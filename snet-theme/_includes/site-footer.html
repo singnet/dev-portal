@@ -2,7 +2,7 @@
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-3 first">
 					{% if site.snet.footer.content.logo.text %}
 						<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.snet.footer.content.logo.text }}</a>
 					{% elsif site.snet.footer.content.logo.image %}
@@ -20,7 +20,7 @@
 	                </ul>
 
 				</div><!-- /.col -->
-				<div class="col-sm-3">
+				<div class="col-sm-1">
 					<!-- empty -->
 				</div>
 				<div class="col-sm-3">
@@ -38,6 +38,9 @@
 	                    </li>
 	                </ul>
 	            </div>
+				<div class="col-sm-1">
+					<!-- empty -->
+				</div>
 	            <div class="col-sm-3">
 	                <h6>Knowledgebase</h6>
 	                <ul class="footer-links">
