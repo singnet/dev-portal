@@ -15,6 +15,15 @@
 	ul li::before {
 		display: none;
 	}
+
+	ul li {
+		padding-left: 0;
+	}
+
+	a {
+		list-style: none;
+		list-style-type: none;
+	}
 }
 
 /* ----- Logo ----- */
