@@ -3,7 +3,7 @@
 	<head>
 		{% include site-head.html %}
 	</head>
-	<body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
+	<body class="{{ site.snet.color_theme }}" >
 		{% include site-header.html %}
 		<div class="hero-subheader">
 			<div class="container">
@@ -62,7 +62,7 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</div><!-- /.hero-subheader -->
-		<div class="section">
+		<div class="section" data-spy="scroll" data-target=".js-scrollspy">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7">
@@ -101,15 +101,13 @@
 						</div><!-- /.row -->
 					</div><!-- /.container -->
 				</nav><!-- /.page-nav -->
-				<div class="container">
 			{% endif %}
+
+			{% if page.dev_news == true %}
+				{% include dev-news.html %}
+			{% endif %}
+
 			{% if jekyll.environment == "production" and page.comments == true and site.snet.comments.disqus_forum_shortname %}
-				{% if page.dev_news == true %}
-					{% include dev-news.html %}
-				{% endif %}
-			</div>
-
-
 				<div class="section section--grey">
 					<div class="container">
 						<div class="row">
