@@ -60,7 +60,7 @@ In order to add the Kovan Testnet AGI you may need the following details:
 ## Alpha Marketplace
 On our [Alpha Marketplace](http://alpha.singularitynet.io), a decentralized application (DApp), you will find a list of AI services ready to be used via the Kovan Testnet. You can [buy AI services](/docs/buyer) or [sell AI services](/docs/provider).
 
-The Alpha Marketplace is under heavy development, so it is advised that you check back regularly for new updates. We are expecting to release the beta in February 2019. You can sign up for developer updates at the end of this page. 
+The Alpha Marketplace is under heavy development, so it is advised that you check back regularly for new updates. We are expecting to release the beta in February 2019. You can sign up for developer updates at the end of this page.
 
 ## Community
 We expect everyone in our community to treat each other with respect and to contribute in a positive way to our ecosystem. Please read our [Code of Conduct](https://community.singularitynet.io/faq) and help us promote this message in the community.
@@ -69,8 +69,8 @@ You can meet and chat with other developers via the following channels:
 * [Developer Telegram](https://t.me/AGIDevelopers)
 * [Developer Forum](https://community.singularitynet.io/c/developers)
 
-We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/contribute).
+We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](http://dev.singularitynet.io/contribute).
 
 Please contribute pull requests to the master branch. In case you simply want to notify us of an issue, please open an issue [here](https://github.com/singnet/dev-portal/issues).
 
-If you would like to speak to a SingularityNET employee privately, you can contact Ibby Benali via the [forum](https://community.singularitynet.io/u/ibby/), [telegram](t.me/ibbybenali) or [email](mailto:ibby@singularitynet.io).
+If you would like to speak to a SingularityNET employee privately, you can contact Ibby Benali via the [forum](https://community.singularitynet.io/u/ibby/), [telegram](http://t.me/ibbybenali) or [email](mailto:ibby@singularitynet.io).
