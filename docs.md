@@ -10,13 +10,13 @@ micro_nav: true
 title: Documentation
 description: Welcome to the SingularityNET Developer Portal. SingularityNET lets anyone create, share, and monetize AI services at scale. The world’s decentralized AI network has arrived.
 buttons:
-    - content: All Docs
-      url: '/docs'
+    - content: I am an AI provider
+      url: '#provider'
       external_url: false
     - icon: github
-      content: Download on GitHub
-      url: '#'
-      external_url: true
+      content: I am an AI buyer
+      url: '#buyer'
+      external_url: false
 
 # Author box
 # author:
