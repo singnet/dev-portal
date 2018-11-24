@@ -34,7 +34,7 @@ page_nav:
 ## AGI Token
 SingularityNET uses the AGI Token for its marketplace. The AGI Token is an ERC-20 token hosted on the Ethereum blockchain. Right now, we are in the `alpha` phase of the SingularityNET Marketplace. That means that you will need to use Kovan Testnet AGI to work with our tools. You can get Kovan Testnet AGI by following the instructions [here](#agi-faucet).
 
-## Kovan Testnet AGI vs Ethereum Mainnet AGI
+## Testnet AGI vs Mainnet AGI
 For those new to Ethereum, it may be a bit confusing what exactly the difference between Testnet and Mainnet tokens are. In principle, you can distinguish them as follows:
 * Testnet tokens are used to test software applications with, try out demos, or in our case the Alpha.
 * Mainnet tokens are used for officially deployed software.
@@ -57,11 +57,10 @@ In order to add the Kovan Testnet AGI you may need the following details:
 * Decimals: 8
 * Kovan Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
 
-## SNET Alpha Network
+## Alpha Marketplace
+On our [Alpha Marketplace](http://alpha.singularitynet.io), a decentralized application (DApp), you will find a list of AI services ready to be used via the Kovan Testnet. You can [buy AI services](/docs/buyer) or [sell AI services](/docs/provider).
 
-* DApp: http://alpha.singularitynet.io
-* Kovan Registry Address: [0x440cf8424fcd7fc2d2ff3a5668c919e93a3d2aab](https://kovan.etherscan.io/address/0x440cf8424fcd7fc2d2ff3a5668c919e93a3d2aab)
-* Kovan Agent Factory Address: [0x1faa8ec70afe4f5ce904da935a6ddf5f3482eedb](https://kovan.etherscan.io/address/0x1faa8ec70afe4f5ce904da935a6ddf5f3482eedb)
+The Alpha Marketplace is under heavy development, so it is advised that you check back regularly for new updates. We are expecting to release the beta in February 2019. You can sign up for developer updates at the end of this page. 
 
 ## Community
 We expect everyone in our community to treat each other with respect and to contribute in a positive way to our ecosystem. Please read our [Code of Conduct](https://community.singularitynet.io/faq) and help us promote this message in the community.
