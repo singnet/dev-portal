@@ -8,8 +8,8 @@ comments: true
 title: Page title
 description: Page description
 
-# Author box
-author:
+# extralink box
+extralink:
     title: All Docs
     title_url: '#'
     external_url: true
@@ -31,4 +31,6 @@ page_nav:
         url: '#'
 ---
 
+# Example
+You can use this file to
 Write your markdown here ...
