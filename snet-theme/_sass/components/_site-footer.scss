@@ -23,6 +23,7 @@
 	a {
 		list-style: none;
 		list-style-type: none;
+		border-bottom: none;
 	}
 }
 
@@ -33,7 +34,7 @@
 	hr {
 		width: 5.625rem;
 	}
-	
+
 	color: $color-footer-copyright;
 
 	ul li::before {
@@ -47,6 +48,7 @@
 	a {
 		list-style: none;
 		list-style-type: none;
+		border-bottom: none;
 	}
 }
 }
