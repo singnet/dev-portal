@@ -10,6 +10,11 @@
 	hr {
 		width: 5.625rem;
 	}
+	color: $color-footer-copyright;
+
+	ul li::before {
+		display: none;
+	}
 }
 
 /* ----- Logo ----- */
@@ -37,7 +42,8 @@
 }
 
 .footer-links h6,
-.footer-links li a {
+.footer-links li a,
+.footer-links a {
 	list-style-type: none;
 	color: $color-footer-copyright;
 	text-decoration: none;
