@@ -78,21 +78,7 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</div><!-- /.section -->
-		{% if page.dev_news == true %}
-			{% include dev-news.html %}
-		{% endif %}
-		
-		{% if jekyll.environment == "production" and page.comments == true and site.snet.comments.disqus_forum_shortname %}
-			<div class="section section--grey">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-7">
-							{% include comments.html %}
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.container -->
-			</div><!-- /.section -->
-		{% endif %}
+
 		<div class="js-footer-area">
 			{% if page.page_nav.prev.content or page.page_nav.next.content %}
 				<nav class="page-nav">
@@ -118,6 +104,21 @@
 			{% endif %}
 			{% if page.micro_nav == true %}
 				{% include micro-nav.html %}
+			{% endif %}
+			{% if page.dev_news == true %}
+				{% include dev-news.html %}
+			{% endif %}
+
+			{% if jekyll.environment == "production" and page.comments == true and site.snet.comments.disqus_forum_shortname %}
+				<div class="section section--grey">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-7">
+								{% include comments.html %}
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</div><!-- /.section -->
 			{% endif %}
 			{% include site-footer.html %}
 		</div><!-- /.js-footer-area -->
