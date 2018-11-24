@@ -53,16 +53,12 @@
 	                </ul>
 	            </div>
 			</div><!-- /.row -->
-		</div><!-- /.container -->
-	</footer><!-- /.site-footer -->
-	<footer class="site-footer-copyright">
-		<div class="container">
 			<div class="row">
 				<div class="col-sm6">
 					{% if site.snet.footer.content.copyright %}
-					<hr>
-					<p class="site-footer__copyright">{{ site.snet.footer.content.copyright }}</p>
-			{% endif %}
+						<hr>
+						<p class="site-footer__copyright">{{ site.snet.footer.content.copyright }}</p>
+					{% endif %}
 				</div>
 				{% if site.snet.footer.social_list %}
 				<div class="col-sm-6 align-right">
@@ -76,10 +72,11 @@
 						{% endfor %}
 					</ul><!-- /.social-list -->
 				</div><!-- /.col -->
-			{% endif %}
+				{% endif %}
 			</div>
-		</div>
-	</footer>
+		</div><!-- /.container -->
+	</footer><!-- /.site-footer -->
+
 {% endif %}
 
 <script src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/snet-theme/assets/js/vendor/jquery.min.js"></script>
