@@ -102,14 +102,12 @@
 					</div><!-- /.container -->
 				</nav><!-- /.page-nav -->
 			{% endif %}
-			{% if page.micro_nav == true %}
-				{% include micro-nav.html %}
-			{% endif %}
-			{% if page.dev_news == true %}
-				{% include dev-news.html %}
-			{% endif %}
-
 			{% if jekyll.environment == "production" and page.comments == true and site.snet.comments.disqus_forum_shortname %}
+				{% if page.dev_news == true %}
+					{% include dev-news.html %}
+				{% endif %}
+
+
 				<div class="section section--grey">
 					<div class="container">
 						<div class="row">
@@ -119,6 +117,9 @@
 						</div><!-- /.row -->
 					</div><!-- /.container -->
 				</div><!-- /.section -->
+			{% endif %}
+			{% if page.micro_nav == true %}
+				{% include micro-nav.html %}
 			{% endif %}
 			{% include site-footer.html %}
 		</div><!-- /.js-footer-area -->
