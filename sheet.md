@@ -8,8 +8,8 @@ comments: true
 title: Fact Sheet
 description: Here you will find a concise overview of some quick facts that you may need whilst working with SingularityNET tools.
 
-# Author box
-author:
+# extralink box
+extralink:
     title: All Docs
     title_url: '/docs'
     external_url: true

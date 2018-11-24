@@ -8,12 +8,12 @@ comments: true
 title: Getting Started
 description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
 
-# Author box
-# author:
-#    title: About Author
+# extralink box
+# extralink:
+#    title: About extralink
 #    title_url: '#'
 #    external_url: true
-#    description: Author description
+#    description: extralink description
 
 # Micro navigation
 micro_nav: true
@@ -44,7 +44,7 @@ TBA
 We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please contribute pull requests to the master branch. In case you simply want to notify us of an issue, please open an issue [here](https://github.com/singnet/dev-portal/issues).
 
 # Examples
-Below some random examples. 
+Below some random examples.
 ---
 __Advertisement :)__
 

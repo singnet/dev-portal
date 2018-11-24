@@ -18,12 +18,12 @@ buttons:
       url: '#'
       external_url: true
 
-# Author box
-# author:
-#    title: About Author
+# extralink box
+# extralink:
+#    title: About extralink
 #    title_url: '#'
 #    external_url: true
-#    description: Author description
+#    description: extralink description
 
 # Grid navigation
 grid_navigation:
@@ -33,7 +33,7 @@ grid_navigation:
       url: '/docs/getting-started'
     - title: Platform Overview
       excerpt: An overview and explanation of the SingularityNET architecture.
-      cta: Read more 
+      cta: Read more
       url: '/docs/platform-overview'
     - title: Sell your Service
       excerpt: Learn how to sell an AI service on the SingularityNET Marketplace.

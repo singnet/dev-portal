@@ -20,12 +20,12 @@ buttons:
       url: '#buyer'
       external_url: false
 
-# Author box
-# author:
-#    title: About Author
+# extralink box
+# extralink:
+#    title: About extralink
 #    title_url: '#'
 #    external_url: true
-#    description: Author description
+#    description: extralink description
 
 
 

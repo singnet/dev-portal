@@ -8,12 +8,12 @@ comments: true
 title: Page title
 description: Page description
 
-# Author box
-author:
-    title: About Author
+# extralink box
+extralink:
+    title: About extralink
     title_url: '#'
     external_url: true
-    description: Author description
+    description: extralink description
 
 # Micro navigation
 micro_nav: true

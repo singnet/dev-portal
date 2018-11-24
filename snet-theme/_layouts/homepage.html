@@ -33,26 +33,26 @@
 							</div><!-- /.align-inner -->
 						</div><!-- /.align-container -->
 					</div><!-- /.col -->
-					{% if page.author.title and page.author.description and page.author.title_url %}
+					{% if page.extralink.title and page.extralink.description and page.extralink.title_url %}
 						<div class="col-md-4 col-md-offset-1 hidden-xs hidden-sm">
 							<div class="align-container" data-mh>
 								<div class="align-inner">
-									<div class="hero-subheader__author">
-										<p class="hero-subheader__author-title">
+									<div class="hero-subheader__extralink">
+										<p class="hero-subheader__extralink-title">
 											{% if button.external_url == true %}
-											<a href="{{ page.author.title_url }}" class="btn btn--read-more">
-												{{ page.author.title }}
+											<a href="{{ page.extralink.title_url }}" class="btn btn--read-more">
+												{{ page.extralink.title }}
 												<i class="icon icon--arrow-right"></i>
 											</a>
 											{% else %}
-											<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.author.title_url }}" class="btn btn--read-more">
-												{{ page.author.title }}
+											<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.extralink.title_url }}" class="btn btn--read-more">
+												{{ page.extralink.title }}
 												<i class="icon icon--arrow-right"></i>
 											</a>
 											{% endif %}
-										</p><!-- /.hero-subheader__author-title -->
-										<p>{{ page.author.description }}</p>
-									</div><!-- /.hero-subheader__author -->
+										</p><!-- /.hero-subheader__extralink-title -->
+										<p>{{ page.extralink.description }}</p>
+									</div><!-- /.hero-subheader__extralink -->
 								</div><!-- /.align-inner -->
 							</div><!-- /.align-container -->
 						</div><!-- /.col -->
