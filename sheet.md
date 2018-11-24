@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: fact sheet
 comments: true
 
 # Hero section
