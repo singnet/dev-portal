@@ -1,0 +1,12 @@
+{
+    "DAEMON_TYPE": "grpc",
+    "DAEMON_LISTENING_PORT": "7000",
+    "BLOCKCHAIN_ENABLED": true,
+    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
+    "AGENT_CONTRACT_ADDRESS": "__AGENT_ADDRESS__",
+    "SERVICE_TYPE": "grpc",
+    "PASSTHROUGH_ENABLED": true,
+    "PASSTHROUGH_ENDPOINT": "http://localhost:__SERVICE_PORT__",
+    "LOG_LEVEL": 10,
+    "PRIVATE_KEY": "__PRIVATE_KEY__"
+}

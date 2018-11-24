@@ -1,0 +1,243 @@
+## Table of contents
+
+- [Install prerequisites](#install-prerequisites)
+- [Deploy local environment](#deploy-local-environment)
+- [Start environment](#start-environment-and-finalize-snet-configuration)
+
+## Overview
+
+This tutorial describes the process of building and deploying fully functional local SingularityNET environment. In such environment one can publish services, call them and have full control over local test blockchain network.
+
+## Install prerequisites
+
+This document describes the process of environment setup in Ubuntu 18.04. Some commands can be different under other linux distributions.
+
+### Go toolset
+
+- Go 1.10+
+- Dep 0.4.1+
+- Go Protobuf Compiler
+- Golint
+
+Part of the code is written in [Go](https://golang.org) language so you need a set of tools to compile Go code and manage Go dependencies.
+
+```
+sudo apt-get install golang go-dep golang-goprotobuf-dev golint
+```
+
+### NodeJS toolset
+
+- NodeJS 8+ 
+- NPM
+
+[Truffle](https://truffleframework.com/truffle) and [Ganache](https://truffleframework.com/ganache) are used to develop and test Ethereum contracts so NodeJS development tools are required.
+
+```
+sudo apt-get install nodejs npm
+```
+
+### IPFS
+
+IPFS is used to keep RPC models of the services which are published via SingularityNET platform. Follow instructions at https://ipfs.io/docs/install to download and install IPFS. Following steps expects that ```ipfs``` is installed and can be run from the command line.
+
+### Python toolset
+
+- Python 3.6.5
+- Pip
+
+Part of the code is written in Python so you need a Python interpreter and Pip as python package manager.
+
+```
+sudo apt-get install python3 python3-pip
+```
+
+### Other
+
+- libudev
+- libusb 1.0
+
+```
+sudo apt-get install libudev-dev libusb-1.0-0-dev
+```
+
+## Deploy local environment
+
+### Setup Go building environments
+
+Go compiler expects that path to the workspace is exported as ```GOPATH``` variable. ```SINGNET_REPOS``` is exported to simplify change directory commands below.
+
+```
+mkdir -p singnet/src/github.com/singnet
+cd singnet
+mkdir log
+export GOPATH=`pwd`
+export SINGNET_REPOS=${GOPATH}/src/github.com/singnet
+export PATH=${GOPATH}/bin:${PATH}
+```
+
+### Deploy local IPFS instance
+
+IPFS is used by SingularityNET to keep published services RPC models. For local test environment we will setup private local IPFS instance.
+
+Initialize IPFS data folder:
+
+```
+export IPFS_PATH=$GOPATH/ipfs
+ipfs init
+```
+
+Remove all default IPFS bootstrap instances from default IPFS configuration (see [IPFS private network](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#private-networks)).
+
+```
+ipfs bootstrap rm --all
+```
+
+Change IPFS API and Gateway ports because they intersect with default ```example-service``` and snet-daemon ports.
+
+```
+ipfs config Addresses.API /ip4/127.0.0.1/tcp/5002
+ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8081
+```
+
+### Compile platform contracts
+
+Clone platform-contracts repository:
+
+```
+cd $SINGNET_REPOS
+git clone https://github.com/singnet/platform-contracts
+cd platform-contracts
+```
+
+Install dependencies and Ganache using NPM:
+
+```
+npm install
+npm install ganache-cli
+```
+
+Compile contracts using Truffle:
+
+```
+./node_modules/.bin/truffle compile
+```
+
+### Setup ```snet``` command line interface
+
+Clone snet-cli repository:
+
+```
+cd $SINGNET_REPOS
+git clone https://github.com/singnet/snet-cli
+cd snet-cli
+```
+
+Install blockchain dependencies and snet-cli package in development mode.
+
+```
+# you need python 3.6 here, with python 3.5 you will get an error
+./scripts/blockchain install
+pip3 install -e .
+```
+
+Setup in snet-cli correct address for contracts in the local blockchain. Our network will be run with networkId=829257324 and mnemonics "gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce".
+
+```
+echo '{"829257324":{"events":{},"links":{},"address":"0x5c7a4290f6f8ff64c69eeffdfafc8644a4ec3a4e","transactionHash":""}}' > snet_cli/resources/contracts/networks/MultiPartyEscrow.json
+echo '{"829257324":{"events":{},"links":{},"address":"0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2","transactionHash":""}}' > snet_cli/resources/contracts/networks/Registry.json
+echo '{"829257324":{"events":{},"links":{},"address":"0x6e5f20669177f5bdf3703ec5ea9c4d4fe3aabd14","transactionHash":""}}' > snet_cli/resources/contracts/networks/SingularityNetToken.json
+```
+ 
+
+After this ```snet``` command will be available. Run it for the first time to
+create default config:
+
+```
+snet
+```
+
+Add local Ethereum network to the ```snet``` configuration and use this network by default. 
+
+```
+cat >> ~/.snet/config << EOF
+[network.local]
+default_eth_rpc_endpoint = http://localhost:8545
+EOF
+```
+
+Replace IPFS instance in ```snet``` configuration by local instance: 
+
+```
+sed -ie '/ipfs/,+2d' ~/.snet/config
+cat >> ~/.snet/config << EOF
+[ipfs]
+default_ipfs_endpoint = http://localhost:5002
+EOF
+```
+
+### Build snet-daemon
+
+Clone ```snet-daemon``` repository:
+
+```
+cd $SINGNET_REPOS
+git clone https://github.com/singnet/snet-daemon
+cd snet-daemon
+```
+
+Build ```snet-daemon```:
+
+```
+./scripts/install # install dependencies
+./scripts/build linux amd64  # build project
+```
+
+## Start environment and finalize snet configuration
+
+### Start local IPFS instance
+
+Start IPFS daemon:
+
+```
+ipfs daemon >$GOPATH/log/ipfs.log 2>&1 &
+```
+
+### Start local Ethereum network
+
+Start local Ethereum network. Pass mnemonic to produce deterministic blockchain environment: accounts, private keys and behavior.
+We also set predefined networkId=829257324. 
+
+```
+cd $SINGNET_REPOS/platform-contracts
+./node_modules/.bin/ganache-cli --mnemonic 'gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce' >$GOPATH/log/ganache.log --networkId 829257324 2>&1 &
+```
+Accounts and private keys printed by Ganache will be used in next steps. Deploy contracts using Truffle.
+
+```
+./node_modules/.bin/truffle migrate --network local 
+```
+
+Contract addresses printed after deployment was already used for setup snet. 
+
+Truffle deploys contracts using first account of the test network. As SingularityNETToken contract is deployed using this account this account's balance keeps all of SingularityNET tokens issued during deployment. Other contracts deployed are Registry and MultiPartyEscrow. Registry keeps the list of organization and published services, and MultiPartyEscrow is a part of our payment system.
+
+
+### Create Ethereum identity for snet-cli
+
+Create new Ethereum identity in ```snet```:
+
+```
+snet identity create snet-user key --private-key 0xc71478a6d0fe44e763649de0a0deb5a080b788eefbbcf9c6f7aef0dd5dbd67e0
+snet identity snet-user
+```
+Example above uses private key for the first account generated by ganache. As this account was used for deploying platform-contracts it has all of AGI tokens emitted during deployment as described in previous step.
+
+0xc71478a6d0fe44e763649de0a0deb5a080b788eefbbcf9c6f7aef0dd5dbd67e0 - is a private key of the first account which was generated by Ganache test network.
+
+### Use local Ethereum network
+
+Use ```snet``` tool to select local Ethereum network:
+```
+snet network local
+```
+

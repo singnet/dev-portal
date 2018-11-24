@@ -1,0 +1,14 @@
+{
+    "name": "__SERVICE_NAME__",
+    "service_spec": "src/service_spec",
+    "organization": "SNET",
+    "path": "",
+    "price": 0,
+    "endpoint": "http://localhost:7000",
+    "tags": [
+        "[]"
+    ],
+    "metadata": {
+        "description": ""
+    }
+}
