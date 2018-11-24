@@ -60,7 +60,10 @@
 }
 
 .row.copyright {
-	background: #000;
+	border-top: 1px solid #3e3e3e;
+	padding-top: 2%;
+	margin-top: 2%;
+
 }
 .footer-links h6,
 .footer-links li a,
@@ -69,4 +72,9 @@
 	color: $color-footer-copyright;
 	text-decoration: none;
 	border-bottom: none;
+}
+
+.footer-links h6 {
+	font-weight:700;
+	text-transform: capitalize;
 }
