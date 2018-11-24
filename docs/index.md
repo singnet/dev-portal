@@ -7,7 +7,7 @@ keywords:
 micro_nav: true
 
 # Hero section
-title: Developer Portal
+title: Documentation
 description: Welcome to the SingularityNET Developer Portal. SingularityNET lets anyone create, share, and monetize AI services at scale. The world’s decentralized AI network has arrived.
 buttons:
     - content: All Docs
@@ -33,7 +33,7 @@ grid_navigation:
       url: '/docs/getting-started'
     - title: Platform Overview
       excerpt: An overview and explanation of the SingularityNET architecture.
-      cta: Read more 
+      cta: Read more
       url: '/docs/platform-overview'
     - title: Sell your Service
       excerpt: Learn how to sell an AI service on the SingularityNET Marketplace.

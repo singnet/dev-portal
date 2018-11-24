@@ -35,3 +35,9 @@
 	font-size: .875em;
 	line-height: $line-height-base;
 }
+
+.footer-links {
+	list-style-type: none;
+	color: $color-footer-copyright;
+	text-decoration: none;
+}

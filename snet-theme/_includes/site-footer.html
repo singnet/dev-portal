@@ -2,54 +2,6 @@
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-6  col-md-4 col-lg-2">
-	                <h6>Quick Links</h6>
-	                <ul class="footer-links">
-	                    <li><a href="download.html">Download</a>
-	                    </li>
-	                    <li><a href="https://singularitynet.com/dev-blog" target="_blank">Dev Blog</a>
-	                    </li>
-	                    <li><a href="https://community.singularitynet.io/c/developers" target="_blank">Community</a>
-	                    </li>
-	                    <li><a href="newsletter.html">Newsletter</a>
-	                    </li>
-	                    <li><a href="https://github.com/singnet" target="_blank">GitHub</a>
-	                    </li>
-	                </ul>
-	            </div>
-	            <div class="col-6  col-md-4 col-lg-2">
-	                <h6>Knowledgebase</h6>
-	                <ul class="footer-links">
-	                    <li><a href="#">Getting Started</a>
-	                    </li>
-	                    <li><a href="#">API Guidelines</a>
-	                    </li>
-	                    <li><a href="#">Tutorials</a>
-	                    </li>
-	                    <li><a href="register-organization.html">Register Your Organization</a>
-	                    </li>
-	                    <li><a href="sell-services.html">Sell Your Service</a>
-	                    </li>
-	                    <li><a href="buy-services.html">Buy AI Services</a>
-	                    </li>
-	                </ul>
-	            </div>
-	            <div class="col-6  col-md-4 col-lg-2">
-	                <h6>About SingularityNET</h6>
-	                <ul class="footer-links">
-	                    <li><a href="https://singularitynet.io/about" target="_blank">Company</a>
-	                    </li>
-	                    <li><a href="https://singularitynet.io/jobs" target="_blank">Jobs</a>
-	                    </li>
-	                    <li><a href="#">Whitepaper</a>
-	                    </li>
-	                    <li><a href="#">Technical Paper</a>
-	                    </li>
-	                </ul>
-	            </div>
-			</div>
-
-			<div class="row">
 				<div class="col-sm-6">
 					{% if site.snet.footer.content.logo.text %}
 						<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.snet.footer.content.logo.text }}</a>
@@ -63,6 +15,49 @@
 						<p class="site-footer__copyright">{{ site.snet.footer.content.copyright }}</p>
 					{% endif %}
 				</div><!-- /.col -->
+				<div class="col-sm-6">
+	                <h6>Quick Links</h6>
+	                <ul class="footer-links">
+	                    <li><a href="/docs/download">Downloads</a>
+	                    </li>
+	                    <li><a href="alpha.singularitynet.io" target="_blank">Alpha Marketplace</a>
+	                    </li>
+	                    <li><a href="https://community.singularitynet.io/c/developers" target="_blank">Community</a>
+	                    </li>
+	                    <li><a href="faucet.singularitynet.io" target="_blank">Faucet</a>
+	                    </li>
+	                    <li><a href="https://singularitynet.io/platform-roadmap" target="_blank">Platform Roadmap</a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="col-sm-6">
+	                <h6>Knowledgebase</h6>
+	                <ul class="footer-links">
+	                    <li><a href="/docs">Documentation</a>
+	                    </li>
+	                    <li><a href="/docs/getting-started">Getting Started</a>
+	                    </li>
+	                    <li><a href="/docs/sell-services">Sell Your Service</a>
+	                    </li>
+	                    <li><a href="/docs/buy-services">Buy AI Services</a>
+	                    </li>
+						<li><a href="/docs/deploy-singularitynet">Deploy SingularityNET Locally</a>
+	                    </li>
+	                    <li><a href="/docs/contribute">Contribute</a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="col-sm-6">
+	                <h6>About SingularityNET</h6>
+	                <ul class="footer-links">
+	                    <li><a href="https://singularitynet.io/about" target="_blank">Company</a>
+	                    </li>
+	                    <li><a href="https://singularitynet.io/jobs" target="_blank">Jobs</a>
+	                    </li>
+	                    <li><a href="#">Platform Whitepaper</a>
+	                    </li>
+	                </ul>
+	            </div>
 				{% if site.snet.footer.social_list %}
 					<div class="col-sm-6 align-right">
 						<ul class="social-list">
