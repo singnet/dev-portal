@@ -27,32 +27,6 @@
 	}
 }
 
-/*.site-footer-copyright {
-	background-color: #000000;
-	padding: 3.75rem 0 (3.75rem - 1.25rem) 0;
-
-	hr {
-		width: 5.625rem;
-	}
-
-	color: $color-footer-copyright;
-
-	ul li::before {
-		display: none;
-	}
-
-	ul li {
-		padding-left: 0;
-	}
-
-	a {
-		list-style: none;
-		list-style-type: none;
-		border-bottom: none;
-	}
-}
-}*/
-
 /* ----- Logo ----- */
 .site-footer__logo {
 	@include link-reset;
