@@ -44,8 +44,8 @@ SingularityNET uses the AGI Token for its marketplace. The AGI Token is an ERC-2
 * Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
 * AGI Faucet: https://faucet.singularitynet.io
 
-##[AGI Faucet](#agi-faucet)
-AGI Faucet Instructions go here. 
+##AGI Faucet
+AGI Faucet Instructions go here.
 
 ## SNET Alpha Network ##
 
