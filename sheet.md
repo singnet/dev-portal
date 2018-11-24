@@ -1,9 +1,42 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Page title
+description: Page description
+
+# Author box
+author:
+    title: All Docs
+    title_url: '#'
+    external_url: true
+    description: Here a description
+
+# Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Previous page
+        url: '#'
+    next:
+        content: Next page
+        url: '#'
+---
+
 ## SingularityNET Token ##
 
 ##### Ethereum Mainnet
 
 * Token Address: [0x8eb24319393716668d768dcec29356ae9cffe285](https://etherscan.io/address/0x8eb24319393716668d768dcec29356ae9cffe285)
-* Exchanges: https://coinmarketcap.com/currencies/singularitynet/#markets
+
 
 ##### Kovan Testnet
 
