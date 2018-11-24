@@ -1,0 +1,55 @@
+# Theme settings
+snet:
+    baseurl: /dev-portal-2
+    color_theme: blue
+    header:
+        logo:
+            text:
+            image: '../assets/images/layout/logo.png'
+        nav:
+            - item_name: Home
+              item_url: 'https://dev.singularitynet.io'
+            - item_name: Getting Started
+              item_url: '#'
+            - item_name: Docs
+              item_url: '/docs'
+            - item_name: Contribute
+              item_url: '/contribute'
+            - item_name: Issues
+              item_url: 'https://github.com/singnet/dev-portal/issues'
+            - item_name: Forum
+              item_url: 'https://community.singularitynet.io/c/developers'
+    footer:
+        content:
+            logo:
+                text:
+                image: '../assets/images/layout/logo.png'
+            copyright: Copyright &copy; 2018. - SingularityNET <br>All rights reserved.
+        social_list:
+            - network_name: github
+              profile_url: 'https://github.com/singnet'
+            - network_name: twitter
+              profile_url: 'https://twitter.com/singularity_net'
+            - network_name: facebook
+              profile_url: 'https://www.facebook.com/singularityNET.io'
+            - network_name: linkedin
+              profile_url: 'https://www.linkedin.com/company/singularitynet/'
+            - network_name: youtube
+              profile_url: 'https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw'
+            - network_name: instagram
+              profile_url: 'https://instagram.com/singularitynet.io'
+    google_analytics:
+        tracking_code: UA-107763881-9
+    comments:
+        disqus_forum_shortname: singularitynet
+
+# SASS settings
+sass:
+    sass_dir: ./snet-theme/_sass
+    style: :compressed
+
+# Jekyll settings
+layouts_dir: ./snet-theme/_layouts
+includes_dir: ./snet-theme/_includes
+exclude: [ 'README.md', 'CHANGELOG.md' ]
+permalink: /:title/
