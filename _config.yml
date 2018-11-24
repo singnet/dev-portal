@@ -9,22 +9,17 @@ snet:
         nav:
             - item_name: Home
               item_url: 'https://dev.singularitynet.io'
-              external_url: false
             - item_name: Getting Started
               item_url: '#'
-              external_url: false
             - item_name: Docs
               item_url: '/docs'
-              external_url: false
             - item_name: Contribute
               item_url: '/contribute'
-              external_url: false
             - item_name: Issues
               item_url: 'https://github.com/singnet/dev-portal/issues'
-              external_url: true
             - item_name: Forum
               item_url: 'https://community.singularitynet.io/c/developers'
-              external_url: true
+
     footer:
         content:
             logo:
