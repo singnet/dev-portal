@@ -24,14 +24,15 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Previous page
-        url: '#'
+        content: Back to home
+        url: 'dev.singularitynet.io'
     next:
-        content: Next page
-        url: '#'
+        content: Getting Started
+        url: '/docs/getting-started'
 ---
 
-## SingularityNET Token ##
+## AGI Token ##
+SingularityNET uses the AGI Token for its marketplace. The AGI Token is an ERC-20 token hosted on the Ethereum blockchain. Right now, we are in the `alpha` phase of the SingularityNET Marketplace. That means that you will need to use Kovan Testnet AGI to work with our tools. You can get Kovan Testnet AGI by following the instructions [here](#agi-faucet).
 
 ##### Ethereum Mainnet
 
@@ -43,6 +44,9 @@ page_nav:
 * Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
 * AGI Faucet: https://faucet.singularitynet.io
 
+##[AGI Faucet](#agi-faucet)
+AGI Faucet Instructions go here. 
+
 ## SNET Alpha Network ##
 
 * DApp: http://alpha.singularitynet.io
@@ -50,5 +54,14 @@ page_nav:
 * Kovan Agent Factory Address: [0x1faa8ec70afe4f5ce904da935a6ddf5f3482eedb](https://kovan.etherscan.io/address/0x1faa8ec70afe4f5ce904da935a6ddf5f3482eedb)
 
 ## Community
+We expect everyone in our community to treat each other with respect and to contribute in a positive way to our ecosystem. Please read our [Code of Conduct](https://community.singularitynet.io/faq) and help us promote this message in the community.
 
+You can meet and chat with other developers via the following channels:
 * Developer Telegram: https://t.me/AGIDevelopers
+* Developer Forum: https://community.singularitynet.io/c/developers
+
+We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/contribute).
+
+Please contribute pull requests to the master branch. In case you simply want to notify us of an issue, please open an issue [here](https://github.com/singnet/dev-portal/issues).
+
+If you would like to speak to a SingularityNET employee privately, you can contact Ibby Benali via the [forum](https://community.singularitynet.io/u/ibby/), [telegram](t.me/ibbybenali) or [email](mailto:ibby@singularitynet.io).
