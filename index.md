@@ -10,8 +10,8 @@ micro_nav: true
 title: Developer Portal
 description: Welcome to the SingularityNET Developer Portal. SingularityNET lets anyone create, share, and monetize AI services at scale. The world’s decentralized AI network has arrived.
 buttons:
-    - content: Button
-      url: '#'
+    - content: All Docs
+      url: '/docs'
       external_url: false
     - icon: github
       content: Download on GitHub
@@ -30,22 +30,18 @@ grid_navigation:
     - title: Getting Started
       excerpt: Section description
       cta: Read more
-      url: '../dev-portal-2/docs/getting-started'
-    - title: Register your Organization
-      excerpt: Section description
-      cta: Read more
-      url: '../dev-portal-2/docs/register-organization'
+      url: '/docs/getting-started'
     - title: Sell your Service
-      excerpt: Section description
+      excerpt: Learn how to sell an AI service on the SingularityNET Marketplace.
       cta: Read more
-      url: '../dev-portal-2/docs/sell-services'
+      url: '/docs/sell-services'
     - title: Buying AI Services
-      excerpt: Section description
+      excerpt: Learn how to buy AI services from the SingularityNET Marketplace.
       cta: Read more
-      url: '../dev-portal-2/docs/buy-services'
+      url: '/docs/buy-services'
     - title: Deploy SingularityNET Locally
-      excerpt: Section description
+      excerpt: Learn how to deploy a local version of the SingularityNET Marketplace.
       cta: Read more
-      url: '../dev-portal-2/docs/deploy-singularitynet'
+      url: '/docs/deploy-singularitynet'
 
 ---

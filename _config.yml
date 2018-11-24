@@ -1,6 +1,6 @@
 # Theme settings
 snet:
-    baseurl: /dev-portal-2
+    baseurl:
     color_theme: blue
     header:
         logo:
