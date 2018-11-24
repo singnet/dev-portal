@@ -5,15 +5,15 @@ keywords:
 comments: true
 
 # Hero section
-title: Page title
-description: Page description
+title: Fact Sheet
+description: Here you will find a concise overview of some quick facts that you may need whilst working with SingularityNET tools.
 
 # Author box
 author:
     title: All Docs
-    title_url: '#'
+    title_url: '/docs'
     external_url: true
-    description: Here a description
+    description: Find an overview of our full documentation here.
 
 # Newsletter
 dev_news: true
