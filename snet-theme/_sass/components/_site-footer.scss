@@ -36,7 +36,8 @@
 	line-height: $line-height-base;
 }
 
-.footer-links {
+.footer-links h6,
+.footer-links li a {
 	list-style-type: none;
 	color: $color-footer-copyright;
 	text-decoration: none;
