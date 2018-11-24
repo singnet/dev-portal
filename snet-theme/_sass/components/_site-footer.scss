@@ -5,7 +5,7 @@
 /* ----- General ----- */
 .site-footer {
 	background-color: $color-footer-bg;
-	padding: 3.75rem 0 (3.75rem - 1.25rem) 0;
+	padding: 3.75rem 0 1rem 0;
 
 	hr {
 		width: 5.625rem;
@@ -74,7 +74,7 @@
 	border-bottom: none;
 }
 
-.footer-links h6 {
+.site-footer h6 {
 	font-weight:700;
 	text-transform: capitalize;
 }
