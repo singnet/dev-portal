@@ -2,7 +2,7 @@
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-2">
+				<div class="col-sm-4">
 					{% if site.snet.footer.content.logo.text %}
 						<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.snet.footer.content.logo.text }}</a>
 					{% elsif site.snet.footer.content.logo.image %}
@@ -10,9 +10,17 @@
 							<img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/snet-theme/assets/images/layout/logo-footer.png">
 						</a><!-- /.site-footer__logo -->
 					{% endif %}
+					<ul class="footer-links">
+	                    <li><a href="https://singularitynet.io/about" target="_blank">Company</a>
+	                    </li>
+	                    <li><a href="https://singularitynet.io/jobs" target="_blank">Jobs</a>
+	                    </li>
+	                    <li><a href="#">Platform Whitepaper</a>
+	                    </li>
+	                </ul>
 
 				</div><!-- /.col -->
-				<div class="col-sm-2">
+				<div class="col-sm-4">
 	                <h6>Quick Links</h6>
 	                <ul class="footer-links">
 	                    <li><a href="/docs/download">Downloads</a>
@@ -27,7 +35,7 @@
 	                    </li>
 	                </ul>
 	            </div>
-	            <div class="col-sm-2">
+	            <div class="col-sm-4">
 	                <h6>Knowledgebase</h6>
 	                <ul class="footer-links">
 	                    <li><a href="/docs">Documentation</a>
@@ -44,17 +52,6 @@
 	                    </li>
 	                </ul>
 	            </div>
-	            <div class="col-sm-2">
-	                <h6>About SingularityNET</h6>
-	                <ul class="footer-links">
-	                    <li><a href="https://singularitynet.io/about" target="_blank">Company</a>
-	                    </li>
-	                    <li><a href="https://singularitynet.io/jobs" target="_blank">Jobs</a>
-	                    </li>
-	                    <li><a href="#">Platform Whitepaper</a>
-	                    </li>
-	                </ul>
-				</div>
 			</div><!-- /.row -->
 		</div><!-- /.container -->
 	</footer><!-- /.site-footer -->
