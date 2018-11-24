@@ -25,7 +25,7 @@ micro_nav: true
 page_nav:
     prev:
         content: Back to home
-        url: 'dev.singularitynet.io'
+        url: 'http://dev.singularitynet.io'
     next:
         content: Getting Started
         url: '/docs/getting-started'
