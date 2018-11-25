@@ -19,6 +19,9 @@ buttons:
     - content: I am an AI buyer
       url: '/docs/buyer'
       external_url: false
+    - content: View All Docs
+      url: '/docs/all'
+      external_url: false
 
 # extralink box
 # extralink:
