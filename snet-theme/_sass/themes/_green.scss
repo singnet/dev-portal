@@ -42,3 +42,10 @@
 		background-color: $color-theme-green;
 	}
 }
+
+/* ----- Maintenance ----- */
+.green {
+	&.maintenance {
+		background-color: $color-theme-green;
+	}
+}

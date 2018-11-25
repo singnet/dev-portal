@@ -42,3 +42,10 @@
 		background-color: $color-theme-purple;
 	}
 }
+
+/* ----- Maintenance ----- */
+.purple {
+	&.maintenance {
+		background-color: $color-theme-purple;
+	}
+}

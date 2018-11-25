@@ -36,9 +36,9 @@
 	}
 }
 
-/* ----- Error 404 ----- */
+/* ----- Maintenance ----- */
 .red {
-	&.error-404 {
+	&.maintenance {
 		background-color: $color-theme-red;
 	}
 }
