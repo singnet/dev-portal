@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include site-head.html %}
+	</head>
+	<body class="{{ site.snet.color_theme }} maintenance">
+		<div class="align-container">
+			<div class="align-inner">
+				<h1 class="maintenance__title">{{ page.page_content.title }}</h1>
+				{% if page.page_content.message %}
+					<p>{{ page.page_content.message }}</p>
+				{% endif %}
+			</div><!-- /.align-inner -->
+		</div><!-- /.align-container -->
+	</body>
+</html>

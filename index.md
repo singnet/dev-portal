@@ -1,6 +1,6 @@
 ---
 # Page settings
-layout: error-404
+layout: maintenance
 title: Under Construction
 
 # Content settings
