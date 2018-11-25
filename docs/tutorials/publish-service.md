@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: How to Publish a SingularityNET Service
+description: This is an example page that you can use as a base for when adding new content.
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Previous page
+        url: '#'
+    next:
+        content: Next page
+        url: '#'
+---
+
 # Tutorial - How to Publish a SingularityNET Service
 
 -------------------------------
@@ -15,7 +48,7 @@ Run this tutorial from a bash terminal.
 
 In this tutorial we'll publish a basic service in SingularityNET using Kovan Test Network.
 
-## Step 1 
+## Step 1
 
 Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
@@ -26,14 +59,14 @@ $ docker run -p 7000:7000 -ti snet_service bash
 
 Step 1 may take a couple of minutes to finish. Step 2 can be performed concurrently.
 
-## Step 2 (optional if you already have enough AGI and ETH tokens) 
+## Step 2 (optional if you already have enough AGI and ETH tokens)
 
 You need some AGI and ETH tokens. You can get then for free using your github account here:
 
 * AGI: https://faucet.singularitynet.io/
 * ETH: https://faucet.kovan.network/
 
-## Step 3 
+## Step 3
 
 From this point we follow the turorial in the Docker container's prompt.
 
@@ -53,7 +86,7 @@ Replace MY_ID_NAME by an id to identify your key in the SNET-CLI. This id will n
 
 In this tutorial we'll use KEY_TYPE == key. Enter your private key when prompted.
 
-## Step 4 (optional if you already have an organization) 
+## Step 4 (optional if you already have an organization)
 
 Create an organization and add your key to it.
 
@@ -164,4 +197,3 @@ Or you can make requests trough SingularityNET
 # snet set current_agent_at YOUR_AGENT_ADDRESS
 # snet client call add '{"a":6,"b":4}'
 ```
-

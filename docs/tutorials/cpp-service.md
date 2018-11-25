@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: How to Write a SingularityNET Service in C++
+description: This is an example page that you can use as a base for when adding new content.
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Previous page
+        url: '#'
+    next:
+        content: Next page
+        url: '#'
+---
+
 # Tutorial - How to write a SingularityNET service in C++
 
 -------------------------------
@@ -17,10 +50,10 @@ We'll use C++ gRPC, for more details see https://grpc.io/docs/
 
 In this tutorial we'll create a C++ service and publish it in SingularityNET.
 
-## Step 1 
+## Step 1
 
 Setup and run a docker container. We'll install C++ gRPC stuff in a container
-because of this warning from the authors: 
+because of this warning from the authors:
 
 ```
 "WARNING: After installing with make install there is no easy way to uninstall,
@@ -174,7 +207,7 @@ void doSomething(int argc, char** argv) {
     SingleString checkDivisor;
     divisor.set_v(n2);
     Status status1 = stub_->check(&context1, divisor, &checkDivisor);
-    if (! status1.ok()) { 
+    if (! status1.ok()) {
         std::cout << "doSomething rpc failed." << std::endl;
         return;
     }
@@ -189,7 +222,7 @@ void doSomething(int argc, char** argv) {
     input.set_a(n1);
     input.set_b(n2);
     Status status2 = stub_->div(&context2, input, &result);
-    if (status2.ok()) { 
+    if (status2.ok()) {
         std::cout << result.v() << std::endl;
     } else {
         std::cout << "doSomething rpc failed." << std::endl;
@@ -267,7 +300,7 @@ features) in https://github.com/singnet/snet-cli
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)
 
-## Step 10 (optional if you already have an organization) 
+## Step 10 (optional if you already have an organization)
 
 Create an organization and add your key to it.
 
@@ -301,7 +334,7 @@ Edit a JSON configuration file for your service.  We already have a valid
         "description": ""
     }
 }
-``` 
+```
 
 Anyway we'll change it to add some useful information in `tags` and `description`.
 
@@ -318,7 +351,7 @@ Anyway we'll change it to add some useful information in `tags` and `description
         "description": "A tutorial C++ service"
     }
 }
-``` 
+```
 
 You could also use `SNET-CLI` build the JSON configuration file
 using `snet service init` and answering the prompted questions.
@@ -359,7 +392,7 @@ Optionally you can un-publish the service
 Actually, since this is just a tutorial, you are expected to un-publish your
 service as soon as you finish the tests.
 
-Other `snet` commands and options (as well as their documentation) can be found here: 
+Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
 ## Step 13

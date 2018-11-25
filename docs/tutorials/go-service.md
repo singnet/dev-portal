@@ -1,4 +1,37 @@
-# Tutorial - How to write a SingularityNET service in Java
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: How to Write a SingularityNET Service in Go
+description: This is an example page that you can use as a base for when adding new content.
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Previous page
+        url: '#'
+    next:
+        content: Next page
+        url: '#'
+---
+
+# Tutorial - How to write a SingularityNET service in Go
 
 -------------------------------
 
@@ -13,30 +46,30 @@ _You will need a private-public key pair to register your service in SNET. Gener
 
 Run this tutorial from a bash terminal.
 
-We'll use Java gRPC, for more details see https://grpc.io/docs/
+We'll use Go gRPC, for more details see https://grpc.io/docs/
 
-In this tutorial we'll create a Java service and publish it in SingularityNET.
+In this tutorial we'll create a Go service and publish it in SingularityNET.
 
-## Step 1 
+## Step 1
 
 Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
 ```
-$ docker build --build-arg language=java -t snet_java_service https://github.com/singnet/wiki.git#master:/tutorials/Docker
-$ docker run -p 7000:7000 -ti snet_java_service bash
+$ docker build --build-arg language=go -t snet_go_service https://github.com/singnet/wiki.git#master:/tutorials/Docker
+$ docker run -p 7000:7000 -ti snet_go_service bash
 ```
 
 From this point we follow the turorial in the Docker container's prompt.
 
 ```
-# cd wiki/tutorials/howToWriteJavaService
+# cd wiki/tutorials/howToWriteGoService
 ```
 
 ## Step 2
 
 Create the skeleton structure for your service's project
 
-```bash
+```
 # ./create_project.sh PROJECT_NAME SERVICE_NAME SERVICE_PORT
 ```
 
@@ -59,13 +92,13 @@ So we'll use this command line to create project's skeleton and go to its folder
 
 ```
 # ./create_project.sh tutorial math-operations 7070
-# cd tutorial
+# cd /opt/singnet/go/src/tutorial
 ```
 
 ## Step 3
 
 Now we'll customize the skeleton code to actually implement our basic service.
-We need to edit `../howToWriteJavaService/tutorial/src/main/java/service_spec/tutorial.proto` and define
+We need to edit `./service_spec/tutorial.proto` and define
 
 * the data structures used to carry input and output of the methods, and
 * the RPC API of the service.
@@ -73,18 +106,12 @@ We need to edit `../howToWriteJavaService/tutorial/src/main/java/service_spec/tu
 Take a look at https://developers.google.com/protocol-buffers/docs/overview to
 understand everything you can do in the `.proto` file.
 
-Edit the proto file:
-```Java
-# nano src/main/java/service_spec/tutorial.proto
-```
-
-In this tutorial our proto file should be like this:
+In this tutorial our `./service_spec/tutorial.proto` will be like this:
 
 ```Java
 syntax = "proto3";
 
-option java_generic_services = true;
-option java_multiple_files = true;
+package tutorial;
 
 message IntPair {
     int32 a = 1;
@@ -110,62 +137,59 @@ in the API. The `service` statement defines the RPC API itself.
 
 ## Step 4
 
-In order to actually implement our API we need to edit the `JavaServer.java file`.
+In order to actually implement our API we need to edit `server.go`.
 
-Look for //`SERVICE_API` and replace `doSomething()` by our actual API methods:
+Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```Java
-
-@Override
-public void div(IntPair request, StreamObserver<SingleInt> responseObserver) {
-    int result = request.getA() / request.getB();
-    SingleInt reply = SingleInt.newBuilder().setV(result).build();
-    responseObserver.onNext(reply);
-    responseObserver.onCompleted();
+```Go
+func (s *server) Div(ctx context.Context, in *pb.IntPair) (*pb.SingleInt, error) {
+	return &pb.SingleInt{V: in.A / in.B}, nil
 }
-
+func (s *server) Check(ctx context.Context, in *pb.SingleInt) (*pb.SingleString, error) {
+	return &pb.SingleString{S: fmt.Sprintf("%v", in.V)}, nil
+}
 ```
 ## Step 5
 
 Now we'll write a client to test our server locally (without using the
-blockchain). Edit `JavaClient.java`.
+blockchain). Edit `client.go`.
 
-Look for //`TEST_CODE` and replace `doSomething()` implementation by our
+Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```Java
-public void div(int a, int b) {
-    logger.info("Trying to divide "+a+" by "+ b);
-    IntPair request = IntPair.newBuilder().setA(a).setB(b).build();
-    SingleInt response;
-    try {
-        response = blockingStub.div(request);
-        logger.log(Level.INFO, "Result: " + response.getV());
-    } catch (StatusRuntimeException e) {
-        logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
-        return;
+```Go
+func doSomething(conn *grpc.ClientConn) (*pb.SingleInt, error) {
+	// Check the compiled proto file (.pb.go) to get this method name
+	c := pb.NewServiceDefinitionClient(conn)
+	// Set variables 'a' and 'b' to be sent to the server.
+	var a int32 = 12
+	var b int32 = 4
+	if len(os.Args) > 2 {
+		if i, err := strconv.ParseInt(os.Args[1], 10, 32); err == nil {
+			a = int32(i)
+		}
+		if i, err := strconv.ParseInt(os.Args[2], 10, 32); err == nil {
+			b = int32(i)
+		}
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+	r, err := c.Div(ctx, &pb.IntPair{A: a, B: b})
+	if err != nil {
+		return nil, err
+	} else {
+	    return r, nil
     }
 }
-
 ```
 
 ## Step 6
 
-To compile the protobuf and generate server and client jar:
+To compile the protobuf file:
 
-Note: protobuf complie is embedded in the commands below. For more details, please edit build.sh.
-\
-Note1: On you project name, used in the previous command ./create_project.sh
-
-To generate a server aplication:
 ```
-# sh build.sh tutorial server
-```
-
-To generate a client aplication:
-```
-# sh build.sh tutorial client
+# ./build.sh
 ```
 
 ## Step 7
@@ -173,31 +197,23 @@ To generate a client aplication:
 To test our server locally (without using the blockchain)
 
 ```
-# java -jar ./bin/JavaServer.jar &
-```
-In a new terminal instance
-```
-# java -jar ./bin/JavaClient.jar 10 5
+# ./server &
+# ./client 12 4
 ```
 
 You should have something like the following output:
 
-```bash
-java -jar ./bin/JavaServer.jar &
-[1] 1627
-# Nov 18, 2018 5:27:16 AM JavaServer start
-INFO: Server listening on 7070
-java -jar ./bin/JavaClient.jar 10 5
-Client connected on port: 7070
-Nov 18, 2018 5:30:13 AM JavaClient div
-INFO: Trying to div 10 by 5
-Nov 18, 2018 5:30:13 AM JavaClient div
-INFO: Result:2                                                                                     
+```
+# ./server &
+[1] 4217
+# Server listening on 0.0.0.0:7070
+./client 12 4
+3
 ```
 
-At this point you have successfully built a gRPC Java service. The executables can 
-be used from anywhere inside the container (they don't need anything from 
-the installation directory) or outside the container.
+At this point you have successfully built a gRPC Go service. The executables can
+be used from anywhere inside the container (they don't need anything from
+the installation directory) or outside the container if you have Go gRPC libraries installed.
 
 The next steps in this tutorial will publish the service in SingularityNET.
 
@@ -235,7 +251,7 @@ features) in https://github.com/singnet/snet-cli
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)
 
-## Step 10 (optional if you already have an organization) 
+## Step 10 (optional if you already have an organization)
 
 Create an organization and add your key to it.
 
@@ -269,7 +285,7 @@ Edit a JSON configuration file for your service.  We already have a valid
         "description": ""
     }
 }
-``` 
+```
 
 Anyway we'll change it to add some useful information in `tags` and `description`.
 
@@ -280,13 +296,13 @@ Anyway we'll change it to add some useful information in `tags` and `description
     "organization": "SNET",
     "path": "",
     "price": 0,
-    "endpoint": "http://localhost:7070",
+    "endpoint": "http://localhost:7000",
     "tags": ["tutorial", "math-operations", "basic"],
     "metadata": {
-        "description": "A tutorial Java service"
+        "description": "A tutorial Go service"
     }
 }
-``` 
+```
 
 You could also use `SNET-CLI` build the JSON configuration file
 using `snet service init` and answering the prompted questions.
@@ -327,7 +343,7 @@ Optionally you can un-publish the service
 Actually, since this is just a tutorial, you are expected to un-publish your
 service as soon as you finish the tests.
 
-Other `snet` commands and options (as well as their documentation) can be found here: 
+Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
 ## Step 13

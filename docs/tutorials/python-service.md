@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: How to Write a SingularityNET Service in Python
+description: This is an example page that you can use as a base for when adding new content.
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Previous page
+        url: '#'
+    next:
+        content: Next page
+        url: '#'
+---
+
 # Tutorial - How to write a SingularityNET service in Python
 
 -------------------------------
@@ -17,7 +50,7 @@ We'll use Python gRPC, for more details see https://grpc.io/docs/
 
 In this tutorial we'll create a Python service and publish it in SingularityNET.
 
-## Step 1 
+## Step 1
 
 Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
@@ -176,8 +209,8 @@ python3 client.py 12 4
 3
 ```
 
-At this point you have successfully built a gRPC Python service. The executables can 
-be used from anywhere inside the container (they don't need anything from 
+At this point you have successfully built a gRPC Python service. The executables can
+be used from anywhere inside the container (they don't need anything from
 the installation directory) or outside the container if you have Python gRPC libraries installed.
 
 The next steps in this tutorial will publish the service in SingularityNET.
@@ -216,7 +249,7 @@ features) in https://github.com/singnet/snet-cli
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)
 
-## Step 10 (optional if you already have an organization) 
+## Step 10 (optional if you already have an organization)
 
 Create an organization and add your key to it.
 
@@ -250,7 +283,7 @@ Edit a JSON configuration file for your service.  We already have a valid
         "description": ""
     }
 }
-``` 
+```
 
 Anyway we'll change it to add some useful information in `tags` and `description`.
 
@@ -267,7 +300,7 @@ Anyway we'll change it to add some useful information in `tags` and `description
         "description": "A tutorial Python service"
     }
 }
-``` 
+```
 
 You could also use `SNET-CLI` build the JSON configuration file
 using `snet service init` and answering the prompted questions.
@@ -308,7 +341,7 @@ Optionally you can un-publish the service
 Actually, since this is just a tutorial, you are expected to un-publish your
 service as soon as you finish the tests.
 
-Other `snet` commands and options (as well as their documentation) can be found here: 
+Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
 ## Step 13

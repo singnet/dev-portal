@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: How to Write an Opencog Service to SingularityNET
+description: This is an example page that you can use as a base for when adding new content.
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Previous page
+        url: '#'
+    next:
+        content: Next page
+        url: '#'
+---
+
 [atomese]: https://wiki.opencog.org/w/Atomese
 [scheme]: https://wiki.opencog.org/wikihome/index.php/Scheme
 [services-readme]: https://github.com/singnet/opencog-services/blob/master/README.md
@@ -15,9 +48,9 @@ Run this tutorial from a bash terminal.
 
 In this tutorial we'll create an Opencog service and publish it in SingularityNET.
 
-## Step 1 
+## Step 1
 
-Setup and run a docker container. 
+Setup and run a docker container.
 
 ```
 $ git clone https://github.com/singnet/opencog-services.git
@@ -28,7 +61,7 @@ $ docker run --name OPENCOG_SERVICE_DEV -ti opencog_service_dev /bin/bash
 From this point we follow the turorial in the Docker container's prompt.
 
 The code in this repo is used to start and publish an Opencog service in
-SingularityNET. `bin/server` is the executable that actually listen for requests. 
+SingularityNET. `bin/server` is the executable that actually listen for requests.
 `bin/client` can be used to send commands to the server locally (without blockchain).
 
 Note that there's **only one** Opencog service, which expects comands like this:
@@ -158,7 +191,7 @@ load new modules, define several global variables or helper functions etc.
 The only requisite is that you nned to define a function with the exact name of the
 command expecting a list of arguments as the only parameter.
 
-**Important:** Anything the command send to `stdout` (e.g. by calling the 
+**Important:** Anything the command send to `stdout` (e.g. by calling the
 function `(display)`) will be considered as part of the output.
 
 So we're done with the Scheme command.
@@ -234,7 +267,7 @@ Hello World
 Execute integration tests:
 
 ```
-./bin/runTests 
+./bin/runTests
 Runing tests for Echo...
 Runing tests for EchoScheme...
 Runing tests for PatternMiner...
@@ -252,7 +285,7 @@ file need to have this empty line at the end.
 
 Now we need to create a proper documentation for our new commands. Create
 `docs/HelloWorld.md` and `docs/HelloWorld2.md`. You are advised to use one of
-the documents of other commands as template for your own. 
+the documents of other commands as template for your own.
 
 Use a MarkDown previewer of your choice. When you are done with the documentation, call:
 
@@ -296,5 +329,3 @@ The superclass inherited by your command has a couple of helper methods and vari
 - **evaluateScheme()**: Evaluates the passed Scheme command (any Opencog's scheme functions use the public **atomSpace**). The Scheme command output is discarded.
 - **evaluateScheme()**: Evaluates the passed Scheme command (any Opencog's scheme functions use the public **atomSpace**). The Scheme command output is returned in `output`.
 - **setConfigurationParameters()**: Use the passed JSON hash to set Opencog's configuration parameters (e.g. `{"Max_thread_num": "8", "Pattern_Max_Gram": "3"}`)
-
-
