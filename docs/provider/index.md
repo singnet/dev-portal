@@ -10,7 +10,7 @@ micro_nav: true
 dev_news: true
 
 # Hero section
-title: Tutorials
+title: Documentation for AI Providers
 description: The tutorials below teach you how to work with SingularityNET Services in various programming languages.
 buttons:
     - content: View Full Docs
