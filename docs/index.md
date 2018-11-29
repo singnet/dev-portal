@@ -23,16 +23,6 @@ buttons:
       url: '/docs/all'
       external_url: false
 
-# Hero section
-title: Tutorials
-description: The tutorials below teach you how to work with SingularityNET Services in various programming languages.
-buttons:
-    - content: View Full Docs
-      url: '/docs/all'
-      external_url: false
-    - content: Join Dev Community
-      url: '/sheet/#community'
-      external_url: false
 
 # Grid navigation
 grid_navigation:
