@@ -12,28 +12,29 @@ We are welcoming external contributions to our documentation, such as correction
 ## Repository Structure
 The SingularityNET Developer Portal is structured as follows:
 ```bash
-|__ index.md                    # Index page
-|__ sheet.md                    # Fact sheet with most important details
-|__ default.md                  # Example page
-|__ 404.md                      # 404 page not found
-|__ docs.md                     # Documentation Index Page
-|__ contribute.md               # Contribution guidelines
-|__ docs                        # Documentation of files
-    |__ provider                # Documentation for AI Providers
-    |__ buyer                   # Documentation for AI Buyers
-    |__ all                     # All Documentation
-|__ workshops                   # Here you can find workshop material.
-|__ tutorials                   # Here you can find our tutorials.
-    |__ cpp-service.md          # C++ Service Tutorial
-    |__ docker.md               # Docker Tutorial
-    |__ go-service.md           # Go Service Tutorial
-    |__ index.md                # Index Page
-    |__ java-service.md         # Java Service Tutorial
-    |__ opencog-service.md      # OpenCog Service Tutorial
-    |__ publish-service.md      # Publish Services
-    |__ python-service.md       # Python Service Tutorial
-
+├── index.md                    # Index page
+├── sheet.md                    # Fact sheet with most important details
+├── default.md                  # Example page
+├── 404.md                      # 404 page not found
+├── docs.md                     # Documentation Index Page
+├── contribute.md               # Contribution guidelines
+├── docs                        # Documentation of files
+│   ├── provider                # Documentation for AI Providers
+│   ├── buyer                   # Documentation for AI Buyers
+│   └── all                     # All Documentation
+├── workshops                   # Here you can find workshop material.
+├── tutorials                   # Here you can find our tutorials.
+│   ├── cpp-service.md          # C++ Service Tutorial
+│   ├── docker.md               # Docker Tutorial
+│   ├── go-service.md           # Go Service Tutorial
+│   ├── index.md                # Index Page
+│   ├── java-service.md         # Java Service Tutorial
+│   ├── opencog-service.md      # OpenCog Service Tutorial
+│   ├── publish-service.md      # Publish Services
+│   └── python-service.md       # Python Service Tutorial
+└── .gitignore
 ```
+
 
 ## Planning
 
