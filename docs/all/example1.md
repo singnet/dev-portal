@@ -1,4 +1,37 @@
-﻿# Front to back example of MPE payment system (Example1)
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Getting Started
+description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+
+# extralink box
+# extralink:
+#    title: About extralink
+#    title_url: '#'
+#    external_url: true
+#    description: extralink description
+
+# Micro navigation
+micro_nav: true
+
+# Newsletter
+dev_news: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Overview
+        url: '#'
+    next:
+        content: Register Organization
+        url: '#'
+---
+
+# Front to back example of MPE payment system (Example1)
 
 Simple front to back example of using MPE payment system in
 SingularityNET with one replica configuration.
@@ -13,14 +46,14 @@ from the service side:
 * How to claim the funds from the server side using "treasurer server"
 
 from the client side:
-* How to open the payment channel 
+* How to open the payment channel
 * How to make calls using MPE payment system
 
 ## Preparation
 
 Please follow the tutorial [Build-and-deploy-SingularityNET-locally](Build-and-deploy-SingularityNET-locally.md) in order to deploy SingularitNet localy.
 
-The following example can be also executed on the kovan test net, but you will need to make sure that your organization name haven't been already taken and you should probably use another account for the collect payment from the client side (see KOVAN warnings bellow) 
+The following example can be also executed on the kovan test net, but you will need to make sure that your organization name haven't been already taken and you should probably use another account for the collect payment from the client side (see KOVAN warnings bellow)
 
 For our local network we assume the following accounts
 
@@ -29,7 +62,7 @@ For our local network we assume the following accounts
 # Second Address (service)     : 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 ```
 
-In order to have such addresses you should run ganache with 
+In order to have such addresses you should run ganache with
 mnemonics from tutorial: 'gauge enact
 biology destroy normal tunnel slight slide wide sauce ladder produce'.
 
@@ -69,14 +102,14 @@ snet service metadata_add_endpoints localhost:8080
 
 Create an organization "testo". And publish our service "tests".
 
-(KOVAN) On KOVAN you probably will need to choose another name for your organization. 
+(KOVAN) On KOVAN you probably will need to choose another name for your organization.
 
 ```
 snet organization  create testo -y
 snet service publish testo tests -y
 ```
 
-#### Configure and start your daemon 
+#### Configure and start your daemon
 
 ###### Preparation
 
@@ -137,13 +170,13 @@ It should be noted that we use wrong private address, because this daemon will n
 ## Open payment channel and make a call (client side)
 
 
-#### Open the payment channel with service provider 
+#### Open the payment channel with service provider
 
 
 (KOVAN) For KOVAN network you should make sure that you use right names for organization and service.
 
 ```
-# create identity in snet-cli (probably you've already done it) 
+# create identity in snet-cli (probably you've already done it)
 snet identity create snet-user key --private-key 0xc71478a6d0fe44e763649de0a0deb5a080b788eefbbcf9c6f7aef0dd5dbd67e0
 snet identity snet-user
 
@@ -196,9 +229,9 @@ snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
 
 ## Claim channel by treasurer server (service provider side)
 
-At the moment treasurer server logic is implemented as part of the daemon. 
+At the moment treasurer server logic is implemented as part of the daemon.
 
-#### Configure treasurer 
+#### Configure treasurer
 
 ```
 cd $SINGNET_REPOS
@@ -243,7 +276,7 @@ Let's check our balance before and after claim the funds.
 
 ```bash
 #balance before claim
-snet client balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB 
+snet client balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 
 ../snet-daemon/build/snetd-linux-amd64 claim  --channel-id 0
 
@@ -255,4 +288,3 @@ the following logic happened during the run of treasurer server.
 * treasurer server ask etcd to send the last stated of the channel, and increment the nonce of the channel.
 * daemon(s) can continue to work with the client without any confirmation from the treasurer or block-chain.
 * treasurer send on-chain transaction to claim funds and increase the nonce of the channel (close/reopen channel)
-

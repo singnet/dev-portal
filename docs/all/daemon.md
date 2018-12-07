@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Daemon
+description: In this overview, we will be giving you a brief introduction to the SingularityNET Daemon.
+
+# extralink box
+# extralink:
+#    title: About extralink
+#    title_url: '#'
+#    external_url: true
+#    description: extralink description
+
+# Micro navigation
+micro_nav: true
+
+# Newsletter
+dev_news: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Overview
+        url: '#'
+    next:
+        content: Register Organization
+        url: '#'
+---
+
 # SingularityNET Daemon
 
 ## Overview

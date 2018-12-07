@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Getting Started
+description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+
+# extralink box
+# extralink:
+#    title: About extralink
+#    title_url: '#'
+#    external_url: true
+#    description: extralink description
+
+# Micro navigation
+micro_nav: true
+
+# Newsletter
+dev_news: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Overview
+        url: '#'
+    next:
+        content: Register Organization
+        url: '#'
+---
+
 # MultiPartyEscrow contract
 
 ### Introduction
@@ -9,7 +42,7 @@ tokens into MPE, via deposit function, and everybody can withdraw
 their funds (which have not been escrowed at the moment).
 2. The set of the simple ("atomic") unidirectional payment channels
 between clients and services providers and functions for manipulation
-of these channels. 
+of these channels.
 
 
 ### Atomic unidirectional payment channel
@@ -21,7 +54,7 @@ unidirectional payment channel. You can find the implementation of
 escrow contract for such a channel in
 [SimpleEscrow.sol](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol).
 
-The main logic is following. 
+The main logic is following.
 
 * The sender creates escrow contract with given expiration date and he funds it with
   desired amount of tokens.
@@ -31,7 +64,7 @@ The main logic is following.
   take from the channel the commutative amount of the tokens which are due.
 * The recipient must check that authorization is correctly signed and
   that the amount is correct, and that this amount is not exceed the funds being
-  escrowed. 
+  escrowed.
 * The recipient can close the channel at any moment by presenting a
   signed amount from the sender.  Of course it is better for recipient to
   close the channel with the last authorization (with highest amount).
@@ -39,13 +72,13 @@ The main logic is following.
   to the sender.
 * The sender can close the channel after expiration date and take all
   funds back.
-* The sender can extend the expiration date and add funds to the contract at any moments. 
+* The sender can extend the expiration date and add funds to the contract at any moments.
 
 ### The set of channels and functions to manipulate them
 
 ##### PaymentChannel structure
 
-Each "atomic" payment channel in MPE is represented by the following structure 
+Each "atomic" payment channel in MPE is represented by the following structure
 
 ```Solidity
        //the full ID of "atomic" payment channel = "[this, channel_id, nonce]"
@@ -53,7 +86,7 @@ Each "atomic" payment channel in MPE is represented by the following structure
         address sender;      // The account sending payments.
         address recipient;    // The account receiving the payments.
         uint256 replicaId;  // id of particular service replica
-        uint256 value;       // Total amount of tokens deposited to the channel. 
+        uint256 value;       // Total amount of tokens deposited to the channel.
         uint256 nonce;       // "nonce" of the channel (by changing nonce we effectivly close the old channel ([this, channel_id, old_nonce])
                              //  and open the new channel [this, channel_id, new_nonce])
                              // nonce also prevents race conditon between channel_claim and channel_extend_and_add_funds
@@ -64,7 +97,7 @@ mapping (uint256 => PaymentChannel) public channels;
 
 ```
 
-Comments are selfexplanatory, but few clarifications migth be useful. 
+Comments are selfexplanatory, but few clarifications migth be useful.
 
 * The full ID of "atomic" payment channel is "[MPEContractAddress, channel_id, nonce]". The MPEContractAdress is the address of MPE contract,
    which is needed to prevent the multi contracts attacks. channel_id is a index in the channels mapping. nonce is a part of close/reopen logic.
@@ -74,7 +107,7 @@ Comments are selfexplanatory, but few clarifications migth be useful.
 * The full ID of the recipient is [recipient_ethereum_address, replicaId]. By doing this we allow service provider to use the
   same ethereum wallet for different replicas.
 
-##### Functions 
+##### Functions
 
 The following function open the new "atomic" channel, assuming that the caller is the sender.
 ```Solidity
@@ -86,21 +119,21 @@ The following function open the channel from the recipient side.
 ```Solidity
 function openChannelByRecipient(address  sender, uint256 value, uint256 expiration, uint256 replicaId, bytes memory signature)
 ```
-The recipient should have the singed permission from the sender to open a channel. 
+The recipient should have the singed permission from the sender to open a channel.
 This permission contains the following message signed by the sender [MPEContractAdress, recipient_address, replicaId, value, expiration].
 The recipient should receive this message from the sender off-chain. See usercases for details.
 
 By the following function the recipient can claim funds from the channel.
 ```Solidity
-function channelClaim(uint256 channel_id, uint256 amount, bytes memory signature, bool is_sendback) 
+function channelClaim(uint256 channel_id, uint256 amount, bytes memory signature, bool is_sendback)
 ```
 The recipent should present the following message, signed by the sender [MPEContractAdress, channel_id, nonce, amount].
-It should be noted that [MPEContractAdress, channel_id, nonce] is the full ID of "atomic" channel. 
+It should be noted that [MPEContractAdress, channel_id, nonce] is the full ID of "atomic" channel.
 
 The recipient has two possibility:
 * (is_sendback==true)  "close" the channel and send remainder back to the sender.
 * (is_sendback==false) "close/reopen". We transfer the claimed amount to the recipient, but instead of sending remainder back to the sender we
-  simple change the nonce of the channel. By doing this we close the old atomic channel [MPEContractAdress, channel_id, old_nonce] 
+  simple change the nonce of the channel. By doing this we close the old atomic channel [MPEContractAdress, channel_id, old_nonce]
   and open the new one [MPEContractAdress, channel_id, new_nonce]
 
 
@@ -114,34 +147,34 @@ function channelExtendAndAddFunds(uint256 channel_id, uint256 new_expiration, ui
 function channelClaimTimeout(uint256 channel_id);
 ```
 
-  
-### Usercases 
 
-#### Simple usercase 
+### Usercases
+
+#### Simple usercase
 
 Informal description:
 
 * Client deposit tokens to the MPE. We could propose to everybody to use MPE as a wallet for all theirs AGI tokens (I would have proposed to discuss the possibility of creating AGI tokens via MPE, if they hadn't been already created).
 * Client select service provider.
-* Client open the payment channel with one of replicas from the chosen region. 
+* Client open the payment channel with one of replicas from the chosen region.
 * It should be noted that the client can send requests to any replica from the selected region, not only to the replica with which he has the channel (after we implement state-sharing between replicas of the same region)
 * Client starts to send requests to the replicas. With each call he send the signed authorization to take the commutative amount of the tokens which are due.
 * At some point server can decide to close/reopen channel in order to fix the profit. At the next call from the client, the server should inform the client that the channel has been
-closed/reopend (that "nonce" of the channel has been changed). Client can also obtain this information by listening events from the MPE. 
+closed/reopend (that "nonce" of the channel has been changed). Client can also obtain this information by listening events from the MPE.
 Of course, the client should reset "the commutative amount".
 * At some point the client can decide to extend expiration data or/and escrow more funds.
 * It should be noted that because of two previous items the channel can exist forever.
 
 Formal example:
 
-Let's assume that the price for one call is 1 AGI. Also we assume that server and client perform all required validations on each call. 
+Let's assume that the price for one call is 1 AGI. Also we assume that server and client perform all required validations on each call.
 For example server check that signature is authentic, that amount is correct, that this amount doesn't exceed value of the channel, that expiration data is tolerable etc.
 
 
 
 * CLIENT1 call: openChannel(server=SERVER1, replica=REPLICA1, value=10 AGI, expiration=expiratoin0)
 * MPE create the PaymentChanel: [channel_id = 0, sender=CLIENT1, recipient=SERVER1, replicaId=REPLICA1, value=10 AGI, nonce=0, expiration=expiration0]
-* MPE subtract 10 AGI from the balance of the CLIENT1 
+* MPE subtract 10 AGI from the balance of the CLIENT1
 * CLIENT1 send to SERVER1/REPLICA1 authorization SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=1)
 * CLIENT1 send to SERVER1/REPLICA1 authorization SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=2)
 * CLIENT1 send to SERVER1/REPLICA1 authorization SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=3)
@@ -168,8 +201,8 @@ For example server check that signature is authentic, that amount is correct, th
 * .....
 * Client decides to put more funds in the channel and extend it expiration date.
 * ....
-* Server decides to close/reopen the channel 
-* .... 
+* Server decides to close/reopen the channel
+* ....
 * This can goes forever
 * If server decides to stop working with this client he could close the channel with channelClaim(...., is_sendback=true)
 * If server fails to claim funds before timeout (for example he goes offline forever), then the client can claim all funds after the expiration date
@@ -178,7 +211,7 @@ For example server check that signature is authentic, that amount is correct, th
 #### Open the channel from the service side
 
 The channel can be opened from the server side. The server should obtain the singed authorization from the client to open the channel.
-If everything is done in the "secure" manner (server waits the confirmation that the channel has been opened) 
+If everything is done in the "secure" manner (server waits the confirmation that the channel has been opened)
 then it is simply a way to force the server to pay the gas for the channel creation.  
 
 formal example:
@@ -195,9 +228,9 @@ formal example:
 
 ### Remarks
 
-* Service provider can use the same ethereum address for all replicas or he can use different address. 
-In any case, the replicas very rarely need to send on-chain transactions. It means, that we actually don't need to provide the demons with direct access to the private key. 
-Instead it could be some centralized server to sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner). 
+* Service provider can use the same ethereum address for all replicas or he can use different address.
+In any case, the replicas very rarely need to send on-chain transactions. It means, that we actually don't need to provide the demons with direct access to the private key.
+Instead it could be some centralized server to sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner).
 * openChannelByRecipient it is simply a way to force the server to pay the gas for channel creation.
 * By the similar technique we could force the server to pay the gas for channelExtendAndAddFunds  (extend the expiration date and add funds to the channel)
 * In the current version the client sign off-chain authorization messages with the ethereum private key. It means that, unlike the server, the client should have access to the privet key almost constantly. We could easily change it by using different key for signing off-chain messages, but I don't think that we should, because signing with the ethereum private key makes MPE much more compact.
@@ -205,6 +238,5 @@ Instead it could be some centralized server to sign the transactions from the da
   (after he fix the profit and ask MPE to change the nonce of the channel). He can inform the client that nonce of the channel have changed
   (that old atomic  channel have been closed and new atomic chanel have been opened). The server can start accepting calls from the client with a new nonce. It can be shown that it is secure for both the client and the server, if transaction is accepted by blockchain before expiration date of the channel. Similary the client don't need to wait the confirmation from the blockchain after sending channelExtendAndAddFunds. It makes MPE functional even on very slow Ethereum network.  
 * nonce in the channel prevent race condition between channelExtendAndAddFunds and channelClaim. If the client send channelExtendAndAddFunds request and at the same time the
-server sends channelClaim request. Then, as have been said before, they can continue to work without receiving confirmation from blockchain. 
+server sends channelClaim request. Then, as have been said before, they can continue to work without receiving confirmation from blockchain.
 But it is also doesn't matter which request will be accepted first (because channelClaim only change the nonce, and not create new PaymentChannel structure).
-

@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Multi-Party Escrow API Changes
+description: A proposal for changings in the APIs of SingularityNET components. 
+
+# extralink box
+# extralink:
+#    title: About extralink
+#    title_url: '#'
+#    external_url: true
+#    description: extralink description
+
+# Micro navigation
+micro_nav: true
+
+# Newsletter
+dev_news: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Overview
+        url: '#'
+    next:
+        content: Register Organization
+        url: '#'
+---
+
 # Overview
 
 Below proposal describes changes in APIs of SingularityNet components. Main
@@ -136,4 +169,3 @@ Support replicas:
 Migrate dApp to MPE:
 1. Implement dApp using MPE contracts
 2. Remove legacy API
-

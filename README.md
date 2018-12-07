@@ -9,19 +9,28 @@ The SingularityNET Developer Portal offers documentation about the SingularityNE
 ## Contributing
 We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/contribute).
 
-Please contribute pull requests to the master branch. In case you simply want to notify us of an issue, please open an issue [here](https://github.com/singnet/dev-portal/issues).
-
 ## Repository Structure
 The SingularityNET Developer Portal is structured as follows:
 ```bash
-|-- index.md
-|-- sheet.md
-|-- example.md
-|-- 404.md
-|-- docs.md
-|-- contribute.md
-|-- docs
-|----| provider
-|----| buyer
-|----| all
+|__ index.md                    # Index page
+|__ sheet.md                    # Fact sheet with most important details
+|__ default.md                  # Example page
+|__ 404.md                      # 404 page not found
+|__ docs.md                     # Documentation Index Page
+|__ contribute.md               # Contribution guidelines
+|__ docs                        # Documentation of files
+    |__ provider                # Documentation for AI Providers
+    |__ buyer                   # Documentation for AI Buyers
+    |__ all                     # All Documentation
+|__ workshops                   # Here you can find workshop material.
+|__ tutorials                   # Here you can find our tutorials.
+    |__ cpp-service.md          # C++ Service Tutorial
+    |__ docker.md               # Docker Tutorial
+    |__ go-service.md           # Go Service Tutorial
+    |__ index.md                # Index Page
+    |__ java-service.md         # Java Service Tutorial
+    |__ opencog-service.md      # OpenCog Service Tutorial
+    |__ publish-service.md      # Publish Services
+    |__ python-service.md       # Python Service Tutorial 
+
 ```

@@ -13,11 +13,11 @@ dev_news: true
 title: Documentation for AI Providers
 description: The tutorials below teach you how to work with SingularityNET Services in various programming languages.
 buttons:
-    - content: View Full Docs
+    - content: View All Docs
       url: '/docs/all'
       external_url: false
-    - content: Join Dev Community
-      url: '/sheet/#community'
+    - content: View Buyer Docs
+      url: '/docs/buyer'
       external_url: false
 
 # Grid navigation

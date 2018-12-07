@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Getting Started
+description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+
+# extralink box
+# extralink:
+#    title: About extralink
+#    title_url: '#'
+#    external_url: true
+#    description: extralink description
+
+# Micro navigation
+micro_nav: true
+
+# Newsletter
+dev_news: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Overview
+        url: '#'
+    next:
+        content: Register Organization
+        url: '#'
+---
+
 # Platform How-Tos
 
 ## Install SingularityNET CLI
@@ -32,7 +65,7 @@ Initializing the service metadata will create a `service.json` file in your curr
 ## Publish Service Metadata
 Requires: [Initialize Service Metadata](#initialize-service-metadata)
 
-Publishing the service metadata will create an Agent contract if necessary (and record the resuting address in the `service.json` file), create a registration for the service in the Registry contract if necessary, and update all remote sources (e.g. Agent contract, Registry contract, data stored in IPFS) to be consistent against the `service.json` file 
+Publishing the service metadata will create an Agent contract if necessary (and record the resuting address in the `service.json` file), create a registration for the service in the Registry contract if necessary, and update all remote sources (e.g. Agent contract, Registry contract, data stored in IPFS) to be consistent against the `service.json` file
 
 1. Run `snet service publish` (append `--no-register` if you either haven't created an organization or don't yet want to publish the service to the Registry contract).
 
@@ -140,7 +173,7 @@ def serializer(*args, **kwargs):
 
 def deserializer(*args, **kwargs):
 	return Parse(args[0], ClassifyResponse(), True)
-  
+
 stub.classify._request_serializer = serializer
 stub.classify._response_deserializer = deserializer
 

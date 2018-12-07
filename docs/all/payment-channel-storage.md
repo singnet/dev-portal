@@ -1,3 +1,37 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Getting Started
+description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+
+# extralink box
+# extralink:
+#    title: About extralink
+#    title_url: '#'
+#    external_url: true
+#    description: extralink description
+
+# Micro navigation
+micro_nav: true
+
+# Newsletter
+dev_news: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Overview
+        url: '#'
+    next:
+        content: Register Organization
+        url: '#'
+---
+
+
 # Payment channel storage
 
 To fulfil a request from a client to service an snet-daemon needs to store and process information about
@@ -12,15 +46,15 @@ to be claimed when the service successfully accomplishes the request.
 
 The situation becomes more complicated if a service provides several replicas.
 In this case it is not possible just to have several separated snet-daemons each of which has an independent
-internal storage. 
+internal storage.
 
 ![several replicas with several independent storages](img/payment_channel_storage_several_replicas_several_independent_storages.jpg)
 
-One drawback of using a separated payment channel for each replica is that it can be expensive from the gas consumption 
-and time execution (it really could takes relatively long time) point of view because each operation to open a channel 
+One drawback of using a separated payment channel for each replica is that it can be expensive from the gas consumption
+and time execution (it really could takes relatively long time) point of view because each operation to open a channel
 requires to process it by the blockchain.
 
-The other one is that such model is subject to an attack where the same payment can be used for services 
+The other one is that such model is subject to an attack where the same payment can be used for services
 from different replicas.
 
 This leads to a model where all snet-daemons for the same service should use the shared storage.
@@ -60,7 +94,7 @@ The new design now looks like:
 
 ![several replicas with several independent storages](img/payment_channel_storage_several_replicas_separate_distributed_storage.jpg)
 
-The current approach is fine but it requires for a service owner not only setup an snet-daemon for each replica 
+The current approach is fine but it requires for a service owner not only setup an snet-daemon for each replica
 but also to deploy a separated distributed storage. This can be rather tedious and complicated task.
 To avoid this it would be good to incorporate the distributed storage nodes into snet-daemons so it would be the
 snet-daemon task to run required distributed storage nodes:
@@ -74,7 +108,7 @@ We are looking for a distributed storage with strong consistence guarantee which
 
 Some storages which were considered:
 
-| Distributed Storage                            |Language| Consensus|Embedded Server Support 
+| Distributed Storage                            |Language| Consensus|Embedded Server Support
 |------------------------------------------------|--------|----------|--------------------------------------------
 |[Etcd](https://github.com/etcd-io/etcd)         | Go     | Raft     |[native](https://godoc.org/github.com/coreos/etcd/embed)
 |[Consul](https://github.com/hashicorp/consul)   | Go     | Raft     |[ticket 467](https://github.com/hashicorp/consul/issues/467)

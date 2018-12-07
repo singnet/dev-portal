@@ -1,3 +1,36 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Getting Started
+description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+
+# extralink box
+# extralink:
+#    title: About extralink
+#    title_url: '#'
+#    external_url: true
+#    description: extralink description
+
+# Micro navigation
+micro_nav: true
+
+# Newsletter
+dev_news: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Overview
+        url: '#'
+    next:
+        content: Register Organization
+        url: '#'
+---
+
 # SingularityNET Documentation Wiki
 
 > SingularityNET is still under active development. The design is
@@ -25,9 +58,9 @@ It includes information describing how to build and access AI services that are 
 
 ### What is SingularityNET?
 
-SingularityNET is an open and decentralized network of AI services made accessible through 
-the blockchain. AI developers publish their services onto the SingularityNET network where they can be used by anyone with 
-an internet connection. AI deveopers are able to charge for the use of their services using the 
+SingularityNET is an open and decentralized network of AI services made accessible through
+the blockchain. AI developers publish their services onto the SingularityNET network where they can be used by anyone with
+an internet connection. AI deveopers are able to charge for the use of their services using the
 native AGI token -- an ERC20 token hosted on Ethereum.
 
 AI services span the entire gamut of offerings in artificial intelligence and machine learning.
@@ -39,9 +72,9 @@ the network.
 
 The SingularityNET platform and network can be broken down into several core components:
 
-* **Agents:** An Agent is an AI service that has been published onto the SingularityNET network. It has an 
+* **Agents:** An Agent is an AI service that has been published onto the SingularityNET network. It has an
 associated Agent contract that manages pricing and exposes metadata such as the service endpoint.
-End users interact with the Agent contract on-chain to purchase access to a service using 
+End users interact with the Agent contract on-chain to purchase access to a service using
 SingularityNET's native AGI token.
 
 * **Registry**: AI services are published onto a publicly accessible central registry on the
@@ -49,22 +82,22 @@ blockchain. The registry maintains a list of active Agents on the network that e
 which can be called using the AGI token.
 
 * **SNET Daemon:** An AI service developer exposes their service to the network by running
-the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to 
+the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to
 facilitate authorization and payment for services and acts as a passthrough for making API
 calls to the service.
 
-* **Escrow:** Currently exposed as a *Job* contract on the blockchain, AGI funds are held 
+* **Escrow:** Currently exposed as a *Job* contract on the blockchain, AGI funds are held
 in escrow during interaction between an end-user and an Agent The escrow is funded before a
 service can be called and funds are not released from escrow until the services have been
 delivered.
 
-* **SNET DApp:** The SingularityNET DApp is a front-end for exploring available AI services 
-and inetracting with them through a web-UI. 
+* **SNET DApp:** The SingularityNET DApp is a front-end for exploring available AI services
+and inetracting with them through a web-UI.
 
 ### Current state of development
 
 SingularityNET raised funds to build out our platform during our Token Generation Event (TGE) in
-December 2017. Since then we've been working quickly to build upon our platform and 
+December 2017. Since then we've been working quickly to build upon our platform and
 finalize designs for our production platform which will go into Beta later in 2018.
 
 Active development on our platform is still continuing as we add additional capabilities to enable
@@ -74,11 +107,10 @@ build out a vibrant network of useful AI services.
 Designs for our production platform and associated development roadmap will also be published to the
 wiki as they are finalized.
 
-### Find out more 
+### Find out more
 
-To get started with the SingularityNET platform review the [Overview](doc/Overview.md) and 
+To get started with the SingularityNET platform review the [Overview](doc/Overview.md) and
 [Getting Started](doc/Getting-Started.md) pages.
 
 Further [Resources](doc/Resources.md),
 including information on how to acquire AGI tokens.
-
