@@ -31,6 +31,17 @@ The SingularityNET Developer Portal is structured as follows:
     |__ java-service.md         # Java Service Tutorial
     |__ opencog-service.md      # OpenCog Service Tutorial
     |__ publish-service.md      # Publish Services
-    |__ python-service.md       # Python Service Tutorial 
+    |__ python-service.md       # Python Service Tutorial
 
 ```
+
+## Planning
+The SingularityNET Developer Portal is in active development. Below you will find what we plan to do next:
+[checkbox:checked] Launch the beta-version of the SingularityNET Developer Portal.
+[checkbox:unchecked] Pilot developer workshops in Helsinki.
+[checkbox:unchecked] Create a developer workshop cookbook.
+[checkbox:unchecked] Gather feedback from the community.
+[checkbox:unchecked] Move all Github Wiki's to the SingularityNET Developer Portal.
+[checkbox:unchecked] Implement feedback from the community that we decided to go with.
+[checkbox:unchecked] For every tutorial, add a video demonstration.
+[checkbox:unchecked] Roll out a global SingularityNET Developer Workshop program. 
