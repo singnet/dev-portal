@@ -34,14 +34,22 @@ page_nav:
 ## Introduction
 We are very excited to host our first developer workshop this Friday, the 14th of December in Helsinki! Your instructors will be Vitaly Bogdanov for SingularityNET Workshop and Anatoly Belikov for the OpenCog Workshop. Dr. Ben Goertzel (CEO SingularityNET) and Ibby Benali (Marketing Manager) will also be present.
 
-The workshop will take place from 10:00 - 17:00.
-Place: TBA.
 
-## Learning Objectives
-TBA
+## Schedule
+09:00 - 09:30 Registration to the workshop
+09:30 - 11:00 Introduction to SingularityNET
+11:00 - 12:00 LUNCH BREAK
+12:00 - 12:50 SingularityNET hands-on
+12:50 - 13:00 BREAK
+13:00 - 14:00 SingularityNET hands-on
+14:00 - 14:15 BREAK
+14:15 - 15:45 OpenCog Notebook
+15:45 - 16:00 BREAK
+16:00 - 16:45 OpenCog Notebook
+16:45 - 17:00 Q&A + AOT
 
 ## How to prepare for the workshop
-There will be a docker image available for you to setup.
+TBA
 
 ## Join the SingularityNET Developer Community
 We expect everyone in our community to treat each other with respect and to contribute in a positive way to our ecosystem. Please read our [Code of Conduct](https://community.singularitynet.io/faq) and help us promote this message in the community.
