@@ -106,7 +106,7 @@ understand everything you can do in the `.proto` file.
 
 In this tutorial our `./service_spec/tutorial.proto` will be like this:
 
-```Java
+```
 syntax = "proto3";
 
 package tutorial;
@@ -139,7 +139,7 @@ In order to actually implement our API we need to edit `server.go`.
 
 Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```Go
+```
 func (s *server) Div(ctx context.Context, in *pb.IntPair) (*pb.SingleInt, error) {
 	return &pb.SingleInt{V: in.A / in.B}, nil
 }
@@ -156,7 +156,7 @@ Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```Go
+```
 func doSomething(conn *grpc.ClientConn) (*pb.SingleInt, error) {
 	// Check the compiled proto file (.pb.go) to get this method name
 	c := pb.NewServiceDefinitionClient(conn)
@@ -272,7 +272,7 @@ your key before proceeding. In this tutorial we assume you'll use SNET.
 Edit a JSON configuration file for your service.  We already have a valid
 `service.json` in project's folder looking like this:
 
-```JSON
+```
 {
     "name": "math-operations",
     "service_spec": "service_spec/",
@@ -291,7 +291,7 @@ Edit a JSON configuration file for your service.  We already have a valid
 
 Anyway we'll change it to add some useful information in `tags` and `description`.
 
-```JSON
+```
 {
     "name": "math-operations",
     "service_spec": "service_spec/",
@@ -348,7 +348,7 @@ service as soon as you finish the tests.
 Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
-## Step 13: Test Service 
+## Step 13: Test Service
 
 You can test your service making requests in command line
 
