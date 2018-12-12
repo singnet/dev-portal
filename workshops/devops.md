@@ -36,17 +36,17 @@ We are very excited to host our first developer workshop this Friday, the 14th o
 
 
 ## Schedule
-09:00 - 09:30 Registration to the workshop
-09:30 - 11:00 Introduction to SingularityNET
-11:00 - 12:00 LUNCH BREAK
-12:00 - 12:50 SingularityNET hands-on
-12:50 - 13:00 BREAK
-13:00 - 14:00 SingularityNET hands-on
-14:00 - 14:15 BREAK
-14:15 - 15:45 OpenCog Notebook
-15:45 - 16:00 BREAK
-16:00 - 16:45 OpenCog Notebook
-16:45 - 17:00 Q&A + AOT
+- 09:00 - 09:30 Registration to the workshop
+- 09:30 - 11:00 Introduction to SingularityNET
+- 11:00 - 12:00 LUNCH BREAK
+- 12:00 - 12:50 SingularityNET hands-on
+- 12:50 - 13:00 BREAK
+- 13:00 - 14:00 SingularityNET hands-on
+- 14:00 - 14:15 BREAK
+- 14:15 - 15:45 OpenCog Notebook
+- 15:45 - 16:00 BREAK
+- 16:00 - 16:45 OpenCog Notebook
+- 16:45 - 17:00 Q&A + AOT
 
 ## How to prepare for the workshop
 TBA
