@@ -60,26 +60,11 @@
 						</div><!-- /.col -->
 					{% endif %}
 				</div><!-- /.row -->
-                <div class="row">
-                    {% if page.dev_news == true %}
-                        {% include dev-news.html %}
-                    {% endif %}
-                </div>
 			</div><!-- /.container -->
             {% if page.dev_news == true %}
                 {% include dev-news.html %}
             {% endif %}
 		</div><!-- /.hero-subheader -->
-		<div class="section">
-			<div class="container">
-				<div class="row">
-                    {% if page.dev_news == true %}
-                        {% include dev-news.html %}
-                    {% endif %}
-				</div><!-- /.row -->
-			</div><!-- /.container -->
-		</div><!-- /.section -->
-
 		<div class="js-footer-area">
 			{% if page.page_nav.prev.content or page.page_nav.next.content %}
 				<nav class="page-nav">
