@@ -61,10 +61,10 @@
 					{% endif %}
 				</div><!-- /.row -->
 			</div><!-- /.container -->
-            {% if page.dev_news == true %}
-                {% include dev-news.html %}
-            {% endif %}
 		</div><!-- /.hero-subheader -->
+        {% if page.dev_news == true %}
+            {% include dev-news.html %}
+        {% endif %}
 		<div class="js-footer-area">
 			{% if page.page_nav.prev.content or page.page_nav.next.content %}
 				<nav class="page-nav">
