@@ -219,8 +219,8 @@ The next steps in this tutorial will publish the service in SingularityNET.
 You need some AGI and ETH tokens. You can get then for free (using your github
 account) here:
 
-* AGI: https://faucet.singularitynet.io/
-* ETH: https://faucet.kovan.network/
+* AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
+* ETH: [https://faucet.kovan.network/](https://faucet.kovan.network/)
 
 Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
 
@@ -344,7 +344,7 @@ Actually, since this is just a tutorial, you are expected to un-publish your
 service as soon as you finish the tests.
 
 Other `snet` commands and options (as well as their documentation) can be found here:
-https://github.com/singnet/snet-cli
+[https://github.com/singnet/snet-cli](https://github.com/singnet/snet-cli)
 
 ## Step 13: Test Service
 
