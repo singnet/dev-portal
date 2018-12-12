@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: How to Write an Opencog Service to SingularityNET
+title: How to Write an OpenCog Service to SingularityNET
 description: This is an example page that you can use as a base for when adding new content.
 
 # extralink box
@@ -24,11 +24,11 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Previous page
-        url: '#'
+        content: Back to tutorials
+        url: '/tutorials'
     next:
-        content: Next page
-        url: '#'
+        content: View all docs
+        url: '/docs/all'
 ---
 
 [atomese]: https://wiki.opencog.org/w/Atomese

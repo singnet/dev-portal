@@ -17,38 +17,38 @@ buttons:
       url: '/docs/all'
       external_url: false
     - content: Join Dev Community
-      url: '/sheet/#community'
+      url: '/sheet#community'
       external_url: false
 
 # Grid navigation
 grid_navigation:
-    - title: Docker
-      excerpt: Section description
-      cta: Read more
-      url: '/docs/tutorials/docker'
     - title: How to Publish a SingularityNET Service
-      excerpt: description
+      excerpt: Learn how to sell your AI service on the SingularityNET Marketplace.
       cta: Read more
-      url: '/docs/tutorials/publish-service'
+      url: '/tutorials/publish-service'
+    - title: Docker
+      excerpt: Use docker to publish a SingularityNET Service
+      cta: Read more
+      url: '/tutorials/docker'
     - title: How to Write a SingularityNET Service in C++
-      excerpt: description
+      excerpt: Getting started with C++ for your AI Service
       cta: Read more
       url: '/docs/tutorials/cpp-service'
     - title: How to Write a SingularityNET Service in Go
-      excerpt: description
+      excerpt: Getting started with Go for your AI Service
       cta: Read more
-      url: '/docs/tutorials/go-service'
+      url: '/tutorials/go-service'
     - title: How to Write a SingularityNET Service in Java
-      excerpt: description
+      excerpt: Getting started with Java for your AI Service
       cta: Read more
-      url: '/docs/tutorials/java-service'
+      url: '/tutorials/java-service'
     - title: How to Write a SingularityNET Service in Python
-      excerpt: description
+      excerpt: Getting started with Python for your AI Service
       cta: Read more
-      url: '/docs/tutorials/python-service'
+      url: '/tutorials/python-service'
     - title: How to Write an Opencog Service to SingularityNET
-      excerpt: description
+      excerpt: Getting started with OpenCog for your AI Service
       cta: Read more
-      url: '/docs/tutorials/opencog-service'
+      url: '/tutorials/opencog-service'
 
 ---

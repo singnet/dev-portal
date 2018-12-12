@@ -73,4 +73,4 @@ We are welcoming external contributions to our documentation, such as correction
 
 Please contribute pull requests to the master branch. In case you simply want to notify us of an issue, please open an issue [here](https://github.com/singnet/dev-portal/issues).
 
-If you would like to speak to a SingularityNET employee privately, you can contact Ibby Benali via the [forum](https://community.singularitynet.io/u/ibby/), [telegram](http://t.me/ibbybenali) or [email](mailto:ibby@singularitynet.io).
+If you would like to speak to a SingularityNET employee privately, you can contact Ibby Benali via the [forum](https://community.singularitynet.io/u/ibby/), [telegram](http://t.me/ibbybenali) or [email](mailto:ibby@singularitynet.io). 

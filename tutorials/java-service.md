@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: How to Write a SingularityNET Service in C++
-description: This is an example page that you can use as a base for when adding new content.
+title: How to Write a SingularityNET Service in Java
+description: Getting started with Java for your AI Service
 
 # extralink box
 extralink:
@@ -24,14 +24,12 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Previous page
-        url: '#'
+        content: Back to tutorials
+        url: '/tutorials'
     next:
-        content: Next page
-        url: '#'
+        content: How to Write a SingularityNET Service in Python
+        url: '/tutorials/python-service'
 ---
-
-# Tutorial - How to write a SingularityNET service in C++
 
 -------------------------------
 
@@ -46,41 +44,30 @@ _You will need a private-public key pair to register your service in SNET. Gener
 
 Run this tutorial from a bash terminal.
 
-We'll use C++ gRPC, for more details see https://grpc.io/docs/
+We'll use Java gRPC, for more details see https://grpc.io/docs/
 
-In this tutorial we'll create a C++ service and publish it in SingularityNET.
+In this tutorial we'll create a Java service and publish it in SingularityNET.
 
-## Step 1
-
-Setup and run a docker container. We'll install C++ gRPC stuff in a container
-because of this warning from the authors:
-
-```
-"WARNING: After installing with make install there is no easy way to uninstall,
-which can cause issues if you later want to remove the grpc and/or protobuf
-installation or upgrade to a newer version."
-```
-
-In this tutorial we'll develop our service inside the docker container.
+## Step 1: Setting up with Docker
 
 Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
 ```
-$ docker build --build-arg language=cpp -t snet_cpp_service https://github.com/singnet/wiki.git#master:/tutorials/Docker
-$ docker run -p 7000:7000 -ti snet_cpp_service bash
+$ docker build --build-arg language=java -t snet_java_service https://github.com/singnet/wiki.git#master:/tutorials/Docker
+$ docker run -p 7000:7000 -ti snet_java_service bash
 ```
 
-From this point we follow the turorial in the Docker container's prompt.
+From this point we follow the tutorial in the Docker container's prompt.
 
 ```
-# cd wiki/tutorials/howToWriteCPPService
+# cd wiki/tutorials/howToWriteJavaService
 ```
 
-## Step 2
+## Step 2: Creating the Skeleton Structure
 
 Create the skeleton structure for your service's project
 
-```
+```bash
 # ./create_project.sh PROJECT_NAME SERVICE_NAME SERVICE_PORT
 ```
 
@@ -99,17 +86,17 @@ In this tutorial we'll implement a service with two methods:
 * int div(int a, int b)
 * string check(int a)
 
-So we'll use this command line to create project's skeleton
+So we'll use this command line to create project's skeleton and go to its folder
 
 ```
 # ./create_project.sh tutorial math-operations 7070
 # cd tutorial
 ```
 
-## Step 3
+## Step 3: Customize Skeleton Code
 
 Now we'll customize the skeleton code to actually implement our basic service.
-We need to edit `src/service_spec/tutorial.proto` and define
+We need to edit `../howToWriteJavaService/tutorial/src/main/java/service_spec/tutorial.proto` and define
 
 * the data structures used to carry input and output of the methods, and
 * the RPC API of the service.
@@ -117,12 +104,18 @@ We need to edit `src/service_spec/tutorial.proto` and define
 Take a look at https://developers.google.com/protocol-buffers/docs/overview to
 understand everything you can do in the `.proto` file.
 
-In this tutorial our `src/service_spec/tutorial.proto` will be like this:
+Edit the proto file:
+```Java
+# nano src/main/java/service_spec/tutorial.proto
+```
+
+In this tutorial our proto file should be like this:
 
 ```Java
 syntax = "proto3";
 
-package tutorial;
+option java_generic_services = true;
+option java_multiple_files = true;
 
 message IntPair {
     int32 a = 1;
@@ -146,127 +139,101 @@ service ServiceDefinition {
 Each `message` statement define a data structure used either as input or output
 in the API. The `service` statement defines the RPC API itself.
 
-## Step 4
+## Step 4: Implement API
 
-In order to actually implement our API we need to edit `src/server.cc`.
+In order to actually implement our API we need to edit the `JavaServer.java file`.
 
-Look for `PROTO_TYPES` and replace the `using` statements to reflect our data
-types defined in step 3.
+Look for //`SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```C++
-using tutorial::ServiceDefinition;
-using tutorial::IntPair;
-using tutorial::SingleInt;
-using tutorial::SingleString;
-```
+```Java
 
-Now look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
-
-```C++
-Status div(ServerContext* context, const IntPair* input, SingleInt* output) override {
-    output->set_v(input->a() / input->b());
-    return Status::OK;
+@Override
+public void div(IntPair request, StreamObserver<SingleInt> responseObserver) {
+    int result = request.getA() / request.getB();
+    SingleInt reply = SingleInt.newBuilder().setV(result).build();
+    responseObserver.onNext(reply);
+    responseObserver.onCompleted();
 }
 
-Status check(ServerContext* context, const SingleInt* input, SingleString* output) override {
-    if (input->v() != 0) {
-        output->set_s("OK");
-    } else {
-        output->set_s("NOK");
-    }
-    return Status::OK;
-}
 ```
-## Step 5
+## Step 5: Writing a Test Client
 
 Now we'll write a client to test our server locally (without using the
-blockchain). Edit `src/client.cc`.
+blockchain). Edit `JavaClient.java`.
 
-Look for `PROTO_TYPES` and replace the `using` statements to reflect our data
-types defined in Step 3.
-
-```C++
-using tutorial::ServiceDefinition;
-using tutorial::IntPair;
-using tutorial::SingleInt;
-using tutorial::SingleString;
-```
-
-Now look for `TEST_CODE` and replace `doSomething()` implementation by our
+Look for //`TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```C++
-void doSomething(int argc, char** argv) {
-
-    int n1 = atoi(argv[1]);
-    int n2 = atoi(argv[2]);
-
-    ClientContext context1;
-    SingleInt divisor;
-    SingleString checkDivisor;
-    divisor.set_v(n2);
-    Status status1 = stub_->check(&context1, divisor, &checkDivisor);
-    if (! status1.ok()) {
-        std::cout << "doSomething rpc failed." << std::endl;
+```Java
+public void div(int a, int b) {
+    logger.info("Trying to divide "+a+" by "+ b);
+    IntPair request = IntPair.newBuilder().setA(a).setB(b).build();
+    SingleInt response;
+    try {
+        response = blockingStub.div(request);
+        logger.log(Level.INFO, "Result: " + response.getV());
+    } catch (StatusRuntimeException e) {
+        logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
         return;
-    }
-    if (checkDivisor.s() != "OK") {
-        std::cout << "Check failed." << std::endl;
-        return;
-    }
-
-    ClientContext context2;
-    IntPair input;
-    SingleInt result;
-    input.set_a(n1);
-    input.set_b(n2);
-    Status status2 = stub_->div(&context2, input, &result);
-    if (status2.ok()) {
-        std::cout << result.v() << std::endl;
-    } else {
-        std::cout << "doSomething rpc failed." << std::endl;
     }
 }
-```
-
-## Step 6
-
-To build the service:
 
 ```
-# ./build.sh
+
+## Step 6: Compiling Protobuf and Generating Jars
+
+To compile the protobuf and generate server and client jar:
+
+Note: protobuf complie is embedded in the commands below. For more details, please edit build.sh.
+\
+Note1: On you project name, used in the previous command ./create_project.sh
+
+To generate a server aplication:
+```
+# sh build.sh tutorial server
 ```
 
-At this point you should have `server` and `client` in `bin/`
+To generate a client aplication:
+```
+# sh build.sh tutorial client
+```
 
-## Step 7
+## Step 7: Local Tests
 
 To test our server locally (without using the blockchain)
 
 ```
-# ./bin/server &
-# ./bin/client 12 4
+# java -jar ./bin/JavaServer.jar &
+```
+In a new terminal instance
+```
+# java -jar ./bin/JavaClient.jar 10 5
 ```
 
 You should have something like the following output:
 
-```
-root@1eee79873d63:~/install/tutorial# ./bin/server &
-[1] 4217
-root@1eee79873d63:~/install/tutorial# Server listening on 0.0.0.0:7070
-./bin/client 12 4
-3
+```bash
+java -jar ./bin/JavaServer.jar &
+[1] 1627
+# Nov 18, 2018 5:27:16 AM JavaServer start
+INFO: Server listening on 7070
+java -jar ./bin/JavaClient.jar 10 5
+Client connected on port: 7070
+Nov 18, 2018 5:30:13 AM JavaClient div
+INFO: Trying to div 10 by 5
+Nov 18, 2018 5:30:13 AM JavaClient div
+INFO: Result:2                                                                                     
 ```
 
-At this point you have successfully built a gRPC C++ service. The executables
-in `bin/` can be used from anywhere inside the container (they don't need
-anything from the installation directory) or outside the container if you have
-C++ gRPC libraries installed.
+At this point you have successfully built a gRPC Java service. The executables can
+be used from anywhere inside the container (they don't need anything from
+the installation directory) or outside the container.
 
 The next steps in this tutorial will publish the service in SingularityNET.
 
-## Step 8 (optional if you already have enough AGI and ETH tokens)
+## Step 8: Getting Testnet AGI and Ethereum
+> Optional if you already have enough AGI and ETH tokens
 
 You need some AGI and ETH tokens. You can get then for free (using your github
 account) here:
@@ -274,7 +241,9 @@ account) here:
 * AGI: https://faucet.singularitynet.io/
 * ETH: https://faucet.kovan.network/
 
-## Step 9
+Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
+
+## Step 9: Creating an identity
 
 Create an "alias" for your private key.
 
@@ -300,7 +269,8 @@ features) in https://github.com/singnet/snet-cli
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)
 
-## Step 10 (optional if you already have an organization)
+## Step 10: Creating an organization
+> Optional if you already have an organization
 
 Create an organization and add your key to it.
 
@@ -314,7 +284,7 @@ by the public key associated with the private key you used previously.
 If you want to join an existing organization (e.g. SNET), ask the owner to add
 your key before proceeding. In this tutorial we assume you'll use SNET.
 
-## Setp 11
+## Step 11: Editing our JSON file
 
 Edit a JSON configuration file for your service.  We already have a valid
 `service.json` in project's folder looking like this:
@@ -322,7 +292,7 @@ Edit a JSON configuration file for your service.  We already have a valid
 ```JSON
 {
     "name": "math-operations",
-    "service_spec": "src/service_spec",
+    "service_spec": "service_spec/",
     "organization": "SNET",
     "path": "",
     "price": 0,
@@ -341,14 +311,14 @@ Anyway we'll change it to add some useful information in `tags` and `description
 ```JSON
 {
     "name": "math-operations",
-    "service_spec": "src/service_spec",
+    "service_spec": "service_spec/",
     "organization": "SNET",
     "path": "",
     "price": 0,
-    "endpoint": "http://localhost:7000",
+    "endpoint": "http://localhost:7070",
     "tags": ["tutorial", "math-operations", "basic"],
     "metadata": {
-        "description": "A tutorial C++ service"
+        "description": "A tutorial Java service"
     }
 }
 ```
@@ -356,7 +326,7 @@ Anyway we'll change it to add some useful information in `tags` and `description
 You could also use `SNET-CLI` build the JSON configuration file
 using `snet service init` and answering the prompted questions.
 
-## Step 12
+## Step 12: Publish and Start Service
 
 First, make sure you killed the `server` proccess started in Step 7. Then
 publish and start your service:
@@ -395,7 +365,7 @@ service as soon as you finish the tests.
 Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
-## Step 13
+## Step 13: Test Service 
 
 You can test your service making requests in command line
 

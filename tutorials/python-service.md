@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: How to Write a SingularityNET Service in Java
-description: This is an example page that you can use as a base for when adding new content.
+title: How to Write a SingularityNET Service in Python
+description: Getting started with Python for your AI Service
 
 # extralink box
 extralink:
@@ -24,14 +24,12 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Previous page
-        url: '#'
+        content: Back to tutorials
+        url: '/tutorials'
     next:
-        content: Next page
-        url: '#'
+        content: How to Write a SingularityNET Service with OpenCog
+        url: '/tutorials/opencog-service'
 ---
-
-# Tutorial - How to write a SingularityNET service in Java
 
 -------------------------------
 
@@ -46,30 +44,30 @@ _You will need a private-public key pair to register your service in SNET. Gener
 
 Run this tutorial from a bash terminal.
 
-We'll use Java gRPC, for more details see https://grpc.io/docs/
+We'll use Python gRPC, for more details see https://grpc.io/docs/
 
-In this tutorial we'll create a Java service and publish it in SingularityNET.
+In this tutorial we'll create a Python service and publish it in SingularityNET.
 
-## Step 1
+## Step 1: Setup Docker
 
 Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
 ```
-$ docker build --build-arg language=java -t snet_java_service https://github.com/singnet/wiki.git#master:/tutorials/Docker
-$ docker run -p 7000:7000 -ti snet_java_service bash
+$ docker build --build-arg language=python -t snet_python_service https://github.com/singnet/wiki.git#master:/tutorials/Docker
+$ docker run -p 7000:7000 -ti snet_python_service bash
 ```
 
 From this point we follow the turorial in the Docker container's prompt.
 
 ```
-# cd wiki/tutorials/howToWriteJavaService
+# cd wiki/tutorials/howToWritePythonService
 ```
 
-## Step 2
+## Step 2: Create Skeleton Structure
 
 Create the skeleton structure for your service's project
 
-```bash
+```
 # ./create_project.sh PROJECT_NAME SERVICE_NAME SERVICE_PORT
 ```
 
@@ -92,13 +90,13 @@ So we'll use this command line to create project's skeleton and go to its folder
 
 ```
 # ./create_project.sh tutorial math-operations 7070
-# cd tutorial
+# cd /opt/singnet/tutorial
 ```
 
-## Step 3
+## Step 3: Customize Skeleton Code
 
 Now we'll customize the skeleton code to actually implement our basic service.
-We need to edit `../howToWriteJavaService/tutorial/src/main/java/service_spec/tutorial.proto` and define
+We need to edit `./service_spec/tutorial.proto` and define
 
 * the data structures used to carry input and output of the methods, and
 * the RPC API of the service.
@@ -106,18 +104,12 @@ We need to edit `../howToWriteJavaService/tutorial/src/main/java/service_spec/tu
 Take a look at https://developers.google.com/protocol-buffers/docs/overview to
 understand everything you can do in the `.proto` file.
 
-Edit the proto file:
-```Java
-# nano src/main/java/service_spec/tutorial.proto
-```
-
-In this tutorial our proto file should be like this:
+In this tutorial our `./service_spec/tutorial.proto` will be like this:
 
 ```Java
 syntax = "proto3";
 
-option java_generic_services = true;
-option java_multiple_files = true;
+package tutorial;
 
 message IntPair {
     int32 a = 1;
@@ -141,100 +133,89 @@ service ServiceDefinition {
 Each `message` statement define a data structure used either as input or output
 in the API. The `service` statement defines the RPC API itself.
 
-## Step 4
+## Step 4: Implement API
 
-In order to actually implement our API we need to edit the `JavaServer.java file`.
+In order to actually implement our API we need to edit `server.py`.
 
-Look for //`SERVICE_API` and replace `doSomething()` by our actual API methods:
+Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```Java
+```Python
+class ServiceDefinition(pb2_grpc.ServiceDefinitionServicer):
+    def __init__(self):
+        self.a = 0
+        self.b = 0
+        self.response = None
 
-@Override
-public void div(IntPair request, StreamObserver<SingleInt> responseObserver) {
-    int result = request.getA() / request.getB();
-    SingleInt reply = SingleInt.newBuilder().setV(result).build();
-    responseObserver.onNext(reply);
-    responseObserver.onCompleted();
-}
+    def div(self, request, context):
+        self.a = request.a
+        self.b = request.b
+        self.response = pb2.SingleInt()
+        self.response.v = int(self.a / self.b)
+        return self.response
 
+    def check(self, request, context):
+        self.response = pb2.SingleString()
+        self.response.s = "{}".format(request.v)
+        return self.response
 ```
-## Step 5
+## Step 5: Writing a Test Client
 
 Now we'll write a client to test our server locally (without using the
-blockchain). Edit `JavaClient.java`.
+blockchain). Edit `client.py`.
 
-Look for //`TEST_CODE` and replace `doSomething()` implementation by our
+Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
-
-```Java
-public void div(int a, int b) {
-    logger.info("Trying to divide "+a+" by "+ b);
-    IntPair request = IntPair.newBuilder().setA(a).setB(b).build();
-    SingleInt response;
-    try {
-        response = blockingStub.div(request);
-        logger.log(Level.INFO, "Result: " + response.getV());
-    } catch (StatusRuntimeException e) {
-        logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
-        return;
-    }
-}
-
+```Python
+def doSomething(channel):
+    a = 12
+    b = 4
+    if len(sys.argv) == 3:
+        a = int(sys.argv[1])
+        b = int(sys.argv[2])
+    # Check the compiled proto file (.py) to get method names
+    stub = pb2_grpc.ServiceDefinitionStub(channel)
+    response = stub.div(pb2.IntPair(a=a, b=b))
+    print("{}".format(response.v))
+    return response
 ```
 
-## Step 6
+## Step 6: Compiling Protobuf
 
-To compile the protobuf and generate server and client jar:
+To compile the protobuf file:
 
-Note: protobuf complie is embedded in the commands below. For more details, please edit build.sh.
-\
-Note1: On you project name, used in the previous command ./create_project.sh
-
-To generate a server aplication:
 ```
-# sh build.sh tutorial server
+# ./build.sh
 ```
 
-To generate a client aplication:
-```
-# sh build.sh tutorial client
-```
-
-## Step 7
+## Step 7: Local Tests
 
 To test our server locally (without using the blockchain)
 
 ```
-# java -jar ./bin/JavaServer.jar &
-```
-In a new terminal instance
-```
-# java -jar ./bin/JavaClient.jar 10 5
+# python3 server.py &
+# python3 client.py 12 4
 ```
 
 You should have something like the following output:
 
-```bash
-java -jar ./bin/JavaServer.jar &
-[1] 1627
-# Nov 18, 2018 5:27:16 AM JavaServer start
-INFO: Server listening on 7070
-java -jar ./bin/JavaClient.jar 10 5
-Client connected on port: 7070
-Nov 18, 2018 5:30:13 AM JavaClient div
-INFO: Trying to div 10 by 5
-Nov 18, 2018 5:30:13 AM JavaClient div
-INFO: Result:2                                                                                     
+```
+# python3 server.py &
+[1] 4217
+# Server listening on 0.0.0.0:7070
+python3 client.py 12 4
+3
 ```
 
-At this point you have successfully built a gRPC Java service. The executables can
+At this point you have successfully built a gRPC Python service. The executables can
 be used from anywhere inside the container (they don't need anything from
-the installation directory) or outside the container.
+the installation directory) or outside the container if you have Python gRPC libraries installed.
 
 The next steps in this tutorial will publish the service in SingularityNET.
 
-## Step 8 (optional if you already have enough AGI and ETH tokens)
+## Step 8: Getting Testnet AGI and Ethereum
+> Optional if you already have enough AGI and ETH tokens
+
 
 You need some AGI and ETH tokens. You can get then for free (using your github
 account) here:
@@ -242,7 +223,7 @@ account) here:
 * AGI: https://faucet.singularitynet.io/
 * ETH: https://faucet.kovan.network/
 
-## Step 9
+## Step 9: Creating an Identity
 
 Create an "alias" for your private key.
 
@@ -268,7 +249,8 @@ features) in https://github.com/singnet/snet-cli
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)
 
-## Step 10 (optional if you already have an organization)
+## Step 10: Creating an organization
+> Optional if you already have an organization
 
 Create an organization and add your key to it.
 
@@ -282,7 +264,7 @@ by the public key associated with the private key you used previously.
 If you want to join an existing organization (e.g. SNET), ask the owner to add
 your key before proceeding. In this tutorial we assume you'll use SNET.
 
-## Setp 11
+## Step 11: Editing our JSON file
 
 Edit a JSON configuration file for your service.  We already have a valid
 `service.json` in project's folder looking like this:
@@ -313,10 +295,10 @@ Anyway we'll change it to add some useful information in `tags` and `description
     "organization": "SNET",
     "path": "",
     "price": 0,
-    "endpoint": "http://localhost:7070",
+    "endpoint": "http://localhost:7000",
     "tags": ["tutorial", "math-operations", "basic"],
     "metadata": {
-        "description": "A tutorial Java service"
+        "description": "A tutorial Python service"
     }
 }
 ```
@@ -324,7 +306,7 @@ Anyway we'll change it to add some useful information in `tags` and `description
 You could also use `SNET-CLI` build the JSON configuration file
 using `snet service init` and answering the prompted questions.
 
-## Step 12
+## Step 12: Publish and Start Service
 
 First, make sure you killed the `server` proccess started in Step 7. Then
 publish and start your service:
@@ -363,7 +345,7 @@ service as soon as you finish the tests.
 Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
-## Step 13
+## Step 13: Test Service 
 
 You can test your service making requests in command line
 
