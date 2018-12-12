@@ -60,6 +60,11 @@
 						</div><!-- /.col -->
 					{% endif %}
 				</div><!-- /.row -->
+                <div class="row">
+                    {% if page.dev_news == true %}
+                        {% include dev-news.html %}
+                    {% endif %}
+                </div>
 			</div><!-- /.container -->
 		</div><!-- /.hero-subheader -->
 		<div class="section">
