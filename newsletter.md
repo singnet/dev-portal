@@ -1,6 +1,6 @@
 ---
 # Page settings
-layout: default
+layout: newsletter
 keywords:
 comments: false
 
