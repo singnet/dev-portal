@@ -33,7 +33,7 @@ grid_navigation:
     - title: How to Write a SingularityNET Service in C++
       excerpt: Getting started with C++ for your AI Service
       cta: Read more
-      url: '/docs/tutorials/cpp-service'
+      url: '/tutorials/cpp-service'
     - title: Service Integration Guidelines
       excerpt: Write and integrate new AI services to the platform.
       cta: Read more

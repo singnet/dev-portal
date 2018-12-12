@@ -150,13 +150,13 @@ Optionally you can un-publish the service
 # snet service delete ORGANIZATION_NAME SERVICE_NAME
 ```
 
-## Step 8: Running the Service 
+## Step 8: Running the Service
 
 Running the service using SNET Daemon
 
 In the service folder, create a dir named 'config' and a file named 'snetd_[SERVICE_NAME]_config.json' according to this template
 
-```JSON
+```
 {
     "DAEMON_TYPE": "grpc",
     "DAEMON_LISTENING_PORT": "7000",
