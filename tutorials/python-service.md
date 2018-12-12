@@ -106,7 +106,7 @@ understand everything you can do in the `.proto` file.
 
 In this tutorial our `./service_spec/tutorial.proto` will be like this:
 
-```Java
+```
 syntax = "proto3";
 
 package tutorial;
@@ -139,7 +139,7 @@ In order to actually implement our API we need to edit `server.py`.
 
 Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```Python
+```
 class ServiceDefinition(pb2_grpc.ServiceDefinitionServicer):
     def __init__(self):
         self.a = 0
@@ -166,7 +166,7 @@ blockchain). Edit `client.py`.
 Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
-```Python
+```
 def doSomething(channel):
     a = 12
     b = 4
@@ -270,7 +270,7 @@ your key before proceeding. In this tutorial we assume you'll use SNET.
 Edit a JSON configuration file for your service.  We already have a valid
 `service.json` in project's folder looking like this:
 
-```JSON
+```
 {
     "name": "math-operations",
     "service_spec": "service_spec/",
@@ -289,7 +289,7 @@ Edit a JSON configuration file for your service.  We already have a valid
 
 Anyway we'll change it to add some useful information in `tags` and `description`.
 
-```JSON
+```
 {
     "name": "math-operations",
     "service_spec": "service_spec/",
