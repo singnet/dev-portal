@@ -49,7 +49,7 @@ We are very excited to host our first developer workshop this Friday, the 14th o
 - 16:45 - 17:00 Q&A + AOT
 
 ## How to prepare for the workshop
-TBA
+Please see [the docker instructions](https://dev.singularitynet.io/tutorials/docker/).
 
 ## Join the SingularityNET Developer Community
 We expect everyone in our community to treat each other with respect and to contribute in a positive way to our ecosystem. Please read our [Code of Conduct](https://community.singularitynet.io/faq) and help us promote this message in the community.

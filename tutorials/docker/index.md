@@ -11,7 +11,7 @@ description: This is an example page that you can use as a base for when adding 
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs'
+    title_url: '/docs/all'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -24,11 +24,11 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Previous page
-        url: '#'
+        content: Back to tutorials
+        url: '/tutorials'
     next:
-        content: Next page
-        url: '#'
+        content: View all docs
+        url: '/docs/all'
 ---
 ## SingularityNet workshop examples
 
