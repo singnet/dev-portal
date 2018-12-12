@@ -6,15 +6,15 @@ comments: true
 
 # Hero section
 title: How to Publish a SingularityNET Service
-description: This is an example page that you can use as a base for when adding new content.
+description: Getting your service to the SingularityNET Marketplace
 
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs'
+    title_url: '/docs/all'
     external_url: false
     description: Find an overview of our full documentation here.
- 
+
 # Developer Newsletter
 dev_news: true
 
@@ -24,14 +24,14 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Previous page
-        url: '#'
+        content: Back to tutorials
+        url: '/tutorials'
     next:
-        content: Next page
-        url: '#'
+        content: View all docs
+        url: '/docs/all'
 ---
 
-# Tutorial - How to Publish a SingularityNET Service
+
 
 -------------------------------
 
@@ -48,7 +48,7 @@ Run this tutorial from a bash terminal.
 
 In this tutorial we'll publish a basic service in SingularityNET using Kovan Test Network.
 
-## Step 1
+## Step 1: Setting up with Docker
 
 Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
@@ -59,16 +59,20 @@ $ docker run -p 7000:7000 -ti snet_service bash
 
 Step 1 may take a couple of minutes to finish. Step 2 can be performed concurrently.
 
-## Step 2 (optional if you already have enough AGI and ETH tokens)
+## Step 2: Getting Testnet AGI and Ethereum
+> Optional if you already have enough AGI and ETH tokens
 
-You need some AGI and ETH tokens. You can get then for free using your github account here:
+You need some AGI and ETH tokens. You can get then for free (using your github
+account) here:
 
 * AGI: https://faucet.singularitynet.io/
 * ETH: https://faucet.kovan.network/
 
-## Step 3
+Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
 
-From this point we follow the turorial in the Docker container's prompt.
+## Step 3: Completing Docker Tutorial
+
+From this point we follow the tutorial in the Docker container's prompt.
 
 Create an "alias" for your private key.
 
@@ -86,7 +90,8 @@ Replace MY_ID_NAME by an id to identify your key in the SNET-CLI. This id will n
 
 In this tutorial we'll use KEY_TYPE == key. Enter your private key when prompted.
 
-## Step 4 (optional if you already have an organization)
+## Step 4: Creating an organization
+> Optional if you already have an organization
 
 Create an organization and add your key to it.
 
@@ -98,7 +103,7 @@ Replace ORGANIZATION_NAME by a name of your choice.
 
 If you want to join an existing organization (e.g. SNET), ask the owner to add your public key into it before proceeding.
 
-## Step 5
+## Step 5: Editing our JSON file
 
 Build a JSON configuration file for your service.
 
@@ -119,13 +124,13 @@ The questions are (hopefully) self-explanatory. Defaults are safe except for:
 * Organization (see step 4)
 * Endpoint (the ip:port address of your service)
 
-## Step 6
+## Step 6: .proto file
 
 Create the 'service_spec' folder (or anything else you've specified in your JSON configuration file) and put the .proto file inside it.
 
 In our tutorial the .proto is already in place
 
-## Step 7
+## Step 7: Publishing the Service
 
 Publish your service
 
@@ -145,7 +150,7 @@ Optionally you can un-publish the service
 # snet service delete ORGANIZATION_NAME SERVICE_NAME
 ```
 
-## Step 8
+## Step 8: Running the Service 
 
 Running the service using SNET Daemon
 

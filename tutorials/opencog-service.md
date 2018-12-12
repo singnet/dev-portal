@@ -6,12 +6,12 @@ comments: true
 
 # Hero section
 title: How to Write an OpenCog Service to SingularityNET
-description: This is an example page that you can use as a base for when adding new content.
+description: Getting started with OpenCog for your AI Service
 
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs'
+    title_url: '/docs/all'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -36,7 +36,7 @@ page_nav:
 [services-readme]: https://github.com/singnet/opencog-services/blob/master/README.md
 [contribution-guidelines]: https://github.com/singnet/wiki/blob/master/guidelines/CONTRIBUTING.md
 
-# Tutorial - How to write an Opencog service to SingularityNET
+
 
 -------------------------------
 
@@ -48,7 +48,7 @@ Run this tutorial from a bash terminal.
 
 In this tutorial we'll create an Opencog service and publish it in SingularityNET.
 
-## Step 1
+## Step 1: Setting up with Docker
 
 Setup and run a docker container.
 
@@ -83,13 +83,13 @@ Take a look at [this document][services-readme] for details.
 **Note:** If you decided to run the server to actually test the client command
 above, make sure you kill it before moving on.
 
-## Step 2
+## Step 2: Implementing "Hello World" commands
 
 We'll implement 2 versions of a "Hello world" command, one in C++ and another
 in Scheme. We need different names for the two commands so we'll call them
 HelloWorld and HelloWorld2 respectively.
 
-### Step 2a
+### Step 2a: C++
 
 For the C++ command, we need to implement a C++ class (with separated .h and .cc) in `src/cpp-services`.
 The class is supposed to have the exact name of the command in `CamelCase` notation.
@@ -170,7 +170,7 @@ To compile our new command just cd to `src/` and:
 
 OK we are ready to test our new C++ command.
 
-### Step 2b
+### Step 2b: Scheme
 
 For the Scheme command, we need to implement a [Scheme][scheme] file in
 `src/scm-services` with the exact name of the command in `CamelCase` notation
@@ -196,7 +196,7 @@ function `(display)`) will be considered as part of the output.
 
 So we're done with the Scheme command.
 
-## Step 3
+## Step 3: Testing Commands
 
 We are ready to test our two new commands. `cd` to the root directory and start
 the server:
@@ -215,7 +215,7 @@ Hello World 2
 
 ```
 
-## Step 4
+## Step 4: Integrate into OpenCog Service
 
 Once your commands are working properly, it's time to make a PR to integrate
 then in the SingularityNET Opencog service. Make sure you read our
@@ -235,7 +235,7 @@ docs/HelloWorld.md is mising
 Note that we're missing a lot of files. Basically we need to provide test cases
 for a regression test and a `.md` documentation for our new commands.
 
-### Step 4a
+### Step 4a: Integration Test
 
 First, we'll create the test cases for both commands.
 
@@ -281,7 +281,7 @@ regression tests again to make sure all the tests pass. **NOTE**: The Scheme
 commands append an extra `\n` at the end of the output. So your baseline output
 file need to have this empty line at the end.
 
-### Step 4b
+### Step 4b: Creating Documentation
 
 Now we need to create a proper documentation for our new commands. Create
 `docs/HelloWorld.md` and `docs/HelloWorld2.md`. You are advised to use one of
@@ -302,7 +302,7 @@ look for the secion "Opencog services to SingularityNET". Add your newly
 created commands to the list with a simple description of their arguments
 and what is their expected output.
 
-## Step 5
+## Step 5: Submitting PR 
 
 You are ready to submit your PR. Read our
 [contribution guidelines][contribution-guidelines] before submiting it.

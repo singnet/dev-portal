@@ -365,7 +365,7 @@ service as soon as you finish the tests.
 Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
-## Step 13: Test Service 
+## Step 13: Test Service
 
 You can test your service making requests in command line
 

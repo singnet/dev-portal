@@ -216,12 +216,13 @@ The next steps in this tutorial will publish the service in SingularityNET.
 ## Step 8: Getting Testnet AGI and Ethereum
 > Optional if you already have enough AGI and ETH tokens
 
-
 You need some AGI and ETH tokens. You can get then for free (using your github
 account) here:
 
 * AGI: https://faucet.singularitynet.io/
 * ETH: https://faucet.kovan.network/
+
+Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
 
 ## Step 9: Creating an Identity
 
@@ -345,7 +346,7 @@ service as soon as you finish the tests.
 Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
-## Step 13: Test Service 
+## Step 13: Test Service
 
 You can test your service making requests in command line
 

@@ -1,4 +1,35 @@
-![singnetlogo](assets/img/singnet-logo.jpg 'SingularityNET')
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Service Integration Guidelines
+description: Write and integrate new AI services to the platform.
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs/all'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Back to tutorials
+        url: '/tutorials'
+    next:
+        content: View all docs
+        url: '/docs/all'
+---
 
 [singnet-home]: https://www.singularitynet.io
 [singnet-github]: https://github.com/singnet
@@ -17,7 +48,7 @@
 [opencog]: https://opencog.org/
 [opencog-services]: https://github.com/singnet/opencog-services
 
-# Guidelines for service integration in SingularityNET 
+# Guidelines for service integration in SingularityNET  
 
 These are guidelines to help SingularityNET developers to write/integrate new
 AI services to the platform.
@@ -50,10 +81,10 @@ available [here][grpc-docs].
 There are tutorials with step-by-step instructions for implementing a new
 service in each of these languages:
 
-- [How to write a SingularityNET service in C++][cpp-tutorial]
-- [How to write a SingularityNET service in Python][python-tutorial]
-- [How to write a SingularityNET service in Java][java-tutorial]
-- [How to write a SingularityNET service in Go][go-tutorial]
+- [How to write a SingularityNET service in C++](/tutorials/cpp-service)
+- [How to write a SingularityNET service in Python](/tutorials/python-service)
+- [How to write a SingularityNET service in Java](/tutorials/java-service)
+- [How to write a SingularityNET service in Go](/tutorials/go-service)
 
 If you already have a gRPC service, this tutorial explains how to publish it in
 SingularityNET:

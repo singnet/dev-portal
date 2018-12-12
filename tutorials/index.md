@@ -34,6 +34,10 @@ grid_navigation:
       excerpt: Getting started with C++ for your AI Service
       cta: Read more
       url: '/docs/tutorials/cpp-service'
+    - title: Service Integration Guidelines
+      excerpt: Write and integrate new AI services to the platform.
+      cta: Read more
+      url: '/tutorials/service-integration-guidelines'
     - title: How to Write a SingularityNET Service in Go
       excerpt: Getting started with Go for your AI Service
       cta: Read more
@@ -46,7 +50,7 @@ grid_navigation:
       excerpt: Getting started with Python for your AI Service
       cta: Read more
       url: '/tutorials/python-service'
-    - title: How to Write an Opencog Service to SingularityNET
+    - title: How to Write an OpenCog Service to SingularityNET
       excerpt: Getting started with OpenCog for your AI Service
       cta: Read more
       url: '/tutorials/opencog-service'

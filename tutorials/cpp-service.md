@@ -31,8 +31,6 @@ page_nav:
         url: '/tutorials/go-service'
 ---
 
-# Tutorial - How to write a SingularityNET service in C++
-
 -------------------------------
 
 _Before following this tutorial, make sure you've installed_
@@ -50,7 +48,7 @@ We'll use C++ gRPC, for more details see https://grpc.io/docs/
 
 In this tutorial we'll create a C++ service and publish it in SingularityNET.
 
-## Step 1
+## Step 1:  Setting up with Docker
 
 Setup and run a docker container. We'll install C++ gRPC stuff in a container
 because of this warning from the authors:
@@ -70,13 +68,13 @@ $ docker build --build-arg language=cpp -t snet_cpp_service https://github.com/s
 $ docker run -p 7000:7000 -ti snet_cpp_service bash
 ```
 
-From this point we follow the turorial in the Docker container's prompt.
+From this point we follow the tutorial in the Docker container's prompt.
 
 ```
 # cd wiki/tutorials/howToWriteCPPService
 ```
 
-## Step 2
+## Step 2: Creating the Skeleton Structure
 
 Create the skeleton structure for your service's project
 
@@ -106,7 +104,7 @@ So we'll use this command line to create project's skeleton
 # cd tutorial
 ```
 
-## Step 3
+## Step 3: Customize the Skeleton Code
 
 Now we'll customize the skeleton code to actually implement our basic service.
 We need to edit `src/service_spec/tutorial.proto` and define
@@ -146,7 +144,7 @@ service ServiceDefinition {
 Each `message` statement define a data structure used either as input or output
 in the API. The `service` statement defines the RPC API itself.
 
-## Step 4
+## Step 4: Implement API
 
 In order to actually implement our API we need to edit `src/server.cc`.
 
@@ -177,7 +175,7 @@ Status check(ServerContext* context, const SingleInt* input, SingleString* outpu
     return Status::OK;
 }
 ```
-## Step 5
+## Step 5: Writing a Test Client
 
 Now we'll write a client to test our server locally (without using the
 blockchain). Edit `src/client.cc`.
@@ -230,7 +228,7 @@ void doSomething(int argc, char** argv) {
 }
 ```
 
-## Step 6
+## Step 6: Build Services
 
 To build the service:
 
@@ -240,7 +238,7 @@ To build the service:
 
 At this point you should have `server` and `client` in `bin/`
 
-## Step 7
+## Step 7: Local Tests
 
 To test our server locally (without using the blockchain)
 
@@ -266,7 +264,8 @@ C++ gRPC libraries installed.
 
 The next steps in this tutorial will publish the service in SingularityNET.
 
-## Step 8 (optional if you already have enough AGI and ETH tokens)
+## Step 8: Getting Testnet AGI and Ethereum
+> Optional if you already have enough AGI and ETH tokens
 
 You need some AGI and ETH tokens. You can get then for free (using your github
 account) here:
@@ -274,7 +273,9 @@ account) here:
 * AGI: https://faucet.singularitynet.io/
 * ETH: https://faucet.kovan.network/
 
-## Step 9
+Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
+
+## Step 9: Creating an Identity
 
 Create an "alias" for your private key.
 
@@ -300,7 +301,8 @@ features) in https://github.com/singnet/snet-cli
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)
 
-## Step 10 (optional if you already have an organization)
+## Step 10: Creating an organization
+> Optional if you already have an organization
 
 Create an organization and add your key to it.
 
@@ -314,7 +316,7 @@ by the public key associated with the private key you used previously.
 If you want to join an existing organization (e.g. SNET), ask the owner to add
 your key before proceeding. In this tutorial we assume you'll use SNET.
 
-## Setp 11
+## Step 11: Editing our JSON file
 
 Edit a JSON configuration file for your service.  We already have a valid
 `service.json` in project's folder looking like this:
@@ -356,7 +358,7 @@ Anyway we'll change it to add some useful information in `tags` and `description
 You could also use `SNET-CLI` build the JSON configuration file
 using `snet service init` and answering the prompted questions.
 
-## Step 12
+## Step 12: Publish and Start Service
 
 First, make sure you killed the `server` proccess started in Step 7. Then
 publish and start your service:
@@ -395,7 +397,7 @@ service as soon as you finish the tests.
 Other `snet` commands and options (as well as their documentation) can be found here:
 https://github.com/singnet/snet-cli
 
-## Step 13
+## Step 13: Test Service
 
 You can test your service making requests in command line
 
