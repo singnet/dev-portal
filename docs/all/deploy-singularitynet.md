@@ -5,15 +5,18 @@ keywords:
 comments: true
 
 # Hero section
-title: Page title
-description: Page description
+title: Deploy SingularityNET Locally
+description: Learn how to build and deploy SingularityNET locally to publish and call services, and to have full control over a local test network blockchain.
 
 # extralink box
 extralink:
-    title: About extralink
-    title_url: '#'
-    external_url: true
-    description: extralink description
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
@@ -21,11 +24,12 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Previous page
+        content:
         url: '#'
     next:
-        content: Next page
+        content: 
         url: '#'
+---
 ---
 
 ## Table of contents
