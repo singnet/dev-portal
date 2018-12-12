@@ -30,10 +30,10 @@ page_nav:
         content: View all docs
         url: '/docs/all'
 ---
-## SingularityNet workshop examples
+## SingularityNET workshop examples
 
 Docker image and number of simple application examples which demonstrate how to
-work with SingularityNet platform.
+work with SingularityNET platform.
 
 For the sake of clarity and simplicity it is a prepared environment which
 simulates behaviour of the Ethereum testnet like Kovan. But all things you are
@@ -65,7 +65,7 @@ Run docker image with examples:
 ```
 
 After docker image is up you will be in the `singnet` folder which contains all
-main SingularityNet git repositories and SingularityNet examples.
+main SingularityNET git repositories and SingularityNET examples.
 
 Please start with reading `examples/01-snet-cli/README` file and follow instructions.
 
@@ -96,5 +96,5 @@ What is done in the docker image:
   respectively.
 
 In order to see full list of preparations you need to work with local Ethereum
-network you need to look at page [build and deploy SingularityNet
+network you need to look at page [build and deploy SingularityNET
 locally](https://github.com/singnet/wiki/blob/master/multiPartyEscrowContract/front-to-back-examples/Build-and-deploy-SingularityNET-locally.md).
