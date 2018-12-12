@@ -26,7 +26,7 @@ grid_navigation:
       excerpt: Learn how to sell your AI service on the SingularityNET Marketplace.
       cta: Read more
       url: '/tutorials/publish-service'
-    - title: Docker
+    - title: Getting started with Docker
       excerpt: Use docker to publish a SingularityNET Service
       cta: Read more
       url: '/tutorials/docker'
