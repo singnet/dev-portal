@@ -31,8 +31,6 @@ page_nav:
         url: '#'
 ---
 
-# Getting Started
-
 ## Service Owner/Creator
 
 ### Create an Organization

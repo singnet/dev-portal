@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: Daemon
+title: SingularityNET Daemon
 description: In this overview, we will be giving you a brief introduction to the SingularityNET Daemon.
 
 # extralink box
@@ -30,8 +30,6 @@ page_nav:
         content: Register Organization
         url: '#'
 ---
-
-# SingularityNET Daemon
 
 ## Overview
 
