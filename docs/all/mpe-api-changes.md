@@ -97,7 +97,7 @@ state in Registry instead of using separate Agent contract.
 ## Daemon API changes
 
 Sequence diagram of calls during client/daemon interaction:
-![Client/daemon interaction sequence diagram](./assets/img/clientDaemonInteractionSequenceDiagram.svg "Client/daemon interaction sequence diagram")
+![Client/daemon interaction sequence diagram](/assets/img/clientDaemonInteractionSequenceDiagram.svg)
 
 ### RPC call API
 
