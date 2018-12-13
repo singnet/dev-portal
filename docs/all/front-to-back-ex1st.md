@@ -6,29 +6,21 @@ comments: true
 
 # Hero section
 title: Multi Party Escrow: Front to back example.
-description: In this example you will be learning how to use the MPE payment system in SingularityNET with one replica configuration.
+description: Using the MPE payment system in SingularityNET with one replica configuration.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
 
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
 
 You can find scripts for this examples here: [scripts/example1](scripts/example1)
