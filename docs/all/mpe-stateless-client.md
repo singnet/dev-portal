@@ -5,33 +5,24 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: Stateless client with MPE
+description: How to work a stateless client with MPE
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
 
-# Stateless client with MPE
+## Stateless client with MPE
 In this document we demonstrate that the client who communicate with SingularityNet services using MPE payment channels doesn't
 require to store the state of the payment channel. He only need to store his Ethereum identity.  
 
@@ -68,10 +59,10 @@ In all cases we are interesting in two numbers:
     * next_signed_amount = current_signed_amount + price
 * The amount of tokens which haven't been already spent (unspent_amount).
 
-#### Simple case current_nonce == blockchain_nonce
+### Simple case current_nonce == blockchain_nonce
 * unspent_amount = blockchain_value - current_signed_amount
 
-#### Difficulate case current_nonce != blockchain_nonce
+### Difficulate case current_nonce != blockchain_nonce
 Taking into account our assumption we know that current_nonce = blockchain_nonce + 1.
 * unspent_amount = blockchain_value - oldnonce_signed_amount - current_signed_amount
 

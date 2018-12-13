@@ -5,39 +5,28 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: Snap-CLI for MPE contract and channels
+description: Manipulating the MultiPartyEscrow Contract and calling services from the client side.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
-
-# snap-cli for MPE contract and channels
 
 In this document we present snap-cli commands for manipulating
 MultiPartyEscrow contract and calling services from the client side using
 payment channels.
 
-### Manipulating MultyPartyEscrow contract
+## Manipulating MultyPartyEscrow contract
 
 All manipalation with MPE contract can be done via "snet-cli contract"
 option, which is low level interface to smart contracts.
@@ -113,7 +102,7 @@ snet contract MultiPartyEscrow --at 0x5c7a4290f6f8ff64c69eeffdfafc8644a4ec3a4e c
 # You can try to claim timeout now. It will not be possible ~24 hours...
 ```
 
-### Call the server using MPE channel
+## Call the server using MPE channel
 
 Here we consider low level functionality for calling services via snap-cli.
 We assume the following
@@ -121,7 +110,7 @@ We assume the following
 * You opened the payment channel in MPE with a given service group (see previous section)
 * You know the endpoint of selected group (from IPFS metadata)
 
-#### Compile protobuf for service at the given payment channel
+### Compile protobuf for service at the given payment channel
 
 ```bash
 # proto_dir - directory in which we have .proto file
@@ -130,9 +119,9 @@ We assume the following
 
 snet  mpe-client compile_from_file <proto_dir> <proto_file> 0
 ```
-#### Call the service   
+### Call the service   
 
-###### JSON parameters and modifiers
+#### JSON parameters and modifiers
 
 Parameters for the service itself have to be passed to snet-cli in JSON format
 (via cmdline parameter or via a JSON file, or via stdin).
@@ -158,7 +147,7 @@ for example if you pass the following JSON as parameter then as "image" paramete
 
 If we remove b64encode modifier from the previous example then we will pass 1.jpeg image in binary format without base64 encoding.  
 
-###### Make a call (using low level functionality)
+#### Make a call (using low level functionality)
 
 Let's make a call to the server with the following parameters
 * 0x39ee715b50e78a920120c1ded58b1a47f571ab75 - address of MultiPartyEscrow contract

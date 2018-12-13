@@ -5,33 +5,22 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: Naming Standards
+description: About the standardisation of naming within the SingularityNET Network.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
-
-# SingularityNET naming standardisation
 
 We currently provide a lot of freedom as to how entities in SingularityNET are named.
 
@@ -56,7 +45,7 @@ be [slugified with dashes](https://docs.djangoproject.com/en/2.1/ref/utils/#djan
 This is analogous to a URL on the web. A domain name is case insensitive, and while a URL path can use captialisation, many web applications
 will treat these paths as case insensitive.
 
-### Internationalisation and UTF-8
+## Internationalisation and UTF-8
 
 These fields are 8bit characters so can support UTF-8. We don't currently explicitly test and support this in our tooling yet.
 

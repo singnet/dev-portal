@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: Multi-Party Escrow Contract
+description: An introduction to the Multi-Party Escrow Contract and its functionalities.
 
 # extralink box
 # extralink:
@@ -31,9 +31,7 @@ page_nav:
         url: '#'
 ---
 
-# MultiPartyEscrow contract
-
-### Introduction
+## Introduction
 
 The MultiPartyEscrow contract (hereafter MPE) have two main functionalities:
 
@@ -45,7 +43,7 @@ between clients and services providers and functions for manipulation
 of these channels.
 
 
-### Atomic unidirectional payment channel
+## Atomic unidirectional payment channel
 
 You can skip this section if you are familiar with it.
 
@@ -74,9 +72,9 @@ The main logic is following.
   funds back.
 * The sender can extend the expiration date and add funds to the contract at any moments.
 
-### The set of channels and functions to manipulate them
+## The set of channels and functions to manipulate them
 
-##### PaymentChannel structure
+### PaymentChannel structure
 
 Each "atomic" payment channel in MPE is represented by the following structure
 
@@ -107,7 +105,7 @@ Comments are selfexplanatory, but few clarifications migth be useful.
 * The full ID of the recipient is [recipient_ethereum_address, replicaId]. By doing this we allow service provider to use the
   same ethereum wallet for different replicas.
 
-##### Functions
+### Functions
 
 The following function open the new "atomic" channel, assuming that the caller is the sender.
 ```Solidity
@@ -148,9 +146,9 @@ function channelClaimTimeout(uint256 channel_id);
 ```
 
 
-### Usercases
+## Use cases
 
-#### Simple usercase
+### Simple use case
 
 Informal description:
 
@@ -208,7 +206,7 @@ For example server check that signature is authentic, that amount is correct, th
 * If server fails to claim funds before timeout (for example he goes offline forever), then the client can claim all funds after the expiration date
 
 
-#### Open the channel from the service side
+### Open the channel from the service side
 
 The channel can be opened from the server side. The server should obtain the singed authorization from the client to open the channel.
 If everything is done in the "secure" manner (server waits the confirmation that the channel has been opened)
@@ -226,7 +224,7 @@ formal example:
 * usual workflow can be started now.
 * ......
 
-### Remarks
+## Remarks
 
 * Service provider can use the same ethereum address for all replicas or he can use different address.
 In any case, the replicas very rarely need to send on-chain transactions. It means, that we actually don't need to provide the demons with direct access to the private key.

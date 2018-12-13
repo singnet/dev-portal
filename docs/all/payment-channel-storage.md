@@ -5,41 +5,31 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: Payment Channel Storage
+description: Storing and processing information about service payments in payment channels.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
 
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
 
-
-# Payment channel storage
 
 To fulfil a request from a client to service an snet-daemon needs to store and process information about
 service payment which is referred as payment channel.
 
 If there is only one service and corresponding snet-daemon the process is easy:
 
-![one replica](img/payment_channel_storage_single_replica.jpg)
+![one replica](/docs/assets/img/payment_channel_storage_single_replica.jpg)
 
 if payment passes a validation process the payment channel is stored in an internal storage
 to be claimed when the service successfully accomplishes the request.
@@ -48,7 +38,7 @@ The situation becomes more complicated if a service provides several replicas.
 In this case it is not possible just to have several separated snet-daemons each of which has an independent
 internal storage.
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_several_independent_storages.jpg)
+![several replicas with several independent storages](/docs/assets/img/payment_channel_storage_several_replicas_several_independent_storages.jpg)
 
 One drawback of using a separated payment channel for each replica is that it can be expensive from the gas consumption
 and time execution (it really could takes relatively long time) point of view because each operation to open a channel
@@ -59,7 +49,7 @@ from different replicas.
 
 This leads to a model where all snet-daemons for the same service should use the shared storage.
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_one_storage.jpg)
+![several replicas with several independent storages](/docs/assets/img/payment_channel_storage_several_replicas_one_storage.jpg)
 
 However if there is only one instance of a storage is provided it can easily become a single point of failure
 for the whole system because its failures leads that all payments can't be processed even where are some alive replicas.
@@ -92,14 +82,14 @@ Lets strike out the availability guarantee and leave only partition tolerance an
 
 The new design now looks like:
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_separate_distributed_storage.jpg)
+![several replicas with several independent storages](/docs/assets/img/payment_channel_storage_several_replicas_separate_distributed_storage.jpg)
 
 The current approach is fine but it requires for a service owner not only setup an snet-daemon for each replica
 but also to deploy a separated distributed storage. This can be rather tedious and complicated task.
 To avoid this it would be good to incorporate the distributed storage nodes into snet-daemons so it would be the
 snet-daemon task to run required distributed storage nodes:
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_embedded_distributed_storage.jpg)
+![several replicas with several independent storages](/docs/assets/img/payment_channel_storage_several_replicas_embedded_distributed_storage.jpg)
 
 ## Considered storages
 

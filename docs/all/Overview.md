@@ -5,33 +5,24 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
+title: Overview
 description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
 
-# Overview
+## Overview
 
 The current codebase represents an early version of the SingularityNET Platform and Network.
 AI developers can use the platform to publish AI services onto the SingularityNET
@@ -112,7 +103,7 @@ The following contracts (in combination with the SingularityNET ERC-20 token) co
 
 Below is a diagram of the interaction between the On-Chain components of the Alpha:
 
-![Contracts1](../assets/img/contracts1.png)
+![Contracts1](/docs/assets/img/contracts1.png)
 
 ## Off-Chain Components
 The following components provide the off-chain functionality of the alpha SingularityNET implementation.
@@ -137,10 +128,10 @@ The following components provide the off-chain functionality of the alpha Singul
 
 Below is a diagram of the interaction between the Off-Chain components of the platform:
 
-![Structure1](../assets/img/structure1.png)
+![Structure1](/docs/assets/img/structure1.png)
 
 ## End-to-End
 Below is a diagram that illusrates the end-to-end operation of a client interoperating with a published Service on the
 SingularityNET Network
 
-![Structure2](../assets/img/structure2.png)
+![Structure2](/docs/assets/img/structure2.png)
