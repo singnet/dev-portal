@@ -1,0 +1,16 @@
+{
+   "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
+   "PASSTHROUGH_ENABLED": true,
+   "PASSTHROUGH_ENDPOINT": "http://localhost:__SERVICE_PORT__",
+   "REGISTRY_ADDRESS_KEY": "0x2e4b2f2b72402b9b2d6a7851e37c856c329afe38",
+   "DAEMON_END_POINT": "http://localhost:7000",
+   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
+   "ORGANIZATION_NAME": "__ORGANIZATION_NAME__",
+   "SERVICE_NAME": "__SERVICE_NAME__",
+   "LOG": {
+      "LEVEL": "debug",
+      "OUTPUT": {
+          "TYPE": "stdout"
+          }
+   }
+}

@@ -1,0 +1,44 @@
+' https://www.planttext.com/?text=bLJ1JiCm3BtdAooujAARE2CDWG0X3aX87AUfCgdf8jAa9Ea6Vq-w9btNZGqkLPiyFp-_shwn3erhAicO4quId3sJjLYIXGcyqcT3YXFS2omDLcUCbKOtDHHKQoiSkvE2b8F9_DnGiRY6vvS7k8gtoGfbGobh3psYD4JAOsuVdpocqYlAdVuWPHE-OSdQw0p6GVZTyxwXHA_6phk01LpCEZWZLR3fT1hKwPeKy2KgHV8NYIqa3v34aba9JY5t1lHL2uDEQ9M1eLeAZlc6kPVLKTqZLLfvDbhv594kRxcJy94EyeTQmi4LsAQQnnXHB606bwD2JEk_TU0q18t_eFFcrEPuI8tVLVis0ojAbOVFPCkIZLdJFJzx4uBOf427MQHEMRZVPky3-9BuHvzKejrQw9lIqIyaNHUzTdwCygOidW-W0uMsrifIubyQEQ0TMBA7sVqZN2jda3ilpJY14jR2BGk3QvG3aSDEYoLnYQ9AGaKPlAEqVstpoImwCUtQ_MXKw9Ik0Kw6ALhVXJ68OxWx3duDxB0S78_HOFHk7XgCuE3OsPD6Hi3UMZbgmYIkY9DRQBDzTcllDB8R__GRyWS0
+
+@startuml
+
+title "Messages - Sequence Diagram"
+
+group deposit
+Client -[#red]> MPE : deposit(value)
+MPE -[#green]> AGI : move_tokens(client, MPE, value)
+MPE -[#gray]> MPE : balances[client] += value
+end
+...
+group open channel
+Client -[#red]> MPE : open_channel(service, value, expiration, replica_group)
+MPE -[#red]> Daemon : event_channel_open(channel)
+Client -[#gray]> Client : sum[channel_id] = 0
+end
+...
+group request to service
+Client -[#gray]> Client : sum[channel_id] += price
+Client -[#gray]> Client : payment = sign_payment(channel_id, sum[channel_id])
+Client -[#red]> Daemon : request(data, payment)
+Daemon -[#gray]> Daemon : check_payment(last_channel_state, payment)
+Daemon -[#green]> Service : request(data)
+Service -[#green]> Daemon : response(result)
+Daemon -> Client : response(result)
+end
+...
+group contract partial withdrawal
+Daemon -[#red]> MPE : channel_claim(payment, false)
+MPE -[#gray]> MPE : balances[client] -= payment.value
+MPE -[#gray]> MPE : balances[service] += payment.value
+MPE -[#gray]> MPE : newChannel(client, service, value - payment.value, expiration, replica)
+MPE -[#red]> Client : event_channel_open(contract)
+end
+...
+group withdrawal
+Daemon -[#red]> MPE : withdraw(value)
+MPE -[#gray]> MPE : balances[service] -= value
+MPE -[#green]> AGI : move_tokens(MPE, service, value)
+end
+
+@enduml
+

@@ -9,26 +9,19 @@ title: SingularityNET Daemon
 description: In this overview, we will be giving you a brief introduction to the SingularityNET Daemon.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
 
-# Newsletter
-dev_news: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
 
 ## Overview
@@ -45,7 +38,7 @@ The daemon itself exposes a gRPC/gRPC-Web endpoint regardless of what type of se
 
 ## Service Models
 
-Services are encouraged to define their API surface using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition) as an IDL. This allows SingularityNET clients to determine the request/response schema programmatically. See [this](Platform-How-Tos.md#create-a-service-model) for an example of how to create a service model for any of the [supported service types](#supported-service-types), and [this](Platform-How-Tos.md#publish-service-metadata) for directions on how to publish the service model to the network.
+Services are encouraged to define their API surface using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition) as an IDL. This allows SingularityNET clients to determine the request/response schema programmatically. See [this](/docs/all/platform-how-tos#create-a-service-model) for an example of how to create a service model for any of the [supported service types](#supported-service-types), and [this](/docs/all/platform-how-tos#publish-service-metadata) for directions on how to publish the service model to the network.
 
 ## SSL
 
@@ -61,4 +54,4 @@ The daemon uses a blockchain identity/wallet to transact on the blockchain. This
 
 ## Configuration
 
-The daemon's behavior with respect to [service type](#supported-service-types), [SSL](#ssl), [blockchain interactions](#blockchain), etc. is configurable via a configuration file, environment variables, and executable flags. See [this](Platform-How-Tos.md#configure-singularitynet-daemon) for a description of the available configuration keys.
+The daemon's behavior with respect to [service type](#supported-service-types), [SSL](#ssl), [blockchain interactions](#blockchain), etc. is configurable via a configuration file, environment variables, and executable flags. See [this](/docs/all/platform-how-tos#configure-singularitynet-daemon) for a description of the available configuration keys.

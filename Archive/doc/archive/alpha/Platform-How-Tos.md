@@ -1,36 +1,3 @@
----
-# Page settings
-layout: default
-keywords:
-comments: true
-
-# Hero section
-title: Platform Overview 
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
-
-# extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
-
-# Micro navigation
-micro_nav: true
-
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
----
-
 # Platform How-Tos
 
 ## Install SingularityNET CLI
@@ -65,7 +32,7 @@ Initializing the service metadata will create a `service.json` file in your curr
 ## Publish Service Metadata
 Requires: [Initialize Service Metadata](#initialize-service-metadata)
 
-Publishing the service metadata will create an Agent contract if necessary (and record the resuting address in the `service.json` file), create a registration for the service in the Registry contract if necessary, and update all remote sources (e.g. Agent contract, Registry contract, data stored in IPFS) to be consistent against the `service.json` file
+Publishing the service metadata will create an Agent contract if necessary (and record the resuting address in the `service.json` file), create a registration for the service in the Registry contract if necessary, and update all remote sources (e.g. Agent contract, Registry contract, data stored in IPFS) to be consistent against the `service.json` file 
 
 1. Run `snet service publish` (append `--no-register` if you either haven't created an organization or don't yet want to publish the service to the Registry contract).
 
@@ -81,32 +48,8 @@ Note that the request message schema as defined in the protobuf model map to the
 The process for creating a model for an executable as a service is similar. Currently, the executable must expect the request object as serialized JSON on STDIN and return the response object as serialized JSON on STDOUT. Thus, for the example above `echo '{"image_type": <image_type>, "image": <image>}' | /path/to/executable` should print `{"predictions": [<prediction>, ...], "confidences": [<confidence>, ...]}` to STDOUT.
 
 ## Configure SingularityNET Daemon
-The SingularityNET daemon can be configured using a config file, environment variables, flags, or a combination. Below are the available configuration keys and their descriptions:
-
-
-|config file key|environment variable key|flag|description|
-|---|---|---|---|
-|`AGENT_CONTRACT_ADDRESS`|`SNET_AGENT_CONTRACT_ADDRESS`|   |(Required) Ethereum address of the Agent contract instance associated with this service|
-|`AUTO_SSL_DOMAIN`|`SNET_AUTO_SSL_DOMAIN`|`--auto-ssl-domain`|(Optional; default: `""`) Domain name for which the daemon should automatically acquire SSL certs from [Let's Encrypt](https://letsencrypt.org/)|
-|`AUTO_SSL_CACHE_DIR`|`SNET_AUTO_SSL_CACHE_DIR`|`--auto-ssl-cache`|(Optional; only applies if `AUTO_SSL_DOMAIN` is set; default: `".certs"`) Directory in which to cache the SSL certs issued by Let's Encrypt|
-|`BLOCKCHAIN_ENABLED`|`SNET_BLOCKCHAIN_ENABLED`|`--blockchain`, `-b`|(Optional; default: `true`) Enables or disables blockchain features of daemon; `false` reserved mostly for testing purposes|
-|`CONFIG_PATH`|`SNET_CONFIG_PATH`|`--config`, `-c`|(Optional; default: `"snetd.config.json"`) Path to JSON config file|
-|`DAEMON_LISTENING_PORT`|`SNET_DAEMON_LISTENING_PORT`|`--port`, `-p`|(Optional; default: `5000`) Port on which daemon listens for connections|
-|`DAEMON_TYPE`|`SNET_DAEMON_TYPE`|`--type`, `-t`|(Optional; default: `"grpc"`) Switches between SingularityNET Alpha-compatible daemon mode (`"http"`) and new generation gRPC (`"grpc"`) daemon|
-|`DB_PATH`|`SNET_DB_PATH`|`--db-path`|(Optional; default: `"snetd.db"`) Path to database file daemon uses to persist relevant blockchain and call state|
-|`ETHEREUM_JSON_RPC_ENDPOINT`|`SNET_ETHEREUM_JSON_RPC_ENDPOINT`|`--ethereum-endpoint`|(Optional; default: `"http://127.0.0.1:8545"`) Endpoint to which daemon sends ethereum JSON-RPC requests; recommend `"https://kovan.infura.io"` for kovan testnet|
-|`EXECUTABLE_PATH`|`SNET_EXECUTABLE_PATH`|   |(Required iff `SERVICE_TYPE` == `executable`) Path to executable to expose as a service|
-|`HDWALLET_INDEX`|`SNET_HDWALLET_INDEX`|`--wallet-index`|(Optional; default: `0`; only applies if `HDWALLET_MNEMONIC` is set) Derivation index for key to use within HDWallet specified by mnemonic|
-|`HDWALLET_MNEMONIC`|`SNET_HDWALLET_MNEMONIC`|`--mnemonic`|(Optional; default: `""`; this or `PRIVATE_KEY` must be set) [bip39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemonic corresponding to wallet with which daemon transacts on blockchain|
-|`LOG_LEVEL`|`SNET_LOG_LEVEL`|   |(Required) Log level 0-5 increasing with verbosity|
-|`PASSTHROUGH_ENABLED`|`SNET_PASSTHROUGH_ENABLED`|`--passthrough`|(Optional; default: `false`) When passthrough is disabled, daemon echoes requests back as responses; `false` reserved mostly for testing purposes|
-|`PASSTHROUGH_ENDPOINT`|`SNET_PASSTHROUGH_ENDPOINT`|   |(Required iff `SERVICE_TYPE` != `executable`) Endpoint to which requests should be proxied for handling by service|
-|`POLL_SLEEP`|`SNET_POLL_SLEEP`|   |(Optional; default: `"5s"`) Duration to sleep between polling blockchain for new state|
-|`PRIVATE_KEY`|`SNET_PRIVATE_KEY`|   |(Optional; default: `""`; this or `HDWALLET_MNEMONIC` must be set) Private key with which daemon transacts on blockchain|
-|`SERVICE_TYPE`|`SNET_SERVICE_TYPE`|`--service-type`|(Optional; default: `"grpc"`) `"grpc"`, `"jsonrpc"`, or `"executable"` indicating which type of service daemon is exposing on network|
-|`SSL_CERT`|`SNET_SSL_CERT`|`--ssl-cert`|(Optional; default: `""`) Path to certificate to use for SSL|
-|`SSL_KEY`|`SNET_SSL_KEY`|`--ssl-key`|(Optional; only applies if `SSL_CERT` is set; default: `""`) Path to key to use for SSL|
-|`WIRE_ENCODING`|`SNET_WIRE_ENCODING`|`--wire-encoding`|(Optional; default: `"proto"`) Determines the wire format of requests from the client; should be `"grpc"` iff `SERVICE_TYPE` == `grpc`|
+The SingularityNET daemon can be configured using a config file, environment variables, flags, or a combination. 
+See [daemon configuration documentation](https://github.com/singnet/snet-daemon/blob/master/README.md#configuration) for the available configuration keys and their descriptions.
 
 ## Download a Service Model
 Requires: [Install SingularityNET CLI](#install-singularitynet-cli)
@@ -173,7 +116,7 @@ def serializer(*args, **kwargs):
 
 def deserializer(*args, **kwargs):
 	return Parse(args[0], ClassifyResponse(), True)
-
+  
 stub.classify._request_serializer = serializer
 stub.classify._response_deserializer = deserializer
 
