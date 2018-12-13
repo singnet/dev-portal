@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: Multi Party Escrow: Front to back example.
+description: In this example you will be learning how to use the MPE payment system in SingularityNET with one replica configuration.
 
 # extralink box
 # extralink:
@@ -31,27 +31,21 @@ page_nav:
         url: '#'
 ---
 
-# Front to back example of MPE payment system (Example1)
-
-Simple front to back example of using MPE payment system in
-SingularityNET with one replica configuration.
-
 You can find scripts for this examples here: [scripts/example1](scripts/example1)
 
-We will demonstrate the following.
-
-from the service side:
+We will demonstrate the following:
+**from the service side**
 * How to publish your service (in MPE payment system)
 * How to configure your daemon(s)
 * How to claim the funds from the server side using "treasurer server"
 
-from the client side:
+**from the client side**
 * How to open the payment channel
 * How to make calls using MPE payment system
 
 ## Preparation
 
-Please follow the tutorial [Build-and-deploy-SingularityNET-locally](Build-and-deploy-SingularityNET-locally.md) in order to deploy SingularitNet localy.
+Please follow the tutorial [Build-and-deploy-SingularityNET-locally](/docs/all/deploy-singularitynet) in order to deploy SingularityNET locally.
 
 The following example can be also executed on the kovan test net, but you will need to make sure that your organization name haven't been already taken and you should probably use another account for the collect payment from the client side (see KOVAN warnings bellow)
 
