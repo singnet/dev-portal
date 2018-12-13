@@ -5,58 +5,25 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: What is SingularityNET?
+description: A brief introduction.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
 
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
 
-# SingularityNET Documentation Wiki
-
-> SingularityNET is still under active development. The design is
-> rapidly evolving and should be considered unstable until we release our Beta platform later this year.
-
-## Contents
-
-- [Resources](doc/Resources.md)
-
-### SNET Platform
-- [Overview](doc/Overview.md)
-- [Daemon](doc/SingularityNET-Daemon.md)
-- [Registry](doc/SingularityNET-Registry.md)
-- [Getting Started](doc/Getting-Started.md)
-- [Platform How-Tos](doc/Platform-How-Tos.md)
-
-### SNET Platform Development
-
-- [Tutorial: Build and deploy SingularityNET locally](doc/Tutorial:-Build-and-deploy-SingularityNET-locally.md)
-
-## Welcome to the SingularityNET Wiki
-
-This is the community maintained wiki covering the details of the SingulairtyNET platform and our associated decentralized network of AI services.
-It includes information describing how to build and access AI services that are published onto the network as a service developer or an end-client.
-
-### What is SingularityNET?
+## What is SingularityNET?
 
 SingularityNET is an open and decentralized network of AI services made accessible through
 the blockchain. AI developers publish their services onto the SingularityNET network where they can be used by anyone with
@@ -94,7 +61,7 @@ delivered.
 * **SNET DApp:** The SingularityNET DApp is a front-end for exploring available AI services
 and inetracting with them through a web-UI.
 
-### Current state of development
+## Current state of development
 
 SingularityNET raised funds to build out our platform during our Token Generation Event (TGE) in
 December 2017. Since then we've been working quickly to build upon our platform and
@@ -107,10 +74,9 @@ build out a vibrant network of useful AI services.
 Designs for our production platform and associated development roadmap will also be published to the
 wiki as they are finalized.
 
-### Find out more
+## Find out more
 
-To get started with the SingularityNET platform review the [Overview](doc/Overview.md) and
-[Getting Started](doc/Getting-Started.md) pages.
+To get started with the SingularityNET platform review the [Overview](docs/overview) and
+[Getting Started](docs/getting-started) pages.
 
-Further [Resources](doc/Resources.md),
-including information on how to acquire AGI tokens.
+Furthermore, the [Fact Sheet](/sheet) includes information on how to acquire AGI tokens and more. 

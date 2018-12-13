@@ -20,15 +20,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: #
-        url: '#'
-    next:
-        content: #
-        url: '#'
 ---
 
 ## Overview
