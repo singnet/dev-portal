@@ -6,40 +6,32 @@ comments: true
 
 # Hero section
 title: Multi-Party Escrow API Changes
-description: A proposal for changings in the APIs of SingularityNET components. 
+description: A proposal for changings in the APIs of SingularityNET components.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
 
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
 
-# Overview
+## Overview
 
-Below proposal describes changes in APIs of SingularityNet components. Main
-goal is allowing step by step migration of the SingularityNet from Jobs to
+Below proposal describes changes in APIs of SingularityNET components. Main
+goal is allowing step by step migration of the SingularityNET from Jobs to
 MultiPartyEscrow contracts. It means that for some time it will be possible to
 use both payment ways. At the end one can find development plan based on API
 changes proposed.
 
-# IPFS metadata changes
+## IPFS metadata changes
 
 Current API:
 
@@ -63,9 +55,9 @@ Proposed API:
     - endpoint_uri - http://127.0.0.1:1234 - unique endpoint identifier
     - group_id
 
-# Agent contract API changes:
+## Agent contract API changes:
 
-## Introducing replicas and Multi Party Escrow (MPE)
+### Introducing replicas and Multi Party Escrow (MPE)
 
 As all payment related logic will be moved to the MPE contract and some
 metadata will be moved to IPFS, most of the fields and methods will be
@@ -97,17 +89,17 @@ Methods:
 - disable - disable service
 - setMetadataURI - update metadata
 
-## Replacing Agent by Registry plus metadata URI
+### Replacing Agent by Registry plus metadata URI
 
 We can move further and replace Agent contract by keeping metadataURI and service
 state in Registry instead of using separate Agent contract.
 
-# Daemon API changes
+## Daemon API changes
 
 Sequence diagram of calls during client/daemon interaction:
-![Client/daemon interaction sequence diagram](./img/clientDaemonInteractionSequenceDiagram.svg "Client/daemon interaction sequence diagram")
+![Client/daemon interaction sequence diagram](/assets/img/clientDaemonInteractionSequenceDiagram.svg "Client/daemon interaction sequence diagram")
 
-## RPC call API
+### RPC call API
 
 Current API:
 
@@ -126,21 +118,21 @@ Proposed API:
   - (old) snet-job-address - Job contract instance address to verity payment (32 bytes in hex string)
   - (old) snet-job-signature - Job payment signature (65 bytes in hex string)
 
-### Using decimal numbers
+#### Using decimal numbers
 
 Some values are represented as decimal number printed to string. The reason is that by their nature these values are incremental counters. Representing them as ```unit256``` value in hex string requires sending 64 bytes for relatively small value. To make representation more compact and clear we have decided keeping them as plain decimal numbers. But client should expect that this number can be as big as ```uint256```, so the best type to represent such values in code is ```BigInteger```.
 
-### Binary data encoding
+#### Binary data encoding
 
 gRPC supports sending binary data in metadata fields. To use this feature metadata key should have ```-bin``` postfix. Caller should pass values for such keys as byte array casted to the string (some implementations may allow passing byte arrays without casting). gRPC library encodes such values using ```base64```. See [grpc-metadata.md#storing-binary-data-in-metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md#storing-binary-data-in-metadata) for reference.
 
-## Blockchain events API
+### Blockchain events API
 
 New MPE events doesn't intersect with previous Job one. NewPaymentChannel
 events should be polled from Ethereum blockchain and added to the distributed
 payment channel cache.
 
-# Development plan
+## Development plan
 
 Minimal payment channel implementation:
 1. Add MultiPartyEscrow contract

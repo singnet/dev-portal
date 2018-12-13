@@ -5,35 +5,26 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: MPE Service Metadata
+description: Learn how to use service metadata to describe your AI services.
 
 # extralink box
-# extralink:
-#    title: About extralink
-#    title_url: '#'
-#    external_url: true
-#    description: extralink description
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Newsletter
-dev_news: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Overview
-        url: '#'
-    next:
-        content: Register Organization
-        url: '#'
 ---
 
-# Overview
+## Overview
 
-Service metadata is the off-chain descrition of SingularityNET service.
+Service metadata is the off-chain description of SingularityNET service.
 In order to use a SingularityNet service client need to know.
 
 * Address of MultiPartyEscrow contract
