@@ -21,17 +21,19 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+
 ---
 
 You can find scripts for this examples here: [scripts/example1](scripts/example1)
 
 We will demonstrate the following:
-**from the service side**
+
+- from the service side:
 * How to publish your service (in MPE payment system)
 * How to configure your daemon(s)
 * How to claim the funds from the server side using "treasurer server"
 
-**from the client side**
+- from the client side:
 * How to open the payment channel
 * How to make calls using MPE payment system
 
