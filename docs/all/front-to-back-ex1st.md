@@ -57,7 +57,7 @@ biology destroy normal tunnel slight slide wide sauce ladder produce'.
 
 ## Configure, Register and start your service (service provider side)
 
-#### Start the service (without a daemon)
+### Start the service (without a daemon)
 We will use Basic_Template service from https://github.com/singnet/dnn-model-services
 
 ```
@@ -72,7 +72,7 @@ python run_basic_service.py
 ```
 It will start the service at the port 7003.
 
-#### Register your service in Registry
+### Register your service in Registry
 
 
 Prepare metadata (service_metadata.json). We will register the second ganache identity (0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB) as a recipient wallet.
@@ -97,9 +97,9 @@ snet organization  create testo -y
 snet service publish testo tests -y
 ```
 
-#### Configure and start your daemon
+### Configure and start your daemon
 
-###### Preparation
+#### Preparation
 
 We assume that executable file for the daemon is placed in $SINGNET_REPOS/snet-daemon/build/snetd-linux-amd64
 
@@ -119,7 +119,7 @@ ln -s ../../../../snet-daemon/build/snetd-linux-amd64
 rm -rf storage-1.etcd
 ```
 
-###### Make configuration file for the daemon
+#### Make configuration file for the daemon
 
 ```
 cd $SINGNET_REPOS
@@ -149,7 +149,7 @@ EOF
 
 It should be noted that we use wrong private address, because this daemon will not make any on-chain calls.
 
-###### Run daemon
+#### Run daemon
 
 ```
 ./snetd-linux-amd64
@@ -158,7 +158,7 @@ It should be noted that we use wrong private address, because this daemon will n
 ## Open payment channel and make a call (client side)
 
 
-#### Open the payment channel with service provider
+### Open the payment channel with service provider
 
 
 (KOVAN) For KOVAN network you should make sure that you use right names for organization and service.
@@ -176,7 +176,7 @@ snet client deposit 100.1
 snet client open_init_channel_registry testo tests 42 100000000 -y
 
 ```
-#### Make a call using stateless logic
+### Make a call using stateless logic
 
 We are going to make a call using stateless logic (see https://github.com/singnet/wiki/blob/master/multiPartyEscrowContract/MultiPartyEscrow_stateless_client.md).
 It means that the client don't need to persist any information, except channel_id of the payment channel which he wants to use. The client can get the list of his payment channels from blockchain log, or blockchain itself. But this operation is rather slow, so the client cannot make it at each call. But we will be able to use this function in the case of catastrophic recovery.  
@@ -219,7 +219,7 @@ snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
 
 At the moment treasurer server logic is implemented as part of the daemon.
 
-#### Configure treasurer
+### Configure treasurer
 
 ```
 cd $SINGNET_REPOS
