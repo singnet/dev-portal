@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: SingularityNET Daemon
-description: In this overview, we will be giving you a brief introduction to the SingularityNET Daemon.
+title: Title
+description: Description
 
 # extralink box
 extralink:
@@ -21,8 +21,8 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-
 ---
+# SingularityNET Daemon
 
 ## Overview
 
@@ -38,7 +38,7 @@ The daemon itself exposes a gRPC/gRPC-Web endpoint regardless of what type of se
 
 ## Service Models
 
-Services are encouraged to define their API surface using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition) as an IDL. This allows SingularityNET clients to determine the request/response schema programmatically. See [this](/docs/all/platform-how-tos#create-a-service-model) for an example of how to create a service model for any of the [supported service types](#supported-service-types), and [this](/docs/all/platform-how-tos#publish-service-metadata) for directions on how to publish the service model to the network.
+Services are encouraged to define their API surface using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition) as an IDL. This allows SingularityNET clients to determine the request/response schema programmatically. See [this](archive/alpha/Platform-How-Tos.md#create-a-service-model) for an example of how to create a service model for any of the [supported service types](#supported-service-types), and [this](archive/alpha/Platform-How-Tos.md#publish-service-metadata) for directions on how to publish the service model to the network.
 
 ## SSL
 
@@ -46,12 +46,20 @@ The daemon supports SSL termination using either a service developer-supplied ce
 
 ## Auth
 
-Prior to invoking a service through the SingularityNET platform, a consumer must have created and funded a Job contract with the Agent contracted associated with the service. With each invocation, the request is paired with custom HTTP2 headers that indicate the address of the funded Job contract and a signature generated with the private key associated with the address that created and funded the Job contract. The daemon ensures that the funds have been successfully locked into escrow and that the signature is valid as a token to claim the funds after processing the request prior to proxying the request to the service.
+Prior to invoking a service through the SingularityNET platform, a consumer must have
+- Funded  the multiparty escrow contract
+- Opened a payment channel with the recipient as specified by the service definition.
 
-## Blockchain
-
-The daemon uses a blockchain identity/wallet to transact on the blockchain. This identity need not have any relation to the identity that owns the Agent contract for the service. It is important that the daemon's configured blockchain identity remains funded with ETH in order for funds to be moved from escrow to the service owner's wallet.
+With each invocation the daemon checks
+- That the signature is authentic
+- The payment channel has sufficient funds
+- The payment channel expiry is beyond specified threshold (to ensure that the developer can claim the accrued funds)
+Post these successful checks the request is proxied to the service.
 
 ## Configuration
 
-The daemon's behavior with respect to [service type](#supported-service-types), [SSL](#ssl), [blockchain interactions](#blockchain), etc. is configurable via a configuration file, environment variables, and executable flags. See [this](/docs/all/platform-how-tos#configure-singularitynet-daemon) for a description of the available configuration keys.
+The daemon's behavior with respect to [service type](#supported-service-types), [SSL](#ssl), [blockchain interactions](#blockchain), etc. is configurable via a configuration file, environment variables, and executable flags. See [this](archive/alpha/Platform-How-Tos.md#configure-singularitynet-daemon) for a description of the available configuration keys.
+
+## Payment channel state
+
+The daemon stores payment channel state in a etcdb cluster. This is detailed [here](../payment-channel/PaymentChannelStorage.md)

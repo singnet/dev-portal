@@ -1,12 +1,37 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Title
+description: Description
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+---
+
 # Overview
 
-The current codebase represents an early version of the SingularityNET Platform and Network. 
-AI developers can use the platform to publish AI services onto the SingularityNET 
-Network where they can be listed and discovered from a central blockchain Registry on the 
-Ethereum testnet. End users can call AI services published onto the Network by using 
+The current codebase represents an early version of the SingularityNET Platform and Network.
+AI developers can use the platform to publish AI services onto the SingularityNET
+Network where they can be listed and discovered from a central blockchain Registry on the
+Ethereum testnet. End users can call AI services published onto the Network by using
 the DApp, the CLI, or by interacting with the blockchain to facilitate calling a service directly.
 
-As this is software under active development, it is still undergoing regular development improvements. There will 
+As this is software under active development, it is still undergoing regular development improvements. There will
 likely be bugs as well as future backward-incompatible changes.
 
 The platform currently also has significant limitations in its capabilities as compared to our production
@@ -22,9 +47,9 @@ shortcomings.
 
 ## Glossary
 
-* **Agent:** An Agent is an AI service that has been published onto the SingularityNET network. It has an 
+* **Agent:** An Agent is an AI service that has been published onto the SingularityNET network. It has an
 associated Agent contract that manages pricing and exposes metadata such as the service endpoint.
-End users interact with the Agent contract on-chain to purchase access to a service using 
+End users interact with the Agent contract on-chain to purchase access to a service using
 SingularityNET's native AGI token.
 
 * **Registry**: AI services are published onto a publicly accessible central registry on the
@@ -32,17 +57,17 @@ blockchain. The registry maintains a list of active Agents on the network that e
 which can be called using the AGI token.
 
 * **SNET Daemon:** An AI service developer exposes their service to the network by running
-the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to 
+the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to
 facilitate authorization and payment for services and acts as a passthrough for making API
 calls to the service.
 
-* **Escrow:** Currently exposed as a *Job* contract on the blockchain, AGI funds are held 
+* **Escrow:** Currently exposed as a *Job* contract on the blockchain, AGI funds are held
 in escrow during interaction between an end-user and an Agent The escrow is funded before a
 service can be called and funds are not released from escrow until the services have been
 delivered.
 
-* **SNET DApp:** The SingularityNET DApp is a front-end for exploring available AI services 
-and inetracting with them through a web-UI. 
+* **SNET DApp:** The SingularityNET DApp is a front-end for exploring available AI services
+and inetracting with them through a web-UI.
 
 ## On-Chain Components
 The following contracts (in combination with the SingularityNET ERC-20 token) comprise the on-chain components of the alpha SingularityNET implementation.
@@ -107,7 +132,7 @@ Below is a diagram of the interaction between the Off-Chain components of the pl
 ![Structure1](../assets/img/structure1.png)
 
 ## End-to-End
-Below is a diagram that illusrates the end-to-end operation of a client interoperating with a published Service on the 
+Below is a diagram that illusrates the end-to-end operation of a client interoperating with a published Service on the
 SingularityNET Network
 
 ![Structure2](../assets/img/structure2.png)

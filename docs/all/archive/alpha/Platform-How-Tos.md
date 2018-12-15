@@ -1,3 +1,28 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Title
+description: Description
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+---
+
 # Platform How-Tos
 
 ## Install SingularityNET CLI
@@ -32,7 +57,7 @@ Initializing the service metadata will create a `service.json` file in your curr
 ## Publish Service Metadata
 Requires: [Initialize Service Metadata](#initialize-service-metadata)
 
-Publishing the service metadata will create an Agent contract if necessary (and record the resuting address in the `service.json` file), create a registration for the service in the Registry contract if necessary, and update all remote sources (e.g. Agent contract, Registry contract, data stored in IPFS) to be consistent against the `service.json` file 
+Publishing the service metadata will create an Agent contract if necessary (and record the resuting address in the `service.json` file), create a registration for the service in the Registry contract if necessary, and update all remote sources (e.g. Agent contract, Registry contract, data stored in IPFS) to be consistent against the `service.json` file
 
 1. Run `snet service publish` (append `--no-register` if you either haven't created an organization or don't yet want to publish the service to the Registry contract).
 
@@ -48,7 +73,7 @@ Note that the request message schema as defined in the protobuf model map to the
 The process for creating a model for an executable as a service is similar. Currently, the executable must expect the request object as serialized JSON on STDIN and return the response object as serialized JSON on STDOUT. Thus, for the example above `echo '{"image_type": <image_type>, "image": <image>}' | /path/to/executable` should print `{"predictions": [<prediction>, ...], "confidences": [<confidence>, ...]}` to STDOUT.
 
 ## Configure SingularityNET Daemon
-The SingularityNET daemon can be configured using a config file, environment variables, flags, or a combination. 
+The SingularityNET daemon can be configured using a config file, environment variables, flags, or a combination.
 See [daemon configuration documentation](https://github.com/singnet/snet-daemon/blob/master/README.md#configuration) for the available configuration keys and their descriptions.
 
 ## Download a Service Model
@@ -116,7 +141,7 @@ def serializer(*args, **kwargs):
 
 def deserializer(*args, **kwargs):
 	return Parse(args[0], ClassifyResponse(), True)
-  
+
 stub.classify._request_serializer = serializer
 stub.classify._response_deserializer = deserializer
 

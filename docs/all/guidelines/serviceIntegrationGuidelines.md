@@ -1,3 +1,28 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Title
+description: Description
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+---
+
 ![singnetlogo](assets/singnet-logo.jpg 'SingularityNET')
 
 [singnet-home]: https://www.singularitynet.io
@@ -86,7 +111,7 @@ you follow all the guidelines below.
 that the service is based on third-party work.
 1. The original work (code, paper, model etc) is clearly mentioned and properly
 linked in README.
-1. The authors of the original code or model(s) are clearly mentioned 
+1. The authors of the original code or model(s) are clearly mentioned
 in README.
 1. Any licenses attached to the original work is mentioned in README.
 1. The terms of any license attached to the original work allows its use in

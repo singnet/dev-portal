@@ -1,3 +1,28 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: true
+
+# Hero section
+title: Title
+description: Description
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
+
+# Developer Newsletter
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+---
+
 # Contributing
 
 Are you ready to contribute to SingularityNET ? We'd love to have you on board, and we will help you as much as we can. Here are the guidelines we'd like you to follow so that we can be of more help:
@@ -22,7 +47,7 @@ If you find a bug in the source code or a mistake in the documentation, you can 
 
 ## <a name="feature"></a> Feature Requests
 
-You can request a new feature by submitting a ticket to our GitHub issues. 
+You can request a new feature by submitting a ticket to our GitHub issues.
 If you would like to implement a new feature then consider what kind of change it is:
 
 -   **Major Changes** that you wish to contribute to the project should be discussed first. Please open a ticket which clearly states that it is a feature request in the title and explain clearly what you want to achieve in the description, and the developers team will discuss with you what should be done in that ticket. You can then start working on a Pull Request.

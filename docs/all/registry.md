@@ -1,12 +1,12 @@
 ---
 # Page settings
 layout: default
-keywords: SingularityNET, SingularityNET Registry
+keywords:
 comments: true
 
 # Hero section
-title: SingularityNET Registry
-description: Learn how to use the registry to expose information about your AI services to the outside world.
+title: Title
+description: Description
 
 # extralink box
 extralink:
@@ -20,7 +20,10 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
+
 ---
+
+# SingularityNET Registry
 
 ## Overview
 
@@ -41,9 +44,10 @@ An Organization is an umbrella for Services to be grouped together and is the to
 An Organization registration record has a name, an owner address, a collection of member addresses, a collection of Services, and a collection of Type Repositories. Services and Type Repositories registered under a given Organization are said to be owned by that Organization. The list of members is a primitive access management structure; members of an organization can do everything except change the organization owner and delete the organization.
 
 ### Service
-A Service represents a single AI service and contains the necessary information for any consumer to call that AI service. A Service registration record contains a name, a path, an agent address, and a collection of tags. The name is an identifier for discoverability, the path is an optional identifier for organization's internal management, the agent address is the address of the deployed [Agent contract](https://github.com/singnet/platform-contracts/blob/master/contracts/Agent.sol), and the tags exist for discoverability. DApps and smart contracts can use the `listServicesForTag` view function to discover Services.
+A Service represents a single AI service and contains the necessary information for any consumer to call that AI service. A Service registration record contains a name, IPFS hash and a collection of tags. The name is an identifier for discoverability, the IPFS hash is the link to the metadata file on IPFS and the tags exist for discoverability. DApps and smart contracts can use the `listServicesForTag` view function to discover Services.
 
-The Agent contract pointed to by the agent address stores the HTTP endpoint and the metadata URI which is what a consumer needs to download the service model and call the API.
+### Service Metadata
+The service metadata is stored off chain in IPFS. This is described in detail [here](../multiPartyEscrowContract/MPEServiceMetadata.md)
 
 ### Type Repository
 A Type Repository is a place where a service developer can host service metadata such as the service model and the data types used. A Type Repository registration record contains a name, a path, a URI, and a collection of tags. The name is an identifier for discoverability, the path is an optional identifier for organization's internal management, the URI is the location where a consumer can find the metadata, and the tags exist for discoverability. DApps and smart contracts can use the `listTypeRepositoriesForTag` view function to discover Services. Note that the URI is intended to be an IPFS hash and the hosting itself can be done by either SingularityNET, the service developer, or any pinning service such as Infura.

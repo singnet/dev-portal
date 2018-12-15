@@ -30,9 +30,16 @@ buttons:
 
 # Grid navigation
 grid_navigation:
-    - title: DevOps 2018
-      excerpt: We are hosting our first developer workshop in Helsinki where we will introduce you SingularityNET and OpenCog concepts in a hands-on workshop.
+    - title: DEVOPS2018
+      excerpt: We hosted our first developer workshop in Helsinki where we introduced SingularityNET and OpenCog concepts in a hands-on workshop.
       cta: Read more
       url: '/workshops/devops-2018'
-
+    - title: SingularityNET Workshop Docker
+      excerpt: Here you will find some of the SingularityNET Workshop Examples as presented during DEVOPS2018
+      cta: Read more
+      url: /workshops/docker-snet
+    - title: OpenCog Workshop Docker
+      excerpt: Here you will find some of the OpenCog Workshop Examples as presented during DEVOPS2018
+      cta: Read more
+      url: /workshops/docker-opencog 
 ---
