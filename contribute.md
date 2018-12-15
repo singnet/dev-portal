@@ -27,18 +27,18 @@ page_nav:
         content: Getting Started
         url: '/docs/getting-started'
 ---
-## Contribution Guidelines 
+
 Are you ready to contribute to SingularityNET? We'd love to have you on board, and we will help you as much as we can. Here are the guidelines we'd like you to follow so that we can be of more help:
 
--   [Questions and help](#question)
--   [Issues and Bugs](#issue)
--   [Feature Requests](#feature)
--   [Submission Guidelines](#submit)
--   [Coding Rules](#rules)
--   [Git Commit Guidelines](#commit)
+-   [Questions and help](#questions-and-help)
+-   [Issues and Bugs](#issues-and-bugs)
+-   [Feature Requests](#feature-requests)
+-   [Submission Guidelines](#submission-guidelines)
+-   [Coding Rules](#coding-rules)
+-   [Git Commit Guidelines](#git-commit-guidelines)
 
-## <a name="question"></a> Questions and help
-This is our guideline for [Issues and Bugs](#issue) and for [Feature Requests](#feature).
+## Questions and help
+This is our guideline for [Issues and Bugs](#issues-and-bugs) and for [Feature Requests](#feature-requests).
 
 You can meet and chat with other developers via the following channels:
 * [Developer Telegram](https://t.me/AGIDevelopers)
@@ -46,46 +46,41 @@ You can meet and chat with other developers via the following channels:
 
 Read more about our developer community [here](/sheet#community)
 
-## <a name="issue"></a> Issues and Bugs
-
-If you find a bug in the source code or a mistake in the documentation, you can help us by submitting a ticket to our GitHub issues. Even better, you can submit a Pull Request to our projects if you decided to fix it.
+## Issues and Bugs
+If you find a bug in the source code or a mistake in the documentation, you can help us by submitting a ticket to our GitHub issues. Even better, you can decide to submit a pull request to our projects if you decide to fix it.
 
 **Please see the Submission Guidelines below**.
 
-## <a name="feature"></a> Feature Requests
+## Feature Requests
+You can request a new feature by submitting a ticket to any of our repositories in the issues tab. For example, if you would like to give feedback about our Developer Portal, please do that [here](https://github.com/singnet/dev-portal/issues).
 
-You can request a new feature by submitting a ticket to our GitHub issues.
 If you would like to implement a new feature then consider what kind of change it is:
-
 -   **Major Changes** that you wish to contribute to the project should be discussed first. Please open a ticket which clearly states that it is a feature request in the title and explain clearly what you want to achieve in the description, and the developers team will discuss with you what should be done in that ticket. You can then start working on a Pull Request.
 -   **Small Changes** can be proposed without any discussion. Open up a ticket which clearly states that it is a feature request in the title. Explain your change in the description, and you can propose a Pull Request straight away.
 
-## <a name="submit"></a> Submission Guidelines
+## Submission Guidelines
 
 ### Submitting an Issue
+Before you submit your issue, please first search the archive. It could be that your question was already answered or the issue was already reported.
 
-Before you submit your issue search the archive, maybe your question was already answered.
+If your issue appears to be a bug, and has not been reported, open a new issue. Help us to maximize the effort we can spend fixing issues and adding new features by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
 
-If your issue appears to be a bug, and has not been reported, open a new issue. Help us to maximize the effort we can spend fixing issues and adding new features, by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
-
--   **Overview of the issue** - if an error is being thrown a stack trace helps
--   **Motivation for or Use Case** - explain why this is a bug for you
--   **Reproduce the error** - an unambiguous set of steps to reproduce the error.
--   **Related issues** - has a similar issue been reported before?
--   **Suggest a Fix** - if you can't fix the bug yourself, perhaps you can point to what might be
-    causing the problem (line of code or commit)
--   **Project Version(s)** - is it a regression?
--   **Operating System** - Inform the used operating system
+-   **Overview of the issue** - If an error is being thrown a stack trace helps.
+-   **Motivation for or Use Case** - Explain why this is a bug for you.
+-   **Reproduce the error** - An unambiguous set of steps to reproduce the error.
+-   **Related issues** - Has a similar issue been reported before?
+-   **Suggest a Fix** - If you can't fix the bug yourself, perhaps you can point to what might be causing the problem (line of code or commit).
+-   **Project Version(s)** - Is it a regression?
+-   **Operating System** - Indicate the used operating system.
 
 ### Submitting a Pull Request
-
 Before you submit your pull request consider the following guidelines:
 
 -   Search GitHub for an open or closed Pull Request that relates to your submission.
 -   Fork our repository and make your changes.
 -   Include appropriate test cases.
--   Follow our [Coding Rules](#rules).
--   Ensure that all tests pass
+-   Follow our [Coding Rules](#coding-rules).
+-   Ensure that all tests pass.
 -   Commit your changes using a descriptive commit message that follows our
     [commit message conventions](#commit-message-format).
 
@@ -96,7 +91,7 @@ Before you submit your pull request consider the following guidelines:
     Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
 
 -   In GitHub, send a pull request to the original repository.
--   If we suggest changes then
+-   If we suggest changes then:
 
     -   Make the required updates.
     -   Re-run all the tests on your sample generated project to ensure tests are still passing.
@@ -105,7 +100,6 @@ Before you submit your pull request consider the following guidelines:
 That's it! Thank you for your contribution!
 
 #### Resolving pull request conflicts
-
 Sometimes your PR will have merge conflicts with the original repository's master branch. There are several ways to solve this but if not done correctly this can end up as a true nightmare. So here is one method that works quite well.
 
 -   First, fetch the latest version from the original repository
@@ -128,22 +122,19 @@ Sometimes your PR will have merge conflicts with the original repository's maste
     git push
     ```
 
-## <a name="rules"></a> Coding Rules
-
+## Coding Rules
 To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
 -   All features or bug fixes **must be tested** by one or more tests.
 -   The project must have unit tests and integration tests to all features.
 -   Code files **must be** formatted using default code style of each used language.
--   All code files **must be** well documented and commented.
+-   All code files **must be** well documented.
 
-## <a name="commit"></a> Git Commit Guidelines
-
+## Git Commit Guidelines
 Please ensure to [squash](https://help.github.com/articles/about-git-rebase/#commands-available-while-rebasing) unnecessary commits so that your commit history is clean.
 
-We prefer well formatted commit messages. Please try the following example.
-
-### <a name="commit-message-format"></a> Commit Message Format
+### Commit Message Format
+We prefer well formatted commit messages - it makes it easier to understand what was done and why it was done, and it helps inform our decisions to accept your PRs or to request for a change. 
 
 Each commit message consists of a **header**, a **body** and a **footer**.
 
@@ -155,10 +146,10 @@ Each commit message consists of a **header**, a **body** and a **footer**.
 <footer>
 ```
 
-Any line of the commit message cannot be longer 100 characters! This allows the message to be easier to read on GitHub as well as in various git tools.
+Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
+to read on GitHub as well as in various git tools.
 
 ### Header
-
 The header contains a succinct description of the change:
 
 -   use the imperative, present tense: "change" not "changed" nor "changes"
@@ -166,20 +157,15 @@ The header contains a succinct description of the change:
 -   no dot (.) at the end
 
 ### Body
-
-If your change is simple, the body is optional.
-
-Just as in the header, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
+If your change is simple, the body is optional. Just as in the header, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
 
 ### Footer
-
 The footer is the place to reference GitHub issues that this commit **Closes**.
 
 You **must** use the [GitHub keywords](https://help.github.com/articles/closing-issues-via-commit-messages) for
 automatically closing the issues referenced in your commit.
 
 ### Example
-
 For example, here is a good commit message:
 
 ```

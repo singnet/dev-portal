@@ -23,8 +23,6 @@ micro_nav: true
 
 ---
 
-![singnetlogo](assets/singnet-logo.jpg 'SingularityNET')
-
 [singnet-home]: https://www.singularitynet.io
 [singnet-github]: https://github.com/singnet
 [dnn-github]: https://github.com/singnet/dnn-model-services
