@@ -108,7 +108,7 @@ Designs for our production platform and associated development roadmap will also
 The SingularityNET Developer Portal is in active development. Below you will find what we plan to do next:
 
 * [x] Launch the beta-version of the SingularityNET Developer Portal.
-* [ ] Pilot developer workshops in Helsinki on the 14th of December 2018.
+* [x] Pilot developer workshops in Helsinki on the 14th of December 2018.
 * [ ] Create a developer workshop cookbook.
 * [ ] Gather feedback from the community.
 * [ ] Move all Github Wiki's to the SingularityNET Developer Portal.
