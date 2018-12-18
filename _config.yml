@@ -54,3 +54,5 @@ layouts_dir: ./snet-theme/_layouts
 includes_dir: ./snet-theme/_includes
 exclude: [ 'README.md', 'CHANGELOG.md' ]
 permalink: /:title/
+plugins:
+  - jekyll-feed
