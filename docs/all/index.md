@@ -11,7 +11,7 @@ dev_news: true
 
 # Hero section
 title: All Docs
-description: Here you will find all our currently available documentation. 
+description: Here you will find all our currently available documentation.
 buttons:
     - content: View Provider Docs
       url: '/docs/provider'
@@ -50,5 +50,10 @@ grid_navigation:
       excerpt: description
       cta: Read more
       url: '/docs/tutorials/opencog-service'
+    - title: Payment Channel Storage 
+      excerpt: description
+      cta: Read more
+      url: '/docs/all/payment-channel'
+
 
 ---

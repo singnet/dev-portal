@@ -105,24 +105,111 @@ If you want to join an existing organization (e.g. SNET), ask the owner to add y
 
 ## Step 5: Editing our JSON file
 
-Build a JSON configuration file for your service.
+In this tutorial we'll use a simple service from [SingularityNET Example Service](https://github.com/singnet/example-service).
 
-In this tutorial we use a simple service implemented in [DNN Model Services](https://github.com/singnet/dnn-model-services.git).
-
-```
-# git clone https://github.com/singnet/dnn-model-services.git
-# cd dnn-model-services/Services/gRPC/Basic_Template/service/
-```
-To build the JSON configuration file, execute the following command and enter the requested information.
+* Clone the git repository:
 
 ```
-# snet service init
+# git clone https://github.com/singnet/example-service.git
+# cd example-service
 ```
 
-The questions are (hopefully) self-explanatory. Defaults are safe except for:
+* Install the dependencies and compile the protobuf file:
 
-* Organization (see step 4)
-* Endpoint (the ip:port address of your service)
+```
+# pip3 install -r requirements.txt
+# sh buildproto.sh
+```
+
+To start the setup of your service, execute the following command:
+
+```
+# snet service metadata_init SERVICE_PROTOBUF_DIR SERVICE_DISPLAY_NAME PAYMENT_ADDRESS
+```
+
+`SERVICE_PROTOBUF_DIR`: The folder where your service's `.proto` file is.
+
+For example:
+```
+# snet service metadata_init service/service_spec/ example-service 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B
+```
+
+With these parameters, the JSON must looks like:
+
+```
+{
+    "version": 1,
+    "display_name": "example-service",
+    "encoding": "grpc",
+    "service_type": "grpc",
+    "payment_expiration_threshold": 40320,
+    "model_ipfs_hash": "QmSkiwenyYUMt1rCgSboH9eiSSdeMDi1kVPXZvKScAZQyx",
+    "mpe_address": "0xdd4292864063d0DA1F294AC65D74d55a44F4766C",
+    "pricing": {},
+    "groups": [
+        {
+            "group_name": "default_group",
+            "group_id": "gbXRAIn9XB8LMocMi8xZlFd/nNrVoBWUbeTVqTEHZXE=",
+            "payment_address": "0xA6E06cF37110930D2906e6Ae70bA6224eDED917B"
+        }
+    ],
+    "endpoints": []
+}
+```
+
+Now, lets set a fixed price for your `example-service`:
+
+```
+# snet service metadata_set_fixed_price PRICE_IN_AGI
+```
+
+Remember that 1 AGI = 10^8 COGS, so lets set the price 1 COG.
+
+```
+# snet service metadata_set_fixed_price 0.00000001
+```
+
+Then, lets set the endpoint where your `SNET Daemon` and `service` will be listening to:
+
+```
+# snet service metadata_add_endpoints IP:PORT
+```
+
+For example:
+```
+# snet service metadata_add_endpoints http://54.203.198.53:7000
+```
+
+Our service's JSON configuration now looks like:
+
+```
+{
+    "version": 1,
+    "display_name": "example-service",
+    "encoding": "grpc",
+    "service_type": "grpc",
+    "payment_expiration_threshold": 40320,
+    "model_ipfs_hash": "QmSkiwenyYUMt1rCgSboH9eiSSdeMDi1kVPXZvKScAZQyx",
+    "mpe_address": "0xdd4292864063d0DA1F294AC65D74d55a44F4766C",
+    "pricing": {
+        "price_model": "fixed_price",
+        "price_in_cogs": 1
+    },
+    "groups": [
+        {
+            "group_name": "default_group",
+            "group_id": "gbXRAIn9XB8LMocMi8xZlFd/nNrVoBWUbeTVqTEHZXE=",
+            "payment_address": "0xA6E06cF37110930D2906e6Ae70bA6224eDED917B"
+        }
+    ],
+    "endpoints": [
+        {
+            "group_name": "default_group",
+            "endpoint": "http://54.203.198.53:7000"
+        }
+    ]
+}
+```
 
 ## Step 6: .proto file
 

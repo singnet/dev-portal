@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: Getting Started
-description: In this overview, we will be giving you a brief introduction to SingularityNET Tools.
+title: Example Page
+description: This is an example page that you can use as a base for when adding new content.
 
 # extralink box
 extralink:
@@ -20,7 +20,17 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Previous page
+        url: '#'
+    next:
+        content: Next page
+        url: '#'
 ---
+
 # SingularityNET Developer Portal
 
 Welcome to the SingularityNET Developer Portal! Let's build the Technological Singularity together!
@@ -131,7 +141,7 @@ Designs for our production platform and associated development roadmap will also
 The SingularityNET Developer Portal is in active development. Below you will find what we plan to do next:
 
 * [x] Launch the beta-version of the SingularityNET Developer Portal.
-* [ ] Pilot developer workshops in Helsinki on the 14th of December 2018.
+* [x] Pilot developer workshops in Helsinki on the 14th of December 2018.
 * [ ] Create a developer workshop cookbook.
 * [ ] Gather feedback from the community.
 * [ ] Move all Github Wiki's to the SingularityNET Developer Portal.

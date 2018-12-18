@@ -47,4 +47,4 @@ Active development on our platform is still continuing as we add additional capa
 Designs for our production platform and associated development roadmap will also be published to the wiki as they are finalized.
 
 ## Find out more
-To get started with the SingularityNET platform review the [Getting Started](docs/getting-started) and [Fact Sheet](/sheet) pages.
+To get started with the SingularityNET platform review the [Getting Started](docs/all/getting-started) and [Fact Sheet](/sheet) pages.

@@ -22,24 +22,6 @@ dev_news: true
 micro_nav: true
 
 ---
-
-[singnet-github]: https://github.com/singnet
-[dnn-github]: https://github.com/singnet/dnn-model-services
-[contribution-guidelines]: https://github.com/singnet/wiki/blob/master/guidelines/CONTRIBUTING.md
-[docs-templates]: https://github.com/singnet/wiki/blob/master/templates
-[cpp-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWriteCPPService
-[java-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWriteJavaService
-[go-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWriteGoService
-[python-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWritePythonService
-[opencog-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWriteOpencogService
-[service-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToPublishService
-[naming-standards]: https://github.com/singnet/wiki/blob/master/doc/Naming-Standards.md
-[grpc]: https://grpc.io/
-[grpc-docs]: https://grpc.io/docs/
-[opencog]: https://opencog.org/
-[opencog-services]: https://github.com/singnet/opencog-services
-
-
 In this guide, you will find the guidelines to help you write and integrate new AI services to the platform.
 
 ## Supported languages
@@ -68,7 +50,7 @@ service in a number of these languages:
 - [How to write a SingularityNET service in Java](/tutorials/java)
 - [How to write a SingularityNET service in Go](/tutorials/go)
 
-If you already have a gRPC service, please check out [this]((/tutorials/publish)) tutorial to learn how to publish a service.
+If you already have a gRPC service, please check out [this](/tutorials/publish) tutorial to learn how to publish a service.
 
 Make sure you follow our [naming standardisation guidelines](/docs/all/naming-standards) as well when naming your services.
 
@@ -94,15 +76,15 @@ you follow all the guidelines below.
 See [this example](https://github.com/singnet/dnn-model-services) of a third-party based service documentation which is fully compliant with these guidelines.
 
 ## Service documentation
-All the following documentation is mandatory for any service.
+All the following documentation is recommended for any service.
 
 - **README** describing the structure of the repository and how to build/test the service. This is a sort of "developer's guide" aimed at people interested in extending or reusing the service.
 - **docs/index.html** pointed by standard Github Pages describing how to use the service. This is the "user's guide" of your service.
-- **LICENSE** with the SingularityNET standard license.
+- **LICENSE** with an MIT license, the license of choice SingularityNET usually uses as well.
 
 If you are extending an existing service. Follow any particular guidelines of the specific project and make sure you update all the aforementioned documents accordingly.
 
 See [this example](https://github.com/singnet/opencog-services) of service documentation which is fully compliant with these guidelines.
 
 ## Contributing to existing projects
-SingularityNET has several AI service integration projects. See our[github](https://github.com/singnet) for a list of them. Before contributing to any of these, please read our [contribution guidelines](/contribute).
+SingularityNET has several AI service integration projects. See our [github](https://github.com/singnet) for a list of them. Before contributing to any of these, please read our [contribution guidelines](/contribute).
