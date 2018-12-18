@@ -19,7 +19,7 @@ extralink:
 dev_news: true
 
 # Micro navigation
-micro_nav: true
+micro_nav: true 
 
 ---
 

@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: Title
+title: Title 
 description: Description
 
 # extralink box

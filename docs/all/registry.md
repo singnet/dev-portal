@@ -22,7 +22,7 @@ dev_news: true
 micro_nav: true
 
 ---
-
+ 
 ## Overview
 The SingularityNET Registry is a smart contract on the Ethereum blockchain that stores Organizations, Services, and Type Repositories. Service developers use the Registry to expose information about their services to the outside world and consumers can use the Registry to find services to use. The [SingularityNET DApp](https://github.com/singnet/alpha-dapp) reads from the Registry to display services for discovery and demo purposes. The Registry also allows tagging of services and type repositories to enable searching and filtering.
 

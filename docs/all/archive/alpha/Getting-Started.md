@@ -6,7 +6,7 @@ comments: true
 
 # Hero section
 title: Title
-description: Description
+description: Description 
 
 # extralink box
 extralink:

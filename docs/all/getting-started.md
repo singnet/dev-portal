@@ -14,7 +14,7 @@ extralink:
     title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
-
+ 
 # Developer Newsletter
 dev_news: true
 

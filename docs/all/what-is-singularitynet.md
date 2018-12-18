@@ -23,7 +23,7 @@ micro_nav: true
 
 ---
 
-## What is SingularityNET?
+## What is SingularityNET? 
 SingularityNET is an open and decentralized network of AI services made accessible through the blockchain. AI developers publish their services onto the SingularityNET network where they can be used by anyone with an internet connection. AI developers are able to charge for the use of their services using the native AGI token -- an ERC20 token hosted on Ethereum.
 
 AI services span the entire gamut of offerings in artificial intelligence and machine learning. AI developers can provide services for inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. AI services can be as small as individual algorithms or large as end-to-end solutions and standalone AI applications. AI developers can also deploy autonomous AI agents that interoperate with other services on the network.

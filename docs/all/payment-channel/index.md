@@ -8,7 +8,7 @@ comments: true
 title: Payment Channel Storage
 description: Learn how to work with a payment channel to store and process information about service payments.
 
-# extralink box
+# extralink box 
 extralink:
     title: All Docs
     title_url: '/docs'

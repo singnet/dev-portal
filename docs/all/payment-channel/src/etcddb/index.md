@@ -16,7 +16,7 @@ extralink:
     description: Find an overview of our full documentation here.
 
 # Developer Newsletter
-dev_news: true
+dev_news: true 
 
 # Micro navigation
 micro_nav: true

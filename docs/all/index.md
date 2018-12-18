@@ -22,14 +22,18 @@ buttons:
 
 # Grid navigation
 grid_navigation:
-    - title: Docker
+    - title: Getting Started
       excerpt: Section description
       cta: Read more
-      url: '/docs/tutorials/docker'
-    - title: How to Publish a SingularityNET Service
+      url: '/docs/all/getting-started'
+    - title: What is SingularityNET?
       excerpt: description
       cta: Read more
-      url: '/docs/tutorials/publish-service'
+      url: '/docs/all/what-is-singularitynet'
+    - title: Platform Overview
+      excerpt: Section Description
+      cta: Read more
+      url: '/docs/all/platform-overview'
     - title: How to Write a SingularityNET Service in C++
       excerpt: description
       cta: Read more
@@ -50,7 +54,7 @@ grid_navigation:
       excerpt: description
       cta: Read more
       url: '/docs/tutorials/opencog-service'
-    - title: Payment Channel Storage 
+    - title: Payment Channel Storage
       excerpt: description
       cta: Read more
       url: '/docs/all/payment-channel'

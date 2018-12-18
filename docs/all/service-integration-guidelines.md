@@ -52,7 +52,7 @@ service in a number of these languages:
 
 If you already have a gRPC service, please check out [this](/tutorials/publish) tutorial to learn how to publish a service.
 
-Make sure you follow our [naming standardisation guidelines](/docs/all/naming-standards) as well when naming your services.
+Make sure you follow our [naming standardisation guidelines](/docs/all/naming-standard) as well when naming your services.
 
 ## AI frameworks
 There are a couple of AI frameworks integrated to SingularityNET so you can just add new functionalities to services which are already published.
@@ -71,7 +71,7 @@ you follow all the guidelines below.
 - The original work (code, paper, model etc) is clearly mentioned and properly linked in README.
 - The authors of the original code or model(s) are clearly mentioned in README.
 - Any licenses attached to the original work is mentioned in README.
-- The terms of any license attached to the original work allows its use in SNET.
+- The terms of any license attached to the original work allows its use in SingularityNET.
 
 See [this example](https://github.com/singnet/dnn-model-services) of a third-party based service documentation which is fully compliant with these guidelines.
 

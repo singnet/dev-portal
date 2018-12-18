@@ -24,7 +24,7 @@ micro_nav: true
 
 We currently provide a lot of freedom as to how entities in SingularityNET are named.
 
-Unfortunately this can result in confusion as to how to capitalise and separate words in names.
+Unfortunately this can result in confusion as to how to capitalize and separate words in names.
 This document is an attempt at a best practices guide. At some point these may get codified, such
 that smart contracts and our software enforce them, but for now they are just for guidance.
 

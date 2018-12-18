@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: Title
+title: SNET CLI 
 description: Description
 
 # extralink box
