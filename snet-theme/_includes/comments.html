@@ -27,7 +27,7 @@
 
 <script type="text/javascript">
   DiscourseEmbed = { discourseUrl: 'https://community.singularitynet.io/',
-                     discourseEmbedUrl: 'https://dev.singularitynet.io/{{ page.path }}' };
+                     discourseEmbedUrl: '{{this.page.url}}'};
 
   (function() {
     var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
