@@ -140,11 +140,7 @@ Choose between few variations:</p>
 
                 </div><!-- /.content -->
             </div><!-- /.col -->
-            <div class="col-md-4 col-md-offset-1">
-                <div class="sections-list-wrapper">
-                    <div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
-                </div>
-            </div><!-- /.col -->
+            
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div><!-- /.section -->
