@@ -50,5 +50,4 @@ grid_navigation:
       excerpt: Help build the technological singularity by contributing to the SingularityNET project.
       cta: Read more
       url: '/docs/all/contribute/contribution-guidelines'
-
 ---
