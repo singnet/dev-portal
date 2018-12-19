@@ -41,7 +41,7 @@ grid_navigation:
     - title: Service Integration Guidelines
       excerpt: Write and integrate new AI services to the platform.
       cta: Read more
-      url: '/tutorials/integration'
+      url: '/docs/all/service-integration-guidelines'
     - title: How to Write a SingularityNET Service in Go
       excerpt: Getting started with Go for your AI Service
       cta: Read more

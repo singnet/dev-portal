@@ -14,7 +14,7 @@ snet:
             - item_name: Docs
               item_url: '/docs'
             - item_name: Contribute
-              item_url: '/contribute'
+              item_url: '/docs/contribute'
             - item_name: Issues
               item_url: 'https://github.com/singnet/dev-portal/issues'
             - item_name: Forum
