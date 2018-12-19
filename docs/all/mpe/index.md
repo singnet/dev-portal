@@ -6,62 +6,26 @@ keywords:
 # Micro navigation
 micro_nav: true
 
-# Newsletter
-dev_news: true
-
 # Hero section
-title: All Docs
-description: Here you will find all our currently available documentation.
+title: Multi-Party Escrow Documentation
+description: This section purely focuses on the Multi-Party Escrow Documentation for the SingularityNET Platform.
 buttons:
-    - content: View Provider Docs
-      url: '/docs/provider'
+    - content: All Docs
+      url: '/docs'
       external_url: false
-    - content: View Buyer Docs
-      url: '/docs/buyer'
-      external_url: false
+    - icon: github
+      content: View on GitHub
+      url: 'github.com/singnet/dev-portal'
+      external_url: true
+
+# extralink box
+extralink:
+    title: Dev Community
+    title_url: '/sheet#community'
+    external_url: false
+    description: Meet other devs in the SingularityNET Community.
 
 # Grid navigation
-grid_navigation:
-    - title: Getting Started
-      excerpt: Section description
-      cta: Read more
-      url: '/docs/all/getting-started'
-    - title: What is SingularityNET?
-      excerpt: description
-      cta: Read more
-      url: '/docs/all/what-is-singularitynet'
-    - title: Platform Overview
-      excerpt: Section Description
-      cta: Read more
-      url: '/docs/all/platform-overview'
-    - title: How to Write a SingularityNET Service in C++
-      excerpt: description
-      cta: Read more
-      url: '/docs/tutorials/cpp-service'
-    - title: How to Write a SingularityNET Service in Go
-      excerpt: description
-      cta: Read more
-      url: '/docs/tutorials/go-service'
-    - title: How to Write a SingularityNET Service in Java
-      excerpt: description
-      cta: Read more
-      url: '/docs/tutorials/java-service'
-    - title: How to Write a SingularityNET Service in Python
-      excerpt: description
-      cta: Read more
-      url: '/docs/tutorials/python-service'
-    - title: How to Write an Opencog Service to SingularityNET
-      excerpt: description
-      cta: Read more
-      url: '/docs/tutorials/opencog-service'
-    - title: Payment Channel Storage
-      excerpt: description
-      cta: Read more
-      url: '/docs/all/payment-channel'
-
-
----
-
 grid_navigation:
     - title: The Multi-Party Escrow Contract
       excerpt: An introduction to the deposit, withdraw, and payment channel functionalities of the Multi-Party Escrow
@@ -91,4 +55,4 @@ grid_navigation:
       excerpt: In this document, we look at how to pass parameters to a service in the SNET-CLI and how to pass binary parameters via a command line interface.
       cta: Read more
       url: '/docs/all/mpe/snet-cli'
-      
+---

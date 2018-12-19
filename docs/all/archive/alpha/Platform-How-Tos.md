@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: Title
-description: Description 
+title: Platform How-Tos
+description: This content is archived Alpha content.  
 
 # extralink box
 extralink:

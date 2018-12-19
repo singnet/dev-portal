@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: MPE Service Metadata
+title: Multi-Party Escrow Service Metadata
 description: Learn how to use service metadata to describe your AI services.
 
 # extralink box

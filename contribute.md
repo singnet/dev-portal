@@ -36,6 +36,7 @@ Are you ready to contribute to SingularityNET? We'd love to have you on board, a
 -   [Submission Guidelines](#submission-guidelines)
 -   [Coding Rules](#coding-rules)
 -   [Git Commit Guidelines](#git-commit-guidelines)
+-   [Developer Portal](#developer-portal)
 
 ## Questions and help
 This is our guideline for [Issues and Bugs](#issues-and-bugs) and for [Feature Requests](#feature-requests).
@@ -134,7 +135,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 Please ensure to [squash](https://help.github.com/articles/about-git-rebase/#commands-available-while-rebasing) unnecessary commits so that your commit history is clean.
 
 ### Commit Message Format
-We prefer well formatted commit messages - it makes it easier to understand what was done and why it was done, and it helps inform our decisions to accept your PRs or to request for a change. 
+We prefer well formatted commit messages - it makes it easier to understand what was done and why it was done, and it helps inform our decisions to accept your PRs or to request for a change.
 
 Each commit message consists of a **header**, a **body** and a **footer**.
 
@@ -176,3 +177,6 @@ see https://www.python.org/download/releases/
 
 Fix #1234
 ```
+
+## Developer Portal
+If you would like to contribute by helping us improve, expand, or otherwise enhance the SingularityNET Developer Portal you are welcome to do so. You can send a PR for simple changes, or first open an issue for big changes [here](https://github.com/singnet/dev-portal/issues). To find an overview of how this developer portal works, please click [here](/docs/all/contribute). 

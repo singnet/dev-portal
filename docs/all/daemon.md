@@ -22,7 +22,7 @@ dev_news: true
 micro_nav: true
 
 ---
-# SingularityNET Daemon 
+# SingularityNET Daemon
 
 ## Overview
 

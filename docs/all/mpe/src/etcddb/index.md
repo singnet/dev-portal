@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: Title
-description: Description
+title: Throughput Tests
+description: Throughput tests to run several etcd nodes locally and measure number of writes, and compare and set requests per seconds.
 
 # extralink box
 extralink:
@@ -16,12 +16,15 @@ extralink:
     description: Find an overview of our full documentation here.
 
 # Developer Newsletter
-dev_news: true 
+dev_news: true
 
 # Micro navigation
 micro_nav: true
 
 ---
+
+> NOTE: if you are reading this on the developer portal, please be aware that there are additional Go files in the repository found [here](https://github.com/singnet/dev-portal/tree/master/docs/all/mpe/src/etcddb)
+
 # etcd throughput
 
 Number of clients: 10
