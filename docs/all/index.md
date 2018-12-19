@@ -27,7 +27,7 @@ grid_navigation:
       cta: Read more
       url: '/docs/all/getting-started'
     - title: What is SingularityNET?
-      excerpt: A brief introduction.
+      excerpt: A brief introduction to the SingularityNET decentralized marketplace.
       cta: Read more
       url: '/docs/all/what-is-singularitynet'
     - title: Fact Sheet
