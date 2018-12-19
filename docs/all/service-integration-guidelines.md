@@ -87,4 +87,4 @@ If you are extending an existing service. Follow any particular guidelines of th
 See [this example](https://github.com/singnet/opencog-services) of service documentation which is fully compliant with these guidelines.
 
 ## Contributing to existing projects
-SingularityNET has several AI service integration projects. See our [github](https://github.com/singnet) for a list of them. Before contributing to any of these, please read our [contribution guidelines](/docs/all/contribute/contribution-guidelines).
+SingularityNET has several AI service integration projects. See our [github](https://github.com/singnet) for a list of them. Before contributing to any of these, please read our [contribution guidelines](/docs/docs/contribute/contribution-guidelines).

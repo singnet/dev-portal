@@ -25,10 +25,10 @@ micro_nav: true
 page_nav:
     prev:
         content: All Developer Portal Docs
-        url: '/docs/all/contribute'
+        url: '/docs/docs/contribute'
     next:
         content: Deployment
-        url: '/docs/all/contribute/manage-content'
+        url: '/docs/docs/contribute/manage-content'
 ---
 <div class="container">
         <div class="row">

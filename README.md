@@ -27,7 +27,7 @@ You can find our portal at [dev.singularitynet.io](dev.singularitynet.io) and th
 - [Multi-Party Escrow Documentation](/docs/all/mpe)
 - [Tutorials](/tutorials)
 - [Workshops](/workshops)
-- [Developer Portal Documentation](/docs/all/contribute)
+- [Developer Portal Documentation](/docs/docs/contribute)
 
 ## SingularityNET Platform
 - [Daemon](/docs/all/daemon)
@@ -70,7 +70,7 @@ calls to the service.
 and interacting with them through a web-UI.
 
 ## Contributing
-We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/docs/all/contribute/contribution-guidelines).
+We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/docs/docs/contribute/contribution-guidelines).
 
 ## Developer updates
 In order to receive SingularityNET Developer Updates please subscribe [here](dev.singularitynet.io/newsletter).

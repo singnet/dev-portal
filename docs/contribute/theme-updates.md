@@ -25,10 +25,10 @@ micro_nav: true
 page_nav:
     prev:
         content: Deployment
-        url: '/docs/all/contribute/deployment'
+        url: '/docs/docs/contribute/deployment'
     next:
         content: All Developer Portal Docs
-        url: '/docs/all/contribute'
+        url: '/docs/docs/contribute'
 ---
 
 ## How to update?
