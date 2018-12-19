@@ -30,18 +30,6 @@ You can find our portal at [dev.singularitynet.io](dev.singularitynet.io) and th
 
 > SingularityNET is still under active development. The design is rapidly evolving and should be considered unstable until we release our beta platform in February 2019.
 
-## Contents
-- [Documentation Pages](#documentation-pages)
-- [SingularityNET Platform](#singularitynet-platform)
-- [Platform Development](#platform-development)
-- [What is SingularityNET](#what-is-singularitynet)
-- [Contributing](#contributing)
-- [Developer Updates](#developer-updates)
-- [Repository Structure](#repository-structure)
-- [Current State of Development](#current-state-of-development)
-- [Planning](#planning)
-- [Find out more](#find-out-more)
-
 ## Documentation Pages
 - [All Documentation](/docs/all)
 - [Documentation for AI Service Providers](/docs/provider)
