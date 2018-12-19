@@ -44,8 +44,8 @@ Test should be run on a clean environment in the given order.
 ```bash
 #I. Download example scripts and make sure that scripts are in the current directory.
 
-git clone https://github.com/singnet/wiki
-cd wiki/multiPartyEscrowContract/front-to-back-examples/scripts/example1/
+git clone https://github.com/singnet/dev-portal
+cd dev-portal/docs/all/mpe/front-to-back-examples/scripts/example1
 
 #II. Run ubuntu:latest docker container and "mount" ./ to /example1
 docker run -v `pwd`:/example1 -it ubuntu:latest
@@ -65,7 +65,7 @@ At this point you can "commit" your docker container.
 After this you will be able to use $USER/snet_example1 instead of ubuntu:latest (without running install_all.sh)
 ```
 # you should be inside example1 directory
-# cd wiki/multiPartyEscrowContract/front-to-back-examples/scripts/example1/
+#cd dev-portal/docs/all/mpe/front-to-back-examples/scripts/example1
 docker run -v `pwd`:/example1 -it $USER/snet_example1
 ```
 
