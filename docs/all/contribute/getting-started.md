@@ -30,8 +30,7 @@ page_nav:
         content: Deployment
         url: '/docs/all/contribute/configuration'
 ---
-<div class="section">
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="col-md-7">
                 <div class="content">
@@ -331,5 +330,4 @@ This project adheres to <a href="http://semver.org/">Semantic Versioning</a>.</p
                 </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
-    </div><!-- /.container -->
-</div><!-- /.section -->
+</div><!-- /.container -->

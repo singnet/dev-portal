@@ -8,7 +8,7 @@ micro_nav: true
 
 # Hero section
 title: Developer Portal Documentation
-description: Welcome to the SingularityNET Developer Portal. Here you will find documentation related to the SingularityNET Developer Portal itself. Learn how to contribute content, launch your own local version of the SingularityNET Developer Portal, and how to use the right styling. 
+description: Welcome to the SingularityNET Developer Portal. Here you will find documentation related to the SingularityNET Developer Portal itself. Learn how to contribute content, launch your own local version of the SingularityNET Developer Portal, and how to use the right styling.
     - content: All Docs
       url: '/docs'
       external_url: false
@@ -49,6 +49,6 @@ grid_navigation:
     - title: Contribution Guidelines for Repos
       excerpt: Help build the technological singularity by contributing to the SingularityNET project.
       cta: Read more
-      url: '/docs/all/contribute/contribute'
+      url: '/docs/all/contribute/contribution-guidelines'
 
 ---

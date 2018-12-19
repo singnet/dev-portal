@@ -30,8 +30,7 @@ page_nav:
         content: Deployment
         url: '/docs/all/contribute/theme-updates'
 ---
-<div class="section">
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="col-md-7">
                 <div class="content">
@@ -100,5 +99,4 @@ page_nav:
                 </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
-    </div><!-- /.container -->
-</div><!-- /.section -->
+</div><!-- /.container -->

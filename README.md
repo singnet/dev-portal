@@ -70,7 +70,7 @@ calls to the service.
 and interacting with them through a web-UI.
 
 ## Contributing
-We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/docs/all/contribute/contribute).
+We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/docs/all/contribute/contribution-guidelines).
 
 ## Developer updates
 In order to receive SingularityNET Developer Updates please subscribe [here](dev.singularitynet.io/newsletter).
