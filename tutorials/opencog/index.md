@@ -40,7 +40,7 @@ page_nav:
 
 -------------------------------
 
-_Before following this tutorial, make sure you've installed Docker (https://www.docker.com/)_
+_Before following this tutorial, make sure you've installed [Docker](https://www.docker.com/)_
 
 -------------------------------
 
@@ -302,7 +302,7 @@ look for the secion "Opencog services to SingularityNET". Add your newly
 created commands to the list with a simple description of their arguments
 and what is their expected output.
 
-## Step 5: Submitting PR 
+## Step 5: Submitting PR
 
 You are ready to submit your PR. Read our
 [contribution guidelines][contribution-guidelines] before submiting it.

@@ -25,10 +25,10 @@ micro_nav: true
 page_nav:
     prev:
         content: All Developer Portal Docs
-        url: '/docs/docs/contribute'
+        url: '/docs/contribute'
     next:
-        content: Deployment
-        url: '/docs/docs/contribute/configuration'
+        content: Configuration
+        url: '/docs/contribute/configuration'
 ---
 <div class="container">
         <div class="row">
@@ -70,7 +70,7 @@ You can use it with <a href="https://pages.github.com/">GitHub</a> and <a href="
 
 <h2 id="install-snet">Install the SingularityNET Developer Portal Theme</h2>
 <h3 id="download">Download</h3>
-<p>Download your SingularityNET Developer Portal Theme from our <a href="github.com/singnet/dev-portal" target="_blank">Github</a> (you should get <code class="highlighter-rouge">dev-portal-master.zip</code>) and unzip it.</p>
+<p>Download your SingularityNET Developer Portal Theme from our <a href="https://github.com/singnet/dev-portal" target="_blank">Github</a> (you should get <code class="highlighter-rouge">dev-portal-master.zip</code>) and unzip it.</p>
 
 <h3 id="start-development-server">Start development server</h3>
 <p>Jekyll comes with a built-in development server that will allow you to preview what the generated site will look like in your browser locally.</p>
@@ -323,11 +323,6 @@ This project adheres to <a href="http://semver.org/">Semantic Versioning</a>.</p
 </ul>
 
                 </div><!-- /.content -->
-            </div><!-- /.col -->
-            <div class="col-md-4 col-md-offset-1">
-                <div class="sections-list-wrapper">
-                    <div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
-                </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
 </div><!-- /.container -->

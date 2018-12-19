@@ -35,7 +35,7 @@ For example in [this front-to-back example](front-to-back-examples/example.md#ma
 
 We can use three ways:
 ```bash
-# via cmpline parameter
+# via cmdline parameter
 snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
 
 # via json file
@@ -48,7 +48,7 @@ echo '{"a":10,"b":32}' | snet client call 0 0.1 localhost:8080 add
 
 ## Modifiers
 
-We've implemented several modifiers for this JSON parameter in order to simplify passing big files and and to have the possibility to pass binary data (and not only base64 encoded data).
+We've implemented several modifiers for this JSON parameter in order to simplify passing big files and to have the possibility to pass binary data (and not only base64 encoded data).
 
 There are 3 possible modifiers:
 * file      - read from file;
@@ -58,7 +58,7 @@ There are 3 possible modifiers:
 For example, if you pass the following JSON as a parameter, then as an "image" parameter we will use the base64 encoded content of "1.jpeg"
 
 ```bash
-'{"image_type": "jpg", "file@b64enode@image": "1.jpeg"}'
+'{"image_type": "jpg", "file@b64encode@image": "1.jpeg"}'
 ```
 
 If we remove the b64encode modifier from the previous example, then we will pass 1.jpeg image in binary format without base64 encoding.  

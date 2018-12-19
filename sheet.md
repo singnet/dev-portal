@@ -28,7 +28,7 @@ page_nav:
         url: 'http://dev.singularitynet.io'
     next:
         content: Getting Started
-        url: '/docs/getting-started'
+        url: '/docs/all/getting-started'
 ---
 
 ## AGI Token
@@ -69,7 +69,7 @@ You can meet and chat with other developers via the following channels:
 * [Developer Telegram](https://t.me/AGIDevelopers)
 * [Developer Forum](https://community.singularitynet.io/c/developers)
 
-We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](http://dev.singularitynet.io/contribute/contribution-guidelines).
+We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](/docs/contribute/contribution-guidelines).
 
 Please contribute pull requests to the master branch. In case you simply want to notify us of an issue, please open an issue [here](https://github.com/singnet/dev-portal/issues).
 

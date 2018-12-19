@@ -28,7 +28,7 @@ page_nav:
         url: '/tutorials'
     next:
         content: How to Write a SingularityNET Service in Go
-        url: '/tutorials/go-service'
+        url: '/tutorials/go'
 ---
 
 -------------------------------
@@ -44,7 +44,7 @@ _You will need a private-public key pair to register your service in SNET. Gener
 
 Run this tutorial from a bash terminal.
 
-We'll use C++ gRPC, for more details see https://grpc.io/docs/
+We'll use C++ gRPC, for more details see [https://grpc.io/docs/](https://grpc.io/docs/).
 
 In this tutorial we'll create a C++ service and publish it in SingularityNET.
 
@@ -270,8 +270,8 @@ The next steps in this tutorial will publish the service in SingularityNET.
 You need some AGI and ETH tokens. You can get then for free (using your github
 account) here:
 
-* AGI: https://faucet.singularitynet.io/
-* ETH: https://faucet.kovan.network/
+* AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
+* ETH: [https://faucet.kovan.network/](https://faucet.kovan.network/)
 
 Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
 
@@ -296,7 +296,7 @@ alias is kept locally in the container and will vanish when it's shutdown.
 * trezor
 
 You may find detailed information regarding key types (and other `SNET-CLI`
-features) in https://github.com/singnet/snet-cli
+features) in [https://github.com/singnet/snet-cli](https://github.com/singnet/snet-cli).
 
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)
@@ -395,7 +395,7 @@ Actually, since this is just a tutorial, you are expected to un-publish your
 service as soon as you finish the tests.
 
 Other `snet` commands and options (as well as their documentation) can be found here:
-https://github.com/singnet/snet-cli
+[https://github.com/singnet/snet-cli](https://github.com/singnet/snet-cli).
 
 ## Step 13: Test Service
 

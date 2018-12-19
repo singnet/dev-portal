@@ -15,7 +15,7 @@ buttons:
       external_url: false
     - icon: github
       content: View on GitHub
-      url: 'github.com/singnet/dev-portal'
+      url: 'https://github.com/singnet/dev-portal'
       external_url: true
 
 # Grid navigation
@@ -37,7 +37,7 @@ grid_navigation:
       cta: Read more
       url: '/docs/contribute/deployment'
     - title: Theme Updates
-      excerpt: Sometimes we'll add new feature, fix small theme bugs and you'll need to update your SingularityNET Developer Portal in case you have installed it locally. In this section you can find a full theme update guide.
+      excerpt: Sometimes we'll add a new feature or fix small theme bugs, and you'll need to update your SingularityNET Developer Portal in case you have installed it locally. In this section you can find a full theme update guide.
       cta: Read more
       url: '/docs/contribute/theme-updates'
     - title: Contribution Guidelines for Repos

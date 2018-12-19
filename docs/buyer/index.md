@@ -35,7 +35,7 @@ grid_navigation:
       cta: Read more
       url: '/sheet'
     - title: The Multi-Party Escrow Contract
-      excerpt: An introduction to the deposit, withdraw, and payment channel functionalities of the Multi-Party Escrow
+      excerpt: An introduction to the deposit, withdrawal, and payment channel functionalities of the Multi-Party Escrow
       cta: Read more
       url: '/docs/all/mpe/mpe'
     - title: The Stateless Client with the Multi-Party Escrow

@@ -25,10 +25,10 @@ micro_nav: true
 page_nav:
     prev:
         content: All Developer Portal Docs
-        url: '/docs/docs/contribute'
+        url: '/docs/contribute'
     next:
         content: Deployment
-        url: '/docs/docs/contribute/theme-updates'
+        url: '/docs/contribute/theme-updates'
 ---
 <div class="container">
         <div class="row">
@@ -92,11 +92,6 @@ page_nav:
 <p>Output will become available under a subpath of your user pages subdomain, such as <code class="highlighter-rouge">username.gitlab.io/project</code> (unless a custom domain is specified).</p>
 
                 </div><!-- /.content -->
-            </div><!-- /.col -->
-            <div class="col-md-4 col-md-offset-1">
-                <div class="sections-list-wrapper">
-                    <div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
-                </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
 </div><!-- /.container -->

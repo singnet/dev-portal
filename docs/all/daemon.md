@@ -31,7 +31,7 @@ The daemon has been written to support a variety of service implementations. Cur
 The daemon itself exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon. This enables one consistent protocol to be used to communicate with any service on the SingularityNET network. Note that certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs. Also note that bi-directional streaming RPCs are only compatible with gRPC clients (not gRPC-Web i.e. browser clients).
 
 ## Service Models
-Services are encouraged to define their API surface using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition) as an IDL. This allows SingularityNET clients to determine the request/response schema programmatically. See [this](/docs/all/archive/alpha/Platform-How-Tos.md#create-a-service-model) for an example of how to create a service model for any of the [supported service types](#supported-service-types), and [this](/docs/all/archive/alpha/Platform-How-Tos.md#publish-service-metadata) for directions on how to publish the service model to the network.
+Services are encouraged to define their API surface using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition) as an IDL. This allows SingularityNET clients to determine the request/response schema programmatically. See [this](/docs/all/archive/alpha/Platform-How-Tos#create-a-service-model) for an example of how to create a service model for any of the [supported service types](#supported-service-types), and [this](/docs/all/archive/alpha/Platform-How-Tos#publish-service-metadata) for directions on how to publish the service model to the network.
 
 ## SSL
 The daemon supports SSL termination using either a service developer-supplied certificate and keyfile or automatic certificates provided by [Let's Encrypt](https://letsencrypt.org/).
@@ -49,7 +49,7 @@ With each invocation the daemon checks:
 After these successful checks the request is proxied to the service.
 
 ## Configuration
-The daemon's behavior with respect to the [service type](#supported-service-types), [SSL](#ssl), [blockchain interactions](#blockchain), etc. is configurable via a configuration file, environment variables, and executable flags. See [this](/docs/all/archive/alpha/Platform-How-Tos.md#configure-singularitynet-daemon) for a description of the available configuration keys.
+The daemon's behavior with respect to the [service type](#supported-service-types), [SSL](#ssl), blockchain interactions, etc. is configurable via a configuration file, environment variables, and executable flags. See [this](/docs/all/archive/alpha/Platform-How-Tos#configure-singularitynet-daemon) for a description of the available configuration keys.
 
 ## Payment channel state
-The daemon stores the payment channel state in an etcddb cluster. This is detailed [here](/docs/all/mpe/payment-channel-storage). 
+The daemon stores the payment channel state in an etcddb cluster. This is detailed [here](/docs/all/mpe/payment-channel-storage).

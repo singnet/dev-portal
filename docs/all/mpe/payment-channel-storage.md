@@ -8,7 +8,7 @@ comments: true
 title: Payment Channel Storage
 description: Learn how to work with a payment channel to store and process information about service payments.
 
-# extralink box 
+# extralink box
 extralink:
     title: All Docs
     title_url: '/docs'
@@ -119,7 +119,7 @@ The following Go code is used to start etcd node and use etcd client:
 * [etcd_storage_server.go](src/etcddb/etcd_storage_server.go)
 * [etcd_storage_client.go](src/etcddb/etcd_storage_client.go)
 
-There are some [throughput tests](src/etcddb) which run several etcd nodes locally and measure number of writes, and compare and set requests per seconds.
+There are some [throughput tests](/docs/all/mpe/src/etcddb) which run several etcd nodes locally and measure number of writes, and compare and set requests per seconds.
 
 Note: because all etcd nodes were run locally, the results can be different from when each etcd node is ran on its own separated server.
 

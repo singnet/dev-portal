@@ -25,10 +25,10 @@ micro_nav: true
 page_nav:
     prev:
         content: All Developer Portal Docs
-        url: '/docs/docs/contribute'
+        url: '/docs/contribute'
     next:
-        content: Deployment
-        url: '/docs/docs/contribute/manage-content'
+        content: Manage Content 
+        url: '/docs/contribute/manage-content'
 ---
 <div class="container">
         <div class="row">
@@ -161,7 +161,7 @@ page_nav:
 <h3 id="social-list">Social list</h3>
 <p>To properly setup social list update <code class="highlighter-rouge">social_list</code> variable in <code class="highlighter-rouge">_config.yml</code>. Add as many items as you need.</p>
 
-<p>At the bottom of the “Getting Started” section you can find list of icons you can use in this list. Update <code class="highlighter-rouge">network_name</code> variable to add proper icon.</p>
+<p>At the bottom of the “Getting Started” section you can find a list of icons you can use in this list. Update <code class="highlighter-rouge">network_name</code> variable to add a proper icon.</p>
 
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
@@ -187,7 +187,7 @@ page_nav:
 </code></pre></div></div>
 
 <div class="callout callout--warning">
-<p><strong>Build site with environment variable!</strong> When you run <code>jekyll serve</code>, your Google Analytics tracking code shouldn’t render at all in any pages.</p><p>The reason for this is if you visit your Google Analytics account, you’ll see a bunch of visits from <code>localhost:4000</code> or <code>127.0.0.1:4000</code> depending on the type of operating system you’re developing your Jekyll project.</p>
+<p><strong>Build site with environment variable!</strong> When you run <code>jekyll serve</code>, your Google Analytics tracking code shouldn’t render at all in any pages.</p><p>The reason for this is if you visit your Google Analytics account, you’ll see a bunch of visits from <code>localhost:4000</code> or <code>127.0.0.1:4000</code> depending on the type of operating system you’re developing your Jekyll project on.</p>
 <p>This can potentially muddy up your analytics, so to mitigate this problem, we’ll set Jekyll to only render Google Analytics when its environment is set to production.</p>
 <p>So then, how do you get the analytics to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with <code>JEKYLL_ENV=production</code> so the complete command looks like this one: <code>JEKYLL_ENV=production jekyll build</code></p>
 </div>
@@ -197,7 +197,7 @@ page_nav:
 
 <p>Comments are available only on <code class="highlighter-rouge">default</code> page layout and you have to enable them on new pages with <code class="highlighter-rouge">comments: true</code> variable.</p>
 
-<p> Currently, we have integrated Discourse comments into our SingularityNET Developer Portal which link directly to topics created on <a href="community.singularitynet.io/c/developers" target="_blank">our forum</a>.
+<p> Currently, we have integrated Discourse comments into our SingularityNET Developer Portal which link directly to topics created on <a href="https://community.singularitynet.io/c/developers" target="_blank">our forum</a>.
 
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
@@ -219,11 +219,6 @@ page_nav:
 </div>
 
                 </div><!-- /.content -->
-            </div><!-- /.col -->
-            <div class="col-md-4 col-md-offset-1">
-                <div class="sections-list-wrapper">
-                    <div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
-                </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
 </div><!-- /.container -->

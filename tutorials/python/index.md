@@ -28,15 +28,15 @@ page_nav:
         url: '/tutorials'
     next:
         content: How to Write a SingularityNET Service with OpenCog
-        url: '/tutorials/opencog-service'
+        url: '/tutorials/opencog'
 ---
 
 -------------------------------
 
 _Before following this tutorial, make sure you've installed_
 
-* _Docker (https://www.docker.com/)_
-* _Metamask (https://metamask.io)_
+* _[Docker](https://www.docker.com/)_
+* _[Metamask](https://metamask.io)_
 
 _You will need a private-public key pair to register your service in SNET. Generate them in Metamask before you start this turorial._
 
@@ -44,7 +44,7 @@ _You will need a private-public key pair to register your service in SNET. Gener
 
 Run this tutorial from a bash terminal.
 
-We'll use Python gRPC, for more details see https://grpc.io/docs/
+We'll use Python gRPC, for more details see [the official gRPC documentation](https://grpc.io/docs/).
 
 In this tutorial we'll create a Python service and publish it in SingularityNET.
 
@@ -101,8 +101,7 @@ We need to edit `./service_spec/tutorial.proto` and define
 * the data structures used to carry input and output of the methods, and
 * the RPC API of the service.
 
-Take a look at https://developers.google.com/protocol-buffers/docs/overview to
-understand everything you can do in the `.proto` file.
+Take a look at [Google's Protocol Buffer Overview](https://developers.google.com/protocol-buffers/docs/overview) to understand everything you can do in the `.proto` file.
 
 In this tutorial our `./service_spec/tutorial.proto` will be like this:
 
@@ -245,7 +244,7 @@ alias is kept locally in the container and will vanish when it's shutdown.
 * trezor
 
 You may find detailed information regarding key types (and other `SNET-CLI`
-features) in https://github.com/singnet/snet-cli
+features) in [here](https://github.com/singnet/snet-cli).
 
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)

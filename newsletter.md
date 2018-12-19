@@ -23,9 +23,6 @@ micro_nav: true
 
 # Page navigation
 page_nav:
-    prev:
-        content: Back to home
-        url: 'https://dev.singularitynet.io'
     next:
         content: More Dev Community
         url: '/sheet#community'

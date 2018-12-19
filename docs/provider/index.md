@@ -11,7 +11,7 @@ dev_news: true
 
 # Hero section
 title: Documentation for AI Service Providers
-description: The articles below are intended to be followed by AI service providers.
+description: The articles below are intended to guide AI service providers.
 buttons:
     - content: View All Docs
       url: '/docs/all'
@@ -51,7 +51,7 @@ grid_navigation:
       cta: Read more
       url: '/docs/all/service-integration-guidelines'
     - title: The Multi-Party Escrow Contract
-      excerpt: An introduction to the deposit, withdraw, and payment channel functionalities of the Multi-Party Escrow
+      excerpt: An introduction to the deposit, withdrawal, and payment channel functionalities of the Multi-Party Escrow
       cta: Read more
       url: '/docs/all/mpe/mpe'
     - title: The Stateless Client with the Multi-Party Escrow

@@ -6,7 +6,7 @@ comments: true
 
 # Hero section
 title: The Multi-Party Escrow Contract
-description: An introduction to the deposit, withdraw, and payment channel functionalities of the Multi-Party Escrow
+description: An introduction to the deposit, withdrawal, and payment channel functionalities of the Multi-Party Escrow
 
 # extralink box
 extralink:
@@ -125,7 +125,7 @@ function channelClaimTimeout(uint256 channel_id);
 * The client opens a Payment Channel with the chosen payment group.
 * It should be noted that the client can send requests to any replica from the selected payment group (replicas in one payment group should share the state of the payment channel amongst others in the payment group)
 * The client starts to send requests to the replicas. With each call it sends the signed authorization for the server to "withdraw" the total amount of AGI tokens which are due.
-* At some point, the server can decide to close/reopen channel in order to claim the AGI tokens due. At the next call from the client, the server should inform the client that the `nonce` of the channel has been changed (see [this topic on stateless clients](/docs/mpe/mpe-stateless-client)).
+* At some point, the server can decide to close/reopen channel in order to claim the AGI tokens due. At the next call from the client, the server should inform the client that the `nonce` of the channel has been changed (see [this topic on stateless clients](/docs/all/mpe/mpe-stateless-client)).
 * At some point, the client can decide to postpone the expiration of the channel or to escrow more funds.
 * It should be noted that because of the possibility to repeatedly postpone the expiration of the channel and/or to escrow more funds, the payment channel can exist forever.
 
@@ -151,7 +151,7 @@ Let's assume that one call requires 1 AGI. We also assume that the server and th
 * `SERVER1` initiates a call: `channelClaim(channel_id = 0, amount=5, signature = SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=5), is_sendback=false)`
 * The Multi-Party Escrow adds `5 AGI` to the balance of `SERVER1`
 * The Multi-Party Escrow changes the nonce (`nonce +=1`) and value (`value -= 5`) in the Payment Channel: `[channel_id = 0, sender=CLIENT1, recipient=SERVER1, replicaId=REPLICA1, value=5 AGI, nonce=1, expiration=expiration0]`
-* The client is notified that the channel has been reopened, and that the `nonce` has been changed (see [this topic on stateless clients](/docs/mpe/mpe-stateless-client)).
+* The client is notified that the channel has been reopened, and that the `nonce` has been changed (see [this topic on stateless clients](/docs/all/mpe/mpe-stateless-client)).
 * `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=1)`
 * `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=2)`
 * `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=3)`
@@ -173,12 +173,12 @@ Let's assume that one call requires 1 AGI. We also assume that the server and th
 * This can be repeated forever.
 * ....
 * If the server decides to stop working with this client he could close the channel with `channelClaim(...., is_sendback=true)`
-* If the server fails to claim the tokens before timeout (for example if he goes offline forever), then the client can claim all remaining tokens after the expiration date. 
+* If the server fails to claim the tokens before timeout (for example if he goes offline forever), then the client can claim all remaining tokens after the expiration date.
 
 ## Remarks
 
 * The service provider can use the same Ethereum address for all payment groups or she/he can use a different address. In any case, the daemons very rarely need to send an on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner). We call such a server a treasurer server.
 * In the current implementation, the client signs off-chain authorization messages with the signer's private key. This means that the client doesn't necessarily need to sign transactions with his Ethereum identity. Instead, he can use other key pairs.
-* The server does not need to wait for a confirmation from the blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the nonce of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.  
+* The server does not need to wait for a confirmation from the blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the `nonce` of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.  
 * The `nonce` in the channel prevents a race between the `channelExtendAndAddFunds` and `channelClaim`. If the client sends the `channelExtendAndAddFunds` request and at the same time the
-server sends a `channelClaim` request, they can continue to work without receiving confirmation from blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
+server sends a `channelClaim` request, they can continue to work without receiving confirmation from the blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).

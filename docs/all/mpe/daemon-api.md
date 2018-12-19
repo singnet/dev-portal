@@ -39,7 +39,7 @@ gRPC request metadata fields:
 Some values are represented as decimal numbers printed to a string. The reason is that by their nature, these values are incremental counters. Representing them as `unit256` value in hex string requires sending 64 bytes for a relatively small value. To make the representation more compact and clear, we have decided to keep them as plain decimal numbers. The client should expect that this number can be as big as `uint256`, so the best type to represent such values in code is `BigInteger`.
 
 ### Binary data encoding
-gRPC supports sending binary data in metadata fields. To use this feature metadata key should have a `-bin` postfix. The caller should pass values for such keys as a byte array casted to the string (some implementations may allow passing byte arrays without casting). The gRPC library encodes such values using `base64`. [Click to see what the gRPC documentation says about this for reference](https://github.com/grpc/grpc-go blob/master/Documentation/grpc-metadata.md#storing-binary-data-in-metadata).
+gRPC supports sending binary data in metadata fields. To use this feature metadata key should have a `-bin` postfix. The caller should pass values for such keys as a byte array casted to the string (some implementations may allow passing byte arrays without casting). The gRPC library encodes such values using `base64`. [Click to see what the gRPC documentation says about this for reference](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md#storing-binary-data-in-metadata).
 
 ## gRPC error codes
 The SingularityNET daemon uses both standard and custom gRPC error codes to provide client information when an error occurred. In the case that a service returns an error, it will be passed to the client without transformations.
@@ -80,4 +80,4 @@ The client can get the latest payment channel state from the service using Payme
 ## Sequence of Calls
 Sequence diagram of calls during client/daemon interaction:
 
-![Client/daemon interaction sequence diagram](./img/clientDaemonInteractionSequenceDiagram.svg "Client/daemon interaction sequence diagram")
+![Client/daemon interaction sequence diagram](/docs/all/mpe/img/clientDaemonInteractionSequenceDiagram.svg "Client/daemon interaction sequence diagram")

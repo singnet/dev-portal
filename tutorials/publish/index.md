@@ -65,8 +65,8 @@ Step 1 may take a couple of minutes to finish. Step 2 can be performed concurren
 You need some AGI and ETH tokens. You can get then for free (using your github
 account) here:
 
-* AGI: https://faucet.singularitynet.io/
-* ETH: https://faucet.kovan.network/
+* AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
+* ETH: [https://faucet.kovan.network/](https://faucet.kovan.network/)
 
 Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
 

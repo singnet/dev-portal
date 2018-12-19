@@ -22,18 +22,10 @@ micro_nav: true
 page_nav:
     prev:
         content: All Developer Portal Docs
-        url: '/docs/docs/contribute'
+        url: '/docs/contribute'
 ---
 
-Are you ready to contribute to SingularityNET? We'd love to have you on board, and we will help you as much as we can. Here are the guidelines we'd like you to follow so that we can be of more help:
-
--   [Questions and help](#questions-and-help)
--   [Issues and Bugs](#issues-and-bugs)
--   [Feature Requests](#feature-requests)
--   [Submission Guidelines](#submission-guidelines)
--   [Coding Rules](#coding-rules)
--   [Git Commit Guidelines](#git-commit-guidelines)
--   [Developer Portal](#developer-portal)
+Are you ready to contribute to SingularityNET? We'd love to have you on board, and we will help you as much as we can. 
 
 ## Questions and help
 This is our guideline for [Issues and Bugs](#issues-and-bugs) and for [Feature Requests](#feature-requests).
@@ -61,9 +53,9 @@ If you would like to implement a new feature then consider what kind of change i
 ### Submitting an Issue
 Before you submit your issue, please first search the archive. It could be that your question was already answered or the issue was already reported.
 
-If your issue appears to be a bug, and has not been reported, open a new issue. Help us to maximize the effort we can spend fixing issues and adding new features by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
+If your issue appears to be a bug, and has not been reported, open a new issue. Help us minimize the effort we need to take to fix issues and adding new features by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
 
--   **Overview of the issue** - If an error is being thrown a stack trace helps.
+-   **Overview of the issue** - If an error is being thrown, a stack trace helps.
 -   **Motivation for or Use Case** - Explain why this is a bug for you.
 -   **Reproduce the error** - An unambiguous set of steps to reproduce the error.
 -   **Related issues** - Has a similar issue been reported before?
@@ -106,7 +98,7 @@ Sometimes your PR will have merge conflicts with the original repository's maste
     git fetch original_repository_git_url
     ```
 
--   Merge tour changes with the latest changes from the original repository.
+-   Merge your changes with the latest changes from the original repository.
 
     ```bash
     git merge FETCH_HEAD
@@ -176,4 +168,4 @@ Fix #1234
 ```
 
 ## Developer Portal
-If you would like to contribute by helping us improve, expand, or otherwise enhance the SingularityNET Developer Portal you are welcome to do so. You can send a PR for simple changes, or first open an issue for big changes [here](https://github.com/singnet/dev-portal/issues). To find an overview of how this developer portal works, please click [here](/docs/docs/contribute).
+If you would like to contribute by helping us improve, expand, or otherwise enhance the SingularityNET Developer Portal you are welcome to do so. You can send a PR for simple changes, or first open an issue for big changes [here](https://github.com/singnet/dev-portal/issues). To find an overview of how this developer portal works, please click [here](/docs/contribute).

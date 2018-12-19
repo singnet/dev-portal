@@ -6,7 +6,7 @@ comments: true
 
 # Hero section
 title: Service Integration Guidelines
-description: This guide will help AI providers to integrate services into the platform.
+description: This guide will help AI providers integrate services into the platform.
 
 # extralink box
 extralink:
@@ -52,7 +52,7 @@ service in a number of these languages:
 
 If you already have a gRPC service, please check out [this](/tutorials/publish) tutorial to learn how to publish a service.
 
-Make sure you follow our [naming standardisation guidelines](/docs/all/naming-standard) as well when naming your services.
+Make sure you follow our [naming standardization guidelines](/docs/all/naming-standard) as well when naming your services.
 
 ## AI frameworks
 There are a couple of AI frameworks integrated to SingularityNET so you can just add new functionalities to services which are already published.
@@ -87,4 +87,4 @@ If you are extending an existing service. Follow any particular guidelines of th
 See [this example](https://github.com/singnet/opencog-services) of service documentation which is fully compliant with these guidelines.
 
 ## Contributing to existing projects
-SingularityNET has several AI service integration projects. See our [github](https://github.com/singnet) for a list of them. Before contributing to any of these, please read our [contribution guidelines](/docs/docs/contribute/contribution-guidelines).
+SingularityNET has several AI service integration projects. See our [github](https://github.com/singnet) for a list of them. Before contributing to any of these, please read our [contribution guidelines](/docs/contribute/contribution-guidelines).

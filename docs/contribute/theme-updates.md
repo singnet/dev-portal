@@ -6,7 +6,7 @@ comments: true
 
 # Hero section
 title: SingularityNET Theme Updates
-description: Sometimes we'll add new feature, fix small theme bugs and you'll need to update your SingularityNET Developer Portal in case you have installed it locally. In this section you can find a full theme update guide.
+description: Sometimes we'll add a new feature or fix small theme bugs, and you'll need to update your SingularityNET Developer Portal in case you have installed it locally. In this section you can find a full theme update guide.
 
 # extralink box
 extralink:
@@ -25,10 +25,10 @@ micro_nav: true
 page_nav:
     prev:
         content: Deployment
-        url: '/docs/docs/contribute/deployment'
+        url: '/docs/contribute/deployment'
     next:
         content: All Developer Portal Docs
-        url: '/docs/docs/contribute'
+        url: '/docs/contribute'
 ---
 
 ## How to update?

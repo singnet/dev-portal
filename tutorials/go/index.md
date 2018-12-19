@@ -28,17 +28,17 @@ page_nav:
         url: '/tutorials'
     next:
         content: How to Write a SingularityNET Service in Java
-        url: '/tutorials/java-service'
+        url: '/tutorials/java'
 ---
 
 -------------------------------
 
 _Before following this tutorial, make sure you've installed_
 
-* _Docker (https://www.docker.com/)_
-* _Metamask (https://metamask.io)_
+* _[Docker](https://www.docker.com/)_
+* _[Metamask](https://metamask.io)_
 
-_You will need a private-public key pair to register your service in SNET. Generate them in Metamask before you start this turorial._
+_You will need a private-public key pair to register your service on SingularityNET. Generate them in Metamask before you start this turorial._
 
 -------------------------------
 
@@ -101,7 +101,7 @@ We need to edit `./service_spec/tutorial.proto` and define
 * the data structures used to carry input and output of the methods, and
 * the RPC API of the service.
 
-Take a look at https://developers.google.com/protocol-buffers/docs/overview to
+Take a look at [Google's Protocol Buffers Overview](https://developers.google.com/protocol-buffers/docs/overview) to
 understand everything you can do in the `.proto` file.
 
 In this tutorial our `./service_spec/tutorial.proto` will be like this:
@@ -221,8 +221,8 @@ The next steps in this tutorial will publish the service in SingularityNET.
 You need some AGI and ETH tokens. You can get then for free (using your github
 account) here:
 
-* AGI: https://faucet.singularitynet.io/
-* ETH: https://faucet.kovan.network/
+* AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
+* ETH: [https://faucet.kovan.network/](https://faucet.kovan.network/)
 
 Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
 
@@ -246,8 +246,7 @@ alias is kept locally in the container and will vanish when it's shutdown.
 * ledger
 * trezor
 
-You may find detailed information regarding key types (and other `SNET-CLI`
-features) in https://github.com/singnet/snet-cli
+You may find detailed information regarding key types (and other `SNET-CLI` features) [here](https://github.com/singnet/snet-cli).
 
 In this tutorial we'll use `KEY_TYPE == key`. Enter your private key when
 prompted (in `Metamask`: menu -> details -> export private key)
@@ -345,8 +344,7 @@ Optionally you can un-publish the service
 Actually, since this is just a tutorial, you are expected to un-publish your
 service as soon as you finish the tests.
 
-Other `snet` commands and options (as well as their documentation) can be found here:
-https://github.com/singnet/snet-cli
+Other `snet` commands and options (as well as their documentation) can be found [here](https://github.com/singnet/snet-cli).
 
 ## Step 13: Test Service
 
