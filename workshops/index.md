@@ -18,7 +18,7 @@ buttons:
       external_url: false
     - icon: github
       content: Download on GitHub
-      url: '#'
+      url: 'https://github.com/singnet/dev-portal'
       external_url: true
 
 # extralink box
@@ -41,5 +41,5 @@ grid_navigation:
     - title: OpenCog Workshop Docker
       excerpt: Here you will find some of the OpenCog Workshop Examples as presented during DEVOPS2018
       cta: Read more
-      url: /workshops/docker-opencog 
+      url: /workshops/docker-opencog
 ---

@@ -15,7 +15,7 @@ buttons:
       external_url: false
     - icon: github
       content: View on GitHub
-      url: 'github.com/singnet/dev-portal'
+      url: 'https://github.com/singnet/dev-portal'
       external_url: true
 
 # extralink box
