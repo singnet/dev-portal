@@ -23,7 +23,7 @@ buttons:
 # Grid navigation
 grid_navigation:
     - title: Getting Started
-      excerpt: Section description
+      excerpt: Welcome to the SingularityNET Developer Portal. Here is a quick overview of things you need to know to get started with our developer tools.
       cta: Read more
       url: '/docs/all/getting-started'
     - title: What is SingularityNET?
@@ -91,4 +91,78 @@ grid_navigation:
       excerpt: In this document, we look at how to pass parameters to a service in the SNET-CLI and how to pass binary parameters via a command line interface.
       cta: Read more
       url: '/docs/all/mpe/snet-cli'
-      
+
+      - title: SingularityNET Workshop Docker
+        excerpt: Here you will find some of the SingularityNET Workshop Examples as presented during DEVOPS2018
+        cta: Read more
+        url: /workshops/docker-snet
+      - title: OpenCog Workshop Docker
+        excerpt: Here you will find some of the OpenCog Workshop Examples as presented during DEVOPS2018
+        cta: Read more
+        url: /workshops/docker-opencog
+        # Grid navigation
+        grid_navigation:
+            - title: How to Publish a SingularityNET Service
+              excerpt: Learn how to sell your AI service on the SingularityNET Marketplace.
+              cta: Read more
+              url: '/tutorials/publish'
+            - title: Getting started with Docker (SingularityNET)
+              excerpt: Use docker to publish a SingularityNET Service
+              cta: Read more
+              url: '/workshops/docker-snet'
+            - title: Getting started with Docker (OpenCog)
+              excerpt: Use docker to work with OpenCog tools.
+              cta: Read more
+              url: '/workshops/docker-opencog'
+            - title: How to Write a SingularityNET Service in C++
+              excerpt: Getting started with C++ for your AI Service
+              cta: Read more
+              url: '/tutorials/cpp'
+            - title: Service Integration Guidelines
+              excerpt: Write and integrate new AI services to the platform.
+              cta: Read more
+              url: '/tutorials/integration'
+            - title: How to Write a SingularityNET Service in Go
+              excerpt: Getting started with Go for your AI Service
+              cta: Read more
+              url: '/tutorials/go'
+            - title: How to Write a SingularityNET Service in Java
+              excerpt: Getting started with Java for your AI Service
+              cta: Read more
+              url: '/tutorials/java'
+            - title: How to Write a SingularityNET Service in Python
+              excerpt: Getting started with Python for your AI Service
+              cta: Read more
+              url: '/tutorials/python'
+            - title: How to Write an OpenCog Service to SingularityNET
+              excerpt: Getting started with OpenCog for your AI Service
+              cta: Read more
+              url: '/tutorials/opencog'
+
+        ---
+
+
+An Introduction to the SingularityNET Daemon  
+Learn about the functionalities of the daemon and how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
+Read more
+'/docs/all/daemon'
+
+
+Developer Portal Documentation
+Learn how the SingularityNET Developer Portal works so you can contribute to the expansion and enhancement of the portal.
+Read more
+'/docs/all/contribute'
+
+
+Naming Standards
+About the standardisation of naming within the SingularityNET Network.
+
+
+SingularityNET Registry
+This guide will teach you how the registry is used to expose information about AI services to the outside world so consumers can find and buy these services.
+
+Service Integration Guidelines
+This guide will help AI providers to integrate services into the platform.
+
+What is SingularityNET?
+A brief introduction. 

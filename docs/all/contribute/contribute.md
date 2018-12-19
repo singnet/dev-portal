@@ -21,11 +21,8 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Back to home
-        url: 'http://dev.singularitynet.io'
-    next:
-        content: Getting Started
-        url: '/docs/getting-started'
+        content: All Developer Portal Docs
+        url: '/docs/all/contribute'
 ---
 
 Are you ready to contribute to SingularityNET? We'd love to have you on board, and we will help you as much as we can. Here are the guidelines we'd like you to follow so that we can be of more help:
@@ -179,4 +176,4 @@ Fix #1234
 ```
 
 ## Developer Portal
-If you would like to contribute by helping us improve, expand, or otherwise enhance the SingularityNET Developer Portal you are welcome to do so. You can send a PR for simple changes, or first open an issue for big changes [here](https://github.com/singnet/dev-portal/issues). To find an overview of how this developer portal works, please click [here](/docs/all/contribute). 
+If you would like to contribute by helping us improve, expand, or otherwise enhance the SingularityNET Developer Portal you are welcome to do so. You can send a PR for simple changes, or first open an issue for big changes [here](https://github.com/singnet/dev-portal/issues). To find an overview of how this developer portal works, please click [here](/docs/all/contribute).

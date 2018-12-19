@@ -11,7 +11,7 @@ dev_news: true
 
 # Hero section
 title: Documentation for AI Buyers
-description: The tutorials below teach you how to buy SingularityNET Services to integrate in your application.
+description: The tutorials below teach you how to buy SingularityNET Services to integrate in your application. 
 buttons:
     - content: View All Docs
       url: '/docs/all'

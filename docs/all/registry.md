@@ -22,19 +22,15 @@ dev_news: true
 micro_nav: true
 
 ---
-# SingularityNET Registry
-
-## Overview
 
 The SingularityNET Registry is a smart contract on the Ethereum blockchain that stores Organizations, Services, and Type Repositories. Service developers use the Registry to expose information about their services to the outside world and consumers can use the Registry to find services to use. The [SingularityNET DApp](https://github.com/singnet/alpha-dapp) reads from the Registry to display services for discovery and demo purposes. The Registry also allows tagging of services and type repositories to enable searching and filtering.
 
-The source, ABI, and deployment information for the Registry is located in the [singnet/platform-contracts](https://github.com/singnet/platform-contracts) repo.
+The source, ABI, and deployment information for the Registry is located in the [`singnet/platform-contracts`](https://github.com/singnet/platform-contracts) repo.
 
 ## Interface
 The Registry interface, IRegistry, is a full specification of the functionality of the Registry. The Registry is published alongside its interface located in [`IRegistry.sol`](https://github.com/singnet/platform-contracts/blob/master/contracts/IRegistry.sol). The interface contains [natspec](https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format)-compliant documentation on all functions and developers should import and target the interface instead of the implementation. The registry implements the interface and also fully supports [ERC-165](https://eips.ethereum.org/EIPS/eip-165).
 
 ## Data Model
-
 The Registry stores four main pieces of data: Organizations, Services, Type Repositories, and Tags. It supports CRUD on all of these and contains a number of view functions for retrieving data.
 
 ### Organization

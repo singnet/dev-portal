@@ -9,26 +9,36 @@ You can find our portal at [dev.singularitynet.io](dev.singularitynet.io) and th
 > SingularityNET is still under active development. The design is rapidly evolving and should be considered unstable until we release our beta platform in February 2019.
 
 ## Contents
-- [SingularityNET Platform](singularitynet-platform)
-- [Platform Development](platform-development)
-- [What is SingularityNET](what-is-singularitynet)
-- [Contributing](contributing)
-- [Developer Updates](developer-updates)
-- [Repository Structure](repository-structure)
-- [Current State of Development](current-state-of-development)
-- [Planning](planning)
-- [Find out more](find-out-more)
+- [Documentation Pages](#documentation-pages)
+- [SingularityNET Platform](#singularitynet-platform)
+- [Platform Development](#platform-development)
+- [What is SingularityNET](#what-is-singularitynet)
+- [Contributing](#contributing)
+- [Developer Updates](#developer-updates)
+- [Repository Structure](#repository-structure)
+- [Current State of Development](#current-state-of-development)
+- [Planning](#planning)
+- [Find out more](#find-out-more)
+
+## Documentation Pages
+- [All Documentation](/docs/all)
+- [Documentation for AI Service Providers](/docs/provider)
+- [Documentation for AI Service Buyers](/docs/buyer)
+- [Multi-Party Escrow Documentation](/docs/all/mpe)
+- [Tutorials](/tutorials)
+- [Workshops](/workshops)
+- [Developer Portal Documentation](/docs/all/contribute)
 
 ## SingularityNET Platform
-- [Daemon](docs/all/daemon.md)
-- [Multiparty Escrow](docs/all/mpe/mpe.md)
-- [Registry](docs/all/registry.md)
-
+- [Daemon](/docs/all/daemon)
+- [Multi-Party Escrow](/docs/all/mpe/mpe)
+- [Payment Channel Storage](/docs/all/mpe/payment-channel-storage)
+- [Registry](/docs/all/registry)
 
 ## Platform Development
 - Tutorials
-	- [Build and deploy SingularityNET locally](/docs/all/mpe/front-to-back-examples/Build-and-deploy-SingularityNET-locally.md)
-	- [Build, publish and run a sample service on the SingularityNET platform - Example 1](/docs/all/mpe/front-to-back-examples/example1.md)
+	- [Build and deploy SingularityNET locally](/docs/all/deploy-singularitynet)
+	- [Build, publish and run a sample service on the SingularityNET platform - Example 1](/docs/all/mpe/front-to-back-examples/example.md)
 	- [Build, publish and run a sample service on the SingularityNET platform - Example 2](/tutorials/publish)
 	- [Build a service in C++](/tutorials/cpp)
 	- [Build a service in Go](/tutorials/go)
@@ -60,7 +70,7 @@ calls to the service.
 and interacting with them through a web-UI.
 
 ## Contributing
-We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/contribute).
+We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](dev.singularitynet.io/docs/all/contribute/contribute).
 
 ## Developer updates
 In order to receive SingularityNET Developer Updates please subscribe [here](dev.singularitynet.io/newsletter).
@@ -73,8 +83,9 @@ The SingularityNET Developer Portal is structured as follows:
 ├── default.md                  # Example page
 ├── maintenance.md              # Maintenance page
 ├── docs.md                     # Documentation Index Page
-├── contribute.md               # Contribution guidelines
 ├── docs                        # Documentation of files
+│   ├── contribute              # Documentation for contributors
+│       └── ...                 # Only documentation files for contributors
 │   ├── provider                # Documentation for AI Providers
 │       └── ...                 # Only documentation files for AI providers
 │   ├── buyer                   # Documentation for AI Buyers
@@ -109,6 +120,7 @@ The SingularityNET Developer Portal is in active development. Below you will fin
 
 * [x] Launch the beta-version of the SingularityNET Developer Portal.
 * [x] Pilot developer workshops in Helsinki on the 14th of December 2018.
+* [ ] Launch a Meetup group.
 * [ ] Create a developer workshop cookbook.
 * [ ] Gather feedback from the community.
 * [ ] Move all Github Wiki's to the SingularityNET Developer Portal.

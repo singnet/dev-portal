@@ -6,7 +6,7 @@ comments: true
 
 # Hero section
 title: Overview
-description: This content is archived Alpha content.  
+description: This content is archived Alpha content, but may still be referenced to as an example.   
 
 # extralink box
 extralink:
