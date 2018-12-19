@@ -28,7 +28,7 @@ This tutorial describes the process of building and deploying a fully functional
 ## Install prerequisites
 This document describes the process of the environment setup in Ubuntu 18.04. Some commands can be different under other linux distributions.
 
-> TIP: You can setup an Ubuntu 18.04 server via [Digital Ocean](https://m.do.co/c/8859a29e6ab7).
+> TIP: [Here](/docs/all/mpe/front-to-back-examples/scripts/example1) you can find an instruction how to run SingularityNet platform locally inside a docker container, and how to run simple front-to-back example in it.
 
 ### Go toolset
 - Go 1.10+

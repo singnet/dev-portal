@@ -23,8 +23,8 @@ cat > snetd.config.json << EOF
    "REGISTRY_ADDRESS_KEY": "0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2",
    "DAEMON_END_POINT": "localhost:8080",
    "IPFS_END_POINT": "http://localhost:5002",
-   "ORGANIZATION_NAME": "testo",
-   "SERVICE_NAME": "tests",
+   "ORGANIZATION_ID": "testo",
+   "SERVICE_ID": "tests",
    "log": {
    "level": "debug",
    "output": {
@@ -42,6 +42,6 @@ EOF
 
 # You can check balance of the service (second ganache identity address=0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB)
 # Unfortunately we should provide address of the token contract by hands
-snet client balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
+snet account balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 
 

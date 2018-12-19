@@ -24,7 +24,7 @@ micro_nav: true
 
 ---
 
-You can find scripts for the examples [here (example 1)](/docs/all/mpe/front-to-back-examples/scripts/example1) and [here (example 2)](/docs/all/mpe/front-to-back-examples/scripts/example2).
+You can find script for this example and instruction how to run it inside a docker [here (example 1)](/docs/all/mpe/front-to-back-examples/scripts/example1).
 
 We will demonstrate the following:
 
@@ -62,12 +62,12 @@ We will use a Basic_Template service that you can find [here](https://github.com
 ```
 # $SINGNET_REPOS is the path from tutorial, but it could be any directory
 cd $SINGNET_REPOS
-git clone https://github.com/singnet/dnn-model-services.git
-cd dnn-model-services/Services/gRPC/Basic_Template/
+git clone https://github.com/singnet/example-service.git
+cd example-service
 
 # build protobuf
 . buildproto.sh
-python3 run_basic_service.py --no-daemon
+python3 run_example_service.py --no-daemon
 ```
 It will start the service at port 7003.
 
@@ -78,19 +78,19 @@ Prepare your metadata in `service_metadata.json`. We will register the second ga
 
 ```bash
 cd $SINGNET_REPOS
-cd dnn-model-services/Services/gRPC/Basic_Template/
+cd example-service
 
-snet service metadata_init service/service_spec Example1 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
-snet service metadata_set_fixed_price 0.1
-snet service metadata_add_endpoints localhost:8080
+snet service metadata-init service/service_spec Example1 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
+snet service metadata-set-fixed-price 0.1
+snet service metadata-add-endpoints localhost:8080
 ```
 
-Create an organization called "testo", and publish the service "tests".
+Create an organization with name "testo" and organization id "testo", and publish the service with service id "tests".
 
 (KOVAN) On KOVAN you probably will need to choose another name for your organization.
 
 ```
-snet organization  create testo -y
+snet organization  create testo --org-id testo -y
 snet service publish testo tests -y
 ```
 
@@ -102,12 +102,12 @@ We assume that the executable file for the daemon is placed in $SINGNET_REPOS/sn
 # You could start the daemon from any directory
 # We will use directory of the service
 cd $SINGNET_REPOS
-cd dnn-model-services/Services/gRPC/Basic_Template/
+cd example-service
 
 # ../../../../snet-daemon/build/snetd-linux-amd64 is a path to daemon
 
 # we make a link for simplicity (service is already running)
-ln -s ../../../../snet-daemon/build/snetd-linux-amd64 snetd
+ln -s ../snet-daemon/build/snetd-linux-amd64 snetd
 
 # if it is not the first time you run this test, and state of blockchain was reset,
 # you should reset the state of etcd storage as well
@@ -128,8 +128,8 @@ cat > snetd.config.json << EOF
    "REGISTRY_ADDRESS_KEY": "0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2",
    "DAEMON_END_POINT": "localhost:8080",
    "IPFS_END_POINT": "http://localhost:5002",
-   "ORGANIZATION_NAME": "testo",
-   "SERVICE_NAME": "tests",
+   "ORGANIZATION_ID": "testo",
+   "SERVICE_ID": "tests",
    "log": {
    "level": "debug",
    "output": {
@@ -162,11 +162,11 @@ snet identity create snet-user key --private-key 0xc71478a6d0fe44e763649de0a0deb
 snet identity snet-user
 
 # deposit 100.1 AGI to MPE wallet
-snet client deposit 100.1 -y
+snet account deposit 100.1 -y
 
 # open channel with our service (organization=testo service_name=tests)
 # channel with channel_id=0 should be created and initialized after this call
-snet client open_init_channel_registry testo tests 42 100000000 -y
+snet channel open-init testo tests 42 100000000 -y
 
 ```
 ### Make a call using stateless logic
@@ -177,7 +177,7 @@ First, let's request from the blockchain the list of all open channels:
 
 ```
 # take the list of channels from blockchain (from events!)
-snet client print_all_channels
+snet channel print-all-filter-sender
 ```
 
 We should have one channel with the recipient=0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB, and we should have 42 AGI in it.
@@ -186,7 +186,7 @@ In order to make an actual call, the channel should be initialized (meaning: pro
 
 Let's check the list of initialized channels:
 ```
-snet client print_initialized_channels
+snet channel print-initialized
 ```
 
 Now we can make a call to send us the last state of the channel:
@@ -226,8 +226,8 @@ cat > snetd.config.json << EOF
    "REGISTRY_ADDRESS_KEY": "0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2",
    "DAEMON_END_POINT": "localhost:8080",
    "IPFS_END_POINT": "http://localhost:5002",
-   "ORGANIZATION_NAME": "testo",
-   "SERVICE_NAME": "tests",
+   "ORGANIZATION_ID": "testo",
+   "SERVICE_ID": "tests",
    "log": {
    "level": "debug",
    "output": {
@@ -250,12 +250,12 @@ Now we can ask the treasurer to claim funds from the channel (close/reopen logic
 
 ```bash
 #balance before claim
-snet client balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
+snet account balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 
 ../snet-daemon/build/snetd-linux-amd64 claim  --channel-id 0
 
 # balance after claim
-snet client balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
+snet account balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 ```
 
 The following logic when we ran the treasurer server:
