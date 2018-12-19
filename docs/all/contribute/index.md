@@ -7,7 +7,7 @@ keywords: Developer Documentation
 micro_nav: true
 
 # Hero section
-title: Developer Portal Documentation
+title: SingularityNET Dev Portal Docs
 description: Here you will find documentation related to the SingularityNET Developer Portal itself. Learn how to contribute content, launch your own local version of the SingularityNET Developer Portal, and how to use the right styling.
     - content: All Docs
       url: '/docs'
@@ -16,13 +16,6 @@ description: Here you will find documentation related to the SingularityNET Deve
       content: View on GitHub
       url: 'github.com/singnet/dev-portal'
       external_url: true
-
-# extralink box
-extralink:
-    title: Dev Community
-    title_url: '/sheet#community'
-    external_url: false
-    description: Meet other devs in the SingularityNET Community.
 
 # Grid navigation
 grid_navigation:
