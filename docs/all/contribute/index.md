@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: homepage
-keywords:
+keywords: Developer Documentation 
 
 # Micro navigation
 micro_nav: true
