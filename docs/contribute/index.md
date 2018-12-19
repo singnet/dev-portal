@@ -9,6 +9,7 @@ micro_nav: true
 # Hero section
 title: SingularityNET Dev Portal Docs
 description: Here you will find documentation related to the SingularityNET Developer Portal itself. Learn how to contribute content, launch your own local version of the SingularityNET Developer Portal, and how to use the right styling.
+buttons:
     - content: All Docs
       url: '/docs'
       external_url: false
