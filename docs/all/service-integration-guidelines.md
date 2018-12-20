@@ -39,6 +39,7 @@ gRPC supports several programming languages such as:
 - Android Java
 - Objective-C
 - PHP
+- Haskell 
 
 A guide for each of them is available [here](https://grpc.io/docs/).
 
