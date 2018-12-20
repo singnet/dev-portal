@@ -218,7 +218,3 @@ page_nav:
 <p><strong>Favicon <code>.psd</code> file included!</strong> We've included <code>.psd</code> file with pre-made favicon in <code>/designs</code> folder of your theme.</p>
 </div>
 
-                </div><!-- /.content -->
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-</div><!-- /.container -->
