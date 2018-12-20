@@ -71,24 +71,30 @@ The SingularityNET Developer Portal is structured as follows:
 ├── docs.md                     # Documentation Index Page
 ├── docs                        # Documentation of files
 │   ├── contribute              # Documentation for contributors
-│       └── ...                 # Only documentation files for contributors
+│   │   └── ...                 # Only documentation files for contributors
 │   ├── provider                # Documentation for AI Providers
-│       └── ...                 # Only documentation files for AI providers
+│   │   └── ...                 # Only documentation files for AI providers
 │   ├── buyer                   # Documentation for AI Buyers
-│       └── ...                 # Only documentation files for AI buyers
+│   │   └── ...                 # Only documentation files for AI buyers
 │   └── all                     # All Documentation
 │       └── ...                 # All documentation files go here
 ├── workshops                   # Here you can find workshop material
 │       └── ...                 # Relevant information per workshop
 ├── tutorials                   # Here you can find our tutorials
-│   ├── cpp-service.md          # C++ Service Tutorial
-│   ├── docker.md               # Docker Tutorial
-│   ├── go-service.md           # Go Service Tutorial
 │   ├── index.md                # Index Page
-│   ├── java-service.md         # Java Service Tutorial
-│   ├── opencog-service.md      # OpenCog Service Tutorial
-│   ├── publish-service.md      # Publish Services
-│   ├── python-service.md       # Python Service Tutorial
+│   ├── cpp		        # C++ Service Tutorial
+│   │   └── ...                 # Only documentation files for C++
+│   ├── docker.md               # Docker Tutorial
+│   ├── go	                # Go Service Tutorial
+│   │   └── ...                 # Only documentation files for Go
+│   ├── java		        # Java Service Tutorial
+│   │   └── ...                 # Only documentation files for Java
+│   ├── opencog		        # OpenCog Service Tutorial
+│   │   └── ...                 # Only documentation files for OpenCog 
+│   ├── publish		        # Publish Services
+│   │   └── ...                 # Only documentation files for publishing
+│   ├── python		        # Python Service Tutorial
+│   │   └── ...                 # Only documentation files for Python
 │   └── ...                     # Any other tutorials
 └── .gitignore
 ```
