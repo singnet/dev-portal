@@ -27,7 +27,7 @@ page_nav:
         content: All Developer Portal Docs
         url: '/docs/contribute'
     next:
-        content: Deployment
+        content: Theme Updates
         url: '/docs/contribute/theme-updates'
 ---
 <div class="container">
