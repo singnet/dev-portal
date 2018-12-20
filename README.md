@@ -7,30 +7,30 @@ You can find our portal at [dev.singularitynet.io](https://dev.singularitynet.io
 > SingularityNET is still under active development. The design is rapidly evolving and should be considered unstable until we release our beta platform in February 2019.
 
 ## Documentation Pages
-- [All Documentation](/docs/all)
-- [Documentation for AI Service Providers](/docs/provider)
-- [Documentation for AI Service Buyers](/docs/buyer)
-- [Multi-Party Escrow Documentation](/docs/all/mpe)
-- [Tutorials](/tutorials)
-- [Workshops](/workshops)
-- [Developer Portal Documentation](/docs/contribute)
+- [All Documentation](https://dev.singularitynet.io/docs/all)
+- [Documentation for AI Service Providers](https://dev.singularitynet.io/docs/provider)
+- [Documentation for AI Service Buyers](https://dev.singularitynet.io/docs/buyer)
+- [Multi-Party Escrow Documentation](https://dev.singularitynet.io/docs/all/mpe)
+- [Tutorials](https://dev.singularitynet.io/tutorials)
+- [Workshops](https://dev.singularitynet.io/workshops)
+- [Developer Portal Documentation](https://dev.singularitynet.io/docs/contribute)
 
 ## SingularityNET Platform
-- [Daemon](/docs/all/daemon)
-- [Multi-Party Escrow](/docs/all/mpe/mpe)
-- [Payment Channel Storage](/docs/all/mpe/payment-channel-storage)
-- [Registry](/docs/all/registry)
+- [Daemon](https://dev.singularitynet.io/docs/all/daemon)
+- [Multi-Party Escrow](https://dev.singularitynet.io/docs/all/mpe/mpe)
+- [Payment Channel Storage](https://dev.singularitynet.io/docs/all/mpe/payment-channel-storage)
+- [Registry](https://dev.singularitynet.io/docs/all/registry)
 
 ## Platform Development
 - Tutorials
-	- [Build and deploy SingularityNET locally](/docs/all/deploy-singularitynet)
-	- [Build, publish and run a sample service on the SingularityNET platform - Example 1](/docs/all/mpe/front-to-back-examples/example)
-	- [Build, publish and run a sample service on the SingularityNET platform - Example 2](/tutorials/publish)
-	- [Build a service in C++](/tutorials/cpp)
-	- [Build a service in Go](/tutorials/go)
-	- [Build a service in Java](/tutorials/java)
-	- [Build a service in Python](/tutorials/python)
-	- [Build an Opencog service](/tutorials/opencog)
+	- [Build and deploy SingularityNET locally](https://dev.singularitynet.io/docs/all/deploy-singularitynet)
+	- [Build, publish and run a sample service on the SingularityNET platform - Example 1](https://dev.singularitynet.io/docs/all/mpe/front-to-back-examples/example)
+	- [Build, publish and run a sample service on the SingularityNET platform - Example 2](https://dev.singularitynet.io/tutorials/publish)
+	- [Build a service in C++](https://dev.singularitynet.io/tutorials/cpp)
+	- [Build a service in Go](https://dev.singularitynet.io/tutorials/go)
+	- [Build a service in Java](https://dev.singularitynet.io/tutorials/java)
+	- [Build a service in Python](https://dev.singularitynet.io/tutorials/python)
+	- [Build an Opencog service](https://dev.singularitynet.io/tutorials/opencog)
 
 ## What is SingularityNET
 SingularityNET is an open and decentralized network of AI services made accessible through the blockchain. AI developers publish their services onto the SingularityNET network where they can be used by anyone with an internet connection. AI developers are able to charge for the use of their services using the native AGI token -- an ERC20 token hosted on Ethereum.
@@ -56,10 +56,10 @@ calls to the service.
 and interacting with them through a web-UI.
 
 ## Contributing
-We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](/docs/contribute/contribution-guidelines).
+We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](https://dev.singularitynet.io/docs/contribute/contribution-guidelines).
 
 ## Developer updates
-In order to receive SingularityNET Developer Updates please subscribe [here](/newsletter).
+In order to receive SingularityNET Developer Updates please subscribe [here](https://dev.singularitynet.io/newsletter).
 
 ## Repository Structure
 The SingularityNET Developer Portal is structured as follows:
@@ -122,4 +122,4 @@ The SingularityNET Developer Portal is in active development. Below you will fin
 
 
 ## Find out more
-Further [resources to be found in our Fact Sheet](/sheet).
+Further [resources to be found in our Fact Sheet](https://dev.singularitynet.io/sheet).
