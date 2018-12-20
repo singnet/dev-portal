@@ -102,7 +102,7 @@ The SingularityNET Developer Portal is structured as follows:
 ## Current State of Development
 SingularityNET raised funds to build out our platform during our Token Generation Event (TGE) in December 2017. Since then we've been working quickly to build upon our platform and finalize designs for our production platform which will go into Beta in Feb 2019.
 
-Active development on our platform is still continuing as we add additional capabilities to enable AI developers to begin launching services onto the network. Our goal is to help the community build out a vibrant network of useful AI services.
+Active development on our platform is still continuing as we add capabilities to enable AI developers to begin launching services onto the network. Our goal is to help the community build out a vibrant network of useful AI services.
 
 Designs for our production platform and associated development roadmap will also be published to the wiki as they are finalized.
 
