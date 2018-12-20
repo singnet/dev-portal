@@ -62,13 +62,13 @@ Step 1 may take a couple of minutes to finish. Step 2 can be performed concurren
 ## Step 2: Getting Testnet AGI and Ethereum
 > Optional if you already have enough AGI and ETH tokens
 
-You need some AGI and ETH tokens. You can get then for free (using your github
+You need some AGI and ETH tokens. You can get them for free (using your github
 account) here:
 
 * AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
 * ETH: [https://faucet.kovan.network/](https://faucet.kovan.network/)
 
-Also see [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
+See [Fact Sheet](/sheet) for more information about AGI tokens and test networks.
 
 ## Step 3: Completing Docker Tutorial
 
