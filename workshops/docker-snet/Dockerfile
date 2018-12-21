@@ -31,7 +31,7 @@ RUN mkdir -p ${SINGNET}
 RUN sudo apt-get install -y git
 # install NodeJS dev environment
 RUN sudo apt-get install -y nodejs npm
-RUN sudo npm install -g ganache-cli@6.2.4. truffle@4.1.14
+RUN sudo npm install -g ganache-cli@6.2.4 truffle@4.1.14
 # install Python dev environment
 RUN sudo apt-get install -y python3 python3-pip
 # install other libraries
