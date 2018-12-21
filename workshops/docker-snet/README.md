@@ -29,13 +29,15 @@ docker build -t singnet .
 
 Run docker image with examples:
 ```sh
-./run.sh
+docker run -ti singnet
 ```
 
 After docker image is up you will be in the `singnet` folder which contains all
 main SingularityNet git repositories and SingularityNet examples.
 
 Please start with reading `examples/01-snet-cli/README` file and follow instructions.
+You can use preinstalled `vim` and `nano` editors to edit example files inside
+container.
 
 # Preparations made in image
 
