@@ -31,13 +31,13 @@ RUN mkdir -p ${SINGNET}
 RUN sudo apt-get install -y git
 # install NodeJS dev environment
 RUN sudo apt-get install -y nodejs npm
-RUN sudo npm install -g ganache-cli truffle
+RUN sudo npm install -g ganache-cli@6.2.4 truffle@4.1.14
 # install Python dev environment
 RUN sudo apt-get install -y python3 python3-pip
 # install other libraries
 RUN sudo apt-get install -y libudev-dev libusb-1.0-0-dev
 # additional tools
-RUN sudo apt-get install -y net-tools screen vim wget
+RUN sudo apt-get install -y net-tools screen vim wget nano jq
 
 # install IPFS
 ENV IPFS_PATH ${IPFS}
@@ -60,14 +60,14 @@ RUN git checkout -b demo v1.0.0
 WORKDIR ${SINGNET}
 RUN git clone https://github.com/singnet/platform-contracts
 WORKDIR ${SINGNET}/platform-contracts
-RUN git checkout -b demo v0.2.4
+RUN git checkout -b demo v0.2.5
 RUN npm install
 
 # snet-cli
 WORKDIR ${SINGNET}
 RUN git clone https://github.com/singnet/snet-cli
 WORKDIR ${SINGNET}/snet-cli
-#RUN git checkout -b demo v0.1.8
+RUN git checkout -b demo v0.1.9
 RUN ./scripts/blockchain install
 RUN sudo pip3 install -e .
 
@@ -75,11 +75,11 @@ RUN sudo pip3 install -e .
 WORKDIR ${SINGNET}
 RUN git clone https://github.com/singnet/snet-daemon
 WORKDIR ${SINGNET}/snet-daemon
-RUN git checkout -b demo v0.1.3
+RUN git checkout -b demo v0.1.4
 WORKDIR /tmp
-RUN wget https://github.com/singnet/snet-daemon/releases/download/v0.1.3/snetd-0.1.3.tar.gz && \
-    tar -xvf snetd-0.1.3.tar.gz && \
-    mv ./linux-amd64/snetd ${BIN}/snetd-linux-amd64
+RUN wget https://github.com/singnet/snet-daemon/releases/download/v0.1.4/snetd-0.1.4.tar.gz && \
+    tar -xvf snetd-0.1.4.tar.gz && \
+    mv ./snetd-0.1.4/snetd-linux-amd64 ${BIN}/snetd-linux-amd64
 
 # wiki
 WORKDIR ${SINGNET}
@@ -111,6 +111,9 @@ RUN snet set current_singularitynettoken_at ${TOKEN_ADDR}
 RUN snet set current_registry_at ${REGISTRY_ADDR}
 RUN snet set current_multipartyescrow_at ${MULTIPARTYESCROW_ADDR}
 
+# prepare environment for examples
 COPY ./start_environment.sh ${GOPATH}/bin/
 COPY ./stop_service.sh ${GOPATH}/bin
+RUN mkdir -p ${SINGNET}/examples/
+COPY --chown=singnet:singnet ./examples ${SINGNET}/examples/
 CMD start_environment.sh

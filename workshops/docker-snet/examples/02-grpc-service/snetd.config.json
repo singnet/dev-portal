@@ -6,12 +6,12 @@
   "log": {
     "level": "debug",
     "output": {
-      "type": "stdout"
+      "type": "file"
     }
   },
-  "organization_name": "ExampleOrganization",
+  "organization_id": "ExampleOrganizationId",
   "passthrough_enabled": true,
   "registry_address_key": "0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2",
-  "service_name": "EchoService",
+  "service_id": "EchoService",
   "passthrough_endpoint": "http://127.0.0.1:12345"
 }
