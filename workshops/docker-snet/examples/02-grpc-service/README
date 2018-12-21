@@ -11,7 +11,7 @@ python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. ./echo_servi
 
 # start service server
 cat echo_service.py
-screen -d -m python3 echo_service.py
+python3 echo_service.py &
 
 # check that service works
 cat echo_client.py
@@ -19,19 +19,19 @@ python3 echo_client.py
 
 # publish service to the Registry
 snet identity publisher
-snet service metadata_init . EchoService $PUBLISHER_ADDR --encoding proto --service_type grpc
-snet service metadata_set_fixed_price 3
-snet service metadata_add_endpoints http://127.0.0.1:8080
+snet service metadata-init . EchoService $PUBLISHER_ADDR --encoding proto --service-type grpc
+snet service metadata-set-fixed-price 3
+snet service metadata-add-endpoints http://127.0.0.1:8080
 cat service_metadata.json
-snet service publish ExampleOrganization EchoService --yes
+snet service publish ExampleOrganizationId EchoService --yes
 
 # start daemon
 cat snetd.config.json
-screen -d -m snetd-linux-amd64
+snetd-linux-amd64 &
 
 # call service via SingularityNet
 snet identity caller
-snet client open_init_channel_registry ExampleOrganization EchoService 50 57600 -y
+snet channel open-init ExampleOrganizationId EchoService 50 57600 -y
 snet client call 0 3 localhost:8080 echo '{"message": "hello"}'
 
 # stop the service
