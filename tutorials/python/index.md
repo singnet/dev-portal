@@ -60,7 +60,7 @@ $ docker run -p 7000:7000 -ti snet_python_service bash
 From this point we follow the tutorial in the Docker container's prompt.
 
 ```
-# cd dev-porta/tutorials/python
+# cd dev-portal/tutorials/python
 ```
 
 ## Step 2
