@@ -108,7 +108,7 @@ understand everything you can do in the `.proto` file.
 
 In this tutorial our `./service_spec/tutorial.proto` will be like this:
 
-```Java
+```
 syntax = "proto3";
 
 package tutorial;
@@ -141,7 +141,7 @@ In order to actually implement our API we need to edit `server.go`.
 
 Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```Go
+```
 func (s *server) Div(ctx context.Context, in *pb.IntPair) (*pb.SingleInt, error) {
 	return &pb.SingleInt{V: in.A / in.B}, nil
 }
@@ -158,7 +158,7 @@ Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```Go
+```
 func doSomething(conn *grpc.ClientConn) (*pb.SingleInt, error) {
 	// Check the compiled proto file (.pb.go) to get this method name
 	c := pb.NewServiceDefinitionClient(conn)

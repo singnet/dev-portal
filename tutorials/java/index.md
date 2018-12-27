@@ -107,13 +107,13 @@ Take a look at https://developers.google.com/protocol-buffers/docs/overview to
 understand everything you can do in the `.proto` file.
 
 Edit the proto file:
-```Java
+```
 # nano src/main/java/service_spec/tutorial.proto
 ```
 
 In this tutorial our proto file should be like this:
 
-```Java
+```
 syntax = "proto3";
 
 option java_generic_services = true;
@@ -147,7 +147,7 @@ In order to actually implement our API we need to edit the `JavaServer.java file
 
 Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```Java
+```
 
 @Override
 public void div(IntPair request, StreamObserver<SingleInt> responseObserver) {
@@ -167,7 +167,7 @@ Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```Java
+```
 public void div(int a, int b) {
     logger.info("Trying to divide "+a+" by "+ b);
     IntPair request = IntPair.newBuilder().setA(a).setB(b).build();
