@@ -108,7 +108,7 @@ understand everything you can do in the `.proto` file.
 
 In this tutorial our `./service_spec/tutorial.proto` will be like this:
 
-```Java
+```
 syntax = "proto3";
 
 package tutorial;
@@ -141,7 +141,7 @@ In order to actually implement our API we need to edit `server.py`.
 
 Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```Python
+```
 class ServiceDefinition(pb2_grpc.ServiceDefinitionServicer):
     def __init__(self):
         self.a = 0
@@ -168,7 +168,7 @@ blockchain). Edit `client.py`.
 Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
-```Python
+```
 def doSomething(channel):
     a = 12
     b = 4

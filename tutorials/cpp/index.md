@@ -119,7 +119,7 @@ understand everything you can do in the `.proto` file.
 
 In this tutorial our `src/service_spec/tutorial.proto` will be like this:
 
-```Java
+```
 syntax = "proto3";
 
 package tutorial;
@@ -153,7 +153,7 @@ In order to actually implement our API we need to edit `src/server.cc`.
 Look for `PROTO_TYPES` and replace the `using` statements to reflect our data
 types defined in step 3.
 
-```C++
+```
 using tutorial::ServiceDefinition;
 using tutorial::IntPair;
 using tutorial::SingleInt;
@@ -162,7 +162,7 @@ using tutorial::SingleString;
 
 Now look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```C++
+```
 Status div(ServerContext* context, const IntPair* input, SingleInt* output) override {
     output->set_v(input->a() / input->b());
     return Status::OK;
@@ -185,7 +185,7 @@ blockchain). Edit `src/client.cc`.
 Look for `PROTO_TYPES` and replace the `using` statements to reflect our data
 types defined in Step 3.
 
-```C++
+```
 using tutorial::ServiceDefinition;
 using tutorial::IntPair;
 using tutorial::SingleInt;
@@ -196,7 +196,7 @@ Now look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```C++
+```
 void doSomething(int argc, char** argv) {
 
     int n1 = atoi(argv[1]);
