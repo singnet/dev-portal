@@ -1,4 +1,6 @@
 ---
+redirect_from: "/home/"
+
 # Page settings
 layout: homepage
 keywords:
