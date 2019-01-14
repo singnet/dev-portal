@@ -74,7 +74,7 @@ It will start the service at port 7003.
 ### Register your service in the registry
 Prepare your metadata in `service_metadata.json`. We will register the second ganache identity (0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB) as a recipient wallet.
 
-(KOVAN) On the KOVAN network you might want to choose another wallet.  
+(KOVAN) On the KOVAN network you might want to choose another wallet.
 
 ```bash
 cd $SINGNET_REPOS
@@ -158,7 +158,7 @@ We are now quickly going to look at what will happen next on the **client side**
 
 ```
 # create identity in snet-cli (probably you've already done it)
-snet identity create snet-user key --private-key 0xc71478a6d0fe44e763649de0a0deb5a080b788eefbbcf9c6f7aef0dd5dbd67e0
+snet identity create snet-user rpc --network local
 snet identity snet-user
 
 # deposit 100.1 AGI to MPE wallet
@@ -207,52 +207,18 @@ snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
 ```
 
 ## Service Provider: Claiming the Channel with a Treasurer Server
-The service provider can use the same Ethereum address for all payment groups or she/he can use a different address. In any case, the daemons very rarely need to send an on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner). We call such a server a treasurer server, which has recently been implemented.
-
-### Configure treasurer
+The service provider can use the same Ethereum address for all payment groups or she/he can use a different address. In any case, the daemons don't need to send any on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons. We call such a server a treasurer server. In the current version trearurer server logic is implemented via snet-cli.
 
 ```
-cd $SINGNET_REPOS
-mkdir treasurer
-cd treasurer
-ln -s ../snet-daemon/build/snetd-linux-amd64
+# Service has second ganache idendity (--wallet-index 1)
+# Print list of unclaimed channels and total sum of unclaimed funds
+snet treasurer print-unclaimed --endpoint localhost:8080 --wallet-index 1
 
-cat > snetd.config.json << EOF
-{
-   "PRIVATE_KEY": "04899d5fd471ce68f84a5ec64e2e4b6b045d8b850599a57f5b307024be01f262",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "http://localhost:8545",
-   "PASSTHROUGH_ENABLED": true,
-   "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
-   "REGISTRY_ADDRESS_KEY": "0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2",
-   "DAEMON_END_POINT": "localhost:8080",
-   "IPFS_END_POINT": "http://localhost:5002",
-   "ORGANIZATION_ID": "testo",
-   "SERVICE_ID": "tests",
-   "log": {
-   "level": "debug",
-   "output": {
-   "type": "stdout"
-      }
-   }
-}
-EOF
-```
-
-There is an important difference in the configuration between the daemon and the treasurer server. In the treasurer server, we **must** provide an ethereum identity (a private key in this case), because the treasurer server will need to make on-chain transactions (this is different from the daemon which doesn't need to send any on-chain transactions).
-
-First, we ask the treasurer to print a list of unclaimed channels:
-
-```bash
-../snet-daemon/build/snetd-linux-amd64 list channels
-```
-
-Now we can ask the treasurer to claim funds from the channel (close/reopen logic). Let's check our balance before and after we claim the funds.
-
-```bash
 #balance before claim
 snet account balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 
-../snet-daemon/build/snetd-linux-amd64 claim  --channel-id 0
+# claim all channels
+snet treasurer claim-all --endpoint localhost:8080  --wallet-index 1 -y
 
 # balance after claim
 snet account balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
