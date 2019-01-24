@@ -170,12 +170,12 @@ Remember that 1 AGI = 10^8 COGS, so lets set the price 1 COG.
 Then, lets set the endpoint where your `SNET Daemon` and `service` will be listening to:
 
 ```
-# snet service metadata-add-endpoints http://DAEMON_HOST:DAEMON_PORT
+# snet service metadata-add-endpoints https://DAEMON_HOST:DAEMON_PORT
 ```
 
 For example:
 ```
-# snet service metadata-add-endpoints http://54.203.198.53:7000
+# snet service metadata-add-endpoints https://54.203.198.53:7000
 ```
 
 Our service's JSON configuration now looks like:
@@ -203,7 +203,7 @@ Our service's JSON configuration now looks like:
     "endpoints": [
         {
             "group_name": "default_group",
-            "endpoint": "http://54.203.198.53:7000"
+            "endpoint": "https://54.203.198.53:7000"
         }
     ]
 }
@@ -246,10 +246,10 @@ In the service folder, create a file named `snetd.config.json` according to this
 
 ```
 {
-   "DAEMON_END_POINT": "http://DAEMON_HOST:DAEMON_PORT",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
+   "DAEMON_END_POINT": "https://DAEMON_HOST:DAEMON_PORT",
+   "ETHEREUM_JSON_RPC_ENDPOINT": "https://JSON_RPC_ENDPOINT",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
+   "REGISTRY_ADDRESS_KEY": "REGISTRY_ADDRESS",
    "PASSTHROUGH_ENABLED": true,
    "PASSTHROUGH_ENDPOINT": "http://SERVICE_GRPC_HOST:SERVICE_GRPC_PORT",  
    "ORGANIZATION_ID": "ORGANIZATION_ID",
@@ -263,19 +263,49 @@ In the service folder, create a file named `snetd.config.json` according to this
 }
 ```
 
-For our example, replace tags with these values:
+For example, using the Kovan testnet, replace tags with:
 
-- `http://DAEMON_HOST:DAEMON_PORT`: http://54.203.198.53:7000
+- `https://DAEMON_HOST:DAEMON_PORT`: https://54.203.198.53:7000
+- `https://JSON_RPC_ENDPOINT`: https://kovan.infura.io
+- `REGISTRY_ADDRESS`: 0xe331bf20044a5b24c1a744abc90c1fd711d2c08d
 - `http://SERVICE_GRPC_HOST:SERVICE_GRPC_PORT`: http://localhost:7003
 - `ORGANIZATION_ID`: snet
 - `SERVICE_ID`: example-service
 
 ```
 {
-   "DAEMON_END_POINT": "http://54.203.198.53:7000",
+   "DAEMON_END_POINT": "https://54.203.198.53:7000",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
+   "PASSTHROUGH_ENABLED": true,
+   "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
+   "ORGANIZATION_ID": "snet",
+   "SERVICE_ID": "example-service",
+   "LOG": {
+       "LEVEL": "debug",
+       "OUTPUT": {
+              "TYPE": "stdout"
+           }
+   }
+}
+```
+
+For example, using the Ropsten testnet, replace tags with:
+
+- `https://DAEMON_HOST:DAEMON_PORT`: https://54.203.198.53:7000
+- `https://JSON_RPC_ENDPOINT`: https://ropsten.infura.io
+- `REGISTRY_ADDRESS`: 0x5156fde2ca71da4398f8c76763c41bc9633875e4
+- `http://SERVICE_GRPC_HOST:SERVICE_GRPC_PORT`: http://localhost:7003
+- `ORGANIZATION_ID`: snet
+- `SERVICE_ID`: example-service
+
+```
+{
+   "DAEMON_END_POINT": "https://54.203.198.53:7000",
+   "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io",
+   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
+   "REGISTRY_ADDRESS_KEY": "0x5156fde2ca71da4398f8c76763c41bc9633875e4",
    "PASSTHROUGH_ENABLED": true,
    "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
    "ORGANIZATION_ID": "snet",
@@ -391,7 +421,7 @@ To claim these AGIs you must use the `SNET Treasurer` via `SNET Daemon`.
 ```
 {
    "PRIVATE_KEY": "PRIVATE_KEY_FROM_PAYMENT_ADDRESS",
-   "DAEMON_END_POINT": "http://DAEMON_HOST:DAEMON_PORT",
+   "DAEMON_END_POINT": "https://DAEMON_HOST:DAEMON_PORT",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
@@ -408,10 +438,10 @@ To claim these AGIs you must use the `SNET Treasurer` via `SNET Daemon`.
 }
 ```
 
-For our example, replace tags with these values:
+For our example, replace tags with these values (using Kovan testnet):
 
 - `PRIVATE_KEY_FROM_PAYMENT_ADDRESS`: The private key for `0xA6E06cF37110930D2906e6Ae70bA6224eDED917B`
-- `DAEMON_HOST:DAEMON_PORT`: http://54.203.198.53:7000
+- `DAEMON_HOST:DAEMON_PORT`: https://54.203.198.53:7000
 - `SERVICE_GRPC_HOST:SERVICE_GRPC_PORT`: http://localhost:7003
 - `ORGANIZATION_ID`: snet
 - `SERVICE_ID`: example-service
@@ -421,7 +451,7 @@ For our example, replace tags with these values:
 # cat snetd.config.json
 {
    "PRIVATE_KEY": "PRIVATE_KEY_FROM_PAYMENT_ADDRESS",
-   "DAEMON_END_POINT": "http://54.203.198.53:7000",
+   "DAEMON_END_POINT": "https://54.203.198.53:7000",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
