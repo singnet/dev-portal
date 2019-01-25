@@ -55,7 +55,7 @@ Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 ```
 $ docker build -t snet_example_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
 $ export ETCD_HOST_FOLDER=$HOME/singnet/etcd/example-service/
-$ export ETCD_CONTAINER_FOLDER=/opt/singnet/example-service/storage-data-dir-1.etcd/
+$ export ETCD_CONTAINER_FOLDER=/opt/singnet/etcd/
 $ docker run -p 7000:7000 -v $ETCD_HOST_FOLDER:$ETCD_CONTAINER_FOLDER -ti snet_example_service bash
 ```
 
@@ -109,7 +109,7 @@ If you want to join an existing organization (e.g. `snet`), ask the owner to add
 
 In this tutorial we'll use a simple service from [SingularityNET Example Service](https://github.com/singnet/example-service).
 
-* Clone the git repository:
+* Clone the git repository (not necessary if you're using our Docker images):
 
 ```
 # git clone https://github.com/singnet/example-service.git
@@ -258,6 +258,9 @@ In the service folder, create a file named `snetd.config.json` according to this
    "PASSTHROUGH_ENDPOINT": "http://SERVICE_GRPC_HOST:SERVICE_GRPC_PORT",  
    "ORGANIZATION_ID": "ORGANIZATION_ID",
    "SERVICE_ID": "SERVICE_ID",
+   "PAYMENT_CHANNEL_STORAGE_SERVER": {
+       "DATA_DIR": "/opt/singnet/etcd/"
+   },
    "LOG": {
        "LEVEL": "debug",
        "OUTPUT": {
@@ -286,6 +289,9 @@ For example, using the Kovan testnet, replace tags with:
    "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
    "ORGANIZATION_ID": "snet",
    "SERVICE_ID": "example-service",
+   "PAYMENT_CHANNEL_STORAGE_SERVER": {
+       "DATA_DIR": "/opt/singnet/etcd/"
+   },
    "LOG": {
        "LEVEL": "debug",
        "OUTPUT": {
@@ -314,6 +320,9 @@ For example, using the Ropsten testnet, replace tags with:
    "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
    "ORGANIZATION_ID": "snet",
    "SERVICE_ID": "example-service",
+   "PAYMENT_CHANNEL_STORAGE_SERVER": {
+       "DATA_DIR": "/opt/singnet/etcd/"
+   },
    "LOG": {
        "LEVEL": "debug",
        "OUTPUT": {
