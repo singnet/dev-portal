@@ -54,8 +54,12 @@ Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
 ```
 $ docker build -t snet_example_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
-$ docker run -p 7000:7000 -ti snet_example_service bash
+$ export ETCD_HOST_FOLDER=$HOME/singnet/etcd/example-service/
+$ export ETCD_CONTAINER_FOLDER=/opt/singnet/example-service/storage-data-dir-1.etcd/
+$ docker run -p 7000:7000 -v $ETCD_HOST_FOLDER:$ETCD_CONTAINER_FOLDER -ti snet_example_service bash
 ```
+
+Note that the $ETCD_(HOST|CONTAINER)_FOLDER are useful to keep your service's etcd folder outside the container.
 
 Step 1 may take a couple of minutes to finish. Step 2 can be performed concurrently.
 
@@ -78,7 +82,7 @@ Create an "alias" for your private key.
 
 Replace `MY_ID_NAME` by an id to identify your key in the `SNET CLI`. 
 This id will not be seen by anyone. 
-It's just a way to make it easier for you to refer to your private key (you may have many, btw) in following `snet` commands. 
+It's just a way to make it easier for you to refer to your wallet (you may have many, btw) in following `snet` commands. 
 This alias is kept locally in the container and will vanish when it's shutdown. `KEY_TYPE` can be either
 
 * key
@@ -87,7 +91,7 @@ This alias is kept locally in the container and will vanish when it's shutdown. 
 * ledger
 * trezor
 
-In this tutorial we'll use `KEY_TYPE` == `key`. Enter your private key when prompted.
+In this tutorial we'll use `KEY_TYPE` == `mnemonic`. Enter your mnemonic(s) when prompted.
 
 ## Step 4 (optional if you already have an organization) 
 
@@ -142,7 +146,7 @@ With these parameters, the JSON must looks like:
     "service_type": "grpc",
     "payment_expiration_threshold": 40320,
     "model_ipfs_hash": "QmSkiwenyYUMt1rCgSboH9eiSSdeMDi1kVPXZvKScAZQyx",
-    "mpe_address": "0x39f31ac7b393fe2c6660b95b878feb16ea8f3156",
+    "mpe_address": "0x39f31Ac7B393fE2C6660b95b878FEB16eA8f3156",
     "pricing": {},
     "groups": [
         {
@@ -170,12 +174,12 @@ Remember that 1 AGI = 10^8 COGS, so lets set the price 1 COG.
 Then, lets set the endpoint where your `SNET Daemon` and `service` will be listening to:
 
 ```
-# snet service metadata-add-endpoints https://DAEMON_HOST:DAEMON_PORT
+# snet service metadata-add-endpoints http://DAEMON_HOST:DAEMON_PORT
 ```
 
 For example:
 ```
-# snet service metadata-add-endpoints https://54.203.198.53:7000
+# snet service metadata-add-endpoints http://54.203.198.53:7000
 ```
 
 Our service's JSON configuration now looks like:
@@ -203,7 +207,7 @@ Our service's JSON configuration now looks like:
     "endpoints": [
         {
             "group_name": "default_group",
-            "endpoint": "https://54.203.198.53:7000"
+            "endpoint": "http://54.203.198.53:7000"
         }
     ]
 }
@@ -246,8 +250,8 @@ In the service folder, create a file named `snetd.config.json` according to this
 
 ```
 {
-   "DAEMON_END_POINT": "https://DAEMON_HOST:DAEMON_PORT",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://JSON_RPC_ENDPOINT",
+   "DAEMON_END_POINT": "http://DAEMON_HOST:DAEMON_PORT",
+   "ETHEREUM_JSON_RPC_ENDPOINT": "JSON_RPC_ENDPOINT",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "REGISTRY_ADDRESS",
    "PASSTHROUGH_ENABLED": true,
@@ -265,8 +269,8 @@ In the service folder, create a file named `snetd.config.json` according to this
 
 For example, using the Kovan testnet, replace tags with:
 
-- `https://DAEMON_HOST:DAEMON_PORT`: https://54.203.198.53:7000
-- `https://JSON_RPC_ENDPOINT`: https://kovan.infura.io
+- `http://DAEMON_HOST:DAEMON_PORT`: http://54.203.198.53:7000
+- `JSON_RPC_ENDPOINT`: https://kovan.infura.io
 - `REGISTRY_ADDRESS`: 0xe331bf20044a5b24c1a744abc90c1fd711d2c08d
 - `http://SERVICE_GRPC_HOST:SERVICE_GRPC_PORT`: http://localhost:7003
 - `ORGANIZATION_ID`: snet
@@ -274,7 +278,7 @@ For example, using the Kovan testnet, replace tags with:
 
 ```
 {
-   "DAEMON_END_POINT": "https://54.203.198.53:7000",
+   "DAEMON_END_POINT": "http://54.203.198.53:7000",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
@@ -293,8 +297,8 @@ For example, using the Kovan testnet, replace tags with:
 
 For example, using the Ropsten testnet, replace tags with:
 
-- `https://DAEMON_HOST:DAEMON_PORT`: https://54.203.198.53:7000
-- `https://JSON_RPC_ENDPOINT`: https://ropsten.infura.io
+- `http://DAEMON_HOST:DAEMON_PORT`: http://54.203.198.53:7000
+- `JSON_RPC_ENDPOINT`: https://ropsten.infura.io
 - `REGISTRY_ADDRESS`: 0x5156fde2ca71da4398f8c76763c41bc9633875e4
 - `http://SERVICE_GRPC_HOST:SERVICE_GRPC_PORT`: http://localhost:7003
 - `ORGANIZATION_ID`: snet
@@ -302,7 +306,7 @@ For example, using the Ropsten testnet, replace tags with:
 
 ```
 {
-   "DAEMON_END_POINT": "https://54.203.198.53:7000",
+   "DAEMON_END_POINT": "http://54.203.198.53:7000",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0x5156fde2ca71da4398f8c76763c41bc9633875e4",
@@ -407,122 +411,68 @@ Example (for `endpoint` just use `IP:PORT`):
 # snet client call 0 0.00000001 54.203.198.53:7000 mul '{"a":12,"b":7}'
 ```
 
-## Step 8
+## Step 8 (Treasurer):
 
-- Treasurer:
+As the owner of this service you have the right to claim all AGIs that were spent on it.
 
-As the owner of this service you have the right to claim all AGIs that were
-spent with it.
+To claim these AGIs you must use the `treasurer` command via `SNET CLI`.
 
-To claim these AGIs you must use the `SNET Treasurer` via `SNET Daemon`.
-
-- First, create a `snetd.config.json` in a different folder (i.e. `treasurer/`) according to this template:
-
-```
-{
-   "PRIVATE_KEY": "PRIVATE_KEY_FROM_PAYMENT_ADDRESS",
-   "DAEMON_END_POINT": "https://DAEMON_HOST:DAEMON_PORT",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
-   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
-   "PASSTHROUGH_ENABLED": true,
-   "PASSTHROUGH_ENDPOINT": "http://SERVICE_GRPC_HOST:SERVICE_GRPC_PORT",
-   "ORGANIZATION_ID": "ORGANIZATION_ID",
-   "SERVICE_ID": "SERVICE_ID",
-   "LOG": {
-       "LEVEL": "debug",
-       "OUTPUT": {
-          "TYPE": "stdout"
-          }
-   }
-}
-```
-
-For our example, replace tags with these values (using Kovan testnet):
-
-- `PRIVATE_KEY_FROM_PAYMENT_ADDRESS`: The private key for `0xA6E06cF37110930D2906e6Ae70bA6224eDED917B`
-- `DAEMON_HOST:DAEMON_PORT`: https://54.203.198.53:7000
-- `SERVICE_GRPC_HOST:SERVICE_GRPC_PORT`: http://localhost:7003
-- `ORGANIZATION_ID`: snet
-- `SERVICE_ID`: example-service
-
-```
-# cd treasurer
-# cat snetd.config.json
-{
-   "PRIVATE_KEY": "PRIVATE_KEY_FROM_PAYMENT_ADDRESS",
-   "DAEMON_END_POINT": "https://54.203.198.53:7000",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
-   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
-   "PASSTHROUGH_ENABLED": true,
-   "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
-   "ORGANIZATION_ID": "snet",
-   "SERVICE_ID": "example-service",
-   "LOG": {
-       "LEVEL": "debug",
-       "OUTPUT": {
-          "TYPE": "stdout"
-          }
-   }
-}
-```
-
-The `PRIVATE_KEY_FROM_PAYMENT_ADDRESS` must be related to `0xA6E06cF37110930D2906e6Ae70bA6224eDED917B`
+The `IDENTITY` of `SNET CLI` must be related to `0xA6E06cF37110930D2906e6Ae70bA6224eDED917B`
 in our example.
 
-Now run the `SNET Daemon` to list all channels that were created to call your service:
+Check your `IDENTITY`, running:
 
-```
-# snetd list channels
-INFO[0000] Cobra initialized                            
-INFO[0000] Using configuration file                      configFile=snetd.config.json
-INFO[0000]                                               PaymentChannelStorageClient="&{ConnectionTimeout:5s RequestTimeout:3s Endpoints:[http://127.0.0.1:2379]}"
-0: {
-ChannelID: 0, 
-Nonce: 0, 
-State: Open, 
-Sender: 0xFF2a327ed1Ca40CE93F116C5d6646b56991c0ddE, 
-Recipient: 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B, 
-GroupId: [102 246 250 169 115 225 21 99 128 252 113 211 110 41 224 185 246 243 157 8 53 185 14 10 47 225 235 251 74 51 189 17], 
-FullAmount: 450, 
-Expiration: 11000000, 
-AuthorizedAmount: 180, 
-Signature: jzVh5QoRIiiLH/RKH0GHvxMNRcLquVOZQE2ZFmUiYAsPsr+pIap+YERI7zw+BQ2d/ofs4Gl8J6u2SwTxN8rblRs=
-}
-```
-
-The output shows that sender `0xFF2a327ed1Ca40CE93F116C5d6646b56991c0ddE` has already spent
-`180` COGs from the total amount `450` COGs with this service.
-
-- So if we claim this channel right now, we'll be able to get these `180` COGs.
-
-```
-# snetd claim --channel-id 0
-[Daemon log]
-INFO[0001] Transaction finished successfully             amount=180 channelId=9 isSendBack=false signature="jzVh5QoRIiiLH/RKH0GHvxMNRcLquVOZQE2ZFmUiYAsPsr+pIap+YERI7zw+BQ2d/ofs4Gl8J6u2SwTxN8rblRs=" timeout=5s
-```
-
-- Then you can check your balance to be sure that these `180` COGs are now into your MultiPartyEscrow(`MPE`):
-
-```
-# snet client balance --account 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B
+``` 
+# snet account balance
     account: 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B
     ETH: **********
-    AGI: 0.00000000
-    MPE: 0.00000180
+    AGI: 0
+    MPE: 0
 ```
 
-- The last thing you should do is withdraw this amount from `MPE` to your private wallet:
+To print the list of unclaimed channels and also the total amount of unclaimed funds:
+
+``` 
+# snet treasurer print-unclaimed --endpoint 54.203.198.53:7000
+
+# channel_id  channel_nonce  signed_amount (AGI)
+0   0   0.00000001
+1   0   0.00000001
+# total_unclaimed_in_AGI = 0.00000001
+```
+
+To claim all channels at once:
 
 ```
-# snet client withdraw 0.00000180
+# snet treasurer claim-all --endpoint 54.203.198.53:7000  -y
+Submitting transaction...
 [blockchain transaction]
+```
+
+```
+# snet account balance
+    account: 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B
+    ETH: **********
+    AGI: 0
+    MPE: 0.00000002
+```
+
+The last step you should do is withdraw this amount from `MPE` to your private wallet:
+
+```
+# snet account withdraw 0.00000002 -y
+[blockchain transaction]
+
 # snet client balance
     account: 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B
     ETH: **********
-    AGI: 0.00000180
-    MPE: 0.00000000
+    AGI: 0.00000002
+    MPE: 0
 ```
+
+Note that all this AGI claim steps must be run with a certain frequency, we recommend the 
+service's owner to do this once a day.
+
+You can automate it using `cron`.
 
 For more information about the `SNET MultiPartyEscrow` check this [link](https://github.com/singnet/dev-portal/tree/master/docs/all/mpe). 
