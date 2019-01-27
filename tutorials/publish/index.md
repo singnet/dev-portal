@@ -274,7 +274,7 @@ snet channel open-init ORGANIZATION_ID example-service 0.0000001 $EXPIRATION
 ```
 This command will print CHANNEL_ID of created channel. You should remember this id, because you will need it to call the service.
 
-- Now, you can check your channels 
+Now, you can check your channels 
 
 ```
 # list of locally initialized channels
@@ -337,15 +337,15 @@ To claim all channels at once:
 snet treasurer claim-all --endpoint MY_IP:7000  -y
 ```
 
- Each payment channel have its expiration time (we've already encountered this parameter when we run ```snet channel open-init```). After this expiration time the sender can take back all unclaimed funds. In service metadata we have the special parameter payment-expiration-threshold which by default is 40320 blocks, or approximately one week with 15 sec/block (you can set this parameter in ```snet service metadata-init```). Your service will automatically stop accepting payments in channels which will became expired in less then payment-expiration-threshold blocks. 
+ Each payment channel have its expiration time (we've already encountered this parameter when we run ```snet channel open-init```). After expiration time the sender can take back all unclaimed funds. In service metadata we have the special parameter payment-expiration-threshold which by default is 40320 blocks, or approximately one week with 15 sec/block (you can set this parameter in ```snet service metadata-init```). Your service will automatically stop accepting payments in channels which will became expired in less then payment-expiration-threshold blocks. 
 
 We also have special command: ```snet treasurer claim-expired``` which will claim all channels which are close to expiration. By default it will claim all channels which will be expired in 34560 blocks or 6 days with 15sec/block.
 
-It also should be noted that if your etcd storage is safe and channels are not expired you don't required to claim your funds. You can claim them then you want, for example once in month. 
+It also should be noted that if your etcd storage is safe and channels are not expiredi then you don't required to claim your funds. You can claim them then you want, for example once in several month. 
 
 Our recommendations are following
 - Your should run ```snet treasurer claim-expired``` each 1-3 days. We recommend automate it using `cron`.
-- You can run ```claim-all``` command when your want.
+- You can run ```claim-all``` command when your want. For example once in serveral month.
 ```
 
 For more information about the `SNET MultiPartyEscrow` check this [link](https://github.com/singnet/dev-portal/tree/master/docs/all/mpe). 
