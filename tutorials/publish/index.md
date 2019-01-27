@@ -346,6 +346,5 @@ It also should be noted that if your etcd storage is safe and channels are not e
 Our recommendations are following
 - Your should run ```snet treasurer claim-expired``` each 1-3 days. We recommend automate it using `cron`.
 - You can run ```claim-all``` command when your want. For example once in serveral month.
-```
 
 For more information about the `SNET MultiPartyEscrow` check this [link](https://github.com/singnet/dev-portal/tree/master/docs/all/mpe). 
