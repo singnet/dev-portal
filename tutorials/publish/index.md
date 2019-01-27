@@ -174,7 +174,7 @@ You need to specify the following parameters:
 
 ```
 # !!! replace ORGANIZATION_ID with id of your organization
-snet service publish snet example-service
+snet service publish ORGANIZATION_ID example-service
 ```
 
 Check if your service has been properly published
@@ -263,7 +263,7 @@ In order to open a payment channel to your service your can use the following co
 
 ```# snet channel open-init ORGANIZATION_ID SERVICE_ID AMOUNT_IN_AGI EXPIRATION_BLOCK_NUMBER```
 
-For example with the following commands we open and initialize the channel for 10 cogs for ORGANIZATION_ID/example-service with expiration time 57600 blocks in the future (approximately 10 days with 15 seconds per blocks) :
+For example with the following commands we open and initialize the channel for 10 cogs for ORGANIZATION_ID/example-service with expiration time 57600 blocks in the future (approximately 10 days with 15 sec/blocks) :
 
 ```
 #  `snet channel block-number` returns the current block number
@@ -287,29 +287,21 @@ snet channel print-all-filter-sender
 It should be noted that if you delete your `SNET CLI` configuration you remove all your initialized channels. But your can easily find all your channels using ```snet channel print-all-filter-sender``` command and initialize them again using ```snet channel init``` command.
 
 
-##### From now on, the `SNET Daemon` must be running!
+From now on, the `SNET Daemon` must be running!
 
-- You can inspect a channel state (by `id`):
-
-```
-# snet client get-channel-state CHANNEL_ID SERVICE_ENDPOINT
-```
-
-Example:
+You can inspect a channel state (your should use `CHANNEL_ID` which was returned by ```snet channel open-init```):
 
 ```
-snet client get-channel-state 0 MY_IP:7000
+# !!! replace MY_IP with your ip
+# !!! replace CHANNEL_ID with channel id
+snet client get-channel-state CHANNEL_ID MY_IP:7000
 ```
 
-- Finally, you can call your service with:
+Finally, you can call your service with:
 
 ```
 # snet client call CHANNEL_ID PRICE_IN_AGI SERVICE_ENDPOINT SERVICE_METHOD SERVICE_JSON_PARAMS
-```
 
-Example (for `endpoint` just use `IP:PORT`):
-
-```
 # !!! replace CHANNEL_ID with channel id (which you get with "snet channel open-init" command)
 # !!! replace MY_IP with your ip
 snet client call CHANNEL_ID 0.00000001 MY_IP:7000 mul '{"a":12,"b":7}'
