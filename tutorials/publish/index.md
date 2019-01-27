@@ -64,11 +64,11 @@ Now you can simply run a docker container (with proper port mapping).
 docker run -p 7000:7000 -ti snet_example_service bash
 ```
 
-However in case of real service it might not be enough. Service (more precisely 'SNET DAEMON') stores payments in etcd storage. They will be written in blockchain only after your claim them using 'snet treasurer' commands. It means that if your lose your etcd storage your lose all unclaimed payments. 
+However in case of real service it might not be enough. Service (more precisely `SNET DAEMON`) stores payments in etcd storage. They will be written in blockchain only after your claim them using ```snet treasurer``` commands. It means that if your lose your etcd storage your lose all unclaimed payments. 
 
-In this example we run etcd cluster inside a docker container (more precisely inside a 'SNET DAEMON') and all payments are stored in etcd folder /opt/singnet/etcd/, it means that your only need to store this etcd folder outside the docker container to make this setup suitable for the real use-case (you can use -v option in ```docker run``` command). You also have possibility to configure 'SNET DAEMON' to store payments in external etcd cluster.
+In this example we run etcd cluster inside a docker container (more precisely inside a `SNET DAEMON`) and all payments are stored in etcd folder /opt/singnet/etcd/, it means that your only need to store this etcd folder outside the docker container to make this setup suitable for the real use-case (you can use -v option in ```docker run``` command). You also have possibility to configure `SNET DAEMON` to store payments in external etcd cluster.
 
-## Step 2. Setup 'SNET CLI' and create your identity.
+## Step 2. Setup `SNET CLI` and create your identity.
 
 From this point we follow the tutorial in the Docker container's prompt.
 
@@ -240,9 +240,9 @@ python3 run_example_service.py
 
 At this point your service should be up and running. 
 
-## Step 9. Call your service using 'SNET CLI'.
+## Step 9. Call your service using `SNET CLI`.
 
-You can call your service using 'SNET CLI' for testing purpose. 
+You can call your service using `SNET CLI` for testing purpose. 
 
 After running the service, the terminal will not return to you, so you will need to open a second terminal in your container.
 
@@ -284,7 +284,7 @@ snet channel print-initialized
 snet channel print-all-filter-sender
 ```
 
-It should be noted that if you delete your 'SNET CLI' configuration you remove all your initialized channels. But your can easily find all your channels using ```snet channel print-all-filter-sender``` command and initialize them again using ```snet channel init``` command.
+It should be noted that if you delete your `SNET CLI` configuration you remove all your initialized channels. But your can easily find all your channels using ```snet channel print-all-filter-sender``` command and initialize them again using ```snet channel init``` command.
 
 
 ##### From now on, the `SNET Daemon` must be running!
