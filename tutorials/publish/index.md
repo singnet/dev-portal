@@ -169,9 +169,8 @@ You can publish your service using the following command:
 ```
 
 You need to specify the following parameters:
-`ORGANIZATION_ID`: The id of the organization you've create in step 4.
-`SERVICE_ID` : The id that you want to registry your service with. Can be the same as
-`SERVICE_DISPLAY_NAME` or different.
+- `ORGANIZATION_ID`: The id of the organization you've create in step 4.
+- `SERVICE_ID` : The id that you want to registry your service with. Can be the same as `SERVICE_DISPLAY_NAME` or different.
 
 ```
 # !!! replace ORGANIZATION_ID with id of your organization
