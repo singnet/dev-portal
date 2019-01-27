@@ -89,7 +89,7 @@ In this tutorial we'll use mnemonic identity.
 snet identity create MY_ID_NAME mnemonic --mnemonic "MY_MNEMONIC"
 ```
 
-Replace MY_MNEMONIC with any string your want. Replace `MY_ID_NAME` by an id to identify your key in the `SNET CLI`. This id will not be seen by anyone. It's just a way to make it easier for you to refer to your wallet (you may have many, btw) in following `snet` commands. 
+Replace MY_MNEMONIC with any string your want. You can replace `MY_ID_NAME` by an id to identify your key in the `SNET CLI`. This id will not be seen by anyone. It's just a way to make it easier for you to refer to your wallet (you may have many, btw) in following `snet` commands. 
 This alias is kept locally in the container and will vanish when it's shutdown. So you might want to configure `SNET CLI` not in the container, or you can simply keep it's configuration (```$HOME/.snet``` directory) outside the container. 
 
 `SNET CLI` will automatically switch to this identity because it will be the first identity created. 
@@ -162,12 +162,13 @@ This command will create ```service_metadata.json``` file. Please take a look in
 
 ## Step 7. Publish the service in SingularityNet.
 
-Publish your service
+You can publish your service using the following command:
 
 ```
 # snet service publish ORGANIZATION_ID SERVICE_ID
 ```
 
+You need to specify the following parameters:
 `ORGANIZATION_ID`: The id of the organization you've create in step 4.
 `SERVICE_ID` : The id that you want to registry your service with. Can be the same as
 `SERVICE_DISPLAY_NAME` or different.
