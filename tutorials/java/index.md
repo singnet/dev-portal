@@ -54,7 +54,9 @@ Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
 ```
 $ docker build --build-arg language=java -t snet_java_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
-$ docker run -p 7000:7000 -ti snet_java_service bash
+$ export ETCD_HOST_FOLDER=$HOME/singnet/etcd/example-java-service/
+$ export ETCD_CONTAINER_FOLDER=/opt/singnet/etcd/
+$ docker run -p 7000:7000 -v $ETCD_HOST_FOLDER:$ETCD_CONTAINER_FOLDER -ti snet_java_service bash
 ```
 
 From this point we follow the tutorial in the Docker container's prompt.

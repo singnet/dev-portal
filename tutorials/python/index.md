@@ -54,7 +54,9 @@ Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
 
 ```
 $ docker build --build-arg language=python -t snet_python_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
-$ docker run -p 7000:7000 -ti snet_python_service bash
+$ export ETCD_HOST_FOLDER=$HOME/singnet/etcd/example-python-service/
+$ export ETCD_CONTAINER_FOLDER=/opt/singnet/etcd/
+$ docker run -p 7000:7000 -v $ETCD_HOST_FOLDER:$ETCD_CONTAINER_FOLDER -ti snet_python_service bash
 ```
 
 From this point we follow the tutorial in the Docker container's prompt.
