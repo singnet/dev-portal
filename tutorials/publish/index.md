@@ -341,7 +341,7 @@ snet treasurer claim-all --endpoint MY_IP:7000  -y
 
 We also have special command: ```snet treasurer claim-expired``` which will claim all channels which are close to expiration. By default it will claim all channels which will be expired in 34560 blocks or 6 days with 15sec/block.
 
-It also should be noted that if your etcd storage is safe and channels are not expiredi then you don't required to claim your funds. You can claim them then you want, for example once in several month. 
+It also should be noted that if your etcd storage is safe and channels have not expired then you are not required to claim your funds. You can claim them when you want, for example once in several months. 
 
 Our recommendations are following
 - Your should run ```snet treasurer claim-expired``` each 1-3 days. We recommend automate it using `cron`.
