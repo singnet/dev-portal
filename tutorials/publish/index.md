@@ -31,7 +31,7 @@ page_nav:
         url: '/docs/all'
 ---
 
-[naming-standards]: https://github.com/singnet/dev-portal/blob/master/docs/all/naming-standard.md
+[naming-standards]: https://dev.singularitynet.io/docs/all/naming-standard/
 
 -------------------------------
 
@@ -46,7 +46,7 @@ Run this tutorial from a bash terminal.
 
 In this tutorial we will publish an example service in SingularityNET using Kovan Test Network.
 
-We will run example service on endpoint MY_IP:7000. You will need to replace MY_IP with your ip in all commands.
+We will run example service on endpoint `SERVICE_IP:7000`. You will need to replace `SERVICE_IP` with your service's ip in all commands.
 
 ## Step 1. Setup and run a docker container
 
@@ -149,14 +149,14 @@ You need to specify the following parameters:
 * SERVICE_PROTOBUF_DIR - Directory which contains protobuf files of your service: ```service/service_spec/``` in case of our example service.
 * SERVICE_DISPLAY_NAME - Display name of your service. You can choose any name you want. 
 * PAYMENT_ADDRESS - Ethereum account which will receive payments for this service. You should set it to your ethereum account. You can use ```snet account print``` to see your account.
-* SERVICE_ENDPOINT - Endpoint which will be used to connect to your service: ```http://MY_IP:7000```.
+* SERVICE_ENDPOINT - Endpoint which will be used to connect to your service: ```http://SERVICE_IP:7000```.
 * FIXED_PRICE - Price in AGI for a single call to your service. We will set the price to 1 COG (remember that 1 AGI = 10^8 COGS).
 
 For example:
 ```
-# !!! replace MY_IP with your ip
+# !!! replace SERVICE_IP with your service's ip
 ACCOUNT=`snet account print`
-snet service metadata-init service/service_spec/ example-service $ACCOUNT --endpoints http://MY_IP:7000 --fixed-price 0.00000001 
+snet service metadata-init service/service_spec/ example-service $ACCOUNT --endpoints http://SERVICE_IP:7000 --fixed-price 0.00000001 
 ```
 This command will create ```service_metadata.json``` file. Please take a look into this file. You can find the description of service metadata format in [mpe-metadata.md](docs/all/mpe/mpe-metadata.md).
 
@@ -198,14 +198,14 @@ Running the service and `SNET Daemon`.
 
 In the service folder, create a file named `snetd.config.json`. 
 
-You should replace `MY_IP` with your IP address and `ORGANIZATION_ID` with the id of your organization.
+You should replace `SERVICE_IP` with your service's IP address and `ORGANIZATION_ID` with the id of your organization.
 
 ```
-# !!! replace MY_IP with your ip
+# !!! replace SERVICE_IP with your service's ip
 # !!! replace ORGANIZATION_ID with id of your organization
 cat > snetd.config.json << EOF
 {
-   "DAEMON_END_POINT": "http://MY_IP:7000",
+   "DAEMON_END_POINT": "http://SERVICE_IP:7000",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
@@ -294,9 +294,9 @@ From now on, the `SNET Daemon` must be running!
 You can inspect a channel state (you should use `CHANNEL_ID` which was returned by ```snet channel open-init```):
 
 ```
-# !!! replace MY_IP with your ip
+# !!! replace SERVICE_IP with your service's ip
 # !!! replace CHANNEL_ID with channel id
-snet client get-channel-state CHANNEL_ID MY_IP:7000
+snet client get-channel-state CHANNEL_ID SERVICE_IP:7000
 ```
 
 Finally, you can call your service with:
@@ -305,8 +305,8 @@ Finally, you can call your service with:
 # snet client call CHANNEL_ID PRICE_IN_AGI SERVICE_ENDPOINT SERVICE_METHOD SERVICE_JSON_PARAMS
 
 # !!! replace CHANNEL_ID with channel id (which you get with "snet channel open-init" command)
-# !!! replace MY_IP with your ip
-snet client call CHANNEL_ID 0.00000001 MY_IP:7000 mul '{"a":12,"b":7}'
+# !!! replace SERVICE_IP with your service's ip
+snet client call CHANNEL_ID 0.00000001 SERVICE_IP:7000 mul '{"a":12,"b":7}'
 ```
 
 ## Step 10. Treasurer
@@ -328,15 +328,15 @@ You can check your balance using ```snet account balance``` command.
 To print the list of unclaimed channels and also the total amount of unclaimed funds:
 
 ``` 
-# !!! replace MY_IP with your ip
-snet treasurer print-unclaimed --endpoint MY_IP:7000
+# !!! replace SERVICE_IP with your service's ip
+snet treasurer print-unclaimed --endpoint SERVICE_IP:7000
 ```
 
 To claim all channels at once:
 
 ```
-# !!! replace MY_IP with your ip
-snet treasurer claim-all --endpoint MY_IP:7000  -y
+# !!! replace SERVICE_IP with your service's ip
+snet treasurer claim-all --endpoint SERVICE_IP:7000  -y
 ```
 
 Each payment channel has its expiration time (we've already encountered this parameter when we run ```snet channel open-init```). After expiration time the sender can take back all unclaimed funds. 
@@ -349,6 +349,22 @@ It also should be noted that if your etcd storage is safe and channels have not 
 
 Our recommendations are following
 - Your should run ```snet treasurer claim-expired``` each 1-3 days. We recommend automate it using `cron`.
-- You can run ```claim-all``` command when your want. For example once in serveral month.
+- You can run ```claim-all``` command when your want. For example once in several months.
 
-For more information about the `SNET MultiPartyEscrow` check this [link](https://github.com/singnet/dev-portal/tree/master/docs/all/mpe). 
+For more information about the `SNET MultiPartyEscrow` check this [link](https://dev.singularitynet.io/docs/all/mpe/mpe/). 
+
+## Step 11 (optional). Withdraw AGI tokens from MPE
+
+After the step 10, all the AGIs are in the MultiPartyEscrow (MPE).
+
+If you need to withdraw your tokens from MPE wallet, you should run the `SNET CLI` withdraw command.
+
+For example:
+
+```
+# !!! check current account and MPE balance
+snet account balance
+
+# !!! withdraw tokens from MPE
+snet account withdraw AMOUNT_IN_AGI -y
+```
