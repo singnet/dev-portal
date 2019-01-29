@@ -158,7 +158,7 @@ For example:
 ACCOUNT=`snet account print`
 snet service metadata-init service/service_spec/ example-service $ACCOUNT --endpoints http://SERVICE_IP:7000 --fixed-price 0.00000001 
 ```
-This command will create ```service_metadata.json``` file. Please take a look into this file. You can find the description of service metadata format in [mpe-metadata.md](docs/all/mpe/mpe-metadata.md).
+This command will create ```service_metadata.json``` file. Please take a look into this file. You can find the description of service metadata format in [mpe-metadata](https://dev.singularitynet.io/docs/all/mpe/mpe-metadata/).
 
 ## Step 7. Publish the service in SingularityNET
 
