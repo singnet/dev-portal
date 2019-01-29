@@ -355,28 +355,16 @@ For more information about the `SNET MultiPartyEscrow` check this [link](https:/
 
 ## Step 11 (optional). Withdraw AGI tokens from MPE
 
-After the step 10, all the AGIs are in the MultiPartyEscrow Contract (MPE).
+After the step 10, all the AGIs are in the MultiPartyEscrow (MPE).
 
-If you need to transfer them to your wallet, you must run the `SNET CLI` withdraw command.
+If you need to withdraw your tokens from MPE wallet, you should run the `SNET CLI` withdraw command.
 
-For example, to withdraw 5 AGIs from MPE:
+For example:
 
 ```
-# !!! check current account balance
+# !!! check current account and MPE balance
 snet account balance
-  account: 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B
-  ETH: **********
-  AGI: 0
-  MPE: 5
 
-# !!! withdraw 5 AGIs from MPE
-snet account withdraw 5 -y
-[blockchain transaction]
-
-# !!! check again the current account balance
-snet account balance
-  account: 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B
-  ETH: **********
-  AGI: 5
-  MPE: 0
+# !!! withdraw tokens from MPE
+snet account withdraw AMOUNT_IN_AGI -y
 ```
