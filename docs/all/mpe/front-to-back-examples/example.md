@@ -166,7 +166,7 @@ snet account deposit 100.1 -y
 
 # open channel with our service (organization=testo service_name=tests)
 # channel with channel_id=0 should be created and initialized after this call
-snet channel open-init testo tests 42 100000000 -y
+snet channel open-init testo tests 42 +20days -y
 
 ```
 ### Make a call using stateless logic

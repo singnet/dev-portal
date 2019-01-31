@@ -14,7 +14,7 @@ snet account deposit 42000.22 -y
 
 # open channel with our service (organization=testo service_name=tests)
 # channel with channel_id=0 should be created and initilized
-snet channel open-init testo tests 42 100000000 -y
+snet channel open-init testo tests 42 +20days -y
 
 # call the server using stateless logic
 snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
