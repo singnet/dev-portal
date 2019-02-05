@@ -240,7 +240,7 @@ Replace `PAYMENT_ADDRESS` by your public key (wallet).
 Example:
 
 ```
-# ./publishAndStartService.sh 0xA6E06cF37110930D2906e6Ae70bA6224eDED917B
+# ./publishAndStartService.sh 0x501e8c58E6C16081c0AbCf80Ce2ABb6b3f91E717
 ```
 
 This will start the `SNET Daemon` and your service. If everything goes well you will 
@@ -279,12 +279,23 @@ Other `snet` commands and options (as well as their documentation) can be found
 
 You can test your service making requests in command line:
 
-The `testServiceRequest.sh` script is set to use channel id `0`, if your
-`SNET CLI` identity already had opened previous channels, you'll have to
-set channel id manually at.
+The `openChannel.sh` script will open and initialize a new payment channel, it'll 
+output the new channel id (that will be used by `testServiceRequest.sh`):
 
 ```
-# ./testServiceRequest.sh 12 4
+# ./openChannel.sh
+[blockchain log]
+
+#channel_id
+10
+```
+
+In this example the channel id is `10`.
+
+So now you must run `testServiceRequest.sh CHANNEL_ID VALUE_A VALUE_B`:
+
+```
+# ./testServiceRequest.sh 10 12 4
 [blockchain log]
     response:
         v: 3

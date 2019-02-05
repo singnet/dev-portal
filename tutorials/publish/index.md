@@ -205,7 +205,7 @@ You should replace `SERVICE_IP` with your service's IP address and `ORGANIZATION
 # !!! replace ORGANIZATION_ID with id of your organization
 cat > snetd.config.json << EOF
 {
-   "DAEMON_END_POINT": "http://SERVICE_IP:7000",
+   "DAEMON_END_POINT": "SERVICE_IP:7000",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
