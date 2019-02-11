@@ -26,6 +26,10 @@ grid_navigation:
       excerpt: Learn how to sell your AI service on the SingularityNET Marketplace.
       cta: Read more
       url: '/tutorials/publish'
+    - title: Publish a Process-Type SingularityNET Service
+      excerpt: Wrap your AI service as a process/executable and publish it onto SingularityNET.
+      cta: Read more
+      url: '/tutorials/process'
     - title: Getting started with Docker (SingularityNET)
       excerpt: Use docker to publish a SingularityNET Service
       cta: Read more
