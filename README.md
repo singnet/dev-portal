@@ -112,11 +112,11 @@ The SingularityNET Developer Portal is in active development. Below you will fin
 
 * [x] Launch the beta-version of the SingularityNET Developer Portal.
 * [x] Pilot developer workshops in Helsinki on the 14th of December 2018.
-* [ ] Launch a Meetup group.
+* [x] Launch a Meetup group (https://meetup.com/pro/singularitynet).
 * [ ] Create a developer workshop cookbook.
-* [ ] Gather feedback from the community.
+* [x] Gather feedback from the community.
 * [ ] Move all Github Wiki's to the SingularityNET Developer Portal.
-* [ ] Implement feedback from the community that we decided to go with.
+* [x] Implement feedback from the community that we decided to go with.
 * [ ] For every tutorial, add a video demonstration.
 * [ ] Roll out a global SingularityNET Developer Workshop program.
 
