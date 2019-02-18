@@ -274,7 +274,7 @@ EXPIRATION=$((`snet channel block-number` + 57600))
 # replace  ORGANIZATION_ID with id of your organization
 snet channel open-init ORGANIZATION_ID example-service 0.0000001 $EXPIRATION
 ```
-This command will print CHANNEL_ID of created channel. You should remember this id, because you will need it to call the service.
+This command will print CHANNEL_ID of created channel.
 
 Now, you can check your channels:
 
@@ -302,11 +302,10 @@ snet client get-channel-state CHANNEL_ID SERVICE_IP:7000
 Finally, you can call your service with:
 
 ```
-# snet client call CHANNEL_ID PRICE_IN_AGI SERVICE_ENDPOINT SERVICE_METHOD SERVICE_JSON_PARAMS
+# snet client call ORGANIZATION_ID SERVICE_ID SERVICE_METHOD SERVICE_JSON_PARAMS
 
-# !!! replace CHANNEL_ID with channel id (which you get with "snet channel open-init" command)
-# !!! replace SERVICE_IP with your service's ip
-snet client call CHANNEL_ID 0.00000001 SERVICE_IP:7000 mul '{"a":12,"b":7}'
+# replace  ORGANIZATION_ID with id of your organization
+snet client call ORGANIZATION_ID example-service mul '{"a":12,"b":7}'
 ```
 
 ## Step 10. Treasurer

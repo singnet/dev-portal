@@ -17,5 +17,5 @@ snet account deposit 42000.22 -y
 snet channel open-init testo tests 42 +20days -y
 
 # call the server using stateless logic
-snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
-snet client call 0 0.1 localhost:8080 mul '{"a":6,"b":7}'
+snet client call testo tests add '{"a":10,"b":32}' -y
+snet client call testo tests mul '{"a":6,"b":7}'  -y

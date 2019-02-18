@@ -189,21 +189,20 @@ Let's check the list of initialized channels:
 snet channel print-initialized
 ```
 
-Now we can make a call to send us the last state of the channel:
+Now we can make a call.
 ```
 # we make call using stateless logic with the following arguments
-#channel_id       = 0
-#price            = 0.1
-#endpoint         = localhost:8080
+#org_id       = testo
+#service_id   = tests
 #protobuf_method  = add
 #parameters       = '{"a":10,"b":32}'
-snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
+snet client call testo tests add '{"a":10,"b":32}'
 ```
 We can make a call using this state, and we can repeat this call until we spend all the tokens in the channel. There are no on-chain transactions here yet.
 
 ```
-snet client call 0 0.1 localhost:8080 mul '{"a":6,"b":7}'
-snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
+snet client call testo tests mul '{"a":6,"b":7}'
+snet client call testo tests add '{"a":10,"b":32}'
 ```
 
 ## Service Provider: Claiming the Channel with a Treasurer Server
