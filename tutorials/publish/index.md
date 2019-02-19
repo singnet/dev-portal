@@ -37,8 +37,10 @@ page_nav:
 
 _Before following this tutorial, make sure you've installed_
 
-* _Docker (https://www.docker.com/)_
-* _Metamask (https://metamask.io)_
+* _Docker ([https://www.docker.com/](https://www.docker.com/))_
+* _Metamask ([https://metamask.io](https://metamask.io))_
+
+_If you aren't familiar with Docker you may want to take a look at its official [Get Started Guide](https://docs.docker.com/get-started/)._
 
 -------------------------------
 
@@ -208,10 +210,10 @@ In the service folder, create a file named `snetd.config.json`.
 
 You should replace `SERVICE_IP` with your service's IP address and `ORGANIZATION_ID` with the id of your organization.
 
-Note: Since you're running this service inside a Docker Container, you must specify the `0.0.0.0` as `SERVICE_IP`.
+_NOTE:_ In this tutorial we're running the service inside a Docker Container so we  must set `SERVICE_IP` to `0.0.0.0`.
 
 ```
-# !!! replace SERVICE_IP with your service's ip ("0.0.0.0" if using Docker Container)
+# !!! replace SERVICE_IP with your service's IP ("0.0.0.0" in this tutorial)
 # !!! replace ORGANIZATION_ID with id of your organization
 cat > snetd.config.json << EOF
 {
