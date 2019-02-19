@@ -68,6 +68,14 @@ However in case of real service it might not be enough. Service (more precisely 
 
 In this example we run etcd cluster inside a docker container (more precisely inside a `SNET DAEMON`) and all payments are stored in etcd folder `/opt/singnet/etcd/`, it means that you only need to store this etcd folder outside the docker container to make this setup suitable for the real use-case (you can use `-v` option in ```docker run``` command). You also have the possibility to configure `SNET DAEMON` to store payments in external etcd cluster.
 
+For example:
+
+```
+export ETCD_HOST_FOLDER=$HOME/singnet/etcd/example-service/
+export ETCD_CONTAINER_FOLDER=/opt/singnet/etcd/
+docker run -p 7000:7000 -v $ETCD_HOST_FOLDER:$ETCD_CONTAINER_FOLDER -ti snet_example_service bash
+```
+
 ## Step 2. Setup `SNET CLI` and create your identity
 
 From this point we follow the tutorial in the Docker container's prompt.
@@ -165,7 +173,7 @@ This command will create ```service_metadata.json``` file. Please take a look in
 You can publish your service using the following command:
 
 ```
-# snet service publish ORGANIZATION_ID SERVICE_ID
+snet service publish ORGANIZATION_ID SERVICE_ID
 ```
 
 You need to specify the following parameters:
@@ -198,14 +206,37 @@ Running the service and `SNET Daemon`.
 
 In the service folder, create a file named `snetd.config.json`. 
 
+```json
+{
+   "DAEMON_END_POINT": "SERVICE_IP:7000",
+   "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
+   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
+   "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
+   "PASSTHROUGH_ENABLED": true,
+   "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
+   "ORGANIZATION_ID": "ORGANIZATION_ID",
+   "SERVICE_ID": "example-service",
+   "PAYMENT_CHANNEL_STORAGE_SERVER": {
+       "DATA_DIR": "/opt/singnet/etcd/"
+   },
+   "LOG": {
+       "LEVEL": "debug",
+       "OUTPUT": {
+              "TYPE": "stdout"
+           }
+   }
+}
+```
+
 You should replace `SERVICE_IP` with your service's IP address and `ORGANIZATION_ID` with the id of your organization.
 
+Note: Since we're running this service inside a Docker Container, we must specify the `0.0.0.0` as `SERVICE_IP`.
+
 ```
-# !!! replace SERVICE_IP with your service's ip
 # !!! replace ORGANIZATION_ID with id of your organization
 cat > snetd.config.json << EOF
 {
-   "DAEMON_END_POINT": "SERVICE_IP:7000",
+   "DAEMON_END_POINT": "0.0.0.0:7000",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
