@@ -37,8 +37,10 @@ page_nav:
 
 _Before following this tutorial, make sure you've installed_
 
-* _Docker (https://www.docker.com/)_
-* _Metamask (https://metamask.io)_
+* _Docker ([https://www.docker.com/](https://www.docker.com/))_
+* _Metamask ([https://metamask.io](https://metamask.io))_
+
+_If you aren't familiar with Docker you may want to take a look at its official [Get Started Guide](https://docs.docker.com/get-started/)._
 
 -------------------------------
 
@@ -67,6 +69,14 @@ docker run -p 7000:7000 -ti snet_example_service bash
 However in case of real service it might not be enough. Service (more precisely `SNET DAEMON`) stores payments in etcd storage. They will be written in blockchain only after you claim them using ```snet treasurer``` commands. It means that if you lose your etcd storage you lose all unclaimed payments. 
 
 In this example we run etcd cluster inside a docker container (more precisely inside a `SNET DAEMON`) and all payments are stored in etcd folder `/opt/singnet/etcd/`, it means that you only need to store this etcd folder outside the docker container to make this setup suitable for the real use-case (you can use `-v` option in ```docker run``` command). You also have the possibility to configure `SNET DAEMON` to store payments in external etcd cluster.
+
+For example:
+
+```
+export ETCD_HOST_FOLDER=$HOME/singnet/etcd/example-service/
+export ETCD_CONTAINER_FOLDER=/opt/singnet/etcd/
+docker run -p 7000:7000 -v $ETCD_HOST_FOLDER:$ETCD_CONTAINER_FOLDER -ti snet_example_service bash
+```
 
 ## Step 2. Setup `SNET CLI` and create your identity
 
@@ -165,7 +175,7 @@ This command will create ```service_metadata.json``` file. Please take a look in
 You can publish your service using the following command:
 
 ```
-# snet service publish ORGANIZATION_ID SERVICE_ID
+snet service publish ORGANIZATION_ID SERVICE_ID
 ```
 
 You need to specify the following parameters:
@@ -200,8 +210,10 @@ In the service folder, create a file named `snetd.config.json`.
 
 You should replace `SERVICE_IP` with your service's IP address and `ORGANIZATION_ID` with the id of your organization.
 
+_NOTE:_ In this tutorial we're running the service inside a Docker Container so we  must set `SERVICE_IP` to `0.0.0.0`.
+
 ```
-# !!! replace SERVICE_IP with your service's ip
+# !!! replace SERVICE_IP with your service's IP ("0.0.0.0" in this tutorial)
 # !!! replace ORGANIZATION_ID with id of your organization
 cat > snetd.config.json << EOF
 {
