@@ -206,37 +206,16 @@ Running the service and `SNET Daemon`.
 
 In the service folder, create a file named `snetd.config.json`. 
 
-```json
-{
-   "DAEMON_END_POINT": "SERVICE_IP:7000",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
-   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
-   "PASSTHROUGH_ENABLED": true,
-   "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
-   "ORGANIZATION_ID": "ORGANIZATION_ID",
-   "SERVICE_ID": "example-service",
-   "PAYMENT_CHANNEL_STORAGE_SERVER": {
-       "DATA_DIR": "/opt/singnet/etcd/"
-   },
-   "LOG": {
-       "LEVEL": "debug",
-       "OUTPUT": {
-              "TYPE": "stdout"
-           }
-   }
-}
-```
-
 You should replace `SERVICE_IP` with your service's IP address and `ORGANIZATION_ID` with the id of your organization.
 
-Note: Since we're running this service inside a Docker Container, we must specify the `0.0.0.0` as `SERVICE_IP`.
+Note: Since you're running this service inside a Docker Container, you must specify the `0.0.0.0` as `SERVICE_IP`.
 
 ```
+# !!! replace SERVICE_IP with your service's ip ("0.0.0.0" if using Docker Container)
 # !!! replace ORGANIZATION_ID with id of your organization
 cat > snetd.config.json << EOF
 {
-   "DAEMON_END_POINT": "0.0.0.0:7000",
+   "DAEMON_END_POINT": "SERVICE_IP:7000",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
