@@ -33,7 +33,7 @@ page_nav:
 
 [naming-standards]: https://dev.singularitynet.io/docs/all/naming-standard/
 
-## Step 1a. Setup your system
+## Step 2a. Setup your system
 
 #### Requirements
 
@@ -65,18 +65,18 @@ sudo mv snetd-linux-amd64 /usr/bin/snetd
 Setup environment variables (they are explained later in this tutorial as they're used):
 
 ```
-ORGANIZATION_ID="$USER"-org
-ORGANIZATION_NAME="The $USER's Organization"
+export ORGANIZATION_ID="$USER"-org
+export ORGANIZATION_NAME="The $USER's Organization"
 
-SERVICE_ID=example-service
-SERVICE_NAME="SNET Example Service"
-SERVICE_IP=127.0.0.1
-SERVICE_PORT=7000
+export SERVICE_ID=example-service
+export SERVICE_NAME="SNET Example Service"
+export SERVICE_IP=127.0.0.1
+export SERVICE_PORT=7000
 
-DAEMON_HOST=$SERVICE_IP
-DAEMON_PORT=$SERVICE_PORT
+export DAEMON_HOST=$SERVICE_IP
+export DAEMON_PORT=$SERVICE_PORT
 
-USER_ID = $USER
+export USER_ID = $USER
 ```
 
 After installation, you can proceed with [Tutorial/Publish/Step3](https://dev.singularitynet.io/tutorials/publish/#step-3-setup-snet-cli-and-create-your-identity).
