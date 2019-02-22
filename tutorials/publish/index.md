@@ -82,24 +82,16 @@ DAEMON_HOST=0.0.0.0
 USER_ID=$USER
 ```
 
-Now you can simply run a docker container [with](#with-persistence) or [without](#without-persistence) persistence.
-
-##### With persistence:
-
-Services store some sensible information in the filesystem. So you may want to share some folders 
-in your host machine with the Docker container to avoid them from vanishing if you lose the Docker container.
-
-- `etcd` Storage folder ([SNET DAEMON etcd](https://github.com/singnet/snet-daemon/blob/master/etcddb/README.md))
-- `SNET CLI` configuration folder ([SNET CLI README.md](https://github.com/singnet/snet-cli/blob/master/README.md))
+Now you can run the Docker container.
 
 ```
 # to secure payments
-ETCD_HOST=$HOME/singnet/etcd/example-service/
+ETCD_HOST=$HOME/.snet/etcd/$SERVICE_ID/
 ETCD_CONTAINER=/opt/singnet/etcd/
 
 # to make your snet's configs persistent
-SNET_HOST=$HOME/.snet
-SNET_CONTAINER=/root/.snet
+SNET_CLI_HOST=$HOME/.snet/
+SNET_CLI_CONTAINER=/root/.snet/
 
 docker run \
     --name MY_SNET_SERVICE \
@@ -114,25 +106,7 @@ docker run \
     -e USER_ID=$USER_ID \
     -p $SERVICE_PORT:$SERVICE_PORT \
     -v $ETCD_HOST:$ETCD_CONTAINER \
-    -v $SNET_HOST:$SNET_CONTAINER \
-    -ti snet_publish_service bash
-```
-
-##### Without persistence:
-
-```
-docker run \
-    --name MY_SNET_SERVICE \
-    -e ORGANIZATION_ID=$ORGANIZATION_ID \
-    -e ORGANIZATION_NAME="$ORGANIZATION_NAME" \
-    -e SERVICE_ID=$SERVICE_ID \
-    -e SERVICE_NAME="$SERVICE_NAME" \
-    -e SERVICE_IP=$SERVICE_IP \
-    -e SERVICE_PORT=$SERVICE_PORT \
-    -e DAEMON_HOST=$DAEMON_HOST \
-    -e DAEMON_PORT=$SERVICE_PORT \
-    -e USER_ID=$USER_ID \
-    -p $SERVICE_PORT:$SERVICE_PORT \
+    -v $SNET_CLI_HOST:$SNET_CLI_CONTAINER \
     -ti snet_publish_service bash
 ```
 
@@ -154,7 +128,7 @@ You can create an identity using a known key.
 
 `SNET CLI` supports these other identity types:
 
-* key - a hex private key
+* key - hex private key
 * rpc - used with a JSON-RPC manager
 * ledger - hardware wallet
 * trezor - hardware wallet
@@ -189,7 +163,7 @@ If you had to use a different `ORGANIZATION_ID` (other than the one we provided 
 you will have to update `ORGANIZATION_ID` properly as it is used later in this tutorial.
 
 ```
-ORGANIZATION_ID="new-org-id"
+export ORGANIZATION_ID="new-org-id"
 ```
 
 If you want to join an existing organization (e.g. `snet`), ask its owner to add your public key (account) into it before proceeding.
@@ -295,7 +269,9 @@ At this point your service should be up and running.
 
 Open a new terminal, if using Docker, enter in the docker container, using:
 
-```docker exec -it MY_SNET_SERVICE bash```
+```
+docker exec -it MY_SNET_SERVICE bash
+```
 
 At this point you can use several `SNET CLI` commands to interact with your account and with the Kovan network
 (see [SNET CLI](https://github.com/singnet/snet-cli/blob/master/README.md) for details).
