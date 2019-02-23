@@ -57,20 +57,22 @@ You can use it with <a href="https://pages.github.com/">GitHub</a> and <a href="
 </ul>
 
 <h3 id="install-with-rubygems">Install with RubyGems</h3>
-<p>The best way to install Jekyll is via <a href="https://rubygems.org/pages/download">RubyGems</a>. At the terminal prompt, simply run the following command to install Jekyll:</p>
+<p>We suggest installing Jekyll via <a href="https://rubygems.org/pages/download">RubyGems</a>. On a terminal prompt, run the following commands:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gem install jekyll
+<span class="nv">$ </span>gem install jekyll-redirect-from
 </code></pre></div></div>
 
-<p>All of Jekyll’s gem dependencies are automatically installed by the above command, so you won’t have to worry about them at all.</p>
+<p>Jekyll’s gem dependencies are automatically installed by the first command, but the developer portal needs the `jekyll-redirect-from` plugin too.</p>
 
 <div class="callout callout--info">
 <p><strong>Full Jekyll installation guide</strong> You can find full Jekyll installation guide <a href="https://jekyllrb.com/docs/installation/" target="blank">here</a>.</p>
 </div>
 
-<h2 id="install-snet">Install the SingularityNET Developer Portal Theme</h2>
+<h2 id="install-snet">Starting a local SingularityNET Developer Portal</h2>
 <h3 id="download">Download</h3>
-<p>Download your SingularityNET Developer Portal Theme from our <a href="https://github.com/singnet/dev-portal" target="_blank">Github</a> (you should get <code class="highlighter-rouge">dev-portal-master.zip</code>) and unzip it.</p>
+<p>Get the SingularityNET Developer Portal sources from <a href="https://github.com/singnet/dev-portal" target="_blank">Github</a>, either download an archive
+or fetch with git clone.</p>
 
 <h3 id="start-development-server">Start development server</h3>
 <p>Jekyll comes with a built-in development server that will allow you to preview what the generated site will look like in your browser locally.</p>

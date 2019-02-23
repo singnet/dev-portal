@@ -6,7 +6,7 @@ comments: true
 
 # Hero section
 title: How to Publish a SingularityNET Service
-description: Getting your service to the SingularityNET Marketplace
+description: Getting your service deployed on to the SingularityNET platform
 
 # extralink box
 extralink:
