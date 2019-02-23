@@ -55,29 +55,3 @@ grid_navigation:
       url: '/tutorials'
 
 ---
-
-## Documentation Pages
-- [All Documentation](/docs/all)
-- [Documentation for AI Service Providers](/docs/provider)
-- [Documentation for AI Service Buyers](/docs/buyer)
-- [Multi-Party Escrow Documentation](/docs/all/mpe)
-- [Tutorials](/tutorials)
-- [Workshops](/workshops)
-- [Developer Portal Documentation](/docs/contribute)
-
-## SingularityNET Platform
-- [Daemon](/docs/all/daemon)
-- [Multi-Party Escrow](/docs/all/mpe/mpe)
-- [Payment Channel Storage](/docs/all/mpe/payment-channel-storage)
-- [Registry](/docs/all/registry)
-
-## Platform Development
-- Tutorials
-	- [Build and deploy SingularityNET locally](/docs/all/deploy-singularitynet)
-	- [Build, publish and run a sample service on the SingularityNET platform - Example 1](/docs/all/mpe/front-to-back-examples/example)
-	- [Build, publish and run a sample service on the SingularityNET platform - Example 2](/tutorials/publish)
-	- [Build a service in C++](/tutorials/cpp)
-	- [Build a service in Go](/tutorials/go)
-	- [Build a service in Java](/tutorials/java)
-	- [Build a service in Python](/tutorials/python)
-	- [Build an Opencog service](/tutorials/opencog)
