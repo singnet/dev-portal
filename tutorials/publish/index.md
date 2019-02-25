@@ -33,7 +33,7 @@ page_nav:
 
 [naming-standards]: https://dev.singularitynet.io/docs/all/naming-standard/
 
-## Step 1. Get Started
+## Step 1. Dependencies
 
 Run this tutorial from a bash terminal.
 
@@ -60,7 +60,7 @@ _If you are not familiar with Docker you may want to take a look at its official
 
 -------------------------------
 
-Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
+Build your own tutorial Docker image directly from our git repo using the following command:
 
 ```
 docker build -t snet_publish_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
@@ -80,11 +80,7 @@ SERVICE_PORT=7000
 DAEMON_HOST=0.0.0.0
 
 USER_ID=$USER
-```
 
-Now you can run the Docker container.
-
-```
 # to secure payments
 ETCD_HOST=$HOME/.snet/etcd/$SERVICE_ID/
 ETCD_CONTAINER=/opt/singnet/etcd/
@@ -92,7 +88,11 @@ ETCD_CONTAINER=/opt/singnet/etcd/
 # to make your snet's configs persistent
 SNET_CLI_HOST=$HOME/.snet/
 SNET_CLI_CONTAINER=/root/.snet/
+```
 
+Now you can run a Docker container based on this image:
+
+```
 docker run \
     --name MY_SNET_SERVICE \
     -e ORGANIZATION_ID=$ORGANIZATION_ID \
@@ -110,7 +110,10 @@ docker run \
     -ti snet_publish_service bash
 ```
 
-From this point on we follow the tutorial in the Docker container's prompt.
+This will put you into a shell within the docker container. The rest of the tutorial assumes you are workings from the Docker container's prompt.
+
+You can `ctrl-d` to exit, this will stop the container. If you wish to enter the container again, just use `docker start snet_publish_service` and
+you can continue from where you left off.
 
 ## Step 3. Setup `SNET CLI` and create your identity
 
