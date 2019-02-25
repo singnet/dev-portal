@@ -33,10 +33,21 @@ page_nav:
 
 ## Step 1. Metamask
 
-Install metamask
+[Metamask](https://metamask.io/) is a browser extension to interact with blockchain enabled websites like our marketplace.
+
+Install Metamask now from their website.
 
 ## Step 2. Create an Identity
 
-Link to metamasks explanation?
+On first start up, metamask should ask you to create an identity which will be used for blockchain transactions and storing tokens.
 
-Explain the different networks
+This is a good opportunity to watch the video on their website or otherwise read how to use the extension.
+
+## Step 3. What are the different networks?
+
+The "Main Ethereum Network" or "mainnet" is where all the real value transactions occur. The other networks are for testing, and
+the tokens on those are essentially value-less and are only useful testing code and software.
+
+SingularityNet started life on Kovan, but this network will be deprecated shortly in favour of Ropsten for testing.
+
+Our major releases will be on the main network. Starting with the Beta in Feb/Mar 2019.
