@@ -35,8 +35,8 @@ page_nav:
 
 _Before following this tutorial, make sure you've installed_
 
-* _Docker (https://www.docker.com/)_
-* _Metamask (https://metamask.io)_
+* _Docker ([https://www.docker.com/](https://www.docker.com/))_
+* _Metamask ([https://metamask.io](https://www.docker.com/))_
 
 _You will need a private-public key pair to register your service in SNET. Generate them in Metamask before you start this tutorial._
 
@@ -61,13 +61,18 @@ installation or upgrade to a newer version."
 
 In this tutorial we'll develop our service inside the docker container.
 
-Setup a `ubuntu:18.04` docker container using provided `Dockerfile`.
+Setup a `ubuntu:18.04` docker container (with proper `SNET Daemon` version) using provided `Dockerfile`.
 
 ```
-$ docker build --build-arg language=cpp -t snet_cpp_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
-$ export ETCD_HOST_FOLDER=$HOME/singnet/etcd/example-cpp-service/
-$ export ETCD_CONTAINER_FOLDER=/opt/singnet/etcd/
-$ docker run -p 7000:7000 -v $ETCD_HOST_FOLDER:$ETCD_CONTAINER_FOLDER -ti snet_cpp_service bash
+SNETD_VERSION-"v0.1.7"
+docker build \
+    --build-arg language=cpp \
+    --build-arg snetd_version=$SNETD_VERSION \
+    -t snet_cpp_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
+
+ETCD_HOST=$HOME/.snet/etcd/example-cpp-service/
+ETCD_CONTAINER=/opt/singnet/etcd/
+docker run -p 7000:7000 -v $ETCD_HOST:$ETCD_CONTAINER -ti snet_cpp_service bash
 ```
 
 From this point we follow the tutorial in the Docker container's prompt.
@@ -270,10 +275,10 @@ The next steps in this tutorial will publish the service in SingularityNET.
 
 ## Step 8
 
-Now you must follow the [publish](../publish/index.md)
+Now you must follow the [publish](https://dev.singularitynet.io/tutorials/publish/)
 tutorial to publish this service or use our script (next step).
 
-You'll also need a `SNET CLI` identity (check step 3 from [publish](../publish/index.md#step-3) tutorial).
+You'll also need a `SNET CLI` identity (check step 3 from [publish](https://dev.singularitynet.io/tutorials/publish/#step-3-setup-snet-cli-and-create-your-identity) tutorial).
 
 ## Step 9
 

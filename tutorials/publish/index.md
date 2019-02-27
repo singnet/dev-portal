@@ -37,7 +37,7 @@ page_nav:
 
 Run this tutorial from a bash terminal.
 
-In this tutorial we will publish an example service in SingularityNET using Kovan Test Network.
+In this tutorial we will publish an example service in SingularityNET using Ropsten Test Network.
 
 We have a [Docker](https://www.docker.com/) Image set up with all the required dependencies 
 but if you prefer you can install the dependencies by yourself in your own workstation.
@@ -141,10 +141,10 @@ You'll need some ETH and AGI tokens.
 
 First, get the address of your account using ```snet account print``` command.
 
-Then, using your address you can get Kovan AGIs and ETHs for free using your Github's account here:
+Then, using your address you can get Ropsten AGIs and ETHs for free using your Github's account here:
 
 * AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
-* ETH: [https://faucet.kovan.network/](https://faucet.kovan.network/)
+* ETH: [https://faucet.ropsten.be/](https://faucet.ropsten.be/)
 
 ## Step 5. Create an organization
 
@@ -237,9 +237,9 @@ Create a `SNET DAEMON` configuration file named `snetd.config.json`.
 cat > snetd.config.json << EOF
 {
    "DAEMON_END_POINT": "$DAEMON_HOST:$DAEMON_PORT",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
+   "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
+   "REGISTRY_ADDRESS_KEY": "0x5156fde2ca71da4398f8c76763c41bc9633875e4",
    "PASSTHROUGH_ENABLED": true,
    "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
    "ORGANIZATION_ID": "$ORGANIZATION_ID",
@@ -273,7 +273,7 @@ Open a new terminal, if using Docker, enter in the docker container, using:
 docker exec -it MY_SNET_SERVICE bash
 ```
 
-At this point you can use several `SNET CLI` commands to interact with your account and with the Kovan network
+At this point you can use several `SNET CLI` commands to interact with your account and with the Ropsten network
 (see [SNET CLI](https://github.com/singnet/snet-cli/blob/master/README.md) for details).
 
 Check your balance and setup a MultiPartyEscrow (MPE) Payment Channel to call your service.
