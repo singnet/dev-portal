@@ -53,7 +53,7 @@ In this tutorial we'll create a Go service and publish it in SingularityNET.
 Setup a `ubuntu:18.04` docker container (with proper `SNET Daemon` version) using provided `Dockerfile`.
 
 ```
-SNETD_VERSION-"v0.1.7"
+SNETD_VERSION="v0.1.7"
 docker build \
     --build-arg language=go \
     --build-arg snetd_version=$SNETD_VERSION \
@@ -212,10 +212,12 @@ You should have something like the following output:
 
 ```
 ./server &
-[1] 4217
-Server listening on 0.0.0.0:7070
+
+# [1] 4217
+# Server listening on 0.0.0.0:7070
+
 ./client 12 4
-3
+# 3
 ```
 
 At this point you have successfully built a gRPC Go service. The executables can 
@@ -255,13 +257,13 @@ see the blockchain transaction logs and then the following messages
 (respectively from: your service and `SNET Daemon`):
 
 ```
-[blockchain log]
-Server listening on 0.0.0.0:7070
-[daemon initial log]
-INFO[0002] Blockchain is enabled: instantiate payment validation interceptor 
-INFO[0002]                                               PaymentChannelStorageClient="&{ConnectionTimeout:5s RequestTimeout:3s Endpoints:[http://127.0.0.1:2379]}"
-INFO[0002] Default payment handler registered            defaultPaymentType=escrow
-DEBU[0002] starting daemon                              
+# [blockchain log]
+# Server listening on 0.0.0.0:7070
+# [daemon initial log]
+# INFO[0002] Blockchain is enabled: instantiate payment validation interceptor 
+# INFO[0002]                                               PaymentChannelStorageClient="&{ConnectionTimeout:5s RequestTimeout:3s Endpoints:[http://127.0.0.1:2379]}"
+# INFO[0002] Default payment handler registered            defaultPaymentType=escrow
+# DEBU[0002] starting daemon                              
 ```
 
 You can double check if it has been properly published using
@@ -291,10 +293,10 @@ output the new channel id (that will be used by `testServiceRequest.sh`):
 
 ```
 ./openChannel.sh
-[blockchain log]
 
-#channel_id
-10
+# [blockchain log]
+# #channel_id
+# 10
 ```
 
 In this example the channel id is `10`.
@@ -303,9 +305,10 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 
 ```
 ./testServiceRequest.sh 12 4
-[blockchain log]
-    response:
-        v: 3
+
+# [blockchain log]
+#   response:
+#       v: 3
 ```
 
 That's it. Remember to delete your service as explained in Step 9.

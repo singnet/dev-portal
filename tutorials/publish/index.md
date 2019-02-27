@@ -146,6 +146,18 @@ Then, using your address you can get Ropsten AGIs and ETHs for free using your G
 * AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
 * ETH: [https://faucet.ropsten.be/](https://faucet.ropsten.be/)
 
+Now make sure you are on Ropsten Network, using:
+
+```
+snet network ropsten
+```
+
+And then check your balance, using:
+
+```
+snet account balance
+```
+
 ## Step 5. Create an organization
 
 In order to be able to publish a service you need to be an owner or a member of an organization.
