@@ -272,7 +272,7 @@ EOF
 Running the service will spawn an instance of `SNET DAEMON` automatically.
 
 ```
-python3 run_example_service.py
+python3 run_example_service.py --daemon-config snetd.config.json
 ```
 
 At this point your service should be up and running. 
