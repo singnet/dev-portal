@@ -187,7 +187,7 @@ In this tutorial we'll use a simple service from [SingularityNET Example Service
 * Clone the git repository:
 
 ```
-git clone https://github.com/singnet/example-service.git
+git clone --depth=1 https://github.com/singnet/example-service.git
 cd example-service
 ```
 
