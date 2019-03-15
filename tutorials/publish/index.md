@@ -133,7 +133,7 @@ You can create an identity using a known key.
 * ledger - hardware wallet
 * trezor - hardware wallet
 
-Check more details on how to use them at ([SNET CLI](https://github.com/singnet/snet-cli#commands)).
+Check more details on how to use them at ([SNET CLI](http://snet-cli-docs.singularitynet.io)).
 
 ## Step 4. Get ETH and AGI
 
@@ -286,7 +286,7 @@ docker exec -it MY_SNET_SERVICE bash
 ```
 
 At this point you can use several `SNET CLI` commands to interact with your account and with the Ropsten network
-(see [SNET CLI](https://github.com/singnet/snet-cli/blob/master/README.md) for details).
+(see [SNET CLI](http://snet-cli-docs.singularitynet.io) for details).
 
 Check your balance and setup a MultiPartyEscrow (MPE) Payment Channel to call your service.
 
