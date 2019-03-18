@@ -1,7 +1,8 @@
 FROM ubuntu:18.04
 
 ARG language
-ARG snetd_version="v0.1.7"
+ARG snetd_version="v0.1.8"
+ARG snet_version="0.2.10"
 
 ENV SINGNET_REPOS=/opt/singnet
 ENV GOPATH=${SINGNET_REPOS}/go
@@ -13,6 +14,7 @@ RUN apt-get update && \
     apt-get install -y \
     apt-utils \
     nano \
+    vim \
     git \
     wget \
     curl \
@@ -20,24 +22,21 @@ RUN apt-get update && \
     libudev-dev \
     libusb-1.0-0-dev
 
-RUN apt-get install -y nodejs npm
 RUN apt-get install -y python3 python3-pip
 
-RUN cd ${SINGNET_REPOS} && \
-    git clone https://github.com/singnet/snet-cli && \
-    cd snet-cli && \
-    ./scripts/blockchain install && \
-    pip3 install -e .
+RUN pip3 install snet-cli==${snet_version}
 
-RUN cd ${SINGNET_REPOS} && \
+RUN cd /tmp && \
     mkdir snet-daemon && \
     cd snet-daemon && \
     wget https://github.com/singnet/snet-daemon/releases/download/${snetd_version}/snet-daemon-${snetd_version}-linux-amd64.tar.gz && \
     tar -xvf snet-daemon-${snetd_version}-linux-amd64.tar.gz && \
-    mv snet-daemon-${snetd_version}-linux-amd64/snetd /usr/bin/snetd
+    mv snet-daemon-${snetd_version}-linux-amd64/snetd /usr/bin/snetd && \
+    cd .. && \
+    rm -rf snet-daemon
 
 RUN cd ${SINGNET_REPOS} && \
-    git clone https://github.com/singnet/dev-portal.git
+    git clone --depth 1 https://github.com/singnet/dev-portal.git
 
 RUN if [ "$language" = "cpp" ]; then \
         apt-get install -y build-essential autoconf libtool pkg-config libgflags-dev libgtest-dev clang libc++-dev; \
