@@ -133,7 +133,7 @@ You can create an identity using a known key.
 * ledger - hardware wallet
 * trezor - hardware wallet
 
-Check more details on how to use them at ([SNET CLI](https://github.com/singnet/snet-cli#commands)).
+Check more details on how to use them at ([SNET CLI](http://snet-cli-docs.singularitynet.io)).
 
 ## Step 4. Get ETH and AGI
 
@@ -187,7 +187,7 @@ In this tutorial we'll use a simple service from [SingularityNET Example Service
 * Clone the git repository:
 
 ```
-git clone https://github.com/singnet/example-service.git
+git clone --depth=1 https://github.com/singnet/example-service.git
 cd example-service
 ```
 
@@ -272,7 +272,7 @@ EOF
 Running the service will spawn an instance of `SNET DAEMON` automatically.
 
 ```
-python3 run_example_service.py
+python3 run_example_service.py --daemon-config snetd.config.json
 ```
 
 At this point your service should be up and running. 
@@ -286,7 +286,7 @@ docker exec -it MY_SNET_SERVICE bash
 ```
 
 At this point you can use several `SNET CLI` commands to interact with your account and with the Ropsten network
-(see [SNET CLI](https://github.com/singnet/snet-cli/blob/master/README.md) for details).
+(see [SNET CLI](http://snet-cli-docs.singularitynet.io) for details).
 
 Check your balance and setup a MultiPartyEscrow (MPE) Payment Channel to call your service.
 
@@ -358,10 +358,10 @@ snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
 snet account balance
 
 # Move funds from all expired channels to MPE
-snet treasurer claim-expired -y
+snet treasurer claim-expired --endpoint $SERVICE_IP:$SERVICE_PORT -y
 snet account balance
 
 # Move funds from MPE to user's account
-snet account withdraw AMOUNT_IN_AGI -y
+snet account withdraw <AMOUNT_IN_AGI> -y
 snet account balance
 ```
