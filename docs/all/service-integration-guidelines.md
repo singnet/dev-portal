@@ -63,19 +63,6 @@ There are a couple of AI frameworks integrated to SingularityNET so you can just
 There are tutorials with step-by-step instructions on how to extend the existing AI framework service in order to implement new functionalities:
 - [How to write an OpenCog service for SingularityNET](/tutorials/opencog)
 
-## Third-party code and models
-Before publishing a service based on third-party code or model(s), make sure
-you follow all the guidelines below.
-
-- The service is FREE.
-- The main documentation of the service (e.g. README.md) mentions (crystal clear) that the service is based on third-party work.
-- The original work (code, paper, model etc) is clearly mentioned and properly linked in README.
-- The authors of the original code or model(s) are clearly mentioned in README.
-- Any licenses attached to the original work is mentioned in README.
-- The terms of any license attached to the original work allows its use in SingularityNET.
-
-See [this example](https://github.com/singnet/dnn-model-services) of a third-party based service documentation which is fully compliant with these guidelines.
-
 ## Service documentation
 All the following documentation is recommended for any service.
 
