@@ -358,10 +358,10 @@ snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
 snet account balance
 
 # Move funds from all expired channels to MPE
-snet treasurer claim-expired -y
+snet treasurer claim-expired --endpoint $SERVICE_IP:$SERVICE_PORT -y
 snet account balance
 
 # Move funds from MPE to user's account
-snet account withdraw AMOUNT_IN_AGI -y
+snet account withdraw <AMOUNT_IN_AGI> -y
 snet account balance
 ```
