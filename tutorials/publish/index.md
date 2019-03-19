@@ -213,7 +213,7 @@ You need to specify the following parameters:
 * `SERVICE_DISPLAY_NAME` - Display name of your service. You can choose any name you want. 
 * `PAYMENT_ADDRESS` - Ethereum account which will receive payments for this service. You should set it to your ethereum account. 
 * `SERVICE_ENDPOINT` - Endpoint which will be used to connect to your service.
-* `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 1 COG (remember that 1 AGI = 10^8 COGS).
+* `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 10^-8 AGI (remember that 10^-8 AGI = 1 GOG).
 
 ```
 ACCOUNT=`snet account print`
