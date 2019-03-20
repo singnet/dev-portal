@@ -216,7 +216,7 @@ You need to specify the following parameters:
 * `SERVICE_DISPLAY_NAME` - Display name of your service. You can choose any name you want. 
 * `PAYMENT_ADDRESS` - Ethereum account which will receive payments for this service. You should set it to your ethereum account. 
 * `SERVICE_ENDPOINT` - Endpoint which will be used to connect to your service.
-* `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 1 COG (remember that 1 AGI = 10^8 COGS).
+* `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 10^-8 AGI (remember that 10^-8 AGI = 1 COG).
 
 ```
 ACCOUNT=`snet account print`
@@ -353,7 +353,7 @@ snet account balance
 
 As the service user, you **CAN'T** claim unused funds before the channel expires. 
 
-Once it did, you can claim the funds using ```snet treasurer claim-expired```:
+Once it did, you can claim the funds using ```snet channel claim-timeout-all```:
 
 ```
 # Shows spent/unspent AGIs in the MPE channel
@@ -361,7 +361,7 @@ snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
 snet account balance
 
 # Move funds from all expired channels to MPE
-snet treasurer claim-expired --endpoint $SERVICE_IP:$SERVICE_PORT -y
+snet channel claim-timeout-all -y
 snet account balance
 
 # Move funds from MPE to user's account
