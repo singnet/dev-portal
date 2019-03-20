@@ -350,7 +350,7 @@ snet account balance
 
 As the service user, you **CAN'T** claim unused funds before the channel expires. 
 
-Once it did, you can claim the funds using ```snet treasurer claim-expired```:
+Once it did, you can claim the funds using ```snet channel claim-timeout-all```:
 
 ```
 # Shows spent/unspent AGIs in the MPE channel
@@ -358,7 +358,7 @@ snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
 snet account balance
 
 # Move funds from all expired channels to MPE
-snet treasurer claim-expired --endpoint $SERVICE_IP:$SERVICE_PORT -y
+snet channel claim-timeout-all -y
 snet account balance
 
 # Move funds from MPE to user's account
