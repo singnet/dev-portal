@@ -29,14 +29,14 @@ extralink:
 
 # Grid navigation
 grid_navigation:
-    - title: Getting Started
-      excerpt: A quick primer to get started with SingularityNET Tools & Software.
-      cta: Read more
-      url: '/docs/all/getting-started'
     - title: What is SingularityNET?
       excerpt: A brief introduction to the SingularityNET decentralized marketplace.
       cta: Read more
       url: '/docs/all/what-is-singularitynet'
+    - title: Getting Started
+      excerpt: A quick primer to get started with SingularityNET Tools & Software.
+      cta: Read more
+      url: '/docs/all/getting-started'
     - title: Docs for AI Providers
       excerpt: Learn how to sell AI services on SingularityNET.
       cta: Read more
