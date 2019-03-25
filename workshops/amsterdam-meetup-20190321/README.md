@@ -1,23 +1,29 @@
 # Overview
 
-Docker image which is similar to [one from tutorials
+Docker image is similar to the [one from the tutorials
 page](https://github.com/singnet/dev-portal/blob/master/tutorials/docker/Dockerfile)
-but contains source code of example-service and all main SingularityNET
-components in addition.
+but contains source code of [example-service](https://github.com/singnet/example-service)
+and all main SingularityNET components in addition.
 
-# Download docker
+# SingularityNet Docker image
+
+You can download or build it from scratch:
+
+## Download
+
 ```sh
 docker pull vsbogd/snet-platform:latest
 docker tag  vsbogd/snet-platform:latest snet-amsterdam-meetup
 ```
 
-# Or build docker
+## Build
 
 ```sh
 docker build -t snet-amsterdam-meetup https://github.com/singnet/dev-portal.git#master:/workshops/amsterdam-meetup-20190321
 ```
 
-# Run docker
+# Run Docker container
+
 ```sh
 docker run --name snet-amsterdam-meetup -p 7000:7000 -ti snet-amsterdam-meetup bash
 ```

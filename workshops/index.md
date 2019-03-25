@@ -35,4 +35,8 @@ grid_navigation:
       excerpt: OpenCog Workshop Examples as presented during DEVOPS2018
       cta: Read more
       url: /workshops/docker-opencog
+    - title: SingularityNET Amsterdam Meetup
+      excerpt: Source material for SingularityNET meetup in Amsterdam, 2019-March-21
+      cta: Read more
+      url: /workshops/docker-amsterdam-meetup-20190321
 ---
