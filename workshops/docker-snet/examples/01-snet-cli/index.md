@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: Example 2: Using the SNET-CLI tool
+title: "Example 2: Using the SNET-CLI tool"
 description: This example shows you how to use the SNET-CLI tool.
 
 # extralink box

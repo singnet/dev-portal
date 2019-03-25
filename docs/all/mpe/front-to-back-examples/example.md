@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: Multi Party Escrow: Front to back example.
+title: "Multi Party Escrow: Front to back example."
 description: Using the MPE payment system in SingularityNET with one replica configuration.
 
 # extralink box
