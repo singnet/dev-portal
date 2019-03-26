@@ -24,9 +24,9 @@ micro_nav: true
 
 Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io).
 
-Our Developer Portal provides documentation about the SingularityNET Platform and Marketplace. You will learn how to build and access AI services that are published onto the network as a service developer or as an end-user of services that other people have published.
+Our Developer Portal provides documentation about the SingularityNET Platform and Marketplace. As a service developer, you will learn how to build and access AI services that are published onto the network. As a client of SingularityNET services, you learn to integrate your software with SingularityNET services that other people have published.
 
-The Alpha Marketplace is at [alpha.singularitynet.io](http://alpha.singularitynet.io), but this is quite old. We will release our beta platform in February 2019. When it's released it will be at [beta.singularitynet.io](https://beta.singularitynet.io), and close to that date you may see the site available sporadically.
+The beta Marketplace is online at [beta.singularitynet.io](http://beta.singularitynet.io), and allows you browse a curated set of services that are available in the registry.
 
 If you're new to SingularityNET, this is the suggested order in which to explore the developer portal. For everyone else, it's hopefully a good index to find the information you need.
 
@@ -37,11 +37,16 @@ If you're new to SingularityNET, this is the suggested order in which to explore
 
 ## First Steps
 
+The first three links are relevant if you want to be a consumer of SingularityNET services. They are also worth going through if you want to publish a service, so that you you can test your service and will know the flow your customers need to go through.
+
 - [Create a Wallet](/tutorials/create-a-wallet) - To make transactions you'll need a wallet with some funds.
 - [How to call a service](/tutorials/call-a-service) - Covers trying out a service in the marketplace, and calling it from our command line tool.
 - [Using the SDK](/tutorials/sdk) - Calling a service using the Python SDK.
+
+These steps guide you through creating a service, and getting that service on our marketplace:
+
 - [Publish and run your own example service](/tutorials/publish)
-- [Marketplace Requirements for Services](/docs/marketplace) - How to submitting your service for inclusion in the marketplace. A curated view of services available in the registry.
+- [Marketplace Requirements for Services](/docs/marketplace) - How to submit your service for inclusion in the Singularity marketplace. The marketplace is a curated view of services available in the registry.
 
 ## SingularityNET Platform
 
