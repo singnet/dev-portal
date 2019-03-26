@@ -1,6 +1,6 @@
 ---
 # Page settings
-layout: homepage
+layout: default
 keywords:
 
 # Micro navigation
@@ -11,7 +11,7 @@ dev_news: true
 
 # Hero section
 title: Tutorials
-description: The tutorials below teach you how to work with SingularityNET Services in various programming languages.
+description: Tutorials to help you learn how to implement and deploy different types of SingularityNET Services.
 buttons:
     - content: View Full Docs
       url: '/docs/all'
@@ -20,47 +20,26 @@ buttons:
       url: '/sheet#community'
       external_url: false
 
-# Grid navigation
-grid_navigation:
-    - title: How to Publish a SingularityNET Service
-      excerpt: Learn how to sell your AI service on the SingularityNET Marketplace.
-      cta: Read more
-      url: '/tutorials/publish'
-    - title: Publish a Process-Type SingularityNET Service
-      excerpt: Wrap your AI service as a process/executable and publish it onto SingularityNET.
-      cta: Read more
-      url: '/tutorials/process'
-    - title: Getting started with Docker (SingularityNET)
-      excerpt: Use docker to publish a SingularityNET Service
-      cta: Read more
-      url: '/workshops/docker-snet'
-    - title: Getting started with Docker (OpenCog)
-      excerpt: Use docker to work with OpenCog tools.
-      cta: Read more
-      url: '/workshops/docker-opencog'
-    - title: How to Write a SingularityNET Service in C++
-      excerpt: Getting started with C++ for your AI Service
-      cta: Read more
-      url: '/tutorials/cpp'
-    - title: Service Integration Guidelines
-      excerpt: Write and integrate new AI services to the platform.
-      cta: Read more
-      url: '/docs/all/service-integration-guidelines'
-    - title: How to Write a SingularityNET Service in Go
-      excerpt: Getting started with Go for your AI Service
-      cta: Read more
-      url: '/tutorials/go'
-    - title: How to Write a SingularityNET Service in Java
-      excerpt: Getting started with Java for your AI Service
-      cta: Read more
-      url: '/tutorials/java'
-    - title: How to Write a SingularityNET Service in Python
-      excerpt: Getting started with Python for your AI Service
-      cta: Read more
-      url: '/tutorials/python'
-    - title: How to Write an OpenCog Service to SingularityNET
-      excerpt: Getting started with OpenCog for your AI Service
-      cta: Read more
-      url: '/tutorials/opencog'
 
 ---
+
+## General service publishing tutorials
+
+- [How to Publish a SingularityNET Service](/tutorials/publish) - Learn how to sell your AI service on the SingularityNET Marketplace.
+- [Publish a Process-Type SingularityNET Service](/tutorials/process) - Wrap your AI service as a process/executable and publish it onto SingularityNET.
+- [Service Integration Guidelines](/docs/all/service-integration-guidelines) - Write and integrate new AI services to the platform.
+- [Build an Opencog service](/tutorials/opencog)
+
+## Tutorials by programming language
+
+Guides to implementing a service in a number of programming languages. Is you favourite language missing? Please contribute one 😉
+
+- [Build a service in C++](/tutorials/cpp)
+- [Build a service in Go](/tutorials/go)
+- [Build a service in Java](/tutorials/java)
+- [Build a service in Python](/tutorials/python)
+
+## Workshop Tutorials
+
+- [Use docker to publish a SingularityNET Service](/workshops/docker-snet)
+- [Getting started with Docker (OpenCog)](/workshops/docker-opencog) - Use docker to work with OpenCog tools.
