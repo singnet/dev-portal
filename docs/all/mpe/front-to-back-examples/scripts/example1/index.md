@@ -23,7 +23,7 @@ micro_nav: true
 
 ---
 
-> NOTE: Please find the .sh documents on Github if you are reading this on the developer portal [here](https://github.com/singnet/dev-portal/tree/master/docs/all/mpe/front-to-back-examples/scripts).
+> NOTE: You can find the script files for this example on Github [here](https://github.com/singnet/dev-portal/tree/master/docs/all/mpe/front-to-back-examples/scripts/example1)
 
 ## DESCRIPTION
 
