@@ -32,7 +32,7 @@ If you're new to SingularityNET, this is the suggested order in which to explore
 
 ## Overview
 
-- [What is SingularityNET](docs/what-is-singularitynet) - a high level introduction.
+- [What is SingularityNET](/docs/all/what-is-singularitynet) - a high level introduction.
 - [Fact Sheet](/sheet) - Glossary and reference information such a contract addresses.
 
 ## First Steps
