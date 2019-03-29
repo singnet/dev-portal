@@ -22,15 +22,15 @@ extralink:
 # Grid navigation
 grid_navigation:
     - title: Core Concepts
-      excerpt: A brief introduction to the SingularityNET decentralized platform for AI services.
+      excerpt: Learn about the core parts of the SingularityNET platform and how it works under the hood.
       cta: Read more
-      url: '/docs/all/what-is-singularitynet'
+      url: '/docs/concepts'
     - title: Setup Guide
-      excerpt: A quick primer to get started with SingularityNET Tools & Software.
+      excerpt: A primer to get you started with working with SingularityNET tools & software and the blockchain.
       cta: Read more
-      url: '/docs/all/getting-started'
+      url: '/docs/setup'
     - title: Tutorials
-      excerpt: Our tutorials teach you how to work with SingularityNET Services in various programming languages.
+      excerpt: Guides for how to work the platform, how to integrate SingularityNET services into your software, and even how to publish your own services!
       cta: Read more
       url: '/tutorials'
 
