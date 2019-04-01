@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: What is SingularityNET?
+title: Service Agent
 
 # extralink box
 extralink:
@@ -20,4 +20,13 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+# Page navigation
+page_nav:
+    prev:
+        content: Marketplace
+        url: '/docs/concepts/marketplace'
+    next:
+        content: Service Metadata
+        url: '/docs/concepts/service-metadata'
 ---
+

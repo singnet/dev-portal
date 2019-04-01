@@ -128,8 +128,11 @@ hr {
 
 /* ----- Quotes ----- */
 blockquote {
-	margin: 0 0 1.25rem 0;
+	margin: 0 0 0 0;
+    padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+    background: #eff6ff;	
 }
+
 
 q {
 	color: $color-dark-blue;

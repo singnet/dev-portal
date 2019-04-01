@@ -1,13 +1,13 @@
 ---
 # Page settings
-layout: homepage
-keywords: Developer Documentation
+layout: default
+keywords: community contribute
 
 # Micro navigation
 micro_nav: true
 
 # Hero section
-title: Developer Portal Docs
+title: Contribute to SingularityNET
 description: Here you will find documentation related to the SingularityNET Developer Portal itself. Learn how to contribute content, launch your own local version of the SingularityNET Developer Portal, and how to use the right styling.
 buttons:
     - content: All Docs

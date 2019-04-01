@@ -34,4 +34,6 @@ grid_navigation:
       cta: Read more
       url: '/tutorials'
 
+# Newsletter
+dev_news: true
 ---

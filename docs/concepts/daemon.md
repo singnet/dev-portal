@@ -6,7 +6,7 @@ comments: true
 
 # Hero section
 title: An introduction to the SingularityNET Daemon
-description: Learn about the functionalities of the daemon and how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
+description: Learn about the daemon - how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
 
 # extralink box
 extralink:
@@ -21,6 +21,15 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+# Page navigation
+page_nav:
+    prev:
+        content: snet-cli command line tool
+        url: '/docs/concepts/snet-cli'
+    next:
+        content: Naming Standards
+        url: '/docs/concepts/naming-standards'
+        
 ---
 The daemon is the adapter that a service can use to interface with the SingularityNET platform.
 In software architecture lingo, the daemon is a [sidecar proxy](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar), —a process deployed next to a core application (the AI service, in this case) to abstract away some architectural concerns such as logging and configuration as well as entire platform aspects, such as the interaction with smart contracts or even the decision to use the Ethereum blockchain.

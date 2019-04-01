@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: Multi-Party Escrow Service Metadata
-description: Learn how to use service metadata to describe your AI services.
+title: Service Metadata
+description: Describing your AI services to the world
 
 # extralink box
 extralink:
@@ -20,9 +20,17 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Service
+        url: '/docs/concepts/service'
+    next:
+        content: Naming Standards
+        url: '/docs/concepts/naming-standards'
 ---
 
-## Overview
 The service metadata is the off-chain description of a SingularityNET service. In order to use a SingularityNET service, the client needs to know:
 * The address of Multi-Party Escrow contract
 * The service metadata

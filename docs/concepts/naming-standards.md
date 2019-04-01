@@ -20,6 +20,15 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Service Metadata
+        url: '/docs/concepts/service-metadata'
+    next:
+        content: Software
+        url: '/docs/concepts/software'
 ---
 
 We currently provide a lot of freedom as to how entities in SingularityNET are named. Unfortunately, this can result in confusion as to how to capitalize and separate words in names. This document is an attempt at a best practices guide. At some point these may get codified, such that smart contracts and our software can enforce them, but for now they are just for guidance.

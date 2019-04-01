@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: intro concepts
 comments: true
 
 # Hero section
@@ -22,9 +22,9 @@ micro_nav: true
 
 ---
 
-SingularityNET is an open and decentralized network of AI services made accessible through the blockchain. AI developers publish their services onto the SingularityNET network where they can be used by anyone with an internet connection. AI developers are able to charge for the use of their services using the native AGI token -- an ERC20 token hosted on Ethereum.
+SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the blockchain. Ddevelopers publish their services to the SingularityNET network, where they can be used by anyone with an internet connection. Developers are able to charge for the use of their services using the native AGI token -- an ERC20 token hosted on Ethereum.
 
-AI services span the entire gamut of offerings in artificial intelligence and machine learning. AI developers can provide services for inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. AI services can be as small as individual algorithms or large as end-to-end solutions and standalone AI applications. AI developers can also deploy autonomous AI agents that interoperate with other services on the network.
+Services can span the entire gamut of offerings in artificial intelligence and machine learning. Services can provide inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. The services can be as simple as wrapping a well-known algorithm such as A* path planning, a complete end-to-end solution for an industry problem, or a standalone AI application. Developers can also deploy autonomous AI agents that interoperate with other services on the network.
 
 The SingularityNET platform contains a number of critical components that work together to enable a decentralized network of AI services to flourish. The core components include many architectural components that allow for a functional, scalable, and extensible system. We arrived at this architecture through a careful process guided by a few key decisions governing blockchain
 interactions, AI service integration, and abstraction and by the goal of building an AI marketplace that is both open and compliant with regulatory and legal requirements.
@@ -42,8 +42,11 @@ The SingularityNET platform and network can be broken down into several core com
 * **Registry**: The Registry is where AI service providers register on the platform, which involves
 providing text descriptions and tags to allow users to discover their service, pricing information,
 and information such as gRPC models and endpoint locations to allow users to call their services using the AGI token.
+## Core Concepts and Components
 
-* **SNET Daemon:** An AI service developer exposes their service to the network by running the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to facilitate authorization and payment for services and acts as a passthrough for making API calls to the service.
+Here we've broken down the SingularityNET platform and network into its core components. You can jump directly to the thing you'd like to know more about, or use the navigation at the bottom of each page to read through each in turn.
+
+* [**SingularityNET Marketplace:**](/docs/concepts/marketplace) The SingularityNET Marketplace is a DApp ("Distributed App") and provides a front-end for exploring AI services available on the network. Users can interact with and call them through a web interface, and rate them after. This allows the community to provide feedback and to get a sense of the level of quality that can expected from a service.
 
 * **Escrow:** The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and an Agent. An end-user places funds in Escrow before a service can be called, and there are not released from escrow until the services have been delivered or the they timeout.
 
@@ -76,14 +79,20 @@ roles.
 
 <img src="/docs/all/mpe/img/platform_components.jpg" width="400">
 
+* [**Service:**](/docs/concepts/service) A Service is published to the SingularityNET network and provides a [grpc](https://grpc.io)-based API for calling it. The service API specification, the IP address where it can be accessed, and the pricing information is published to IPFS as service metadata. This location of this metadata is then advertised in the SingularityNet Registry.
+    * [metadata](/docs/concepts/service-metadata)
+    * [naming standards](/docs/concepts/naming-standards)
+* [**Software**](/docs/concepts/software)
+    * [**snet-cli:**](/docs/concepts/snet-cli)
+    * [**SNET Daemon:**](/docs/concepts/daemon) A developer exposes their service to the network by running the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to facilitate authorization and payment for services and acts as a passthrough for making API calls to the service. This isolates the payment and blockchain interaction so a developer can focus on deploying and improving their service.
+        * [api](/docs/concepts/daemon-api)
+        * [channel storage](/docs/concepts/daemon-channel-storage)
 
-## Current state of development
+* [**Blockchain Contracts:**](/docs/concepts/blockchain-contracts)
+    * [**AGI Token:**](/docs/concepts/agi-token)
+    * [**Registry**:](/docs/concepts/registry) Services are published to a publicly-accessible central registry on the blockchain. The registry maintains a list of active services on the network, and has support to group services by the organisation or team with access control for organisation members.
+    * [**Escrow:**](/docs/concepts/multi-party-escrow) The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and a service. An end-user places funds in escrow before a service can be called, and remain there until the service has been delivered or the escrow funds timeout.
+    * [mpe stateless](/docs/concepts/mpe-stateless-client)
 
-SingularityNET raised funds to build out our platform during our Token Generation Event (TGE) in December 2017. Since then we've been working quickly to build upon our platform and finalize designs for our production platform which will go into Beta in February 2019.
 
-Active development on our platform is still continuing as we add additional capabilities to enable AI developers to begin launching services onto the network. Our goal is to help the community build out a vibrant network of useful AI services.
 
-To keep abreast of SingularityNET development and platform design changes, follow the pinned repos on our [github account](https://github.com/singnet).
-
-## Find out more
-To get started with the SingularityNET platform review the [Getting Started](/docs/all/getting-started) and [Fact Sheet](/sheet) pages.

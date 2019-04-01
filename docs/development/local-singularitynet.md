@@ -5,8 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: Deploy SingularityNET Locally  
-description: Learn how to deploy a local version of the SingularityNET Marketplace.
+title: Launch a local SingularityNET network
 
 # extralink box
 extralink:
@@ -23,14 +22,16 @@ micro_nav: true
 
 ---
 
-This tutorial describes the process of building and deploying a fully functional local SingularityNET environment. In such an environment, one can publish services, call them and have full control over a local test blockchain network.
+This tutorial describes the process of launching a fully functional local SingularityNET environment. You can publish services, call them and have full control over a local blockchain network for development and testing.
 
 ## Install prerequisites
+
 This document describes the process of the environment setup in Ubuntu 18.04. Some commands can be different under other linux distributions.
 
 > TIP: [Here](/docs/all/mpe/front-to-back-examples/scripts/example1) you can find an instruction how to run SingularityNet platform locally inside a docker container, and how to run simple front-to-back example in it.
 
 ### Go toolset
+
 - Go 1.10+
 - Dep 0.4.1+
 - Go Protobuf Compiler
@@ -43,6 +44,7 @@ sudo apt-get install golang go-dep golang-goprotobuf-dev golint
 ```
 
 ### NodeJS toolset
+
 - NodeJS 8+
 - NPM
 
@@ -53,9 +55,11 @@ sudo apt-get install nodejs npm
 ```
 
 ### IPFS
-IPFS is used to keep RPC models of the services which are published via SingularityNET platform. Follow instructions [here](https://ipfs.io/docs/install) to download and install IPFS. Following steps expects that ```ipfs``` is installed and can be run from the command line.
+
+IPFS is used to keep RPC models of the services which are published via SingularityNET platform. Follow instructions [here](https://ipfs.io/docs/install) to download and install IPFS. Following steps expects that `ipfs` is installed and can be run from the command line.
 
 ### Python toolset
+
 - Python 3.6.5
 - Pip
 
@@ -66,6 +70,7 @@ sudo apt-get install python3 python3-pip
 ```
 
 ### Other
+
 - libudev
 - libusb 1.0
 
@@ -74,11 +79,12 @@ sudo apt-get install libudev-dev libusb-1.0-0-dev
 ```
 
 ## Deploy local environment
+
 ### Setup Go building environments
 
 Go compiler expects that the path to the workspace is exported as ```GOPATH``` variable. ```SINGNET_REPOS``` is exported to simplify change directory commands below.
 
-```
+```sh
 mkdir -p singnet/src/github.com/singnet
 cd singnet
 mkdir log
@@ -88,24 +94,25 @@ export PATH=${GOPATH}/bin:${PATH}
 ```
 
 ### Deploy local IPFS instance
+
 IPFS is used by SingularityNET to keep published services RPC models. For local test environment we will setup a private local IPFS instance.
 
 Initialize IPFS data folder:
 
-```
+```sh
 export IPFS_PATH=$GOPATH/ipfs
 ipfs init
 ```
 
 Remove all default IPFS bootstrap instances from default IPFS configuration (see [IPFS private network](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#private-networks)).
 
-```
+```sh
 ipfs bootstrap rm --all
 ```
 
 Change IPFS API and Gateway ports because they intersect with default ```example-service``` and snet-daemon ports.
 
-```
+```sh
 ipfs config Addresses.API /ip4/127.0.0.1/tcp/5002
 ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8081
 ```
@@ -113,7 +120,7 @@ ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8081
 ### Compile platform contracts
 Clone platform-contracts repository:
 
-```
+```sh
 cd $SINGNET_REPOS
 git clone https://github.com/singnet/platform-contracts
 cd platform-contracts
@@ -121,21 +128,21 @@ cd platform-contracts
 
 Install dependencies and Ganache using NPM:
 
-```
+```sh
 npm install
 npm install ganache-cli
 ```
 
 Compile contracts using Truffle:
 
-```
+```sh
 ./node_modules/.bin/truffle compile
 ```
 
 ### Setup ```snet``` command line interface
 Clone snet-cli repository:
 
-```
+```sh
 cd $SINGNET_REPOS
 git clone https://github.com/singnet/snet-cli
 cd snet-cli
@@ -143,7 +150,7 @@ cd snet-cli
 
 Install blockchain dependencies and snet-cli package in development mode.
 
-```
+```sh
 # you need python 3.6 here, with python 3.5 you will get an error
 ./scripts/blockchain install
 pip3 install -e .
@@ -152,7 +159,7 @@ pip3 install -e .
 ### Build snet-daemon
 Clone ```snet-daemon``` repository:
 
-```
+```sh
 cd $SINGNET_REPOS
 git clone https://github.com/singnet/snet-daemon
 cd snet-daemon
@@ -160,7 +167,7 @@ cd snet-daemon
 
 Build ```snet-daemon```:
 
-```
+```sh
 ./scripts/install # install dependencies
 ./scripts/build linux amd64  # build project
 ```
@@ -170,14 +177,14 @@ Build ```snet-daemon```:
 
 Start IPFS daemon:
 
-```
+```sh
 ipfs daemon >$GOPATH/log/ipfs.log 2>&1 &
 ```
 
 ### Start local Ethereum network
 Start a local Ethereum network. Pass mnemonic to produce a deterministic blockchain environment: accounts, private keys and behavior.
 
-```
+```sh
 cd $SINGNET_REPOS/platform-contracts
 ./node_modules/.bin/ganache-cli --mnemonic 'gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce' >$GOPATH/log/ganache.log 2>&1 &
 ```
@@ -185,7 +192,7 @@ cd $SINGNET_REPOS/platform-contracts
 Accounts and private keys printed by Ganache will be used in next steps.
 Deploy contracts using Truffle.
 
-```
+```sh
 ./node_modules/.bin/truffle migrate --network local
 npm run package-npm
 ```
@@ -197,7 +204,7 @@ Truffle deploys contracts using the first account of the test network. As Singul
 
 ### Configure snet-cli for local environment
 
-```
+```sh
 # run snet command  for the first time to create default config:
 snet
 

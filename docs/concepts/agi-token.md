@@ -1,12 +1,10 @@
 ---
-# Page settings
-layout: default
-keywords: fact sheet
+keywords: agi token
 comments: true
 
 # Hero section
-title: Fact Sheet
-description: Here you will find a concise overview of some quick facts that you may need whilst working with SingularityNET tools.
+title: AGI Token
+description:
 
 # extralink box
 extralink:
@@ -20,15 +18,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Back to home
-        url: 'http://dev.singularitynet.io'
-    next:
-        content: Getting Started
-        url: '/docs/all/getting-started'
 ---
 
 ## AGI Token
@@ -58,21 +47,3 @@ In order to add the Kovan Testnet AGI you may need the following details:
 * Kovan Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
 
 You can request Kovan or Ropsten Testnet Ether here: https://faucet.metamask.io. 
-
-## Beta Marketplace
-On our [Beta Marketplace](http://beta.singularitynet.io), a decentralized application (DApp), you will find a list of AI services ready to be used via the Kovan or Ropsten Testnet. You can [buy AI services](/docs/buyer) or [sell AI services](/docs/provider).
-
-The Beta Marketplace is under heavy development, so it is advised that you check back regularly for new updates. We are expecting to release the mainnet beta end of February 2019. You can sign up for developer updates at the end of this page.
-
-## Community
-We expect everyone in our community to treat each other with respect and to contribute in a positive way to our ecosystem. Please read our [Code of Conduct](https://community.singularitynet.io/faq) and help us promote this message in the community.
-
-You can meet and chat with other developers via the following channels:
-* [Developer Telegram](https://t.me/AGIDevelopers)
-* [Developer Forum](https://community.singularitynet.io/c/developers)
-
-We are welcoming external contributions to our documentation, such as corrections, improvements, new tutorials, or other suitable additions. Please find our contribution guidelines [here](/docs/contribute/contribution-guidelines).
-
-Please contribute pull requests to the master branch. In case you simply want to notify us of an issue, please open an issue [here](https://github.com/singnet/dev-portal/issues).
-
-If you would like to speak to a SingularityNET employee privately, you can contact Ibby Benali via the [forum](https://community.singularitynet.io/u/ibby/), [telegram](http://t.me/ibbybenali) or [email](mailto:ibby@singularitynet.io).
