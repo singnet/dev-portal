@@ -1,40 +1,50 @@
-# Overview
+# SingularityNET Tokyo Workshop Notes
 
-Docker image is similar to the [one from the tutorials
-page](https://github.com/singnet/dev-portal/blob/master/tutorials/docker/Dockerfile)
-but contains source code of [example-service](https://github.com/singnet/example-service)
-and all main SingularityNET components in addition.
+This file contains notes for the SingularityNET workshop on April 4th, 2019 in Tokyo. The presentation slides on Google Sheets [can be found here](https://docs.google.com/presentation/d/1NEKfZP75fCdLJUDG3jVbUY01h4nUaPB6PeTBKZnWjCI).
 
-# SingularityNet Docker image
+## Related Material
 
-You can download or build it from scratch:
+For this workshop we require basic working knowledge of these technologies:
+  - [Docker](https://github.com/wsargent/docker-cheat-sheet)
+  - [Protobuf](http://blakesmith.me/2012/09/05/a-primer-on-protocol-buffers.html)
+  - [gRPC](https://medium.com/@philipshen13/a-short-introduction-to-grpc-419b620e2177)
 
-## Download
+The tutorials can also be found here:
+  - [SingularityNET Developer Portal](https://dev.singularitynet.io)
+  - [Publisher Tutorial](https://dev.singularitynet.io/tutorials/publish/)
 
+
+## Docker image
+The Docker image is similar to the [one from the tutorial page](https://github.com/singnet/dev-portal/blob/master/tutorials/docker/Dockerfile), but also contains source code of [example-service](https://github.com/singnet/example-service) and all main SingularityNET components.
+
+To download the image (~800MB):
 ```sh
 docker pull vsbogd/snet-platform:latest
-docker tag  vsbogd/snet-platform:latest snet-amsterdam-meetup
+docker tag  vsbogd/snet-platform:latest snet-tokyo-workshop
 ```
 
-## Build
-
+To build it from scratch:
 ```sh
-docker build -t snet-amsterdam-meetup https://github.com/singnet/dev-portal.git#master:/workshops/amsterdam-meetup-20190321
+docker build -t snet-tokyo-workshop https://github.com/elggem/dev-portal.git#master:/workshops/tokyo-workshop-20190404
 ```
 
-# Run Docker container
-
+To run the docker container, do this:
 ```sh
-docker run --name snet-amsterdam-meetup -p 7000:7000 -ti snet-amsterdam-meetup bash
+docker run --name snet-container -p 7000:7000 -ti snet-tokyo-workshop bash
 ```
 
-# Tutorial steps
+# Tutorial Instructions
 
 ## Setup Ethereum identity
 
+To create a service or make calls to a service, we need to establish our identity on the blockchain. To do this, follow these steps:
+
 ```sh
-# Create Ethereum identity
-snet identity create --mnemonic '<my mnemonic>' publisher mnemonic
+# Create Ethereum identity from scratch, using seed mnemonic
+snet identity create --mnemonic '<my mnemonic>' YOURNAME mnemonic
+# OR create identity from existing private key (can be copied from Metamask):
+snet identity create YOURNAME key
+
 # Switch to Ropsten network
 snet network ropsten
 # Look at current snet-cli settings
@@ -43,7 +53,12 @@ snet session
 snet account balance
 ```
 
+To receive AGI/ETH on ropsten, faucets can be used
+  - https://faucet.singularitynet.io/
+  - https://faucet.ropsten.be/
+
 ## Review & build service
+
 ```sh
 cd example-service
 # Review service API
@@ -55,19 +70,20 @@ sh buildproto.sh
 ```
 
 ## Publish service
+
 ```sh
 # Create organization
 snet organization create --org-id <my-org-id> '<my organization name>'
 # Initialize service metadata
-snet service metadata-init ./service/service_spec "Example service" 0x89E58AF872b225d3ef94Ee7524880a57d014C826 --endpoints http://<my.ip>:7000 --fixed-price 0.00000001
+snet service metadata-init ./service/service_spec "Example service" 0xETHEREUM_PAYMENT_DESTINATION --endpoints http://<my.ip>:7000 --fixed-price 0.00000001
 # Add service description
-snet service metadata-add-description --json {"description": "<my service descrition>", "url": "<my service url>"}'
+snet service metadata-add-description --json '{"description": "<my service descrition>", "url": "<my service url>"}'
 # Review metadata
 cat service_metadata.json
 # Publish service
 snet service publish <my-org-id> example-service
 # Review organization
-snet organization info
+snet organization info <my-org-id>
 ```
 
 ## Start service
@@ -87,7 +103,7 @@ python3 run_example_service.py --daemon-config snetd.config.json
 Open new console and execute:
 ```sh
 # Switch to the new docker instance
-docker exec -it snet-amsterdam-meetup bash
+docker exec -it snet-container bash
 # Review account balance
 snet account balance
 # Deposit AGI tokens to MPE wallet
