@@ -33,7 +33,7 @@ The SingularityNET platform and network can be broken down into several core com
 
 * **SNET Daemon:** An AI service developer exposes their service to the network by running the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to facilitate authorization and payment for services and acts as a passthrough for making API calls to the service.
 
-* **Escrow:** The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and an Agent. An end-user places funds in escore before a service can be called, and there are not released from escrow until the services have been delivered or the they timeout.
+* **Escrow:** The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and an Agent. An end-user places funds in Escrow before a service can be called, and there are not released from escrow until the services have been delivered or the they timeout.
 
 * **SNET DApp:** The SingularityNET DApp is a front-end for exploring available AI services and interacting with them through a web-UI.
 
