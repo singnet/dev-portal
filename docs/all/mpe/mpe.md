@@ -24,7 +24,10 @@ micro_nav: true
 ---
 
 ## Introduction
-The Multi-Party Escrow contract has two main functionalities:
+The Multi-Party Escrow smart contract (“MPE”), coupled with our atomic unidirectional
+payment channels, enables scalable payments in the platform by minimizing the number of
+on-blockchain transactions needed between clients and AI service owners. The MPE contract has
+two main functionalities:
 1. A very simple wallet with a deposit and withdraw function. Everybody can deposit AGI tokens into a Multi-Party Escrow, and everybody can withdraw their AGI tokens (which have not been escrowed at the moment).
 2. The set of the simple ("atomic") unidirectional payment channels between clients and service providers and functions for manipulation of these channels.
 
@@ -32,9 +35,7 @@ The Multi-Party Escrow contract has two main functionalities:
 ## Atomic unidirectional payment channel
 > You can skip this section if you are familiar with the concept of payment channels.
 
-The main logical building block of the Multi-Party Escrow is a simple ("atomic") unidirectional payment channel. You can find the implementation of the escrow contract for such a channel in the [SimpleEscrow.sol file here](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol).
-
-The main logic is as follows:
+The main logical building block of the Multi-Party Escrow is a simple ("atomic") unidirectional payment channel. You can find the implementation of the escrow contract for such a channel in the [SimpleEscrow.sol file here](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol). A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is a tool that enables off-chain transactions between parties without the delay imposed by blockchain block formation times and without compromising the transactional security. There are several kinds of payment channels. Let us consider the simple unidirectional payment channel, the main logic is as follows:
 
 * The sender creates an escrow contract with a given expiration date and she/he funds it with
   a desired amount of tokens.
@@ -43,6 +44,30 @@ The main logic is as follows:
 * The recipient can close the channel at any moment by presenting a signed amount from the sender.  Of course it is better for the recipient to close the channel with the last authorization (with highest amount). The recipient will be sent that amount, and the remainder will go back to the sender.
 * The sender can close the channel after the expiration date and take all funds back.
 * The sender can extend the expiration date and add funds to the contract at any moment in time.
+
+In the model above, there is no way for the receiver to withdraw funds without closing the channel.
+Otherwise, he could use the sender's signed authorization a second time and withdraw 5 more AGI
+tokens.
+Therefore, we added a feature that allows the receiver to withdraw funds from the channel without
+closing it, while preventing this replay attack. We used a simple, textbook solution: a nonce. We
+add a nonce to the message that the sender signs, and this nonce changes each time the recipient
+claims the channel.
+With this improvement, payment channels inside MPE have the following favorable
+properties:
+* The channel between sender and recipient can persist indefinitely. The sender can extend
+the expiration time and add funds to the channel. The recipient can claim the amount
+signed over to him at any time.
+* The system is comfortably functional even when the Ethereum network is overloaded
+with confirmation time of several hours or even more, for the following reasons:
+  * Neither the sender nor recipient needs any confirmation from the blockchain. Alice can continue to add funds, and Bob can continue to claim them in the channel, with no confirmation from the blockchain. For example, after Bob claims his funds, he can inform Alice that the nonce of the channel has changed, and she can start to send messages with the new nonce. It is easy to demonstrate that this is safe for both the sender and the recipient. There is only one condition: the recipient should make sure that the transaction is mined before the expiry time of the channel.
+  * There is no race condition between claiming (from the recipient side) and extending/adding funds (from the sender side). The parties can use these functions at any time, and the final result will not depend on the order in which these transactions are mined.
+When a user wants to call a given service, they must open a channel, add funds to it, and set an
+expiry date that allows sufficient time for the service to fulfill its function. Each channel is
+unique to a combination of client identity (sender), service identity (recipient), and daemon
+group identity. This allows daemons in the same group to share payment information via etdc,
+reducing the overall number of channels and simplifying life on the client side. Clients can be
+end users interacting with the platform via the [Marketplace DApp](https://beta.singularitynet.io/) or applications making calls
+directly or through the SDK's generated code.
 
 ## The Set of Channels and Manipulation Functions
 ### Payment Channel Structure
