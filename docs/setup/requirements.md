@@ -31,8 +31,6 @@ page_nav:
         url: '/docs/all'
 ---
 
-[naming-standards]: https://dev.singularitynet.io/docs/all/naming-standard/
-
 ## Step 2a. Setup your system
 
 #### Requirements

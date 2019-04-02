@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: An introduction to the SingularityNET Daemon
+title: snetd - SingularityNET Daemon
 description: Learn about the daemon - how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
 
 # extralink box
@@ -24,11 +24,11 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: snet-cli command line tool
-        url: '/docs/concepts/snet-cli'
+        content: SDK
+        url: '/docs/concepts/sdk'
     next:
-        content: Naming Standards
-        url: '/docs/concepts/naming-standards'
+        content: The Daemon API 
+        url: '/docs/concepts/daemon-api'
         
 ---
 The daemon is the adapter that a service can use to interface with the SingularityNET platform.
@@ -58,31 +58,38 @@ speed and ability. The daemon uses the [token bucket](https://en.wikipedia.org/w
 checking protocol](https://github.com/grpc/grpc/blob/master/doc/health-checking.md). The daemon will check that the heartbeat of the service is configured; this is used by monitoring services as well as the Marketplace DApp.
 
 ## Supported Service Types
-The daemon has been written to support a variety of service implementations. Currently, services that either expose a JSON-RPC endpoint, a gRPC endpoint, or are implemented as executables to be executed on a per-call basis with the input parameters on STDIN can be used with the SingularityNET daemon.
+
+The daemon has been written to support a variety of service implementations. Currently, services that either expose a gRPC endpoint, a JSON-RPC endpoint, or are implemented as executables to be executed on a per-call basis with the input parameters on `stdin` can be used with the SingularityNET daemon.
 
 ## Daemon API
-The daemon itself exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon. This enables one consistent protocol to be used to communicate with any service on the SingularityNET network. Note that certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs. Also note that bi-directional streaming RPCs are only compatible with gRPC clients (not gRPC-Web i.e. browser clients).
+
+The daemon itself exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon. This enables one consistent protocol to be used to communicate with any service on the SingularityNET network. Note that certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs (streaming is also a work in progress, see [here](https://github.com/singnet/snet-daemon/issues/195)). Also note that bi-directional streaming RPCs are only compatible with gRPC clients (not gRPC-Web i.e. browser clients).
 
 ## Service Models
-Services are encouraged to define their API surface using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition) as an IDL. This allows SingularityNET clients to determine the request/response schema programmatically. See [this](/docs/all/archive/alpha/Platform-How-Tos#create-a-service-model) for an example of how to create a service model for any of the [supported service types](#supported-service-types), and [this](/docs/all/archive/alpha/Platform-How-Tos#publish-service-metadata) for directions on how to publish the service model to the network.
+
+Services need to define their API using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition). This allows SingularityNET clients to determine the request/response schema programmatically. This definition, or "service specification" is published using the CLI. An example of defining this API and publishing a service that implements it, is available [here](/tutorials/publish/).
 
 ## SSL
-The daemon supports SSL termination using either a service developer-supplied certificate and keyfile or automatic certificates provided by [Let's Encrypt](https://letsencrypt.org/).
 
-## Auth
+The daemon supports SSL termination using either a service developer-supplied certificate and keyfile or automatic certificates provided by [Let's Encrypt](https://letsencrypt.org/). See our [SSL guide](/tutorials/daemon-ssl-setup) for step-by-step instructions on how to set this up.
+
+## Authorisation and Payment
+
 Prior to invoking a service through the SingularityNET platform, a consumer must have:
-- Funded the Multi-Party Escrow contract ([see this article](/docs/all/mpe/mpe)); and
-- Opened a payment channel with the recipient as specified by the service definition ([see this article](/docs/all/mpe/payment-channel-storage)).
+- Funded the Multi-Party Escrow contract ([see this article](/docs/concepts/multi-party-escrow)); and
+- Opened a payment channel with the recipient as specified by the service definition ([see this article](/docs/concepts/daemon-channel-storage)).
 
 With each invocation the daemon checks:
 - that the signature is authentic;
 - that the payment channel has sufficient funds; and
-- that the payment channel expiry is beyond specified threshold (to ensure that the developer can claim the accrued funds).
+- that the payment channel expiry is beyond specified threshold (to ensure that the service author can claim the accrued funds after delivering the service).
 
-After these successful checks the request is proxied to the service.
+After these checks are successful the request is proxied to the service.
 
 ## Configuration
-The daemon's behaviour with respect to the [service type](#supported-service-types), [SSL](#ssl), blockchain interactions, etc. is configurable via a configuration file, environment variables, and executable flags. See [this](/docs/all/archive/alpha/Platform-How-Tos#configure-singularitynet-daemon) for a description of the available configuration keys.
+
+The daemon's behavior with respect to the [service type](#supported-service-types), [SSL](#ssl), blockchain interactions, etc. can be controlled via a configuration file, environment variables, and executable flags. See [the daemon's README](https://github.com/singnet/snet-daemon#configuration) for a description of the available configuration keys and how they map to environment variables and runtime flags.
 
 ## Payment channel state
-The daemon stores the payment channel state in an etcddb cluster. This is detailed [here](/docs/all/mpe/payment-channel-storage).
+
+The daemon stores the payment channel state in an etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/concepts/daemon-channel-storage).

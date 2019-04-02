@@ -5,8 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: Using the SNET-CLI to pass parameters to a service
-description: In this document, we look at how to pass parameters to a service in the SNET-CLI and how to pass binary parameters via a command line interface.
+title: The SingularityNET Command Line Tools
 
 # extralink box
 extralink:
@@ -26,12 +25,10 @@ page_nav:
         content: Software
         url: '/docs/concepts/software'
     next:
-        content: snetd daemon
+        content: SDK
         url: '/docs/concepts/daemon'
-
 ---
 
-## Introduction
 The SingularityNET command line interface (CLI) is the primary tool for interacting with the
 platform's smart contracts, managing deployed services, and managing funds. It is aimed at service providers. In the near future, it will be supplemented by a web-based dashboard and control panel.
 
@@ -55,17 +52,27 @@ and locking/unlocking accounts for transacting with the blockchain. This compone
 * Registry contract. Deals with organizations, members, services, types, and tags.
 * MPE contract. Sends and receives funds and manages other functions related to payment channels; e.g., closing a channel or extending its expiry date.
 
-## JSON parameters
+This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/setup/requirements).
 
-Parameters for a service have to be passed to the snet-cli in a JSON format. There are three ways of passing this JSON:
+## Making a call to a SingularityNET service
+
+### JSON parameters
+
+While protocol buffers are used for communication, call parameters are represented as JSON on the command line.
+
+There are three ways of passing this JSON:
 * via a cmdline parameter;
 * via JSON file; and
 * via stdin.
 
-For example in [this front-to-back example](front-to-back-examples/example.md#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
-`{"a":10,"b":32}`
+For example, in [this platform example](development/mpe-example.md#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
+
+```json
+{"a": 10, "b": 32}
+```
 
 We can use three ways:
+
 ```bash
 # via cmdline parameter
 snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
@@ -78,7 +85,7 @@ snet client call 0 0.1 localhost:8080 add p.txt
 echo '{"a":10,"b":32}' | snet client call 0 0.1 localhost:8080 add
 ```
 
-## Modifiers
+### Modifiers
 
 We've implemented several modifiers for this JSON parameter in order to simplify passing big files and to have the possibility to pass binary data (and not only base64 encoded data).
 

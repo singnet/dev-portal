@@ -44,7 +44,7 @@ providing text descriptions and tags to allow users to discover their service, p
 and information such as gRPC models and endpoint locations to allow users to call their services using the AGI token.
 ## Core Concepts and Components
 
-Here we've broken down the SingularityNET platform and network into its core components. You can jump directly to the thing you'd like to know more about, or use the navigation at the bottom of each page to read through each in turn.
+Here we've broken down the SingularityNET platform and network into its core components. You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn.
 
 * [**SingularityNET Marketplace:**](/docs/concepts/marketplace) The SingularityNET Marketplace is a DApp ("Distributed App") and provides a front-end for exploring AI services available on the network. Users can interact with and call them through a web interface, and rate them after. This allows the community to provide feedback and to get a sense of the level of quality that can expected from a service.
 
@@ -82,16 +82,20 @@ roles.
 * [**Service:**](/docs/concepts/service) A Service is published to the SingularityNET network and provides a [grpc](https://grpc.io)-based API for calling it. The service API specification, the IP address where it can be accessed, and the pricing information is published to IPFS as service metadata. This location of this metadata is then advertised in the SingularityNet Registry.
     * [metadata](/docs/concepts/service-metadata)
     * [naming standards](/docs/concepts/naming-standards)
+* [**SingularityNET Marketplace**](/docs/concepts/marketplace) - The SingularityNET Marketplace is a DApp ("Distributed App") and provides a front-end for exploring AI services available on the network. Users can interact with and call them through a web interface, and rate them afterwards. This allows the community to provide feedback and to get a sense of the level of quality that can expected from a service, and will eventually feed into our reputation engine.
+* [**Service**](/docs/concepts/service) - A Service is published to the SingularityNET network and provides a [grpc](https://grpc.io)-based API for calling it. The service API specification, the IP address where it can be accessed, and the pricing information is published to IPFS as service metadata. This location of this metadata is then advertised in the SingularityNet Registry.
+    * [Service Metadata](/docs/concepts/service-metadata) - The metadata describes the service's API, payment method, and where to find the service.
+    * [Naming Standards](/docs/concepts/naming-standards) - We ask that people follow various guidelines for how to name their services.
 * [**Software**](/docs/concepts/software)
-    * [**snet-cli:**](/docs/concepts/snet-cli)
-    * [**SNET Daemon:**](/docs/concepts/daemon) A developer exposes their service to the network by running the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to facilitate authorization and payment for services and acts as a passthrough for making API calls to the service. This isolates the payment and blockchain interaction so a developer can focus on deploying and improving their service.
-        * [api](/docs/concepts/daemon-api)
-        * [channel storage](/docs/concepts/daemon-channel-storage)
-
-* [**Blockchain Contracts:**](/docs/concepts/blockchain-contracts)
-    * [**AGI Token:**](/docs/concepts/agi-token)
-    * [**Registry**:](/docs/concepts/registry) Services are published to a publicly-accessible central registry on the blockchain. The registry maintains a list of active services on the network, and has support to group services by the organisation or team with access control for organisation members.
-    * [**Escrow:**](/docs/concepts/multi-party-escrow) The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and a service. An end-user places funds in escrow before a service can be called, and remain there until the service has been delivered or the escrow funds timeout.
+    * [**snet-cli**](/docs/concepts/snet-cli) - The `snet` command line tool lets you interact with the platform: whether that's to call and query services, or publish your own.
+    * [**SDK**](/docs/concepts/sdk) - The software development kit (SDK) helps you integate SingularityNET services with your own software.
+    * [**SNET Daemon**](/docs/concepts/daemon) - A developer exposes their service to the network by running the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to facilitate authorization and payment for services and acts as a passthrough for making API calls to the service. This isolates the payment and blockchain interaction so a developer can focus on deploying and improving their service.
+        * [Daemon API](/docs/concepts/daemon-api)
+        * [Daemon Channel Storage](/docs/concepts/daemon-channel-storage)
+* [**Blockchain Contracts**](/docs/concepts/blockchain-contracts)
+    * [**AGI Token**](/docs/concepts/agi-token)
+    * [**Registry**](/docs/concepts/registry) - Services are published to a publicly-accessible central registry on the blockchain. The registry maintains a list of active services on the network, and has support to group services by the organisation or team with access control for organisation members.
+    * [**Escrow**](/docs/concepts/multi-party-escrow) - The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and a service. An end-user places funds in escrow before a service can be called, and remain there until the service has been delivered or the escrow funds timeout.
     * [mpe stateless](/docs/concepts/mpe-stateless-client)
 
 
