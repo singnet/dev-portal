@@ -20,9 +20,13 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+page_nav:
+    next:
+        content: Marketplace
+        url: '/docs/concepts/marketplace'
 ---
 
-SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the blockchain. Ddevelopers publish their services to the SingularityNET network, where they can be used by anyone with an internet connection. Developers are able to charge for the use of their services using the native AGI token -- an ERC20 token hosted on Ethereum.
+SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the blockchain. Developers publish their services to the SingularityNET network, where they can be used by anyone with an internet connection. Developers are able to charge for the use of their services using the native AGI token.
 
 Services can span the entire gamut of offerings in artificial intelligence and machine learning. Services can provide inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. The services can be as simple as wrapping a well-known algorithm such as A* path planning, a complete end-to-end solution for an industry problem, or a standalone AI application. Developers can also deploy autonomous AI agents that interoperate with other services on the network.
 
@@ -93,7 +97,7 @@ roles.
         * [Daemon API](/docs/concepts/daemon-api)
         * [Daemon Channel Storage](/docs/concepts/daemon-channel-storage)
 * [**Blockchain Contracts**](/docs/concepts/blockchain-contracts)
-    * [**AGI Token**](/docs/concepts/agi-token)
+    * [**AGI Token**](/docs/concepts/agi-token) - Our utility token to be exchanged for AI service, it is an ERC20 token hosted on Ethereum.
     * [**Registry**](/docs/concepts/registry) - Services are published to a publicly-accessible central registry on the blockchain. The registry maintains a list of active services on the network, and has support to group services by the organisation or team with access control for organisation members.
     * [**Escrow**](/docs/concepts/multi-party-escrow) - The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and a service. An end-user places funds in escrow before a service can be called, and remain there until the service has been delivered or the escrow funds timeout.
     * [mpe stateless](/docs/concepts/mpe-stateless-client)

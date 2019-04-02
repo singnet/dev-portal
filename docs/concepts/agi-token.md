@@ -1,4 +1,5 @@
 ---
+layout: default
 keywords: agi token
 comments: true
 
