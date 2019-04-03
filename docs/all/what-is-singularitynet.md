@@ -74,7 +74,7 @@ stake AGI tokens as a reward for high-quality solutions.
 The diagram below depicts the key components along with auxiliary components and their
 roles.
 
-<img src="docs/mpe/img/platform_componenets.png" width="400">
+<img src="docs/all/mpe/img/platform_components.jpg" width="400">
 
 
 ## Current state of development
