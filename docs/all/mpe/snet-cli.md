@@ -23,6 +23,30 @@ micro_nav: true
 
 ---
 
+## Introduction
+The SingularityNET command line interface (CLI) is the primary tool for interacting with the
+platform's smart contracts, managing deployed services, and managing funds. It is aimed at service providers. In the near future, it will be supplemented by a web-based dashboard and control panel.
+
+The CLI provides commands to interface with the blockchain in the following ways:
+* creating and managing identities;
+* registering and managing the organizations, members, services, types, and tags on the
+SingularityNET Registry;
+* claiming funds from customers using MPE and payment channels;
+* reading and writing metadata and Protobuf specs about AI services (these are stored on IPFS, while basic service parameters can be fetched from blockchain contracts); and
+* connecting to different networks like local testnets, Kovan, Ropsten, and the Ethereum mainnet.
+
+The CLI also provides service development and deployment support. It can set up new services by generating service metadata, Protobuf specs, and code templates provided by the SingularityNET Foundation. The CLI interacts with daemons for each service.
+Security-wise, the CLI follows the same guidelines as provided by Ethereum for storing the private keys. When user identities are created and registered with a client, the CLI safely stores the details on the local machine and retrieves them only when it needs to interact with the blockchain.
+
+<img src="docs/mpe/img/how_cli_works.png" width="400">
+
+The CLI requires and connects to four critical components:
+* User identity management. Involves user registration, managing identities and sessions,
+and locking/unlocking accounts for transacting with the blockchain. This component is local to the machine where the CLI is run.
+* Sidecar proxy. Communicates to servers hosting AI services.
+* Registry contract. Deals with organizations, members, services, types, and tags.
+* MPE contract. Sends and receives funds and manages other functions related to payment channels; e.g., closing a channel or extending its expiry date.
+
 ## JSON parameters
 
 Parameters for a service have to be passed to the snet-cli in a JSON format. There are three ways of passing this JSON:
