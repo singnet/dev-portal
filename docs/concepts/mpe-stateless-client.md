@@ -5,8 +5,8 @@ keywords:
 comments: true
 
 # Hero section
-title: The Stateless Client with the Multi-Party Escrow
-description: How to communicate with SingularityNET services with the stateless method.
+title: Stateless Client with the Multi-Party Escrow
+description: Calling SingularityNET services with the stateless method.
 
 # extralink box
 extralink:
@@ -21,8 +21,17 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+# Page navigation
+page_nav:
+    next:
+        content: Back to Concepts
+        url: '/docs/concepts/'
+    prev:
+        content: Multi-Party Escrow
+        url: '/docs/concepts/multi-party-escrow'
+
 ---
-# Stateless client with Multi-Party Escrow
+
 In this document we demonstrate that the client that communicates with SingularityNET services using the Multi-Party Escrow payment channels does not require to store the state of the payment channel. The client only needs to store its Ethereum identity.  
 
 1. The client can easily obtain the list of its payment channels (payment channels with "sender==client") from the Multi-Party Escrow (see EventChannelOpen). However, we need to take into account the situation in which the request to open the channel has been already sent, but not yet mined. This can happen when the client has sent this request and died (it "lost" its state).

@@ -31,7 +31,7 @@ page_nav:
         url: '/docs/concepts/daemon-api'
         
 ---
-The daemon is the adapter that a service can use to interface with the SingularityNET platform.
+The [SingularityNET daemon](https://github.com/singnet/snet-daemon) is the adapter that a service can use to interface with the SingularityNET platform.
 In software architecture lingo, the daemon is a [sidecar proxy](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar), —a process deployed next to a core application (the AI service, in this case) to abstract away some architectural concerns such as logging and configuration as well as entire platform aspects, such as the interaction with smart contracts or even the decision to use the Ethereum blockchain.
 The two key abstraction responsibilities of the daemon are payments and request translation. In order to authorize payments, the daemon interacts with the Multi-Party Escrow contract.
 Before invoking a service through SingularityNET, a consumer must have
@@ -57,27 +57,33 @@ speed and ability. The daemon uses the [token bucket](https://en.wikipedia.org/w
 * Heartbeat. A pull-based heartbeat service is provided, following the [gRPC health
 checking protocol](https://github.com/grpc/grpc/blob/master/doc/health-checking.md). The daemon will check that the heartbeat of the service is configured; this is used by monitoring services as well as the Marketplace DApp.
 
+The latest version is {{ data.versions.snet-daemon }}, and can be [downloaded from the release page](https://github.com/singnet/snet-daemon/releases).
+
 ## Supported Service Types
 
-The daemon has been written to support a variety of service implementations. Currently, services that either expose a gRPC endpoint, a JSON-RPC endpoint, or are implemented as executables to be executed on a per-call basis with the input parameters on `stdin` can be used with the SingularityNET daemon.
+The daemon has been written to support a variety of service implementations. Currently, the daemon supports services that either:
 
-## Daemon API
+- expose a gRPC endpoint,
+- expose a JSON-RPC endpoint, or
+- executables called on a per-request basis with the input parameters on `stdin`
 
-The daemon itself exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon. This enables one consistent protocol to be used to communicate with any service on the SingularityNET network. Note that certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs (streaming is also a work in progress, see [here](https://github.com/singnet/snet-daemon/issues/195)). Also note that bi-directional streaming RPCs are only compatible with gRPC clients (not gRPC-Web i.e. browser clients).
+Note however that the daemon exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon.
 
-## Service Models
+This means we have one consistent protocol to be used to communicate with any service on the SingularityNET network, while still allowing service authors to have flexibility in their implementations. Certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs (streaming is also a work in progress, see [here](https://github.com/singnet/snet-daemon/issues/195)). Also note that bi-directional streaming RPCs are only compatible with some gRPC clients (not gRPC-Web i.e. browser clients).
 
-Services need to define their API using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition). This allows SingularityNET clients to determine the request/response schema programmatically. This definition, or "service specification" is published using the CLI. An example of defining this API and publishing a service that implements it, is available [here](/tutorials/publish/).
+### Service Models
+
+As noted when discussing [Services](/docs/concepts/services), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
 
 ## SSL
 
-The daemon supports SSL termination using either a service developer-supplied certificate and keyfile or automatic certificates provided by [Let's Encrypt](https://letsencrypt.org/). See our [SSL guide](/tutorials/daemon-ssl-setup) for step-by-step instructions on how to set this up.
+The daemon supports SSL termination using a developer-supplied certificate and keyfile. See our [SSL guide](/tutorials/daemon-ssl-setup) for step-by-step instructions on how to set this up with [Let's Encrypt](https://letsencrypt.org/).
 
 ## Authorisation and Payment
 
 Prior to invoking a service through the SingularityNET platform, a consumer must have:
-- Funded the Multi-Party Escrow contract ([see this article](/docs/concepts/multi-party-escrow)); and
-- Opened a payment channel with the recipient as specified by the service definition ([see this article](/docs/concepts/daemon-channel-storage)).
+- Funded the [Multi-Party Escrow contract](/docs/concepts/multi-party-escrow); and
+- Opened a payment channel with the recipient as specified by the [service metadata](/docs/concepts/service-metadata).
 
 With each invocation the daemon checks:
 - that the signature is authentic;

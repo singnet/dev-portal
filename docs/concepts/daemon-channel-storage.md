@@ -5,8 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: Payment Channel Storage
-description: Learn how to work with a payment channel to store and process information about service payments.
+title: Daemon Payment Channel Storage
 
 # extralink box
 extralink:
@@ -21,27 +20,35 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+# Page navigation
+page_nav:
+    prev:
+        content: The Daemon API 
+        url: '/docs/concepts/daemon-api'
+    next:
+        content: Blockchain Contracts
+        url: '/docs/concepts/blockchain-contracts'
 ---
 
 To fulfill a request from a client to a service, a snet-daemon needs to store and process information about the service payment. This connection is called the payment channel.
 
 If there is only one service and corresponding snet-daemon the process is easy:
 
-![one replica](img/payment_channel_storage_single_replica.jpg)
+![one replica](/assets/img/mpe/payment_channel_storage_single_replica.jpg)
 
 When payment passes a validation process, the payment channel is stored in an internal storage
 to be claimed when the service successfully accomplishes the request.
 
 The situation becomes more complicated if a service provides several replicas. In this case it is not possible to have several separated snet-daemons each of which has an independent internal storage.
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_several_independent_storages.jpg)
+![several replicas with several independent storages](/assets/img/mpe/payment_channel_storage_several_replicas_several_independent_storages.jpg)
 
 One drawback of using a separated payment channel for each replica, is that it can be expensive from the gas consumption and time execution point of view, because each operation to open a channel requires it to be processed by the blockchain.
 
 The other one is that such model is subject to an attack where the same payment can be used for services
 from different replicas. This leads to a model where all snet-daemons for the same service should use the shared storage.
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_one_storage.jpg)
+![several replicas with several independent storages](/assets/img/mpe/payment_channel_storage_several_replicas_one_storage.jpg)
 
 However, if only one instance of a storage is provided it can easily become a single point of failure
 for the whole system. When it fails, this leads to failure of all payments even when there are live replicas.
@@ -66,13 +73,13 @@ Lets strike out the availability guarantee and leave only partition tolerance an
 
 The new design now looks like this:
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_separate_distributed_storage.jpg)
+![several replicas with several independent storages](/assets/img/mpe/payment_channel_storage_several_replicas_separate_distributed_storage.jpg)
 
 The current approach is fine, but it requires for a service owner not only to setup a snet-daemon for each replica, but also to deploy a separated distributed storage. This can be a rather tedious and complicated task.
 
 To avoid this, it would be good to incorporate the distributed storage nodes into snet-daemons so it would be the snet-daemon's task to run required distributed storage nodes:
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_embedded_distributed_storage.jpg)
+![several replicas with several independent storages](/assets/img/mpe/payment_channel_storage_several_replicas_embedded_distributed_storage.jpg)
 
 ## Considered storages
 We are looking for a distributed storage with strong consistency guarantees which can be run by snet-daemon (e.g. be easily integrated into a Go program).
@@ -130,7 +137,7 @@ an odd number of etcd nodes in a cluster, usually 3 or 5. It also mentions that 
 
 ##  Proposed solutions
 
-![several replicas with several independent storages](img/payment_channel_storage_several_replicas_embedded_etcd_cluster.jpg)
+![several replicas with several independent storages](/assets/img/mpe/payment_channel_storage_several_replicas_embedded_etcd_cluster.jpg)
 
 The following solutions are based on the embedded etcd storage discussed in details in chapters below:
 * Command line etcd cluster creation

@@ -26,7 +26,7 @@ page_nav:
         url: '/docs/concepts/software'
     next:
         content: SDK
-        url: '/docs/concepts/daemon'
+        url: '/docs/concepts/sdk'
 ---
 
 The SingularityNET command line interface (CLI) is the primary tool for interacting with the
@@ -54,7 +54,7 @@ and locking/unlocking accounts for transacting with the blockchain. This compone
 
 This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/setup/requirements).
 
-See the CLI documentation for full details of all commands.
+See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full details of actions the tool allows.
 
 ## Making a call to a SingularityNET service
 

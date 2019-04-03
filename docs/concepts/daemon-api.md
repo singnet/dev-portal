@@ -21,9 +21,16 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+page_nav:
+    prev:
+        content: The Daemon
+        url: '/docs/concepts/daemon'
+    next:
+        content: Daemon Payment Channel Storage
+        url: '/docs/concepts/daemon-channel-storage'
 ---
 
-`snetd`, the SingularityNET daemon, provides an API to call service methods using [multi-party escrow contract](/docs/multi-party-escrow) payment channels.
+`snetd`, the SingularityNET daemon, provides an API to call service methods using [multi-party escrow contract](/docs/concepts/multi-party-escrow) payment channels.
 
 To call a published service's method, the client sends payment details via gRPC metadata, as described in the section [gRPC metadata](#grpc-metadata). The server will return one of the [gRPC error codes](#grpc-error-codes) in response.
 

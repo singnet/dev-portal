@@ -21,6 +21,15 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+# Page navigation
+page_nav:
+    next:
+        content: MPE Stateless Client
+        url: '/docs/concepts/mpe-stateless-client'
+    prev:
+        content: Registry
+        url: '/docs/concepts/registry'
+
 ---
 
 ## Introduction

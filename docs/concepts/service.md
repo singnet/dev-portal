@@ -35,13 +35,14 @@ Anyone can publish the availability of their machine learning method, or integra
 directly.
 
 These services are primarily meant to be AI or machine learning related, but there is no intrinsic limitation to what type of service can be offered.
-Indeed, we may end up implementing utility and adaptor services (such as [image conversion](https://github.com/singnet/face-services/issues/7)) to allow
-services be composed more easily. We build on top of gRPC and protocol buffers, so if you can represent your service with these libraries, you can mostly
-likely publish it to SingularityNET (however, see the current limitations below).
+Indeed, the foundation or the community may end up implementing utility and adaptor services (such as [image conversion](https://github.com/singnet/face-services/issues/7)) to allow
+services be composed more easily.
 
-A "service" is defined through it's specification (the `.proto` file describing the gRPC service and message format), and [it's metadata](/docs/concepts/service-metadata).
+Services define their API using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition). This allows SingularityNET clients to determine the request/response schema programmatically. This definition, or "service specification" is published using the CLI. An example of defining this API and publishing a service that implements it, is available [here](/tutorials/publish/).
 
-A service is "published", by uploading the specification and metadata to IPFS, and updating the [Registry contract](/docs/concepts/registry).
+A "service" is defined through it's specification and [it's metadata](/docs/concepts/service-metadata).
+
+A service is "published", by uploading the specification and metadata to IPFS, and updating the [Registry contract](/docs/concepts/registry). Both of these actions are handled by the CLI.
 
 For a full example of publishing a service, see ["How to Publish a SingularityNET Service"](/tutorials/publish).
 

@@ -5,7 +5,7 @@ keywords: intro concepts
 comments: true
 
 # Hero section
-title: What is SingularityNET?
+title: Concepts and Components
 
 # extralink box
 extralink:
@@ -25,6 +25,8 @@ page_nav:
         content: Marketplace
         url: '/docs/concepts/marketplace'
 ---
+
+## What is SingularityNET?
 
 SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the blockchain. Developers publish their services to the SingularityNET network, where they can be used by anyone with an internet connection. Developers are able to charge for the use of their services using the native AGI token.
 
@@ -46,7 +48,8 @@ The SingularityNET platform and network can be broken down into several core com
 * **Registry**: The Registry is where AI service providers register on the platform, which involves
 providing text descriptions and tags to allow users to discover their service, pricing information,
 and information such as gRPC models and endpoint locations to allow users to call their services using the AGI token.
-## Core Concepts and Components
+
+## Concepts and Components
 
 Here we've broken down the SingularityNET platform and network into its core components. You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn.
 
@@ -100,7 +103,7 @@ roles.
     * [**AGI Token**](/docs/concepts/agi-token) - Our utility token to be exchanged for AI service, it is an ERC20 token hosted on Ethereum.
     * [**Registry**](/docs/concepts/registry) - Services are published to a publicly-accessible central registry on the blockchain. The registry maintains a list of active services on the network, and has support to group services by the organisation or team with access control for organisation members.
     * [**Escrow**](/docs/concepts/multi-party-escrow) - The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and a service. An end-user places funds in escrow before a service can be called, and remain there until the service has been delivered or the escrow funds timeout.
-    * [mpe stateless](/docs/concepts/mpe-stateless-client)
+        * [MPE Stateless Client](/docs/concepts/mpe-stateless-client)
 
 
 

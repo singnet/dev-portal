@@ -21,6 +21,15 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+# Page navigation
+page_nav:
+    prev:
+        content: AGI Token
+        url: '/docs/concepts/agi-token'
+    next:
+        content: Multi-Party Escrow
+        url: '/docs/concepts/multi-party-escrow'
+
 ---
 
 The SingularityNET Registry is an [ERC-165](https://eips.ethereum.org/EIPS/eip-165)–compliant smart contract on the Ethereum blockchain that stores organizations, services, and type repositories. AI developers use the Registry to announce details of their services, and consumers use the Registry to find the services they need. When a user searches for a service in the [Marketplace DApp](https://beta.singularitynet.io/), it reads details of the services from the Registry, which also allows tagging of services and type repositories to enable searching and filtering.
