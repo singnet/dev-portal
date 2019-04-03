@@ -38,7 +38,7 @@ SingularityNET Registry;
 The CLI also provides service development and deployment support. It can set up new services by generating service metadata, Protobuf specs, and code templates provided by the SingularityNET Foundation. The CLI interacts with daemons for each service.
 Security-wise, the CLI follows the same guidelines as provided by Ethereum for storing the private keys. When user identities are created and registered with a client, the CLI safely stores the details on the local machine and retrieves them only when it needs to interact with the blockchain.
 
-<img src="docs/all/mpe/img/how_cli_works.jpg" width="400">
+<img src="/docs/all/mpe/img/how_cli_works.jpg" width="400">
 
 The CLI requires and connects to four critical components:
 * User identity management. Involves user registration, managing identities and sessions,
