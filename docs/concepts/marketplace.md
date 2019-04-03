@@ -26,7 +26,7 @@ page_nav:
         content: Concepts Overview
         url: '/docs/concepts'
     next:
-        content: 
+        content: SingularityNET Services
         url: '/docs/concepts/service'
 ---
 

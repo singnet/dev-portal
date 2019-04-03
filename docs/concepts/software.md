@@ -32,10 +32,10 @@ page_nav:
 
 ---
 
-Service developers and those integrating with services, only need to learn a few tools
+There are three pieces of software and tooling to assist service developers and clients integrating with SingularityNET services.
 
-- snet-cli
-- Daemon
-- SDK
+`snet-cli` and the SDK are important for both users of SNET and service authors.
+
+The SingularityNET daemon, `snetd`, is only of concern for people wanting to publish and host SNET services.
 
 There are more parts to the ecosystem of software that make the SingularityNET platform work, but these are only needed if you are doing development on the platform itself. Full details are in the [development guide](/docs/development).

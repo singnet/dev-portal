@@ -54,6 +54,8 @@ and locking/unlocking accounts for transacting with the blockchain. This compone
 
 This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/setup/requirements).
 
+See the CLI documentation for full details of all commands.
+
 ## Making a call to a SingularityNET service
 
 ### JSON parameters
