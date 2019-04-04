@@ -2,7 +2,7 @@
 # Page settings
 layout: default
 keywords:
-comments: true
+comments: false
 
 # Hero section
 title: "Example 2: Write & Publish gRPC Python Service"

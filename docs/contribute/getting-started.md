@@ -2,7 +2,7 @@
 # Page settings
 layout: default
 keywords:
-comments: true
+comments: false
 
 # Hero section
 title: Getting Started

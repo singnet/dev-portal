@@ -2,7 +2,7 @@
 # Page settings
 layout: default
 keywords: intro concepts
-comments: true
+comments: false
 
 # Hero section
 title: Concepts and Components

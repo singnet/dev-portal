@@ -1,7 +1,7 @@
 ---
 layout: default
 keywords: agi token
-comments: true
+comments: false
 
 # Hero section
 title: AGI Token

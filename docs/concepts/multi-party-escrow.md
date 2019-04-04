@@ -2,7 +2,7 @@
 # Page settings
 layout: default
 keywords: Multi-Party Escrow, MPE, Multi Party Escrow
-comments: true
+comments: false
 
 # Hero section
 title: The Multi-Party Escrow Contract

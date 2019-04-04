@@ -2,7 +2,7 @@
 # Page settings
 layout: default
 keywords: status network
-comments: true
+comments: false
 
 # Hero section
 title: Current Status of SingularityNET
