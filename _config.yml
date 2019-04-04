@@ -25,7 +25,7 @@ snet:
             logo:
                 text:
                 image: '/assets/images/layout/logo.png'
-            copyright: Copyright &copy; 2018 SingularityNET. All rights reserved.
+            copyright: Copyright &copy; 2019 SingularityNET. All rights reserved.
         social_list:
             - network_name: github
               profile_url: 'https://github.com/singnet'
