@@ -15,7 +15,7 @@ description: Welcome to the SingularityNET Developer Portal. SingularityNET lets
 # extralink box
 extralink:
     title: Dev Community
-    title_url: '/sheet#community'
+    title_url: 'https://community.singularitynet.io/c/developers'
     external_url: false
     description: Meet other devs in the SingularityNET Community.
 
