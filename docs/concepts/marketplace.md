@@ -34,9 +34,22 @@ The [SingularityNET Marketplace](http://beta.singularitynet.io) provides an easy
 
 ![marketplace](/assets/img/marketplace.png)
 
-While SingularityNET the platform is open and decentralised, the Marketplace is the SingularityNET Foundation's curated view of it. This allows the foundation to provide oversight and adhere to legal requirements requirements in different legislative regions.
+The SingularityNET marketplace is a decentralized application (DApp) and provides a front-end for exploring available AI services and interacting with them through a web-UI. It also handles payment for services (through MetaMask integration) and service ratings. The DApp
+  * reads data from the on-chain Registry and pairs it with off-chain metadata, allowing AI
+services to be searched, filtered, and discovered;
+  * integrates the SingularityNET curation service, displaying from the Registry only those
+services that have been vetted and whose owners have undergone due diligence and
+signed legal agreements that protect user privacy and data;
+  * allows AI services to display custom UI components for user interactions (gathering
+inputs for service execution and displaying results);
+  * integrates with Multi-Party Escrow, enabling the user to pay for service usage;
+  * allows consumers to rate services they have used; this is a simple rating component that
+will eventually be replaced by SingularityNET's Reputation System (currently under
+development); and
+  * captures usage metrics at a consumer level.
 
-Our marketplace is implemented as decentralized application (DApp), with AI services published on both the main Ethereum network and the Ropsten test network.
+
+While SingularityNET the platform is open and decentralised, the Marketplace is the SingularityNET Foundation's curated view of it. This allows the foundation to provide oversight and adhere to legal requirements requirements in different legislative regions.
 
 The Marketplace and SingularityNET is in beta, but still under heavy development. See our [current status](/docs/current-status) page for ways to to stay informed of changes, or follow the [github repo](https://github.com/singnet/snet-dapp).
 
