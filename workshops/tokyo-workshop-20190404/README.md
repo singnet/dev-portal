@@ -9,8 +9,14 @@ For this workshop we require basic working knowledge of these technologies:
   - [Protobuf](http://blakesmith.me/2012/09/05/a-primer-on-protocol-buffers.html)
   - [gRPC](https://medium.com/@philipshen13/a-short-introduction-to-grpc-419b620e2177)
 
-The tutorials can also be found here:
+Recommended reading from the SingularityNET profile
   - [SingularityNET Developer Portal](https://dev.singularitynet.io)
+  - [SingularityNET Documentation](https://dev.singularitynet.io/docs)
+  - [SingularityNET Daemon](http://dev.singularitynet.io/docs/concepts/daemon)
+  - [SingularityNET Registry](http://dev.singularitynet.io/docs/concepts/registry)
+  - [SingularityNET MPE](http://dev.singularitynet.io/docs/concepts/multi-party-escrow)
+
+The tutorials can also be found here:
   - [Publisher Tutorial](https://dev.singularitynet.io/tutorials/publish/)
 
 
