@@ -10,7 +10,7 @@ snet:
             - item_name: Home
               item_url: 'https://dev.singularitynet.io'
             - item_name: Getting Started
-              item_url: '/docs/all/getting-started'
+              item_url: '/tutorials/getting-started'
             - item_name: Docs
               item_url: '/docs'
             - item_name: Contribute
