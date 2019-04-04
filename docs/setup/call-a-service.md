@@ -20,15 +20,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Back to Create A Wallet
-        url: '/tutorials/create-a-wallet'
-    next:
-        content: Call a Service via the SDK
-        url: '/tutorials/sdk'
 ---
 
 ## Step 1. Get some Ether

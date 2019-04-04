@@ -5,7 +5,7 @@ keywords:
 comments: true
 
 # Hero section
-title: System Requirements to Publish a SingularityNET Service
+title: Setup Requirements
 description: Getting your system ready
 
 # extralink box
@@ -21,19 +21,8 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Back to tutorials
-        url: '/tutorials/publish'
-    next:
-        content: View all docs
-        url: '/docs/all'
 ---
 
-## Step 2a. Setup your system
-
-#### Requirements
 
 - [Python 3.6+](https://www.python.org/downloads/)
 - [Node 8+ with npm](https://nodejs.org/en/download/)
@@ -44,7 +33,7 @@ page_nav:
 
 For example, installing the requirements using `Ubuntu 18.04`:
 
-```
+```bash
 sudo apt-get update
 sudo apt-get install wget git
 sudo apt-get install python3 python3-pip
@@ -76,5 +65,3 @@ export DAEMON_PORT=$SERVICE_PORT
 
 export USER_ID = $USER
 ```
-
-After installation, you can proceed with [Tutorial/Publish/Step3](https://dev.singularitynet.io/tutorials/publish/#step-3-setup-snet-cli-and-create-your-identity).

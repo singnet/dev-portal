@@ -21,14 +21,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Back to Getting Started
-        url: '/docs/all/getting-started'
-    next:
-        content: Call a Service
-        url: '/tutorials/call-a-service'
 ---
 
 ## Step 1. Metamask
