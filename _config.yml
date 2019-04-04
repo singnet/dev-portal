@@ -5,7 +5,7 @@ snet:
     header:
         logo:
             text:
-            image: '../assets/images/layout/logo.png'
+            image: '/assets/images/layout/logo.png'
         nav:
             - item_name: Home
               item_url: 'https://dev.singularitynet.io'
@@ -24,7 +24,7 @@ snet:
         content:
             logo:
                 text:
-                image: '../assets/images/layout/logo.png'
+                image: '/assets/images/layout/logo.png'
             copyright: Copyright &copy; 2018 SingularityNET. All rights reserved.
         social_list:
             - network_name: github
@@ -46,12 +46,12 @@ snet:
 
 # SASS settings
 sass:
-    sass_dir: ./snet-theme/_sass
+    sass_dir: ./theme/_sass
     style: :compressed
 
 # Jekyll settings
-layouts_dir: ./snet-theme/_layouts
-includes_dir: ./snet-theme/_includes
+layouts_dir: ./theme/_layouts
+includes_dir: ./theme/_includes
 exclude: [ 'README.md', 'CHANGELOG.md' ]
 permalink: /:title/
 plugins:

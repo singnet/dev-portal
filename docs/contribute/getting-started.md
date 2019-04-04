@@ -96,7 +96,7 @@ or fetch with git clone.</p>
 <p>This is the basic directory structure which looks like this:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet/
-├── snet-theme/ <span class="c"># snet theme source files.</span>
+├── theme/ <span class="c"># snet theme source files.</span>
 ├── _config.yml <span class="c"># Stores Jekyll configuration data.</span>
 ├── .eslintrc <span class="c"># ESlint configuration file.</span>
 ├── .gitignore <span class="c"># Git related file which specifies intentionally untracked files to ignore.</span>
