@@ -2,7 +2,7 @@
 # Page settings
 layout: default
 keywords:
-comments: true
+comments: false
 
 # Hero section
 title: SingularityNET Theme Updates
@@ -36,4 +36,4 @@ Firstly, when a new update is available you have to download the files with the 
 
 You can go ahead and build the site again locally as usual.
 
-If you only want the theme updates, simply delete your old snet-theme folder and replace it with the new one.
+If you only want the theme updates, simply delete your old theme folder and replace it with the new one.

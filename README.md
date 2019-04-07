@@ -1,4 +1,4 @@
-![logo](snet-theme/assets/images/layout/logo.png)
+![logo](theme/assets/images/layout/logo.png)
 
 Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io).
 

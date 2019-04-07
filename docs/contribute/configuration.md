@@ -2,7 +2,7 @@
 # Page settings
 layout: default
 keywords:
-comments: true
+comments: false
 
 # Hero section
 title: Configuration
@@ -90,7 +90,7 @@ page_nav:
 <p>If you need logo as image, update <code class="highlighter-rouge">image</code> variable and set it to <code class="highlighter-rouge">true</code> and leave <code class="highlighter-rouge">text</code> empty.</p>
 
 <p>To set your custom logo image just upload it in place of <code class="highlighter-rouge">logo.png</code> here<br />
-<code class="highlighter-rouge">/snet-theme/assets/images/layout/logo.png</code>.</p>
+<code class="highlighter-rouge">/theme/assets/images/layout/logo.png</code>.</p>
 
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
@@ -133,7 +133,7 @@ page_nav:
 <h3 id="logo-with-image-1">Logo with image</h3>
 <p>If you need logo as image, update <code class="highlighter-rouge">image</code> variable and set it to <code class="highlighter-rouge">true</code> and leave <code class="highlighter-rouge">text</code> empty.</p>
 
-<p>To set your custom logo image just upload it in place of <code class="highlighter-rouge">logo-footer.png</code> here <code class="highlighter-rouge">/snet-theme/assets/images/layout/logo-footer.png</code>.</p>
+<p>To set your custom logo image just upload it in place of <code class="highlighter-rouge">logo-footer.png</code> here <code class="highlighter-rouge">/theme/assets/images/layout/logo-footer.png</code>.</p>
 
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>

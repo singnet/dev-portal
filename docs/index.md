@@ -25,59 +25,55 @@ grid_navigation:
     - title: Getting Started
       excerpt: Welcome to the SingularityNET Developer Portal. Here is a quick overview of things you need to know to get started with our developer tools.
       cta: Read more
-      url: '/docs/all/getting-started'
+      url: '/tutorials/getting-started'
     - title: What is SingularityNET?
-      excerpt: A brief introduction to the SingularityNET decentralized marketplace.
+      excerpt: An introduction to the SingularityNET decentralized marketplace.
       cta: Read more
-      url: '/docs/all/what-is-singularitynet'
-    - title: Fact Sheet
-      excerpt: Here you will find a concise overview of some quick facts that you may need whilst working with SingularityNET tools.
-      cta: Read more
-      url: '/sheet'
+      url: '/docs/concepts'
     - title: An introduction to the SingularityNET Daemon
       excerpt: Learn about the functionalities of the daemon and how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
       cta: Read more
-      url: '/docs/all/daemon'
+      url: '/docs/concepts/daemon'
     - title: SingularityNET Registry
       excerpt: This guide will teach you how the registry is used to expose information about AI services to the outside world so consumers can find and buy these services.
       cta: Read more
-      url: '/docs/all/registry'
+      url: '/docs/concepts/registry'
     - title: Naming Standards
       excerpt: About the standardisation of naming within the SingularityNET Network.
       cta: Read more
-      url: '/docs/all/naming-standard'
+      url: '/docs/concepts/naming-standards'
     - title: Service Integration Guidelines
       excerpt: This guide will help AI providers integrate services into the platform.
       cta: Read more
-      url: '/docs/all/service-integration-guidelines'
+      url: '/tutorials/integration'
     - title: The Multi-Party Escrow Contract
       excerpt: An introduction to the deposit, withdrawal, and payment channel functionalities of the Multi-Party Escrow
       cta: Read more
-      url: '/docs/all/mpe/mpe'
+      url: '/docs/concepts/multi-party-escrow'
     - title: The Stateless Client with the Multi-Party Escrow
       excerpt: How to communicate with SingularityNET services with the stateless method.
       cta: Read more
-      url: '/docs/all/mpe/mpe-stateless-client'
+      url: '/docs/concepts/mpe-stateless-client'
     - title: Payment Channel Storage
       excerpt: Learn how to work with a payment channel to store and process information about service payments.
       cta: Read more
-      url: '/docs/all/mpe/payment-channel-storage'
+      url: '/docs/concepts/daemon-channel-storage'
     - title: Multi-Party Escrow Service Metadata
       excerpt: Learn how to use service metadata to describe your AI services.
       cta: Read more
-      url: '/docs/all/mpe/mpe-metadata'
+      url: '/docs/concepts/service-metadata'
     - title: SingularityNET Daemon API
       excerpt: Learn how to use the SingularityNET Daemon API.
       cta: Read more
-      url: '/docs/all/mpe/daemon-api'
+      url: '/docs/concepts/daemon-api'
     - title: Deploy SingularityNET Locally
       excerpt: Learn how to deploy a local version of the SingularityNET Marketplace.
       cta: Read more
-      url: '/docs/all/deploy-singularitynet'
+      url: '/docs/development/local-singularitynet'
     - title: Using the SNET-CLI to pass parameters to a service
       excerpt: In this document, we look at how to pass parameters to a service in the SNET-CLI and how to pass binary parameters via a command line interface.
       cta: Read more
-      url: '/docs/all/mpe/snet-cli'
+      url: '/docs/concepts/snet-cli'
     - title: How to Publish a SingularityNET Service
       excerpt: Learn how to sell your AI service on the SingularityNET Marketplace.
       cta: Read more
