@@ -53,7 +53,7 @@ service in a number of these languages:
 
 If you already have a gRPC service, please check out [this](/tutorials/publish) tutorial to learn how to publish a service.
 
-Make sure you follow our [naming standardization guidelines](/docs/all/naming-standard) as well when naming your services.
+Make sure you follow our [naming standardization guidelines](/docs/concepts/naming-standards) as well when naming your services.
 
 ## AI frameworks
 There are a couple of AI frameworks integrated to SingularityNET so you can just add new functionalities to services which are already published.

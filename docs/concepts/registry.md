@@ -64,7 +64,7 @@ request format (gRPC, JSON-RPC or process);
 * A list of daemon endpoints, aggregated into one or more groups;
 * pricing information; and
 * an IPFS hash for the service API model.
-The CLI provides a convenient API and library for manipulating this metadata. This is described in detail [here](/docs/all/mpe/mpe-metadata).
+The CLI provides a convenient API and library for manipulating this metadata. This is described in detail [here](/docs/concepts/service-metadata).
 
 ### Type Repository
 A type repository is a Registry entry where a service developer lists service metadata, such as

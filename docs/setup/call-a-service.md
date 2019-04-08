@@ -11,7 +11,7 @@ description: How to interact with services on the SingularityNET platform
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs/all'
+    title_url: '/docs/'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -38,7 +38,7 @@ So how do you get Ether? The mainnet requires you to buy or mine it, but we're g
 
 Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.ropsten.be/).
 
-To use the faucet you need to [create a wallet](tutorials/create-a-wallet), and then provide them with your wallet's public address.
+To use the faucet you need to [create a wallet](/docs/setup/create-a-wallet), and then provide them with your wallet's public address.
 
 ## Step 2. Get some AGI
 

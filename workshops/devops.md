@@ -11,7 +11,7 @@ description: On the 14th of December we will be hosting our first developer work
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs/all'
+    title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -26,9 +26,6 @@ page_nav:
     prev:
         content: Back to Workshops
         url: '/workshops'
-    next:
-        content: Join Developer Community
-        url: '/sheet#community'
 ---
 
 ## Introduction

@@ -159,7 +159,7 @@ function channelClaimTimeout(uint256 channel_id);
 * The client opens a Payment Channel with the chosen payment group.
 * It should be noted that the client can send requests to any replica from the selected payment group (replicas in one payment group should share the state of the payment channel amongst others in the payment group)
 * The client starts to send requests to the replicas. With each call it sends the signed authorization for the server to "withdraw" the total amount of AGI tokens which are due.
-* At some point, the server can decide to close/reopen channel in order to claim the AGI tokens due. At the next call from the client, the server should inform the client that the `nonce` of the channel has been changed (see [this topic on stateless clients](/docs/all/mpe/mpe-stateless-client)).
+* At some point, the server can decide to close/reopen channel in order to claim the AGI tokens due. At the next call from the client, the server should inform the client that the `nonce` of the channel has been changed (see [this topic on stateless clients](/docs/concepts/mpe-stateless-client)).
 * At some point, the client can decide to postpone the expiration of the channel or to escrow more funds.
 * It should be noted that because of the possibility to repeatedly postpone the expiration of the channel and/or to escrow more funds, the payment channel can exist forever.
 
@@ -185,7 +185,7 @@ Let's assume that one call requires 1 AGI. We also assume that the server and th
 * `SERVER1` initiates a call: `channelClaim(channel_id = 0, amount=5, signature = SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=5), is_sendback=false)`
 * The Multi-Party Escrow adds `5 AGI` to the balance of `SERVER1`
 * The Multi-Party Escrow changes the nonce (`nonce +=1`) and value (`value -= 5`) in the Payment Channel: `[channel_id = 0, sender=CLIENT1, recipient=SERVER1, replicaId=REPLICA1, value=5 AGI, nonce=1, expiration=expiration0]`
-* The client is notified that the channel has been reopened, and that the `nonce` has been changed (see [this topic on stateless clients](/docs/all/mpe/mpe-stateless-client)).
+* The client is notified that the channel has been reopened, and that the `nonce` has been changed (see [this topic on stateless clients](/docs/concepts/mpe-stateless-client)).
 * `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=1)`
 * `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=2)`
 * `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=3)`

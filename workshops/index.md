@@ -38,5 +38,5 @@ grid_navigation:
     - title: SingularityNET Amsterdam Meetup
       excerpt: Source material for SingularityNET meetup in Amsterdam, 2019-March-21
       cta: Read more
-      url: /workshops/docker-amsterdam-meetup-20190321
+      url: https://github.com/singnet/dev-portal/tree/master/workshops/amsterdam-meetup-20190321
 ---
