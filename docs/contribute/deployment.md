@@ -30,6 +30,11 @@ page_nav:
         content: Theme Updates
         url: '/docs/contribute/theme-updates'
 ---
+## Introduction
+
+SingularityNET hosts the public community developer portal using Github pages, and Github automatically builds and deploys the site from the master branch.
+If you want to deploy a local or private copy, there are several options available.
+
 ## Web hosting providers (FTP)
 
 To upload a Jekyll site to a web host using FTP, simply run the `JEKYLL_ENV=production jekyll build` command and copy the generated `_site` folder to the root folder of your hosting account.
