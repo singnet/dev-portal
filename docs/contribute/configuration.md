@@ -36,16 +36,15 @@ page_nav:
 
 >__Please stop and re-run `jekyll serve` command after you change configuration file!__ <br> Master configuration file contains global configurations and variable definitions that are read once at execution time. Changes made to `config.yml` during automatic regeneration are not loaded until the next execution.
 
-## Relative URLs
+## Hosting
 
 If you’re deploying to server where your site is not going to be in `root` directory, you should setup `baseurl` variable.
 
 For example, if your site is going to be stored on URL that looks like this `http://example.com/project`, you’ll have to update your `baseurl` variable and it should look like this:
 
-```
+```yml
 snet:
-baseurl: /project
-
+  baseurl: /project
 ```
 
 >__Build site with environment variable!__ <br> When you run `jekyll serve`, your `baseurl` variable shouldn’t render at all in any pages.
@@ -66,9 +65,9 @@ The SingularityNET Developer Portal Theme supports a few color themes:
 
 You can update your `color_theme` variable in `_config.yml` to see changes.
 
-```
+```yml
 snet:
-color_theme: green
+  color_theme: green
 
 ```
 
@@ -78,13 +77,12 @@ color_theme: green
 
 If you need logo as text, update `text` variable and leave `image` empty.
 
-```
+```yml
 snet:
-header:
-logo:
-    text: Project name
-    image:
-
+  header:
+    logo:
+        text: Project name
+        image:
 ```
 
 ### Logo with image
@@ -94,12 +92,12 @@ If you need logo as image, update `image` variable and set it to `true` and leav
 To set your custom logo image just upload it in place of `logo.png` here  
 `/theme/assets/images/layout/logo.png`.
 
-```
+```yml
 snet:
-header:
-logo:
-    text:
-    image: true
+  header:
+    logo:
+        text:
+        image: true
 
 ```
 
@@ -109,14 +107,14 @@ logo:
 
 To add new items in main navigation you have to setup `nav` variable in `_config.yml`. Add as many items as you need.
 
-```
+```yml
 snet:
-header:
-nav:
-    - item_name: Item 1
-      item_url: /example-url-1
-    - item_name: Item 2
-      item_url: /example-url-2
+  header:
+    nav:
+        - item_name: Item 1
+          item_url: /example-url-1
+        - item_name: Item 2
+          item_url: /example-url-2
 
 ```
 
@@ -126,13 +124,13 @@ nav:
 
 If you need logo as text, update `text` variable and leave `image` empty.
 
-```
+```yml
 snet:
-footer:
-content:
-    logo:
-        text: Project name
-        image:
+  footer:
+    content:
+        logo:
+            text: Project name
+            image:
 
 ```
 
@@ -142,13 +140,13 @@ If you need logo as image, update `image` variable and set it to `true` and leav
 
 To set your custom logo image just upload it in place of `logo-footer.png` here `/theme/assets/images/layout/logo-footer.png`.
 
-```
+```yml
 snet:
-footer:
-content:
-    logo:
-        text:
-        image: true
+  footer:
+    content:
+        logo:
+            text:
+            image: true
 
 ```
 
@@ -158,11 +156,11 @@ content:
 
 If you need to setup new footer copyright text, update `copyright` variable in your `_config.yml` file.
 
-```
+```yml
 snet:
-footer:
-content:
-    copyright: Copyright &copy; 2017. - Project name <br>All rights reserved.
+  footer:
+    content:
+        copyright: Copyright &copy; 2017. - Project name <br>All rights reserved.
 
 ```
 
@@ -172,18 +170,18 @@ To properly setup social list update `social_list` variable in `_config.yml`. Ad
 
 At the bottom of the “Getting Started” section you can find a list of icons you can use in this list. Update `network_name` variable to add a proper icon.
 
-```
+```yml
 snet:
 footer:
-social_list:
-    - network_name: facebook
-      profile_url: http://example.com
-    - network_name: twitter
-      profile_url: http://example.com
-    - network_name: instagram
-      profile_url: http://example.com
-    - network_name: youtube
-      profile_url: http://example.com
+  social_list:
+      - network_name: facebook
+        profile_url: http://example.com
+      - network_name: twitter
+        profile_url: http://example.com
+      - network_name: instagram
+        profile_url: http://example.com
+      - network_name: youtube
+        profile_url: http://example.com
 
 ```
 
@@ -191,10 +189,10 @@ social_list:
 
 To activate Google Analytics you have to update `_config.yml` with GA tracking code. You can do that with `tracking_code` variable.
 
-```
+```yml
 snet:
-google_analytics:
-tracking_code: UA-XXXXXX-X
+  google_analytics:
+    tracking_code: UA-XXXXXX-X
 
 ```
 
@@ -214,10 +212,10 @@ Comments are available only on `default` page layout and you have to enable them
 
 Currently, we have integrated Discourse comments into our SingularityNET Developer Portal which link directly to topics created on [our forum](https://community.singularitynet.io/c/developers).
 
-```
+```yml
 snet:
-comments:
-disqus_forum_shortname:
+  comments:
+    disqus_forum_shortname:
 
 ```
 
