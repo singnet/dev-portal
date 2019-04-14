@@ -35,7 +35,7 @@ The **service metadata** is the off-chain description of a SingularityNET servic
 In order to use a service, the client needs to know:
 
 * The service metadata
-* The address of [Multi-Party Escrow (MPE) contract](/docs/multi-party-escrow)
+* The address of [Multi-Party Escrow (MPE) contract](/docs/concepts/multi-party-escrow)
 
 Fortunately the latter is included in the metadata. The daemon allowing access to the service also needs to know this metadata, in order to configure the necessary payment systems.
 

@@ -27,7 +27,7 @@ buttons:
 
 - [How to Publish a SingularityNET Service](/tutorials/publish) - Learn how to sell your AI service on the SingularityNET Marketplace.
 - [Publish a Process-Type SingularityNET Service](/tutorials/process) - Wrap your AI service as a process/executable and publish it onto SingularityNET.
-- [Service Integration Guidelines](/docs/all/service-integration-guidelines) - Write and integrate new AI services to the platform.
+- [Service Integration Guidelines](/tutorials/integration) - Write and integrate new AI services to the platform.
 - [Build an Opencog service](/tutorials/opencog)
 
 ## Tutorials by programming language

@@ -24,7 +24,7 @@ micro_nav: true
 
 ---
 
-You can find script for this example and instruction how to run it inside a docker [here (example 1)](/docs/all/mpe/front-to-back-examples/scripts/example1).
+You can find script for this example and instruction how to run it inside a docker [here (example 1)](https://github.com/singnet/dev-portal/tree/master/src/example1).
 
 We will demonstrate the following:
 
@@ -40,7 +40,7 @@ We will demonstrate the following:
 
 ## Preparation
 
-Please start by following the tutorial [How to Build and Deploy SingularityNET Locally](/docs/all/deploy-singularitynet).
+Please start by following the tutorial [How to Build and Deploy SingularityNET Locally](/docs/development/local-singularitynet).
 
 The following example can also be executed on the kovan test net, but you will need to make sure that your organization name has not already been taken and you should probably also use another account to collect payments from the client side (see the KOVAN warnings below).
 
@@ -171,7 +171,7 @@ snet channel open-init testo tests 42 +20days -y
 ```
 ### Make a call using stateless logic
 
-We are going to make a call using stateless logic [see this page for more information](/docs/all/mpe/mpe-stateless-client). This means that the client does not need to store any information, except for the `channel_id` of the payment channel which it wants to use. The client can get the list of the payment channels from the blockchain log or from the blockchain itself. However, this operation is quite slow, so the client cannot do this at each call. The most important thing is that we will be able to use this function in the case of a catastrophic recovery.
+We are going to make a call using stateless logic [see this page for more information](/docs/concepts/mpe-stateless-client). This means that the client does not need to store any information, except for the `channel_id` of the payment channel which it wants to use. The client can get the list of the payment channels from the blockchain log or from the blockchain itself. However, this operation is quite slow, so the client cannot do this at each call. The most important thing is that we will be able to use this function in the case of a catastrophic recovery.
 
 First, let's request from the blockchain the list of all open channels:
 

@@ -73,7 +73,7 @@ This means we have one consistent protocol to be used to communicate with any se
 
 ### Service Models
 
-As noted when discussing [Services](/docs/concepts/services), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
+As noted when discussing [Services](/docs/concepts/service), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
 
 ## SSL
 

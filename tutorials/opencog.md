@@ -11,7 +11,7 @@ description: Getting started with OpenCog for your AI Service
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs/all'
+    title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -28,13 +28,13 @@ page_nav:
         url: '/tutorials'
     next:
         content: View all docs
-        url: '/docs/all'
+        url: '/docs'
 ---
 
 [atomese]: https://wiki.opencog.org/w/Atomese
 [scheme]: https://wiki.opencog.org/wikihome/index.php/Scheme
-[services-readme]: https://github.com/singnet/opencog-services/blob/master/README.md
-[contribution-guidelines]: https://github.com/singnet/wiki/blob/master/guidelines/CONTRIBUTING.md
+[services-readme]: https://github.com/singnet/opencog-services
+[contribution-guidelines]: /docs/guidelines
 
 
 

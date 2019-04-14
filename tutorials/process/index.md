@@ -11,7 +11,7 @@ description: Learn how to wrap your AI service as a process/executable and make 
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs/all'
+    title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -28,7 +28,7 @@ page_nav:
         url: '/tutorials'
     next:
         content: View all docs
-        url: '/docs/all'
+        url: '/docs'
 ---
 
 > This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET. It assumes you have successfully installed all of SingularityNET components. To do that, refer to previous tutorials or simply run a docker container from the [Dockerfile](./Dockerfile) provided. If you choose to run a Docker container, make sure to expose a port so that SNET Daemon can communicate with the blockchain.
