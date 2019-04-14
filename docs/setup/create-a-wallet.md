@@ -11,7 +11,7 @@ description: Create a wallet so you can interact with the Ethereum blockchain
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs/all'
+    title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
 

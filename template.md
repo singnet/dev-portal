@@ -25,11 +25,11 @@ micro_nav: true
 page_nav:
     prev:
         content: Previous page
-        url: '#'
+        url: ''
     next:
         content: Next page
-        url: '#'
+        url: ''
 ---
 
 ## Example
-Use this file to add new content to the SingularityNET Developer Portal. Find all instructions on how to contribute [here](/contribute).
+Use this file to add new content to the SingularityNET Developer Portal. Find all instructions on how to contribute [here](/docs/contribute).

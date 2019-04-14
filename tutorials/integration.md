@@ -11,7 +11,7 @@ description: Write and integrate new AI services to the platform.
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs/all'
+    title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -28,21 +28,21 @@ page_nav:
         url: '/tutorials'
     next:
         content: View all docs
-        url: '/docs/all'
+        url: '/docs'
 ---
 
 [singnet-home]: https://www.singularitynet.io
 [singnet-github]: https://github.com/singnet
 [dnn-github]: https://github.com/singnet/dnn-model-services
-[contribution-guidelines]: https://github.com/singnet/wiki/blob/master/guidelines/CONTRIBUTING.md
-[docs-templates]: https://github.com/singnet/wiki/blob/master/templates
-[cpp-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWriteCPPService
-[java-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWriteJavaService
-[go-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWriteGoService
-[python-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWritePythonService
-[opencog-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToWriteOpencogService
-[service-tutorial]: https://github.com/singnet/wiki/tree/master/tutorials/howToPublishService
-[naming-standards]: https://github.com/singnet/wiki/blob/master/doc/Naming-Standards.md
+[contribution-guidelines]: /docs/guidelines
+[docs-templates]: templates
+[cpp-tutorial]: /tutorials/cpp
+[java-tutorial]: /tutorials/java
+[go-tutorial]: /tutorials/go
+[python-tutorial]: /tutorials/python
+[opencog-tutorial]: /tutorials/opencog
+[service-tutorial]: /tutorials/publish
+[naming-standards]: /docs/concepts/naming-standards
 [grpc]: https://grpc.io/
 [grpc-docs]: https://grpc.io/docs/
 [opencog]: https://opencog.org/
@@ -81,10 +81,10 @@ available [here][grpc-docs].
 There are tutorials with step-by-step instructions for implementing a new
 service in each of these languages:
 
-- [How to write a SingularityNET service in C++](/tutorials/cpp-service)
-- [How to write a SingularityNET service in Python](/tutorials/python-service)
-- [How to write a SingularityNET service in Java](/tutorials/java-service)
-- [How to write a SingularityNET service in Go](/tutorials/go-service)
+- [How to write a SingularityNET service in C++](/tutorials/cpp)
+- [How to write a SingularityNET service in Python](/tutorials/python)
+- [How to write a SingularityNET service in Java](/tutorials/java)
+- [How to write a SingularityNET service in Go](/tutorials/go)
 
 If you already have a gRPC service, this tutorial explains how to publish it in
 SingularityNET:

@@ -6,7 +6,7 @@ Our Developer Portal provides documentation about the SingularityNET Platform an
 
 ## Overview
 
-If you are just starting out, read the [getting started](https://dev.singularitynet.io/docs/all/getting-started) page.
+If you are just starting out, read the [getting started](https://dev.singularitynet.io/tutorials/getting-started) page.
 
 If you are already familiar with blockchain technology like MetaMask, Ethereum and AGI, then you may want to skip immediately to browsing the beta [Marketplace](http://beta.singularitynet.io).
 
@@ -16,7 +16,27 @@ We welcome external contributions to our documentation, such as corrections, imp
 
 Please find our contribution guidelines [here](https://dev.singularitynet.io/docs/contribute/contribution-guidelines).
 
-If you want to host the developer portal locally, or help us improve our documentation 
+If you want to host the developer portal locally, or help us improve our documentation, here's what you need to install, assuming you already have ruby:
+
+```sh
+gem install --user-install jekyll
+gem install --user-install jekyll-paginate
+gem install --user-install jekyll-sitemap
+gem install --user-install jemoji
+```
+
+```
+git clone https://github.com/singnet/dev-portal.git
+cd dev-portal
+jekyll serve
+```
+
+Before making a pull request, please also check all links are valid:
+
+```
+gem install --user-install html-proofer
+htmlproofer ./_site/ --only-4xx --empty-alt-ignore
+```
 
 ## Stay up to date
 

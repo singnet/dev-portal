@@ -23,7 +23,7 @@ micro_nav: true
 
 ---
 
-> NOTE: if you are reading this on the developer portal, please be aware that there are additional Go files in the repository found [here](https://github.com/singnet/dev-portal/tree/master/docs/all/mpe/src/etcddb)
+> NOTE: if you are reading this on the developer portal, please be aware that there are additional Go files in the repository found [here](https://github.com/singnet/dev-portal/tree/master/src/etcddb)
 
 # etcd throughput
 

@@ -65,7 +65,7 @@ For a full guide on getting your wallet and browser setup, see our [Setup Guide]
 
 We mandate a number of requirements before your service is visible to others. To get your service listed on the marketplace you must:
 
-0. Build and [publish your service](/tutorial/publish) ;-)
+0. Build and [publish your service](/tutorials/publish) ;-)
 1. Ensure you are using SSL with the snet-daemon. We recommend using [certbot and letsencrypt](https://certbot.eff.org/) if you don't already have a SSL certificate.
 3. Fork the snet-dapp repo, build a react component as the user interface for your service, and submit a pull request. Let us know what networks your service is on, and the organisation and service names used. More details are in the [dapp repo README.md](https://github.com/singnet/snet-dapp#ui-for-services).
 4. Last is some paperwork that we are still finalising, and we'll update this list when we have that. If you are itching to get your service listed, reach out to us via one of our [community](/docs/community) groups.
