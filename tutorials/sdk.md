@@ -11,7 +11,7 @@ description: Building applications the depend on SingularityNET
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs/all'
+    title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -20,15 +20,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: How to Call a Service
-        url: '/tutorials/call-a-service'
-    next:
-        content: How to Publish a Service
-        url: '/tutorials/publish'
 ---
 
 ## Step 1. Prerequisites
@@ -46,7 +37,7 @@ so if you can find support for a language for both of those, then it's only matt
 
 Here's an example of calling a service using the SDK
 
-```
+```python
 from snet_sdk import Snet
 snet = Snet(private_key=MY_PRIVATE_KEY, eth_rpc_endpoint="https://ropsten.infura.io")
 client = snet.client("snet", "example-service")
@@ -72,7 +63,7 @@ how you'd interact with any other grpc service.
 
 However in a dynamic language like python it can feel a little clunky. That's why there is an alternative using the snet cli:
 
-```
+```python
 from snet_cli.call_stub_generator import call_stub_generator
 add = call_stub_generator("snet", "example-service", "add")
 params = {"a":20, "b":30}

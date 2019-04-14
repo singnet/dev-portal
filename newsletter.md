@@ -25,5 +25,5 @@ micro_nav: true
 page_nav:
     next:
         content: More Dev Community
-        url: '/sheet#community'
+        url: '/docs/community'
 ---

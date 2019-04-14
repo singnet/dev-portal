@@ -67,7 +67,7 @@ There are three ways of passing this JSON:
 * via JSON file; and
 * via stdin.
 
-For example, in [this platform example](development/mpe-example.md#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
+For example, in [this platform example](/docs/development/mpe-example#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
 
 ```json
 {"a": 10, "b": 32}
