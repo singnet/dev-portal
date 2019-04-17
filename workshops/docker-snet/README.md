@@ -50,7 +50,7 @@ What is done in the docker image:
 * Ganache instance is started with predefined network number and mnemonic to
   generate predictable accounts numbers and private keys (see [start local
   ethereum
-  network](https://github.com/singnet/wiki/blob/master/multipartyescrowcontract/front-to-back-examples/build-and-deploy-singularitynet-locally.md#start-local-ethereum-network));
+  network](https://github.com/singnet/wiki/blob/master/multiPartyEscrowContract/front-to-back-examples/Build-and-deploy-SingularityNET-locally.md#start-local-ethereum-network));
 * local network id is exported as `$NETWORK_ID` environment variable;
 * all contracts are already deployed and their addresses are written to
   `snet-cli` configuration and exported as environment variables:
