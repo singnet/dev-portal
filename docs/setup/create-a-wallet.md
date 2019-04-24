@@ -36,7 +36,7 @@ On first start up, MetaMask should ask you to create an identity which will be u
 For complete instructions on how to use MetaMask, check their [instructional video](https://www.youtube.com/watch?time_continue=6&v=ZIGUC9JAAw8).
 
 After you create your wallet, you can transfer funds to it and start using the [SingularityNET DApp](https://beta.singularitynet.io/) on Mainnet! You can check our [video tutorial](https://www.youtube.com/watch?v=j_9yLRQ1bE4) to learn how to use the DApp!
-If you are interested in using the Ropsten network for testing the platform with testnet tokens, please continue reading the above steps.
+If you are interested in using the Ropsten network for testing the platform with testnet tokens, please continue reading the next steps.
 
 ## Step 3. What are the different networks?
 
@@ -50,7 +50,7 @@ You can change the Ethereum network on the top of the MetaMask extension.
 
 ## Step 4. Ethereum Faucet (Ropsten Test Network Only)
 
-Ethereum Ropsten coins are free to claim and can be used to test the platform. Ropsten Ethereum is needed to cover the Gas costs associated with transactions on the platform. Users are required to visit a [Ropsten Faucet](https://faucet.metamask.io/), which is a per-request Ropsten Ethereum distribution hub. Users provide their Ropsten Ethereum wallet address from MetaMask to the faucet and it issues a set amount of Ropsten Ethereum to the requesting wallet.
+Ethereum Ropsten coins are free to claim and can be used to test the platform. Ropsten Ethereum is needed to cover the Gas costs associated with transactions on the platform. Users are required to visit a [Ropsten Faucet](https://faucet.ropsten.be/), which is a per-request Ropsten Ethereum distribution hub. Users provide their Ropsten Ethereum wallet address from MetaMask to the faucet and it issues a set amount of Ropsten Ethereum to the requesting wallet.
 
 ## Step 5. AGI Faucet (Ropsten Test Network Only)
 

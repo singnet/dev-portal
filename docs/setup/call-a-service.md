@@ -44,11 +44,11 @@ To use the faucet you need to [create a wallet](/docs/setup/create-a-wallet), an
 
 We provide a faucet to get AGI for either Ropsten or Kovan networks: https://faucet.singularitynet.io/
 
-You'll need a github account to authenticate, and there after you can request AGI every 24 hours. (TODO confirm this timeout period is correct)
+You'll need a github account to authenticate, and there after you can request AGI every 24 hours.
 
 ## Step 3. Make a Call from the Marketplace
 
-TODO someone needs to step through with the final beta UI taking screenshots
+Follow this [video tutorial](https://www.youtube.com/watch?v=j_9yLRQ1bE4).
 
 ## Step 4. Setup the `snet` CLI tool
 
@@ -57,7 +57,7 @@ The `snet` CLI tool is your swiss army knife for working with SingularityNET. It
 You can install the CLI with pip:
 
 ```
-pip install snet-cli
+pip3 install snet-cli
 ```
 
 You then need to create an identity that matches your metamask account, since this is where the faucets sent all your test tokens too.

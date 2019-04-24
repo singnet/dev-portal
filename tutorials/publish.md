@@ -53,7 +53,7 @@ here and jump to [Step 3](#step-3-setup-snet-cli-and-create-your-identity).
 -------------------------------
 _Before following, make sure you've installed:_
 
-* _Docker ([https://www.docker.com/](https://www.docker.com/))_
+* _Docker ([ttps://docs.docker.com/install](https://docs.docker.com/install))_
 
 _If you are not familiar with Docker you may want to take a look at its official 
 [Get Started Guide](https://docs.docker.com/get-started/)._
@@ -62,13 +62,13 @@ _If you are not familiar with Docker you may want to take a look at its official
 
 Build your own tutorial Docker image directly from our git repo using the following command:
 
-```sh
+```bash
 docker build -t snet_publish_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
 ```
 
 Setup environment variables (they are explained later in this tutorial as they're used):
 
-```sh
+```bash
 ORGANIZATION_ID="$USER"-org
 ORGANIZATION_NAME="The $USER's Organization"
 
@@ -92,7 +92,7 @@ SNET_CLI_CONTAINER=/root/.snet/
 
 Now you can run a Docker container based on this image:
 
-```sh
+```bash
 docker run \
     --name MY_SNET_SERVICE \
     -e ORGANIZATION_ID=$ORGANIZATION_ID \
@@ -121,7 +121,7 @@ you can continue from where you left off.
 
 Select a Mnemonic of your choice. MY_MNEMONIC is a string which will be used as seed to generate a public/private key pair. 
 
-```sh
+```bash
 snet identity create $USER_ID mnemonic --mnemonic "MY_MNEMONIC"
 ```
 
@@ -151,13 +151,13 @@ Then, using your address you can get Ropsten AGIs and ETHs for free using your G
 
 Now make sure you are on Ropsten Network, using:
 
-```
+```bash
 snet network ropsten
 ```
 
 And then check your balance, using:
 
-```
+```bash
 snet account balance
 ```
 
@@ -167,7 +167,7 @@ In order to be able to publish a service you need to be an owner or a member of 
 
 You can create a new organization using:
  
-```
+```bash
 snet organization create "$ORGANIZATION_NAME" --org-id $ORGANIZATION_ID -y
 ```
 
@@ -177,7 +177,7 @@ Make sure you follow our [naming standardization guidelines][naming-standards].
 If you had to use a different `ORGANIZATION_ID` (other than the one we provided in [Step 2](#step-2-setup-a-docker-container)), 
 you will have to update `ORGANIZATION_ID` properly as it is used later in this tutorial.
 
-```
+```bash
 export ORGANIZATION_ID="new-org-id"
 ```
 
@@ -189,14 +189,14 @@ In this tutorial we'll use a simple service from [SingularityNET Example Service
 
 * Clone the git repository:
 
-```
+```bash
 git clone --depth=1 https://github.com/singnet/example-service.git
 cd example-service
 ```
 
 * Install the dependencies and compile the protobuf file:
 
-```
+```bash
 pip3 install -r requirements.txt
 sh buildproto.sh
 ```
@@ -207,7 +207,7 @@ Service is ready to run, but first we need to publish it on SingularityNET and c
 
 First we need to create a service metadata file. You can do it by running:
 
-```sh
+```bash
 snet service metadata-init SERVICE_PROTOBUF_DIR SERVICE_DISPLAY_NAME PAYMENT_ADDRESS --endpoints SERVICE_ENDPOINT --fixed-price FIXED_PRICE
 ```
 
@@ -218,7 +218,7 @@ You need to specify the following parameters:
 * `SERVICE_ENDPOINT` - Endpoint which will be used to connect to your service.
 * `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 10^-8 AGI (remember that 10^-8 AGI = 1 COG).
 
-```sh
+```bash
 ACCOUNT=`snet account print`
 snet service metadata-init service/service_spec/ "$SERVICE_NAME" $ACCOUNT --endpoints http://$SERVICE_IP:$SERVICE_PORT --fixed-price 0.00000001
 
@@ -234,13 +234,13 @@ See details of service metadata in [here](/docs/concepts/service-metadata).
 
 Now you can publish your service (```service_metadata.json``` is used implicitly) using:
 
-```sh
+```bash
 snet service publish $ORGANIZATION_ID $SERVICE_ID -y
 ```
 
 Check if your service has been properly published:
 
-```sh
+```bash
 snet organization info $ORGANIZATION_ID
 ```
 
@@ -248,7 +248,7 @@ snet organization info $ORGANIZATION_ID
 
 Create a `SNET DAEMON` configuration file named `snetd.config.json`. 
 
-```sh
+```bash
 cat > snetd.config.json << EOF
 {
    "DAEMON_END_POINT": "$DAEMON_HOST:$DAEMON_PORT",
@@ -274,7 +274,7 @@ EOF
 
 Running the service will spawn an instance of `SNET DAEMON` automatically.
 
-```sh
+```bash
 python3 run_example_service.py --daemon-config snetd.config.json
 ```
 
@@ -284,7 +284,7 @@ At this point your service should be up and running.
 
 Open a new terminal, if using Docker, enter in the docker container, using:
 
-```sh
+```bash
 docker exec -it MY_SNET_SERVICE bash
 ```
 
@@ -293,7 +293,7 @@ At this point you can use several `SNET CLI` commands to interact with your acco
 
 Check your balance and setup a MultiPartyEscrow (MPE) Payment Channel to call your service.
 
-```sh
+```bash
 # check your balance
 snet account balance
 
@@ -311,7 +311,7 @@ snet channel open-init $ORGANIZATION_ID $SERVICE_ID 0.00000010 +10days -y
 expiration at 10 days (57600 blocks in the future with 15 sec/blocks). 
 This command prints the id of the created channel, record it to use in the following commands.
 
-```sh
+```bash
 # check your balance - 10 COGs were moved from MPE to the channel
 snet account balance
 
@@ -321,13 +321,13 @@ snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
 
 Call your service using:
 
-```sh
+```bash
 snet client call $ORGANIZATION_ID $SERVICE_ID mul '{"a":12,"b":7}' -y
 ```
 
 The MPE Payment Channel has changed, see its funds using:
 
-```sh
+```bash
 # 1 COG has been spent (signed) 
 snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
 ```
@@ -338,7 +338,7 @@ You can keep calling the service until your MPE Payment Channel runs out of fund
 
 As the service provider, you can claim spent AGIs on your service at anytime using:
 
-```sh
+```bash
 snet treasurer claim-all --endpoint $SERVICE_IP:$SERVICE_PORT -y
 
 # claimed funds are now in MPE
@@ -355,7 +355,7 @@ As the service user, you **CAN'T** claim unused funds before the channel expires
 
 Once it did, you can claim the funds using ```snet channel claim-timeout-all```:
 
-```sh
+```bash
 # Shows spent/unspent AGIs in the MPE channel
 snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
 snet account balance
