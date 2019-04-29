@@ -148,8 +148,8 @@ First, get the address of your account using ```snet account print``` command.
 
 Then, using your address you can get Ropsten AGIs and ETHs for free using your Github's account here:
 
-* AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
-* ETH: [https://faucet.ropsten.be/](https://faucet.ropsten.be/)
+* AGI: [{{ site.data.faucets.agi }}]({{ site.data.faucets.agi }})
+* ETH: [{{ site.data.faucets.eth }}]({{ site.data.faucets.eth }})
 
 Now make sure you are on Ropsten Network, using:
 

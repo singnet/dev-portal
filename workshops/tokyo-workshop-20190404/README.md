@@ -61,7 +61,7 @@ snet account balance
 
 To receive AGI/ETH on ropsten, faucets can be used
   - https://faucet.singularitynet.io/
-  - https://faucet.ropsten.be/
+  - https://faucet.metamask.io/
 
 ## Review & build service
 
