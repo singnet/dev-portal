@@ -43,7 +43,8 @@ snet:
         tracking_code: UA-107763881-9
     comments:
         disqus_forum_shortname: singularitynet
-
+#github:
+#  repository_url: https://github.com/singnet/dev-portal
 # SASS settings
 sass:
     sass_dir: ./theme/_sass
