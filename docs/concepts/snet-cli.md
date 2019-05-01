@@ -75,7 +75,7 @@ For example, in [this platform example](/docs/development/mpe-example#make-a-cal
 
 We can use three ways:
 
-```bash
+```sh
 # via cmdline parameter
 snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
 
@@ -98,7 +98,7 @@ There are 3 possible modifiers:
 
 For example, if you pass the following JSON as a parameter, then as an "image" parameter we will use the base64 encoded content of "1.jpeg"
 
-```bash
+```sh
 '{"image_type": "jpg", "file@b64encode@image": "1.jpeg"}'
 ```
 

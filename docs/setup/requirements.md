@@ -33,7 +33,7 @@ micro_nav: true
 
 For example, installing the requirements using `Ubuntu 18.04`:
 
-```bash
+```sh
 sudo apt-get update
 sudo apt-get install wget git
 sudo apt-get install python3 python3-pip
@@ -52,7 +52,7 @@ sudo mv snet-daemon-${SNETD_VERSION}-linux-amd64/snetd /usr/bin/snetd
 
 Setup environment variables (they are explained later in this tutorial as they're used):
 
-```
+```sh
 export ORGANIZATION_ID="$USER"-org
 export ORGANIZATION_NAME="The $USER's Organization"
 
