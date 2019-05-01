@@ -36,13 +36,13 @@ or extend the timeout for the payment channel.
 
 So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
 
-Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.ropsten.be/).
+Luckily for test networks you can [go to a faucet to request some Ether for free]({{ site.data.faucets.eth }}).
 
 To use the faucet you need to [create a wallet](/docs/setup/create-a-wallet), and then provide them with your wallet's public address.
 
 ## Step 2. Get some AGI
 
-We provide a faucet to get AGI for either Ropsten or Kovan networks: https://faucet.singularitynet.io/
+We provide a faucet to get AGI for either Ropsten or Kovan networks: [{{ site.data.faucets.agi }}]({{ site.data.faucets.agi }})
 
 You'll need a github account to authenticate, and there after you can request AGI every 24 hours.
 

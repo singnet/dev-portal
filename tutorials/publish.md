@@ -58,6 +58,8 @@ _Before following, make sure you've installed:_
 _If you are not familiar with Docker you may want to take a look at its official 
 [Get Started Guide](https://docs.docker.com/get-started/)._
 
+_Note that this tutorial assumes your user is part of the `docker` group that has permissions to contact the daemon. To ensure this, use `sudo adduser $USER docker` or read more [in the docker documentation](https://docs.docker.com/install/linux/linux-postinstall/)._
+
 -------------------------------
 
 Build your own tutorial Docker image directly from our git repo using the following command:
@@ -146,8 +148,8 @@ First, get the address of your account using ```snet account print``` command.
 
 Then, using your address you can get Ropsten AGIs and ETHs for free using your Github's account here:
 
-* AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
-* ETH: [https://faucet.ropsten.be/](https://faucet.ropsten.be/)
+* AGI: [{{ site.data.faucets.agi }}]({{ site.data.faucets.agi }})
+* ETH: [{{ site.data.faucets.eth }}]({{ site.data.faucets.eth }})
 
 Now make sure you are on Ropsten Network, using:
 
