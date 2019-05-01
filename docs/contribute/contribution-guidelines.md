@@ -94,19 +94,19 @@ Sometimes your PR will have merge conflicts with the original repository's maste
 
 -   First, fetch the latest version from the original repository
 
-    ```bash
+    ```sh
     git fetch original_repository_git_url
     ```
 
 -   Merge your changes with the latest changes from the original repository.
 
-    ```bash
+    ```sh
     git merge FETCH_HEAD
     ```
 
 -   Commit and push your changes.
 
-    ```bash
+    ```sh
     git add.
     git commit -a
     git push
