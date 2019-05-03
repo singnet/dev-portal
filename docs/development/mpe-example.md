@@ -46,7 +46,7 @@ The following example can also be executed on the kovan test net, but you will n
 
 For our local network we assume we have the following accounts
 
-```bash
+```sh
 # First Address (snet identity): 0x592E3C0f3B038A0D673F19a18a773F993d4b2610
 # Second Address (service)     : 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 ```
@@ -59,7 +59,7 @@ In order to get exactly these addresses you should run [ganache](https://truffle
 ### Starting the service (without a daemon)
 We will use a Basic_Template service that you can find [here](https://github.com/singnet/dnn-model-services).
 
-```
+```sh
 # $SINGNET_REPOS is the path from tutorial, but it could be any directory
 cd $SINGNET_REPOS
 git clone https://github.com/singnet/example-service.git
@@ -76,7 +76,7 @@ Prepare your metadata in `service_metadata.json`. We will register the second ga
 
 (KOVAN) On the KOVAN network you might want to choose another wallet.
 
-```bash
+```sh
 cd $SINGNET_REPOS
 cd example-service
 
@@ -89,7 +89,7 @@ Create an organization with name "testo" and organization id "testo", and publis
 
 (KOVAN) On KOVAN you probably will need to choose another name for your organization.
 
-```
+```sh
 snet organization  create testo --org-id testo -y
 snet service publish testo tests -y
 ```
@@ -98,7 +98,7 @@ snet service publish testo tests -y
 #### Preparation
 We assume that the executable file for the daemon is placed in $SINGNET_REPOS/snet-daemon/build/snetd-linux-amd64
 
-```
+```sh
 # You could start the daemon from any directory
 # We will use directory of the service
 cd $SINGNET_REPOS
@@ -116,7 +116,7 @@ rm -rf storage-1.etcd
 
 #### Make a configuration file for the daemon
 
-```
+```sh
 cd $SINGNET_REPOS
 cd dnn-model-services/Services/gRPC/Basic_Template/
 
@@ -145,7 +145,7 @@ It should be noted that we do not provide any Ethereum identity as this daemon w
 #### Run the daemon
 In order to run the daemon we use the following command:
 
-```
+```sh
 ./snetd-linux-amd64
 ```
 
@@ -156,7 +156,7 @@ We are now quickly going to look at what will happen next on the **client side**
 
 (KOVAN) For the KOVAN network you should make sure that you use the right names for organization and services.
 
-```
+```sh
 # create identity in snet-cli (probably you've already done it)
 snet identity create snet-user rpc --network local
 snet identity snet-user
@@ -175,7 +175,7 @@ We are going to make a call using stateless logic [see this page for more inform
 
 First, let's request from the blockchain the list of all open channels:
 
-```
+```sh
 # take the list of channels from blockchain (from events!)
 snet channel print-all-filter-sender
 ```
@@ -185,12 +185,12 @@ We should have one channel with the recipient=0x3b2b3C2e2E7C93db335E69D827F3CC4b
 In order to make an actual call, the channel should be initialized (meaning: protobuf should be compiled).
 
 Let's check the list of initialized channels:
-```
+```sh
 snet channel print-initialized
 ```
 
 Now we can make a call.
-```
+```sh
 # we make call using stateless logic with the following arguments
 #org_id       = testo
 #service_id   = tests
@@ -200,7 +200,7 @@ snet client call testo tests add '{"a":10,"b":32}'
 ```
 We can make a call using this state, and we can repeat this call until we spend all the tokens in the channel. There are no on-chain transactions here yet.
 
-```
+```sh
 snet client call testo tests mul '{"a":6,"b":7}'
 snet client call testo tests add '{"a":10,"b":32}'
 ```
@@ -208,7 +208,7 @@ snet client call testo tests add '{"a":10,"b":32}'
 ## Service Provider: Claiming the Channel with a Treasurer Server
 The service provider can use the same Ethereum address for all payment groups or she/he can use a different address. In any case, the daemons don't need to send any on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons. We call such a server a treasurer server. In the current version trearurer server logic is implemented via snet-cli.
 
-```
+```sh
 # Service has second ganache idendity (--wallet-index 1)
 # Print list of unclaimed channels and total sum of unclaimed funds
 snet treasurer print-unclaimed --endpoint localhost:8080 --wallet-index 1

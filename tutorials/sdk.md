@@ -31,7 +31,9 @@ This guide assumes you've got a wallet, have installed the `snet` tool, and have
 Currently our SDK only supports Python 3.6+. In the future we'll support a wide variety of languages. We make use of protocol buffers and grpc,
 so if you can find support for a language for both of those, then it's only matter of time before we (or the community! ;-) ) writes an SDK for it.
 
-`pip install snet-sdk` (check this is correct)
+```sh
+pip install snet-sdk
+```
 
 ## Step 3. Write some code!
 

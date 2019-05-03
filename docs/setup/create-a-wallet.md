@@ -38,6 +38,7 @@ For complete instructions on how to use MetaMask, check their [instructional vid
 After you create your wallet, you can transfer funds to it and start using the [SingularityNET DApp](https://beta.singularitynet.io/) on Mainnet! You can check our [video tutorial](https://www.youtube.com/watch?v=j_9yLRQ1bE4) to learn how to use the DApp!
 If you are interested in using the Ropsten network for testing the platform with testnet tokens, please continue reading the above steps.
 
+
 ## Step 3. What are the different networks?
 
 Deploying decentralized applications on the Ethereum main network requires the use of real Ethereum coins. Real Ethereum coins are valuable. Developers want to test their software before launching on the Ethereum main network to minimize catastrophic consequences arising from oversights in coding. Thus, the Ethereum Test Networks allow developers to simulate how their DApps would perform, before launching in a more risky situation.

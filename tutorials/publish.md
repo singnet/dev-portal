@@ -53,10 +53,12 @@ here and jump to [Step 3](#step-3-setup-snet-cli-and-create-your-identity).
 -------------------------------
 _Before following, make sure you've installed:_
 
-* _Docker ([https://www.docker.com/](https://www.docker.com/))_
+* _Docker ([https://docs.docker.com/install](https://docs.docker.com/install))_
 
 _If you are not familiar with Docker you may want to take a look at its official 
 [Get Started Guide](https://docs.docker.com/get-started/)._
+
+_Note that this tutorial assumes your user is part of the `docker` group that has permissions to contact the daemon. To ensure this, use `sudo adduser $USER docker` or read more [in the docker documentation](https://docs.docker.com/install/linux/linux-postinstall/)._
 
 -------------------------------
 
@@ -146,18 +148,18 @@ First, get the address of your account using ```snet account print``` command.
 
 Then, using your address you can get Ropsten AGIs and ETHs for free using your Github's account here:
 
-* AGI: [https://faucet.singularitynet.io/](https://faucet.singularitynet.io/)
-* ETH: [https://faucet.ropsten.be/](https://faucet.ropsten.be/)
+* AGI: [{{ site.data.faucets.agi }}]({{ site.data.faucets.agi }})
+* ETH: [{{ site.data.faucets.eth }}]({{ site.data.faucets.eth }})
 
 Now make sure you are on Ropsten Network, using:
 
-```
+```sh
 snet network ropsten
 ```
 
 And then check your balance, using:
 
-```
+```sh
 snet account balance
 ```
 
@@ -167,7 +169,7 @@ In order to be able to publish a service you need to be an owner or a member of 
 
 You can create a new organization using:
  
-```
+```sh
 snet organization create "$ORGANIZATION_NAME" --org-id $ORGANIZATION_ID -y
 ```
 
@@ -177,7 +179,7 @@ Make sure you follow our [naming standardization guidelines][naming-standards].
 If you had to use a different `ORGANIZATION_ID` (other than the one we provided in [Step 2](#step-2-setup-a-docker-container)), 
 you will have to update `ORGANIZATION_ID` properly as it is used later in this tutorial.
 
-```
+```sh
 export ORGANIZATION_ID="new-org-id"
 ```
 
@@ -189,14 +191,14 @@ In this tutorial we'll use a simple service from [SingularityNET Example Service
 
 * Clone the git repository:
 
-```
+```sh
 git clone --depth=1 https://github.com/singnet/example-service.git
 cd example-service
 ```
 
 * Install the dependencies and compile the protobuf file:
 
-```
+```sh
 pip3 install -r requirements.txt
 sh buildproto.sh
 ```
