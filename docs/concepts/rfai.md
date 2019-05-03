@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: Request for AI
-description: Learn how to use the Request for AI portal, and how does it work.
+description: Learn how to use the Request for AI portal, and how it work.
 
 # extralink box
 extralink:
@@ -32,61 +32,65 @@ page_nav:
 
 ---
 
-The Request for AI portal is a platform that allows any member of the community to make requests for AI services to be published on the SingularityNET Registry.
-These requests are backed by AGI tokens, which are transferred to the developer who submits a valid solution for the request.
+The Request for AI Portal (RFAI) lets users make requests for AI services that they would like to see built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed or as a pledge to make use of the service once it goes live. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
+The RFAI portal fosters the community by enabling users to incentivize developers to publish services.
 
-## Request for AI Service
 
-* Anyone should be able to request for a service in the Web Portal;
-* Requester can back on the Service Request;
-* Service Request details will be available in IPFS and the hash will be in BlockChain Contract;
-* There is an expiry for the Service Request;
-* When a new requested is created it will be in a Open State until foundation is Approved;
-* Requester can extend the request only when it is not approved means in Open state.
+## Requesting for an AI Service
+
+* Any request for an AI service should be back by AGI tokens.
+* Requests should be detailed enough to allow discussion and development and should be in the form of a github pull requests to repo. You can view the template for the request here
+* Provide an expiry date for the request. Meaning the date post which you can withdraw your funds if no submission has been made
+* A request created will need to be approved by the foundation before it shows up for everybody
+
+## Backing an AI Service
+* In order to request for an AI service, you need to back it with AGI tokens
+* You first need to transfer tokens to the RFAI escrow from the Account tab. This is a two step process
+    * Approve the number of tokens to deposit
+    * Deposit the tokens
+* You are now set to request for an AI service or back any approved request
+
 
 ## Request Approval
 
-* Request will be approved by any member from Foundation which is managed in the Contract;
-* Once approved request state changes to approved and available to accept the submissions;
-* During approval foundation needs to provide following details:
-  * Submission duration in blocknumbers;
-  * Evaluation duration in blocknumbers;
-  * Expiration duration in case of any change from the expiration provide by the requester.
+* The foundation will review all requests and will approve them. In general we look for
+    * Clear problem description
+    * Relevant problem which if solved will help the community
+    * Quantitative evaluation criteria 
+* Once approved the request is visible for all on the portal
 
-## Back the Request
 
-* Anyone can back into the request when the request is approved by the foundation;
-* Backing will be accepted for a non expired request until evaluation completed;
-* Even foundation members can also back into the request.
+## Solution Submission
 
-## Proposal or Solution Submission
+* All submissions are evaluated by the SingularityNet foundation to ensure that the acceptance criteria as specified in the request is met and the problem is solved for.
+* The submission should include the github repo of your code
+* The submission should be signed using the same address used to publish the service. This is an important step to ensure that you are the owner of the service.
+* The submission is evaluated as follows
+*  The specified acceptance criteria in the request must be met
+    *  Any performance metrics specified against provided test datasets should be met
+    * Submission should be a service deployed on the SingularityNet platform
 
-* Anyone can submit the solution for a given request which is ready to accept the submissions;
-* Solution are accepted only during the submission phase as provide by the foundation.
 
-## Voting a Solution
+## Voting for a Solution
 
-* Foundation will vote to shortlist the submissions;
-* Backers can vote to any submission not only to shortlisted ones;
-* Right now only backers in the respective request can vote for the submission;
-* Validation of the solution will be performed offline. Solution will be available as part of Marketplace.
+  * Foundation will vote to shortlist the submissions
+  * Users backing the service request can vote for any submission (not just the shortlisted ones)
+  * Only the users who are backing a service request can vote for the submission
+  * Validation of the solution will be performed offline.
 
-## Claims
+## Claiming tokens for a submission
 
-* Claims can be done only after the evaluation;
-* Solution submitter can claim any time before expiry of the request;
-* Claims will be calculated based on the votes from backers;
-* In case if there is no votes from backers, foundation votes are considered;
-* Claims will be distributed based on the number of votes either by backers or by foundation members;
-* Foundation member pledged amount will be distributed as per the respective member shortlisting.
+  * Claims can be done only after the evaluation period and before the expiry period
+  * Solution submitter can claim any time before expiry of the request
+  * Claims will be caluculated based on the votes from backing users
+      * In case if there is no votes from any backing user, foundation votes are considered
+  * Claims will be distributed based on the number of votes either by backing users or by foundation members
 
-## Reclaim Pledge
+## Reclaiming Tokens
+  * AGI tokens used to back a service request can be reclaimed by the backer after the service request is expired
 
-* Backers can reclaim the pledged amount only when the request is expired;
-* No solution submitter can claim when the request is expired.
+## Closing a Request
 
-## Close Request
-
-* Only foundation can forcible close the request even after the approval;
-* Pledges will be given back to the respective backers of the request;
-* Request status will changed to Closed.
+  * Only fondation can close a request.
+  * AGI Tokens used for backing will be returned to the backers
+  * Request status will change to Closed
