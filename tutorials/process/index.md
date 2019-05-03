@@ -11,7 +11,7 @@ description: Learn how to wrap your AI service as a process/executable and make 
 # extralink box
 extralink:
     title: All Docs
-    title_url: '/docs/all'
+    title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -28,7 +28,7 @@ page_nav:
         url: '/tutorials'
     next:
         content: View all docs
-        url: '/docs/all'
+        url: '/docs'
 ---
 
 > This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET. It assumes you have successfully installed all of SingularityNET components. To do that, refer to previous tutorials or simply run a docker container from the [Dockerfile](./Dockerfile) provided. If you choose to run a Docker container, make sure to expose a port so that SNET Daemon can communicate with the blockchain.
@@ -60,7 +60,7 @@ For this tutorial we'll write an example executable service in [Python](https://
 
 To keep the directory structure of the services and follow the standard file paths, we'll create the following directories: 
 
-```bash
+```sh
 mkdir -p example-executable-service/service/service_spec && \
 cd example-executable-service/service
 ```
@@ -133,7 +133,7 @@ Notice that:
 
 After writing the code for your service, you should now specify its user interface: the service model. We do that through a [protobuf](https://developers.google.com/protocol-buffers/docs/overview) file, in which we define `services` (or methods) and their inputs and outputs (`messages`). By default, the `.proto` file is stored inside the `service/service_spec` folder. Below is the protobuf file for our example executable service that defines the `add` method, the `Numbers` message containing the two numbers to added, `a` and `b`, and the `Result` message returning their sum. It is a very simple example of a protobuf file, [learn more](https://developers.google.com/protocol-buffers/docs/proto3) about protobuf syntax for more complex service models.
 
-```bash
+```proto
 syntax = "proto3";
 
 message Numbers {
@@ -167,13 +167,13 @@ You'll also need to specify:
 - Your services endpoints `--endpoints http://IP:PORT`;
 - And, because the Daemon will call our service as a process and pass parameters using JSON encoding , specify the `--service-type process --encoding json` parameters as well. The full command for our service is shown below. Make sure to change the `PAYMENT_ADDRESS` and the `endpoints` accordingly before running it.
 
-```bash
+```sh
 snet service metadata-init service/service_spec example-executable-service 0xD416d832F6AE2Ca7d9C7C05f9255Ab49b70c0fe4 --endpoints http://54.203.198.53:7018 --fixed-price 0 --service-type process --encoding json 
 ```
 
 That will generate a `service_metadata.json` file at the root of your service directory that should look like this:
 
-```
+```json
 {
     "version": 1,
     "display_name": "example-executable-service",
@@ -206,7 +206,7 @@ That will generate a `service_metadata.json` file at the root of your service di
 
 Publish your service by running `snet service publish ORGANIZATION_ID SERVICE_ID`. In our example:
 
-```bash
+```sh
 snet service publish my_organization example-executable-service
 ```
 
@@ -218,7 +218,7 @@ Confirm the transaction and the blockchain should now be aware of your service!
 
 To run your service, you simply need to run an instance of SNET Daemon at the specified endpoint. It will listen to client calls at the blockchain and execute your service at the specified path using the client parameters. SNET Daemon takes a configuration file that specifies which network it should listen to (e.g. Kovan Testnet), where to redirect calls to, etc. (refer to [SNET Daemon's Github Repository](https://github.com/singnet/snet-daemon) for the complete list of parameters). By default, the daemon configuration file should be created at the root directory of your service and be called `snetd.config.json`. Here's the example configuration file for our service (again, make sure to change the parameters accordingly before saving):
 
-```
+```json
 {
    "DAEMON_END_POINT": "http://54.203.198.53:7018",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
@@ -242,7 +242,7 @@ To run your service, you simply need to run an instance of SNET Daemon at the sp
 
 You're now able to keep an instance of SNET Daemon running at your service directory to keep it available: 
 
-```bash
+```sh
 snetd serve .
 ```
 
@@ -252,14 +252,14 @@ To call your service through the blockchain, make sure you have sufficient funds
  
 Create a payment channel to your service: specify its organization and service IDs, deposit some tokens into the channel and set its expiration time: `snet channel open-init ORG_ID SERVICE_ID AMOUNT EXPIRATION`. For our example, we'll deposit 0 tokens and set the payment channel to expire in 10 days:
 
-```bash
+```sh
 snet channel open-init my_organization example-executable-service 0 +10days
 ```
 
 Confirm the transaction and that should print the number of the channel you have opened (you can always check again by running `snet channel print-initialized`). Supposing your channel number is `450`, you will spend `0` cogs and call the service at `54.203.198.53:7018` here's an example of how to call the service you have just published:
 
-```bash
-snet client call 450 0 54.203.198.53:7018 add '{"a": 6.3, "b": 13.2}'
+```sh
+snet client call my_organization example-executable-service add '{"a": 6.3, "b": 13.2}'
 ```
 
 It should then return:

@@ -10,7 +10,7 @@ snet:
             - item_name: Home
               item_url: 'https://dev.singularitynet.io'
             - item_name: Getting Started
-              item_url: '/docs/all/getting-started'
+              item_url: '/tutorials/getting-started'
             - item_name: Docs
               item_url: '/docs'
             - item_name: Contribute
@@ -25,7 +25,7 @@ snet:
             logo:
                 text:
                 image: '/assets/images/layout/logo.png'
-            copyright: Copyright &copy; 2018 SingularityNET. All rights reserved.
+            copyright: Copyright &copy; 2019 SingularityNET. All rights reserved.
         social_list:
             - network_name: github
               profile_url: 'https://github.com/singnet'
@@ -43,7 +43,8 @@ snet:
         tracking_code: UA-107763881-9
     comments:
         disqus_forum_shortname: singularitynet
-
+#github:
+#  repository_url: https://github.com/singnet/dev-portal
 # SASS settings
 sass:
     sass_dir: ./theme/_sass
@@ -52,7 +53,9 @@ sass:
 # Jekyll settings
 layouts_dir: ./theme/_layouts
 includes_dir: ./theme/_includes
-exclude: [ 'README.md', 'CHANGELOG.md' ]
+exclude: [ 'README.md', 'CHANGELOG.md', 'template.md' ]
 permalink: /:title/
 plugins:
   - jekyll-redirect-from
+  - jekyll-sitemap
+  - jemoji

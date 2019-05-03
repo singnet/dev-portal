@@ -67,7 +67,7 @@ There are three ways of passing this JSON:
 * via JSON file; and
 * via stdin.
 
-For example, in [this platform example](development/mpe-example.md#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
+For example, in [this platform example](/docs/development/mpe-example#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
 
 ```json
 {"a": 10, "b": 32}
@@ -75,7 +75,7 @@ For example, in [this platform example](development/mpe-example.md#make-a-call-u
 
 We can use three ways:
 
-```bash
+```sh
 # via cmdline parameter
 snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
 
@@ -98,7 +98,7 @@ There are 3 possible modifiers:
 
 For example, if you pass the following JSON as a parameter, then as an "image" parameter we will use the base64 encoded content of "1.jpeg"
 
-```bash
+```sh
 '{"image_type": "jpg", "file@b64encode@image": "1.jpeg"}'
 ```
 

@@ -11,7 +11,7 @@ description: Help build the technological singularity by contributing to the Sin
 # extralink box
 extralink:
     title: All docs
-    title_url: '/docs/all'
+    title_url: '/docs'
     external_url: false
     description: Find an overview of our full documentation here.
 
@@ -34,7 +34,7 @@ You can meet and chat with other developers via the following channels:
 * [Developer Telegram](https://t.me/AGIDevelopers)
 * [Developer Forum](https://community.singularitynet.io/c/developers)
 
-Read more about our developer community [here](/sheet#community)
+Read more about our developer community [here](/docs/community)
 
 ## Issues and Bugs
 If you find a bug in the source code or a mistake in the documentation, you can help us by submitting a ticket to our GitHub issues. Even better, you can decide to submit a pull request to our projects if you decide to fix it.
@@ -94,19 +94,19 @@ Sometimes your PR will have merge conflicts with the original repository's maste
 
 -   First, fetch the latest version from the original repository
 
-    ```bash
+    ```sh
     git fetch original_repository_git_url
     ```
 
 -   Merge your changes with the latest changes from the original repository.
 
-    ```bash
+    ```sh
     git merge FETCH_HEAD
     ```
 
 -   Commit and push your changes.
 
-    ```bash
+    ```sh
     git add.
     git commit -a
     git push
