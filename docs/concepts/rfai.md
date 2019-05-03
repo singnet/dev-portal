@@ -38,7 +38,7 @@ The RFAI portal fosters the community by enabling users to incentivize developer
 
 ## Requesting for an AI Service
 
-* Any request for an AI service should be back by AGI tokens.
+* Any request for an AI service should be backed by AGI tokens.
 * Requests should be detailed enough to allow discussion and development and should be in the form of a github pull requests to repo. You can view the template for the request here
 * Provide an expiry date for the request. Meaning the date post which you can withdraw your funds if no submission has been made
 * A request created will need to be approved by the foundation before it shows up for everybody
