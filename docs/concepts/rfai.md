@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: Request for AI
-description: Learn how to use the Request for AI portal, and how it work.
+description: Learn how to use the Request for AI portal, and how it works.
 
 # extralink box
 extralink:
@@ -32,14 +32,14 @@ page_nav:
 
 ---
 
-The Request for AI Portal (RFAI) lets users make requests for AI services that they would like to see built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed or as a pledge to make use of the service once it goes live. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
+The Request for AI Portal (RFAI) lets users make requests for AI services that they would like to see built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
 The RFAI portal fosters the community by enabling users to incentivize developers to publish services.
 
 
-## Requesting for an AI Service
+## Making a request for an AI service
 
 * Any request for an AI service should be backed by AGI tokens.
-* Requests should be detailed enough to allow discussion and development and should be in the form of a github pull requests to repo. You can view the template for the request here
+* Requests should be detailed enough to allow discussion and development and should be in the form of a github pull requests to [this](https://github.com/singnet/rfai-proposal) repo. You can view the template for the request [here](https://github.com/singnet/rfai-proposal/blob/master/rfai-proposal-template.md)
 * Provide an expiry date for the request. Meaning the date post which you can withdraw your funds if no submission has been made
 * A request created will need to be approved by the foundation before it shows up for everybody
 
@@ -48,7 +48,7 @@ The RFAI portal fosters the community by enabling users to incentivize developer
 * You first need to transfer tokens to the RFAI escrow from the Account tab. This is a two step process
     * Approve the number of tokens to deposit
     * Deposit the tokens
-* You are now set to request for an AI service or back any approved request
+* You are now set to make a request for an AI service or back any approved request
 
 
 ## Request Approval
@@ -75,22 +75,22 @@ The RFAI portal fosters the community by enabling users to incentivize developer
 
   * Foundation will vote to shortlist the submissions
   * Users backing the service request can vote for any submission (not just the shortlisted ones)
-  * Only the users who are backing a service request can vote for the submission
+  * Only the users who are backing a service request can vote for a submission
   * Validation of the solution will be performed offline.
 
 ## Claiming tokens for a submission
 
-  * Claims can be done only after the evaluation period and before the expiry period
+  * Claims can be made only after the evaluation period and before the expiry date
   * Solution submitter can claim any time before expiry of the request
-  * Claims will be caluculated based on the votes from backing users
-      * In case if there is no votes from any backing user, foundation votes are considered
+  * Claims will be calculated based on the votes from backing users
+      * In case there are no votes from any backing user, foundation votes are considered
   * Claims will be distributed based on the number of votes either by backing users or by foundation members
 
 ## Reclaiming Tokens
-  * AGI tokens used to back a service request can be reclaimed by the backer after the service request is expired
+  * AGI tokens used to back a service request can be reclaimed by the backer after the service request has expired
 
 ## Closing a Request
 
-  * Only fondation can close a request.
-  * AGI Tokens used for backing will be returned to the backers
-  * Request status will change to Closed
+  * Only the fondation can close a request.
+  * AGI tokens used for backing will be returned to the backers
+  * Request status will change to closed
