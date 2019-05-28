@@ -10,14 +10,28 @@ micro_nav: true
 
 # Hero section
 title: Developer Portal
-description: Welcome to the SingularityNET Developer Portal. SingularityNET lets anyone create, share, and monetize AI services at scale. The world’s decentralized AI network has arrived.
+description: Welcome to the SingularityNET Developer Portal. SingularityNET allows you to easily integrate AI services into your software and sell your AI services to developers globally.
+popularsearch: 
+  - item_name: mutli-party escrow
+    item_url: ''
+  - item_name: SDK
+    item_url: ''
+  - item_name: integrate AI service
+    item_url: ''
+  - item_name: register AI service
+    item_url: ''
 
-# extralink box
-extralink:
-    title: Dev Community
-    title_url: 'https://community.singularitynet.io/c/developers'
-    external_url: false
-    description: Meet other devs in the SingularityNET Community.
+# Featrures    
+features:
+    - title: Quick Start
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      img_url: "http://placehold.it/50x50"
+    - title: Core Concepts
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      img_url: "http://placehold.it/50x50"
+    - title: Tutorial
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      img_url: "http://placehold.it/50x50"
 
 # Grid navigation
 grid_navigation:

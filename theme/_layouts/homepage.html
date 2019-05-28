@@ -6,87 +6,156 @@
 	<body class="{{ site.snet.color_theme }}">
 		{% include site-header.html %}
 		<div class="hero-subheader-home{% if page.grid_navigation %} hero-subheader--before-out{% endif %}">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-7">
-						<div class="align-container" data-mh>
-							<div class="align-inner">
-								{% if page.title %}
-									<h1 class="hero-subheader__title">{{ page.title }}</h1>
-								{% endif %}
-								{% if page.description %}
-									<p class="hero-subheader__desc">{{ page.description }}</p>
-								{% endif %}
-								{% for button in page.buttons %}
-									{% if button.external_url == true %}
-									<a href="{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
-										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
-										{{ button.content }}
-									</a>
-									{% else %}
-									<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
-										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
-										{{ button.content }}
-									</a>
-									{% endif %}
-								{% endfor %}
-							</div><!-- /.align-inner -->
-						</div><!-- /.align-container -->
-					</div><!-- /.col -->
-					{% if page.extralink.title and page.extralink.description and page.extralink.title_url %}
-						<div class="col-md-4 col-md-offset-1 hidden-xs hidden-sm">
-							<div class="align-container" data-mh>
-								<div class="align-inner">
-									<div class="hero-subheader__extralink">
-										<p class="hero-subheader__extralink-title">
-											{% if button.external_url == true %}
-											<a href="{{ page.extralink.title_url }}" class="btn btn--read-more">
-												{{ page.extralink.title }}
-												<i class="icon icon--arrow-right"></i>
-											</a>
-											{% else %}
-											<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.extralink.title_url }}" class="btn btn--read-more">
-												{{ page.extralink.title }}
-												<i class="icon icon--arrow-right"></i>
-											</a>
-											{% endif %}
-										</p><!-- /.hero-subheader__extralink-title -->
-										<p>{{ page.extralink.description }}</p>
-									</div><!-- /.hero-subheader__extralink -->
-								</div><!-- /.align-inner -->
-							</div><!-- /.align-container -->
+			<div class="container_fluid">
+				<!-- Banner Starts -->
+				<div class="home-page-wrapper">
+					<div class="banner row">
+						<div class="col-md-7 banner-content">
+							{% if page.title %}
+								<h2 class="hero-subheader__title">{{ page.title }}</h2>
+							{% endif %}
+							{% if page.description %}
+								<p class="hero-subheader__desc">{{ page.description }}</p>
+							{% endif %}
+							<div class="search-bar">
+	          		<input type="text" name="Search" placeholder="Search knowledge base">
+	          		<i class="fa fa-search" aria-hidden="true"></i>
+	        		</div><!-- /.search-bar -->
+	        		<p class="popular-search">Popular searches:
+	        			{% for item in page.popularsearch %}
+	  							<a href="{{ item.item_url }}" class="blue-txt" title={{item.item_name}}>{{ item.item_name }}</a>
+	  						{% endfor %}
+	        		</p>
 						</div><!-- /.col -->
-					{% endif %}
-				</div><!-- /.row -->
+					</div><!-- /.row -->
+				</div>
+
+				<!-- Features of Developer Portal Starts -->
+        <div class="home-page-wrapper">
+          <div class="features row">
+          	{% for item in page.features %}
+            <div class="col-sx-12 col-sm-12 col-md-3 feature-card">            	
+              <a href="#" title={{item.title}}>
+                <img src={{item.img_url}} alt="Feature">
+                <span>{{item.title}}</span>
+                <p>{{item.description}}</p>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Whats New Starts -->
+        <div class="new">
+          <p><span class="uppercase-txt">new</span> We have updated our documentation, we added a new <a href="#" title="Tutorial Section">tutorial section</a>. Check it out!</p>
+        </div>
+
+        <div class="ai-service-process">
+          <div class="home-page-wrapper">
+          <!-- Quick Start Section -->
+            <div class="quick-start">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <span class="title">Quick Start</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                  <button class="blue-txt browse-all-btn">Browse all</button>
+                </div>
+              </div>
+              <div class="row cards">
+                <div class="col-sx-12 col-sm-12 col-md-3 card">
+                  <span class="blue-txt">Getting Started</span>
+                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                  <div class="author-detail">
+                    <span>5 authors, 13 entries</span>
+                  </div>
+                </div>
+                <div class="col-sx-12 col-sm-12 col-md-3 card">
+                  <span class="blue-txt">Account & Billing</span>
+                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                  <div class="author-detail">
+                    <span>5 authors, 13 entries</span>
+                  </div>
+                </div>
+              </div>
+            </div>  
+
+          <!-- Integrating Ai Services -->
+            <div class="integration-services">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <span class="title">Integrating AI Services</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                  <button class="blue-txt browse-all-btn">Browse all</button>
+                </div>
+              </div>
+              <div class="row cards">
+                <div class="col-sx-12 col-sm-12 col-md-3 card">
+                  <span class="blue-txt">Sketch symbols</span>
+                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                  <div class="author-detail">
+                    <span>5 authors, 13 entries</span>
+                  </div>
+                </div>
+                <div class="col-sx-12 col-sm-12 col-md-3 card">
+                  <span class="blue-txt">Design tools</span>
+                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                  <div class="author-detail">
+                    <span>5 authors, 13 entries</span>
+                  </div>
+                </div>
+                <div class="col-sx-12 col-sm-12 col-md-3 card">
+                  <span class="blue-txt">User Experience</span>
+                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                  <div class="author-detail">
+                    <span>5 authors, 13 entries</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- Selloing Ai Services -->
+            <div class="selling-services">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <span class="title">Selling AI Services</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                  <button class="blue-txt browse-all-btn">Browse all</button>
+                </div>
+              </div>
+              <div class="row cards">
+                <div class="col-sx-12 col-sm-12 col-md-3 card">
+                  <span class="blue-txt">Frontend</span>
+                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                  <div class="author-detail">
+                    <span>5 authors, 13 entries</span>
+                  </div>
+                </div>
+                <div class="col-sx-12 col-sm-12 col-md-3 card">
+                  <span class="blue-txt">Backend</span>
+                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                  <div class="author-detail">
+                    <span>5 authors, 13 entries</span>
+                  </div>
+                </div>
+                <div class="col-sx-12 col-sm-12 col-md-3 card">
+                  <span class="blue-txt">Mobile</span>
+                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                  <div class="author-detail">
+                    <span>5 authors, 13 entries</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
 			</div><!-- /.container -->
 		</div><!-- /.hero-subheader -->
 		{% if page.grid_navigation %}
-			<div class="section section--darker-theme-color-bg">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="nav-grid nav-grid--out">
-								<div class="row">
-									{% for item in page.grid_navigation %}
-										<div class="col-sm-6 col-lg-4">
-											<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ item.url }}" class="nav-grid__item">
-												<div class="nav-grid__content" data-mh>
-													<h2 class="nav-grid__title">{{ item.title }}</h2>
-													<p>{{ item.excerpt }}</p>
-												</div><!-- /.nav-grid__content -->
-												<p class="nav-grid__btn">
-													{{ item.cta }}
-													<i class="icon icon--arrow-right"></i>
-												</p>
-											</a><!-- /.nav-grid__item -->
-										</div><!-- /.col -->
-									{% endfor %}
-								</div><!-- /.row -->
-							</div><!-- /.nav-grid -->
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.container -->
-			</div><!-- /.section -->
 		{% endif %}
 		{% include site-footer.html %}
 	</body>
