@@ -11,7 +11,8 @@ body {
     &.home{
         background-image: url(../images/bg1.svg), url(../images/bg2.svg);
         background-position: right 93px, left calc(100% - 390px);
-        background-repeat: no-repeat, no-repeat;            
+        background-repeat: no-repeat, no-repeat;  
+        background-size: auto;
     }
 }
 
@@ -1029,11 +1030,11 @@ nav {
             }
             &:last-of-type {
                 a { 
-                border-radius: 25px;
-                margin-left: 5px;
-                background: linear-gradient(90deg,#40ceff,#5a2ff1);
-                color: #fff;
-            }
+                    border-radius: 25px;
+                    margin-left: 5px;
+                    background: linear-gradient(90deg,#40ceff,#5a2ff1);
+                    color: #fff;
+                }
             }
             &:before {
                 content: '';
@@ -1041,16 +1042,16 @@ nav {
             }
             a {
                 border-bottom: none;
-            padding: 5px 15px!important;
-            color: #7a7a7a;
-            font-size: 17px;
-            font-weight: 500;  
-            &:hover {
-                  border-radius: 50px;
-                  color: #fff!important;
-                  animation-name: button-animation;
-                  background-color: #61abfd;
-                  animation-duration: .2s;
+                padding: 5px 15px!important;
+                color: #7a7a7a;
+                font-size: 17px;
+                font-weight: 500;  
+                &:hover {
+                    border-radius: 50px;
+                    color: #fff!important;
+                    animation-name: button-animation;
+                    background-color: #61abfd;
+                    animation-duration: .2s;
                 }
             }
         }
@@ -1104,13 +1105,13 @@ nav {
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         &:hover {
-        padding: 6px 24px 4px;
-        border-radius: 50px;
-        color: #fff!important;
-        animation-name: button-animation;
-        background-color: #61abfd;
-        animation-duration: .2s;
-        text-decoration: none;
+            padding: 6px 24px 4px;
+            border-radius: 50px;
+            color: #fff!important;
+            animation-name: button-animation;
+            background-color: #61abfd;
+            animation-duration: .2s;
+            text-decoration: none;
         }
     }
 }
@@ -1156,7 +1157,7 @@ nav {
     .offcanvas-expanded & {
         span {
             &:first-child,
-            &:last-child {
+                &:last-child {
                 top: 2.6875rem;
             }
 
@@ -1184,4 +1185,10 @@ nav {
 @media only screen and (max-width: 768px) {
     .desktop-header { display: none; }
     .hamburger-menu { display: block; }
+    body { 
+        &.home{
+            background-position: right 93px, left calc(100% - 390px);
+            background-size: 50%,auto;
+        }
+    }    
 }
