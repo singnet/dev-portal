@@ -1007,3 +1007,181 @@ input[type="email"] {
         }
     }   
 }
+
+
+/* ----- Navigation ----- */
+nav { 
+    padding: 15px 0;
+    .navbar-brand {
+        width: 200px;
+        border: none;
+        display: inline-block;;
+    }
+    ul { 
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; 
+        li {
+            padding: 0; 
+            margin: 0;
+            &:nth-child(2) {
+                a { color: #46abfc; }
+            }
+            &:last-of-type {
+                a { 
+                border-radius: 25px;
+                margin-left: 5px;
+                background: linear-gradient(90deg,#40ceff,#5a2ff1);
+                color: #fff;
+            }
+            }
+            &:before {
+                content: '';
+                display: block;
+            }
+            a {
+                border-bottom: none;
+            padding: 5px 15px!important;
+            color: #7a7a7a;
+            font-size: 17px;
+            font-weight: 500;  
+            &:hover {
+                  border-radius: 50px;
+                  color: #fff!important;
+                  animation-name: button-animation;
+                  background-color: #61abfd;
+                  animation-duration: .2s;
+                }
+            }
+        }
+    }
+}
+
+
+/* ----- Offcanvas ----- */
+.offcanvas {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    // @include translate(0, -1.875rem);
+    transition: transform .2s, opacity .2s, visibility .2s;
+    z-index: 2;
+
+    .offcanvas-expanded & {
+        opacity: 1;
+        visibility: visible;
+        // @include translate(0, 0);
+    }
+}
+
+/* ----- Offcanvas navigation ----- */
+.offcanvas__nav {
+    height: 100%;
+    overflow: scroll;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    -webkit-overflow-scrolling: touch;
+    li {
+        padding: 0;
+        &::before {
+            display: none;
+        }
+        + li {
+            margin-top: 1.25rem;
+        }
+    }
+    a {
+        // @include link-reset;
+        padding: 6px 24px 4px;
+        color: #253951 !important;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        &:hover {
+        padding: 6px 24px 4px;
+        border-radius: 50px;
+        color: #fff!important;
+        animation-name: button-animation;
+        background-color: #61abfd;
+        animation-duration: .2s;
+        text-decoration: none;
+        }
+    }
+}
+
+/* ----- Offcanvas toggle ----- */
+.offcanvas-toggle {
+    height: calc(5.625rem - 1px);
+    width: 5.625rem;
+    cursor: pointer;
+    border: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    outline: none;
+    background-color: transparent;
+    -webkit-transform: translate3d(0,0,0,);
+    -moz-transform: translate3d(0,0,0,);
+    transform: translate3d(0,0,0,);
+    z-index: 3;
+
+    span {
+        display: block;
+        height: 2px;
+        width: 1.875rem;
+        background-color: #253951;
+        position: absolute;
+        left: 1.875rem;
+        transition: top .2s, transform .2s, opacity .2s;
+
+        &:first-child {
+            top: 2.125rem;
+        }
+
+        &:nth-child(2) {
+            top: 2.6875rem;
+        }
+
+        &:last-child {
+            top: 3.25rem;
+        }
+    }
+
+    .offcanvas-expanded & {
+        span {
+            &:first-child,
+            &:last-child {
+                top: 2.6875rem;
+            }
+
+            &:first-child {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+
+            &:last-child {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .desktop-header { display: none; }
+    .hamburger-menu { display: block; }
+}
