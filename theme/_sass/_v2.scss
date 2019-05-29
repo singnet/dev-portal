@@ -243,7 +243,9 @@ footer li a:hover {
     color: #ccc;
     text-decoration: underline; 
 }
-
+footer h6{
+    color: #fff;
+}
 .secondary-footer {
     padding-top: 10px;
     border-top: 1px solid #4b4b4b;
@@ -851,7 +853,7 @@ input[type="email"] {
     footer .footer-links div { padding-left: 5%; }
     .side-nav,
     .vertical-navigation button { text-align: center; }
-    .feature-card { margin-bottom: 25px; }
+    .feature-card { margin-bottom: 25px; width:100%;}
 
     .quick-start .cards,
     .integration-services .cards,
