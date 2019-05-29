@@ -205,7 +205,7 @@ input[type="text"]:-moz-placeholder { /* Firefox 18- */
 /* Footer Styling */
 footer { 
     padding: 45px 0 20px;
-    margin-top: 70px;
+    margin-top: 0px;
     background-color: #212121; 
 }  
 
@@ -297,15 +297,25 @@ footer li a:hover {
     text-align: left;
 }
 
-.vertical-navigation ul { margin-bottom: 15px; }
+.vertical-navigation ul { 
+    margin-bottom: 15px; 
+    margin-top:10px; }
+
 
 .vertical-navigation li a {
-    padding-left: 35px;
-    color: #979797;
-    font-size: 17px;
+    padding: 0 0 15px 35px;  
+    line-height: 21px;
+    color: #444;
+    font-weight: 300;
+    font-size: 18px;
+    &:hover{
+        font-weight: 600;    
+        color: #3794FC;
+        text-decoration: none;
+    }
 }
 
-.requirement-details { padding: 40px 50px 0; }
+.requirement-details { padding: 40px 50px; }
 .requirement-details p { color: #6c6b6b; }
 .steps-list { background-color: #FBFBFC; }
 
@@ -411,12 +421,22 @@ footer li a:hover {
 
 .on-this-page span { font-size: 17px; }
 .on-this-page ul { margin: 10px 0 0; }
-
+.on-this-page li{
+    display: block;
+    width: 100%;
+}
 .on-this-page li a {
     padding: 0 0 5px 18px;
-    border-left: 2px solid #ddd;
-    color: #979797;
-    font-size: 17px;
+    border-left: 3px solid #ddd;
+    color: #444;
+    font-weight: 300;
+    font-size: 18px;
+    &:hover,
+        .active{
+        font-weight: 600;
+        color: #3794FC;
+        border-left: 3px solid #3794FC;        
+    }
 }
 
 .on-this-page li a.active { 
@@ -839,6 +859,59 @@ input[type="text"] {
                 line-height: 70px;   
                 text-transform: uppercase;
             }
+            a{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            &.breadcrumb-item::before{
+                display: none;
+            }
         }
+    }
+}
+.main-content{
+    img{
+        width: 100%;
+    }
+    p{
+        color: #444444;	
+        font-family: "Open Sans";	
+        font-size: 16px;	
+        line-height: 24px;  
+        margin-bottom: 30px;
+    }
+    h1,h2,h3,h4,h5{
+        color: #333333;	
+        font-family: "Open Sans"; 
+        font-weight: 600;        
+    }
+    h1{
+        font-size: 32px;	//1.8125
+        line-height: 58px;          
+    }
+    h2{
+        font-size: 28px;	
+        line-height: 50px;        
+    }
+    h3{
+        font-size: 24px;	
+        line-height: 44px;        
+    }
+    h4{
+        font-size: 20px;	
+        line-height: 36px;        
+    }
+    h5{
+        font-size: 16px;	
+        line-height: 30px;        
+    }
+    strong{
+        color:#048EF8;        
+        font-weight: 700;
+    }
+    a{
+        color:#048EF8;        
+        font-weight: 600;       
+        text-decoration: underline;
     }
 }
