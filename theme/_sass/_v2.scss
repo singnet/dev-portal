@@ -881,9 +881,14 @@ input[type="email"] {
 @media(max-width:576px) {
     .footer-links,
     footer .row .logo { text-align: center; }
-
     footer .row .logo { border-right: 0; }
     footer .footer-links div { margin-bottom: 25px; }
+    footer .footer-links{
+        margin-bottom:30px;
+        li{
+            text-align: left;
+        }
+    }
     .socail-icons ul {
         margin-top: 15px;
         justify-content: flex-start;
