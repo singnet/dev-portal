@@ -36,7 +36,9 @@
                         {% for item in page.features %}
                         <div class=" feature-card">            	
                             <a href="#" title={{item.title}}>
-                                <img src={{item.img_url}} alt="Feature">
+                                <div class="img-wrapper">
+                                    <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/chat.svg" >                                        
+                                </div>
                                 <span>{{item.title}}</span>
                                 <p>{{item.description}}</p>
                             </a>
@@ -158,28 +160,36 @@
                             <div class="col-md-12 download-cards">
                                 <div class="col-xs-12 col-sm-12 col-md-3 download-card">
                                     <a href="#" title="Download">
-                                        <img src="http://placehold.it/50x50" alt="Feature">
+                                        <div class="img-wrapper">
+                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/download.svg" > 
+                                        </div>
                                         <span>Download</span>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     </a>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 download-card">
                                     <a href="#" title="Download">
-                                        <img src="http://placehold.it/50x50" alt="Feature">
+                                        <div class="img-wrapper">
+                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/download.svg" > 
+                                        </div>
                                         <span>Download</span>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     </a>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 download-card">
                                     <a href="#" title="Download">
-                                        <img src="http://placehold.it/50x50" alt="Feature">
+                                        <div class="img-wrapper">
+                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/download.svg" > 
+                                        </div>
                                         <span>Download</span>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     </a>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 download-card">
                                     <a href="#" title="Download">
-                                        <img src="http://placehold.it/50x50" alt="Feature">
+                                        <div class="img-wrapper">
+                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/download.svg" > 
+                                        </div>
                                         <span>Download</span>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     </a>
