@@ -505,6 +505,7 @@ footer li a:hover {
     background: linear-gradient(90deg,#40ceff,#5a2ff1);
     color: #fff;
     font-size: 22px;
+    cursor: pointer;
 }
 
 .popular-search {
@@ -660,6 +661,28 @@ footer li a:hover {
     margin-bottom: 55px;
     display: flex;
     flex-wrap: nowrap;
+    a{
+        &:hover{
+            text-decoration: none;
+            outline:none;
+            .card{
+                box-shadow: 0 5px 10px -5px rgba(0,0,0,0.4);  
+                text-decoration: none;
+                outline:none;                
+                span.blue-txt{
+                    color: #252E94!important;
+                }
+                p{
+                    color: #333;
+                }
+                .author-detail{
+                    span{
+                        color: #67758D;                        
+                    }
+                }
+            }
+        }
+    }
 }
 .selling-services .cards {
     margin-bottom: 0;
@@ -667,11 +690,8 @@ footer li a:hover {
 .quick-start .card,
 .integration-services .card,
 .selling-services .card { 
-    //width: 360px;
-    //border: none;
     padding: 25px 25px 15px;
     margin-right: 25px;
-    //box-shadow: 0 -1px 5px -5px #efecec, 5px 0 5px -5px #efecec, 0 7px 11px -5px #efecec, -3px 0 6px -5px #efecec;
     width: 359px;
     border: 1px solid #F6F9FC;
     border-radius: 4px;
@@ -741,13 +761,8 @@ footer li a:hover {
 
 .download-cards {
     padding: 30px 0;
-
     margin: 20px auto;
     justify-content: space-evenly;
-
-
-
-
     border-radius: 32px;
     background-color: #FBFBFC;
     box-shadow: 0 10px 20px -4px rgba(0,0,0,0.15);
@@ -785,6 +800,7 @@ footer li a:hover {
     background-color: #fff;
 }
 
+input[type="text"],
 input[type="email"] {
     width: 70%;
     padding: 0 20px;

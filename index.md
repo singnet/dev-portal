@@ -104,6 +104,33 @@ cards_row_three:
       authors: 6 authors, 13 entries
       url: '/docs/setup'
 
+# Downloads Section
+downloads_section:
+      title: Downloads
+
+download_cards:
+    - title: Download 1
+      excerpt: Lorem ipsum dolor sit amet idius audem sempre.
+      icon: 'download.svg'
+      url: '/docs/concepts'
+    - title: Download 2
+      excerpt: Lorem ipsum dolor sit amet idius audem sempre.
+      icon: 'download.svg'
+      url: '/docs/concepts'
+    - title: Download 3
+      excerpt: Lorem ipsum dolor sit amet idius audem sempre.
+      icon: 'download.svg'
+      url: '/docs/concepts'
+    - title: Download 4
+      excerpt: Lorem ipsum dolor sit amet idius audem sempre.
+      icon: 'download.svg'
+      url: '/docs/concepts'
+
+# Email Subscription Section
+email_subscription:
+      title: Stay up to date
+      excerpt: Be the first to know about SingularityNET developer news and get the newest tutorials, articles, and updates.
+
 # Newsletter
 dev_news: true
 ---

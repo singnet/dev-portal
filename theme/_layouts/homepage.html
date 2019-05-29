@@ -67,13 +67,15 @@
 
                             <div class="row cards">
                                 {% for item in page.cards_row_one %}
-                                <div class="card">
-                                    <span class="blue-txt">{{ item.title }}</span>
-                                    <p>{{ item.excerpt }}</p>
-                                    <div class="author-detail">
-                                        <span>{{ item.authors }}</span>
+                                <a href="{{ item.url }}">                                
+                                    <div class="card">
+                                        <span class="blue-txt">{{ item.title }}</span>
+                                        <p>{{ item.excerpt }}</p>
+                                        <div class="author-detail">
+                                            <span>{{ item.authors }}</span>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                                 {% endfor %}                                
                             </div>
                         </div>  
@@ -90,18 +92,20 @@
                             </div>
                             <div class="row cards">
                                 {% for item in page.cards_row_two %}
-                                <div class="card">
-                                    <span class="blue-txt">{{ item.title }}</span>
-                                    <p>{{ item.excerpt }}</p>
-                                    <div class="author-detail">
-                                        <span>{{ item.authors }}</span>
+                                <a href="{{ item.url }}">
+                                    <div class="card">
+                                        <span class="blue-txt">{{ item.title }}</span>
+                                        <p>{{ item.excerpt }}</p>
+                                        <div class="author-detail">
+                                            <span>{{ item.authors }}</span>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                                 {% endfor %}         
                             </div>
                         </div>
 
-                        <!-- Selloing Ai Services -->
+                        <!-- Selling Ai Services -->
                         <div class="selling-services">
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
@@ -113,13 +117,15 @@
                             </div>
                             <div class="row cards">
                                 {% for item in page.cards_row_three %}
-                                <div class="card">
-                                    <span class="blue-txt">{{ item.title }}</span>
-                                    <p>{{ item.excerpt }}</p>
-                                    <div class="author-detail">
-                                        <span>{{ item.authors }}</span>
+                                <a href="{{ item.url }}">
+                                    <div class="card">
+                                        <span class="blue-txt">{{ item.title }}</span>
+                                        <p>{{ item.excerpt }}</p>
+                                        <div class="author-detail">
+                                            <span>{{ item.authors }}</span>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                                 {% endfor %} 
                             </div>
                         </div>
@@ -127,53 +133,29 @@
                         <!-- Downloads Starts -->
                         <div class="downloads row">
                             <div class="col-md-12 text-center">
-                                <h2>Downloads</h2>
+                                <h2>{{ page.downloads_section.title }}</h2>
                             </div>
                             <div class="col-md-12 download-cards">
+                                {% for item in page.download_cards %}
                                 <div class="col-xs-12 col-sm-12 col-md-3 download-card">
-                                    <a href="#" title="Download">
+                                    <a href="{{ item.url }}" title="Download">
                                         <div class="img-wrapper">
-                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/download.svg" > 
+                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.icon }}" > 
                                         </div>
-                                        <span>Download</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                        <span>{{ item.title }}</span>
+                                        <p>{{ item.excerpt }}</p>
                                     </a>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-3 download-card">
-                                    <a href="#" title="Download">
-                                        <div class="img-wrapper">
-                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/download.svg" > 
-                                        </div>
-                                        <span>Download</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </a>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-3 download-card">
-                                    <a href="#" title="Download">
-                                        <div class="img-wrapper">
-                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/download.svg" > 
-                                        </div>
-                                        <span>Download</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </a>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-3 download-card">
-                                    <a href="#" title="Download">
-                                        <div class="img-wrapper">
-                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/download.svg" > 
-                                        </div>
-                                        <span>Download</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </a>
-                                </div>
+                                </div>                                
+                                {% endfor %}
+
                             </div>
                         </div>   
 
                         <!-- Stay Up To Date -->
                         <div class="stay-upto-date">
-                            <h2>Stay up to date</h2>
+                            <h2>{{ page.email_subscription.title }}</h2>
                             <form action="https://singularitynet.us16.list-manage.com/subscribe/post?u=d74195510c25bf501caf3011d&amp;id=a804df2efd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">                            
-                                <label for="mce-EMAIL">Be the first to know about SingularityNET developer news and get the newest tutorials, article, and updates.</label>                                
+                                <label for="mce-EMAIL">{{ page.email_subscription.excerpt }}</label>                                
                                 <div class="signup">
                                     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
                                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
