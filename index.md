@@ -25,27 +25,17 @@ popularsearch:
 features:
     - title: Quick Start
       description: A primer to get you started with working with SingularityNET tools & software and the blockchain.
+      icon: 'chat.svg'
+      url: '/docs/setup'
 
     - title: Core Concepts
       description: Learn about the core parts of the SingularityNET platform and how it works under the hood.
+      icon: 'chat.svg'
+      url: '/docs/concepts'
 
     - title: Tutorial
       description: Guides for how to work the platform, how to integrate SingularityNET services into your software, and even how to publish your own services!
-
-
-# Grid navigation
-grid_navigation:
-    - title: Core Concepts
-      excerpt: Learn about the core parts of the SingularityNET platform and how it works under the hood.
-      cta: Read more
-      url: '/docs/concepts'
-    - title: Setup Guide
-      excerpt: A primer to get you started with working with SingularityNET tools & software and the blockchain.
-      cta: Read more
-      url: '/docs/setup'
-    - title: Tutorials
-      excerpt: Guides for how to work the platform, how to integrate SingularityNET services into your software, and even how to publish your own services!
-      cta: Read more
+      icon: 'chat.svg'
       url: '/tutorials'
 
 # Cards Row One

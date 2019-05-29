@@ -532,16 +532,35 @@ footer li a:hover {
 .feature-card{
     width: 26%;    
     text-align: center;    
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #F6F9FC;	
     border-radius: 4px;	
     background-color: #FFFFFF;	
     box-shadow: 0 10px 20px -10px rgba(0,0,0,0.15);     
+    &:hover{
+        box-shadow: 0 10px 20px -10px rgba(0,0,0,0.4);      
+        span{
+            color: #252E94!important;
+        }
+        p{
+            color: #333;
+        }
+    }
 }
 
 .feature-card a:hover,
 .download-card a:hover { text-decoration: none; }
-
+.download-card {
+    &:hover{
+        box-shadow: 0 10px 20px -10px rgba(0,0,0,0.4);      
+        span{
+            color: #252E94!important;
+        }
+        p{
+            color: #333;
+        }       
+    }
+}
 
 .img-wrapper{
     width: 80px;
@@ -578,10 +597,8 @@ footer li a:hover {
 .feature-card p,
 .download-card p { color: #69778F; }
 .download-card p{
-
     color: #67758D;
     font-family: "Open Sans";
-    font-size: 16px;
     line-height: 24px;
     text-align: center;
 
@@ -589,7 +606,7 @@ footer li a:hover {
 .feature-card p{
     color: #67758D;	
     font-family: "Open Sans";	
-    font-size: 16px;	
+    font-size: 15px;	
     line-height: 24px;	
     text-align: center;    
 }
@@ -692,7 +709,8 @@ footer li a:hover {
 .selling-services .card { 
     padding: 25px 25px 15px;
     margin-right: 25px;
-    width: 359px;
+    //max-width: 359px;
+    max-width:82%;
     border: 1px solid #F6F9FC;
     border-radius: 4px;
     background-color: #FFFFFF;

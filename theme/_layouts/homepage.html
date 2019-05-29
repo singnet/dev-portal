@@ -35,9 +35,9 @@
                     <div class="features row">
                         {% for item in page.features %}
                         <div class=" feature-card">            	
-                            <a href="#" title={{item.title}}>
-                                <div class="img-wrapper">
-                                    <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/chat.svg" >                                        
+                            <a href="{{ item.url }}" title="{{ item.title }}" >
+                               <div class="img-wrapper">
+                                    <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{item.icon}}" >                                        
                                 </div>
                                 <span>{{item.title}}</span>
                                 <p>{{item.description}}</p>
@@ -169,8 +169,6 @@
 
             </div><!-- /.container -->
         </div><!-- /.hero-subheader -->
-        {% if page.grid_navigation %}
-        {% endif %}
         {% include site-footer.html %}
     </body>
 </html>
