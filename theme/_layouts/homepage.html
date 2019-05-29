@@ -1,162 +1,210 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		{% include site-head.html %}
-	</head>
-	<body class="{{ site.snet.color_theme }}">
-		{% include site-header.html %}
-		<div class="hero-subheader-home{% if page.grid_navigation %} hero-subheader--before-out{% endif %}">
-			<div class="container_fluid">
-				<!-- Banner Starts -->
-				<div class="home-page-wrapper">
-					<div class="banner row">
-						<div class="col-md-7 banner-content">
-							{% if page.title %}
-								<h2 class="hero-subheader__title">{{ page.title }}</h2>
-							{% endif %}
-							{% if page.description %}
-								<p class="hero-subheader__desc">{{ page.description }}</p>
-							{% endif %}
-							<div class="search-bar">
-	          		<input type="text" name="Search" placeholder="Search knowledge base">
-	          		<i class="fa fa-search" aria-hidden="true"></i>
-	        		</div><!-- /.search-bar -->
-	        		<p class="popular-search">Popular searches:
-	        			{% for item in page.popularsearch %}
-	  							<a href="{{ item.item_url }}" class="blue-txt" title={{item.item_name}}>{{ item.item_name }}</a>
-	  						{% endfor %}
-	        		</p>
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div>
+    <head>
+        {% include site-head.html %}
+    </head>
+    <body class="home">
+        {% include site-header.html %}
+        <div class="hero-subheader-home{% if page.grid_navigation %} hero-subheader--before-out{% endif %}">
+            <div class="container_fluid">
+                <!-- Banner Starts -->
+                <div class="home-page-wrapper">
+                    <div class="banner row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 banner-content">
+                            {% if page.title %}
+                            <h2 class="hero-subheader__title">{{ page.title }}</h2>
+                            {% endif %}
+                            {% if page.description %}
+                            <p class="banner-description">{{ page.description }}</p>
+                            {% endif %}
+                            <div class="search-bar">
+                                <input type="text" name="Search" placeholder="Search knowledge base">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </div><!-- /.search-bar -->
+                            <p class="popular-search">Popular searches:
+                                {% for item in page.popularsearch %}
+                                <a href="{{ item.item_url }}" class="blue-txt" title={{item.item_name}}>{{ item.item_name }}</a>
+                                {% endfor %}
+                            </p>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div>
 
-				<!-- Features of Developer Portal Starts -->
-        <div class="home-page-wrapper">
-          <div class="features row">
-          	{% for item in page.features %}
-            <div class="col-sx-12 col-sm-12 col-md-3 feature-card">            	
-              <a href="#" title={{item.title}}>
-                <img src={{item.img_url}} alt="Feature">
-                <span>{{item.title}}</span>
-                <p>{{item.description}}</p>
-              </a>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
+                <!-- Features of Developer Portal Starts -->
+                <div class="feature-page-wrapper">
+                    <div class="features row">
+                        {% for item in page.features %}
+                        <div class=" feature-card">            	
+                            <a href="#" title={{item.title}}>
+                                <img src={{item.img_url}} alt="Feature">
+                                <span>{{item.title}}</span>
+                                <p>{{item.description}}</p>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
 
-        <!-- Whats New Starts -->
-        <div class="new">
-          <p><span class="uppercase-txt">new</span> We have updated our documentation, we added a new <a href="#" title="Tutorial Section">tutorial section</a>. Check it out!</p>
-        </div>
+                <!-- Whats New Starts -->
+                <div class="new">
+                    <p><span class="uppercase-txt">new</span> We have updated our documentation, we added a new <a href="#" title="Tutorial Section">tutorial section</a>. Check it out!</p>
+                </div>
 
-        <div class="ai-service-process">
-          <div class="home-page-wrapper">
-          <!-- Quick Start Section -->
-            <div class="quick-start">
-              <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                  <span class="title">Quick Start</span>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                  <button class="blue-txt browse-all-btn">Browse all</button>
-                </div>
-              </div>
-              <div class="row cards">
-                <div class="col-sx-12 col-sm-12 col-md-3 card">
-                  <span class="blue-txt">Getting Started</span>
-                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
-                  <div class="author-detail">
-                    <span>5 authors, 13 entries</span>
-                  </div>
-                </div>
-                <div class="col-sx-12 col-sm-12 col-md-3 card">
-                  <span class="blue-txt">Account & Billing</span>
-                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
-                  <div class="author-detail">
-                    <span>5 authors, 13 entries</span>
-                  </div>
-                </div>
-              </div>
-            </div>  
+                <div class="ai-service-process">
+                    <div class="home-page-wrapper">
+                        <!-- Quick Start Section -->
+                        <div class="quick-start">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <span class="title">Quick Start</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                                    <button class="blue-txt browse-all-btn">Browse all</button>
+                                </div>
+                            </div>
+                            <div class="row cards">
+                                <div class="card">
+                                    <span class="blue-txt">Getting Started</span>
+                                    <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                                    <div class="author-detail">
+                                        <span>5 authors, 13 entries</span>
+                                    </div>
+                                </div>
+                                <div class=" card">
+                                    <span class="blue-txt">Account & Billing</span>
+                                    <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                                    <div class="author-detail">
+                                        <span>5 authors, 13 entries</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
 
-          <!-- Integrating Ai Services -->
-            <div class="integration-services">
-              <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                  <span class="title">Integrating AI Services</span>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                  <button class="blue-txt browse-all-btn">Browse all</button>
-                </div>
-              </div>
-              <div class="row cards">
-                <div class="col-sx-12 col-sm-12 col-md-3 card">
-                  <span class="blue-txt">Sketch symbols</span>
-                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
-                  <div class="author-detail">
-                    <span>5 authors, 13 entries</span>
-                  </div>
-                </div>
-                <div class="col-sx-12 col-sm-12 col-md-3 card">
-                  <span class="blue-txt">Design tools</span>
-                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
-                  <div class="author-detail">
-                    <span>5 authors, 13 entries</span>
-                  </div>
-                </div>
-                <div class="col-sx-12 col-sm-12 col-md-3 card">
-                  <span class="blue-txt">User Experience</span>
-                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
-                  <div class="author-detail">
-                    <span>5 authors, 13 entries</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+                        <!-- Integrating Ai Services -->
+                        <div class="integration-services">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <span class="title">Integrating AI Services</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                                    <button class="blue-txt browse-all-btn">Browse all</button>
+                                </div>
+                            </div>
+                            <div class="row cards">
+                                <div class="card">
+                                    <span class="blue-txt">Sketch symbols</span>
+                                    <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                                    <div class="author-detail">
+                                        <span>5 authors, 13 entries</span>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <span class="blue-txt">Design tools</span>
+                                    <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                                    <div class="author-detail">
+                                        <span>5 authors, 13 entries</span>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <span class="blue-txt">User Experience</span>
+                                    <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                                    <div class="author-detail">
+                                        <span>5 authors, 13 entries</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-          <!-- Selloing Ai Services -->
-            <div class="selling-services">
-              <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                  <span class="title">Selling AI Services</span>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                  <button class="blue-txt browse-all-btn">Browse all</button>
-                </div>
-              </div>
-              <div class="row cards">
-                <div class="col-sx-12 col-sm-12 col-md-3 card">
-                  <span class="blue-txt">Frontend</span>
-                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
-                  <div class="author-detail">
-                    <span>5 authors, 13 entries</span>
-                  </div>
-                </div>
-                <div class="col-sx-12 col-sm-12 col-md-3 card">
-                  <span class="blue-txt">Backend</span>
-                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
-                  <div class="author-detail">
-                    <span>5 authors, 13 entries</span>
-                  </div>
-                </div>
-                <div class="col-sx-12 col-sm-12 col-md-3 card">
-                  <span class="blue-txt">Mobile</span>
-                  <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
-                  <div class="author-detail">
-                    <span>5 authors, 13 entries</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
+                        <!-- Selloing Ai Services -->
+                        <div class="selling-services">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <span class="title">Selling AI Services</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                                    <button class="blue-txt browse-all-btn">Browse all</button>
+                                </div>
+                            </div>
+                            <div class="row cards">
+                                <div class=" card">
+                                    <span class="blue-txt">Frontend</span>
+                                    <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                                    <div class="author-detail">
+                                        <span>5 authors, 13 entries</span>
+                                    </div>
+                                </div>
+                                <div class=" card">
+                                    <span class="blue-txt">Backend</span>
+                                    <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                                    <div class="author-detail">
+                                        <span>5 authors, 13 entries</span>
+                                    </div>
+                                </div>
+                                <div class=" card">
+                                    <span class="blue-txt">Mobile</span>
+                                    <p>Get introduced to the basic concepts of our editor, how to create projects and navigate between the platform functionalities.</p>
+                                    <div class="author-detail">
+                                        <span>5 authors, 13 entries</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-			</div><!-- /.container -->
-		</div><!-- /.hero-subheader -->
-		{% if page.grid_navigation %}
-		{% endif %}
-		{% include site-footer.html %}
-	</body>
+                        <!-- Downloads Starts -->
+                        <div class="downloads row">
+                            <div class="col-md-12 text-center">
+                                <h2>Downloads</h2>
+                            </div>
+                            <div class="col-md-12 download-cards">
+                                <div class="col-xs-12 col-sm-12 col-md-3 download-card">
+                                    <a href="#" title="Download">
+                                        <img src="http://placehold.it/50x50" alt="Feature">
+                                        <span>Download</span>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </a>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-3 download-card">
+                                    <a href="#" title="Download">
+                                        <img src="http://placehold.it/50x50" alt="Feature">
+                                        <span>Download</span>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </a>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-3 download-card">
+                                    <a href="#" title="Download">
+                                        <img src="http://placehold.it/50x50" alt="Feature">
+                                        <span>Download</span>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </a>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-3 download-card">
+                                    <a href="#" title="Download">
+                                        <img src="http://placehold.it/50x50" alt="Feature">
+                                        <span>Download</span>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>   
+
+                        <!-- Stay Up To Date -->
+                        <div class="stay-upto-date">
+                            <h2>Stay up to date</h2>
+                            <p>Be the first to know about SingularityNET developer news and get the newest tutorials, article, and updates.</p>
+                            <div class="signup">
+                                <input type="text" name="Sign In" placeholder="your@email.com">
+                                <button class="gradient-bg uppercase-txt">sign up</button>
+                            </div>
+                        </div>                        
+
+
+                    </div>
+                </div>
+
+            </div><!-- /.container -->
+        </div><!-- /.hero-subheader -->
+        {% if page.grid_navigation %}
+        {% endif %}
+        {% include site-footer.html %}
+    </body>
 </html>

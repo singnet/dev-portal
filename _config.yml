@@ -10,7 +10,7 @@ snet:
             - item_name: Home
               item_url: ''
             - item_name: Documentation
-              item_url: ''
+              item_url: '/tutorials/getting-started'
             - item_name: API
               item_url: ''
             - item_name: Release Notes

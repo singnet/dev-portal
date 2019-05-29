@@ -24,13 +24,13 @@ popularsearch:
 # Featrures    
 features:
     - title: Quick Start
-      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      description: A primer to get you started with working with SingularityNET tools & software and the blockchain.
       img_url: "http://placehold.it/50x50"
     - title: Core Concepts
-      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      description: Learn about the core parts of the SingularityNET platform and how it works under the hood.
       img_url: "http://placehold.it/50x50"
     - title: Tutorial
-      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      description: Guides for how to work the platform, how to integrate SingularityNET services into your software, and even how to publish your own services!
       img_url: "http://placehold.it/50x50"
 
 # Grid navigation
