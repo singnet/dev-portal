@@ -524,7 +524,7 @@ footer li a:hover {
   padding: 75px 0 30px;
   display: flex;
   justify-content: space-between;
-  .feature-card{
+  .feature-card {
     width: 26%;    
     text-align: center;    
     padding: 20px;
@@ -543,6 +543,10 @@ footer li a:hover {
     }
   }
 }
+
+@media(max-width: 768px) {
+    .features .feature-card { width: 100% };
+  }
 
 .feature-card a:hover,
 .download-card a:hover { text-decoration: none; }
@@ -790,24 +794,22 @@ footer li a:hover {
 
 
 .stay-upto-date {
-    padding: 200px 0 285px;
-    color: #fff;
-    text-align: center;
-}
-
-.stay-upto-date h2 { 
+  padding: 200px 0 285px;
+  color: #fff;
+  text-align: center;
+  h2 { 
     font-size: 42px; 
     font-weight: 700;
-}
-
-.stay-upto-date p,
-.stay-upto-date label{
+  }
+  label{
     width: 50%;
     margin: 20px auto;
     font-size: 22px;
-}
-
-.signup {
+    @media(max-width:814px) {
+      width: 100%;
+    }
+  }
+  .signup {
     width: 50%;
     border-radius: 25px;
     padding: 4px;
@@ -815,6 +817,18 @@ footer li a:hover {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
+    @media(max-width:814px) {
+      width: 100%;
+    }
+    button {
+      border: none;
+      border-radius: 25px;
+      padding: 9px 20px 10px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
 }
 
 input[type="text"],
@@ -824,15 +838,6 @@ input[type="email"] {
     border: none;
     border-radius: 25px;
     outline: none;
-}
-
-.signup button {
-    border: none;
-    border-radius: 25px;
-    padding: 9px 20px 10px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 500;
 }
 
 /* Media Queries */
@@ -880,7 +885,7 @@ input[type="email"] {
     .integration-services .card,
     .selling-services .card { 
         width: 100%; 
-        margin-bottom: 25px;
+        margin: 0 auto 25px;
     }
 
     .download-cards { display: block; }
@@ -891,8 +896,6 @@ input[type="email"] {
     }
 
     .stay-upto-date { padding: 100px 20px 185px; }
-    .stay-upto-date p,
-    .signup { width: 100%; }
 }
 
 @media(max-width:576px) {
