@@ -1,8 +1,8 @@
 {% if site.snet.footer.content.logo.image or site.snet.footer.content.logo.text or site.snet.footer.content.copyright or site.snet.footer.social_list %}
 <footer class="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 first">
+    <div class="footer-wrapper">
+        <div class="row footer-links">
+            <div class="col-xs-12 col-sm-12 col-md-3 logo">
                 {% if site.snet.footer.content.logo.text %}
                 <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.snet.footer.content.logo.text }}</a>
                 {% elsif site.snet.footer.content.logo.image %}
@@ -18,12 +18,9 @@
                     <li><a href="https://singularitynet.io/jobs" target="_blank">Jobs</a>
                     </li>
                 </ul>
-            </div><!-- /.col -->
-            <div class="col-sm-1">
-                <!-- empty -->
             </div>
-            <div class="col-sm-3">
-                <h6>Quick Links</h6>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <h6 class="uppercase-txt bold">Quick Links</h6>
                 <ul class="footer-links">
                     <!-- empty<li><a href="/docs/download">Downloads</a>
                     </li>-->
@@ -37,8 +34,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-3">
-                <h6>Knowledge base</h6>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <h6 class="uppercase-txt bold">Knowledge base</h6>
                 <ul class="footer-links">
                     <li><a href="/tutorials/getting-started">Getting Started</a>
                     </li>
@@ -52,8 +49,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-2">
-                <h6>Community </h6>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <h6 class="uppercase-txt bold">Community </h6>
                 <ul class="footer-links">
                     <li><a href="https://community.singularitynet.io/c/developers" target="_blank">Forum</a>
                     </li>
@@ -72,7 +69,7 @@
             <div class="col-xs-12 col-sm-7 col-md-7 socail-icons">
                 <ul>
                     {% for item in site.snet.footer.social_list %}
-                    <li>123
+                    <li>
                         <a href="{{ item.profile_url }}" target="_blank"  title="{{ item.network_name }}">
                             <i class="fab fa-{{ item.profile_icon }}"></i>
                         </a>
