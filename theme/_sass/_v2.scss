@@ -486,6 +486,7 @@ footer li a:hover {
             font-size: 38px;	
             font-weight: bold;	
             line-height: 52px;    
+            letter-spacing: -1px;
         }
         .banner-description { 
             color: #616161;	
@@ -493,6 +494,7 @@ footer li a:hover {
             font-size: 20px;  
             line-height: 36px;   
             padding-right: 30px;
+            letter-spacing: -.3px;            
         }
         .search-bar {
             border-radius: 87px;
@@ -531,9 +533,10 @@ footer li a:hover {
         border: 1px solid #F6F9FC;  
         border-radius: 4px; 
         background-color: #FFFFFF;  
-        box-shadow: 0 10px 20px -15px rgba(0,0,0,0.2);     
+        box-shadow: 0 10px 20px -15px rgba(0,0,0,0.15);     
         &:hover{
-            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);      
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);    
+            background-image: linear-gradient(#fff, #fafafa);            
             span{
                 color: #252E94!important;
             }
@@ -556,10 +559,11 @@ footer li a:hover {
     padding: 30px;
     border-radius: 4px;
     background-color: #fff;
-    box-shadow: 0 10px 20px -15px rgba(0,0,0,0.2);    
+    box-shadow: 0 10px 20px -15px rgba(0,0,0,0.15);    
     text-align: center;
     &:hover{
-        box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);    
+        box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);    
+        background-image: linear-gradient(#fff, #fafafa);          
         span{
             color: #252E94!important;
         }
@@ -676,6 +680,7 @@ footer li a:hover {
     color: #3794FC;
     &:hover{
         text-decoration: underline;
+        color: #252E94!important;
     }
 }
 
@@ -689,8 +694,7 @@ footer li a:hover {
         &:hover{
             text-decoration: none;
             outline:none;
-            .card{
-                box-shadow: 0 5px 10px -5px rgba(0,0,0,0.4);  
+            .card{ 
                 text-decoration: none;
                 outline:none;                
                 span.blue-txt{
@@ -710,7 +714,8 @@ footer li a:hover {
     .card{
         &:hover{
             //box-shadow: 0 5px 10px -5px rgba(0,0,0,0.4);  
-            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);             
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
+            background-image: linear-gradient(#fff, #fafafa);              
             text-decoration: none;
             cursor: pointer;
             outline:none;   
@@ -748,7 +753,7 @@ footer li a:hover {
     border: 1px solid #F6F9FC;
     border-radius: 4px;
     background-color: #FFFFFF;
-    box-shadow: 0 10px 20px -15px rgba(0,0,0,0.2); 
+    box-shadow: 0 10px 20px -15px rgba(0,0,0,0.15); 
 }
 
 .quick-start .card span,
@@ -823,11 +828,13 @@ footer li a:hover {
     h2 { 
         font-size: 42px; 
         font-weight: 700;
+        letter-spacing: -1px;
     }
     label{
         width: 50%;
         margin: 20px auto;
         font-size: 22px;
+        letter-spacing: -.3px;
         @media(max-width:814px) {
             width: 100%;
         }
