@@ -531,9 +531,9 @@ footer li a:hover {
         border: 1px solid #F6F9FC;  
         border-radius: 4px; 
         background-color: #FFFFFF;  
-        box-shadow: 0 10px 20px -10px rgba(0,0,0,0.15);     
+        box-shadow: 0 10px 20px -15px rgba(0,0,0,0.2);     
         &:hover{
-            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.4);      
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);      
             span{
                 color: #252E94!important;
             }
@@ -554,19 +554,18 @@ footer li a:hover {
 
 .download-card {
     padding: 30px;
+    border-radius: 4px;
     background-color: #fff;
-    box-shadow: 0 -1px 5px -5px #efecec, 5px 0 5px -5px #efecec, 0 7px 11px -5px #efecec, -3px 0 6px -5px #efecec;    
+    box-shadow: 0 10px 20px -15px rgba(0,0,0,0.2);    
     text-align: center;
-    .download-card {
-        &:hover{
-            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.4);      
-            span{
-                color: #252E94!important;
-            }
-            p{
-                color: #333;
-            }       
+    &:hover{
+        box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);    
+        span{
+            color: #252E94!important;
         }
+        p{
+            color: #333;
+        }       
     }
 }
 
@@ -710,7 +709,8 @@ footer li a:hover {
     }
     .card{
         &:hover{
-            box-shadow: 0 5px 10px -5px rgba(0,0,0,0.4);  
+            //box-shadow: 0 5px 10px -5px rgba(0,0,0,0.4);  
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);             
             text-decoration: none;
             cursor: pointer;
             outline:none;   
@@ -748,7 +748,7 @@ footer li a:hover {
     border: 1px solid #F6F9FC;
     border-radius: 4px;
     background-color: #FFFFFF;
-    box-shadow: 0 5px 10px -5px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px -15px rgba(0,0,0,0.2); 
 }
 
 .quick-start .card span,
@@ -808,9 +808,8 @@ footer li a:hover {
     margin: 20px auto;
     display: flex;
     justify-content: space-evenly;
-    border-radius: 32px;
+    border-radius: 24px;
     background-color: #FBFBFC;
-    box-shadow: 0 10px 20px -4px rgba(0,0,0,0.15);
 
 }
 
@@ -1225,7 +1224,7 @@ nav {
 
 @media only screen and (max-width: 768px) {
     .desktop-header { display: none; }
-    .hamburger-menu { display: block; }  
+    .hamburger-menu { display: block; }   
 }
 @media only screen and (max-width: 1200px) {
     body { 
