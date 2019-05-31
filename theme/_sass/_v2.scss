@@ -708,6 +708,33 @@ footer li a:hover {
             }
         }
     }
+    .card{
+        &:hover{
+            box-shadow: 0 5px 10px -5px rgba(0,0,0,0.4);  
+            text-decoration: none;
+            cursor: pointer;
+            outline:none;   
+            span.blue-txt{
+                color: #252E94!important;
+            }
+            p{
+                color: #333;
+            }
+            .author-detail{
+                span{
+                    color: #67758D;                        
+                }
+            }  
+            a,a:hover{
+                text-decoration: none;
+                outline:none;   
+            }
+        }
+        a,a:hover{
+            text-decoration: none;
+            outline:none;               
+        }
+    }
 }
 .selling-services .cards {
     margin-bottom: 0;
@@ -737,7 +764,6 @@ footer li a:hover {
 .quick-start .card p,
 .integration-services .card p,
 .selling-services .card p { 
-
     color: #67758D;
     font-size: 15px;
     line-height: 24px;    
@@ -775,8 +801,6 @@ footer li a:hover {
     font-weight: bold;
     line-height: 52px;
     text-align: center;
-
-
 }
 
 .download-cards {
@@ -1201,13 +1225,7 @@ nav {
 
 @media only screen and (max-width: 768px) {
     .desktop-header { display: none; }
-    .hamburger-menu { display: block; }
-    body { 
-        &.home{
-            background-position: right 93px, left calc(100% - 390px);
-            background-size: 50%,auto;
-        }
-    }    
+    .hamburger-menu { display: block; }  
 }
 @media only screen and (max-width: 1200px) {
     body { 
