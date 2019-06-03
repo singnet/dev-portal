@@ -16,7 +16,8 @@ snet:
             - item_name: Release Notes
               item_url: ''
             - item_name: Marketplace
-              item_url: ''
+              item_url: 'https://beta.singularitynet.io'
+              item_external_url: 'https://beta.singularitynet.io'
 
     footer:
         content:

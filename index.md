@@ -99,22 +99,18 @@ downloads_section:
       title: Downloads
 
 download_cards:
-    - title: Download 1
-      excerpt: Lorem ipsum dolor sit amet idius audem sempre.
+    - title: SNET Contracts
       icon: 'download.svg'
-      url: '/docs/concepts'
-    - title: Download 2
-      excerpt: Lorem ipsum dolor sit amet idius audem sempre.
+      url: 'https://www.npmjs.com/package/singularitynet-platform-contracts'
+    - title: Daemon
       icon: 'download.svg'
-      url: '/docs/concepts'
-    - title: Download 3
-      excerpt: Lorem ipsum dolor sit amet idius audem sempre.
+      url: 'https://github.com/singnet/snet-daemon/releases/latest'
+    - title: SNET Client
       icon: 'download.svg'
-      url: '/docs/concepts'
-    - title: Download 4
-      excerpt: Lorem ipsum dolor sit amet idius audem sempre.
+      url: 'https://pypi.org/project/snet-cli/'
+    - title: Python SDK
       icon: 'download.svg'
-      url: '/docs/concepts'
+      url: 'https://pypi.org/project/snet-sdk/'
 
 # Email Subscription Section
 email_subscription:
