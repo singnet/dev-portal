@@ -11,6 +11,9 @@ $light-grey-text:#69778F;
 $font-family-primary: 'Open Sans', sans-serif;
 $font-family-secondary: 'Raleway', sans-serif;
 
+$font-family-secondary: 'Open Sans', sans-serif;
+$font-family-primary: 'Raleway', sans-serif;
+
 /* ----- Mixin ----- */
 @mixin common-headings($font-size, $alignment){
     font-weight: 600;
