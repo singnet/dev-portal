@@ -26,16 +26,19 @@ features:
     - title: Quick Start
       description: A primer to get you started with working with SingularityNET tools & software and the blockchain.
       icon: 'chat.svg'
+      material-icon: bookmarks
       url: '/docs/setup'
 
     - title: Core Concepts
       description: Learn about the core parts of the SingularityNET platform and how it works under the hood.
       icon: 'chat.svg'
+      material-icon: collections_bookmark
       url: '/docs/concepts'
 
     - title: Tutorial
       description: Guides for how to work the platform, how to integrate SingularityNET services into your software, and even how to publish your own services!
       icon: 'chat.svg'
+      material-icon: import_contacts
       url: '/tutorials'
 
 # Cards Row One

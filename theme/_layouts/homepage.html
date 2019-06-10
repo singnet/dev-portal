@@ -23,7 +23,7 @@
                             </div><!-- /.search-bar -->
                             <p class="popular-search">Popular searches:
                                 {% for item in page.popularsearch %}
-                                <a href="{{ item.item_url }}" class="blue-txt" title={{item.item_name}}>{{ item.item_name }}</a>
+                                <a href="{{ item.item_url }}" class="blue-txt" title={{item.item_name}}>{{ item.item_name }} </a>
                                 {% endfor %}
                             </p>
                         </div><!-- /.col -->
@@ -37,7 +37,8 @@
                         <div class=" feature-card">            	
                             <a href="{{ item.url }}" title="{{ item.title }}" >
                                 <div class="img-wrapper">
-                                    <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{item.icon}}" >                                        
+                                   <!--  <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{item.icon}}" >  -->
+                                    <i class="material-icons">{{item. material-icon}}</i>
                                 </div>
                                 <span>{{item.title}}</span>
                                 <p>{{item.description}}</p>
@@ -70,9 +71,6 @@
                                     <a href="{{ item.url }}">                                        
                                         <span class="blue-txt">{{ item.title }}</span>
                                         <p>{{ item.excerpt }}</p>
-                                        <div class="author-detail">
-                                            <span>{{ item.authors }}</span>
-                                        </div>
                                     </a>                                        
                                 </div>
                                 {% endfor %}                                
@@ -95,9 +93,6 @@
                                     <a href="{{ item.url }}">                                        
                                         <span class="blue-txt">{{ item.title }}</span>
                                         <p>{{ item.excerpt }}</p>
-                                        <div class="author-detail">
-                                            <span>{{ item.authors }}</span>
-                                        </div>
                                     </a>                                        
                                 </div>
                                 {% endfor %}         
@@ -120,9 +115,6 @@
                                     <a href="{{ item.url }}">                                        
                                         <span class="blue-txt">{{ item.title }}</span>
                                         <p>{{ item.excerpt }}</p>
-                                        <div class="author-detail">
-                                            <span>{{ item.authors }}</span>
-                                        </div>
                                     </a>
                                 </div>
                                 {% endfor %} 
