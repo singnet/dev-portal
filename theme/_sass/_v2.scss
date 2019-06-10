@@ -279,9 +279,12 @@ footer li a:hover {
 }
 
 /* REQUIREMENTS STYLING */
-.side-nav { 
+.side-nav,
+.left-nav-wrapper{ 
     background-color: #FBFBFC;
-    padding: 45px 20px 0 40px;
+    position: relative;
+    width: 100%;
+    //padding: 45px 20px 0 40px;
 }
 
 .vertical-navigation {
@@ -309,7 +312,7 @@ footer li a:hover {
 
 
 .vertical-navigation li a {
-    padding: 0 0 15px 15px;  
+    padding: 0 0 15px 0px;  
     line-height: 21px;
     color: #444;
     font-weight: 300;
@@ -420,11 +423,15 @@ footer li a:hover {
     padding: 15px 25px;
 }
 
-.on-this-page-wrapper{
-    background-color: #FBFBFC; 
-    padding: 45px 20px 0 40px;    
+.on-this-page-wrapper,
+.left-nav-wrapper{
+    background-color: #FBFBFC;    
+    width: 100%;
+    position: relative;
 }
-.on-this-page { 
+.on-this-page,
+.left-nav{ 
+    padding: 45px 20px 0 40px;     
     position: static;
 }
 
@@ -1152,7 +1159,7 @@ nav {
         // @include link-reset;
         padding: 6px 24px 4px;
         color: #253951 !important;
-        font-family: 'Montserrat', sans-serif;
+        font-family: $font-family-primary;
         text-transform: uppercase;
         &:hover {
             padding: 6px 24px 4px;
@@ -1238,6 +1245,7 @@ nav {
 @media only screen and (max-width: 768px) {
     .desktop-header { display: none; }
     .hamburger-menu { display: block; }   
+    .on-this-page{display:none;}
 }
 @media only screen and (max-width: 1200px) {
     body { 

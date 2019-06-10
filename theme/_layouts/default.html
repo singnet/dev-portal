@@ -42,48 +42,48 @@
 
 
                 <!-- Left Side Section -->
-                <div class="col-md-3 side-nav">
-                    <span class="bold uppercase-txt">categories</span>
-                    <div class="vertical-navigation">
-
-                        <div id="Getting_Started" class="tab-details">
-                            <ul>
-                                {% assign path_crumbs = page.path | split: "/" %}                          
-                                {% case path_crumbs[0] %}
-                                {% when 'docs' %}
-                                {% case path_crumbs[1] %}
-                                {% when 'concepts' %}
-                                {% assign nav_tree = site.data.navigation.concepts %}
-                                {% when 'provider.md' %}
-                                {% assign nav_tree = site.data.navigation.provider %}
-                                {% when 'buyer.md' %}
-                                {% assign nav_tree = site.data.navigation.buyer %}
-                                {% else %}
-                                {% assign nav_tree = site.data.navigation.docs %}                                      
-                                {% endcase %}            
-                                {% when 'tutorials' %}
-                                {% assign nav_tree = site.data.navigation.tutorials %}
-                                {% when 'contribute' %}
-                                {% assign nav_tree = site.data.navigation.contribute %}                                        
-                                {% else %}
-                                {% assign nav_tree = nil %}
-                                {% endcase %}  
-                                <!-- <li class="list-inline">
-                                     <a href="{{ path_crumbs[0] }}">{{ path_crumbs[0] }}</a>
-                                 </li> 
-                                 <li class="list-inline">
-                                     <a href="{{ nav_tree }}">{{ nav_tree }}</a>
-                                 </li>                                    -->
-                                {%if nav_tree %}                                                                           
-                                {% for menu in nav_tree %}
-                                <li class="list-inline">
-                                    <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
-                                </li>
-                                {% endfor %}
-                                {% endif %}
-                            </ul>
-                        </div>
-
+                <div class="col-md-3 side-nav left-nav-wrapper">
+                    <div class="left-nav">
+                        <span class="bold uppercase-txt">categories</span>
+                        <div class="vertical-navigation">
+                            <div id="Getting_Started" class="tab-details">
+                                <ul>
+                                    {% assign path_crumbs = page.path | split: "/" %}                          
+                                    {% case path_crumbs[0] %}
+                                    {% when 'docs' %}
+                                    {% case path_crumbs[1] %}
+                                    {% when 'concepts' %}
+                                    {% assign nav_tree = site.data.navigation.concepts %}
+                                    {% when 'provider.md' %}
+                                    {% assign nav_tree = site.data.navigation.provider %}
+                                    {% when 'buyer.md' %}
+                                    {% assign nav_tree = site.data.navigation.buyer %}
+                                    {% else %}
+                                    {% assign nav_tree = site.data.navigation.docs %}                                      
+                                    {% endcase %}            
+                                    {% when 'tutorials' %}
+                                    {% assign nav_tree = site.data.navigation.tutorials %}
+                                    {% when 'contribute' %}
+                                    {% assign nav_tree = site.data.navigation.contribute %}                                        
+                                    {% else %}
+                                    {% assign nav_tree = nil %}
+                                    {% endcase %}  
+                                    <!-- <li class="list-inline">
+                                         <a href="{{ path_crumbs[0] }}">{{ path_crumbs[0] }}</a>
+                                     </li> 
+                                     <li class="list-inline">
+                                         <a href="{{ nav_tree }}">{{ nav_tree }}</a>
+                                     </li>                                    -->
+                                    {%if nav_tree %}                                                                           
+                                    {% for menu in nav_tree %}
+                                    <li class="list-inline">
+                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                    </li>
+                                    {% endfor %}
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>                        
                     </div>
                 </div>                
 
@@ -97,7 +97,7 @@
                 <div class="col-md-3 on-this-page-wrapper">
                     <div class="on-this-page">
                         <span class="uppercase-txt bold">on this page</span>
-                        <div class="sections-list js-sections">
+                        <div class="sections-list js-sections" >
                         </div>                           
                     </div>
                 </div>

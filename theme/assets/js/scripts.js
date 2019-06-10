@@ -168,4 +168,19 @@
 	$( '.offcanvas-toggle' ).on( 'click', function() {
 		$( 'body' ).toggleClass( 'offcanvas-expanded' );
 	} );
+        
+$(window).scroll(function(e){ 
+  var $el = $('.on-this-page'); 
+  //var $el2 = $('.left-nav');   
+  //var st=$('.on-this-page').offset().top;
+  //alert(st);
+  var isPositionFixed = ($el.css('position') == 'fixed'); 
+  if ($(this).scrollTop() > 195 && !isPositionFixed){ 
+    $el.css({'position': 'fixed', 'top': '0px','padding-top':'0px'}); 
+  }
+  if ($(this).scrollTop() < 195 && isPositionFixed){
+    $el.css({'position': 'static', 'top': '0px','padding-top':'45px'}); 
+  } 
+ 
+});        
 }( jQuery ) );
