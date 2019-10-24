@@ -58,66 +58,35 @@ Fortunately, the `snet-cli` does this by default.
 
 ```js
 {
-    // used to track format changes (current version is 1)
-    "version": 1,
-    // Display name of the service
-    "display_name": "example-service",
-    // Service encoding (proto or json)
+    "version": 2,
+    "display_name": "Entity Disambiguation",
     "encoding": "proto",
-    // Service type (grpc, jsonrpc or process)
     "service_type": "grpc",
-   
-    // IPFS HASH to the .tar archive of protobuf service specification
-    "model_ipfs_hash": "QmSUGHW24YPjwMVhUnDwLExk4tgM8fVAKZCLqtLafbBQAu",
-    // Address of MultiPartyEscrow contract.
-    // - Client should use it for cross-checking of mpe_address
-    // - Daemon can use it directly if authenticity of metadata is confirmed
-    "mpe_address": "0x7E6366Fbe3bdfCE3C906667911FC5237Cc96BD08",
- 
-    "pricing": {
-        "price_model": "fixed_price",
-        "price_in_cogs": 10
-    },
-    // group is the number of endpoints which shares same payment channel
-    //      grouping strategy is defined by service provider;
-    //      for example service provider can use region name as group name
-    //    group_name - unique name of the group (human readable)
-    //    group_id   - unique id of the group (random 32 byte string in base64 encoding)
-    //    payment_address - Ethereum address to recieve payments
-  "groups": [
-         {
-             "group_name": "default_group",
-                // Pricing model
-                // Design supports for Multiple pricing models:
-                // 1. Fixed price
-                //    price_model   - "fixed_price"
-                //    price_in_cogs -  unique fixed price in cogs for all method (1 AGI = 10^8 cogs)
-                // (other pricing models can be easily supported)
-             "pricing": [
-                 {
-                     "price_model": "fixed_price",
-                     "price_in_cogs": 1,
-                     "default": true
-                 }
-             ],
-             // Each entry specifies an endpoint URL for where the service is available,
-             // and the corresponding payment group the replica belonds to
-             "endpoints": [
-                 "https://tz-services-1.snet.sh:8005"
-             ],
-             "group_id": "EoFmN3nvaXpf6ew8jJbIPVghE5NXfYupFF7PkRmVyGQ="
-         }
-     ],
-    // Associate your service with an image 
-     "assets": {
-            "hero_image": "Qmb1n3LxPXLHTUMu7afrpZdpug4WhhcmVVCEwUxjLQafq1/hero_named-entity-disambiguation.png"
-        },
-      //Description of your service and add any links you wish to further link it with 
-        "service_description": {
-            "url": "https://singnet.github.io/nlp-services-misc/users_guide/named-entity-disambiguation-service.html",
-            "description": "Provide further clearity regaridng entities named within a piece of text. For example, \"Paris is the capital of France\", we would want to link \"Paris\" to Paris the city not Paris Hilton in this case."
+    "model_ipfs_hash": "Qmdxxxhggjkkgk6wAB4GmGBekQfLoiLtXYv",
+    "mpe_address": "0x34E2EeE197EfAAbEcC495FdF3B1781a3b894eB5f",
+    "groups": [
+        {
+            "group_name": "default_group",
+            "pricing": [
+                {
+                    "price_model": "fixed_price",
+                    "price_in_cogs": 1,
+                    "default": true
+                }
+            ],
+            "endpoints": [
+                "https://tz-services-1.snet.sh:8005"
+            ],
+            "group_id": "EoFmN3nvaXpf6ew8jJbIPVghE5NXfYupFF7PkRmVyGQ="
         }
- 
+    ],
+    "assets": {
+        "hero_image": "QmbaewdfafrpZdpug4WhhcmVVCEwUxjLQafq1/hero_named-entity-disambiguation.png"
+    },
+    "service_description": {
+        "url": "https://dummy.io/sadds/users_guide/named-entity-disambiguation-service.html",
+        "description": "Provide further clearity regaridng entities named within a piece of text. For example, \"Paris is the capital of France\", we would want to link \"Paris\" to Paris the city not Paris Hilton in this case."
+    }
 }
 ```
 
