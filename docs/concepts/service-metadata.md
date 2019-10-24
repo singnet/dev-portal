@@ -66,23 +66,14 @@ Fortunately, the `snet-cli` does this by default.
     "encoding": "proto",
     // Service type (grpc, jsonrpc or process)
     "service_type": "grpc",
-    // Service will reject payments with expiration less
-    // than current_block + payment_expiration_threshold.
-    // This field should be used by the client with caution.
-    // Client should not accept arbitrary payment_expiration_threshold
-    "payment_expiration_threshold": 40320,
+   
     // IPFS HASH to the .tar archive of protobuf service specification
     "model_ipfs_hash": "QmSUGHW24YPjwMVhUnDwLExk4tgM8fVAKZCLqtLafbBQAu",
     // Address of MultiPartyEscrow contract.
     // - Client should use it for cross-checking of mpe_address
     // - Daemon can use it directly if authenticity of metadata is confirmed
     "mpe_address": "0x7E6366Fbe3bdfCE3C906667911FC5237Cc96BD08",
-    // Pricing model
-    // Only one pricing models currently implemented:
-    // 1. Fixed price
-    //    price_model   - "fixed_price"
-    //    price_in_cogs -  unique fixed price in cogs for all method (1 AGI = 10^8 cogs)
-    // (other pricing models can be easily supported)
+ 
     "pricing": {
         "price_model": "fixed_price",
         "price_in_cogs": 10
@@ -93,21 +84,40 @@ Fortunately, the `snet-cli` does this by default.
     //    group_name - unique name of the group (human readable)
     //    group_id   - unique id of the group (random 32 byte string in base64 encoding)
     //    payment_address - Ethereum address to recieve payments
-    "groups": [
-        {
-            "group_name": "default_group",
-            "group_id": "58jzXGw13K3XC4VNNxZEPB36naQg2lEfduI/0z+axQs=",
-            "payment_address": "0x464c564e427fA7A715922D9E0373a5D90589E021"
+  "groups": [
+         {
+             "group_name": "default_group",
+                // Pricing model
+                // Design supports for Multiple pricing models:
+                // 1. Fixed price
+                //    price_model   - "fixed_price"
+                //    price_in_cogs -  unique fixed price in cogs for all method (1 AGI = 10^8 cogs)
+                // (other pricing models can be easily supported)
+             "pricing": [
+                 {
+                     "price_model": "fixed_price",
+                     "price_in_cogs": 1,
+                     "default": true
+                 }
+             ],
+             // Each entry specifies an endpoint URL for where the service is available,
+             // and the corresponding payment group the replica belonds to
+             "endpoints": [
+                 "https://tz-services-1.snet.sh:8005"
+             ],
+             "group_id": "EoFmN3nvaXpf6ew8jJbIPVghE5NXfYupFF7PkRmVyGQ="
+         }
+     ],
+    // Associate your service with an image 
+     "assets": {
+            "hero_image": "Qmb1n3LxPXLHTUMu7afrpZdpug4WhhcmVVCEwUxjLQafq1/hero_named-entity-disambiguation.png"
+        },
+      //Description of your service and add any links you wish to further link it with 
+        "service_description": {
+            "url": "https://singnet.github.io/nlp-services-misc/users_guide/named-entity-disambiguation-service.html",
+            "description": "Provide further clearity regaridng entities named within a piece of text. For example, \"Paris is the capital of France\", we would want to link \"Paris\" to Paris the city not Paris Hilton in this case."
         }
-    ],
-    // Each entry specifies an endpoint URL for where the service is available,
-    // and the corresponding payment group the replica belonds to
-    "endpoints": [
-        {
-            "group_name": "default_group",
-            "endpoint": "https://services-1.snet.sh:6306"
-        }
-    ]
+ 
 }
 ```
 
