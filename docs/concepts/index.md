@@ -52,6 +52,8 @@ roles.
 You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn.
 
 * [**SingularityNET Marketplace**](/docs/concepts/marketplace) - The SingularityNET Marketplace is a DApp ("Distributed App") and provides a front-end for exploring AI services available on the network. Users can interact with and call them through a web interface, and rate them afterwards. This allows the community to provide feedback and to get a sense of the level of quality that can expected from a service, and will eventually feed into our reputation engine.
+* [**Organiztion**](/docs/concepts/organization.md) - An Organization published to the SingularityNET network
+    * [Organization Metadata](/docs/concepts/organization-metadata.md) 
 * [**Service**](/docs/concepts/service) - A Service is published to the SingularityNET network and provides a [grpc](https://grpc.io)-based API for calling it. The service API specification, the IP address where it can be accessed, and the pricing information is published to IPFS as service metadata. This location of this metadata is then advertised in the SingularityNet Registry.
     * [Service Metadata](/docs/concepts/service-metadata) - The metadata describes the service's API, payment method, and where to find the service.
     * [Naming Standards](/docs/concepts/naming-standards) - We ask that people follow various guidelines for how to name their services.
