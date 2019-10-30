@@ -57,31 +57,26 @@ Fortunately, the `snet-cli` does this by default.
 
 ```json
 {
-    "org_name": "snet",
-    "org_id": "snet",
-    
- 
-    "groups": [
-        {
-            "group_name": "default_group",
-            "group_id": "EoFmN3nvaXpf6ew8jJbIPVghE5NXfYupFF7PkRmVyGQ=",
-            "payment": {
-                
-                "payment_address": "0xd1C9246f6A15A86bae293a3E72F28C57Da6e1dCD",
-                "payment_expiration_threshold": 100,
-                
-                "payment_channel_storage_type": "etcd",
-                "payment_channel_storage_client": {
-                    "connection_timeout": "100s",
-                    "request_timeout": "5s",
-                   
-                    "endpoints": [
-                        "https://snet-etcd.singularitynet.io:2379"
-                    ]
-                }
-            }
+"org_name": "snet",
+"org_id": "snet", 
+"groups": [
+    {
+    "group_name": "default_group",
+    "group_id": "EoFmN3nvaXpf6ew8jJbIPVghE5NXfYupFF7PkRmVyGQ=",
+    "payment": {
+        "payment_address": "0xd1C9246f6A15A86bae293a3E72F28C57Da6e1dCD",
+        "payment_expiration_threshold": 100,
+        "payment_channel_storage_type": "etcd",
+        "payment_channel_storage_client": {
+            "connection_timeout": "100s",
+            "request_timeout": "5s",
+            "endpoints": [
+                "https://snet-etcd.singularitynet.io:2379"
+            ]
         }
-    ]
+      }
+    }
+ ] 
 }
 ```
 
