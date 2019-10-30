@@ -178,7 +178,7 @@ You can create a new organization using:
 ```sh
 ACCOUNT=`snet account print`
 
-snet organization metadata-init "$ORGANIZATION_NAME" --org-id $ORGANIZATION_ID -y
+snet organization metadata-init "$ORGANIZATION_NAME" $ORGANIZATION_ID
 
 snet organization add-group default_group $ACCOUNT $ETCD_ENDPOINT
 
@@ -237,7 +237,7 @@ You need to specify the following parameters:
 
 
 #set the type of encoding and provide the proto files
-snet service metadata-init service/service_spec "$SERVICE_NAME" --encoding proto --service-type grpc --group-name defualt_group
+snet service metadata-init service/service_spec "$SERVICE_NAME" --encoding proto --service-type grpc --group-name default_group
 
 #set the price of the service 
 snet service metadata-set-fixed-price default_group 0.00000001
