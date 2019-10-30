@@ -71,28 +71,47 @@ python3 run_example_service.py --no-daemon
 ```
 It will start the service at port 7003.
 
-### Register your service in the registry
-Prepare your metadata in `service_metadata.json`. We will register the second ganache identity (0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB) as a recipient wallet.
+### Register your Organization in the registry
+Create an organization with name "testo" and organization id "testo"
+We will register the second ganache identity (0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB) as a recipient wallet.
 
+```sh
+snet organization metadata-init testo testo
+snet organization add-group default_group 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB http://127.0.0.1:2379
+snet organization create testo
+
+```
+
+### Register your service in the registry
+Prepare your metadata in `service_metadata.json`.
+
+create the metadata for your service and publish your service with service id "tests".
 (KOVAN) On the KOVAN network you might want to choose another wallet.
+
+If you want to set up your own etcd cluster refert to [etcd-setup](/docs/concepts/etcdsetup.md), else you could use
+a local etcd set up (Daemon will bring this up locally when started based on certain configuration , refer to the 
+demon config below for details)
 
 ```sh
 cd $SINGNET_REPOS
 cd example-service
 
-snet service metadata-init service/service_spec Example1 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
-snet service metadata-set-fixed-price 0.1
-snet service metadata-add-endpoints localhost:8080
+SERVICEDESCRIPTION='My Example Service , Testo'
+
+
+MODE=pubish
+
+snet service metadata-init --metadata-file $MD_FILE service/service_spec Example1 --encoding proto --service-type grpc --group-name default_group
+
+snet service metadata-set-fixed-price default_group 0.0000001
+snet service metadata-add-endpoints default_group localhost:8080 
+snet service metadata-add-description --description "$SERVICEDESCRIPTION" 
+snet service publish testo tests -y
 ```
 
-Create an organization with name "testo" and organization id "testo", and publish the service with service id "tests".
 
 (KOVAN) On KOVAN you probably will need to choose another name for your organization.
 
-```sh
-snet organization  create testo --org-id testo -y
-snet service publish testo tests -y
-```
 
 ### Configure and start the daemon
 #### Preparation
@@ -136,6 +155,19 @@ cat > snetd.config.json << EOF
    "type": "stdout"
       }
    }
+   "payment_channel_storage_server": {
+   		"id": "storage-1",
+   		"scheme": "http",
+   		"host" : "127.0.0.1",
+   		"client_port": 2379,
+   		"peer_port": 2380,
+   		"token": "unique-token",
+   		"cluster": "storage-1=http://127.0.0.1:2380",
+   		"startup_timeout": "1m",
+   		"data_dir": "storage-data-dir-1.etcd",
+   		"log_level": "info",
+   		"enabled": true
+   	},
 }
 EOF
 ```
@@ -152,7 +184,8 @@ In order to run the daemon we use the following command:
 We are now quickly going to look at what will happen next on the **client side** when someone wants to buy our service. After that section, we will go through some more steps relevant to the **server side**.
 
 ## Service Buyer: Buying a Service from the Client Side
-### Open the payment channel with service provider
+### Open the payment channel with service provider, please note , you will now be eligible to use any service under this organization
+
 
 (KOVAN) For the KOVAN network you should make sure that you use the right names for organization and services.
 
@@ -164,9 +197,9 @@ snet identity snet-user
 # deposit 100.1 AGI to MPE wallet
 snet account deposit 100.1 -y
 
-# open channel with our service (organization=testo service_name=tests)
+# open channel with our service (organization=testo default group=default_group)
 # channel with channel_id=0 should be created and initialized after this call
-snet channel open-init testo tests 42 +20days -y
+snet channel open-init testo default_group 42 +20days -y
 
 ```
 ### Make a call using stateless logic
@@ -196,13 +229,13 @@ Now we can make a call.
 #service_id   = tests
 #protobuf_method  = add
 #parameters       = '{"a":10,"b":32}'
-snet client call testo tests add '{"a":10,"b":32}'
+snet client call testo tests default_group add '{"a":10,"b":32}'
 ```
 We can make a call using this state, and we can repeat this call until we spend all the tokens in the channel. There are no on-chain transactions here yet.
 
 ```sh
-snet client call testo tests mul '{"a":6,"b":7}'
-snet client call testo tests add '{"a":10,"b":32}'
+snet client call testo tests default_group mul '{"a":6,"b":7}'
+snet client call testo tests default_group add '{"a":10,"b":32}'
 ```
 
 ## Service Provider: Claiming the Channel with a Treasurer Server
