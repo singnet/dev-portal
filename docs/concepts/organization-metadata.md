@@ -49,10 +49,14 @@ Please note that only the Owner of the Organization can modify the metadata
 
 A suspicious client should also check that hash of the metadata corresponds to the IPFS hash, otherwise the client can be attacked if the IPFS client is compromised.
 Fortunately, the `snet-cli` does this by default.
-`groups` Multiple groups can be associated with an organization , one payment type is associated with every 
-`payment_address` Address of the Service provider who would receive the payment
-`payment_channel_storage_type` Type of storge to manage payments ( For Example ETCD )
-`endpoints` Storage end points for the clients to connect.
+
+`groups` : Multiple groups can be associated with an organization , one payment type is associated with every
+ 
+`payment_address` : Address of the Service provider who would receive the payment
+
+`payment_channel_storage_type` : Type of storage to manage payments ( For Example ETCD )
+
+`endpoints` : Storage end points for the clients to connect.
 ## Metadata Overview
 
 ```json
