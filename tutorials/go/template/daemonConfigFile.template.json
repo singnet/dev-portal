@@ -7,9 +7,7 @@
     "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
     "ORGANIZATION_ID": "__ORGANIZATION_ID__",
     "SERVICE_ID": "__SERVICE_ID__",
-    "PAYMENT_CHANNEL_STORAGE_SERVER": {
-        "DATA_DIR": "/opt/singnet/etcd/"
-    },
+
     "LOG": {
         "LEVEL": "debug",
         "OUTPUT": {
