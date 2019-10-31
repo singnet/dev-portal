@@ -23,7 +23,7 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Marketplace
+        content: Organization Metadata
         url: '/docs/concepts/organization-metadata'
     next:
         content: Service Metadata
