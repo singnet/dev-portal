@@ -31,7 +31,7 @@ page_nav:
         url: '/docs'
 ---
 
-[naming-standards]: /docs/concepts/naming-standards
+[naming-standards]: /docs/concepts/naming-standards.md
 
 ## Step 1. Dependencies
 
@@ -45,7 +45,7 @@ but if you prefer you can install the dependencies by yourself in your own works
 Using a Docker Image is usually easier (you don't need to be a Docker guru to follow this tutorial).
 To go this way, just proceed to the next tutorial step.
 
-If you want to install the dependencies by yourself, check all the [requirements](/docs/setup/requirements) 
+If you want to install the dependencies by yourself, check all the [requirements](/docs/setup/requirements.md) 
 here and jump to [Step 3](#step-3-setup-snet-cli-and-create-your-identity).
 
 ## Step 2. Setup a Docker container
@@ -62,6 +62,8 @@ _Note that this tutorial assumes your user is part of the `docker` group that ha
 
 -------------------------------
 
+To secure payments, to set up your own ETCD Cluster , refer to the docs [ETCD Setup](/docs/concepts/etcdsetup.md)
+
 Build your own tutorial Docker image directly from our git repo using the following command:
 
 ```sh
@@ -76,16 +78,19 @@ ORGANIZATION_NAME="The $USER's Organization"
 
 SERVICE_ID=example-service
 SERVICE_NAME="SNET Example Service"
-SERVICE_IP=127.0.0.1
-SERVICE_PORT=7000
-
+#define the Public IP/domain name , that will be used to access your service
+SERVICE_IP=localhost
+DAEMON_PORT=7000
 DAEMON_HOST=0.0.0.0
 
 USER_ID=$USER
 
-# to secure payments
-ETCD_HOST=$HOME/.snet/etcd/$SERVICE_ID/
-ETCD_CONTAINER=/opt/singnet/etcd/
+# to secure payments, reference the ETCD client end point based on your etcd cluster set up, 
+ 
+ETCD_ENDPOINT=https://youretcdclientendpoint:2379
+
+# we strongly recommend that you set up a https connections and download the cert to say the location below
+ETCD_CERTIFICATES=/opt/singnet/etcd/
 
 # to make your snet's configs persistent
 SNET_CLI_HOST=$HOME/.snet/
@@ -104,10 +109,11 @@ docker run \
     -e SERVICE_IP=$SERVICE_IP \
     -e SERVICE_PORT=$SERVICE_PORT \
     -e DAEMON_HOST=$DAEMON_HOST \
-    -e DAEMON_PORT=$SERVICE_PORT \
+    -e DAEMON_PORT=$DAEMON_PORT \
     -e USER_ID=$USER_ID \
     -p $SERVICE_PORT:$SERVICE_PORT \
-    -v $ETCD_HOST:$ETCD_CONTAINER \
+    -e ETCD_ENDPOINT=ETCD_ENDPOINT \
+    -v $ETCD_CERTIFICATES:$ETCD_CERTIFICATES \
     -v $SNET_CLI_HOST:$SNET_CLI_CONTAINER \
     -ti snet_publish_service bash
 ```
@@ -170,7 +176,13 @@ In order to be able to publish a service you need to be an owner or a member of 
 You can create a new organization using:
  
 ```sh
-snet organization create "$ORGANIZATION_NAME" --org-id $ORGANIZATION_ID -y
+ACCOUNT=`snet account print`
+
+snet organization metadata-init "$ORGANIZATION_NAME" $ORGANIZATION_ID
+
+snet organization add-group default_group $ACCOUNT $ETCD_ENDPOINT
+
+snet organization create $ORGANIZATION_ID
 ```
 
 In case of an already taken `ORGANIZATION_ID` replace it with a different id of your choice.
@@ -205,6 +217,7 @@ sh buildproto.sh
 
 Service is ready to run, but first we need to publish it on SingularityNET and configure the `SNET DAEMON`.
 
+
 ## Step 7. Prepare service metadata to publish the service
 
 First we need to create a service metadata file. You can do it by running:
@@ -221,8 +234,16 @@ You need to specify the following parameters:
 * `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 10^-8 AGI (remember that 10^-8 AGI = 1 COG).
 
 ```sh
-ACCOUNT=`snet account print`
-snet service metadata-init service/service_spec/ "$SERVICE_NAME" $ACCOUNT --endpoints http://$SERVICE_IP:$SERVICE_PORT --fixed-price 0.00000001
+
+
+#set the type of encoding and provide the proto files
+snet service metadata-init service/service_spec "$SERVICE_NAME" --encoding proto --service-type grpc --group-name default_group
+
+#set the price of the service 
+snet service metadata-set-fixed-price default_group 0.00000001
+
+#set the end points to be called 
+snet service metadata-add-endpoints default_group http://$SERVICE_IP:$DAEMON_PORT
 
 # describe your service and add an URL for further service's information.
 snet service metadata-add-description --json '{"description": "Description of my Service.", "url": "https://service.users.guide"}'
@@ -230,7 +251,7 @@ snet service metadata-add-description --json '{"description": "Description of my
 
 This command will create a JSON configuration file: ```service_metadata.json```.
 
-See details of service metadata in [here](/docs/concepts/service-metadata).
+See details of service metadata in [here](/docs/concepts/service-metadata.md).
 
 ## Step 8. Publish the service on SingularityNET
 
@@ -261,9 +282,9 @@ cat > snetd.config.json << EOF
    "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
    "ORGANIZATION_ID": "$ORGANIZATION_ID",
    "SERVICE_ID": "$SERVICE_ID",
-   "PAYMENT_CHANNEL_STORAGE_SERVER": {
-       "DATA_DIR": "/opt/singnet/etcd/"
-   },
+   "payent_channel_cert_path": "$ETCD_CERTIFICATES/client.pem",
+   "payent_channel_ca_path": "$ETCD_CERTIFICATES/ca.pem",
+   "payent_channel_key_path": "$ETCD_CERTIFICATES/client-key.pem",
    "LOG": {
        "LEVEL": "debug",
        "OUTPUT": {
@@ -306,11 +327,11 @@ snet account deposit 0.00000010 -y
 snet account balance
 
 # open a payment channel to your service:
-snet channel open-init $ORGANIZATION_ID $SERVICE_ID 0.00000010 +10days -y
+snet channel open-init $ORGANIZATION_ID default_group 0.00000010 +10days -y
 ```
 
-`snet channel open-init` has opened and initialized a channel with 10 COGs for `$ORGANIZATION_ID/$SERVICE_ID` with 
-expiration at 10 days (57600 blocks in the future with 15 sec/blocks). 
+`snet channel open-init` has opened and initialized a channel with 10 COGs for `$ORGANIZATION_ID` with 
+expiration at 10 days (57600 blocks in the future with 15 sec/blocks). You can now use any service under this organization
 This command prints the id of the created channel, record it to use in the following commands.
 
 ```sh
@@ -318,20 +339,20 @@ This command prints the id of the created channel, record it to use in the follo
 snet account balance
 
 # look for the channel balance (CHANNEL_ID was printed by 'snet channel open-init')
-snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
-```
+snet client get-channel-state <CHANNEL_ID> http://$SERVICE_IP:$DAEMON_PORT
+````
 
 Call your service using:
 
 ```sh
-snet client call $ORGANIZATION_ID $SERVICE_ID mul '{"a":12,"b":7}' -y
+snet client call $ORGANIZATION_ID $SERVICE_ID default_group mul '{"a":12,"b":7}' -y
 ```
 
 The MPE Payment Channel has changed, see its funds using:
 
 ```sh
 # 1 COG has been spent (signed) 
-snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
+snet client get-channel-state <CHANNEL_ID> http://$SERVICE_IP:$DAEMON_PORT
 ```
 
 At this point you've spent 1 COG (service cost was defined in [Step 7](#step-7-prepare-service-metadata-to-publish-the-service)),
@@ -341,7 +362,7 @@ You can keep calling the service until your MPE Payment Channel runs out of fund
 As the service provider, you can claim spent AGIs on your service at anytime using:
 
 ```sh
-snet treasurer claim-all --endpoint $SERVICE_IP:$SERVICE_PORT -y
+snet treasurer claim-all --endpoint http;//$SERVICE_IP:$DAEMON_PORT -y
 
 # claimed funds are now in MPE
 snet account balance
@@ -359,7 +380,7 @@ Once it did, you can claim the funds using ```snet channel claim-timeout-all```:
 
 ```sh
 # Shows spent/unspent AGIs in the MPE channel
-snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
+snet client get-channel-state <CHANNEL_ID> http://$SERVICE_IP:$DAEMON_PORT
 snet account balance
 
 # Move funds from all expired channels to MPE
