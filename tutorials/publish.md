@@ -79,7 +79,7 @@ ORGANIZATION_NAME="The $USER's Organization"
 SERVICE_ID=example-service
 SERVICE_NAME="SNET Example Service"
 #define the Public IP/domain name , that will be used to access your service
-SERVICE_IP=34.197.167.102
+SERVICE_IP=localhost
 DAEMON_PORT=7000
 DAEMON_HOST=0.0.0.0
 
@@ -87,7 +87,7 @@ USER_ID=$USER
 
 # to secure payments, reference the ETCD client end point based on your etcd cluster set up, 
  
-ETCD_ENDPOINT=https://snet-etcd.singularitynet.io:2379
+ETCD_ENDPOINT=https://youretcdclientendpoint:2379
 
 # we strongly recommend that you set up a https connections and download the cert to say the location below
 ETCD_CERTIFICATES=/opt/singnet/etcd/
