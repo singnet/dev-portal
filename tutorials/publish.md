@@ -282,9 +282,9 @@ cat > snetd.config.json << EOF
    "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
    "ORGANIZATION_ID": "$ORGANIZATION_ID",
    "SERVICE_ID": "$SERVICE_ID",
-   "payent_channel_cert_path": "$ETCD_CERTIFICATES/client.pem",
-   "payent_channel_ca_path": "$ETCD_CERTIFICATES/ca.pem",
-   "payent_channel_key_path": "$ETCD_CERTIFICATES/client-key.pem",
+   "payment_channel_cert_path": "$ETCD_CERTIFICATES/client.pem",
+   "payment_channel_ca_path": "$ETCD_CERTIFICATES/ca.pem",
+   "payment_channel_key_path": "$ETCD_CERTIFICATES/client-key.pem",
    "LOG": {
        "LEVEL": "debug",
        "OUTPUT": {
