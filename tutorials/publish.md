@@ -31,7 +31,7 @@ page_nav:
         url: '/docs'
 ---
 
-[naming-standards]: /docs/concepts/naming-standards.md
+[naming-standards]: /docs/concepts/naming-standards
 
 ## Step 1. Dependencies
 
@@ -45,7 +45,7 @@ but if you prefer you can install the dependencies by yourself in your own works
 Using a Docker Image is usually easier (you don't need to be a Docker guru to follow this tutorial).
 To go this way, just proceed to the next tutorial step.
 
-If you want to install the dependencies by yourself, check all the [requirements](/docs/setup/requirements.md) 
+If you want to install the dependencies by yourself, check all the [requirements](/docs/setup/requirements) 
 here and jump to [Step 3](#step-3-setup-snet-cli-and-create-your-identity).
 
 ## Step 2. Setup a Docker container
@@ -62,7 +62,7 @@ _Note that this tutorial assumes your user is part of the `docker` group that ha
 
 -------------------------------
 
-To secure payments, to set up your own ETCD Cluster , refer to the docs [ETCD Setup](/docs/concepts/etcdsetup.md)
+To secure payments, to set up your own ETCD Cluster , refer to the docs [ETCD Setup](/docs/concepts/etcdsetup)
 
 Build your own tutorial Docker image directly from our git repo using the following command:
 
@@ -197,6 +197,8 @@ export ORGANIZATION_ID="new-org-id"
 
 If you want to join an existing organization (e.g. `snet`), ask its owner to add your public key (account) into it before proceeding.
 
+See details of organization metadata in [here](/docs/concepts/organization-metadata).
+
 ## Step 6. Download and configure example-service
 
 In this tutorial we'll use a simple service from [SingularityNET Example Service](https://github.com/singnet/example-service).
@@ -223,18 +225,18 @@ Service is ready to run, but first we need to publish it on SingularityNET and c
 First we need to create a service metadata file. You can do it by running:
 
 ```sh
-snet service metadata-init SERVICE_PROTOBUF_DIR SERVICE_DISPLAY_NAME PAYMENT_ADDRESS --endpoints SERVICE_ENDPOINT --fixed-price FIXED_PRICE
+snet service metadata-init SERVICE_PROTOBUF_DIR SERVICE_DISPLAY_NAME \
+	--group-name PAYMENT_GROUP_NAME --endpoints SERVICE_ENDPOINT --fixed-price FIXED_PRICE
 ```
 
 You need to specify the following parameters:
 * `SERVICE_PROTOBUF_DIR` - Directory which contains protobuf files of your service: ```service/service_spec/``` in our example service.
 * `SERVICE_DISPLAY_NAME` - Display name of your service. You can choose any name you want. 
-* `PAYMENT_ADDRESS` - Ethereum account which will receive payments for this service. You should set it to your ethereum account. 
+* `PAYMENT_GROUP_NAME` - Name of the payment group from organization metadata published in [Step 5](#step-5-create-an-organization).
 * `SERVICE_ENDPOINT` - Endpoint which will be used to connect to your service.
 * `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 10^-8 AGI (remember that 10^-8 AGI = 1 COG).
 
 ```sh
-
 
 #set the type of encoding and provide the proto files
 snet service metadata-init service/service_spec "$SERVICE_NAME" --encoding proto --service-type grpc --group-name default_group
@@ -251,7 +253,7 @@ snet service metadata-add-description --json '{"description": "Description of my
 
 This command will create a JSON configuration file: ```service_metadata.json```.
 
-See details of service metadata in [here](/docs/concepts/service-metadata.md).
+See details of service metadata in [here](/docs/concepts/service-metadata).
 
 ## Step 8. Publish the service on SingularityNET
 
