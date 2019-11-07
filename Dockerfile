@@ -1,4 +1,5 @@
-FROM singularitynet/snet-platform:latest
+ARG TAG
+FROM singularitynet/snet-platform:${TAG}
 
 # setup environment variables
 ENV ROOT /opt/singnet
