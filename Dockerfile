@@ -81,7 +81,14 @@ RUN snet set current_singularitynettoken_at ${TOKEN_ADDR}
 RUN snet set current_registry_at ${REGISTRY_ADDR}
 RUN snet set current_multipartyescrow_at ${MULTIPARTYESCROW_ADDR}
 
-# prepare environment for examples
+# additional scripts
 COPY ./start_environment.sh ${BIN}
 COPY ./stop_service.sh ${BIN}
-CMD start_environment.sh
+COPY ./start_docker.sh ${BIN}
+
+# deploy example-service
+COPY ./deploy_example_service.sh ${BIN}
+RUN deploy_example_service.sh
+
+RUN snet identity deployer
+CMD start_docker.sh

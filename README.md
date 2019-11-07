@@ -28,18 +28,26 @@ What is done in the docker image:
 * Service endpoint is `http://localhost:7003`, its port is not exported. Thus
   service available only via daemon.
 * All services use HTTP to simplify setup.
+* [Example Service](https://github.com/singnet/example-service) is deployed
+  under `example-org` with `example-service` id.
 
 # Usage
 
 Build docker:
 ```
-$ ./docker_build.sh
+./docker_build.sh
 ```
 
 Run docker:
 ```
-$ ./docker_run.sh
+./docker_run.sh
 ```
 
-To publish your service one can use ["How to Publish a SingularityNET
-Service"](https://dev.singularitynet.io/tutorials/publish/) tutorial as guide.
+To try example service execute:
+```
+snet identity caller
+snet client call example-org example-service default_group mul '{ "a": 6, "b": 7 }' -y
+```
+
+To publish own service use ["How to Publish a SingularityNET
+Service"](https://dev.singularitynet.io/tutorials/publish/) tutorial as a guide.
