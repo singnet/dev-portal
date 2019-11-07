@@ -24,10 +24,14 @@ RUN apt-get install -y net-tools telnet screen vim nano
 
 # install IPFS
 ENV IPFS_PATH ${IPFS}
-RUN apt-get install -y curl
-COPY ./install_ipfs.sh ${BIN}
-RUN install_ipfs.sh
-# setup IPFS
+RUN export IPFS_VERSION=v0.4.18 && \
+	cd /tmp && \
+	wget https://dist.ipfs.io/go-ipfs/${IPFS_VERSION}/go-ipfs_${IPFS_VERSION}_linux-amd64.tar.gz && \
+	tar xzf go-ipfs_${IPFS_VERSION}_linux-amd64.tar.gz && \
+	cd go-ipfs && \
+	mv ipfs ${BIN} && \
+	cd .. && \
+	rm -rf go-ipfs*
 RUN ipfs init
 RUN ipfs bootstrap rm --all
 RUN ipfs config Addresses.API /ip4/0.0.0.0/tcp/5002
