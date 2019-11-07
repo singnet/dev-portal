@@ -7,6 +7,7 @@ ENV PATH ${BIN}:${PATH}
 ENV LOG ${ROOT}/log
 ENV IPFS ${ROOT}/ipfs
 ENV GANACHE ${ROOT}/ganache
+ENV GANACHE_MNEMONIC 'gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce'
 ENV ETCD ${ROOT}/etcd
 
 # setup folders needed
@@ -47,6 +48,8 @@ WORKDIR ${ROOT}
 RUN git clone --depth 1 -b v0.3.4 https://github.com/singnet/platform-contracts
 WORKDIR ${ROOT}/platform-contracts
 RUN npm install
+COPY ./deploy_contracts.sh ${BIN}
+RUN deploy_contracts.sh
 
 # publish Ethereum related environment variables
 ENV NETWORK_ID 12345
