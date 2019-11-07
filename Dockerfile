@@ -6,11 +6,13 @@ ENV BIN ${ROOT}/bin
 ENV PATH ${BIN}:${PATH}
 ENV LOG ${ROOT}/log
 ENV IPFS ${ROOT}/ipfs
+ENV GANACHE ${ROOT}/ganache
 
 # setup folders needed
 RUN mkdir -p ${BIN}
 RUN mkdir -p ${LOG}
 RUN mkdir -p ${IPFS}
+RUN mkdir -p ${GANACHE}
 
 # Install local Ethereum network
 RUN npm install -g ganache-cli@6.2.4 truffle@4.1.14
