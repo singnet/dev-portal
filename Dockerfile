@@ -86,6 +86,7 @@ RUN snet set current_multipartyescrow_at ${MULTIPARTYESCROW_ADDR}
 COPY ./start_environment.sh ${BIN}
 COPY ./stop_service.sh ${BIN}
 COPY ./start_docker.sh ${BIN}
+COPY ./banner.txt /root/
 
 # deploy example-service
 COPY ./deploy_example_service.sh ${BIN}
