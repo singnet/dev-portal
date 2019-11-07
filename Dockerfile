@@ -7,12 +7,14 @@ ENV PATH ${BIN}:${PATH}
 ENV LOG ${ROOT}/log
 ENV IPFS ${ROOT}/ipfs
 ENV GANACHE ${ROOT}/ganache
+ENV ETCD ${ROOT}/etcd
 
 # setup folders needed
 RUN mkdir -p ${BIN}
 RUN mkdir -p ${LOG}
 RUN mkdir -p ${IPFS}
 RUN mkdir -p ${GANACHE}
+RUN mkdir -p ${ETCD}
 
 # Install local Ethereum network
 RUN npm install -g ganache-cli@6.2.4 truffle@4.1.14
@@ -29,6 +31,16 @@ RUN ipfs init
 RUN ipfs bootstrap rm --all
 RUN ipfs config Addresses.API /ip4/0.0.0.0/tcp/5002
 RUN ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8081
+
+# install etcd
+RUN export ETCD_VERSION=v3.3.13 && \
+	cd /tmp && \
+    wget https://github.com/etcd-io/etcd/releases/download/${ETCD_VERSION}/etcd-${ETCD_VERSION}-linux-amd64.tar.gz && \
+	tar -zxvf etcd-${ETCD_VERSION}-linux-amd64.tar.gz && \
+	cd etcd-${ETCD_VERSION}-linux-amd64/ && \
+	mv etcd etcdctl ${BIN} && \
+	cd .. && \
+	rm -rf etcd-${ETCD_VERSION}-linux-amd64*
 
 # plaform-contracts
 WORKDIR ${ROOT}
