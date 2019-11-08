@@ -2,17 +2,17 @@
 
 start_environment.sh
 
-snet identity deployer
-ACCOUNT=`snet account print`
-snet organization metadata-init example-org example-org
-snet organization add-group default_group $ACCOUNT http://localhost:2379
-snet organization create example-org -y
-
 cd ${ROOT}
 git clone --depth 1 https://github.com/singnet/example-service.git
 cd example-service
 pip3 install -r requirements.txt
 sh buildproto.sh
+
+snet identity deployer
+ACCOUNT=`snet account print`
+snet organization metadata-init example-org example-org
+snet organization add-group default_group $ACCOUNT http://localhost:2379
+snet organization create example-org -y
 
 snet service metadata-init service/service_spec "Example Service" \
 	--group-name default_group --endpoints http://localhost:7000 \

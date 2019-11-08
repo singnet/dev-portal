@@ -53,7 +53,7 @@ WORKDIR ${ROOT}
 RUN git clone --depth 1 -b v0.3.4 https://github.com/singnet/platform-contracts
 WORKDIR ${ROOT}/platform-contracts
 RUN npm install
-COPY ./deploy_contracts.sh ${BIN}
+COPY ./bin/deploy_contracts.sh ${BIN}
 RUN deploy_contracts.sh
 
 # publish Ethereum related environment variables
@@ -71,7 +71,7 @@ ENV MULTIPARTYESCROW_ADDR 0x5c7a4290f6f8ff64c69eeffdfafc8644a4ec3a4e
 # setup snet-cli
 WORKDIR ${ROOT}
 RUN snet || true
-COPY ./add_local_network.sh ${BIN}
+COPY ./bin/add_local_network.sh ${BIN}
 RUN add_local_network.sh
 RUN snet identity create deployer key --private-key ${DEPLOYER_KEY}
 RUN snet identity create caller key --private-key ${CALLER_KEY}
@@ -82,15 +82,15 @@ RUN snet set current_singularitynettoken_at ${TOKEN_ADDR}
 RUN snet set current_registry_at ${REGISTRY_ADDR}
 RUN snet set current_multipartyescrow_at ${MULTIPARTYESCROW_ADDR}
 
-# additional scripts
-COPY ./start_environment.sh ${BIN}
-COPY ./stop_service.sh ${BIN}
-COPY ./start_docker.sh ${BIN}
-COPY ./banner.txt /root/
-
 # deploy example-service
-COPY ./deploy_example_service.sh ${BIN}
+COPY ./bin/start_environment.sh ${BIN}
+COPY ./bin/deploy_example_service.sh ${BIN}
 RUN deploy_example_service.sh
+
+# additional scripts
+COPY ./bin/ ${BIN}
+COPY ./README.md ${ROOT}
+COPY ./motd /etc/motd
 
 RUN snet identity deployer
 CMD start_docker.sh
