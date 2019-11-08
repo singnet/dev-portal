@@ -21,7 +21,7 @@ RUN mkdir -p ${ETCD}
 # Install local Ethereum network
 RUN npm install -g ganache-cli@6.2.4 truffle@4.1.14
 # Install other tools
-RUN apt-get install -y net-tools telnet screen vim nano
+RUN apt-get install -y lsof net-tools telnet screen vim nano
 
 # install IPFS
 ENV IPFS_PATH ${IPFS}
