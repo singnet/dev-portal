@@ -35,12 +35,12 @@ What is done in the docker image:
 
 Build docker:
 ```
-./docker_build.sh
+./build.sh
 ```
 
-Run docker:
+Start docker:
 ```
-./docker_run.sh
+./start.sh
 ```
 
 To try example service execute:
