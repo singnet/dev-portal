@@ -45,7 +45,7 @@ The RFAI portal fosters the community by enabling users to incentivize developer
 
 ## Backing an AI Service
 * In order to request for an AI service, you need to back it with AGI tokens
-* You first need to transfer tokens to the RFAI escrow from the Account tab. This is a two step process
+* You need to transfer tokens to the RFAI escrow from the user profile Account's menu. This is a two step process
     * Approve the number of tokens to deposit
     * Deposit the tokens
 * You are now set to make a request for an AI service or back any approved request
@@ -64,10 +64,10 @@ The RFAI portal fosters the community by enabling users to incentivize developer
 
 * All submissions are evaluated by the SingularityNet foundation to ensure that the acceptance criteria as specified in the request is met and the problem is solved for.
 * The submission should include the github repo of your code
-* The submission should be signed using the same address used to publish the service. This is an important step to ensure that you are the owner of the service.
+* The submitter should be using the same address used to publish the service while submitting the solution.
 * The submission is evaluated as follows
-*  The specified acceptance criteria in the request must be met
-    *  Any performance metrics specified against provided test datasets should be met
+* The specified acceptance criteria in the request must be met
+    * Any performance metrics specified against provided test datasets should be met
     * Submission should be a service deployed on the SingularityNet platform
 
 
@@ -91,6 +91,7 @@ The RFAI portal fosters the community by enabling users to incentivize developer
 
 ## Closing a Request
 
-  * Only the foundation can close a request.
-  * AGI tokens used for backing will be returned to the backers
+  * Only the foundation can close a request after it has been approved.
+  * Request owner can close the request before its approval from the foundation.
+  * AGI tokens can be claimed back by the backers.
   * Request status will change to closed
