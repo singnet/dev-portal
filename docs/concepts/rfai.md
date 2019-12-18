@@ -91,6 +91,7 @@ The RFAI portal fosters the community by enabling users to incentivize developer
 
 ## Closing a Request
 
+  * Only the foundation can close a request after it has been approved.
   * Request owner can close the request before its approval from the foundation.
   * AGI tokens can be claimed back by the backers.
   * Request status will change to closed
