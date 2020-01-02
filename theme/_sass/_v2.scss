@@ -8,12 +8,18 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility !important;    
     background: #fff;  
-    &.home{
+    /*&.home{
         background-image: url(../images/bg1.svg), url(../images/bg2.svg);
         background-position: right 72px, left calc(100% - 320px);
         background-repeat: no-repeat, no-repeat;  
         background-size: 50%, 95%;
-    }
+    }*/
+    &.home{
+        background-image: url(../images/bg1.svg);
+        background-position: right 72px;
+        background-repeat: no-repeat;  
+        background-size: 30%;
+    }    
 }
 
 li { list-style: none; }
