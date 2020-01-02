@@ -582,6 +582,9 @@ footer li a:hover {
             }
             .img-wrapper{
                 background: #5a2ff1;
+           
+                animation-name: button-animation, rotate-animation;
+                animation-duration: .5s,.2s;                             
             }
         }
     }
@@ -1289,4 +1292,41 @@ nav {
             background-size: 50%,auto;
         }
     }      
+}
+
+
+/*
+Some rotate animations
+*/
+
+@keyframes rotate-animation {
+    0% {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari 3-8 */
+        transform: rotate(0deg);
+    }
+    25% {
+        -ms-transform: rotate(-10deg); /* IE 9 */
+        -webkit-transform: rotate(-10deg); /* Safari 3-8 */
+        transform: rotate(-10deg);
+    }   
+    50% {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari 3-8 */
+        transform: rotate(0deg);
+    } 
+    75% {
+        -ms-transform: rotate(10deg); /* IE 9 */
+        -webkit-transform: rotate(10deg); /* Safari 3-8 */
+        transform: rotate(10deg);
+    }     
+    100% {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari 3-8 */
+        transform: rotate(0deg);
+    }
+}
+@keyframes button-animation {
+    0% {background-color: #ACDDFD;}
+    100% {background-color: #5a2ff1;}
 }
