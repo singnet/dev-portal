@@ -572,13 +572,16 @@ footer li a:hover {
         background-color: #FFFFFF;  
         box-shadow: 0 10px 20px -15px rgba(0,0,0,0.15);     
         &:hover{
-            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);    
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.4);    
             background-image: linear-gradient(#fff, #fafafa);            
             span{            
                 color: $dark-blue!important;                
             }
             p{
                 color: #333;
+            }
+            .img-wrapper{
+                background: #5a2ff1;
             }
         }
     }
@@ -606,7 +609,10 @@ footer li a:hover {
         }
         p{
             color: #333;
-        }       
+        }   
+        .img-wrapper{
+            background: #5a2ff1;             
+        }
     }
 }
 
@@ -614,7 +620,8 @@ footer li a:hover {
     width: 70px;
     height: 70px;
     margin: 0 auto;    
-    background: linear-gradient(90deg,#40ceff,#5a2ff1);   
+    //background: linear-gradient(90deg,#40ceff,#5a2ff1); 
+    background: #40ceff;
     border-radius: 50%;
     overflow:hidden;
     vertical-align: central;    
@@ -819,7 +826,7 @@ footer li a:hover {
     h2{
         color: $dark-blue;
         letter-spacing: -.5px;
-        @include heading-style-secondary(34, center);        
+        @include heading-style-secondary(24, center);        
     }
 }
 
@@ -830,6 +837,21 @@ footer li a:hover {
     justify-content: space-evenly;
     border-radius: 12px;
     background-color: #FBFBFC;
+    .download-card{
+        padding: 20px;
+        .img-wrapper{
+            height: 48px;
+            width: 48px;
+            img{
+                width: 20px;
+                margin-top: 13px;
+            }
+        }
+        span{
+            font-size: 16px;
+            margin-top: 16px;
+        }        
+    }
 
 }
 
