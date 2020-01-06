@@ -1,0 +1,280 @@
+I"L6
+<hr />
+
+<p><em>Before following this tutorial, make sure you’ve installed <a href="https://www.docker.com/">Docker</a></em></p>
+
+<hr />
+
+<p>Run this tutorial from a bash terminal.</p>
+
+<p>In this tutorial we’ll create an Opencog service and publish it in SingularityNET.</p>
+
+<h2 id="step-1-setting-up-with-docker">Step 1: Setting up with Docker</h2>
+
+<p>Setup and run a docker container.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/singnet/opencog-services.git
+$ docker build -t opencog_service_dev opencog-services/Docker/
+$ docker run --name OPENCOG_SERVICE_DEV -ti opencog_service_dev /bin/bash
+</code></pre></div></div>
+
+<p>From this point we follow the turorial in the Docker container’s prompt.</p>
+
+<p>The code in this repo is used to start and publish an Opencog service in
+SingularityNET. <code class="highlighter-rouge">bin/server</code> is the executable that actually listen for requests.
+<code class="highlighter-rouge">bin/client</code> can be used to send commands to the server locally (without blockchain).</p>
+
+<p>Note that there’s <strong>only one</strong> Opencog service, which expects comands like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ./bin/client sync Echo foo bar
+foo bar
+</code></pre></div></div>
+
+<p>The service will issue the comand <code class="highlighter-rouge">Echo</code> passing 2 arguments: <code class="highlighter-rouge">foo</code> and <code class="highlighter-rouge">bar</code>.
+Thus, to implement a <strong>new Opencog service</strong>, we’ll actually need to implement a class
+which is linked to <code class="highlighter-rouge">bin/server</code> to provide the new command. So from now on we
+use the terminology “command” instead of “service” because we’ll actually
+implement a new “command” to the Opencog “service” which is already in place.</p>
+
+<p>The <code class="highlighter-rouge">sync</code> keyword in the above command line is not relevant here.
+Take a look at <a href="https://github.com/singnet/opencog-services">this document</a> for details.</p>
+
+<p><strong>Note:</strong> If you decided to run the server to actually test the client command
+above, make sure you kill it before moving on.</p>
+
+<h2 id="step-2-implementing-hello-world-commands">Step 2: Implementing “Hello World” commands</h2>
+
+<p>We’ll implement 2 versions of a “Hello world” command, one in C++ and another
+in Scheme. We need different names for the two commands so we’ll call them
+HelloWorld and HelloWorld2 respectively.</p>
+
+<h3 id="step-2a-c">Step 2a: C++</h3>
+
+<p>For the C++ command, we need to implement a C++ class (with separated .h and .cc) in <code class="highlighter-rouge">src/cpp-services</code>.
+The class is supposed to have the exact name of the command in <code class="highlighter-rouge">CamelCase</code> notation.
+So the header file <code class="highlighter-rouge">src/cpp-services/HelloWorld.h</code> will look like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#ifndef _OPENCOGSERVICES_HELLOWORLD_H
+#define _OPENCOGSERVICES_HELLOWORLD_H
+
+#include "../OpencogSNETService.h"
+
+namespace opencogservices
+{
+
+class HelloWorld : public OpencogSNETService
+{
+
+public:
+
+    bool execute(std::string &amp;output, const std::vector&lt;std::string&gt; &amp;args);
+
+    HelloWorld();
+    ~HelloWorld();
+
+private:
+
+};
+
+}
+
+#endif // _OPENCOGSERVICES_HELLOWORLD_H
+</code></pre></div></div>
+
+<p>The command class need to inherit from <code class="highlighter-rouge">OpencogSNETService</code>. The only required
+method is <code class="highlighter-rouge">execute()</code> but <code class="highlighter-rouge">OpencogSNETService</code> has other implemented helper
+methods explained <a href="#Additional-helper-methods-in-OpencogSNETService">here</a>.</p>
+
+<p><code class="highlighter-rouge">execute()</code> expects a reference to std::string where its output is supposed to
+be written and a std::vector with the input arguments. In our case we expect no
+arguments.</p>
+
+<p>So we only need to implement <code class="highlighter-rouge">execute()</code> in <code class="highlighter-rouge">src/cpp-services/HelloWorld.cc</code>. In our case it may
+look like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include "HelloWorld.h"
+
+using namespace opencogservices;
+using namespace std;
+
+HelloWorld::HelloWorld() {}
+HelloWorld::~HelloWorld() {}
+
+bool HelloWorld::execute(string &amp;output, const vector&lt;std::string&gt; &amp;args)
+{
+    output.assign("Hello World");
+    return false;
+}
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">execute()</code> is supposed to return <code class="highlighter-rouge">true</code> if and only if an error occurred so
+our <code class="highlighter-rouge">HelloHorld</code> implementation will just return <code class="highlighter-rouge">false</code> meaning that
+everything is OK.</p>
+
+<p>Once the class is ready, edit <code class="highlighter-rouge">src/OpencogSNETServiceFactory.cc</code> and add an
+<code class="highlighter-rouge">#include</code> statement and another <code class="highlighter-rouge">else if</code> clause in the method <code class="highlighter-rouge">factory()</code>
+according to your new command name.</p>
+
+<p>Although <code class="highlighter-rouge">OpencogSNETServiceFactory</code> may compile if you use different names for
+the command and C++ class, you are supposed to use the exact same name.</p>
+
+<p>To compile our new command just cd to <code class="highlighter-rouge">src/</code> and:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># make clean
+# make
+</code></pre></div></div>
+
+<p>OK we are ready to test our new C++ command.</p>
+
+<h3 id="step-2b-scheme">Step 2b: Scheme</h3>
+
+<p>For the Scheme command, we need to implement a <a href="https://wiki.opencog.org/wikihome/index.php/Scheme">Scheme</a> file in
+<code class="highlighter-rouge">src/scm-services</code> with the exact name of the command in <code class="highlighter-rouge">CamelCase</code> notation
+defining a funcion named <code class="highlighter-rouge">execute</code> which expects one single argument (a list with
+all the arguments to the function).</p>
+
+<p>So our Scheme file <code class="highlighter-rouge">src/scm-services/HelloWorld2.scm</code> will look like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(define (execute args)
+    "Hello World 2"
+)
+</code></pre></div></div>
+
+<p>If the command expects arguments, they will be passed as a list to the function.
+You can make an arbritary number of valid Scheme calls in your file e.g.
+load new modules, define several global variables or helper functions etc.
+The only requisite is that you nned to define a function with the exact name of the
+command expecting a list of arguments as the only parameter.</p>
+
+<p><strong>Important:</strong> Anything the command send to <code class="highlighter-rouge">stdout</code> (e.g. by calling the
+function <code class="highlighter-rouge">(display)</code>) will be considered as part of the output.</p>
+
+<p>So we’re done with the Scheme command.</p>
+
+<h2 id="step-3-testing-commands">Step 3: Testing Commands</h2>
+
+<p>We are ready to test our two new commands. <code class="highlighter-rouge">cd</code> to the root directory and start
+the server:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ./bin/server &amp;
+</code></pre></div></div>
+
+<p>Now call our new commands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ./bin/client sync HelloWorld
+Hello World
+# ./bin/client sync HelloWorld2
+Hello World 2
+
+</code></pre></div></div>
+
+<h2 id="step-4-integrate-into-opencog-service">Step 4: Integrate into OpenCog Service</h2>
+
+<p>Once your commands are working properly, it’s time to make a PR to integrate
+then in the SingularityNET Opencog service. Make sure you read our
+<a href="/docs/guidelines">contribution guidelines</a> before going on.</p>
+
+<p>Before issuing a PR, chek if your new commands implementation is compliant
+with some basic standards for tests and documentation. in the root directory run:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ./scripts/compliance_check.sh
+tests/HelloWorld is mising
+tests/HelloWorld/testCases.txt is mising
+tests/HelloWorld/baseline is mising
+docs/HelloWorld.md is mising
+</code></pre></div></div>
+
+<p>Note that we’re missing a lot of files. Basically we need to provide test cases
+for a regression test and a <code class="highlighter-rouge">.md</code> documentation for our new commands.</p>
+
+<h3 id="step-4a-integration-test">Step 4a: Integration Test</h3>
+
+<p>First, we’ll create the test cases for both commands.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># cd tests
+# mkdir -p HelloWorld/baseline
+</code></pre></div></div>
+
+<p>Create a new file <code class="highlighter-rouge">HelloWorld/testCases.txt</code> like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"test-cases": [
+{"input": "", "output": "t.txt"}
+]}
+
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">testCases.txt</code> lists all the test cases in a JSON array. Each entry is a hash
+with “input” and “output”. the first key is the input parameters of the test
+case and second one is the name of the file (which is expected to be in
+<code class="highlighter-rouge">HelloWorld/baseline/</code>) with the respective expected output.</p>
+
+<p>We have only one test case so create <code class="highlighter-rouge">HelloWorld/baseline/t.txt</code> like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello World
+</code></pre></div></div>
+
+<p>Execute integration tests:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/runTests
+Runing tests for Echo...
+Runing tests for EchoScheme...
+Runing tests for PatternMiner...
+Runing tests for HelloWorld...
+Runing tests for HelloWorld2...
+Could execute tests for HelloWorld2
+</code></pre></div></div>
+
+<p>Still missing the test cases for HelloWorld2. Follow the same steps and run the
+regression tests again to make sure all the tests pass. <strong>NOTE</strong>: The Scheme
+commands append an extra <code class="highlighter-rouge">\n</code> at the end of the output. So your baseline output
+file need to have this empty line at the end.</p>
+
+<h3 id="step-4b-creating-documentation">Step 4b: Creating Documentation</h3>
+
+<p>Now we need to create a proper documentation for our new commands. Create
+<code class="highlighter-rouge">docs/HelloWorld.md</code> and <code class="highlighter-rouge">docs/HelloWorld2.md</code>. You are advised to use one of
+the documents of other commands as template for your own.</p>
+
+<p>Use a MarkDown previewer of your choice. When you are done with the documentation, call:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ./scripts/buildDocs.sh
+</code></pre></div></div>
+
+<p>This script will use your newly created documents to update the HTML
+user’s guide of SingularityNET Opencog Services. Those HTML files are in the
+repository as well so don’t forget to commit them in your PR.</p>
+
+<p>You also need to update the main <code class="highlighter-rouge">README.md</code> of the repository. Edit it and
+look for the secion “Opencog services to SingularityNET”. Add your newly
+created commands to the list with a simple description of their arguments
+and what is their expected output.</p>
+
+<h2 id="step-5-submitting-pr">Step 5: Submitting PR</h2>
+
+<p>You are ready to submit your PR. Read our
+<a href="/docs/guidelines">contribution guidelines</a> before submiting it.</p>
+
+<h2 id="additional-helper-methods-in-opencogsnetservice">Additional helper methods in OpencogSNETService</h2>
+
+<p>The superclass inherited by your command has a couple of helper methods and variables.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    opencog::AtomSpace atomSpace;
+
+    virtual void loadModules();
+
+    bool loadAtomeseFile(std::string &amp;errorMessage, const std::string &amp;url);
+    void evaluateScheme(const std::string &amp;scmLine);
+    void evaluateScheme(std::string &amp;output, const std::string &amp;scmLine);
+    void setConfigurationParameters(const std::string jsonString);
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>loadModules()</strong>: Loads required SCM modules. Default implementation loads only (use-modules (opencog)) This method is called in OpencogSNETService constructor.</li>
+  <li><strong>atomSpace</strong>: a variable containing the AtomSpace object used to execute any Opencog call.</li>
+  <li><strong>loadAtomeseFile()</strong>: Fetches the contents of the passed URL (which is supposed to be a .scm file with an Atomese knowledge base) and load it in <strong>atomSpace</strong>. Any errors are reported in <code class="highlighter-rouge">errorMessage</code>.</li>
+  <li><strong>evaluateScheme()</strong>: Evaluates the passed Scheme command (any Opencog’s scheme functions use the public <strong>atomSpace</strong>). The Scheme command output is discarded.</li>
+  <li><strong>evaluateScheme()</strong>: Evaluates the passed Scheme command (any Opencog’s scheme functions use the public <strong>atomSpace</strong>). The Scheme command output is returned in <code class="highlighter-rouge">output</code>.</li>
+  <li><strong>setConfigurationParameters()</strong>: Use the passed JSON hash to set Opencog’s configuration parameters (e.g. <code class="highlighter-rouge">{"Max_thread_num": "8", "Pattern_Max_Gram": "3"}</code>)</li>
+</ul>
+:ET

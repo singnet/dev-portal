@@ -1,0 +1,55 @@
+I"�<p>The SingularityNET Registry is an <a href="https://eips.ethereum.org/EIPS/eip-165">ERC-165</a>–compliant smart contract on the Ethereum blockchain that stores organizations, services, and type repositories. AI developers use the Registry to announce details of their services, and consumers use the Registry to find the services they need. When a user searches for a service in the <a href="https://beta.singularitynet.io/">Marketplace DApp</a>, it reads details of the services from the Registry, which also allows tagging of services and type repositories to enable searching and filtering.
+The Registry provides all the information needed to find and interact with AI services on the
+platform, either by listing the information in full or, when it is too long, by listing the IPFS hash. The source, ABI, and deployment information for the Registry is located in the <a href="https://github.com/singnet/platform-contracts"><code class="highlighter-rouge">singnet/platform-contracts</code></a> repo.</p>
+
+<h2 id="interface">Interface</h2>
+<p>The Registry interface, IRegistry, is a full specification of the functionality of the Registry. The Registry is published alongside its interface located in <a href="https://github.com/singnet/platform-contracts/blob/master/contracts/IRegistry.sol"><code class="highlighter-rouge">IRegistry.sol</code></a>. The interface contains <a href="https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format">natspec</a>-compliant documentation on all functions and developers should import and target the interface instead of the implementation. The registry implements the interface and also fully supports <a href="https://eips.ethereum.org/EIPS/eip-165">ERC-165</a>.</p>
+
+<h2 id="data-model">Data Model</h2>
+<p>The Registry stores four main pieces of data: Organizations, Services, Type Repositories, and Tags. It supports CRUD on all of these and contains a number of view functions for retrieving data.</p>
+
+<h3 id="organization">Organization</h3>
+<p>An organization is an umbrella for services to be grouped under and is at the top of the
+Registry’s data hierarchy. Service developers can (and should) register an organization and then
+put all of their services underneath it.</p>
+
+<p>An organization registration record has a name, an owner address (in the identity sense), a collection of member addresses, a collection of services, and a collection of type repositories. Services and type repositories registered under a given organization are said to be owned by that organization. The list of members is a primitive access-management structure; members of an organization can do everything except change the organization owner and delete the organization.</p>
+
+<h3 id="service">Service</h3>
+<p>A service represents a single AI algorithm. Its Registry entry contains all the necessary
+information for a consumer to call that AI service. The entry contains a name, tags, and IPFS
+hash. The name is an identifier for discoverability, the tags help a customer find a service
+without knowing its name, and the IPFS hash is the link to the metadata file on IPFS. DApps and smart contracts can use the <code class="highlighter-rouge">listServicesForTag</code> view function to discover Services.</p>
+
+<h3 id="service-metadata">Service Metadata</h3>
+<p>All service metadata is stored off-chain in IPFS for performance and gas-cost reasons. This
+metadata includes</p>
+<ul>
+  <li>basic information such as version number, service name, description, etc.;</li>
+  <li>code-level information for calling the service, such as encoding (protobuf or JSON) and
+request format (gRPC, JSON-RPC or process);</li>
+  <li>A list of daemon endpoints, aggregated into one or more groups;</li>
+  <li>pricing information; and</li>
+  <li>an IPFS hash for the service API model.
+The CLI provides a convenient API and library for manipulating this metadata. This is described in detail <a href="/docs/concepts/service-metadata">here</a>.</li>
+</ul>
+
+<h3 id="type-repository">Type Repository</h3>
+<p>A type repository is a Registry entry where a service developer lists service metadata, such as
+the service model and the data types used. The entry contains a name, some tags, a path, and a
+URI. The name and tags are for discoverability, the path is an optional identifier for the
+organization’s internal management, and the URI allows the client (whether an end user or an
+application making calls through the SingularityNET SDK) to find the metadata. DApps and
+smart contracts can use the <code class="highlighter-rouge">listTypeRepositoriesForTag</code> view function to discover AI services.
+The URI is an IPFS hash, and the hosting itself can be done by either SingularityNET, the
+service developer, or any IPFS pinning service, such as <a href="https://infura.io/">Infura</a>.</p>
+
+<h3 id="tags">Tags</h3>
+<p>Tags are completely optional but recommended for discoverability. Services and Type Repositories can be associated with tags by using the relevant Registry methods such as <code class="highlighter-rouge">addTagToServiceRegistration</code>. After that, the tags are displayed and searchable on the DApp. Thanks to a reverse index built into the Registry contract, other smart contracts can also search the Registry directly. This is the foundation for the “API of APIs” functionality discussed below.</p>
+
+<h2 id="dapp-integration">DApp Integration</h2>
+<p>The SingularityNET DApp is essentially a rich Registry explorer. It loads the Registry and generates UI for playing with the Services and Type Repositories registered in it.</p>
+
+<h2 id="cli-integration">CLI Integration</h2>
+<p>The SingularityNET CLI has all the tooling necessary to call any of the Registry methods. Please see the CLI documentation for details.</p>
+:ET

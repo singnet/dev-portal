@@ -1,0 +1,60 @@
+I"�<p>In this document we demonstrate that the client that communicates with SingularityNET services using the Multi-Party Escrow payment channels does not require to store the state of the payment channel. The client only needs to store its Ethereum identity.</p>
+
+<ol>
+  <li>The client can easily obtain the list of its payment channels (payment channels with “sender==client”) from the Multi-Party Escrow (see EventChannelOpen). However, we need to take into account the situation in which the request to open the channel has been already sent, but not yet mined. This can happen when the client has sent this request and died (it “lost” its state).</li>
+  <li>The client can request the last state of the given payment channel from the server.
+    <ul>
+      <li>The server is not able to forge this state, because it was signed by the client (of course the client should check its own signature).</li>
+      <li>The server is obviously interested in saving and sending the last state, otherwise it loses money.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>We have a special gRPC method in the daemon which returns the state of the channel (see: <a href="https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto">https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto</a>). The client actually does not even need to use a special call to request the last state of the channel from the daemon. The daemon can return the state of the channel in the response to any non-authorized call.</p>
+
+<p>The client receives the following information from the daemon:</p>
+<ul>
+  <li><code class="highlighter-rouge">current_nonce</code> - current nonce of the payment channel.</li>
+  <li><code class="highlighter-rouge">current_signed_amount</code> -  a last amount which were signed by client with current_nonce. If no messages were signed with the <code class="highlighter-rouge">current_nonce</code>, then this value is an empty byte string (b’’), which we should interpret as 0.</li>
+  <li><code class="highlighter-rouge">current_signature</code> - a last signature sent by the client with current_nonce, it could be absent (empty string) if no message was signed with current nonce.</li>
+  <li>(not implemented yet) <code class="highlighter-rouge">oldnonce_signed_amount</code> - last amount which was signed by client with <code class="highlighter-rouge">nonce=current_nonce - 1</code>.</li>
+  <li>(not implemented yet) <code class="highlighter-rouge">oldnonce_signature</code> - last signature sent by client with nonce = current_nonce - 1.</li>
+</ul>
+
+<p><strong>It should be noted that the two last values are not in the current version, and we need them only to calculate <code class="highlighter-rouge">unspent_amount</code> in the case that <code class="highlighter-rouge">current_nonce != blockchain_nonce</code></strong></p>
+
+<p>We should consider a complex situation where the server starts a close/reopen procedure for the channel. The client doesn’t need to wait for a confirmation from the blockchain, because it is not in the interest of the server to lie. At the same time, the server also doesn’t need to wait for a confirmation from the blockchain if he makes sure that the request is mined before expiration of the channel.</p>
+
+<p>Before considering all possible cases, let’s define the following parameters</p>
+<ul>
+  <li><code class="highlighter-rouge">blockchain_nonce</code> - nonce of the channel in the blockchain</li>
+  <li><code class="highlighter-rouge">blockchain_value</code> - value of the channel in the blockchain</li>
+</ul>
+
+<p>We also assume that the daemon starts the close/reopen procedure only after the previous <code class="highlighter-rouge">channelClaim</code> request was mined. This means that the <code class="highlighter-rouge">current_nonce</code>, at maximum, is one point ahead of the <code class="highlighter-rouge">blockchain_nonce</code>. We can easily relax this assumption if necessary.</p>
+
+<p>In all cases we assume that the client can verify that it’s own signature is authentic.</p>
+
+<p>In all cases we are interested in two numbers:</p>
+<ul>
+  <li>Next amount which has to be signed (<code class="highlighter-rouge">next_signed_amount</code>), taking into account the price for the current call (<code class="highlighter-rouge">price</code>). This value can be easily calculated as we interpret <code class="highlighter-rouge">current_signed_amount = b''</code> as 0.
+    <ul>
+      <li><code class="highlighter-rouge">next_signed_amount = current_signed_amount + price</code></li>
+    </ul>
+  </li>
+  <li>The amount of tokens which haven’t been already spent (<code class="highlighter-rouge">unspent_amount</code>).</li>
+</ul>
+
+<h4 id="simple-case-current_nonce--blockchain_nonce">Simple case <code class="highlighter-rouge">current_nonce == blockchain_nonce</code></h4>
+<ul>
+  <li><code class="highlighter-rouge">unspent_amount = blockchain_value - current_signed_amount</code></li>
+</ul>
+
+<h4 id="complex-case-current_nonce--blockchain_nonce">Complex case <code class="highlighter-rouge">current_nonce != blockchain_nonce</code></h4>
+<p>Taking into account our assumptions, we know that <code class="highlighter-rouge">current_nonce = blockchain_nonce + 1</code>.</p>
+<ul>
+  <li><code class="highlighter-rouge">unspent_amount = blockchain_value - oldnonce_signed_amount - current_signed_amount</code></li>
+</ul>
+
+<p>It should be noted that in this case the server could send us smaller <code class="highlighter-rouge">oldnonce_signed_amount</code> (not the actually last one which was used for <code class="highlighter-rouge">channelClaim</code>). In this case, the server can only make us believe that we have more money in the channel then we actually have. That means that one possible attack via <code class="highlighter-rouge">unspent_amount</code> is to make us believe that we have less tokens than we truly have, and therefore reject future calls (or force us to call <code class="highlighter-rouge">channelAddFunds</code>).</p>
+:ET

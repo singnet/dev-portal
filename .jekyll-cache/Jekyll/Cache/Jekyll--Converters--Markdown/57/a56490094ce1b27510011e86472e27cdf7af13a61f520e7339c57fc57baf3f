@@ -1,0 +1,74 @@
+I"H<p>Welcome to the <a href="https://dev.singularitynet.io">SingularityNET Developer Portal</a>.</p>
+
+<p>Our Developer Portal provides documentation about the SingularityNET Platform and Marketplace. As a service developer, you will learn how to build and access AI services that are published onto the network. As a client of SingularityNET services, you learn to integrate your software with SingularityNET services that other people have published.</p>
+
+<p>The beta Marketplace is online at <a href="http://beta.singularitynet.io">beta.singularitynet.io</a>, and allows you browse a curated set of services that are available in the registry.</p>
+
+<p>If you’re new to SingularityNET, this is the suggested order in which to explore the developer portal. For everyone else, it’s hopefully a good index to find the information you need.</p>
+
+<h2 id="overview">Overview</h2>
+
+<ul>
+  <li><a href="/docs/concepts">What is SingularityNET?</a> - Core concepts and components that make up SingularityNET.</li>
+</ul>
+
+<h2 id="first-steps">First Steps</h2>
+
+<p>The first three links are relevant if you want to be a consumer of SingularityNET services. They are also worth going through if you want to publish a service, so that you you can test your service and will know the flow your customers need to go through.</p>
+
+<ul>
+  <li><a href="/docs/setup/requirements">Prerequisities</a> - What do you need to do before you can start working with decentralised AI services.</li>
+  <li><a href="/docs/setup/create-a-wallet">Create a Wallet</a> - To make transactions you’ll need a wallet with some funds.</li>
+  <li><a href="/docs/setup/call-a-service">How to call a service</a> - Covers trying out a service in the marketplace, and calling it from our command line tool.</li>
+  <li><a href="/tutorials/sdk">Using the SDK</a> - Calling a service using the Python SDK.</li>
+</ul>
+
+<p>These steps guide you through creating a service, and getting that service on our marketplace:</p>
+
+<ul>
+  <li><a href="/tutorials/publish">Publish and run your own example service</a></li>
+  <li><a href="/docs/concepts/marketplace">Marketplace Requirements for Services</a> - How to submit your service for inclusion in the Singularity marketplace. The marketplace is a curated view of services available in the registry.</li>
+</ul>
+
+<h2 id="singularitynet-platform">SingularityNET Platform</h2>
+
+<p>Learn the details of the platform components.</p>
+
+<ul>
+  <li><a href="/docs/concepts/registry">Registry</a></li>
+  <li><a href="/docs/concepts/daemon">Daemon</a></li>
+  <li><a href="/docs/concepts/multi-party-escrow">Multi-Party Escrow (MPE)</a></li>
+</ul>
+
+<h2 id="tutorials-across-languages">Tutorials across languages</h2>
+
+<p>We maintain language-specific tutorials for a number popular languages.</p>
+
+<ul>
+  <li><a href="/tutorials">Tutorials</a>
+    <ul>
+      <li><a href="/tutorials/cpp">Build a service in C++</a></li>
+      <li><a href="/tutorials/go">Build a service in Go</a></li>
+      <li><a href="/tutorials/java">Build a service in Java</a></li>
+      <li><a href="/tutorials/python">Build a service in Python</a></li>
+      <li><a href="/tutorials/opencog">Build an Opencog service</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="advanced">Advanced</h2>
+
+<ul>
+  <li><a href="/docs/concepts/daemon-channel-storage">Multi-Party Escrow (MPE) - Payment Channel Storage</a> - Details of channels and payment works.</li>
+  <li><a href="/docs/development/local-singularitynet">Launch your own local copy of the SingularityNET platform</a> - If you want to set up your own development environment of the whole platform, this is the page for you!</li>
+  <li><a href="/docs/development/mpe-example">Full automated SingularityNET platform example</a></li>
+</ul>
+
+<h2 id="community">Community</h2>
+
+<ul>
+  <li><a href="/workshops">Workshops</a> - Find workshop resources here.</li>
+  <li><a href="/docs/contribute">Help improve our Developer Portal and Documentation</a> - Our community is what makes us great!</li>
+  <li><a href="/newsletter">Subscribe to our newsletter</a> - We’ll let you know of the latest updates, releases, and changes to the platform and marketplace.</li>
+</ul>
+:ET

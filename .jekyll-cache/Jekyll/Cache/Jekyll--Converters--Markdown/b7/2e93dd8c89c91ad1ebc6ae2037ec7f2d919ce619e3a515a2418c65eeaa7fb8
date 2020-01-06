@@ -1,0 +1,31 @@
+I"ø<p>Please see:</p>
+<ul>
+  <li><a href="https://github.com/singnet/snet-cli">snet-cli repo documentation</a></li>
+</ul>
+
+<h2 id="transfer-tokens-to-the-caller">Transfer tokens to the caller</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet identity deployer
+snet client balance
+snet contract SingularityNetToken transferTokens $CALLER_ADDR 100000000000 --transact --yes
+</code></pre></div></div>
+
+<h2 id="deposit-tokens-into-multipartyescrow-contract">Deposit tokens into MultiPartyEscrow contract</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet identity caller
+snet client balance
+snet client deposit 1000 -y
+snet client balance
+</code></pre></div></div>
+
+<h2 id="create-publisher-identity">Create publisher identity</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet identity create --private-key $PUBLISHER_KEY publisher key
+</code></pre></div></div>
+
+<h2 id="create-organization">Create organization</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet identity publisher
+snet organization create ExampleOrganization --yes
+</code></pre></div></div>
+
+<blockquote>
+  <p>Next Example</p>
+</blockquote>
+:ET
