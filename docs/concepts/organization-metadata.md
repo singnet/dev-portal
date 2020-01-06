@@ -82,7 +82,7 @@ Fortunately, the `snet-cli` does this by default.
             "phone": "1234567890"
         },
         {
-            "contact_type": "dummy",
+            "contact_type": "contact-us",
             "email_id": "dummy@abcdef.com",
             "phone": "1234567890"
         }
