@@ -50,19 +50,53 @@ Please note that only the Owner of the Organization can modify the metadata
 A suspicious client should also check that hash of the metadata corresponds to the IPFS hash, otherwise the client can be attacked if the IPFS client is compromised.
 Fortunately, the `snet-cli` does this by default.
 
-`groups` : Multiple groups can be associated with an organization , one payment type is associated with every
+##Description of Fields in metadata file 
+
+`type` : Describes of this is an Individual or a Company organization 
+`contacts` : Stores the contacts related to an Organization , you can have multiple contacts 
+   `contact_type` : Describes the contact type , example support etc;
+   `email_id` : Email associated with this contact 
+   `phone` : Phone number associated with this contact 
+
+`assets` : used to refer to the image associated with an Organization. Image is uploaded on to ipfs and referenced here.
+
+`groups` : Multiple groups can be associated with an organization, one payment type is associated with every group.
  
 `payment_address` : Address of the Service provider who would receive the payment
 
 `payment_channel_storage_type` : Type of storage to manage payments ( For Example ETCD )
 
 `endpoints` : Storage end points for the clients to connect.
-## Metadata Overview
+
+ 
+## Metadata example
 
 ```json
 {
 "org_name": "snet",
 "org_id": "snet", 
+
+ "type": "individual",
+    "contacts": [
+        {
+            "contact_type": "support",
+            "email_id": "abcd@abcdef.com",
+            "phone": "1234567890"
+        },
+        {
+            "contact_type": "contact-us",
+            "email_id": "dummy@abcdef.com",
+            "phone": "1234567890"
+        }
+    ],
+    "description": {
+        "description": "Describe your organization details here ",
+        "short_description": "This is short description of your organization",
+        "url": "https://anyurlofyourorganization"
+    },
+    "assets": {
+        "hero_image": "QmNW2jjz11enwbRrF1mJ2LdaQPeZVEtmKU8Uq7kpEkmXCc/hero_orgImage.png"
+    },
 "groups": [
     {
     "group_name": "default_group",
@@ -75,7 +109,7 @@ Fortunately, the `snet-cli` does this by default.
             "connection_timeout": "100s",
             "request_timeout": "5s",
             "endpoints": [
-                "https://snet-etcd.singularitynet.io:2379"
+                "https://etcdendpoint:2379"
             ]
         }
       }
