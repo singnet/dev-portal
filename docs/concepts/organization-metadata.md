@@ -89,11 +89,11 @@ Fortunately, the `snet-cli` does this by default.
     ],
     "description": {
         "description": "Describe your organization details here ",
-        "short_description": "this is short description of your organization",
+        "short_description": "This is short description of your organization",
         "url": "https://anyurlofyourorganization"
     },
     "assets": {
-        "hero_image": "QmNW2jjz11enwbRrF1mJ2LdaQPeZVEtmKU8Uq7kpEkmXCc/hero_gene-annotation.png"
+        "hero_image": "QmNW2jjz11enwbRrF1mJ2LdaQPeZVEtmKU8Uq7kpEkmXCc/hero_orgImage.png"
     },
 "groups": [
     {
