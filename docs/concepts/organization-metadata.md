@@ -50,6 +50,8 @@ Please note that only the Owner of the Organization can modify the metadata
 A suspicious client should also check that hash of the metadata corresponds to the IPFS hash, otherwise the client can be attacked if the IPFS client is compromised.
 Fortunately, the `snet-cli` does this by default.
 
+##Description of Fields in metadata file 
+
 `type` : Describes of this is an Individual or a Company organization 
 `contacts` : Stores the contacts related to an Organization , you can have multiple contacts 
    `contact_type` : Describes the contact type , example support etc;
@@ -67,7 +69,7 @@ Fortunately, the `snet-cli` does this by default.
 `endpoints` : Storage end points for the clients to connect.
 
  
-## Metadata Overview
+## Metadata example
 
 ```json
 {
