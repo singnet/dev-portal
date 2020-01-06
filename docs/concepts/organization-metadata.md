@@ -56,9 +56,9 @@ Fortunately, the `snet-cli` does this by default.
    `email_id` : Email associated with this contact 
    `phone` : Phone number associated with this contact 
 
-`assets` : used to refer to the image associated with an Organization.Image is uploaded on to ipfs and referenced here.
+`assets` : used to refer to the image associated with an Organization. Image is uploaded on to ipfs and referenced here.
 
-`groups` : Multiple groups can be associated with an organization , one payment type is associated with every
+`groups` : Multiple groups can be associated with an organization, one payment type is associated with every group.
  
 `payment_address` : Address of the Service provider who would receive the payment
 
