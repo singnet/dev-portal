@@ -75,11 +75,21 @@
                                          <a href="{{ nav_tree }}">{{ nav_tree }}</a>
                                      </li>                                    -->
                                     {%if nav_tree %}                                                                           
-                                    {% for menu in nav_tree %}
-                                    <li class="list-inline">
-                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
-                                    </li>
-                                    {% endfor %}
+                                        {% for menu in nav_tree %}
+                                            {% assign menu_url = menu[1].url | split: "/" %}
+                                            {% assign menu_url_last_inx = path_url.size | minus: 1 %}
+                                            {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
+                                            {% if path_crumbs[2] == file_name %}
+                                                <li class="list-inline">
+                                                    <a href="{{ menu[1].url }}"><span class="bold">{{ menu[1].title }}</span></a>
+                                                </li>
+                                            {% else %}
+                                                <li class="list-inline">
+                                                    <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                                </li>
+                                            {% endif %}
+                                        
+                                        {% endfor %}
                                     {% endif %}
                                 </ul>
                             </div>
