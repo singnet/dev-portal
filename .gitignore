@@ -18,5 +18,12 @@ Thumbs.db
 # ---------------
 # Compiled assets
 # ---------------
-.sass-cache
-_site
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# ---------------
+# Project Files
+# ---------------
+/nbproject
