@@ -1,53 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% include site-head.html %}
+        {% include site-head-new.html %}
     </head>
     <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
-        {% include site-header.html %}
+        {% include site-header-new.html %}
 
 
-        <div class="breadcrumbs-container">
-            <div class="wrapper">
-                {% capture url_tree %}
-                {{ page.url | replace: '/', ' ' | strip }}
-                {% endcapture %}
-                {% capture url_level %}
-                {{ url_tree | number_of_words | minus: 1 }}
-                {% endcapture %}
-                {% assign breadcrumb = url_tree | split: ' ' %}
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="{{ site.baseurl }}">Home</a>
-                    </li>
-                    {% for item in breadcrumb %}
-                    {% assign label = item | replace: '-', ' ' | capitalize %}
-                    {% assign index = forloop.length | minus: forloop.index %}
-                    {% assign page_url = page.url | split: '/' | pop: index | join: '/' %}
-                    <li class="breadcrumb-item">
-                        {% if forloop.last %}
-                        <span>{{ page.breadcrumb_label | default: label }}</span>
-                        {% else %}
-                        <a href="{{ page_url }}/">{{ label }}</a>
-                        {% endif %}
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
 
-        <main>
-            <div class="row">
-                <!-- Left Side Section -->
-
-
-                <!-- Left Side Section -->
-                <div class="col-md-3 side-nav left-nav-wrapper">
-                    <div class="left-nav">
-                        <span class="bold uppercase-txt">categories</span>
-                        <div class="vertical-navigation">
-                            <div id="Getting_Started" class="tab-details">
-                                <ul>
+        <div class="wrapper">
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="d-none d-sm-block col-sm-3">
+                        <div class="snet-card">
+                            <h3 class="snet-card_title">Explore</h3>
+                            <div class="snet-card_content">
+                                <ul class="snet-nav_list">
                                     {% assign path_crumbs = page.path | split: "/" %}                          
                                     {% case path_crumbs[0] %}
                                     {% when 'docs' %}
@@ -68,74 +36,102 @@
                                     {% else %}
                                     {% assign nav_tree = nil %}
                                     {% endcase %}  
-                                    <!-- <li class="list-inline">
-                                         <a href="{{ path_crumbs[0] }}">{{ path_crumbs[0] }}</a>
-                                     </li> 
-                                     <li class="list-inline">
-                                         <a href="{{ nav_tree }}">{{ nav_tree }}</a>
-                                     </li>                                    -->
+
                                     {%if nav_tree %}                                                                           
                                         {% for menu in nav_tree %}
                                             {% assign menu_url = menu[1].url | split: "/" %}
                                             {% assign menu_url_last_inx = path_url.size | minus: 1 %}
                                             {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
                                             {% if path_crumbs[2] == file_name %}
-                                                <li class="list-inline">
-                                                    <a href="{{ menu[1].url }}"><span class="bold">{{ menu[1].title }}</span></a>
+                                            <li class="active">
+                                                    <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
                                                 </li>
                                             {% else %}
-                                                <li class="list-inline">
+                                                <li>
                                                     <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
                                                 </li>
                                             {% endif %}
                                         
                                         {% endfor %}
-                                    {% endif %}
+                                    {% endif %}                   
                                 </ul>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="snet-card">
+                            <div class="snet-card_wrapper">
+                                <ul class="snet-breadcrumb">
+                                    {% capture url_tree %}
+                                    {{ page.url | replace: '/', ' ' | strip }}
+                                    {% endcapture %}
+                                    {% capture url_level %}
+                                    {{ url_tree | number_of_words | minus: 1 }}
+                                    {% endcapture %}
+                                    {% assign breadcrumb = url_tree | split: ' ' %}                                    
+                                    <li> <a href="{{ site.baseurl }}">Home</a></li>
+
+                                    {% for item in breadcrumb %}
+                                    {% assign label = item | replace: '-', ' ' | capitalize %}
+                                    {% assign index = forloop.length | minus: forloop.index %}
+                                    {% assign page_url = page.url | split: '/' | pop: index | join: '/' %}
+                                    <li>
+                                        {% if forloop.last %}
+                                        <span>{{ page.breadcrumb_label | default: label }}</span>
+                                        {% else %}
+                                        <a href="{{ page_url }}/">{{ label }}</a>
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}                                    
+                                </ul>
+                            </div>
+                            <div class="snet-card_content">
+                                <div class="snet-card_maincontents">
+                                    {{ content }}
+                                    <div class="snet-forum_question text-center">
+                                        <a href="#">Ask a question in the forum</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>                        
-                    </div>
-                </div>                
-
-
-                <!-- Center Section -->
-                <div class="col-md-6 requirement-details main-content">
-
-                    {{ content }}
-                </div>  
-
-                <div class="col-md-3 on-this-page-wrapper">
-                    <div class="on-this-page">
-                        <span class="uppercase-txt bold">on this page</span>
-                        <div class="sections-list js-sections" >
-                        </div>                           
-                    </div>
-                </div>
-
-
-
+                    </div>                
+                    <div class="col-xs-12 col-sm-3 order-first order-sm-last">
+                        <div class="snet-card transparent">
+                            <h4 class="snet-card_title">Contents</h4>
+                            <div class="snet-card_content">
+                                <div class="snet-nav_list_secondary sections-list js-sections">
+                                     
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="snet-card transparent mt-5 d-none d-sm-block ">
+                            <h4 class="snet-card_title">Was this page useful?</h4>
+                            <div class="snet-card_content">
+                                <div  class="snet-card_wrapper border-0">
+                                    <div class="snet-starrating">
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>                                                                              
+                                    </div>
+                                </div>
+                                <div  class="snet-card_wrapper border-0">
+                                    <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a>
+                                    <a href="#" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
+                                </div>
+                            </div>
+                        </div>                          
+                    </div>                      
+                </div>              
             </div>
-        </main>
+        </div>
 
+<!-- <script src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/jquery.min.js"></script> -->
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
 
-
-
-        <div class="js-footer-area">
-
-
-
-            {% if jekyll.environment == "production" and page.comments == true and site.snet.comments.disqus_forum_shortname %}
-            <div class="section section--grey">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            {% include comments.html %}
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </div><!-- /.section -->
-            {% endif %}
-            {% include site-footer.html %}
-        </div><!-- /.js-footer-area -->
     </body>
 </html>

@@ -1,0 +1,365 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 15, 2020, 12:12:14 PM
+    Author     : Sujith
+*/
+body{
+    margin:0;
+    padding: 0;
+    background: #fafafa;
+    color: #212121;    
+    font-family:Muli,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale
+}
+header{
+    background-color: #220D3A; 
+}
+.snet-secondary-nav{
+    background: #f1f1f1;
+    border-bottom: solid 1px #DBE3E7;
+}
+
+
+.snet-navbar_main{
+    padding: 12px 65px 4px 60px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);   
+}
+.snet-navbar_main h1{
+    font-size: 16px;
+}
+.snet-navbar_main .navbar-toggler-icon i{
+    color: #fff;
+}
+.wrapper{
+    margin: 0 auto;
+}
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+.navbar-brand img{
+    width: 172px;    
+}
+.snet-navbar_navigation,
+.snet-navbar_login{
+    margin-bottom: 10px;    
+}
+.snet-navbar_login{
+    margin-bottom: 6px;    
+}
+.snet-navbar_navigation .nav-item a{
+    color: #9B9B9B;
+    font-size: 16px;
+    margin: 0!important;
+    padding: 0 0 4px 0!important;
+    border-bottom: 2px solid #220D3A;    
+}
+.snet-navbar_login .nav-item a{
+    color: #fff;
+    font-size: 16px;
+    margin: 0!important;
+    padding: 0!important;
+}
+.nav-item{
+    margin-right: 40px;
+}
+.nav-item:last-child{
+    margin-right:0px;
+}
+.snet-navbar_navigation .nav-item.active a,
+.snet-navbar_navigation .nav-item a:hover{
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+.snet-navbar_login .nav-item{
+    align-self: center;
+}
+.snet-navbar_login .nav-item a.snet-button_outline{
+    cursor: pointer;
+    padding: 6px 24px!important;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 0;
+    border-radius: 4px;   
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 1.79px;    
+}
+.snet-navbar_login .nav-item a.snet-button_outline:hover{
+    background: rgba(256,256,256,.1);
+}
+
+
+.snet-navbar_secondary{
+    padding: 12px 65px 12px 60px;  
+}
+.snet-navbar_secondary h1{
+    width: 30%;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0;
+}
+.snet-navbar_secondary .snet-navbar_navigation{
+    margin: 0;
+    padding: 0;
+}
+.snet-navbar_secondary .snet-navbar_navigation .nav-item a{
+    color: #9B9B9B;
+    font-size: 14px;
+    margin: 0!important;
+    padding: 0!important;
+    border-bottom: 2px solid #f1f1f1;    
+}
+.snet-navbar_secondary .snet-navbar_navigation .nav-item a:hover,
+.snet-navbar_secondary .snet-navbar_navigation .nav-item.active a{
+    color: #4086FF;
+    border-bottom: 2px solid #4086FF;        
+}
+.snet-card{
+    width: 100%;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.07), 0 2px 1px -1px rgba(0,0,0,0.07), 0 1px 3px 0 rgba(0,0,0,0.1);
+    padding-bottom: 4px;
+}
+.snet-card.transparent{
+    width: 100%;
+    border-radius: 4px;
+    background-color: transparent;
+    box-shadow: none;
+}
+.snet-card h3.snet-card_title{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 12px 18px;
+    border-bottom: 1px solid #F5F7F8;   
+    margin: 0;
+}
+.snet-card h4.snet-card_title{
+    font-size: 14px;
+    color: #6D7278;
+    font-weight: 400;
+    padding: 12px 18px;
+    border-bottom: 1px solid #F5F7F8;   
+    margin: 0;
+}
+.snet-card.transparent h4.snet-card_title{
+    border-bottom: none;
+}
+.snet-card .snet-card_content{
+    padding: 0;    
+}
+.snet-nav_list{
+    margin: 0;
+    padding: 0;   
+    list-style: none;
+}
+.snet-nav_list li{
+    margin: 0;
+    padding: 0;    
+    border-bottom: 1px solid #F5F7F8; 
+}
+.snet-nav_list li a{
+    display: inline-block;
+    width: 100%;
+    color: #666;
+    padding: 5px 18px;     
+    font-size: 14px;
+    font-size: 14px;
+    font-weight: 600;    
+}
+.snet-nav_list li a:hover,
+.snet-nav_list li.active a{
+    color: #4086FF;
+    background: #FAFAFA;
+    text-decoration: none;
+
+}
+.snet-card .snet-card_maincontents{
+    padding: 18px;
+    color: #666;
+    font-size: 14px;
+    line-height: 21px;
+}
+.snet-card .snet-card_maincontents h1,
+.snet-card .snet-card_maincontents h2,
+.snet-card .snet-card_maincontents h3,
+.snet-card .snet-card_maincontents h4,
+.snet-card .snet-card_maincontents h5{
+    color: #212121;
+    letter-spacing: 0.20px;
+    font-weight: 500;
+}
+.snet-card .snet-card_maincontents h1{
+    font-size:30px;
+}
+.snet-card .snet-card_maincontents h2{
+    font-size:24px;
+}
+.snet-card .snet-card_maincontents h3{
+    font-size:20px;
+}
+.snet-card .snet-card_maincontents h4{
+    font-size:16px;
+}
+.snet-card .snet-card_maincontents h5{
+    font-size:14px;
+    font-weight: 700;
+}
+.snet-card .snet-card_maincontents img{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.snet-card .snet-card_maincontents .snet-forum_question{
+    width: 100%;
+    padding: 16px 0 0 0;    
+    border-top: #DBE3E7 solid 1px;
+    margin: 16px 0 0 0;
+}
+.snet-card .snet-card_maincontents .snet-forum_question a{
+    color: #4086FF;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    letter-spacing: 1.25px;
+    font-weight: 500;
+}
+.snet-nav_list_secondary ul{
+    margin: 0;
+    padding: 0;   
+    list-style: none;    
+}
+.snet-nav_list_secondary ul li{
+    margin: 0;
+    padding: 0;      
+    width: 100%;
+}
+.snet-nav_list_secondary ul li a{                        
+    display: inline-block;
+    border-left: 2px solid transparent;
+    width: 100%;
+    color: #9B9B9B;
+    padding: 6px 18px;     
+    font-size: 12px;
+}
+.snet-nav_list_secondary ul li a:hover,
+.snet-nav_list_secondary ul li.active a{                        
+    color: #4086FF;
+    text-decoration: none;
+}
+.snet-nav_list_secondary ul li.active a{                        
+    border-left: 2px solid #4086FF;
+}
+.snet-card_wrapper{
+    padding:12px 18px;
+    border-bottom: 1px solid #F5F7F8;     
+}
+.snet-card_feedbacklinks{
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    color: #4086FF;
+    font-size: 14px;
+    font-weight: 600;
+}
+.snet-card_feedbacklinks:hover{
+    text-decoration: none;
+}
+
+.snet-breadcrumb{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+}
+.snet-breadcrumb li{
+    display: inline-block;
+}
+.snet-breadcrumb li a{
+    display: inline-block;
+    color: #4086FF;
+}
+.snet-breadcrumb li:after{
+    content: ">";
+    display: inline-block;
+}
+.snet-breadcrumb li:last-child:after{
+    display: none;
+}
+
+.snet-starrating i{
+    font-size: 20px;
+    color: rgba(161,163,168,.35);
+}
+.snet-starrating i:hover{
+    color: #FFC200;
+}
+
+
+@media only screen and (max-width: 575px) {
+    /* xs */    
+    body{
+        /* background: red!important; */
+    }
+    .wrapper{
+        width:90%;
+    }      
+}
+@media only screen and (min-width: 576px) and (max-width:767px){
+    /* sm */    
+    body{
+        /* background: yellow!important; */
+    }   
+    .wrapper{
+        width:576px;
+    }      
+}
+@media only screen and (min-width: 768px) and (max-width:991px){
+    /* md */    
+    body{
+        /* background: blue!important; */
+    }    
+    .wrapper{
+        width:768px;
+    }      
+}
+@media only screen and (min-width: 992px) and (max-width:1279px) {
+    /* lg */    
+    body{
+       /* background: green!important; */
+    }    
+    .wrapper{
+        width:992px;
+    }      
+    .snet-navbar_navigation .nav-item a{
+        font-size: 14px;
+    }
+    .snet-navbar_login .nav-item a{
+        font-size: 14px;
+    }
+    .nav-item{
+        margin-right: 24px;
+    }    
+    .snet-navbar_login .nav-item a.snet-button_outline{
+        cursor: pointer;
+        padding: 6px 20px!important;
+        font-size: 14px;
+        letter-spacing: 1.29px;    
+    }    
+}
+@media only screen and (min-width: 1280px) {
+    /* xl */
+    body{
+        /* background: purple!important; */
+    }  
+    .wrapper{
+        width:1280px;
+    }    
+}

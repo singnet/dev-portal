@@ -1,6 +1,5 @@
 ( function( $ ) {
 	'use strict';
-
 	// Reduce
 	$.fn.reduce = function( fnReduce, initialValue ) {
 		var values = this,
@@ -106,7 +105,7 @@
 		for ( i = 0; i < list.length; i += 1 ) {
 			$li = $( '<li></li>' );
 			$li.append(
-				'<a href="#' + list[ i ].$el.attr( 'id' ) + '">' +
+				'<a class="js-smooth-scroll" href="#' + list[ i ].$el.attr( 'id' ) + '">' +
 					list[ i ].$el.text().replace( /^#\ /, '' ) +
 				'</a>'
 			);
@@ -132,6 +131,8 @@
 	var $jsSmoothScroll = $( '.js-smooth-scroll' );
 
 	$jsSmoothScroll.click( function() {
+                $(".sections-list ul li.active").removeClass("active");
+                $(this).parent("li").addClass("active");
 		$( 'html, body' ).animate( {
 			scrollTop: $( $( this ).attr( 'href' ) ).offset().top
 		}, 1200 );
@@ -164,23 +165,20 @@
 		} );
 	} );
 
-	// Offcanvas
-	$( '.offcanvas-toggle' ).on( 'click', function() {
-		$( 'body' ).toggleClass( 'offcanvas-expanded' );
-	} );
-        
+/*        
 $(window).scroll(function(e){ 
-  var $el = $('.on-this-page'); 
+  var $el = $('.testodutest'); 
   //var $el2 = $('.left-nav');   
   //var st=$('.on-this-page').offset().top;
   //alert(st);
   var isPositionFixed = ($el.css('position') == 'fixed'); 
   if ($(this).scrollTop() > 195 && !isPositionFixed){ 
-    $el.css({'position': 'fixed', 'top': '0px','padding-top':'0px'}); 
+    $el.css({'position': 'fixed', 'top': '0px', 'right': '0px','padding-top':'0px'}); 
   }
   if ($(this).scrollTop() < 195 && isPositionFixed){
-    $el.css({'position': 'static', 'top': '0px','padding-top':'45px'}); 
+    $el.css({'position': 'static', 'top': '0px','right': '0px','padding-top':'45px'}); 
   } 
  
-});        
+});    
+*/
 }( jQuery ) );
