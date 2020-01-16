@@ -363,3 +363,9 @@ header{
         width:1280px;
     }    
 }
+
+h1 .title-anchor-link{ display: none;}
+h2 .title-anchor-link{ display: none;}
+h3 .title-anchor-link{ display: none;}
+h4 .title-anchor-link{ display: none;}
+h5 .title-anchor-link{ display: none;}

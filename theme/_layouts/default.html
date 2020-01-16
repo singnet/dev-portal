@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% include site-head-new.html %}
+        {% include site-head.html %}
     </head>
     <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
-        {% include site-header-new.html %}
-
-
+        {% include site-header.html %}
 
         <div class="wrapper">
             <div class="container-fluid mt-3">
                 <div class="row">
                     <div class="d-none d-sm-block col-sm-3">
-                        <div class="snet-card">
+                        <div class="snet-card sticky-top">
                             <h3 class="snet-card_title">Explore</h3>
                             <div class="snet-card_content">
                                 <ul class="snet-nav_list">
@@ -38,21 +36,21 @@
                                     {% endcase %}  
 
                                     {%if nav_tree %}                                                                           
-                                        {% for menu in nav_tree %}
-                                            {% assign menu_url = menu[1].url | split: "/" %}
-                                            {% assign menu_url_last_inx = path_url.size | minus: 1 %}
-                                            {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
-                                            {% if path_crumbs[2] == file_name %}
-                                            <li class="active">
-                                                    <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
-                                                </li>
-                                            {% else %}
-                                                <li>
-                                                    <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
-                                                </li>
-                                            {% endif %}
-                                        
-                                        {% endfor %}
+                                    {% for menu in nav_tree %}
+                                    {% assign menu_url = menu[1].url | split: "/" %}
+                                    {% assign menu_url_last_inx = path_url.size | minus: 1 %}
+                                    {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
+                                    {% if path_crumbs[2] == file_name %}
+                                    <li class="active">
+                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                    </li>
+                                    {% endif %}
+
+                                    {% endfor %}
                                     {% endif %}                   
                                 </ul>
                             </div>
@@ -96,42 +94,46 @@
                         </div>                        
                     </div>                
                     <div class="col-xs-12 col-sm-3 order-first order-sm-last">
-                        <div class="snet-card transparent">
-                            <h4 class="snet-card_title">Contents</h4>
-                            <div class="snet-card_content">
-                                <div class="snet-nav_list_secondary sections-list js-sections">
-                                     
-                                </div>
-                            </div>
-                        </div>  
-                        <div class="snet-card transparent mt-5 d-none d-sm-block ">
-                            <h4 class="snet-card_title">Was this page useful?</h4>
-                            <div class="snet-card_content">
-                                <div  class="snet-card_wrapper border-0">
-                                    <div class="snet-starrating">
-                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
-                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
-                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
-                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
-                                        <a href="#" class=""><i class="material-icons">star_border</i></a>                                                                              
+                        <div class="sticky-top">
+                            <div class="snet-card transparent">
+                                <h4 class="snet-card_title">Contents</h4>
+                                <div class="snet-card_content">
+                                    <div class="snet-nav_list_secondary sections-list js-sections">
+
                                     </div>
                                 </div>
-                                <div  class="snet-card_wrapper border-0">
-                                    <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a>
-                                    <a href="#" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
+                            </div>  
+                            <div class="snet-card transparent mt-5 d-none d-sm-block ">
+                                <h4 class="snet-card_title">Was this page useful?</h4>
+                                <div class="snet-card_content">
+                                    <div  class="snet-card_wrapper border-0">
+                                        <div class="snet-starrating">
+                                            <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                            <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                            <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                            <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                            <a href="#" class=""><i class="material-icons">star_border</i></a>                                                                              
+                                        </div>
+                                    </div>
+                                    <div  class="snet-card_wrapper border-0">
+                                        <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a>
+                                        <a href="#" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
+                                    </div>
                                 </div>
-                            </div>
-                        </div>                          
+                            </div> 
+                        </div>
                     </div>                      
                 </div>              
             </div>
         </div>
+        
+        {% include site-footer.html %}        
 
-<!-- <script src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/jquery.min.js"></script> -->
-<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
-<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
-<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
-<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
+        <!-- <script src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/jquery.min.js"></script> -->
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
 
     </body>
 </html>
