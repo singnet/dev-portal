@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!--
+    Created on : Jan 15, 2020, 12:12:14 PM
+    Author     : Sujith Varma [sujith.varma@singularitynet.io]
+-->
+<html>
+    <head>
+        <title>Dev Portal Basic Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <!-- Google Font Family -->
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <!-- CSS link -->
+        <link rel="stylesheet"  type="text/css" href="newcss.css">        
+        <!-- Font awesome link -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>        
+    </head>
+    <body>
+        <!-- Navigations Start -->
+        <header>
+            <nav class="navbar navbar-expand-lg snet-navbar_primary">
+                <h1 style="width: 30%">
+                    <a class="navbar-brand" href="#"><img src="https://beta.singularitynet.io/static/media/WhiteLogo.93b76382.svg"></a>                        
+                </h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon">
+                        <i class="material-icons">dehaze</i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav mr-auto snet-navbar_menu">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Docs</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu dropdown-info">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#">Community</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#">Changelog</a>
+                        </li>                    
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto snet-navbar_login">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link snet-button_outline" href="#">Sign Up Free</a>
+                        </li>
+                    </ul>
+
+                </div>           
+            </nav>               
+        </header>
+        <nav class="navbar navbar-expand-lg snet-navbar_secondary">
+            <h1> 
+                Documentation
+            </h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#secondary-menu">
+                <span class="navbar-toggler-icon">
+                    <i class="material-icons">dehaze</i>
+                </span>
+            </button>                
+            <div class="collapse navbar-collapse" id="secondary-menu">
+                <ul class="navbar-nav mr-auto snet-navbar_navigation">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Overview <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Core Concepts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="#">Platform Dev</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="#">AI Developer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="#">AI Consumer</a>
+                    </li>                            
+                </ul>
+            </div>           
+        </nav>                                   
+        <!-- Navigations End -->     
+
+        <div class="wrapper">
+            <div class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-3">
+                        <h1 class="">Getting Started</h1>
+                    </div>
+                    <div class="col-6">
+                        <span class="snet-tagline">
+                            The best way is to get started to understanding the AI services on decentralized blockchain marketplace.                            
+                        </span>
+                    </div>                    
+                </div> 
+                <div class="row">
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-height">  
+                            <h2 class="snet-card_title">Core Concepts</h2>
+                            <div class="snet-card_wrapper border-0">
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
+                                    <p class="snet-card_paragraph">Get the high level view how SNET’s platform works for you.</p>                                    
+                                </div>                                
+                                <ul class="snet-card_list">
+                                    <li><a href="#">Get Started Guide</a></li>
+                                    <li><a href="#">Concepts and Components</a></li>
+                                    <li><a href="#">Basics of AI</a></li>
+                                    <li><a href="#">View all</a></li>
+                                </ul>                                 
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-height">                       
+                            <h2 class="snet-card_title">AI Developers</h2>
+                            <div class="snet-card_wrapper border-0">  
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
+                                    <p class="snet-card_paragraph">Learn how to publish and manage AI services to collect AGI tokens.</p>                                    
+                                </div>                                                                
+                                <ul class="snet-card_list">
+                                    <li><a href="#">Get Started Guide</a></li>
+                                    <li><a href="#">For Beginner</a></li>
+                                    <li><a href="#">For Advance Users</a></li>
+                                    <li><a href="#">View all</a></li>
+                                </ul>    
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-height">                        
+                            <h2 class="snet-card_title">Platform Developers</h2>
+                            <div class="snet-card_wrapper border-0">  
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
+                                    <p class="snet-card_paragraph">Learn how to publish and manage AI services to collect AGI tokens.</p>                                    
+                                </div>                                                                
+                                <ul class="snet-card_list">
+                                    <li><a href="#">Get Started Guide</a></li>
+                                    <li><a href="#">For Beginner</a></li>
+                                    <li><a href="#">For Advance Users</a></li>
+                                    <li><a href="#">View all</a></li>
+                                </ul>  
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-height">                        
+                            <h2 class="snet-card_title">AI Consumers</h2>
+                            <div class="snet-card_wrapper border-0">
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
+                                    <p class="snet-card_paragraph">Learn how to use SNET AI Marketplace and integrate AI services</p>                                    
+                                </div>                                                                      
+                                <ul class="snet-card_list">
+                                    <li><a href="#">Get Started Guide</a></li>
+                                    <li><a href="#">For Beginner</a></li>
+                                    <li><a href="#">For Advance Users</a></li>
+                                    <li><a href="#">View all</a></li>
+                                </ul>   
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-3">
+                        <h1>By Product</h1>
+                    </div>
+                    <div class="col-6">
+                        <span class="snet-tagline">
+                            SingularityNET gives you the tools to develop high-quality AI apps, grow your user base, and earn more AGI tokens.                            
+                        </span>                        
+                    </div>                    
+                </div> 
+                <div class="row">
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-heights">  
+                            <h2 class="snet-card_title">AI Marketplace</h2>
+                            <div class="snet-card_wrapper border-0">   
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">
+                                    <p class="snet-card_paragraph">Get the high level view how SNET’s platform works for you.</p>                                    
+                                </div>
+                                <ul class="snet-card_list">
+                                    <li><a href="#">Get Started Guide</a></li>
+                                    <li><a href="#">Demoing services</a></li>
+                                    <li><a href="#">Integrate AI into your Apps</a></li>
+                                    <li><a href="#">View all</a></li>
+                                </ul>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-heights">                       
+                            <h2 class="snet-card_title">AI Publisher</h2>
+                            <div class="snet-card_wrapper border-0">
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
+                                    <p class="snet-card_paragraph">Learn how to create, launch and manage AI services.</p>                                    
+                                </div>                                      
+                                <ul class="snet-card_list">
+                                    <li><a href="#">Setting up your Organization</a></li>
+                                    <li><a href="#">Creating new AI services</a></li>
+                                    <li><a href="#">Configuring Regions & ETCD</a></li>
+                                    <li><a href="#">View all</a></li>
+                                </ul>    
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-height">                       
+                            <h2 class="snet-card_title">Request For AI (RFAI)</h2>
+                            <div class="snet-card_wrapper border-0">    
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
+                                    <p class="snet-card_paragraph">Learn how to request, back, and submit solutions for AI.</p>                                    
+                                </div>                                      
+                                <ul class="snet-card_list">
+                                    <li><a href="#">Get Started Guide</a></li>
+                                    <li><a href="#">Backing an AI Request</a></li>
+                                    <li><a href="#">Submitting Solutions</a></li>
+                                    <li><a href="#">View all</a></li>
+                                </ul>   
+                            </div>
+                        </div>                        
+                    </div>
+                </div>     
+                <div class="row mt-5">
+                    <div class="col-3">
+                        <h1>By Platform</h1>
+                    </div>
+                    <div class="col-6">
+                        <span class="snet-tagline">
+                            SingularityNET works with programming languages you perfer.  Check out how to use them with the SNET clients.                            
+                        </span>                        
+                    </div>                    
+                </div> 
+                <div class="row">
+                    <div class="col-3 pt-4">
+                        <div class="snet-card">  
+                            <h2 class="snet-card_title">C++</h2>
+                            <div class="snet-card_wrapper border-0">                           
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                         
+                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with C++.</p>                                    
+                                </div>                                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card">                        
+                            <h2 class="snet-card_title">Python</h2>
+                            <div class="snet-card_wrapper border-0"> 
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                       
+                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with Python.</p>                                     
+                                </div>                                
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card">                        
+                            <h2 class="snet-card_title">Java</h2>
+                            <div class="snet-card_wrapper border-0">
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                       
+                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with Java.</p>                                     
+                                </div>                                                                
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card">                      
+                            <h2 class="snet-card_title">GO</h2>
+                            <div class="snet-card_wrapper border-0"> 
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                       
+                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with GO.</p>                                      
+                                </div>                                                                
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card">                        
+                            <h2 class="snet-card_title">OpenCog</h2>
+                            <div class="snet-card_wrapper border-0">
+                                <div class="snet-flex">
+                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                       
+                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with OpenCog.</p>                                      
+                                </div>                                                                  
+                            </div>
+                        </div>                        
+                    </div>                    
+                </div>                     
+                <div class="row mt-5">
+                    <div class="col-3">
+                        <h1>By Tools & Resources</h1>
+                    </div>
+                    <div class="col-6">
+                        <span class="snet-tagline">
+                            Get the latest updates and downloads of the software and tools you need to run and manage your AI services.                            
+                        </span>                        
+                    </div>                    
+                </div>                 
+                <div class="row row-eq-height">
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-height">
+                            <h2 class="snet-card_title ">SNET Contracts</h2>
+                            <img class="snet-card_descriptionicon big" src="http://placehold.jp/290x160.png">  
+                            <div class="snet-card_wrapper border-0 overflow-hidden">                           
+                                <p class="snet-card_paragraph">Get the latest contract release from SingularityNet, so that your services run efficiently with the platform.</p>
+                                <a class="float-left" href="#">Download</a> <a class="float-right"  href="#">Install Guide</a>         
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-height">                       
+                            <h2 class="snet-card_title">Daemon</h2>
+                            <img class="snet-card_descriptionicon big" src="http://placehold.jp/290x160.png">                              
+                            <div class="snet-card_wrapper border-0 overflow-hidden">                           
+                                <p class="snet-card_paragraph">Its important to use the latest daemon when you confiigure AI services.  </p>
+                                <a class="float-left" href="#">Download</a> <a class="float-right"  href="#">Install Guide</a>         
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-3 pt-4 full-height">
+                        <div class="snet-card">                      
+                            <h2 class="snet-card_title">SNET Client</h2>
+                            <img class="snet-card_descriptionicon big" src="http://placehold.jp/290x160.png">                              
+                            <div class="snet-card_wrapper border-0 overflow-hidden">
+                                <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id. Quaeque eripuit alterum id eum, ad eius assum.</p>
+                                <a class="float-left" href="#">Download</a> <a class="float-right"  href="#">Install Guide</a>          
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-3 pt-4">
+                        <div class="snet-card full-height">                      
+                            <h2 class="snet-card_title">Python SDK</h2>
+                            <img class="snet-card_descriptionicon big" src="http://placehold.jp/290x160.png">                              
+                            <div class="snet-card_wrapper border-0 overflow-hidden">
+                                <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id. Quaeque eripuit alterum id eum, ad eius assum.</p>                                
+                                <a class="float-left" href="#">Download</a> <a class="float-right"  href="#">Install Guide</a>                                      
+                            </div>                            
+                        </div>                        
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </body>
+</html>

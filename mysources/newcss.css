@@ -1,0 +1,458 @@
+/* 
+    Created on : Jan 15, 2020, 12:12:14 PM
+    Author     : Sujith Varma [sujith.varma@singularitynet.io]
+*/
+body {
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #212121;
+  font-family: Muli,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 30px; }
+
+header {
+  background-color: #220D3A; }
+  header .snet-navbar_primary {
+    padding: 12px 65px 4px 60px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3); }
+    header .snet-navbar_primary h1 {
+      font-size: 16px; }
+    header .snet-navbar_primary .navbar-toggler-icon i {
+      color: #fff; }
+    header .snet-navbar_primary .navbar-brand {
+      margin: 0;
+      padding: 0; }
+      header .snet-navbar_primary .navbar-brand img {
+        width: 172px; }
+    header .snet-navbar_primary .snet-navbar_menu,
+    header .snet-navbar_primary .snet-navbar_login {
+      margin-bottom: 10px; }
+      header .snet-navbar_primary .snet-navbar_menu .nav-item,
+      header .snet-navbar_primary .snet-navbar_login .nav-item {
+        margin-right: 40px; }
+      header .snet-navbar_primary .snet-navbar_menu .nav-item:last-child,
+      header .snet-navbar_primary .snet-navbar_login .nav-item:last-child {
+        margin-right: 0px; }
+    header .snet-navbar_primary .snet-navbar_menu .nav-item.active a, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover a {
+      color: #fff;
+      border-bottom: 2px solid #fff; }
+    header .snet-navbar_primary .snet-navbar_menu .nav-item a {
+      color: #9B9B9B;
+      font-size: 16px;
+      margin: 0 !important;
+      padding: 0 0 4px 0 !important;
+      border-bottom: 2px solid #220D3A; }
+    header .snet-navbar_primary .snet-navbar_login {
+      margin-bottom: 6px; }
+      header .snet-navbar_primary .snet-navbar_login .nav-item {
+        align-self: center; }
+        header .snet-navbar_primary .snet-navbar_login .nav-item a {
+          color: #fff;
+          font-size: 16px;
+          margin: 0 !important;
+          padding: 0 !important; }
+          header .snet-navbar_primary .snet-navbar_login .nav-item a.snet-button_outline {
+            cursor: pointer;
+            padding: 6px 24px !important;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 1px;
+            margin-right: 0;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            line-height: 16px;
+            letter-spacing: 1.79px; }
+            header .snet-navbar_primary .snet-navbar_login .nav-item a.snet-button_outline:hover {
+              background: rgba(255, 255, 255, 0.1); }
+
+.wrapper {
+  margin: 0 auto; }
+
+.snet-navbar_secondary {
+  padding: 12px 65px 12px 60px;
+  background: #f1f1f1;
+  border-bottom: solid 1px #DBE3E7; }
+  .snet-navbar_secondary h1 {
+    width: 30%;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0; }
+  .snet-navbar_secondary .snet-navbar_navigation {
+    margin: 0;
+    padding: 0; }
+    .snet-navbar_secondary .snet-navbar_navigation .nav-item {
+      margin-right: 40px; }
+      .snet-navbar_secondary .snet-navbar_navigation .nav-item.active a {
+        color: #4086FF;
+        border-bottom: 2px solid #4086FF; }
+      .snet-navbar_secondary .snet-navbar_navigation .nav-item a {
+        color: #9B9B9B;
+        font-size: 14px;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: 2px solid #f1f1f1; }
+        .snet-navbar_secondary .snet-navbar_navigation .nav-item a:hover {
+          color: #4086FF;
+          border-bottom: 2px solid #4086FF; }
+
+.snet-card {
+  width: 100%;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.07), 0 2px 1px -1px rgba(0, 0, 0, 0.07), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding-bottom: 4px; }
+  .snet-card.full-height {
+    height: 100%; }
+  .snet-card.transparent {
+    width: 100%;
+    border-radius: 4px;
+    background-color: transparent;
+    box-shadow: none; }
+    .snet-card.transparent h4.snet-card_title {
+      border-bottom: none; }
+  .snet-card h2, .snet-card h3, .snet-card h4 {
+    font-weight: 400;
+    padding: 12px 18px;
+    border-bottom: 1px solid #F5F7F8;
+    margin: 0;
+    color: #212121; }
+  .snet-card h2.snet-card_title {
+    font-size: 20px; }
+  .snet-card h3.snet-card_title {
+    font-size: 18px; }
+  .snet-card h4.snet-card_title {
+    font-size: 14px;
+    color: #666; }
+  .snet-card .snet-card_content {
+    padding: 0; }
+  .snet-card img.snet-card_descriptionicon {
+    width: 80px;
+    height: 80px;
+    margin-right: 8px;
+    flex-shrink: 0; }
+    .snet-card img.snet-card_descriptionicon.big {
+      width: 100%;
+      height: auto;
+      display: block; }
+  .snet-card p.snet-card_paragraph {
+    color: #666;
+    font-size: 14px;
+    line-height: 19px;
+    display: inline-block; }
+  .snet-card ul.snet-card_list {
+    list-style: none;
+    margin: 16px 0 0 0;
+    padding: 0;
+    color: #666;
+    font-size: 14px; }
+    .snet-card ul.snet-card_list li {
+      padding: 5px 0;
+      border-bottom: 1px solid #F5F7F8; }
+      .snet-card ul.snet-card_list li:last-child {
+        border: none; }
+      .snet-card ul.snet-card_list li:hover {
+        background: #fafafa; }
+        .snet-card ul.snet-card_list li:hover a {
+          font-weight: 500; }
+      .snet-card ul.snet-card_list li a {
+        color: #4086FF;
+        display: block;
+        text-decoration: none !important;
+        text-transform: capitalize; }
+  .snet-card .snet-flex {
+    display: flex;
+    margin-bottom: 0px; }
+  .snet-card .snet-card_buttonwrapper {
+    position: relative; }
+    .snet-card .snet-card_buttonwrapper .snet-card_buttons {
+      position: absolute;
+      bottom: 0; }
+  .snet-card .snet-card_wrapper_homepage {
+    display: flex; }
+    .snet-card .snet-card_wrapper_homepage .snet-card_homepage_content h2 {
+      font-size: 24px;
+      color: #212121;
+      letter-spacing: 0.3px;
+      border-bottom: none; }
+    .snet-card .snet-card_wrapper_homepage .snet-card_homepage_content p {
+      font-size: 14px;
+      color: #666;
+      padding: 0 18px; }
+    .snet-card .snet-card_wrapper_homepage img {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      margin-right: 18px; }
+  .snet-card .snet-blog-entry {
+    display: flex; }
+    .snet-card .snet-blog-entry img {
+      width: 180px;
+      flex-shrink: 0;
+      height: auto;
+      margin-left: 18px; }
+    .snet-card .snet-blog-entry .snet-blog-entry_content {
+      margin-top: 24px; }
+      .snet-card .snet-blog-entry .snet-blog-entry_content span {
+        display: block;
+        color: #9b9b9b;
+        letter-spacing: 2px;
+        font-size: 12px;
+        padding: 0 18px; }
+      .snet-card .snet-blog-entry .snet-blog-entry_content h4 {
+        font-size: 20px;
+        color: #212121;
+        letter-spacing: 0.2px;
+        line-height: 20px;
+        border-bottom: none;
+        padding: 8px 18px; }
+      .snet-card .snet-blog-entry .snet-blog-entry_content p {
+        font-size: 14px;
+        color: #666;
+        padding: 0 18px; }
+  .snet-card .snet-event-entry .snet-event-entry_content {
+    margin-top: 24px; }
+    .snet-card .snet-event-entry .snet-event-entry_content span {
+      display: block;
+      color: #9b9b9b;
+      letter-spacing: 2px;
+      font-size: 12px;
+      padding: 0 18px; }
+    .snet-card .snet-event-entry .snet-event-entry_content h4 {
+      font-size: 16px;
+      color: #4086FF;
+      letter-spacing: 0.2px;
+      line-height: 20px;
+      border-bottom: none;
+      padding: 8px 18px; }
+    .snet-card .snet-event-entry .snet-event-entry_content p {
+      font-size: 14px;
+      color: #666;
+      padding: 0 18px; }
+
+.snet-nav_list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.snet-nav_list li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #F5F7F8; }
+
+.snet-nav_list li a {
+  display: inline-block;
+  width: 100%;
+  color: #666;
+  padding: 5px 18px;
+  font-size: 14px;
+  font-size: 14px;
+  font-weight: 600; }
+
+.snet-nav_list li a:hover,
+.snet-nav_list li.active a {
+  color: #4086FF;
+  background: #FAFAFA;
+  text-decoration: none; }
+
+.snet-card .snet-card_maincontents {
+  padding: 18px;
+  color: #666;
+  font-size: 14px;
+  line-height: 21px; }
+
+.snet-card .snet-card_maincontents h1,
+.snet-card .snet-card_maincontents h2,
+.snet-card .snet-card_maincontents h3,
+.snet-card .snet-card_maincontents h4,
+.snet-card .snet-card_maincontents h5 {
+  color: #212121;
+  letter-spacing: 0.20px;
+  font-weight: 500; }
+
+.snet-card .snet-card_maincontents h1 {
+  font-size: 30px; }
+
+.snet-card .snet-card_maincontents h2 {
+  font-size: 24px; }
+
+.snet-card .snet-card_maincontents h3 {
+  font-size: 20px; }
+
+.snet-card .snet-card_maincontents h4 {
+  font-size: 16px; }
+
+.snet-card .snet-card_maincontents h5 {
+  font-size: 14px;
+  font-weight: 700; }
+
+.snet-card .snet-card_maincontents img {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px; }
+
+.snet-card .snet-card_maincontents .snet-forum_question {
+  width: 100%;
+  padding: 16px 0 0 0;
+  border-top: #DBE3E7 solid 1px;
+  margin: 16px 0 0 0; }
+
+.snet-card .snet-card_maincontents .snet-forum_question a {
+  color: #4086FF;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  letter-spacing: 1.25px;
+  font-weight: 500; }
+
+.snet-nav_list_secondary ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.snet-nav_list_secondary ul li {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+.snet-nav_list_secondary ul li a {
+  display: inline-block;
+  border-left: 2px solid transparent;
+  width: 100%;
+  color: #9B9B9B;
+  padding: 6px 18px;
+  font-size: 12px; }
+
+.snet-nav_list_secondary ul li a:hover,
+.snet-nav_list_secondary ul li.active a {
+  color: #4086FF;
+  text-decoration: none; }
+
+.snet-nav_list_secondary ul li.active a {
+  border-left: 2px solid #4086FF; }
+
+.snet-card_wrapper {
+  padding: 12px 18px;
+  border-bottom: 1px solid #F5F7F8; }
+
+.snet-card_feedbacklinks {
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  color: #4086FF;
+  font-size: 14px;
+  font-weight: 600; }
+
+.snet-card_feedbacklinks:hover {
+  text-decoration: none; }
+
+.snet-breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px; }
+
+.snet-breadcrumb li {
+  display: inline-block; }
+
+.snet-breadcrumb li a {
+  display: inline-block;
+  color: #4086FF; }
+
+.snet-breadcrumb li:after {
+  content: ">";
+  display: inline-block; }
+
+.snet-breadcrumb li:last-child:after {
+  display: none; }
+
+.snet-starrating i {
+  font-size: 20px;
+  color: rgba(161, 163, 168, 0.35); }
+
+.snet-starrating i:hover {
+  color: #FFC200; }
+
+@media only screen and (max-width: 575px) {
+  /* xs */
+  body {
+    /* background: red!important; */ }
+
+  .wrapper {
+    width: 90%; } }
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* sm */
+  body {
+    /* background: yellow!important; */ }
+
+  .wrapper {
+    width: 576px; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* md */
+  body {
+    /* background: blue!important; */ }
+
+  .wrapper {
+    width: 768px; } }
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
+  /* lg */
+  body {
+    /* background: green!important; */ }
+
+  .wrapper {
+    width: 992px; }
+
+  .snet-navbar_navigation .nav-item a {
+    font-size: 14px; }
+
+  .snet-navbar_login .nav-item a {
+    font-size: 14px; }
+
+  .nav-item {
+    margin-right: 24px; }
+
+  .snet-navbar_login .nav-item a.snet-button_outline {
+    cursor: pointer;
+    padding: 6px 20px !important;
+    font-size: 14px;
+    letter-spacing: 1.29px; } }
+@media only screen and (min-width: 1280px) {
+  /* xl */
+  body {
+    /* background: purple!important; */ }
+
+  .wrapper {
+    width: 1280px; } }
+/* Heading Styles */
+h1 {
+  font-size: 24px;
+  letter-spacing: 0.20px; }
+
+h1 .title-anchor-link {
+  display: none; }
+
+h2 .title-anchor-link {
+  display: none; }
+
+h3 .title-anchor-link {
+  display: none; }
+
+h4 .title-anchor-link {
+  display: none; }
+
+h5 .title-anchor-link {
+  display: none; }
+
+.snet-tagline {
+  font-size: 18px;
+  font-weight: 300;
+  color: #212121;
+  line-height: 20px; }
+
+/* Homepage Styles */
+.snet-herobanner {
+  height: 280px;
+  background: #4086FF; }
+
+/*# sourceMappingURL=newcss.css.map */
