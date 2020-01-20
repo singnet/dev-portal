@@ -5,97 +5,107 @@
     </head>
     <body class="home">
         {% include site-header.html %}
-        <div class="hero-subheader-home{% if page.grid_navigation %} hero-subheader--before-out{% endif %}">
-            <div class="container_fluid">
-                <!-- Banner Starts -->
-                <div class="home-page-wrapper">
-                    <div class="banner row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 banner-content">
+        <section class="snet-herobanner">
+            <div class="wrapper">
+                <div class="container-fluid"> 
+                    <div class="row">
+                        <div class="col-4">
                             {% if page.title %}
                             <h2 class="hero-subheader__title">{{ page.title }}</h2>
                             {% endif %}
+                        </div>
+                        <div class="col-8">
                             {% if page.description %}
                             <p class="banner-description">{{ page.description }}</p>
                             {% endif %}
-                            <!--
-                            <div class="search-bar">
-                                <input type="text" name="Search" placeholder="Search knowledge base">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </div>
-                            -->
-                            <!-- /.search-bar -->
-                            <!--
-                            <p class="popular-search">Popular searches:
-                                {% for item in page.popularsearch %}
-                                <a href="{{ item.item_url }}" class="blue-txt" title={{item.item_name}}>{{ item.item_name }} </a>
-                                {% endfor %}
-                            </p>
-                            -->
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
+                        </div>                    
+                    </div>
                 </div>
+            </div>            
+        </section>
 
-                <!-- Features of Developer Portal Starts -->
-                <div class="feature-page-outer-wrapper">
-                    <div class="feature-page-wrapper">
-                        <div class="features row">
-                            {% for item in page.features %}
-                            <div class=" feature-card">            	
-                                <a href="{{ item.url }}" title="{{ item.title }}" >
-                                    <div class="img-wrapper">
-                                       <!--  <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{item.icon}}" >  -->
-                                        <i class="material-icons">{{item. material-icon}}</i>
+        <div class="wrapper">
+            <div class="container-fluid">     
+                <div class="row">
+                    {% for item in page.features %}
+                    <div class="col-4 pt-4">
+                        <a class="snet-card_wrapper_link" href="{{ item.url }}">
+                            <div class="snet-card"> 
+                                <div class="snet-card_wrapper_homepage">
+                                    <div class="snet-card_homepage_content">
+                                        <h2>{{ item.title }}</h2>
+                                        <p>{{ item.description }}</p>
                                     </div>
-                                    <span>{{item.title}}</span>
-                                    <p>{{item.description}}</p>
-                                </a>
+                                    <img class="snet-card_descriptionicon align-self-center" src="http://placehold.jp/80x80.png">                                      
+                                </div>
+                            </div>  
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>      
+                <div class="row">
+                    <div class="col-8 pt-4">
+                        <div class="snet-card"> 
+                            <h2 class="snet-card_title">Blog Posts</h2>                            
+                            <div class="snet-blog-entry">
+                                <img class="snet-card_descriptionicon align-self-center" src="http://placehold.jp/180x100.png">                                 
+                                <div class="snet-blog-entry_content">
+                                    <span>April 4, 2019</span>
+                                    <h4>Building the unimaginable</h4>
+                                    <p>On the tragedy of the commons, ownerless ecosystems, and redefining the energy sharing status quo.</p>
+                                </div>
                             </div>
-                            {% endfor %}
+                            <div class="snet-blog-entry">
+                                <img class="snet-card_descriptionicon align-self-center" src="http://placehold.jp/180x100.png">                                 
+                                <div class="snet-blog-entry_content">
+                                    <span>April 21, 2019</span>
+                                    <h4>The Birth of Decentralized AI</h4>
+                                    <p>Announcing the launch of the main net Beta version of the SingularityNET Platform on the Ethereum Network</p>
+                                </div>
+                            </div>
+                            <div class="snet-blog-entry">
+                                <img class="snet-card_descriptionicon align-self-center" src="http://placehold.jp/180x100.png">                                 
+                                <div class="snet-blog-entry_content">
+                                    <span>May 2, 2019</span>
+                                    <h4>SingularityNET Partners with Roya Mahboob’s Digital Citizen</h4>
+                                    <p>The curriculum-focused partnership aims to advance the digital literacy for women and children in developing countries.</p>
+                                </div>
+                            </div>                            
                         </div>
                     </div>
-                </div>
-                <div class="ai-service-process">
-                    <div class="home-page-wrapper">
-
-                        <!-- Downloads Starts -->
-                        <div class="downloads row">
-                            <div class="col-md-12 text-center">
-                                <h2>{{ page.downloads_section.title }}</h2>
-                            </div>
-                            <div class="col-md-12 download-cards">
-                                {% for item in page.download_cards %}
-                                <div class="col-xs-12 col-sm-12 col-md-3 download-card">
-                                    <a href="{{ item.url }}" title="Download" target="_blank">
-                                        <div class="img-wrapper">
-                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.icon }}" > 
-                                        </div>
-                                        <span>{{ item.title }}</span>
-                                        <p>{{ item.excerpt }}</p>
-                                    </a>
-                                </div>                                
-                                {% endfor %}
-
-                            </div>
-                        </div>   
-
-                        <!-- Stay Up To Date
-                        <div class="stay-upto-date">
-                            <h2>{{ page.email_subscription.title }}</h2>
-                            <form action="https://singularitynet.us16.list-manage.com/subscribe/post?u=d74195510c25bf501caf3011d&amp;id=a804df2efd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">                            
-                                <label for="mce-EMAIL">{{ page.email_subscription.excerpt }}</label>                                
-                                <div class="signup">
-                                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d74195510c25bf501caf3011d_a804df2efd" tabindex="-1" value=""></div>                                    
-                                    <button class="gradient-bg uppercase-txt" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">sign up</button>
+                    <div class="col-4 pt-4">
+                        <div class="snet-card"> 
+                            <h2 class="snet-card_title">Upcoming Events</h2>  
+                            <div class="snet-event-entry">
+                                <div class="snet-event-entry_content">
+                                    <span>May 28, 2019 | USA NYC</span>
+                                    <h4>SNET Hackathon</h4>
+                                    <p>
+                                        100 teams from all over the world will arrive in Groningen, 
+                                        a vibrant young city in the Netherlands, 
+                                        to participate in the world’s biggest blockchain and AI hackathon: Odyssey
+                                    </p>                                    
                                 </div>
-                            </form>                            
-                        </div>   
-   -->                      
-                    </div>
-                </div>
 
-            </div><!-- /.container -->
-        </div><!-- /.hero-subheader -->
+                            </div>
+                            <div class="snet-event-entry">
+                                <div class="snet-event-entry_content">
+                                    <span>April 25, 2019 | USA NYC</span>
+                                    <h4>SNET Meetup</h4>
+                                    <p>
+                                        100 teams from all over the world will arrive in Groningen, 
+                                        a vibrant young city in the Netherlands, 
+                                        to participate in the world’s biggest blockchain and AI hackathon: Odyssey
+                                    </p>
+                                </div>                                
+                            </div>                            
+                        </div>                        
+                    </div>                    
+                </div>
+            </div>
+        </div>                
+
+
         {% include site-footer.html %}
     </body>
 </html>

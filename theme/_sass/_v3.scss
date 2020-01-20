@@ -1,11 +1,6 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : Jan 15, 2020, 12:12:14 PM
-    Author     : Sujith
+    Author     : Sujith Varma [sujith.varma@singularitynet.io]
 */
 body{
     margin:0;
@@ -14,113 +9,134 @@ body{
     color: #212121;    
     font-family:Muli,sans-serif;
     -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale
+    -moz-osx-font-smoothing:grayscale;
+    padding-bottom:30px;
 }
 header{
     background-color: #220D3A; 
-}
-.snet-secondary-nav{
-    background: #f1f1f1;
-    border-bottom: solid 1px #DBE3E7;
+    .snet-navbar_primary{
+        padding: 12px 65px 4px 60px;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);   
+        h1{
+            font-size: 16px;            
+        }
+        .navbar-toggler-icon i{
+            color: #fff;
+        }    
+        .navbar-brand {
+            margin: 0;
+            padding: 0;
+            img{
+                width: 172px;    
+            }    
+        } 
+        .snet-navbar_menu,
+        .snet-navbar_login{
+            margin-bottom: 10px;    
+            .nav-item{
+                margin-right: 40px;
+            }
+            .nav-item:last-child{
+                margin-right:0px;
+            }            
+        }
+        .snet-navbar_menu{          
+            .nav-item{
+                &.active,
+                &:hover{
+                    a{
+                        color: #fff;
+                        border-bottom: 2px solid #fff;                        
+                    }
+                }
+                a{
+                    color: #9B9B9B;
+                    font-size: 16px;
+                    margin: 0!important;
+                    padding: 0 0 4px 0!important;
+                    border-bottom: 2px solid #220D3A;                     
+                }   
+            }            
+        }
+        .snet-navbar_login{
+            margin-bottom: 6px;  
+            .nav-item{
+                align-self: center;
+                a{
+                    color: #fff;
+                    font-size: 16px;
+                    margin: 0!important;
+                    padding: 0!important;     
+                    &.snet-button_outline{
+                        cursor: pointer;
+                        padding: 6px 24px!important;
+                        border-color: #fff;
+                        border-style: solid;
+                        border-width: 1px;
+                        margin-right: 0;
+                        border-radius: 4px;   
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        line-height: 16px;
+                        letter-spacing: 1.79px;   
+                        &:hover{
+                            background: rgba(256,256,256,.1);                            
+                        }
+                    }
+                }
+            }                     
+        }        
+    }   
 }
 
-
-.snet-navbar_main{
-    padding: 12px 65px 4px 60px;
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);   
-}
-.snet-navbar_main h1{
-    font-size: 16px;
-}
-.snet-navbar_main .navbar-toggler-icon i{
-    color: #fff;
-}
 .wrapper{
     margin: 0 auto;
 }
-.navbar-brand {
-    margin: 0;
-    padding: 0;
-}
-.navbar-brand img{
-    width: 172px;    
-}
-.snet-navbar_navigation,
-.snet-navbar_login{
-    margin-bottom: 10px;    
-}
-.snet-navbar_login{
-    margin-bottom: 6px;    
-}
-.snet-navbar_navigation .nav-item a{
-    color: #9B9B9B;
-    font-size: 16px;
-    margin: 0!important;
-    padding: 0 0 4px 0!important;
-    border-bottom: 2px solid #220D3A;    
-}
-.snet-navbar_login .nav-item a{
-    color: #fff;
-    font-size: 16px;
-    margin: 0!important;
-    padding: 0!important;
-}
-.nav-item{
-    margin-right: 40px;
-}
-.nav-item:last-child{
-    margin-right:0px;
-}
-.snet-navbar_navigation .nav-item.active a,
-.snet-navbar_navigation .nav-item a:hover{
-    color: #fff;
-    border-bottom: 2px solid #fff;
-}
-.snet-navbar_login .nav-item{
-    align-self: center;
-}
-.snet-navbar_login .nav-item a.snet-button_outline{
-    cursor: pointer;
-    padding: 6px 24px!important;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 1px;
-    margin-right: 0;
-    border-radius: 4px;   
-    text-transform: uppercase;
-    font-weight: 600;
-    line-height: 16px;
-    letter-spacing: 1.79px;    
-}
-.snet-navbar_login .nav-item a.snet-button_outline:hover{
-    background: rgba(256,256,256,.1);
-}
+
 
 
 .snet-navbar_secondary{
     padding: 12px 65px 12px 60px;  
+    background: #f1f1f1;
+    border-bottom: solid 1px #DBE3E7;    
+    h1{
+        width: 30%;
+        font-weight: normal;
+        font-size: 18px;
+        margin: 0;        
+    }
+    .snet-navbar_navigation{
+        margin: 0;
+        padding: 0;
+        .nav-item{
+            margin-right:40px;
+            &.active{
+                a{
+                    color: #4086FF;
+                    border-bottom: 2px solid #4086FF;                      
+                }
+            }
+            a{
+                color: #9B9B9B;
+                font-size: 14px;
+                margin: 0!important;
+                padding: 0!important;
+                border-bottom: 2px solid #f1f1f1;    
+                &:hover{
+                    color: #4086FF;
+                    border-bottom: 2px solid #4086FF;                       
+                }
+            }   
+        }        
+    }    
 }
-.snet-navbar_secondary h1{
-    width: 30%;
-    font-weight: normal;
-    font-size: 18px;
-    margin: 0;
-}
-.snet-navbar_secondary .snet-navbar_navigation{
-    margin: 0;
-    padding: 0;
-}
-.snet-navbar_secondary .snet-navbar_navigation .nav-item a{
-    color: #9B9B9B;
-    font-size: 14px;
-    margin: 0!important;
-    padding: 0!important;
-    border-bottom: 2px solid #f1f1f1;    
-}
-.snet-navbar_secondary .snet-navbar_navigation .nav-item a:hover,
-.snet-navbar_secondary .snet-navbar_navigation .nav-item.active a{
-    color: #4086FF;
-    border-bottom: 2px solid #4086FF;        
+
+
+.snet-card_wrapper_link{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
 }
 .snet-card{
     width: 100%;
@@ -128,34 +144,207 @@ header{
     background-color: #FFFFFF;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.07), 0 2px 1px -1px rgba(0,0,0,0.07), 0 1px 3px 0 rgba(0,0,0,0.1);
     padding-bottom: 4px;
+    &.full-height{
+        height: 100%;        
+    }
+    &.transparent{
+        width: 100%;
+        border-radius: 4px;
+        background-color: transparent;
+        box-shadow: none;
+        h4{
+            &.snet-card_title{
+                border-bottom: none;
+            }            
+        }
+    }
+    h2,h3,h4{
+        font-weight: 400;
+        padding: 12px 18px;
+        border-bottom: 1px solid #F5F7F8;   
+        margin: 0;     
+        color: #212121;
+    }
+    h2{
+        &.snet-card_title{
+            font-size: 20px;
+        }
+    }
+    h3{
+        &.snet-card_title{
+            font-size: 18px;
+        }
+    }
+    h4{
+        &.snet-card_title{
+            font-size: 14px;
+            color: #666;
+        }        
+    }
+    .snet-card_content{
+        padding: 0;    
+    }
+    img{
+        &.snet-card_descriptionicon{
+            width: 80px;  
+            height: 80px;              
+            margin-right: 8px;
+            flex-shrink: 0;
+            &.big{
+                width:100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+    p{
+        &.snet-card_paragraph{
+            color: #666;
+            font-size: 14px;
+            line-height: 19px;
+            display: inline-block;
+        }
+
+    }
+    ul{
+        &.snet-card_list{
+            list-style: none;
+            margin: 16px 0 0 0;
+            padding: 0;
+            color: #666;
+            font-size: 14px;            
+            li{
+                padding: 5px 0;
+                border-bottom: 1px solid #F5F7F8;  
+                &:last-child{
+                    border: none;
+                }
+                &:hover{
+                    background: #fafafa;
+                    a{
+                        font-weight: 500;
+                    }
+                }
+                a{
+                    color: #4086FF;
+                    display: block;
+                    text-decoration: none!important;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+    .snet-flex{
+        display: flex;
+        margin-bottom: 0px;
+    }
+    .snet-card_buttonwrapper{
+        position:relative;
+        .snet-card_buttons{
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    .snet-card_wrapper_homepage{
+        display: flex;
+        .snet-card_homepage_content{
+            h2{
+                font-size: 24px;
+                color: #212121;
+                letter-spacing: 0.3px;
+                border-bottom: none;
+            }
+            p{
+                font-size: 14px;
+                color: #666;
+                padding: 0 18px;
+            }
+
+        }
+        img{
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            margin-right: 18px;
+        }
+    }
+    .snet-blog-entry{
+        display: flex;
+        img{
+            width: 180px;
+            flex-shrink: 0;
+            height: auto;
+            margin-left: 18px;
+        }
+        .snet-blog-entry_content{
+            margin-top:24px;
+            span{
+                display: block;
+                color: #9b9b9b;
+                letter-spacing: 2px;
+                font-size: 12px;
+                padding: 0 18px;
+            }
+            h4{
+                font-size: 20px;
+                color: #212121;
+                letter-spacing: 0.2px;
+                line-height: 20px;
+                border-bottom: none;
+                padding: 8px 18px;
+            }
+            p{
+                font-size: 14px;
+                color: #666;
+                padding: 0 18px;
+            }  
+        }
+    }
+    .snet-event-entry{
+        .snet-event-entry_content{
+            margin-top:24px;
+            span{
+                display: block;
+                color: #9b9b9b;
+                letter-spacing: 2px;
+                font-size: 12px;
+                padding: 0 18px;
+            }
+            h4{
+                font-size: 16px;
+                color: #4086FF;
+                letter-spacing: 0.2px;
+                line-height: 20px;
+                border-bottom: none;
+                padding: 8px 18px;
+            }
+            p{
+                font-size: 14px;
+                color: #666;
+                padding: 0 18px;
+            }            
+        }
+    }
+    &.inner-card{
+        background:#fefefe;
+        .snet-card_title{
+            font-size: 16px!important;
+            padding: 8px 18px;
+            margin-bottom: 0;
+        }
+        .snet-card_wrapper{
+            padding: 10px 18px;
+            p{
+                margin: 0;
+            }
+        }
+        
+    }
 }
-.snet-card.transparent{
-    width: 100%;
-    border-radius: 4px;
-    background-color: transparent;
-    box-shadow: none;
-}
-.snet-card h3.snet-card_title{
-    font-size: 18px;
-    font-weight: 400;
-    padding: 12px 18px;
-    border-bottom: 1px solid #F5F7F8;   
-    margin: 0;
-}
-.snet-card h4.snet-card_title{
-    font-size: 14px;
-    color: #6D7278;
-    font-weight: 400;
-    padding: 12px 18px;
-    border-bottom: 1px solid #F5F7F8;   
-    margin: 0;
-}
-.snet-card.transparent h4.snet-card_title{
-    border-bottom: none;
-}
-.snet-card .snet-card_content{
-    padding: 0;    
-}
+
+
+
+
 .snet-nav_list{
     margin: 0;
     padding: 0;   
@@ -196,6 +385,9 @@ header{
     color: #212121;
     letter-spacing: 0.20px;
     font-weight: 500;
+    padding: 0;
+    border: none;
+    margin-bottom: 10px;
 }
 .snet-card .snet-card_maincontents h1{
     font-size:30px;
@@ -217,6 +409,20 @@ header{
     display: block;
     width: 100%;
     margin-bottom: 20px;
+}
+.snet-card .snet-card_maincontents p{
+    margin-top: 0;
+}
+.snet-card .snet-card_maincontents p.spacer{
+    display: block;
+    width: 100%;
+    height: 1px;
+}
+.snet-card .snet-card_maincontents p+h2,
+.snet-card .snet-card_maincontents p+h3,
+.snet-card .snet-card_maincontents p+h4,
+.snet-card .snet-card_maincontents p+h5{
+   margin-top: 30px; 
 }
 .snet-card .snet-card_maincontents .snet-forum_question{
     width: 100%;
@@ -333,7 +539,7 @@ header{
 @media only screen and (min-width: 992px) and (max-width:1279px) {
     /* lg */    
     body{
-       /* background: green!important; */
+        /* background: green!important; */
     }    
     .wrapper{
         width:992px;
@@ -364,8 +570,25 @@ header{
     }    
 }
 
+
+/* Heading Styles */
+h1{ font-size: 24px;     letter-spacing: 0.20px;}
 h1 .title-anchor-link{ display: none;}
 h2 .title-anchor-link{ display: none;}
 h3 .title-anchor-link{ display: none;}
 h4 .title-anchor-link{ display: none;}
 h5 .title-anchor-link{ display: none;}
+.snet-tagline{
+    font-size: 18px;
+    font-weight: 300;
+    color: #212121;
+    line-height: 20px;
+}
+
+
+
+/* Homepage Styles */
+.snet-herobanner{
+    height: 280px;
+    background: #4086FF;
+}

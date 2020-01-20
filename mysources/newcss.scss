@@ -132,7 +132,12 @@ header{
 }
 
 
-
+.snet-card_wrapper_link{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
 .snet-card{
     width: 100%;
     border-radius: 4px;
@@ -320,6 +325,21 @@ header{
             }            
         }
     }
+    &.inner-card{
+        background:#fefefe;
+        .snet-card_title{
+            font-size: 16px!important;
+            padding: 8px 18px;
+            margin-bottom: 0;
+        }
+        .snet-card_wrapper{
+            padding: 10px 18px;
+            p{
+                margin: 0;
+            }
+        }
+        
+    }
 }
 
 
@@ -365,6 +385,9 @@ header{
     color: #212121;
     letter-spacing: 0.20px;
     font-weight: 500;
+    padding: 0;
+    border: none;
+    margin-bottom: 10px;
 }
 .snet-card .snet-card_maincontents h1{
     font-size:30px;
@@ -386,6 +409,20 @@ header{
     display: block;
     width: 100%;
     margin-bottom: 20px;
+}
+.snet-card .snet-card_maincontents p{
+    margin-top: 0;
+}
+.snet-card .snet-card_maincontents p.spacer{
+    display: block;
+    width: 100%;
+    height: 1px;
+}
+.snet-card .snet-card_maincontents p+h2,
+.snet-card .snet-card_maincontents p+h3,
+.snet-card .snet-card_maincontents p+h4,
+.snet-card .snet-card_maincontents p+h5{
+   margin-top: 30px; 
 }
 .snet-card .snet-card_maincontents .snet-forum_question{
     width: 100%;

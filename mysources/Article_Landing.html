@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--
+    Created on : Jan 15, 2020, 12:12:14 PM
+    Author     : Sujith Varma [sujith.varma@singularitynet.io]
+-->
+<html>
+    <head>
+        <title>Dev Portal Basic Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <!-- Google Font Family -->
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <!-- CSS link -->
+        <link rel="stylesheet"  type="text/css" href="newcss.css">        
+        <!-- Font awesome link -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>        
+    </head>
+    <body>
+        <!-- Navigations Start -->
+        <header>
+            <nav class="navbar navbar-expand-lg snet-navbar_primary">
+                <h1 style="width: 30%">
+                    <a class="navbar-brand" href="#"><img src="https://beta.singularitynet.io/static/media/WhiteLogo.93b76382.svg"></a>                        
+                </h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon">
+                        <i class="material-icons">dehaze</i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav mr-auto snet-navbar_menu">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Docs</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu dropdown-info">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#">Community</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="#">Changelog</a>
+                        </li>                    
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto snet-navbar_login">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link snet-button_outline" href="#">Sign Up Free</a>
+                        </li>
+                    </ul>
+
+                </div>           
+            </nav>               
+        </header>
+
+        <nav class="navbar navbar-expand-lg snet-navbar_secondary">
+            <h1> 
+                Documentation
+            </h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#secondary-menu">
+                <span class="navbar-toggler-icon">
+                    <i class="material-icons">dehaze</i>
+                </span>
+            </button>                
+            <div class="collapse navbar-collapse" id="secondary-menu">
+                <ul class="navbar-nav mr-auto snet-navbar_navigation">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Overview <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Core Concepts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Platform Dev</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">AI Developer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">AI Consumer</a>
+                    </li>                            
+                </ul>
+            </div>           
+        </nav>                                   
+        <!-- Navigations End -->     
+
+        <div class="wrapper">
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="d-none d-sm-block col-sm-3">
+                        <div class="snet-card">
+                            <h3 class="snet-card_title">Explore</h3>
+                            <div class="snet-card_content">
+                                <ul class="snet-nav_list">
+                                    <li class="active"><a href="#">asdaas 1</a></li>
+                                    <li><a href="#">asdaas 2</a></li>
+                                    <li><a href="#">asdaas 3</a></li>                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="snet-card">
+                            <div class="snet-card_wrapper">
+                                <ul class="snet-breadcrumb">
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                </ul>
+                            </div>
+                            <div class="snet-card_content">
+                                <div class="snet-card_maincontents">
+                                    <h2>AI Developers</h2>
+                                    <p>
+                                        The SingularityNET guides are step-by-step walkthroughs that help you get started. Choose your starting level of experience below.                                        
+                                    </p>
+                                    <h3>For Beginners</h3>
+                                    <p>
+                                        The best place to start is with the get started.  Build models by plugging together building blocks. After these tutorials, read the this.                                        
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">Beginner Quickstart</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">Daemon Basics</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-6 pt-3">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">Next Thing To Do</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-6 pt-3">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">Another Thing To Do</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div> 
+                                    <p class="spacer"></p>
+                                    <h3>For Experts</h3>
+                                    <p>
+                                        The best place to start is with the get started.  Build models by plugging together building blocks. After these tutorials, read the this.
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">Advanced Quickstart</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">Daemon Advance</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>  
+                                    <p class="spacer"></p>                                    
+                                    <h3>Tool & Downloads</h3>
+                                    <p>
+                                        Make sure you have downloaded and installed the latest versions of these:
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">SNET Contracts</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">Daemon </h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-6 pt-3">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">SNET Client</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-6 pt-3">
+                                            <div class="snet-card inner-card">                      
+                                                <h2 class="snet-card_title">Python SDK</h2>
+                                                <div class="snet-card_wrapper border-0"> 
+                                                    <div class="snet-flex">                                     
+                                                        <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, saperet pertinax duo in, id alii sententiae vel. Unum facilis ius an, ad sed idque vitae accommodare,</p>                                      
+                                                    </div>                                                                
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>                                     
+                                    <p class="spacer"></p>
+                                    <div class="snet-forum_question text-center">
+                                        <a href="#">Ask a question in the forum</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>                
+                    <div class="col-xs-12 col-sm-3 order-first order-sm-last">
+                        <div class="snet-card transparent d-none d-sm-block ">
+                            <h4 class="snet-card_title">Was this page useful?</h4>
+                            <div class="snet-card_content">
+                                <div  class="snet-card_wrapper border-0">
+                                    <div class="snet-starrating">
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>  
+                                        <a href="#" class=""><i class="material-icons">star_border</i></a>                                                                              
+                                    </div>
+                                </div>
+                                <div  class="snet-card_wrapper border-0">
+                                    <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a>
+                                    <a href="#" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
+                                </div>
+                            </div>
+                        </div>                          
+                    </div>                      
+                </div>              
+            </div>
+        </div>
+
+
+    </body>
+</html>
