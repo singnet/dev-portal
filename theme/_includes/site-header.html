@@ -14,26 +14,15 @@
         </button>
         <div class="collapse navbar-collapse" id="main-menu">
             <ul class="navbar-nav mr-auto snet-navbar_navigation">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
+                {% for item in site.snet.header.nav %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Docs</a>
+                    {% if item.item_external_url %}
+                    <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                    {% else %}
+                    <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                    {% endif %}
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">Products</a>
-                    <div class="dropdown-menu dropdown-info">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">Community</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">Changelog</a>
-                </li>                    
+                {% endfor %}                                   
             </ul>
 
             <ul class="navbar-nav ml-auto snet-navbar_login">

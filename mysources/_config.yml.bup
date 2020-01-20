@@ -8,15 +8,16 @@ snet:
             image: '/assets/images/layout/logo.png'
         nav:
             - item_name: Home
-              item_url: '/'
-            - item_name: Docs
+              item_url: ''
+            - item_name: Documentation
               item_url: '/tutorials/getting-started'
-            - item_name: Products
+            - item_name: API
               item_url: ''
-            - item_name: Community
+            - item_name: Release Notes
               item_url: ''
-            - item_name: Changelogs
-              item_url: ''
+            - item_name: Marketplace
+              item_url: 'https://beta.singularitynet.io'
+              item_external_url: 'https://beta.singularitynet.io'
 
     footer:
         content:
