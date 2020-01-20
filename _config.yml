@@ -10,7 +10,7 @@ snet:
             - item_name: Home
               item_url: '/'
             - item_name: Docs
-              item_url: '/tutorials/getting-started'
+              item_url: '/overview/'
             - item_name: Products
               item_url: ''
             - item_name: Community
@@ -19,15 +19,15 @@ snet:
               item_url: ''
         secondnav:
             - item_name: Overview
-              item_url: '/overview'
+              item_url: '/overview/'
             - item_name: Core Concepts
-              item_url: '/articlelanding'
+              item_url: '/articlelanding/'
             - item_name: Platform Dev
-              item_url: '/articlelanding'
+              item_url: '/articlelanding/'
             - item_name: AI Developer
-              item_url: '/articlelanding'
+              item_url: '/articlelanding/'
             - item_name: AI Consumer
-              item_url: '/articlelanding'              
+              item_url: '/articlelanding/'              
 
     footer:
         content:

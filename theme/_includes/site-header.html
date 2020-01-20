@@ -15,6 +15,11 @@
         <div class="collapse navbar-collapse" id="main-menu">
             <ul class="navbar-nav mr-auto snet-navbar_navigation">
                 {% for item in site.snet.header.nav %}
+                {% if page.url == item.item_url %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>                    
+                </li>
+                {% else %}                
                 <li class="nav-item">
                     {% if item.item_external_url %}
                     <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
@@ -22,6 +27,7 @@
                     <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
                     {% endif %}
                 </li>
+                {% endif %}                 
                 {% endfor %}                                   
             </ul>
 
@@ -51,6 +57,11 @@
         <div class="collapse navbar-collapse" id="secondary-menu">
             <ul class="navbar-nav mr-auto snet-navbar_navigation">
                 {% for item in site.snet.header.secondnav %}
+                {% if page.url == item.item_url %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>                    
+                </li>
+                {% else %}
                 <li class="nav-item">
                     {% if item.item_external_url %}
                     <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
@@ -58,6 +69,7 @@
                     <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
                     {% endif %}
                 </li>                
+                {% endif %}                
                 {% endfor %}                                                              
             </ul>
         </div>           
