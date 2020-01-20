@@ -15,9 +15,20 @@
         <div class="collapse navbar-collapse" id="main-menu">
             <ul class="navbar-nav mr-auto snet-navbar_navigation">
                 {% for item in site.snet.header.nav %}
-                {% if page.url == item.item_url %}
+                {% assign dropdown = 0 %}
+                {% for header in site.data.navigation.top-level-headers %}
+                {% if item.item_name == header %}
+                {% assign dropdown = 1 %}
+                {% endif %}
+                {% endfor %}
+                {% if dropdown == 1 %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>                    
+                    <a class="nav-link" data-toggle="dropdown" title="{{ item.item_name }}">{{ item.item_name }}</a>  
+                            <div class="dropdown-menu dropdown-info">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>                    
                 </li>
                 {% else %}                
                 <li class="nav-item">

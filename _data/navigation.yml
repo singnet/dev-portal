@@ -1,3 +1,7 @@
+top-level-headers:
+    Products:
+        title: Test
+        url: "/overview"
 docs:
   concepts:
     title: Core Concepts
