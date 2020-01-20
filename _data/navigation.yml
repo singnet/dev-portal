@@ -1,7 +1,17 @@
-top-level-headers:
-    Products:
-        title: Test
+topheaders:
+  - 
+    title: "Products"
+    subheaders:
+      -
+        title: "Client"
         url: "/overview"
+      - 
+        title: "SDK"
+        url: "/overview"   
+      - 
+        title: "Daemon"
+        url: "/overview"
+
 docs:
   concepts:
     title: Core Concepts

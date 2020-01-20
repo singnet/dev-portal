@@ -15,21 +15,22 @@
         <div class="collapse navbar-collapse" id="main-menu">
             <ul class="navbar-nav mr-auto snet-navbar_navigation">
                 {% for item in site.snet.header.nav %}
-                {% assign dropdown = 0 %}
-                {% for header in site.data.navigation.top-level-headers %}
-                {% if item.item_name == header %}
-                {% assign dropdown = 1 %}
-                {% endif %}
+                {% assign dropdowntree = nil %}
+                {% for header in site.data.navigation.topheaders %}
+                    {% if item.item_name == header.title %}
+                        {% assign dropdowntree = header %}
+                        {% break %}
+                    {% endif %}
                 {% endfor %}
-                {% if dropdown == 1 %}
-                <li class="nav-item active">
-                    <a class="nav-link" data-toggle="dropdown" title="{{ item.item_name }}">{{ item.item_name }}</a>  
-                            <div class="dropdown-menu dropdown-info">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>                    
-                </li>
+                {% if dropdowntree %}
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="dropdown" title="{{ item.item_name }}">{{ item.item_name }}</a>  
+                                <div class="dropdown-menu dropdown-info">
+                                    {% for subheader in dropdowntree.subheaders %}
+                                        <a class="dropdown-item" href="{{subheader.url}}">{{subheader.title}}</a>
+                                    {% endfor %}
+                                </div>                    
+                    </li>
                 {% else %}                
                 <li class="nav-item">
                     {% if item.item_external_url %}
