@@ -1,6 +1,7 @@
 /* 
-    Created on : Jan 15, 2020, 12:12:14 PM
-    Author     : Sujith Varma [sujith.varma@singularitynet.io]
+    Created on  : Jan 15, 2020, 12:12:14 PM
+    Author      : Sujith Varma [sujith.varma@singularitynet.io]
+    NOTES       : THIS FILES NEEDS OPTIMIZATION
 */
 body{
     margin:0;
@@ -138,6 +139,9 @@ header{
     text-decoration: none;
     &:hover{
         text-decoration: none;
+        .snet-card{
+            background-color: #ebf2ff;
+        }        
     }
 }
 .snet-card{
