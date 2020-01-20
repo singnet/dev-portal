@@ -19,74 +19,26 @@
                     </div>                    
                 </div> 
                 <div class="row">
+                    {% for item in page.gettingstarted_cards %}
                     <div class="col-3 pt-4">
                         <div class="snet-card full-height">  
-                            <h2 class="snet-card_title">Core Concepts</h2>
+                            <h2 class="snet-card_title">{{item.title}}</h2>
                             <div class="snet-card_wrapper border-0">
                                 <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
-                                    <p class="snet-card_paragraph">Get the high level view how SNET’s platform works for you.</p>                                    
+                                    <img class="snet-card_descriptionicon" src="{{item.img}}">                                    
+                                    <p class="snet-card_paragraph">{{item.description}}</p>                                    
                                 </div>                                
                                 <ul class="snet-card_list">
-                                    <li><a href="#">Get Started Guide</a></li>
-                                    <li><a href="#">Concepts and Components</a></li>
-                                    <li><a href="#">Basics of AI</a></li>
-                                    <li><a href="#">View all</a></li>
+                                    <li><a href="#">{{item.url_1}}</a></li>
+                                    <li><a href="#">{{item.url_2}}</a></li>
+                                    <li><a href="#">{{item.url_3}}</a></li>
+                                    <li><a href="#">{{item.url_4}}</a></li>
                                 </ul>                                 
                             </div>                           
                         </div>
                     </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-height">                       
-                            <h2 class="snet-card_title">AI Developers</h2>
-                            <div class="snet-card_wrapper border-0">  
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
-                                    <p class="snet-card_paragraph">Learn how to publish and manage AI services to collect AGI tokens.</p>                                    
-                                </div>                                                                
-                                <ul class="snet-card_list">
-                                    <li><a href="#">Get Started Guide</a></li>
-                                    <li><a href="#">For Beginner</a></li>
-                                    <li><a href="#">For Advance Users</a></li>
-                                    <li><a href="#">View all</a></li>
-                                </ul>    
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-height">                        
-                            <h2 class="snet-card_title">Platform Developers</h2>
-                            <div class="snet-card_wrapper border-0">  
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
-                                    <p class="snet-card_paragraph">Learn how to publish and manage AI services to collect AGI tokens.</p>                                    
-                                </div>                                                                
-                                <ul class="snet-card_list">
-                                    <li><a href="#">Get Started Guide</a></li>
-                                    <li><a href="#">For Beginner</a></li>
-                                    <li><a href="#">For Advance Users</a></li>
-                                    <li><a href="#">View all</a></li>
-                                </ul>  
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-height">                        
-                            <h2 class="snet-card_title">AI Consumers</h2>
-                            <div class="snet-card_wrapper border-0">
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
-                                    <p class="snet-card_paragraph">Learn how to use SNET AI Marketplace and integrate AI services</p>                                    
-                                </div>                                                                      
-                                <ul class="snet-card_list">
-                                    <li><a href="#">Get Started Guide</a></li>
-                                    <li><a href="#">For Beginner</a></li>
-                                    <li><a href="#">For Advance Users</a></li>
-                                    <li><a href="#">View all</a></li>
-                                </ul>   
-                            </div>
-                        </div>                        
-                    </div>
+                    {% endfor %}                                                
+
                 </div>
                 <div class="row mt-5">
                     <div class="col-3">

@@ -5,24 +5,35 @@ keywords:
 
 
 # Featrures    
-features:
-    - title: Quick Start
-      description: A primer to get you started with working with SingularityNET tools & software and the blockchain.
-      icon: 'chat.svg'
-      material-icon: bookmarks
-      url: '/docs/setup'
-
+gettingstarted_cards:
     - title: Core Concepts
-      description: Learn about the core parts of the SingularityNET platform and how it works under the hood.
-      icon: 'chat.svg'
-      material-icon: collections_bookmark
-      url: '/docs/concepts'
-
-    - title: Tutorial
-      description: Guides for how to work the platform, how to integrate SingularityNET services into your software, and even how to publish your own services!
-      icon: 'chat.svg'
-      material-icon: import_contacts
-      url: '/tutorials'
+      img: 'http://placehold.jp/80x80.png'
+      description: Get the high level view how SNET’s platform works for you.
+      url_1: 'a'
+      url_2: 'b'
+      url_3: 'c'
+      url_4: 'd'
+    - title: AI Developers
+      img: 'http://placehold.jp/80x80.png'
+      description: Learn how to publish and manage AI services to collect AGI tokens.
+      url_1: 'a'
+      url_2: 'b'
+      url_3: 'c'
+      url_4: 'd'
+    - title: Platform Developers
+      img: 'http://placehold.jp/80x80.png'
+      description: Learn how to publish and manage AI services to collect AGI tokens.
+      url_1: 'a'
+      url_2: 'b'
+      url_3: 'c'
+      url_4: 'd'
+    - title: AI Consumers
+      img: 'http://placehold.jp/80x80.png'
+      description: Learn how to use SNET AI Marketplace and integrate AI services.
+      url_1: 'a'
+      url_2: 'b'
+      url_3: 'c'
+      url_4: 'd'
 
 # Cards Row One
 row_one:
