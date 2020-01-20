@@ -17,6 +17,17 @@ snet:
               item_url: ''
             - item_name: Changelogs
               item_url: ''
+        secondnav:
+            - item_name: Overview
+              item_url: '/overview'
+            - item_name: Core Concepts
+              item_url: '/articlelanding'
+            - item_name: Platform Dev
+              item_url: '/articlelanding'
+            - item_name: AI Developer
+              item_url: '/articlelanding'
+            - item_name: AI Consumer
+              item_url: '/articlelanding'              
 
     footer:
         content:

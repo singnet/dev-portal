@@ -50,21 +50,15 @@
         </button>                
         <div class="collapse navbar-collapse" id="secondary-menu">
             <ul class="navbar-nav mr-auto snet-navbar_navigation">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Overview <span class="sr-only">(current)</span></a>
-                </li>
+                {% for item in site.snet.header.secondnav %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Core Concepts</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">Platform Dev</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">AI Developer</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">AI Consumer</a>
-                </li>                            
+                    {% if item.item_external_url %}
+                    <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                    {% else %}
+                    <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                    {% endif %}
+                </li>                
+                {% endfor %}                                                              
             </ul>
         </div>           
     </nav>                                   
