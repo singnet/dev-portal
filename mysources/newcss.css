@@ -98,6 +98,9 @@ header {
           color: #4086FF;
           border-bottom: 2px solid #4086FF; }
 
+.snet-header_banner {
+  height: 280px; }
+
 .snet-card_wrapper_link {
   text-decoration: none; }
   .snet-card_wrapper_link:hover {
