@@ -11,7 +11,6 @@ body{
     font-family:Muli,sans-serif;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
-    padding-bottom:30px;
 }
 header{
     background-color: #220D3A; 
@@ -312,29 +311,6 @@ header{
             width: 80px;
             height: 80px;
             margin-right: 18px;
-        }
-    }
-    a.main-url:link{
-        overflow:hidden;
-        display:block;
-        &:hover{
-            .snet-blog-entry{
-                text-decoration:none!important;    
-                .snet-blog-entry_content{
-                    text-decoration:none!important;    
-                    span,
-                    h4,
-                    div,
-                    p{
-                        text-decoration:none!important;
-                        color:red;
-                        &:hover{
-                            text-decoration:none!important;                              
-                        }
-                    }
-
-                }
-            }            
         }
     }
     .snet-blog-entry{
@@ -764,4 +740,7 @@ h5 .title-anchor-link{ display: none;}
     line-height: 20px;
 }
 
+
+
 @import "home";
+@import "overview";

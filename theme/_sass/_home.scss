@@ -14,3 +14,27 @@
         color: #fff;        
     }
 }
+
+a.main-url:link{
+    overflow:hidden;
+    display:block;
+    &:hover{
+        .snet-blog-entry{
+            text-decoration:none!important;    
+            .snet-blog-entry_content{
+                text-decoration:none!important;    
+                span,
+                h4,
+                div,
+                p{
+                    text-decoration:none!important;
+                    color:red;
+                    &:hover{
+                        text-decoration:none!important;                              
+                    }
+                }
+
+            }
+        }            
+    }
+}

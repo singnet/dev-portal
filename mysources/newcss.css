@@ -10,8 +10,7 @@ body {
   color: #212121;
   font-family: Muli,sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-bottom: 30px; }
+  -moz-osx-font-smoothing: grayscale; }
 
 header {
   background-color: #220D3A; }
@@ -618,23 +617,61 @@ h5 .title-anchor-link {
   .snet-herobanner p {
     color: #fff; }
 
-/* 
-    Created on  : Jan 15, 2020, 12:12:14 PM
-    Author      : Sujith Varma [sujith.varma@singularitynet.io]
-    NOTES       : THIS FILES NEEDS OPTIMIZATION
-*/
-body {
-  margin: 0;
-  padding: 0;
-  background: #fafafa;
-  color: #212121;
-  font-family: Muli,sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-bottom: 30px; }
-
 section {
-  background: #eee;
   margin-bottom: 64px; }
+  section h2 {
+    font-size: 22px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: #212121; }
+
+.snet-card_topimage {
+  height: 164px;
+  width: 100%;
+  background: #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  overflow: hidden; }
+  .snet-card_topimage img {
+    display: block;
+    height: 100%; }
+
+.snet-card_innercontents {
+  padding: 18px;
+  color: #666;
+  font-size: 14px;
+  line-height: 21px;
+  position: relative; }
+  .snet-card_innercontents .snet-card_innercontents_bottomlinks {
+    margin-top: 20px;
+    overflow: hidden; }
+
+.fullwidth .snet-overviewimage img {
+  display: block;
+  width: 80%;
+  margin: 0 auto; }
+.fullwidth h3.snet-card_title {
+  font-size: 22px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #212121;
+  border-bottom: none;
+  padding: 18px; }
+.fullwidth p.big {
+  margin: 0;
+  font-weight: 300;
+  font-size: 18px;
+  color: #666; }
+.fullwidth ul.snet-card_list {
+  margin: 0 0 8px 0; }
+.fullwidth .snet-platformcards img {
+  display: block;
+  height: 64px;
+  margin: 0 auto; }
+.fullwidth .snet-platformcards span {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 16px; }
 
 /*# sourceMappingURL=newcss.css.map */

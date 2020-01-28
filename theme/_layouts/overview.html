@@ -4,226 +4,155 @@
         {% include site-head.html %}
     </head>
     <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
-        {% include site-header.html %}       
+        {% include site-header.html %}  
+
+
 
         <div class="wrapper">
-            <div class="container-fluid">
-                <div class="row mt-4">
-                    <div class="col-3">
-                        <h1 class="">Getting Started</h1>
+            <div class="container-fluid mt-1">
+                <section class="snet-section_gettingstarted">
+                    <div class="row">
+                        <div class="col">
+                            <div class="snet-card fullwidth">
+                                <div class="snet-card_content">
+                                    <h3 class="snet-card_title">{{ page.title }}</h3>                                    
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="snet-overviewimage">
+                                                <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ page.img }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="big">
+                                                {{ page.description }}
+                                            </p>
+                                        </div>                                        
+                                        <div class="col-3">
+                                            <ul class="snet-card_list">
+                                                {% for item in page.gettingstarted_cards %}                                                
+                                                <li><a href="{{ item.url_link }}">{{ item.url_name }}</a></li>
+                                                {% endfor %}                                                                                                
+                                            </ul>                                             
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <span class="snet-tagline">
-                            The best way is to get started to understanding the AI services on decentralized blockchain marketplace.                            
-                        </span>
-                    </div>                    
-                </div> 
-                <div class="row">
-                    {% for item in page.gettingstarted_cards %}
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-height">  
-                            <h2 class="snet-card_title">{{item.title}}</h2>
-                            <div class="snet-card_wrapper border-0">
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="{{item.img}}">                                    
-                                    <p class="snet-card_paragraph">{{item.description}}</p>                                    
-                                </div>                                
-                                <ul class="snet-card_list">
-                                    <li><a href="{{item.url_1_link}}">{{item.url_1_name}}</a></li>
-                                    <li><a href="{{item.url_2_link}}">{{item.url_2_name}}</a></li>
-                                    <li><a href="{{item.url_3_link}}">{{item.url_3_name}}</a></li>
-                                    <li><a href="{{item.url_4_link}}">{{item.url_4_name}}</a></li>
-                                </ul>                                 
+                </section>                    
+                <section class="snet-section_byuser">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>By User</h2>
+                        </div>
+                        {% for item in page.byuser_cards %}  
+                        <div class="col-4">
+                            <div class="snet-card">
+                                <div class="snet-card_content">
+                                    <div class="snet-card_topimage">
+                                        <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.img }}">                                             
+                                    </div>
+                                    <h3 class="snet-card_title">{{ item.title }}</h3>
+                                    <div class="snet-card_innercontents">
+                                        {{ item.description }}
+                                        <ul class="snet-card_list">
+                                            {% for item_inner in item.urls %}                                              
+                                            <li><a href="{{ item_inner.url_link }}">{{ item_inner.url_name }}</a></li>
+                                            {% endfor %}                                             
+                                        </ul>                                         
+                                    </div>                                       
+                                </div>
+                            </div>                              
+                        </div>
+                        {% endfor %} 
+
+                    </div>                  
+                </section>                    
+                <section class="snet--section_byproduct">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>By Product</h2>
+                        </div>
+                        {% for item in page.byproduct_cards %}  
+                        <div class="col-4">
+                            <div class="snet-card">
+                                <div class="snet-card_content">
+                                    <div class="snet-card_topimage">
+                                        <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.img }}">                                                                                         
+                                    </div>
+                                    <h3 class="snet-card_title">{{ item.title }}</h3>
+                                    <div class="snet-card_innercontents">
+                                        {{ item.description }}
+                                        <ul class="snet-card_list">
+                                            {% for item_inner in item.urls %}                                              
+                                            <li><a href="{{ item_inner.url_link }}">{{ item_inner.url_name }}</a></li>
+                                            {% endfor %}                                             
+                                        </ul>                                         
+                                    </div>                                       
+                                </div>
+                            </div>                              
+                        </div>
+                        {% endfor %}                        
+                    </div> 
+                </section>  
+                <section class="snet--section_byplatform">
+                    <div class="row">
+                        <div class="col">
+                            <div class="snet-card fullwidth">
+                                <div class="snet-card_content">
+                                    <h3 class="snet-card_title">By Platform</h3>                                    
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="snet-card_innercontents">
+                                                <p>
+                                                    SingularityNET works with programming languages you perfer.  Check out how to use them with the SNET clients. We will be supporting other languages in the future.                                            
+                                                </p>                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                {% for item in page.byplatform_cards %}  
+                                                <div class="col">
+                                                    <div class="snet-platformcards">
+                                                        <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.platform_img }}">                                             
+                                                        <span>{{ item.platform_name}}</span>
+                                                    </div>
+                                                </div>
+                                                {% endfor %} 
+                                            </div>
+                                        </div>                                                                         
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </section>   
+                <section class="snet--section_tools">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>By Tools & Resources</h2>
+                        </div>
+                        {% for item in page.bytools_cards %}  
+                        <div class="col-3">
+                            <div class="snet-card full-height">
+                                <div class="snet-card_content">
+                                    <h3 class="snet-card_title">{{ item.title }}</h3>
+                                    <div class="snet-card_innercontents">
+                                        {{ item.description }}
+                                        <div class="snet-card_innercontents_bottomlinks">
+                                            <a href="{{ item.left_url_link }}" class="float-left">{{ item.left_url_name }}</a>
+                                            <a href="{{ item.left_url_link }}" class="float-right">{{ item.right_url_name }}</a>
+                                        </div>
+                                    </div>                                       
+                                </div>
                             </div>                           
                         </div>
-                    </div>
-                    {% endfor %}                                                
-
-                </div>
-                <div class="row mt-5">
-                    <div class="col-3">
-                        <h1>By Product</h1>
-                    </div>
-                    <div class="col-6">
-                        <span class="snet-tagline">
-                            SingularityNET gives you the tools to develop high-quality AI apps, grow your user base, and earn more AGI tokens.                            
-                        </span>                        
-                    </div>                    
-                </div> 
-                <div class="row">
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-heights">  
-                            <h2 class="snet-card_title">AI Marketplace</h2>
-                            <div class="snet-card_wrapper border-0">   
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">
-                                    <p class="snet-card_paragraph">Get the high level view how SNET’s platform works for you.</p>                                    
-                                </div>
-                                <ul class="snet-card_list">
-                                    <li><a href="#">Get Started Guide</a></li>
-                                    <li><a href="#">Demoing services</a></li>
-                                    <li><a href="#">Integrate AI into your Apps</a></li>
-                                    <li><a href="#">View all</a></li>
-                                </ul>    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-heights">                       
-                            <h2 class="snet-card_title">AI Publisher</h2>
-                            <div class="snet-card_wrapper border-0">
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
-                                    <p class="snet-card_paragraph">Learn how to create, launch and manage AI services.</p>                                    
-                                </div>                                      
-                                <ul class="snet-card_list">
-                                    <li><a href="#">Setting up your Organization</a></li>
-                                    <li><a href="#">Creating new AI services</a></li>
-                                    <li><a href="#">Configuring Regions & ETCD</a></li>
-                                    <li><a href="#">View all</a></li>
-                                </ul>    
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-height">                       
-                            <h2 class="snet-card_title">Request For AI (RFAI)</h2>
-                            <div class="snet-card_wrapper border-0">    
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                    
-                                    <p class="snet-card_paragraph">Learn how to request, back, and submit solutions for AI.</p>                                    
-                                </div>                                      
-                                <ul class="snet-card_list">
-                                    <li><a href="#">Get Started Guide</a></li>
-                                    <li><a href="#">Backing an AI Request</a></li>
-                                    <li><a href="#">Submitting Solutions</a></li>
-                                    <li><a href="#">View all</a></li>
-                                </ul>   
-                            </div>
-                        </div>                        
-                    </div>
-                </div>     
-                <div class="row mt-5">
-                    <div class="col-3">
-                        <h1>By Platform</h1>
-                    </div>
-                    <div class="col-6">
-                        <span class="snet-tagline">
-                            SingularityNET works with programming languages you perfer.  Check out how to use them with the SNET clients.                            
-                        </span>                        
-                    </div>                    
-                </div> 
-                <div class="row">
-                    <div class="col-3 pt-4">
-                        <div class="snet-card">  
-                            <h2 class="snet-card_title">C++</h2>
-                            <div class="snet-card_wrapper border-0">                           
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                         
-                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with C++.</p>                                    
-                                </div>                                    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card">                        
-                            <h2 class="snet-card_title">Python</h2>
-                            <div class="snet-card_wrapper border-0"> 
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                       
-                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with Python.</p>                                     
-                                </div>                                
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card">                        
-                            <h2 class="snet-card_title">Java</h2>
-                            <div class="snet-card_wrapper border-0">
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                       
-                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with Java.</p>                                     
-                                </div>                                                                
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card">                      
-                            <h2 class="snet-card_title">GO</h2>
-                            <div class="snet-card_wrapper border-0"> 
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                       
-                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with GO.</p>                                      
-                                </div>                                                                
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card">                        
-                            <h2 class="snet-card_title">OpenCog</h2>
-                            <div class="snet-card_wrapper border-0">
-                                <div class="snet-flex">
-                                    <img class="snet-card_descriptionicon" src="http://placehold.jp/80x80.png">                                       
-                                    <p class="snet-card_paragraph">Learn how to use SingularityNet with OpenCog.</p>                                      
-                                </div>                                                                  
-                            </div>
-                        </div>                        
-                    </div>                    
-                </div>                     
-                <div class="row mt-5">
-                    <div class="col-3">
-                        <h1>By Tools & Resources</h1>
-                    </div>
-                    <div class="col-6">
-                        <span class="snet-tagline">
-                            Get the latest updates and downloads of the software and tools you need to run and manage your AI services.                            
-                        </span>                        
-                    </div>                    
-                </div>                 
-                <div class="row row-eq-height">
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-height">
-                            <h2 class="snet-card_title ">SNET Contracts</h2>
-                            <img class="snet-card_descriptionicon big" src="http://placehold.jp/290x160.png">  
-                            <div class="snet-card_wrapper border-0 overflow-hidden">                           
-                                <p class="snet-card_paragraph">Get the latest contract release from SingularityNet, so that your services run efficiently with the platform.</p>
-                                <a class="float-left" href="#">Download</a> <a class="float-right"  href="#">Install Guide</a>         
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-height">                       
-                            <h2 class="snet-card_title">Daemon</h2>
-                            <img class="snet-card_descriptionicon big" src="http://placehold.jp/290x160.png">                              
-                            <div class="snet-card_wrapper border-0 overflow-hidden">                           
-                                <p class="snet-card_paragraph">Its important to use the latest daemon when you confiigure AI services.  </p>
-                                <a class="float-left" href="#">Download</a> <a class="float-right"  href="#">Install Guide</a>         
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-3 pt-4 full-height">
-                        <div class="snet-card">                      
-                            <h2 class="snet-card_title">SNET Client</h2>
-                            <img class="snet-card_descriptionicon big" src="http://placehold.jp/290x160.png">                              
-                            <div class="snet-card_wrapper border-0 overflow-hidden">
-                                <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id. Quaeque eripuit alterum id eum, ad eius assum.</p>
-                                <a class="float-left" href="#">Download</a> <a class="float-right"  href="#">Install Guide</a>          
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-3 pt-4">
-                        <div class="snet-card full-height">                      
-                            <h2 class="snet-card_title">Python SDK</h2>
-                            <img class="snet-card_descriptionicon big" src="http://placehold.jp/290x160.png">                              
-                            <div class="snet-card_wrapper border-0 overflow-hidden">
-                                <p class="snet-card_paragraph">Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id. Quaeque eripuit alterum id eum, ad eius assum.</p>                                
-                                <a class="float-left" href="#">Download</a> <a class="float-right"  href="#">Install Guide</a>                                      
-                            </div>                            
-                        </div>                        
-                    </div>
-                </div>                    
+                        {% endfor %}                         
+                    </div> 
+                </section>                   
             </div>
         </div>
+
         {% include site-footer.html %}        
 
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
