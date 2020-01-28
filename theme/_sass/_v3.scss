@@ -314,6 +314,26 @@ header{
             margin-right: 18px;
         }
     }
+    html body a.main-url{
+        overflow:hidden;
+        &:hover{
+            .snet-blog-entry{
+                text-decoration:none!important;    
+                .snet-blog-entry_content{
+                    text-decoration:none!important;    
+                    span,
+                    h4,
+                    div{
+                        text-decoration:none!important;   
+                        &:hover{
+                            text-decoration:none!important;                              
+                        }
+                    }
+
+                }
+            }            
+        }
+    }
     .snet-blog-entry{
         display: flex;
         img{
@@ -740,7 +760,5 @@ h5 .title-anchor-link{ display: none;}
     color: #212121;
     line-height: 20px;
 }
-
-
 
 @import "home";
