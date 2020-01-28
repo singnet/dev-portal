@@ -418,28 +418,16 @@ h5 .title-anchor-link{ display: none;}
             min-height: 40px;
             display: block;
             text-transform: capitalize;
-            letter-spacing: 0;           
+            letter-spacing: 0;   
+            .e_l,
+            .e_m{
+                display: none;
+            }
             &:hover{
                 color: #4086FF;
                 background: #FAFAFA;
                 text-decoration: none;                
-            }
-            &:not(.collapsed){
-                .e_m{
-                    display: none;
-                }
-                .e_l{
-                    display: inline-block;
-                }                     
-            }
-            &.collapsed{
-                .e_m{
-                    display: inline-block;
-                }
-                .e_l{
-                    display: none;
-                }                
-            }           
+            }         
         }          
         ul{
             list-style: none;
@@ -459,6 +447,26 @@ h5 .title-anchor-link{ display: none;}
                 color: #4086FF;
                 background: #FAFAFA;
                 text-decoration: none;                
+            }
+        }
+        &.has-submenu{
+            a{
+                &:not(.collapsed){
+                    .e_m{
+                        display: none;
+                    }
+                    .e_l{
+                        display: inline-block;
+                    }                     
+                }
+                &.collapsed{
+                    .e_m{
+                        display: inline-block;
+                    }
+                    .e_l{
+                        display: none;
+                    }                
+                }  
             }
         }
     }    

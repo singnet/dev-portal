@@ -14,8 +14,8 @@
                             <h3 class="snet-card_title">Explore</h3>
                             <div class="snet-card_content">
                                 <ul class="snet-nav_list">
-                                    <li>
-                                        <a data-toggle="collapse" class="collapsed" href="#this-should-be-unique">
+                                    <li class="has-submenu"> <!-- The parent "li" tag should have a class "has-submenu"-->
+                                        <a data-toggle="collapse" class="collapsed" href="#this-should-be-unique"> <!-- the href should point to the unique id of inner list -->
                                             Multi LVL Sample
                                             <i class="material-icons align-middle float-right e_m">expand_more</i>  
                                             <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
@@ -54,11 +54,19 @@
                                     {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
                                     {% if path_crumbs[2] == file_name %}
                                     <li class="active">
-                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                        <a href="{{ menu[1].url }}">
+                                            {{ menu[1].title }}
+                                            <i class="material-icons align-middle float-right e_m">expand_more</i>  
+                                            <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
+                                        </a>                                        
                                     </li>
                                     {% else %}
                                     <li>
-                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                        <a href="{{ menu[1].url }}">
+                                            {{ menu[1].title }}
+                                            <i class="material-icons align-middle float-right e_m">expand_more</i>  
+                                            <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
+                                        </a>                                        
                                     </li>
                                     {% endif %}
 

@@ -332,18 +332,13 @@ h5 .title-anchor-link {
       display: block;
       text-transform: capitalize;
       letter-spacing: 0; }
+      .snet-nav_list li a .e_l,
+      .snet-nav_list li a .e_m {
+        display: none; }
       .snet-nav_list li a:hover {
         color: #4086FF;
         background: #FAFAFA;
         text-decoration: none; }
-      .snet-nav_list li a:not(.collapsed) .e_m {
-        display: none; }
-      .snet-nav_list li a:not(.collapsed) .e_l {
-        display: inline-block; }
-      .snet-nav_list li a.collapsed .e_m {
-        display: inline-block; }
-      .snet-nav_list li a.collapsed .e_l {
-        display: none; }
     .snet-nav_list li ul {
       list-style: none;
       margin: 0;
@@ -358,6 +353,14 @@ h5 .title-anchor-link {
       color: #4086FF;
       background: #FAFAFA;
       text-decoration: none; }
+    .snet-nav_list li.has-submenu a:not(.collapsed) .e_m {
+      display: none; }
+    .snet-nav_list li.has-submenu a:not(.collapsed) .e_l {
+      display: inline-block; }
+    .snet-nav_list li.has-submenu a.collapsed .e_m {
+      display: inline-block; }
+    .snet-nav_list li.has-submenu a.collapsed .e_l {
+      display: none; }
 
 /*==============================================================================*/
 /* Right Side Navigation */
