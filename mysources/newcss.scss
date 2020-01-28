@@ -36,6 +36,7 @@ header{
             margin-bottom: 10px;    
             .nav-item{
                 margin-right: 40px;
+                position: relative;
             }
             .nav-item:last-child{
                 margin-right:0px;
@@ -183,7 +184,8 @@ header{
     }
     h4{
         &.snet-card_title{
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: 500;
             color: #666;
         }        
     }
@@ -344,7 +346,7 @@ header{
                 margin: 0;
             }
         }
-        
+
     }
 }
 
@@ -356,135 +358,125 @@ header{
     padding: 0;   
     list-style: none;
 }
-.snet-nav_list li{
-    margin: 0;
-    padding: 0;    
-    border-bottom: 1px solid #F5F7F8; 
-}
-.snet-nav_list li a{
-    display: inline-block;
-    width: 100%;
-    color: #666;
-    padding: 5px 18px;     
-    font-size: 14px;
-    font-size: 14px;
-    font-weight: 600;    
-}
-.snet-nav_list li a:hover,
-.snet-nav_list li.active a{
-    color: #4086FF;
-    background: #FAFAFA;
-    text-decoration: none;
+.snet-nav_list{
+    li{
+        margin: 0;
+        padding: 0;    
+        border-bottom: 1px solid #F5F7F8; 
+        a{
+            display: inline-block;
+            width: 100%;
+            color: #666;     
+            padding:10px 10px 10px 24px;
+            font-size: 14px;
+            font-weight: 400;
+            min-height: 40px;
+            display: block;
+            text-transform: capitalize;
+            letter-spacing: 0;  
+            &:hover{
+                color: #4086FF;
+                background: #FAFAFA;
+                text-decoration: none;                
+            }
+            &+ul{
+                color: red;
+            }
+        }          
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li{
+                border-bottom: none;                 
+                a{
+                    padding:10px 10px 10px 32px;
+                    font-size: 13px;
+                    color: #999;
+                }
+            }
+        }
+        &.active{
+            a{
+                color: #4086FF;
+                background: #FAFAFA;
+                text-decoration: none;                
+            }
+        }
+    }    
+} 
+/*==============================================================================*/
+/* Heading Styles */
+/*==============================================================================*/
+h1{ font-size: 24px;     letter-spacing: 0.20px;}
+h1 .title-anchor-link{ display: none;}
+h2 .title-anchor-link{ display: none;}
+h3 .title-anchor-link{ display: none;}
+h4 .title-anchor-link{ display: none;}
+h5 .title-anchor-link{ display: none;}
 
+/*==============================================================================*/
+/* Left Side Navigation */
+/*==============================================================================*/
+.snet-nav_list_secondary{  
+    ul{
+        margin: 0;
+        padding: 0;   
+        list-style: none;    
+        li{
+            margin: 0 0 0 14px;
+            padding: 0;      
+            display: block;       
+            a{
+                display: block;
+                border-left: 2px solid transparent;
+                width: 100%;
+                color: #9B9B9B;    
+                font-size: 14px;    
+                padding:5px 10px 5px 24px;
+                font-size: 14px;
+                font-weight: 400;
+                min-height: 30px;     
+                text-transform: capitalize;
+                &:hover{
+                    color: #4086FF;
+                    text-decoration: none;                    
+                }
+            }
+            &.active{
+                a{
+                    color: #4086FF;
+                    text-decoration: none;                    
+                    border-left: 2px solid #4086FF;                    
+                }
+            }
+        }
+    }
 }
-.snet-card .snet-card_maincontents{
-    padding: 18px;
-    color: #666;
-    font-size: 14px;
-    line-height: 21px;
-}
-.snet-card .snet-card_maincontents h1,
-.snet-card .snet-card_maincontents h2,
-.snet-card .snet-card_maincontents h3,
-.snet-card .snet-card_maincontents h4,
-.snet-card .snet-card_maincontents h5{
-    color: #212121;
-    letter-spacing: 0.20px;
-    font-weight: 500;
-    padding: 0;
-    border: none;
-    margin-bottom: 10px;
-}
-.snet-card .snet-card_maincontents h1{
-    font-size:30px;
-}
-.snet-card .snet-card_maincontents h2{
-    font-size:24px;
-}
-.snet-card .snet-card_maincontents h3{
-    font-size:20px;
-}
-.snet-card .snet-card_maincontents h4{
-    font-size:16px;
-}
-.snet-card .snet-card_maincontents h5{
-    font-size:14px;
-    font-weight: 700;
-}
-.snet-card .snet-card_maincontents img{
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-}
-.snet-card .snet-card_maincontents p{
-    margin-top: 0;
-}
-.snet-card .snet-card_maincontents p.spacer{
-    display: block;
-    width: 100%;
-    height: 1px;
-}
-.snet-card .snet-card_maincontents p+h2,
-.snet-card .snet-card_maincontents p+h3,
-.snet-card .snet-card_maincontents p+h4,
-.snet-card .snet-card_maincontents p+h5{
-   margin-top: 30px; 
-}
-.snet-card .snet-card_maincontents .snet-forum_question{
-    width: 100%;
-    padding: 16px 0 0 0;    
-    border-top: #DBE3E7 solid 1px;
-    margin: 16px 0 0 0;
-}
-.snet-card .snet-card_maincontents .snet-forum_question a{
-    color: #4086FF;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin: 0 auto;
-    letter-spacing: 1.25px;
-    font-weight: 500;
-}
-.snet-nav_list_secondary ul{
-    margin: 0;
-    padding: 0;   
-    list-style: none;    
-}
-.snet-nav_list_secondary ul li{
-    margin: 0;
-    padding: 0;      
-    width: 100%;
-}
-.snet-nav_list_secondary ul li a{                        
-    display: inline-block;
-    border-left: 2px solid transparent;
-    width: 100%;
-    color: #9B9B9B;
-    padding: 6px 18px;     
-    font-size: 12px;
-}
-.snet-nav_list_secondary ul li a:hover,
-.snet-nav_list_secondary ul li.active a{                        
-    color: #4086FF;
-    text-decoration: none;
-}
-.snet-nav_list_secondary ul li.active a{                        
-    border-left: 2px solid #4086FF;
-}
+
 .snet-card_wrapper{
     padding:12px 18px;
     border-bottom: 1px solid #F5F7F8;     
 }
+/*==============================================================================*/
+/* Feedback Links */
+/*==============================================================================*/
 .snet-card_feedbacklinks{
     text-transform: uppercase;
+    display: block;
+    margin: 0 0 8px 14px;
     letter-spacing: 1.25px;
     color: #4086FF;
     font-size: 14px;
     font-weight: 600;
-}
-.snet-card_feedbacklinks:hover{
-    text-decoration: none;
+    &:hover{
+        text-decoration: none;        
+    }
 }
 
+/*==============================================================================*/
+/* Breadcrumbs */
+/*==============================================================================*/
 .snet-breadcrumb{
     margin: 0;
     padding: 0;
@@ -506,15 +498,114 @@ header{
     display: none;
 }
 
-.snet-starrating i{
-    font-size: 20px;
-    color: rgba(161,163,168,.35);
+.snet-starrating{
+    padding:0 0 0 28px;
+    i{
+        font-size: 20px;
+        color: rgba(161,163,168,.35);
+        &:hover{
+            color: #FFC200;        
+        }
+    }    
 }
-.snet-starrating i:hover{
-    color: #FFC200;
+/*==============================================================================*/
+/* Main Contents */
+/*==============================================================================*/
+.snet-card{
+    .snet-card_maincontents{
+        padding: 18px;
+        color: #666;
+        font-size: 14px;
+        line-height: 21px;
+    }   
+}
+@mixin header-generator($font-size, $letter-spacing, $margin-bottom, $font-weight:"500") {
+    padding: 0;
+    border: none;
+    color: #212112;
+    font-size:$font-size + 0px;
+    letter-spacing: $letter-spacing + 0px;
+    margin-bottom: $margin-bottom + 0px;    
+    font-weight: $font-weight;    
+}
+.snet-card{
+    .snet-card_maincontents{
+        h1{
+            @include header-generator(22,0.23,16);              
+        }
+        h2{
+            @include header-generator(20,0.21,14); 
+        }
+        h3{
+            @include header-generator(18,0.19,12);               
+        }
+        h4{
+            @include header-generator(16,0.17,10);              
+        }
+        h5{
+            @include header-generator(14,0.15,8);              
+        }
+        h6{
+            @include header-generator(14,0.15,8,400);               
+        }
+        p{
+            margin-top: 0;   
+            font-size:14px;
+            line-height:21px;
+            color:#666;
+            letter-spacing:0px;
+            &.spacer{
+                display: block;
+                width: 100%;
+                height: 1px;                
+            }
+            &+h1,
+            &+h2,
+            &+h3,
+            &+h4,
+            &+h5,
+            &+h6{
+                margin-top: 30px;                 
+            }            
+        }
+        img{
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;            
+        }
+        code{
+            font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+            color: #8824D1;
+            background: #EEEEEE;
+            padding: 0 5px;
+            border-radius: 2px;
+        }
+        ul{
+            list-style: disc;
+        }
+        ol{
+            list-style:decimal;
+        }
+    }
+} 
+.snet-card .snet-card_maincontents .snet-forum_question{
+    width: 100%;
+    padding: 16px 0 0 0;    
+    border-top: #DBE3E7 solid 1px;
+    margin: 16px 0 0 0;
+}
+.snet-card .snet-card_maincontents .snet-forum_question a{
+    color: #4086FF;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    letter-spacing: 1.25px;
+    font-weight: 500;
 }
 
-
+/*==============================================================================*/
+/* Main Contents */
+/*==============================================================================*/
 @media only screen and (max-width: 575px) {
     /* xs */    
     body{
@@ -577,21 +668,13 @@ header{
 }
 
 
-/* Heading Styles */
-h1{ font-size: 24px;     letter-spacing: 0.20px;}
-h1 .title-anchor-link{ display: none;}
-h2 .title-anchor-link{ display: none;}
-h3 .title-anchor-link{ display: none;}
-h4 .title-anchor-link{ display: none;}
-h5 .title-anchor-link{ display: none;}
+
 .snet-tagline{
     font-size: 18px;
     font-weight: 300;
     color: #212121;
     line-height: 20px;
 }
-
-
 
 /* Homepage Styles */
 .snet-herobanner{
