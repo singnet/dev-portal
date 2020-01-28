@@ -46,8 +46,8 @@
                             <a class="nav-link" href="#">Docs</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown" >Products</a>
-                            <div class="dropdown-menu dropdown-info">
+                            <a class="nav-link" href="">Products <i class="material-icons float-right align-middle">arrow_drop_down</i></a>
+                            <div class="snet_slidingDropdown">
                                 <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                                 <a class="dropdown-item" href="#">Something else here</a>
@@ -116,12 +116,16 @@
                                     <li class="active"><a href="#">A very long link which points somewhere  </a></li>
                                     <li><a href="#">asdaas 2</a></li>
                                     <li>
-                                        <a href="#">asdaas 3</a>
-                                        <ul>
+                                        <a data-toggle="collapse" class="collapsed" href="#this-should-be-unique">
+                                            Multi LVL Sample
+                                            <i class="material-icons align-middle float-right e_m">expand_more</i>  
+                                            <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
+                                        </a>                                        
+                                        <ul class="collapse" id="this-should-be-unique">
                                             <li><a href="#">asdaas 3.1</a></li>
                                             <li><a href="#">asdaas 3.2</a></li>
                                             <li><a href="#">asdaas 3.3</a></li>                                            
-                                        </ul>
+                                        </ul>       
                                     </li>                    
                                     <li><a href="#">asdaas 4</a></li>                                    
                                 </ul>

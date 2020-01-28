@@ -44,8 +44,15 @@ header{
         }
         .snet-navbar_menu{          
             .nav-item{
-                .dropdown-menu{
+                .snet_slidingDropdown{
+                    position: absolute;
+                    min-width: 100%;
+                    width: auto;                    
                     background-color: #220D3A;    
+                    max-height:0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease-in;   
+                    z-index: 1;                    
                     a{
                         font-size:14px;                        
                         padding: 10px!important;
@@ -60,10 +67,11 @@ header{
                 &:hover{
                     a{
                         color: #fff;
-                        border-bottom: 2px solid #fff;                        
+                        border-bottom: 2px solid #fff;   
                     }
-                    .dropdown-menu{
-                        background-color: #220D3A;                         
+                    .snet_slidingDropdown{
+                        background-color: #220D3A;  
+                        max-height: 200px;
                         a{
                             padding: 10px!important;
                             color: #9B9B9B;

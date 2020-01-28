@@ -24,8 +24,11 @@
                 {% endfor %}
                 {% if dropdowntree %}
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ item.item_name }}</a>  
-                    <div class="dropdown-menu dropdown-info">
+                    <a class="nav-link" >
+                        {{ item.item_name }}
+                        <i class="material-icons float-right align-middle">arrow_drop_down</i>
+                    </a>  
+                    <div class="snet_slidingDropdown">
                         {% for subheader in dropdowntree.subheaders %}
                         <a class="dropdown-item" href="{{subheader.url}}">{{subheader.title}}</a>
                         {% endfor %}

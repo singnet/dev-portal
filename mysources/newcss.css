@@ -43,25 +43,33 @@ header {
       header .snet-navbar_primary .snet-navbar_menu .nav-item:last-child,
       header .snet-navbar_primary .snet-navbar_login .nav-item:last-child {
         margin-right: 0px; }
-    header .snet-navbar_primary .snet-navbar_menu .nav-item .dropdown-menu {
-      background-color: #220D3A; }
-      header .snet-navbar_primary .snet-navbar_menu .nav-item .dropdown-menu a {
+    header .snet-navbar_primary .snet-navbar_menu .nav-item .snet_slidingDropdown {
+      position: absolute;
+      min-width: 100%;
+      width: auto;
+      background-color: #220D3A;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in;
+      z-index: 1; }
+      header .snet-navbar_primary .snet-navbar_menu .nav-item .snet_slidingDropdown a {
         font-size: 14px;
         padding: 10px !important;
         color: #9B9B9B;
         border-bottom: 2px solid #220D3A; }
-        header .snet-navbar_primary .snet-navbar_menu .nav-item .dropdown-menu a:hover {
+        header .snet-navbar_primary .snet-navbar_menu .nav-item .snet_slidingDropdown a:hover {
           color: #220D3A; }
     header .snet-navbar_primary .snet-navbar_menu .nav-item.active a, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover a {
       color: #fff;
       border-bottom: 2px solid #fff; }
-    header .snet-navbar_primary .snet-navbar_menu .nav-item.active .dropdown-menu, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .dropdown-menu {
-      background-color: #220D3A; }
-      header .snet-navbar_primary .snet-navbar_menu .nav-item.active .dropdown-menu a, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .dropdown-menu a {
+    header .snet-navbar_primary .snet-navbar_menu .nav-item.active .snet_slidingDropdown, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .snet_slidingDropdown {
+      background-color: #220D3A;
+      max-height: 200px; }
+      header .snet-navbar_primary .snet-navbar_menu .nav-item.active .snet_slidingDropdown a, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .snet_slidingDropdown a {
         padding: 10px !important;
         color: #9B9B9B;
         border-bottom: 2px solid #220D3A; }
-        header .snet-navbar_primary .snet-navbar_menu .nav-item.active .dropdown-menu a:hover, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .dropdown-menu a:hover {
+        header .snet-navbar_primary .snet-navbar_menu .nav-item.active .snet_slidingDropdown a:hover, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .snet_slidingDropdown a:hover {
           color: #220D3A; }
     header .snet-navbar_primary .snet-navbar_menu .nav-item a {
       color: #9B9B9B;
