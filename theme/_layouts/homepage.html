@@ -36,7 +36,7 @@
                                         <h2>{{ item.title }}</h2>
                                         <p>{{ item.description }}</p>
                                     </div>
-                                    <img class="snet-card_descriptionicon align-self-center" src="http://placehold.jp/80x80.png">                                      
+                                    <img class="snet-card_descriptionicon align-self-center" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{item.icon}}">                                      
                                 </div>
                             </div>  
                         </a>
