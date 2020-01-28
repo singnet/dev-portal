@@ -546,7 +546,7 @@ h5 .title-anchor-link {
   font-weight: 500; }
 
 /*==============================================================================*/
-/* Main Contents */
+/* Responsive */
 /*==============================================================================*/
 @media only screen and (max-width: 575px) {
   /* xs */
@@ -604,9 +604,37 @@ h5 .title-anchor-link {
   color: #212121;
   line-height: 20px; }
 
+/* 
+    Created on  : Jan 15, 2020, 12:12:14 PM
+    Author      : Sujith Varma [sujith.varma@singularitynet.io]
+    NOTES       : THIS FILES NEEDS OPTIMIZATION
+*/
 /* Homepage Styles */
 .snet-herobanner {
   height: 280px;
-  background: #4086FF; }
+  background: url("main_banner.png") top center no-repeat; }
+  .snet-herobanner h2 {
+    color: #fff; }
+  .snet-herobanner p {
+    color: #fff; }
+
+/* 
+    Created on  : Jan 15, 2020, 12:12:14 PM
+    Author      : Sujith Varma [sujith.varma@singularitynet.io]
+    NOTES       : THIS FILES NEEDS OPTIMIZATION
+*/
+body {
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #212121;
+  font-family: Muli,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 30px; }
+
+section {
+  background: #eee;
+  margin-bottom: 64px; }
 
 /*# sourceMappingURL=newcss.css.map */

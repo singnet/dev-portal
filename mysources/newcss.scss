@@ -669,7 +669,7 @@ h5 .title-anchor-link{ display: none;}
 }
 
 /*==============================================================================*/
-/* Main Contents */
+/* Responsive */
 /*==============================================================================*/
 @media only screen and (max-width: 575px) {
     /* xs */    
@@ -741,8 +741,7 @@ h5 .title-anchor-link{ display: none;}
     line-height: 20px;
 }
 
-/* Homepage Styles */
-.snet-herobanner{
-    height: 280px;
-    background: #4086FF;
-}
+
+
+@import "home";
+@import "article-landing";
