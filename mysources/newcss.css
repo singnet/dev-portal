@@ -255,47 +255,6 @@ header {
       .snet-card.inner-card .snet-card_wrapper p {
         margin: 0; }
 
-.snet-nav_list {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-.snet-nav_list li {
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #F5F7F8; }
-  .snet-nav_list li a {
-    display: inline-block;
-    width: 100%;
-    color: #666;
-    padding: 10px 10px 10px 24px;
-    font-size: 14px;
-    font-weight: 400;
-    min-height: 40px;
-    display: block;
-    text-transform: capitalize;
-    letter-spacing: 0; }
-    .snet-nav_list li a:hover {
-      color: #4086FF;
-      background: #FAFAFA;
-      text-decoration: none; }
-    .snet-nav_list li a + ul {
-      color: red; }
-  .snet-nav_list li ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-    .snet-nav_list li ul li {
-      border-bottom: none; }
-      .snet-nav_list li ul li a {
-        padding: 10px 10px 10px 32px;
-        font-size: 13px;
-        color: #999; }
-  .snet-nav_list li.active a {
-    color: #4086FF;
-    background: #FAFAFA;
-    text-decoration: none; }
-
 /*==============================================================================*/
 /* Heading Styles */
 /*==============================================================================*/
@@ -321,6 +280,49 @@ h5 .title-anchor-link {
 /*==============================================================================*/
 /* Left Side Navigation */
 /*==============================================================================*/
+.snet-nav_list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .snet-nav_list li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #F5F7F8; }
+    .snet-nav_list li a {
+      display: inline-block;
+      width: 100%;
+      color: #666;
+      padding: 10px 10px 10px 24px;
+      font-size: 14px;
+      font-weight: 400;
+      min-height: 40px;
+      display: block;
+      text-transform: capitalize;
+      letter-spacing: 0; }
+      .snet-nav_list li a:hover {
+        color: #4086FF;
+        background: #FAFAFA;
+        text-decoration: none; }
+      .snet-nav_list li a + ul {
+        color: red; }
+    .snet-nav_list li ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .snet-nav_list li ul li {
+        border-bottom: none; }
+        .snet-nav_list li ul li a {
+          padding: 10px 10px 10px 32px;
+          font-size: 13px;
+          color: #999; }
+    .snet-nav_list li.active a {
+      color: #4086FF;
+      background: #FAFAFA;
+      text-decoration: none; }
+
+/*==============================================================================*/
+/* Right Side Navigation */
+/*==============================================================================*/
 .snet-nav_list_secondary ul {
   margin: 0;
   padding: 0;
@@ -328,11 +330,11 @@ h5 .title-anchor-link {
   .snet-nav_list_secondary ul li {
     margin: 0 0 0 14px;
     padding: 0;
-    display: block; }
+    display: block;
+    width: 100%; }
     .snet-nav_list_secondary ul li a {
-      display: block;
+      display: inline-block;
       border-left: 2px solid transparent;
-      width: 100%;
       color: #9B9B9B;
       font-size: 14px;
       padding: 5px 10px 5px 24px;
@@ -413,7 +415,7 @@ h5 .title-anchor-link {
   font-size: 22px;
   letter-spacing: 0.23px;
   margin-bottom: 16px;
-  font-weight: "500"; }
+  font-weight: 500; }
 .snet-card .snet-card_maincontents h2 {
   padding: 0;
   border: none;
@@ -421,7 +423,7 @@ h5 .title-anchor-link {
   font-size: 20px;
   letter-spacing: 0.21px;
   margin-bottom: 14px;
-  font-weight: "500"; }
+  font-weight: 500; }
 .snet-card .snet-card_maincontents h3 {
   padding: 0;
   border: none;
@@ -429,7 +431,7 @@ h5 .title-anchor-link {
   font-size: 18px;
   letter-spacing: 0.19px;
   margin-bottom: 12px;
-  font-weight: "500"; }
+  font-weight: 500; }
 .snet-card .snet-card_maincontents h4 {
   padding: 0;
   border: none;
@@ -437,7 +439,7 @@ h5 .title-anchor-link {
   font-size: 16px;
   letter-spacing: 0.17px;
   margin-bottom: 10px;
-  font-weight: "500"; }
+  font-weight: 500; }
 .snet-card .snet-card_maincontents h5 {
   padding: 0;
   border: none;
@@ -445,7 +447,7 @@ h5 .title-anchor-link {
   font-size: 14px;
   letter-spacing: 0.15px;
   margin-bottom: 8px;
-  font-weight: "500"; }
+  font-weight: 500; }
 .snet-card .snet-card_maincontents h6 {
   padding: 0;
   border: none;
@@ -480,6 +482,12 @@ h5 .title-anchor-link {
   list-style: disc; }
 .snet-card .snet-card_maincontents ol {
   list-style: decimal; }
+.snet-card .snet-card_maincontents a {
+  color: #4086FF;
+  font-weight: 600; }
+  .snet-card .snet-card_maincontents a:hover {
+    color: #4086FF;
+    text-decoration: underline; }
 
 .snet-card .snet-card_maincontents .snet-forum_question {
   width: 100%;

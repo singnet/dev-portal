@@ -348,17 +348,24 @@ header{
         }
 
     }
-}
+} 
+/*==============================================================================*/
+/* Heading Styles */
+/*==============================================================================*/
+h1{ font-size: 24px;     letter-spacing: 0.20px;}
+h1 .title-anchor-link{ display: none;}
+h2 .title-anchor-link{ display: none;}
+h3 .title-anchor-link{ display: none;}
+h4 .title-anchor-link{ display: none;}
+h5 .title-anchor-link{ display: none;}
 
-
-
-
+/*==============================================================================*/
+/* Left Side Navigation */
+/*==============================================================================*/
 .snet-nav_list{
     margin: 0;
     padding: 0;   
-    list-style: none;
-}
-.snet-nav_list{
+    list-style: none;    
     li{
         margin: 0;
         padding: 0;    
@@ -404,19 +411,10 @@ header{
             }
         }
     }    
-} 
-/*==============================================================================*/
-/* Heading Styles */
-/*==============================================================================*/
-h1{ font-size: 24px;     letter-spacing: 0.20px;}
-h1 .title-anchor-link{ display: none;}
-h2 .title-anchor-link{ display: none;}
-h3 .title-anchor-link{ display: none;}
-h4 .title-anchor-link{ display: none;}
-h5 .title-anchor-link{ display: none;}
+}
 
 /*==============================================================================*/
-/* Left Side Navigation */
+/* Right Side Navigation */
 /*==============================================================================*/
 .snet-nav_list_secondary{  
     ul{
@@ -426,11 +424,11 @@ h5 .title-anchor-link{ display: none;}
         li{
             margin: 0 0 0 14px;
             padding: 0;      
-            display: block;       
+            display: block;   
+            width:100%;
             a{
-                display: block;
+                display: inline-block;
                 border-left: 2px solid transparent;
-                width: 100%;
                 color: #9B9B9B;    
                 font-size: 14px;    
                 padding:5px 10px 5px 24px;
@@ -519,7 +517,7 @@ h5 .title-anchor-link{ display: none;}
         line-height: 21px;
     }   
 }
-@mixin header-generator($font-size, $letter-spacing, $margin-bottom, $font-weight:"500") {
+@mixin header-generator($font-size, $letter-spacing, $margin-bottom, $font-weight:500) {
     padding: 0;
     border: none;
     color: #212112;
@@ -585,6 +583,14 @@ h5 .title-anchor-link{ display: none;}
         }
         ol{
             list-style:decimal;
+        }
+        a{
+            color: #4086FF;
+            font-weight: 600;
+            &:hover{
+                color: #4086FF;
+                text-decoration: underline;                
+            }
         }
     }
 } 
