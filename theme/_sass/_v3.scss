@@ -314,8 +314,9 @@ header{
             margin-right: 18px;
         }
     }
-    html body a.main-url{
+    a.main-url:link{
         overflow:hidden;
+        display:block;
         &:hover{
             .snet-blog-entry{
                 text-decoration:none!important;    
@@ -323,8 +324,10 @@ header{
                     text-decoration:none!important;    
                     span,
                     h4,
-                    div{
-                        text-decoration:none!important;   
+                    div,
+                    p{
+                        text-decoration:none!important;
+                        color:red;
                         &:hover{
                             text-decoration:none!important;                              
                         }
