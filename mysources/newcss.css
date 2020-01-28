@@ -17,7 +17,13 @@ header {
   background-color: #220D3A; }
   header .snet-navbar_primary {
     padding: 12px 65px 4px 60px;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+    /*
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+        margin: -0.125rem 0 0;            
+    } 
+    */ }
     header .snet-navbar_primary h1 {
       font-size: 16px; }
     header .snet-navbar_primary .navbar-toggler-icon i {
@@ -37,9 +43,26 @@ header {
       header .snet-navbar_primary .snet-navbar_menu .nav-item:last-child,
       header .snet-navbar_primary .snet-navbar_login .nav-item:last-child {
         margin-right: 0px; }
+    header .snet-navbar_primary .snet-navbar_menu .nav-item .dropdown-menu {
+      background-color: #220D3A; }
+      header .snet-navbar_primary .snet-navbar_menu .nav-item .dropdown-menu a {
+        font-size: 14px;
+        padding: 10px !important;
+        color: #9B9B9B;
+        border-bottom: 2px solid #220D3A; }
+        header .snet-navbar_primary .snet-navbar_menu .nav-item .dropdown-menu a:hover {
+          color: #220D3A; }
     header .snet-navbar_primary .snet-navbar_menu .nav-item.active a, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover a {
       color: #fff;
       border-bottom: 2px solid #fff; }
+    header .snet-navbar_primary .snet-navbar_menu .nav-item.active .dropdown-menu, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .dropdown-menu {
+      background-color: #220D3A; }
+      header .snet-navbar_primary .snet-navbar_menu .nav-item.active .dropdown-menu a, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .dropdown-menu a {
+        padding: 10px !important;
+        color: #9B9B9B;
+        border-bottom: 2px solid #220D3A; }
+        header .snet-navbar_primary .snet-navbar_menu .nav-item.active .dropdown-menu a:hover, header .snet-navbar_primary .snet-navbar_menu .nav-item:hover .dropdown-menu a:hover {
+          color: #220D3A; }
     header .snet-navbar_primary .snet-navbar_menu .nav-item a {
       color: #9B9B9B;
       font-size: 16px;

@@ -44,11 +44,34 @@ header{
         }
         .snet-navbar_menu{          
             .nav-item{
+                .dropdown-menu{
+                    background-color: #220D3A;    
+                    a{
+                        font-size:14px;                        
+                        padding: 10px!important;
+                        color: #9B9B9B;
+                        border-bottom: 2px solid #220D3A;   
+                        &:hover{
+                            color: #220D3A;
+                        }
+                    }
+                }                
                 &.active,
                 &:hover{
                     a{
                         color: #fff;
                         border-bottom: 2px solid #fff;                        
+                    }
+                    .dropdown-menu{
+                        background-color: #220D3A;                         
+                        a{
+                            padding: 10px!important;
+                            color: #9B9B9B;
+                            border-bottom: 2px solid #220D3A;   
+                            &:hover{
+                                color: #220D3A;
+                            }
+                        }
                     }
                 }
                 a{
@@ -87,7 +110,13 @@ header{
                     }
                 }
             }                     
-        }        
+        }   
+        /*
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+            margin: -0.125rem 0 0;            
+        } 
+        */
     }   
 }
 

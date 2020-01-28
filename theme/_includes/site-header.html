@@ -24,7 +24,7 @@
                 {% endfor %}
                 {% if dropdowntree %}
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="dropdown" title="{{ item.item_name }}">{{ item.item_name }}</a>  
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ item.item_name }}</a>  
                     <div class="dropdown-menu dropdown-info">
                         {% for subheader in dropdowntree.subheaders %}
                         <a class="dropdown-item" href="{{subheader.url}}">{{subheader.title}}</a>
@@ -42,7 +42,7 @@
                 {% endif %}                 
                 {% endfor %}                
             </ul>
-
+<!--
             <ul class="navbar-nav ml-auto snet-navbar_login">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Login</a>
@@ -51,6 +51,7 @@
                     <a class="nav-link snet-button_outline" href="#">Sign Up Free</a>
                 </li>
             </ul>
+-->
 
         </div>           
     </nav>               
