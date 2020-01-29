@@ -24,23 +24,23 @@
             </div>            
         </section>
 
-        <div class="wrapper">
+        <div class="wrapper snet-card_margintop_fix">
             <div class="container-fluid">     
                 <div class="row">
                     {% for item in page.features %}
                     <div class="col-4 pt-4">
-                        <a class="snet-card_wrapper_link" href="{{ item.url }}">
-                            <div class="snet-card"> 
-                                <div class="snet-card_wrapper_homepage">
-                                    <div class="snet-card_homepage_content">
-                                        <h2>{{ item.title }}</h2>
-                                        <p>{{ item.description }}</p>
-                                    </div>
-                                    <img class="snet-card_descriptionicon align-self-center" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{item.icon}}">                                      
+                        <a href="{{ item.url }}" class="snet-card_wrapper_link">
+                            <div class="snet-card full-height"> 
+                                <div class="snet-home_cards">
+                                    <img class="snet-card_descriptionicon align-self-center" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{item.icon}}">                                       
+                                    <h2>{{ item.title }}</h2>
+                                    <p>
+                                        {{ item.description }}                                       
+                                    </p>
                                 </div>
-                            </div>  
-                        </a>
-                    </div>
+                            </div>   
+                        </a>                            
+                    </div>                    
                     {% endfor %}
                 </div>      
                 <div class="row">
@@ -49,21 +49,21 @@
                             <h2 class="snet-card_title">Blog Posts</h2>     
                             {% assign index = 0 %}
                             {% for e in site.external_feed %}
-                                <a class="main-url" href="{{ e.feed_url }}">
-                                    <div class="snet-blog-entry">
-                                        <img class="snet-card_descriptionicon align-self-center" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{page.blogcards[0].icon}}">                                 
-                                        <div class="snet-blog-entry_content">
-                                            <span>{{ e.pub_date }}</span>
-                                            <h4>{{ e.title }}</h4>
-                                            <p>{{ item.description }}</p>
-                                        </div>
+                            <a class="main-url" href="{{ e.feed_url }}">
+                                <div class="snet-blog-entry">
+                                    <img class="snet-card_descriptionicon align-self-center" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{page.blogcards[0].icon}}">                                 
+                                    <div class="snet-blog-entry_content">
+                                        <span>{{ e.pub_date }}</span>
+                                        <h4>{{ e.title }}</h4>
+                                        <p>{{ item.description }}</p>
                                     </div>
-                                </a>
-                                {% if index == 2 %}
-                                    {% break %}
-                                {% endif %}
+                                </div>
+                            </a>
+                            {% if index == 2 %}
+                            {% break %}
+                            {% endif %}
 
-                                {% assign index = index | plus: 1 %}
+                            {% assign index = index | plus: 1 %}
                             {% endfor %}                                                    
                         </div>
                     </div>

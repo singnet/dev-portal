@@ -292,6 +292,7 @@ header{
     }
     .snet-card_wrapper_homepage{
         display: flex;
+        background:red;
         .snet-card_homepage_content{
             h2{
                 font-size: 24px;
@@ -304,13 +305,12 @@ header{
                 color: #666;
                 padding: 0 18px;
             }
-
-        }
-        img{
-            flex-shrink: 0;
-            width: 80px;
-            height: 80px;
-            margin-right: 18px;
+            img{
+                flex-shrink: 0;
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+            }            
         }
     }
     .snet-blog-entry{

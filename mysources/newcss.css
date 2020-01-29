@@ -216,7 +216,8 @@ header {
       position: absolute;
       bottom: 0; }
   .snet-card .snet-card_wrapper_homepage {
-    display: flex; }
+    display: flex;
+    background: red; }
     .snet-card .snet-card_wrapper_homepage .snet-card_homepage_content h2 {
       font-size: 24px;
       color: #212121;
@@ -226,11 +227,11 @@ header {
       font-size: 14px;
       color: #666;
       padding: 0 18px; }
-    .snet-card .snet-card_wrapper_homepage img {
+    .snet-card .snet-card_wrapper_homepage .snet-card_homepage_content img {
       flex-shrink: 0;
       width: 80px;
       height: 80px;
-      margin-right: 18px; }
+      margin: 0 auto; }
   .snet-card .snet-blog-entry {
     display: flex; }
     .snet-card .snet-blog-entry img {
@@ -599,13 +600,39 @@ h5 .title-anchor-link {
     NOTES       : THIS FILES NEEDS OPTIMIZATION
 */
 /* Homepage Styles */
-.snet-herobanner {
+section.snet-herobanner {
   height: 280px;
-  background: url("main_banner.png") top center no-repeat; }
-  .snet-herobanner h2 {
+  background: url("main_banner.png") #414e8e top center no-repeat;
+  margin-bottom: 0; }
+  section.snet-herobanner h2 {
+    color: #fff;
+    font-size: 26px; }
+  section.snet-herobanner p {
     color: #fff; }
-  .snet-herobanner p {
-    color: #fff; }
+  section.snet-herobanner .snet-herobanner_tagline {
+    font-size: 22px;
+    font-weight: 500;
+    display: block; }
+
+.snet-card_margintop_fix {
+  margin-top: -50px; }
+
+.snet-card .snet-home_cards {
+  padding: 18px;
+  font-size: 14px;
+  color: #666; }
+  .snet-card .snet-home_cards h2 {
+    text-align: center;
+    border: none;
+    font-size: 20px; }
+  .snet-card .snet-home_cards p {
+    text-align: center;
+    margin: 0; }
+  .snet-card .snet-home_cards img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto; }
 
 section {
   margin-bottom: 64px; }
