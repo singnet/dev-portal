@@ -34,10 +34,12 @@
                                     {% assign nav_tree = site.data.navigation.concepts %}
                                     {% when 'provider.md' %}
                                     {% assign nav_tree = site.data.navigation.provider %}
+                                    {% when 'ai-consumers' %}
+                                    {% assign nav_tree = site.data.navigation.ai-consumers %}                                                                            
                                     {% when 'buyer.md' %}
                                     {% assign nav_tree = site.data.navigation.buyer %}
                                     {% else %}
-                                    {% assign nav_tree = site.data.navigation.docs %}                                      
+                                    {% assign nav_tree = site.data.navigation.docs %}                                                                          
                                     {% endcase %}            
                                     {% when 'tutorials' %}
                                     {% assign nav_tree = site.data.navigation.tutorials %}
