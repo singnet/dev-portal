@@ -574,6 +574,7 @@ h5 .title-anchor-link{ display: none;}
         color: #666;
         font-size: 14px;
         line-height: 21px;
+        overflow: hidden;
     }   
 }
 @mixin header-generator($font-size, $letter-spacing, $margin-bottom, $font-weight:500) {
@@ -739,16 +740,12 @@ h5 .title-anchor-link{ display: none;}
     }    
 }
 
-
-
 .snet-tagline{
     font-size: 18px;
     font-weight: 300;
     color: #212121;
     line-height: 20px;
 }
-
-
 
 @import "home";
 @import "overview";

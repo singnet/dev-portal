@@ -448,7 +448,8 @@ h5 .title-anchor-link {
   padding: 18px;
   color: #666;
   font-size: 14px;
-  line-height: 21px; }
+  line-height: 21px;
+  overflow: hidden; }
 
 .snet-card .snet-card_maincontents h1 {
   padding: 0;
