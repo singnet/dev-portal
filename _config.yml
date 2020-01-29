@@ -73,3 +73,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jemoji
+  - feedjira
+  - httparty
+collections:
+  - external_feed
