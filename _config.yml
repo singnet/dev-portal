@@ -27,7 +27,7 @@ snet:
             - item_name: AI Developer
               item_url: '/articlelanding/'
             - item_name: AI Consumer
-              item_url: '/articlelanding/'              
+              item_url: '/docs/ai-consumers/'              
 
     footer:
         content:
