@@ -52,7 +52,7 @@ header {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in;
-        z-index: 1; }
+        z-index: 1025; }
         header .snet-navbar_primary .snet-navbar_menu .nav-item .snet_slidingDropdown a {
           font-size: 14px;
           padding: 10px !important;
@@ -550,16 +550,10 @@ h5 .title-anchor-link {
 /*==============================================================================*/
 @media only screen and (max-width: 575px) {
   /* xs */
-  body {
-    background: red !important; }
-
   .wrapper {
     width: 90%; } }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   /* sm */
-  body {
-    background: yellow !important; }
-
   .wrapper {
     width: 576px; }
 
@@ -567,16 +561,10 @@ h5 .title-anchor-link {
     padding: 10px 8px 10px 8px; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* md */
-  body {
-    background: blue !important; }
-
   .wrapper {
     width: 768px; } }
 @media only screen and (min-width: 992px) and (max-width: 1279px) {
   /* lg */
-  body {
-    background: green !important; }
-
   .wrapper {
     width: 992px; }
 
@@ -596,9 +584,6 @@ h5 .title-anchor-link {
     letter-spacing: 1.29px; } }
 @media only screen and (min-width: 1280px) {
   /* xl */
-  body {
-    background: purple !important; }
-
   .wrapper {
     width: 1280px; } }
 .snet-tagline {

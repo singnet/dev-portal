@@ -52,7 +52,7 @@ header{
                     max-height:0;
                     overflow: hidden;
                     transition: max-height 0.3s ease-in;   
-                    z-index: 1;                    
+                    z-index: 1025;                    
                     a{
                         font-size:14px;                        
                         padding: 10px!important;
@@ -674,7 +674,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (max-width: 575px) {
     /* xs */    
     body{
-        background: red!important; 
+        //background: red!important; 
     }
     .wrapper{
         width:90%;
@@ -683,7 +683,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 576px) and (max-width:767px){
     /* sm */    
     body{
-        background: yellow!important; 
+        //background: yellow!important; 
     }   
     .wrapper{
         width:576px;
@@ -699,7 +699,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 768px) and (max-width:991px){
     /* md */    
     body{
-        background: blue!important;
+        //background: blue!important;
     }    
     .wrapper{
         width:768px;
@@ -708,7 +708,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 992px) and (max-width:1279px) {
     /* lg */    
     body{
-        background: green!important;
+        //background: green!important;
     }    
     .wrapper{
         width:992px;
@@ -732,7 +732,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 1280px) {
     /* xl */
     body{
-        background: purple!important;
+        //background: purple!important;
     }  
     .wrapper{
         width:1280px;
