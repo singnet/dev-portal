@@ -12,7 +12,7 @@ micro_nav: true
 
 ---
 
-## Getting Started
+## Introduction to MPE
 
 Documentation for AI Consumers
 
@@ -36,3 +36,7 @@ You can jump directly to the thing you'd like to know more about, or use the nav
         * [MPE Stateless Client](/docs/concepts/mpe-stateless-client)
 * **The Request for AI Portal (RFAI):** is a DApp through which end users and application developers can request specific AI services they would like added to the network and stake AGI tokens as a reward for high-quality solutions.
 
+
+## How to use MPE
+
+## Reading MPE

@@ -4,37 +4,45 @@
     NOTES       : THIS FILES NEEDS OPTIMIZATION
 */
 /* Homepage Styles */
-.snet-herobanner{
+section.snet-herobanner{
     height: 280px;
-    background:url("../images/main_banner.png") top center no-repeat;
+    background:url("../images/main_banner.png") #414e8e top center no-repeat;
+    margin-bottom:0;
     h2{
         color: #fff;
+        font-size: 26px;
     }
     p{
         color: #fff;        
     }
+    .snet-herobanner_tagline{
+        font-size: 22px;
+        font-weight: 500;
+        display: block;
+    }
 }
-
-a.main-url:link{
-    overflow:hidden;
-    display:block;
-    &:hover{
-        .snet-blog-entry{
-            text-decoration:none!important;    
-            .snet-blog-entry_content{
-                text-decoration:none!important;    
-                span,
-                h4,
-                div,
-                p{
-                    text-decoration:none!important;
-                    color:red;
-                    &:hover{
-                        text-decoration:none!important;                              
-                    }
-                }
-
-            }
-        }            
+.snet-card_margintop_fix{
+    margin-top: -50px;
+}
+.snet-card{
+    .snet-home_cards{
+        padding: 18px;
+        font-size: 14px;
+        color: #666;
+        h2{
+            text-align: center;
+            border: none;
+            font-size: 20px;            
+        }
+        p{
+            text-align: center;
+            margin: 0;
+        }
+        img{
+            display: block;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;            
+        }
     }
 }

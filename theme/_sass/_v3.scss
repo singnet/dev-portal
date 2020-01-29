@@ -52,7 +52,7 @@ header{
                     max-height:0;
                     overflow: hidden;
                     transition: max-height 0.3s ease-in;   
-                    z-index: 1;                    
+                    z-index: 1025;                    
                     a{
                         font-size:14px;                        
                         padding: 10px!important;
@@ -292,6 +292,7 @@ header{
     }
     .snet-card_wrapper_homepage{
         display: flex;
+        background:red;
         .snet-card_homepage_content{
             h2{
                 font-size: 24px;
@@ -304,13 +305,12 @@ header{
                 color: #666;
                 padding: 0 18px;
             }
-
-        }
-        img{
-            flex-shrink: 0;
-            width: 80px;
-            height: 80px;
-            margin-right: 18px;
+            img{
+                flex-shrink: 0;
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+            }            
         }
     }
     .snet-blog-entry{
@@ -407,6 +407,7 @@ h5 .title-anchor-link{ display: none;}
         margin: 0;
         padding: 0;    
         border-bottom: 1px solid #F5F7F8; 
+        overflow:hidden;
         a{
             display: inline-block;
             width: 100%;
@@ -573,6 +574,7 @@ h5 .title-anchor-link{ display: none;}
         color: #666;
         font-size: 14px;
         line-height: 21px;
+        overflow: hidden;
     }   
 }
 @mixin header-generator($font-size, $letter-spacing, $margin-bottom, $font-weight:500) {
@@ -673,7 +675,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (max-width: 575px) {
     /* xs */    
     body{
-        /* background: red!important; */
+        //background: red!important; 
     }
     .wrapper{
         width:90%;
@@ -682,16 +684,23 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 576px) and (max-width:767px){
     /* sm */    
     body{
-        /* background: yellow!important; */
+        //background: yellow!important; 
     }   
     .wrapper{
         width:576px;
     }      
+    .snet-nav_list{
+        li{
+            a{
+                padding: 10px 8px 10px 8px;                
+            }
+        }
+    }
 }
 @media only screen and (min-width: 768px) and (max-width:991px){
     /* md */    
     body{
-        /* background: blue!important; */
+        //background: blue!important;
     }    
     .wrapper{
         width:768px;
@@ -700,7 +709,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 992px) and (max-width:1279px) {
     /* lg */    
     body{
-        /* background: green!important; */
+        //background: green!important;
     }    
     .wrapper{
         width:992px;
@@ -724,14 +733,12 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 1280px) {
     /* xl */
     body{
-        /* background: purple!important; */
+        //background: purple!important;
     }  
     .wrapper{
         width:1280px;
     }    
 }
-
-
 
 .snet-tagline{
     font-size: 18px;
@@ -740,7 +747,12 @@ h5 .title-anchor-link{ display: none;}
     line-height: 20px;
 }
 
-
-
 @import "home";
 @import "overview";
+
+.sticky-top{
+    &.sticky-with-margin{
+        top:50px;
+    }    
+}
+
