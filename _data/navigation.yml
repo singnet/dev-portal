@@ -272,3 +272,24 @@ buyer:
       excerpt: Receive the latest SingularityNET Developer Updates by subscribing to the newsletter below.
       cta: Read more
       url: '/newsletter'
+
+ai-consumers:
+  getting-started:
+    title: Getting Started
+    children:
+        mpe:
+          title: Multi-Party Escrow
+          excerpt: Everything you need to know about the multi-party Escrow
+          cta: Read more
+          url: '/docs/ai-consumers/mpe'
+  stateless-mpe:
+      title: The Stateless Client with the Multi-Party Escrow
+      excerpt: How to communicate with SingularityNET services with the stateless method.
+      cta: Read more
+      url: '/docs/concepts/mpe-stateless-client'
+  channel-storage:
+      title: Payment Channel Storage
+      excerpt: Learn how to work with a payment channel to store and process information about service payments.
+      cta: Read more
+      url: '/docs/concepts/daemon-channel-storage'
+

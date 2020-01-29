@@ -51,24 +51,33 @@
 
                                     {%if nav_tree %}                                                                           
                                     {% for menu in nav_tree %}
+                                    {% assign children = menu[1].children %}
                                     {% assign menu_url = menu[1].url | split: "/" %}
                                     {% assign menu_url_last_inx = path_url.size | minus: 1 %}
                                     {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
                                     {% if path_crumbs[2] == file_name %}
                                     <li class="active">
-                                        <a href="{{ menu[1].url }}">
+                                    {% endif %}
+                                    {% if children %}
+                                        {% assign unique_id = menu[1].title | replace: " ","--" %}
+                                        <li class="has-submenu"> <!-- The parent "li" tag should have a class "has-submenu"-->
+                                        <a data-toggle="collapse" class="collapsed" href="#{{ unique_id }}"> <!-- the href should point to the unique id of inner list -->
                                             {{ menu[1].title }}
                                             <i class="material-icons align-middle float-right e_m">expand_more</i>  
                                             <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
-                                        </a>                                        
+                                        </a>
+                                        <ul class="collapse" id="{{ unique_id }}">
+                                            {% for child in children %}
+                                                <li><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
                                     </li>
                                     {% else %}
                                     <li>
-                                        <a href="{{ menu[1].url }}">
-                                            {{ menu[1].title }}
-                                            <i class="material-icons align-middle float-right e_m">expand_more</i>  
-                                            <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
-                                        </a>                                        
+                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                    </li>
+                                    {% endif %}
+                                    {% if path_crumbs[2] == file_name %}
                                     </li>
                                     {% endif %}
 
