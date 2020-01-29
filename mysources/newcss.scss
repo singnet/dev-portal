@@ -407,6 +407,7 @@ h5 .title-anchor-link{ display: none;}
         margin: 0;
         padding: 0;    
         border-bottom: 1px solid #F5F7F8; 
+        overflow:hidden;
         a{
             display: inline-block;
             width: 100%;
@@ -673,7 +674,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (max-width: 575px) {
     /* xs */    
     body{
-        /* background: red!important; */
+        background: red!important; 
     }
     .wrapper{
         width:90%;
@@ -682,16 +683,23 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 576px) and (max-width:767px){
     /* sm */    
     body{
-        /* background: yellow!important; */
+        background: yellow!important; 
     }   
     .wrapper{
         width:576px;
     }      
+    .snet-nav_list{
+        li{
+            a{
+                padding: 10px 8px 10px 8px;                
+            }
+        }
+    }
 }
 @media only screen and (min-width: 768px) and (max-width:991px){
     /* md */    
     body{
-        /* background: blue!important; */
+        background: blue!important;
     }    
     .wrapper{
         width:768px;
@@ -700,7 +708,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 992px) and (max-width:1279px) {
     /* lg */    
     body{
-        /* background: green!important; */
+        background: green!important;
     }    
     .wrapper{
         width:992px;
@@ -724,7 +732,7 @@ h5 .title-anchor-link{ display: none;}
 @media only screen and (min-width: 1280px) {
     /* xl */
     body{
-        /* background: purple!important; */
+        background: purple!important;
     }  
     .wrapper{
         width:1280px;
@@ -744,3 +752,10 @@ h5 .title-anchor-link{ display: none;}
 
 @import "home";
 @import "overview";
+
+.sticky-top{
+    &.sticky-with-margin{
+        top:50px;
+    }    
+}
+
