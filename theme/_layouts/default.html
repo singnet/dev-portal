@@ -23,7 +23,11 @@
                                     {% when 'provider.md' %}
                                     {% assign nav_tree = site.data.navigation.provider %}
                                     {% when 'ai-consumers' %}
-                                    {% assign nav_tree = site.data.navigation.ai-consumers %}                                                                            
+                                    {% assign nav_tree = site.data.navigation.ai-consumers %}
+                                    {% when 'ai-developers' %}
+                                    {% assign nav_tree = site.data.navigation.ai-developers %}
+                                    {% when 'platform-dev' %}
+                                    {% assign nav_tree = site.data.navigation.platform-dev %}
                                     {% when 'buyer.md' %}
                                     {% assign nav_tree = site.data.navigation.buyer %}
                                     {% else %}

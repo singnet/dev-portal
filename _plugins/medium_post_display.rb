@@ -10,7 +10,7 @@ def generate(site)
         feed = Feedjira.parse(xml)
 	Feedjira.parse(xml).entries.each do |e|
 #Feedjira::Feed.fetch_and_parse("https://medium.com/feed/singularitynet").entries.each do |e|
-        p "Title: #{e.title}, published on Medium #{e.url} #{e}"
+        #p "Title: #{e.title}, published on Medium #{e.url} #{e}"
         title = e[:title]
         content = e[:content]
         guid = e[:url]

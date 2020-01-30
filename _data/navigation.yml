@@ -279,17 +279,154 @@ ai-consumers:
     children:
         mpe:
           title: Multi-Party Escrow
-          excerpt: Everything you need to know about the multi-party Escrow
+          excerpt: 
           cta: Read more
           url: '/docs/ai-consumers/mpe'
-  stateless-mpe:
-      title: The Stateless Client with the Multi-Party Escrow
+        organization:
+          title: Organization
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/organization'
+        service:
+          title: Service
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/service'
+  payments:
+    title: Payments
+    children:
+        mpe:
+          title: Paypal
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/paypal'
+        tokens:
+          title: Tokens
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/tokens'
+  service-invocation:
+    title: Service Invocation
+    children:
+        snet-cli:
+          title: snet-cli
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/snet-cli'
+        sdk:
+          title: SDK
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/sdk'
+  tutorials:
+    title: Tutorials
+    children:
+        snet-cli:
+          title: snet-cli
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/snet-cli'
+        sdk:
+          title: SDK
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/sdk'
+  troubleshooting:
+      title: Troubleshooting
       excerpt: How to communicate with SingularityNET services with the stateless method.
       cta: Read more
-      url: '/docs/concepts/mpe-stateless-client'
+      url: '/docs/ai-consumers/troubleshooting'
+
+ai-developers:
+  getting-started:
+    title: Getting Started
+    children:
+        organization:
+          title: Organization
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/organization'
+        service:
+          title: Service
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/service'
+  payments:
+    title: Payments
+    children:
+        mpe:
+          title: Paypal
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/paypal'
+        tokens:
+          title: Tokens
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/tokens'
+  organization-setup:
+    title: Organization Setup
+    children:
+        snet-cli:
+          title: etcd
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/etcd'
+        sdk:
+          title: Recepient Setup
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/recepient-setup'
+  service-setup:
+    title: Service Setup
+    children:
+        snet-cli:
+          title: snet-cli
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/snet-cli'
+        sdk:
+          title: Daemon
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/daemon'
+  tutorials:
+    title: Tutorials
+    children:
+        snet-cli:
+          title: snet-cli
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/'
+        sdk:
+          title: SDK
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/'
+  troubleshooting:
+      title: Troubleshooting
+      excerpt:
+      cta: Read more
+      url: '/docs/ai-developers/troubleshooting'
+
+platform-dev:
+  registry:
+      title: Registry
+      excerpt:
+      cta: Read more
+      url: '/docs/platform-dev/registry'
+  daemon:
+      title: Daemon
+      excerpt: How to communicate with SingularityNET services with the stateless method.
+      cta: Read more
+      url: '/docs/platform-dev/daemon'
+  mpe:
+      title: Multi-Party Escrow
+      excerpt: How to communicate with SingularityNET services with the stateless method.
+      cta: Read more
+      url: '/docs/platform-dev/mpe'
   channel-storage:
       title: Payment Channel Storage
-      excerpt: Learn how to work with a payment channel to store and process information about service payments.
+      excerpt: How to communicate with SingularityNET services with the stateless method.
       cta: Read more
-      url: '/docs/concepts/daemon-channel-storage'
-
+      url: '/docs/platform-dev/channel-storage'            
