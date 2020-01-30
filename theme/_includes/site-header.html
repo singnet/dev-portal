@@ -45,16 +45,16 @@
                 {% endif %}                 
                 {% endfor %}                
             </ul>
-<!--
-            <ul class="navbar-nav ml-auto snet-navbar_login">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link snet-button_outline" href="#">Sign Up Free</a>
-                </li>
-            </ul>
--->
+            <!--
+                        <ul class="navbar-nav ml-auto snet-navbar_login">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link snet-button_outline" href="#">Sign Up Free</a>
+                            </li>
+                        </ul>
+            -->
 
         </div>           
     </nav>               
@@ -65,13 +65,15 @@
     <h1> 
         Documentation
     </h1>
+    <!--
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#secondary-menu">
         <span class="navbar-toggler-icon">
             <i class="material-icons">dehaze</i>
         </span>
-    </button>                
-    <div class="collapse navbar-collapse" id="secondary-menu">
-        <ul class="navbar-nav mr-auto snet-navbar_navigation">
+    </button> 
+    -->
+    <div class="-collapse -navbar-collapse" id="secondary-menu">
+        <ul class="navbar-nav mr-auto snet-navbar_navigation">            
             {% for item in site.snet.header.secondnav %}            
             {% if page.url == item.item_url %}
             <li class="nav-item active">
@@ -86,7 +88,17 @@
                 {% endif %}
             </li>                
             {% endif %}                
-            {% endfor %}                            
+            {% endfor %}  
+            <li class="nav-item last-item-list">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">More</a>
+                <div class="dropdown-menu dropdown-menu-secondary">
+                    {% for item in site.snet.header.secondnav %}  
+                    {% if forloop.index > 3 %}
+                    <a class="dropdown-item" href="{{ item.item_url }}">{{ item.item_name }}</a>                    
+                    {% endif %}
+                    {% endfor %}                      
+                </div>                
+            </li>            
         </ul>
     </div>           
 </nav>   
