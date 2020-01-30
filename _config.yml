@@ -35,6 +35,7 @@ snet:
                 text:
                 image: '/assets/images/layout/logo.png'
             copyright: Copyright &copy; 2019 SingularityNET. All rights reserved.
+            copyright_address: Stichting SingularityNET Barbara Strozzilaan 362 1083 HN Amsterdam The Netherlands
         social_list:
             - network_name: github
               profile_icon: github

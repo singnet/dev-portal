@@ -10,10 +10,18 @@ section.snet-herobanner{
     margin-bottom:0;
     h2{
         color: #fff;
-        font-size: 26px;
+        font-size: 28px;
     }
     p{
-        color: #fff;        
+        color: #fff;   
+        &.tagline{
+            font-size: 24px;
+            font-weight: 300;
+        }
+        &.description{
+            font-size: 16px;
+            font-weight: 500;
+        }        
     }
     .snet-herobanner_tagline{
         font-size: 22px;
@@ -22,7 +30,28 @@ section.snet-herobanner{
     }
 }
 .snet-card_margintop_fix{
-    margin-top: -50px;
+    margin-top: -80px;
+}
+.snet-card_wrapper_link{
+    text-decoration: none;
+    .snet-card{    
+        &:after{
+        }
+    }
+    &:hover{
+        text-decoration: none;
+        .snet-card{         
+            background: #ebf2ff!important;     
+            box-shadow: 0 2px 0 0 #4086FF;            
+            transition: all .3s ease;     
+            &:after{
+            }            
+        }
+        h2{
+            transition: color 0.3s ease;               
+            color: #4086FF!important;                
+        }      
+    }
 }
 .snet-card{
     .snet-home_cards{
@@ -43,6 +72,15 @@ section.snet-herobanner{
             width: 80px;
             height: 80px;
             margin: 0 auto;            
+        }
+    }
+}
+
+.main-url{
+    &:hover{
+        text-decoration: none;
+        h4{
+            color: #4086FF!important;
         }
     }
 }

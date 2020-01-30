@@ -138,6 +138,7 @@ header{
     padding: 12px 65px 12px 60px;  
     background: #f1f1f1;
     border-bottom: solid 1px #DBE3E7;    
+    z-index:1024;
     h1{
         width: 30%;
         font-weight: normal;
@@ -172,15 +173,6 @@ header{
 
 .snet-header_banner{
     height: 280px;
-}
-.snet-card_wrapper_link{
-    text-decoration: none;
-    &:hover{
-        text-decoration: none;
-        .snet-card{
-            background-color: #ebf2ff;
-        }        
-    }
 }
 .snet-card{
     width: 100%;
@@ -315,6 +307,7 @@ header{
     }
     .snet-blog-entry{
         display: flex;
+        margin-bottom:16px;
         img{
             width: 180px;
             flex-shrink: 0;
