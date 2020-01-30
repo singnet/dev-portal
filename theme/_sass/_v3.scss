@@ -696,7 +696,23 @@ h5 .title-anchor-link{ display: none;}
     .wrapper{
         width:90%;
     }  
-  
+    header{
+        .snet-navbar_primary{
+            padding: 12px 5px 4px 20px;
+            .nav-item{
+                padding:4px 0;
+                .material-icons{
+                    display: none;
+                }
+            }
+        }        
+    }
+    #main-menu{
+        //position: absolute;
+        //background: #220D3A;
+        //z-index: 1026;        
+        //width: 100%;
+    }
     .snet-navbar_secondary{
         padding: 12px 30px 12px 30px;
         h1{
