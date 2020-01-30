@@ -14,7 +14,16 @@ micro_nav: true
 
 ## Introduction to MPE
 
-Documentation for AI Consumers
+### Use cases
+Consider the following 
+•	Jack - Client is considered Consumer/Buyer 
+•	Kevin - Service Provider/Seller
+When Kevin makes a call requesting for 1 AGI, which is the cost of service, Kevin and Jack validates based on the following details on each call:
+•	Signature is authentic;
+•	Amount of AGI tokens specified is correct;
+•	Amount does not exceed the value of the channel; and
+•	Expiration date is manageable.
+
 
 
 You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn.
