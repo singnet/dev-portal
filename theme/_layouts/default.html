@@ -14,9 +14,14 @@
                             <h3 class="snet-card_title">Explore</h3>
                             <div class="snet-card_content">
                                 <ul class="snet-nav_list">
-                                    {% assign path_crumbs = page.path | split: "/" %}                          
+                                    {% assign path_crumbs = page.path | split: "/" %}
+                                    {% assign crumbs = path_crumbs[0] %}
                                     {% case path_crumbs[0] %}
+                                    {% when 'products' %}
+                                    {% assign crumbs = path_crumbs[1] %}
+                                    {% assign nav_tree = site.data.navigation.products %}
                                     {% when 'docs' %}
+                                    {% assign crumbs = path_crumbs[2] %}
                                     {% case path_crumbs[1] %}
                                     {% when 'concepts' %}
                                     {% assign nav_tree = site.data.navigation.concepts %}
@@ -28,6 +33,7 @@
                                     {% assign nav_tree = site.data.navigation.ai-developers %}
                                     {% when 'platform-dev' %}
                                     {% assign nav_tree = site.data.navigation.platform-dev %}
+
                                     {% when 'buyer.md' %}
                                     {% assign nav_tree = site.data.navigation.buyer %}
                                     {% else %}
@@ -48,7 +54,7 @@
                                     {% assign menu_url_last_inx = path_url.size | minus: 1 %}
                                     {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
                                     {% assign classname = "has-submenu"%}
-                                    {% if path_crumbs[2] == file_name %}
+                                    {% if crumbs == file_name %}
                                         {% assign classname = "active has-submenu"%}
                                     {% endif %}
                                     {% if children %}
@@ -60,10 +66,10 @@
                                             {% assign ul_class = "collapse" %}
                                             {% assign li_class = "" %}
                                             {% assign a_class = "collapsed" %}
-                                            {% if path_crumbs[2] == child_file_name %}
+                                            {% if crumbs == child_file_name %}
                                                 {% assign ul_class = "collapse show" %}
-                                                {% assign li_class = "active" %}
                                                 {% assign a_class = "" %}
+                                                {% assign active_child_title = child[1].title %}
                                                 {% break %}
                                             {% endif %}
                                         {% endfor %}
@@ -75,6 +81,10 @@
                                             </a>
                                             <ul class="{{ ul_class }}" id="{{ unique_id }}">
                                                 {% for child in children %}
+                                                    {% assign li_class = "" %}
+                                                    {% if active_child_title == child[1].title %}
+                                                        {% assign li_class = "active" %}
+                                                    {% endif %}
                                                     <li class="{{ li_class }}"><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
                                                 {% endfor %}
                                             </ul>

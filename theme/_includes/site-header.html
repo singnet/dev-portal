@@ -34,8 +34,9 @@
                         {% endfor %}
                     </div>                    
                 </li>
-                {% else %}                
-                <li class="nav-item">
+                {% else %}
+                {% assign top_nav_class = "nav-item"%}
+                <li class="{{ top_nav_class }}">
                     {% if item.item_external_url %}
                     <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
                     {% else %}
@@ -74,20 +75,19 @@
     -->
     <div class="-collapse -navbar-collapse" id="secondary-menu">
         <ul class="navbar-nav mr-auto snet-navbar_navigation">            
-            {% for item in site.snet.header.secondnav %}            
-            {% if page.url == item.item_url %}
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>                    
-            </li>
-            {% else %}
-            <li class="nav-item">
+            {% for item in site.snet.header.secondnav %}
+            {% assign nav_class = "nav-item"%}
+            {% if page.url contains item.item_url %}
+                {% assign nav_class = "nav-item active" %}
+            {% endif %}
+            <li class="{{ nav_class }}">
                 {% if item.item_external_url %}
                 <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
                 {% else %}
                 <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
                 {% endif %}
             </li>                
-            {% endif %}                
+           
             {% endfor %}  
             <li class="nav-item last-item-list">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">More</a>

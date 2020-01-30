@@ -66,41 +66,17 @@ byproduct_cards:
     - title: AI Marketplace
       img: 'marketplace.png'
       description: AI Marketplace Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
-      urls:
-      - url_name: AI Marketplace Link 1
-        url_link: 'a'
-      - url_name: AI Marketplace Link 2
-        url_link: 'a'
-      - url_name: AI Marketplace Link 3
-        url_link: 'a'
-      - url_name: View More
-        url_link: 'a'
+      url: '/products/marketplace'
 
     - title: AI Publisher
       img: 'publisher.png'
       description: AI Publisher Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
-      urls:
-      - url_name: AI Publisher Link 1
-        url_link: 'a'
-      - url_name: AI Publisher Link 2
-        url_link: 'a'
-      - url_name: AI Publisher Link 3
-        url_link: 'a'
-      - url_name: View More
-        url_link: 'a'
+      url: '/products/publisher'
 
     - title: RFAI
       img: 'rfai.png'
       description: RFAI Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
-      urls:
-      - url_name: RFAI Link 1
-        url_link: 'a'
-      - url_name: RFAI Link 2
-        url_link: 'a'
-      - url_name: RFAI Link 3
-        url_link: 'a'
-      - url_name: View More
-        url_link: 'a'
+      url: '/products/rfai'
 
 # By Platform    
 byplatform_cards:

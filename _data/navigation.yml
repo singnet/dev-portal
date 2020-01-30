@@ -429,4 +429,21 @@ platform-dev:
       title: Payment Channel Storage
       excerpt: How to communicate with SingularityNET services with the stateless method.
       cta: Read more
-      url: '/docs/platform-dev/channel-storage'            
+      url: '/docs/platform-dev/channel-storage'
+
+products:
+  marketplace:
+      title: AI Marketplace
+      excerpt:
+      cta: Read more
+      url: '/products/marketplace'
+  publisher:
+      title: AI Publisher portal
+      excerpt:
+      cta: Read more
+      url: '/products/publisher'
+  rfai:
+      title: Request For AI Service
+      excerpt:
+      cta: Read more
+      url: '/products/rfai'      

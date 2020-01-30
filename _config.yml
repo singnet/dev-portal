@@ -10,16 +10,14 @@ snet:
             - item_name: Home
               item_url: '/'
             - item_name: Docs
-              item_url: '/overview/'
+              item_url: '/docs/overview/'
             - item_name: Products
               item_url: ''
             - item_name: Community
               item_url: ''
-            - item_name: Changelogs
-              item_url: ''
         secondnav:
             - item_name: Overview
-              item_url: '/overview/'
+              item_url: '/docs/overview/'
             - item_name: Core Concepts
               item_url: '/docs/concepts/'
             - item_name: Platform Dev

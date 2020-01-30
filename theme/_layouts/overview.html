@@ -75,6 +75,7 @@
                         </div>
                         {% for item in page.byproduct_cards %}  
                         <div class="col-4">
+                            <a href="{{ item.url }}">
                             <div class="snet-card">
                                 <div class="snet-card_content">
                                     <div class="snet-card_topimage">
@@ -83,14 +84,10 @@
                                     <h3 class="snet-card_title">{{ item.title }}</h3>
                                     <div class="snet-card_innercontents">
                                         {{ item.description }}
-                                        <ul class="snet-card_list">
-                                            {% for item_inner in item.urls %}                                              
-                                            <li><a href="{{ item_inner.url_link }}">{{ item_inner.url_name }}</a></li>
-                                            {% endfor %}                                             
-                                        </ul>                                         
                                     </div>                                       
                                 </div>
-                            </div>                              
+                            </div>
+                            </a>                              
                         </div>
                         {% endfor %}                        
                     </div> 
