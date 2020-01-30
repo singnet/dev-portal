@@ -14,18 +14,6 @@
                             <h3 class="snet-card_title">Explore</h3>
                             <div class="snet-card_content">
                                 <ul class="snet-nav_list">
-                                    <li class="has-submenu"> <!-- The parent "li" tag should have a class "has-submenu"-->
-                                        <a data-toggle="collapse" class="collapsed" href="#this-should-be-unique"> <!-- the href should point to the unique id of inner list -->
-                                            Multi LVL Sample
-                                            <i class="material-icons align-middle float-right e_m">expand_more</i>  
-                                            <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
-                                        </a>                                        
-                                        <ul class="collapse" id="this-should-be-unique">
-                                            <li><a href="#">asdaas 3.1</a></li>
-                                            <li><a href="#">asdaas 3.2</a></li>
-                                            <li><a href="#">asdaas 3.3</a></li>                                            
-                                        </ul>       
-                                    </li>
                                     {% assign path_crumbs = page.path | split: "/" %}                          
                                     {% case path_crumbs[0] %}
                                     {% when 'docs' %}
@@ -55,32 +43,43 @@
                                     {% assign menu_url = menu[1].url | split: "/" %}
                                     {% assign menu_url_last_inx = path_url.size | minus: 1 %}
                                     {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
+                                    {% assign classname = "has-submenu"%}
                                     {% if path_crumbs[2] == file_name %}
-                                    <li class="active">
+                                        {% assign classname = "active has-submenu"%}
                                     {% endif %}
                                     {% if children %}
                                         {% assign unique_id = menu[1].title | replace: " ","--" %}
-                                        <li class="has-submenu"> <!-- The parent "li" tag should have a class "has-submenu"-->
-                                        <a data-toggle="collapse" class="collapsed" href="#{{ unique_id }}"> <!-- the href should point to the unique id of inner list -->
-                                            {{ menu[1].title }}
-                                            <i class="material-icons align-middle float-right e_m">expand_more</i>  
-                                            <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
-                                        </a>
-                                        <ul class="collapse" id="{{ unique_id }}">
-                                            {% for child in children %}
-                                                <li><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
-                                            {% endfor %}
-                                        </ul>
-                                    </li>
+                                        {% for child in children %}
+                                            {% assign child_url = child[1].url | split: "/" %}
+                                            {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        
+                                            {% assign child_file_name = child_url[child_url_last_inx] | append: ".md" %}
+                                            {% assign ul_class = "collapse" %}
+                                            {% assign li_class = "" %}
+                                            {% assign a_class = "collapsed" %}
+                                            {% if path_crumbs[2] == child_file_name %}
+                                                {% assign ul_class = "collapse show" %}
+                                                {% assign li_class = "active" %}
+                                                {% assign a_class = "" %}
+                                                {% break %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <li class="{{ classname }}"> <!-- The parent "li" tag should have a class "has-submenu"-->
+                                            <a data-toggle="collapse" class="{{ a_class }}" href="#{{ unique_id }}"> <!-- the href should point to the unique id of inner list -->
+                                                {{ menu[1].title }}
+                                                <i class="material-icons align-middle float-right e_m">expand_more</i>  
+                                                <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
+                                            </a>
+                                            <ul class="{{ ul_class }}" id="{{ unique_id }}">
+                                                {% for child in children %}
+                                                    <li class="{{ li_class }}"><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
                                     {% else %}
-                                    <li>
-                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
-                                    </li>
+                                        <li class="{{ classname }}">
+                                            <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                        </li>
                                     {% endif %}
-                                    {% if path_crumbs[2] == file_name %}
-                                    </li>
-                                    {% endif %}
-
                                     {% endfor %}
                                     {% endif %}                   
                                 </ul>
