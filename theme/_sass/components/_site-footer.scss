@@ -84,11 +84,42 @@ $screen-md-max: ($screen-lg-min - 1) !default;
         width: 15.625rem;
     }
 }
-
+.secondary-footer{
+    border-top: solid 1px #999;
+    padding-top: 24px;
+    .copyright{
+        font-size: 14px;       
+        color: #999;
+    }
+}
+.row.footer-links{
+    padding-bottom:24px;
+    .logo{
+        border-right: solid 1px #999;        
+        .site-footer__logo{
+            float: right;
+        }
+        padding-right: 50px;
+    }
+    ul{
+        &.footer-links{
+            margin-left: 40px;    
+            a{
+                color: #999;
+                &:hover{
+                    color: #fff;
+                }
+            }
+        }        
+    }
+    h6{
+        margin-left: 40px;
+    }
+}
 /* ----- Copyright ----- */
 .site-footer__copyright {
     color: $color-footer-copyright;
-    font-size: .875em;
+    //font-size: .875em;    
     line-height: $line-height-base;
 }
 
@@ -147,6 +178,9 @@ $screen-md-max: ($screen-lg-min - 1) !default;
         li{
             float: left;
             padding-right: 40px;
+            a{
+                color: #fff;                
+            }
         }
     }
 }

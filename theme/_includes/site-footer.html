@@ -64,10 +64,13 @@
             </div><!-- /.row -->
 
             <div class="row secondary-footer">
-                <div class="col-xs-12 col-sm-5 col-md-5 copyright">
-                    <p>{{ site.snet.footer.content.copyright }}</p>
+                <div class="col-xs-12 col-sm-5 col-md-6 copyright">
+                    <p>
+                        {{ site.snet.footer.content.copyright }}<br>
+                        {{ site.snet.footer.content.copyright_address }}
+                    </p>
                 </div>
-                <div class="col-xs-12 col-sm-7 col-md-7 socail-icons">
+                <div class="col-xs-12 col-sm-7 col-md-6 socail-icons">
                     <ul>
                         {% for item in site.snet.footer.social_list %}
                         <li>
