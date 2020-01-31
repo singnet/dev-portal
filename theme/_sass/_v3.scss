@@ -739,7 +739,10 @@ h5 .title-anchor-link{ display: none;}
                 }
             }    
         }        
-    }     
+    }  
+    .byuser-cards{
+        margin-bottom: 40px;
+    }       
 }
 @media only screen and (min-width: 576px) and (max-width:767px){
     /* sm */    
@@ -781,6 +784,9 @@ h5 .title-anchor-link{ display: none;}
                 }
             }    
         }        
+    }  
+    .byuser-cards{
+        margin-bottom: 40px;
     }    
 }
 @media only screen and (min-width: 768px) and (max-width:991px){
