@@ -3,80 +3,70 @@
 layout: overview
 keywords:
 title: Getting Started
-description: The best way is to get started to understanding the AI services on decentralized blockchain marketplace. Lets start by looking at the high level view on how SNET’s platform works for you.                                                
+description: The best way to get started is by understanding the platform that powers the decentralized blockchain marketplace. Here is a high level view on how SingularityNet's platform works for you.                                                
 img: 'main-ai.png'
 
 # Getting Started Cards    
 gettingstarted_cards:
-    - url_name: Get Started Link 1
-      url_link: 'Link 1'
-
-    - url_name: Get Started Link 2
-      url_link: 'Link 1'
-
-    - url_name: Get Started Link 3
-      url_link: 'Link 1'
-
-    - url_name: View All
-      url_link: 'Link 1'
 
 # By User Cards Section  
 byuser_cards:
     - title: AI Developer
       img: 'blockchain.png'
-      description: AI Developer Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
+      description: Get started with developing a service for the SingularityNet platform
       urls:
-      - url_name: AI Developer Link 1
-        url_link: 'a'
-      - url_name: AI Developer Link 2
-        url_link: 'a'
-      - url_name: AI Developer Link 3
-        url_link: 'a'
+      - url_name: Get Started
+        url_link: /docs/ai-developers/get-started/
+      - url_name: Setup an Organization
+        url_link: /docs/ai-developers/etcd/
+      - url_name: Setup a Service
+        url_link: /docs/ai-developers/snet-cli/
       - url_name: View More
-        url_link: 'a'
+        url_link: /docs/ai-developers/
 
     - title: Platform Developers
       img: 'blockchain.png'
-      description: Platform Developers Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
+      description: Get started contributing to the development of the SingularityNet platform
       urls:
-      - url_name: Platform Developers Link 1
-        url_link: 'a'
-      - url_name: Platform Developers Link 2
-        url_link: 'a'
-      - url_name: Platform Developers Link 3
-        url_link: 'a'
+      - url_name: Registry Contract
+        url_link: /docs/platform-dev/registry/
+      - url_name: Multi-Party Escrow Contract
+        url_link: /docs/platform-dev/mpe/
+      - url_name: Daemon
+        url_link: /docs/platform-dev/daemon/
       - url_name: View More
-        url_link: 'a'
+        url_link: /docs/platform-dev/
 
     - title: AI Consumers
       img: 'blockchain.png'
-      description: AI Consumers Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
+      description: Get started using the service on the SingularityNet platform
       urls:
-      - url_name: AI Consumers Link 1
-        url_link: 'a'
-      - url_name: AI Consumers Link 2
-        url_link: 'a'
-      - url_name: AI Consumers Link 3
-        url_link: 'a'
+      - url_name: Get Started
+        url_link: /docs/ai-consumers/service/
+      - url_name: How to pay for a service
+        url_link: /docs/ai-consumers/paypal/
+      - url_name: Invoke a service
+        url_link: /docs/ai-consumers/snet-cli/
       - url_name: View More
-        url_link: 'a'
+        url_link: /docs/ai-consumers/
 
 # By Product Cards Section  
 byproduct_cards:
     - title: AI Marketplace
       img: 'marketplace.png'
-      description: AI Marketplace Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
+      description: Explore and connect to the largest open AI marketplace in the world.
       url: '/products/marketplace'
-
-    - title: AI Publisher
-      img: 'publisher.png'
-      description: AI Publisher Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
-      url: '/products/publisher'
 
     - title: RFAI
       img: 'rfai.png'
-      description: RFAI Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
+      description: Request for an AI service that you would like built on the SingularityNet platfrom
       url: '/products/rfai'
+
+    - title: AI Publisher
+      img: 'publisher.png'
+      description: Coming Soon. A portal for you to publish your AI services on the SingularityNet platfrom
+      url: '/products/publisher'
+
 
 # By Platform    
 byplatform_cards:
@@ -100,35 +90,36 @@ byplatform_cards:
 bytools_cards:
     - title: SNET Contracts
       img: 'http://placehold.jp/80x80.png'
-      description: SNET Contracts Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
+      description: Ethereum smart contracts that power the SingularityNet platform
       left_url_name: Download
-      left_url_link: 'a'
-      right_url_name: Install Guide
-      right_url_link: 'a'
-
-    - title: Daemon
-      img: 'http://placehold.jp/80x80.png'
-      description: Daemon Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
-      left_url_name: Download
-      left_url_link: 'a'
-      right_url_name: Install Guide
-      right_url_link: 'a'
+      left_url_link: https://www.npmjs.com/package/singularitynet-platform-contracts
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/platform-contracts
 
     - title: SNET Client
       img: 'http://placehold.jp/80x80.png'
-      description: SNET Client Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
+      description: A command line utility to interface with the SingularityNet platform
       left_url_name: Download
-      left_url_link: 'a'
-      right_url_name: Install Guide
-      right_url_link: 'a'
+      left_url_link: https://pypi.org/project/snet-cli/
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/snet-cli
+
+    - title: Daemon
+      img: 'http://placehold.jp/80x80.png'
+      description: Daemon exposes an AI application as an API that is accessible through the SingularityNET platform. 
+      left_url_name: Download
+      left_url_link: https://github.com/singnet/snet-daemon/releases/latest
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/snet-daemon
+
 
     - title: Python SDK
       img: 'http://placehold.jp/80x80.png'
-      description: Python SDK Description Lorem ipsum dolor sit amet, feugait oportere ex nec. Id cum choro ancillae. Homero disputationi eum id.
+      description: Python SDK to invoke AI services on the SingularityNet platform programatically
       left_url_name: Download
-      left_url_link: 'a'
-      right_url_name: Install Guide
-      right_url_link: 'a'
+      left_url_link: https://pypi.org/project/snet-cli/
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/snet-cli
 
 # Email Subscription Section
 email_subscription:
