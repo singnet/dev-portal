@@ -384,3 +384,105 @@ Substitute CN and hosts values, for example:
     ]
 }
 ```
+Now we are ready to generate member1 certificate and private key:
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=peer member1.json | cfssljson -bare member1
+
+You'll get following files:
+```
+member1-key.pem
+member1.csr
+member1.pem
+```
+Repeat these steps for each etcd member hostname.
+
+###Generate client certificate
+cfssl print-defaults csr > client.json
+For client certificate we can ignore hosts values and set only Common Name (CN) to client value
+
+```
+{
+    "CN": "client",
+    "hosts": [""],
+    "key": {
+        "algo": "ecdsa",
+        "size": 256
+    },
+    "names": [
+        {
+            "C": "US",
+            "L": "CA",
+            "ST": "San Francisco"
+        }
+    ]
+}
+```
+Generate client certificate:
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=client client.json | cfssljson -bare client
+
+You'll get following files:
+```
+client-key.pem
+client.csr
+client.pem
+```
+##Download, Install & Configuring the ETCD Cluster
+Download the etcd binary in each of the boxes and configure the cluster by following the below steps.
+
+Download the etcd binary
+
+Download the binary of the etcd in each of the server.
+
+```
+client-key.pem
+cd ~
+wget https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz
+tar -zxvf etcd-v3.3.13-linux-amd64.tar.gz
+cd etcd-v3.3.13-linux-amd64/
+sudo mv etcd etcdctl /usr/bin/
+cd ~
+rm -rf etcd-v3.3.13-linux-amd64*
+```
+
+###Copy the generated certificates
+
+Copy the ca.pem,server.pem, server-key.pem, member-1.pem & member-1-key.pem into member-1 server.
+```
+mkdir -p /var/lib/etcd/cfssl
+cp ca.pem server.pem server-key.pem member-1.pem member-1-key.pem /var/lib/etcd/cfssl
+```
+Similarly copy the other member certificates to their respective servers.
+
+###Create a service file for etcd
+Create a service file in member-1 machine with the below content.
+```
+echo "
+[Unit]
+Description=etcd service
+Documentation=https://github.com/coreos/etcd
+
+[Service]
+User=root
+Type=notify
+ExecStart=/usr/bin/etcd \\
+ --name member-1 \\
+ --data-dir /var/lib/etcd \\
+ --initial-advertise-peer-urls https://10.0.1.10:2380 \\
+ --listen-peer-urls https://10.0.1.10:2380 \\
+ --listen-client-urls https://10.0.1.10:2379,https://127.0.0.1:2379 \\
+ --advertise-client-urls https://10.0.1.10:2379 \\
+ --initial-cluster-token etcd-cluster-1 \\
+ --initial-cluster member-1=https://10.0.1.10:2380,member-2=https://10.0.1.10:2380,member-3=https://10.0.1.10:2380 \\
+ --client-cert-auth --trusted-ca-file=/var/lib/etcd/cfssl/ca.pem \\
+ --cert-file=/var/lib/etcd/cfssl/server.pem --key-file=/var/lib/etcd/cfssl/server-key.pem \\
+ --peer-client-cert-auth --peer-trusted-ca-file=/var/lib/etcd/cfssl/ca.pem \\
+ --peer-cert-file=/var/lib/etcd/cfssl/member-1.pem --peer-key-file=/var/lib/etcd/cfssl/member-1-key.pem \\
+ --initial-cluster-state new
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target " > /lib/systemd/system/etcd.service
+```
+
+**Note**: Please make sure that you update the private-ip with your respective ips. Repeat the above step for member-2 and member-3 machines.
+
