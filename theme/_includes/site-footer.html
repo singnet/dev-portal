@@ -1,12 +1,12 @@
-{% if site.snet.footer.content.logo.image or site.snet.footer.content.logo.text or site.snet.footer.content.copyright or site.snet.footer.social_list %}
+{% if site.data.navigation.footer.content.logo.image or site.data.navigation.footer.content.logo.text or site.data.navigation.footer.content.copyright or site.data.navigation.footer.social_list %}
 <footer class="site-footer">
     <div class="wrapper">        
         <div class="footer-wrapper">
             <div class="row footer-links">
                 <div class="col-xs-12 col-sm-12 col-md-3 logo">
-                    {% if site.snet.footer.content.logo.text %}
-                    <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.snet.footer.content.logo.text }}</a>
-                    {% elsif site.snet.footer.content.logo.image %}
+                    {% if site.data.navigation.footer.content.logo.text %}
+                    <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.data.navigation.footer.content.logo.text }}</a>
+                    {% elsif site.data.navigation.footer.content.logo.image %}
                     <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">
                         <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/layout/logo-footer.png">
                     </a><!-- /.site-footer__logo -->
@@ -66,13 +66,13 @@
             <div class="row secondary-footer">
                 <div class="col-xs-12 col-sm-5 col-md-6 copyright">
                     <p>
-                        {{ site.snet.footer.content.copyright }}<br>
-                        {{ site.snet.footer.content.copyright_address }}
+                        {{ site.data.navigation.footer.content.copyright }}<br>
+                        {{ site.data.navigation.footer.content.copyright_address }}
                     </p>
                 </div>
                 <div class="col-xs-12 col-sm-7 col-md-6 socail-icons">
                     <ul>
-                        {% for item in site.snet.footer.social_list %}
+                        {% for item in site.data.navigation.footer.social_list %}
                         <li>
                             <a href="{{ item.profile_url }}" target="_blank"  title="{{ item.network_name }}">
                                 <i class="fab fa-{{ item.profile_icon }}"></i>
