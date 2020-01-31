@@ -207,3 +207,58 @@ function channelClaimTimeout(uint256 channel_id);
 * The server does not need to wait for a confirmation from the blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the `nonce` of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.  
 * The `nonce` in the channel prevents a race between the `channelExtendAndAddFunds` and `channelClaim`. If the client sends the `channelExtendAndAddFunds` request and at the same time the
 server sends a `channelClaim` request, they can continue to work without receiving confirmation from the blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
+
+#MPE-stateless-client
+This section describes how the client communicates with the SingularityNET services using the Multi-Party Escrow payment channels without storing state of the payment channel. 
+The client needs to store the Ethereum identity as follows:
+1.	The client obtains the list of payment channels (payment channels with "sender==client") from the Multi-Party Escrow (see EventChannelOpen). 
+    Considering the situation in which the request to open the channel had been sent, but not yet mined. This can occur when the client request has not received any acknowledgement or the session is disconnected (it "lost" its state).
+2.	The client requests the last state of the given payment channel from the server
+    
+ - The server can never duplicate the state of the payment channel signed by the client (off course the client should check its own signature).
+ - The server saves and sends the last state, otherwise the money lost.
+ 
+ **Note:** A unique gRPC method is available in the daemon helps return the state of the channel (see: https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto). 
+ 
+ The client does not necessarily require a special call request to know the last state of the channel from the daemon. 
+ 
+ The daemon can return the state of the channel in the response to any non-authorized call.
+ 
+ The client receives the following information from the daemon:
+
+- **current_nonce** 
+  <br>Current nonce of the payment channel.
+- **current_signed_amoun**t
+  <br>Last amount which were signed by client with current_nonce. If no messages were signed with the current_nonce, then this value is an empty byte string (b''), which we should interpret as 0.
+- **current_signature **
+  <br>Last signature sent by the client with current_nonce, it could be absent (empty string) if no message was signed with current nonce.
+- **(not implemented yet) oldnonce_signed_amount**  
+  <br>last amount which was signed by client with nonce=current_nonce - 1.
+- **(not i<br>mplemented yet) oldnonce_signature** 
+  <br>last signature sent by client with nonce = current_nonce - 1.
+
+**Note:** The two last values are not available in current version, if implemented, can calculate the unspent_amount in the case that current_nonce != blockchain_nonce.
+
+**Example**
+Assume that the server performs a close/reopen procedure for the channel. The client can proceed without confirmation from the blockchain, because the server does not need to be dependent, or the client ensures that the request is mined before expiration of the channel.
+
+Before considering the above scenario, define the following parameters
+- blockchain_nonce - nonce of the channel in the blockchain
+- blockchain_value - value of the channel in the blockchain
+
+It is known that the daemon starts the close/reopen procedure only after the previous channelClaim request was mined. This means that the current_nonce, at maximum, is one point ahead of the blockchain_nonce.
+
+In each case, the client can verify their signature is authentic and considers the following two numbers:
+
+- Next amount which has to be signed (next_signed_amount), taking into account the price for the current call (price). This value can be easily calculated as we interpret current_signed_amount = b'' as 0.
+    - next_signed_amount = current_signed_amount + price
+- The amount of tokens which haven't been already spent (unspent_amount).
+
+**Simple case** current_nonce == blockchain_nonce
+- unspent_amount = blockchain_value - current_signed_amount
+
+**Complex case**current_nonce != blockchain_nonce
+Taking into account our assumptions, we know that current_nonce = blockchain_nonce + 1.
+- unspent_amount = blockchain_value - oldnonce_signed_amount - current_signed_amount
+
+**Note:** The server can send smaller oldnonce_signed_amount (not the actually last one which was used for channelClaim), But the server trust that the money available is actually more in the channel, which means that a likely attack has occurred through unspent_amount, which lead us  believe that there are less tokens than the actuals, and therefore the future calls need be rejected instantly (or force us to call channelAddFunds).
