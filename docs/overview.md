@@ -12,7 +12,7 @@ gettingstarted_cards:
 # By User Cards Section  
 byuser_cards:
     - title: AI Developer
-      img: 'blockchain.png'
+      img: 'ai_developer.png'
       description: Get started with developing a service for the SingularityNet platform
       urls:
       - url_name: Get Started
@@ -25,7 +25,7 @@ byuser_cards:
         url_link: /docs/ai-developers/
 
     - title: Platform Developers
-      img: 'blockchain.png'
+      img: 'platform_developers.png'
       description: Get started contributing to the development of the SingularityNet platform
       urls:
       - url_name: Registry Contract
@@ -38,7 +38,7 @@ byuser_cards:
         url_link: /docs/platform-dev/
 
     - title: AI Consumers
-      img: 'blockchain.png'
+      img: 'ai_consumer.png'
       description: Get started using the service on the SingularityNet platform
       urls:
       - url_name: Get Started

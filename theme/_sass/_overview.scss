@@ -19,6 +19,14 @@ section{
         display: block;
         height: 100%;
     }
+    &.by_user{
+        background:#fff;
+        img{
+            display: block;
+            height: 100%;            
+            margin: 0 auto;
+        }
+    }
 }
 .snet-card_innercontents{
     padding: 18px;
