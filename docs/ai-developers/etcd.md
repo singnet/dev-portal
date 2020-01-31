@@ -485,4 +485,52 @@ WantedBy=multi-user.target " > /lib/systemd/system/etcd.service
 ```
 
 **Note**: Please make sure that you update the private-ip with your respective ips. Repeat the above step for member-2 and member-3 machines.
+##Starting the cluster
+Make sure the ports 2380 is open between the nodes and 2379 is open to the world. Reload the daemon and start the service.
 
+```
+systemctl daemon-reload
+systemctl enable etcd
+systemctl start etcd.service
+```
+
+##Testing the Cluster
+In order to test the cluster, use the generated ca.pem, client.pem & client-key.pem. Replace the domain name with the specific domain or public ip and execute the below command.
+```
+curl --cacert ca.pem --cert client.pem --key client-key.pem https://domain-name:2379/health
+```
+You would get the below output.
+```
+{"health": "true"}
+```
+**Note**: Ship the ca.pem, client.pem & client-key.pem files along with daemon, and follow the daemon configuration in order to establish a connection between etcd and daemon.
+##The Set of Channels and Manipulation Functions
+Each “atomic” payment channel in MPE is represented by the following structure:
+```
+//the full ID of “atomic” payment channel = “[this, channel_id, nonce]”
+struct PaymentChannel {
+        address sender;      // The account sending payments.
+        Address recipient;   // The account receiving the payments.
+        Bytes32 groupId;     // id of group of replicas who share the same payment channel
+// You should generate groupId randomly in order to prevent
+// two PaymentChannel with the same [recipient, groupId]
+        uint256 value;      // Total amount of tokens deposited to the channel.
+        Uint256 nonce;      // “nonce” of the channel (by changing nonce we  ecipient y close the old channel ([this, channelId, oldNonce])
+//  and open the new channel [this, channelId, newNonce])
+//!!! Nonce also prevents race  ecipient between channelClaim and channelExtendAndAddFunds
+    uint256 expiration;     // Timeout (in block numbers) in case the recipient never closes.
+// if block.number > expiration then sender can call channelClaimTimeout
+        address signer;    // signer on behalf of sender
+   }
+mapping (uint256 => PaymentChannel) public channels;
+```
+
+The following list describes about the code:
+- Complete ID of an “atomic” payment channel is [MPEContractAddress, channelId, nonce].
+- MPEContractAdress is the address of Multi-Party Escrow contract, which is needed to prevent a multi contract attack.
+- channelId is an index in the channels mapping.
+- nonce is a part of the close/reopen logic.
+- Can effectively close the old channel by changing the nonce  [MPEContractAddress, channelId, oldNonce] and open the new one [MPEContractAddress, channelId, newNonce]. We will go more into details about this later.
+- nonce can prevent a race condition between  channelClaim and channelExtendAndAddFunds.
+- Sservice provider can use the same Ethereum wallet for different replicas by modifying the full ID of the recipient is [recipient_ethereum_address, groupId]. 
+     
