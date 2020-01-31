@@ -125,7 +125,262 @@ For example:
 |replica id| start etcd node  |etcd node name|etcd node client url   |etcd node peer url       |
 |----------------------------|---------------|-----------------------|-------------------------|
 |replica 1 |yes              |node 1         |http://AAA.BBB.1.1:2379 | http://AAA.BBB.1.1:2380|
-|replica 1 |yes              |node 2         |http://AAA.BBB.1.2:2379 | http://AAA.BBB.1.2:2380| 
-|replica 1 |yes              |ZAB            |                        |                        |
-|replica 1 |yes              |node 3         |http://AAA.BBB.1.4:2379 |http://AAA.BBB.1.4:2380 |
+|replica 2 |yes              |node 2         |http://AAA.BBB.1.2:2379 | http://AAA.BBB.1.2:2380| 
+|replica 3 |yes              |ZAB            |                        |                        |
+|replica 4 |yes              |node 3         |http://AAA.BBB.1.4:2379 |http://AAA.BBB.1.4:2380 |
+|replica 5 |no               |               |                        |                        |
 
+**Note**: Such a configuration requires that all replicas which maintain an etcd node need to be started first to have a functional etcd cluster.
+
+### Incremental etcd cluster creation approach
+
+Starting etcd cluster requires that initial size of the cluster was defined during cluster bootstrap. It means that the cluster begins to work only when quorum number of nodes join the cluster.
+Suppose there are 3 replicas and they want to run 3 ectd nodes. When the first replica starts an etcd node, it is not able to write and read from the etcd because 2 more etcd nodes need to join the cluster.
+
+As an alternative, it is suggested that the first replica starts with etcd cluster which consists of only one etcd node. In this case it will be able to read and write to the etcd. When the second replica starts it can find the existing etcd cluster (using the address of the first replica) and just adds the second node to the cluster.
+
+This allows us to have a working etcd cluster even when only some of the replicas are running.
+
+**Note**: etcd has a Discovery Service Protocol. It is only used in the cluster bootstrap phase, and cannot be used for runtime reconfiguration.
+
+The following algorithm describes the creating and updating of the etcd cluster during replica initialization based on an incremental approach
+
+**Input**
+
+Each replica needs to have access to the following info which is provided during the replica starting:
+- etcd cluster token value
+- list of all replicas with corresponding values:
+    - replica id
+    - etcd node name
+    - etcd ip address
+    - ectd client and peer ports
+
+Cluster Configuration Table
+
+The table with the given columns will be maintained in etcd cluster:
+- replica id
+- timestamp
+- running etcd server node flag
+
+The last field indicates that a replica started an etcd server instance and that it had been alive at the time when the record to the Cluster Configuration Table was written.
+
+**Replicas to etcd nodes correspondence**
+Each replica can use a predefined function which returns the number of etcd nodes that are necessary to run for the given number of live replicas.
+
+The function can be described in pseudocode like:
+
+```
+numberOfEtcdNodes(numberOfReplicas) {
+    1, 2   -> 1
+    3, 4   -> 3
+    5, ... -> 5
+```
+**Detecting added and failed replicas**
+It is suggested to use the heartbeat mechanism to detect failures in replicas. Each replica needs to repeatedly write a timestamp using the replica id as a key to the Cluster Configuration Table. 
+
+When the difference between the current time and the timestamp of the replica is higher than a certain threshold, the replica is considered dead.
+
+**Detecting failed etcd nodes**
+etcd Admin API Documentation provides a REST API to check the health of an etcd node.
+
+###Initial state
+
+The first initialized replica detects that there is no etcd cluster and starts an embedded etcd instance.
+
+###Main loop
+Each replica reads the Cluster Configuration Table, checks the number of live replicas and calculates the number of required etcd nodes using the numberOfEtcdNodes(numberOfReplicas) function.
+
+If the number of required etcd nodes is less than the current number of live etcd nodes, then only one replica with the lowest id that does not have a running embedded etcd node starts it and adds this node to the current cluster.
+
+There can be two results:
+- The embedded etcd is successfully run
+- The replica which starts the etcd misses the timeout and is considered dead
+
+If the etcd node initialization succeeds, the replica adds the record to the Cluster Configuration Table to let it know that it has running ectd node.
+
+In both cases the process can be just repeated as is.
+
+#Setting-up ETCD Cluster
+
+Starting an etcd cluster statically requires that each member knows another in the cluster. In that regard, we should know the public and private ips of the machines well ahead before setting up the cluster.
+
+The public and private ips of these machines are used to generate the server, client and peer certificates. Using these certificates, the cluster will be setup with TLS Authentication enabled.
+
+|Name      | Private Ip  |Public Ip     |Hostname             |
+|------------------------|--------------|---------------------|
+|member-1  |10.0.1.10    |54.93.140.146 |member-1.example.com |
+|member-1  |10.0.1.11    |54.93.140.76  |member-2.example.com |   
+|member-1  |10.0.1.12    |54.93.140.30  |member-3.example.com |
+
+This document considers to deploy three node etcd cluster. Following are the example nodes for our reference.
+
+##Infrastructure Diagram
+
+ETCD Cluster setup on AWS. 
+
+Imaga 7 Diagram
+
+##Generating Certificates
+
+Three certificate types will be used to setup the cluster
+- Client certificate is used to authenticate client by server. For example etcdctl, etcd proxy, or docker clients.
+- Server certificate is used by server and verified by client for server identity. For example docker server or kube-apiserver.
+- Peer certificate is used by etcd cluster members as they communicate with each other in both ways.
+###Download cfssl
+Let's use cfssl and walk through the whole process to create all the required certificates. This document assumes that you are generating these certificates with cfssl on your local x86_64 Linux host.
+
+```
+mkdir ~/bin
+curl -s -L -o ~/bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+curl -s -L -o ~/bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+chmod +x ~/bin/{cfssl,cfssljson}
+export PATH=$PATH:~/bin
+```
+###Initialize a certificate authority
+First of all we have to save default cfssl options for future substitutions:
+```
+mkdir ~/cfssl
+cd ~/cfssl
+cfssl print-defaults config > ca-config.json
+cfssl print-defaults csr > ca-csr.json
+```
+
+###Configure CA options
+Update the generated ca-config.json config file with the below content in order to generate three set of certificates
+
+```
+{
+    "signing": {
+        "default": {
+            "expiry": "43800h"
+        },
+        "profiles": {
+            "server": {
+                "expiry": "43800h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "server auth"
+                ]
+            },
+            "client": {
+                "expiry": "43800h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "client auth"
+                ]
+            },
+            "peer": {
+                "expiry": "43800h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "server auth",
+                    "client auth"
+                ]
+            }
+        }
+    }
+}
+```
+
+**Note**: You can set the expiry of the certificates based on the requirement.
+
+You can also modify ca-csr.json Certificate Signing Request (CSR):
+
+```
+{
+    "CN": "My own CA",
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C": "US",
+            "L": "CA",
+            "O": "My Company Name",
+            "ST": "San Francisco",
+            "OU": "Org Unit 2"
+        }
+    ]
+}
+```
+And generate CA with defined options:
+
+cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
+You'll get following files:
+```
+ca-key.pem
+ca.csr
+ca.pem
+```
+**Note**: Please keep ca-key.pem file in safe. This key allows to create any kind of certificates within your CA.
+###Generate server certificate
+{ cfssl print-defaults csr > server.json
+
+Most important values for server certificate are Common Name (CN) and hosts. We have to substitute them, with public ips. For example:
+```
+"CN": "etcd-cluster",
+    "hosts": [
+        "domain-name",
+        "54.93.140.146",
+        "54.93.140.76",
+        "54.93.140.30",
+        "127.0.0.1"
+    ],
+    "key": {
+        "algo": "ecdsa",
+        "size": 256
+    },
+    "names": [
+        {
+            "C": "US",
+            "L": "CA",
+            "ST": "San Francisco"
+        }
+    ]
+}
+```
+**Note**: It's mandatory to include 127.0.0.1 in the hosts section as it acts as a loopback resolver.
+
+Now we are ready to generate server certificate and private key:
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=server server.json | cfssljson -bare server
+
+You'll get following files:
+```
+server-key.pem
+server.csr
+server.pem
+```
+
+###Generate peer certificate
+cfssl print-defaults csr > member1.json
+
+Substitute CN and hosts values, for example:
+
+```
+{
+    "CN": "member-1",
+    "hosts": [
+      "member-1",
+      "member-1.local",
+      "10.0.1.10",
+      "10.0.1.11",
+      "10.0.1.12",
+      "127.0.0.1"
+    ],
+    "key": {
+        "algo": "ecdsa",
+        "size": 256
+    },
+    "names": [
+        {
+            "C": "US",
+            "L": "CA",
+            "ST": "San Francisco"
+        }
+    ]
+}
+```
