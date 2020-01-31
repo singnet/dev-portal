@@ -14,7 +14,7 @@ extralink:
     external_url: false
     description: Find an overview of our full documentation here.
 
-# Developer Newsletter
+# Market Place
 dev_news: true
 
 # Micro navigation
@@ -30,42 +30,58 @@ page_nav:
         url: '/docs/concepts/service'
 ---
 
-The [SingularityNET Marketplace](http://beta.singularitynet.io) provides an easy way for people browse available AI services and interact with them via a web interface.
+The [The SingularityNET Marketplace](http://beta.singularitynet.io)  is a decentralized application (DApp), which lists the available AI services and helps you to interact with those services through web interface. It also processes payment for services (through MetaMask) and conduct service ratings.
+Whenever transaction happens on Blockchain, an event is created. The marketplace monitors all those events. 
+For example, if you publish a new organization, a new service, the marketplace receives an alert notification about published information in the Blockchain. The Blockchain reads the organization metadata, the service and the stores the data into the local database. This application efficiently displays allt the details in the marketplace quickly without relying on the slow performance of the Blockchain
+The following image shows the contents from the marketplace database.  
 
 ![marketplace](/assets/img/marketplace.png)
 
-The SingularityNET marketplace is a decentralized application (DApp) and provides a front-end for exploring available AI services and interacting with them through a web-UI. It also handles payment for services (through MetaMask integration) and service ratings. The DApp
-  * reads data from the on-chain Registry and pairs it with off-chain metadata, allowing AI
-services to be searched, filtered, and discovered;
-  * integrates the SingularityNET curation service, displaying from the Registry only those
-services that have been vetted and whose owners have undergone due diligence and
-signed legal agreements that protect user privacy and data;
-  * allows AI services to display custom UI components for user interactions (gathering
-inputs for service execution and displaying results);
-  * integrates with Multi-Party Escrow, enabling the user to pay for service usage;
-  * allows consumers to rate services they have used; this is a simple rating component that
-will eventually be replaced by SingularityNET's Reputation System (currently under
-development); and
-  * captures usage metrics at a consumer level.
+The decentralized application (DApp) does the following:
+- Reads data from the on-chain Registry and pairs it with off-chain metadata.
+    This allows for searching, filtering, and discovering AI services.
+    
+- Integrates the SingularityNET curation service, and displays from the registry.
+    Whenever an event comes from Blockchain, the details are stored in the local database, the review process is done on that data, and then when approved, the information is made available in the marketplace. 
+    **Note:** Displays those services that have been vetted, and owners who have experienced due diligence and signed legal agreements that protects user and data privacy.
+    
+- Displays custom UI components for interactions with AI services.
+    It enables you to quickly build the UI components and host the component on the platform, and also you can determine what inputs need to be chosen for service execution, and is the expected output, without understanding the complexity of knowing the gRPC protocol, the proto that is associated with the service and how to call the service and so on.
+    
+- Integrates with Multi-Party Escrow, to allow consumers to pay for service usage;
+    Allows consumers to rate about the utilized services
+    **Note:** This rating services will be part of the SingularityNET's Reputation System (currently under development). Currently, it is very difficult to rate services on blockchain. Therefore all rating mechanism are performed off chain and managed in the market place. So you can share your opinion and reviews at marketplace.
+    
+- Captures usage metrics at a consumer level.
 
+**Note:** Although, the SingularityNET platform is open and decentralized, the Marketplace is the SingularityNET Foundation's curated view. This allows the foundation to adhere to legal requirements of different legislative regions. Currently, the Marketplace and SingularityNET is in beta stage. For more information about the current status, refer to  current status page for changes, or follow the github repo. Page.
 
-While SingularityNET the platform is open and decentralised, the Marketplace is the SingularityNET Foundation's curated view of it. This allows the foundation to provide oversight and adhere to legal requirements requirements in different legislative regions.
+## Calling a Service
 
-The Marketplace and SingularityNET is in beta, but still under heavy development. See our [current status](/docs/current-status) page for ways to to stay informed of changes, or follow the [github repo](https://github.com/singnet/snet-dapp).
+The Marketplace offers a free trial version, where registered users can access service(s) for a specified time period. After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. This extension mediates with the blockchain on behalf, helping you in transferring of tokens between wallets, and invoke contracts.
+Example: The sample service below shows the SingularityNET  platform can authorize Metamask:
 
-# Calling a Service
+Image to be included
 
-The Marketplace is a DApp, which means in order to use it you need to install a ethereum browser extension like [MetaMask](https://metamask.io/). This extension carries out interactions with the blockchain on your behalf, allows you to transfer tokens between wallets, and invoke contracts.
+- Select a Wallet -
+- General Account Wallet
+- Metamask
 
-In the context of the marketplace it lets you query what services are available, transfer AGI funds into escrow, and setup payment channels that allow you call any of the listed services.
+**Important**: Metamask is a plugin which is available in SingularityNET platform. 
 
-For a full guide on getting your wallet and browser setup, see our [Setup Guide](/docs/setup).
+This extension, allows you to perform the following in the context of the marketplace:
+- query what services are available
+- transfer AGI funds into escrow, 
+- setup payment channels to enable calls to any of the listed services.
+To learn more about how to get your wallet and install browser extension, see our Setup Guide.
 
-# Marketplace Requirements
+## Marketplace Requirements
 
-We mandate a number of requirements before your service is visible to others. To get your service listed on the marketplace you must:
-
-0. Build and [publish your service](/tutorials/publish) ;-)
-1. Ensure you are using SSL with the snet-daemon. We recommend using [certbot and letsencrypt](https://certbot.eff.org/) if you don't already have a SSL certificate.
-3. Fork the snet-dapp repo, build a react component as the user interface for your service, and submit a pull request. Let us know what networks your service is on, and the organisation and service names used. More details are in the [dapp repo README.md](https://github.com/singnet/snet-dapp#ui-for-services).
-4. Last is some paperwork that we are still finalising, and we'll update this list when we have that. If you are itching to get your service listed, reach out to us via one of our [community](/docs/community) groups.
+If you are a service author, need the service to be visible to others and listed on the marketplace you must:
+1.	Build and publish your service 
+2.	Use SSL with the snet-daemon. 
+    **Note:** if you don't already have an SSL certificate for your domain, it is recommend you use certbot and letsencrypt .
+3.	Fork the snet-dapp repo, build a react component as the user interface for your service, and submit a pull request. 
+    **Note:** Identify the services on your networks, organization and service names being used. For more details, refer to dapp repo README.md.
+4.	Last is some paperwork that we are still finalising, and we'll update this list when we have that. If you are itching to get your service listed, reach out to us via one of our community groups.
+    **Note** that your service can be published to SingularityNET without being listed on the marketplace, but your service may be less discoverable to potential customers if it is not listed. 

@@ -662,10 +662,6 @@ h5 .title-anchor-link{ display: none;}
     font-weight: 500;
 }
 
-
-
-
-
 .last-item-list{
     display: none;
 }
@@ -693,6 +689,16 @@ h5 .title-anchor-link{ display: none;}
     body{
         //background: red!important; 
     }
+    .snet-blog-entry{
+        display: block!important;
+        img.snet-card_descriptionicon{
+            display: block!important;
+            margin: 0 auto!important;
+        }
+        .snet-blog-entry_content{
+            display: block!important;
+        }
+    }
     .wrapper{
         width:90%;
     }  
@@ -706,6 +712,12 @@ h5 .title-anchor-link{ display: none;}
                 }
             }
         }        
+    }
+    .snet-herobanner{
+        height: auto!important;
+    }    
+    .snet-card_margintop_fix{
+        margin-top: 10px!important;
     }
     #main-menu{
         //position: absolute;
@@ -739,7 +751,10 @@ h5 .title-anchor-link{ display: none;}
                 }
             }    
         }        
-    }     
+    }  
+    .byuser-cards{
+        margin-bottom: 40px;
+    }       
 }
 @media only screen and (min-width: 576px) and (max-width:767px){
     /* sm */    
@@ -781,6 +796,9 @@ h5 .title-anchor-link{ display: none;}
                 }
             }    
         }        
+    }  
+    .byuser-cards{
+        margin-bottom: 40px;
     }    
 }
 @media only screen and (min-width: 768px) and (max-width:991px){
