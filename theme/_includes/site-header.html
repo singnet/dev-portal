@@ -1,5 +1,5 @@
 
-{% if site.snet.header.logo.text or site.snet.header.logo.image or site.snet.header.nav %}   
+{% if site.data.navigation.header.logo.text or site.data.navigation.header.logo.image or site.data.navigation.header.nav %}   
 
 <!-- Navigations Start -->
 <header>
@@ -14,36 +14,33 @@
         </button>
         <div class="collapse navbar-collapse" id="main-menu">
             <ul class="navbar-nav mr-auto snet-navbar_menu">
-                {% for item in site.snet.header.nav %}
-                {% assign dropdowntree = nil %}
-                {% for header in site.data.navigation.topheaders %}
-                {% if item.item_name == header.title %}
-                {% assign dropdowntree = header %}
-                {% break %}
-                {% endif %}
-                {% endfor %}
-                {% if dropdowntree %}
-                <li class="nav-item">
-                    <a class="nav-link" >
-                        {{ item.item_name }}
-                        <i class="material-icons float-right align-middle">arrow_drop_down</i>
-                    </a>  
-                    <div class="snet_slidingDropdown">
-                        {% for subheader in dropdowntree.subheaders %}
-                        <a class="dropdown-item" href="{{subheader.url}}">{{subheader.title}}</a>
-                        {% endfor %}
-                    </div>                    
-                </li>
-                {% else %}
-                {% assign top_nav_class = "nav-item"%}
-                <li class="{{ top_nav_class }}">
-                    {% if item.item_external_url %}
-                    <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                    {% else %}
-                    <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                {% for item in site.data.navigation.header.nav %}
+                    {% assign dropdowntree = nil %}
+                    {% if item.subheaders %}
+                        {% assign dropdowntree = item.subheaders %}
                     {% endif %}
-                </li>
-                {% endif %}                 
+                    {% if dropdowntree %}
+                        <li class="nav-item">
+                            <a class="nav-link" >
+                                {{ item.item_name }}
+                                <i class="material-icons float-right align-middle">arrow_drop_down</i>
+                            </a>  
+                            <div class="snet_slidingDropdown">
+                                {% for subheader in dropdowntree %}
+                                    <a class="dropdown-item" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a>
+                                {% endfor %}
+                            </div>                    
+                        </li>
+                    {% else %}
+                        {% assign top_nav_class = "nav-item"%}
+                        <li class="{{ top_nav_class }}">
+                            {% if item.item_external_url %}
+                                <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                            {% else %}
+                                <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                            {% endif %}
+                        </li>
+                    {% endif %}                 
                 {% endfor %}                
             </ul>
             <!--
@@ -75,7 +72,7 @@
     -->
     <div class="-collapse -navbar-collapse" id="secondary-menu">
         <ul class="navbar-nav mr-auto snet-navbar_navigation">            
-            {% for item in site.snet.header.secondnav %}
+            {% for item in site.data.navigation.header.secondnav %}
             {% assign nav_class = "nav-item"%}
             {% if page.url contains item.item_url %}
                 {% assign nav_class = "nav-item active" %}
@@ -92,7 +89,7 @@
             <li class="nav-item last-item-list">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">More</a>
                 <div class="dropdown-menu dropdown-menu-secondary">
-                    {% for item in site.snet.header.secondnav %}  
+                    {% for item in site.data.navigation.header.secondnav %}  
                     {% if forloop.index > 3 %}
                     <a class="dropdown-item" href="{{ item.item_url }}">{{ item.item_name }}</a>                    
                     {% endif %}

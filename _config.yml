@@ -2,57 +2,6 @@
 snet:
     baseurl:
     color_theme: blue
-    header:
-        logo:
-            text:
-            image: '/assets/images/layout/logo.png'
-        nav:
-            - item_name: Home
-              item_url: '/'
-            - item_name: Docs
-              item_url: '/docs/overview/'
-            - item_name: Products
-              item_url: ''
-            - item_name: Community
-              item_url: ''
-        secondnav:
-            - item_name: Overview
-              item_url: '/docs/overview/'
-            - item_name: Core Concepts
-              item_url: '/docs/concepts/'
-            - item_name: Platform Dev
-              item_url: '/docs/platform-dev/'
-            - item_name: AI Developer
-              item_url: '/docs/ai-developers/'
-            - item_name: AI Consumer
-              item_url: '/docs/ai-consumers/'              
-
-    footer:
-        content:
-            logo:
-                text:
-                image: '/assets/images/layout/logo.png'
-            copyright: Copyright &copy; 2019 SingularityNET. All rights reserved.
-            copyright_address: Stichting SingularityNET Barbara Strozzilaan 362 1083 HN Amsterdam The Netherlands
-        social_list:
-            - network_name: github
-              profile_icon: github
-              profile_url: 'https://github.com/singnet'
-            - network_name: twitter
-              profile_icon: twitter            
-              profile_url: 'https://twitter.com/singularity_net'
-            - network_name: facebook
-              profile_icon: facebook-square            
-              profile_url: 'https://www.facebook.com/singularityNET.io'
-            - network_name: linkedin
-              profile_icon: linkedin            
-              profile_url: 'https://www.linkedin.com/company/singularitynet/'
-            - network_name: youtube
-              profile_icon: youtube            
-              profile_url: 'https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw'
-            - network_name: instagram
-              profile_icon: instagram            
-              profile_url: 'https://instagram.com/singularitynet.io'
     google_analytics:
         tracking_code: UA-107763881-9
     comments:

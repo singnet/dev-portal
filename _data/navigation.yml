@@ -1,16 +1,74 @@
-topheaders:
-  - 
-    title: "Products"
-    subheaders:
-      -
-        title: "Client"
-        url: "/overview"
-      - 
-        title: "SDK"
-        url: "/overview"   
-      - 
-        title: "Daemon"
-        url: "/overview"
+header:
+    logo:
+        text:
+        image: '/assets/images/layout/logo.png'
+    nav:
+        - item_name: Home
+          item_url: '/'
+        - item_name: Docs
+          item_url: '/docs/overview/'
+        - item_name: Products
+          item_url: ''
+          subheaders:
+          -
+            title: "AI Marketplace"
+            url: "https://beta.singularitynet.io"
+          - 
+            title: "Request For AI"
+            url: "https://rfai.singularitynet.io"
+          - 
+            title: "Platform Status"
+            url: "https://status.singularitynet.io"            
+        - item_name: Community
+          item_url: ''
+          subheaders:
+          -
+            title: "FAQ"
+            url: "https://community.singularitynet.io/c/qa"
+          - 
+            title: "Forum"
+            url: "https://community.singularitynet.io/"
+          - 
+            title: "Telegram"
+            url: "https://t.me/singularitynet"             
+    secondnav:
+        - item_name: Overview
+          item_url: '/docs/overview/'
+        - item_name: Core Concepts
+          item_url: '/docs/concepts/'
+        - item_name: Platform Dev
+          item_url: '/docs/platform-dev/'
+        - item_name: AI Developer
+          item_url: '/docs/ai-developers/'
+        - item_name: AI Consumer
+          item_url: '/docs/ai-consumers/'              
+
+footer:
+    content:
+        logo:
+            text:
+            image: '/assets/images/layout/logo.png'
+        copyright: Copyright &copy; 2019 SingularityNET. All rights reserved.
+        copyright_address: Stichting SingularityNET Barbara Strozzilaan 362 1083 HN Amsterdam The Netherlands
+    social_list:
+        - network_name: github
+          profile_icon: github
+          profile_url: 'https://github.com/singnet'
+        - network_name: twitter
+          profile_icon: twitter            
+          profile_url: 'https://twitter.com/singularity_net'
+        - network_name: facebook
+          profile_icon: facebook-square            
+          profile_url: 'https://www.facebook.com/singularityNET.io'
+        - network_name: linkedin
+          profile_icon: linkedin            
+          profile_url: 'https://www.linkedin.com/company/singularitynet/'
+        - network_name: youtube
+          profile_icon: youtube            
+          profile_url: 'https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw'
+        - network_name: instagram
+          profile_icon: instagram            
+          profile_url: 'https://instagram.com/singularitynet.io'
 
 docs:
   concepts:
@@ -321,6 +379,11 @@ ai-consumers:
   tutorials:
     title: Tutorials
     children:
+        create-wallet:
+          title: How to Create a Wallet?
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/create-a-wallet'      
         snet-cli:
           title: snet-cli
           excerpt: 
@@ -393,16 +456,21 @@ ai-developers:
   tutorials:
     title: Tutorials
     children:
+        create-wallet:
+          title: How to Create a Wallet?
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/create-a-wallet'
         snet-cli:
           title: snet-cli
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/'
+          url: '/docs/ai-developers/snet-cli'
         sdk:
           title: SDK
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/'
+          url: '/docs/ai-developers/sdk'
   troubleshooting:
       title: Troubleshooting
       excerpt:
