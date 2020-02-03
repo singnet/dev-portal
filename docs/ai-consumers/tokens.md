@@ -46,4 +46,4 @@ In order to add the Kovan Testnet AGI, you may need the following details:
 * Decimals: 8
 * Kovan Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
 
-To learn more about how to request for  Kovan or Ropsten Testnet Ether, click on this URL: https://faucet.metamask.io. You can request fo
+To learn more about how to request for  Kovan or Ropsten Testnet Ether, click on this URL: https://faucet.metamask.io.
