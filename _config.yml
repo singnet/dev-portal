@@ -1,6 +1,6 @@
 # Theme settings
 snet:
-    baseurl:
+    baseurl: "http://127.0.0.1:4000/"
     color_theme: blue
     google_analytics:
         tracking_code: UA-107763881-9

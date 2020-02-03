@@ -11,13 +11,13 @@ description: SingularityNET allows you to easily integrate AI services into your
 # Micro navigation
 micro_nav: true
 
-# Featrures    
+# Features    
 features:
-    - title: Quick Start
+    - title: Overview
       description: A primer to get you started with working with SingularityNET tools & software and the blockchain.
       icon: 'snet.png'
-      material-icon: bookmarks
-      url: '/docs/setup'
+      card-image: ''
+      url: '/docs/overview'
 
     - title: Core Concepts
       description: Learn about the core parts of the SingularityNET platform and how it works under the hood.
@@ -31,25 +31,35 @@ features:
       material-icon: import_contacts
       url: '/tutorials'
 
-# Blog Cards
-blogcards:
-    - title: Building the unimaginable
-      date: 'April 4, 2019'
-      description: On the tragedy of the commons, ownerless ecosystems, and redefining the energy sharing status quo.
-      url: '#'
-      icon: 'blog_1.png'
+# By Tools  
+tools_cards:
+    - title: SNET Contracts
+      description: 'Ethereum smart contracts that power the SingularityNet platform'
+      left_url_name: Download
+      left_url_link: https://www.npmjs.com/package/singularitynet-platform-contracts
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/platform-contracts
 
-    - title: The Birth of Decentralized AI
-      date: 'April 21, 2019'
-      description: Announcing the launch of the main net Beta version of the SingularityNET Platform on the Ethereum Network
-      url: '#'
-      icon: 'blog_2.png'
+    - title: SNET Client
+      description: A command line utility to interface with the SingularityNet platform
+      left_url_name: Download
+      left_url_link: https://pypi.org/project/snet-cli/
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/snet-cli
 
-    - title: SingularityNET Partners with Roya Mahboob’s Digital Citizen
-      date: 'May 6, 2019'
-      description: The curriculum-focused partnership aims to advance the digital literacy for women and children in developing countries.
-      url: '#'
-      icon: 'blog_3.png'
+    - title: Daemon
+      description: Daemon exposes an AI application as an API that is accessible through the SingularityNET platform. 
+      left_url_name: Download
+      left_url_link: https://github.com/singnet/snet-daemon/releases/latest
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/snet-daemon
+
+    - title: Python SDK
+      description: Python SDK to invoke AI services on the SingularityNet platform programatically
+      left_url_name: Download
+      left_url_link: https://pypi.org/project/snet-cli/
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/snet-cli
 
 # Email Subscription Section
 email_subscription:
