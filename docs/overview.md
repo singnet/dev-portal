@@ -112,7 +112,6 @@ bytools_cards:
       right_url_name: Github
       right_url_link: https://github.com/singnet/snet-daemon
 
-
     - title: Python SDK
       img: 'http://placehold.jp/80x80.png'
       description: Python SDK to invoke AI services on the SingularityNet platform programatically

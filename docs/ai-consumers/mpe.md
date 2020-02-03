@@ -102,13 +102,13 @@ The sender can extend the expiration time and add funds to the channel. The reci
 - The likely scenario for such delayed response can be due to the following reason:
 
     - Neither the sender nor recipient needs any confirmation from the blockchain. 
-    <br>Alice can continue to add funds, and Bob can continue to claim them in the channel, with no confirmation from the blockchain. 
-For example, after Bob claims the funds and inform Alice that the nonce of the channel has changed, and Bob can start sending messages with the new nonce. At this stage it appears safe for both the sender and the recipient. There is only one condition that applies: the recipient should make sure that the transaction is performed before the expiry time of the channel.
+    <br>Kevin can continue to add funds, and Jack can continue to claim them in the channel, with no confirmation from the blockchain. 
+For example, after Jack claims the funds and inform Kevin that the nonce of the channel has changed, and Jack can start sending messages with the new nonce. At this stage it appears safe for both the sender and the recipient. There is only one condition that applies: the recipient should make sure that the transaction is performed before the expiry time of the channel.
     - There is no race condition between claiming (from the recipient side) and extending or adding funds (from the sender side). 
     <br>The parties can use these functions at any time, but the end result depends on the order in which these transactions took place. 
     <br>When a user wants to call to a particular service, the user must ensure to open a channel, add sufficient funds, and set an expiry date, so that it would provide sufficient time for the user to consume the service. 
 
-**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient), and daemon group identity. 
+**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity. 
 
 This combination allows daemons in the same group to share payment information through ETDC, reducing the liability on the number of open channels and benefitting clients. Clients can be end users interacting with the platform through the Marketplace DApp or applications making calls directly or through the SDK’s generated code.
 
@@ -138,7 +138,25 @@ Assume the client needs a particular service, and the client is aware that the r
 7.	Kevin prefers to make a claim for certain amount.
     **Note:** Nonce increments to 2, when claim is performed online.
     
-## Claiming Funds from the Channel
+
+### Postponing the Expiration Time of the Channel
+With the following functions the client can postpone the expiration time of the channel and can add funds to the channel at any time and can also claim all funds from the channel after the expiration time is reached.
+
+```
+function channelExtend(uint256 channel_id, uint256 new_expiration);
+function channelAddFunds(uint256 channel_id, uint256 amount);
+function channelExtendAndAddFunds(uint256 channel_id, uint256 new_expiration, uint256 amount);
+function channelClaimTimeout(uint256 channel_id);
+```
+
+
+### Claiming your funds back after Expiration 
+The Sender can claim the funds after the expiry date
+```
+function channelClaimTimeout(uint256 channel_id);
+```
+
+## How the recipient Claims funds from the Channel
 With the following function, the recipient can claim funds from the channel
 
 ith the following function, the recipient can claim funds from the channel.
@@ -152,53 +170,6 @@ It should be noted that `v`, `r`, `s` are parts of the signature. The recipent s
 The recipient has two possibilities:
 * `(is_sendback==true)` - "close" the channel and send the remainder back to the sender.
 * `(is_sendback==false)` - "close/reopen". We transfer the claimed amount to the recipient, but instead of sending the remainder back to the sender we simple change the nonce of the channel. By doing this we close the old atomic channel `[MPEContractAdress, channel_id, old_nonce]` and open the new one `[MPEContractAdress, channel_id, new_nonce]`.
-
-### Postponing the Expiration Time of the Channel
-With the following functions the client can postpone the expiration time of the channel and can add funds to the channel at any time and can also claim all funds from the channel after the expiration time is reached.
-
-```
-function channelExtend(uint256 channel_id, uint256 new_expiration);
-function channelAddFunds(uint256 channel_id, uint256 amount);
-function channelExtendAndAddFunds(uint256 channel_id, uint256 new_expiration, uint256 amount);
-function channelClaimTimeout(uint256 channel_id);
-```
-**We assume that** `REPLICA1` **is from the payment group identified with** `groupId=group1`.
-
-* `CLIENT1` initiates a call: `openChannel(recipient=SERVER1, value=10 AGI, expiration=expiration0, groupId=group1, signer=CLIENT1)`
-* Multi-Party Escrow creates the Payment Channel: `[channel_id = 0, sender=CLIENT1, recipient=SERVER1, groupId=group1, value=10 AGI, nonce=0, expiration=expiration0, signer=CLIENT1]`
-* Multi-Party Escrow subtracts `10 AGI` from the balance of `CLIENT1`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=1)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=2)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=3)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=4)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=5)`
-* Server decides to close/reopen the channel (and claims `5 AGI` that is due)
-* `SERVER1` initiates a call: `channelClaim(channel_id = 0, amount=5, signature = SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=5), is_sendback=false)`
-* The Multi-Party Escrow adds `5 AGI` to the balance of `SERVER1`
-* The Multi-Party Escrow changes the nonce (`nonce +=1`) and value (`value -= 5`) in the Payment Channel: `[channel_id = 0, sender=CLIENT1, recipient=SERVER1, replicaId=REPLICA1, value=5 AGI, nonce=1, expiration=expiration0]`
-* The client is notified that the channel has been reopened, and that the `nonce` has been changed (see [this topic on stateless clients](/docs/concepts/mpe-stateless-client)).
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=1)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=2)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=3)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=4)`
-* The client decides to deposit more AGI tokens in the channel and postpones its expiration date.
-* `CLIENT1` calls `channelExtendAndAddFunds(channel_id=0, new_expiration = now + 1day, amount=10 AGI)`
-* The Multi-Party Escrow changes the value and expiration date in the Payment Channel: `[channel_id = 0, sender=CLIENT1, recipient=SERVER1, groupId=group1, value=15 AGI, nonce=1, expiration=expiration1, signer=CLIENT1]`
-* The Multi-Party Escrow subtracts `10 AGI` from the balance of `CLIENT1`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=5)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=6)`
-* .....
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=10)`
-* The server decides to close/reopen the channel (claims 10 AGI that is due).
-* .....
-* Client decides to put more AGI tokens in the channel and postpones its expiration date.
-* ....
-* Server decides to close/reopen the channel.
-* ....
-* This can be repeated forever.
-* ....
-* If the server decides to stop working with this client he could close the channel with `channelClaim(...., is_sendback=true)`
-* If the server fails to claim the tokens before timeout (for example if he goes offline forever), then the client can claim all remaining tokens after the expiration date.
 
 ## Remarks
 
@@ -232,9 +203,9 @@ The client needs to store the Ethereum identity as follows:
   <br>Last amount which were signed by client with current_nonce. If no messages were signed with the current_nonce, then this value is an empty byte string (b''), which we should interpret as 0.
 - **current_signature **
   <br>Last signature sent by the client with current_nonce, it could be absent (empty string) if no message was signed with current nonce.
-- **(not implemented yet) oldnonce_signed_amount**  
+- **oldnonce_signed_amount**  
   <br>last amount which was signed by client with nonce=current_nonce - 1.
-- **(not i<br>mplemented yet) oldnonce_signature** 
+- **oldnonce_signature** 
   <br>last signature sent by client with nonce = current_nonce - 1.
 
 **Note:** The two last values are not available in current version, if implemented, can calculate the unspent_amount in the case that current_nonce != blockchain_nonce.

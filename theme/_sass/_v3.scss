@@ -338,31 +338,6 @@ header{
             }  
         }
     }
-    .snet-event-entry{
-        .snet-event-entry_content{
-            margin-top:24px;
-            span{
-                display: block;
-                color: #9b9b9b;
-                letter-spacing: 2px;
-                font-size: 12px;
-                padding: 0 18px;
-            }
-            h4{
-                font-size: 16px;
-                color: #4086FF;
-                letter-spacing: 0.2px;
-                line-height: 20px;
-                border-bottom: none;
-                padding: 8px 18px;
-            }
-            p{
-                font-size: 14px;
-                color: #666;
-                padding: 0 18px;
-            }            
-        }
-    }
     &.inner-card{
         background:#fefefe;
         .snet-card_title{

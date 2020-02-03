@@ -45,7 +45,7 @@
                     {% endfor %}
                 </div>      
                 <div class="row">
-                    <div class="col-12 pt-4">
+                    <div class="col-8 pt-4">
                         <div class="snet-card"> 
                             <h2 class="snet-card_title">Blog Posts</h2>     
                             {% assign index = 0 %}
@@ -55,10 +55,10 @@
                                     {% assign img_src="/theme/assets/images/" %}
                                     {% assign img_src= img_src | append: page.blogcards[0].icon %}
                                     {% if jekyll.environment == 'production' %}
-                                        {% assign img_src = site.snet.baseurl | append: img_src %}
+                                    {% assign img_src = site.snet.baseurl | append: img_src %}
                                     {% endif %}
                                     {% if e.feed_image %}
-                                        {% assign img_src = e.feed_image %}
+                                    {% assign img_src = e.feed_image %}
                                     {% endif %}
                                     <img class="snet-card_descriptionicon align-self-center" src="{{ img_src }}">          
                                     <div class="snet-blog-entry_content">
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                             </a>
-                            {% if index == 2 %}
+                            {% if index == 3 %}
                             {% break %}
                             {% endif %}
 
@@ -76,36 +76,28 @@
                             {% endfor %}                                                    
                         </div>
                     </div>
-                    <!--
+
                     <div class="col-4 pt-4">
                         <div class="snet-card"> 
-                            <h2 class="snet-card_title">Upcoming Events</h2>  
+                            <h2 class="snet-card_title">Tools & Resources</h2>  
+                            {% for item in page.tools_cards %}                              
                             <div class="snet-event-entry">
                                 <div class="snet-event-entry_content">
-                                    <span>May 28, 2019 | USA NYC</span>
-                                    <h4>SNET Hackathon</h4>
-                                    <p>
-                                        100 teams from all over the world will arrive in Groningen, 
-                                        a vibrant young city in the Netherlands, 
-                                        to participate in the world’s biggest blockchain and AI hackathon: Odyssey
-                                    </p>                                    
-                                </div>
-
+                                    <h4>
+                                        {{ item.title }}
+                                    </h4>
+                                    <div class="contents">
+                                        {{ item.description }}   
+                                        <div class="clearfix mt-1 actionbuttons">
+                                            <a href="{{ item.left_url_link }}" class="float-left">{{ item.left_url_name }}</a>
+                                            <a href="{{ item.right_url_link }}" class="float-right">{{ item.right_url_name }}</a>                                                                                                                           
+                                        </div>
+                                    </div>
+                                </div>                               
                             </div>
-                            <div class="snet-event-entry">
-                                <div class="snet-event-entry_content">
-                                    <span>April 25, 2019 | USA NYC</span>
-                                    <h4>SNET Meetup</h4>
-                                    <p>
-                                        100 teams from all over the world will arrive in Groningen, 
-                                        a vibrant young city in the Netherlands, 
-                                        to participate in the world’s biggest blockchain and AI hackathon: Odyssey
-                                    </p>
-                                </div>                                
-                            </div>                            
+                            {% endfor %}                                                          
                         </div>                        
                     </div> 
-                    -->
                 </div>
             </div>
         </div>                
