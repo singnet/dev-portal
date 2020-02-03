@@ -21,54 +21,18 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 ---
+# Introduction to SDK
 
-## Step 1. Prerequisites
+The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorisations.
 
-This guide assumes you've got a wallet, have installed the `snet` tool, and have successfully called a service.
+**Note**:  SDK uses gRPC protocol for communication 
 
-## Step 2. Install the SDK
+The SDK can include several default funding strategies for payment channels, but allows and supports the developer to implement funding strategies for payment channel of their own, to control over tokens and service payments.
 
-Currently our SDK only supports Python 3.6+. In the future we'll support a wide variety of languages. We make use of protocol buffers and grpc,
-so if you can find support for a language for both of those, then it's only matter of time before we (or the community! ;-) ) writes an SDK for it.
+The SDK, in combination with the CLI, simplifies the process of fetching the latest service specification for dependent services, and compiles the proto definitions, so that the services can be invoked with minimal fuss.
 
-`pip install snet-sdk` (check this is correct)
+Currently, a fully functional a [preliminary version of a Python SDK](https://github.com/singnet/snet-sdk-python) is available, which forms the basis for the [SDK tutorial](/tutorials/sdk), but has  [revealed several design concerns](https://github.com/singnet/snet-sdk-python/issues/16).
 
-## Step 3. Write some code!
+Work is in process towards an [SDK for Javascript](https://github.com/singnet/snet-sdk-js), and intend to support other popular languages and welcome third party contributions for people's favourite languages.
 
-Here's an example of calling a service using the SDK
-
-```python
-from snet_sdk import Snet
-snet = Snet(private_key=MY_PRIVATE_KEY, eth_rpc_endpoint="https://ropsten.infura.io")
-client = snet.client("snet", "example-service")
-stub = client.grpc.example_service_pb2_grpc.CalculatorStub(client.grpc_channel)
-calc_request = client.grpc.example_service_pb2.Numbers(a=20, b=30)
-print("The result is", stub.add(calc_request).value))
-```
-
-For anyone that has written grpc code before this will look somewhat familiar.
-
-However, underneath the hood the SDK will fetch the model definition from IPFS, compile the code, set up payment channels,
-and make the request for you.
-
-This isn't done for every request. It will only do these steps if it doesn't have a local cache of a compiled model, and doesn't
-already have an existing funded channel to use.
-
-(TODO: Update once the SDK is released and finalised depending on how much is automated or not)
-
-## Step 4. The simple SDK
-
-The above is great for building well defined APIs with objects representing the messages being sent. Its also consistent with
-how you'd interact with any other grpc service.
-
-However in a dynamic language like python it can feel a little clunky. That's why there is an alternative using the snet cli:
-
-```python
-from snet_cli.call_stub_generator import call_stub_generator
-add = call_stub_generator("snet", "example-service", "add")
-params = {"a":20, "b":30}
-rez = add(params)
-print(rez)
-```
-
-This requires you to have the CLI set up, and will only ever be available for Python applications, but it's nice to have options.
+As these SDKs become stable the [SDK tutorial](/tutorials/sdk) will be periodically updated to to include details supporting each programming language.
