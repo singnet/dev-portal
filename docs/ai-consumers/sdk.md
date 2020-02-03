@@ -27,6 +27,13 @@ The SDK simplifies the process of integrating with SingularityNET services and p
 
 **Note**:  SDK uses gRPC protocol for communication 
 
+The SDK is from the consumer perspective and from the service developers, such as follows:
+
+    * Managing a service 
+    * Accessing a service
+
+**Note**:  According  to the design pattern all SDK modules, need to be available in all programming languages, such as Java, Python and NodeJS. 
+
 The SDK can include several default funding strategies for payment channels, but allows and supports the developer to implement funding strategies for payment channel of their own, to control over tokens and service payments.
 
 The SDK, in combination with the CLI, simplifies the process of fetching the latest service specification for dependent services, and compiles the proto definitions, so that the services can be invoked with minimal fuss.
