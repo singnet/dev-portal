@@ -29,25 +29,39 @@ page_nav:
         url: '/docs/concepts/sdk'
 ---
 
-The SingularityNET command line interface (CLI) is the primary tool for interacting with the
-platform's smart contracts, managing deployed services, and managing funds. It is aimed at service providers. In the near future, it will be supplemented by a web-based dashboard and control panel.
+The SingularityNET command line interface (CLI) is a primary tool used for supporting the service providers as follows:
+* interacting with theplatform's smart contracts
+* managing deployed services
+* managing funds
 
-The CLI provides commands to interface with the blockchain in the following ways:
+**Note**: Soon the interface will support web-based dashboard and control panel.
+
+For example, you can successfully complete the following operation at the CLI prompt:
+* Create Organization Metadata, whcih can craete a JSAON format at the background
+* Publish it to the Blockchain
+* Add few tokens to your account
+* Move your tokens 
+* Create a channel and move some funds to the other channel
+* Make a call to any service
+* Signature signing using MetaMask
+The CLI includes set of commands to interface with the blockchain as follows:
 * creating and managing identities;
 * registering and managing the organizations, members, services, types, and tags on the
 SingularityNET Registry;
 * claiming funds from customers using MPE and payment channels;
 * reading and writing metadata and Protobuf specs about AI services (these are stored on IPFS, while basic service parameters can be fetched from blockchain contracts); and
 * connecting to different networks like local testnets, Kovan, Ropsten, and the Ethereum mainnet.
+* Providing service development and deployment support. 
 
-The CLI also provides service development and deployment support. It can set up new services by generating service metadata, Protobuf specs, and code templates provided by the SingularityNET Foundation. The CLI interacts with daemons for each service.
+*Note*: It can create services by generating service metadata, Protobuf specs, and code templates provided by the SingularityNET Foundation. The CLI interacts with daemons for each service.
 Security-wise, the CLI follows the same guidelines as provided by Ethereum for storing the private keys. When user identities are created and registered with a client, the CLI safely stores the details on the local machine and retrieves them only when it needs to interact with the blockchain.
 
 <img src="/assets/img/how_cli_works.jpg" width="400">
 
-The CLI requires and connects to four critical components:
-* User identity management. Involves user registration, managing identities and sessions,
-and locking/unlocking accounts for transacting with the blockchain. This component is local to the machine where the CLI is run.
+The CLI supports connection to four critical components:
+* User identity management. 
+    
+    Involves user registration, managing identities and sessions, and locking/unlocking accounts for transacting with the blockchain. This component is local to the machine where the CLI is run.
 * Sidecar proxy. Communicates to servers hosting AI services.
 * Registry contract. Deals with organizations, members, services, types, and tags.
 * MPE contract. Sends and receives funds and manages other functions related to payment channels; e.g., closing a channel or extending its expiry date.
