@@ -12,31 +12,33 @@ micro_nav: true
 
 ---
 
-## Introduction to MPE
+## Introduction to AGI Tokens
 
-Documentation for AI Consumers
+SingularityNET uses the AGI Token for at marketplace. The AGI Token is an ERC-20 token, which is hosted on the Ethereum blockchain. Currently  it is at the `beta` stage of the SingularityNET Marketplace. SO, you need to use either Kovan or Ropsten Testnet AGI to use the tools. 
 
+To learn more about how to obtain Kovan or Ropsten Testnet AGI, by following the instructions [here](#agi-faucet).You can get  
 
-You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn.
+## Testnet AGI vs Mainnet AGI
+For those new to Ethereum, it may be a bit confusing what exactly the difference between Testnet and Mainnet tokens are. In principle, you can distinguish them as follows:
+* Testnet tokens are used to test software applications with, try out demos, or in our case the Beta.
+* Mainnet tokens are used for officially deployed software.
+* Testnet tokens never have a monetary value.
+* Mainnet tokens could have a monetary value.
+* Both tokens can be used to add extra utility to the software.
 
-* [**SingularityNET Marketplace**](/docs/concepts/marketplace) - The SingularityNET Marketplace is a DApp ("Distributed App") and provides a front-end for exploring AI services available on the network. Users can interact with and call them through a web interface, and rate them afterwards. This allows the community to provide feedback and to get a sense of the level of quality that can expected from a service, and will eventually feed into our reputation engine.
-* [**Service**](/docs/concepts/service) - A Service is published to the SingularityNET network and provides a [grpc](https://grpc.io)-based API for calling it. The service API specification, the IP address where it can be accessed, and the pricing information is published to IPFS as service metadata. This location of this metadata is then advertised in the SingularityNet Registry.
-    * [Service Metadata](/docs/concepts/service-metadata) - The metadata describes the service's API, payment method, and where to find the service.
-    * [Naming Standards](/docs/concepts/naming-standards) - We ask that people follow various guidelines for how to name their services.
-* [**Software**](/docs/concepts/software)
-    * [**snet-cli**](/docs/concepts/snet-cli) - The `snet` command line tool lets you interact with the platform: whether that's to call and query services, or publish your own. It allows crucial tasks such as: registering and managing identities, publishing services, updating registration information, notifying the platform of new endpoints, managing payment channels and balances, and calling services.
-    * [**SDK**](/docs/concepts/sdk) - The software development kit (SDK) helps you integate SingularityNET services with your own software.
-    * [**SNET Daemon**](/docs/concepts/daemon) - A developer exposes their service to the network by running the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to facilitate authorization and payment for services and acts as a passthrough for making API calls to the service. This isolates the payment and blockchain interaction so a developer can focus on deploying and improving their service.
-        * [Daemon API](/docs/concepts/daemon-api)
-        * [Daemon Channel Storage](/docs/concepts/daemon-channel-storage)
-* [**Blockchain Contracts**](/docs/concepts/blockchain-contracts)
-    * [**AGI Token**](/docs/concepts/agi-token) - Our utility token to be exchanged for AI service, it is an ERC20 token hosted on Ethereum.
-    * [**Registry**](/docs/concepts/registry) - Services are published to a publicly-accessible central registry on the blockchain. The registry maintains a list of active services on the network and where to find a services corresponding metadata. The Registry has support for grouping services by organisation or team, along with access control for organisation members.
-    * [**Escrow**](/docs/concepts/multi-party-escrow) - The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and a service. An end-user places funds in escrow before a service can be called, and remain there until the service has been delivered or the escrow funds timeout.
-        * [MPE Stateless Client](/docs/concepts/mpe-stateless-client)
-* **The Request for AI Portal (RFAI):** is a DApp through which end users and application developers can request specific AI services they would like added to the network and stake AGI tokens as a reward for high-quality solutions.
+Since we are currently in the Beta stage, we only use Kovan and Ropsten Testnet AGI. You can find our Mainnet AGI Token (to be used in a later stage) [here](https://etherscan.io/address/0x8eb24319393716668d768dcec29356ae9cffe285) with the address `0x8eb24319393716668d768dcec29356ae9cffe285`.
+
+<div class="callout callout--warning">
+    <p><strong>NOTE</strong> While we are aware that the AGI token is currently being traded on some exchanges, we do not encourage or facilitate this exchange trading in any manner. Speculative secondary trading is against the spirit of the AGI token and SingularityNET project. We strongly discourage speculative secondary trading and officially ask AGI token holders to act accordingly.</p>
+</div>
 
 
-## How to use MPE
+## AGI Faucet
+We have an automated faucet for distributing Kovan and Ropsten Testnet AGI Tokens [here](http://faucet.singularitynet.io). You will need to login using your GitHub account and input the Ethereum address where you want to receive the AGI token. Make sure this address is a Kovan Ethereum Address. You can request 1 AGI token every 24 hours.
 
-## Reading MPE
+In order to add the Kovan Testnet AGI you may need the following details:
+* Symbol: AGI
+* Decimals: 8
+* Kovan Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
+
+You can request Kovan or Ropsten Testnet Ether here: https://faucet.metamask.io. 
