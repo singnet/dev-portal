@@ -75,6 +75,12 @@ The CLI supports connection to four critical components:
     For example, your organization contract is created on the Blockchain and the service contract is created in the bloackchain. These operation together is considered Registry contract.
 * MPE contract. Sends and receives funds and manages other functions related to payment channels; e.g., closing a channel or extending its expiry date.
 
+    For example, Multiparty Contract is smart piece of executable programme which does the following:
+    * Create a Channel
+    * Depositing or withdrawing money from and to the channel
+    * Validation of channel
+    * Claims on channel
+    
 This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/setup/requirements).
 
 See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full details of actions the tool allows.
