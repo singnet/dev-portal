@@ -62,8 +62,17 @@ The CLI supports connection to four critical components:
 * User identity management. 
     
     Involves user registration, managing identities and sessions, and locking/unlocking accounts for transacting with the blockchain. This component is local to the machine where the CLI is run.
-* Sidecar proxy. Communicates to servers hosting AI services.
+* Sidecar proxy. Communicates to servers hosting AI services. 
+    
+    For example, some of the operations which Sidecar proxy can performs along with the main component are listed as follows:
+    *  Payment management
+    * Rate Limiting
+    * Consolidating the number of request
+    * Validation
+    * Updates the state
 * Registry contract. Deals with organizations, members, services, types, and tags.
+    
+    For example, your organization contract is created on the Blockchain and the service contract is created in the bloackchain. These operation together is considered Registry contract.
 * MPE contract. Sends and receives funds and manages other functions related to payment channels; e.g., closing a channel or extending its expiry date.
 
 This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/setup/requirements).
