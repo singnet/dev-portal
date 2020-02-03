@@ -102,13 +102,13 @@ The sender can extend the expiration time and add funds to the channel. The reci
 - The likely scenario for such delayed response can be due to the following reason:
 
     - Neither the sender nor recipient needs any confirmation from the blockchain. 
-    <br>Alice can continue to add funds, and Bob can continue to claim them in the channel, with no confirmation from the blockchain. 
-For example, after Bob claims the funds and inform Alice that the nonce of the channel has changed, and Bob can start sending messages with the new nonce. At this stage it appears safe for both the sender and the recipient. There is only one condition that applies: the recipient should make sure that the transaction is performed before the expiry time of the channel.
+    <br>Kevin can continue to add funds, and Jack can continue to claim them in the channel, with no confirmation from the blockchain. 
+For example, after Jack claims the funds and inform Kevin that the nonce of the channel has changed, and Jack can start sending messages with the new nonce. At this stage it appears safe for both the sender and the recipient. There is only one condition that applies: the recipient should make sure that the transaction is performed before the expiry time of the channel.
     - There is no race condition between claiming (from the recipient side) and extending or adding funds (from the sender side). 
     <br>The parties can use these functions at any time, but the end result depends on the order in which these transactions took place. 
     <br>When a user wants to call to a particular service, the user must ensure to open a channel, add sufficient funds, and set an expiry date, so that it would provide sufficient time for the user to consume the service. 
 
-**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient), and daemon group identity. 
+**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity. 
 
 This combination allows daemons in the same group to share payment information through ETDC, reducing the liability on the number of open channels and benefitting clients. Clients can be end users interacting with the platform through the Marketplace DApp or applications making calls directly or through the SDK’s generated code.
 
@@ -146,6 +146,13 @@ With the following functions the client can postpone the expiration time of the 
 function channelExtend(uint256 channel_id, uint256 new_expiration);
 function channelAddFunds(uint256 channel_id, uint256 amount);
 function channelExtendAndAddFunds(uint256 channel_id, uint256 new_expiration, uint256 amount);
+function channelClaimTimeout(uint256 channel_id);
+```
+
+
+### Claiming your funds back after Expiration 
+The Sender can claim the funds after the expiry date
+```
 function channelClaimTimeout(uint256 channel_id);
 ```
 
