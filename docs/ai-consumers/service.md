@@ -8,7 +8,7 @@ comments: false
 
 ---
 
-## Service Metadata
+## Service Metadata****
 The service metadata is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster. To use a service, the client needs to know the following:
 - The service metadata
 - The address of Multi-Party Escrow (MPE) contract
