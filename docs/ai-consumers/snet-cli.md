@@ -29,15 +29,15 @@ page_nav:
         url: '/docs/concepts/sdk'
 ---
 
-The SingularityNET command line interface (CLI) is a primary tool used for supporting the service providers as follows:
-* interacting with theplatform's smart contracts
+SingularityNET command line interface (CLI) is a primary tool used for supporting the service providers as follows:
+* interacting with the platform's smart contracts
 * managing deployed services
 * managing funds
 
 **Note**: Soon the interface will support web-based dashboard and control panel.
 
 For example, you can successfully complete the following operation at the CLI prompt:
-* Create Organization Metadata, whcih can craete a JSAON format at the background
+* Create Organization Metadata, which can create a JSON format at the background
 * Publish it to the Blockchain
 * Add few tokens to your account
 * Move your tokens 
