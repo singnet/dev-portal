@@ -23,7 +23,7 @@ This allows the foundation to adhere to legal requirements of different legislat
 
 This waiting period is known as Curative process. Only after the successful it has been approved; the service becomes available in the Marketplace. 
 
-**Note**: You can also go to the Marketplace and pay the price through Paypal. I such case, the entire process is preformed at the background automatically for you.
+**Note**: You can also go to the Marketplace and pay the price through Paypal. I such case, the entire process is managed at the background automatically for you.
 
 The protofile  information associated IPFS hash are so complex to understand. But because they are part of the UI, it becomes user-friendly way to build the  UI components around a service and host it on SingularityNET platform. 
 
@@ -65,7 +65,16 @@ All service metadata details are stored in the the JSON file
 - File management system such as IPFS stores the location of the hash and points to the associated protofile
     The IPFS can include a file and the same file returns same hash. 
 
+### How to use service by paying through PayPal
+
+1.	Go to the Marketplace portal
+2.	Pay service through your Paypal 
+3.	Use Faucet to convert to crypto currency details
+4.	The application send the equal token in to wallet and then to Channel
+5.	Now you can make a call now - the call is based on proto.
+
 ### Depositing  tokens from Metamask to the Singularity Escrow Wallet.
+
 Steps
 1.	Let start by depositing some tokens from Metamask to the Singularity Escrow Wallet. So you can pay for service
 2.	On the Home page click on Account link
