@@ -4,7 +4,7 @@ layout: overview
 keywords:
 title: Getting Started
 description: The best way to get started is by understanding the platform that powers the decentralized blockchain marketplace. Here is a high level view on how SingularityNet's platform works for you.                                                
-img: 'main-ai.png'
+img: 'Tutorials_1.svg'
 
 # Getting Started Cards    
 gettingstarted_cards:
@@ -12,7 +12,7 @@ gettingstarted_cards:
 # By User Cards Section  
 byuser_cards:
     - title: AI Developer
-      img: 'ai_developer.png'
+      img: 'ai_developer.svg'
       description: Get started with developing a service for the SingularityNet platform
       urls:
       - url_name: Get Started
@@ -25,7 +25,7 @@ byuser_cards:
         url_link: /docs/ai-developers/
 
     - title: Platform Developers
-      img: 'platform_developers.png'
+      img: 'platform_developers.svg'
       description: Get started contributing to the development of the SingularityNet platform
       urls:
       - url_name: Registry Contract
@@ -38,7 +38,7 @@ byuser_cards:
         url_link: /docs/platform-dev/
 
     - title: AI Consumers
-      img: 'ai_consumer.png'
+      img: 'AI Consumers.svg'
       description: Get started using the service on the SingularityNet platform
       urls:
       - url_name: Get Started

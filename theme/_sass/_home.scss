@@ -61,17 +61,20 @@ section.snet-herobanner{
         h2{
             text-align: center;
             border: none;
-            font-size: 20px;            
+            font-size: 20px;   
+            padding-top: 8px;
         }
         p{
             text-align: center;
             margin: 0;
+            font-size: 14px;
         }
         img{
             display: block;
-            width: 80px;
-            height: 80px;
+            width: auto;
+            height: 120px;
             margin: 0 auto;            
+            
         }
     }
 }
