@@ -51,6 +51,18 @@ The Marketplace offers a free trial version, where registered users can access s
 
 This extension mediates with the blockchain on behalf, and helps you in transferring of tokens between wallets, and invoke contracts.
 
+**Note**: Service metadata is a place where the price of the service is set and it is on the blockchain.
+
+The service provider needs to publish the details about the service in the Blockchain.
+
+As a consumer, you may go the Blockchain or the Marketplace portal where the services are deployed.
+
+All service metadata details are stored in the the JSON file
+- Create a JSON file - information about the image, service type, description, price of the service, the endpoint and how to make a request.
+- Singularity platform works on gRPC. Whenever you need to call you need a protofile.
+- File management system such as IPFS stores the location of the hash and points to the associated protofile
+    The IPFS can include a file and the same file returns same hash. 
+
 ### Depositing  tokens from Metamask to the Singularity Escrow Wallet.
 Steps
 1.	Let start by depositing some tokens from Metamask to the Singularity Escrow Wallet. So you can pay for service
@@ -86,4 +98,24 @@ Steps
 14.	Wait for the response
 15.	You can up vote or down vote hope on the decentralized market curation
 
+Not only have bought service, you have also opened a Payment channel with it and continue to use until it expires. 
 
+### claim back the reserved fund
+1.	Go the **Account** page
+    If there is any expired channel it displays under the **Expired Channel Details** section
+3.	Select the channel you want to claim
+4.	Click **Claim Channel**
+5.	Confirm this transaction on Metamask
+6.	Wait for it to mined
+    Displays the message confirming that funds have been successfully claimed.  Once you do this, the payment channel you claimed is unlisted.
+
+### Withdraw tokens from Escrow wallet to Metamask
+1.	Go to the **Account** page
+2.	In the**Manage your Escrow account** section, select  **Withdraw**
+3.	Confirm that you have sufficient funds in the Escrow wallet.
+4.	Enter the money you want to withdraw and click **Withdraw**
+5.	Confirm this transaction on the Metamask
+6.	Wait for it to be mined
+    A message displays that the withdraw has been successful
+8.	Refresh the page to see the balance is updated.
+    You will be able to see the token back in to your Metamask wallet. 
