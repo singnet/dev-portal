@@ -34,6 +34,13 @@ SingularityNET command line interface (CLI) is a primary tool used for supportin
 * managing deployed services
 * managing funds
 
+Besides, it can communicate with the following service which are in blockchain:
+
+1. Registry contract
+2. Service Daemon 
+3. Multi-party Escrow
+
+
 **Note**: Soon the interface will support web-based dashboard and control panel.
 
 For example, you can successfully complete the following operation at the CLI prompt:
