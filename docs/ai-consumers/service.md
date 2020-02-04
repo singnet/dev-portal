@@ -67,5 +67,5 @@ The following are the defaults MPE addresses for various networks:
 }
 
 ```
-You can edit the metadata file before publishing to IPFS, or perform changes using snet-cli through service subcommands that have the metadata-* prefix.
-For more information about how to manipulate the metadata using the python module, **click on this link here.**
+
+For more information about how to viewing the metadata using the python module, **click on this link here.**
