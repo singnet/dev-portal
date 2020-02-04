@@ -43,7 +43,9 @@ Besides, it can communicate with the following service which are in blockchain:
 
 **Note**: Soon the interface will support web-based dashboard and control panel.
 
-For example, you can successfully complete the following operation at the CLI prompt:
+If you are a text savvy where you wish to perform the same task that you intend performing in snet CLI, you can do it exactly the same way using the command prompt. 
+
+For example, you can literally complete every operation at the CLI prompt without using the Marketplace:
 * Create Organization Metadata, which can create a JSON format at the background
 * Publish it to the Blockchain
 * Add few tokens to your account
