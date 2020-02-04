@@ -32,7 +32,15 @@ The SDK is from the consumer perspective and from the service developers, such a
     * Managing a service 
     * Accessing a service
 
-**Note**:  According  to the design pattern all SDK modules, need to be available in all programming languages, such as Java, Python and NodeJS. 
+SDK is a tool for AI customers to make calls to services.
+
+There are three types of SDK available:
+
+- SDK in JAVA
+- SDK in Python
+- SDK in NodeJS
+
+**Note**:  According  to the design pattern for the  SDK modules such as functionality, need to be available in all programming languages, such as Java, Python and NodeJS. 
 
 The SDK can include several default funding strategies for payment channels, but allows and supports the developer to implement funding strategies for payment channel of their own, to control over tokens and service payments.
 
