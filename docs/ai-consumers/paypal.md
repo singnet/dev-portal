@@ -23,7 +23,9 @@ This allows the foundation to adhere to legal requirements of different legislat
 
 This waiting period is known as Curative process. Only after the successful it has been approved; the service becomes available in the Marketplace. 
 
-The protofile  information associated IPFS hash are so complex to understand. But because there part of the UI, it becomes user-friendly way for the user to build their UI components around a service and host it on SingularityNET platform. 
+**Note**: You can also go to the Marketplace and pay the price through Paypal. I such case, the entire process is preformed at the background automatically for you.
+
+The protofile  information associated IPFS hash are so complex to understand. But because they are part of the UI, it becomes user-friendly way to build the  UI components around a service and host it on SingularityNET platform. 
 
 This becomes easy for the user to the Input values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC call and the proto that is associated to the service and so.  So when you click the Invoke button the AI service computes the result 
 
