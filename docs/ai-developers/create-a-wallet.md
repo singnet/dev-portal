@@ -27,7 +27,7 @@ micro_nav: true
 ## Step 1. Metamask
                                                                                                                 
 [Metamask](https://metamask.io/) is a browser extension for interacting with blockchain enabled websites, such as marketplace.
-         
+  
 Install Metamask now from their website.
                                                                                                                 
 ## Step 2. Create an Identity

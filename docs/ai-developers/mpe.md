@@ -127,6 +127,21 @@ If Jack is buying services from the Kevin, they both need to enter in to a forma
 
 The same process follows for future calls authorizations of cogs.
 
+### Withdraw funds from the Channel
+A new feature (simple, textbook solution) known as nonce has be incorporated. Each time the recipient claims through the channel, a nonce is added to the message that the sender signs, and the nonce periodically changes each time when the recipient makes a claim. The payment channels in the MPE includes the following properties:
+
+Channel between sender and recipient can persist indefinitely. The sender can extend the expiration time and add funds to the channel. The recipient can claim the amount signed at any time before the expiration of the channel ideally , after the expiration, the sender can withdraw the funds anytime. You can jump directly to the thing you’d like to know more about, or use the navigation on each page to read through them in turn.
+System continues to be operational for a longer period of time, even when the Ethereum network is congested and waiting for confirmation.
+The likely scenario for such delayed response can be due to the following reason:
+
+Neither the sender nor recipient needs any confirmation from the blockchain.
+Kevin can continue to add funds, and Jack can continue to claim them in the channel, with no confirmation from the blockchain. For example, after Jack claims the funds and informs Kevin that the nonce of the channel has changed, and Jack can start sending messages with the new nonce. At this stage it appears safe for both the sender and the recipient. There is only one condition that applies: the recipient should make sure that the transaction is performed before the expiry time of the channel.
+There is no race condition between claiming (from the recipient side) and extending or adding funds (from the sender side).
+The parties can use these functions at any time, but the end result depends on the order in which these transactions took place.
+When a user wants to call to a particular service, the user must ensure to open a channel, add sufficient funds, and set an expiry date, so that it would provide sufficient time for the user to consume the service.
+Note: Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity.
+
+This combination allows daemons in the same group to share payment information through ETDC, reducing the liability on the number of open channels and benefiting clients.
    
 ### Postponing the Expiration Time of the Channel
 With the following functions the client can postpone the expiration time of the channel and can add funds to the channel at any time and can also claim all funds from the channel after the expiration time is reached.
