@@ -27,7 +27,7 @@ The MPE contract has two main functionalities which includes:
 
 
 ## What is Payment Channel?
-Whenever the sender and the receiver enter into an contract, a channel is created on the Blockchain.
+Whenever the sender and the receiver enter into an contract, a channel is created.
 A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is a tool that enables off-chain transactions between parties without the delay imposed by blockchain block formation and without compromising the transactional security.
 
 
