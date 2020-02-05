@@ -32,8 +32,7 @@ This service is integrated with the Multiparty Escrow, allowing the user to pay 
 
 For example, If you look at the Sample service under the Organization in the Marketplace, you will notice that it shows that you have utilized the free trial service period. 
 
-So from the list of options available in the list are as folows:
-
+You can choose an option from the following list :
 - Select a Walley
 - General Account Wallet 
 = Metamask
