@@ -47,7 +47,8 @@ An organization is an umbrella for services to be grouped under and is at the to
 Registry’s data hierarchy. Service developers can (and should) register an organization and then
 put all of their services underneath it.
 
-An organization registration record has a name, an owner address (in the identity sense), a collection of member addresses, a collection of services, and a collection of type repositories. Services and type repositories registered under a given organization are said to be owned by that organization. The list of members is a primitive access-management structure; members of an organization can do everything except change the organization owner and delete the organization.
+An organization registration record has a name, an owner address (in the identity sense), a collection of member addresses, a collection of services. Its Registry entry contains a name,members, and IPFS hash. the IPFS hash is the link to the metadata file on IPFS , this file has all the necessary information about the recipient address for payment and the storage details to keep track of all off-chain channel state. Services and type repositories registered under a given organization are said to be owned by that organization. The list of members is a primitive access-management structure. Members of an organization cannot change the organization owner or delete the organization or even update the metadata, members can however create , update and delete services under an organization.
+Organization metadata is described in detail [here](/docs/ai-consumers/organization).
 
 ### Service
 A service represents a single AI algorithm. Its Registry entry contains all the necessary
@@ -64,7 +65,7 @@ request format (gRPC, JSON-RPC or process);
 * A list of daemon endpoints, aggregated into one or more groups;
 * pricing information; and
 * an IPFS hash for the service API model.
-The CLI provides a convenient API and library for manipulating this metadata. This is described in detail [here](/docs/concepts/service-metadata).
+* Service metata is described in detail [here](/docs/ai-consumers/service).
 
 ### Type Repository
 A type repository is a Registry entry where a service developer lists service metadata, such as
@@ -83,4 +84,4 @@ Tags are completely optional but recommended for discoverability. Services and T
 The SingularityNET DApp is essentially a rich Registry explorer. It loads the Registry and generates UI for playing with the Services and Type Repositories registered in it.
 
 ## CLI Integration
-The SingularityNET CLI has all the tooling necessary to call any of the Registry methods. Please see the CLI documentation for details.
+The SingularityNET CLI has all the tooling necessary to call any of the Registry methods. Please see the[CLI documentation](http://snet-cli-docs.singularitynet.io/)
