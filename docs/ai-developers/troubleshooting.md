@@ -114,3 +114,84 @@ A folders already exists for all services under snet , this folder name is mappe
 
 Upload the configuration information, regression test results, hero image and the demon configurations details to the respective folders 
 https://drive.google.com/drive/folders/0AJYSxYnxHqLVUk9PVA
+
+# Common issues with Daemon start
+
+###You need to specify a valid signer address, such as 'free_call_signer_address' as part of the curation process to support free calls”
+
+Refer to the document on metering configurations with example.
+
+###Specify a valid private key 'pvt_key_for_metering' to include during the service publication process.”
+When you enable the free calls and Metering, specify the private key to initialize the Daemon Otherwise, the  Daemon sends the request to metering, which checks the associated public address mapped in the configuration of that Daemon.
+
+Refer to the document on metering configurations and an example 
+
+### unable to create etcd client
+To learn about how to configure the etcd certificate configuration with an example, refer to the document 
+
+###Metering authentication failed. Please verify the configuration”
+When you enable the free calls and Metering, specify the private key to initialize the Daemon. The Daemon will initialize, only if the configured Pvt key config matches the public Address of the Daemon registered for metering.
+
+Daemon addresses are registered for a given Org, Group id  and service id .
+You need to re-publish the service again with the correct public address . Please use the 
+Following command to do so 
+
+```
+snet service metadata-add-daemon-addresses default_group $DAEMONADDRESS --metadata-file $MD_FILE
+```
+If the issue is still unresolved, contact the #services-integration channel
+
+#Common errors returned by the Daemon
+
+###Payment signer is not valid
+
+Check if the port number of your daemon matches exactly to what was deployed on Service metadata.
+
+For Ropsten make sure you have the below config 
+```
+"free_call_signer_address": "0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F",
+"metering_end_point": "https://ropsten-marketplace.singularitynet.io/metering",
+```
+
+For mainnet make sure you have the below config 
+```
+"free_call_signer_address":"0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf",
+"metering_end_point": "https://mainnet-marketplace.singularitynet.io/metering",
+```
+
+### Free call limit has been exceeded.
+You have exceeded the number of permitted free calls. So, calls can now be done only using the paid mode alone 
+
+- End point deployed from Service metadata should be assigned to the same port / domain the daemon is starting. 
+
+### Rate limiting, too many requests to handle”
+The number of request has increased along with the rate limiting, either retry again later or configure your daemon for rate limiting 
+
+### Unexpected payment type”
+The supported payment types are free-call / escrow
+
+# Common Daemon warnings (in the logs)
+
+### “Unable to publish metrics”
+If you make calls using  SDK / snet-cli, the issue is resolved once the daemon supports metering .
+
+###invalid hex address specified/missing for 'authentication_address' in configuration , you cannot make remote update to current configurations”
+Ignore: This was more towards the operator UI use case, need modification in the next release. 
+
+###msg="error determining current block" error="403 Forbidden
+Add the the following link: 
+
+```
+"ethereum_json_rpc_endpoint": "https://mainnet.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2" 
+```
+n your daemon configuration. Ideally  you should have your own project Id on infura. 
+
+###How do I set up a new host 
+Post your request on the #services-integration channel with the following details: 
+- Domain Name 
+- GPU/Without GPU
+- RAM Required
+- HD Required
+- Ports for public access
+- Public Key to setup the user
+
