@@ -234,3 +234,20 @@ Navigate to the specific package which needs to be published and then run the fo
 npm run publish
 LICENSE file for details.
 
+#snet-sdk-Java
+
+Class diagram Image <Needed>
+
+##How to build
+
+Integration testing is enabled by default. To run full build including integration tests use:
+
+```
+mvn install
+```
+
+Running integration tests is a time consuming process so to make fast build running unit tests only use:
+
+```
+mvn install -DskipITs
+```
