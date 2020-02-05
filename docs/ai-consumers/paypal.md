@@ -38,8 +38,8 @@ By selecting this option,yYou are Authorizing SingularityNET to use Metamask. Me
 For example if I want to move the money into my account, you need to do a Blockchain Operation. Or need to move money from your account to channel, into my account, which involves some additional charges, 
 
 As an AI consumer you can choose to:
-- create a Wallet
-- use a Metamask
+- Create a wallet
+- Use Metamask
 
 The Marketplace offers a free trial version, where registered users can access service(s) for a specified time period. After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. 
 
@@ -60,12 +60,13 @@ All service metadata details are stored in the the JSON file
 ### How to use service by paying through PayPal
 
 1.	Go to the Marketplace portal
-2.	Pay service through your Paypal 
-3.	Use Faucet to convert to crypto currency details
-4.	The application send the equal token in to wallet and then to Channel
-5.	Now you can make a call now - the call is based on proto.
+2.	Pay for service through your Paypal account    
+3.	If you dont have a wallet , the application will create a wallet and a channel for you.
+    The application will then deposit the equivalent AGI tokens in to channel.
+4.	Now you can make a call now - The Dapp components hide all the complexity on making these calls.
+   
 
-### Depositing  tokens from Metamask to the Singularity Escrow Wallet.
+### Depositing tokens from Metamask to the Singularity Escrow Wallet.
 
 Steps
 1.	Let start by depositing some tokens from Metamask to the Singularity Escrow Wallet. So you can pay for service
