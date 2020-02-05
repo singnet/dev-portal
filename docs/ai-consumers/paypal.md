@@ -33,7 +33,7 @@ You can choose an option from the following list :
 
 Choose a Metamask.
 
-By selecting this option,yYou are Authorizing SingularityNET to use Metamask. Metamask is a plugin which can be used as an Wallet. It is coming from Ethereum blockchain, so you can add money, any crypto currency or tokens to this Wallet.  
+By selecting this option,yYou are Authorizing SingularityNET to use Metamask. Metamask is a plugin which can be used as an Wallet. It is coming from Ethereum Blockchain, so you can add money, any crypto currency or tokens to this Wallet.  
 
 For example if I want to move the money into my account, you need to do a Blockchain Operation. Or need to move money from your account to channel, into my account, which involves some additional charges, 
 
@@ -43,7 +43,7 @@ As an AI consumer you can choose to:
 
 The Marketplace offers a free trial version, where registered users can access service(s) for a specified time period. After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. 
 
-This extension mediates with the blockchain on behalf, and helps you in transferring of tokens between wallets, and invoke contracts.
+This extension mediates with the Blockchain on behalf, and helps you in transferring of tokens between wallets, and invoke contracts.
 
 **Note**: Service metadata is a place where the price of the service is set and it is on the blockchain.
 
