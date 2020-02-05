@@ -18,10 +18,10 @@ micro_nav: true
 ## Emails Alerts
 
 ### Mainnet Alerts
-Alert messages are sent through the email Id : no-reply@signularitynet.io 
+Alert messages are sent through the email Id : [no-reply@signularitynet.io](no-reply@signularitynet.io) 
 Subject : The service example-service is terminated for mainnet network
 ### opsten Alerts 
-Alert messages are sent through the mail id : test-no-reply@singularitynet.io 
+Alert messages are sent through the mail id : [test-no-reply@singularitynet.io](test-no-reply@singularitynet.io) 
 Subject : The service example-service is terminated for ropsten network
 ### Slack Alerts 
 Subscribe for slack alerts on the channel   #mainnet-service-alerts for production monitoring. 
@@ -58,8 +58,8 @@ Your metadata snippet should look like the following:
 
 ### How to I configure the service heartbeat?
 
-- Refer to the documentation provided.
-- or the service heartbeat implementation, follow the standard health checking protocol as defined in gRPC Health Checking Protocol link. 
+- Refer to the [documentation](https://github.com/singnet/snet-daemon/blob/master/metrics/README.md) provided.
+- or the service heartbeat implementation, follow the standard health checking protocol as defined in [gRPC Health Checking] (https://github.com/grpc/grpc/blob/master/doc/health-checking.md) Protocol link. 
 
 **Note**: The service must use the same proto and implement the heartbeat functionality.
 
