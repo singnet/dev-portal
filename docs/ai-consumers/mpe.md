@@ -119,7 +119,7 @@ If Jack is buying services from the Kevin, they both need to enter in to a forma
 |**Channel ID**       | 1       |The channel ID created is 1|
 |---------------------|---------|----------------------------------|
 |**Nonce**            | 1       |Initially the Nonce was 0 but now it is 1|
-|**Full amount**      | 98 Cogs|Amount signed by Jack was for two cogs. The full amount in in the channel is 98. This is the channel current balance in the channel after two cogs has been claimed and moved into Kevin’s account.|
+|**Full amount**      | 98 Cogs|Amount signed by Jack was for two cogs. The full amount in the channel is 98.|
 |**Authorized Amount**|	0       |The Authorized amount is two.|
 |**Signature**        |	0       |No signature is required to be sent|
 
