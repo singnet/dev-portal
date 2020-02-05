@@ -33,11 +33,12 @@ This service is integrated with the Multiparty Escrow, allowing the user to pay 
 For example, If you look at the Sample service under the Organization in the Marketplace, you will notice that it shows that you have utilized the free trial service period. 
 
 You can choose an option from the following list :
+
 - Select a Walley
 - General Account Wallet 
 = Metamask
 
-Choose Metamask.
+Choose a Metamask.
 
 By selecting this option,yYou are Authorizing SingularityNET to use Metamask. Metamask is a plugin which can be used as an Wallet. It is coming from Ethereum blockchain, so you can add money, any crypto currency or tokens to this Wallet.  
 
