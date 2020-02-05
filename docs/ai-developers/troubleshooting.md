@@ -195,3 +195,74 @@ Post your request on the #services-integration channel with the following detail
 - Ports for public access
 - Public Key to setup the user
 
+###How do I get the latest version of Daemon 
+All latest released versions of Daemon are available here.
+
+With the newer version of Daemon getting released, a script is available for you. 
+- Download the latest (Will automatically pull the latest one for you) 
+- untar
+
+You  need to manually configure the path to refer to this binary.
+
+### How do I get the latest version of snet-Client 
+
+```
+pip install --upgrade snet-cli  
+```
+ 
+**Note**: manually configure the path to refer to this binary.
+
+###Where do I update service details 
+Retain this sheet on your Fav / Handy . All new services / updates to the existing services are necessarily done here .
+### Whom do I reach out to for any changes on mainnet  
+Post your query on the channel #services-integration 
+If you do not hear back in a day , please escalate to the concerned authority.
+###What to when I notice a proto change?
+Ensure that the proto file is updated and checked into Git.
+If the path of your proto has changed indicate it in the column ‘FOLDER Location to your proto definition in Github’ on the document here . 
+
+Post your query on the channel #services-integration 
+
+#DAPP
+
+###My Service is not visible on Dapp 
+- Ensure whether the service has been published on the network you are testing?
+    
+    If the service has been published successfully, then approach the channel ##services-integration to curate the service.
+    
+    After curation, the service becomes available on Dapp 
+
+- Keep the below links handy 
+    
+    Dapp for Ropsten: http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
+    
+    Dapp for Mainnet: http://beta.singularitynet.io/
+
+###How to make a call from the DAPP
+- Open the respective service’s page.
+- In the Service Demo section. You will see the Free calls pending count, provided that you are already logged in to the system.
+- Click on the RUN FOR FREE button. (If your free calls are exhausted, you will find options to create a wallet or to use your existing MetaMask wallet )
+    
+    You will be taken to the service’s input screen.
+- Fill in the necessary details.
+- Click on INVOKE.
+
+**Note**: Don’t close the application, until the service is executes, and the results are displayed  on the same screen. 
+
+###Where do I see the components I can reuse on Dapp 
+
+- Check for the reusable components’ code here  => snet-dapp-monorepo/packages/shared/src/components.
+- You could also run yarn storybook to view the demo of the components.
+- While importing, Import the components from => snet-dapp-monorepo/packages/dist/components.
+###How do I raise a Pull request for DApp
+- Raise pull requests against “snet-dapp-monorepo/development”.
+- Once it is merged in the development. It will be deployed to the ropsten network:http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
+###When does my Pull request gets merged to Master 
+- If your changes are shown in ropsten. Inform the concerned authority to merge the changes from development to master. This is then deployed to mainnet network: http://beta.singularitynet.io/
+###Whom and How  do I reach out for help/Support 
+Please use the channel #platform-support for any questions / issues related to platform 
+- Use the #services-integration
+- If no response is received within a Day’s time, escalate to the concerned authority.
+###Utilization  stats 
+- Summary of how many calls were failed / successful 
+- Work in progress 
