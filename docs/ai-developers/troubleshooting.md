@@ -264,6 +264,6 @@ Please use the channel #platform-support for any questions / issues related to p
 - Use the #services-integration
 - If no response is received within a Day’s time, escalate to the concerned authority.
 ###Utilization  stats 
-- Summary of how many calls were failed / successful 
+- Summary of failed / successful calls 
 - Work in progress 
 
