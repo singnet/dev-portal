@@ -5,8 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: How to Create a Wallet
-description: Create a wallet so you can interact with the Ethereum Blockchain
+title: AI Consumers
 
 # extralink box
 extralink:

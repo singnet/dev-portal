@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: The SingularityNET Command Line Tools
+title: AI Consumers
 
 # extralink box
 extralink:

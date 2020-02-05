@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: SingularityNET Marketplace
+title: AI Consumers
 
 # extralink box
 extralink:

@@ -5,7 +5,7 @@ keywords: MPE
 comments: false
 
 # Hero section
-title: MPE
+title: AI Consumers
 
 # Micro navigation
 micro_nav: true
