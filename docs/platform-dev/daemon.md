@@ -94,7 +94,7 @@ After these checks are successful the request is proxied to the service.
 
 ## Configuration
 
-The daemon's behavior with respect to the [service type](#supported-service-types), [SSL](#ssl), blockchain interactions, etc. can be controlled via a configuration file, environment variables, and executable flags. See [the daemon's README](https://github.com/singnet/snet-daemon#configuration) for a description of the available configuration keys and how they map to environment variables and runtime flags.
+The daemon's behavior with respect to the [service type](#supported-service-types), [SSL](#ssl), Blockchain interactions, etc. can be controlled via a configuration file, environment variables, and executable flags. See [the daemon's README](https://github.com/singnet/snet-daemon#configuration) for a description of the available configuration keys and how they map to environment variables and runtime flags.
 
 ## Payment channel state
 
