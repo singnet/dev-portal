@@ -28,7 +28,7 @@ The MPE contract has two main functionalities which includes:
 
 ## What is Payment Channel?
 Whenever the sender and the receiver enter into an contract, a channel is created.
-A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is a tool that enables off-chain transactions between parties without the delay imposed by blockchain block formation and without compromising the transactional security.
+A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is a tool that enables off-chain transactions between parties without the delay imposed by Blockchain block formation and without compromising the transactional security.
 
 
 ## Atomic unidirectional payment channel
@@ -37,7 +37,7 @@ The core logical building block of the Multi-Party Escrow is a simple (“Atomic
 
 It is understood that the payment channel is on the Blockchain. So, in order to prevent direct updating on the Blockchain regularly, the payment channel state is maintained in the storage.
 
-Daemon maintains the channel state off chain as block operations involve gas cost and are slow between parties without imposing any delay by the blockchain block formation times and compromising on transactional security. 
+Daemon maintains the channel state off chain as block operations involve gas cost and are slow between parties without imposing any delay by the Blockchain block formation times and compromising on transactional security. 
 
 
 Let us consider the simple unidirectional payment channel, the main logic is as follows:
@@ -163,7 +163,7 @@ The recipient has two possibilities:
 
 * The service provider can use the same Ethereum address for all payment groups or she/he can use a different address. In any case, the daemons very rarely need to send an on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner). We call such a server a treasurer server.
 * In the current implementation, the client signs off-chain authorization messages with the signer's private key. This means that the client doesn't necessarily need to sign transactions with his Ethereum identity. Instead, he can use other key pairs.
-* The server does not need to wait for a confirmation from the blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the `nonce` of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.  
+* The server does not need to wait for a confirmation from the Blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the `nonce` of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.  
 * The `nonce` in the channel prevents a race between the `channelExtendAndAddFunds` and `channelClaim`. If the client sends the `channelExtendAndAddFunds` request and at the same time the
 server sends a `channelClaim` request, they can continue to work without receiving confirmation from the blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
 
@@ -196,14 +196,14 @@ The client needs to store the Ethereum identity as follows:
 - **oldnonce_signature** 
   <br>last signature sent by client with nonce = current_nonce - 1.
 
-**Note:** The two last values are not available in current version, if implemented, can calculate the unspent_amount in the case that current_nonce != blockchain_nonce.
+**Note:** The two last values are not available in current version, if implemented, can calculate the unspent_amount in the case that current_nonce != Blockchain_nonce.
 
 **Example**
-Assume that the server performs a close/reopen procedure for the channel. The client can proceed without confirmation from the blockchain, because the server does not need to be dependent, or the client ensures that the request is mined before expiration of the channel.
+Assume that the server performs a close/reopen procedure for the channel. The client can proceed without confirmation from the Blockchain, because the server does not need to be dependent, or the client ensures that the request is mined before expiration of the channel.
 
 Before considering the above scenario, define the following parameters
-- blockchain_nonce - nonce of the channel in the blockchain
-- blockchain_value - value of the channel in the blockchain
+- Blockchain_nonce - nonce of the channel in the Blockchain
+- Blockchain_value - value of the channel in the Blockchain
 
 It is known that the daemon starts the close/reopen procedure only after the previous channelClaim request was mined. This means that the current_nonce, at maximum, is one point ahead of the blockchain_nonce.
 
@@ -213,11 +213,11 @@ In each case, the client can verify their signature is authentic and considers t
     - next_signed_amount = current_signed_amount + price
 - The amount of tokens which haven't been already spent (unspent_amount).
 
-**Simple case** current_nonce == blockchain_nonce
-- unspent_amount = blockchain_value - current_signed_amount
+**Simple case** current_nonce == Blockchain_nonce
+- unspent_amount = Blockchain_value - current_signed_amount
 
-**Complex case**current_nonce != blockchain_nonce
-Taking into account our assumptions, we know that current_nonce = blockchain_nonce + 1.
-- unspent_amount = blockchain_value - oldnonce_signed_amount - current_signed_amount
+**Complex case**current_nonce != Blockchain_nonce
+Taking into account our assumptions, we know that current_nonce = Blockchain_nonce + 1.
+- unspent_amount = Blockchain_value - oldnonce_signed_amount - current_signed_amount
 
 **Note:** The server can send smaller oldnonce_signed_amount (not the actually last one which was used for channelClaim), But the server trust that the money available is actually more in the channel, which means that a likely attack has occurred through unspent_amount, which lead us  believe that there are less tokens than the actuals, and therefore the future calls need be rejected instantly (or force us to call channelAddFunds).
