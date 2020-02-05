@@ -141,14 +141,13 @@ function channelClaimTimeout(uint256 channel_id);
 
 ### Claiming your funds back after Expiration 
 The Sender can claim the funds after the expiry date
+
 ```
 function channelClaimTimeout(uint256 channel_id);
 ```
 
 ## How the recipient Claims funds from the Channel
 With the following function, the recipient can claim funds from the channel
-
-ith the following function, the recipient can claim funds from the channel.
 
 ```
 function channelClaim(uint256 channelId, uint256 amount, uint8 v, bytes32 r, bytes32 s, bool isSendback)
