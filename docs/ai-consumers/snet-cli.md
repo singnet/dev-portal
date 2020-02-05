@@ -96,7 +96,7 @@ The CLI supports connection to four critical components:
 * Sidecar proxy. Communicates to servers hosting AI services. 
     
     For example, some of the operations which Sidecar proxy can performs along with the main component are listed as follows:
-    *  Payment management
+    * Payment management
     * Rate Limiting
     * Consolidating the number of request
     * Validation
