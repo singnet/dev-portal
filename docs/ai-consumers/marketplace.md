@@ -50,7 +50,7 @@ The decentralized application (DApp) does the following:
     
 - Integrates with Multi-Party Escrow, to allow consumers to pay for service usage;
     Allows consumers to rate about the utilized services
-    **Note:** This rating services will be part of the SingularityNET's Reputation System (currently under development). Currently, it is very difficult to rate services on blockchain. Therefore all rating mechanism are performed off chain and managed in the market place. So you can share your opinion and reviews at marketplace.
+    **Note:** This rating services will be part of the SingularityNET's Reputation System (currently under development). Currently, it is very difficult to rate services on Blockchain. Therefore all rating mechanism are performed off chain and managed in the market place. So you can share your opinion and reviews at marketplace.
     
 - Captures usage metrics at a consumer level.
 
