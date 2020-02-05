@@ -27,7 +27,7 @@ For example, If you look at the Sample service under the Organization in the Mar
 
 You can choose an option from the following list :
 
-- Select a Walley
+- Select a Wallet
 - General Account Wallet 
 = Metamask
 
