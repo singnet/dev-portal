@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: AI Consumers
 comments: false
 
 # Hero section
@@ -14,42 +14,46 @@ micro_nav: true
 
 ## Introduction to MPE
 
-The Multi-Party Escrow smart contract (“MPE”), combined with our atomic unidirectional payment channels, allows scalable payments in the platform, resulting in minimum number of on-blockchain to accomplish desired transactions between clients and AI service owners. 
+An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account. 
+The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-Blockchain interactions between AI Consumers and AI service providers.
+ 
 
 The MPE contract has two main functionalities which includes:
-Documentation for AI Consumers
 
-1.	A wallet with a deposit and withdraw function. 
+1. A wallet with a deposit and withdraw function. 
 2. A set of the simple (“atomic”) unidirectional payment channels between clients and service providers and support functions for controlling of these channels.
 
     **Note:** Each one can deposit and withdraw their AGI tokens into a Multi-Party Escrow, (which have not been escrowed at the moment).
 
-## Atomic unidirectional payment channel
-You can ignore this section, if you are familiar with the concept of payment channels.
-The core logical building block of the Multi-Party Escrow is a simple (“Atomic”) unidirectional payment channel. To learn more about the details of how to implement the Escrow contract for unidirectional payment channel, click on this link SimpleEscrow.sol file here. 
 
 ## What is Payment Channel?
+A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is a tool that enables off-chain transactions between parties without the delay imposed by blockchain block formation and without compromising the transactional security.
+
+
+## Atomic unidirectional payment channel
+You can ignore this section, if you are familiar with the concept of payment channels.
+The core logical building block of the Multi-Party Escrow is a simple (“Atomic”) unidirectional payment channel. To learn more about the details of how to implement the Escrow contract for unidirectional payment channel, click on this link [SimpleEscrow.sol](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol) file here. 
 
 It is understood that the payment channel is on the Blockchain. So, in order to prevent direct updating on the Blockchain regularly, the payment channel state is maintained in the storage, For example, whenever the sender and the receiver enter into an contract, a channel should be created first on the Blockchain. So, if Kevin is buying services from the Jack, Kevin has to put some tokens in the channel and specify the expiration period.
 
-A payment channel is a tool that allows payment channel is an on chain, daemon maintains the channel state off chain as block operations involve gas cost and are slowbetween parties without imposing any delay by the blockchain block formation times and compromising on transactional security. 
+Daemon maintains the channel state off chain as block operations involve gas cost and are slow between parties without imposing any delay by the blockchain block formation times and compromising on transactional security. 
 There are several kinds of payment channels. 
 
 Let us consider the simple unidirectional payment channel, the main logic is as follows:
 
 1.	The sender creates an Escrow contract with a given expiration date, and funds it with a desired amount of tokens.
-2.	The sender then needs to send a small amount of tokens to the recipient each time (to the recipient) with signed authorization, to close the channel, and thereafter, withdraws from the channel when the total amount of the tokens becomes due.
+2.	The sender then needs to send a small amount of tokens to the recipient each time (to the recipient) with signed authorization
 3.	The recipient must verify whether the signed authorization and the amount required is correct, and that amount specified does not exceed the funds being escrowed.
 4.	The channel nonce is incremented, whenever a claim happens,
 Actually, the channel is not closed and the task can still continue off line, but a new nonce need to be used.
 5.	The sender can perform the following:
-      - Close the channel after the expiration date and collect all funds.
+      - Can collect all funds remaining after the expiration date.
       <br>-or-
       - Extend the expiration date and add funds to the contract at any moment in time.
 
 Note: The receiver can withdraw from the channel (same as claim) only using the authorized amount by the sender.  Whenever a signature is made on a certain format which should be signed by the private key of Kevin, Jack then verifies whether the signature was authentic to Kevin, based on the agreed format. 
 
-### Use case for Claims and Nonce
+### Use case 
 
 1.	Kevin (Buyer) and Jack (Service provider) enter into a contract for the first time, they create a channel details in the Blockchain is as follows: 
 
@@ -92,7 +96,7 @@ Note: The receiver can withdraw from the channel (same as claim) only using the 
 Now the same iteration process follows for future calls authorizations of cogs.
 **Note:** If the claim does not occur, then Kevin need to authorize for 98 cogs. 
 
-## Withdraw funds without closing the Channel
+## Withdraw funds from the Channel
 A new feature (simple, textbook solution) known as nonce has be incorporated. Each time the recipient claims through the channel, a nonce is added to the message that the sender signs, and the nonce periodically changes each time when the recipient makes a claim. 
 The payment channels in the MPE includes the following properties:
 - Channel between sender and recipient can persist indefinitely.
