@@ -86,28 +86,28 @@ certificates are about to expire for service %s for %s network.
 ##NGINX
 ### Setting up your own ETCD cluster 
 
-To set up your own ETCD cluster please follow the link here
+To set up your own ETCD cluster please follow the [link](https://drive.google.com/drive/folders/1nfzsJCGhTpUfzzO9HABa_RmFOf58LYm4)here
 
 ### Certificates for ETCD 
-For snet, all ETCD storage, appropriate certificates are available at drive  
+For snet, all ETCD storage, appropriate certificates are available at [drive](https://drive.google.com/drive/folders/1PThpgF2ScX4gU98CJlKO40vLo2rgNT94))  
 
 To renew the ETCD Client Certificates for SNET Organisation:
-- Run the etcd-client-certificates-generation job.
-- This task generates the client-certificates in this path.
+- Run the [et]cd-client-certificates-generation](https://eu-central-1.console.aws.amazon.com/codesuite/codebuild/projects/etcd-client-certificates-generation/history?region=eu-central-1) job.
+- This task generates the client-certificates in this [path](https://s3.console.aws.amazon.com/s3/buckets/codepipeline-us-east-1-publish/etcd/certificates/?region=us-east-1&tab=overview).
         
 For other Organisations, follow the below steps to regenerate the etcd client certificates.
 - Download the cfssl & cfssljson using the below commands
 
 ```
-curl -s -L -o cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
-curl -s -L -o cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd6
+[curl -s -L -o cfssl] (https://pkg.cfssl.org/R1.2/cfssl_linux-amd64) 
+[curl -s -L -o cfssl] (https://pkg.cfssl.org/R1.2/cfssl_linux-amd64)
 ```
 
 - Copy the ca.pem, ca-key.pem, ca-config.json & client.json that you previously used for generating the etcd certificates.
 - Run the below command to generate the client certificates.
 
 ### How to deploy an Organization and a Service on Ropsten? 
-Complete the following steps listed in the document 
+Complete the following steps listed in the [document](https://drive.google.com/open?id=1w9zYYB5HxrlXCgUKzCsgGbXRGzm75Cm0n0qbPeMhrRU) 
 
 ###Allow the shared drive to monitor service configurations. 
 A folders already exists for all services under snet , this folder name is mapped to the service_id of your service.
@@ -119,15 +119,15 @@ https://drive.google.com/drive/folders/0AJYSxYnxHqLVUk9PVA
 
 ###You need to specify a valid signer address, such as 'free_call_signer_address' as part of the curation process to support free calls”
 
-Refer to the document on metering configurations with example.
+Refer to the [document](https://docs.google.com/document/d/1w9zYYB5HxrlXCgUKzCsgGbXRGzm75Cm0n0qbPeMhrRU/edit#heading=h.gtjqvnsibkk3) on metering configurations with example.
 
 ###Specify a valid private key 'pvt_key_for_metering' to include during the service publication process.”
 When you enable the free calls and Metering, specify the private key to initialize the Daemon Otherwise, the  Daemon sends the request to metering, which checks the associated public address mapped in the configuration of that Daemon.
 
-Refer to the document on metering configurations and an example 
+Refer to the [document](https://docs.google.com/document/d/1w9zYYB5HxrlXCgUKzCsgGbXRGzm75Cm0n0qbPeMhrRU/edit#heading=h.gtjqvnsibkk3) on metering configurations and an example 
 
 ### unable to create etcd client
-To learn about how to configure the etcd certificate configuration with an example, refer to the document 
+To learn about how to configure the etcd certificate configuration with an example, refer to the [document](https://docs.google.com/document/d/1w9zYYB5HxrlXCgUKzCsgGbXRGzm75Cm0n0qbPeMhrRU/edit#heading=h.gtjqvnsibkk3) 
 
 ###Metering authentication failed. Please verify the configuration”
 When you enable the free calls and Metering, specify the private key to initialize the Daemon. The Daemon will initialize, only if the configured Pvt key config matches the public Address of the Daemon registered for metering.
@@ -165,7 +165,7 @@ You have exceeded the number of permitted free calls. So, calls can now be done 
 - End point deployed from Service metadata should be assigned to the same port / domain the daemon is starting. 
 
 ### Rate limiting, too many requests to handle”
-The number of request has increased along with the rate limiting, either retry again later or configure your daemon for rate limiting 
+The number of request has increased along with the rate limiting, either retry again later or configure your daemon for [rate limiting](https://github.com/singnet/snet-daemon/tree/master/ratelimit) 
 
 ### Unexpected payment type”
 The supported payment types are free-call / escrow
@@ -219,7 +219,7 @@ Post your query on the channel #services-integration
 If you do not hear back in a day , please escalate to the concerned authority.
 ###What to when I notice a proto change?
 Ensure that the proto file is updated and checked into Git.
-If the path of your proto has changed indicate it in the column ‘FOLDER Location to your proto definition in Github’ on the document here . 
+If the path of your proto has changed indicate it in the column ‘FOLDER Location to your proto definition in Github’ on the document [here](https://docs.google.com/spreadsheets/d/1qAhoPY47meGYI2kwG_yZWx4yEhXrfGDp6bYMEp9PHyU/edit#gid=716820045) . 
 
 Post your query on the channel #services-integration 
 
@@ -258,7 +258,9 @@ Post your query on the channel #services-integration
 - Raise pull requests against “snet-dapp-monorepo/development”.
 - Once it is merged in the development. It will be deployed to the ropsten network:http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
 ###When does my Pull request gets merged to Master 
-- If your changes are shown in ropsten. Inform the concerned authority to merge the changes from development to master. This is then deployed to mainnet network: http://beta.singularitynet.io/
+- If your changes are shown in ]ropsten\(http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/). 
+    
+    Inform the concerned authority to merge the changes from development to master. This is then deployed to mainnet network: http://beta.singularitynet.io/
 ###Whom and How  do I reach out for help/Support 
 Please use the channel #platform-support for any questions / issues related to platform 
 - Use the #services-integration
