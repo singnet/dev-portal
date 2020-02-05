@@ -9,16 +9,10 @@
             <div class="wrapper">
                 <div class="container-fluid"> 
                     <div class="row pt-4">
-                        <div class="col-xs-12 col-sm-4">
-                            {% if page.title %}
-                            <h2>{{ page.title }}</h2>
-                            {% endif %}
-                        </div>
-                        <div class="col-xs-12 col-sm-8">
-                            {% if page.description %}
-                            <p class="tagline">{{ page.tagline }}</p>                            
-                            <p class="description">{{ page.description }}</p>
-                            {% endif %}
+                        <div class="col-xs-12 col-md-7">
+                            <h2>{{ page.title }}</h2>                            
+                            <p class="tagline first">{{ page.tagline_1 }}</p>     
+                            <p class="tagline">{{ page.tagline_2 }}</p>                                 
                         </div>                    
                     </div>
                 </div>
@@ -43,9 +37,38 @@
                         </a>                            
                     </div>                    
                     {% endfor %}
-                </div>      
+                </div>     
                 <div class="row">
-                    <div class="col-8 pt-4">
+                    <div class="col-12 pt-4">
+                        <div class="snet-card full-height"> 
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="snet-home-smallcards">
+                                        <h4>Release Notes</h4>
+                                        <p>Our release notes will tell you about new new features, improvements, and fixes across  products.</p>   
+                                        <a href="#">View Release Notes</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="snet-home-smallcards">
+                                        <h4>Community Forum</h4>
+                                        <p>Have a something in mind? Meet other devs in the SingularityNET Community.</p>                                        
+                                        <a href="#">Visit forum</a>
+                                    </div>                                    
+                                </div>
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="snet-home-smallcards last">
+                                        <h4>Tools & Resources</h4>
+                                        <p>Download the latest releases of our contracts, daemons and tools necessary.</p>                                        
+                                        <a href="#">Tools and Resources</a>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-8 pt-4">
                         <div class="snet-card"> 
                             <h2 class="snet-card_title">Blog Posts</h2>     
                             {% assign index = 0 %}
@@ -76,8 +99,7 @@
                             {% endfor %}                                                    
                         </div>
                     </div>
-
-                    <div class="col-4 pt-4">
+                    <div class="col-xs-12 col-md-4 pt-4">
                         <div class="snet-card"> 
                             <h2 class="snet-card_title">Tools & Resources</h2>  
                             {% for item in page.tools_cards %}                              
@@ -100,7 +122,27 @@
                     </div> 
                 </div>
             </div>
-        </div>                
+        </div>   
+        <div class="mt-4 snet-newsletter">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <div class="field-wrapper">
+                                <div class="mr-3">
+                                    <h3>Want to stay updated?</h3>
+                                    <p>Subscribe for email updates</p>
+                                </div>
+                                <div class="ml-3">
+                                    <input type="text" >
+                                    <input type="submit" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
 
 
         {% include site-footer.html %}

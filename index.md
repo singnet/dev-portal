@@ -4,9 +4,9 @@ redirect_from: "/home/"
 # Page settings
 layout: homepage
 keywords:
-title: Developer Portal
-tagline: Welcome to the SingularityNET Developer Portal.
-description: SingularityNET allows you to easily integrate AI services into your software and sell your AI services to developers globally.
+title: Welcome to the AI Dev Community, powered by open collaboration.
+tagline_1: 'The go-to place for all developer related content and social activities.'
+tagline_2: 'SingularityNET lets anyone create, share, and monetize AI services at scale.'
 
 # Micro navigation
 micro_nav: true
