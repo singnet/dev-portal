@@ -173,8 +173,8 @@ Clone the git repository
 ```
 $ git clone git@github.com:singnet/snet-sdk-python.git
 $ cd snet-sdk-python
-•	Install development/test blockchain dependencies
-$ ./scripts/blockchain install
+•	Install development/test Blockchain dependencies
+$ ./scripts/Blockchain install
 •	Install the package in development/editable mode
 $ pip install -e .
 ```
