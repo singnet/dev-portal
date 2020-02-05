@@ -40,3 +40,5 @@ You can jump directly to the thing you'd like to know more about, or use the nav
 ## How to use MPE
 
 ## Reading MPE
+
+## Errors in Daemon 

@@ -340,6 +340,11 @@ ai-consumers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-consumers/mpe'
+        registry:
+          title: Registry
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/registry'
         organization:
           title: Organization
           excerpt: 
@@ -350,22 +355,30 @@ ai-consumers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-consumers/service'
+
   payments:
     title: Payments
     children:
-        mpe:
-          title: Paypal
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-consumers/paypal'
         tokens:
           title: Tokens
           excerpt: 
           cta: Read more
           url: '/docs/ai-consumers/tokens'
+
+        paypal:
+          title: Paypal
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/paypal'
+
   service-invocation:
     title: Service Invocation
     children:
+        marketplace-dapp:
+          title: Marketplace-Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/marketplace'
         snet-cli:
           title: snet-cli
           excerpt: 

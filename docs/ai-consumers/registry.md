@@ -77,9 +77,7 @@ The URI is an IPFS hash, and the hosting itself can be done by either Singularit
 service developer, or any IPFS pinning service, such as [Infura](https://infura.io/).
 
 ### Tags
-Tags are completely optional but recommended for discoverability.
- Services and Type Repositories can be associated with tags by using the relevant Registry methods such as `addTagToServiceRegistration`. After that, the tags are displayed and searchable on the DApp. 
- Thanks to a reverse index built into the Registry contract, other smart contracts can also search the Registry directly. This is the foundation for the “API of APIs” functionality discussed below.
+Tags are completely optional but recommended for discoverability. Services and Type Repositories can be associated with tags by using the relevant Registry methods such as `addTagToServiceRegistration`. After that, the tags are displayed and searchable on the DApp. Thanks to a reverse index built into the Registry contract, other smart contracts can also search the Registry directly. This is the foundation for the “API of APIs” functionality discussed below.
 
 ## DApp Integration
 The SingularityNET DApp is essentially a rich Registry explorer. It loads the Registry and generates UI for playing with the Services and Type Repositories registered in it.
