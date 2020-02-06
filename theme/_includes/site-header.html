@@ -1,17 +1,55 @@
 
 {% if site.data.navigation.header.logo.text or site.data.navigation.header.logo.image or site.data.navigation.header.nav %}   
 
-<!-- Navigations Start -->
+<!-- Mobile First Navigation -->
+<div class="snet-mobile-first collapse" id="snet-mobile-first"> 
+    <ul>
+        <li>
+            <a href="#" class="snet-mobile-first-close" data-toggle="collapse" data-target="#snet-mobile-first">
+                <i class="material-icons">close</i>                
+            </a>
+        </li>
+        {% for item in site.data.navigation.header.nav %}
+        {% assign dropdowntree = nil %}
+        {% if item.subheaders %}
+        {% assign dropdowntree = item.subheaders %}
+        {% endif %}
+        {% if dropdowntree %}
+        <li>
+            <a class="" >
+                {{ item.item_name }}
+            </a>  
+            <div class="sub-menu">
+                {% for subheader in dropdowntree %}
+                <a class="" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a>
+                {% endfor %}
+            </div>                    
+        </li>
+        {% else %}
+        {% assign top_nav_class = "nav-item"%}
+        <li class="{{ top_nav_class }}">
+            {% if item.item_external_url %}
+            <a target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+            {% else %}
+            <a href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+            {% endif %}
+        </li>
+        {% endif %}                 
+        {% endfor %}   
+    </ul>
+</div>
+
+<!-- Main Header -->
 <header>
     <div class="shadow-wrapper">
         <div class="wrapper">
-            <nav class="navbar navbar-expand-lg snet-navbar_primary">
+            <nav class="navbar navbar-expand-md snet-navbar_primary">
                 <h1>
                     <!--            <a class="navbar-brand" href="{{ site.snet.baseurl }}"><img src="https://beta.singularitynet.io/static/media/WhiteLogo.93b76382.svg"></a>                        -->
                     <!-- <a class="navbar-brand" href="/"><img src="https://beta.singularitynet.io/static/media/WhiteLogo.93b76382.svg"></a>   -->
                     <a class="navbar-brand" href="/"><img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/WhiteLogo.93b76382.svg"></a>                   
                 </h1>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                <button class="navbar-toggler snet-navbar-toggler" type="button" data-toggle="collapse" data-target="#snet-mobile-first">
                     <span class="navbar-toggler-icon">
                         <i class="material-icons">dehaze</i>
                     </span>
@@ -46,17 +84,6 @@
                         {% endif %}                 
                         {% endfor %}                
                     </ul>
-                    <!--
-                                <ul class="navbar-nav ml-auto snet-navbar_login">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Login</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link snet-button_outline" href="#">Sign Up Free</a>
-                                    </li>
-                                </ul>
-                    -->
-
                 </div>           
             </nav>         
         </div>              
