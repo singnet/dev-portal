@@ -44,20 +44,24 @@ header{
         .snet-navbar_menu{          
             .nav-item{
                 cursor:pointer;
+                .dropdown-menu,
                 .snet_slidingDropdown{
                     position: absolute;
-                    min-width: 100%;
+                    top:80%;
+                    left: -1px;
+                    min-width: 105%;
                     width: auto;                    
-                    background-color: #220D3A;    
-                    max-height:0;
+                    //background-color: #220D3A;   
+                    background-color: #fff;                       
+                    //max-height:0;
                     overflow: hidden;
                     transition: max-height 0.3s ease-in;   
                     z-index: 1025;                    
                     a{
-                        font-size:14px;                        
-                        padding: 10px!important;
+                        font-size:16px;                        
+                        padding: 10px 16px!important;
                         color: #9B9B9B;
-                        border-bottom: 2px solid #220D3A;   
+                        border-bottom: 2px solid #fff;   
                         &:hover{
                             color: #220D3A;
                         }
@@ -69,13 +73,15 @@ header{
                         color: #fff;
                         border-bottom: 2px solid #fff;   
                     }
+                    .dropdown-menu,
                     .snet_slidingDropdown{
                         background-color: #220D3A;  
+                        background-color: #fff;                          
                         max-height: 200px;
                         a{
-                            padding: 10px!important;
+                            padding: 10px 16px!important;
                             color: #9B9B9B;
-                            border-bottom: 2px solid #220D3A;   
+                            border-bottom: 2px solid #fff;   
                             &:hover{
                                 color: #220D3A;
                             }

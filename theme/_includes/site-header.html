@@ -22,13 +22,12 @@
                     {% endif %}
                     {% if dropdowntree %}
                         <li class="nav-item">
-                            <a class="nav-link" >
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" >
                                 {{ item.item_name }}
-                                <i class="material-icons float-right align-middle">arrow_drop_down</i>
                             </a>  
-                            <div class="snet_slidingDropdown">
+                            <div class="dropdown-menu">
                                 {% for subheader in dropdowntree %}
-                                    <a class="dropdown-item" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a>
+                                   <a class="dropdown-item" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a>
                                 {% endfor %}
                             </div>                    
                         </li>
