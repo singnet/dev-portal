@@ -222,6 +222,23 @@ section.snet-herobanner{
         border-bottom: 1px solid #eee;
         padding-bottom: 16px;
     }    
+    .field-wrapper{
+        display:block!important;
+        .heading-section{
+            width: 100%;
+            text-align: center;
+            margin: 0!important;
+        }
+        .form-section{
+            margin: 10px 0 0 0!important;
+            width: 100%;       
+            input{
+                margin-top: 5px;    
+                display: block;
+                width: 100%!important;
+            }
+        }
+    }
 }
 @media only screen and (min-width: 768px) and (max-width:991px){
     .snet-card .snet-home_cards img{
