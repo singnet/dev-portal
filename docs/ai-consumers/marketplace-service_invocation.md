@@ -69,7 +69,7 @@ This extension, allows you to perform the following in the context of the market
 ![marketplace](/assets/img/dapp/authorize_metamask.png)
 
 
-### Depositing tokens from Metamask to the Singularity Escrow Wallet.
+### Depositing tokens from Metamask to the Escrow Wallet.
 
 Steps
 1.	Let start by depositing some tokens from Metamask to the Singularity Escrow Wallet. So you can pay for service
@@ -102,9 +102,18 @@ Select the 'General Wallet' Option
 Once you have exhausted your free calls , you can now pay either through paypal or using Metamask
 
 If you use Metamask this will ask for a signature on the Metamask, since you will be opening a Payment channel, click on the Sign 
-You woudl see something like this, if you dont have money on Escrow account, you will be asked to ***Deposit into Escrow***
+You would see something like this, if you dont have money on Escrow account, you will be asked to ***Deposit into Escrow***
+![marketplace](/assets/img/dapp/depositinEscrow.png)
+Now click on **Deposit**
 
+You need to confirm every Blockchain transaction when using metamask as your mode of payment
+![marketplace](/assets/img/dapp/confirmationfrommetamask.png)
 
+Based on the number of calls you wish to invoke ,select the option and the channel will be 
+funded accordingly
+![marketplace](/assets/img/dapp/metamaskmultiplecalls.png)
+
+Once the funds are in the channel, you are all set to invoke the service !
 
 If you are using General Wallet and you have sufficient funds , you will see the continue button 
 ![marketplace](/assets/img/dapp/generalwalletUse.png)
@@ -112,10 +121,11 @@ If you are using General Wallet and you have sufficient funds , you will see the
 5.	Now you have the access to the invoke section of the service 
     The interface will change according to the input need for each service.
 6.	Choose a Method to identify the service -  An Image
-7.	After setting-up all that you need,  click the **Invoke**.
-8.	Sign the Metamask transaction to send the service to the Blockchain
+7.	After setting-up all that you need,  click the **Invoke** button.
+8.	If you are using Metamask , then the transaction will need to be signed again using metamask before invoking 
 9.	Wait for the response
-10.	You can up vote or down vote hope on the decentralized market curation
+10.	You are now eligible to write a review
+![marketplace](/assets/img/dapp/reviewscree.png)
 
 Not only have bought service, you have also opened a Payment channel with it and continue to use until it expires. 
 
