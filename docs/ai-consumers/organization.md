@@ -12,7 +12,7 @@ micro_nav: true
 
 ---
 
-#Organization Metadata
+## Organization Metadata
 
 The organization metadata is the description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster. In order to use a service, the client needs to know the following:
 - The Organization metadata
@@ -26,7 +26,7 @@ There are three ways of providing this metadata to the clients and the daemons:
 **Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack
 **Note:** By default, the snet-cli adheres to this verification.
 
-##Description of Fields in metadata file
+## Description of Fields in metadata file
 The following is the list of filed types and their description.
 **type** : Describes of this is an Individual or a Company organization contacts : Stores the contacts related to an Organization , you can have multiple contacts contact_type : Describes the contact type , example support etc; email_id : Email associated with this contact phone : Phone number associated with this contact
 **assets** : used to refer to the image associated with an Organization. Image is uploaded on to ipfs and referenced here.
