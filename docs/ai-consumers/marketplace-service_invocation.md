@@ -104,7 +104,7 @@ Once you have exhausted your free calls , you can now pay either through paypal 
 If you use Metamask this will ask for a signature on the Metamask, since you will be opening a Payment channel, click on the Sign 
 You woudl see something like this, if you dont have money on Escrow account, you will be asked to ***Deposit into Escrow***
 
-![marketplace](/assets/img/dapp/marketplaceimage.gif)
+
 
 If you are using General Wallet and you have sufficient funds , you will see the continue button 
 ![marketplace](/assets/img/dapp/generalwalletUse.png)
