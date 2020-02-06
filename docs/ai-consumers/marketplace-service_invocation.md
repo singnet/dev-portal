@@ -122,7 +122,7 @@ If you are using General Wallet and you have sufficient funds , you will see the
 10.	You are now eligible to write a review
 ![marketplace](/assets/img/dapp/reviewscree.png)
 
-Not only have bought service, you have also opened a Payment channel with it and continue to use until it expires. 
+You can now continue to use the Service till you have sufficient funds before the expiry date of the channel
 
 ### claim back the reserved fund
 1.	Go the **Account** page
