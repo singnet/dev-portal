@@ -11,7 +11,9 @@ title: AI Consumers
 micro_nav: true
 
 ---
-## Introduction to Paypal
+## SingularityNET’s Decentralized AI Marketplace Integration with PayPal
+
+The integration of SingularityNET’s decentralized AI marketplace with PayPal represents a significant step in the direction of wide adoption of the platform. It makes it easier for more AI users to leverage the platform, thus increasing the likelihood that data scientists and developers will feel incentivized to consider SingularityNET a viable alternative pathway to monetize their expertise. This integration represents a large opportunity for SingularityNET and our community.
 
 Whatever happens on Blockchain, an event is created, and the Marketplace listens to all events.  When there is an event notification, the Marketplace reads the Organization metadata and serviice metadata for example, and retrives the data from the Blockchain and stores them in the local tables, or database. 
 

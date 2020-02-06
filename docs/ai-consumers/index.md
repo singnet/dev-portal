@@ -54,6 +54,3 @@ roles.
 * **The Request for AI Portal (RFAI):** is a DApp through which end users and application developers can request specific AI services they would like added to the network and stake AGI tokens as a reward for high-quality solutions.
 
 
-## How to use MPE
-
-## Reading MPE

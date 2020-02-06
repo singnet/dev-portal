@@ -32,15 +32,30 @@ page_nav:
 
 ## Calling a Service
 
+**Note**: You need to go the Marketplace and pay the price (set in AGI tokens) in equivalent USD through Paypal. In such case, the entire process is managed at the background automatically for you.
+
+All complexity of invoking a service is abstracted from the users.
+
+Foe example it becomes easy for the user to Input the values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC call and the proto that is associated to the service and so.  
+
+As an AI consumer you can choose to:
+- Create a wallet
+- Use Metamask
+
+Please note that the the Marketplace offers a **free trial** version, where registered users can access service(s) for a specified time period. 
+
+![marketplace](/assets/img/dapp/free_call_feature.png)
+
+After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. 
+
+This extension mediates with the Blockchain on behalf, and helps you in transferring of tokens between wallets, and invoke contracts.
+
 The Marketplace offers a free trial version, where registered users can access service(s) for a specified time period. After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. This extension mediates with the Blockchain on behalf, helping you in transferring of tokens between wallets, and invoke contracts.
 Example: The sample service below shows the SingularityNET  platform can authorize Metamask:
 
 - Select a Wallet -
 ![marketplace](/assets/img/dapp/select_awallet.png)
 
-
-- Select Metamask -
-![marketplace](/assets/img/dapp/authorize_metamask.png)
 
 **Important**: Metamask is a plugin which is used by the SingularityNET platform. 
 
@@ -49,6 +64,9 @@ This extension, allows you to perform the following in the context of the market
 - Transfer AGI funds into escrow, 
 - Setup payment channels to enable calls to any of the listed services.
 
+
+- Select Metamask -
+![marketplace](/assets/img/dapp/authorize_metamask.png)
 
 
 ### Depositing tokens from Metamask to the Singularity Escrow Wallet.
@@ -67,25 +85,37 @@ Steps
 11.	Confirmation message show that the token has been deposited to the Escrow wallet 
 12.	You might need to refresh if your token still appears as authorized.
 
-### To  call a service
+### Using General Wallet 
+
+Select the 'General Wallet' Option
+![marketplace](/assets/img/dapp/marketplaceimage.gif)
+
+
+### To call a service 
 
 1.	View a list of service from the home page.
 2.	Filter the list by using the search text box.
 3.	Look for  image recognition service
-4.	Click on **Details**. 
-    An overview dialog box displays on the right. On the top you can view a brief description of the service.
-5.	The below section shows the amount that will be deposited in the payment channel and the blocknumber when the block will expire
-6.	Click on the **Start job**
-    This will ask for a signature on the Metamask, since you will be opening a Payment channel
-8.	Click Sign, followed by reserved funds. 
-    You must edit the Amount and Expiration before confirming this step. And wait for it to be mined.
-9.	Now you have the access to the invoke section of the service 
+4.	Click on **Demo**. 
+    This will take you to the corresponding service details page.
+
+Once you have exhausted your free calls , you can now pay either through paypal or using Metamask
+
+If you use Metamask this will ask for a signature on the Metamask, since you will be opening a Payment channel, click on the Sign 
+You woudl see something like this, if you dont have money on Escrow account, you will be asked to ***Deposit into Escrow***
+
+![marketplace](/assets/img/dapp/marketplaceimage.gif)
+
+If you are using General Wallet and you have sufficient funds , you will see the continue button 
+![marketplace](/assets/img/dapp/generalwalletUse.png)
+
+5.	Now you have the access to the invoke section of the service 
     The interface will change according to the input need for each service.
-11.	Choose a Method to identify the service -  An Image
-12.	After setting-up all that you need,  click the **Invoke**.
-13.	Sign the Metamask transaction to send the service to the Blockchain
-14.	Wait for the response
-15.	You can up vote or down vote hope on the decentralized market curation
+6.	Choose a Method to identify the service -  An Image
+7.	After setting-up all that you need,  click the **Invoke**.
+8.	Sign the Metamask transaction to send the service to the Blockchain
+9.	Wait for the response
+10.	You can up vote or down vote hope on the decentralized market curation
 
 Not only have bought service, you have also opened a Payment channel with it and continue to use until it expires. 
 

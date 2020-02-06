@@ -355,6 +355,11 @@ ai-consumers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-consumers/service'
+        marketplace:
+          title: Marketplace Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/marketplace'
 
   payments:
     title: Payments
@@ -378,7 +383,7 @@ ai-consumers:
           title: Marketplace-Dapp
           excerpt:
           cta: Read more
-          url: '/docs/ai-consumers/marketplace'
+          url: '/docs/ai-consumers/marketplace-service_invocation'
         snet-cli:
           title: snet-cli
           excerpt: 

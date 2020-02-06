@@ -4,11 +4,14 @@ layout: default
 keywords: intro concepts
 comments: false
 
-
+# Hero section
+title: AI Consumers
 
 ---
 
-## Service Metadata****
+## Service Metadata
+
+
 The service metadata is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster. To use a service, the client needs to know the following:
 - The service metadata
 - The address of Multi-Party Escrow (MPE) contract
@@ -31,6 +34,20 @@ The following are the defaults MPE addresses for various networks:
 **Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack 
 **Note:** By default, the snet-cli adheres to this verification. 
 
+
+**Note**: 
+
+The service provider needs to publish the details about the service in the Blockchain.
+
+As a consumer, you may go the Blockchain or the Marketplace portal where the services are deployed.
+Details like Service the price of the service ,
+image depicting / related to the service , service type, description, the endpoint and how to make a request.
+
+Please note that
+- Singularity platform works on gRPC. Whenever you need to call you need a protofile.
+- File management system such as IPFS stores the location of the hash and points to the associated protofile
+    The IPFS can include a file and the same file returns same hash. 
+    
 ## Metadata Overview
 
 ```
