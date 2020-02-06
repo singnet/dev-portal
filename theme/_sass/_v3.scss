@@ -363,7 +363,7 @@ h2 .title-anchor-link{ display: none;}
 h3 .title-anchor-link{ display: none;}
 h4 .title-anchor-link{ display: none;}
 h5 .title-anchor-link{ display: none;}
-table {border-style: groove}
+//table {border-style: groove}
 /*==============================================================================*/
 /* Left Side Navigation */
 /*==============================================================================*/
@@ -577,7 +577,7 @@ table {border-style: groove}
         p{
             margin-top: 0;   
             font-size:14px;
-            line-height:21px;
+            line-height:22px;
             color:#666;
             letter-spacing:0px;
             &.spacer{
@@ -618,6 +618,27 @@ table {border-style: groove}
             &:hover{
                 color: #4086FF;
                 text-decoration: underline;                
+            }
+        }
+        table{
+            border: solid 1px #f1f1f1;
+            width: 100%;
+            margin-bottom:24px;
+            tr{
+                th{
+                    font-weight: 600;
+                    color: #212121;
+                    padding: 6px;
+                }
+                td{
+                    color: #666;
+                    padding: 4px 6px;     
+                }
+                &:nth-child(2n){
+                    td{
+                        background: #f6f6f6;                        
+                    }
+                }  
             }
         }
     }
