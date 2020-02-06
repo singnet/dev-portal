@@ -12,7 +12,7 @@ micro_nav: true
 
 ---
 
-## Introduction to MPE
+## Troubleshooting
 
 #Common errors returned by the Daemon
 
