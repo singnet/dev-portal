@@ -15,7 +15,7 @@ body{
 header{
     background-color: #220D3A; 
     .snet-navbar_primary{
-        padding: 12px 65px 4px 60px;
+        padding: 12px 0px 4px 15px;
         box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);   
         h1{
             font-size: 16px;            
@@ -141,7 +141,7 @@ header{
 
 
 .snet-navbar_secondary{
-    padding: 12px 65px 12px 60px;  
+    padding: 12px 0px 12px 0px;  
     background: #f1f1f1;
     border-bottom: solid 1px #DBE3E7;    
     z-index:1024;
@@ -149,7 +149,12 @@ header{
         width: 30%;
         font-weight: normal;
         font-size: 18px;
-        margin: 0;        
+        margin: 0;     
+        padding: 0 0 0 15px;
+        display: inline-block;
+    }
+    #secondary-menu{
+        display: inline-block;                        
     }
     .snet-navbar_navigation{
         margin: 0;
@@ -689,7 +694,7 @@ h5 .title-anchor-link{ display: none;}
                     .s{color:#e6db74}
                     .na{color:#a6e22e}
                     .nb{//color:#f8f8f2;
-                    color:#bda0d4;}
+                        color:#bda0d4;}
                     .nc{color:#a6e22e}
                     .no{color:#66d9ef}
                     .nd{color:#a6e22e}
@@ -817,6 +822,7 @@ h5 .title-anchor-link{ display: none;}
             display: none;
         }
         #secondary-menu{
+            //padding-left: 15px;              
             margin:0 auto;
             .snet-navbar_navigation{
                 display: block;
@@ -849,7 +855,10 @@ h5 .title-anchor-link{ display: none;}
     }   
     .wrapper{
         width:576px;
-    }      
+    }     
+    #secondary-menu{
+        padding-left: 15px;    
+    }    
     .snet-nav_list{
         li{
             a{
@@ -895,6 +904,9 @@ h5 .title-anchor-link{ display: none;}
     .wrapper{
         width:768px;
     }   
+    #secondary-menu{
+        padding-left: 15px;    
+    }
     .snet-navbar_secondary{
         h1{
             display: none;

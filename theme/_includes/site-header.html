@@ -3,101 +3,105 @@
 
 <!-- Navigations Start -->
 <header>
-    <nav class="navbar navbar-expand-lg snet-navbar_primary">
-        <h1 style="width: 30%">
-<!--            <a class="navbar-brand" href="{{ site.snet.baseurl }}"><img src="https://beta.singularitynet.io/static/media/WhiteLogo.93b76382.svg"></a>                        -->
-            <a class="navbar-brand" href="/"><img src="https://beta.singularitynet.io/static/media/WhiteLogo.93b76382.svg"></a>                                    
-        </h1>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
-            <span class="navbar-toggler-icon">
-                <i class="material-icons">dehaze</i>
-            </span>
-        </button>
-        <div class="collapse navbar-collapse" id="main-menu">
-            <ul class="navbar-nav mr-auto snet-navbar_menu">
-                {% for item in site.data.navigation.header.nav %}
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg snet-navbar_primary">
+            <h1 style="width: 30%">
+                <!--            <a class="navbar-brand" href="{{ site.snet.baseurl }}"><img src="https://beta.singularitynet.io/static/media/WhiteLogo.93b76382.svg"></a>                        -->
+                <a class="navbar-brand" href="/"><img src="https://beta.singularitynet.io/static/media/WhiteLogo.93b76382.svg"></a>                                    
+            </h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                <span class="navbar-toggler-icon">
+                    <i class="material-icons">dehaze</i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-menu">
+                <ul class="navbar-nav mr-auto snet-navbar_menu">
+                    {% for item in site.data.navigation.header.nav %}
                     {% assign dropdowntree = nil %}
                     {% if item.subheaders %}
-                        {% assign dropdowntree = item.subheaders %}
+                    {% assign dropdowntree = item.subheaders %}
                     {% endif %}
                     {% if dropdowntree %}
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" >
-                                {{ item.item_name }}
-                            </a>  
-                            <div class="dropdown-menu">
-                                {% for subheader in dropdowntree %}
-                                   <a class="dropdown-item" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a>
-                                {% endfor %}
-                            </div>                    
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" >
+                            {{ item.item_name }}
+                        </a>  
+                        <div class="dropdown-menu">
+                            {% for subheader in dropdowntree %}
+                            <a class="dropdown-item" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a>
+                            {% endfor %}
+                        </div>                    
+                    </li>
                     {% else %}
-                        {% assign top_nav_class = "nav-item"%}
-                        <li class="{{ top_nav_class }}">
-                            {% if item.item_external_url %}
-                                <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                            {% else %}
-                                <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                            {% endif %}
-                        </li>
+                    {% assign top_nav_class = "nav-item"%}
+                    <li class="{{ top_nav_class }}">
+                        {% if item.item_external_url %}
+                        <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                        {% else %}
+                        <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                        {% endif %}
+                    </li>
                     {% endif %}                 
-                {% endfor %}                
-            </ul>
-            <!--
-                        <ul class="navbar-nav ml-auto snet-navbar_login">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link snet-button_outline" href="#">Sign Up Free</a>
-                            </li>
-                        </ul>
-            -->
+                    {% endfor %}                
+                </ul>
+                <!--
+                            <ul class="navbar-nav ml-auto snet-navbar_login">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link snet-button_outline" href="#">Sign Up Free</a>
+                                </li>
+                            </ul>
+                -->
 
-        </div>           
-    </nav>               
+            </div>           
+        </nav>         
+    </div>              
 </header>
 
 {% if page.url != "/" %}
 <nav class="navbar navbar-expand-lg snet-navbar_secondary sticky-top">
-    <h1> 
-        Documentation
-    </h1>
-    <!--
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#secondary-menu">
-        <span class="navbar-toggler-icon">
-            <i class="material-icons">dehaze</i>
-        </span>
-    </button> 
-    -->
-    <div class="-collapse -navbar-collapse" id="secondary-menu">
-        <ul class="navbar-nav mr-auto snet-navbar_navigation">            
-            {% for item in site.data.navigation.header.secondnav %}
-            {% assign nav_class = "nav-item"%}
-            {% if page.url contains item.item_url %}
+    <div class="wrapper">
+        <h1> 
+            Documentation
+        </h1>
+        <!--
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#secondary-menu">
+            <span class="navbar-toggler-icon">
+                <i class="material-icons">dehaze</i>
+            </span>
+        </button> 
+        -->
+        <div class="-collapse -navbar-collapse" id="secondary-menu">
+            <ul class="navbar-nav mr-auto snet-navbar_navigation">            
+                {% for item in site.data.navigation.header.secondnav %}
+                {% assign nav_class = "nav-item"%}
+                {% if page.url contains item.item_url %}
                 {% assign nav_class = "nav-item active" %}
-            {% endif %}
-            <li class="{{ nav_class }}">
-                {% if item.item_external_url %}
-                <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                {% else %}
-                <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
                 {% endif %}
-            </li>                
-           
-            {% endfor %}  
-            <li class="nav-item last-item-list">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">More</a>
-                <div class="dropdown-menu dropdown-menu-secondary">
-                    {% for item in site.data.navigation.header.secondnav %}  
-                    {% if forloop.index > 3 %}
-                    <a class="dropdown-item" href="{{ item.item_url }}">{{ item.item_name }}</a>                    
+                <li class="{{ nav_class }}">
+                    {% if item.item_external_url %}
+                    <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                    {% else %}
+                    <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
                     {% endif %}
-                    {% endfor %}                      
-                </div>                
-            </li>            
-        </ul>
-    </div>           
+                </li>                
+
+                {% endfor %}  
+                <li class="nav-item last-item-list">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">More</a>
+                    <div class="dropdown-menu dropdown-menu-secondary">
+                        {% for item in site.data.navigation.header.secondnav %}  
+                        {% if forloop.index > 3 %}
+                        <a class="dropdown-item" href="{{ item.item_url }}">{{ item.item_name }}</a>                    
+                        {% endif %}
+                        {% endfor %}                      
+                    </div>                
+                </li>            
+            </ul>
+        </div>            
+    </div>       
 </nav>   
 {% endif %} 
 {% endif %} 
