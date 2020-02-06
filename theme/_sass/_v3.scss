@@ -989,6 +989,20 @@ h5 .title-anchor-link{ display: none;}
     //display: none;
 }
 @media only screen and (max-width: 768px) {
+    header{
+        .snet-navbar_primary{
+            padding-left:0;
+            padding-right:0;            
+            h1{
+                margin: 0;
+            }
+            .navbar-brand{
+                img{
+                    height: 40px;                    
+                }
+            } 
+        } 
+    }
     .snet-mobile-first{
         position: absolute;
         padding: 32px;
