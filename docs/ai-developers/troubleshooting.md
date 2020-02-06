@@ -184,7 +184,7 @@ Add the the following link:
 ```
 "ethereum_json_rpc_endpoint": "https://mainnet.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2" 
 ```
-n your daemon configuration. Ideally  you should have your own project Id on infura. 
+In your daemon configuration. Ideally  you should have your own project Id on infura. 
 
 ###How do I set up a new host 
 Post your request on the #services-integration channel with the following details: 
