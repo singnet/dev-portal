@@ -131,10 +131,13 @@
 	var $jsSmoothScroll = $( '.js-smooth-scroll' );
 
 	$jsSmoothScroll.click( function() {
+                var scroll_one= $($(this).attr( 'href' )).offset().top;
+                var height_diff= $('.snet-navbar_secondary').outerHeight();
                 $(".sections-list ul li.active").removeClass("active");
                 $(this).parent("li").addClass("active");
 		$( 'html, body' ).animate( {
-			scrollTop: $( $( this ).attr( 'href' ) ).offset().top
+			//scrollTop: ($( $( this ).attr( 'href' ) ).offset().top)-48
+                        scrollTop: (scroll_one - height_diff)
 		}, 1200 );
 
 		return false;
