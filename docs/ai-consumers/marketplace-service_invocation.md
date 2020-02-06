@@ -32,44 +32,39 @@ page_nav:
 
 ## Calling a Service
 
-**Note**: You need to go the Marketplace and pay the price (set in AGI tokens) in equivalent USD through Paypal. In such case, the entire process is managed at the background automatically for you.
 
 All complexity of invoking a service is abstracted from the users.
 
-Foe example it becomes easy for the user to Input the values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC call and the proto that is associated to the service and so.  
+For example it becomes easy for the user to Input the values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC calls/generating signatures for authorization to call a  service.  
 
-As an AI consumer you can choose to:
-- Create a wallet
-- Use Metamask
 
-Please note that the the Marketplace offers a **free trial** version, where registered users can access service(s) for a specified time period. 
+
+Please note that the the Marketplace offers a **free trial** version, where registered users can access service(s) for a specified number of calls. 
 
 ![marketplace](/assets/img/dapp/free_call_feature.png)
 
-After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. 
 
-This extension mediates with the Blockchain on behalf, and helps you in transferring of tokens between wallets, and invoke contracts.
-
-The Marketplace offers a free trial version, where registered users can access service(s) for a specified time period. After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. This extension mediates with the Blockchain on behalf, helping you in transferring of tokens between wallets, and invoke contracts.
-Example: The sample service below shows the SingularityNET  platform can authorize Metamask:
+Once your freecalls are exhausted , you will need to pay for any new calls to the service.
+***You can either pay through Metamask or through a General wallet(paypal)***
 
 - Select a Wallet -
 ![marketplace](/assets/img/dapp/select_awallet.png)
 
 
-**Important**: Metamask is a plugin which is used by the SingularityNET platform. 
+Lets look at each of the wallet options in detail below
 
-This extension, allows you to perform the following in the context of the marketplace:
+### Using Metamask
+**Important**: Metamask is a plugin which is used by the SingularityNET platform. This extension, allows you to perform the following in the context of the marketplace:
 
 - Transfer AGI funds into escrow, 
 - Setup payment channels to enable calls to any of the listed services.
 
-
-- Select Metamask -
+As a first step you will need to Authorize the Dapp to connect to your metamask account
+- Authorize Metamask -
 ![marketplace](/assets/img/dapp/authorize_metamask.png)
 
 
-### Depositing tokens from Metamask to the Escrow Wallet.
+#### Depositing tokens from Metamask to the Escrow Wallet.
 
 Steps
 1.	Let start by depositing some tokens from Metamask to the Singularity Escrow Wallet. So you can pay for service
@@ -85,6 +80,20 @@ Steps
 11.	Confirmation message show that the token has been deposited to the Escrow wallet 
 12.	You might need to refresh if your token still appears as authorized.
 
+If you dont have money on Escrow account, you will be asked to ***Deposit into Escrow***
+![marketplace](/assets/img/dapp/depositinEscrow.png)
+Now click on **Deposit**
+
+You need to confirm every Blockchain transaction when using metamask as your mode of payment
+![marketplace](/assets/img/dapp/confirmationfrommetamask.png)
+
+Based on the number of calls you wish to invoke ,select the option and the channel will be 
+funded accordingly
+![marketplace](/assets/img/dapp/metamaskmultiplecalls.png)
+
+Once the funds are in the channel, you are all set to invoke the service !
+
+
 ### Using General Wallet 
 
 Select the 'General Wallet' Option
@@ -99,21 +108,7 @@ Select the 'General Wallet' Option
 4.	Click on **Demo**. 
     This will take you to the corresponding service details page.
 
-Once you have exhausted your free calls , you can now pay either through paypal or using Metamask
 
-If you use Metamask this will ask for a signature on the Metamask, since you will be opening a Payment channel, click on the Sign 
-You would see something like this, if you dont have money on Escrow account, you will be asked to ***Deposit into Escrow***
-![marketplace](/assets/img/dapp/depositinEscrow.png)
-Now click on **Deposit**
-
-You need to confirm every Blockchain transaction when using metamask as your mode of payment
-![marketplace](/assets/img/dapp/confirmationfrommetamask.png)
-
-Based on the number of calls you wish to invoke ,select the option and the channel will be 
-funded accordingly
-![marketplace](/assets/img/dapp/metamaskmultiplecalls.png)
-
-Once the funds are in the channel, you are all set to invoke the service !
 
 If you are using General Wallet and you have sufficient funds , you will see the continue button 
 ![marketplace](/assets/img/dapp/generalwalletUse.png)
