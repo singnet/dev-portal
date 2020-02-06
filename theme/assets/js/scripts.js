@@ -184,4 +184,7 @@ $(window).scroll(function(e){
  
 });    
 */
+$('.snet-navbar-toggler').click(function(){
+    //alert("hi");
+});
 }( jQuery ) );

@@ -614,10 +614,14 @@ h5 .title-anchor-link{ display: none;}
                 margin-top: 30px;                 
             }            
         }
-        img{
+        img{ 
             display: block;
-            width: 100%;
-            margin-bottom: 20px;            
+            margin: 0 auto;
+            width: auto;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border: solid 7px #fff;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);            
         }
         code{
             font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
@@ -861,7 +865,7 @@ h5 .title-anchor-link{ display: none;}
     /* sm */    
     body{
         //background: yellow!important; 
-    }   
+    }      
     .wrapper{
         width:576px;
     }     
@@ -982,4 +986,50 @@ h5 .title-anchor-link{ display: none;}
         top:50px;
     }    
 }
-
+.snet-mobile-first{
+    //display: none;
+}
+@media only screen and (max-width: 768px) {
+    .snet-mobile-first{
+        position: absolute;
+        padding: 32px;
+        width: 100vw;
+        min-height: 100vh;
+        background: #220D3A;
+        z-index:1027;
+        ul{
+            list-style: none;
+            margin:0;
+            padding:0;
+            li{
+                color:#9b9b9b;
+                border-bottom:solid 1px #403050;  
+                a{
+                    color: #fff;
+                    background: #220D3A;
+                    font-size: 20px;
+                    display: block;
+                    padding: 8px;
+                    &.snet-mobile-first-close{
+                        width: 40px;
+                        background: red;
+                        margin-bottom: 16px;
+                    }
+                    &:hover{
+                        background: rgba(256,256,256,.1)!important;
+                        text-decoration: none;
+                    }
+                }
+                .sub-menu{
+                    a{
+                        display: block;
+                        margin-left: 32px;                  
+                    }
+                }  
+                &:first-child{
+                    border: none;
+                } 
+            }
+        }
+    }    
+}
