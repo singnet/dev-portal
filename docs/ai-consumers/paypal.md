@@ -12,30 +12,13 @@ micro_nav: true
 
 ---
 
-## Introduction to Paypal
+## Introduction to Paypal, 
 
 **Note**: You need to go the Marketplace and pay the price (set in AGI tokens) in equivalent USD through Paypal. In such case, the entire process is managed at the background automatically for you.
 
-The protofile  information associated IPFS hash are so complex to understand. But because they are part of the UI, it becomes user-friendly way to build the  UI components around a service and host it on SingularityNET platform. 
+All complexity of invoking a service is abstracted from the users.
 
-This becomes easy for the user to the Input values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC call and the proto that is associated to the service and so.  
-So when you click the Invoke button the AI service computes the result 
-
-This service is integrated with the Multiparty Escrow, allowing the user to pay for the service uisng Paypal, that allows the  application to manage.
-
-For example, If you look at the Sample service under the Organization in the Marketplace, you will notice that it shows that you have utilized the free trial service period. 
-
-You can choose an option from the following list :
-
-- Select a Wallet
-- General Account Wallet 
-= Metamask
-
-Choose a Metamask.
-
-By selecting this option,yYou are Authorizing SingularityNET to use Metamask. Metamask is a plugin which can be used as an Wallet. It is coming from Ethereum Blockchain, so you can add money, any crypto currency or tokens to this Wallet.  
-
-For example if I want to move the money into my account, you need to do a Blockchain Operation. Or need to move money from your account to channel, into my account, which involves some additional charges, 
+Foe example it becomes easy for the user to Input the values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC call and the proto that is associated to the service and so.  
 
 As an AI consumer you can choose to:
 - Create a wallet
@@ -65,61 +48,3 @@ All service metadata details are stored in the the JSON file
     The application will then deposit the equivalent AGI tokens in to channel.
 4.	Now you can make a call now - The Dapp components hide all the complexity on making these calls.
    
-
-### Depositing tokens from Metamask to the Singularity Escrow Wallet.
-
-Steps
-1.	Let start by depositing some tokens from Metamask to the Singularity Escrow Wallet. So you can pay for service
-2.	On the Home page click on Account link
-3.	Confirm you have sufficient balance in your Metamask Wallet
-4.	In your Account details, check the Total Balance, This is the number AGI token you have in Metamask wallet
-5.	In the Manage your Escrow account section, Enter the amount of money you want to deposit to the Escrow wallet
-6.	Click Deposit. A Metamask Window should pop-up. If it Metamask Window does not pop-up, click on the Metamask icon on the top of your browser.
-7.	Check the transaction and click confirm.
-8.	Wait for the transactions to be mined.
-9.	This is two step transactions; you will need to confirm both steps.(Gas fee and Total)
-10.	Wait for the transactions to be mined again
-11.	Confirmation message show that the token has been deposited to the Escrow wallet 
-12.	You might need to refresh if your token still appears as authorized.
-
-### To  call a service
-
-1.	View a list of service from the home page.
-2.	Filter the list by using the search text box.
-3.	Look for  image recognition service
-4.	Click on **Details**. 
-    An overview dialog box displays on the right. On the top you can view a brief description of the service.
-5.	The below section shows the amount that will be deposited in the payment channel and the blocknumber when the block will expire
-6.	Click on the **Start job**
-    This will ask for a signature on the Metamask, since you will be opening a Payment channel
-8.	Click Sign, followed by reserved funds. 
-    You must edit the Amount and Expiration before confirming this step. And wait for it to be mined.
-9.	Now you have the access to the invoke section of the service 
-    The interface will change according to the input need for each service.
-11.	Choose a Method to identify the service -  An Image
-12.	After setting-up all that you need,  click the **Invoke**.
-13.	Sign the Metamask transaction to send the service to the Blockchain
-14.	Wait for the response
-15.	You can up vote or down vote hope on the decentralized market curation
-
-Not only have bought service, you have also opened a Payment channel with it and continue to use until it expires. 
-
-### claim back the reserved fund
-1.	Go the **Account** page
-    If there is any expired channel it displays under the **Expired Channel Details** section
-3.	Select the channel you want to claim
-4.	Click **Claim Channel**
-5.	Confirm this transaction on Metamask
-6.	Wait for it to mined
-    Displays the message confirming that funds have been successfully claimed.  Once you do this, the payment channel you claimed is unlisted.
-
-### Withdraw tokens from Escrow wallet to Metamask
-1.	Go to the **Account** page
-2.	In the**Manage your Escrow account** section, select  **Withdraw**
-3.	Confirm that you have sufficient funds in the Escrow wallet.
-4.	Enter the money you want to withdraw and click **Withdraw**
-5.	Confirm this transaction on the Metamask
-6.	Wait for it to be mined
-    A message displays that the withdraw has been successful
-8.	Refresh the page to see the balance is updated.
-    You will be able to see the token back in to your Metamask wallet. 
