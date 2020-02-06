@@ -190,12 +190,13 @@ section.snet-herobanner{
             font-weight: 400;
             font-size: 14px;
         }
-        input[type="text"]{
+        input[type="email"]{
             margin: 0;
             border: none;
             height: 38px;
             border-radius: 2px;
             width: 256px;
+            padding-left: 6px;
         }
         input[type="submit"]{
             font-size: 14px;
