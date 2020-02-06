@@ -14,25 +14,34 @@ body{
 }
 header{
     background-color: #220D3A; 
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);       
+    height:70px;
+    position:relative;
     .snet-navbar_primary{
-        padding: 12px 65px 4px 60px;
-        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);   
+        //padding: 12px 0px 4px 15px;
+        padding:11px 16px 11px 16px; 
         h1{
             font-size: 16px;            
+            margin: 0 48px 0 0;
+            padding: 0;
         }
         .navbar-toggler-icon i{
             color: #fff;
         }    
         .navbar-brand {
             margin: 0;
-            padding: 0;
+            padding:0;
+            display:block;
             img{
-                width: 172px;    
+                display: block;
+                height: 48px;                
+                //width: 172px;    
+                //width:290px;
             }    
         } 
         .snet-navbar_menu,
         .snet-navbar_login{
-            margin-bottom: 10px;    
+            //margin-bottom: 10px;    
             .nav-item{
                 margin-right: 40px;
                 position: relative;
@@ -44,20 +53,24 @@ header{
         .snet-navbar_menu{          
             .nav-item{
                 cursor:pointer;
+                .dropdown-menu,
                 .snet_slidingDropdown{
                     position: absolute;
-                    min-width: 100%;
+                    top:80%;
+                    left: -1px;
+                    min-width: 105%;
                     width: auto;                    
-                    background-color: #220D3A;    
-                    max-height:0;
+                    //background-color: #220D3A;   
+                    background-color: #fff;                       
+                    //max-height:0;
                     overflow: hidden;
                     transition: max-height 0.3s ease-in;   
                     z-index: 1025;                    
                     a{
-                        font-size:14px;                        
-                        padding: 10px!important;
+                        font-size:16px;                        
+                        padding: 10px 16px!important;
                         color: #9B9B9B;
-                        border-bottom: 2px solid #220D3A;   
+                        border-bottom: 2px solid #fff;   
                         &:hover{
                             color: #220D3A;
                         }
@@ -69,13 +82,15 @@ header{
                         color: #fff;
                         border-bottom: 2px solid #fff;   
                     }
+                    .dropdown-menu,
                     .snet_slidingDropdown{
                         background-color: #220D3A;  
+                        background-color: #fff;                          
                         max-height: 200px;
                         a{
-                            padding: 10px!important;
+                            padding: 10px 16px!important;
                             color: #9B9B9B;
-                            border-bottom: 2px solid #220D3A;   
+                            border-bottom: 2px solid #fff;   
                             &:hover{
                                 color: #220D3A;
                             }
@@ -135,7 +150,7 @@ header{
 
 
 .snet-navbar_secondary{
-    padding: 12px 65px 12px 60px;  
+    padding: 12px 0px 12px 0px;  
     background: #f1f1f1;
     border-bottom: solid 1px #DBE3E7;    
     z-index:1024;
@@ -143,7 +158,12 @@ header{
         width: 30%;
         font-weight: normal;
         font-size: 18px;
-        margin: 0;        
+        margin: 0;     
+        padding: 0 0 0 15px;
+        display: inline-block;
+    }
+    #secondary-menu{
+        display: inline-block;                        
     }
     .snet-navbar_navigation{
         margin: 0;
@@ -363,7 +383,7 @@ h2 .title-anchor-link{ display: none;}
 h3 .title-anchor-link{ display: none;}
 h4 .title-anchor-link{ display: none;}
 h5 .title-anchor-link{ display: none;}
-table {border-style: groove}
+//table {border-style: groove}
 /*==============================================================================*/
 /* Left Side Navigation */
 /*==============================================================================*/
@@ -577,7 +597,7 @@ table {border-style: groove}
         p{
             margin-top: 0;   
             font-size:14px;
-            line-height:21px;
+            line-height:22px;
             color:#666;
             letter-spacing:0px;
             &.spacer{
@@ -620,6 +640,111 @@ table {border-style: groove}
                 text-decoration: underline;                
             }
         }
+        table{
+            border: solid 1px #f1f1f1;
+            width: 100%;
+            margin-bottom:24px;
+            tr{
+                th{
+                    font-weight: 600;
+                    color: #212121;
+                    padding: 6px;
+                }
+                td{
+                    color: #666;
+                    padding: 4px 6px;     
+                }
+                &:nth-child(2n){
+                    td{
+                        background: #f6f6f6;                        
+                    }
+                }  
+            }
+        }
+        pre{
+            overflow: auto;
+            border-left: 8px solid #212121;
+            margin: 0 0 1.25rem 0;
+            -webkit-overflow-scrolling: touch;
+            font-size: 0.9rem;            
+            &.highlight{
+                background: #220D3A;
+                color: #f8f8f2;
+                padding: 1.5625rem;   
+                code{
+                    color: #f8f8f2;
+                    background: #220D3A;   
+                    .c{color:#75715e}
+                    .err{color:#960050;background-color:#1e0010}
+                    .k{color:#66d9ef}
+                    .l{color:#ae81ff}
+                    .n{color:#f8f8f2}
+                    .o{color:#f92672}
+                    .p{color:#f8f8f2}
+                    .ch{color:#75715e}
+                    .cm{color:#75715e}
+                    .cp{color:#75715e}
+                    .cpf{color:#75715e}
+                    .c1{color:#75715e}
+                    .cs{color:#75715e}
+                    .gd{color:#f92672}
+                    .ge{font-style:italic}
+                    .gi{color:#a6e22e}
+                    .gs{font-weight:bold}
+                    .gu{color:#75715e}
+                    .kc{color:#66d9ef}
+                    .kd{color:#66d9ef}
+                    .kn{color:#f92672}
+                    .kp{color:#66d9ef}
+                    .kr{color:#66d9ef}
+                    .kt{color:#66d9ef}
+                    .ld{color:#e6db74}
+                    .m{color:#ae81ff}
+                    .s{color:#e6db74}
+                    .na{color:#a6e22e}
+                    .nb{//color:#f8f8f2;
+                        color:#bda0d4;}
+                    .nc{color:#a6e22e}
+                    .no{color:#66d9ef}
+                    .nd{color:#a6e22e}
+                    .ni{color:#f8f8f2}
+                    .ne{color:#a6e22e}
+                    .nf{color:#a6e22e}
+                    .nl{color:#f8f8f2}
+                    .nn{color:#f8f8f2}
+                    .nx{color:#a6e22e}
+                    .py{color:#f8f8f2}
+                    .nt{color:#f92672}
+                    .nv{color:#f8f8f2}
+                    .ow{color:#f92672}
+                    .w{color:#f8f8f2}
+                    .mb{color:#ae81ff}
+                    .mf{color:#ae81ff}
+                    .mh{color:#ae81ff}
+                    .mi{color:#ae81ff}
+                    .mo{color:#ae81ff}
+                    .sa{color:#e6db74}
+                    .sb{color:#e6db74}
+                    .sc{color:#e6db74}
+                    .dl{color:#e6db74}
+                    .sd{color:#e6db74}
+                    .s2{color:#e6db74}
+                    .se{color:#ae81ff}
+                    .sh{color:#e6db74}
+                    .si{color:#e6db74}
+                    .sx{color:#e6db74}
+                    .s1{color:#e6db74}
+                    .ss{color:#e6db74}
+                    .bp{color:#f8f8f2}
+                    .fm{color:#a6e22e}
+                    .vc{color:#f8f8f2}
+                    .vg{color:#f8f8f2}
+                    .vi{color:#f8f8f2}
+                    .vm{color:#f8f8f2}
+                    .il{color:#ae81ff}                    
+                }
+            }            
+        }        
     }
 } 
 .snet-card .snet-card_maincontents .snet-forum_question{
@@ -706,6 +831,7 @@ table {border-style: groove}
             display: none;
         }
         #secondary-menu{
+            //padding-left: 15px;              
             margin:0 auto;
             .snet-navbar_navigation{
                 display: block;
@@ -738,7 +864,10 @@ table {border-style: groove}
     }   
     .wrapper{
         width:576px;
-    }      
+    }     
+    #secondary-menu{
+        padding-left: 15px;    
+    }    
     .snet-nav_list{
         li{
             a{
@@ -784,6 +913,9 @@ table {border-style: groove}
     .wrapper{
         width:768px;
     }   
+    #secondary-menu{
+        padding-left: 15px;    
+    }
     .snet-navbar_secondary{
         h1{
             display: none;
