@@ -361,7 +361,7 @@ ai-consumers:
           cta: Read more
           url: '/docs/ai-consumers/marketplace'
         keyterms:
-          title: Marketplace Dapp
+          title: Key Terms
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/key-terms'
