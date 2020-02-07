@@ -1,3 +1,21 @@
+
+
+# Market Place
+dev_news: true
+
+# Micro navigation
+micro_nav: true
+
+# Page navigation
+page_nav:
+    prev:
+        content: Concepts Overview
+        url: '/docs/concepts'
+    next:
+        content: SingularityNET Services
+        url: '/docs/concepts/service'
+---
+
 #### IPFS:  
 The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to
 store and share data in a distributed file system. IPFS uses content-addressing to uniquely

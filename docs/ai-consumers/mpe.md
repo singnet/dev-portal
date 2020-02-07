@@ -127,7 +127,7 @@ If Jack is buying services from the Kevin, they both need to enter in to a forma
 
 The same process follows for future calls authorizations of cogs.
 
-   
+  
 ### Postponing the Expiration Time of the Channel
 With the following functions the client can postpone the expiration time of the channel and can add funds to the channel at any time and can also claim all funds from the channel after the expiration time is reached.
 
@@ -167,7 +167,15 @@ The recipient has two possibilities:
 * The `nonce` in the channel prevents a race between the `channelExtendAndAddFunds` and `channelClaim`. If the client sends the `channelExtendAndAddFunds` request and at the same time the
 server sends a `channelClaim` request, they can continue to work without receiving confirmation from the blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
 
-#MPE-stateless-client
+
+
+# MPE Stateless Client 
+The Client does not have to maintain the state of the last amount it had signed
+ The client can request the last state of the given payment channel from the server.
+    * The server is not able to forge this state, because it was signed by the client (of course the client should check its own signature).
+    * The server is obviously interested in saving and sending the last state, otherwise it loses money.
+    
+
 This section describes how the client communicates with the SingularityNET services using the Multi-Party Escrow payment channels without storing state of the payment channel. 
 The client needs to store the Ethereum identity as follows:
 1.	The client obtains the list of payment channels (payment channels with "sender==client") from the Multi-Party Escrow (see EventChannelOpen). 
