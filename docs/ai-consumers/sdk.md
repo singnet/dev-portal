@@ -44,7 +44,7 @@ The SDK can include several default funding strategies for payment channels, but
 
 The SDK, in combination with the CLI, simplifies the process of fetching the latest service specification for dependent services, and compiles the proto definitions, so that the services can be invoked with minimal fuss.
 
-Currently, a fully functional a [preliminary version of a Python SDK](https://github.com/singnet/snet-sdk-python) is available, which forms the basis for the [SDK tutorial](/tutorials/sdk), but has  [revealed several design concerns](https://github.com/singnet/snet-sdk-python/issues/16).
+Currently, a fully functional a [preliminary version of a Python SDK](https://github.com/singnet/snet-sdk-python) is available, which forms the basis for the [SDK tutorial](/tutorials/sdk), but has  [some design improvements](https://github.com/singnet/snet-sdk-python/issues/16).
 
 Work is in process towards an [SDK for Javascript](https://github.com/singnet/snet-sdk-js), and intend to support other popular languages and welcome third party contributions for people's favourite languages.
 

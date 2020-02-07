@@ -406,12 +406,12 @@ ai-consumers:
           title: snet-cli
           excerpt: 
           cta: Read more
-          url: '/docs/ai-consumers/snet-cli-tutorial.md'
+          url: '/docs/ai-consumers/snet-cli-tutorial'
         sdk:
           title: SDK
           excerpt: 
           cta: Read more
-          url: '/docs/ai-consumers/sdk-tutorial.md'
+          url: '/docs/ai-consumers/sdk-tutorial'
   troubleshooting:
       title: Troubleshooting
       excerpt: How to communicate with SingularityNET services with the stateless method.
