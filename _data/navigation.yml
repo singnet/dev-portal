@@ -364,7 +364,7 @@ ai-consumers:
           title: Key Terms
           excerpt:
           cta: Read more
-          url: '/docs/ai-consumers/key-terms'
+          url: '/docs/ai-consumers/keyterms'
 
   payments:
     title: Payments

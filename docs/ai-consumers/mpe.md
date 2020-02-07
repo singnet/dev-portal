@@ -167,6 +167,8 @@ The recipient has two possibilities:
 * The `nonce` in the channel prevents a race between the `channelExtendAndAddFunds` and `channelClaim`. If the client sends the `channelExtendAndAddFunds` request and at the same time the
 server sends a `channelClaim` request, they can continue to work without receiving confirmation from the blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
 
+### Contract Addresses
+[Click here](https://github.com/singnet/platform-contracts#deployed-contracts-npm-version-033)
 
 
 # MPE Stateless Client 

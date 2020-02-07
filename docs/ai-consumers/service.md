@@ -26,10 +26,6 @@ There are three ways of providing metadata details to the clients and the daemon
 
 **Note:** The client using the mpe_address from the metadata should not adhere to this as a primary source of information, for the sake of security. The client should check that this address corresponds to the expected mpe_address . 
 
-The following are the defaults MPE addresses for various networks:
-- Mainnet - 0x9c9252ec9fa844e2c7bd2e6f54bec2901938479f
-- Ropsten - 0x7e6366fbe3bdfce3c906667911fc5237cc96bd08
-- Kovan (deprecated) - 0x39f31ac7b393fe2c6660b95b878feb16ea8f3156
 
 **Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack 
 **Note:** By default, the snet-cli adheres to this verification. 

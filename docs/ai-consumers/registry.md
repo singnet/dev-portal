@@ -56,6 +56,9 @@ information for a consumer to call that AI service. The entry contains a name, t
 hash. The name is an identifier for discoverability, the tags help a customer find a service
 without knowing its name, and the IPFS hash is the link to the metadata file on IPFS. DApps and smart contracts can use the `listServicesForTag` view function to discover Services.
 
+### Contract Addresses
+[Click here](https://github.com/singnet/platform-contracts#deployed-contracts-npm-version-033)
+
 ### Service Metadata
 All service metadata is stored off-chain in IPFS for performance and gas-cost reasons. This
 metadata includes

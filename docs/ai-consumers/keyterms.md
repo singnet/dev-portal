@@ -1,4 +1,18 @@
+---
+# Page settings
+layout: default
+keywords:
+comments: false
 
+# Hero section
+title: AI Consumers
+
+# extralink box
+extralink:
+    title: All Docs
+    title_url: '/docs'
+    external_url: false
+    description: Find an overview of our full documentation here.
 
 # Market Place
 dev_news: true
