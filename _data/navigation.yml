@@ -360,6 +360,11 @@ ai-consumers:
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/marketplace'
+        keyterms:
+          title: Marketplace Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/key-terms'
 
   payments:
     title: Payments
