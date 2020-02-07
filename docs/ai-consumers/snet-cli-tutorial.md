@@ -55,7 +55,7 @@ To use the faucet you need to [create a wallet](/docs/ai-consumers/wallet), and 
 
 ### Step 2. Get some AGI
 
-We provide a faucet to get AGI for either Ropsten or Kovan networks: https://faucet.singularitynet.io/
+We provide a faucet to get AGI for either Ropsten or Kovan [networks](https://faucet.singularitynet.io/)
 
 You'll need a github account to authenticate, and there after you can request AGI every 24 hours. 
 
