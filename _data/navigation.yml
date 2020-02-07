@@ -401,7 +401,7 @@ ai-consumers:
           title: How to Create a Wallet?
           excerpt: 
           cta: Read more
-          url: '/docs/ai-consumers/create-a-wallet'      
+          url: '/docs/ai-consumers/wallet'
         snet-cli:
           title: snet-cli
           excerpt: 

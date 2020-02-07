@@ -1,11 +1,11 @@
-# Page settings
 ---
+# Page settings
 layout: default
 keywords:
 comments: false
 
 # Hero section
-title: AI Consumers
+title: Wallet
 
 # extralink box
 extralink:
@@ -20,7 +20,15 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
+page_nav:
+    prev:
+        content: Software
+        url: '/docs/concepts/software'
+    next:
+        content: SDK
+        url: '/docs/concepts/sdk'
 ---
+
 
 ## Step 1. Metamask
                                                                                                                 

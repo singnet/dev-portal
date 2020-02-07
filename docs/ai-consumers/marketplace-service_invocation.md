@@ -33,10 +33,9 @@ page_nav:
 ## Calling a Service
 
 
+
 All complexity of invoking a service is abstracted from the users.
-
 For example it becomes easy for the user to Input the values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC calls/generating signatures for authorization to call a  service.  
-
 
 
 Please note that the the Marketplace offers a **free trial** version, where registered users can access service(s) for a specified number of calls. 
@@ -44,7 +43,9 @@ Please note that the the Marketplace offers a **free trial** version, where regi
 ![marketplace](/assets/img/dapp/free_call_feature.png)
 
 
-Once your freecalls are exhausted , you will need to pay for any new calls to the service.
+Once your freecalls are exhausted , you will need to pay for any new calls to the service. for this you need need a wallet, some ethers in your wallet , some AGI in your wallet 
+
+
 ***You can either pay through Metamask or through a General wallet(paypal)***
 
 - Select a Wallet -
