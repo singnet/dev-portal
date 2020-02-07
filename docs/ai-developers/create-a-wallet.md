@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords:token
 comments: false
 
 # Hero section
@@ -34,6 +34,11 @@ Install Metamask now from their website.
 In the initial startup, Metamask must prompt you to create an identity, which can be used in Blockchain transactions and for storing tokens.
                                                                                                                 
 To learn more about this, watch the video uploaded on the website or  read about how to us the extensions.
+                    
+                    
+You can also do this using the snet-cli commands
+
+
                                                                                                                 
 ## Step 3. What are the different networks?
                                                                                                                 

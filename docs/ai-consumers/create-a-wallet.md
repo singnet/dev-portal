@@ -33,7 +33,16 @@ Install Metamask now from their website.
 In the initial startup, metamask should prompt you to create an identity which can be used in Blockchain transactions and for storing tokens.
                                                                                                                 
 To learn more about this, watch the video uploaded on the website or  read about how to us the extensions.
-                                                                                                                
+
+You can also create an identity using the snet-cli commands
+for further details [click here](http://snet-cli-docs.singularitynet.io/identity.html)
+``` editorconfig
+snet identity create [-h] [--mnemonic MNEMONIC] [--private-key PRIVATE_KEY]
+                     [--keystore-path KEYSTORE_PATH] [--network NETWORK]
+                     [--wallet-index WALLET_INDEX]
+                     IDENTITY_NAME IDENTITY_TYPE                                                                     
+```                     
+                     
 ## Step 3. What are the different networks?
                                                                                                                 
 All real value transactions occur in either "Main Ethereum Network" or "Mainnet Network". The other available networks are for testing purposes, and
