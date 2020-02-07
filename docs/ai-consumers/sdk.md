@@ -23,22 +23,20 @@ micro_nav: true
 ---
 # Introduction to SDK
 
+SDK is a tool for AI customers to make calls to services.
+
 The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorisations.
 
 **Note**:  SDK uses gRPC protocol for communication 
 
-The SDK is from the consumer perspective and from the service developers, such as follows:
-
-    * Managing a service 
-    * Accessing a service
-
-SDK is a tool for AI customers to make calls to services.
 
 There are three types of SDK available:
 
 - SDK in JAVA
 - SDK in Python
 - SDK in NodeJS
+
+All SDKs provided adhere to the same design standard and strategy
 
 **Note**:  According  to the design pattern for the  SDK modules such as functionality, need to be available in all programming languages, such as Java, Python and NodeJS. 
 

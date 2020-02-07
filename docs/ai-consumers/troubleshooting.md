@@ -16,29 +16,21 @@ micro_nav: true
 
 #Common errors returned by the Daemon
 
-###Payment signer is not valid
-
-Check if the port number of your daemon matches exactly to what was deployed on Service metadata.
-
-For Ropsten make sure you have the below config 
-```
-"free_call_signer_address": "0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F",
-"metering_end_point": "https://ropsten-marketplace.singularitynet.io/metering",
-```
-
-For mainnet make sure you have the below config 
-```
-"free_call_signer_address":"0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf",
-"metering_end_point": "https://mainnet-marketplace.singularitynet.io/metering",
-```
-
 ### Free call limit has been exceeded.
 You have exceeded the number of permitted free calls. So, calls can now be done only using the paid mode alone 
 
-- End point deployed from Service metadata should be assigned to the same port / domain the daemon is starting. 
 
 ### Rate limiting, too many requests to handle”
 The number of request has increased along with the rate limiting, either retry again later or configure your daemon for [rate limiting](https://github.com/singnet/snet-daemon/tree/master/ratelimit) 
 
-### Unexpected payment type”
+### Unexpected payment type
 The supported payment types are free-call / escrow
+
+### If the service is not available on Dapp
+If you see the service published on block chain , but not on Dapp , then it is very likely that the service is under curation 
+
+If you see a service on Dapp , but is shown as "Not Available", then it is very likely that the end point is temporarily down. You can use the contact-support for any questions
+
+### Lost the private key to your general wallet
+You will not be able to link this wallet to an other organization , you can however
+continue to use the funds deposited on existing channel or even Top up ( add more funds to your channel)
