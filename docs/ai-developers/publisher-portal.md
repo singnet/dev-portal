@@ -15,7 +15,7 @@ micro_nav: true
 Goal is to help the developers easily publish and manage their organizations
 and services using the publisher portal
 You can list your services on to the marketplace Dapp easily making it very simple for your users to search and use your service.
-   
+ *** Publisher portal will be live by March ***  
 
 ## On boarding an Organization 
 All relevant data to publish your Organization can now be entered through simple forms abstracting all the complexity on doing it through command line interface.Please note once the basic on boarding details are entered, a
@@ -46,4 +46,8 @@ Once all the details are entered, a review is triggered for the singularity team
 on boarding any service on to market place Dapp
 ![Service Review](/assets/img/publisher/Publish_Service_onbloackhain_0.png) 
 
-![Publish Service on Blockchain](/assets/img/publisher/Publish_Service_onbloackhain_1.png.png) 
+![Publish Service on Blockchain](/assets/img/publisher/Publish_Service_onbloackhain_1.png) 
+
+## Claim easily from Publisher portal
+Claims can now be very easily done using the publisher portal
+![Claim](/assets/img/publisher/claim.png) 
