@@ -1,0 +1,104 @@
+/* 
+    Created on  : Jan 15, 2020, 12:12:14 PM
+    Author      : Sujith Varma [sujith.varma@singularitynet.io]
+    NOTES       : THIS FILES NEEDS OPTIMIZATION
+*/
+//$xs:
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+//mobile
+//@media only screen and (max-width: 768px)
+//xs
+//@media only screen and (max-width: 575px) 
+//sm
+//@media only screen and (min-width: 576px) and (max-width:767px)
+//md
+//@media only screen and (min-width: 768px) and (max-width:991px)
+//lg
+//@media only screen and (min-width: 992px) and (max-width:1199px)
+//xl
+//@media only screen and (min-width: 1200px) 
+
+@mixin mobile {
+    @media only screen and (max-width: #{$md - 1px}) {
+        @content;
+    }
+}
+@mixin xs {
+    @media only screen and (max-width: #{$sm - 1px}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media only screen and (min-width: #{$sm}) and (max-width: #{$md - 1px}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media only screen and (min-width: #{$md}) and (max-width: #{$lg - 1px}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media only screen and (min-width: #{$lg}) and (max-width: #{$xl - 1px}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media only screen and (min-width: #{$xl}) {
+        @content;
+    }
+}
+
+@mixin responsive-check( $check:0) {
+    body{
+        @if $check == 0 {
+            @include xs{
+                background: red;
+            } 
+            @include sm{
+                background: yellow;
+            }        
+            @include md{
+                background: green;
+            }
+            @include lg{
+                background: blue;
+            }
+            @include xl{
+                background: purple;
+            }
+        }
+        @else {       
+            @include mobile{
+                background: orange;
+            }            
+            @include md{
+                background: green;
+            }
+            @include lg{
+                background: blue;
+            }
+            @include xl{
+                background: purple;
+            }
+        }        
+    }  
+}
+
+@mixin header-generator($font-size, $letter-spacing, $margin-bottom, $font-weight:500) {
+    padding: 0;
+    border: none;
+    color: #212112;
+    font-size:$font-size + 0px;
+    letter-spacing: $letter-spacing + 0px;
+    margin-bottom: $margin-bottom + 0px;    
+    font-weight: $font-weight;    
+}

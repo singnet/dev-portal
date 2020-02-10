@@ -81,7 +81,7 @@ $screen-md-max: ($screen-lg-min - 1) !default;
 
     img {
         display: block;
-        width: 15.625rem;
+        width: 9rem;
     }
 }
 .secondary-footer{
@@ -181,6 +181,35 @@ $screen-md-max: ($screen-lg-min - 1) !default;
             a{
                 color: #fff;                
             }
+        }
+    }
+}
+@include mobile{
+    .site-footer__logo{
+        float: left!important;
+        margin-bottom: 10px;
+        &:after{
+            content: "";
+            display: block;
+            clear: both;
+            height: 1px;
+            width: 100%;
+                
+        }
+    }
+    .row.footer-links .logo{
+        border: none;
+    }
+    .row.footer-links h6{
+        margin-left: 0;
+    }
+    .row.footer-links ul.footer-links{
+        display: block;
+        width: 100%;
+        margin-left:0;
+        li{
+            float: none;
+            text-align: left;
         }
     }
 }
