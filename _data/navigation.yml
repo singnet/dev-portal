@@ -489,7 +489,7 @@ ai-developers:
     title: Organization Setup
     children:
         etcd:
-          title: etcd
+          title: Etcd Setup
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/etcdsetup'
