@@ -40,6 +40,18 @@ The etcd cluster has been set up from the previous step and you need to use the 
 ```sh
 snet organization add-group <group_name> <wallet_address> <etcd-end-point>
 ```
+Add in any images related to your organization 
+
+```sh
+snet organization metadata-add-assets [-h] [--metadata-file METADATA_FILE] ASSET_FILE_PATH ASSET_TYPE
+```
+
+Add in any contact details related to your organization
+```sh
+snet organization metadata-add-contact [-h] [--phone PHONE] [--email EMAIL]
+                                       [--metadata-file METADATA_FILE]
+                                       contact_type
+```
 
 Now check the metadata file created 
 
