@@ -492,7 +492,7 @@ ai-developers:
           title: etcd
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/etcd'
+          url: '/docs/ai-developers/etcdsetup'
         publish-organization:
           title: Publish Organization on Blockchain
           excerpt: 
