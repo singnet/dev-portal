@@ -41,7 +41,7 @@
                         <div class="col-xs-12 col-md-4 byuser-cards">
                             <div class="snet-card full-height">
                                 <div class="snet-card_content">
-                                    <div class="snet-card_topimage by_user">
+                                    <div class="snet-card_topimage vector-fix">
                                         <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.img }}">                                             
                                     </div>
                                     <h3 class="snet-card_title">{{ item.title }}</h3>
@@ -70,7 +70,7 @@
                             <a href="{{ item.url }}">
                                 <div class="snet-card full-height">
                                     <div class="snet-card_content">
-                                        <div class="snet-card_topimage">
+                                        <div class="snet-card_topimage vector-fix">
                                             <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.img }}">                                                                                         
                                         </div>
                                         <h3 class="snet-card_title">{{ item.title }}</h3>
