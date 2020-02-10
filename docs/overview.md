@@ -3,7 +3,7 @@
 layout: overview
 keywords:
 title: Getting Started
-description: The best way to get started is by understanding the platform that powers the decentralized blockchain marketplace. Here is a high level view on how SingularityNet's platform works for you.                                                
+description: The best way to get started is by understanding the platform that powers the decentralized blockchain marketplace. Here is a high level view on how SingularityNet's platform works for you.
 img: 'Tutorials_1.svg'
 
 # Getting Started Cards    

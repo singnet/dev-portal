@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:token
+keywords: token
 comments: false
 
 # Hero section

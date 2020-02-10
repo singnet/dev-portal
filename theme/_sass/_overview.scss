@@ -73,6 +73,7 @@ section{
     p{
         &.big{
             margin: 0;
+            padding: 0 8px 8px 8px;
             font-weight: 300;
             font-size: 18px;
             color: #666;            
@@ -117,5 +118,14 @@ section{
                 }
             }
         }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:991px){
+    .snet-card_topimage{
+        height: auto;
+    }
+    .snet-card_topimage.by_user img{
+        //height: 60%;
     }
 }

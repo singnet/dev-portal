@@ -6,8 +6,6 @@
     <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
         {% include site-header.html %}  
 
-
-
         <div class="wrapper">
             <div class="container-fluid mt-1">
                 <section class="snet-section_gettingstarted">
@@ -17,23 +15,17 @@
                                 <div class="snet-card_content">
                                     <h3 class="snet-card_title">{{ page.title }}</h3>                                    
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-12 col-sm-5 col-md-4 col-xl-3">
                                             <div class="snet-overviewimage">
                                                 <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ page.img }}">
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12 col-sm-7 col-md-8 col-xl-7">
                                             <p class="big">
                                                 {{ page.description }}
                                             </p>
-                                        </div>                                        
-                                        <div class="col-3">
-                                            <ul class="snet-card_list">
-                                                {% for item in page.gettingstarted_cards %}                                                
-                                                <li><a href="{{ item.url_link }}">{{ item.url_name }}</a></li>
-                                                {% endfor %}                                                                                                
-                                            </ul>                                             
-                                        </div>                                        
+                                        </div>    
+                                       
                                     </div>
                                 </div>
                             </div>  
