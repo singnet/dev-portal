@@ -487,7 +487,7 @@ ai-developers:
           title: Publish Organization on Blockchain
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/recepient-setup'
+          url: '/docs/ai-developers/organization-setup'
   service-setup:
     title: Service Setup
     children:
@@ -505,11 +505,16 @@ ai-developers:
   daemon-setup:
     title: Daemon Setup
     children:
-      snet-daemon:
-        title: snet-daemon
+      snet-daemon-ssl-setup:
+        title: Daemon SSL setup
         excerpt:
         cta: Read more
-        url: '/docs/ai-developers/daemon-setup'
+        url: '/docs/ai-developers/daemon-ssl-setup'
+      snet-daemon:
+        title: Launching Daemon
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/launching-daemon'
   claims:
     title: Claims
     excerpt:
