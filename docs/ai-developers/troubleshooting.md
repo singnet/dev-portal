@@ -174,21 +174,13 @@ If the issue is still unresolved, contact the #services-integration channel
 
 ## Common errors returned by the Daemon
 
-###Payment signer is not valid
+### Payment signer is not valid for free calls
 
 Check if the port number of your daemon matches exactly to what was deployed on Service metadata.
-
-For Ropsten make sure you have the below config 
-```
-"free_call_signer_address": "0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F",
-"metering_end_point": "https://ropsten-marketplace.singularitynet.io/metering",
+```bash
+ snet service metadata-set-freecall-signer-address default_group $SIGNERADDRESS --metadata-file $MD_FILE
 ```
 
-For Mainnet make sure you have the below config 
-```
-"free_call_signer_address":"0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf",
-"metering_end_point": "https://mainnet-marketplace.singularitynet.io/metering",
-```
 
 ### Free call limit has been exceeded.
 You have exceeded the number of permitted free calls. So, calls can now be done only using the paid mode alone 
