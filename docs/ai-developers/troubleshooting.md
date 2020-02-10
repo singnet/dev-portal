@@ -27,7 +27,7 @@ Alert messages are sent through the mail id : [test-no-reply@singularitynet.io](
 Subject : The service example-service is terminated for ropsten network
 
 
-### What to do when I receive an alert ?
+### What to do when I receive an alert?
 - Check whether the daemon end point heartbeats are healthy, and view the daemon logs
 - Restart the daemon, and analyse why the daemon has suspended.
 - Incorporate the post details in the document here as well. 
@@ -37,7 +37,7 @@ Subject : The service example-service is terminated for ropsten network
 The platform uses exponential back-off retry to test the health of the service. Each time a health check fails, an email message is sent to Service developer ( progressive delay in the next health check ). 
 
 
-**Note**: The maximum time a test on the health service is 12hrs.
+**Note**: The maximum time a test can take on the health service is 12hrs.
 
 ### How to configure service metadata to receive alerts ?
 Obtain the latest version of snet-cli and run the following command:
@@ -113,7 +113,7 @@ server {
     grpc_pass grpc://reroute_url;
     }}
  
-The above config works based on the content-type of the request , whenever the grpc-web(dapp) makes a call to nginx, the content-type would be application/grpc-web and this content-type is not been handled by nginx with grpc_pass.
+The above config works based on the content-type of the request. Whenever the grpc-web(dapp) makes a call to nginx, the content-type would be application/grpc-web and this content-type is not been handled by nginx with grpc_pass.
 Hence, only those requests with grpc specified  content-type application/grpc+(proto|json|customType) works with grpc_pass while rest of the requests will work with proxy_pass.
 
 
@@ -158,7 +158,7 @@ snet service metadata-add-daemon-addresses default_group $DAEMONADDRESS --metada
 ```
 
 ### Unable to create etcd client
-To learn about how to configure the etcd certificate configuration with an example, refer to the [document](https://docs.google.com/document/d/1w9zYYB5HxrlXCgUKzCsgGbXRGzm75Cm0n0qbPeMhrRU/edit#heading=h.gtjqvnsibkk3) 
+To learn about how to configure the etcd certificate, refer to the [document](https://docs.google.com/document/d/1w9zYYB5HxrlXCgUKzCsgGbXRGzm75Cm0n0qbPeMhrRU/edit#heading=h.gtjqvnsibkk3) for configuration with example. 
 
 ### Metering authentication failed. Please verify the configuration”
 When you enable the free calls and Metering, specify the private key to initialize the Daemon. The Daemon will initialize, only if the configured Pvt key config matches the public Address of the Daemon registered for metering.
@@ -196,7 +196,7 @@ The supported payment types are free-call / escrow
 ## Common Daemon warnings (in the logs)
 
 ### “Unable to publish metrics”
-If you make calls using  SDK / snet-cli, the issue is resolved once the daemon supports metering .
+If you make calls using SDK / snet-cli, the issue is resolved once if the daemon supports metering.
 
 ### Invalid hex address specified/missing for 'authentication_address' in configuration , you cannot make remote update to current configurations”
 Ignore: This was more towards the operator UI use case, need modification in the next release. 
@@ -211,7 +211,7 @@ In your daemon configuration. Ideally  you should have your own project Id on in
 
 
 
-### How do I set up a new host 
+### How do I set up a new host ?
 Typically you will need to do the below 
 - Domain Name 
 - GPU/Without GPU
@@ -236,25 +236,23 @@ pip install --upgrade snet-cli
  
 **Note**: manually configure the path to refer to this binary.
 
-
-
 ### When there is proto change?
 Ensure that you re deploy the service with the latest proto 
 ```
 snet service metadata-init --metadata-file $MD_FILE `pwd`/$YOURGITREPONAME/$PATHFORSERVICESPEC "$DISPLAYNAME" --encoding proto --service-type grpc --group-name default_group
 ```
-Also make sure , your stubs are updated on the Dapp Components
+Also make sure  your stubs are updated on the Dapp Components
 
 # DAPP
 
 ### My Service is not visible on Dapp 
-- Ensure whether the service has been published on the network you are testing?
+- Ensure the services have been published on the network for testing?
     
     If the service has been published successfully, then approach the channel ##services-integration to curate the service.
     
     After curation, the service becomes available on Dapp 
 
-- Keep the below links handy 
+- Keep the below links for reference 
     
     Dapp for Ropsten: http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
     
@@ -262,31 +260,29 @@ Also make sure , your stubs are updated on the Dapp Components
 
 ### How to make a call from the DAPP
 - Open the respective service’s page.
-- In the Service Demo section. You will see the Free calls pending count, provided that you are already logged in to the system.
-- Click on the RUN FOR FREE button. (If your free calls are exhausted, you will find options to create a wallet or to use your existing MetaMask wallet )
+- In the Service Demo section, you will notice the Free calls pending count, provided  you have already logged in to the system.
+- Click on the **RUN FOR FREE** button. (If your free calls are exhausted, you will find options to create a wallet or to use your existing MetaMask wallet )
     
     You will be taken to the service’s input screen.
 - Fill in the necessary details.
 - Click on INVOKE.
 
-**Note**: Don’t close the application, until the service is executes, and the results are displayed  on the same screen. 
+**Note**: Don’t close the application, until the results are displayed  on the same screen after service execution. 
 
 ### Where do I see the components I can reuse on Dapp 
 
-- Check for the reusable components’ code here  => snet-dapp-monorepo/packages/shared/src/components.
+- Check for the reusable components code here  => snet-dapp-monorepo/packages/shared/src/components.
 - You could also run yarn storybook to view the demo of the components.
-- While importing, Import the components from => snet-dapp-monorepo/packages/dist/components.
+- While importing, import the components from => snet-dapp-monorepo/packages/dist/components.
 
 ### How do I raise a Pull request for DApp
-- Raise pull requests against “snet-dapp-monorepo/development”.
-- Once it is merged in the development. It will be deployed to the ropsten network:http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
+- Raise pull requests using “snet-dapp-monorepo/development”.
+- After merging in the development. It will be deployed to the ropsten network:http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
 
 ### When does my Pull request gets merged to Master 
-- If your changes are shown in [ropsten](http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/). 
+- If your changes are seen in [ropsten](http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/). 
     
-    Inform the concerned authority to merge the changes from development to master. This is then deployed to mainnet network: http://beta.singularitynet.io/
+    Inform the concerned authority to merge the changes from development to master. This is then deployed to Mainnet network: http://beta.singularitynet.io/
     
 ### Whom and How  do I reach out for help/Support 
-Please use the email tech-support@singularitynet.io for any questions / issues related to platform 
-
-
+Use the email tech-support@singularitynet.io for any questions / issues related to the platform.
