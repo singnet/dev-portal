@@ -453,13 +453,13 @@ ai-developers:
   organization-setup:
     title: Organization Setup
     children:
-        snet-cli:
+        etcd:
           title: etcd
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/etcd'
-        sdk:
-          title: Recepient Setup
+        publish-organization:
+          title: Organization Setup
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/recepient-setup'
