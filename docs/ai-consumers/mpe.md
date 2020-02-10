@@ -81,6 +81,9 @@ If Jack is buying services from the Kevin, they both need to enter in to a forma
 7.	Kevin can now make a claim with the amount authorized.
     **Note:** Nonce increments to 1, when claim is performed.
     
+### Diagram showcasing how Kevin and Jack Communicate
+![Etcd Cluster Infrastructure](/assets/img/mpe/persona.png)    
+    
 ### State management of the channel 
 
 * Jack (Buyer) and Kevin (Service provider) enter into a contract for the first time, they create a channel details in the Blockchain is as follows: 
