@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: SingularityNET Marketplace
+title: AI Consumers
 
 # extralink box
 extralink:
@@ -29,13 +29,14 @@ page_nav:
         content: SingularityNET Services
         url: '/docs/concepts/service'
 ---
+## Introduction to SingularityNET Marketplace
 
-The [The SingularityNET Marketplace](http://beta.singularitynet.io)  is a decentralized application (DApp), which lists the available AI services and helps you to interact with those services through web interface. It also processes payment for services (through MetaMask) and conduct service ratings.
+The [The SingularityNET Marketplace](http://beta.singularitynet.io)  is a decentralized application (DApp), which lists the available AI services and helps you to interact with those services through web interface abstracting all the complexity in invoking a service. It also processes payment for services (through MetaMask/General Wallet)  and conduct service ratings.
 Whenever transaction happens on Blockchain, an event is created. The marketplace monitors all those events. 
-For example, if you publish a new organization, a new service, the marketplace receives an alert notification about published information in the Blockchain. The Blockchain reads the organization metadata, the service and the stores the data into the local database. This application efficiently displays allt the details in the marketplace quickly without relying on the slow performance of the Blockchain
-The following image shows the contents from the marketplace database.  
+For example, if you publish a new organization, a new service, the marketplace receives an alert notification about published information in the Blockchain. The marketplace reads the organization metadata, the service metadata and the stores this into its database. This application efficiently displays all the details quickly without relying on the slow performance of the Blockchain
+The following image shows the contents from the marketplace.  
 
-![marketplace](/assets/img/marketplace.png)
+![marketplace](/assets/img/dapp/dapp_landing_page.png)
 
 The decentralized application (DApp) does the following:
 - Reads data from the on-chain Registry and pairs it with off-chain metadata.
@@ -50,30 +51,11 @@ The decentralized application (DApp) does the following:
     
 - Integrates with Multi-Party Escrow, to allow consumers to pay for service usage;
     Allows consumers to rate about the utilized services
-    **Note:** This rating services will be part of the SingularityNET's Reputation System (currently under development). Currently, it is very difficult to rate services on blockchain. Therefore all rating mechanism are performed off chain and managed in the market place. So you can share your opinion and reviews at marketplace.
+    **Note:** This rating services will be part of the SingularityNET's Reputation System (currently under development). Currently, it is very difficult to rate services on Blockchain. Therefore all rating mechanism are performed off chain and managed in the market place. So you can share your opinion and reviews at marketplace.
     
 - Captures usage metrics at a consumer level.
 
-**Note:** Although, the SingularityNET platform is open and decentralized, the Marketplace is the SingularityNET Foundation's curated view. This allows the foundation to adhere to legal requirements of different legislative regions. Currently, the Marketplace and SingularityNET is in beta stage. For more information about the current status, refer to  current status page for changes, or follow the github repo. Page.
-
-## Calling a Service
-
-The Marketplace offers a free trial version, where registered users can access service(s) for a specified time period. After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. This extension mediates with the blockchain on behalf, helping you in transferring of tokens between wallets, and invoke contracts.
-Example: The sample service below shows the SingularityNET  platform can authorize Metamask:
-
-Image to be included
-
-- Select a Wallet -
-- General Account Wallet
-- Metamask
-
-**Important**: Metamask is a plugin which is available in SingularityNET platform. 
-
-This extension, allows you to perform the following in the context of the marketplace:
-- query what services are available
-- transfer AGI funds into escrow, 
-- setup payment channels to enable calls to any of the listed services.
-To learn more about how to get your wallet and install browser extension, see our Setup Guide.
+**Note:** Although, the SingularityNET platform is open and decentralized, the Marketplace is the SingularityNET Foundation's curated view. This allows the foundation to adhere to legal requirements of different legislative regions. Currently, the Marketplace and SingularityNET is in beta stage. For more information about the current status, refer to  current status page for changes, or follow the [git-repo](https://github.com/singnet/snet-dapp)
 
 ## Marketplace Requirements
 

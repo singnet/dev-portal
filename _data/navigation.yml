@@ -427,16 +427,41 @@ ai-developers:
   getting-started:
     title: Getting Started
     children:
+        mpe:
+          title: MPE
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/mpe'
+        registry:
+          title: Registry
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/registry'
         organization:
-          title: Organization
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/organization'
+            title: Organization
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/organization'
         service:
-          title: Service
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/service'
+            title: Service
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/service'
+        publisher-portal:
+            title: Publisher Portal
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/publisher-portal'
+        marketplace:
+            title: Marketplace Dapp
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/marketplace'
+        keyterms:
+            title: Key Terms
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/keyterms'
   payments:
     title: Payments
     children:
@@ -450,6 +475,11 @@ ai-developers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/tokens'
+        claims:
+          title: Claims
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/claims'
   organization-setup:
     title: Organization Setup
     children:
@@ -476,6 +506,20 @@ ai-developers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/daemon'
+
+  daemon-setup:
+    title: Daemon Setup
+    children:
+      snet-daemon:
+        title: snet-daemon
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/daemon-setup'
+      local-etcd:
+        title: Daemon on local Etcd
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/local-etcd'
   tutorials:
     title: Tutorials
     children:
@@ -494,6 +538,12 @@ ai-developers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/sdk'
+
+        publisher-portal:
+          title: Publisher Portal
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/publisher-portal-tutorial'
   troubleshooting:
       title: Troubleshooting
       excerpt:
