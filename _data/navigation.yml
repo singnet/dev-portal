@@ -492,15 +492,21 @@ ai-developers:
     title: Service Setup
     children:
         snet-cli:
-          title: Publish Organization on Blockchain
+          title: Publish Service on Blockchain
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/snet-cli'
-        sdk:
-          title: Daemon
-          excerpt: 
+          url: '/docs/ai-developers/service-setup'
+        invoke-serivce-snet-cli:
+          title: Invoking a Serice - snet-cli
+          excerpt:
           cta: Read more
-          url: '/docs/ai-developers/daemon'
+          url: '/docs/ai-developers/invoke-service-snet-cli'
+        invoke-serivce:
+          title: Invoking a Serice - Marketplace Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/marketplace-service_invocation'
+
 
   daemon-setup:
     title: Daemon Setup
