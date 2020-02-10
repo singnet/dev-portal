@@ -1,0 +1,280 @@
+.snet-card{
+    .snet-card_maincontents{
+        padding: 18px;
+        color: #666;
+        font-size: 14px;
+        line-height: 21px;
+        overflow: hidden;
+    }   
+}
+.snet-card{
+    .snet-card_maincontents{
+        h1{
+            @include header-generator(22,0.23,16);              
+        }
+        h2{
+            @include header-generator(20,0.21,14); 
+        }
+        h3{
+            @include header-generator(18,0.19,12);               
+        }
+        h4{
+            @include header-generator(16,0.17,10);              
+        }
+        h5{
+            @include header-generator(14,0.15,8);              
+        }
+        h6{
+            @include header-generator(14,0.15,8,400);               
+        }
+        p{
+            margin-top: 0;   
+            font-size:14px;
+            line-height:22px;
+            color:#666;
+            letter-spacing:0px;
+            &.spacer{
+                display: block;
+                width: 100%;
+                height: 1px;                
+            }
+            &+h1,
+            &+h2,
+            &+h3,
+            &+h4,
+            &+h5,
+            &+h6{
+                margin-top: 30px;                 
+            }            
+        }
+        img{ 
+            display: block;
+            margin: 8px auto 32px auto;
+            width: auto;
+            max-width: 90%;
+            border: solid 7px #fff;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);            
+        }
+        code{
+            font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+            color: #8824D1;
+            background: #EEEEEE;
+            padding: 0 5px;
+            border-radius: 2px;
+        }
+        ul{
+            list-style: disc;
+        }
+        ol{
+            list-style:decimal;
+        }
+        a{
+            color: #4086FF;
+            font-weight: 600;
+            &:hover{
+                color: #4086FF;
+                text-decoration: underline;                
+            }
+        }
+        table{
+            border: solid 1px #f1f1f1;
+            width: 100%;
+            margin-bottom:24px;
+            tr{
+                th{
+                    font-weight: 600;
+                    color: #212121;
+                    padding: 6px;
+                }
+                td{
+                    color: #666;
+                    padding: 4px 6px;     
+                }
+                &:nth-child(2n){
+                    td{
+                        background: #f6f6f6;                        
+                    }
+                }  
+            }
+        }
+        pre{
+            overflow: auto;
+            border-left: 8px solid #212121;
+            margin: 0 0 1.25rem 0;
+            -webkit-overflow-scrolling: touch;
+            font-size: 0.9rem;            
+            &.highlight{
+                background: #220D3A;
+                color: #f8f8f2;
+                padding: 1.5625rem;   
+                code{
+                    color: #f8f8f2;
+                    background: #220D3A;   
+                    .c{color:#75715e}
+                    .err{color:#960050;background-color:#1e0010}
+                    .k{color:#66d9ef}
+                    .l{color:#ae81ff}
+                    .n{color:#f8f8f2}
+                    .o{color:#f92672}
+                    .p{color:#f8f8f2}
+                    .ch{color:#75715e}
+                    .cm{color:#75715e}
+                    .cp{color:#75715e}
+                    .cpf{color:#75715e}
+                    .c1{color:#75715e}
+                    .cs{color:#75715e}
+                    .gd{color:#f92672}
+                    .ge{font-style:italic}
+                    .gi{color:#a6e22e}
+                    .gs{font-weight:bold}
+                    .gu{color:#75715e}
+                    .kc{color:#66d9ef}
+                    .kd{color:#66d9ef}
+                    .kn{color:#f92672}
+                    .kp{color:#66d9ef}
+                    .kr{color:#66d9ef}
+                    .kt{color:#66d9ef}
+                    .ld{color:#e6db74}
+                    .m{color:#ae81ff}
+                    .s{color:#e6db74}
+                    .na{color:#a6e22e}
+                    .nb{//color:#f8f8f2;
+                        color:#bda0d4;}
+                    .nc{color:#a6e22e}
+                    .no{color:#66d9ef}
+                    .nd{color:#a6e22e}
+                    .ni{color:#f8f8f2}
+                    .ne{color:#a6e22e}
+                    .nf{color:#a6e22e}
+                    .nl{color:#f8f8f2}
+                    .nn{color:#f8f8f2}
+                    .nx{color:#a6e22e}
+                    .py{color:#f8f8f2}
+                    .nt{color:#f92672}
+                    .nv{color:#f8f8f2}
+                    .ow{color:#f92672}
+                    .w{color:#f8f8f2}
+                    .mb{color:#ae81ff}
+                    .mf{color:#ae81ff}
+                    .mh{color:#ae81ff}
+                    .mi{color:#ae81ff}
+                    .mo{color:#ae81ff}
+                    .sa{color:#e6db74}
+                    .sb{color:#e6db74}
+                    .sc{color:#e6db74}
+                    .dl{color:#e6db74}
+                    .sd{color:#e6db74}
+                    .s2{color:#e6db74}
+                    .se{color:#ae81ff}
+                    .sh{color:#e6db74}
+                    .si{color:#e6db74}
+                    .sx{color:#e6db74}
+                    .s1{color:#e6db74}
+                    .ss{color:#e6db74}
+                    .bp{color:#f8f8f2}
+                    .fm{color:#a6e22e}
+                    .vc{color:#f8f8f2}
+                    .vg{color:#f8f8f2}
+                    .vi{color:#f8f8f2}
+                    .vm{color:#f8f8f2}
+                    .il{color:#ae81ff}                    
+                }
+            }            
+        }        
+    }
+} 
+.snet-card .snet-card_maincontents .snet-forum_question{
+    width: 100%;
+    padding: 16px 0 0 0;    
+    border-top: #DBE3E7 solid 1px;
+    margin: 16px 0 0 0;
+}
+.snet-card .snet-card_maincontents .snet-forum_question a{
+    color: #4086FF;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    letter-spacing: 1.25px;
+    font-weight: 500;
+}
+
+.last-item-list{
+    display: none;
+}
+.snet-navbar_secondary .snet-navbar_navigation .dropdown-menu-secondary{
+    //background: red!important;
+    border-radius: 2px;
+    a{
+        display: block;
+        padding: 5px 10px!important;
+        &:last-child{
+            border-bottom: none;
+        }
+        &:hover{
+            color: #4086FF;
+        }
+    }
+}
+
+/*==============================================================================*/
+/* Right Side Navigation */
+/*==============================================================================*/
+.snet-nav_list_secondary{  
+    ul{
+        margin: 0;
+        padding: 0;   
+        list-style: none;    
+        li{
+            margin: 0 0 0 14px;
+            padding: 0;      
+            display: block;   
+            width:100%;
+            a{
+                display: inline-block;
+                border-left: 2px solid transparent;
+                color: #9B9B9B;    
+                font-size: 14px;    
+                padding:5px 10px 5px 24px;
+                font-size: 14px;
+                font-weight: 400;
+                min-height: 30px;     
+                text-transform: capitalize;
+                &:hover{
+                    color: #4086FF;
+                    text-decoration: none;                    
+                }
+            }
+            &.active{
+                a{
+                    color: #4086FF;
+                    text-decoration: none;                    
+                    border-left: 2px solid #4086FF;                    
+                }
+            }
+        }
+    }
+    &.sections-list{
+        //background: red;
+    }
+}
+
+.snet-card_wrapper{
+    padding:12px 18px;
+    border-bottom: 1px solid #F5F7F8;     
+}
+@include mobile{
+    .snet-blog_rightsection,
+    .snet-blog_leftsection,
+    .snet-blog_middlesection{
+        //background: teal;
+        padding-left: 0;
+    }   
+    .snet-blog_rightsection{
+        padding-right: 0;
+    }
+}
+@include xs{
+    .snet-blog_middlesection{
+        padding-right: 0;
+    }    
+}

@@ -1,8 +1,9 @@
 <footer class="site-footer">
-    <div class="wrapper">        
+    <!-- <div class="wrapper">   -->
+    <div class="container-fluid">
         <div class="footer-wrapper">
             <div class="row footer-links">
-                <div class="col-xs-12 col-sm-12 col-md-3 logo">
+                <div class="col-12 col-sm-6 col-md-3 logo">
                     {% if site.data.navigation.footer.content.logo.text %}
                     <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.data.navigation.footer.content.logo.text }}</a>
                     {% elsif site.data.navigation.footer.content.logo.image %}
@@ -19,7 +20,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                     <h6 class="uppercase-txt bold">Quick Links</h6>
                     <ul class="footer-links">
                         <!-- empty<li><a href="/docs/download">Downloads</a>
@@ -34,7 +35,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                     <h6 class="uppercase-txt bold">Knowledge base</h6>
                     <ul class="footer-links">
                         <li><a href="/tutorials/getting-started">Getting Started</a>
@@ -49,7 +50,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                     <h6 class="uppercase-txt bold">Community </h6>
                     <ul class="footer-links">
                         <li><a href="https://community.singularitynet.io/c/developers" target="_blank">Forum</a>
@@ -63,13 +64,13 @@
             </div><!-- /.row -->
 
             <div class="row secondary-footer">
-                <div class="col-xs-12 col-sm-5 col-md-6 copyright">
+                <div class="col-12 col-sm-5 col-md-6 copyright">
                     <p>
                         {{ site.data.navigation.footer.content.copyright }}<br>
                         {{ site.data.navigation.footer.content.copyright_address }}
                     </p>
                 </div>
-                <div class="col-xs-12 col-sm-7 col-md-6 socail-icons">
+                <div class="col-12 col-sm-7 col-md-6 socail-icons">
                     <ul>
                         {% for item in site.data.navigation.footer.social_list %}
                         <li>
@@ -82,8 +83,22 @@
                     </ul>
                 </div>
             </div>          
-        </div><!-- /.container -->
-    </div>        
+        </div><!-- /.container -->            
+    </div>
+    <!-- </div> -->        
 </footer><!-- /.site-footer -->  
+
+<!-- The Modal -->
+<div id="snetModal" class="snetmodal-modal">
+    <!-- Modal content -->
+    <div class="snetmodal-modal_content">
+        <span id="snetModal-close" class="snetmodal-close">&times;</span>
+        <div class="clearfix"></div>
+        <p>
+            <img src="">
+        </p>
+    </div>
+
+</div>
 
 {% include google-analytics.html %}

@@ -100,9 +100,6 @@ section{
     }
 }
 .byproduct-cards{
-    .snet-card_topimage{
-        
-    }
     a{
         &:hover{
             text-decoration: none;
@@ -129,4 +126,20 @@ section{
     .snet-card_topimage.by_user img{
         //height: 60%;
     }
+}
+
+@include md{
+    .byproduct-cards{
+        .snet-card_topimage{
+            height: 128px;
+        }    
+    }    
+}
+
+@include mobile{
+    .byuser-cards,
+    .byproduct-cards,
+    .bytool-cards{
+        margin-bottom: 40px;
+    }  
 }
