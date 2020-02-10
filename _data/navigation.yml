@@ -475,11 +475,6 @@ ai-developers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/tokens'
-        claims:
-          title: Claims
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/claim'
   organization-setup:
     title: Organization Setup
     children:
@@ -515,6 +510,11 @@ ai-developers:
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/daemon-setup'
+  claims:
+    title: Claims
+    excerpt:
+    cta: Read more
+    url: '/docs/ai-developers/claim'
 
   tutorials:
     title: Tutorials

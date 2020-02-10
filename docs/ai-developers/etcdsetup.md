@@ -6,16 +6,16 @@ comments: false
 
 # Hero section
 title: AI Developers
-
 ---
 
 # SETTING UP ETCD CLUSTER
 
-Starting an etcd cluster statically requires that each member knows another in the cluster. In that regard, we should know the public and private ips of the machines well ahead before setting up the cluster.
+Starting an etcd cluster normally requires each member to be familiar with other members in the cluster. Also, you need to determine in advance the public and private IP addresses of the system before setting up the cluster.
 
-The public and private ips of these machines are used to generate the server, client and peer certificates. Using these certificates, the cluster will be setup with TLS Authentication enabled.
+To generate the server, client and peer certificates, use the public and private IP addresses of these machines. Using these certificates, the cluster will be setup with Transport Layer Service (TLS) Authentication enabled.
 
-This document considers to deploy three node etcd cluster.
+This document considers deploying three node etcd cluster.
+
 Following are the example nodes for our reference.
 
 
@@ -32,14 +32,13 @@ Infrastural diagram of ETCD Cluster setup on AWS.
 
 ## Generating Certificates
 
-Three certificate types will be used to setup the cluster
-- **Client certificate** is used to authenticate client by server. For example etcdctl, etcd proxy, or docker clients.
-- **Server certificate** is used by server and verified by client for server identity. For example docker server or kube-apiserver.
-- **Peer certificate** is used by etcd cluster members as they communicate with each other in both ways.
+To setup the cluster, use three types of certificate, such as: 
+- **Client certificate** : Server uses to authenticate client. For example etcdctl, etcd proxy, or docker clients.
+- **Server certificate** : Server uses and client verifies for server identity. For example docker server or kube-apiserver.
+- **Peer certificate**   : etcd cluster  members uses this certificate to communicate both ways.
 
 ### Download cfssl
-Let's use cfssl and walk through the whole process to create all the required certificates.
-This document assumes that you are generating these certificates with cfssl on your local x86_64 Linux host.
+Let's use cfssl on your local x86_64 Linux host, and walk through the process, of generating all required certificates.
 
 ```bash
 mkdir ~/bin
@@ -60,7 +59,7 @@ cfssl print-defaults csr > ca-csr.json
 
 ### Configure CA options
 
-Update the generated ca-config.json config file with the below content in order to generate three set of certifcates.
+Update the generated ca-config.json config file with the below content in order to generate three set of certificates.
 
 ```json
 {
@@ -98,9 +97,9 @@ Update the generated ca-config.json config file with the below content in order 
     }
 }
 ```
-**Note:** You can set the expiry of the certificates based on the requirement.
+**Note:** You can specify a particular expiry date for each certificate based on the requirement.
 
-You can also modify ca-csr.json Certificate Signing Request (CSR):
+Also, you could modify the ca-csr.json Certificate Signing Request (CSR):
 
 ```json
 {
@@ -132,13 +131,13 @@ ca-key.pem
 ca.csr
 ca.pem
 ```
-**Note:** Please keep ca-key.pem file in safe. This key allows to create any kind of certificates within your CA.
+**Note:** Keep ca-key.pem file safely. This key allows to create any kind of certificates within your CA.
 
 ### Generate server certificate
 ```bash
 cfssl print-defaults csr > server.json
 ```
-Most important values for server certificate are Common Name (CN) and hosts. We have to substitute them, with public ips. For example:
+**Important**: Values for server certificate are Common Name (CN) and hosts. We have to substitute them, with public ips. For example:
 ```json
 {
     "CN": "etcd-cluster",
@@ -168,7 +167,7 @@ Now we are ready to generate server certificate and private key:
 ```bash
 cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=server server.json | cfssljson -bare server
 ```
-You'll get following files:
+The following files are generated:
 ```
 server-key.pem
 server.csr
@@ -208,13 +207,13 @@ Now we are ready to generate member1 certificate and private key:
 ```bash
 cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=peer member1.json | cfssljson -bare member1
 ```
-You'll get following files:
+The following files are generated:
 ```
 member1-key.pem
 member1.csr
 member1.pem
 ```
-Repeat these steps for each etcd member hostname.
+Repeat the above steps for each etcd member hostname.
 
 ### Generate client certificate
 
@@ -243,7 +242,7 @@ Generate client certificate:
 ```bash
 cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=client client.json | cfssljson -bare client
 ```
-You'll get following files:
+The following files are generated:
 ```
 client-key.pem
 client.csr
@@ -251,10 +250,10 @@ client.pem
 ```
 
 ## Download, Install & Configuring the ETCD Cluster
-Download the etcd binary in each of the boxes and configure the cluster by following the below steps.
+Download the etcd binary in each of the boxes and and follow the steps below to configure the cluster:
 
 ### Download the etcd binary
-Download the binary of the etcd in each of the server.
+Download the binary of the etcd in each server.
 ```bash
 cd ~
 wget https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz
@@ -271,10 +270,10 @@ Copy the `ca.pem`,`server.pem`, `server-key.pem`, `member-1.pem` & `member-1-key
 mkdir -p /var/lib/etcd/cfssl
 cp ca.pem server.pem server-key.pem member-1.pem member-1-key.pem /var/lib/etcd/cfssl
 ```
-Similarly copy the other member certifcates to their respective servers.
+Similarly, copy the other member certificates to their respective servers.
 
 ### Create a service file for etcd.
-Create a service file in member-1 machine with the below content.
+Create a service file in member-1 machine with the below content:
 ```bash
 echo "
 [Unit]
@@ -304,11 +303,11 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target " > /lib/systemd/system/etcd.service
 ```
-**Note:** Please make sure that you update the `private-ip` with your respective `ips`.
-Repeat the above step for member-2 and member-3 machines.
+**Note:** Ensure, you update the `private-ip` address with your respective `ips` address.
+Accordingly, reiterate the above step for member-2 and member-3 machines.
 
 ### Starting the cluster.
-Make sure the ports `2380` is open between the nodes and `2379` is open to the world.
+Make sure the port`2380` is open between the nodes, and port `2379` to the world.
 Reload the daemon and start the service.
 
 ```bash
@@ -318,7 +317,7 @@ systemctl start etcd.service
 ```
 
 ### Testing the Cluster
-In order to test the cluster, use the generated `ca.pem`, `client.pem` & `client-key.pem`. Replace the domain name with the specific domain or public ip and execute the below command.
+To test the cluster, use the generated `ca.pem`, `client.pem` & `client-key.pem`. Replace the domain name with the specific domain or "public ip" and execute the below command.
 
 ```bash
 curl --cacert ca.pem --cert client.pem --key client-key.pem https://domain-name:2379/health
@@ -329,7 +328,7 @@ You would get the below output.
 {"health": "true"}
 ```
 
-**Note**: Ship the `ca.pem`, `client.pem` & `client-key.pem` files along with daemon, and follow the daemon configuration in order to establish a connection between etcd and daemon.
+**Note**: Ship the `ca.pem`, `client.pem` & `client-key.pem` files along with daemon, and follow the daemon configuration to connect between etcd and daemon.
 
 ###Setting up your own ETCD cluster 
          To set up your own ETCD cluster please follow the link here .  
@@ -348,4 +347,4 @@ curl -s -L -o cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
 Copy the ca.pem, ca-key.pem, ca-config.json & client.json that you previously used for generating the etcd certificates.
 Run the below command to generate the client certificates.
 
-	./cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=client.json | ./cfssljson -bare client
+   ./cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=client.json | ./cfssljson -bare client

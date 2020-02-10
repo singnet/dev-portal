@@ -69,11 +69,11 @@ The daemon has been written to support a variety of service implementations. Cur
 
 Note however that the daemon exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon.
 
-This means we have one consistent protocol to be used to communicate with any service on the SingularityNET network, while still allowing service authors to have flexibility in their implementations. Certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs (streaming is also a work in progress, see [here](https://github.com/singnet/snet-daemon/issues/195)). Also note that bi-directional streaming RPCs are only compatible with some gRPC clients (not gRPC-Web i.e. browser clients).
+This means we have one consistent protocol to be used to communicate with any service on the SingularityNET network, while still allowing service authors to have flexibility in their implementations. Certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs. Also note that bi-directional streaming RPCs are only compatible with some gRPC clients (not gRPC-Web i.e. browser clients).
 
 ### Service Models
 
-As noted when discussing [Services](/docs/concepts/service), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
+As noted when discussing [Services](/docs/ai-developers/service), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
 
 ## SSL
 
