@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: AI Consumers
+title: AI Developers
 
 # extralink box
 extralink:
