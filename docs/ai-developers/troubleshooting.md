@@ -14,30 +14,32 @@ micro_nav: true
 
 ## Troubleshooting
 
-# Alerting mechanism 
-## Emails Alerts
+## Alerting mechanism - Emails Alerts
+
+
 
 ### Mainnet Alerts
 Alert messages are sent through the email Id : [no-reply@signularitynet.io](no-reply@signularitynet.io) 
-Subject : The service example-service is terminated for mainnet network
-### ropsten Alerts 
+Subject : The service '**service-name**' is terminated for Mainnet network
+
+### Ropsten Alerts 
 Alert messages are sent through the mail id : [test-no-reply@singularitynet.io](test-no-reply@singularitynet.io) 
 Subject : The service example-service is terminated for ropsten network
 
 
-###What to do when I receive an alert ?
+### What to do when I receive an alert ?
 - Check whether the daemon end point heartbeats are healthy, and view the daemon logs
 - Restart the daemon, and analyse why the daemon has suspended.
 - Incorporate the post details in the document here as well. 
 
-###How much time does it take for the service to become healthy on Dapp again?
+### How much time does it take for the service to become healthy on Dapp again?
 
 The platform uses exponential back-off retry to test the health of the service. Each time a health check fails, an email message is sent to Service developer ( progressive delay in the next health check ). 
 
 
 **Note**: The maximum time a test on the health service is 12hrs.
 
-###How to configure service metadata to receive alerts ?
+### How to configure service metadata to receive alerts ?
 Obtain the latest version of snet-cli and run the following command:
 
 ```
@@ -80,9 +82,9 @@ Subject :
 certificates are about to expire for service %s for %s network.
 ```
 
-##Common Setups
+## Common Setups
 
-###NGINX
+### NGINX
 Since there is no direct support for grpc-web(dapp)from nginx, we can make a below hack in the config file of the nginx to work with both grpc-web(dapp) and grpc(sdk,snet-cli) calls.
 server {
     listen 1449 ssl http2;
@@ -117,16 +119,15 @@ Hence, only those requests with grpc specified  content-type application/grpc+(p
 
 ### Setting up your own ETCD cluster 
 
-To set up your own ETCD cluster please follow the [link](https://drive.google.com/drive/folders/1nfzsJCGhTpUfzzO9HABa_RmFOf58LYm4)here
+To set up your own ETCD cluster please follow the [link](/docs/ai-developers/etcdsetup)
 
 ### Certificates for ETCD 
-For snet, all ETCD storage, appropriate certificates are available at [drive](https://drive.google.com/drive/folders/1PThpgF2ScX4gU98CJlKO40vLo2rgNT94))  
 
 To renew the ETCD Client Certificates for SNET Organisation:
 - Run the [et]cd-client-certificates-generation](https://eu-central-1.console.aws.amazon.com/codesuite/codebuild/projects/etcd-client-certificates-generation/history?region=eu-central-1) job.
 - This task generates the client-certificates in this [path](https://s3.console.aws.amazon.com/s3/buckets/codepipeline-us-east-1-publish/etcd/certificates/?region=us-east-1&tab=overview).
         
-For other Organisations, follow the below steps to regenerate the etcd client certificates.
+For other Organizations, follow the below steps to regenerate the etcd client certificates.
 - Download the cfssl & cfssljson using the below commands
 
 ```
@@ -140,11 +141,6 @@ For other Organisations, follow the below steps to regenerate the etcd client ce
 ### How to deploy an Organization and a Service on Ropsten? 
 Complete the following steps listed in the [document](https://drive.google.com/open?id=1w9zYYB5HxrlXCgUKzCsgGbXRGzm75Cm0n0qbPeMhrRU) 
 
-###Allow the shared drive to monitor service configurations. 
-A folders already exists for all services under snet , this folder name is mapped to the service_id of your service.
-
-Upload the configuration information, regression test results, hero image and the demon configurations details to the respective folders 
-https://drive.google.com/drive/folders/0AJYSxYnxHqLVUk9PVA
 
 ## Common issues with Daemon start
 
@@ -154,7 +150,7 @@ https://drive.google.com/drive/folders/0AJYSxYnxHqLVUk9PVA
  snet service metadata-set-freecall-signer-address default_group $SIGNERADDRESS --metadata-file $MD_FILE
 ```
 
-###Specify a valid private key 'pvt_key_for_metering' to include during the service publication process.”
+### Specify a valid private key 'pvt_key_for_metering' to include during the service publication process.”
 When you enable the free calls and Metering, specify the private key to initialize the Daemon Otherwise, the  Daemon sends the request to metering, which checks the associated public address mapped in the configuration of that Daemon.
 
 ```bash
@@ -188,7 +184,7 @@ For Ropsten make sure you have the below config
 "metering_end_point": "https://ropsten-marketplace.singularitynet.io/metering",
 ```
 
-For mainnet make sure you have the below config 
+For Mainnet make sure you have the below config 
 ```
 "free_call_signer_address":"0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf",
 "metering_end_point": "https://mainnet-marketplace.singularitynet.io/metering",
@@ -250,13 +246,12 @@ pip install --upgrade snet-cli
 
 
 
-### What to when there is proto change?
+### There is proto change?
 Ensure that you re deploy the service with the latest proto 
 ```
 snet service metadata-init --metadata-file $MD_FILE `pwd`/$YOURGITREPONAME/$PATHFORSERVICESPEC "$DISPLAYNAME" --encoding proto --service-type grpc --group-name default_group
 ```
-
-Post your query on the channel #services-integration 
+Also make sure , your stubs are updated on the Dapp Components
 
 #DAPP
 
@@ -284,22 +279,22 @@ Post your query on the channel #services-integration
 
 **Note**: Don’t close the application, until the service is executes, and the results are displayed  on the same screen. 
 
-###Where do I see the components I can reuse on Dapp 
+### Where do I see the components I can reuse on Dapp 
 
 - Check for the reusable components’ code here  => snet-dapp-monorepo/packages/shared/src/components.
 - You could also run yarn storybook to view the demo of the components.
 - While importing, Import the components from => snet-dapp-monorepo/packages/dist/components.
 
-###How do I raise a Pull request for DApp
+### How do I raise a Pull request for DApp
 - Raise pull requests against “snet-dapp-monorepo/development”.
 - Once it is merged in the development. It will be deployed to the ropsten network:http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
 
-###When does my Pull request gets merged to Master 
+### When does my Pull request gets merged to Master 
 - If your changes are shown in [ropsten](http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/). 
     
     Inform the concerned authority to merge the changes from development to master. This is then deployed to mainnet network: http://beta.singularitynet.io/
     
-###Whom and How  do I reach out for help/Support 
+### Whom and How  do I reach out for help/Support 
 Please use the email tech-support@singularitynet.io for any questions / issues related to platform 
 
 
