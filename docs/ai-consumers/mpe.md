@@ -82,7 +82,7 @@ If Jack is buying services from the Kevin, they both need to enter in to a forma
     **Note:** Nonce increments to 1, when claim is performed.
     
 ### Diagram showcasing how Kevin and Jack Communicate
-![Etcd Cluster Infrastructure](/assets/img/mpe/persona.png)    
+![How sellers and buyers interact](/assets/img/mpe/persona.png)    
     
 ### State management of the channel 
 

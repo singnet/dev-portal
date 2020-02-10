@@ -7,36 +7,88 @@ comments: false
 # Hero section
 title: AI Consumers
 
-# Micro navigation
-micro_nav: true
-
 ---
 
-## Introduction to MPE
-
-Documentation for AI Consumers
+## Service Metadata
 
 
-You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn.
+The service metadata is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster. To use a service, the client needs to know the following:
+- The service metadata
+- The address of Multi-Party Escrow (MPE) contract
+Fortunately, the latter is included in the metadata. 
 
-* [**SingularityNET Marketplace**](/docs/concepts/marketplace) - The SingularityNET Marketplace is a DApp ("Distributed App") and provides a front-end for exploring AI services available on the network. Users can interact with and call them through a web interface, and rate them afterwards. This allows the community to provide feedback and to get a sense of the level of quality that can expected from a service, and will eventually feed into our reputation engine.
-* [**Service**](/docs/concepts/service) - A Service is published to the SingularityNET network and provides a [grpc](https://grpc.io)-based API for calling it. The service API specification, the IP address where it can be accessed, and the pricing information is published to IPFS as service metadata. This location of this metadata is then advertised in the SingularityNet Registry.
-    * [Service Metadata](/docs/concepts/service-metadata) - The metadata describes the service's API, payment method, and where to find the service.
-    * [Naming Standards](/docs/concepts/naming-standards) - We ask that people follow various guidelines for how to name their services.
-* [**Software**](/docs/concepts/software)
-    * [**snet-cli**](/docs/concepts/snet-cli) - The `snet` command line tool lets you interact with the platform: whether that's to call and query services, or publish your own. It allows crucial tasks such as: registering and managing identities, publishing services, updating registration information, notifying the platform of new endpoints, managing payment channels and balances, and calling services.
-    * [**SDK**](/docs/concepts/sdk) - The software development kit (SDK) helps you integate SingularityNET services with your own software.
-    * [**SNET Daemon**](/docs/concepts/daemon) - A developer exposes their service to the network by running the SNET Daemon alongside their service. The SNET Daemon interacts with the blockchain to facilitate authorization and payment for services and acts as a passthrough for making API calls to the service. This isolates the payment and blockchain interaction so a developer can focus on deploying and improving their service.
-        * [Daemon API](/docs/concepts/daemon-api)
-        * [Daemon Channel Storage](/docs/concepts/daemon-channel-storage)
-* [**Blockchain Contracts**](/docs/concepts/blockchain-contracts)
-    * [**AGI Token**](/docs/concepts/agi-token) - Our utility token to be exchanged for AI service, it is an ERC20 token hosted on Ethereum.
-    * [**Registry**](/docs/concepts/registry) - Services are published to a publicly-accessible central registry on the blockchain. The registry maintains a list of active services on the network and where to find a services corresponding metadata. The Registry has support for grouping services by organisation or team, along with access control for organisation members.
-    * [**Escrow**](/docs/concepts/multi-party-escrow) - The escrow contract on the blockchain holds AGI funds in escrow during interaction between an end-user and a service. An end-user places funds in escrow before a service can be called, and remain there until the service has been delivered or the escrow funds timeout.
-        * [MPE Stateless Client](/docs/concepts/mpe-stateless-client)
-* **The Request for AI Portal (RFAI):** is a DApp through which end users and application developers can request specific AI services they would like added to the network and stake AGI tokens as a reward for high-quality solutions.
+The daemon which allows access to the service, needs information about the metadata to configure the payment systems.
+
+There are three ways of providing metadata details to the clients and the daemons:
+- Simple JSON file
+- IPFS hash that points to the JSON metadata
+- Name of service in the Registry - this can be resolved to an IPFS hash, pointing to the metadata, through the Registry’s getMetadataIPFSHash method.
+
+**Note:** The client using the mpe_address from the metadata should not adhere to this as a primary source of information, for the sake of security. The client should check that this address corresponds to the expected mpe_address . 
 
 
-## How to use MPE
+**Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack 
+**Note:** By default, the snet-cli adheres to this verification. 
 
-## Reading MPE
+
+**Note**: 
+
+The service provider needs to publish the details about the service in the Blockchain.
+
+As a consumer, you may go the Blockchain or the Marketplace portal where the services are deployed.
+Details like Service the price of the service ,
+image depicting / related to the service , service type, description, the endpoint and how to make a request.
+
+Please note that
+- Singularity platform works on gRPC. Whenever you need to call you need a protofile.
+- File management system such as IPFS stores the location of the hash and points to the associated protofile
+    The IPFS can include a file and the same file returns same hash. 
+    
+## Metadata Overview
+
+```
+{
+    "version": 1,
+    "display_name": "Entity Disambiguation",
+    "encoding": "proto",
+    "service_type": "grpc",
+    "model_ipfs_hash": "Qmd21xqgX8fkU4fD2bFMNG2Q86wAB4GmGBekQfLoiLtXYv",
+    "mpe_address": "0x34E2EeE197EfAAbEcC495FdF3B1781a3b894eB5f",
+    "groups": [
+        {
+            "group_name": "default_group",
+            "free_calls": 12,
+            "free_call_signer_address": "0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F",
+            "daemon_address ": ["0x1234", "0x345"],
+            "pricing": [
+                {
+                    "price_model": "fixed_price",
+                    "price_in_cogs": 1,
+                    "default": true
+                }
+            ],
+            "endpoints": [
+                "https://tz-services-1.snet.sh:8005"
+            ],
+            "group_id": "EoFmN3nvaXpf6ew8jJbIPVghE5NXfYupFF7PkRmVyGQ="
+        }
+    ],
+    "assets": {
+        "hero_image": "Qmb1n3LxPXLHTUMu7afrpZdpug4WhhcmVVCEwUxjLQafq1/hero_named-entity-disambiguation.png"
+    },
+    "service_description": {
+        "url": "https://singnet.github.io/nlp-services-misc/users_guide/named-entity-disambiguation-service.html",
+        "description": "Provide further clearity regaridng entities named within a piece of text. For example, \"Paris is the capital of France\", we would want to link \"Paris\" to Paris the city not Paris Hilton in this case.",
+        "short_description": "text of 180 chars"
+    },
+    "contributors": [
+            {
+                "name": "dummy dummy",
+                "email_id": "dummy@dummy.io"
+            }
+        ]
+}
+
+```
+
+For more information about how to viewing the metadata using the python module, [CLI documentation](http://snet-cli-docs.singularitynet.io/) 

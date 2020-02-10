@@ -48,15 +48,18 @@ Please note that
 
 ```
 {
-    "version": 2,
+    "version": 1,
     "display_name": "Entity Disambiguation",
     "encoding": "proto",
     "service_type": "grpc",
-    "model_ipfs_hash": "Qmdxxxhggjkkgk6wAB4GmGBekQfLoiLtXYv",
+    "model_ipfs_hash": "Qmd21xqgX8fkU4fD2bFMNG2Q86wAB4GmGBekQfLoiLtXYv",
     "mpe_address": "0x34E2EeE197EfAAbEcC495FdF3B1781a3b894eB5f",
     "groups": [
         {
             "group_name": "default_group",
+            "free_calls": 12,
+            "free_call_signer_address": "0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F",
+            "daemon_address ": ["0x1234", "0x345"],
             "pricing": [
                 {
                     "price_model": "fixed_price",
@@ -71,14 +74,21 @@ Please note that
         }
     ],
     "assets": {
-        "hero_image": "QmbaewdfafrpZdpug4WhhcmVVCEwUxjLQafq1/hero_named-entity-disambiguation.png"
+        "hero_image": "Qmb1n3LxPXLHTUMu7afrpZdpug4WhhcmVVCEwUxjLQafq1/hero_named-entity-disambiguation.png"
     },
     "service_description": {
-        "url": "https://dummy.io/sadds/users_guide/named-entity-disambiguation-service.html",
-        "description": "Provide further clearity regaridng entities named within a piece of text. For example, \"Paris is the capital of France\", we would want to link \"Paris\" to Paris the city not Paris Hilton in this case."
-    }
+        "url": "https://singnet.github.io/nlp-services-misc/users_guide/named-entity-disambiguation-service.html",
+        "description": "Provide further clearity regaridng entities named within a piece of text. For example, \"Paris is the capital of France\", we would want to link \"Paris\" to Paris the city not Paris Hilton in this case.",
+        "short_description": "text of 180 chars"
+    },
+    "contributors": [
+            {
+                "name": "dummy dummy",
+                "email_id": "dummy@dummy.io"
+            }
+        ]
 }
 
 ```
 
-For more information about how to viewing the metadata using the python module, **click on this link here.**
+For more information about how to viewing the metadata using the python module, [CLI documentation](http://snet-cli-docs.singularitynet.io/) 
