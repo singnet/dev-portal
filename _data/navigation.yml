@@ -447,6 +447,11 @@ ai-developers:
             excerpt:
             cta: Read more
             url: '/docs/ai-developers/service'
+        daemon:
+          title: Daemon
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/daemon'
         publisher-portal:
             title: Publisher Portal
             excerpt:
@@ -479,7 +484,7 @@ ai-developers:
           title: Claims
           excerpt:
           cta: Read more
-          url: '/docs/ai-developers/claims'
+          url: '/docs/ai-developers/claim'
   organization-setup:
     title: Organization Setup
     children:
@@ -489,7 +494,7 @@ ai-developers:
           cta: Read more
           url: '/docs/ai-developers/etcd'
         publish-organization:
-          title: Organization Setup
+          title: Publish Organization on Blockchain
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/recepient-setup'
@@ -497,7 +502,7 @@ ai-developers:
     title: Service Setup
     children:
         snet-cli:
-          title: snet-cli
+          title: Publish Organization on Blockchain
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/snet-cli'
@@ -515,11 +520,7 @@ ai-developers:
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/daemon-setup'
-      local-etcd:
-        title: Daemon on local Etcd
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/local-etcd'
+
   tutorials:
     title: Tutorials
     children:
@@ -532,18 +533,8 @@ ai-developers:
           title: snet-cli
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/snet-cli'
-        sdk:
-          title: SDK
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/sdk'
+          url: '/docs/ai-developers/snet-cli-tutorial'
 
-        publisher-portal:
-          title: Publisher Portal
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/publisher-portal-tutorial'
   troubleshooting:
       title: Troubleshooting
       excerpt:
