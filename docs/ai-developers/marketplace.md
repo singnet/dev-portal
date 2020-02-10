@@ -59,7 +59,7 @@ The decentralized application (DApp) does the following:
 
 ## Marketplace Requirements
 
-If you are a service author, need the service to be visible to others and listed on the marketplace you must:
+If you are a service author, for the service to be visible to others and listed on the marketplace you must:
 1.	Build and publish your service 
 2.	Use SSL with the snet-daemon. 
     **Note:** if you don't already have an SSL certificate for your domain, it is recommend you use certbot and letsencrypt .

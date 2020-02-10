@@ -57,13 +57,3 @@ The decentralized application (DApp) does the following:
 
 **Note:** Although, the SingularityNET platform is open and decentralized, the Marketplace is the SingularityNET Foundation's curated view. This allows the foundation to adhere to legal requirements of different legislative regions. Currently, the Marketplace and SingularityNET is in beta stage. For more information about the current status, refer to  current status page for changes, or follow the [git-repo](https://github.com/singnet/snet-dapp)
 
-## Marketplace Requirements
-
-If you are a service author, need the service to be visible to others and listed on the marketplace you must:
-1.	Build and publish your service 
-2.	Use SSL with the snet-daemon. 
-    **Note:** if you don't already have an SSL certificate for your domain, it is recommend you use certbot and letsencrypt .
-3.	Fork the snet-dapp repo, build a react component as the user interface for your service, and submit a pull request. 
-    **Note:** Identify the services on your networks, organization and service names being used. For more details, refer to dapp repo README.md.
-4.	Last is some paperwork that we are still finalising, and we'll update this list when we have that. If you are itching to get your service listed, reach out to us via one of our community groups.
-    **Note** that your service can be published to SingularityNET without being listed on the marketplace, but your service may be less discoverable to potential customers if it is not listed. 
