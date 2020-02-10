@@ -452,11 +452,6 @@ ai-developers:
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/daemon'
-        publisher-portal:
-            title: Publisher Portal
-            excerpt:
-            cta: Read more
-            url: '/docs/ai-developers/publisher-portal'
         marketplace:
             title: Marketplace Dapp
             excerpt:
