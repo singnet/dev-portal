@@ -29,34 +29,35 @@ page_nav:
         url: '/docs/concepts/sdk'
 ---
 
-The SingularityNET command line interface (CLI) is the primary tool for interacting with the
-platform's smart contracts, managing deployed services, and managing funds. It is aimed at service providers. In the near future, it will be supplemented by a web-based dashboard and control panel.
-
-The CLI provides commands to interface with the blockchain in the following ways:
-* Creating and managing identities;
-* Registering and managing the organizations, members, services, types, and tags on the
-SingularityNET Registry;
-* Claiming funds from customers using MPE and payment channels;
-* Reading and writing metadata and Protobuf specs about AI services (these are stored on IPFS, while basic service parameters can be fetched from blockchain contracts); and
-* Connecting to different networks like local testnets, Kovan, Ropsten, and the Ethereum mainnet.
-
-The CLI also provides service development and deployment support. It can set up new services by generating service metadata, Protobuf specs, and code templates provided by the SingularityNET Foundation. The CLI interacts with daemons for each service.
-Security-wise, the CLI follows the same guidelines as provided by Ethereum for storing the private keys. When user identities are created and registered with a client, the CLI safely stores the details on the local machine and retrieves them only when it needs to interact with the blockchain.
-
-<img src="/assets/img/how_cli_works.jpg" width="400">
-
-The CLI requires and connects to four critical components:
-* User identity management. Involves user registration, managing identities and sessions,
-and locking/unlocking accounts for transacting with the blockchain. This component is local to the machine where the CLI is run.
-* Sidecar proxy. Communicates to servers hosting AI services.
-* Registry contract. Deals with organizations, members, services, types, and tags.
-* MPE contract. Sends and receives funds and manages other functions related to payment channels; e.g., closing a channel or extending its expiry date.
-
 This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/setup/requirements).
 
 See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full details of actions the tool allows.
 
 ## Making a call to a SingularityNET service
+
+### Step 1. Get some Ether
+
+Ether is used to pay for interactions on the block chain (known as gas).
+
+The transactions you make a call to SingularityNET are:
+- Transfer AGI into the multi-party escrow account,
+- Create a payment channel for a service published in the SingularityNET registry, and
+- Transfer AGI into the payment channel and set the timeout
+
+After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGI
+or extend the timeout for the payment channel.
+
+So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
+
+Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.ropsten.be/).
+
+To use the faucet you need to [create a wallet](/docs/ai-consumers/wallet), and then provide them with your wallet's public address.
+
+### Step 2. Get some AGI
+
+We provide a faucet to get AGI for either Ropsten or Kovan [networks](https://faucet.singularitynet.io/)
+
+You'll need a github account to authenticate, and there after you can request AGI every 24 hours. 
 
 ### JSON parameters
 
@@ -67,17 +68,18 @@ There are three ways of passing this JSON:
 * via JSON file; and
 * via stdin.
 
-For example, in [this platform example](/docs/development/mpe-example#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
+For example, in [this platform example](https://github.com/singnet/example-service) we need to pass the following JSON as a parameter for the "add" method to our service, proto definition can be found [here](https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto) :
 
 ```json
 {"a": 10, "b": 32}
 ```
 
 We can use three ways:
+For more details refer to the [section](http://snet-cli-docs.singularitynet.io/client.html) 
 
 ```sh
 # via cmdline parameter
-snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
+snet client call org_id service_id default_group add '{"a":10,"b":32}'
 
 # via json file
 echo '{"a":10,"b":32}' > p.txt

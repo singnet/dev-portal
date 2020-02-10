@@ -246,14 +246,14 @@ pip install --upgrade snet-cli
 
 
 
-### There is proto change?
+### When there is proto change?
 Ensure that you re deploy the service with the latest proto 
 ```
 snet service metadata-init --metadata-file $MD_FILE `pwd`/$YOURGITREPONAME/$PATHFORSERVICESPEC "$DISPLAYNAME" --encoding proto --service-type grpc --group-name default_group
 ```
 Also make sure , your stubs are updated on the Dapp Components
 
-#DAPP
+# DAPP
 
 ### My Service is not visible on Dapp 
 - Ensure whether the service has been published on the network you are testing?
