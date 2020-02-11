@@ -32,8 +32,6 @@ page_nav:
 
 ## Calling a Service
 
-
-
 All complexity of invoking a service is abstracted from the users.
 For example it becomes easy for the user to Input the values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC calls/generating signatures for authorization to call a  service.  
 

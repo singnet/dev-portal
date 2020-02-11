@@ -21,14 +21,7 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    next:
-        content: Back to Concepts
-        url: '/docs/concepts/'
-    prev:
-        content: Multi-Party Escrow
-        url: '/docs/concepts/multi-party-escrow'
+
 
 ---
 
@@ -39,7 +32,7 @@ In this document we demonstrate that the client that communicates with Singulari
     * The server is not able to forge this state, because it was signed by the client (of course the client should check its own signature).
     * The server is obviously interested in saving and sending the last state, otherwise it loses money.
 
-We have a special gRPC method in the daemon which returns the state of the channel (see: [https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto](https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto)). The client actually does not even need to use a special call to request the last state of the channel from the daemon. The daemon can return the state of the channel in the response to any non-authorized call.
+We have a special gRPC method in the daemon which returns the state of the channel [see](https://github.com/singnet/snet-daemon/blob/master/escrow/state_service.proto). 
 
 The client receives the following information from the daemon:
 * `current_nonce` - current nonce of the payment channel.
@@ -48,15 +41,15 @@ The client receives the following information from the daemon:
 * (not implemented yet) `oldnonce_signed_amount` - last amount which was signed by client with `nonce=current_nonce - 1`.
 * (not implemented yet) `oldnonce_signature` - last signature sent by client with nonce = current_nonce - 1.
 
-**It should be noted that the two last values are not in the current version, and we need them only to calculate `unspent_amount` in the case that `current_nonce != Blockchain_nonce`**
+**It should be noted that the two last values are not in the current version, and we need them only to calculate `unspent_amount` in the case that `current_nonce != blockchain_nonce`**
 
-We should consider a complex situation where the server starts a close/reopen procedure for the channel. The client doesn't need to wait for a confirmation from the Blockchain, because it is not in the interest of the server to lie. At the same time, the server also doesn't need to wait for a confirmation from the blockchain if he makes sure that the request is mined before expiration of the channel.
+We should consider a complex situation where the server starts a close/reopen procedure for the channel. The client doesn't need to wait for a confirmation from the Blockchain, because it is not in the interest of the server to lie. At the same time, the server also doesn't need to wait for a confirmation from the Blockchain if he makes sure that the request is mined before expiration of the channel.
 
 Before considering all possible cases, let's define the following parameters
-* `Blockchain_nonce` - nonce of the channel in the Blockchain
-* `Blockchain_value` - value of the channel in the Blockchain
+* `blockchain_nonce` - nonce of the channel in the blockchain
+* `blockchain_value` - value of the channel in the blockchain
 
-We also assume that the daemon starts the close/reopen procedure only after the previous `channelClaim` request was mined. This means that the `current_nonce`, at maximum, is one point ahead of the `Blockchain_nonce`. We can easily relax this assumption if necessary.   
+We also assume that the daemon starts the close/reopen procedure only after the previous `channelClaim` request was mined. This means that the `current_nonce`, at maximum, is one point ahead of the `blockchain_nonce`. We can easily relax this assumption if necessary.   
 
 In all cases we assume that the client can verify that it's own signature is authentic.  
 
@@ -65,11 +58,11 @@ In all cases we are interested in two numbers:
     * `next_signed_amount = current_signed_amount + price`
 * The amount of tokens which haven't been already spent (`unspent_amount`).
 
-#### Simple case `current_nonce == Blockchain_nonce`
-* `unspent_amount = Blockchain_value - current_signed_amount`
+#### Simple case `current_nonce == blockchain_nonce`
+* `unspent_amount = blockchain_value - current_signed_amount`
 
-#### Complex case `current_nonce != Blockchain_nonce`
-Taking into account our assumptions, we know that `current_nonce = Blockchain_nonce + 1`.
-* `unspent_amount = Blockchain_value - oldnonce_signed_amount - current_signed_amount`
+#### Complex case `current_nonce != blockchain_nonce`
+Taking into account our assumptions, we know that `current_nonce = blockchain_nonce + 1`.
+* `unspent_amount = blockchain_value - oldnonce_signed_amount - current_signed_amount`
 
 It should be noted that in this case the server could send us smaller `oldnonce_signed_amount` (not the actually last one which was used for `channelClaim`). In this case, the server can only make us believe that we have more money in the channel then we actually have. That means that one possible attack via `unspent_amount` is to make us believe that we have less tokens than we truly have, and therefore reject future calls (or force us to call `channelAddFunds`).
