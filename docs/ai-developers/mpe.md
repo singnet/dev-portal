@@ -19,7 +19,7 @@ An Escrow contract defines the conditional transaction between two transacting p
 The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-Blockchain interactions between AI Consumers and AI service providers.
  
 
-The MPE contract comprises two main functionalities which includes:
+The MPE contract comprises two main functions, which includes:
 
 1. A wallet with a deposit and withdraw function. 
 2. A set of the simple (“atomic”) unidirectional payment channels between clients and service providers and support functions for controlling these channels.
@@ -73,9 +73,9 @@ If Kevin is buying services from the Jack, they both need to enter in to a forma
 3.	Kevin funds the channel. Kevin suggests Jack to deposit a bare amount ( cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable. <br>
     <br>Based on how much Jack wants to use a service , Jack deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time. <br>
     <br>**Note:** Unless and until Jack authorises, the Kevin cannot withdraw the money.
-    Jack and Kevin come in to agreement to perform operation Off chain. The daemon manages the off chain state of the channel. 
+    Kevin and Jack come in to agreement to perform operation Off chain. The daemon manages the off chain state of the channel. 
 4.	Kevin needs to authorize using the signature (using his private key to sign) to let Jack withdraw
-5.	JAck verifies the following:<br>
+5.	Jack verifies the following:<br>
     - Signature is authentic.
     - Amount of AGI tokens specified is correct (last Authorized Amount from Kevin + Cost of the Service being called).
     - Amount does not exceed the value of the channel.
@@ -94,7 +94,7 @@ If Kevin is buying services from the Jack, they both need to enter in to a forma
 |Channel ID       | 1       |The channel ID created is 1 on Chain|
 |---------------------|-------- |----------------------------------|
 |**Nonce**            | 0       |Initially the Nonce is 0|
-|**Full amount**      | 100 Cogs|Amount Jack has put into the channel is 100 Cogs|
+|**Full amount**      | 100 Cogs|Amount Kevin has put into the channel is 100 Cogs|
 |**Authorized Amount**|	0       |The Authorized amount is zero, because no services has been used for the first time.|
 |**Signature**        |	Nil     |No signature is required to be sent.|
 
