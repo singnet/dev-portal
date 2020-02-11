@@ -520,6 +520,11 @@ ai-developers:
   daemon-setup:
     title: Daemon Setup
     children:
+      snet-daemon-api:
+        title: Daemon API
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/daemon-api'
       snet-daemon-ssl-setup:
         title: Daemon SSL setup
         excerpt:
