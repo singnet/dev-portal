@@ -1,7 +1,0 @@
-I"Œ<h2 id="how-to-update">How to update?</h2>
-<p>Firstly, when a new update is available you have to download the files with the updated content from <a href="https://github.com/singnet/dev-portal">our Github</a>.</p>
-
-<p>You can go ahead and build the site again locally as usual.</p>
-
-<p>If you only want the theme updates, simply delete your old theme folder and replace it with the new one.</p>
-:ET
