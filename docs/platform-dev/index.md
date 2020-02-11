@@ -5,14 +5,12 @@ keywords: intro concepts
 comments: false
 
 # Hero section
-title: AI Developers
+title: Platform Developers
 
 # Micro navigation
 micro_nav: true
 
 ---
-
-## Documentation for AI Developers
 
 ## Overview
 

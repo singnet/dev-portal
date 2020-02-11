@@ -12,8 +12,6 @@ micro_nav: true
 
 ---
 
-## Documentation for AI Developers
-
 ## Overview
 
 SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, where they can be used by anyone with an internet connection. Developers are able to charge for the use of their services using the native AGI token.
