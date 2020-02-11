@@ -23,8 +23,8 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Marketplace
-        url: '/docs/concepts/marketplace'
+        content: Organization Metadata
+        url: '/docs/concepts/organization-metadata'
     next:
         content: Service Metadata
         url: '/docs/concepts/service-metadata'
@@ -38,7 +38,7 @@ These services are primarily meant to be AI or machine learning related, but the
 Indeed, the foundation or the community may end up implementing utility and adaptor services (such as [image conversion](https://github.com/singnet/face-services/issues/7)) to allow
 services be composed more easily.
 
-Services define their API using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition). This allows SingularityNET clients to determine the request/response schema programmatically. This definition, or "service specification" is published using the CLI. An example of defining this API and publishing a service that implements it, is available [here](/tutorials/publish/).
+Services define their API using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition). This allows SingularityNET clients to determine the request/response schema programmatically. This definition, or "service specification" is published using the CLI. An example of defining this API and publishing a service that implements it, is available [here](/tutorials/publish.md).
 
 A "service" is defined through it's specification and [it's metadata](/docs/concepts/service-metadata).
 

@@ -24,8 +24,8 @@ micro_nav: true
 # Page navigation
 page_nav:
     next:
-        content: Back to Concepts
-        url: '/docs/concepts/'
+        content: The Request for AI portal
+        url: '/docs/concepts/rfai'
     prev:
         content: Multi-Party Escrow
         url: '/docs/concepts/multi-party-escrow'
