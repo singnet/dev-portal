@@ -170,7 +170,7 @@ class ServiceDefinition(pb2_grpc.ServiceDefinitionServicer):
 ## Step 5
 
 Now we'll write a client to test our server locally (without using the
-blockchain). Edit `client.py`.
+|Blockchain). Edit `client.py`.
 
 Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
@@ -199,7 +199,7 @@ To compile the protobuf file:
 
 ## Step 7
 
-To test our server locally (without using the blockchain)
+To test our server locally (without using the |Blockchain)
 
 ```
 python3 server.py &
@@ -252,14 +252,14 @@ Example:
 ```
 
 This will start the `SNET Daemon` and your service. If everything goes well you will 
-see the blockchain transaction logs and then the following messages 
+see the |Blockchain transaction logs and then the following messages 
 (respectively from: your service and `SNET Daemon`):
 
 ```
-# [blockchain log]
+# [|Blockchain log]
 # Server listening on 0.0.0.0:7070
 # [daemon initial log]
-# INFO[0002] Blockchain is enabled: instantiate payment validation interceptor 
+# INFO[0002] |Blockchain is enabled: instantiate payment validation interceptor 
 # INFO[0002]                                               PaymentChannelStorageClient="&{ConnectionTimeout:5s RequestTimeout:3s Endpoints:[http://127.0.0.1:2379]}"
 # INFO[0002] Default payment handler registered            defaultPaymentType=escrow
 # DEBU[0002] starting daemon                              
@@ -293,7 +293,7 @@ output the new channel id (that will be used by `testServiceRequest.sh`):
 ```
 ./openChannel.sh
 
-# [blockchain log]
+# [|Blockchain log]
 # #channel_id
 # 10
 ```
@@ -305,7 +305,7 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 ```
 ./testServiceRequest.sh 12 4
 
-# [blockchain log]
+# [|Blockchain log]
 #   response:
 #       v: 3
 ```

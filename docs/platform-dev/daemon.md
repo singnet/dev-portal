@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: snetd - SingularityNET Daemon
-description: Learn about the daemon - how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
+description: Learn about the daemon - how it interacts with the SingularityNET Marketplace and the Ethereum |Blockchain.
 
 # extralink box
 extralink:
@@ -32,7 +32,7 @@ page_nav:
         
 ---
 The [SingularityNET daemon](https://github.com/singnet/snet-daemon) is the adapter that a service can use to interface with the SingularityNET platform.
-In software architecture lingo, the daemon is a [sidecar proxy](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar), —a process deployed next to a core application (the AI service, in this case) to abstract away some architectural concerns such as logging and configuration as well as entire platform aspects, such as the interaction with smart contracts or even the decision to use the Ethereum blockchain.
+In software architecture lingo, the daemon is a [sidecar proxy](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar), —a process deployed next to a core application (the AI service, in this case) to abstract away some architectural concerns such as logging and configuration as well as entire platform aspects, such as the interaction with smart contracts or even the decision to use the Ethereum |Blockchain.
 The two key abstraction responsibilities of the daemon are payments and request translation. In order to authorize payments, the daemon interacts with the Multi-Party Escrow contract.
 Before invoking a service through SingularityNET, a consumer must have
 1. funded the Multi-Party Escrow contract (see section on payments below) and
@@ -69,11 +69,11 @@ The daemon has been written to support a variety of service implementations. Cur
 
 Note however that the daemon exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon.
 
-This means we have one consistent protocol to be used to communicate with any service on the SingularityNET network, while still allowing service authors to have flexibility in their implementations. Certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs (streaming is also a work in progress, see [here](https://github.com/singnet/snet-daemon/issues/195)). Also note that bi-directional streaming RPCs are only compatible with some gRPC clients (not gRPC-Web i.e. browser clients).
+This means we have one consistent protocol to be used to communicate with any service on the SingularityNET network, while still allowing service authors to have flexibility in their implementations. Certain gRPC features such as streaming require the service itself to expose a gRPC endpoint with streaming RPCs. Also note that bi-directional streaming RPCs are only compatible with some gRPC clients (not gRPC-Web i.e. browser clients).
 
 ### Service Models
 
-As noted when discussing [Services](/docs/concepts/service), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
+As noted when discussing [Services](/docs/ai-developers/service), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
 
 ## SSL
 
@@ -82,8 +82,8 @@ The daemon supports SSL termination using a developer-supplied certificate and k
 ## Authorisation and Payment
 
 Prior to invoking a service through the SingularityNET platform, a consumer must have:
-- Funded the [Multi-Party Escrow contract](/docs/concepts/multi-party-escrow); and
-- Opened a payment channel with the recipient as specified by the [service metadata](/docs/concepts/service-metadata).
+- Funded the [Multi-Party Escrow contract](/docs/ai-developers/mpe); and
+- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/ai-developers/organization).
 
 With each invocation the daemon checks:
 - that the signature is authentic;
@@ -94,8 +94,9 @@ After these checks are successful the request is proxied to the service.
 
 ## Configuration
 
-The daemon's behavior with respect to the [service type](#supported-service-types), [SSL](#ssl), Blockchain interactions, etc. can be controlled via a configuration file, environment variables, and executable flags. See [the daemon's README](https://github.com/singnet/snet-daemon#configuration) for a description of the available configuration keys and how they map to environment variables and runtime flags.
+The daemon's behavior with respect to the [service type](#supported-service-types), [SSL](#ssl), |Blockchain interactions, etc. can be controlled via a configuration file, environment variables, and executable flags. See [the daemon's README](https://github.com/singnet/snet-daemon#configuration) for a description of the available configuration keys and how they map to environment variables and runtime flags.
 
 ## Payment channel state
 
-The daemon stores the payment channel state in an etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/concepts/daemon-channel-storage).
+The daemon stores the payment channel state in an etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/ai-developers/daemon-channel-storage).
+[ETCD cluster](/docs/ai-developers/etcdsetup).

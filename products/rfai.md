@@ -5,7 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: SingularityNET Marketplace
+title: Request for AI (RFAI)
+description: Learn how to use the Request for AI portal, and how it works.
 
 # extralink box
 extralink:
@@ -23,49 +24,74 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: Concepts Overview
-        url: '/docs/concepts'
+        content: MPE Stateless Client
+        url: '/docs/concepts/mpe-stateless-client'
     next:
-        content: SingularityNET Services
-        url: '/docs/concepts/service'
+        content: Back to Concepts
+        url: '/docs/concepts/'
+
 ---
 
-The [SingularityNET Marketplace](http://beta.singularitynet.io) provides an easy way for people browse available AI services and interact with them via a web interface.
-
-![marketplace](/assets/img/marketplace.png)
-
-The SingularityNET marketplace is a decentralized application (DApp) and provides a front-end for exploring available AI services and interacting with them through a web-UI. It also handles payment for services (through MetaMask integration) and service ratings. The DApp
-  * reads data from the on-chain Registry and pairs it with off-chain metadata, allowing AI
-services to be searched, filtered, and discovered;
-  * integrates the SingularityNET curation service, displaying from the Registry only those
-services that have been vetted and whose owners have undergone due diligence and
-signed legal agreements that protect user privacy and data;
-  * allows AI services to display custom UI components for user interactions (gathering
-inputs for service execution and displaying results);
-  * integrates with Multi-Party Escrow, enabling the user to pay for service usage;
-  * allows consumers to rate services they have used; this is a simple rating component that
-will eventually be replaced by SingularityNET's Reputation System (currently under
-development); and
-  * captures usage metrics at a consumer level.
+The [Request for AI Portal](https://rfai.singularitynet.io/) lets users make requests for AI services that they would like to see built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
+The RFAI portal fosters the community by enabling users to incentivize developers to publish services.
 
 
-While SingularityNET the platform is open and decentralised, the Marketplace is the SingularityNET Foundation's curated view of it. This allows the foundation to provide oversight and adhere to legal requirements requirements in different legislative regions.
+## Making a request for an AI service
 
-The Marketplace and SingularityNET is in beta, but still under heavy development. See our [current status](/docs/current-status) page for ways to to stay informed of changes, or follow the [github repo](https://github.com/singnet/snet-dapp).
+* Any request for an AI service should be backed by AGI tokens.
+* Requests should be detailed enough to allow discussion and development and should be in the form of a github pull requests to [this](https://github.com/singnet/rfai-proposal) repo. You can view the template for the request [here](https://github.com/singnet/rfai-proposal/blob/master/rfai-proposal-template.md)
+* Provide an expiry date for the request. Meaning the date post which you can withdraw your funds if no submission has been made
+* A request created will need to be approved by the foundation before it shows up for everybody
 
-# Calling a Service
+## Backing an AI Service
+* In order to request for an AI service, you need to back it with AGI tokens
+* You need to transfer tokens to the RFAI escrow from the user profile Account's menu. This is a two step process
+    * Approve the number of tokens to deposit
+    * Deposit the tokens
+* You are now set to make a request for an AI service or back any approved request
 
-The Marketplace is a DApp, which means in order to use it you need to install a ethereum browser extension like [MetaMask](https://metamask.io/). This extension carries out interactions with the blockchain on your behalf, allows you to transfer tokens between wallets, and invoke contracts.
 
-In the context of the marketplace it lets you query what services are available, transfer AGI funds into escrow, and setup payment channels that allow you call any of the listed services.
+## Request Approval
 
-For a full guide on getting your wallet and browser setup, see our [Setup Guide](/docs/setup).
+* The foundation will review all requests and will approve them. In general we look for
+    * Clear problem description
+    * Relevant problem which if solved will help the community
+    * Quantitative evaluation criteria 
+* Once approved the request is visible for all on the portal
 
-# Marketplace Requirements
 
-We mandate a number of requirements before your service is visible to others. To get your service listed on the marketplace you must:
+## Solution Submission
 
-0. Build and [publish your service](/tutorials/publish) ;-)
-1. Ensure you are using SSL with the snet-daemon. We recommend using [certbot and letsencrypt](https://certbot.eff.org/) if you don't already have a SSL certificate.
-3. Fork the snet-dapp repo, build a react component as the user interface for your service, and submit a pull request. Let us know what networks your service is on, and the organisation and service names used. More details are in the [dapp repo README.md](https://github.com/singnet/snet-dapp#ui-for-services).
-4. Last is some paperwork that we are still finalising, and we'll update this list when we have that. If you are itching to get your service listed, reach out to us via one of our [community](/docs/community) groups.
+* All submissions are evaluated by the SingularityNet foundation to ensure that the acceptance criteria as specified in the request is met and the problem is solved for.
+* The submission should include the github repo of your code
+* The submitter should be using the same address used to publish the service while submitting the solution.
+* The submission is evaluated as follows
+* The specified acceptance criteria in the request must be met
+    * Any performance metrics specified against provided test datasets should be met
+    * Submission should be a service deployed on the SingularityNet platform
+
+
+## Voting for a Solution
+
+  * Foundation will vote to shortlist the submissions
+  * Users backing the service request can vote for any submission (not just the shortlisted ones)
+  * Only the users who are backing a service request can vote for a submission
+  * Validation of the solution will be performed offline.
+
+## Claiming tokens for a submission
+
+  * Claims can be made only after the evaluation period and before the expiry date
+  * Solution submitter can claim any time before expiry of the request
+  * Claims will be calculated based on the votes from backing users
+      * In case there are no votes from any backing user, foundation votes are considered
+  * Claims will be distributed based on the number of votes either by backing users or by foundation members
+
+## Reclaiming Tokens
+  * AGI tokens used to back a service request can be reclaimed by the backer after the service request has expired
+
+## Closing a Request
+
+  * Only the foundation can close a request after it has been approved.
+  * Request owner can close the request before its approval from the foundation.
+  * AGI tokens can be claimed back by the backers.
+  * Request status will change to closed

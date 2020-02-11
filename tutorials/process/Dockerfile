@@ -30,7 +30,7 @@ RUN apt-get install -y \
     cd /opt && \
     git clone https://github.com/singnet/snet-cli && \
     cd snet-cli && \
-    ./scripts/blockchain install && \
+    ./scripts/|Blockchain install && \
     pip3 install -e .
 
 

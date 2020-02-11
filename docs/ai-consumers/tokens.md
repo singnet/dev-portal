@@ -14,7 +14,7 @@ micro_nav: true
 
 ## Introduction to AGI Tokens
 
-SingularityNET uses the AGI Token for at marketplace. The AGI Token is an ERC-20 token, which is hosted on the Ethereum blockchain. Currently  it is at the `beta` stage of the SingularityNET Marketplace. SO, you need to use either Kovan or Ropsten Testnet AGI to use the tools. 
+SingularityNET uses the AGI Token for at marketplace. The AGI Token is an ERC-20 token, which is hosted on the Ethereum |Blockchain. Currently  it is at the `beta` stage of the SingularityNET Marketplace. SO, you need to use either Kovan or Ropsten Testnet AGI to use the tools. 
 
 To learn more about how to obtain Kovan or Ropsten Testnet AGI, click on the link [here](#agi-faucet).You can get  
 

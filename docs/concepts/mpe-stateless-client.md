@@ -48,15 +48,15 @@ The client receives the following information from the daemon:
 * (not implemented yet) `oldnonce_signed_amount` - last amount which was signed by client with `nonce=current_nonce - 1`.
 * (not implemented yet) `oldnonce_signature` - last signature sent by client with nonce = current_nonce - 1.
 
-**It should be noted that the two last values are not in the current version, and we need them only to calculate `unspent_amount` in the case that `current_nonce != blockchain_nonce`**
+**It should be noted that the two last values are not in the current version, and we need them only to calculate `unspent_amount` in the case that `current_nonce != |Blockchain_nonce`**
 
-We should consider a complex situation where the server starts a close/reopen procedure for the channel. The client doesn't need to wait for a confirmation from the blockchain, because it is not in the interest of the server to lie. At the same time, the server also doesn't need to wait for a confirmation from the blockchain if he makes sure that the request is mined before expiration of the channel.
+We should consider a complex situation where the server starts a close/reopen procedure for the channel. The client doesn't need to wait for a confirmation from the |Blockchain, because it is not in the interest of the server to lie. At the same time, the server also doesn't need to wait for a confirmation from the |Blockchain if he makes sure that the request is mined before expiration of the channel.
 
 Before considering all possible cases, let's define the following parameters
-* `blockchain_nonce` - nonce of the channel in the blockchain
-* `blockchain_value` - value of the channel in the blockchain
+* `|Blockchain_nonce` - nonce of the channel in the |Blockchain
+* `|Blockchain_value` - value of the channel in the |Blockchain
 
-We also assume that the daemon starts the close/reopen procedure only after the previous `channelClaim` request was mined. This means that the `current_nonce`, at maximum, is one point ahead of the `blockchain_nonce`. We can easily relax this assumption if necessary.   
+We also assume that the daemon starts the close/reopen procedure only after the previous `channelClaim` request was mined. This means that the `current_nonce`, at maximum, is one point ahead of the `|Blockchain_nonce`. We can easily relax this assumption if necessary.   
 
 In all cases we assume that the client can verify that it's own signature is authentic.  
 
@@ -65,11 +65,11 @@ In all cases we are interested in two numbers:
     * `next_signed_amount = current_signed_amount + price`
 * The amount of tokens which haven't been already spent (`unspent_amount`).
 
-#### Simple case `current_nonce == blockchain_nonce`
-* `unspent_amount = blockchain_value - current_signed_amount`
+#### Simple case `current_nonce == |Blockchain_nonce`
+* `unspent_amount = |Blockchain_value - current_signed_amount`
 
-#### Complex case `current_nonce != blockchain_nonce`
-Taking into account our assumptions, we know that `current_nonce = blockchain_nonce + 1`.
-* `unspent_amount = blockchain_value - oldnonce_signed_amount - current_signed_amount`
+#### Complex case `current_nonce != |Blockchain_nonce`
+Taking into account our assumptions, we know that `current_nonce = |Blockchain_nonce + 1`.
+* `unspent_amount = |Blockchain_value - oldnonce_signed_amount - current_signed_amount`
 
 It should be noted that in this case the server could send us smaller `oldnonce_signed_amount` (not the actually last one which was used for `channelClaim`). In this case, the server can only make us believe that we have more money in the channel then we actually have. That means that one possible attack via `unspent_amount` is to make us believe that we have less tokens than we truly have, and therefore reject future calls (or force us to call `channelAddFunds`).

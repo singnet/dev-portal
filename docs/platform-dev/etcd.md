@@ -18,7 +18,7 @@ When the payment moves to a validation process, the payment channel is stored in
 
 Image 2
 
-The limitation of using separate payment channel for each replica, becomes expensive from the gas consumption and time execution, because each operation performed on an open a channel needs processing by the blockchain.
+The limitation of using separate payment channel for each replica, becomes expensive from the gas consumption and time execution, because each operation performed on an open a channel needs processing by the |Blockchain.
 Therefore, such model is vulnerable to a breach (attack) causing same payment on different replicas based on the service. This leads to a model where all snet-daemons for the same service can use the shared storage.
 
 Image 3

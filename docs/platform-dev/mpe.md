@@ -1,133 +1,156 @@
 ---
 # Page settings
 layout: default
-keywords: Multi-Party Escrow, MPE, Multi Party Escrow
+keywords: MPE
 comments: false
 
 # Hero section
-title: The Multi-Party Escrow Contract
-description: An introduction to the deposit, withdrawal, and payment channel functionalities of the Multi-Party Escrow
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
+title: AI Developers
 
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    next:
-        content: MPE Stateless Client
-        url: '/docs/concepts/mpe-stateless-client'
-    prev:
-        content: Registry
-        url: '/docs/concepts/registry'
-
 ---
 
-## Introduction
-The Multi-Party Escrow smart contract (“MPE”), coupled with our atomic unidirectional
-payment channels, enables scalable payments in the platform by minimizing the number of
-on-Blockchain transactions needed between clients and AI service owners. The MPE contract has
-two main functionalities:
-1. A very simple wallet with a deposit and withdraw function. Everybody can deposit AGI tokens into a Multi-Party Escrow, and everybody can withdraw their AGI tokens (which have not been escrowed at the moment).
-2. The set of the simple ("atomic") unidirectional payment channels between clients and service providers and functions for manipulation of these channels.
+## Introduction to MPE
+
+An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account. 
+The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-|Blockchain interactions between AI Consumers and AI service providers.
+ 
+
+The MPE contract has two main functionalities which includes:
+
+1. A wallet with a deposit and withdraw function. 
+2. A set of the simple (“atomic”) unidirectional payment channels between clients and service providers and support functions for controlling these channels.
+
+    **Note:** Any one can deposit and withdraw their AGI tokens into a Multi-Party Escrow, (which have not been escrowed at the moment).
+
+
+## What is Payment Channel?
+Whenever the sender and the receiver enter into an contract, a channel is created.
+A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is a tool that enables off-chain transactions between parties without the delay imposed by |Blockchain block formation and without compromising the transactional security.
 
 
 ## Atomic unidirectional payment channel
-> You can skip this section if you are familiar with the concept of payment channels.
+You can ignore this section, if you are familiar with the concept of payment channels.
+The core logical building block of the Multi-Party Escrow is a simple (“Atomic”) unidirectional payment channel. To learn more about the details of how to implement the Escrow contract for unidirectional payment channel, click on this link [SimpleEscrow.sol](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol) file here. 
 
-The main logical building block of the Multi-Party Escrow is a simple ("atomic") unidirectional payment channel. You can find the implementation of the escrow contract for such a channel in the [SimpleEscrow.sol file here](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol). A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is a tool that enables off-chain transactions between parties without the delay imposed by blockchain block formation times and without compromising the transactional security. There are several kinds of payment channels. Let us consider the simple unidirectional payment channel, the main logic is as follows:
+It is understood that the payment channel is on the |Blockchain. So, in order to prevent direct updating on the |Blockchain regularly, the payment channel state is maintained in the storage.
 
-* The sender creates an escrow contract with a given expiration date and she/he funds it with
-  a desired amount of tokens.
-* Each time the sender needs to send a small amount of tokens to the recipient she/he sends (to the recipient) the signed authorization to close the channel and withdraws from the channel the total amount of the tokens that are due.
-* The recipient must check that the authorization is correctly signed and that the amount is correct, and that this amount is not exceeding the funds being escrowed.
-* The recipient can close the channel at any moment by presenting a signed amount from the sender.  Of course it is better for the recipient to close the channel with the last authorization (with highest amount). The recipient will be sent that amount, and the remainder will go back to the sender.
-* The sender can close the channel after the expiration date and take all funds back.
-* The sender can extend the expiration date and add funds to the contract at any moment in time.
+Daemon maintains the channel state off chain as block operations involve gas cost and are slow between parties without imposing any delay by the |Blockchain block formation times and compromising on transactional security. 
 
-In the model above, there is no way for the receiver to withdraw funds without closing the channel.
-Otherwise, he could use the sender's signed authorization a second time and withdraw 5 more AGI
-tokens.
-Therefore, we added a feature that allows the receiver to withdraw funds from the channel without
-closing it, while preventing this replay attack. We used a simple, textbook solution: a nonce. We
-add a nonce to the message that the sender signs, and this nonce changes each time the recipient
-claims the channel.
-With this improvement, payment channels inside MPE have the following favorable
-properties:
-* The channel between sender and recipient can persist indefinitely. The sender can extend
-the expiration time and add funds to the channel. The recipient can claim the amount
-signed over to him at any time.
-* The system is comfortably functional even when the Ethereum network is overloaded
-with confirmation time of several hours or even more, for the following reasons:
-  * Neither the sender nor recipient needs any confirmation from the Blockchain. Alice can continue to add funds, and Bob can continue to claim them in the channel, with no confirmation from the Blockchain. For example, after Bob claims his funds, he can inform Alice that the nonce of the channel has changed, and she can start to send messages with the new nonce. It is easy to demonstrate that this is safe for both the sender and the recipient. There is only one condition: the recipient should make sure that the transaction is mined before the expiry time of the channel.
-  * There is no race condition between claiming (from the recipient side) and extending/adding funds (from the sender side). The parties can use these functions at any time, and the final result will not depend on the order in which these transactions are mined.
-When a user wants to call a given service, they must open a channel, add funds to it, and set an
-expiry date that allows sufficient time for the service to fulfill its function. Each channel is
-unique to a combination of client identity (sender), service identity (recipient), and daemon
-group identity. This allows daemons in the same group to share payment information via etdc,
-reducing the overall number of channels and simplifying life on the client side. Clients can be
-end users interacting with the platform via the [Marketplace DApp](https://beta.singularitynet.io/) or applications making calls
-directly or through the SDK's generated code.
 
-## The Set of Channels and Manipulation Functions
-### Payment Channel Structure
+Let us consider the simple unidirectional payment channel, the main logic is as follows:
 
-Each "atomic" payment channel in MPE is represented by the following structure
+1.	The sender creates an Escrow contract with a given expiration date, and funds it with a desired amount of tokens.
+2.	The sender then needs to send a small amount of tokens to the recipient each time (to the recipient) with signed authorization
+3.	The recipient must verify whether the signed authorization and the amount required is correct, and that amount specified does not exceed the funds being escrowed.
+4.	The channel nonce is incremented, whenever a claim happens,
+Actually, the channel is not closed and the task can still continue off line, but a new nonce need to be used.
+5.	The sender can perform the following:
+      - Can collect all funds remaining after the expiration date.
+      <br>-or-
+      - Extend the expiration date and add funds to the contract at any moment in time.
+
+Note: The receiver can withdraw from the channel (same as claim) only using the authorized amount by the sender.  Whenever a signature is made on a certain format which should be signed by the private key of Kevin, Jack then verifies whether the signature was authentic to Kevin, based on the agreed format. 
+
+## MPE Use cases
+
+Consider the following 
+- Jack  - is our Client  **Consumer**/**Buyer** 
+- Kevin - is our Service **Provider**/**Seller**
+
+If Jack is buying services from the Kevin, they both need to enter in to a formal agreement with each other.A channel is created.
+**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity. 
+
+1.	Jack deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their AGI tokens.
+2.	Jack creates and opens a Payment Channel. 
+    **Note:** Jack is the sender of tokens and Kevin is the receiver of tokens. Every channel created has a unique ID, which begins from 0. 
+3.	Jack funds the channel
+    Kevin suggests Jack to deposit a bare amount ( cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable. 
+    Based on how much Jack wants to use a service , Jack deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time.
+    **Note:** Unless and until Jack authorises, the Kevin cannot withdraw the money.
+    Jack and Kevin come in to agreement to perform operation Off chain. The daemon manages the off chain state of the channel. 
+4.	Jack needs to authorize using the signature (using his private key to sign) to let Kevin withdraw
+5.	Kevin verifies the following
+    - Signature is authentic;
+    - Amount of AGI tokens specified is correct (last Authorized Amount from Jack + Cost of the Service being called) ;
+    - Amount does not exceed the value of the channel
+    - Channel is not very close to expiring or has expired.
+6.	Jack makes a call; Jack now sends the signed authorization to Kevin to “withdraw”. The effective balance is 1.
+7.	Kevin can now make a claim with the amount authorized.
+    **Note:** Nonce increments to 1, when claim is performed.
+    
+### Diagram showcasing how Kevin and Jack Communicate
+![How sellers and buyers interact](/assets/img/mpe/persona.png)    
+    
+### State management of the channel 
+
+* Jack (Buyer) and Kevin (Service provider) enter into a contract for the first time, they create a channel details in the |Blockchain is as follows: 
+
+|Channel ID       | 1       |The channel ID created is 1 on Chain|
+|---------------------|-------- |----------------------------------|
+|**Nonce**            | 0       |Initially the Nonce is 0|
+|**Full amount**      | 100 Cogs|Amount Jack has put into the channel is 100 Cogs|
+|**Authorized Amount**|	0       |The Authorized amount is zero, because no services has been used for the first time.|
+|**Signature**        |	Nil     |No signature is required to be sent.|
+
+
+<br>
+<br>
+
+* Jack makes a call and authorizes for 1 cog to Kevin, (assuming the cost of the service is 1 cog) ,the status of the channel is now maintained offchain by the storage mechanism used by Daemon :
+
+|**Channel ID**       | 1       |The channel ID 1 is now updated off chain|
+|-------------------- |-------- |----------------------------------|
+|**Nonce**            | 0       |Initially the Nonce is 0|
+|**Full amount**      | 100 Cogs|Amount Jack has put into the channel is 100 Cogs|
+|**Authorized Amount**|	1       |The Authorized amount is zero.|
+|**Signature**        |	1       |No signature is required to be sent.|
+
+*	Jack makes a call and authorizes for 2 cogs, to Kevin, now the status changes as follows:
+
+|**Channel ID**       | 1       |The channel ID 1 is now updated off chain|
+|---------------------|---------|----------------------------------|
+|**Nonce**            | 0       |Initially the Nonce is 0|
+|**Full amount**      | 100 Cogs|Amount Kevin has put into the channel is 100 Cogs|
+|**Authorized Amount**|	2 Cogs  |The Authorized amount is two.|
+|**Signature**        |	2 Cogs  |Signature is required for two.|
+
+*	Kevin makes a claim using the signature from Jack, this transaction is considered on-chain transaction.  please note the effective balance in |Blockchain for this channel is now 98 and its nonce is 1,The same channel state is updated as follows even in the off chain state:
+
+|**Channel ID**       | 1       |The channel ID created is 1|
+|---------------------|---------|----------------------------------|
+|**Nonce**            | 1       |Initially the Nonce was 0 but now it is 1|
+|**Full amount**      | 98 Cogs|Amount signed by Jack was for two cogs. The full amount in the channel is 98.|
+|**Authorized Amount**|	0       |The Authorized amount is two.|
+|**Signature**        |	0       |No signature is required to be sent|
+
+**Note:** Claims are always on-chain transaction and the Nonce gets incremented when claims are made. 
+
+The same process follows for future calls authorizations of cogs.
+
+  
+### Postponing the Expiration Time of the Channel
+With the following functions the client can postpone the expiration time of the channel and can add funds to the channel at any time and can also claim all funds from the channel after the expiration time is reached.
 
 ```
-       //the full ID of "atomic" payment channel = "[this, channel_id, nonce]"
-    struct PaymentChannel {
-        address sender;      // The account sending payments.
-        address recipient;   // The account receiving the payments.
-        bytes32 groupId;     // id of group of replicas who share the same payment channel
-                             // You should generate groupId randomly in order to prevent
-                             // two PaymentChannel with the same [recipient, groupId]
-        uint256 value;       // Total amount of tokens deposited to the channel.
-        uint256 nonce;       // "nonce" of the channel (by changing nonce we effectivly close the old channel ([this, channelId, oldNonce])
-                             //  and open the new channel [this, channelId, newNonce])
-                             //!!! nonce also prevents race conditon between channelClaim and channelExtendAndAddFunds
-        uint256 expiration;  // Timeout (in block numbers) in case the recipient never closes.
-                             // if block.number > expiration then sender can call channelClaimTimeout
-        address signer;     // signer on behalf of sender
-   }
-
-mapping (uint256 => PaymentChannel) public channels;
-
+function channelExtend(uint256 channel_id, uint256 new_expiration);
+function channelAddFunds(uint256 channel_id, uint256 amount);
+function channelExtendAndAddFunds(uint256 channel_id, uint256 new_expiration, uint256 amount);
+function channelClaimTimeout(uint256 channel_id);
 ```
 
-Comments are self-explanatory, but few clarifications migth be useful.
 
-* The full ID of an "atomic" payment channel is `[MPEContractAddress, channelId, nonce]`.
-* The `MPEContractAdress` is the address of Multi-Party Escrow contract, which is needed to prevent a multi contract attack.
-* `channelId` is an index in the channels mapping.
-* `nonce` is a part of the close/reopen logic.
-* By changing the `nonce` we effectively close the old channel `[MPEContractAddress, channelId, oldNonce]` and open the new one `[MPEContractAddress, channelId, newNonce]`. We will go more into details about this later.
-* `nonce` also prevents a race condition between between `channelClaim` and `channelExtendAndAddFunds`.
-* The full ID of the recipient is `[recipient_ethereum_address, groupId]`. By doing this we allow the service provider to use the same Ethereum wallet for different replicas.
-
-### Functions
-
-#### Opening a New Atomic Channel
-
-The following function opens the new "atomic" channel, assuming that the caller is the sender:
+### Claiming your funds back after Expiration 
+The Sender can claim the funds after the expiry date
 
 ```
-function openChannel(address  recipient, uint256 value, uint256 expiration, bytes32 groupId, address signer)
+function channelClaimTimeout(uint256 channel_id);
 ```
 
-This function simply creates a new `PaymentChannel` structure and adds it to the list of channels.
-
-#### Claiming Funds from the Channel
-With the following function, the recipient can claim funds from the channel.
+## How the recipient Claims funds from the Channel
+With the following function, the recipient can claim funds from the channel
 
 ```
 function channelClaim(uint256 channelId, uint256 amount, uint8 v, bytes32 r, bytes32 s, bool isSendback)
@@ -139,80 +162,75 @@ The recipient has two possibilities:
 * `(is_sendback==true)` - "close" the channel and send the remainder back to the sender.
 * `(is_sendback==false)` - "close/reopen". We transfer the claimed amount to the recipient, but instead of sending the remainder back to the sender we simple change the nonce of the channel. By doing this we close the old atomic channel `[MPEContractAdress, channel_id, old_nonce]` and open the new one `[MPEContractAdress, channel_id, new_nonce]`.
 
-#### Postponing the Expiration Time of the Channel
-
-With the following functions the client can postpone the expiration time of the channel and she/he can add funds to the channel at any time. She/he can also claim all funds from the channel after the expiration time is reached.
-
-```
-function channelExtend(uint256 channel_id, uint256 new_expiration);
-function channelAddFunds(uint256 channel_id, uint256 amount);
-function channelExtendAndAddFunds(uint256 channel_id, uint256 new_expiration, uint256 amount);
-function channelClaimTimeout(uint256 channel_id);
-```
-
-## Use cases
-
-### Description of a use case
-
-* The client deposits tokens to the Multi-Party Escrow and uses this as a wallet for their AGI tokens.
-* The client selects an AI service provider.
-* The client opens a Payment Channel with the chosen payment group.
-* It should be noted that the client can send requests to any replica from the selected payment group (replicas in one payment group should share the state of the payment channel amongst others in the payment group)
-* The client starts to send requests to the replicas. With each call it sends the signed authorization for the server to "withdraw" the total amount of AGI tokens which are due.
-* At some point, the server can decide to close/reopen channel in order to claim the AGI tokens due. At the next call from the client, the server should inform the client that the `nonce` of the channel has been changed (see [this topic on stateless clients](/docs/concepts/mpe-stateless-client)).
-* At some point, the client can decide to postpone the expiration of the channel or to escrow more funds.
-* It should be noted that because of the possibility to repeatedly postpone the expiration of the channel and/or to escrow more funds, the payment channel can exist forever.
-
-### Formal example of the use case
-
-Let's assume that one call requires 1 AGI. We also assume that the server and the client perform all required validations on each call. This means it at least checks:
-* whether the signature is authentic;
-* whether the amount of AGI tokens is correct;
-* whether this amount does not exceed the value of the channel; and
-* whether the expiration date is tolerable.
-
-**We assume that** `REPLICA1` **is from the payment group identified with** `groupId=group1`.
-
-* `CLIENT1` initiates a call: `openChannel(recipient=SERVER1, value=10 AGI, expiration=expiration0, groupId=group1, signer=CLIENT1)`
-* Multi-Party Escrow creates the Payment Channel: `[channel_id = 0, sender=CLIENT1, recipient=SERVER1, groupId=group1, value=10 AGI, nonce=0, expiration=expiration0, signer=CLIENT1]`
-* Multi-Party Escrow subtracts `10 AGI` from the balance of `CLIENT1`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=1)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=2)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=3)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=4)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=5)`
-* Server decides to close/reopen the channel (and claims `5 AGI` that is due)
-* `SERVER1` initiates a call: `channelClaim(channel_id = 0, amount=5, signature = SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=0, amount=5), is_sendback=false)`
-* The Multi-Party Escrow adds `5 AGI` to the balance of `SERVER1`
-* The Multi-Party Escrow changes the nonce (`nonce +=1`) and value (`value -= 5`) in the Payment Channel: `[channel_id = 0, sender=CLIENT1, recipient=SERVER1, replicaId=REPLICA1, value=5 AGI, nonce=1, expiration=expiration0]`
-* The client is notified that the channel has been reopened, and that the `nonce` has been changed (see [this topic on stateless clients](/docs/concepts/mpe-stateless-client)).
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=1)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=2)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=3)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=4)`
-* The client decides to deposit more AGI tokens in the channel and postpones its expiration date.
-* `CLIENT1` calls `channelExtendAndAddFunds(channel_id=0, new_expiration = now + 1day, amount=10 AGI)`
-* The Multi-Party Escrow changes the value and expiration date in the Payment Channel: `[channel_id = 0, sender=CLIENT1, recipient=SERVER1, groupId=group1, value=15 AGI, nonce=1, expiration=expiration1, signer=CLIENT1]`
-* The Multi-Party Escrow subtracts `10 AGI` from the balance of `CLIENT1`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=5)`
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=6)`
-* .....
-* `CLIENT1` sends to `SERVER1/REPLICA1` the authorization `SIGNED_BY_CLIENT1(ContractAdress=MPEAdress, channel_id=0, nonce=1, amount=10)`
-* The server decides to close/reopen the channel (claims 10 AGI that is due).
-* .....
-* Client decides to put more AGI tokens in the channel and postpones its expiration date.
-* ....
-* Server decides to close/reopen the channel.
-* ....
-* This can be repeated forever.
-* ....
-* If the server decides to stop working with this client he could close the channel with `channelClaim(...., is_sendback=true)`
-* If the server fails to claim the tokens before timeout (for example if he goes offline forever), then the client can claim all remaining tokens after the expiration date.
-
 ## Remarks
 
-* The service provider can use the same Ethereum address for all payment groups or she/he can use a different address. In any case, the daemons very rarely need to send an on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner). We call such a server a treasurer server.
+* The service provider can use the same Ethereum address for all payment groups or can use a different address. In any case, the daemons very rarely need to send an on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner). We call such a server a treasurer server.
 * In the current implementation, the client signs off-chain authorization messages with the signer's private key. This means that the client doesn't necessarily need to sign transactions with his Ethereum identity. Instead, he can use other key pairs.
-* The server does not need to wait for a confirmation from the Blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the `nonce` of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.  
+* The server does not need to wait for a confirmation from the |Blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the `nonce` of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the |Blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the |Blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.  
 * The `nonce` in the channel prevents a race between the `channelExtendAndAddFunds` and `channelClaim`. If the client sends the `channelExtendAndAddFunds` request and at the same time the
-server sends a `channelClaim` request, they can continue to work without receiving confirmation from the Blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
+server sends a `channelClaim` request, they can continue to work without receiving confirmation from the |Blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
+
+### Contract Addresses
+[Click here](https://github.com/singnet/platform-contracts#deployed-contracts-npm-version-033)
+
+
+# MPE Stateless Client 
+The Client does not have to maintain the state of the last amount it had signed
+ The client can request the last state of the given payment channel from the server.
+    * The server is not able to forge this state, because it was signed by the client (of course the client should check its own signature).
+    * The server is obviously interested in saving and sending the last state, otherwise it loses money.
+    
+
+This section describes how the client communicates with the SingularityNET services using the Multi-Party Escrow payment channels without storing state of the payment channel. 
+The client needs to store the Ethereum identity as follows:
+1.	The client obtains the list of payment channels (payment channels with "sender==client") from the Multi-Party Escrow (see EventChannelOpen). 
+    Considering the situation in which the request to open the channel had been sent, but not yet mined. This can occur when the client request has not received any acknowledgement or the session is disconnected (it "lost" its state).
+2.	The client requests the last state of the given payment channel from the server
+    
+ - The server can never duplicate the state of the payment channel signed by the client (off course the client should check its own signature).
+ - The server saves and sends the last state, otherwise the money lost.
+ 
+ **Note:** A unique gRPC method is available in the daemon helps return the state of the channel (see: https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto). 
+ 
+ The client does not necessarily require a special call request to know the last state of the channel from the daemon. 
+ 
+ The daemon can return the state of the channel in the response to any non-authorized call.
+ 
+ The client receives the following information from the daemon:
+
+- **current_nonce** 
+  <br>Current nonce of the payment channel.
+- **current_signed_amoun**t
+  <br>Last amount which were signed by client with current_nonce. If no messages were signed with the current_nonce, then this value is an empty byte string (b''), which we should interpret as 0.
+- **current_signature **
+  <br>Last signature sent by the client with current_nonce, it could be absent (empty string) if no message was signed with current nonce.
+- **oldnonce_signed_amount**  
+  <br>last amount which was signed by client with nonce=current_nonce - 1.
+- **oldnonce_signature** 
+  <br>last signature sent by client with nonce = current_nonce - 1.
+
+**Note:** The two last values are not available in current version, if implemented, can calculate the unspent_amount in the case that current_nonce != |Blockchain_nonce.
+
+**Example**
+Assume that the server performs a close/reopen procedure for the channel. The client can proceed without confirmation from the |Blockchain, because the server does not need to be dependent, or the client ensures that the request is mined before expiration of the channel.
+
+Before considering the above scenario, define the following parameters
+- |Blockchain_nonce - nonce of the channel in the |Blockchain
+- |Blockchain_value - value of the channel in the |Blockchain
+
+It is known that the daemon starts the close/reopen procedure only after the previous channelClaim request was mined. This means that the current_nonce, at maximum, is one point ahead of the |Blockchain_nonce.
+
+In each case, the client can verify their signature is authentic and considers the following two numbers:
+
+- Next amount which has to be signed (next_signed_amount), taking into account the price for the current call (price). This value can be easily calculated as we interpret current_signed_amount = b'' as 0.
+    - next_signed_amount = current_signed_amount + price
+- The amount of tokens which haven't been already spent (unspent_amount).
+
+**Simple case** current_nonce == |Blockchain_nonce
+- unspent_amount = |Blockchain_value - current_signed_amount
+
+**Complex case**current_nonce != |Blockchain_nonce
+Taking into account our assumptions, we know that current_nonce = |Blockchain_nonce + 1.
+- unspent_amount = |Blockchain_value - oldnonce_signed_amount - current_signed_amount
+
+**Note:** The server can send smaller oldnonce_signed_amount (not the actually last one which was used for channelClaim), But the server trust that the money available is actually more in the channel, which means that a likely attack has occurred through unspent_amount, which lead us  believe that there are less tokens than the actuals, and therefore the future calls need be rejected instantly (or force us to call channelAddFunds).

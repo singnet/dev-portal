@@ -32,8 +32,6 @@ page_nav:
 
 ## Calling a Service
 
-
-
 All complexity of invoking a service is abstracted from the users.
 For example it becomes easy for the user to Input the values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC calls/generating signatures for authorization to call a  service.  
 
@@ -85,7 +83,7 @@ If you dont have money on Escrow account, you will be asked to ***Deposit into E
 ![marketplace](/assets/img/dapp/depositinEscrow.png)
 Now click on **Deposit**
 
-You need to confirm every Blockchain transaction when using metamask as your mode of payment
+You need to confirm every |Blockchain transaction when using metamask as your mode of payment
 ![marketplace](/assets/img/dapp/confirmationfrommetamask.png)
 
 Based on the number of calls you wish to invoke ,select the option and the channel will be 
