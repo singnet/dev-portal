@@ -87,7 +87,7 @@ If Kevin is buying services from the Jack, they both need to enter in to a forma
     
 ### State management of the channel 
 
-* Jack (Buyer) and Kevin (Service provider) enter into a contract for the first time, they create a channel details in the Blockchain is as follows: 
+* Kevin (Buyer) and Jack (Service provider) enter into a contract for the first time, they create a channel details in the Blockchain is as follows: 
 
 |Channel ID       | 1       |The channel ID created is 1 on Chain|
 |---------------------|-------- |----------------------------------|
@@ -100,16 +100,16 @@ If Kevin is buying services from the Jack, they both need to enter in to a forma
 <br>
 <br>
 
-* Jack makes a call and authorizes for 1 cog to Kevin, (assuming the cost of the service is 1 cog) ,the status of the channel is now maintained offchain by the storage mechanism used by Daemon :
+* Kevin makes a call and authorizes for 1 cog to Kevin, (assuming the cost of the service is 1 cog) ,the status of the channel is now maintained offchain by the storage mechanism used by Daemon :
 
 |**Channel ID**       | 1       |The channel ID 1 is now updated off chain|
 |-------------------- |-------- |----------------------------------|
 |**Nonce**            | 0       |Initially the Nonce is 0|
-|**Full amount**      | 100 Cogs|Amount Jack has put into the channel is 100 Cogs|
+|**Full amount**      | 100 Cogs|Amount Kevin has put into the channel is 100 Cogs|
 |**Authorized Amount**|	1       |The Authorized amount is zero.|
 |**Signature**        |	1       |No signature is required to be sent.|
 
-*	Jack makes a call and authorizes for 2 cogs, to Kevin, now the status changes as follows:
+*	Kevin makes a call and authorizes for 2 cogs, to Kevin, now the status changes as follows:
 
 |**Channel ID**       | 1       |The channel ID 1 is now updated off chain|
 |---------------------|---------|----------------------------------|
@@ -123,7 +123,7 @@ If Kevin is buying services from the Jack, they both need to enter in to a forma
 |**Channel ID**       | 1       |The channel ID created is 1|
 |---------------------|---------|----------------------------------|
 |**Nonce**            | 1       |Initially the Nonce was 0 but now it is 1|
-|**Full amount**      | 98 Cogs|Amount signed by Jack was for two cogs. The full amount in the channel is 98.|
+|**Full amount**      | 98 Cogs|Amount signed by Kevin was for two cogs. The full amount in the channel is 98.|
 |**Authorized Amount**|	0       |The Authorized amount is two.|
 |**Signature**        |	0       |No signature is required to be sent|
 
