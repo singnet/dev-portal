@@ -18,7 +18,7 @@ An Escrow contract defines the conditional transaction between two transacting p
 The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-Blockchain interactions between AI Consumers and AI service providers.
  
 
-The MPE contract has two main functionalities which includes:
+The MPE contract comprises two main functionalities which includes:
 
 1. A wallet with a deposit and withdraw function. 
 2. A set of the simple (“atomic”) unidirectional payment channels between clients and service providers and support functions for controlling these channels.
@@ -57,25 +57,26 @@ Note: The receiver can withdraw from the channel (same as claim) only using the 
 ## MPE Use cases
 
 Consider the following 
-- Jack  - is our Client  **Consumer**/**Buyer** 
-- Kevin - is our Service **Provider**/**Seller**
+- Kevin  - is our Client  **Consumer**/**Buyer** 
+- Jack - is our Service **Provider**/**Seller**
 
-If Jack is buying services from the Kevin, they both need to enter in to a formal agreement with each other.A channel is created.
+If Kevin is buying services from the Jack, they both need to enter in to a formal agreement with each other. A channel is created.
+
 **Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity. 
 
-1.	Jack deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their AGI tokens.
-2.	Jack creates and opens a Payment Channel. 
-    **Note:** Jack is the sender of tokens and Kevin is the receiver of tokens. Every channel created has a unique ID, which begins from 0. 
-3.	Jack funds the channel
-    Kevin suggests Jack to deposit a bare amount ( cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable. 
-    Based on how much Jack wants to use a service , Jack deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time.
-    **Note:** Unless and until Jack authorises, the Kevin cannot withdraw the money.
+1.	Kevin deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their AGI tokens.
+2.	Kevin creates and opens a Payment Channel. <br>
+    <br>**Note:** Kevin is the sender of tokens and Jack is the receiver of tokens. Every channel created has a unique ID, which starts from 0. 
+    
+3.	Kevin funds the channel. Kevin suggests Jack to deposit a bare amount ( cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable. <br>
+    <br>Based on how much Jack wants to use a service , Jack deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time. <br>
+    <br>**Note:** Unless and until Jack authorises, the Kevin cannot withdraw the money.
     Jack and Kevin come in to agreement to perform operation Off chain. The daemon manages the off chain state of the channel. 
 4.	Jack needs to authorize using the signature (using his private key to sign) to let Kevin withdraw
-5.	Kevin verifies the following
-    - Signature is authentic;
-    - Amount of AGI tokens specified is correct (last Authorized Amount from Jack + Cost of the Service being called) ;
-    - Amount does not exceed the value of the channel
+5.	Kevin verifies the following:<br>
+    - Signature is authentic.
+    - Amount of AGI tokens specified is correct (last Authorized Amount from Jack + Cost of the Service being called).
+    - Amount does not exceed the value of the channel.
     - Channel is not very close to expiring or has expired.
 6.	Jack makes a call; Jack now sends the signed authorization to Kevin to “withdraw”. The effective balance is 1.
 7.	Kevin can now make a claim with the amount authorized.
