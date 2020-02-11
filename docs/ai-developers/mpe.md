@@ -15,6 +15,7 @@ micro_nav: true
 ## Introduction to MPE
 
 An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account. 
+
 The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-Blockchain interactions between AI Consumers and AI service providers.
  
 
@@ -32,7 +33,8 @@ A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is
 
 
 ## Atomic unidirectional payment channel
-You can ignore this section, if you are familiar with the concept of payment channels.
+If you are familiar with the concept of payment channels, ignore this section. 
+
 The core logical building block of the Multi-Party Escrow is a simple (“Atomic”) unidirectional payment channel. To learn more about the details of how to implement the Escrow contract for unidirectional payment channel, click on this link [SimpleEscrow.sol](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol) file here. 
 
 It is understood that the payment channel is on the Blockchain. So, in order to prevent direct updating on the Blockchain regularly, the payment channel state is maintained in the storage.
