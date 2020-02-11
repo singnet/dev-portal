@@ -46,7 +46,7 @@ The RFAI portal fosters the community by enabling users to promote developers to
 * Any AI service request must associate with corresponding AGI tokens.
 * Furnish sufficient details for discussion and development and invoked in the form of a github pull requests to [this](https://github.com/singnet/rfai-proposal) repo. You can view the template for the request [here](https://github.com/singnet/rfai-proposal/blob/master/rfai-proposal-template.md)
 * Specify the expiry date for the request. Make a post dated date, so if no submission is made, you can withdraw your funds.
-* A request created will need to be approved by the foundation before it shows up for everybody
+* A request created will need to be approved by the foundation before it shows up for everybody.
 
 ## Backing an AI Service
 * To request for an AI service, you need to associate with corresponding AGI tokens
@@ -69,13 +69,14 @@ This is a two step process
 
 ## Solution Submission
 
-* All submissions are evaluated by the SingularityNet foundation to ensure that the acceptance criteria as specified in the request is met and the problem is solved for.
-* The submission should include the github repo of your code
-* The submitter should be using the same address used to publish the service while submitting the solution.
-* The submission is evaluated as follows
-* The specified acceptance criteria in the request must be met
-    * Any performance metrics specified against provided test datasets should be met
-    * Submission should be a service deployed on the SingularityNet platform
+* Submissions are evaluated by the SingularityNet foundation to ensure that the acceptance criteria as specified in the request is met and the problem is solved for.
+* Include the github repo of your code during submission. 
+* Submitter must publish the service, using the same address used while submitting the solution.
+
+The submission is evaluated as follows
+* The specified acceptance criteria in the request must be met.
+    * Any performance metrics specified against provided test datasets should be met.
+    * Submission should be a service deployed on the SingularityNet platform.
 
 
 ## Voting for a Solution
