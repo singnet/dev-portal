@@ -546,7 +546,7 @@ platform-dev:
       title: Daemon Channel Storage
       excerpt: Channel Storage
       cta: Read more
-      url: '/docs/platform-dev/daemon-channel-storage.md'
+      url: '/docs/platform-dev/daemon-channel-storage'
 
 products:
   marketplace:
