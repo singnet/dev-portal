@@ -543,10 +543,10 @@ platform-dev:
       cta: Read more
       url: '/docs/platform-dev/mpe'
   channel-storage:
-      title: Payment Channel Storage
-      excerpt: How to communicate with SingularityNET services with the stateless method.
+      title: Daemon Channel Storage
+      excerpt: Channel Storage
       cta: Read more
-      url: '/docs/platform-dev/channel-storage'
+      url: '/docs/platform-dev/daemon-channel-storage.md'
 
 products:
   marketplace:
