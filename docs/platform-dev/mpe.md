@@ -57,28 +57,28 @@ Note: The receiver can withdraw from the channel (same as claim) only using the 
 ## MPE Use cases
 
 Consider the following 
-- Jack  - is our Client  **Consumer**/**Buyer** 
-- Kevin - is our Service **Provider**/**Seller**
+- Kevin  - is our Client  **Consumer**/**Buyer** 
+- Jack - is our Service **Provider**/**Seller**
 
-If Jack is buying services from the Kevin, they both need to enter in to a formal agreement with each other.A channel is created.
+If Kevin is buying services from the Jack, they both need to enter in to a formal agreement with each other.A channel is created.
 **Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity. 
 
-1.	Jack deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their AGI tokens.
-2.	Jack creates and opens a Payment Channel. 
-    **Note:** Jack is the sender of tokens and Kevin is the receiver of tokens. Every channel created has a unique ID, which begins from 0. 
-3.	Jack funds the channel
+1.	Kevin deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their AGI tokens.
+2.	JKevin creates and opens a Payment Channel. <br>
+    <br>**Note:** Kevin is the sender of tokens and Kevin is the receiver of tokens. Every channel created has a unique ID, which begins from 0.<br>
+3.	Kevin funds the channel
     Kevin suggests Jack to deposit a bare amount ( cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable. 
-    Based on how much Jack wants to use a service , Jack deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time.
+    Based on how much Kevin wants to use a service, Kevin deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time.
     **Note:** Unless and until Jack authorises, the Kevin cannot withdraw the money.
     Jack and Kevin come in to agreement to perform operation Off chain. The daemon manages the off chain state of the channel. 
-4.	Jack needs to authorize using the signature (using his private key to sign) to let Kevin withdraw
-5.	Kevin verifies the following
+4.	Kevin needs to authorize using the signature (using his private key to sign) to let Kevin withdraw
+5.	Jack verifies the following
     - Signature is authentic;
-    - Amount of AGI tokens specified is correct (last Authorized Amount from Jack + Cost of the Service being called) ;
+    - Amount of AGI tokens specified is correct (last Authorized Amount from Kevin + Cost of the Service being called) ;
     - Amount does not exceed the value of the channel
     - Channel is not very close to expiring or has expired.
-6.	Jack makes a call; Jack now sends the signed authorization to Kevin to “withdraw”. The effective balance is 1.
-7.	Kevin can now make a claim with the amount authorized.
+6.	Kevin makes a call; Jack now sends the signed authorization to Kevin to “withdraw”. The effective balance is 1.
+7.	Jack can now make a claim with the amount authorized.
     **Note:** Nonce increments to 1, when claim is performed.
     
 ### Diagram showcasing how Kevin and Jack Communicate
@@ -86,12 +86,12 @@ If Jack is buying services from the Kevin, they both need to enter in to a forma
     
 ### State management of the channel 
 
-* Jack (Buyer) and Kevin (Service provider) enter into a contract for the first time, they create a channel details in the Blockchain is as follows: 
+* Kevin (Buyer) and Jack (Service provider) enter into a contract for the first time, they create a channel details in the Blockchain is as follows: 
 
 |Channel ID       | 1       |The channel ID created is 1 on Chain|
 |---------------------|-------- |----------------------------------|
 |**Nonce**            | 0       |Initially the Nonce is 0|
-|**Full amount**      | 100 Cogs|Amount Jack has put into the channel is 100 Cogs|
+|**Full amount**      | 100 Cogs|Amount Kevin has put into the channel is 100 Cogs|
 |**Authorized Amount**|	0       |The Authorized amount is zero, because no services has been used for the first time.|
 |**Signature**        |	Nil     |No signature is required to be sent.|
 
@@ -99,16 +99,16 @@ If Jack is buying services from the Kevin, they both need to enter in to a forma
 <br>
 <br>
 
-* Jack makes a call and authorizes for 1 cog to Kevin, (assuming the cost of the service is 1 cog) ,the status of the channel is now maintained offchain by the storage mechanism used by Daemon :
+* Kevin makes a call and authorizes for 1 cog to Kevin, (assuming the cost of the service is 1 cog) ,the status of the channel is now maintained offchain by the storage mechanism used by Daemon :
 
 |**Channel ID**       | 1       |The channel ID 1 is now updated off chain|
 |-------------------- |-------- |----------------------------------|
 |**Nonce**            | 0       |Initially the Nonce is 0|
-|**Full amount**      | 100 Cogs|Amount Jack has put into the channel is 100 Cogs|
+|**Full amount**      | 100 Cogs|Amount Kevin has put into the channel is 100 Cogs|
 |**Authorized Amount**|	1       |The Authorized amount is zero.|
 |**Signature**        |	1       |No signature is required to be sent.|
 
-*	Jack makes a call and authorizes for 2 cogs, to Kevin, now the status changes as follows:
+*	Kevin makes a call and authorizes for 2 cogs, to Jack, now the status changes as follows:
 
 |**Channel ID**       | 1       |The channel ID 1 is now updated off chain|
 |---------------------|---------|----------------------------------|
@@ -117,7 +117,7 @@ If Jack is buying services from the Kevin, they both need to enter in to a forma
 |**Authorized Amount**|	2 Cogs  |The Authorized amount is two.|
 |**Signature**        |	2 Cogs  |Signature is required for two.|
 
-*	Kevin makes a claim using the signature from Jack, this transaction is considered on-chain transaction.  please note the effective balance in Blockchain for this channel is now 98 and its nonce is 1,The same channel state is updated as follows even in the off chain state:
+*	Jack makes a claim using the signature from Kevin, this transaction is considered on-chain transaction.  please note the effective balance in Blockchain for this channel is now 98 and its nonce is 1,The same channel state is updated as follows even in the off chain state:
 
 |**Channel ID**       | 1       |The channel ID created is 1|
 |---------------------|---------|----------------------------------|
