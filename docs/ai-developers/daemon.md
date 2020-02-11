@@ -99,4 +99,4 @@ The daemon's behavior with respect to the [service type](#supported-service-type
 ## Payment channel state
 
 The daemon stores the payment channel state in an etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/ai-developers/daemon-channel-storage).
-[ETCD cluster](/docs/ai-developers/etcdsetup.md).
+[ETCD cluster](/docs/ai-developers/etcdsetup).

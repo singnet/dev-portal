@@ -452,6 +452,11 @@ ai-developers:
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/daemon'
+        mpe-stateless-client:
+          title: Stateless Client
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/mpe-stateless-client'
         marketplace:
             title: Marketplace Dapp
             excerpt:
