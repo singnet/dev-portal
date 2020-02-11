@@ -167,49 +167,60 @@
         });
     });
 
-    /*        
-     $(window).scroll(function(e){ 
-     var $el = $('.testodutest'); 
-     //var $el2 = $('.left-nav');   
-     //var st=$('.on-this-page').offset().top;
-     //alert(st);
-     var isPositionFixed = ($el.css('position') == 'fixed'); 
-     if ($(this).scrollTop() > 195 && !isPositionFixed){ 
-     $el.css({'position': 'fixed', 'top': '0px', 'right': '0px','padding-top':'0px'}); 
-     }
-     if ($(this).scrollTop() < 195 && isPositionFixed){
-     $el.css({'position': 'static', 'top': '0px','right': '0px','padding-top':'45px'}); 
-     } 
-     
-     });    
-     */
 
+    $(".snet-card_maincontents img").css({"cursor": "pointer"});
 
-
-    $(".snet-card_maincontents img").css({"cursor":"pointer"});
-    
     // Get the modal
     var modal = document.getElementById("snetModal");
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
-            modal.style.display = "none";
+            //modal.style.display = "none";
+            $(modal).fadeOut();
         }
     }
+
     $('.snet-card_maincontents img').click(function () {
-        //alert($(this).attr('src'));    
-        var modal = document.getElementById("snetModal");
-        $("#snetModal img").attr('src', $(this).attr('src'));
-        //modal.style.display = "block";
-        $(modal).fadeIn();
+        var altText = $(this).attr('alt');
+        var imgUrl = $(this).attr('src');
+
+        $.ajax({
+            url: imgUrl,
+            type: 'HEAD',
+            error: function () {
+                //alert("Image Doent Exist");
+            },
+            success: function () {
+                var modal = document.getElementById("snetModal");
+                $("#snetModal img").attr('src', imgUrl);
+                //$("#snetmodal-altetx").text(altText);
+                $(modal).fadeIn();
+            }
+        });
     });
 
     $('#snetModal-close').click(function () {
         var modal = document.getElementById("snetModal");
-        //modal.style.display = "none";
         $(modal).fadeOut();
     });
+
+
+//    function scrollDetect() {
+//        $('.snet-card_maincontents h1,.snet-card_maincontents h2,.snet-card_maincontents h3,.snet-card_maincontents h4,.snet-card_maincontents h5,.snet-card_maincontents h6,.snet-card_maincontents h7').each(function () {
+//            if ($(window).scrollTop() >= $(this).offset().top) {
+//                var id = $(this).attr('id');
+////                alert(id);    
+//                $('.snet-nav_list_secondary ul li.active').removeClass('active');
+//                var newId = 'a[href$="#' + id + '"]';//"a[href$='.org']"
+//                //console.log("New Id"+newId) +"\n";
+//                $(newId).parent("li").addClass("active");
+//            }
+//        });
+//    }
+//    $(window).on('scroll', function () {
+//        scrollDetect();
+//    });
 
 
 }(jQuery));
