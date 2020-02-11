@@ -535,25 +535,15 @@ ai-developers:
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/daemon-setup'
-  claims:
-    title: Claims
-    excerpt:
-    cta: Read more
-    url: '/docs/ai-developers/claim'
 
   tutorials:
     title: Tutorials
     children:
-        create-wallet:
-          title: How to Create a Wallet?
+        tutorail:
+          title: Tutorials
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/create-a-wallet'
-        snet-cli:
-          title: snet-cli
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/snet-cli-tutorial'
+          url: '/docs/ai-developers/tutorials'
 
   troubleshooting:
       title: Troubleshooting
