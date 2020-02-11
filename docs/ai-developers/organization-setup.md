@@ -106,7 +106,7 @@ Example
 ```sh
 snet organization metadata-add-assets image.png  hero_image
 ```
-the below will be appended to the json
+Appends the following snippet code to the json script
 
 ```json
     "assets": {
@@ -126,7 +126,7 @@ Example
 ```sh
  snet organization metadata-add-contact --phone 123456789 --email yourorg@yourorg support
 ```
-the below will be appended to the json
+Appends the following snippet code to the json script
 ```json
     "contacts": [
         {
@@ -144,9 +144,9 @@ cat organization_metadata.json
 ```
 
 ### Publish the organization 
-Please note you will need an account with Ether to do the below
-Members can update/delete/add services under the given organization , however
-only the owner can modify the metadata of an organization.
+Ensure that you have an account with Ether to perform update/delete/add services for a particular organization.
+
+**Note** Only the owner is eligible to modify the metadata of an organization.
 
 
 
