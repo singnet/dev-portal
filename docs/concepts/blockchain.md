@@ -5,8 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: snetd - SingularityNET Daemon
-description: Learn about the daemon - how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
+title: Core Concepts 
 
 # extralink box
 extralink:
@@ -31,15 +30,13 @@ page_nav:
         url: '/docs/concepts/daemon-api'
         
 ---
-The [SingularityNET daemon](https://github.com/singnet/snet-daemon) is the adapter that a service can use to interface with the SingularityNET platform.
-In software architecture lingo, the daemon is a [sidecar proxy](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar), —a process deployed next to a core application (the AI service, in this case) to abstract away some architectural concerns such as logging and configuration as well as entire platform aspects, such as the interaction with smart contracts or even the decision to use the Ethereum Blockchain.
-The two key abstraction responsibilities of the daemon are payments and request translation. In order to authorize payments, the daemon interacts with the Multi-Party Escrow contract.
-Before invoking a service through SingularityNET, a consumer must have
-1. funded the Multi-Party Escrow contract (see section on payments below) and
-2. opened a payment channel with the recipient as specified by the service definition
-With each invocation the daemon checks that
-1. the signature is authentic,
-2. the payment channel has sufficient funds, and
-3. the payment channel expiry is beyond a specified threshold (to ensure that the developer can claim the accrued funds).
 
-After these successful checks, the request is proxied to the service. The daemon also keeps track of payment states of different clients.
+## What is Blockchain Technology?
+
+Blockchain technology drives cryptocurrency which is a virtual currency secured by cryptography. It is changing the way people, processes and businesses communicate. 
+Blockchain is a distributed ledger of an increasing list of records called ‘blocks’ linked using a cryptographic hash of the previous block, a timestamp, and transaction data. The public and decentralized ledger design of Blockchain enables a unified source of data with an audit trail and consistency across the transacting parties without the intermediaries.
+With the Blockchain technologies creating a fundamental paradigm shift across the global marketplace, with many far-reaching applications across all industries including loyalty and rewards programs, financial services, consumer packaged goods, healthcare, and government agencies, SingularityNET strives to pursue Artificial Intelligence-enabled opportunities in this technology domain.
+SingularityNET enables you to build a gateway to Blockchain
+
+SingularityNET is focused on developing and investing in globally scalable Blockchain technology and its solutions. At SingularityNET, we are dedicated to becoming a momentous participant in the evolution of Blockchain technology that creates long term value for its shareholders and the global community by investing in and developing businesses. 
+To conclude, Blockchain technology is now labelled a ‘foundational technology’ and new Blockchain protocols are emerging with features and applications far beyond the initial vision of digital currencies for payment purposes. 

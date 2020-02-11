@@ -85,54 +85,25 @@ docs:
     url: "/docs/buyer"    
 
 concepts:
-  marketplace:
-    title: "SingularityNet Marketplace"
-    url: "/docs/concepts/marketplace"
-  service:
-    title: "SingularityNet Services"
-    url: "/docs/concepts/service"
-  service-metadata:
-    title: "Service Metadata"
-    url: "/docs/concepts/service-metadata"
+  blockchain:
+    title: "What is Blockchain"
+    url: "/docs/concepts/blockchain"
+  introduction:
+    title: "SingularityNET Introduction "
+    url: "/docs/concepts/introduction"
+  ipfs:
+    title: "IPFS "
+    url: "/docs/concepts/ipfs"
+  mpe:
+    title: "Multi-party Escrow"
+    url: "/docs/concepts/mpe"
   naming-standards:
     title: "Naming Standards"
     url: "/docs/concepts/naming-standards"
-  software:
-    title: "SingularityNet Software"
-    url: "/docs/concepts/software"
-  snet-cli:
-    title: "SingularityNET Command Line Tools"
-    url: "/docs/concepts/snet-cli"
-  sdk:
-    title: "SingularityNet SDK"
-    url: "/docs/concepts/sdk"
-  daemon:
-    title: "SingularityNet Daemon"
-    url: "/docs/concepts/daemon"
-  daemon-api:
-    title: "Daemon API"
-    url: "/docs/concepts/daemon-api"    
-  daemon-channel-storage:
-    title: "Daemon Payment Channel Storage"
-    url: "/docs/concepts/daemon-channel-storage"
-  blockchain-contracts:
-    title: "SingularityNet Platform Contracts"
-    url: "/docs/concepts/blockchain-contracts"   
-  agi-token:
-    title: "AGI Tokens"
-    url: "/docs/concepts/agi-token"
-  registry:
-    title: "Registry"
-    url: "/docs/concepts/registry" 
-  multi-party-escrow:
-    title: "Multi Party Escrow"
-    url: "/docs/concepts/multi-party-escrow"
-  mpe-stateless-client:
-    title: "Stateless Client"
-    url: "/docs/concepts/mpe-stateless-client"
-  rfai:
-    title: "Request For AI Portal"
-    url: "/docs/concepts/rfai"
+  key-terms:
+    title: "Key terms"
+    url: "/docs/concepts/keyterms"
+
 
 tutorials:
   general: 
