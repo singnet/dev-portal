@@ -43,26 +43,28 @@ The RFAI portal fosters the community by enabling users to promote developers to
 
 ## Making a request for an AI service
 
-* Any request for an AI service should be backed by AGI tokens.
-* Requests should be detailed enough to allow discussion and development and should be in the form of a github pull requests to [this](https://github.com/singnet/rfai-proposal) repo. You can view the template for the request [here](https://github.com/singnet/rfai-proposal/blob/master/rfai-proposal-template.md)
-* Provide an expiry date for the request. Meaning the date post which you can withdraw your funds if no submission has been made
+* Any AI service request must associate with corresponding AGI tokens.
+* Furnish sufficient details for discussion and development and invoked in the form of a github pull requests to [this](https://github.com/singnet/rfai-proposal) repo. You can view the template for the request [here](https://github.com/singnet/rfai-proposal/blob/master/rfai-proposal-template.md)
+* Specify the expiry date for the request. Make a post dated date, so if no submission is made, you can withdraw your funds.
 * A request created will need to be approved by the foundation before it shows up for everybody
 
 ## Backing an AI Service
-* In order to request for an AI service, you need to back it with AGI tokens
-* You need to transfer tokens to the RFAI escrow from the user profile Account's menu. This is a two step process
+* To request for an AI service, you need to associate with corresponding AGI tokens
+* Transfer the tokens to the RFAI escrow from the "User profile Account's" menu. 
+This is a two step process
     * Approve the number of tokens to deposit
     * Deposit the tokens
-* You are now set to make a request for an AI service or back any approved request
+
+**Note**: You can request for an AI service or back any approved request
 
 
 ## Request Approval
 
-* The foundation will review all requests and will approve them. In general we look for
+* The foundation reviews all request and approves them. In general look for:
     * Clear problem description
-    * Relevant problem which if solved will help the community
-    * Quantitative evaluation criteria 
-* Once approved the request is visible for all on the portal
+    * Resolved relevant problem can help the community
+    * criteria for Quantitative evaluation  
+* After approval, the approved requests are visible in the portal
 
 
 ## Solution Submission
