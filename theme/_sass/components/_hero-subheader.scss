@@ -1,16 +1,14 @@
-/**
- * Hero subheader (components/_hero-subheader.scss)
- */
+/* Hero subheader (components/_hero-subheader.scss) 
+*/
 
 /* ----- General ----- */
 .hero-subheader {
-	color: $color-dark-blue;
-	background-color: $color-theme-blue;
-	padding: 3.75rem 0 (4.6875rem - 1.25rem) 0;
-
-	@media (min-width: $screen-sm-min) {
-		padding: 9.375rem 0 (10.3125rem - 1.25rem) 0;
-	}
+	// color: $color-dark-blue;
+	// background-color: $color-theme-blue;
+	// padding: 3.75rem 0 (4.6875rem - 1.25rem) 0;
+	// @media (min-width: $screen-sm-min) {
+	// 	padding: 9.375rem 0 (10.3125rem - 1.25rem) 0;
+	// }
 
 	.btn {
 		margin-right: .9375rem;
@@ -31,12 +29,12 @@
 }
 
 .hero-subheader-home {
-	color: $color-dark-blue;
-	background-color: #ffffff;
-	padding: 3.75rem 0 (4.6875rem - 1.25rem) 0;
+	// color: $color-dark-blue;
+	// background-color: #ffffff;
+	// padding: 3.75rem 0 (4.6875rem - 1.25rem) 0;
 
 	@media (min-width: $screen-sm-min) {
-		padding: 9.375rem 0 (10.3125rem - 1.25rem) 0;
+		// padding: 9.375rem 0 (10.3125rem - 1.25rem) 0;
 	}
 
 	.btn {
@@ -59,38 +57,185 @@
 
 .hero-subheader--before-out {
 	@media (min-width: $screen-sm-min) {
-		padding: 9.375rem 0 (15.3125rem - 1.25rem) 0;
+		// padding: 9.375rem 0 (15.3125rem - 1.25rem) 0;
 	}
 }
 
-/* ----- Title ----- */
-.hero-subheader__title {
-	margin-top: 0;
+.home-page-wrapper {
+	  width: 83%;
+	  margin: 0 auto 0;
 }
 
-/* ----- Title ----- */
-.hero-subheader__desc {
-	margin-bottom: 1.875rem;
-}
-
-/* ----- extralink ----- */
-.hero-subheader__extralink {
-	border-left: 2px solid;
-	padding-left: 2.5rem;
-
-	.btn {
-		margin-bottom: 0;
+.hero-subheader-home {
+	background-color: #f8f8f8;
+	.banner-content {
+		padding-top: 150px;
+		.hero-subheader__title {
+			padding: 0;
+			border-bottom: none;
+			margin: 0;
+			color: #252E94;
+	  	font-size: 42px;
+		}
+		.hero-subheader__desc {
+			color: #848484;
+	  	font-size: 20px;
+	  	line-height: 35px;
+		}
+		.search-bar {
+			border-radius: 25px;
+			padding: 4px 6px;
+			display: flex;
+	  	justify-content: space-between;
+	  	align-items: center;
+			background-color: #fff;
+			input[type="text"] { 
+				padding: 8px 20px;	
+				border: none;
+				background-color: transparent; 
+			}
+			.fa-search {
+				border-radius: 25px;
+				padding: 10px 8px 8px 11px;
+				background: linear-gradient(90deg,#40ceff,#5a2ff1);
+				color: #fff;
+				font-size: 22px;
+			}
+		}
+		.popular-search {
+			padding-left: 25px;
+			margin: 15px 0 0;
+			font-size: 14px;
+			a { 
+				border-bottom: none;
+				&:last-of-type {
+					&:after { 
+						content: '';
+						display: block;
+					}
+				}
+				&:after {
+					content: ',';
+					display: inline;
+				}
+			}
+		}
+	}
+	.features {
+	  padding: 75px 0 30px;
+	  display: flex;
+	  justify-content: space-between;
+		.feature-card {
+		  padding: 30px;
+		  background-color: #fff;
+		  box-shadow: 0 -1px 5px -5px #efecec, 5px 0 5px -5px #efecec, 0 7px 11px -5px #efecec, -3px 0 6px -5px #efecec;
+		  text-align: center;
+			a {
+				border-bottom: none;
+				&:hover {text-decoration: none; }
+			}
+			img {
+			  border-radius: 50px;
+			  padding: 16px;
+			  background: linear-gradient(90deg,#40ceff,#5a2ff1);
+			}
+			span {
+			  margin: 25px 0 10px;
+			  display: block;
+			  font-size: 20px;
+			  color: #000;
+			}
+			p { color: #69778F; }
+		}
+	}
+	.new { 
+		padding-bottom: 130px;
+		text-align: center; 
+		p {
+		  width: auto;
+		  padding: 6px;
+		  border-radius: 25px;
+		  margin-bottom: 0;
+		  display: inline-block;
+		  background-color: #f1f5fa;
+		  font-size: 14px;
+			span {
+			  border-radius: 25px;
+			  padding: 2px 10px;
+			  background-color: #51C81C;
+			  color: #fff;
+			  font-size: 12px;
+			}
+			a {
+				color: #46abfc;
+				border-bottom: none;
+			}
+		}
+	}
+	.ai-service-process {
+		.title {
+		  color: #69778F;
+		  font-size: 18px;
+		  font-weight: 500;
+		  &:after {
+			  content: '';
+			  width: 30px;
+			  height: 4px;
+			  border-radius: 25px;
+			  margin: 7px 0 30px;
+			  display: block;
+			  background-color: #DEE5EF;
+			}
+		}
+		.text-right {
+			float: right !important;
+			.browse-all-btn {
+			  border: none;
+			  background-color: transparent;
+			  outline: none;
+			}
+		}
+		.cards { 
+		  margin-bottom: 55px;
+		  display: flex;
+		  flex-wrap: nowrap;
+		  .card { 
+			  width: 360px;
+			  border: none;
+			  padding: 25px 25px 15px;
+			  margin-right: 25px;
+			  box-shadow: 0 -1px 5px -5px #efecec, 5px 0 5px -5px #efecec, 0 7px 11px -5px #efecec, -3px 0 6px -5px #efecec;
+			 span {
+				  margin-bottom: 15px;
+				  font-size: 18px;
+				  font-weight: 500;
+				}
+				p { 
+  				color: #69778F; 
+  				font-size: 15px;
+  				&:after {
+					  content: '';
+					  width: 90px;
+					  height: 1px;
+					  margin: 25px auto 0;
+					  display: block;
+					  background-color: #e7e7e7;  
+					}
+				}
+				.author-detail { 
+					text-align: center; 
+					span {
+						color: #b3bdcd;
+  					font-size: 14px;
+  					font-weight: normal;
+					}
+				}
+			}
+		}
 	}
 }
 
-.hero-subheader__extralink-title {
-	font-size: $font-size-h5;
-}
 
-/* ----- More ----- */
-.hero-subheader__btn-more {
-	color: inherit;
-}
 
 /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
 Adapted from: http://blog.heyimcat.com/universal-signup-form/ */

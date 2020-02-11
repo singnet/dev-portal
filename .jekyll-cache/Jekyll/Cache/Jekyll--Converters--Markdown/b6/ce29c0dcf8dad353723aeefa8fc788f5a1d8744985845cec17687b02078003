@@ -1,0 +1,326 @@
+I"-M
+<h2 id="step-1-dependencies">Step 1. Dependencies</h2>
+
+<p>Run this tutorial from a bash terminal.</p>
+
+<p>In this tutorial we will publish an example service in SingularityNET using Ropsten Test Network.</p>
+
+<p>We have a <a href="https://www.docker.com/">Docker</a> Image set up with all the required dependencies 
+but if you prefer you can install the dependencies by yourself in your own workstation.</p>
+
+<p>Using a Docker Image is usually easier (you don’t need to be a Docker guru to follow this tutorial).
+To go this way, just proceed to the next tutorial step.</p>
+
+<p>If you want to install the dependencies by yourself, check all the <a href="/docs/setup/requirements">requirements</a> 
+here and jump to <a href="#step-3-setup-snet-cli-and-create-your-identity">Step 3</a>.</p>
+
+<h2 id="step-2-setup-a-docker-container">Step 2. Setup a Docker container</h2>
+
+<hr />
+<p><em>Before following, make sure you’ve installed:</em></p>
+
+<ul>
+  <li><em>Docker (<a href="https://www.docker.com/">https://www.docker.com/</a>)</em></li>
+</ul>
+
+<p><em>If you are not familiar with Docker you may want to take a look at its official 
+<a href="https://docs.docker.com/get-started/">Get Started Guide</a>.</em></p>
+
+<hr />
+
+<p>Build your own tutorial Docker image directly from our git repo using the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">-t</span> snet_publish_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
+</code></pre></div></div>
+
+<p>Setup environment variables (they are explained later in this tutorial as they’re used):</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">ORGANIZATION_ID</span><span class="o">=</span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span><span class="nt">-org</span>
+<span class="nv">ORGANIZATION_NAME</span><span class="o">=</span><span class="s2">"The </span><span class="nv">$USER</span><span class="s2">'s Organization"</span>
+
+<span class="nv">SERVICE_ID</span><span class="o">=</span>example-service
+<span class="nv">SERVICE_NAME</span><span class="o">=</span><span class="s2">"SNET Example Service"</span>
+<span class="nv">SERVICE_IP</span><span class="o">=</span>127.0.0.1
+<span class="nv">SERVICE_PORT</span><span class="o">=</span>7000
+
+<span class="nv">DAEMON_HOST</span><span class="o">=</span>0.0.0.0
+
+<span class="nv">USER_ID</span><span class="o">=</span><span class="nv">$USER</span>
+
+<span class="c"># to secure payments</span>
+<span class="nv">ETCD_HOST</span><span class="o">=</span><span class="nv">$HOME</span>/.snet/etcd/<span class="nv">$SERVICE_ID</span>/
+<span class="nv">ETCD_CONTAINER</span><span class="o">=</span>/opt/singnet/etcd/
+
+<span class="c"># to make your snet's configs persistent</span>
+<span class="nv">SNET_CLI_HOST</span><span class="o">=</span><span class="nv">$HOME</span>/.snet/
+<span class="nv">SNET_CLI_CONTAINER</span><span class="o">=</span>/root/.snet/
+</code></pre></div></div>
+
+<p>Now you can run a Docker container based on this image:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="se">\</span>
+    <span class="nt">--name</span> MY_SNET_SERVICE <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">ORGANIZATION_ID</span><span class="o">=</span><span class="nv">$ORGANIZATION_ID</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">ORGANIZATION_NAME</span><span class="o">=</span><span class="s2">"</span><span class="nv">$ORGANIZATION_NAME</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">SERVICE_ID</span><span class="o">=</span><span class="nv">$SERVICE_ID</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">SERVICE_NAME</span><span class="o">=</span><span class="s2">"</span><span class="nv">$SERVICE_NAME</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">SERVICE_IP</span><span class="o">=</span><span class="nv">$SERVICE_IP</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">SERVICE_PORT</span><span class="o">=</span><span class="nv">$SERVICE_PORT</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">DAEMON_HOST</span><span class="o">=</span><span class="nv">$DAEMON_HOST</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">DAEMON_PORT</span><span class="o">=</span><span class="nv">$SERVICE_PORT</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="nv">USER_ID</span><span class="o">=</span><span class="nv">$USER_ID</span> <span class="se">\</span>
+    <span class="nt">-p</span> <span class="nv">$SERVICE_PORT</span>:<span class="nv">$SERVICE_PORT</span> <span class="se">\</span>
+    <span class="nt">-v</span> <span class="nv">$ETCD_HOST</span>:<span class="nv">$ETCD_CONTAINER</span> <span class="se">\</span>
+    <span class="nt">-v</span> <span class="nv">$SNET_CLI_HOST</span>:<span class="nv">$SNET_CLI_CONTAINER</span> <span class="se">\</span>
+    <span class="nt">-ti</span> snet_publish_service bash
+</code></pre></div></div>
+
+<p>This will put you into a shell within the docker container. The rest of the tutorial assumes you are workings from the Docker container’s prompt.</p>
+
+<p>You can <code class="highlighter-rouge">ctrl-d</code> to exit, this will stop the container. If you wish to enter the container again, just use <code class="highlighter-rouge">docker start snet_publish_service</code> and
+you can continue from where you left off.</p>
+
+<h2 id="step-3-setup-snet-cli-and-create-your-identity">Step 3. Setup <code class="highlighter-rouge">SNET CLI</code> and create your identity</h2>
+
+<h5 id="mnemonic-identity-setup">Mnemonic identity setup:</h5>
+
+<p>Select a Mnemonic of your choice. MY_MNEMONIC is a string which will be used as seed to generate a public/private key pair.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet identity create <span class="nv">$USER_ID</span> mnemonic <span class="nt">--mnemonic</span> <span class="s2">"MY_MNEMONIC"</span>
+</code></pre></div></div>
+
+<h5 id="optional-other-identity-type-options">(optional) Other identity type options:</h5>
+
+<p>You can create an identity using a known key.</p>
+
+<p><code class="highlighter-rouge">SNET CLI</code> supports these other identity types:</p>
+
+<ul>
+  <li>key - hex private key</li>
+  <li>rpc - used with a JSON-RPC manager</li>
+  <li>ledger - hardware wallet</li>
+  <li>trezor - hardware wallet</li>
+</ul>
+
+<p>Check more details on how to use them at (<a href="http://snet-cli-docs.singularitynet.io">SNET CLI</a>).</p>
+
+<h2 id="step-4-get-eth-and-agi">Step 4. Get ETH and AGI</h2>
+
+<p>You’ll need some ETH and AGI tokens.</p>
+
+<p>First, get the address of your account using <code class="highlighter-rouge">snet account print</code> command.</p>
+
+<p>Then, using your address you can get Ropsten AGIs and ETHs for free using your Github’s account here:</p>
+
+<ul>
+  <li>AGI: <a href="https://faucet.singularitynet.io/">https://faucet.singularitynet.io/</a></li>
+  <li>ETH: <a href="https://faucet.ropsten.be/">https://faucet.ropsten.be/</a></li>
+</ul>
+
+<p>Now make sure you are on Ropsten Network, using:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet network ropsten
+</code></pre></div></div>
+
+<p>And then check your balance, using:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet account balance
+</code></pre></div></div>
+
+<h2 id="step-5-create-an-organization">Step 5. Create an organization</h2>
+
+<p>In order to be able to publish a service you need to be an owner or a member of an organization.</p>
+
+<p>You can create a new organization using:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet organization create "$ORGANIZATION_NAME" --org-id $ORGANIZATION_ID -y
+</code></pre></div></div>
+
+<p>In case of an already taken <code class="highlighter-rouge">ORGANIZATION_ID</code> replace it with a different id of your choice.
+Make sure you follow our <a href="/docs/concepts/naming-standards">naming standardization guidelines</a>.</p>
+
+<p>If you had to use a different <code class="highlighter-rouge">ORGANIZATION_ID</code> (other than the one we provided in <a href="#step-2-setup-a-docker-container">Step 2</a>), 
+you will have to update <code class="highlighter-rouge">ORGANIZATION_ID</code> properly as it is used later in this tutorial.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export ORGANIZATION_ID="new-org-id"
+</code></pre></div></div>
+
+<p>If you want to join an existing organization (e.g. <code class="highlighter-rouge">snet</code>), ask its owner to add your public key (account) into it before proceeding.</p>
+
+<h2 id="step-6-download-and-configure-example-service">Step 6. Download and configure example-service</h2>
+
+<p>In this tutorial we’ll use a simple service from <a href="https://github.com/singnet/example-service">SingularityNET Example Service</a>.</p>
+
+<ul>
+  <li>Clone the git repository:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone --depth=1 https://github.com/singnet/example-service.git
+cd example-service
+</code></pre></div></div>
+
+<ul>
+  <li>Install the dependencies and compile the protobuf file:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 install -r requirements.txt
+sh buildproto.sh
+</code></pre></div></div>
+
+<p>Service is ready to run, but first we need to publish it on SingularityNET and configure the <code class="highlighter-rouge">SNET DAEMON</code>.</p>
+
+<h2 id="step-7-prepare-service-metadata-to-publish-the-service">Step 7. Prepare service metadata to publish the service</h2>
+
+<p>First we need to create a service metadata file. You can do it by running:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet service metadata-init SERVICE_PROTOBUF_DIR SERVICE_DISPLAY_NAME PAYMENT_ADDRESS <span class="nt">--endpoints</span> SERVICE_ENDPOINT <span class="nt">--fixed-price</span> FIXED_PRICE
+</code></pre></div></div>
+
+<p>You need to specify the following parameters:</p>
+<ul>
+  <li><code class="highlighter-rouge">SERVICE_PROTOBUF_DIR</code> - Directory which contains protobuf files of your service: <code class="highlighter-rouge">service/service_spec/</code> in our example service.</li>
+  <li><code class="highlighter-rouge">SERVICE_DISPLAY_NAME</code> - Display name of your service. You can choose any name you want.</li>
+  <li><code class="highlighter-rouge">PAYMENT_ADDRESS</code> - Ethereum account which will receive payments for this service. You should set it to your ethereum account.</li>
+  <li><code class="highlighter-rouge">SERVICE_ENDPOINT</code> - Endpoint which will be used to connect to your service.</li>
+  <li><code class="highlighter-rouge">FIXED_PRICE</code> - Price in AGI for a single call to your service. We will set the price to 10^-8 AGI (remember that 10^-8 AGI = 1 COG).</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">ACCOUNT</span><span class="o">=</span><span class="sb">`</span>snet account print<span class="sb">`</span>
+snet service metadata-init service/service_spec/ <span class="s2">"</span><span class="nv">$SERVICE_NAME</span><span class="s2">"</span> <span class="nv">$ACCOUNT</span> <span class="nt">--endpoints</span> http://<span class="nv">$SERVICE_IP</span>:<span class="nv">$SERVICE_PORT</span> <span class="nt">--fixed-price</span> 0.00000001
+
+<span class="c"># describe your service and add an URL for further service's information.</span>
+snet service metadata-add-description <span class="nt">--json</span> <span class="s1">'{"description": "Description of my Service.", "url": "https://service.users.guide"}'</span>
+</code></pre></div></div>
+
+<p>This command will create a JSON configuration file: <code class="highlighter-rouge">service_metadata.json</code>.</p>
+
+<p>See details of service metadata in <a href="/docs/concepts/service-metadata">here</a>.</p>
+
+<h2 id="step-8-publish-the-service-on-singularitynet">Step 8. Publish the service on SingularityNET</h2>
+
+<p>Now you can publish your service (<code class="highlighter-rouge">service_metadata.json</code> is used implicitly) using:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet service publish <span class="nv">$ORGANIZATION_ID</span> <span class="nv">$SERVICE_ID</span> <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>Check if your service has been properly published:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet organization info <span class="nv">$ORGANIZATION_ID</span>
+</code></pre></div></div>
+
+<h2 id="step-9-run-the-service-and-snet-daemon">Step 9. Run the service (and SNET Daemon)</h2>
+
+<p>Create a <code class="highlighter-rouge">SNET DAEMON</code> configuration file named <code class="highlighter-rouge">snetd.config.json</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> snetd.config.json <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+{
+   "DAEMON_END_POINT": "</span><span class="nv">$DAEMON_HOST</span><span class="sh">:</span><span class="nv">$DAEMON_PORT</span><span class="sh">",
+   "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io",
+   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
+   "REGISTRY_ADDRESS_KEY": "0x5156fde2ca71da4398f8c76763c41bc9633875e4",
+   "PASSTHROUGH_ENABLED": true,
+   "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
+   "ORGANIZATION_ID": "</span><span class="nv">$ORGANIZATION_ID</span><span class="sh">",
+   "SERVICE_ID": "</span><span class="nv">$SERVICE_ID</span><span class="sh">",
+   "PAYMENT_CHANNEL_STORAGE_SERVER": {
+       "DATA_DIR": "/opt/singnet/etcd/"
+   },
+   "LOG": {
+       "LEVEL": "debug",
+       "OUTPUT": {
+          "TYPE": "stdout"
+       }
+   }
+}
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Running the service will spawn an instance of <code class="highlighter-rouge">SNET DAEMON</code> automatically.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 run_example_service.py <span class="nt">--daemon-config</span> snetd.config.json
+</code></pre></div></div>
+
+<p>At this point your service should be up and running.</p>
+
+<h2 id="step-10-call-your-service-using-snet-cli">Step 10. Call your service using <code class="highlighter-rouge">SNET CLI</code></h2>
+
+<p>Open a new terminal, if using Docker, enter in the docker container, using:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> MY_SNET_SERVICE bash
+</code></pre></div></div>
+
+<p>At this point you can use several <code class="highlighter-rouge">SNET CLI</code> commands to interact with your account and with the Ropsten network
+(see <a href="http://snet-cli-docs.singularitynet.io">SNET CLI</a> for details).</p>
+
+<p>Check your balance and setup a MultiPartyEscrow (MPE) Payment Channel to call your service.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># check your balance</span>
+snet account balance
+
+<span class="c"># deposit funds (10 COG) into MPE contract:</span>
+snet account deposit 0.00000010 <span class="nt">-y</span>
+
+<span class="c"># check your balance - 10 COGs were moved to MPE</span>
+snet account balance
+
+<span class="c"># open a payment channel to your service:</span>
+snet channel open-init <span class="nv">$ORGANIZATION_ID</span> <span class="nv">$SERVICE_ID</span> 0.00000010 +10days <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">snet channel open-init</code> has opened and initialized a channel with 10 COGs for <code class="highlighter-rouge">$ORGANIZATION_ID/$SERVICE_ID</code> with 
+expiration at 10 days (57600 blocks in the future with 15 sec/blocks). 
+This command prints the id of the created channel, record it to use in the following commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># check your balance - 10 COGs were moved from MPE to the channel</span>
+snet account balance
+
+<span class="c"># look for the channel balance (CHANNEL_ID was printed by 'snet channel open-init')</span>
+snet client get-channel-state &lt;CHANNEL_ID&gt; <span class="nv">$SERVICE_IP</span>:<span class="nv">$SERVICE_PORT</span>
+</code></pre></div></div>
+
+<p>Call your service using:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet client call <span class="nv">$ORGANIZATION_ID</span> <span class="nv">$SERVICE_ID</span> mul <span class="s1">'{"a":12,"b":7}'</span> <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>The MPE Payment Channel has changed, see its funds using:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1 COG has been spent (signed) </span>
+snet client get-channel-state &lt;CHANNEL_ID&gt; <span class="nv">$SERVICE_IP</span>:<span class="nv">$SERVICE_PORT</span>
+</code></pre></div></div>
+
+<p>At this point you’ve spent 1 COG (service cost was defined in <a href="#step-7-prepare-service-metadata-to-publish-the-service">Step 7</a>),
+of your MPE Payment Channel, calling the service. 
+You can keep calling the service until your MPE Payment Channel runs out of funds.</p>
+
+<p>As the service provider, you can claim spent AGIs on your service at anytime using:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snet treasurer claim-all <span class="nt">--endpoint</span> <span class="nv">$SERVICE_IP</span>:<span class="nv">$SERVICE_PORT</span> <span class="nt">-y</span>
+
+<span class="c"># claimed funds are now in MPE</span>
+snet account balance
+
+<span class="c"># move funds from MPE to your account (eg. AMOUNT_IN_AGI=0.00000001)</span>
+snet account withdraw &lt;AMOUNT_IN_AGI&gt; <span class="nt">-y</span>
+snet account balance
+</code></pre></div></div>
+
+<h2 id="step-11-optional-claiming-unused-funds-from-mpe-channel">Step 11. (optional) claiming unused funds from MPE channel</h2>
+
+<p>As the service user, you <strong>CAN’T</strong> claim unused funds before the channel expires.</p>
+
+<p>Once it did, you can claim the funds using <code class="highlighter-rouge">snet channel claim-timeout-all</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Shows spent/unspent AGIs in the MPE channel</span>
+snet client get-channel-state &lt;CHANNEL_ID&gt; <span class="nv">$SERVICE_IP</span>:<span class="nv">$SERVICE_PORT</span>
+snet account balance
+
+<span class="c"># Move funds from all expired channels to MPE</span>
+snet channel claim-timeout-all <span class="nt">-y</span>
+snet account balance
+
+<span class="c"># Move funds from MPE to user's account</span>
+snet account withdraw &lt;AMOUNT_IN_AGI&gt; <span class="nt">-y</span>
+snet account balance
+</code></pre></div></div>
+:ET

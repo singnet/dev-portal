@@ -43,7 +43,7 @@ docker run --name snet-container -p 7000:7000 -ti snet-tokyo-workshop bash
 
 ## Setup Ethereum identity
 
-To create a service or make calls to a service, we need to establish our identity on the blockchain. To do this, follow these steps:
+To create a service or make calls to a service, we need to establish our identity on the |Blockchain. To do this, follow these steps:
 
 ```sh
 # Create Ethereum identity from scratch, using seed mnemonic

@@ -1,0 +1,195 @@
+I"“*<p>This tutorial describes the process of launching a fully functional local SingularityNET environment. You can publish services, call them and have full control over a local blockchain network for development and testing.</p>
+
+<h2 id="install-prerequisites">Install prerequisites</h2>
+
+<p>This document describes the process of the environment setup in Ubuntu 18.04. Some commands can be different under other linux distributions.</p>
+
+<blockquote>
+  <p>TIP: <a href="/docs/development/mpe-example1">Here</a> you can find an instruction how to run SingularityNet platform locally inside a docker container, and how to run simple front-to-back example in it.</p>
+</blockquote>
+
+<h3 id="go-toolset">Go toolset</h3>
+
+<ul>
+  <li>Go 1.10+</li>
+  <li>Dep 0.4.1+</li>
+  <li>Go Protobuf Compiler</li>
+  <li>Golint</li>
+</ul>
+
+<p>Part of the code is written in <a href="https://golang.org">Go</a> language so you need a set of tools to compile Go code and manage Go dependencies.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install golang go-dep golang-goprotobuf-dev golint
+</code></pre></div></div>
+
+<h3 id="nodejs-toolset">NodeJS toolset</h3>
+
+<ul>
+  <li>NodeJS 8+</li>
+  <li>NPM</li>
+</ul>
+
+<p><a href="https://truffleframework.com/truffle">Truffle</a> and <a href="https://truffleframework.com/ganache">Ganache</a> are used to develop and test Ethereum contracts so NodeJS development tools are required.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install nodejs npm
+</code></pre></div></div>
+
+<h3 id="ipfs">IPFS</h3>
+
+<p>IPFS is used to keep RPC models of the services which are published via SingularityNET platform. Follow instructions <a href="https://ipfs.io/docs/install">here</a> to download and install IPFS. Following steps expects that <code class="highlighter-rouge">ipfs</code> is installed and can be run from the command line.</p>
+
+<h3 id="python-toolset">Python toolset</h3>
+
+<ul>
+  <li>Python 3.6.5</li>
+  <li>Pip</li>
+</ul>
+
+<p>Part of the code is written in Python so you need a Python interpreter and Pip as python package manager.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install python3 python3-pip
+</code></pre></div></div>
+
+<h3 id="other">Other</h3>
+
+<ul>
+  <li>libudev</li>
+  <li>libusb 1.0</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install libudev-dev libusb-1.0-0-dev
+</code></pre></div></div>
+
+<h2 id="deploy-local-environment">Deploy local environment</h2>
+
+<h3 id="setup-go-building-environments">Setup Go building environments</h3>
+
+<p>Go compiler expects that the path to the workspace is exported as <code class="highlighter-rouge">GOPATH</code> variable. <code class="highlighter-rouge">SINGNET_REPOS</code> is exported to simplify change directory commands below.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> singnet/src/github.com/singnet
+<span class="nb">cd </span>singnet
+<span class="nb">mkdir </span>log
+<span class="nb">export </span><span class="nv">GOPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nb">export </span><span class="nv">SINGNET_REPOS</span><span class="o">=</span><span class="k">${</span><span class="nv">GOPATH</span><span class="k">}</span>/src/github.com/singnet
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">GOPATH</span><span class="k">}</span>/bin:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+</code></pre></div></div>
+
+<h3 id="deploy-local-ipfs-instance">Deploy local IPFS instance</h3>
+
+<p>IPFS is used by SingularityNET to keep published services RPC models. For local test environment we will setup a private local IPFS instance.</p>
+
+<p>Initialize IPFS data folder:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">IPFS_PATH</span><span class="o">=</span><span class="nv">$GOPATH</span>/ipfs
+ipfs init
+</code></pre></div></div>
+
+<p>Remove all default IPFS bootstrap instances from default IPFS configuration (see <a href="https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#private-networks">IPFS private network</a>).</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipfs bootstrap <span class="nb">rm</span> <span class="nt">--all</span>
+</code></pre></div></div>
+
+<p>Change IPFS API and Gateway ports because they intersect with default <code class="highlighter-rouge">example-service</code> and snet-daemon ports.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipfs config Addresses.API /ip4/127.0.0.1/tcp/5002
+ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8081
+</code></pre></div></div>
+
+<h3 id="compile-platform-contracts">Compile platform contracts</h3>
+<p>Clone platform-contracts repository:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$SINGNET_REPOS</span>
+git clone https://github.com/singnet/platform-contracts
+<span class="nb">cd </span>platform-contracts
+</code></pre></div></div>
+
+<p>Install dependencies and Ganache using NPM:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install
+</span>npm <span class="nb">install </span>ganache-cli
+</code></pre></div></div>
+
+<p>Compile contracts using Truffle:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./node_modules/.bin/truffle compile
+</code></pre></div></div>
+
+<h3 id="setup-snet-command-line-interface">Setup <code class="highlighter-rouge">snet</code> command line interface</h3>
+<p>Clone snet-cli repository:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$SINGNET_REPOS</span>
+git clone https://github.com/singnet/snet-cli
+<span class="nb">cd </span>snet-cli
+</code></pre></div></div>
+
+<p>Install blockchain dependencies and snet-cli package in development mode.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># you need python 3.6 here, with python 3.5 you will get an error</span>
+./scripts/blockchain <span class="nb">install
+</span>pip3 <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<h3 id="build-snet-daemon">Build snet-daemon</h3>
+<p>Clone <code class="highlighter-rouge">snet-daemon</code> repository:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$SINGNET_REPOS</span>
+git clone https://github.com/singnet/snet-daemon
+<span class="nb">cd </span>snet-daemon
+</code></pre></div></div>
+
+<p>Build <code class="highlighter-rouge">snet-daemon</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./scripts/install <span class="c"># install dependencies</span>
+./scripts/build linux amd64  <span class="c"># build project</span>
+</code></pre></div></div>
+
+<h2 id="start-environment-and-finalize-snet-configuration">Start environment and finalize snet configuration</h2>
+<h3 id="start-local-ipfs-instance">Start local IPFS instance</h3>
+
+<p>Start IPFS daemon:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipfs daemon <span class="o">&gt;</span><span class="nv">$GOPATH</span>/log/ipfs.log 2&gt;&amp;1 &amp;
+</code></pre></div></div>
+
+<h3 id="start-local-ethereum-network">Start local Ethereum network</h3>
+<p>Start a local Ethereum network. Pass mnemonic to produce a deterministic blockchain environment: accounts, private keys and behavior.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$SINGNET_REPOS</span>/platform-contracts
+./node_modules/.bin/ganache-cli <span class="nt">--mnemonic</span> <span class="s1">'gauge enact biology destroy normal tunnel slight slide wide sauce ladder produce'</span> <span class="o">&gt;</span><span class="nv">$GOPATH</span>/log/ganache.log 2&gt;&amp;1 &amp;
+</code></pre></div></div>
+
+<p>Accounts and private keys printed by Ganache will be used in next steps.
+Deploy contracts using Truffle.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./node_modules/.bin/truffle migrate <span class="nt">--network</span> <span class="nb">local
+</span>npm run package-npm
+</code></pre></div></div>
+
+<p>Contract addresses printed after deployment will be used to setup snet.</p>
+
+<p>Truffle deploys contracts using the first account of the test network. As SingularityNETToken contract is deployed using this account, this accountâ€™s balance keeps all of SingularityNET tokens issued during deployment. Other contracts deployed are Registry and MultiPartyEscrow. Registry keeps the list of organization and published services, and MultiPartyEscrow is a part of our payment system.</p>
+
+<h3 id="configure-snet-cli-for-local-environment">Configure snet-cli for local environment</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># run snet command  for the first time to create default config:</span>
+snet
+
+<span class="c"># add local Ethereum network to the `snet` configuration with the name "local".</span>
+snet network create <span class="nb">local </span>http://localhost:8545
+
+<span class="c"># Create First identity (snet-user = first ganache identity)</span>
+snet identity create snet-user rpc <span class="nt">--network</span> <span class="nb">local</span>
+
+<span class="c"># switch to snet-user (we will switch automatically to local network)</span>
+snet identity snet-user
+
+<span class="c"># switch to local ipfs endpoint</span>
+snet <span class="nb">set  </span>default_ipfs_endpoint http://localhost:5002
+
+<span class="c"># Configure contract addresses for local network (for kovan addresess are already configured!)</span>
+snet <span class="nb">set </span>current_singularitynettoken_at 0x6e5f20669177f5bdf3703ec5ea9c4d4fe3aabd14
+snet <span class="nb">set </span>current_registry_at            0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2
+snet <span class="nb">set </span>current_multipartyescrow_at    0x5c7a4290f6f8ff64c69eeffdfafc8644a4ec3a4e
+
+</code></pre></div></div>
+:ET

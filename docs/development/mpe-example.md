@@ -109,7 +109,7 @@ cd example-service
 # we make a link for simplicity (service is already running)
 ln -s ../snet-daemon/build/snetd-linux-amd64 snetd
 
-# if it is not the first time you run this test, and state of blockchain was reset,
+# if it is not the first time you run this test, and state of Blockchain was reset,
 # you should reset the state of etcd storage as well
 rm -rf storage-1.etcd
 ```
@@ -171,9 +171,9 @@ snet channel open-init testo tests 42 +20days -y
 ```
 ### Make a call using stateless logic
 
-We are going to make a call using stateless logic [see this page for more information](/docs/concepts/mpe-stateless-client). This means that the client does not need to store any information, except for the `channel_id` of the payment channel which it wants to use. The client can get the list of the payment channels from the blockchain log or from the blockchain itself. However, this operation is quite slow, so the client cannot do this at each call. The most important thing is that we will be able to use this function in the case of a catastrophic recovery.
+We are going to make a call using stateless logic [see this page for more information](/docs/concepts/mpe-stateless-client). This means that the client does not need to store any information, except for the `channel_id` of the payment channel which it wants to use. The client can get the list of the payment channels from the Blockchain log or from the Blockchain itself. However, this operation is quite slow, so the client cannot do this at each call. The most important thing is that we will be able to use this function in the case of a catastrophic recovery.
 
-First, let's request from the blockchain the list of all open channels:
+First, let's request from the Blockchain the list of all open channels:
 
 ```sh
 # take the list of channels from blockchain (from events!)
@@ -225,5 +225,5 @@ snet account balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 
 The following logic when we ran the treasurer server:
 * The treasurer server asks the etcd to send the latest state of the channel, and increments the nonce of the channel.
-* Daemon(s) can continue to work with the client without any confirmation from the treasurer or blockchain.
+* Daemon(s) can continue to work with the client without any confirmation from the treasurer or Blockchain.
 * The treasurer sends on-chain transactions to claim funds and increases the nonce of the channel (close/reopen channel).

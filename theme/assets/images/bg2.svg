@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="1268px" viewBox="0 0 1440 1268" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>Bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-9.59459459%" y1="50%" x2="113.112331%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#40CEFF" offset="0%"></stop>
+            <stop stop-color="#5A2FF1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="87.1377456%" y1="83.3986815%" x2="60.0416241%" y2="47.3184508%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="6.46225674%" y1="77.8226113%" x2="34.2998143%" y2="-12.6640549%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-After" transform="translate(0.000000, -2020.000000)">
+            <g id="Hero" transform="translate(-465.000000, -287.000000)">
+                <g id="Bg" transform="translate(1057.387962, 3027.877316) scale(-1, 1) rotate(-9.000000) translate(-1057.387962, -3027.877316) translate(90.887962, 2370.877316)">
+                    <path d="M1606.31015,80.8608783 C1257.21686,376.978543 1216.338,529.593594 775.456322,510.094176 C334.574649,490.594758 307.050655,922.595951 584.141296,1092.23501 C861.231937,1261.87407 1554.9284,1317.22753 1794.34549,844.306362 C2033.76258,371.385197 1955.40344,-215.256786 1606.31015,80.8608783 Z" id="Path-2" fill="url(#linearGradient-1)"></path>
+                    <rect id="Rectangle-5" fill="url(#linearGradient-2)" opacity="0.412760417" style="mix-blend-mode: soft-light;" x="0.812942041" y="420.718115" width="623" height="623" rx="311.5"></rect>
+                    <rect id="Rectangle-5" fill="url(#linearGradient-3)" opacity="0.412760417" style="mix-blend-mode: soft-light;" x="1309.05289" y="690.779642" width="623" height="623" rx="311.5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,89 @@
+I"F!<p>The <strong>service metadata</strong> is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster.
+In order to use a service, the client needs to know:</p>
+
+<ul>
+  <li>The service metadata</li>
+  <li>The address of <a href="/docs/concepts/multi-party-escrow">Multi-Party Escrow (MPE) contract</a></li>
+</ul>
+
+<p>Fortunately the latter is included in the metadata. The daemon allowing access to the service also needs to know this metadata, in order to configure the necessary payment systems.</p>
+
+<p>There are three ways of providing this metadata to the clients and the daemons:</p>
+
+<ul>
+  <li>as a simple JSON file</li>
+  <li>as a IPFS hash that points to the JSON metadata</li>
+  <li>as a name of service in the Registry - this can be resolved to an IPFS hash, pointing to the metadata, through the Registry’s <code class="highlighter-rouge">getMetadataIPFSHash</code> method.</li>
+</ul>
+
+<p>As a security concern the client shoudn’t use <code class="highlighter-rouge">mpe_address</code> from the metadata as a sole source of the MPE contract address. The client should check that this address corresponds to the <code class="highlighter-rouge">mpe_address</code> it was expecting. The defaults MPE addresses for various networks are:</p>
+
+<ul>
+  <li>Mainnet - <code class="highlighter-rouge">0x9c9252ec9fa844e2c7bd2e6f54bec2901938479f</code></li>
+  <li>Ropsten - <code class="highlighter-rouge">0x7e6366fbe3bdfce3c906667911fc5237cc96bd08</code></li>
+  <li>Kovan (deprecated) - <code class="highlighter-rouge">0x39f31ac7b393fe2c6660b95b878feb16ea8f3156</code></li>
+</ul>
+
+<p>A suspicious client should also check that hash of the metadata corresponds to the IPFS hash, otherwise the client can be attacked if the IPFS client is compromised.
+Fortunately, the <code class="highlighter-rouge">snet-cli</code> does this by default.</p>
+
+<h2 id="metadata-overview">Metadata Overview</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="c1">// used to track format changes (current version is 1)</span>
+    <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="c1">// Display name of the service</span>
+    <span class="dl">"</span><span class="s2">display_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">example-service</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Service encoding (proto or json)</span>
+    <span class="dl">"</span><span class="s2">encoding</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">proto</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Service type (grpc, jsonrpc or process)</span>
+    <span class="dl">"</span><span class="s2">service_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">grpc</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Service will reject payments with expiration less</span>
+    <span class="c1">// than current_block + payment_expiration_threshold.</span>
+    <span class="c1">// This field should be used by the client with caution.</span>
+    <span class="c1">// Client should not accept arbitrary payment_expiration_threshold</span>
+    <span class="dl">"</span><span class="s2">payment_expiration_threshold</span><span class="dl">"</span><span class="p">:</span> <span class="mi">40320</span><span class="p">,</span>
+    <span class="c1">// IPFS HASH to the .tar archive of protobuf service specification</span>
+    <span class="dl">"</span><span class="s2">model_ipfs_hash</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">QmSUGHW24YPjwMVhUnDwLExk4tgM8fVAKZCLqtLafbBQAu</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Address of MultiPartyEscrow contract.</span>
+    <span class="c1">// - Client should use it for cross-checking of mpe_address</span>
+    <span class="c1">// - Daemon can use it directly if authenticity of metadata is confirmed</span>
+    <span class="dl">"</span><span class="s2">mpe_address</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0x7E6366Fbe3bdfCE3C906667911FC5237Cc96BD08</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// Pricing model</span>
+    <span class="c1">// Only one pricing models currently implemented:</span>
+    <span class="c1">// 1. Fixed price</span>
+    <span class="c1">//    price_model   - "fixed_price"</span>
+    <span class="c1">//    price_in_cogs -  unique fixed price in cogs for all method (1 AGI = 10^8 cogs)</span>
+    <span class="c1">// (other pricing models can be easily supported)</span>
+    <span class="dl">"</span><span class="s2">pricing</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">price_model</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">fixed_price</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">price_in_cogs</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">},</span>
+    <span class="c1">// group is the number of endpoints which shares same payment channel</span>
+    <span class="c1">//      grouping strategy is defined by service provider;</span>
+    <span class="c1">//      for example service provider can use region name as group name</span>
+    <span class="c1">//    group_name - unique name of the group (human readable)</span>
+    <span class="c1">//    group_id   - unique id of the group (random 32 byte string in base64 encoding)</span>
+    <span class="c1">//    payment_address - Ethereum address to recieve payments</span>
+    <span class="dl">"</span><span class="s2">groups</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">group_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">default_group</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">group_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">58jzXGw13K3XC4VNNxZEPB36naQg2lEfduI/0z+axQs=</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">payment_address</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0x464c564e427fA7A715922D9E0373a5D90589E021</span><span class="dl">"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="c1">// Each entry specifies an endpoint URL for where the service is available,</span>
+    <span class="c1">// and the corresponding payment group the replica belonds to</span>
+    <span class="dl">"</span><span class="s2">endpoints</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">group_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">default_group</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">endpoint</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://services-1.snet.sh:6306</span><span class="dl">"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This metadata file can be directly edited before publishing to IPFS, or manipulated by <code class="highlighter-rouge">snet-cli</code> through <a href="http://snet-cli-docs.singularitynet.io/service.html#Sub-commands:">service subcommands that have the <code class="highlighter-rouge">metadata-*</code> prefix</a>.</p>
+
+<p>The python module for manipulating this metadata directly can be found <a href="https://github.com/singnet/snet-cli/blob/master/snet_cli/mpe_service_metadata.py">here</a>.</p>
+:ET

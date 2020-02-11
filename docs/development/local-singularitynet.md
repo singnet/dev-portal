@@ -22,7 +22,7 @@ micro_nav: true
 
 ---
 
-This tutorial describes the process of launching a fully functional local SingularityNET environment. You can publish services, call them and have full control over a local blockchain network for development and testing.
+This tutorial describes the process of launching a fully functional local SingularityNET environment. You can publish services, call them and have full control over a local Blockchain network for development and testing.
 
 ## Install prerequisites
 
@@ -148,11 +148,11 @@ git clone https://github.com/singnet/snet-cli
 cd snet-cli
 ```
 
-Install blockchain dependencies and snet-cli package in development mode.
+Install Blockchain dependencies and snet-cli package in development mode.
 
 ```sh
 # you need python 3.6 here, with python 3.5 you will get an error
-./scripts/blockchain install
+./scripts/Blockchain install
 pip3 install -e .
 ```
 
@@ -182,7 +182,7 @@ ipfs daemon >$GOPATH/log/ipfs.log 2>&1 &
 ```
 
 ### Start local Ethereum network
-Start a local Ethereum network. Pass mnemonic to produce a deterministic blockchain environment: accounts, private keys and behavior.
+Start a local Ethereum network. Pass mnemonic to produce a deterministic Blockchain environment: accounts, private keys and behavior.
 
 ```sh
 cd $SINGNET_REPOS/platform-contracts

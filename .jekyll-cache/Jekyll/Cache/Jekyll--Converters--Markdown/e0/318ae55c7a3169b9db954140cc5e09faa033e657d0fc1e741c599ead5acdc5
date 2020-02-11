@@ -1,0 +1,36 @@
+I"B	<p>We currently provide a lot of freedom as to how entities in SingularityNET are named.</p>
+
+<p>This can result in confusion as to how to capitalize and separate words in names. This document is a best practices guide. At some point these may get codified, such that smart contracts and our software can enforce them, but for now they are just for guidance.</p>
+
+<h2 id="service-uri">Service URI</h2>
+
+<p>A service URI consists of three things:</p>
+
+<ul>
+  <li>Organization name</li>
+  <li>Service name</li>
+</ul>
+
+<p>e.g. <code class="highlighter-rouge">snet/face-detect</code></p>
+
+<p>Here <code class="highlighter-rouge">snet</code> is the organization, and <code class="highlighter-rouge">face-detect</code> is the service name.</p>
+
+<p>Service authors <em>should</em> use lowercase alphanumerics, for each of these components. Multiple word components should
+be <a href="https://docs.djangoproject.com/en/2.1/ref/utils/#django.utils.text.slugify">slugified with dashes</a> (<a href="https://en.wikipedia.org/wiki/Clean_URL#Slug">wikipedia definition of “slug”</a>) (i.e. dashes should separate the words).</p>
+
+<p>This is analogous to a URL on the web. A domain name is case insensitive, and while a URL path can use capitalisation, many web applications will treat these paths as case insensitive.</p>
+
+<h2 id="service-display-name">Service Display Name</h2>
+
+<p>The service metadata can specify a display name for showing in the Marketplace and in other UIs. We don’t currently suggest any constraints on what this should be, except that it should be roughly similary to the service name used in the URI.</p>
+
+<h2 id="internationalization-and-utf-8">Internationalization and UTF-8</h2>
+
+<p>These fields are 8bit characters so they can support UTF-8. We don’t currently explicitly test and support this in our tooling yet.</p>
+
+<p>When we make a push to support this, a naming standard for other languages may be necessary.</p>
+
+<h2 id="service-tags">Service Tags</h2>
+
+<p>Tags should follow the style of popular sites like <a href="https://stackoverflow.com/">Stack Overflow</a>). These are also lowercase slugified words, e.g. <code class="highlighter-rouge">example-tag</code> <code class="highlighter-rouge">tags-are-great</code> <code class="highlighter-rouge">opencog</code> <code class="highlighter-rouge">artificial-neural-network</code> etc.</p>
+:ET
