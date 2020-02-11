@@ -66,7 +66,7 @@ snet service metadata-add-daemon-addresses default_group $DAEMONADDRESS --metada
 snet service metadata-add-assets service_metadata1.json hero_image
 ```
    
-### Publish Service on |Blockchain
+### Publish Service on Blockchain
 You need to have some ether in your wallet to publish a service
 You must be either the owner or a member to have permission to publish/delete/Modify a service
 

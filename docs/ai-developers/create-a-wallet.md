@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: How to Create a Wallet
-description: Create a wallet so you can interact with the Ethereum |Blockchain
+description: Create a wallet so you can interact with the Ethereum Blockchain
 
 # extralink box
 extralink:
@@ -25,13 +25,13 @@ micro_nav: true
                        
 ## Step 1. Metamask
                                                                                                                 
-[Metamask](https://metamask.io/) is a browser extension for interacting with |Blockchain enabled websites, such as marketplace.
+[Metamask](https://metamask.io/) is a browser extension for interacting with Blockchain enabled websites, such as marketplace.
   
 Install Metamask now from their website.
                                                                                                                 
 ## Step 2. Create an Identity
                                                                                                                 
-In the initial startup, Metamask must prompt you to create an identity, which can be used in |Blockchain transactions and for storing tokens.
+In the initial startup, Metamask must prompt you to create an identity, which can be used in Blockchain transactions and for storing tokens.
                                                                                                                 
 To learn more about this, watch the video uploaded on the website or  read about how to us the extensions.
                     

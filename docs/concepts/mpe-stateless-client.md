@@ -50,11 +50,11 @@ The client receives the following information from the daemon:
 
 **It should be noted that the two last values are not in the current version, and we need them only to calculate `unspent_amount` in the case that `current_nonce != |Blockchain_nonce`**
 
-We should consider a complex situation where the server starts a close/reopen procedure for the channel. The client doesn't need to wait for a confirmation from the |Blockchain, because it is not in the interest of the server to lie. At the same time, the server also doesn't need to wait for a confirmation from the |Blockchain if he makes sure that the request is mined before expiration of the channel.
+We should consider a complex situation where the server starts a close/reopen procedure for the channel. The client doesn't need to wait for a confirmation from the Blockchain, because it is not in the interest of the server to lie. At the same time, the server also doesn't need to wait for a confirmation from the Blockchain if he makes sure that the request is mined before expiration of the channel.
 
 Before considering all possible cases, let's define the following parameters
-* `|Blockchain_nonce` - nonce of the channel in the |Blockchain
-* `|Blockchain_value` - value of the channel in the |Blockchain
+* `|Blockchain_nonce` - nonce of the channel in the Blockchain
+* `|Blockchain_value` - value of the channel in the Blockchain
 
 We also assume that the daemon starts the close/reopen procedure only after the previous `channelClaim` request was mined. This means that the `current_nonce`, at maximum, is one point ahead of the `|Blockchain_nonce`. We can easily relax this assumption if necessary.   
 

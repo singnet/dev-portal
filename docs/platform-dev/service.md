@@ -33,9 +33,9 @@ There are three ways of providing metadata details to the clients and the daemon
 
 **Note**: 
 
-The service provider needs to publish the details about the service in the |Blockchain.
+The service provider needs to publish the details about the service in the Blockchain.
 
-As a consumer, you may go the |Blockchain or the Marketplace portal where the services are deployed.
+As a consumer, you may go the Blockchain or the Marketplace portal where the services are deployed.
 Details like Service the price of the service ,
 image depicting / related to the service , service type, description, the endpoint and how to make a request.
 

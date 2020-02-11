@@ -31,7 +31,7 @@ grid_navigation:
       cta: Read more
       url: '/docs/concepts'
     - title: An introduction to the SingularityNET Daemon
-      excerpt: Learn about the functionalities of the daemon and how it interacts with the SingularityNET Marketplace and the Ethereum |Blockchain.
+      excerpt: Learn about the functionalities of the daemon and how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
       cta: Read more
       url: '/docs/concepts/daemon'
     - title: SingularityNET Registry

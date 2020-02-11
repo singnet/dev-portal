@@ -26,8 +26,8 @@ page_nav:
         content: The Daemon API 
         url: '/docs/concepts/daemon-api'
     next:
-        content: |Blockchain Contracts
-        url: '/docs/concepts/|Blockchain-contracts'
+        content: Blockchain Contracts
+        url: '/docs/concepts/Blockchain-contracts'
 ---
 
 To fulfill a request from a client to a service, a snet-daemon needs to store and process information about the service payment. This connection is called the payment channel.
@@ -43,7 +43,7 @@ The situation becomes more complicated if a service provides several replicas. I
 
 ![several replicas with several independent storages](/assets/img/mpe/payment_channel_storage_several_replicas_several_independent_storages.jpg)
 
-One drawback of using a separated payment channel for each replica, is that it can be expensive from the gas consumption and time execution point of view, because each operation to open a channel requires it to be processed by the |Blockchain.
+One drawback of using a separated payment channel for each replica, is that it can be expensive from the gas consumption and time execution point of view, because each operation to open a channel requires it to be processed by the Blockchain.
 
 The other one is that such model is subject to an attack where the same payment can be used for services
 from different replicas. This leads to a model where all snet-daemons for the same service should use the shared storage.
