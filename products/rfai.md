@@ -81,25 +81,24 @@ The submission is evaluated as follows
 
 ## Voting for a Solution
 
-  * Foundation will vote to shortlist the submissions
+  * Foundation can vote to shortlist the submissions
   * Users backing the service request can vote for any submission (not just the shortlisted ones)
-  * Only the users who are backing a service request can vote for a submission
-  * Validation of the solution will be performed offline.
+  * Validation of the solution are performed offline.
 
 ## Claiming tokens for a submission
 
-  * Claims can be made only after the evaluation period and before the expiry date
-  * Solution submitter can claim any time before expiry of the request
-  * Claims will be calculated based on the votes from backing users
+  * Can avail claims after the evaluation period and before the expiry date,  
+  * Solution submitter can claim before the expiry of the request
+  * Claims are calculated based on the votes from backing users.
       * In case there are no votes from any backing user, foundation votes are considered
-  * Claims will be distributed based on the number of votes either by backing users or by foundation members
+  * Backing users or foundation members, can avail claims based on the number of votes. 
 
 ## Reclaiming Tokens
-  * AGI tokens used to back a service request can be reclaimed by the backer after the service request has expired
+  * AGI tokens (used to back a service request ) can be reclaimed by the backer, after the service request has expired
 
 ## Closing a Request
 
-  * Only the foundation can close a request after it has been approved.
+  * Foundation can authorize closure of a request after the request approved.
   * Request owner can close the request before its approval from the foundation.
   * AGI tokens can be claimed back by the backers.
   * Request status will change to closed
