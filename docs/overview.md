@@ -11,6 +11,19 @@ gettingstarted_cards:
 
 # By User Cards Section  
 byuser_cards:
+    - title: AI Consumers
+      img: 'AI Consumers.svg'
+      description: Get started using the service on the SingularityNet platform
+      urls:
+      - url_name: Get Started
+        url_link: /docs/ai-consumers/index/
+      - url_name: How to pay for a service
+        url_link: /docs/ai-consumers/paypal/
+      - url_name: Invoke a service
+        url_link: /docs/ai-consumers/marketplace-service_invocation/
+      - url_name: View More
+        url_link: /docs/ai-consumers/
+             
     - title: AI Developer
       img: 'ai_developer.svg'
       description: Get started with developing a service for the SingularityNet platform
@@ -37,18 +50,7 @@ byuser_cards:
       - url_name: View More
         url_link: /docs/platform-dev/
 
-    - title: AI Consumers
-      img: 'AI Consumers.svg'
-      description: Get started using the service on the SingularityNet platform
-      urls:
-      - url_name: Get Started
-        url_link: /docs/ai-consumers/index/
-      - url_name: How to pay for a service
-        url_link: /docs/ai-consumers/paypal/
-      - url_name: Invoke a service
-        url_link: /docs/ai-consumers/snet-cli/
-      - url_name: View More
-        url_link: /docs/ai-consumers/
+
 
 # By Product Cards Section  
 byproduct_cards:
