@@ -29,7 +29,7 @@ For a detailed list of configurations available , please check [here](https://gi
  "payment_channel_cert_path": "/home/adminuser/Downloads/ca.pem",
  "payment_channel_ca_path": "/home/adminuser/Downloads/ca.pem",
  "payment_channel_key_path": "/home/adminuser/Downloads/client-key.pem",
- "blockchain_network_selected": "ropsten",
+ "|Blockchain_network_selected": "ropsten",
  "ethereum_json_rpc_endpoint": "https://ropsten.infura.io/v3/<YourRegisterdinfuraiID>",
 }
 

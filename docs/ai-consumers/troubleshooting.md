@@ -27,7 +27,7 @@ The number of request has increased along with the rate limiting, either retry a
 The supported payment types are free-call / escrow
 
 ### If the service is not available on Dapp
-If you see the service published on Blockchain , but not on Dapp , then it is very likely that the service is under curation 
+If you see the service published on |Blockchain , but not on Dapp , then it is very likely that the service is under curation 
 
 If you see a service on Dapp , but is shown as "Not Available", then it is very likely that the end point is temporarily down. You can use the contact-support for any questions
 

@@ -14,7 +14,7 @@ micro_nav: true
 # Features    
 features:
     - title: Overview
-      description: A primer to get you started with working with SingularityNET tools & software and the blockchain.
+      description: A primer to get you started with working with SingularityNET tools & software and the |Blockchain.
       icon: 'Tutorials_1.svg'
       card-image: ''
       url: '/docs/overview'

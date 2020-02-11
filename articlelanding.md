@@ -7,7 +7,7 @@ keywords:
 # Featrures    
 features:
     - title: Quick Start
-      description: A primer to get you started with working with SingularityNET tools & software and the blockchain.
+      description: A primer to get you started with working with SingularityNET tools & software and the |Blockchain.
       icon: 'chat.svg'
       material-icon: bookmarks
       url: '/docs/setup'

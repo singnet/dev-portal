@@ -85,7 +85,7 @@ If you dont have money on Escrow account, you will be asked to ***Deposit into E
 ![marketplace](/assets/img/dapp/depositinEscrow.png)
 Now click on **Deposit**
 
-You need to confirm every Blockchain transaction when using metamask as your mode of payment
+You need to confirm every |Blockchain transaction when using metamask as your mode of payment
 ![marketplace](/assets/img/dapp/confirmationfrommetamask.png)
 
 Based on the number of calls you wish to invoke ,select the option and the channel will be 

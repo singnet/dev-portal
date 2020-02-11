@@ -46,7 +46,7 @@ OAfter entering all the details, a review process is triggered for the singulari
 on boarding any service on to market place Dapp.
 ![Service Review](/assets/img/publisher/Publish_Service_onbloackhain_0.png) 
 
-![Publish Service on Blockchain](/assets/img/publisher/Publish_Service_onbloackhain_1.png) 
+![Publish Service on |Blockchain](/assets/img/publisher/Publish_Service_onbloackhain_1.png) 
 
 ## Claim easily from Publisher portal
 Claims can now be availed using the publisher portal.
