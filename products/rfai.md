@@ -32,7 +32,7 @@ page_nav:
 
 ---
 
-The Request for AI Portal (RFAI) lets users make requests for AI services that they would like to see built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
+The [Request for AI Portal](https://rfai.singularitynet.io/) lets users make requests for AI services that they would like to see built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
 The RFAI portal fosters the community by enabling users to incentivize developers to publish services.
 
 
