@@ -118,7 +118,7 @@ If Kevin is buying services from the Jack, they both need to enter in to a forma
 |**Authorized Amount**|	2 Cogs  |The Authorized amount is two.|
 |**Signature**        |	2 Cogs  |Signature is required for two.|
 
-*	Kevin makes a claim using the signature from Jack, this transaction is considered on-chain transaction.  please note the effective balance in Blockchain for this channel is now 98 and its nonce is 1,The same channel state is updated as follows even in the off chain state:
+*	Jack makes a claim using the signature from Jack, this transaction is considered on-chain transaction.  please note the effective balance in Blockchain for this channel is now 98 and its nonce is 1,The same channel state is updated as follows even in the off chain state:
 
 |**Channel ID**       | 1       |The channel ID created is 1|
 |---------------------|---------|----------------------------------|
