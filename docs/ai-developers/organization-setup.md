@@ -16,18 +16,18 @@ micro_nav: true
 
 ### Setting Metadata
 
-#### Create an Identity in snet-cli for mainnet , if you already have an account with ether , then you can use it , as an example 
+#### Create an Identity in snet-cli for Mainnet, if you already have an account with ether , then you can use it , as an example 
 
 ```sh
 snet identity create test-user key --private-key <PVT-KEY> --network mainnet
 ```
-#### Add in the organization name , id and the type of organization
+#### Add the organization name, id and the type of organization
 test-org-name is the organization name and test-org-id is the organization id. 
 
 ```sh
 snet organization metadata-init test-org-name test-org-id individual
 ```
-the below will be added to the metadata file 
+The following code snippet is included in the metadata file:  
 ```json
     "org_name": "test-org-name",
     "org_id": "test-org-id",
@@ -59,7 +59,7 @@ the below will be added in to the metadata file
 
 
 #### Add in Recipient and group details 
-The etcd cluster has been set up from the previous step and you need to use the same endpoint 
+Use the same endpoint mentioned in the previous step, to setup the etcd cluster.  
 
 **groups** : Multiple groups can be associated with an organization, one payment type is associated with every group.
 **payment_address** : Address of the Service provider who would receive the payment
