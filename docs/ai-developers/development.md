@@ -6,14 +6,6 @@ comments: false
 
 # Hero section
 title: AI Developers
-description: A guide for those who want to work on the software behind SingularityNET itself
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
 
 # Developer Newsletter
 dev_news: true
