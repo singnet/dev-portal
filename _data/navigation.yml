@@ -534,7 +534,7 @@ ai-developers:
         title: Launching Daemon
         excerpt:
         cta: Read more
-        url: '/docs/ai-developers/launching-daemon'
+        url: '/docs/ai-developers/daemon-setup'
   claims:
     title: Claims
     excerpt:
