@@ -38,7 +38,7 @@ Install Metamask now from their website.
                                                                                                                 
 ## Step 2. Create an Identity
                                                                                                                 
-In the initial startup, metamask should prompt you to create an identity which can be used in |Blockchain transactions and for storing tokens.
+In the initial startup, metamask should prompt you to create an identity which can be used in Blockchain transactions and for storing tokens.
                                                                                                                 
 To learn more about this, watch the video uploaded on the website or  read about how to us the extensions.
 

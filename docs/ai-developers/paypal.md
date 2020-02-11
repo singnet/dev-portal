@@ -15,7 +15,7 @@ micro_nav: true
 
 The integration of SingularityNET’s decentralized AI marketplace with PayPal represents a significant step in the direction of wide adoption of the platform. It makes it easier for more AI users to leverage the platform, thus increasing the likelihood that data scientists and developers will feel incentivized to consider SingularityNET a viable alternative pathway to monetize their expertise. This integration represents a large opportunity for SingularityNET and our community.
 
-Whatever happens on |Blockchain, an event is created, and the Marketplace listens to all events.  When there is an event notification, the Marketplace reads the Organization metadata and serviice metadata for example, and retrives the data from the |Blockchain and stores them in the local tables, or database. 
+Whatever happens on Blockchain, an event is created, and the Marketplace listens to all events.  When there is an event notification, the Marketplace reads the Organization metadata and serviice metadata for example, and retrives the data from the Blockchain and stores them in the local tables, or database. 
 
 The Markplace URL page which is designed by the SingularityNET, manages and displays all the information available from Marketplace database.
 the SingularityNET platform is open and decentralized, the Marketplace is the SingularityNET Foundation's curated view. 
@@ -42,9 +42,9 @@ You can choose an option from the following list :
 
 Choose a Metamask.
 
-By selecting this option,yYou are Authorizing SingularityNET to use Metamask. Metamask is a plugin which can be used as an Wallet. It is coming from Ethereum |Blockchain, so you can add money, any crypto currency or tokens to this Wallet.  
+By selecting this option,yYou are Authorizing SingularityNET to use Metamask. Metamask is a plugin which can be used as an Wallet. It is coming from Ethereum Blockchain, so you can add money, any crypto currency or tokens to this Wallet.  
 
-For example if I want to move the money into my account, you need to do a |Blockchain Operation. Or need to move money from your account to channel, into my account, which involves some additional charges, 
+For example if I want to move the money into my account, you need to do a Blockchain Operation. Or need to move money from your account to channel, into my account, which involves some additional charges, 
 
 As an AI consumer you can choose to:
 - create a Wallet
@@ -52,13 +52,13 @@ As an AI consumer you can choose to:
 
 The Marketplace offers a free trial version, where registered users can access service(s) for a specified time period. After the expiration time period of the trial version, install an Ethereum browser extension, such as MetaMask. 
 
-This extension mediates with the |Blockchain on behalf, and helps you in transferring of tokens between wallets, and invoke contracts.
+This extension mediates with the Blockchain on behalf, and helps you in transferring of tokens between wallets, and invoke contracts.
 
-**Note**: Service metadata is a place where the price of the service is set and it is on the |Blockchain.
+**Note**: Service metadata is a place where the price of the service is set and it is on the Blockchain.
 
-The service provider needs to publish the details about the service in the |Blockchain.
+The service provider needs to publish the details about the service in the Blockchain.
 
-As a consumer, you may go the |Blockchain or the Marketplace portal where the services are deployed.
+As a consumer, you may go the Blockchain or the Marketplace portal where the services are deployed.
 
 All service metadata details are stored in the the JSON file
 - Create a JSON file - information about the image, service type, description, price of the service, the endpoint and how to make a request.
@@ -106,7 +106,7 @@ Steps
     The interface will change according to the input need for each service.
 11.	Choose a Method to identify the service -  An Image
 12.	After setting-up all that you need,  click the **Invoke**.
-13.	Sign the Metamask transaction to send the service to the |Blockchain
+13.	Sign the Metamask transaction to send the service to the Blockchain
 14.	Wait for the response
 15.	You can up vote or down vote hope on the decentralized market curation
 

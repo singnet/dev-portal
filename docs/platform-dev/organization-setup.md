@@ -11,7 +11,7 @@ title: AI Developers
 micro_nav: true
 
 ---
-#Publishing Organization on |Blockchain
+#Publishing Organization on Blockchain
 
 
 ### Setting Metadata

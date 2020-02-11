@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: |Blockchain Contracts
+title: Blockchain Contracts
 
 # extralink box
 extralink:

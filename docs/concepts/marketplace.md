@@ -55,7 +55,7 @@ The Marketplace and SingularityNET is in beta, but still under heavy development
 
 # Calling a Service
 
-The Marketplace is a DApp, which means in order to use it you need to install a ethereum browser extension like [MetaMask](https://metamask.io/). This extension carries out interactions with the |Blockchain on your behalf, allows you to transfer tokens between wallets, and invoke contracts.
+The Marketplace is a DApp, which means in order to use it you need to install a ethereum browser extension like [MetaMask](https://metamask.io/). This extension carries out interactions with the Blockchain on your behalf, allows you to transfer tokens between wallets, and invoke contracts.
 
 In the context of the marketplace it lets you query what services are available, transfer AGI funds into escrow, and setup payment channels that allow you call any of the listed services.
 
