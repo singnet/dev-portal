@@ -170,7 +170,6 @@ Following command to do so
 ```
 snet service metadata-add-daemon-addresses default_group $DAEMONADDRESS --metadata-file $MD_FILE
 ```
-If the issue is still unresolved, contact the #services-integration channel
 
 ## Common errors returned by the Daemon
 
@@ -246,11 +245,10 @@ Also make sure  your stubs are updated on the Dapp Components
 # DAPP
 
 ### My Service is not visible on Dapp 
-- Ensure the services have been published on the network for testing?
+- Ensure the services have been published on the network for testing
+
     
-    If the service has been published successfully, then approach the channel ##services-integration to curate the service.
-    
-    After curation, the service becomes available on Dapp 
+  After curation, the service becomes available on Dapp 
 
 - Keep the below links for reference 
     
