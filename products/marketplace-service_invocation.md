@@ -32,25 +32,25 @@ page_nav:
 
 ## Calling a Service
 
-All complexity of invoking a service is abstracted from the users.
-For example it becomes easy for the user to Input the values that need to be sent and view the computed expected result in the Output field, even without knowing the complexity of the gRPC calls/generating signatures for authorization to call a  service.  
+All complexity, such as invoking a service, is abstracted from the users.
+For example, the user finds easier to send the values in the form of input, and view the computed  result in the Output field, even without understanding the complexity of the gRPC calls/generating signatures for authorization to call a  service.  
 
 
-Please note that the the Marketplace offers a **free trial** version, where registered users can access service(s) for a specified number of calls. 
+**Note** The Marketplace offers a **free trial** version, where registered users can access service(s) for a specified number of calls. 
 
 ![marketplace](/assets/img/dapp/free_call_feature.png)
 
 
-Once your freecalls are exhausted , you will need to pay for any new calls to the service. for this you need need a wallet, some ethers in your wallet , some AGI in your wallet 
+Once your freecalls are availed, you are required to pay for any new calls to the service. For this,  you need need a wallet, some ethers in your wallet, and AGI in your wallet 
 
 
-***You can either pay through Metamask or through a General wallet(paypal)***
+***You can either pay through Metamask or through a General wallet(Paypal)***
 
 - Select a Wallet -
 ![marketplace](/assets/img/dapp/select_awallet.png)
 
 
-Lets look at each of the wallet options in detail below
+Lets understand each of the wallet options below:
 
 ### Using Metamask
 **Important**: Metamask is a plugin which is used by the SingularityNET platform. This extension, allows you to perform the following in the context of the marketplace:
@@ -58,7 +58,7 @@ Lets look at each of the wallet options in detail below
 - Transfer AGI funds into escrow, 
 - Setup payment channels to enable calls to any of the listed services.
 
-As a first step you will need to Authorize the Dapp to connect to your metamask account
+Firstly, you need to Authorize the Dapp to connect to your metamask account
 - Authorize Metamask -
 ![marketplace](/assets/img/dapp/authorize_metamask.png)
 
@@ -149,8 +149,8 @@ You can now continue to use the Service till you have sufficient funds before th
 If you are a service author, need the service to be visible to others and listed on the marketplace you must:
 1.	Build and publish your service 
 2.	Use SSL with the snet-daemon. 
-    **Note:** if you don't already have an SSL certificate for your domain, it is recommend you use certbot and letsencrypt .
+    <br>**Note:** if you don't already have an SSL certificate for your domain, it is recommend you use certbot and letsencrypt .
 3.	Fork the snet-dapp repo, build a react component as the user interface for your service, and submit a pull request. 
-    **Note:** Identify the services on your networks, organization and service names being used. For more details, refer to dapp repo README.md.
+    <br>**Note:** Identify the services on your networks, organization and service names being used. For more details, refer to dapp repo README.md.
 4.	Last is some paperwork that we are still finalising, and we'll update this list when we have that. If you are itching to get your service listed, reach out to us via one of our community groups.
-    **Note** that your service can be published to SingularityNET without being listed on the marketplace, but your service may be less discoverable to potential customers if it is not listed. 
+    <br>**Note** that your service can be published to SingularityNET without being listed on the marketplace, but your service may be less discoverable to potential customers if it is not listed. 

@@ -32,7 +32,7 @@ page_nav:
 ## Introduction to SingularityNET Marketplace
 
 The [The SingularityNET Marketplace](http://beta.singularitynet.io)  is a decentralized application (DApp), which lists the available AI services and helps you to interact with those services through web interface abstracting all the complexity in invoking a service. It also processes payment for services (through MetaMask/General Wallet)  and conduct service ratings.
-Whenever transaction happens on |Blockchain, an event is created. The marketplace monitors all those events. 
+Whenever a transaction happens on |Blockchain, an event is created. The marketplace monitors all those events. 
 For example, if you publish a new organization, a new service, the marketplace receives an alert notification about published information in the |Blockchain. The marketplace reads the organization metadata, the service metadata and the stores this into its database. This application efficiently displays all the details quickly without relying on the slow performance of the |Blockchain
 The following image shows the contents from the marketplace.  
 

@@ -22,13 +22,14 @@ micro_nav: true
 
 ---
 
-The [SingularityNET Marketplace](http://beta.singularitynet.io) provides an easy way for people browse available AI services and interact with them via a web interface.
+The [SingularityNET Marketplace](http://beta.singularitynet.io) provides an interface for people to browse and interact with available AI services through web interface.
 
 
-The [Request for AI Portal](https://rfai.singularitynet.io/) (RFAI) lets users make requests for AI services that they would like to see built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
+The [Request for AI Portal](https://rfai.singularitynet.io/) (RFAI) Allows user to request for AI services that are built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
 
 
-The [Publisher Portal](http://workinprogress) provides an easy way for people to assist the developers easily publish and manage their organizations
+The [Publisher Portal](http://workinprogress) Helps people to assist the developers to publish and manage their organizations in a easier way.
 and services using the publisher portal.
-You can list your services on to the marketplace Dapp easily making it very simple for your users to search and use your service.
+
+You can list your services in the marketplace (Dapp), which can help users to search and use your service.
 ***Publisher portal will be live by March***  
