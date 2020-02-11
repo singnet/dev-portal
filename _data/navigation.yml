@@ -516,7 +516,11 @@ ai-developers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/tutorials'
-
+        development:
+          title: More Examples
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/development'
   troubleshooting:
       title: Troubleshooting
       excerpt:
