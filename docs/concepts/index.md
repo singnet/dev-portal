@@ -26,6 +26,7 @@ page_nav:
         url: '/docs/concepts/marketplace'
 ---
 
+
 ## SingularityNET Introduction
 
 SingularityNET(SNET) is an open and decentralized network of AI services made accessible

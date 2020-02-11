@@ -56,7 +56,7 @@ sudo apt-get install nodejs npm
 
 ### IPFS
 
-IPFS is used to keep RPC models of the services which are published via SingularityNET platform. Follow instructions [here](https://ipfs.io/docs/install) to download and install IPFS. Following steps expects that `ipfs` is installed and can be run from the command line.
+IPFS is used to keep RPC models of the services which are published via SingularityNET platform. Follow instructions [here](https://docs.ipfs.io/guides/guides/install/) to download and install IPFS. Following steps expects that `ipfs` is installed and can be run from the command line.
 
 ### Python toolset
 

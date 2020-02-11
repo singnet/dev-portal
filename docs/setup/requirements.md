@@ -33,7 +33,7 @@ micro_nav: true
 
 For example, installing the requirements using `Ubuntu 18.04`:
 
-```bash
+```sh
 sudo apt-get update
 sudo apt-get install wget git
 sudo apt-get install python3 python3-pip
@@ -41,17 +41,18 @@ sudo apt-get install nodejs npm
 sudo apt-get install libudev-dev libusb-1.0-0-dev
 sudo pip3 install snet-cli
 
-# !!! Change version to the latest snet-daemon from releases link above
-SNETD_VERSION="v0.1.6"
+# !!! Get the latest snet-daemon from Github releases
+SNETD_VERSION=`curl -s https://api.github.com/repos/singnet/snet-daemon/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'`
 
-wget https://github.com/singnet/snet-daemon/releases/download/$SNETD_VERSION/snetd-linux-amd64
-chmod a+x snetd-linux-amd64
-sudo mv snetd-linux-amd64 /usr/bin/snetd
+cd /tmp
+wget https://github.com/singnet/snet-daemon/releases/download/${SNETD_VERSION}/snet-daemon-${SNETD_VERSION}-linux-amd64.tar.gz
+tar -xvf snet-daemon-${SNETD_VERSION}-linux-amd64.tar.gz
+sudo mv snet-daemon-${SNETD_VERSION}-linux-amd64/snetd /usr/bin/snetd
 ```
 
 Setup environment variables (they are explained later in this tutorial as they're used):
 
-```
+```sh
 export ORGANIZATION_ID="$USER"-org
 export ORGANIZATION_NAME="The $USER's Organization"
 
@@ -63,5 +64,5 @@ export SERVICE_PORT=7000
 export DAEMON_HOST=$SERVICE_IP
 export DAEMON_PORT=$SERVICE_PORT
 
-export USER_ID = $USER
+export USER_ID=$USER
 ```
