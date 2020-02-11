@@ -36,12 +36,13 @@ header:
           item_url: '/docs/overview/'
         - item_name: Core Concepts
           item_url: '/docs/concepts/'
+        - item_name: AI Consumer
+          item_url: '/docs/ai-consumers/' 
         - item_name: Platform Dev
           item_url: '/docs/platform-dev/'
         - item_name: AI Developer
           item_url: '/docs/ai-developers/'
-        - item_name: AI Consumer
-          item_url: '/docs/ai-consumers/'              
+             
 
 footer:
     content:

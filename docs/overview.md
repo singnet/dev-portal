@@ -16,7 +16,7 @@ byuser_cards:
       description: Get started with developing a service for the SingularityNet platform
       urls:
       - url_name: Get Started
-        url_link: /docs/ai-developers/organization/
+        url_link: /docs/ai-developers/index/
       - url_name: Setup an Organization
         url_link: /docs/ai-developers/etcd/
       - url_name: Setup a Service
@@ -42,7 +42,7 @@ byuser_cards:
       description: Get started using the service on the SingularityNet platform
       urls:
       - url_name: Get Started
-        url_link: /docs/ai-consumers/service/
+        url_link: /docs/ai-consumers/index/
       - url_name: How to pay for a service
         url_link: /docs/ai-consumers/paypal/
       - url_name: Invoke a service
