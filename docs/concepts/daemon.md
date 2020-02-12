@@ -83,7 +83,7 @@ The daemon supports SSL termination using a developer-supplied certificate and k
 
 Prior to invoking a service through the SingularityNET platform, a consumer must have:
 - Funded the [Multi-Party Escrow contract](/docs/concepts/multi-party-escrow); and
-- Opened a payment channel with the recipient as specified by the [service metadata](/docs/concepts/service-metadata).
+- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/concepts/organization-metadata.md).
 
 With each invocation the daemon checks:
 - that the signature is authentic;
@@ -99,3 +99,4 @@ The daemon's behavior with respect to the [service type](#supported-service-type
 ## Payment channel state
 
 The daemon stores the payment channel state in an etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/concepts/daemon-channel-storage).
+[ETCD cluster](/docs/concepts/etcdsetup.md).

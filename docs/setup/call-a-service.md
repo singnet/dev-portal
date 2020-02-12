@@ -36,19 +36,19 @@ or extend the timeout for the payment channel.
 
 So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
 
-Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.ropsten.be/).
+Luckily for test networks you can [go to a faucet to request some Ether for free]({{ site.data.faucets.eth }}).
 
 To use the faucet you need to [create a wallet](/docs/setup/create-a-wallet), and then provide them with your wallet's public address.
 
 ## Step 2. Get some AGI
 
-We provide a faucet to get AGI for either Ropsten or Kovan networks: https://faucet.singularitynet.io/
+We provide a faucet to get AGI for either Ropsten or Kovan networks: [{{ site.data.faucets.agi }}]({{ site.data.faucets.agi }})
 
-You'll need a github account to authenticate, and there after you can request AGI every 24 hours. (TODO confirm this timeout period is correct)
+You'll need a github account to authenticate, and there after you can request AGI every 24 hours.
 
 ## Step 3. Make a Call from the Marketplace
 
-TODO someone needs to step through with the final beta UI taking screenshots
+Follow this [video tutorial](https://www.youtube.com/watch?v=j_9yLRQ1bE4).
 
 ## Step 4. Setup the `snet` CLI tool
 
@@ -57,7 +57,7 @@ The `snet` CLI tool is your swiss army knife for working with SingularityNET. It
 You can install the CLI with pip:
 
 ```
-pip install snet-cli
+sudo pip3 install snet-cli
 ```
 
 You then need to create an identity that matches your metamask account, since this is where the faucets sent all your test tokens too.

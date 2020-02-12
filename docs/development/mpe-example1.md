@@ -41,7 +41,7 @@ Test should be run on a clean environment in the given order.
 
 ### Install everything
 
-```bash
+```sh
 #I. Download example scripts and make sure that scripts are in the current directory.
 
 git clone https://github.com/singnet/dev-portal
@@ -63,7 +63,7 @@ At this point you can "commit" your docker container.
 3. Type "docker commit <container_id> $USER/snet_example1"  
 
 After this you will be able to use $USER/snet_example1 instead of ubuntu:latest (without running install_all.sh)
-```
+```sh
 # you should be inside example1 directory
 #cd dev-portal/docs/all/mpe/front-to-back-examples/scripts/example1
 docker run -v `pwd`:/example1 -it $USER/snet_example1
@@ -71,7 +71,7 @@ docker run -v `pwd`:/example1 -it $USER/snet_example1
 
 ### Register and run example service
 
-```bash
+```sh
 # reset environment
 . /example1/for_docker/reset_environment.sh
 
@@ -89,7 +89,7 @@ After running the service, the terminal will not return to you, so you will need
 
 And your can run your client
 
-```bash
+```sh
 . /example1/run_client.sh
 
 # it should print "42.0"
@@ -97,6 +97,6 @@ And your can run your client
 
 ### Run treasurer
 
-```bash
+```sh
 . /example1/run_treasurer.sh
 ```

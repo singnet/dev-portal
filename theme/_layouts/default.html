@@ -1,187 +1,136 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        {% include site-head.html %}
-    </head>
-    <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
-        {% include site-header.html %}
+	<head>
+		{% include site-head.html %}
+	</head>
+	<body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
+		{% include site-header.html %}
+		<div class="hero-subheader">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-11 hidden-xs hidden-sm" style="margin-top: -50px;">
+						<div class="align-container" data-mh>
+							<div class="align-inner">
+								<a href="{{ site.github.repository_url }}/tree/master/{{ page.path }}" class="btn btn--read-more">Edit<i class="icon icon--arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-7">
+						<div class="align-container" data-mh>
+							<div class="align-inner">
+								{% if page.title %}
+									<h1 class="hero-subheader__title">{{ page.title }}</h1>
+								{% endif %}
+								{% if page.description %}
+									<p class="hero-subheader__desc">{{ page.description }}</p>
+								{% endif %}
+								{% if page.page_nav.prev.content or page.page_nav.next.content %}
+									{% if page.page_nav.prev.content and page.page_nav.prev.url %}
+										<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.page_nav.prev.url }}" class="btn btn--dark btn--rounded btn--w-icon btn--w-icon-left">
+											<i class="icon icon--arrow-left"></i>
+											{{ page.page_nav.prev.content }}
+										</a>
+									{% endif %}
+									{% if page.page_nav.next.content and page.page_nav.next.url %}
+										<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.page_nav.next.url }}" class="btn btn--dark btn--rounded btn--w-icon">
+											<i class="icon icon--arrow-right"></i>
+											{{ page.page_nav.next.content }}
+										</a>
+									{% endif %}
+								{% endif %}
+							</div><!-- /.align-inner -->
+						</div><!-- /.align-container -->
+					</div><!-- /.col -->
 
-        <div class="wrapper">
-            <div class="container-fluid mt-3">
-                <div class="row">
-                    <div class="d-none d-sm-block col-sm-3 snet-blog_leftsection">
-                        <div class="snet-card sticky-top sticky-with-margin">
-                            <h3 class="snet-card_title">Explore</h3>
-                            <div class="snet-card_content">
-                                <ul class="snet-nav_list">
-                                    {% assign path_crumbs = page.path | split: "/" %}
-                                    {% assign crumbs = path_crumbs[0] %}
-                                    {% case path_crumbs[0] %}
-                                    {% when 'products' %}
-                                    {% assign crumbs = path_crumbs[1] %}
-                                    {% assign nav_tree = site.data.navigation.products %}
-                                    {% when 'docs' %}
-                                    {% assign crumbs = path_crumbs[2] %}
-                                    {% case path_crumbs[1] %}
-                                    {% when 'concepts' %}
-                                    {% assign nav_tree = site.data.navigation.concepts %}
-                                    {% when 'provider.md' %}
-                                    {% assign nav_tree = site.data.navigation.provider %}
-                                    {% when 'ai-consumers' %}
-                                    {% assign nav_tree = site.data.navigation.ai-consumers %}
-                                    {% when 'ai-developers' %}
-                                    {% assign nav_tree = site.data.navigation.ai-developers %}
-                                    {% when 'platform-dev' %}
-                                    {% assign nav_tree = site.data.navigation.platform-dev %}
+					{% if page.extralink.title and page.extralink.description and page.extralink.title_url %}
+						<div class="col-md-4 col-md-offset-1 hidden-xs hidden-sm">
+							<div class="align-container" data-mh>
+								<div class="align-inner">
+									<div class="hero-subheader__extralink">
+										<p class="hero-subheader__extralink-title">
+											{% if button.external_url == true %}
+											<a href="{{ page.extralink.title_url }}" class="btn btn--read-more">
+												{{ page.extralink.title }}
+												<i class="icon icon--arrow-right"></i>
+											</a>
+											{% else %}
+											<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.extralink.title_url }}" class="btn btn--read-more">
+												{{ page.extralink.title }}
+												<i class="icon icon--arrow-right"></i>
+											</a>
+											{% endif %}
+										</p><!-- /.hero-subheader__extralink-title -->
+										<p>{{ page.extralink.description }}</p>
+									</div><!-- /.hero-subheader__extralink -->
+								</div><!-- /.align-inner -->
+							</div><!-- /.align-container -->
+						</div><!-- /.col -->
+					{% endif %}
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.hero-subheader -->
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="content">
+							{{ content }}
+						</div><!-- /.content -->
+					</div><!-- /.col -->
+					<div class="col-md-4 col-md-offset-1">
+						<div class="sections-list-wrapper">
+							<div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.section -->
 
-                                    {% when 'buyer.md' %}
-                                    {% assign nav_tree = site.data.navigation.buyer %}
-                                    {% else %}
-                                    {% assign nav_tree = site.data.navigation.docs %}                                                                          
-                                    {% endcase %}            
-                                    {% when 'tutorials' %}
-                                    {% assign nav_tree = site.data.navigation.tutorials %}
-                                    {% when 'contribute' %}
-                                    {% assign nav_tree = site.data.navigation.contribute %}                                        
-                                    {% else %}
-                                    {% assign nav_tree = nil %}
-                                    {% endcase %}  
+		<div class="js-footer-area">
+			{% if page.page_nav.prev.content or page.page_nav.next.content %}
+				<nav class="page-nav">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								{% if page.page_nav.prev.content and page.page_nav.prev.url %}
+									<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.page_nav.prev.url }}" class="page-nav__item page-nav__item--prev">
+										<i class="icon icon--arrow-left"></i>
+										{{ page.page_nav.prev.content }}
+									</a><!-- /.page-nav__item -->
+								{% endif %}
+								{% if page.page_nav.next.content and page.page_nav.next.url %}
+									<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.page_nav.next.url }}" class="page-nav__item page-nav__item--next">
+										{{ page.page_nav.next.content }}
+										<i class="icon icon--arrow-right"></i>
+									</a><!-- /.page-nav__item -->
+								{% endif %}
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</nav><!-- /.page-nav -->
+			{% endif %}
 
-                                    {%if nav_tree %}                                                                           
-                                    {% for menu in nav_tree %}
-                                    {% assign children = menu[1].children %}
-                                    {% assign menu_url = menu[1].url | split: "/" %}
-                                    {% assign menu_url_last_inx = path_url.size | minus: 1 %}
-                                    {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
-                                    {% assign classname = "has-submenu"%}
-                                    {% if crumbs == file_name %}
-                                        {% assign classname = "active has-submenu"%}
-                                    {% endif %}
-                                    {% if children %}
-                                        {% assign unique_id = menu[1].title | replace: " ","--" %}
-                                        {% for child in children %}
-                                            {% assign child_url = child[1].url | split: "/" %}
-                                            {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        
-                                            {% assign child_file_name = child_url[child_url_last_inx] | append: ".md" %}
-                                            {% assign ul_class = "collapse" %}
-                                            {% assign li_class = "" %}
-                                            {% assign a_class = "collapsed" %}
-                                            {% if crumbs == child_file_name %}
-                                                {% assign ul_class = "collapse show" %}
-                                                {% assign a_class = "" %}
-                                                {% assign active_child_title = child[1].title %}
-                                                {% break %}
-                                            {% endif %}
-                                        {% endfor %}
-                                        <li class="{{ classname }}"> <!-- The parent "li" tag should have a class "has-submenu"-->
-                                            <a data-toggle="collapse" class="{{ a_class }}" href="#{{ unique_id }}"> <!-- the href should point to the unique id of inner list -->
-                                                {{ menu[1].title }}
-                                                <i class="material-icons align-middle float-right e_m">expand_more</i>  
-                                                <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
-                                            </a>
-                                            <ul class="{{ ul_class }}" id="{{ unique_id }}">
-                                                {% for child in children %}
-                                                    {% assign li_class = "" %}
-                                                    {% if active_child_title == child[1].title %}
-                                                        {% assign li_class = "active" %}
-                                                    {% endif %}
-                                                    <li class="{{ li_class }}"><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
-                                                {% endfor %}
-                                            </ul>
-                                        </li>
-                                    {% else %}
-                                        <li class="{{ classname }}">
-                                            <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
-                                        </li>
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% endif %}                   
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 snet-blog_middlesection">
-                        <div class="snet-card">
-                            <div class="snet-card_wrapper">
-                                <h2 class="snet-card_title border-0 p-0"> {{ page.title }}</h2>
-                                <!--
-                                <ul class="snet-breadcrumb">
-                                    {% capture url_tree %}
-                                    {{ page.url | replace: '/', ' ' | strip }}
-                                    {% endcapture %}
-                                    {% capture url_level %}
-                                    {{ url_tree | number_of_words | minus: 1 }}
-                                    {% endcapture %}
-                                    {% assign breadcrumb = url_tree | split: ' ' %}                                    
-                                    <li> <a href="{{ site.baseurl }}">Home</a></li>
+			{% if page.dev_news == true %}
+				{% include dev-news.html %}
+			{% endif %}
 
-                                    {% for item in breadcrumb %}
-                                    {% assign label = item | replace: '-', ' ' | capitalize %}
-                                    {% assign index = forloop.length | minus: forloop.index %}
-                                    {% assign page_url = page.url | split: '/' | pop: index | join: '/' %}
-                                    <li>
-                                        {% if forloop.last %}
-                                        <span>{{ page.breadcrumb_label | default: label }}</span>
-                                        {% else %}
-                                        <a href="{{ page_url }}/">{{ label }}</a>
-                                        {% endif %}
-                                    </li>
-                                    {% endfor %}                                    
-                                </ul>
-                                -->
-                            </div>
-                            <div class="snet-card_content">
-                                <div class="snet-card_maincontents">
-                                    {{ content }}
-                                    <div class="snet-forum_question text-center">
-                                        <a href="https://community.singularitynet.io/" target="_blank">Ask a question in the forum</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>                
-                    <div class="col-xs-12 col-sm-3 order-first order-sm-last snet-blog_rightsection">
-                        <div class="sticky-top sticky-with-margin">
-                            <div class="snet-card transparent">
-                                <h4 class="snet-card_title">Contents</h4>
-                                <div class="snet-card_content">
-                                    <div class="snet-nav_list_secondary sections-list js-sections">
-
-                                    </div>
-                                </div>
-                            </div>  
-                            <!--
-                            <div class="snet-card transparent mt-5 d-none d-sm-block ">
-                                <h4 class="snet-card_title">Was this page useful?</h4>
-                                <div class="snet-card_content">
-                                    <div  class="snet-card_wrapper border-0 p-0">
-                                        <div class="snet-starrating">
-                                            <a href="#" class=""><i class="material-icons">star_border</i></a>  
-                                            <a href="#" class=""><i class="material-icons">star_border</i></a>  
-                                            <a href="#" class=""><i class="material-icons">star_border</i></a>  
-                                            <a href="#" class=""><i class="material-icons">star_border</i></a>  
-                                            <a href="#" class=""><i class="material-icons">star_border</i></a>                                                                              
-                                        </div>
-                                    </div>
-                                    <div  class="snet-card_wrapper border-0">
-                                        <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a>
-                                        <a href="#" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
-                                    </div>
-                                </div>
-                            </div> 
-                            -->
-                        </div>
-                    </div>                      
-                </div>              
-            </div>
-        </div>
-
-        {% include site-footer.html %}
-
-        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
-        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
-        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
-        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
-
-    </body>
+			{% if jekyll.environment == "production" and page.comments == true and site.snet.comments.disqus_forum_shortname %}
+				<div class="section section--grey">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-7">
+								{% include comments.html %}
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</div><!-- /.section -->
+			{% endif %}
+			{% if page.micro_nav == true %}
+				{% include micro-nav.html %}
+			{% endif %}
+			{% include site-footer.html %}
+		</div><!-- /.js-footer-area -->
+	</body>
 </html>

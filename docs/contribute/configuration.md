@@ -27,194 +27,206 @@ page_nav:
         content: All Developer Portal Docs
         url: '/docs/contribute'
     next:
-        content: Manage Content 
+        content: Manage Content
         url: '/docs/contribute/manage-content'
 ---
-<div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <div class="content">
-                    <h2 id="introduction">Introduction</h2>
-<p><code class="highlighter-rouge">_config.yml</code> stores configuration data. Many of these options can be specified from the command line executable but it’s easier to specify them here so you don’t have to remember them.</p>
+## Introduction
 
-<div class="callout callout--warning">
-<p><strong>Please stop and re-run <code>jekyll serve</code> command after you change configuration file!</strong> Master configuration file contains global configurations and variable definitions that are read once at execution time. Changes made to <code>config.yml</code> during automatic regeneration are not loaded until the next execution.</p>
-</div>
+`_config.yml` stores configuration data. Many of these options can be specified from the command line executable but it’s easier to specify them here so you don’t have to remember them.
 
-<h2 id="relative-urls">Relative URLs</h2>
-<p>If you’re deploying to server where your site is not going to be in <code class="highlighter-rouge">root</code> directory, you should setup <code class="highlighter-rouge">baseurl</code> variable.</p>
+>__Please stop and re-run `jekyll serve` command after you change configuration file!__ <br> Master configuration file contains global configurations and variable definitions that are read once at execution time. Changes made to `config.yml` during automatic regeneration are not loaded until the next execution.
 
-<p>For example, if your site is going to be stored on URL that looks like this <code class="highlighter-rouge">http://example.com/project</code>, you’ll have to update your <code class="highlighter-rouge">baseurl</code> variable and it should look like this:</p>
+## Hosting
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">baseurl</span><span class="pi">:</span> <span class="s">/project</span>
-</code></pre></div></div>
+If you’re deploying to server where your site is not going to be in `root` directory, you should setup `baseurl` variable.
 
-<div class="callout callout--warning">
-<p><strong>Build site with environment variable!</strong> When you run <code>jekyll serve</code>, your <code>baseurl</code> variable shouldn’t render at all in any pages.</p>
-<p>We’ll set Jekyll to only render <code>baseurl</code> variable when its environment is set to production.</p>
-<p>So then, how do you get the <code>baseurl</code> variable to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with <code>JEKYLL_ENV=production</code> so the complete command looks like this one: <code>JEKYLL_ENV=production jekyll build</code></p>
-</div>
+For example, if your site is going to be stored on URL that looks like this `http://example.com/project`, you’ll have to update your `baseurl` variable and it should look like this:
 
-<h2 id="color-themes">Color themes</h2>
-<p>The SingularityNET Developer Portal Theme supports a few color themes:</p>
-<ul>
-<li>blue (default SingularityNET theme)</li>
-<li>green</li>
-<li>purple</li>
-<li>red</li>
-<li>yellow</li>
-</ul>
+```yml
+snet:
+  baseurl: /project
+```
 
-<p>You can update your <code class="highlighter-rouge">color_theme</code> variable in <code class="highlighter-rouge">_config.yml</code> to see changes.</p>
+>__Build site with environment variable!__ <br> When you run `jekyll serve`, your `baseurl` variable shouldn’t render at all in any pages.
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">color_theme</span><span class="pi">:</span> <span class="s">green</span>
-</code></pre></div></div>
+We’ll set Jekyll to only render `baseurl` variable when its environment is set to production.
 
-<h2 id="header">Header</h2>
-<h3 id="logo-with-text">Logo with text</h3>
-<p>If you need logo as text, update <code class="highlighter-rouge">text</code> variable and leave <code class="highlighter-rouge">image</code> empty.</p>
+So then, how do you get the `baseurl` variable to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with `JEKYLL_ENV=production` so the complete command looks like this one: `JEKYLL_ENV=production jekyll build`
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">header</span><span class="pi">:</span>
-<span class="na">logo</span><span class="pi">:</span>
-    <span class="na">text</span><span class="pi">:</span> <span class="s">Project name</span>
-    <span class="na">image</span><span class="pi">:</span>
-</code></pre></div></div>
+## Color themes
 
-<h3 id="logo-with-image">Logo with image</h3>
-<p>If you need logo as image, update <code class="highlighter-rouge">image</code> variable and set it to <code class="highlighter-rouge">true</code> and leave <code class="highlighter-rouge">text</code> empty.</p>
+The SingularityNET Developer Portal Theme supports a few color themes:
 
-<p>To set your custom logo image just upload it in place of <code class="highlighter-rouge">logo.png</code> here<br />
-<code class="highlighter-rouge">/theme/assets/images/layout/logo.png</code>.</p>
+*   blue (default SingularityNET theme)
+*   green
+*   purple
+*   red
+*   yellow
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">header</span><span class="pi">:</span>
-<span class="na">logo</span><span class="pi">:</span>
-    <span class="na">text</span><span class="pi">:</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="no">true</span>
-</code></pre></div></div>
+You can update your `color_theme` variable in `_config.yml` to see changes.
 
-<div class="callout callout--info">
-<p><strong>Recommended logo image size.</strong> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.</p>
-</div>
+```yml
+snet:
+  color_theme: green
 
-<h3 id="navigation">Navigation</h3>
-<p>To add new items in main navigation you have to setup <code class="highlighter-rouge">nav</code> variable in <code class="highlighter-rouge">_config.yml</code>. Add as many items as you need.</p>
+```
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">header</span><span class="pi">:</span>
-<span class="na">nav</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">item_name</span><span class="pi">:</span> <span class="s">Item 1</span>
-      <span class="na">item_url</span><span class="pi">:</span> <span class="s">/example-url-1</span>
-    <span class="pi">-</span> <span class="na">item_name</span><span class="pi">:</span> <span class="s">Item 2</span>
-      <span class="na">item_url</span><span class="pi">:</span> <span class="s">/example-url-2</span>
-</code></pre></div></div>
+## Header
 
-<h2 id="footer">Footer</h2>
-<h3 id="logo-with-text-1">Logo with text</h3>
-<p>If you need logo as text, update <code class="highlighter-rouge">text</code> variable and leave <code class="highlighter-rouge">image</code> empty.</p>
+### Logo with text
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">footer</span><span class="pi">:</span>
-<span class="na">content</span><span class="pi">:</span>
-    <span class="na">logo</span><span class="pi">:</span>
-        <span class="na">text</span><span class="pi">:</span> <span class="s">Project name</span>
-        <span class="na">image</span><span class="pi">:</span>
-</code></pre></div></div>
+If you need logo as text, update `text` variable and leave `image` empty.
 
-<h3 id="logo-with-image-1">Logo with image</h3>
-<p>If you need logo as image, update <code class="highlighter-rouge">image</code> variable and set it to <code class="highlighter-rouge">true</code> and leave <code class="highlighter-rouge">text</code> empty.</p>
+```yml
+snet:
+  header:
+    logo:
+        text: Project name
+        image:
+```
 
-<p>To set your custom logo image just upload it in place of <code class="highlighter-rouge">logo-footer.png</code> here <code class="highlighter-rouge">/theme/assets/images/layout/logo-footer.png</code>.</p>
+### Logo with image
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">footer</span><span class="pi">:</span>
-<span class="na">content</span><span class="pi">:</span>
-    <span class="na">logo</span><span class="pi">:</span>
-        <span class="na">text</span><span class="pi">:</span>
-        <span class="na">image</span><span class="pi">:</span> <span class="no">true</span>
-</code></pre></div></div>
+If you need logo as image, update `image` variable and set it to `true` and leave `text` empty.
 
-<div class="callout callout--info">
-<p><strong>Recommended logo image size.</strong> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.</p>
-</div>
+To set your custom logo image just upload it in place of `logo.png` here  
+`/theme/assets/images/layout/logo.png`.
 
-<h3 id="copyright">Copyright</h3>
-<p>If you need to setup new footer copyright text, update <code class="highlighter-rouge">copyright</code> variable in your <code class="highlighter-rouge">_config.yml</code> file.</p>
+```yml
+snet:
+  header:
+    logo:
+        text:
+        image: true
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">footer</span><span class="pi">:</span>
-<span class="na">content</span><span class="pi">:</span>
-    <span class="na">copyright</span><span class="pi">:</span> <span class="s">Copyright &amp;copy; 2017. - Project name &lt;br&gt;All rights reserved.</span>
-</code></pre></div></div>
+```
 
-<h3 id="social-list">Social list</h3>
-<p>To properly setup social list update <code class="highlighter-rouge">social_list</code> variable in <code class="highlighter-rouge">_config.yml</code>. Add as many items as you need.</p>
+>__Recommended logo image size.__ <br> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
 
-<p>At the bottom of the “Getting Started” section you can find a list of icons you can use in this list. Update <code class="highlighter-rouge">network_name</code> variable to add a proper icon.</p>
+### Navigation
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">footer</span><span class="pi">:</span>
-<span class="na">social_list</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">network_name</span><span class="pi">:</span> <span class="s">facebook</span>
-      <span class="na">profile_url</span><span class="pi">:</span> <span class="s">http://example.com</span>
-    <span class="pi">-</span> <span class="na">network_name</span><span class="pi">:</span> <span class="s">twitter</span>
-      <span class="na">profile_url</span><span class="pi">:</span> <span class="s">http://example.com</span>
-    <span class="pi">-</span> <span class="na">network_name</span><span class="pi">:</span> <span class="s">instagram</span>
-      <span class="na">profile_url</span><span class="pi">:</span> <span class="s">http://example.com</span>
-    <span class="pi">-</span> <span class="na">network_name</span><span class="pi">:</span> <span class="s">youtube</span>
-      <span class="na">profile_url</span><span class="pi">:</span> <span class="s">http://example.com</span>
-</code></pre></div></div>
+To add new items in main navigation you have to setup `nav` variable in `_config.yml`. Add as many items as you need.
 
-<h2 id="google-analytics">Google Analytics</h2>
-<p>To activate Google Analytics you have to update <code class="highlighter-rouge">_config.yml</code> with GA tracking code. You can do that with <code class="highlighter-rouge">tracking_code</code> variable.</p>
+```yml
+snet:
+  header:
+    nav:
+        - item_name: Item 1
+          item_url: /example-url-1
+        - item_name: Item 2
+          item_url: /example-url-2
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">google_analytics</span><span class="pi">:</span>
-<span class="na">tracking_code</span><span class="pi">:</span> <span class="s">UA-XXXXXX-X</span>
-</code></pre></div></div>
+```
 
-<div class="callout callout--warning">
-<p><strong>Build site with environment variable!</strong> When you run <code>jekyll serve</code>, your Google Analytics tracking code shouldn’t render at all in any pages.</p><p>The reason for this is if you visit your Google Analytics account, you’ll see a bunch of visits from <code>localhost:4000</code> or <code>127.0.0.1:4000</code> depending on the type of operating system you’re developing your Jekyll project on.</p>
-<p>This can potentially muddy up your analytics, so to mitigate this problem, we’ll set Jekyll to only render Google Analytics when its environment is set to production.</p>
-<p>So then, how do you get the analytics to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with <code>JEKYLL_ENV=production</code> so the complete command looks like this one: <code>JEKYLL_ENV=production jekyll build</code></p>
-</div>
+## Footer
 
-<h2 id="disqus-comments">Disqus comments</h2>
-<p>To activate Disqus commenting system you have to update <code class="highlighter-rouge">_config.yml</code> with the Disqus forum shortname. You can do that with <code class="highlighter-rouge">disqus_forum_shortname</code> variable.</p>
+### Logo with text
 
-<p>Comments are available only on <code class="highlighter-rouge">default</code> page layout and you have to enable them on new pages with <code class="highlighter-rouge">comments: true</code> variable.</p>
+If you need logo as text, update `text` variable and leave `image` empty.
 
-<p> Currently, we have integrated Discourse comments into our SingularityNET Developer Portal which link directly to topics created on <a href="https://community.singularitynet.io/c/developers" target="_blank">our forum</a>.
+```yml
+snet:
+  footer:
+    content:
+        logo:
+            text: Project name
+            image:
 
-<div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">snet</span><span class="pi">:</span>
-<span class="na">comments</span><span class="pi">:</span>
-<span class="na">disqus_forum_shortname</span><span class="pi">:</span>
-</code></pre></div></div>
+```
 
-<div class="callout callout--warning">
-<p><strong>Build site with environment variable!</strong> When you run <code>jekyll serve</code>, your Disqus commenting system shouldn’t render at all in any pages.</p>
-<p>We’ll set Jekyll to only render Disqus commenting system when its environment is set to production.</p>
-<p>So then, how do you get the Disqus commenting system to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with <code>JEKYLL_ENV=production</code> so the complete command looks like this one: <code>JEKYLL_ENV=production jekyll build</code></p>
-</div>
+### Logo with image
 
-<h2 id="favicon">Favicon</h2>
-<p>To change favicon just replace <code class="highlighter-rouge">/favicon.ico</code> with your new icon. Make sure it is in <code class="highlighter-rouge">.ico</code> format. Dimensions should be 16px x 16px.</p>
+If you need logo as image, update `image` variable and set it to `true` and leave `text` empty.
 
-<div class="callout callout--info">
-<p><strong>Favicon <code>.psd</code> file included!</strong> We've included <code>.psd</code> file with pre-made favicon in <code>/designs</code> folder of your theme.</p>
-</div>
+To set your custom logo image just upload it in place of `logo-footer.png` here `/theme/assets/images/layout/logo-footer.png`.
 
+```yml
+snet:
+  footer:
+    content:
+        logo:
+            text:
+            image: true
+
+```
+
+>__Recommended logo image size.__ <br> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
+
+### Copyright
+
+If you need to setup new footer copyright text, update `copyright` variable in your `_config.yml` file.
+
+```yml
+snet:
+  footer:
+    content:
+        copyright: Copyright &copy; 2017. - Project name <br>All rights reserved.
+
+```
+
+### Social list
+
+To properly setup social list update `social_list` variable in `_config.yml`. Add as many items as you need.
+
+At the bottom of the “Getting Started” section you can find a list of icons you can use in this list. Update `network_name` variable to add a proper icon.
+
+```yml
+snet:
+footer:
+  social_list:
+      - network_name: facebook
+        profile_url: http://example.com
+      - network_name: twitter
+        profile_url: http://example.com
+      - network_name: instagram
+        profile_url: http://example.com
+      - network_name: youtube
+        profile_url: http://example.com
+
+```
+
+## Google Analytics
+
+To activate Google Analytics you have to update `_config.yml` with GA tracking code. You can do that with `tracking_code` variable.
+
+```yml
+snet:
+  google_analytics:
+    tracking_code: UA-XXXXXX-X
+
+```
+
+>__Build site with environment variable!__ <br> When you run `jekyll serve`, your Google Analytics tracking code shouldn’t render at all in any pages.
+
+The reason for this is if you visit your Google Analytics account, you’ll see a bunch of visits from `localhost:4000` or `127.0.0.1:4000` depending on the type of operating system you’re developing your Jekyll project on.
+
+This can potentially muddy up your analytics, so to mitigate this problem, we’ll set Jekyll to only render Google Analytics when its environment is set to production.
+
+So then, how do you get the analytics to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with `JEKYLL_ENV=production` so the complete command looks like this one: `JEKYLL_ENV=production jekyll build`
+
+## Disqus comments
+
+To activate Disqus commenting system you have to update `_config.yml` with the Disqus forum shortname. You can do that with `disqus_forum_shortname` variable.
+
+Comments are available only on `default` page layout and you have to enable them on new pages with `comments: true` variable.
+
+Currently, we have integrated Discourse comments into our SingularityNET Developer Portal which link directly to topics created on [our forum](https://community.singularitynet.io/c/developers).
+
+```yml
+snet:
+  comments:
+    disqus_forum_shortname:
+
+```
+
+>__Build site with environment variable!__ <br> When you run `jekyll serve`, your Disqus commenting system shouldn’t render at all in any pages.
+
+We’ll set Jekyll to only render Disqus commenting system when its environment is set to production.
+
+So then, how do you get the Disqus commenting system to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with `JEKYLL_ENV=production` so the complete command looks like this one: `JEKYLL_ENV=production jekyll build`
+
+## Favicon
+
+To change favicon just replace `/favicon.ico` with your new icon. Make sure it is in `.ico` format. Dimensions should be 16px x 16px.
+
+>__Favicon `.psd` file included!__ <br> We've included `.psd` file with pre-made favicon in `/designs` folder of your theme.

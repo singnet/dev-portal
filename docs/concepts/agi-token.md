@@ -49,11 +49,11 @@ Since we are currently in the Beta stage, we only use Kovan and Ropsten Testnet 
 
 
 ## AGI Faucet
-We have an automated faucet for distributing Kovan and Ropsten Testnet AGI Tokens [here](http://faucet.singularitynet.io). You will need to login using your GitHub account and input the Ethereum address where you want to receive the AGI token. Make sure this address is a Kovan Ethereum Address. You can request 1 AGI token every 24 hours.
+We have an automated faucet for distributing Kovan and Ropsten Testnet AGI Tokens [here]({{ site.data.faucets.agi }}). You will need to login using your GitHub account and input the Ethereum address where you want to receive the AGI token. Make sure this address is a Kovan Ethereum Address. You can request 1 AGI token every 24 hours.
 
 In order to add the Kovan Testnet AGI you may need the following details:
 * Symbol: AGI
 * Decimals: 8
 * Kovan Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
 
-You can request Kovan or Ropsten Testnet Ether here: https://faucet.metamask.io. 
+You can request Kovan or Ropsten Testnet Ether [here]({{ site.data.faucets.eth }}).
