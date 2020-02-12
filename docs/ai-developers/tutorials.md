@@ -49,7 +49,7 @@ The marketplace is a curated view of services available in the registry.
 
 ## Tutorials across languages
 
-We Support popular language-specific tutorials:
+We Support popular language-specific tutorials
 
 - [Tutorials](/tutorials)
    - [Build a service in C++](/tutorials/cpp)
