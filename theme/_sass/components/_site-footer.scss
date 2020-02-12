@@ -177,7 +177,7 @@ $screen-md-max: ($screen-lg-min - 1) !default;
         float:right;
         li{
             float: left;
-            padding-right: 40px;
+            padding-left: 40px;
             a{
                 color: #fff;                
             }
@@ -194,7 +194,7 @@ $screen-md-max: ($screen-lg-min - 1) !default;
             clear: both;
             height: 1px;
             width: 100%;
-                
+
         }
     }
     .row.footer-links .logo{
@@ -212,4 +212,41 @@ $screen-md-max: ($screen-lg-min - 1) !default;
             text-align: left;
         }
     }
+}
+.form-section{
+    #mc_embed_signup_scroll{
+        position: relative;
+        input{
+            display: inline-block;
+            height: 36px;
+            margin: 0;
+            padding: 0;
+            border:none;
+            line-height: normal;
+            border-radius:2px;
+            font-size:14px;
+            &[type="email"]{
+                min-width: 256px;   
+                padding: 0 0 0 16px;
+                &::placeholder{
+                    font-size: 14px;
+                    font-style: italic;
+                }
+            }
+            &[type="submit"]{
+                background: #4086FF;
+                color: #fff;
+                font-weight: 600;
+                padding: 0 16px;
+                letter-spacing: 1.25px;
+                //padding: 13px 28px 11px;
+                box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+                text-transform: uppercase;
+                cursor: pointer;                
+                &:hover{
+                    background: #005ACB;
+                }
+            }
+        }
+    }    
 }
