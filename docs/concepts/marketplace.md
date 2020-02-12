@@ -30,11 +30,11 @@ page_nav:
         url: '/docs/concepts/service'
 ---
 
-The [SingularityNET Marketplace](http://beta.singularitynet.io) provides an easy way for people browse available AI services and interact with them via a web interface.
+The [SingularityNET Marketplace](http://beta.singularitynet.io) provides an easy way for people to browse available AI services and interact with them via a web interface.
 
-![marketplace](/assets/img/marketplace.png)
+![marketplace](/assets/img/betav2-marketplace.png)
 
-The SingularityNET marketplace is a decentralized application (DApp) and provides a front-end for exploring available AI services and interacting with them through a web-UI. It also handles payment for services (through MetaMask integration) and service ratings. The DApp
+The SingularityNET marketplace is a decentralized application (DApp) and provides a front-end for exploring available AI services and interacting with them through a web-UI. It also handles payment for services (through MetaMask) and service ratings. The DApp
   * reads data from the on-chain Registry and pairs it with off-chain metadata, allowing AI
 services to be searched, filtered, and discovered;
   * integrates the SingularityNET curation service, displaying from the Registry only those
@@ -43,8 +43,7 @@ signed legal agreements that protect user privacy and data;
   * allows AI services to display custom UI components for user interactions (gathering
 inputs for service execution and displaying results);
   * integrates with Multi-Party Escrow, enabling the user to pay for service usage;
-  * allows consumers to rate services they have used; this is a simple rating component that
-will eventually be replaced by SingularityNET's Reputation System (currently under
+  * allows consumers to rate services they have used, this simple consumer rating will eventually be integrated with SingularityNET's Reputation System (currently under
 development); and
   * captures usage metrics at a consumer level.
 
@@ -55,8 +54,8 @@ The Marketplace and SingularityNET is in beta, but still under heavy development
 
 # Calling a Service
 
-The Marketplace offers a free trial wherein signed up users can access any service for free for a fixed number of times.
-When the free trial has ended you need to install an Ethereum browser extension like [MetaMask](https://metamask.io/). This extension carries out interactions with the blockchain on your behalf, allowing you to transfer tokens between wallets, and invoke contracts.
+
+The Marketplace is a DApp, which means in order to use it you need to install a ethereum browser extension like [MetaMask](https://metamask.io/). This extension carries out interactions with the Blockchain on your behalf, allows you to transfer tokens between wallets, and invoke contracts.
 
 In the context of the marketplace it lets you query what services are available, transfer AGI funds into escrow, and setup payment channels that allow you to call any of the listed services.
 

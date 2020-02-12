@@ -1,4 +1,3 @@
----
 # Page settings
 layout: default
 keywords:
@@ -6,7 +5,7 @@ comments: false
 
 # Hero section
 title: Tutorial
-description: You're on the way to being part of the SingularityNET!
+description: You're closer to being part of the SingularityNET!
 
 # extralink box
 extralink:
@@ -24,41 +23,44 @@ micro_nav: true
 
 Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io).
 
-Our Developer Portal provides documentation about the SingularityNET Platform and Marketplace. As a service developer, you will learn how to build and access AI services that are published onto the network. As a client of SingularityNET services, you learn to integrate your software with SingularityNET services that other people have published.
+Our Developer Portal contains documentation about the SingularityNET Platform and Marketplace. 
 
-The beta Marketplace is online at [beta.singularitynet.io](http://beta.singularitynet.io), and allows you browse a curated set of services that are available in the registry.
+As a service developer, you can learn how to build and access AI services that are published onto the network. As a client of SingularityNET services, you learn to integrate your software with SingularityNET services that other people have published.
 
-If you're new to SingularityNET, this is the suggested order in which to explore the developer portal. For everyone else, it's hopefully a good index to find the information you need.
+The beta Marketplace is available online at [beta.singularitynet.io](http://beta.singularitynet.io), and allows you to browse a curated set of services available in the registry.
+
+If you're new to SingularityNET, it is recommended that you follow this order to explore the developer portal. For everyone else, it's hopefully a good index to find the information you need.
 
 
 ## First Steps
 
-The first three links are relevant if you want to be a consumer of SingularityNET services. They are also worth going through if you want to publish a service, so that you you can test your service and will know the flow your customers need to go through.
+if you want to be a consumer of SingularityNET services, the follow first three relevant links. if you prefer publishing, testing and understanding the customer requirements, then it is worth the efforts and value.
+- [Prerequisites](/docs/setup/requirements) - Certain conditions that need to be full-filled. prior to using decentralised AI services.
+- [Create a Wallet](/docs/setup/create-a-wallet) - You'll need a wallet with some funds to perform transactions .
+- [How to call a service](/docs/setup/call-a-service) - Use services that are available in the marketplace, and invoke the service using the command line tool.
+- [Using the SDK](/tutorials/sdk) - Invoking a AI service using the Python SDK.
 
-- [Prerequisities](/docs/setup/requirements) - What do you need to do before you can start working with decentralised AI services.
-- [Create a Wallet](/docs/setup/create-a-wallet) - To make transactions you'll need a wallet with some funds.
-- [How to call a service](/docs/setup/call-a-service) - Covers trying out a service in the marketplace, and calling it from our command line tool.
-- [Using the SDK](/tutorials/sdk) - Calling a service using the Python SDK.
-
-These steps guide you through creating a service, and getting that service on our marketplace:
+To create a service, and upload that service on our marketplace, follow these instructions:
 
 - [Publish and run your own example service](/tutorials/publish)
-- [Marketplace Requirements for Services](/docs/ai-developers/marketplace) - How to submit your service for inclusion in the Singularity marketplace. The marketplace is a curated view of services available in the registry.
+- [Marketplace Requirements for Services](/docs/ai-developers/marketplace) - How to submit your service for inclusion in the Singularity marketplace? 
+
+The marketplace is a curated view of services available in the registry.
 
 ## Tutorials across languages
 
-We maintain language-specific tutorials for a number popular languages.
+We Support popular language-specific tutorials:
 
 - [Tutorials](/tutorials)
-	- [Build a service in C++](/tutorials/cpp)
-	- [Build a service in Go](/tutorials/go)
-	- [Build a service in Java](/tutorials/java)
-	- [Build a service in Python](/tutorials/python)
-	- [Build an Opencog service](/tutorials/opencog)
+   - [Build a service in C++](/tutorials/cpp)
+   - [Build a service in Go](/tutorials/go)
+   - [Build a service in Java](/tutorials/java)
+   - [Build a service in Python](/tutorials/python)
+   - [Build an Opencog service](/tutorials/opencog)
 
 
 ## Community
 
-- [Workshops](/workshops) - Find workshop resources here.
+- [Workshops](/workshops) - For workshop resources, click on this workshop link.
 - [Help improve our Developer Portal and Documentation](/docs/contribute) - Our community is what makes us great!
 - [Subscribe to our newsletter](/newsletter) - We'll let you know of the latest updates, releases, and changes to the platform and marketplace.

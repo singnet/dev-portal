@@ -1,8 +1,0 @@
-I"c<p>Depending on your experience, you may prefer to use a <a href="https://hub.docker.com/r/singularitynet/snet-platform">preconfigured docker image</a> that already has the dependencies installed and ready to go. However, if you do that, you should make sure you a familiar with the basics of docker.</p>
-
-<ul>
-  <li>If you want to configure your own environment, <a href="/docs/setup/requirements">here is what you’ll need</a>.</li>
-  <li><a href="/docs/setup/create-a-wallet">How to create a wallet</a></li>
-  <li><a href="/docs/setup/call-a-service">Get some AGI and ETH, and call a service</a></li>
-</ul>
-:ET
