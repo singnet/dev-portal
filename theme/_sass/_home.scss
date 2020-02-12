@@ -7,7 +7,7 @@
 section.snet-herobanner{
     height: 407px;
     background:url("../images/main_banner.png") top center no-repeat, linear-gradient(to bottom,  #282054 0%,#4671c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    margin-bottom:0;
+    margin:0;
     h2{
         color: #fff;
         font-size: 28px;
@@ -164,12 +164,13 @@ section.snet-herobanner{
                 a{
                     color: #007bff;
                     font-weight: 600;
-                    padding:4px 8px;
+                    //padding:4px 8px;
                     border-radius:2px;
                     &:hover{
                         font-weight: 600;
-                        background: rgba(64,134,255,0.1);
-                        text-decoration: none;
+                        //background: rgba(64,134,255,0.1);
+                        //text-decoration: none;
+                        color: #3f51b5;
                     }
                 }
             }
@@ -182,6 +183,7 @@ section.snet-herobanner{
     }
 }
 .snet-newsletter{
+    margin-top: 64px;
     background: #220D3A; 
     padding:16px;
     .field-wrapper{
