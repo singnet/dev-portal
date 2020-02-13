@@ -45,7 +45,7 @@ You can also do this using the snet-cli commands
 All real value transactions occur in either "Main Ethereum Network" or "Mainnet Network". The other available networks are for testing purposes, and
 the tokens on those networks are essentially value-less and are only useful for testing code and software.
                                                                                                                 
-**Note**: SingularityNet began using  Kovan in order for testing, but this network is likely to be deprecated soon in favour of Ropsten network.
+**Note**: SingularityNet began using  Kovan for testing, but this network is likely to be deprecated soon in favour of Ropsten network.
                                                                                                                 
  **Important** The major releases will be over the main network. Beginning with the Beta testing in Feb/Mar 2019.
 
