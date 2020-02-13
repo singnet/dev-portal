@@ -23,8 +23,9 @@ micro_nav: true
 ---
 
 # Claiming funds from a Channel
-As a service provider, you could claim any authorized amount from the channel.
-You will need the Signature ( Signed by the Sender). The message is signed by the sender using their private key
+A service provider can claim any authorized amount from the channel.
+
+You need the Signature ( Signed by the Sender). The sender signs the message using the private key.
 ## Signature 
 
 ## Nonce of a Channel
