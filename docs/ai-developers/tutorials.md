@@ -1,3 +1,4 @@
+---
 # Page settings
 layout: default
 keywords:
@@ -19,6 +20,7 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
+
 ---
 
 Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io).
