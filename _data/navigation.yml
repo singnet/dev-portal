@@ -43,7 +43,7 @@ header:
         - item_name: Platform Dev
           item_url: '/docs/platform-dev/'  
         - item_name: Products
-          item_url: '/products/'            
+          item_url: '/products'            
 
 footer:
     content:
