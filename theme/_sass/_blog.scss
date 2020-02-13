@@ -237,7 +237,8 @@
         padding: 0;   
         list-style: none;    
         li{
-            margin: 0 0 0 14px;
+            //margin: 0 0 0 14px;
+            margin: 0;            
             padding: 0;      
             display: block;   
             width:100%;
@@ -247,7 +248,7 @@
                 color: #9B9B9B;    
                 color: #666;
                 font-size: 14px;    
-                padding:5px 10px 5px 24px;
+                padding:5px 10px 5px 18px;
                 font-size: 14px;
                 font-weight: 400;
                 min-height: 30px;     
@@ -259,6 +260,7 @@
             }
             ul{
                 li{
+                    margin: 0 0 0 14px;                    
                     a{
                         font-size: 13px;
                         color: #9B9B9B;                            
@@ -292,7 +294,55 @@
     padding:12px 18px;
     border-bottom: 1px solid #F5F7F8;     
 }
+.snet-responsive_samepagemenu{
+    display: none;
+    margin:0 0 24px 0;
+    span{
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: #666;            
+        margin: 0 0 16px 0;
+        border-bottom: 1px solid #F5F7F8;          
+    } 
+    .js-sections{
+        ul{
+            margin: 4px 0 0 0;
+            padding: 0;
+            list-style:none;
+            li{
+                margin: 0;
+                padding: 0 0 8px 0;
+                display: block;
+                width: 100%;
+                a{
+                    color: #888;
+                    &:hover{
+                        color: #4086FF;
+                        text-decoration: none;
+                    }
+                }
+                &>ul{
+                    margin-left: 16px;
+                    li{
+                        padding: 0;      
+                        a{
+                            color: #9b9b9b;
+                            &:hover{
+                                color: #4086FF;
+                                text-decoration: none;
+                            }                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @include mobile{
+    .snet-responsive_samepagemenu{
+        display: block;
+    }
     .snet-blog_rightsection,
     .snet-blog_leftsection,
     .snet-blog_middlesection{
