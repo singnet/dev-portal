@@ -13,7 +13,9 @@ micro_nav: true
 ---
 ## Overview
 
-SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, where they can be used by anyone with an internet connection. Developers are able to charge for the use of their services using the native AGI token.
+SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, and anyone on the network can be use the service using the internet connection. 
+
+Developers can charge for the usage of their services using the native AGI token.
 
 Services can span the entire gamut of offerings in artificial intelligence and machine learning. Services can provide inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. The services can be as simple as wrapping a well-known algorithm such as A* path planning, a complete end-to-end solution for an industry problem, or a standalone AI application. Developers can also deploy autonomous AI agents that interoperate with other services on the network.
 
@@ -29,14 +31,13 @@ Finally, to make our marketplace compliant with regulations without compromising
 
 ## Concepts and Components
 
-Here we've broken down the SingularityNET platform and network into its core components. The diagram below depicts the key components along with auxiliary components and their
-roles.
+The SingularityNET platform and network are shown as core components. The following diagram shows the key components,  associated auxiliary components and corresponding roles.
 
 ![components](/assets/img/platform_components.jpg)
 
   
- You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn. 
+ You can quickly jump to a page to know more about, or use the navigation on each page to read through them in turn. 
 
-**The Request for AI Portal (RFAI):** is a DApp through which end users and application developers can request specific AI services they would like added to the network and stake AGI tokens as a reward for high-quality solutions.
+**The Request for AI Portal (RFAI):** is a DApp through which end users and application developers request specific AI services they want added to the network and stake AGI tokens as a reward for high-quality solutions.
 
 
