@@ -85,12 +85,12 @@ As noted when discussing [Services](/docs/ai-developers/service), the service AP
 
 ## SSL
 
-The daemon supports SSL termination using a developer-supplied certificate and keyfile. See our [SSL guide](/tutorials/daemon-ssl-setup) for step-by-step instructions on how to set this up with [Let's Encrypt](https://letsencrypt.org/).
+The daemon supports SSL termination using a developer-supplied certificate and keyfile. For more information, refer to  [SSL guide](/tutorials/daemon-ssl-setup) on how to setup with [Let's Encrypt](https://letsencrypt.org/).
 
 ## Authorisation and Payment
 
-Prior to invoking a service through the SingularityNET platform, a consumer must have:
-- Funded the [Multi-Party Escrow contract](/docs/ai-developers/mpe); and
+Prior to invoking a service through the SingularityNET platform, the consumer must have completed the following:
+- Funded the [Multi-Party Escrow contract](/docs/ai-developers/mpe);
 - Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/ai-developers/organization).
 
 With each invocation the daemon checks for the following
