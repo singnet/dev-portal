@@ -37,6 +37,3 @@ roles.
   
  You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn. 
 
-**The Request for AI Portal (RFAI):** is a DApp through which end users and application developers can request specific AI services they would like added to the network and stake AGI tokens as a reward for high-quality solutions.
-
-
