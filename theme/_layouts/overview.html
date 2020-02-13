@@ -7,7 +7,7 @@
         {% include site-header.html %}  
 
         <div class="wrapper">
-            <div class="container-fluid mt-1">
+            <div class="container-fluid">
                 <section class="snet-section_gettingstarted">
                     <div class="row">
                         <div class="col">
@@ -15,12 +15,7 @@
                                 <div class="snet-card_content">
                                     <h3 class="snet-card_title">{{ page.title }}</h3>                                    
                                     <div class="row">
-                                        <div class="col-12 col-sm-5 col-md-4 col-xl-3">
-                                            <div class="snet-overviewimage">
-                                                <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ page.img }}">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-7 col-md-8 col-xl-7">
+                                        <div class="col-12 col-sm-9">
                                             <p class="big">
                                                 {{ page.description }}
                                             </p>

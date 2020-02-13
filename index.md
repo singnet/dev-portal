@@ -4,9 +4,8 @@ redirect_from: "/home/"
 # Page settings
 layout: homepage
 keywords:
-title: Welcome to the AI Dev Community, powered by open collaboration.
-tagline_1: 'The go-to place for all developer related content and social activities.'
-tagline_2: 'SingularityNET lets anyone create, share, and monetize AI services at scale.'
+title: Welcome to the AI Dev Community;<br>powered by open collaboration.
+tagline: The go-to place for all developer related content and social activities.<br>SingularityNET lets anyone create, share, and monetize AI services at scale.
 
 # Micro navigation
 micro_nav: true

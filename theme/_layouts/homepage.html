@@ -8,11 +8,12 @@
         <section class="snet-herobanner">
             <div class="wrapper">
                 <div class="container-fluid"> 
-                    <div class="row pt-4">
-                        <div class="col-xs-12 col-md-7">
-                            <h2>{{ page.title }}</h2>                            
-                            <p class="tagline first">{{ page.tagline_1 }}</p>     
-                            <p class="tagline">{{ page.tagline_2 }}</p>                                 
+                    <div class="row">
+                        <div class="col-xs-12 col-md-2">
+                        </div>                            
+                        <div class="col-xs-12 col-md-8">
+                            <h2 class="text-center">{{ page.title }}</h2>                            
+                            <p class="tagline first text-center">{{ page.tagline }}</p>                                   
                         </div>                    
                     </div>
                 </div>
@@ -113,8 +114,8 @@
                                     <div class="contents">
                                         {{ item.description }}   
                                         <div class="clearfix mt-1 actionbuttons">
-                                            <a href="{{ item.left_url_link }}" class="float-left">{{ item.left_url_name }}</a>
-                                            <a href="{{ item.right_url_link }}" class="float-right">{{ item.right_url_name }}</a>                                                                                                                           
+                                            <a href="{{ item.left_url_link }}" class="float-left mr-4">{{ item.left_url_name }}</a>
+                                            <a href="{{ item.right_url_link }}" class="float-left">{{ item.right_url_name }}</a>                                                                                                                           
                                         </div>
                                     </div>
                                 </div>                               
@@ -125,40 +126,7 @@
                 </div>
             </div>
         </div>   
-        <div class="mt-4 snet-newsletter">
-            <div class="wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
-                            <div class="field-wrapper">
-                                <div class="mr-3 heading-section">
-                                    <h3>Subscribe for email updates</h3>
-                                    <!--
-                                    <h3>Want to stay updated?</h3>
-                                    <p>Subscribe for email updates</p>    
-                                    -->
-                                </div>
-                                <div class="ml-3 form-section">
-                                    <!--
-                                    <input type="text" >
-                                    <input type="submit" >
-                                    -->
 
-                                    <form action="https://singularitynet.us16.list-manage.com/subscribe/post?u=d74195510c25bf501caf3011d&amp;id=a804df2efd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-                                        <div id="mc_embed_signup_scroll">
-                                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d74195510c25bf501caf3011d_a804df2efd" tabindex="-1" value="" kl_vkbd_parsed="true"></div>                                            
-                                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="" kl_vkbd_parsed="true">
-                                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" kl_vkbd_parsed="true">
-                                        </div>
-                                    </form>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-            </div>
-        </div>
 
 
         {% include site-footer.html %}
