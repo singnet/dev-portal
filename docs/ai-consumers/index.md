@@ -5,7 +5,7 @@ keywords: intro concepts
 comments: false
 
 # Hero section
-title: AI Consumers
+title: Introduction
 
 # Micro navigation
 micro_nav: true

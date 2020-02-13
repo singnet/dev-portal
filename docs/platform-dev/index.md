@@ -5,7 +5,7 @@ keywords: intro concepts
 comments: false
 
 # Hero section
-title: Platform Developers
+title: Introduction
 
 # Micro navigation
 micro_nav: true
