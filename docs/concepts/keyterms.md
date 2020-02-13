@@ -30,7 +30,7 @@ page_nav:
         url: '/docs/concepts/service'
 ---
 
-#### IPFS:  
+#### IPFS
 The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to
 store and share data in a distributed file system. IPFS uses content-addressing to uniquely
 identify each file in a global namespace connecting all computing devices. Organization details

@@ -85,21 +85,18 @@ docs:
     url: "/docs/buyer"    
 
 concepts:
+  introduction:
+    title: "SingularityNET Introduction "
+    url: "/docs/concepts/index"
   blockchain:
     title: "What is Blockchain"
     url: "/docs/concepts/blockchain"
-  introduction:
-    title: "SingularityNET Introduction "
-    url: "/docs/concepts/introduction"
   ipfs:
     title: "IPFS "
     url: "/docs/concepts/ipfs"
   mpe:
     title: "Multi-party Escrow"
     url: "/docs/concepts/mpe"
-  naming-standards:
-    title: "Naming Standards"
-    url: "/docs/concepts/naming-standards"
   key-terms:
     title: "Key terms"
     url: "/docs/concepts/keyterms"
@@ -433,6 +430,9 @@ ai-developers:
             excerpt:
             cta: Read more
             url: '/docs/ai-developers/marketplace'
+        naming-standards:
+          title: "Naming Standards"
+          url: "/docs/ai-developers/naming-standards"           
         keyterms:
             title: Key Terms
             excerpt:
