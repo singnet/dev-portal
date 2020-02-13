@@ -41,7 +41,9 @@ header:
         - item_name: AI Developer
           item_url: '/docs/ai-developers/'
         - item_name: Platform Dev
-          item_url: '/docs/platform-dev/'          
+          item_url: '/docs/platform-dev/'  
+        - item_name: Products
+          item_url: '/docs/products/'            
 
 footer:
     content:
