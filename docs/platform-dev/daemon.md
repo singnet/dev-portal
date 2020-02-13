@@ -98,7 +98,7 @@ With each invocation the daemon checks for the following
 - that the payment channel has sufficient funds; and
 - that the payment channel expiry is beyond specified threshold (to ensure that the service author can claim the accrued funds after delivering the service).
 
-After these checks are successful the request is proxied to the service.
+After the daemon  performs a successful check, the request is sent to the service.
 
 ## Configuration
 
@@ -106,5 +106,5 @@ The daemon's behavior with respect to the [service type](#supported-service-type
 
 ## Payment channel state
 
-The daemon stores the payment channel state in an etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/ai-developers/daemon-channel-storage).
+The daemon stores the payment channel state in the etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/ai-developers/daemon-channel-storage).
 [ETCD cluster](/docs/ai-developers/etcdsetup).
