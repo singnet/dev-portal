@@ -194,7 +194,7 @@
             success: function () {
                 var modal = document.getElementById("snetModal");
                 $("#snetModal img").attr('src', imgUrl);
-                //$("#snetmodal-altetx").text(altText);
+                $("#snetmodal-altetx").text(altText);
                 $(modal).fadeIn();
             }
         });

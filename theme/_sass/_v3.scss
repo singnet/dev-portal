@@ -97,7 +97,7 @@ header{
                             color: #3f51b5;                            
                             border-bottom: 2px solid #fff;   
                             &:hover{
-                               // color: #220D3A;
+                                // color: #220D3A;
                             }
                         }
                     }
@@ -148,6 +148,20 @@ header{
         */
     }   
 }
+/*@include md{
+    header{
+        .snet-navbar_primary {
+            padding: 17px 16px 17px 16px;
+            .snet-navbar_menu    {
+                margin: 0 auto;
+                li{
+                    padding-top:4px; 
+                }
+            }        
+        }
+    }
+}*/
+
 
 .wrapper{
     margin: 0 auto;
@@ -783,7 +797,6 @@ h5 .title-anchor-link{ display: none;}
         }
     }    
 }
-
 
 //@include responsive-check(1){}
 
