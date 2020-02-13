@@ -114,6 +114,10 @@
                                         </div>                                        
                                     </div>
                                     {{ content }}
+                                    <p>
+                                        <small><i>Last modified on : {% last_modified_at %}</i></small>
+                                    </p>
+
                                     <div class="snet-forum_question text-center">
                                         <a href="https://community.singularitynet.io/" rel="noreferrer noopener" target="_blank">Ask a question in the forum</a>
                                     </div>
@@ -158,6 +162,7 @@
                 </div>              
             </div>
         </div>
+
 
         {% include site-footer.html %}
 

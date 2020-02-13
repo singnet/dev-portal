@@ -26,5 +26,6 @@ plugins:
   - jemoji
   - feedjira
   - httparty
+  - jekyll-last-modified-at
 collections:
   - external_feed

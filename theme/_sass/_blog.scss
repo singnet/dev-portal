@@ -322,6 +322,10 @@
 .snet-responsive_samepagemenu{
     display: none;
     margin:0 0 24px 0;
+    padding:16px;
+    background:#f1f1f1;
+    border:solid 1px #fafafa;
+    border-radius:4px;
     span{
         display: block;
         font-size: 16px;
@@ -337,11 +341,11 @@
             list-style:none;
             li{
                 margin: 0;
-                padding: 0 0 8px 0;
+                padding: 2px 0 8px 0;
                 display: block;
                 width: 100%;
                 a{
-                    color: #888;
+                    color: #666;
                     &:hover{
                         color: #4086FF;
                         text-decoration: none;
@@ -350,13 +354,24 @@
                 &>ul{
                     margin-left: 16px;
                     li{
-                        padding: 0;      
+                        padding: 4px 0 0 0;
+                        border-bottom:solid 1px #fff;
+                        &:last-child{
+                            border:none;
+                        }
                         a{
-                            color: #9b9b9b;
+                            color: #888;
                             &:hover{
                                 color: #4086FF;
                                 text-decoration: none;
                             }                            
+                        }
+                        ul{
+                            li{
+                                a{
+                                    color: #aaa;
+                                }
+                            }
                         }
                     }
                 }

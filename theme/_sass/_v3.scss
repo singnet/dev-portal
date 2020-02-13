@@ -175,12 +175,13 @@ header{
     border-bottom: solid 1px #DBE3E7;    
     z-index:1024;
     h1{
-        width: 30%;
+        width: 25%;
         font-weight: normal;
         font-size: 18px;
         margin: 0;     
         padding: 0 0 0 15px;
         display: inline-block;
+        //background: red;
     }
     #secondary-menu{
         display: inline-block;                        
@@ -540,6 +541,8 @@ h5 .title-anchor-link{ display: none;}
 /*==============================================================================*/
 /* Responsive */
 /*==============================================================================*/
+
+
 @media only screen and (max-width: 575px) {
     /* xs */    
     body{
@@ -622,7 +625,10 @@ h5 .title-anchor-link{ display: none;}
         width:576px;
     }     
     #secondary-menu{
-        padding-left: 15px;    
+        //padding-left: 15px;    
+        width: 100%;
+        text-align: center;
+        margin:0 auto;        
     }    
     .snet-nav_list{
         li{
@@ -739,7 +745,7 @@ h5 .title-anchor-link{ display: none;}
 .snet-mobile-first{
     //display: none;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     header{
         .snet-navbar_primary{
             padding-left:0;
@@ -800,7 +806,11 @@ h5 .title-anchor-link{ display: none;}
 
 //@include responsive-check(1){}
 
-
+@include xxl{
+    .wrapper{
+        width: 1440px;       
+    }
+}
 /* The Modal (background) */
 .snetmodal-modal {
     display: none; /* Hidden by default */
