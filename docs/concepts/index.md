@@ -5,7 +5,7 @@ keywords: intro concepts
 comments: false
 
 # Hero section
-title: Core Concepts
+title: Introduction
 
 # extralink box
 extralink:
