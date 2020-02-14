@@ -140,33 +140,45 @@ header{
                 }
             }                     
         }   
-        /*
-        .dropdown:hover>.dropdown-menu {
-            display: block;
-            margin: -0.125rem 0 0;            
-        } 
-        */
     }   
 }
-/*@include md{
-    header{
-        .snet-navbar_primary {
-            padding: 17px 16px 17px 16px;
-            .snet-navbar_menu    {
-                margin: 0 auto;
-                li{
-                    padding-top:4px; 
-                }
-            }        
-        }
-    }
-}*/
 
-
+/*==============================================================================*/
+/* Wrapper Styles */
+/*==============================================================================*/
 .wrapper{
     margin: 0 auto;
 }
-
+@include xs{
+    .wrapper{
+        width:90%;
+    }      
+}
+@include sm{
+    .wrapper{
+        width:$sm;
+    }   
+}
+@include md{
+    .wrapper{
+        width:$md;
+    }   
+}
+@include lg{
+    .wrapper{
+        width:$lg;
+    }   
+}
+@include xl{
+    .wrapper{
+        width:$xl;
+    }   
+}
+@include xxl{
+    .wrapper{
+        width:$xxl;
+    }   
+}
 
 
 .snet-navbar_secondary{
@@ -404,7 +416,7 @@ h2 .title-anchor-link{ display: none;}
 h3 .title-anchor-link{ display: none;}
 h4 .title-anchor-link{ display: none;}
 h5 .title-anchor-link{ display: none;}
-//table {border-style: groove}
+
 /*==============================================================================*/
 /* Left Side Navigation */
 /*==============================================================================*/
@@ -483,56 +495,6 @@ h5 .title-anchor-link{ display: none;}
 
 
 /*==============================================================================*/
-/* Feedback Links */
-/*==============================================================================*/
-.snet-card_feedbacklinks{
-    text-transform: uppercase;
-    display: block;
-    margin: 0 0 8px 14px;
-    letter-spacing: 1.25px;
-    color: #4086FF;
-    font-size: 14px;
-    font-weight: 600;
-    &:hover{
-        text-decoration: none;        
-    }
-}
-
-/*==============================================================================*/
-/* Breadcrumbs */
-/*==============================================================================*/
-.snet-breadcrumb{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 12px;
-}
-.snet-breadcrumb li{
-    display: inline-block;
-}
-.snet-breadcrumb li a{
-    display: inline-block;
-    color: #4086FF;
-}
-.snet-breadcrumb li:after{
-    content: ">";
-    display: inline-block;
-}
-.snet-breadcrumb li:last-child:after{
-    display: none;
-}
-
-.snet-starrating{
-    padding:0 0 0 28px;
-    i{
-        font-size: 20px;
-        color: rgba(161,163,168,.35);
-        &:hover{
-            color: #FFC200;        
-        }
-    }    
-}
-/*==============================================================================*/
 /* Main Contents */
 /*==============================================================================*/
 @import "blog";
@@ -542,12 +504,8 @@ h5 .title-anchor-link{ display: none;}
 /* Responsive */
 /*==============================================================================*/
 
-
 @media only screen and (max-width: 575px) {
     /* xs */    
-    body{
-        //background: red!important; 
-    }
     .snet-blog-entry{
         display: block!important;
         img.snet-card_descriptionicon{
@@ -558,9 +516,6 @@ h5 .title-anchor-link{ display: none;}
             display: block!important;
         }
     }
-    .wrapper{
-        width:90%;
-    }  
     header{
         .snet-navbar_primary{
             padding: 12px 5px 4px 20px;
@@ -577,12 +532,6 @@ h5 .title-anchor-link{ display: none;}
     }    
     .snet-card_margintop_fix{
         margin-top: 10px!important;
-    }
-    #main-menu{
-        //position: absolute;
-        //background: #220D3A;
-        //z-index: 1026;        
-        //width: 100%;
     }
     .snet-navbar_secondary{
         padding: 12px 30px 12px 30px;
@@ -617,13 +566,7 @@ h5 .title-anchor-link{ display: none;}
     }       
 }
 @media only screen and (min-width: 576px) and (max-width:767px){
-    /* sm */    
-    body{
-        //background: yellow!important; 
-    }      
-    .wrapper{
-        width:576px;
-    }     
+    /* sm */      
     #secondary-menu{
         //padding-left: 15px;    
         width: 100%;
@@ -666,12 +609,6 @@ h5 .title-anchor-link{ display: none;}
 }
 @media only screen and (min-width: 768px) and (max-width:991px){
     /* md */    
-    body{
-        //background: blue!important;
-    }    
-    .wrapper{
-        width:768px;
-    }   
     #secondary-menu{
         padding-left: 15px;    
     }
@@ -693,13 +630,7 @@ h5 .title-anchor-link{ display: none;}
     }
 }
 @media only screen and (min-width: 992px) and (max-width:1199px) {
-    /* lg */    
-    body{
-        //background: green!important;
-    }    
-    .wrapper{
-        width:992px;
-    }      
+    /* lg */       
     .snet-navbar_navigation .nav-item a{
         font-size: 14px;
     }
@@ -716,15 +647,8 @@ h5 .title-anchor-link{ display: none;}
         letter-spacing: 1.29px;    
     }    
 }
-@media only screen and (min-width: 1200px) {
-    /* xl */
-    body{
-        // background: purple!important;
-    }  
-    .wrapper{
-        width:1200px;
-    }    
-}
+
+
 
 .snet-tagline{
     font-size: 18px;
@@ -735,15 +659,12 @@ h5 .title-anchor-link{ display: none;}
 
 @import "home";
 @import "overview";
-
+@import "overlay";
 
 .sticky-top{
     &.sticky-with-margin{
         top:66px;
     }    
-}
-.snet-mobile-first{
-    //display: none;
 }
 @media only screen and (max-width: 767px) {
     header{
@@ -804,53 +725,4 @@ h5 .title-anchor-link{ display: none;}
     }    
 }
 
-//@include responsive-check(1){}
-
-@include xxl{
-    .wrapper{
-        width: 1440px;       
-    }
-}
-/* The Modal (background) */
-.snetmodal-modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1040; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.snetmodal-modal_content {
-    background-color: #fefefe;
-    margin: 2% auto; /* 2% from the top and centered */
-    padding: 10px 20px 20px 20px;
-    border: 1px solid #888;
-    border-radius: 4px;
-    width: 80%; /* Could be more or less, depending on screen size */
-    img{
-        display: block;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-}
-
-/* The Close Button */
-.snetmodal-close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.snetmodal-close:hover,
-.snetmodal-close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+// @include responsive-check(){}
