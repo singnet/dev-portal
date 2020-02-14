@@ -98,6 +98,11 @@ $screen-md-max: ($screen-lg-min - 1) !default;
         border-right: solid 1px #999;        
         .site-footer__logo{
             float: right;
+            &:after{
+                content:'';
+                display: block;
+                clear: both;
+            }
         }
         padding-right: 50px;
     }
