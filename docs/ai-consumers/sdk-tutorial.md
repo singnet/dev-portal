@@ -30,5 +30,6 @@ Note: SDK uses gRPC protocol for communication
 [Click here](https://github.com/singnet/snet-code-examples/tree/master/nodejs/client)
 
 ### Basic usage of python sdk 
+[Clich here](https://github.com/singnet/snet-cli/blob/master/packages/sdk/README.md) For Installation steps 
 [Click here](https://github.com/singnet/snet-cli/blob/master/packages/sdk/testcases/functional_tests/test_sdk_client.py)
 
