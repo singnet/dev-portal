@@ -120,18 +120,19 @@
             }
         }
         table{
-            border: solid 1px #f1f1f1;
+            border: solid 1px #eee;
             width: 100%;
             margin-bottom:24px;
             tr{
                 th{
                     font-weight: 600;
                     color: #212121;
-                    padding: 6px;
+                    padding: 10px;
+                    border-bottom:solid 1px #eee;
                 }
                 td{
                     color: #666;
-                    padding: 4px 6px;     
+                    padding: 8px;     
                 }
                 &:nth-child(2n){
                     td{

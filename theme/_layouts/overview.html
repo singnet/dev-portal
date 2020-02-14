@@ -12,23 +12,28 @@
                     <div class="row">
                         <div class="col">
                             <div class="snet-card fullwidth">
-                                <div class="snet-card_content">
-                                    <h3 class="snet-card_title">{{ page.title }}</h3>                                    
+                                <div class="snet-card_content">                                  
                                     <div class="row">
                                         <div class="col-12 col-sm-9">
+                                            <h3 class="snet-card_title">{{ page.title }}</h3>                                              
                                             <p class="big">
                                                 {{ page.description }}
                                             </p>
                                         </div>   
                                         <div class="col-12 col-md-3">
-                                            <ul class="snet-card_list pl-3 pl-md-0">
-                                                <li><a href="#">Get Started Guide</a></li>
-                                                <li><a href="#">Concepts and Components</a></li>
-                                                <li><a href="#">Basics of AI</a></li>
-                                                <li><a href="#">View all Core Concepts</a></li>
+                                            <ul class="snet-card_list pt-3 pl-3 pl-md-0">
+                                                {% for item in page.gettingstarted_cards %}                                           
+                                                <li><a href="{{ item.url_link }}">{{ item.url_name }}</a></li>
+                                                {% endfor %}    
+
                                             </ul>
                                         </div>                                           
-
+                                        <!-- 
+                                                                                        <li><a href="#">Get Started Guide</a></li>
+                                                                                        <li><a href="#">Concepts and Components</a></li>
+                                                                                        <li><a href="#">Basics of AI</a></li>
+                                                                                        <li><a href="#">View all Core Concepts</a></li>
+                                        -->
                                     </div>
                                 </div>
                             </div>  

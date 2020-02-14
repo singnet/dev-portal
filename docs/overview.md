@@ -8,6 +8,13 @@ img: 'Tutorials_1.svg'
 
 # Getting Started Cards    
 gettingstarted_cards:
+      - url_name: SingularityNET introduction
+        url_link: /docs/concepts/
+      - url_name: What is Blockchain Technology?
+        url_link: /docs/concepts/blockchain/
+      - url_name: Key Terms
+        url_link: /docs/concepts/keyterms/
+
 
 # By User Cards Section  
 byuser_cards:
