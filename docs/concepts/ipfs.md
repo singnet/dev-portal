@@ -30,11 +30,11 @@ The Interplanetary File System (IPFS) is a peer-to-peer network and a network pr
 
 The components of Inter-Planetary File system are:
 
-Distributed Hash Tables
-Block Exchanges
-Merkle DAG
-Version Control Systems
-Self-certifying File System
+* Distributed Hash Tables
+* Block Exchanges
+* Merkle DAG
+* Version Control Systems
+* Self-certifying File System
 
 
 For details on these components, see IPFS Documentation.

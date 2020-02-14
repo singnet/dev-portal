@@ -256,9 +256,10 @@ section.snet-herobanner{
             margin: 10px 0 0 0!important;
             width: 100%;       
             input{
-                margin-top: 5px;    
+                margin-top: 8px!important;    
                 display: block;
                 width: 100%!important;
+                //max-width: 50%;
             }
         }
     }

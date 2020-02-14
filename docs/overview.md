@@ -67,7 +67,7 @@ byproduct_cards:
     - title: AI Publisher
       img: 'publisher.png'
       description: Coming Soon. A portal for you to publish your AI services on the SingularityNet platfrom
-      url: '/products/publisher'
+      url: 'javascript:void(0);'
 
 
 # By Platform    

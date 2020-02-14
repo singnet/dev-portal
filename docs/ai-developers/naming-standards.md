@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Naming Standards
+title: AI Developers
 description: About the standardisation of naming within the SingularityNET Network.
 
 # extralink box
@@ -30,7 +30,7 @@ page_nav:
         content: Software
         url: '/docs/concepts/software'
 ---
-
+## Naming standards
 Currently, a lot of flexibility is provided as to how entities in SingularityNET are defined by naming standards.
 
 Initially, the naming standard can result in difficulty to recognize between capitalization and separation of words in names. But these named standard is proposed to be implemented within the code, so that the smart contracts and the software can enforce the named standard definition efficiently in SingularityNET.

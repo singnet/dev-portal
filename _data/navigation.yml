@@ -41,7 +41,9 @@ header:
         - item_name: AI Developer
           item_url: '/docs/ai-developers/'
         - item_name: Platform Dev
-          item_url: '/docs/platform-dev/'          
+          item_url: '/docs/platform-dev/'  
+        - item_name: Products
+          item_url: '/products'            
 
 footer:
     content:
@@ -85,21 +87,18 @@ docs:
     url: "/docs/buyer"    
 
 concepts:
+  introduction:
+    title: "SingularityNET Introduction "
+    url: "/docs/concepts/index"
   blockchain:
     title: "What is Blockchain"
     url: "/docs/concepts/blockchain"
-  introduction:
-    title: "SingularityNET Introduction "
-    url: "/docs/concepts/introduction"
   ipfs:
     title: "IPFS "
     url: "/docs/concepts/ipfs"
   mpe:
     title: "Multi-party Escrow"
     url: "/docs/concepts/mpe"
-  naming-standards:
-    title: "Naming Standards"
-    url: "/docs/concepts/naming-standards"
   key-terms:
     title: "Key terms"
     url: "/docs/concepts/keyterms"
@@ -433,6 +432,9 @@ ai-developers:
             excerpt:
             cta: Read more
             url: '/docs/ai-developers/marketplace'
+        naming-standards:
+          title: "Naming Standards"
+          url: "/docs/ai-developers/naming-standards"           
         keyterms:
             title: Key Terms
             excerpt:
@@ -554,11 +556,11 @@ products:
       excerpt:
       cta: Read more
       url: '/products/marketplace'
-  publisher:
-      title: AI Publisher portal
-      excerpt:
-      cta: Read more
-      url: '/products/publisher'
+  #publisher:
+      #title: AI Publisher portal
+      #excerpt:
+      #cta: Read more
+      #url: '/products/publisher'
   rfai:
       title: Request For AI Service
       excerpt:

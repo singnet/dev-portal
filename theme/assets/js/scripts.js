@@ -169,6 +169,7 @@
 
 
     $(".snet-card_maincontents img").css({"cursor": "pointer"});
+    $('div.highlighter-rouge').css({"cursor": "pointer"});
 
     // Get the modal
     var modal = document.getElementById("snetModal");
@@ -178,33 +179,43 @@
         if (event.target == modal) {
             //modal.style.display = "none";
             $(modal).fadeOut();
+            $(".overlay-section").empty();
         }
     }
 
+    $('#snetModal-close').click(function () {
+        var modal = document.getElementById("snetModal");
+        $(modal).fadeOut();
+        $(".overlay-section").empty();
+    });
+
+
     $('.snet-card_maincontents img').click(function () {
+        $(".overlay-section").empty();
         var altText = $(this).attr('alt');
         var imgUrl = $(this).attr('src');
+        var fullImgUrl = "<img src='" + imgUrl + "' /><small id='snetmodal-altetx'>" + altText + "</small>";
 
         $.ajax({
             url: imgUrl,
             type: 'HEAD',
             error: function () {
-                //alert("Image Doent Exist");
             },
             success: function () {
                 var modal = document.getElementById("snetModal");
-                $("#snetModal img").attr('src', imgUrl);
-                //$("#snetmodal-altetx").text(altText);
+                //$("#snetModal .overlay-section img").attr('src', imgUrl);
+                $("#snetModal .overlay-section").append(fullImgUrl);
                 $(modal).fadeIn();
             }
         });
     });
 
-    $('#snetModal-close').click(function () {
+    $('div.highlighter-rouge').click(function () {
+        $(".overlay-section").empty();
         var modal = document.getElementById("snetModal");
-        $(modal).fadeOut();
+        $(this).clone().appendTo(".snetmodal-modal_content .overlay-section");
+        $(modal).fadeIn();
     });
-
 
 //    function scrollDetect() {
 //        $('.snet-card_maincontents h1,.snet-card_maincontents h2,.snet-card_maincontents h3,.snet-card_maincontents h4,.snet-card_maincontents h5,.snet-card_maincontents h6,.snet-card_maincontents h7').each(function () {

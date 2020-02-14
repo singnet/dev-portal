@@ -8,6 +8,7 @@ $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
+$xxl:1600px;
 
 //mobile
 //@media only screen and (max-width: 768px)
@@ -52,7 +53,12 @@ $xl: 1200px;
 }
 
 @mixin xl {
-    @media only screen and (min-width: #{$xl}) {
+    @media only screen and (min-width: #{$xl}) and (max-width: #{$xxl - 1px}) {
+        @content;
+    }
+}
+@mixin xxl {
+    @media only screen and (min-width: #{$xxl}) {
         @content;
     }
 }
@@ -75,6 +81,9 @@ $xl: 1200px;
             @include xl{
                 background: purple;
             }
+            @include xxl{
+                background: pink;
+            }            
         }
         @else {       
             @include mobile{
@@ -89,6 +98,9 @@ $xl: 1200px;
             @include xl{
                 background: purple;
             }
+            @include xxl{
+                background: pink;
+            }                 
         }        
     }  
 }

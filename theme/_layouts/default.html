@@ -55,44 +55,44 @@
                                     {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
                                     {% assign classname = "has-submenu"%}
                                     {% if crumbs == file_name %}
-                                        {% assign classname = "active has-submenu"%}
+                                    {% assign classname = "active has-submenu"%}
                                     {% endif %}
                                     {% if children %}
-                                        {% assign unique_id = menu[1].title | replace: " ","--" %}
-                                        {% for child in children %}
-                                            {% assign child_url = child[1].url | split: "/" %}
-                                            {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        
-                                            {% assign child_file_name = child_url[child_url_last_inx] | append: ".md" %}
-                                            {% assign ul_class = "collapse" %}
+                                    {% assign unique_id = menu[1].title | replace: " ","--" %}
+                                    {% for child in children %}
+                                    {% assign child_url = child[1].url | split: "/" %}
+                                    {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        
+                                    {% assign child_file_name = child_url[child_url_last_inx] | append: ".md" %}
+                                    {% assign ul_class = "collapse" %}
+                                    {% assign li_class = "" %}
+                                    {% assign a_class = "collapsed" %}
+                                    {% if crumbs == child_file_name %}
+                                    {% assign ul_class = "collapse show" %}
+                                    {% assign a_class = "" %}
+                                    {% assign active_child_title = child[1].title %}
+                                    {% break %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    <li class="{{ classname }}"> <!-- The parent "li" tag should have a class "has-submenu"-->
+                                        <a data-toggle="collapse" class="{{ a_class }}" href="#{{ unique_id }}"> <!-- the href should point to the unique id of inner list -->
+                                            {{ menu[1].title }}
+                                            <i class="material-icons align-middle float-right e_m">expand_more</i>  
+                                            <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
+                                        </a>
+                                        <ul class="{{ ul_class }}" id="{{ unique_id }}">
+                                            {% for child in children %}
                                             {% assign li_class = "" %}
-                                            {% assign a_class = "collapsed" %}
-                                            {% if crumbs == child_file_name %}
-                                                {% assign ul_class = "collapse show" %}
-                                                {% assign a_class = "" %}
-                                                {% assign active_child_title = child[1].title %}
-                                                {% break %}
+                                            {% if active_child_title == child[1].title %}
+                                            {% assign li_class = "active" %}
                                             {% endif %}
-                                        {% endfor %}
-                                        <li class="{{ classname }}"> <!-- The parent "li" tag should have a class "has-submenu"-->
-                                            <a data-toggle="collapse" class="{{ a_class }}" href="#{{ unique_id }}"> <!-- the href should point to the unique id of inner list -->
-                                                {{ menu[1].title }}
-                                                <i class="material-icons align-middle float-right e_m">expand_more</i>  
-                                                <i class="material-icons align-middle float-right e_l">expand_less</i>                                              
-                                            </a>
-                                            <ul class="{{ ul_class }}" id="{{ unique_id }}">
-                                                {% for child in children %}
-                                                    {% assign li_class = "" %}
-                                                    {% if active_child_title == child[1].title %}
-                                                        {% assign li_class = "active" %}
-                                                    {% endif %}
-                                                    <li class="{{ li_class }}"><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
-                                                {% endfor %}
-                                            </ul>
-                                        </li>
+                                            <li class="{{ li_class }}"><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
                                     {% else %}
-                                        <li class="{{ classname }}">
-                                            <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
-                                        </li>
+                                    <li class="{{ classname }}">
+                                        <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                    </li>
                                     {% endif %}
                                     {% endfor %}
                                     {% endif %}                   
@@ -100,47 +100,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 snet-blog_middlesection">
+                    <div class="col-xs-12 col-sm-9 col-md-6 snet-blog_middlesection">
                         <div class="snet-card">
                             <div class="snet-card_wrapper">
                                 <h2 class="snet-card_title border-0 p-0"> {{ page.title }}</h2>
-                                <!--
-                                <ul class="snet-breadcrumb">
-                                    {% capture url_tree %}
-                                    {{ page.url | replace: '/', ' ' | strip }}
-                                    {% endcapture %}
-                                    {% capture url_level %}
-                                    {{ url_tree | number_of_words | minus: 1 }}
-                                    {% endcapture %}
-                                    {% assign breadcrumb = url_tree | split: ' ' %}                                    
-                                    <li> <a href="{{ site.baseurl }}">Home</a></li>
-
-                                    {% for item in breadcrumb %}
-                                    {% assign label = item | replace: '-', ' ' | capitalize %}
-                                    {% assign index = forloop.length | minus: forloop.index %}
-                                    {% assign page_url = page.url | split: '/' | pop: index | join: '/' %}
-                                    <li>
-                                        {% if forloop.last %}
-                                        <span>{{ page.breadcrumb_label | default: label }}</span>
-                                        {% else %}
-                                        <a href="{{ page_url }}/">{{ label }}</a>
-                                        {% endif %}
-                                    </li>
-                                    {% endfor %}                                    
-                                </ul>
-                                -->
                             </div>
                             <div class="snet-card_content">
                                 <div class="snet-card_maincontents">
+                                    <div class="snet-responsive_samepagemenu">
+                                        <span>Contents</span>
+                                        <div class="js-sections">
+
+                                        </div>                                        
+                                    </div>
                                     {{ content }}
+                                    <p>
+                                        <small><i>Last modified on : {% last_modified_at %}</i></small>
+                                    </p>
+
                                     <div class="snet-forum_question text-center">
-                                        <a href="https://community.singularitynet.io/" target="_blank">Ask a question in the forum</a>
+                                        <a href="https://community.singularitynet.io/" rel="noreferrer noopener" target="_blank">Ask a question in the forum</a>
                                     </div>
                                 </div>
                             </div>
                         </div>                        
                     </div>                
-                    <div class="col-xs-12 col-sm-3 order-first order-sm-last snet-blog_rightsection">
+                    <div class="col-xs-12 col-sm-3 order-first order-sm-last snet-blog_rightsection d-none d-md-block">
                         <div class="sticky-top sticky-with-margin">
                             <div class="snet-card transparent">
                                 <h4 class="snet-card_title">Contents</h4>
@@ -150,10 +135,11 @@
                                     </div>
                                 </div>
                             </div>  
-                            <!--
+
                             <div class="snet-card transparent mt-5 d-none d-sm-block ">
                                 <h4 class="snet-card_title">Was this page useful?</h4>
                                 <div class="snet-card_content">
+                                    <!--
                                     <div  class="snet-card_wrapper border-0 p-0">
                                         <div class="snet-starrating">
                                             <a href="#" class=""><i class="material-icons">star_border</i></a>  
@@ -163,18 +149,20 @@
                                             <a href="#" class=""><i class="material-icons">star_border</i></a>                                                                              
                                         </div>
                                     </div>
+                                    -->
                                     <div  class="snet-card_wrapper border-0">
-                                        <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a>
-                                        <a href="#" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
+                                        <!-- <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a> -->
+                                        <a href="{{ site.github.repository_url }}/tree/master/{{ page.path }}" target="_blank" rel="noreferrer noopener" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
                                     </div>
                                 </div>
                             </div> 
-                            -->
+
                         </div>
                     </div>                      
                 </div>              
             </div>
         </div>
+
 
         {% include site-footer.html %}
 

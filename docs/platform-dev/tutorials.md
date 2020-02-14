@@ -33,21 +33,21 @@ If you're new to SingularityNET, this is the suggested order in which to explore
 
 ## First Steps
 
-The first three links are relevant if you want to be a consumer of SingularityNET services. They are also worth going through if you want to publish a service, so that you you can test your service and will know the flow your customers need to go through.
+The consumer of SingularityNET services can use the following first three relevant links,  to publish a service, test the service and understand the preference of customers.
 
 - [Prerequisities](/docs/setup/requirements) - What do you need to do before you can start working with decentralised AI services.
 - [Create a Wallet](/docs/setup/create-a-wallet) - To make transactions you'll need a wallet with some funds.
 - [How to call a service](/docs/setup/call-a-service) - Covers trying out a service in the marketplace, and calling it from our command line tool.
 - [Using the SDK](/tutorials/sdk) - Calling a service using the Python SDK.
 
-These steps guide you through creating a service, and getting that service on our marketplace:
+The following instructions guide you create a service, and help upload that service on the marketplace:
 
 - [Publish and run your own example service](/tutorials/publish)
 - [Marketplace Requirements for Services](/docs/ai-developers/marketplace) - How to submit your service for inclusion in the Singularity marketplace. The marketplace is a curated view of services available in the registry.
 
 ## Tutorials across languages
 
-We maintain language-specific tutorials for a number popular languages.
+The following list shows the language-specific tutorials for a number popular languages.
 
 - [Tutorials](/tutorials)
 	- [Build a service in C++](/tutorials/cpp)
