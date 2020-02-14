@@ -192,6 +192,15 @@ The number of request has increased along with the rate limiting, either retry a
 ### Unexpected payment type”
 The supported payment types are free-call / escrow
 
+### ETCD client connection issues 
+```bash
+
+
+github.com/singnet/snet-daemon/etcddb.getTlsConfig(0xc4207800c0, 0x1, 0x4)
+        /ext-go/1/src/github.com/singnet/snet-daemon/etcddb/etcddb_client.go:107 +0x3f6
+```
+ Please re check the etcd end point in organization metadata ,if the end point is valid , please check if you have the correct certificates ( for https connection) on your daemon [config](https://github.com/singnet/snet-daemon/tree/master/etcddb#etcd-client-configuration)
+
 ## Common Daemon warnings (in the logs)
 
 ### “Unable to publish metrics”
