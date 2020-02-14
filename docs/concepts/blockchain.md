@@ -5,33 +5,10 @@ keywords:
 comments: false
 
 # Hero section
-title: Core Concepts 
+title: What is Blockchain Technology?
 
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: SDK
-        url: '/docs/concepts/sdk'
-    next:
-        content: The Daemon API 
-        url: '/docs/concepts/daemon-api'
         
 ---
-
-## What is Blockchain Technology?
 
 Blockchain technology drives cryptocurrency which is a virtual currency secured by cryptography. It is changing the way people, processes and businesses communicate. 
 Blockchain is a distributed ledger of an increasing list of records called ‘blocks’ linked using a cryptographic hash of the previous block, a timestamp, and transaction data. The public and decentralized ledger design of Blockchain enables a unified source of data with an audit trail and consistency across the transacting parties without the intermediaries.

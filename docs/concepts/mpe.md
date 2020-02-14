@@ -5,33 +5,8 @@ keywords: Multi-Party Escrow, MPE, Multi Party Escrow
 comments: false
 
 # Hero section
-title: Core Concepts 
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
-
-# Page navigation
-page_nav:
-    next:
-        content: MPE Stateless Client
-        url: '/docs/concepts/mpe-stateless-client'
-    prev:
-        content: Registry
-        url: '/docs/concepts/registry'
-
+title: Multi-Party Escrow
 ---
-## Multi-Party Escrow
-
-
 An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account. 
 The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-blockchain interactions between AI Consumers and AI service providers.
 

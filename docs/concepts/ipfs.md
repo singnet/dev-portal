@@ -1,11 +1,11 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords:ipfs
 comments: false
 
 # Hero section
-title: Core Concepts 
+title: IPFS (Interplanetary File System)
 
 # extralink box
 extralink:
@@ -22,7 +22,6 @@ micro_nav: true
 
         
 ---
-## IPFS (Interplanetary File System)
 
 The Interplanetary File System (IPFS) is a synthesis of several new and existing innovations. IPFS is an open-source project.
 

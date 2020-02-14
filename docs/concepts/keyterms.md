@@ -5,32 +5,10 @@ keywords:
 comments: false
 
 # Hero section
-title: Core Concepts
+title: IPFS
 
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Market Place
-dev_news: true
-
-# Micro navigation
-micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Concepts Overview
-        url: '/docs/concepts'
-    next:
-        content: SingularityNET Services
-        url: '/docs/concepts/service'
 ---
 
-#### IPFS
 The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to
 store and share data in a distributed file system. IPFS uses content-addressing to uniquely
 identify each file in a global namespace connecting all computing devices. Organization details
@@ -74,7 +52,7 @@ The SingularityNET command line interface (CLI) is the primary tool for interact
 All transaction between the two parties are done in offchain mode in order to bring down the dependencies such as , gas cost, and disconnection from Blockchain.  Only when a claim is performed the nonce gets incremented the transaction becomes on Chai  transaction.
  
 #### Signature
-Authorization given by the signer  
+Authorization given by the signer.  
  
 #### Wallet/Address
 Wallet is where you hold your crypto currencies , every wallet is associated to an address. 
