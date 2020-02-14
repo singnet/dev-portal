@@ -1,26 +1,12 @@
 ---
 # Page settings
 layout: default
-keywords:ipfs
+keywords: ipfs
 comments: false
 
 # Hero section
 title: IPFS (Interplanetary File System)
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs/concepts'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
-
-        
+       
 ---
 
 The Interplanetary File System (IPFS) is a synthesis of several new and existing innovations. IPFS is an open-source project.
