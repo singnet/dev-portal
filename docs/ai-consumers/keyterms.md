@@ -64,7 +64,7 @@ The SingularityNET daemon is an adapter that a service uses to interface with th
 #### SDK
  
 SDK is a tool for AI customers to make calls to service. The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorizations.  The SDK is available in NodeJS, Python and Java languages.
-The 
+ 
  
 #### Snet-Cli
 The SingularityNET command line interface (CLI) is the primary tool for interacting with the platform’s smart contracts, managing deployed services, and managing funds. 
