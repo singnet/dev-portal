@@ -59,7 +59,21 @@ We provide a faucet to get AGI for either Ropsten or Kovan [networks](https://fa
 
 You'll need a github account to authenticate, and there after you can request AGI every 24 hours. 
 
-### JSON parameters
+
+### Set an identity 
+```sh
+snet identity create user-ropsten mnemonic --mnemonic "YOUR MNEMONICS" --network ropsten
+snet identity user-ropsten
+```
+### Deposit in Escrow and Create a Channel
+```sh
+snet account balance # check balance (all tokens belongs to this idenity)
+snet account deposit 0.000001 # Deposit Token to MPE and Open a payment channel to the new service:
+snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGI in to the Channel
+```
+### Make a call to a Service 
+
+#### JSON parameters
 
 While protocol buffers are used for communication, call parameters are represented as JSON on the command line.
 
@@ -68,26 +82,47 @@ There are three ways of passing this JSON:
 * via JSON file; and
 * via stdin.
 
-For example, in [this platform example](https://github.com/singnet/example-service) we need to pass the following JSON as a parameter for the "add" method to our service, proto definition can be found [here](https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto) :
+For example, in [this platform example](/docs/development/mpe-example#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
 
 ```json
 {"a": 10, "b": 32}
 ```
 
 We can use three ways:
-For more details refer to the [section](http://snet-cli-docs.singularitynet.io/client.html) 
+
+##### via cmdline parameter
 
 ```sh
-# via cmdline parameter
-snet client call org_id service_id default_group add '{"a":10,"b":32}'
-
-# via json file
-echo '{"a":10,"b":32}' > p.txt
-snet client call 0 0.1 localhost:8080 add p.txt
-
-# via stdin
-echo '{"a":10,"b":32}' | snet client call 0 0.1 localhost:8080 add
+snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'
 ```
+##### via json file
+```sh
+echo '{"a":10,"b":32}' > p.txt
+snet client call <org_id> <service_id> <group_name> add p.txt
+```
+
+##### via stdin
+```
+echo '{"a":10,"b":32}' | snet client call <org_id> <service_id> <group_name> add
+```
+
+### Modifiers
+
+We've implemented several modifiers for this JSON parameter in order to simplify passing big files and to have the possibility to pass binary data (and not only base64 encoded data).
+
+There are 3 possible modifiers:
+* file      - read from file;
+* b64encode - encode to base64; and
+* b64decode - decode from base64.
+
+For example, if you pass the following JSON as a parameter, then as an "image" parameter we will use the base64 encoded content of "1.jpeg"
+
+```sh
+'{"image_type": "jpg", "file@b64encode@image": "1.jpeg"}'
+```
+
+If we remove the b64encode modifier from the previous example, then we will pass 1.jpeg image in binary format without base64 encoding.  
+
 
 ### Modifiers
 

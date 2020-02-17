@@ -80,10 +80,10 @@ docs:
     url: "/tutorials"
   provider:
     title: AI Developer
-    url: "/docs/provider"
+    url: "/docs/ai-developers/"
   buyer:
     title: AI Consumer
-    url: "/docs/buyer"    
+    url: "/docs/ai-consumers/"
 
 concepts:
   introduction:
@@ -381,6 +381,11 @@ ai-consumers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-consumers/wallet'
+        setup:
+          title: Setup Guide
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/setupguide'
         snet-cli:
           title: snet-cli
           excerpt: 
@@ -521,6 +526,11 @@ ai-developers:
   tutorials:
     title: Tutorials
     children:
+        setup:
+          title: Setup Guide
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/setupguide'
         tutorail:
           title: Tutorials
           excerpt: 

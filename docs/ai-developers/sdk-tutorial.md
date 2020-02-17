@@ -26,6 +26,17 @@ micro_nav: true
 [Click here](https://github.com/singnet/snet-code-examples/tree/master/nodejs/client)
 
 ## Basic usage of python sdk 
+
+
+For Installation steps 
+```sh
+#create a virtual environment, an example is shown below
+python3 -m venv env #check your python version and set this accordingly , 
+source env/bin/activate #activate your virtual environment
+
+pip3 install snet-sdk
+````
+
 [Click here](https://github.com/singnet/snet-cli/blob/master/packages/sdk/testcases/functional_tests/test_sdk_client.py)
 
 ## Basic usage of java sdk 
