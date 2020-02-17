@@ -238,5 +238,5 @@ snet account balance --account 0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB
 
 The following logic when we ran the treasurer server:
 * The treasurer server asks the etcd to send the latest state of the channel, and increments the nonce of the channel.
-* Daemon(s) can continue to work with the client without any confirmation from the treasurer or blockchain.
+* Daemon(s) can continue to work with the client without any confirmation from the treasurer or Blockchain.
 * The treasurer sends on-chain transactions to claim funds and increases the nonce of the channel (close/reopen channel).
