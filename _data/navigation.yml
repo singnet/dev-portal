@@ -80,10 +80,10 @@ docs:
     url: "/tutorials"
   provider:
     title: AI Developer
-    url: "/docs/provider"
+    url: "/docs/ai-developers/"
   buyer:
     title: AI Consumer
-    url: "/docs/buyer"    
+    url: "/docs/ai-consumers/"
 
 concepts:
   introduction:
