@@ -360,7 +360,8 @@ header{
     }
     .snet-blog-entry{
         display: flex;
-        margin-bottom:16px;
+        margin-bottom:8px;
+        margin-top:8px;        
         img{
             width: 180px;
             flex-shrink: 0;
@@ -725,7 +726,7 @@ h5 .title-anchor-link{ display: none;}
     }    
 }
 
-// @include responsive-check(){}
+ //@include responsive-check(){}
 
 #search-container{
     position:relative;

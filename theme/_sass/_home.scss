@@ -272,3 +272,24 @@ section.snet-herobanner{
         margin-top: -80px;
     }
 }
+
+
+.snet-viewmore_outlinebutton{
+    color: #4086ff;
+    border:solid 1px #4086ff;
+    padding: 13px 28px 11px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height:normal;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;   
+    border-radius: 4px;
+    margin: 8px 16px 16px 16px;
+    display:inline-block;
+    &:hover{
+        color: #005ACB;
+        border-color: #005ACB;
+        background-color: rgba(0,90,203,0.05) !important;  
+        text-decoration: none;
+    }    
+}
