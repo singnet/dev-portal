@@ -50,13 +50,11 @@ In this tutorial we'll create a Java service and publish it in SingularityNET.
 
 ## Step 1 
 
-Setup a `ubuntu:18.04` docker container (with proper `SNET Daemon` version) using provided `Dockerfile`.
+Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) using provided `Dockerfile`.
 
 ```
-SNETD_VERSION="v0.1.7"
 docker build \
     --build-arg language=java \
-    --build-arg snetd_version=$SNETD_VERSION \
     -t snet_java_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
 
 ETCD_HOST=$HOME/.snet/etcd/example-java-service/
@@ -98,7 +96,7 @@ In this tutorial we'll implement a service with two methods:
 So we'll use this command line to create project's skeleton
 
 ```
-./create_project.sh tutorial snet math-operations 7070
+./create_project.sh tutorial my-org math-operations 7070
 cd tutorial
 ```
 

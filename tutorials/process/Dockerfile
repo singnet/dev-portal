@@ -7,7 +7,6 @@ RUN mkdir -p ${SNET_ROOT} && \
 
 RUN SNETD_VERSION=`curl -s https://api.github.com/repos/singnet/snet-daemon/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'` && \
 
-# SNET Daemon v0.1.6
 # Update, install SNET Daemon and its dependencies
 RUN apt-get update && \
     apt-get install -y wget && \
@@ -19,7 +18,6 @@ RUN apt-get update && \
     cd .. && \
     rm -rf snet-daemon
 
-# SNET CLI v0.1.9
 # Update, install SNET CLI dependencies, Python3.6 and SNET-CLI
 RUN apt-get install -y \
         git \
