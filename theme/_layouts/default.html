@@ -9,11 +9,11 @@
         <div class="wrapper">
             <div class="container-fluid mt-3">
                 <div class="row">
-                    <div class="d-none d-sm-block col-sm-3 snet-blog_leftsection">
+                    <div class="col-12 col-md-3 snet-blog_leftsection">
                         <div class="snet-card sticky-top sticky-with-margin">
                             <h3 class="snet-card_title">Explore</h3>
                             <div class="snet-card_content">
-                                <ul class="snet-nav_list">
+                                <ul class="snet-nav_list d-none d-md-block">
                                     {% assign path_crumbs = page.path | split: "/" %}
                                     {% assign crumbs = path_crumbs[0] %}
                                     {% case path_crumbs[0] %}
@@ -48,7 +48,7 @@
                                     {% endcase %}  
 
                                     {%if nav_tree %}    
-                                    
+
                                     {% for menu in nav_tree %}
                                     {% assign children = menu[1].children %}
                                     {% assign menu_url = menu[1].url | split: "/" %}
@@ -60,7 +60,7 @@
                                     {% endif %}
                                     {% if children %}
                                     {% assign unique_id = menu[1].title | replace: " ","--" %}
-                                    
+
                                     {% for child in children %}
                                     {% assign child_url = child[1].url | split: "/" %}
                                     {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        
@@ -99,10 +99,106 @@
                                     {% endfor %}
                                     {% endif %}                   
                                 </ul>
+
+                                <div class=" d-xs-block d-sm-block d-md-none d-lg-none">
+                                    <div  class="snet-explore_menu_wrapper">                                    
+                                        <button class="snet-buttonfor_dropdown dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Show Articles
+                                        </button>
+
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <ul class="snet-explore_menu">
+                                                {% assign path_crumbs = page.path | split: "/" %}
+                                                {% assign crumbs = path_crumbs[0] %}
+                                                {% case path_crumbs[0] %}
+                                                {% when 'products' %}
+                                                {% assign crumbs = path_crumbs[1] %}
+                                                {% assign nav_tree = site.data.navigation.products %}
+                                                {% when 'docs' %}
+                                                {% assign crumbs = path_crumbs[2] %}
+                                                {% case path_crumbs[1] %}
+                                                {% when 'concepts' %}
+                                                {% assign nav_tree = site.data.navigation.concepts %}
+                                                {% when 'provider.md' %}
+                                                {% assign nav_tree = site.data.navigation.provider %}
+                                                {% when 'ai-consumers' %}
+                                                {% assign nav_tree = site.data.navigation.ai-consumers %}
+                                                {% when 'ai-developers' %}
+                                                {% assign nav_tree = site.data.navigation.ai-developers %}
+                                                {% when 'platform-dev' %}
+                                                {% assign nav_tree = site.data.navigation.platform-dev %}
+
+                                                {% when 'buyer.md' %}
+                                                {% assign nav_tree = site.data.navigation.buyer %}
+                                                {% else %}
+                                                {% assign nav_tree = site.data.navigation.docs %}                                                                          
+                                                {% endcase %}            
+                                                {% when 'tutorials' %}
+                                                {% assign nav_tree = site.data.navigation.tutorials %}
+                                                {% when 'contribute' %}
+                                                {% assign nav_tree = site.data.navigation.contribute %}                                        
+                                                {% else %}
+                                                {% assign nav_tree = nil %}
+                                                {% endcase %}  
+
+                                                {%if nav_tree %}    
+
+                                                {% for menu in nav_tree %}
+                                                {% assign children = menu[1].children %}
+                                                {% assign menu_url = menu[1].url | split: "/" %}
+                                                {% assign menu_url_last_inx = path_url.size | minus: 1 %}
+                                                {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
+                                                {% assign classname = "has-submenu"%}
+                                                {% if crumbs == file_name %}
+                                                {% assign classname = "active has-submenu test "%}
+                                                {% endif %}
+                                                {% if children %}
+                                                {% assign unique_id = menu[1].title | replace: " ","--" %}
+
+                                                {% for child in children %}
+                                                {% assign child_url = child[1].url | split: "/" %}
+                                                {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        
+                                                {% assign child_file_name = child_url[child_url_last_inx] | append: ".md" %}
+                                                {% assign ul_class = "collapse" %}
+                                                {% assign li_class = "" %}
+                                                {% assign a_class = "collapsed" %}
+                                                {% if crumbs == child_file_name %}
+                                                {% assign ul_class = "collapse show" %}
+                                                {% assign a_class = "" %}
+                                                {% assign active_child_title = child[1].title %}
+                                                {% break %}
+                                                {% endif %}
+                                                {% endfor %}
+                                                <li > <!-- The parent "li" tag should have a class "has-submenu"-->
+                                                    <a href="#{{ unique_id }}"> <!-- the href should point to the unique id of inner list -->
+                                                        {{ menu[1].title }}
+
+                                                    </a>
+                                                    <ul id="{{ unique_id }}">
+                                                        {% for child in children %}
+                                                        {% assign li_class = "" %}
+                                                        {% if active_child_title == child[1].title %}
+                                                        {% assign li_class = "active" %}
+                                                        {% endif %}
+                                                        <li ><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                                {% else %}
+                                                <li>
+                                                    <a href="{{ menu[1].url }}">{{ menu[1].title }}</a>
+                                                </li>
+                                                {% endif %}
+                                                {% endfor %}
+                                                {% endif %}                   
+                                            </ul>
+                                        </div>                  
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-6 snet-blog_middlesection">
+                    <div class="col-12 col-sm-12 col-md-9 col-lg-6 snet-blog_middlesection">
                         <div class="snet-card">
                             <div class="snet-card_wrapper">
                                 <h2 class="snet-card_title border-0 p-0"> {{ page.title }}</h2>
@@ -137,17 +233,17 @@
                                     </div>
                                 </div>
                             </div>  
-<!--
-                            <div class="snet-card transparent mt-5 d-none d-sm-block ">
-                                <h4 class="snet-card_title">Was this page useful?</h4>
-                                <div class="snet-card_content">
-                                    <div  class="snet-card_wrapper border-0">
-                                        <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a> 
-                                        <a href="{{ site.github.repository_url }}/{{ page.path }}" target="_blank" rel="noreferrer noopener" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
-                                    </div>
-                                </div>
-                            </div> 
--->
+                            <!--
+                                                        <div class="snet-card transparent mt-5 d-none d-sm-block ">
+                                                            <h4 class="snet-card_title">Was this page useful?</h4>
+                                                            <div class="snet-card_content">
+                                                                <div  class="snet-card_wrapper border-0">
+                                                                    <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a> 
+                                                                    <a href="{{ site.github.repository_url }}/{{ page.path }}" target="_blank" rel="noreferrer noopener" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                            -->
                         </div>
                     </div>                      
                 </div>              
