@@ -53,8 +53,13 @@ snet service metadata-add-endpoints default_group $DOMAINNAME:$PORT --metadata-f
    
 snet service metadata-add-description --metadata-file $MD_FILE --description "$SERVICEDESCRIPTION"  --short-description "$SHORTDESCRIPTION" --url "$HELPURL"
 ​
+#if you want to support free calls , you will need to do the below 
 snet service metadata-set-free-calls default_group $FREECALLS --metadata-file $MD_FILE
 
+#Please note , if you are using market place Dapp , then we recommend to set the below
+#for free call Support 
+#for Ropsten the Signer Address is 0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F
+#for mainnet the Signer Address is 0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf
 snet service metadata-set-freecall-signer-address default_group $SIGNERADDRESS --metadata-file $MD_FILE
 
 
