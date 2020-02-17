@@ -47,7 +47,8 @@
                                     {% assign nav_tree = nil %}
                                     {% endcase %}  
 
-                                    {%if nav_tree %}                                                                           
+                                    {%if nav_tree %}    
+                                    
                                     {% for menu in nav_tree %}
                                     {% assign children = menu[1].children %}
                                     {% assign menu_url = menu[1].url | split: "/" %}
@@ -55,10 +56,11 @@
                                     {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
                                     {% assign classname = "has-submenu"%}
                                     {% if crumbs == file_name %}
-                                    {% assign classname = "active has-submenu"%}
+                                    {% assign classname = "active has-submenu test "%}
                                     {% endif %}
                                     {% if children %}
                                     {% assign unique_id = menu[1].title | replace: " ","--" %}
+                                    
                                     {% for child in children %}
                                     {% assign child_url = child[1].url | split: "/" %}
                                     {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        

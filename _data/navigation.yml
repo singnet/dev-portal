@@ -302,6 +302,11 @@ buyer:
       url: '/newsletter'
 
 ai-consumers:
+  Introduction:
+      title: Introduction
+      excerpt:
+      cta: Read more
+      url: '/docs/ai-consumers/index'       
   getting-started:
     title: Getting Started
     children:
@@ -394,6 +399,11 @@ ai-consumers:
       url: '/docs/ai-consumers/troubleshooting'
 
 ai-developers:
+  Introduction:
+      title: Introduction
+      excerpt:
+      cta: Read more
+      url: '/docs/ai-developers/index'    
   getting-started:
     title: Getting Started
     children:
@@ -529,6 +539,11 @@ ai-developers:
       url: '/docs/ai-developers/troubleshooting'
 
 platform-dev:
+  Introduction:
+      title: Introduction
+      excerpt:
+      cta: Read more
+      url: '/docs/platform-dev/index'      
   registry:
       title: Registry
       excerpt:
@@ -551,6 +566,11 @@ platform-dev:
       url: '/docs/platform-dev/daemon-channel-storage'
 
 products:
+  Introduction:
+      title: Introduction
+      excerpt:
+      cta: Read more
+      url: '/products/index'     
   marketplace:
       title: AI Marketplace
       excerpt:

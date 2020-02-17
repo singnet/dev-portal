@@ -184,7 +184,11 @@ $screen-md-max: ($screen-lg-min - 1) !default;
             float: left;
             padding-left: 40px;
             a{
-                color: #fff;                
+                color: #999;
+                font-size:22px;
+                &:hover{
+                    color: #fff;
+                }                
             }
         }
     }
