@@ -526,6 +526,11 @@ ai-developers:
   tutorials:
     title: Tutorials
     children:
+        setup:
+          title: Setup Guide
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/setupguide'
         tutorail:
           title: Tutorials
           excerpt: 
