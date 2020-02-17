@@ -377,6 +377,11 @@ ai-consumers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-consumers/wallet'
+        setup:
+          title: Setup Guide
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/setupguide'
         snet-cli:
           title: snet-cli
           excerpt: 

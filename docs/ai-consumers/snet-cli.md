@@ -52,7 +52,7 @@ and locking/unlocking accounts for transacting with the Blockchain. This compone
 * Registry contract. Deals with organizations, members, services, types, and tags.
 * MPE contract. Sends and receives funds and manages other functions related to payment channels; e.g., closing a channel or extending its expiry date.
 
-This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/setup/requirements).
+This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/ai-consumers/setupguide).
 
 See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full details of actions the tool allows.
 

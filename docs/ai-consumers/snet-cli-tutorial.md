@@ -29,7 +29,7 @@ page_nav:
         url: '/docs/concepts/sdk'
 ---
 
-This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/setup/requirements).
+This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/ai-consumers/setupguide)..
 
 See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full details of actions the tool allows.
 
