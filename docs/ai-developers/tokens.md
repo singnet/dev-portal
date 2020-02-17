@@ -39,7 +39,7 @@ To learn more about  Mainnet AGI Token (to be used in a later stage) refer to th
 ## AGI Faucet
 To understand how automated faucet is used in distribution of Kovan and Ropsten Testnet AGI Tokens, click on the link [here](http://faucet.singularitynet.io). Use GitHub account to login and type in the Ethereum address to receive the AGI token. Ensure this address belongs Kovan Ethereum Address. 
 
-**Note**: You can request for 1 AGI token every 24 hours.
+**Note**: You can request for 10 AGI token every 24 hours.
 
 In order to add the Kovan Testnet AGI, you may need the following details:
 * Symbol: AGI
