@@ -35,7 +35,7 @@ If you're new to SingularityNET, it is recommended that you follow this order to
 ## First Steps
 
 if you want to be a consumer of SingularityNET services, the follow first three relevant links. if you prefer publishing, testing and understanding the customer requirements, then it is worth the efforts and value.
-- [Prerequisites](/docs/ai-developers/setupguide.md) - Certain conditions that need to be full-filled. prior to using decentralised AI services.
+- [Prerequisites](/docs/ai-developers/setupguide) - Certain conditions that need to be full-filled. prior to using decentralised AI services.
 - [Create a Wallet](/docs/ai-developers/create-a-wallet) - You'll need a wallet with some funds to perform transactions .
 - [How to call a service using snet-cli](/docs/ai-developers/invoke-service-snet-cli) - Invoke the service using the command line tool.
 - [How to call a service using Dapp](/docs/ai-developers/marketplace-service_invocation) 
