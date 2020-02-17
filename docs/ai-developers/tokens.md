@@ -5,7 +5,7 @@ keywords: intro concepts
 comments: false
 
 # Hero section
-title: AI Developers
+title: AI Consumers
 
 # Micro navigation
 micro_nav: true
@@ -13,10 +13,10 @@ micro_nav: true
 ---
 
 ## Introduction to AGI Tokens
+The AGI Token is an ERC-20 token, which is hosted on the Ethereum Blockchain.
 
-SingularityNET uses the AGI Token for at marketplace. The AGI Token is an ERC-20 token, which is hosted on the Ethereum Blockchain. Currently  it is at the `beta` stage of the SingularityNET Marketplace. SO, you need to use either Kovan or Ropsten Testnet AGI to use the tools. 
-
-To learn more about how to obtain Kovan or Ropsten Testnet AGI, click on the link [here](#agi-faucet).You can get  
+SingularityNET uses the AGI Token for any paid calls to a service.
+To learn more about how to obtain Kovan or Ropsten Testnet AGI, click on the link [here](#agi-faucet).
 
 ## Testnet AGI vs Mainnet AGI
 If you are unfamiliar with  Ethereum, it might be hard to understand between Testnet and Mainnet tokens. 
@@ -45,5 +45,3 @@ In order to add the Kovan Testnet AGI, you may need the following details:
 * Symbol: AGI
 * Decimals: 8
 * Kovan Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
-
-To learn more about how to request for  Kovan or Ropsten Testnet Ether, click on this URL: https://faucet.metamask.io.

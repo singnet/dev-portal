@@ -34,12 +34,13 @@ page_nav:
 The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to
 store and share data in a distributed file system. IPFS uses content-addressing to uniquely
 identify each file in a global namespace connecting all computing devices. Organization details
-and service details are stored in IPFS and the hash associated with them are stored in a
+and service details are stored in IPFS and the associated hash stored in the
 Blockchain.
 
 #### Registry  
-The SingularityNET Registry is an ERC-165–compliant smart contract on the Ethereum Blockchain that stores organizations, services, and type repositories.
-Registry provides all the information needed to find and interact with AI services on the platform, either by listing the information in full, or  when it is too long, by listing the IPFS hash.
+The SingularityNET Registry is an ERC-165–compliant smart contract on the Ethereum Blockchain that stores organization, service, and type repository.
+
+Registry provides the information needed to find and interact with AI services on the platform, either by listing the information in full, or  when it is too long, by listing the IPFS hash.
  
 #### Contract 
 Contract: Contracts are smart programs or algorithms, executes when certain conditions are met successfully.
@@ -63,7 +64,7 @@ The SingularityNET daemon is an adapter that a service uses to interface with th
 #### SDK
  
 SDK is a tool for AI customers to make calls to service. The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorizations.  The SDK is available in NodeJS, Python and Java languages.
-The 
+ 
  
 #### Snet-Cli
 The SingularityNET command line interface (CLI) is the primary tool for interacting with the platform’s smart contracts, managing deployed services, and managing funds. 
