@@ -192,12 +192,15 @@
     a{
         display: block;
         padding: 5px 10px!important;
+        border-bottom: none;        
         &:last-child{
             border-bottom: none;
         }
         &:hover{
             color: #4086FF;
+            border-bottom: none;            
         }
+
     }
 }
 
@@ -363,19 +366,78 @@ small{
     .snet-blog_middlesection{
         //background: teal;
         padding-left: 0;
+        padding-right: 0;
     }   
     .snet-blog_rightsection{
         padding-right: 0;
     }
-}
-@include xs{
     .snet-blog_middlesection{
-        padding-right: 0;
-    }    
+        margin-top: 16px;
+    }      
 }
+
 @include md{
     .snet-responsive_samepagemenu{
         display: block;
     }    
 }
 
+.snet-explore_menu_wrapper{
+    position: relative;
+    display:block;
+    .snet-buttonfor_dropdown{
+        display: block;
+        width: 100%;
+        border-radius: 4px;
+        margin: 16px auto!important;
+        padding: 7px 65px;
+        background-color: transparent;
+        color: #fff;
+        font-family: Muli, sans-serif;
+        font-weight: 600;
+        line-height: 16px;
+        color:#3f51b5;        
+        border-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;        
+    }
+    .dropdown-menu{
+        width: 100%!important;
+        /* top: 0;
+         left: 0;
+         margin: 0;
+         padding: 0;*/
+        .snet-explore_menu{
+            position: relative;
+            z-index: 1027;
+            list-style: none;
+            height: 300px;
+            width: 100%;
+            overflow-y: scroll;
+            margin: 0;
+            padding: 0;   
+            a{
+                display: block;
+                padding: 8px 16px;
+                color:#3f51b5;                
+                &:hover{
+                    background: #f1f1f1;
+                    text-decoration: none;
+                }
+            }        
+            ul{
+                padding: 0;
+                list-style: none;
+                margin: 0 0 0 16px;  
+                a{
+                    font-size: 14px;
+                }
+            }
+
+        }
+    }
+
+
+}
