@@ -4,7 +4,7 @@ redirect_from: "/home/"
 # Page settings
 layout: homepage
 keywords:
-title: Welcome to the AI Dev Community;<br>powered by open collaboration.
+title: Welcome to the AI Dev Community<br>Powered by open collaboration.
 tagline: The go-to place for all developer related content and social activities.<br>SingularityNET lets anyone create, share, and monetize AI services at scale.
 
 # Micro navigation
@@ -13,7 +13,7 @@ micro_nav: true
 # Features    
 features:
     - title: Overview
-      description: A primer to get you started with working with SingularityNET tools & software and the |Blockchain.
+      description: A primer to get you started with working with SingularityNET tools & software and the Blockchain.
       icon: 'Tutorials_1.svg'
       card-image: ''
       url: '/docs/overview'

@@ -28,8 +28,6 @@ header:
           - 
             title: "Telegram"
             url: "https://t.me/singularitynet"    
-        - item_name: Platform Status
-          item_external_url: 'https://status.singularitynet.io'            
     secondnav:
         - item_name: Overview
           item_url: '/docs/overview/'
