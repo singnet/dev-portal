@@ -93,5 +93,5 @@ Infura
 
 
 #### Infura
-Infura is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet.
+Infura is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node.
 
