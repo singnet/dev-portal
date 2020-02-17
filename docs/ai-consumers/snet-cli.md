@@ -60,7 +60,7 @@ See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full de
 
 ### Install snet-cli
 ```sh
-pip3 install snet-cli
+pip3 install snet-cli #if not done already
 ```
 
 ### Set an identity 
