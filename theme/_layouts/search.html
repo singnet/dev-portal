@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include site-head.html %}
+    </head>
+    <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
+        {% include site-header.html %}
+
+        <div class="wrapper">
+            <div class="container-fluid mt-3 mb-5">
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center">Search</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="margin: 0 auto; min-height: 400px;">
+                        <div id="search-container">
+                            <input type="text" id="snet-search-input" placeholder="search...">
+                            <ul id="snet-results-container">
+
+                            </ul>
+                        </div>                          
+                    </div>  
+                </div>              
+            </div>
+        </div>
+
+
+        {% include site-footer.html %}
+
+
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/search-script.js"></script>        
+
+        <!-- Configuration -->
+        <script>
+SimpleJekyllSearch({
+searchInput: document.getElementById('snet-search-input'),
+        resultsContainer: document.getElementById('snet-results-container'),
+        json: '/search.json'
+        })
+        </script>        
+    </body>
+</html>

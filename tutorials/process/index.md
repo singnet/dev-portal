@@ -31,11 +31,11 @@ page_nav:
         url: '/docs'
 ---
 
-> This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET. It assumes you have successfully installed all of SingularityNET components. To do that, refer to previous tutorials or simply run a docker container from the [Dockerfile](./Dockerfile) provided. If you choose to run a Docker container, make sure to expose a port so that SNET Daemon can communicate with the blockchain.
+> This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET. It assumes you have successfully installed all of SingularityNET components. To do that, refer to previous tutorials or simply run a docker container from the [Dockerfile](./Dockerfile) provided. If you choose to run a Docker container, make sure to expose a port so that SNET Daemon can communicate with the Blockchain.
 
 SingularityNET is an open-source protocol and collection of smart contracts for a decentralized market of coordinated AI services. Within this framework, anyone can add an AI/machine learning service to SingularityNET for use by the network and receive network payment tokens in exchange.
 
-As an AI/machine learning service developer, you can expose your service to the SingularityNET by running an instance of SNET Daemon alongside it. The Daemon interacts with the blockchain to facilitate authorization and payment for services and acts as a pass-through for making API calls to the service.  There are currently 3 ways by which the Daemon can communicate with a service:
+As an AI/machine learning service developer, you can expose your service to the SingularityNET by running an instance of SNET Daemon alongside it. The Daemon interacts with the Blockchain to facilitate authorization and payment for services and acts as a pass-through for making API calls to the service.  There are currently 3 ways by which the Daemon can communicate with a service:
 
 - Through stdin/stdout as an executable/process;
 - Through JSON-RPC;
@@ -154,6 +154,7 @@ You should copy this code into an `example-executable-service.proto` file inside
 
 ### Step 2.2) Create the organization metadata and service metadata
 
+A service metadata is a series of JSON-encoded information relative to the service that is necessary to publish it. It tells the Blockchain where to redirect client calls to (your service endpoints), its encoding, price, etc. (refer to SNET CLI's help for a list of all possible parameters). 
 
 - `PAYMENT_ADDRESS` is the public key of the blockchain key-pair that will receive the payments from client calls. 
 -  set up your etcd cluster based on [etcd-setup](/docs/concepts/etcdsetup.md)
@@ -205,6 +206,11 @@ At the root directory of your service, create a service metadata file by running
 
 - `PROTOBUF_DIRECTORY` tells SNET CLI where to find the `.proto` file for your service; 
 - `DISPLAY_NAME` is your service's display name; 
+
+- `PAYMENT_ADDRESS` is the public key of the Blockchain key-pair that will receive the payments from client calls. 
+
+You'll also need to specify: 
+
 - The price in cogs for each client call by adding the `--fixed-price PRICE_IN_COGS` parameter;
 - `DAEMON_PORT` and `IP` specify the end point of your proxy ( daemon end point)  `--endpoints http://IP:DAEMON_PORT`;
 - And, because the Daemon will call our service as a process and pass parameters using JSON encoding ,
@@ -273,18 +279,14 @@ Publish your service by running `snet service publish ORGANIZATION_ID SERVICE_ID
 snet service publish my_organization example-executable-service
 ```
 
-Confirm the transaction and the blockchain should now be aware of your service!
+Confirm the transaction and the Blockchain should now be aware of your service!
 
 > After having published your service, both its `service_metadata.json` and its service model/specifications (`.proto` file) will have been stored in IPFS, so if you change these files locally, you'll need to update them. Have a look at `snet service update-metadata` and `snet service metadata-set-model` commands for that.
 
 ### Step 2.4) Running SNET Daemon
 
-To run your service, you simply need to run an instance of SNET Daemon at the specified endpoint. 
-It will listen to client calls at the blockchain and execute your service at the specified path using the client parameters. 
-SNET Daemon takes a configuration file that specifies which network it should listen to (e.g. Kovan Testnet), 
-where to redirect calls to, etc. (refer to [SNET Daemon's Github Repository](https://github.com/singnet/snet-daemon) for the complete list of parameters).
-By default, the daemon configuration file should be created at the root directory of your service and be called `snetd.config.json`.
-Here's the example configuration file for our service (again, make sure to change the parameters accordingly before saving):
+
+To run your service, you simply need to run an instance of SNET Daemon at the specified endpoint. It will listen to client calls at the Blockchain and execute your service at the specified path using the client parameters. SNET Daemon takes a configuration file that specifies which network it should listen to (e.g. Kovan Testnet), where to redirect calls to, etc. (refer to [SNET Daemon's Github Repository](https://github.com/singnet/snet-daemon) for the complete list of parameters). By default, the daemon configuration file should be created at the root directory of your service and be called `snetd.config.json`. Here's the example configuration file for our service (again, make sure to change the parameters accordingly before saving):
 
 ```json
 {
@@ -315,7 +317,7 @@ snetd serve .
 
 ## Step 3) Calling your service
 
-To call your service through the blockchain, make sure you have sufficient funds for the transactions (check by running `snet account balance`). If you don't, deposit an amount (e.g. 10 COGs, or 10e-8 AGI) by running `snet account deposit 0.00000010`. 
+To call your service through the Blockchain, make sure you have sufficient funds for the transactions (check by running `snet account balance`). If you don't, deposit an amount (e.g. 10 COGs, or 10e-8 AGI) by running `snet account deposit 0.00000010`. 
  
 Create a payment channel to your service: specify its organization and service IDs, deposit some tokens into the channel and set its expiration time: `snet channel open-init ORG_ID SERVICE_ID AMOUNT EXPIRATION`. For our example, we'll deposit 0 tokens and set the payment channel to expire in 10 days:
 

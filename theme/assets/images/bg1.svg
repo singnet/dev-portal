@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="807px" height="816px" viewBox="0 0 807 816" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>Bg 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.939775597" y="0.94595647" width="810" height="834"></rect>
+        <linearGradient x1="-9.59459459%" y1="50%" x2="113.112331%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#40CEFF" offset="0%"></stop>
+            <stop stop-color="#5A2FF1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="87.1377456%" y1="83.3986815%" x2="60.0416241%" y2="47.3184508%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="6.46225674%" y1="77.8226113%" x2="34.2998143%" y2="-12.6640549%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-After" transform="translate(-633.000000, -95.000000)">
+            <g id="Hero" transform="translate(112.000000, 94.000000)">
+                <g id="Bg-2" transform="translate(517.060224, 0.054044)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask"></g>
+                    <g mask="url(#mask-2)" id="Bg">
+                        <g transform="translate(-43.000000, -382.000000)">
+                            <g transform="translate(794.500000, 892.500000) rotate(-118.000000) translate(-794.500000, -892.500000) translate(53.000000, 388.000000)">
+                                <path d="M1232.61757,61.656991 C964.629066,288.989498 933.247582,406.153606 594.795878,391.183707 C256.344175,376.213808 235.214826,707.865466 447.929042,838.099075 C660.643258,968.332685 1193.17333,1010.82809 1376.96669,647.761761 C1560.76004,284.69543 1500.60607,-165.675516 1232.61757,61.656991 Z" id="Path-2" fill="url(#linearGradient-3)"></path>
+                                <rect id="Rectangle-5" fill="url(#linearGradient-4)" opacity="0.412760417" style="mix-blend-mode: soft-light;" x="0.368016401" y="322.099426" width="478" height="478" rx="239"></rect>
+                                <rect id="Rectangle-5" fill="url(#linearGradient-5)" opacity="0.412760417" style="mix-blend-mode: soft-light;" x="1004.83993" y="530.287244" width="478" height="478" rx="239"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

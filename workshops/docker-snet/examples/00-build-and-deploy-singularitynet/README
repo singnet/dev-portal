@@ -11,7 +11,7 @@ truffle migrate --network local  # deploy contracts to the local network
 
 # Build and install snet-cli
 cd ${SINGNET}/snet-cli           # go to the snet-cli repository
-./scripts/blockchain install     # install contract dependencies
+./scripts/Blockchain install     # install contract dependencies
 pip3 install -e .                # install snet-cli
 cat ~/.snet/config               # look at snet-cli configuration
 

@@ -68,7 +68,7 @@ WORKDIR ${SINGNET}
 RUN git clone https://github.com/singnet/snet-cli
 WORKDIR ${SINGNET}/snet-cli
 RUN git checkout -b demo v0.1.9
-RUN ./scripts/blockchain install
+RUN ./scripts/Blockchain install
 RUN sudo pip3 install -e .
 
 # snet-daemon

@@ -168,7 +168,7 @@ public void div(IntPair request, StreamObserver<SingleInt> responseObserver) {
 ## Step 5
 
 Now we'll write a client to test our server locally (without using the
-blockchain). Edit `JavaClient.java`.
+Blockchain). Edit `JavaClient.java`.
 
 Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
@@ -210,7 +210,7 @@ sh build.sh tutorial client
 
 ## Step 7
 
-To test our server locally (without using the blockchain)
+To test our server locally (without using the Blockchain)
 
 ```
 java -jar ./bin/JavaServer.jar &
@@ -270,11 +270,11 @@ Example:
 ```
 
 This will start the `SNET Daemon` and your service. If everything goes well you will 
-see the blockchain transaction logs and then the following messages 
+see the Blockchain transaction logs and then the following messages 
 (respectively from: your service and `SNET Daemon`):
 
 ```
-# [blockchain log]
+# [Blockchain log]
 # INFO: Server listening on 7070
 # [daemon initial log]
 # INFO[0002] Blockchain is enabled: instantiate payment validation interceptor 
@@ -311,7 +311,7 @@ output the new channel id (that will be used by `testServiceRequest.sh`):
 ```
 ./openChannel.sh
 
-# [blockchain log]
+# [Blockchain log]
 # #channel_id
 # 10
 ```
@@ -323,7 +323,7 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 ```
 ./testServiceRequest.sh 12 4
 
-# [blockchain log]
+# [Blockchain log]
 #   response:
 #       v: 3
 ```

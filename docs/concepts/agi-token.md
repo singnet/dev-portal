@@ -24,14 +24,14 @@ micro_nav: true
 page_nav:
     prev:
         content: Blockchain Contracts
-        url: '/docs/concepts/blockchain-contracts'
+        url: '/docs/concepts/Blockchain-contracts'
     next:
         content: Registry Contract
         url: '/docs/concepts/registry'
     
 ---
 
-SingularityNET uses the AGI Token for its marketplace. The AGI Token is an ERC-20 token hosted on the Ethereum blockchain. Right now, we are in the `beta` phase of the SingularityNET Marketplace. That means that you will need to use Kovan or Ropsten Testnet AGI to work with our tools. You can get Kovan or Ropsten Testnet AGI by following the instructions [here](#agi-faucet).
+SingularityNET uses the AGI Token for its marketplace. The AGI Token is an ERC-20 token hosted on the Ethereum Blockchain. Right now, we are in the `beta` phase of the SingularityNET Marketplace. That means that you will need to use Kovan or Ropsten Testnet AGI to work with our tools. You can get Kovan or Ropsten Testnet AGI by following the instructions [here](#agi-faucet).
 
 ## Testnet AGI vs Mainnet AGI
 For those new to Ethereum, it may be a bit confusing what exactly the difference between Testnet and Mainnet tokens are. In principle, you can distinguish them as follows:
