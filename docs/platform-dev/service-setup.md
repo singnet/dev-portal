@@ -34,8 +34,12 @@ title: AI Developers
     DAEMONADDRESS="0xDBb9b2499c283cec176e7C707Ecb495B7a961ebf"
     FREECALLS=15
     #The address is of the Signer , who would issue you free tokens
-    SIGNERADDRESS="0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf"
-    #These should be in small letters 
+    #Please note , if you are using market place Dapp , then we recommend to set the below
+    #for free call Support 
+    #for Ropsten the Signer Address is 0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F
+    #for mainnet the Signer Address is 0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf
+    SIGNERADDRESS="0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F"
+    #Tags should be in small letters 
     TAGS=image-recognition; 
     #create a metadata file with the same name as the service id.
     MD_FILE="your_service.json";
@@ -56,10 +60,7 @@ snet service metadata-add-description --metadata-file $MD_FILE --description "$S
 #if you want to support free calls , you will need to do the below 
 snet service metadata-set-free-calls default_group $FREECALLS --metadata-file $MD_FILE
 
-#Please note , if you are using market place Dapp , then we recommend to set the below
-#for free call Support 
-#for Ropsten the Signer Address is 0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F
-#for mainnet the Signer Address is 0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf
+
 snet service metadata-set-freecall-signer-address default_group $SIGNERADDRESS --metadata-file $MD_FILE
 
 
