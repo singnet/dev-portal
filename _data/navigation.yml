@@ -80,10 +80,10 @@ docs:
     url: "/tutorials"
   provider:
     title: AI Developer
-    url: "/docs/ai-developers/"
+    url: "/docs/ai-developers/development"
   buyer:
     title: AI Consumer
-    url: "/docs/ai-consumers/"
+    url: "/docs/ai-consumers/snet-cli-tutorial"
 
 concepts:
   introduction:

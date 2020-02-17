@@ -23,8 +23,6 @@ micro_nav: true
 
 ---
 
-Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io).
-
 Our Developer Portal contains documentation about the SingularityNET Platform and Marketplace. 
 
 As a service developer, you can learn how to build and access AI services that are published onto the network. As a client of SingularityNET services, you learn to integrate your software with SingularityNET services that other people have published.
@@ -37,10 +35,12 @@ If you're new to SingularityNET, it is recommended that you follow this order to
 ## First Steps
 
 if you want to be a consumer of SingularityNET services, the follow first three relevant links. if you prefer publishing, testing and understanding the customer requirements, then it is worth the efforts and value.
-- [Prerequisites](/docs/setup/requirements) - Certain conditions that need to be full-filled. prior to using decentralised AI services.
-- [Create a Wallet](/docs/setup/create-a-wallet) - You'll need a wallet with some funds to perform transactions .
-- [How to call a service](/docs/setup/call-a-service) - Use services that are available in the marketplace, and invoke the service using the command line tool.
-- [Using the SDK](/tutorials/sdk) - Invoking a AI service using the Python SDK.
+- [Prerequisites](/docs/ai-developers/setupguide.md) - Certain conditions that need to be full-filled. prior to using decentralised AI services.
+- [Create a Wallet](/docs/ai-developers/create-a-wallet) - You'll need a wallet with some funds to perform transactions .
+- [How to call a service using snet-cli](/docs/ai-developers/invoke-service-snet-cli) - Invoke the service using the command line tool.
+- [How to call a service using Dapp](/docs/ai-developers/marketplace-service_invocation) 
+- Invoke the service using the Market Place Dapp
+- [Using the SDK](/docs/ai-developers/sdk-tutorial) - Invoking a AI service using the Python SDK.
 
 To create a service, and upload that service on our marketplace, follow these instructions:
 
