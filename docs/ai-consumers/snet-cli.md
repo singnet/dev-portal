@@ -58,7 +58,23 @@ See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full de
 
 ## Making a call to a SingularityNET service
 
-### JSON parameters
+### Install snet-cli
+
+pip3 install snet-cli
+### Set an identity 
+```sh
+snet identity create user-ropsten mnemonic --mnemonic "YOUR MNEMONICS" --network ropsten
+snet identity user-ropsten
+```
+### Deposit in Escrow and Create a Channel
+```sh
+snet account balance # check balance (all tokens belongs to this idenity)
+snet account deposit 0.000001 # Deposit Token to MPE and Open a payment channel to the new service:
+snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGI in to the Channel
+```
+### Make a call to a Service 
+
+#### JSON parameters
 
 While protocol buffers are used for communication, call parameters are represented as JSON on the command line.
 
@@ -75,16 +91,20 @@ For example, in [this platform example](/docs/development/mpe-example#make-a-cal
 
 We can use three ways:
 
-```sh
 # via cmdline parameter
-snet client call 0 0.1 localhost:8080 add '{"a":10,"b":32}'
 
+```sh
+snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'
+```
 # via json file
+```sh
 echo '{"a":10,"b":32}' > p.txt
-snet client call 0 0.1 localhost:8080 add p.txt
+snet client call <org_id> <service_id> <group_name> add p.txt
+```
 
 # via stdin
-echo '{"a":10,"b":32}' | snet client call 0 0.1 localhost:8080 add
+```
+echo '{"a":10,"b":32}' | snet client call <org_id> <service_id> <group_name> add
 ```
 
 ### Modifiers
