@@ -59,8 +59,10 @@ See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full de
 ## Making a call to a SingularityNET service
 
 ### Install snet-cli
-
+```sh
 pip3 install snet-cli
+```
+
 ### Set an identity 
 ```sh
 snet identity create user-ropsten mnemonic --mnemonic "YOUR MNEMONICS" --network ropsten
@@ -91,18 +93,18 @@ For example, in [this platform example](/docs/development/mpe-example#make-a-cal
 
 We can use three ways:
 
-# via cmdline parameter
+##### via cmdline parameter
 
 ```sh
 snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'
 ```
-# via json file
+##### via json file
 ```sh
 echo '{"a":10,"b":32}' > p.txt
 snet client call <org_id> <service_id> <group_name> add p.txt
 ```
 
-# via stdin
+##### via stdin
 ```
 echo '{"a":10,"b":32}' | snet client call <org_id> <service_id> <group_name> add
 ```

@@ -59,7 +59,23 @@ We provide a faucet to get AGI for either Ropsten or Kovan [networks](https://fa
 
 You'll need a github account to authenticate, and there after you can request AGI every 24 hours. 
 
-### JSON parameters
+### Install snet-cli
+```sh
+pip3 install snet-cli
+```
+
+### Set an identity 
+```sh
+snet identity create user-ropsten mnemonic --mnemonic "YOUR MNEMONICS" --network ropsten
+snet identity user-ropsten
+```
+### Deposit in Escrow and Create a Channel
+```sh
+snet account balance # check balance (all tokens belongs to this idenity)
+snet account deposit 0.000001 # Deposit Token to MPE and Open a payment channel to the new service:
+snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGI in to the Channel
+```
+#### JSON parameters
 
 While protocol buffers are used for communication, call parameters are represented as JSON on the command line.
 
@@ -77,17 +93,20 @@ For example, in [this platform example](https://github.com/singnet/example-servi
 We can use three ways:
 For more details refer to the [section](http://snet-cli-docs.singularitynet.io/client.html) 
 
+##### via cmdline parameter
+
 ```sh
-# via cmdline parameter
-snet client call org_id service_id default_group add '{"a":10,"b":32}'
-
-# via json file
-echo '{"a":10,"b":32}' > p.txt
-snet client call 0 0.1 localhost:8080 add p.txt
-
-# via stdin
-echo '{"a":10,"b":32}' | snet client call 0 0.1 localhost:8080 add
+snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'
 ```
+##### via json file
+```sh
+echo '{"a":10,"b":32}' > p.txt
+snet client call <org_id> <service_id> <group_name> add p.txt
+```
+
+##### via stdin
+```
+echo '{"a":10,"b":32}' | snet client call <org_id> <service_id> <group_name> add
 
 ### Modifiers
 
