@@ -19,7 +19,7 @@ Blockchain.
 The SingularityNET Registry is an ERC-165–compliant smart contract on the Ethereum Blockchain that stores organizations, services, and type repositories.
 Registry provides all the information needed to find and interact with AI services on the platform, either by listing the information in full, or  when it is too long, by listing the IPFS hash.
  
-#### Contract 
+#### Smart Contract 
 Contract: Contracts are smart programs or algorithms, executes when certain conditions are met successfully.
 
  
@@ -41,15 +41,15 @@ The SingularityNET daemon is an adapter that a service uses to interface with th
 #### SDK
  
 SDK is a tool for AI customers to make calls to service. The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorizations.  The SDK is available in NodeJS, Python and Java languages.
-The 
+
  
 #### Snet-Cli
 The SingularityNET command line interface (CLI) is the primary tool for interacting with the platform’s smart contracts, managing deployed services, and managing funds. 
 
  
-#### OffChain & On Chain Transaction
- 
-All transaction between the two parties are done in offchain mode in order to bring down the dependencies such as , gas cost, and disconnection from Blockchain.  Only when a claim is performed the nonce gets incremented the transaction becomes on Chai  transaction.
+#### On-Chain & Off-Chain Transaction
+On-chain transactions refer to those crypto currency transactions which occur on the Blockchain - that is, on the records of the Blockchain - and remain dependent on the state of the Blockchain for their validity 
+Off-chain transactions refer to those transactions occurring on a cryptocurrency network which move the value outside of the blockchain. Due to their zero/low cost, off-chain transactions are gaining popularity, especially among large participants
  
 #### Signature
 Authorization given by the signer.  
@@ -83,16 +83,15 @@ ETCD is a local database that store all the events as table, when an event is tr
  
 #### Gas and Gas Cost
  
-The speed, reliability, and costs of Ethereum Blockchain interaction dictates that any system built on top of this must be scalable , and the block-mining time introduce minimize gas costs and delay. 
- 
-These decisions are used in tools to abstract away all Blockchain interactions (the daemon, CLI, and SDK) and in our use of a multi-party escrow contract and atomic unidirectional channels for payments.
+The Gas Limit is the maximum amount of Gas that a user is willing to pay for performing this action or confirming a transaction (a minimum of 21,000). The price of Gas (Gas Price) is the amount of Gwei that the user is willing to spend on each unit of Gas 
+
  
 #### Gas Strategy ( Slow , Medium and Fast) 
 
 Ethereum gas price is a time based gas price strategy ('fast' ~1min, 'medium' ~5min or 'slow' ~60min) (defaults to session.default_gas_price).
 Infura
-DApps and smart contracts can use function to discover AI services. The Universal Resource Identifier (URI) is specified as a IPFS hash, - can be a file an image and so on, which points to the location in the IPFS system, and this hosting itself can be done by either SingularityNET, the service developer, or any IPFS pinning service, such as Infura.
+
 
 #### Infura
-DApps and smart contracts can use function to discover AI services. The Universal Resource Identifier (URI) is specified as a IPFS hash, - can be a file an image and so on, which points to the location in the IPFS system, and this hosting itself can be done by either SingularityNET, the service developer, or any IPFS pinning service, such as Infura.
+Infura is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet.
 

@@ -73,7 +73,7 @@ docs:
   concepts:
     title: Core Concepts
     url: "/docs/concepts"
-  tutorials:
+  tutorials: Pay
     title: Tutorials
     url: "/tutorials"
   provider:
