@@ -24,12 +24,10 @@ For a detailed list of configurations available , please check [here](https://gi
  "passthrough_endpoint": "http://localhost:3000",
  "organization_id": "yourorganization",
  "service_id": "yourserviceid",
- "pvt_key_for_metering":"Provided to you already",
-
  "payment_channel_cert_path": "/home/adminuser/Downloads/ca.pem",
  "payment_channel_ca_path": "/home/adminuser/Downloads/ca.pem",
  "payment_channel_key_path": "/home/adminuser/Downloads/client-key.pem",
- "|Blockchain_network_selected": "ropsten",
+ "blockchain_network_selected": "ropsten",
  "ethereum_json_rpc_endpoint": "https://ropsten.infura.io/v3/<YourRegisterdinfuraiID>"
 }
 
