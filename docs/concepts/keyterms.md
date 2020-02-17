@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: IPFS
+title: Key Terms
 
 ---
 
