@@ -9,10 +9,16 @@ title: Set up
 
 ---
 - [Python 3.6+](https://www.python.org/downloads/)
+
+- [Create a Virtual env](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+
 - [Node 8+ with npm](https://nodejs.org/en/download/)
+
+
 - [SNET CLI](https://github.com/singnet/snet-cli/releases)
     - libudev
     - libusb 1.0
+       
 - [SNET Daemon](https://github.com/singnet/snet-daemon/releases)
 
 For example, installing the requirements using `Ubuntu 18.04`:
