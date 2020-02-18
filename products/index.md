@@ -31,4 +31,4 @@ The [Publisher Portal](http://workinprogress) Helps people to assist the develop
 and services using the publisher portal.
 
 You can list your services in the marketplace (Dapp), which can help users to search and use your service.
-***Publisher portal will be live by soon***  
+***Publisher portal will be live soon***  
