@@ -288,9 +288,11 @@ cat > snetd.config.json << EOF
    "ORGANIZATION_ID": "$ORGANIZATION_ID",
    "SERVICE_ID": "$SERVICE_ID",
 
+
    "PAYMENT_CHANNEL_STORAGE_SERVER": {
         "DATA_DIR": "/opt/singnet/etcd/"
     },
+
 
    "LOG": {
         "LEVEL": "debug",

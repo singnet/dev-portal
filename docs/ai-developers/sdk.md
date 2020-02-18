@@ -30,7 +30,7 @@ The SDK simplifies the process of integrating with SingularityNET services and p
 **Note**:  SDK uses gRPC protocol for communication 
 
 
-There are three types of SDK available:
+We support SDK for the below three languages 
 
 - SDK in JAVA
 - SDK in Python
