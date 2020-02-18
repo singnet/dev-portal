@@ -104,7 +104,10 @@ $xxl:1600px;
         }        
     }  
 }
-
+@mixin link-reset {
+    border-bottom: 0;
+    padding: 0;
+}
 @mixin header-generator($font-size, $letter-spacing, $margin-bottom, $font-weight:500) {
     padding: 0;
     border: none;

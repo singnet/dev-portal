@@ -303,7 +303,7 @@ ai-consumers:
       title: Introduction
       excerpt:
       cta: Read more
-      url: '/docs/ai-consumers/index'       
+      url: '/docs/ai-consumers/'       
   getting-started:
     title: Getting Started
     children:

@@ -6,10 +6,6 @@
                     <div class="field-wrapper">
                         <div class="mr-3 heading-section">
                             <h3>Sign up for developer updates</h3>
-                            <!--
-                            <h3>Want to stay updated?</h3>
-                            <p>Subscribe for email updates</p>    
-                            -->
                         </div>
                         <div class="ml-3 form-section">
                             <form action="https://singularitynet.us16.list-manage.com/subscribe/post?u=d74195510c25bf501caf3011d&amp;id=a804df2efd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
@@ -37,7 +33,7 @@
                         <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.data.navigation.footer.content.logo.text }}</a>
                         {% elsif site.data.navigation.footer.content.logo.image %}
                         <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">
-                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/layout/logo-footer.png">
+                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/snet-logo-footer.png">
                         </a><!-- /.site-footer__logo -->
                         {% endif %}
                         <div class="clearfix"></div>
@@ -109,7 +105,6 @@
                                 </a>
                             </li>
                             {% endfor %}                    
-
                         </ul>
                     </div>
                 </div>          
