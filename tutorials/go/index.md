@@ -96,7 +96,7 @@ In this tutorial we'll implement a service with two methods:
 So we'll use this command line to create project's skeleton
 
 ```
-./create_project.sh tutorial snet math-operations 7070
+./create_project.sh tutorial my-org math-operations 7070
 cd /opt/singnet/go/src/tutorial
 ```
 
