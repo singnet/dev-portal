@@ -1,8 +1,53 @@
 /* 
     Created on  : Jan 15, 2020, 12:12:14 PM
     Author      : Sujith Varma [sujith.varma@singularitynet.io]
-    NOTES       : THIS FILES NEEDS OPTIMIZATION
 */
+
+/*==============================================================================*/
+/* Importing Mixins */
+/*==============================================================================*/
+@import 'mixins';
+
+/*==============================================================================*/
+/* Wrapper Styles */
+/*==============================================================================*/
+.wrapper{
+    margin: 0 auto;
+}
+@include xs{
+    .wrapper{
+        width:90%;
+    }      
+}
+@include sm{
+    .wrapper{
+        width:$sm;
+    }   
+}
+@include md{
+    .wrapper{
+        width:$md;
+    }   
+}
+@include lg{
+    .wrapper{
+        width:$lg;
+    }   
+}
+@include xl{
+    .wrapper{
+        width:$xl;
+    }   
+}
+@include xxl{
+    .wrapper{
+        width:$xxl;
+    }   
+}
+
+/*==============================================================================*/
+/* Main Styles */
+/*==============================================================================*/
 body{
     margin:0;
     padding: 0;
@@ -140,43 +185,6 @@ header{
                 }
             }                     
         }   
-    }   
-}
-
-/*==============================================================================*/
-/* Wrapper Styles */
-/*==============================================================================*/
-.wrapper{
-    margin: 0 auto;
-}
-@include xs{
-    .wrapper{
-        width:90%;
-    }      
-}
-@include sm{
-    .wrapper{
-        width:$sm;
-    }   
-}
-@include md{
-    .wrapper{
-        width:$md;
-    }   
-}
-@include lg{
-    .wrapper{
-        width:$lg;
-    }   
-}
-@include xl{
-    .wrapper{
-        width:$xl;
-    }   
-}
-@include xxl{
-    .wrapper{
-        width:$xxl;
     }   
 }
 
@@ -493,18 +501,100 @@ h5 .title-anchor-link{ display: none;}
         }
     }    
 }
-
+.snet-tagline{
+    font-size: 18px;
+    font-weight: 300;
+    color: #212121;
+    line-height: 20px;
+}
+.sticky-top{
+    &.sticky-with-margin{
+        top:66px;
+    }    
+}
 
 /*==============================================================================*/
 /* Main Contents */
 /*==============================================================================*/
 @import "blog";
 
+/*==============================================================================*/
+/* Footer Styles */
+/*==============================================================================*/
+@import 'site-footer';
+
+/*==============================================================================*/
+/* Home Page Styles */
+/*==============================================================================*/
+@import "home";
+
+/*==============================================================================*/
+/* Overview Page Styles */
+/*==============================================================================*/
+@import "overview";
+
+/*==============================================================================*/
+/* Overlay Popup Styles */
+/*==============================================================================*/
+@import "overlay";
+
+/*==============================================================================*/
+/* Search Styles */
+/*==============================================================================*/
+#search-container{
+    position:relative;
+    #snet-search-input{
+        min-width: 256px;
+        padding: 0;        
+        display: inline-block;
+        height: 36px;
+        margin: 0;
+        padding: 0 0 0 8px;
+        border: none;
+        line-height: normal;
+        border-radius: 4px;
+        font-size: 14px;
+        border: #DBE3E7 solid 1px;
+    }
+    #snet-results-container{
+        display: none;
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        left:0;
+        top:35px;
+        background: #fff;
+        font-size: 14px;
+        list-style: none;
+        box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);     
+        border-radius: 3px;
+        z-index:1030;
+        li{
+            display: block;
+            border-bottom: solid 1px #eee;
+            a{
+                display: block;
+                padding: 8px;
+                color: #4086FF;
+                font-size:14px;                
+                &:hover{
+                    background: #f1f1f1;
+                    text-decoration: none;
+                }                
+            }
+        }
+    }    
+    &:hover{
+        #snet-results-container{
+            display: block;
+        }        
+    }
+}
+
 
 /*==============================================================================*/
 /* Responsive */
 /*==============================================================================*/
-
 @media only screen and (max-width: 575px) {
     /* xs */    
     .snet-blog-entry{
@@ -649,25 +739,8 @@ h5 .title-anchor-link{ display: none;}
     }    
 }
 
-
-
-.snet-tagline{
-    font-size: 18px;
-    font-weight: 300;
-    color: #212121;
-    line-height: 20px;
-}
-
-@import "home";
-@import "overview";
-@import "overlay";
-
-.sticky-top{
-    &.sticky-with-margin{
-        top:66px;
-    }    
-}
 @media only screen and (max-width: 767px) {
+    /* Mobile */           
     header{
         .snet-navbar_primary{
             padding-left:0;
@@ -726,54 +799,4 @@ h5 .title-anchor-link{ display: none;}
     }    
 }
 
- //@include responsive-check(){}
-
-#search-container{
-    position:relative;
-    #snet-search-input{
-        min-width: 256px;
-        padding: 0;        
-        display: inline-block;
-        height: 36px;
-        margin: 0;
-        padding: 0 0 0 8px;
-        border: none;
-        line-height: normal;
-        border-radius: 4px;
-        font-size: 14px;
-        border: #DBE3E7 solid 1px;
-    }
-    #snet-results-container{
-        display: none;
-        position: absolute;
-        width: 100%;
-        padding: 0;
-        left:0;
-        top:35px;
-        background: #fff;
-        font-size: 14px;
-        list-style: none;
-        box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);     
-        border-radius: 3px;
-        z-index:1030;
-        li{
-            display: block;
-            border-bottom: solid 1px #eee;
-            a{
-                display: block;
-                padding: 8px;
-                color: #4086FF;
-                font-size:14px;                
-                &:hover{
-                    background: #f1f1f1;
-                    text-decoration: none;
-                }                
-            }
-        }
-    }    
-    &:hover{
-        #snet-results-container{
-            display: block;
-        }        
-    }
-}
+//@include responsive-check(){}
