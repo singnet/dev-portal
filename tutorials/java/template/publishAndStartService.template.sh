@@ -9,11 +9,13 @@ fi
 TMP_FILE=/tmp/__SNET_SERVICE_PUBLISH_LOG.txt
 rm -f $TMP_FILE
 
-echo "Creating an organization. Please wait..."
-
-snet organization metadata-init "__ORGANIZATION_ID__" __ORGANIZATION_ID__ individual
-snet organization add-group default_group $1 http://127.0.0.1:2379
-snet organization create __ORGANIZATION_ID__ -y 2>&1 | tee $TMP_FILE
+if [ "$(snet organization info __ORGANIZATION_ID__ 2>&1 | tee $TMP_FILE)" != 0 ]
+  then
+    echo "Creating the __ORGANIZATION_ID__ organization. Please wait..."
+    snet organization metadata-init "__ORGANIZATION_ID__" __ORGANIZATION_ID__ individual
+    snet organization add-group default_group "$1" http://127.0.0.1:2379
+    snet organization create __ORGANIZATION_ID__ -y 2>&1 | tee $TMP_FILE
+fi
 
 echo "Publishing your service. Please wait..."
 
