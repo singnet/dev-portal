@@ -284,13 +284,13 @@ see the Blockchain transaction logs and then the following messages
 You can double check if it has been properly published using
 
 ```
-snet organization list-services snet
+snet organization list-services my-org
 ```
 
 Optionally you can un-publish the service
 
 ```
-snet service delete snet math-operations
+snet service delete my-org math-operations
 ```
 
 Actually, since this is just a tutorial, you are expected to un-publish your
@@ -329,5 +329,5 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 That's it. Remember to delete your service as explained in Step 9.
 
 ```
-snet service delete snet math-operations
+snet service delete my-org math-operations
 ```
