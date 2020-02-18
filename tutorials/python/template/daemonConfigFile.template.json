@@ -1,9 +1,9 @@
 {
-    "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io",
+    "BLOCKCHAIN_NETWORK_SELECTED": "ropsten",
+    "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
     "PASSTHROUGH_ENABLED": true,
     "PASSTHROUGH_ENDPOINT": "http://localhost:__SERVICE_PORT__",
-    "REGISTRY_ADDRESS_KEY": "0x5156fde2ca71da4398f8c76763c41bc9633875e4",
-    "DAEMON_END_POINT": "localhost:7000",
+    "DAEMON_END_POINT": "0.0.0.0:7000",
     "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
     "ORGANIZATION_ID": "__ORGANIZATION_ID__",
     "SERVICE_ID": "__SERVICE_ID__",

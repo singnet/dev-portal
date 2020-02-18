@@ -50,13 +50,11 @@ In this tutorial we'll create a Go service and publish it in SingularityNET.
 
 ## Step 1 
 
-Setup a `ubuntu:18.04` docker container (with proper `SNET Daemon` version) using provided `Dockerfile`.
+Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) using provided `Dockerfile`.
 
 ```
-SNETD_VERSION="v0.1.7"
 docker build \
     --build-arg language=go \
-    --build-arg snetd_version=$SNETD_VERSION \
     -t snet_go_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
 
 ETCD_HOST=$HOME/.snet/etcd/example-go-service/

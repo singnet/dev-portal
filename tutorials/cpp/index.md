@@ -61,13 +61,11 @@ installation or upgrade to a newer version."
 
 In this tutorial we'll develop our service inside the docker container.
 
-Setup a `ubuntu:18.04` docker container (with proper `SNET Daemon` version) using provided `Dockerfile`.
+Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) using provided `Dockerfile`.
 
 ```
-SNETD_VERSION="v0.1.7"
 docker build \
     --build-arg language=cpp \
-    --build-arg snetd_version=$SNETD_VERSION \
     -t snet_cpp_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
 
 ETCD_HOST=$HOME/.snet/etcd/example-cpp-service/
