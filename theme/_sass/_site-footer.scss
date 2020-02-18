@@ -264,6 +264,9 @@ $screen-md-max: ($screen-lg-min - 1) !default;
 
 
 .site-footer{
+    .divider{
+        display: none;
+    }
     .col{
         //background:#fff;
         ul{
@@ -271,11 +274,14 @@ $screen-md-max: ($screen-lg-min - 1) !default;
             margin: 0;
             padding: 0;
             li{
-                margin-bottom: 4px;                 
+                margin-bottom: 4px;    
+                display:block;
                 &.headings{
                     color: #fff;
                     font-size: 20px;
-                    font-weight: 500;               
+                    font-weight: 500;   
+                    margin-top: 12px;
+                    margin-bottom: 6px;
                 }                
                 a{
                     color:#9b9b9b;
@@ -287,5 +293,169 @@ $screen-md-max: ($screen-lg-min - 1) !default;
                 }
             }
         }
+        &:first-child{
+            margin-right:8px;
+            ul{
+                border-right:solid 1px #9b9b9b;
+                padding-right:32px;
+                li{
+                    text-align:right;    
+                    a{
+                        img{
+                            display: block;
+                            width: 100%;                        
+                        }
+                    }
+                }
+            }
+        }
     }
+}
+
+@include mobile{
+    .divider{
+        display: block!important;
+        height: 1px;
+        width: 100%;
+        background: #9b9b9b;
+        margin: 18px 0 8px 0;
+    }    
+}
+@include md{
+    .divider{
+        display: block!important;
+        height: 1px;
+        width: 100%;
+        background: #9b9b9b;
+        margin: 18px 0 8px 0;
+    }        
+}
+
+
+
+
+
+.site-footer {
+    //margin-top: 40px;
+    background-color: $color-footer-bg;
+    padding: 20px 0 1rem 0;
+
+    hr {
+        width: 5.625rem;
+    }
+    color: $color-footer-copyright;
+
+    ul li::before {
+        display: none;
+    }
+
+    ul li {
+        padding-left: 0;
+    }
+
+    a {
+        list-style: none;
+        list-style-type: none;
+        border-bottom: none;
+    }
+}
+
+
+.site-footer-two{
+    background-color: $color-footer-bg;
+    padding: 20px 0 1rem 0;    
+    .divider-2{
+        display: none;
+    }
+    .divider-3{
+        display: none;
+    }    
+    .col{
+        //background:#fff;
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li{
+                margin-bottom: 4px;    
+                display:block;
+                padding-left:16px;
+                &.headings{
+                    padding-left:0;                    
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 500;   
+                    margin-top: 12px;
+                    margin-bottom: 6px;
+                }                
+                a{
+                    color:#9b9b9b;
+                    font-size:14px;
+                    &:hover{
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        &:first-child{
+            margin-right:8px;
+            ul{
+                li{
+                    text-align:right;  
+                    padding-left:0;                        
+                    a{
+                        img{
+                            display: block;
+                            width:100%;                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile{
+    .divider-3{
+        display: block!important;
+        height: 1px;
+        width: 100%;
+        background: #9b9b9b;
+        margin: 18px 0 8px 0;
+    }    
+}
+@include md{
+    .divider-2{
+        display: block!important;
+        height: 1px;
+        width: 100%;
+        background: #9b9b9b;
+        margin: 18px 0 8px 0;
+    }        
+}
+@include lg{
+    .divider-2{
+        display: block!important;
+        height: 1px;
+        width: 100%;
+        background: #9b9b9b;
+        margin: 18px 0 8px 0;
+    }    
+    .site-footer-two{
+        .col{
+            //background:#fff;
+            &:first-child{
+                ul{
+                    li{
+                        a{
+                            img{
+                                width: 85%;                        
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+
 }

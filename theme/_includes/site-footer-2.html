@@ -23,72 +23,9 @@
         </div>
     </div>
 </div>
-<footer class="site-footer">
+<footer class="site-footer-two">
     <div class="wrapper">   
         <div class="container-fluid">
-            <!--
-            <div class="row footer-links">
-                <div class="col-12 col-sm-6 col-md-3 logo">
-                    {% if site.data.navigation.footer.content.logo.text %}
-                    <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">{{ site.data.navigation.footer.content.logo.text }}</a>
-                    {% elsif site.data.navigation.footer.content.logo.image %}
-                    <a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/" class="site-footer__logo">
-                        <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/snet-logo-footer.png">
-                    </a>
-                    {% endif %}
-                    <div class="clearfix"></div>
-                    <ul class="footer-links footer-right">
-                        <li><a href="https://singularitynet.io" target="_blank">Foundation Main Site</a>
-                        </li>
-                        <li><a href="https://public.singularitynet.io/whitepaper.pdf" target="_blank">Whitepaper</a>
-                        </li>
-                        <li><a href="https://singularitynet.io/jobs" target="_blank">Jobs</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <h6 class="uppercase-txt bold">Quick Links</h6>
-                    <ul class="footer-links">
-                        <li><a href="/docs/concepts">Documentation</a>
-                        </li>
-                        <li><a href="http://beta.singularitynet.io" target="_blank">Marketplace</a>
-                        </li>
-                        <li><a href="https://faucet.singularitynet.io" target="_blank">Faucet</a>
-                        </li>
-                        <li><a href="https://singularitynet.io/platform-roadmap" target="_blank">Platform Roadmap</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <h6 class="uppercase-txt bold">Knowledge base</h6>
-                    <ul class="footer-links">
-                        <li><a href="/tutorials/getting-started">Getting Started</a>
-                        </li>
-                        <li><a href="/docs/concepts">Core Concepts</a>
-                        </li>
-                        <li><a href="/docs/setup">Setup Guide</a>
-                        </li>
-                        <li><a href="/tutorials">Tutorials</a>
-                        </li>
-                        <li><a href="/workshops">Workshops</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <h6 class="uppercase-txt bold">Community </h6>
-                    <ul class="footer-links">
-                        <li><a href="https://community.singularitynet.io/c/developers" target="_blank">Forum</a>
-                        </li>
-                        <li><a href="https://t.me/agidevelopers" target="_blank">Telegram</a>
-                        </li>
-                        <li><a href="/docs/contribute">Contribute</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            -->
-
             <div class="row">
                 <div class="col">
                     <ul>
@@ -101,13 +38,19 @@
                             </a>
                             {% endif %}                            
                         </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li class="headings">About Us</li><!-- Explore -->
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="https://singularitynet.io/" target="_blank">Foundation Main Site</a></li>
                         <li><a href="https://singularitynet.io/studio/" target="_blank">Singularity Studio</a></li>
                         <li><a href="https://public.singularitynet.io/whitepaper.pdf" target="_blank">White Paper</a></li>
-                        <li><a href="https://singularitynet.io/jobs-temp/" target="_blank">Jobs</a></li>
+                        <li><a href="https://singularitynet.io/jobs-temp/" target="_blank">Jobs</a></li>                     
                     </ul>
                 </div>
+                <div class="divider-3"></div>                   
                 <div class="col">
                     <ul>
                         <li class="headings">Quick Links</li>
@@ -117,15 +60,16 @@
                         <li><a href="/docs/concepts/keyterms/">Key Terms</a></li>               
                     </ul>                    
                 </div>
+                <div class="divider-2"></div>                
                 <div class="col">
                     <ul>
                         <li class="headings">Docs For</li>
                         <li><a href="/docs/ai-developers/">AI Developers</a></li>
                         <li><a href="/docs/ai-consumers/">AI Consumers</a></li>
-                        <li><a href="/docs/platform-dev/">Platform Developers</a></li>             
+                        <li><a href="/docs/platform-dev/">Platform Developers</a></li>              
                     </ul>                                        
                 </div>
-                <div class="divider"></div>
+                <div class="divider-3"></div>                   
                 <div class="col">
                     <ul>
                         <li class="headings">Products</li>
@@ -133,7 +77,7 @@
                         <li><a href="#">Publisher Portal</a></li>
                         <li><a href="/products/rfai/">Request For AI</a></li>  
                         <li><a href="#">Staking</a></li>   
-                        <li><a href="https://faucet.singularitynet.io/">AGI Faucet</a></li>                           
+                        <li><a href="https://faucet.singularitynet.io/">AGI Faucet</a></li>                          
                     </ul>                      
                 </div>
                 <div class="col">
@@ -142,7 +86,7 @@
                         <li><a href="https://blog.singularitynet.io/" target="_blank">Blog</a></li>
                         <li><a href="https://community.singularitynet.io/c/developers" target="_blank">Forum</a></li>
                         <li><a href="https://t.me/agidevelopers" target="_blank">Telegram</a></li>   
-                       <!-- <li><a href="https://github.com/singnet">Github</a></li>                           -->
+                       <!-- <li><a href="https://github.com/singnet">Github</a></li>                           -->                     
                     </ul>                                          
                 </div>
             </div>
