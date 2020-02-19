@@ -16,12 +16,14 @@
                                 <ul class="snet-nav_list d-none d-md-block">
                                     {% assign path_crumbs = page.path | split: "/" %}
                                     {% assign crumbs = path_crumbs[0] %}
+                                    {% assign section = crumbs %}
                                     {% case path_crumbs[0] %}
                                     {% when 'products' %}
                                     {% assign crumbs = path_crumbs[1] %}
                                     {% assign nav_tree = site.data.navigation.products %}
                                     {% when 'docs' %}
                                     {% assign crumbs = path_crumbs[2] %}
+                                    {% assign section = path_crumbs[1] %}
                                     {% case path_crumbs[1] %}
                                     {% when 'concepts' %}
                                     {% assign nav_tree = site.data.navigation.concepts %}
@@ -54,8 +56,9 @@
                                     {% assign menu_url = menu[1].url | split: "/" %}
                                     {% assign menu_url_last_inx = path_url.size | minus: 1 %}
                                     {% assign file_name = menu_url[menu_url_last_inx] | append: ".md" %}
+                                    {% assign section_file_name = section | append: ".md" %}
                                     {% assign classname = "has-submenu"%}
-                                    {% if crumbs == file_name %}
+                                    {% if crumbs == file_name or file_name == section_file_name and crumbs == 'index.md' %}
                                     {% assign classname = "active has-submenu test "%}
                                     {% endif %}
                                     {% if children %}
