@@ -799,7 +799,8 @@ h5 .title-anchor-link{ display: none;}
     }    
 }
 
-@include responsive-check(1){}
+//@include responsive-check(){}
+
 @include xxl{
     .col-xxl-6{
         -ms-flex: 0 0 50%;
