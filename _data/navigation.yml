@@ -96,6 +96,9 @@ concepts:
   mpe:
     title: "Multi-party Escrow"
     url: "/docs/concepts/mpe"
+  staking:
+    title: "Staking"
+    url: "/docs/concepts/staking"
   key-terms:
     title: "Key terms"
     url: "/docs/concepts/keyterms"
@@ -583,13 +586,13 @@ products:
       excerpt:
       cta: Read more
       url: '/products/marketplace'
-  #publisher:
-      #title: AI Publisher portal
-      #excerpt:
-      #cta: Read more
-      #url: '/products/publisher'
   rfai:
       title: Request For AI Service
       excerpt:
       cta: Read more
-      url: '/products/rfai'      
+      url: '/products/rfai'
+  staking:
+    title: Staking
+    excerpt:
+    cta: Read more
+    url: '/products/staking'

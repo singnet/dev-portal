@@ -32,3 +32,6 @@ and services using the publisher portal.
 
 You can list your services in the marketplace (Dapp), which can help users to search and use your service.
 ***Publisher portal will be live soon***  
+
+ [Staking](http://workinprogress) Staking is the process of holding AGI tokens for rewards to support the operations of AI marketplace.
+ Staking will be used to increase AGI liquidity pool.
