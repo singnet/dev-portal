@@ -86,7 +86,7 @@ docs:
 concepts:
   introduction:
     title: "SingularityNET Introduction "
-    url: "/docs/concepts/index"
+    url: "/docs/concepts/"
   blockchain:
     title: "What is Blockchain"
     url: "/docs/concepts/blockchain"
@@ -408,7 +408,7 @@ ai-developers:
       title: Introduction
       excerpt:
       cta: Read more
-      url: '/docs/ai-developers/index'    
+      url: '/docs/ai-developers/'    
   getting-started:
     title: Getting Started
     children:
@@ -553,7 +553,7 @@ platform-dev:
       title: Introduction
       excerpt:
       cta: Read more
-      url: '/docs/platform-dev/index'      
+      url: '/docs/platform-dev/'      
   registry:
       title: Registry
       excerpt:
@@ -580,7 +580,7 @@ products:
       title: Introduction
       excerpt:
       cta: Read more
-      url: '/products/index'     
+      url: '/products/'     
   marketplace:
       title: AI Marketplace
       excerpt:
