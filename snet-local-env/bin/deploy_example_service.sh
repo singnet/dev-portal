@@ -10,7 +10,7 @@ sh buildproto.sh
 
 snet identity deployer
 ACCOUNT=`snet account print`
-snet organization metadata-init example-org example-org
+snet organization metadata-init example-org example-org organization
 snet organization add-group default_group $ACCOUNT http://localhost:2379
 snet organization create example-org -y
 
@@ -18,6 +18,8 @@ snet service metadata-init service/service_spec "Example Service" \
 	--group-name default_group --endpoints http://localhost:7000 \
 	--fixed-price 0.00000001
 snet service metadata-add-description --json '{"description": "Example service description", "url": "https://example.service.users.guide"}'
+snet service metadata-set-free-calls default_group 15
+snet service metadata-set-freecall-signer-address default_group ${DEPLOYER_ADDR}
 snet service publish example-org example-service -y
 
 rm snetd_configs/*
