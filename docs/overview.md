@@ -75,6 +75,11 @@ byproduct_cards:
       img: 'publisher.png'
       description: Coming Soon. A portal for you to publish your AI services on the SingularityNet platfrom
       url: 'javascript:void(0);'
+      
+    - title: Staking
+      img: 'staking.png'
+      description: Coming Soon. A portal for you to stake AGI tokens and get rewarded
+      url: 'javascript:void(0);'      
 
 
 # By Platform    

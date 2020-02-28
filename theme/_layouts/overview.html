@@ -74,7 +74,7 @@
                             <h2>By Product</h2>
                         </div>
                         {% for item in page.byproduct_cards %}  
-                        <div class="col-xs-12 col-md-4 byproduct-cards">
+                        <div class="col-xs-12 col-md-3 byproduct-cards">
                             <a href="{{ item.url }}">
                                 <div class="snet-card full-height">
                                     <div class="snet-card_content">
@@ -152,7 +152,7 @@
             </div>
         </div>
 
-        {% include site-footer.html %}        
+        {% include site-footer.html %}
 
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>

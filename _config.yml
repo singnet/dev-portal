@@ -7,8 +7,8 @@ snet:
     comments:
         disqus_forum_shortname: singularitynet
 github:
-  #repository_url: https://github.com/singnet/dev-portal
-  repository_url: https://github.com/sujithvarma/dev-portal/blob/ui-v3
+  repository_url: https://github.com/singnet/dev-portal/tree/master/
+  #repository_url: https://github.com/sujithvarma/dev-portal/blob/ui-v3
 
 # SASS settings
 sass:
