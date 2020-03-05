@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: publisher portal
 comments: false
 
 # Hero section
@@ -15,7 +15,7 @@ micro_nav: true
 Goal is to assist the developers easily publish and manage their organizations
 and services using the publisher portal.
 You can list your services on to the marketplace Dapp easily making it very simple for your users to search and use your service.
- *** Publisher portal will be live by March ***  
+ *** Publisher portal will be live soon ***  
 
 ## On boarding an Organization 
 Enter all relevant data to publish in your Organization through simple forms, which abstracts all the complexity using command line interface. Once the basic on boarding details are entered, a

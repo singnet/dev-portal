@@ -447,6 +447,11 @@ ai-developers:
             excerpt:
             cta: Read more
             url: '/docs/ai-developers/marketplace'
+        publisher-portal:
+          title: Publisher Portal
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/publisher-portal'
         naming-standards:
           title: "Naming Standards"
           url: "/docs/ai-developers/naming-standards"           
