@@ -20,7 +20,7 @@ The integration of SingularityNET’s decentralized AI marketplace with PayPal r
 
 ### How to use service by paying through PayPal
 
-1.	Go to the Marketplace portal
+1.	Go to the [Marketplace portal](http://beta.singularitynet.io)
 2.	Pay for service through your Paypal account    
 3.	If you dont have a wallet , the application will create a wallet and a channel for you.
     The application will then deposit the equivalent AGI tokens in to channel.
