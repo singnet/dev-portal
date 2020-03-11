@@ -34,6 +34,7 @@ buttons:
 
 Guides to implementing a service in a number of programming languages. Is you favourite language missing? Please contribute one 😉
 
+- [Build a client in Java](/tutorials/client/java)
 - [Build a service in C++](/tutorials/cpp)
 - [Build a service in Go](/tutorials/go)
 - [Build a service in Java](/tutorials/java)
