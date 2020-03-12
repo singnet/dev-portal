@@ -50,7 +50,7 @@ application. It simplifies the things and allow concentrating on the code only.
 Nevetherless sometimes it leads to the additonal configuration parameters. I
 will pay your attention on this when it happens.
 
-First start the environment docker using command below:
+First start the environment docker using command below.
 
 ```sh
 docker run -p 5002:5002 -p 8545:8545 -p 7000:7000 \
@@ -70,7 +70,7 @@ project management systems.
 ### Maven
 
 Add [Jitpack](https://jitpack.io) repository to the `project` section of the
-Maven `pom.xml`:
+Maven `pom.xml`.
 
 ```xml
 <repositories>
@@ -82,7 +82,7 @@ Maven `pom.xml`:
 ```
 
 Add Java SDK artifact as a Maven compilation time dependency (`dependencies`
-section of the `pom.xml`):
+section of the `pom.xml`).
 
 ```xml
 <dependency>
@@ -95,7 +95,7 @@ section of the `pom.xml`):
 In order to use a service one needs adding the service API as a dependency of
 the project. API of the service is kept in the platform Registry.
 `snet-maven-sdk-plugin` automates API downloading and unpacking. To use the
-plugin add the following code under `plugins` section of the Maven `pom.xml`:
+plugin add the following code under `plugins` section of the Maven `pom.xml`.
 
 ```xml
 <plugin>
@@ -143,26 +143,29 @@ gRPC plugins usage can be found [here](/tutorials/client/java/grpc-maven).
 
 ### Gradle
 
+Add Maven Central and Jitpack repositories and apply SingularityNET and
+Protobuf plugins in `build.gradle` file.
+
 ```gradle
 buildscript {
-
     repositories {
         jcenter()
         maven {
             url 'https://jitpack.io'
         }
     }
-
     dependencies {
         classpath 'com.github.singnet.snet-sdk-java:snet-sdk-gradle-plugin:master-SNAPSHOT'
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
     }
-
 }
 
 apply plugin: 'io.singularitynet.sdk'
 apply plugin: 'com.google.protobuf'
 ```
+
+Add Jitpack repository and add SingularityNET SDK artifact as a project
+dependency.
 
 ```gradle
 repositories {
@@ -177,6 +180,10 @@ dependencies {
     implementation 'com.github.singnet.snet-sdk-java:snet-sdk-java:master-SNAPSHOT'
 }
 ```
+
+Add new task which uses SingularityNET plugin to get the API of the service and
+unpack it into the `proto` directory. Add target directory into the Protobuf
+source set.
 
 ```gradle
 task getExampleServiceApi(type: io.singularitynet.sdk.gradle.GetSingularityNetServiceApi) {
@@ -199,6 +206,9 @@ sourceSets {
 }
 ```
 
+Configure Protobuf plugin to compile the API of the service. Add dependency on
+the task which gets the API.
+
 ```gradle
 protobuf {
     protoc { artifact = "com.google.protobuf:protoc:3.5.1" }
@@ -207,10 +217,10 @@ protobuf {
         grpc { artifact = "io.grpc:protoc-gen-grpc-java:1.20.0" }
     }
     generateProtoTasks {
-        all().collect {
-            it.dependsOn(getExampleServiceApi)
-            it.builtins { remove java }
-            it.plugins {
+        all().each { task ->
+            task.dependsOn(getExampleServiceApi)
+            task.builtins { remove java }
+            task.plugins {
                 grpc {}
                 java {}
             }
@@ -226,7 +236,7 @@ repo](https://github.com/singnet/snet-sdk-java/tree/master/plugin/gradle).
 
 SDK configuration contains properties which are required to initialize a
 SingularityNET platform client. Most of the properties can be left with
-default values:
+default values.
 
 ```java
 Configuration config = Configuration.newBuilder()
@@ -257,7 +267,7 @@ identity which is predefined in the local environment.
 Like in the Maven plugin configuration last three parameters are optional, but
 we should specify them to play with a custom environment.
 
-Configuration is done and we are ready to create an instance of the `Sdk` class:
+Configuration is done and we are ready to create an instance of the `Sdk` class.
 
 ```java
 Sdk sdk = new Sdk(config);
@@ -282,7 +292,7 @@ for the service calls. It automatically finds an appropriate payment channel or
 opens the new one.  It extends the expiration date and adds the funds if it is
 required. It has two integer parameters. First parameter specifies the minimal
 channel lifetime in Ethereum blocks. Second parameter specifies the number of
-calls to prepay in the channel:
+calls to prepay in the channel.
 
 ```java
 // 40320 is a week in Ethereum blocks assuming single block is mined in 15 seconds
@@ -290,7 +300,7 @@ OnDemandPaymentChannelPaymentStrategy paymentStrategy =
     new OnDemandPaymentChannelPaymentStrategy(sdk, 40320, 100);
 ```
 
-`sdk.newServiceClient()` call opens a gRPC connection to the service client:
+`sdk.newServiceClient()` call opens a gRPC connection to the service client.
 
 ```java
 ServiceClient serviceClient = sdk.newServiceClient("example-org",
@@ -316,7 +326,7 @@ when not needed.
 
 ## Call service
 
-Last code snippet is pretty close to the gRPC API usage pattern:
+Last code snippet is pretty close to the gRPC API usage pattern.
 
 ```java
 CalculatorBlockingStub stub = serviceClient.getGrpcStub(CalculatorGrpc::newBlockingStub);
@@ -335,7 +345,8 @@ synchronous and asynchronous gRPC stubs are supported.
 ## Run application
 
 Compile and run the application. If it goes well you should see the following
-response on your console:
+response on your console.
+
 ```
 Response received: value: 42.0
 ```
