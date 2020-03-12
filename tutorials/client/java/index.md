@@ -137,9 +137,45 @@ but here we should specify them properly because we are using a custom
 SingularityNET environment.
 
 Use Protobuf and gRPC Maven plugins to compile the API of the service.
-`protoSourceRoot` of the `protobuf-maven-plugin` should include `outputDir`
-directory which is passed to `snet-sdk-maven-plugin`. More information about
-gRPC plugins usage can be found [here](/tutorials/client/java/grpc-maven).
+
+```xml
+<project>
+  <build>
+    ...
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>1.6.2</version>
+      </extension>
+    </extensions>
+    ...
+    <plugins>
+      ...
+      <plugin>
+        <groupId>org.xolstice.maven.plugins</groupId>
+        <artifactId>protobuf-maven-plugin</artifactId>
+        <configuration>
+          <protocArtifact>com.google.protobuf:protoc:3.5.1:exe:${os.detected.classifier}</protocArtifact>
+          <pluginId>grpc-java</pluginId>
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.20.0:exe:${os.detected.classifier}</pluginArtifact>
+          <checkStaleness>true</checkStaleness>
+          <protoSourceRoot>${project.build.directory}/proto</protoSourceRoot>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>compile-custom</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      ...
+    </plugins>
+  </build>
+</project>
+```
 
 ### Gradle
 
