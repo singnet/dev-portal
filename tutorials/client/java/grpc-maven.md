@@ -33,13 +33,18 @@ page_nav:
 ```xml
 <project>
   ...
+  <properties>
+    <protobuf.version>3.5.1</protobuf.version>
+    <grpc.version>1.20.0</grpc.version>
+  </properties>
+  ...
   <!-- load gRPC artifacts versions -->
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-bom</artifactId>
-        <version>1.20.0</version>
+        <version>${grpc.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -52,7 +57,7 @@ page_nav:
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
-      <version>3.5.1</version>
+      <version>${protobuf.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>

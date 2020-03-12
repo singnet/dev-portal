@@ -38,8 +38,10 @@ language. Full code of the tutorial application can be found at [Java SDK
 repository](https://github.com/singnet/snet-sdk-java/tree/master/example/cli/example-service),
 SingularityNET Java SDK API documentation is located at
 [Jitpack](https://jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/master-SNAPSHOT/javadoc).
-In order to complete the tutorial one should have JDK 8 or greater, Maven and
-Docker installed on the local machine.
+In order to complete the tutorial one should have [JDK 8 or
+greater](https://www.oracle.com/java/technologies/javase-downloads.html),
+[Maven](https://maven.apache.org/) or [Gradle](https://gradle.org/) and
+[Docker](https://www.docker.com/) installed on the local machine.
 
 ## Setup environment
 
@@ -62,23 +64,22 @@ SingularityNET daemon port `7000`.
 
 ## Setup project
 
-Make new Java project using Maven (see [Maven project
-page](https://maven.apache.org/index.html)). For example you can use the
-command below:
+Two sections below describe how to setup Java project using two most popular
+project management systems.
 
-```sh
-mvn archetype:generate \
-    -DgroupId=org.example.app \
-    -DartifactId=example-client \
-    -DarchetypeArtifactId=maven-archetype-quickstart \
-    -DarchetypeVersion=1.4 \
-    -DinteractiveMode=false
+### Maven
+
+Add [Jitpack](https://jitpack.io) repository to the `project` section of the
+Maven `pom.xml`:
+
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
 ```
-
-SingularityNET Java SDK includes two plugins to support both Maven and Gradle
-project management system. This tutorial uses Maven. Gradle usage
-documentation can be found at [Gradle plugin GitHub
-repo](https://github.com/singnet/snet-sdk-java/tree/master/plugin/gradle).
 
 Add Java SDK artifact as a Maven compilation time dependency (`dependencies`
 section of the `pom.xml`):
@@ -139,6 +140,87 @@ Use Protobuf and gRPC Maven plugins to compile the API of the service.
 `protoSourceRoot` of the `protobuf-maven-plugin` should include `outputDir`
 directory which is passed to `snet-sdk-maven-plugin`. More information about
 gRPC plugins usage can be found [here](/tutorials/client/java/grpc-maven).
+
+### Gradle
+
+```gradle
+buildscript {
+
+    repositories {
+        jcenter()
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+
+    dependencies {
+        classpath 'com.github.singnet.snet-sdk-java:snet-sdk-gradle-plugin:master-SNAPSHOT'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
+    }
+
+}
+
+apply plugin: 'io.singularitynet.sdk'
+apply plugin: 'com.google.protobuf'
+```
+
+```gradle
+repositories {
+    ...
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    ...
+    implementation 'com.github.singnet.snet-sdk-java:snet-sdk-java:master-SNAPSHOT'
+}
+```
+
+```gradle
+task getExampleServiceApi(type: io.singularitynet.sdk.gradle.GetSingularityNetServiceApi) {
+    orgId = 'example-org'
+    serviceId = 'example-service'
+    javaPackage = 'io.singularitynet.service.exampleservice'
+    outputDir = file("$buildDir/proto")
+    ethereumJsonRpcEndpoint = new URL('http://localhost:8545')
+    // for the custom environment only
+    ipfsRpcEndpoint = new URL('http://localhost:5002')
+    registryAddress = '0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2'
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir "$buildDir/proto"
+        }
+    }
+}
+```
+
+```gradle
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:3.5.1" }
+    plugins {
+        java 
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:1.20.0" }
+    }
+    generateProtoTasks {
+        all().collect {
+            it.dependsOn(getExampleServiceApi)
+            it.builtins { remove java }
+            it.plugins {
+                grpc {}
+                java {}
+            }
+        }
+    }
+}
+```
+
+Gradle usage documentation can be found at [Gradle plugin GitHub
+repo](https://github.com/singnet/snet-sdk-java/tree/master/plugin/gradle).
 
 ## Setup SDK
 
@@ -203,22 +285,22 @@ channel lifetime in Ethereum blocks. Second parameter specifies the number of
 calls to prepay in the channel:
 
 ```java
+// 40320 is a week in Ethereum blocks assuming single block is mined in 15 seconds
 OnDemandPaymentChannelPaymentStrategy paymentStrategy =
-    new OnDemandPaymentChannelPaymentStrategy(sdk, 40320 /* about a week in
-    Ethereum blocks assuming single block is mined in 15 seconds */, 100);
+    new OnDemandPaymentChannelPaymentStrategy(sdk, 40320, 100);
 ```
 
 `sdk.newServiceClient()` call opens a gRPC connection to the service client:
 
 ```java
-ServiceClient serviceClient = sdk.newServiceClient("snet", "cntk-image-recon",
-    "default_group", paymentStrategy);
+ServiceClient serviceClient = sdk.newServiceClient("example-org",
+        "example-service", "default_group", paymentStrategy);
 try {
 
     // service client code
 
 } finally {
-    client.close();
+    serviceClient.close();
 }
 ```
 
@@ -255,8 +337,7 @@ synchronous and asynchronous gRPC stubs are supported.
 Compile and run the application. If it goes well you should see the following
 response on your console:
 ```
-Response received: delta_time: "4.1049"
-top_5: "{1: \'90.81%: rose\', 2: \'02.67%: carnation\', 3: \'01.96%: corn poppy\', 4: \'01.10%: ball moss\', 5: \'00.79%: garden phlox\'}"
+Response received: value: 42.0
 ```
 
 On the real Ethereum network first call can take much more time than others.
