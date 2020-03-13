@@ -47,8 +47,8 @@ greater](https://www.oracle.com/java/technologies/javase-downloads.html),
 
 We are going to use a local SingularityNET environment to run the tutorial
 application. It simplifies the things and allow concentrating on the code only.
-Nevetherless sometimes it leads to the additonal configuration parameters. I
-will pay your attention on this when it happens.
+Nevetherless sometimes it leads to the additonal configuration parameters which
+are described separately.
 
 First start the environment docker using command below.
 
@@ -64,8 +64,38 @@ SingularityNET daemon port `7000`.
 
 ## Setup project
 
-Two sections below describe how to setup Java project using two most popular
-project management systems.
+
+Three things are required to setup the project correctly:
+- add Java SDK as a dependency;
+- download and unpack service gRPC API protobuf;
+- compile protobuf to Java classes.
+
+First step is trivial, second step is done using plugin provided by
+SingularityNET SDK, third step is done using gRPC plugin. Please read next
+paragraph before moving further because it explains SingularityNET plugin
+parameters. Then move to one of the sections below depending on project
+management system you are using.
+
+In order to use a service one needs adding the service API as a part of
+the project. API of the service is kept in the platform Registry.
+SingularityNET SDK provides Maven and Gradle plugins which automate API
+downloading and unpacking.
+
+Plugins input number of parameters to get the API:
+- `orgId` and `serviceId` parameters specify the service we are going to use;
+- `outputDir` points to the location which is used to download the Protobuf API
+  of the service;
+- `javaPackage` sets the convenient package name to place the compiled API
+  classes;
+- `ethereumJsonRpcEndpoint` specifies the Ethereum network and RPC endpoint to
+  use.
+
+There are couple of additional parameters in the code below. `ipfsRpcEndpoint`
+and `registryAddress` are optional but in case of the tutorial we should
+specify them properly because we are using a custom SingularityNET environment.
+
+Next two sections explain how to setup [Maven](#maven) and [Gradle](#gradle)
+projects.
 
 ### Maven
 
@@ -92,10 +122,8 @@ section of the `pom.xml`).
 </dependency>
 ```
 
-In order to use a service one needs adding the service API as a dependency of
-the project. API of the service is kept in the platform Registry.
-`snet-maven-sdk-plugin` automates API downloading and unpacking. To use the
-plugin add the following code under `plugins` section of the Maven `pom.xml`.
+Use `snet-maven-sdk-plugin` to download and unpack the API of the service. Add
+the following code under `plugins` section of the Maven `pom.xml`.
 
 ```xml
 <plugin>
@@ -124,17 +152,6 @@ plugin add the following code under `plugins` section of the Maven `pom.xml`.
   </executions>
 </plugin>
 ```
-
-`orgId` and `serviceId` parameters specify the service we are going to use.
-`outputDir` points to the location which is used to download the Protobuf API
-of the service. `javaPackage` sets the convenient package name to place the
-compiled API classes. `ethereumJsonRpcEndpoint` specifies the Ethereum network
-to use. Full list of the parameters can be found at [Maven plugin GitHub
-repo](https://github.com/singnet/snet-sdk-java/tree/master/pligin/maven).
-
-Last couple of parameters `ipfsRpcEndpoint` and `registryAddress` are optional
-but here we should specify them properly because we are using a custom
-SingularityNET environment.
 
 Use Protobuf and gRPC Maven plugins to compile the API of the service.
 
@@ -264,9 +281,6 @@ protobuf {
     }
 }
 ```
-
-Gradle usage documentation can be found at [Gradle plugin GitHub
-repo](https://github.com/singnet/snet-sdk-java/tree/master/plugin/gradle).
 
 ## Setup SDK
 
