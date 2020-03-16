@@ -35,9 +35,9 @@ page_nav:
 
 This tutorial explains how to create a SingularityNET service client in Java
 language. Full code of the tutorial application can be found at [Java SDK
-repository](https://github.com/singnet/snet-sdk-java/tree/master/example/cli/example-service),
+repository](https://github.com/singnet/snet-sdk-java/tree/0.3.0/example/cli/example-service),
 SingularityNET Java SDK API documentation is located at
-[Jitpack](https://jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/master-SNAPSHOT/javadoc).
+[Jitpack](https://jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc).
 In order to complete the tutorial one should have [JDK 8 or
 greater](https://www.oracle.com/java/technologies/javase-downloads.html),
 [Maven](https://maven.apache.org/) or [Gradle](https://gradle.org/) and
@@ -118,7 +118,7 @@ section of the `pom.xml`).
 <dependency>
   <groupId>com.github.singnet.snet-sdk-java</groupId>
   <artifactId>snet-sdk-java</artifactId>
-  <version>master-SNAPSHOT</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 
@@ -129,7 +129,7 @@ the following code under `plugins` section of the Maven `pom.xml`.
 <plugin>
   <groupId>com.github.singnet.snet-sdk-java</groupId>
   <artifactId>snet-sdk-maven-plugin</artifactId>
-  <version>master-SNAPSHOT</version>
+  <version>0.3.0</version>
   <executions>
     <execution>
 
@@ -208,7 +208,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.github.singnet.snet-sdk-java:snet-sdk-gradle-plugin:master-SNAPSHOT'
+        classpath 'com.github.singnet.snet-sdk-java:snet-sdk-gradle-plugin:0.3.0'
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
     }
 }
@@ -230,7 +230,7 @@ repositories {
 
 dependencies {
     ...
-    implementation 'com.github.singnet.snet-sdk-java:snet-sdk-java:master-SNAPSHOT'
+    implementation 'com.github.singnet.snet-sdk-java:snet-sdk-java:0.3.0'
 }
 ```
 
@@ -368,7 +368,7 @@ Service endpoint group id has to be specified in addition to the organization
 id and service id. It is used to select a service endpoint to connect. To get a
 list of the service endpoint groups one can use `sdk.getMetadataProvider(String
 orgId, String serviceId).getServiceMetadata()` call. See [ServiceMetadata
-documentation](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/master-SNAPSHOT/javadoc/io/singularitynet/sdk/registry/ServiceMetadata.html)
+documentation](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/registry/ServiceMetadata.html)
 for details.
 
 The service client keeps the opened gRPC connection and it should be closed
@@ -410,13 +410,13 @@ because the usage of the payment channel doesn't require making transactions.
 
 There are two ways of making first call execution time predictable. First
 option is creating a payment channel in advance. Use `Sdk` and
-[BlockchainPaymentChannelManager](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/master-SNAPSHOT/javadoc/io/singularitynet/sdk/mpe/BlockchainPaymentChannelManager.html)
+[BlockchainPaymentChannelManager](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/mpe/BlockchainPaymentChannelManager.html)
 to open a channel from the application. Or use
 [snet-cli](/docs/ai-consumers/snet-cli) tool to open a channel from the command
 line.
 
 Second option is increasing a gas price by setting new value in configuration,
 see [Configuration.Builder
-documentation](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/master-SNAPSHOT/javadoc/io/singularitynet/sdk/client/Configuration.Builder.html#setGasPrice-java.math.BigInteger-).
+documentation](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/client/Configuration.Builder.html#setGasPrice-java.math.BigInteger-).
 This way doesn't guarantee the execution time but can decrease the time to
 mine the transaction.
