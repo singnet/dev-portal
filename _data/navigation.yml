@@ -431,7 +431,7 @@ ai-developers:
         title: "Step 4: Creating an Ethereum Identity"
         excerpt: 
         cta: Read more
-        url: '/docs/ai-consumers/create-a-wallet'
+        url: '/docs/ai-developers/create-a-wallet'
       org-setup:
         title: "Step 5: Organization Setup"
         excerpt:
