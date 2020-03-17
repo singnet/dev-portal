@@ -109,6 +109,12 @@ Maven `pom.xml`.
     <url>https://jitpack.io</url>
   </repository>
 </repositories>
+<pluginRepositories>
+  <pluginRepository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </pluginRepository>
+</pluginRepositories>
 ```
 
 Add Java SDK artifact as a Maven compilation time dependency (`dependencies`
