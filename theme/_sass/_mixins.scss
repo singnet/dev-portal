@@ -1,0 +1,215 @@
+/* 
+    Created on  : Jan 15, 2020, 12:12:14 PM
+    Author      : Sujith Varma [sujith.varma@singularitynet.io]
+    NOTES       : THIS FILES NEEDS OPTIMIZATION
+*/
+//$xs:
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl:1600px;
+
+//mobile
+//@media only screen and (max-width: 768px)
+//xs
+//@media only screen and (max-width: 575px) 
+//sm
+//@media only screen and (min-width: 576px) and (max-width:767px)
+//md
+//@media only screen and (min-width: 768px) and (max-width:991px)
+//lg
+//@media only screen and (min-width: 992px) and (max-width:1199px)
+//xl
+//@media only screen and (min-width: 1200px) 
+
+@mixin mobile {
+    @media only screen and (max-width: #{$md - 1px}) {
+        @content;
+    }
+}
+@mixin xs {
+    @media only screen and (max-width: #{$sm - 1px}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media only screen and (min-width: #{$sm}) and (max-width: #{$md - 1px}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media only screen and (min-width: #{$md}) and (max-width: #{$lg - 1px}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media only screen and (min-width: #{$lg}) and (max-width: #{$xl - 1px}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media only screen and (min-width: #{$xl}) and (max-width: #{$xxl - 1px}) {
+        @content;
+    }
+}
+@mixin xxl {
+    @media only screen and (min-width: #{$xxl}) {
+        @content;
+    }
+}
+
+@mixin responsive-check( $check:0) {
+    body{
+        @if $check == 0 {
+            @include xs{
+                background: red;
+            } 
+            @include sm{
+                background: yellow;
+            }        
+            @include md{
+                background: green;
+            }
+            @include lg{
+                background: blue;
+            }
+            @include xl{
+                background: purple;
+            }
+            @include xxl{
+                background: pink;
+            }            
+        }
+        @else {       
+            @include mobile{
+                background: orange;
+            }            
+            @include md{
+                background: green;
+            }
+            @include lg{
+                background: blue;
+            }
+            @include xl{
+                background: purple;
+            }
+            @include xxl{
+                background: pink;
+            }                 
+        }        
+    }  
+}
+@mixin link-reset {
+    border-bottom: 0;
+    padding: 0;
+}
+@mixin header-generator($font-size, $letter-spacing, $margin-bottom, $font-weight:500) {
+    padding: 0;
+    border: none;
+    color: #212112;
+    font-size:$font-size + 0px;
+    letter-spacing: $letter-spacing + 0px;
+    margin-bottom: $margin-bottom + 0px;    
+    font-weight: $font-weight;    
+}
+
+@mixin codehighlighter{
+    code{
+        font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+        color: #8824D1;
+        background: #EEEEEE;
+        padding: 0 5px;
+        border-radius: 2px;
+    }    
+    pre{
+        overflow: auto;
+        border-left: 4px solid #4086FF;
+        margin: 0 0 1.25rem 0;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9rem;            
+        &.highlight{
+            background: #220D3A;
+            color: #f8f8f2;
+            padding: 1.5625rem .5rem;   
+            overflow-x: scroll;
+            cursor: default;            
+            code{
+                color: #f8f8f2;
+                background: #220D3A;   
+                .c{color:#75715e}
+                .err{color:#960050;background-color:#1e0010}
+                .k{color:#66d9ef}
+                .l{color:#ae81ff}
+                .n{color:#f8f8f2}
+                .o{color:#f92672}
+                .p{color:#f8f8f2}
+                .ch{color:#75715e}
+                .cm{color:#75715e}
+                .cp{color:#75715e}
+                .cpf{color:#75715e}
+                .c1{color:#75715e}
+                .cs{color:#75715e}
+                .gd{color:#f92672}
+                .ge{font-style:italic}
+                .gi{color:#a6e22e}
+                .gs{font-weight:bold}
+                .gu{color:#75715e}
+                .kc{color:#66d9ef}
+                .kd{color:#66d9ef}
+                .kn{color:#f92672}
+                .kp{color:#66d9ef}
+                .kr{color:#66d9ef}
+                .kt{color:#66d9ef}
+                .ld{color:#e6db74}
+                .m{color:#ae81ff}
+                .s{color:#e6db74}
+                .na{color:#a6e22e}
+                .nb{//color:#f8f8f2;
+                    color:#bda0d4;}
+                .nc{color:#a6e22e}
+                .no{color:#66d9ef}
+                .nd{color:#a6e22e}
+                .ni{color:#f8f8f2}
+                .ne{color:#a6e22e}
+                .nf{color:#a6e22e}
+                .nl{color:#f8f8f2}
+                .nn{color:#f8f8f2}
+                .nx{color:#a6e22e}
+                .py{color:#f8f8f2}
+                .nt{color:#f92672}
+                .nv{color:#f8f8f2}
+                .ow{color:#f92672}
+                .w{color:#f8f8f2}
+                .mb{color:#ae81ff}
+                .mf{color:#ae81ff}
+                .mh{color:#ae81ff}
+                .mi{color:#ae81ff}
+                .mo{color:#ae81ff}
+                .sa{color:#e6db74}
+                .sb{color:#e6db74}
+                .sc{color:#e6db74}
+                .dl{color:#e6db74}
+                .sd{color:#e6db74}
+                .s2{color:#e6db74}
+                .se{color:#ae81ff}
+                .sh{color:#e6db74}
+                .si{color:#e6db74}
+                .sx{color:#e6db74}
+                .s1{color:#e6db74}
+                .ss{color:#e6db74}
+                .bp{color:#f8f8f2}
+                .fm{color:#a6e22e}
+                .vc{color:#f8f8f2}
+                .vg{color:#f8f8f2}
+                .vi{color:#f8f8f2}
+                .vm{color:#f8f8f2}
+                .il{color:#ae81ff}                    
+            }
+        }            
+    }        
+}

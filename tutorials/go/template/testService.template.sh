@@ -12,4 +12,4 @@ if [ -z "$1" ] || [ -z "$2" ]
     exit 1
 fi
 
-snet client call __ORGANIZATION_ID__ __SERVICE_ID__ div "{\"a\":$1,\"b\":$2}" -y
+snet client call __ORGANIZATION_ID__ __SERVICE_ID__ default_group div "{\"a\":$1,\"b\":$2}" -y

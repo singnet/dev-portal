@@ -3,9 +3,9 @@
 layout: default
 keywords:
 comments: false
-
 # Hero section
-title: The SingularityNET SDK
+title: SingularityNET Registry
+description: This guide will teach you how the registry is used to expose information about AI services to the outside world so consumers can find and buy these services.
 
 # extralink box
 extralink:
@@ -20,25 +20,19 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-page_nav:
-    prev:
-        content: snet-cli command line tool
-        url: '/docs/concepts/snet-cli'
-    next:
-        content: snetd - SingularityNET Daemon
-        url: '/docs/concepts/daemon'
 ---
+The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorizations. 
 
-The SDK simplifies the process of integrating with SingularityNET services. While gRPC is the communication protocol used, the SDK provides tooling to automatically augment gRPC client stubs with the necessary authorisations.
+**Note**: SDK uses gRPC protocol for communication.
 
-The SDK will include a number of default funding strategies for payment channels, but will also allow the developer to implement their own, providing completely control over tokens and service payments.
+The SDK can comprise of several default funding strategies for payment channels. It can also allow the developer to implement their strategies, providing completely control over tokens and service payments.
 
-The SDK, in combination with the CLI, will simplify the process of fetching the latest service specification for dependent services, and compiling the proto definitions so that the services can be called with minimal fuss.
+The SDK, along with the CLI, simplifies the process of fetching the latest service specification for dependent services, and compiles the proto definitions for efficient use of service.
 
-Currently we have a [preliminary version of a Python SDK](https://github.com/singnet/snet-sdk-python) which is functional and is the basis for the [SDK tutorial](/tutorials/sdk), but has since [raised a number of design questions](https://github.com/singnet/snet-sdk-python/issues/16).
+The preliminary version of a Python SDK, which is functional and is the basis for the SDK tutorial has resulted in number of design constrains.
 
-Work is also proceeding on an [SDK for Javascript](https://github.com/singnet/snet-sdk-js).
+**Note**: Work is also proceeding on an SDK for Javascript.
 
-We intend to support most popular languages and welcome third party contributions for people's favourite languages.
+We intend to support most popular languages and welcome third party contributions for people’s favourite languages.
 
-As these SDKs become stable we'll update the [SDK tutorial](/tutorials/sdk) to include details for each programming language.
+As these SDKs become stable we’ll update the SDK tutorial to include details for each programming language.

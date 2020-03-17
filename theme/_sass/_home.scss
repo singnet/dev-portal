@@ -1,0 +1,294 @@
+/* 
+    Author      : Sujith Varma [sujith.varma@singularitynet.io]
+*/
+
+/* Homepage Styles */
+section.snet-herobanner{
+    height: 407px;
+    background:url("../images/main_banner.png") top center no-repeat, linear-gradient(to bottom,  #282054 0%,#4671c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    margin:0;
+    h2{
+        color: #fff;
+        font-size: 28px;
+        margin-top: 56px;
+        letter-spacing: -1px;
+        text-shadow: 1px 1px 5px #220D3A;
+        //text-shadow:2px #220D3A;
+
+    }
+    p{
+        color: #fff;   
+        &.tagline{
+            font-size: 20px;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(34,13,58,.5);            
+            &.first{
+                margin-bottom: 0;
+            }
+        }
+        &.description{
+            font-size: 16px;
+            font-weight: 500;
+        }        
+    }
+    .snet-herobanner_tagline{
+        font-size: 22px;
+        font-weight: 500;
+        display: block;
+    }
+}
+.snet-card_margintop_fix{
+    margin-top: -140px;
+}
+.snet-card_wrapper_link{
+    text-decoration: none;
+    .snet-card{    
+        &:after{
+        }
+    }
+    &:hover{
+        text-decoration: none;
+        .snet-card{         
+            //background: #ebf2ff!important;   
+            background: #f2f6fd!important;
+            //box-shadow: 0 1px 1px 0 rgba(0,0,0,0.07), 0 2px 1px -1px rgba(0,0,0,0.07), 0 1px 3px 0 rgba(0,0,0,0.1),0 2px 0 0 #4086FF;                
+            transition: all .1s ease;      
+            &:after{
+            }            
+        }
+        h2{
+            transition: color 0.3s ease;               
+            color: #4086FF!important;                
+        }      
+    }
+}
+.snet-card{
+    .snet-home_cards{
+        padding: 18px;
+        font-size: 14px;
+        color: #666;
+        h2{
+            text-align: center;
+            border: none;
+            font-size: 20px;   
+            padding-top: 8px;
+        }
+        p{
+            text-align: center;
+            margin: 0;
+            font-size: 14px;
+        }
+        img{
+            display: block;
+            width: auto;
+            height: 120px;
+            margin: 0 auto;            
+
+        }
+    }
+    .snet-home-smallcards{
+        margin:16px 0 16px 0;
+        //border-right:solid 1px #eee;
+        h4{
+            text-align: center;
+            border: none;
+            font-size: 18px;
+            padding-top: 8px;            
+        }
+        p{
+            text-align: center;
+            margin: 0 24px;
+            font-size: 14px;
+            color: #666;
+        }
+        a{
+            display: block!important;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 8px 0 0px 0;
+            font-size: 14px;
+            font-weight: 600;            
+        }
+        &.last{
+            border:none;
+        }
+    }
+}
+
+.main-url{
+    &:hover{
+        text-decoration: none;
+        h4{
+            color: #4086FF!important;
+        }
+    }
+}
+
+.snet-event-entry{
+    .snet-event-entry_content{
+        margin-top:4px;
+        padding-bottom:4px;
+        span{
+            display: block;
+            color: #9b9b9b;
+            letter-spacing: 2px;
+            font-size: 12px;
+            padding: 0 18px;
+        }
+        h4{
+            font-size: 16px;
+            color: #212121;
+            letter-spacing: 0.2px;
+            line-height: 20px;
+            border-bottom: none;
+            padding: 8px 18px;
+        }
+        p{
+            font-size: 14px;
+            color: #666;
+            padding: 0 18px;
+        }   
+        .contents{
+            font-size: 14px;
+            color: #666;
+            padding: 0 18px;
+            display: block;
+            overflow: hidden;
+
+            .actionbuttons{
+                padding: 4px 0 4px 0;
+                border-bottom: solid 1px #eee;
+                text-transform: uppercase;
+                font-size: 12px;
+                a{
+                    color: #007bff;
+                    font-weight: 600;
+                    //padding:4px 8px;
+                    border-radius:2px;
+                    &:hover{
+                        font-weight: 600;
+                        //background: rgba(64,134,255,0.1);
+                        //text-decoration: none;
+                        color: #3f51b5;
+                    }
+                }
+            }
+        }                    
+    }
+    &:last-child{
+        .actionbuttons{
+            border: none!important;
+        }
+    }
+}
+.snet-newsletter{
+    margin-top: 64px;
+    background: #220D3A; 
+    padding:16px;
+    .field-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;     
+        overflow:hidden;
+        h3{
+            color:#fff; 
+            margin: 0;
+            padding: 0;
+            //font-size: 20px;
+            //font-weight: 600;
+            font-size: 20px;
+            font-weight: 300;            
+        }
+        p{
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        /*
+        input[type="email"]{
+            margin: 0;
+            border: none;
+            height: 36px;
+            border-radius: 2px;
+            width: 256px;
+            padding-left: 6px;
+        }
+        input[type="submit"]{
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 16px;
+            height: 36px;
+            letter-spacing: 1.25px;
+            padding: 13px 26px 11px;     
+            color: #fff;
+            background-color: #4086ff;
+            box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+            border:none;
+            border-radius: 4px;
+            text-transform: uppercase;       
+            cursor:pointer;
+            &:hover{
+                background: #005ACB;
+            }
+        }
+        */
+    }
+}
+@media only screen and (max-width:767px){
+    section.snet-herobanner h2{
+        margin-top: 32px;
+    }    
+    .snet-home-smallcards{
+        border-bottom: 1px solid #eee;
+        padding-bottom: 16px;
+    }    
+    .field-wrapper{
+        display:block!important;
+        .heading-section{
+            width: 100%;
+            text-align: center;
+            margin: 0!important;
+        }
+        .form-section{
+            margin: 10px 0 0 0!important;
+            width: 100%;       
+            input{
+                margin-top: 8px!important;    
+                display: block;
+                width: 100%!important;
+                //max-width: 50%;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:991px){
+    .snet-card .snet-home_cards img{
+        height: 90px;        
+    }    
+    .snet-card_margintop_fix{
+        margin-top: -80px;
+    }
+}
+
+
+.snet-viewmore_outlinebutton{
+    color: #4086ff;
+    border:solid 1px #4086ff;
+    padding: 13px 28px 11px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height:normal;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;   
+    border-radius: 4px;
+    margin: 8px 16px 16px 16px;
+    display:inline-block;
+    &:hover{
+        color: #005ACB;
+        border-color: #005ACB;
+        background-color: rgba(0,90,203,0.05) !important;  
+        text-decoration: none;
+    }    
+}

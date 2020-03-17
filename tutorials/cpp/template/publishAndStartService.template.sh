@@ -6,14 +6,28 @@ if [ -z "$1" ]
     exit 1
 fi
 
-echo "Publishing your service. Please wait..."
-
 TMP_FILE=/tmp/__SNET_SERVICE_PUBLISH_LOG.txt
 rm -f $TMP_FILE
-snet service metadata-init __PROTO_DIR__ __SERVICE_ID__ $1
-snet service metadata-set-fixed-price 0.00000001
-snet service metadata-add-endpoints http://localhost:7000
+
+if [ "$(snet organization info __ORGANIZATION_ID__ 2>&1 | tee $TMP_FILE)" != 0 ]
+  then
+    echo "Creating the __ORGANIZATION_ID__ organization. Please wait..."
+    snet organization metadata-init "__ORGANIZATION_ID__" __ORGANIZATION_ID__ individual
+    snet organization add-group default_group "$1" http://127.0.0.1:2379
+    snet organization create __ORGANIZATION_ID__ -y 2>&1 | tee $TMP_FILE
+fi
+
+echo "Publishing your service. Please wait..."
+
+snet service \
+    metadata-init \
+    __PROTO_DIR__ \
+    "__SERVICE_ID__" \
+    --group-name default_group \
+    --fixed-price 0.00000001 \
+    --endpoints http://localhost:7000
 snet service publish __ORGANIZATION_ID__ __SERVICE_ID__ -y 2>&1 | tee $TMP_FILE
-./bin/server &
+
+python3 server.py &
 snetd --config __DAEMON_CONFIG_FILE__ &
 sleep 3

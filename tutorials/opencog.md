@@ -62,7 +62,7 @@ From this point we follow the turorial in the Docker container's prompt.
 
 The code in this repo is used to start and publish an Opencog service in
 SingularityNET. `bin/server` is the executable that actually listen for requests.
-`bin/client` can be used to send commands to the server locally (without blockchain).
+`bin/client` can be used to send commands to the server locally (without Blockchain).
 
 Note that there's **only one** Opencog service, which expects comands like this:
 

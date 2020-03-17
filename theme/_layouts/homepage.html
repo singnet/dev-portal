@@ -1,93 +1,140 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		{% include site-head.html %}
-	</head>
-	<body class="{{ site.snet.color_theme }}">
-		{% include site-header.html %}
-		<div class="hero-subheader-home{% if page.grid_navigation %} hero-subheader--before-out{% endif %}">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-7">
-						<div class="align-container" data-mh>
-							<div class="align-inner">
-								{% if page.title %}
-									<h1 class="hero-subheader__title">{{ page.title }}</h1>
-								{% endif %}
-								{% if page.description %}
-									<p class="hero-subheader__desc">{{ page.description }}</p>
-								{% endif %}
-								{% for button in page.buttons %}
-									{% if button.external_url == true %}
-									<a href="{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
-										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
-										{{ button.content }}
-									</a>
-									{% else %}
-									<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
-										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
-										{{ button.content }}
-									</a>
-									{% endif %}
-								{% endfor %}
-							</div><!-- /.align-inner -->
-						</div><!-- /.align-container -->
-					</div><!-- /.col -->
-					{% if page.extralink.title and page.extralink.description and page.extralink.title_url %}
-						<div class="col-md-4 col-md-offset-1 hidden-xs hidden-sm">
-							<div class="align-container" data-mh>
-								<div class="align-inner">
-									<div class="hero-subheader__extralink">
-										<p class="hero-subheader__extralink-title">
-											{% if button.external_url == true %}
-											<a href="{{ page.extralink.title_url }}" class="btn btn--read-more">
-												{{ page.extralink.title }}
-												<i class="icon icon--arrow-right"></i>
-											</a>
-											{% else %}
-											<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ page.extralink.title_url }}" class="btn btn--read-more">
-												{{ page.extralink.title }}
-												<i class="icon icon--arrow-right"></i>
-											</a>
-											{% endif %}
-										</p><!-- /.hero-subheader__extralink-title -->
-										<p>{{ page.extralink.description }}</p>
-									</div><!-- /.hero-subheader__extralink -->
-								</div><!-- /.align-inner -->
-							</div><!-- /.align-container -->
-						</div><!-- /.col -->
-					{% endif %}
-				</div><!-- /.row -->
-			</div><!-- /.container -->
-		</div><!-- /.hero-subheader -->
-		{% if page.grid_navigation %}
-			<div class="section section--darker-theme-color-bg">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="nav-grid nav-grid--out">
-								<div class="row">
-									{% for item in page.grid_navigation %}
-										<div class="col-sm-6 col-lg-4">
-											<a href="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}{{ item.url }}" class="nav-grid__item">
-												<div class="nav-grid__content" data-mh>
-													<h2 class="nav-grid__title">{{ item.title }}</h2>
-													<p>{{ item.excerpt }}</p>
-												</div><!-- /.nav-grid__content -->
-												<p class="nav-grid__btn">
-													{{ item.cta }}
-													<i class="icon icon--arrow-right"></i>
-												</p>
-											</a><!-- /.nav-grid__item -->
-										</div><!-- /.col -->
-									{% endfor %}
-								</div><!-- /.row -->
-							</div><!-- /.nav-grid -->
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.container -->
-			</div><!-- /.section -->
-		{% endif %}
-		{% include site-footer.html %}
-	</body>
+    <head>
+        {% include site-head.html %}
+    </head>
+    <body class="home">
+        {% include site-header.html %}
+        <section class="snet-herobanner">
+            <div class="wrapper">
+                <div class="container-fluid"> 
+                    <div class="row">
+                        <div class="col-xs-12 col-md-2">
+                        </div>                            
+                        <div class="col-xs-12 col-md-8">
+                            <h2 class="text-center">{{ page.title }}</h2>                            
+                            <p class="tagline first text-center">{{ page.tagline }}</p>                                   
+                        </div>                    
+                    </div>
+                </div>
+            </div>            
+        </section>
+
+        <div class="wrapper snet-card_margintop_fix">
+            <div class="container-fluid">     
+                <div class="row">
+                    {% for item in page.features %}
+                    <div class="col-xs-12 col-md-4 pt-4">
+                        <a href="{{ item.url }}" class="snet-card_wrapper_link">
+                            <div class="snet-card full-height"> 
+                                <div class="snet-home_cards">
+                                    <img class="snet-card_descriptionicon align-self-center" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{item.icon}}">                                       
+                                    <h2>{{ item.title }}</h2>
+                                    <p>
+                                        {{ item.description }}                                       
+                                    </p>
+                                </div>
+                            </div>   
+                        </a>                            
+                    </div>                    
+                    {% endfor %}
+                </div>     
+                <!--
+                <div class="row">
+                    <div class="col-12 pt-4">
+                        <div class="snet-card full-height"> 
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="snet-home-smallcards">
+                                        <h4>Release Notes</h4>
+                                        <p>Our release notes will tell you about new new features, improvements, and fixes across  products.</p>   
+                                        <a href="#">View Release Notes</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="snet-home-smallcards">
+                                        <h4>Community Forum</h4>
+                                        <p>Have a something in mind? Meet other devs in the SingularityNET Community.</p>                                        
+                                        <a href="#">Visit forum</a>
+                                    </div>                                    
+                                </div>
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="snet-home-smallcards last">
+                                        <h4>Tools & Resources</h4>
+                                        <p>Download the latest releases of our contracts, daemons and tools necessary.</p>                                        
+                                        <a href="#">Tools and Resources</a>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                -->
+                <div class="row">
+                    <div class="col-xs-12 col-md-8 pt-4">
+                        <div class="snet-card"> 
+                            <h2 class="snet-card_title">Blog Posts</h2>     
+                            {% assign index = 0 %}
+                            {% for e in site.external_feed %}
+                            <a class="main-url" href="{{ e.feed_url }}" target="_blank">
+                                <div class="snet-blog-entry">
+                                    {% assign img_src="/theme/assets/images/" %}
+                                    {% assign img_src= img_src | append: page.blogcards[0].icon %}
+                                    {% if jekyll.environment == 'production' %}
+                                    {% assign img_src = site.snet.baseurl | append: img_src %}
+                                    {% endif %}
+                                    {% if e.feed_image %}
+                                    {% assign img_src = e.feed_image %}
+                                    {% endif %}
+                                    <img class="snet-card_descriptionicon align-self-center" src="{{ img_src }}">          
+                                    <div class="snet-blog-entry_content">
+                                        <span>{{ e.pub_date }}</span>
+                                        <h4>{{ e.title }}</h4>
+                                        <p>{{ item.description }}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            {% if index == 3 %}
+                            {% break %}
+                            {% endif %}
+
+                            {% assign index = index | plus: 1 %}
+                            {% endfor %}                                                    
+                            <a href="https://blog.singularitynet.io/" target="_blank" class="snet-viewmore_outlinebutton">View More</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 pt-4">
+                        <div class="snet-card"> 
+                            <h2 class="snet-card_title">Tools & Resources</h2>  
+                            {% for item in page.tools_cards %}                              
+                            <div class="snet-event-entry">
+                                <div class="snet-event-entry_content">
+                                    <h4>
+                                        {{ item.title }}
+                                    </h4>
+                                    <div class="contents">
+                                        {{ item.description }}   
+                                        <div class="clearfix mt-1 actionbuttons">
+                                            <a href="{{ item.left_url_link }}" target="_blank" rel="noreferrer noopener" class="float-left mr-4">{{ item.left_url_name }}</a>
+                                            <a href="{{ item.right_url_link }}" target="_blank" rel="noreferrer noopener" class="float-left">{{ item.right_url_name }}</a>                                                                                                                           
+                                        </div>
+                                    </div>
+                                </div>                               
+                            </div>
+                            {% endfor %}                                                          
+                        </div>                        
+                    </div> 
+                </div>
+            </div>
+        </div>   
+
+
+
+        {% include site-footer.html %}
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>        
+    </body>
 </html>
