@@ -178,6 +178,7 @@ Use Protobuf and gRPC Maven plugins to compile the API of the service.
       <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
         <artifactId>protobuf-maven-plugin</artifactId>
+        <version>0.6.1</version>
         <configuration>
           <protocArtifact>com.google.protobuf:protoc:3.5.1:exe:${os.detected.classifier}</protocArtifact>
           <pluginId>grpc-java</pluginId>
