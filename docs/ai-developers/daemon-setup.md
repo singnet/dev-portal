@@ -11,11 +11,17 @@ title: AI Developers
 
 
 ## Get the Latest Binary 
-Download the latest Daemon [Released](https://github.com/singnet/snet-daemon/releases)
+Download the latest Daemon [here](https://github.com/singnet/snet-daemon/releases/latest)
 
-## Sample Configuration 
+## SSL Configuration
+The SingularityNet Daemon is designed to be deployed as a sidecar proxy alongside the service on a given host. All communication to the daemon needs to be secured using SSL and can be achieved in the following ways
+* Set up the daemon behind an nginx server
+* Use SSL certificates. <a href="https://dev.singularitynet.io/docs/ai-developers/daemon-ssl-setup/" target="_blank">This</a> guide walks thru the process of obtaining SSL certificates from Let's Encrypt
 
-For a detailed list of configurations available , please check [here](https://github.com/singnet/snet-daemon)
+
+## Configuration 
+
+The daemon needs to be configured for it to work with the corresponding AI service. For a detailed list of configurations available , please check [here](https://github.com/singnet/snet-daemon)
  ```json
 {
  "daemon_end_point": "0.0.0.0:8088",
@@ -36,6 +42,19 @@ You could also build a default configuration for Daemon by
 ```sh
 $ ./build/snetd-linux-amd64 init 
 ```
+
+### Key Configurations
+* SSL Certificates 
+  If you are using your own certificates (or from Let's Encrypt as described <a href="https://dev.singularitynet.io/docs/ai-developers/daemon-ssl-setup/" target="_blank">here</a>) add the following two entries to the daemon config
+   ```json
+    "ssl_cert": "/etc/letsencrypt/live/<daemon_domain>/fullchain.pem",
+    "ssl_key": "/etc/letsencrypt/live/<daemon_domain>/privkey.pem"
+   ``` 
+* AI Service Endpoint
+  This is the AI service end point to which the daemon will proxy all requests.
+   ```json
+    "passthrough_endpoint": "http://localhost:3000",
+   ``` 
 
 ## Start Daemon
 ```sh

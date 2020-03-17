@@ -408,7 +408,50 @@ ai-developers:
       title: Introduction
       excerpt:
       cta: Read more
-      url: '/docs/ai-developers/'    
+      url: '/docs/ai-developers/'
+  step-by-step-guide:
+    title: Step by Step Guide
+    children:
+      grpc:
+        title: "Step 1: gRPC Services"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/grpc'
+      etcd:
+        title: "Step 2: etcd storage"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/etcd'
+      etcd-setup:
+        title: "Step 3: etcd Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/etcdsetup'
+      create-wallet:
+        title: "Step 4: Creating an Ethereum Identity"
+        excerpt: 
+        cta: Read more
+        url: '/docs/ai-consumers/create-a-wallet'
+      org-setup:
+        title: "Step 5: Organization Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/organization-setup'
+      daemon:
+        title: "Step 6: Daemon Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/daemon-setup'
+      dapp-ui-component:
+        title: "Step 7: DApp UI Component for Service"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/dapp-ui-component'
+      service-setup:
+        title: "Step 8: Service Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/service'
   getting-started:
     title: Getting Started
     children:

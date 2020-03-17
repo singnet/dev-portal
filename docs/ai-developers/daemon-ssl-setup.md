@@ -21,17 +21,25 @@ dev_news: true
 micro_nav: true
        
 ---
+## Introduction
 
-0. Make sure your subdomain has been registered by the platform team. The subdomain needs to exist before you can request a ssl certificate.
+This section provides steps on securing your SingularityNet Daemon with Certbot from <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a>.
+<a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a> is a nonprofit Certificate Authority (CA) that provides an easy way to obtain and install free TLS/SSL certificates, thereby enabling encrypted HTTPS on web servers. It simplifies the process by providing a software client, Certbot, that attempts to automate most (if not all) of the required steps. Currently, the entire process of obtaining and installing a certificate is fully automated. The Lets Encrypt<a href="https://letsencrypt.org/getting-started/" target="_blank">getting started guide</a> gives a detailed explanation on using Lets Encrypt.
 
-1. Install certbot using the guide at https://certbot.eff.org/
+
+## Prerequisites
+* A fully registered domain name. This guide uses daemon_domain as an example throughout. 
+
+## Step 1 — Installing Certbot
+Install certbot using the guide <a href="https://certbot.eff.org/" target="_blank">here</a>
     - Install certbot on the server that will host the certificate
     - For software, select "None of the Above", and choose your OS to get detail install intructions.
     - If you are using Ubuntu 18.04 LTS you can go direct to: https://certbot.eff.org/lets-encrypt/ubuntubionic-other
-    - This guide also includes the process for getting a certificate, but specific instructions are also included below:
 
+## Step 2 — Obtaining an SSL Certificate
+We use the certbot authenticator to obtain an SSL Certificate. The certbot authenticator validates that you control the domain(s) you are requesting a certificate for, obtains a certificate for the specified domain(s), and places the certificate in the /etc/letsencrypt directory on your machine. The authenticator does not install the certificate (it does not edit any of your server’s configuration files to serve the obtained certificate). If you specify multiple domains to authenticate, they will all be listed in a single certificate. To obtain multiple separate certificates you will need to run Certbot multiple times.
 
-2. Here is an example of the running the `sudo certbot certonly` command, for `<domain_name>`
+Here is an example of the running the `sudo certbot certonly` command, for `<daemon_domain>`
 
 ```
 $ sudo certbot certonly
@@ -45,7 +53,7 @@ How would you like to authenticate with the ACME CA?
 Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 1   
 Plugins selected: Authenticator standalone, Installer None
 Enter email address (used for urgent renewal and security notices) (Enter 'c' to
-cancel): joel@singularitynet.io
+cancel): joe@daemon_domain.sh
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Please read the Terms of Service at
@@ -63,18 +71,18 @@ encrypting the web, EFF news, campaigns, and ways to support digital freedom.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 (Y)es/(N)o: n
 Please enter in your domain name(s) (comma and/or space separated)  (Enter 'c'
-to cancel): <domain_name>
+to cancel): <daemon_domain>
 Obtaining a new certificate
 Performing the following challenges:
-http-01 challenge for <domain_name>
+http-01 challenge for <daemon_domain>
 Waiting for verification...
 Cleaning up challenges
 
 IMPORTANT NOTES:
  - Congratulations! Your certificate and chain have been saved at:
-   /etc/letsencrypt/live/<domain_name>/fullchain.pem
+   /etc/letsencrypt/live/<daemon_domain>/fullchain.pem
    Your key file has been saved at:
-   /etc/letsencrypt/live/<domain_name>/privkey.pem
+   /etc/letsencrypt/live/<daemon_domain>/privkey.pem
    Your cert will expire on 2019-05-22. To obtain a new or tweaked
    version of this certificate in the future, simply run certbot
    again. To non-interactively renew *all* of your certificates, run
@@ -90,7 +98,8 @@ IMPORTANT NOTES:
    Donating to EFF:                    https://eff.org/donate-le
 ```
 
-3. Get the certificate path and key using the command: `sudo certbot certificates`
+## Step 3 — Getting the certificate path
+Get the certificate path and key using the command: `sudo certbot certificates`. This is needed for configuring the SingularityNet daemon
 
 ```
 $ sudo certbot certificates
@@ -98,50 +107,42 @@ Saving debug log to /var/log/letsencrypt/letsencrypt.log
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Found the following certs:
-  Certificate Name: <domain_name>
-    Domains: <domain_name>
+  Certificate Name: <daemon_domain>
+    Domains: <daemon_domain>
     Expiry Date: 2019-05-22 23:22:26+00:00 (VALID: 89 days)
-    Certificate Path: /etc/letsencrypt/live/<domain_name>/fullchain.pem
-    Private Key Path: /etc/letsencrypt/live/<domain_name>/privkey.pem
+    Certificate Path: /etc/letsencrypt/live/<daemon_domain>/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/<daemon_domain>/privkey.pem
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
 
-4. Base on the certificate paths from above, mount the certificate dir as a volume in your docker container. Note that the certificates
-may be symbolic links, so you can't just mount `/etc/letsencrypt/live/<domain_name>/`.
+## Step 4 — Mount certificate path (Only required if the daemon is being run in a docker container)
+Based on the certificate paths from above, mount the certificate dir as a volume in your docker container. Note that the certificates
+may be symbolic links, so you can't just mount `/etc/letsencrypt/live/<daemon_domain>/`.
 
 ```
-$ sudo ls -la /etc/letsencrypt/live/<domain_name>/
+$ sudo ls -la /etc/letsencrypt/live/<daemon_domain>/
 total 12
 drwxr-xr-x 2 root root 4096 Feb 22 00:22 .
 drwx------ 3 root root 4096 Feb 22 00:22 ..
-lrwxrwxrwx 1 root root   42 Feb 22 00:22 cert.pem -> ../../archive/<domain_name>/cert1.pem
-lrwxrwxrwx 1 root root   43 Feb 22 00:22 chain.pem -> ../../archive/<domain_name>/chain1.pem
-lrwxrwxrwx 1 root root   47 Feb 22 00:22 fullchain.pem -> ../../archive/<domain_name>/fullchain1.pem
-lrwxrwxrwx 1 root root   45 Feb 22 00:22 privkey.pem -> ../../archive/<domain_name>/privkey1.pem
+lrwxrwxrwx 1 root root   42 Feb 22 00:22 cert.pem -> ../../archive/<daemon_domain>/cert1.pem
+lrwxrwxrwx 1 root root   43 Feb 22 00:22 chain.pem -> ../../archive/<daemon_domain>/chain1.pem
+lrwxrwxrwx 1 root root   47 Feb 22 00:22 fullchain.pem -> ../../archive/<daemon_domain>/fullchain1.pem
+lrwxrwxrwx 1 root root   45 Feb 22 00:22 privkey.pem -> ../../archive/<daemon_domain>/privkey1.pem
 -rw-r--r-- 1 root root  692 Feb 22 00:22 README
 ```
 
 Directory listing shows us that the link is relative and jumps two directories above. 
-This means we need to mount `/etc/letsencrypt` (or mount where it points, e.g. `/etc/letsencrypt/archive/<domain_name>`, 
+This means we need to mount `/etc/letsencrypt` (or mount where it points, e.g. `/etc/letsencrypt/archive/<daemon_domain>`, 
 but this could break if certbot changes how it stores certs and manages renewals)
 
 ```
 $ docker run -v /etc/letsencrypt:/etc/letsencrypt [...]
 ```
-5. Updating daemon config
-    
-Add the following two entries to the daemon config
-    "ssl_cert": "/etc/letsencrypt/live/<domain_name>/fullchain.pem",
-    "ssl_key": "/etc/letsencrypt/live/<domain_name>/privkey.pem"
 
+## Step 5 — Schedule renewal of certificates
 
-6. Registering your service with new endpoint and https
-
-You'll need to update your service metadata to include the new ssl enabled endpoint.
-
-This is in the section beginning `"endpoints": [`
-
-7. Check cron or systemd timer is in place for renewal of certificates:
+Let's Encrypt certificates are valid for 90 days and need to be renewed post that. 
+Check cron or systemd timer is in place for renewal of certificates:
 
 `cat /etc/cron.d/certbot` or `systemctl show certbot.timer`
 
