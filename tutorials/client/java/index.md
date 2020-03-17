@@ -91,8 +91,8 @@ Plugins input number of parameters to get the API:
   use.
 
 There are couple of additional parameters in the code below. `ipfsRpcEndpoint`
-and `registryAddress` are optional but in case of the tutorial we should
-specify them properly because we are using a custom SingularityNET environment.
+and `registryAddress` are optional we should specify them properly when we are
+using a custom SingularityNET environment.
 
 Next two sections explain how to setup [Maven](#maven) and [Gradle](#gradle)
 projects.
@@ -196,7 +196,7 @@ Use Protobuf and gRPC Maven plugins to compile the API of the service.
 
 ### Gradle
 
-Add Maven Central and Jitpack repositories and apply SingularityNET and
+Add Maven Central and [Jitpack](https://jitpack.io) repositories and apply SingularityNET and
 Protobuf plugins in `build.gradle` file.
 
 ```gradle
@@ -330,19 +330,21 @@ try {
 }
 ```
 
-`Sdk` class keeps a connection to the Ethereum endpoint and initializes
-Ethereum smart contracts API. These resources should be released when an `Sdk`
-instance is not needed anymore. 
+[Sdk](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/client/Sdk.html)
+class keeps a connection to the Ethereum endpoint and initializes Ethereum
+smart contracts API. These resources should be released when an `Sdk` instance
+is not needed anymore. 
 
 ## Create service client
 
 Before opening connection to the service we need to specify a payment strategy.
-`OnDemandPaymentChannelPaymentStrategy` uses `MultiPartyEscrow` contract to pay
-for the service calls. It automatically finds an appropriate payment channel or
-opens the new one.  It extends the expiration date and adds the funds if it is
-required. It has two integer parameters. First parameter specifies the minimal
-channel lifetime in Ethereum blocks. Second parameter specifies the number of
-calls to prepay in the channel.
+[OnDemandPaymentChannelPaymentStrategy](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/paymentstrategy/OnDemandPaymentChannelPaymentStrategy.html)
+uses `MultiPartyEscrow` contract to pay for the service calls. It automatically
+finds an appropriate payment channel or opens the new one.  It extends the
+expiration date and adds the funds if it is required. It has two integer
+parameters. First parameter specifies the minimal channel lifetime in Ethereum
+blocks. Second parameter specifies the number of calls to prepay in the
+channel.
 
 ```java
 // 40320 is a week in Ethereum blocks assuming single block is mined in 15 seconds
