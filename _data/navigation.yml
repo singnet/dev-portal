@@ -310,16 +310,16 @@ ai-consumers:
   getting-started:
     title: Getting Started
     children:
-        mpe:
-          title: Multi-Party Escrow
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-consumers/mpe'
         registry:
           title: Registry
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/registry'
+        mpe:
+          title: Multi-Party Escrow
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/mpe'
         organization:
           title: Organization
           excerpt: 
@@ -335,6 +335,11 @@ ai-consumers:
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/marketplace'
+        snet-daemon-api:
+          title: Daemon API
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/daemon-api'          
         keyterms:
           title: Key Terms
           excerpt:
@@ -409,49 +414,6 @@ ai-developers:
       excerpt:
       cta: Read more
       url: '/docs/ai-developers/'
-  step-by-step-guide:
-    title: Step by Step Guide
-    children:
-      grpc:
-        title: "Step 1: gRPC Services"
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/grpc'
-      etcd:
-        title: "Step 2: etcd storage"
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/etcd'
-      etcd-setup:
-        title: "Step 3: etcd Setup"
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/etcdsetup'
-      create-wallet:
-        title: "Step 4: Creating an Ethereum Identity"
-        excerpt: 
-        cta: Read more
-        url: '/docs/ai-developers/create-a-wallet'
-      org-setup:
-        title: "Step 5: Organization Setup"
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/organization-setup'
-      daemon:
-        title: "Step 6: Daemon Setup"
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/daemon-setup'
-      dapp-ui-component:
-        title: "Step 7: DApp UI Component for Service"
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/dapp-ui-component'
-      service-setup:
-        title: "Step 8: Service Setup"
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/service'
   getting-started:
     title: Getting Started
     children:
@@ -511,62 +473,49 @@ ai-developers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/tokens'
-  organization-setup:
-    title: Organization Setup
+  set-up-guide:
+    title: Setup Guide
     children:
-        etcd:
-          title: Etcd Setup
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/etcdsetup'
-        publish-organization:
-          title: Publish Organization on Blockchain
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/organization-setup'
-  service-setup:
-    title: Service Setup
-    children:
-        snet-cli:
-          title: Publish Service on Blockchain
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/service-setup'
-        invoke-serivce-snet-cli:
-          title: Invoking a Serice - snet-cli
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/invoke-service-snet-cli'
-        invoke-serivce-dapp:
-          title: Invoking a Serice - Marketplace Dapp
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/marketplace-service_invocation'
-        invoke-serivce-sdk:
-          title: Invoking a Serice - sdk
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/sdk-tutorial'
-
-  daemon-setup:
-    title: Daemon Setup
-    children:
-      snet-daemon-api:
-        title: Daemon API
+      grpc:
+        title: "Step 1: gRPC Services"
         excerpt:
         cta: Read more
-        url: '/docs/ai-developers/daemon-api'
-      snet-daemon-ssl-setup:
-        title: Daemon SSL setup
+        url: '/docs/ai-developers/grpc'
+      etcd:
+        title: "Step 2: etcd storage"
         excerpt:
         cta: Read more
-        url: '/docs/ai-developers/daemon-ssl-setup'
-      snet-daemon:
-        title: Launching Daemon
+        url: '/docs/ai-developers/etcd'
+      etcd-setup:
+        title: "Step 3: etcd Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/etcdsetup'
+      create-wallet:
+        title: "Step 4: Creating an Ethereum Identity"
+        excerpt: 
+        cta: Read more
+        url: '/docs/ai-developers/create-a-wallet'
+      org-setup:
+        title: "Step 5: Organization Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/organization-setup'
+      daemon:
+        title: "Step 6: Daemon Setup"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/daemon-setup'
-
+      dapp-ui-component:
+        title: "Step 7: DApp UI Component for Service"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/dapp-ui-component'
+      service-setup:
+        title: "Step 8: Service Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/service'
   tutorials:
     title: Tutorials
     children:
@@ -575,6 +524,31 @@ ai-developers:
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/setupguide'
+        org-setup:
+          title: Publish Organization using snet-cli
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/organization-setup-sent-cli'          
+        service-setup:
+          title: Publish Service using snet-cli
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/service-setup'
+        invoke-serivce-snet-cli:
+          title: Invoking a Serice using snet-cli
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/invoke-service-snet-cli'
+        invoke-serivce-dapp:
+          title: Invoking a Serice using Marketplace Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/marketplace-service_invocation'
+        invoke-serivce-sdk:
+          title: Invoking a Serice using sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/sdk-tutorial'          
         tutorail:
           title: Tutorials
           excerpt: 

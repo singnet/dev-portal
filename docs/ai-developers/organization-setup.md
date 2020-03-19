@@ -11,150 +11,55 @@ title: AI Developers
 micro_nav: true
 
 ---
-#Publishing Organization on Blockchain
+## Organization Setup
+
+### Overview
+
+An organization on the SingularityNet platform is a logical entity that groups together various services and the set of identities that can work on these services. The first step to setting up a service on the platform is to create an organization. All metadata that is common across services is stored at an organization level.
+The key attributes of an organization are
+* **Owner** 
+    - This is an ethereum identity that represents the owner of the organization. 
+    - The user with this identity has complete control of the organization and services under the organization. 
+    - The user with this identity has alone can delete the organization from the SingularityNet platform
+
+* **Members** 
+    - These are a set of ethereum identities that can create and manage services
+    - This enables the organization owner to include additional team members to collaborate on the different services
+    - Users with this identity have complete control over all services but not on the organization
+
+* **Groups**
+    - Groups provide a mechanism of having multiple instances of a service in a geographically distributed manner
+    - All service metadata can be managed at a group level
+    - A group very roughly maps to a region in AWS but unlike in AWS is not a pre-determined list. Service owners can define the number of groups that they want
 
 
-### Setting Metadata
+* **Payment Storage**
+    - We use [etcd](etcd) for our payment storage which is defined at a group level
+    - Refer to [etcd-setup](etcdsetup) on how to set up an etcd cluster
 
-#### Create an Identity in snet-cli for Mainnet, if you already have an account with ether , then you can use it , as an example 
+* **Payment Address**
+    - This is an ethereum identity to which all payments will be processed.
+    - This is defined at a group level
+    - The user that has this identity alone can withdraw funds from this wallet
+    - **NOTE: This address does not need to be a member of the organization**
+
+### Creating ethereum identity
+
+There are many ways to create an ethereum identity. A few a listed below. 
+**In all cases the private key has to be stored securely as thats the only way to access the corresponding account.**
+
+#### Using snet-cli
+
+snet-cli is the command line utility to interact with the SIngularityNet platform. The following command can be used to create an identity
 
 ```sh
 snet identity create test-user key --private-key <PVT-KEY> --network mainnet
 ```
-#### Add the organization name, id and the type of organization
-test-org-name is the organization name and test-org-id is the organization id. 
+See the <a href="http://snet-cli-docs.singularitynet.io/organization.html" target="_blank">CLI documentation</a> for full details of actions the tool allows.
 
-```sh
-snet organization metadata-init test-org-name test-org-id individual
-```
-The following code snippet is included in the metadata file:  
-```json
-    "org_name": "test-org-name",
-    "org_id": "test-org-id",
-    "org_type": "individual",
+#### Using Metamask
 
-```
-
-#### Add in description about your organization
-```sh
-snet organization metadata-add-description [-h] [--description DESCRIPTION]
-                                           [--short-description SHORT_DESCRIPTION]
-                                           [--url URL]
-                                           [--metadata-file METADATA_FILE]
-```
-
-Example 
-```sh
-snet organization metadata-add-description --description "Describe your organization details here " --short-description  "This is short description of your organization" --url "https://anyurlofyourorganization"
-```
-
-the below will be added in to the metadata file 
-```json
-    "description": {
-        "description": "Describe your organization details here ",
-        "short_description": "This is short description of your organization",
-        "url": "https://anyurlofyourorganization"
-    },
-```
-
-
-#### Add in Recipient and group details 
-Use the same endpoint mentioned in the previous step, to setup the etcd cluster.  
-
-**groups** : Multiple groups can be associated with an organization, one payment type is associated with every group.
-**payment_address** : Address of the Service provider who would receive the payment
-**payment_channel_storage_type** : Type of storage to manage payments ( For Example ETCD )
-**endpoints** : Storage end points for the clients to connect.
-
-```sh
-snet organization add-group <group_name> <wallet_address> <etcd-end-point>
-```
-
-Example 
-```sh
-snet organization add-group default_groups 0x06A1D29e9FfA2415434A7A571235744F8DA2a514 https://your-etcdendpont:2379
-```
-This would append the below to the json
-```json
-"groups": [
-        {
-            "group_name": "default_groups",
-            "group_id": "gz/+/M9l/qxpfNzPn+T2XmTSPMKyphYyxSsQSPhEJXA=",
-            "payment": {
-                "payment_address": "0x06A1D29e9FfA2415434A7A571235744F8DA2a514",
-                "payment_expiration_threshold": 100,
-                "payment_channel_storage_type": "etcd",
-                "payment_channel_storage_client": {
-                    "connection_timeout": "100s",
-                    "request_timeout": "5s",
-                    "endpoints": [
-                        "https://your-etcdendpont:2379"
-                    ]
-                }
-            }
-        }
-    ]
-
-```
-
-#### Add in any images related to your organization 
-
-```sh
-snet organization metadata-add-assets [-h] [--metadata-file METADATA_FILE] ASSET_FILE_PATH ASSET_TYPE
-```
-Example
-```sh
-snet organization metadata-add-assets image.png  hero_image
-```
-Appends the following snippet code to the json script
-
-```json
-    "assets": {
-        "hero_image": "QmT3WWHEVsdQw5dD9TB4e1Xej2MfcQNrQS8FAHwBepG3HD/image.png"
-    },
-
-
-```
-
-#### Add in any contact details related to your organization
-```sh
-snet organization metadata-add-contact [-h] [--phone PHONE] [--email EMAIL]
-                                       [--metadata-file METADATA_FILE]
-                                       contact_type
-```
-Example
-```sh
- snet organization metadata-add-contact --phone 123456789 --email yourorg@yourorg support
-```
-Appends the following snippet code to the json script
-```json
-    "contacts": [
-        {
-            "contact_type": "support",
-            "email_id": "yourorg@yourorg",
-            "phone": "123456789"
-        }
-    ],
-
-```
-Now check the metadata file created 
-
-```sh
-cat organization_metadata.json
-```
-
-### Publish the organization 
-Ensure that you have an account with Ether to perform update/delete/add services for a particular organization.
-
-**Note** Only the owner is eligible to modify the metadata of an organization.
-
-
-
-```sh
-snet organization create mozi <addressofMember1>,<addressOfMember2>
-```
-
-See the [CLI documentation](http://snet-cli-docs.singularitynet.io/organization.html) for full details of actions the tool allows.
-
+<a href="https://metamask.io/" target="_blank">Metamask</a> is a browser extension for interacting with Blockchain enabled websites, such as marketplace.  
+In the initial startup, Metamask will prompt you to create an identity, which can be used in Blockchain transactions and for storing tokens.
 
 
