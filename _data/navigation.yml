@@ -500,7 +500,7 @@ ai-developers:
         title: "Step 4: Creating an Ethereum Identity"
         excerpt: 
         cta: Read more
-        url: '/docs/ai-developers/create-a-wallet'
+        url: '/docs/ai-developers/ethereum-identity'
       org-setup:
         title: "Step 5: Organization Setup"
         excerpt:
