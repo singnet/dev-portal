@@ -44,17 +44,42 @@ $ ./build/snetd-linux-amd64 init
 ```
 
 ### Key Configurations
-* SSL Certificates 
+* **ssl_cert and ssl_key**
+  <br/>
   If you are using your own certificates (or from Let's Encrypt as described <a href="https://dev.singularitynet.io/docs/ai-developers/daemon-ssl-setup/" target="_blank">here</a>) add the following two entries to the daemon config
    ```json
-    "ssl_cert": "/etc/letsencrypt/live/<daemon_domain>/fullchain.pem",
-    "ssl_key": "/etc/letsencrypt/live/<daemon_domain>/privkey.pem"
+   "ssl_cert": "/etc/letsencrypt/live/<daemon_domain>/fullchain.pem",
+   "ssl_key": "/etc/letsencrypt/live/<daemon_domain>/privkey.pem",
    ``` 
-* AI Service Endpoint
+* **passthrough_endpoint**
+  <br/>
   This is the AI service end point to which the daemon will proxy all requests.
    ```json
-    "passthrough_endpoint": "http://localhost:3000",
+   "passthrough_endpoint": "http://localhost:3000",
    ``` 
+* **daemon_end_point**
+  <br/>
+  This is the endpoint on which the daemon listens for requests and should be in the `<host>:<port>` format. This address should be publically accessible
+   ```json
+   "daemon_end_point": "0.0.0.0:7002",
+   ```   
+
+* **organization_id**
+  <br/>
+  ID of the organization (as set up on the SingularityNet platform) that this daemon belongs to.
+   ```json
+   "organization_id": "snet",
+   ```   
+
+* **service_id**
+  <br/>
+  ID of the service (as set up on the SingularityNet platform) that this daemon is proxys requests for. The daemon will fetch configuration from the SingularityNet platform based on the `organization_id` and `service_id`
+   ```json
+   "service_id": "example-service",
+   ```   
+
+
+The daemon <a href="https://github.com/singnet/snet-daemon#configuration" target="_blank">configuration</a> page has all the available configurations
 
 ## Start Daemon
 ```sh
