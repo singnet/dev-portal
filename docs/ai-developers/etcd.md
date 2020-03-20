@@ -30,7 +30,4 @@ etcd is written in Go and uses the Raft consensus algorithm to manage a highly-a
 * Free Call Usage
 at an organization level. 
 
-## Samples
-
-* The <a href="https://github.com/singnet/example-service/tree/master/service" target="_blank">example service</a> is an example of a Python arthimetic service with gRPC endpoints and a proto definition.
-* These <a href="https://grpc.io/docs/guides/" target="_blank">guides</a> are a good starting point to creating gRPC based services
+The section [ETCD setup](../etcdsetup) section details how to set up an etcd cluster

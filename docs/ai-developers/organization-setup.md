@@ -51,24 +51,7 @@ The key attributes of an organization are
 * **Contacts**
     - Different contact details of the organization
 
+## Creating ethereum identity
 
-### Creating ethereum identity
-
-There are many ways to create an ethereum identity. A few a listed below. 
-**In all cases the private key has to be stored securely as thats the only way to access the corresponding account.**
-
-#### Using snet-cli
-
-snet-cli is the command line utility to interact with the SIngularityNet platform. The following command can be used to create an identity
-
-```sh
-snet identity create test-user key --private-key <PVT-KEY> --network mainnet
-```
-See the <a href="http://snet-cli-docs.singularitynet.io/organization.html" target="_blank">CLI documentation</a> for full details of actions the tool allows.
-
-#### Using Metamask
-
-<a href="https://metamask.io/" target="_blank">Metamask</a> is a browser extension for interacting with Blockchain enabled websites, such as marketplace.  
-In the initial startup, Metamask will prompt you to create an identity, which can be used in Blockchain transactions and for storing tokens.
-
+[This](../ethereum-identity) section has details on creating an ethereum identity
 
