@@ -21,6 +21,7 @@ The key attributes of an organization are
     - This is an ethereum identity that represents the owner of the organization. 
     - The user with this identity has complete control of the organization and services under the organization. 
     - The user with this identity has alone can delete the organization from the SingularityNet platform
+    - The user with this identity can transfer ownership to another user
 
 * **Members** 
     - These are a set of ethereum identities that can create and manage services
@@ -42,6 +43,14 @@ The key attributes of an organization are
     - This is defined at a group level
     - The user that has this identity alone can withdraw funds from this wallet
     - **NOTE: This address does not need to be a member of the organization**
+
+* **Assets**
+    - Images for the Organization. 
+    - These images will be displayed on the SingularityNet Marketplace DApp
+
+* **Contacts**
+    - Different contact details of the organization
+
 
 ### Creating ethereum identity
 

@@ -515,15 +515,10 @@ ai-developers:
         title: "Step 8: Service Setup"
         excerpt:
         cta: Read more
-        url: '/docs/ai-developers/service'
+        url: '/docs/ai-developers/service-setup'
   tutorials:
     title: Tutorials
     children:
-        setup:
-          title: Setup Guide
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/setupguide'
         org-setup:
           title: Publish Organization using snet-cli
           excerpt:
@@ -533,7 +528,7 @@ ai-developers:
           title: Publish Service using snet-cli
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/service-setup'
+          url: '/docs/ai-developers/service-setup-snet-cli'
         invoke-serivce-snet-cli:
           title: Invoking a Serice using snet-cli
           excerpt:
