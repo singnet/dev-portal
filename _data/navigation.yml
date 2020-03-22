@@ -506,21 +506,21 @@ ai-developers:
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/organization-setup'
+      service-setup:
+        title: "Step 6: Service Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/service-setup'
       daemon:
-        title: "Step 6: Daemon Setup"
+        title: "Step 7: Daemon Setup"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/daemon-setup'
       dapp-ui-component:
-        title: "Step 7: DApp UI Component for Service"
+        title: "Step 8: DApp UI Component for Service"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/dapp-ui-component'
-      service-setup:
-        title: "Step 8: Service Setup"
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/service-setup'
   tutorials:
     title: Tutorials
     children:
@@ -528,7 +528,7 @@ ai-developers:
           title: Publish Organization using snet-cli
           excerpt:
           cta: Read more
-          url: '/docs/ai-developers/organization-setup-sent-cli'          
+          url: '/docs/ai-developers/organization-setup-sent-cli'
         service-setup:
           title: Publish Service using snet-cli
           excerpt: 

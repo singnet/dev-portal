@@ -53,5 +53,9 @@ The key attributes of an organization are
 
 ## Creating ethereum identity
 
-[This](../ethereum-identity) section has details on creating an ethereum identity
+[This](../ethereum-identity) section has details on creating an ethereum identity.
+
+## Publishing an organization using snet-cli
+
+[This](../organization-setup-sent-cli) section gives a step by step guide on publishing an organization using the snet-cli
 
