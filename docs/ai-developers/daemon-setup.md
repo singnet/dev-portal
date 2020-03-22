@@ -44,6 +44,13 @@ $ ./build/snetd-linux-amd64 init
 ```
 
 ### Key Configurations
+* **blockchain_network_selected**
+  <br/>
+  Should be main for production use. Other supported values are kovan,ropsten or local which are to be used for testing only
+   ```json
+   "blockchain_network_selected": "main",
+   ```   
+
 * **ssl_cert and ssl_key**
   <br/>
   If you are using your own certificates (or from Let's Encrypt as described <a href="https://dev.singularitynet.io/docs/ai-developers/daemon-ssl-setup/" target="_blank">here</a>) add the following two entries to the daemon config
