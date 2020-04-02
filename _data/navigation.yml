@@ -610,6 +610,31 @@ products:
       url: '/products/rfai'
   staking:
     title: Staking
-    excerpt:
-    cta: Read more
-    url: '/products/staking'
+    children:    
+      overview:
+        title: Overview
+        excerpt:
+        cta: Read more
+        url: '/products/staking'
+      staking-timeline:
+        title: Staking Timeline
+        excerpt:
+        cta: Read more
+        url: '/products/stake-timeline'
+      stake-window:
+        title: Stake Window
+        excerpt:
+        cta: Read more
+        url: '/products/stake-window'
+      stake-opt-out:
+        title: Stake Opt-out
+        excerpt:
+        cta: Read more
+        url: '/products/stake-opt-out'
+      stake-reward:
+        title: Stake Reward
+        excerpt:
+        cta: Read more
+        url: '/products/stake-reward'                        
+           
+

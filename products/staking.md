@@ -14,33 +14,28 @@ micro_nav: true
 Staking is the process of holding AGI tokens for rewards to support the operations of AI marketplace.
 It is an elegant way of securing an additional pool of AGI tokens usable for mediating the exchanges of AGI tokens to fiat as needed. 
 
-## [Overview](#overview)
+## The Fiat-Crypto Gateway
 
-We will use staked AGI tokens to fund the Fiat-Crypto gateway liquidity pool, and users who agree to lock up their tokens for a time period to help us with that will be rewarded, initially with bonus tokens from the Foundation and possibly later with additional rewards.
+The role of staking in the SingularityNET platform ecosystem is closely tied to the fiat-crypto gateway — a collection of software processes that together allow users the option to interact with AI providers and other users on the SingularityNET platform using entirely fiat currency rather than AGI tokens.
 
-We decided to enable staking before the Fiat-Crypto gateway is ready to benefit from this liquidity pool, as we believe this will be a valuable learning exercise for us and for the community, and it will allow us to fine-tune any parameters and work out any kinks before deploying the staked tokens for their ultimate purpose. So for the time being, tokens will just be locked in the AGI Staking smart contract, but users will receive their rewards nonetheless.
+Even with a full fiat-crypto gateway in place, all value exchanged between AI services and their users on SingularityNET will take place using AGI tokens on the back end. Designing the gateway in such a way allows the 
+SingularityNET platform to provide the convenience of fiat currency to its users and additionally permits the gateway to co-exist with the unique economic logic of the AGI token, which is key to the philosophy and operation of the SingularityNET network
 
-## [Calls for Staking](#staking-calls)
+The first half of the fiat-crypto gateway — automated fiat-to-AGI conversion for platform usage — is already in place, at least in initial form. A PayPal interface to the platform has been constructed, which allows users to purchase AI services from providers using their PayPal wallets. As PayPal wallets are easily filled using fiat currency, this interface allows for payment using fiat for service users on the platform.
 
-AGI token staking will happen in fixed time period windows -- if you stake your tokens, they'll be locked in the staking smart contract for at least one window. Before that window of time begins, there is a call for staking period, which lasts a fixed period again. 
+The second half of the fiat-crypto gateway (yet to be built) will enable AI service providers to automatically convert the AGI tokens they earn on the platform into fiat. B
 
-During that call for staking period, any AGI token holder can submit a request for staking through our forthcoming AGI Staking DApp. There is a minimum amount of AGI that can be staked, largely to ensure the operation is worthwhile for both the staker and the foundation, considering the gas costs of moving the tokens into the staking smart contract and then out of it along with rewards.
 
-We currently don't have maximum amounts allowed per user, nor a cap on the amount we will accept for staking. We may enable per user caps in the future if we see the staking rewards are being concentrated in the hands of a few large tokenholders to the detriment of the wider community. We're unlikely to implement overall staking caps, but can't rule out the possibility in some distant future. Both possibilities exist in the smart contract code, should they be necessary.
+## Why the AGI Token Needs Staking
 
-At the end of the call for staking period, staking requests are officially accepted. If we enable either of those caps, then not all staking requests may be accepted. Right now, and for the duration of our initial staking experiments, all valid requests will be accepted. 
+To make the fiat-crypto gateway work on the back end requires the operator of the gateway (i.e. SingularityNET Foundation or some entity it nominates) to engage in continual exchanges of fiat currency for AGI tokens. When a user pays for an AI service in fiat, this fiat then needs to be turned into AGI to pay the AI agent. Further, when a service provider requests payment in fiat for access to their AI agent, the AGI that these agents have received as payment need to be turned into fiat.
 
-## [Staking Window Timeline](#staking-timeline)
+Doing all these exchanges, in practice, requires a “liquidity pool” of AGI tokens that can be provided in exchange for fiat as needed. The operator of the fiat-to-AGI and AGI-to-fiat exchanges need to have some AGI tokens and some fiat currency on hand so that when someone needs to change AGI for fiat, it has the fiat; and vice-versa when someone needs to change fiat for AGI, it has the AGI.
 
-Once the call for staking period is over and requests are accepted, a staking window of the specified time period begins. Tokens are locked in the staking smart contract for the duration of that window.  Towards the end of the window, two things happen:
+![staking](/assets/img/staking/staking_flow.jpeg)
 
-* A new call for staking period begins, as described above. There is a time window during which users can request their tokens back at the end of the current window. 
+Staking is an elegant way of securing an additional pool of AGI tokens usable for mediating the exchanges this gateway requires.
 
-* If users don't request their tokens back, they default to be automatically re-staked in the next window, along with the reward tokens. Users can turn off auto-renewal, in which case their tokens will not be re-staked; instead, they will sit in the smart contract, available for withdrawal. Users can then withdraw their tokens at their convenience. All these operations can be done through the easy to use AGI Staking Dapp.
+When an AGI token holder stakes their tokens, this means they are agreeing to “lock-up” and not use their tokens for a period of time. They are temporarily handing over their tokens to the Foundation to manage the staking process — until the lock-up period expires, and they can request the tokens back. These staked tokens are then part of the pool that can be used to mediate the fiat-to-AGI exchanges required on the back end of the fiat-crypto gateway.
 
-Right after the staking window is over, the staking rewards are delivered to users, proportionally to their share of the overall staked pool in that window. 
-
-The diagram below shows the timeline (with sample time periods) of the key events (calls for staking, withdrawal windows, rewards delivery and the chaining of consecutive staking windows)
-
-![staking](/assets/img/staking/staking_sequence.jpg)
-
+In exchange for providing their tokens to be used in this way, the AGI token holder who has staked their tokens is provided with a certain number of bonus AGI tokens, similarly to fiat depositors earning interest.
