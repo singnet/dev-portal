@@ -32,7 +32,7 @@ Infrastural diagram of ETCD Cluster setup on AWS.
 
 ## Generating Certificates
 
-To setup the cluster, use three types of certificate, such as: 
+To setup the cluster, use three types of certificate, such as:
 - **Client certificate** : Server uses to authenticate client. For example etcdctl, etcd proxy, or docker clients.
 - **Server certificate** : Server uses and client verifies for server identity. For example docker server or kube-apiserver.
 - **Peer certificate**   : etcd cluster  members uses this certificate to communicate both ways.
@@ -176,7 +176,7 @@ server.pem
 
 ### Generate peer certificate
 ```bash
-cfssl print-defaults csr > member1.json
+cfssl print-defaults csr > member-1.json
 ```
 Substitute CN and hosts values, for example:
 ```json
@@ -203,15 +203,15 @@ Substitute CN and hosts values, for example:
     ]
 }
 ```
-Now we are ready to generate member1 certificate and private key:
+Now we are ready to generate member-1 certificate and private key:
 ```bash
-cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=peer member1.json | cfssljson -bare member1
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=peer member-1.json | cfssljson -bare member-1
 ```
 The following files are generated:
 ```
-member1-key.pem
-member1.csr
-member1.pem
+member-1-key.pem
+member-1.csr
+member-1.pem
 ```
 Repeat the above steps for each etcd member hostname.
 
@@ -256,12 +256,12 @@ Download the etcd binary in each of the boxes and and follow the steps below to 
 Download the binary of the etcd in each server.
 ```bash
 cd ~
-wget https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz
-tar -zxvf etcd-v3.3.13-linux-amd64.tar.gz
-cd etcd-v3.3.13-linux-amd64/
+wget https://github.com/etcd-io/etcd/releases/download/v3.1.20/etcd-v3.1.20-linux-amd64.tar.gz
+tar -zxvf etcd-v3.1.20-linux-amd64.tar.gz
+cd etcd-v3.1.20-linux-amd64/
 sudo mv etcd etcdctl /usr/bin/
 cd ~
-rm -rf etcd-v3.3.13-linux-amd64*
+rm -rf etcd-v3.1.20-linux-amd64*
 ```
 
 ### Copy the generated certificates.
@@ -330,14 +330,14 @@ You would get the below output.
 
 **Note**: Ship the `ca.pem`, `client.pem` & `client-key.pem` files along with daemon, and follow the daemon configuration to connect between etcd and daemon.
 
-###Setting up your own ETCD cluster 
+###Setting up your own ETCD cluster
          To set up your own ETCD cluster please follow the link here .  
-      Certificates for ETCD 
+      Certificates for ETCD
          For snet all ETCD storage , required certificates are available at drive  
          For SNET Organisation, in order to renew the ETCD Client Certificates
 Run the etcd-client-certificates-generation job.
 This will generate client-certificates in this path.
-        
+
         For other Organisations, follow the below steps to regenerate the etcd client certificates.
 Download the cfssl & cfssljson using the below commands
 
