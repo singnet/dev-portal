@@ -482,45 +482,55 @@ ai-developers:
     title: Setup Guide
     children:
       grpc:
-        title: "Step 1: gRPC Services"
+        title: "gRPC Services"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/grpc'
       etcd:
-        title: "Step 2: etcd storage"
+        title: "etcd storage"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/etcd'
       etcd-setup:
-        title: "Step 3: etcd Setup"
+        title: "etcd Setup"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/etcdsetup'
       create-wallet:
-        title: "Step 4: Creating an Ethereum Identity"
+        title: "Creating an Ethereum Identity"
         excerpt: 
         cta: Read more
         url: '/docs/ai-developers/ethereum-identity'
       org-setup:
-        title: "Step 5: Organization Setup"
+        title: "Organization Setup"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/organization-setup'
+      collaboration:
+        title: "Collaboration"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/collaboration'        
       service-setup:
-        title: "Step 6: Service Setup"
+        title: "Service Setup"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/service-setup'
       daemon:
-        title: "Step 7: Daemon Setup"
+        title: "Daemon Setup"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/daemon-setup'
       dapp-ui-component:
-        title: "Step 8: DApp UI Component for Service"
+        title: "DApp UI Component for Service"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/dapp-ui-component'
+      claims:
+        title: "Claim AGI"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/claim'              
   tutorials:
     title: Tutorials
     children:
