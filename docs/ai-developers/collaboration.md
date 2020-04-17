@@ -30,4 +30,4 @@ Members of an organization can do the following
 * Edit / Delete Services
 
 Members **cannot perform any operation at an organization level**. 
-Organization level activities such as editing the organization etc can only be done by the owner
+Organization level activities such as publishing any changes to the organization etc can only be done by the owner
