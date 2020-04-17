@@ -37,7 +37,7 @@ This tutorial explains how to create a SingularityNET service client in Java
 language. The content of the tutorial assumes reader is familiar with Java
 programming language and Maven or Gradle project management system. One can
 find the [full code of the tutorial
-application](https://github.com/singnet/snet-sdk-java/tree/master/example/tutorial)
+application](https://github.com/singnet/snet-sdk-java/tree/0.3.1/example/tutorial)
 in Java SDK repository. SingularityNET [Java SDK API
 documentation](https://jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc)
 is located at Jitpack.  In order to complete the tutorial one should have [JDK
