@@ -14,7 +14,7 @@ micro_nav: true
 
 ## Organization Metadata
 
-The organization metadata is the description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster. In order to use a service, the client needs to know the following:
+The organization metadata is the description of a SingularityNET Organization and is, by default, hosted on the SingularityNET IPFS cluster. In order to use a service, the client needs to know the following:
 - The Organization metadata
 - The Service metadata
 There are three ways of providing this metadata to the clients and the daemons:
