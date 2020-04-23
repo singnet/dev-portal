@@ -392,16 +392,26 @@ ai-consumers:
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/setupguide'
-        snet-cli:
-          title: snet-cli
-          excerpt: 
+        invoke-serivce-snet-cli:
+          title: Invoking a Serice using snet-cli
+          excerpt:
           cta: Read more
-          url: '/docs/ai-consumers/snet-cli-tutorial'
-        sdk:
-          title: SDK
-          excerpt: 
+          url: '/docs/ai-consumers/invoke-service-snet-cli'
+        invoke-serivce-dapp:
+          title: Invoking a Serice using Marketplace Dapp
+          excerpt:
           cta: Read more
-          url: '/docs/ai-consumers/sdk-tutorial'
+          url: '/docs/ai-consumers/marketplace-service_invocation'
+        invoke-serivce-java-sdk:
+          title: Invoking a Serice using Java sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/java-sdk'
+        invoke-serivce-sdk:
+          title: Invoking a Serice using sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/sdk-tutorial'          
   troubleshooting:
       title: Troubleshooting
       excerpt: How to communicate with SingularityNET services with the stateless method.
@@ -554,6 +564,11 @@ ai-developers:
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/marketplace-service_invocation'
+        invoke-serivce-java-sdk:
+          title: Invoking a Serice using Java sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/java-sdk'
         invoke-serivce-sdk:
           title: Invoking a Serice using sdk
           excerpt:
