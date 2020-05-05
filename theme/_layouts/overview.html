@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include site-head.html %}
+    </head>
+    <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
+        {% include site-header.html %}  
+
+        <div class="wrapper">
+            <div class="container-fluid">
+                <section class="snet-section_gettingstarted">
+                    <div class="row">
+                        <div class="col">
+                            <div class="snet-card fullwidth">
+                                <div class="snet-card_content">                                  
+                                    <div class="row">
+                                        <div class="col-12 col-sm-9">
+                                            <h3 class="snet-card_title">{{ page.title }}</h3>                                              
+                                            <p class="big">
+                                                {{ page.description }}
+                                            </p>
+                                        </div>   
+                                        <div class="col-12 col-md-3">
+                                            <ul class="snet-card_list pt-3 pl-3 pl-md-0">
+                                                {% for item in page.gettingstarted_cards %}                                           
+                                                <li><a href="{{ item.url_link }}">{{ item.url_name }}</a></li>
+                                                {% endfor %}    
+
+                                            </ul>
+                                        </div>                                           
+                                        <!-- 
+                                                                                        <li><a href="#">Get Started Guide</a></li>
+                                                                                        <li><a href="#">Concepts and Components</a></li>
+                                                                                        <li><a href="#">Basics of AI</a></li>
+                                                                                        <li><a href="#">View all Core Concepts</a></li>
+                                        -->
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </section>                    
+                <section class="snet-section_byuser">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>By User</h2>
+                        </div>
+                        {% for item in page.byuser_cards %}  
+                        <div class="col-xs-12 col-md-4 byuser-cards">
+                            <div class="snet-card full-height">
+                                <div class="snet-card_content">
+                                    <div class="snet-card_topimage vector-fix">
+                                        <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.img }}">                                             
+                                    </div>
+                                    <h3 class="snet-card_title">{{ item.title }}</h3>
+                                    <div class="snet-card_innercontents">
+                                        {{ item.description }}
+                                        <ul class="snet-card_list">
+                                            {% for item_inner in item.urls %}                                              
+                                            <li><a href="{{ item_inner.url_link }}">{{ item_inner.url_name }}</a></li>
+                                            {% endfor %}                                             
+                                        </ul>                                         
+                                    </div>                                       
+                                </div>
+                            </div>                              
+                        </div>
+                        {% endfor %} 
+
+                    </div>                  
+                </section>                    
+                <section class="snet--section_byproduct">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>By Product</h2>
+                        </div>
+                        {% for item in page.byproduct_cards %}  
+                        <div class="col-xs-12 col-md-3 byproduct-cards">
+                            <a href="{{ item.url }}">
+                                <div class="snet-card full-height">
+                                    <div class="snet-card_content">
+                                        <div class="snet-card_topimage vector-fix">
+                                            <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.img }}">                                                                                         
+                                        </div>
+                                        <h3 class="snet-card_title">{{ item.title }}</h3>
+                                        <div class="snet-card_innercontents">
+                                            {{ item.description }}
+                                        </div>                                       
+                                    </div>
+                                </div>
+                            </a>                              
+                        </div>
+                        {% endfor %}                        
+                    </div> 
+                </section>  
+                <!-- <section class="snet--section_byplatform">
+                    <div class="row">
+                        <div class="col">
+                            <div class="snet-card fullwidth">
+                                <div class="snet-card_content">
+                                    <h3 class="snet-card_title">By Platform</h3>                                    
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="snet-card_innercontents">
+                                                <p>
+                                                    SingularityNET works with programming languages you perfer.  Check out how to use them with the SNET clients. We will be supporting other languages in the future.                                            
+                                                </p>                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                {% for item in page.byplatform_cards %}  
+                                                <div class="col">
+                                                    <div class="snet-platformcards">
+                                                        <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/{{ item.platform_img }}">                                             
+                                                        <span>{{ item.platform_name}}</span>
+                                                    </div>
+                                                </div>
+                                                {% endfor %} 
+                                            </div>
+                                        </div>                                                                         
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </section>   -->
+                <section class="snet--section_tools">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>By Tools & Resources</h2>
+                        </div>
+                        {% for item in page.bytools_cards %}  
+                        <div class="col-12 col-sm-6 col-md-3 bytool-cards">
+                            <div class="snet-card full-height">
+                                <div class="snet-card_content">
+                                    <h3 class="snet-card_title">{{ item.title }}</h3>
+                                    <div class="snet-card_innercontents tools">
+                                        <p>
+                                            {{ item.description }}                                            
+                                        </p>
+                                        <div class="snet-card_innercontents_bottomlinks">
+                                            <a target="_blank" href="{{ item.left_url_link }}" class="float-left">{{ item.left_url_name }}</a>
+                                            <a target="_blank" href="{{ item.right_url_link }}" class="float-right">{{ item.right_url_name }}</a>
+                                        </div>
+                                    </div>                                       
+                                </div>
+                            </div>                           
+                        </div>
+                        {% endfor %}                         
+                    </div> 
+                </section>                   
+            </div>
+        </div>
+
+        {% include site-footer.html %}
+
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>        
+    </body>
+</html>

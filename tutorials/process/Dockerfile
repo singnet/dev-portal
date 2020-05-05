@@ -5,19 +5,19 @@ ENV SNET_ROOT=/root/snet
 RUN mkdir -p ${SNET_ROOT} && \
     cd ${SNET_ROOT}
 
-# SNET Daemon v0.1.6
+RUN SNETD_VERSION=`curl -s https://api.github.com/repos/singnet/snet-daemon/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'` && \
+
 # Update, install SNET Daemon and its dependencies
 RUN apt-get update && \
     apt-get install -y wget && \
     mkdir snet-daemon && \
     cd snet-daemon && \
-    wget -q https://github.com/singnet/snet-daemon/releases/download/v0.1.6/snet-daemon-v0.1.6-linux-amd64.tar.gz && \
-    tar -xvf snet-daemon-v0.1.6-linux-amd64.tar.gz  && \
-    mv ./snet-daemon-v0.1.6-linux-amd64/snetd /usr/bin/snetd && \
+    wget -q https://github.com/singnet/snet-daemon/releases/download/${SNETD_VERSION}/snet-daemon-v${SNETD_VERSION}-linux-amd64.tar.gz && \
+    tar -xvf snet-daemon-${SNETD_VERSION}-linux-amd64.tar.gz  && \
+    mv ./snet-daemon-${SNETD_VERSION}-linux-amd64/snetd /usr/bin/snetd && \
     cd .. && \
     rm -rf snet-daemon
 
-# SNET CLI v0.1.9
 # Update, install SNET CLI dependencies, Python3.6 and SNET-CLI
 RUN apt-get install -y \
         git \
@@ -30,7 +30,7 @@ RUN apt-get install -y \
     cd /opt && \
     git clone https://github.com/singnet/snet-cli && \
     cd snet-cli && \
-    ./scripts/blockchain install && \
+    ./scripts/Blockchain install && \
     pip3 install -e .
 
 

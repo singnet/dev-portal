@@ -39,7 +39,7 @@ cd $SINGNET_REPOS
 git clone https://github.com/singnet/snet-cli
 
 cd snet-cli
-./scripts/blockchain install
+./scripts/Blockchain install
 
 pip3 install -e .
 
@@ -68,7 +68,7 @@ git clone https://github.com/singnet/snet-daemon.git
 cd snet-daemon
 
 # Take last contracts from the master
-pushd resources/blockchain
+pushd resources/Blockchain
 npm install -S $SINGNET_REPOS/platform-contracts/build/npm-module
 popd
 

@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: How to Create a Wallet
-description: Create a wallet so you can interact with the Ethereum blockchain
+description: Create a wallet so you can interact with the Ethereum Blockchain
 
 # extralink box
 extralink:
@@ -25,11 +25,13 @@ micro_nav: true
 
 ## Step 1. MetaMask
 
-[MetaMask](https://metamask.io/) is an internet browser [extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) that allows users to interact with the Ethereum blockchain and its decentralized applications. MetaMask serves as your access portal for both the Ethereum Mainnet and Ropsten.
+[Metamask](https://metamask.io/) is a browser extension to interact with Blockchain enabled websites like our marketplace.
+
+Install Metamask now from their website.
 
 ## Step 2. Create an Identity
 
-On first start up, MetaMask should ask you to create an identity which will be used for blockchain transactions and storing tokens. You will need to create a password for MetaMask, and then save the generated seed phrase for your wallet.
+On first start up, metamask should ask you to create an identity which will be used for Blockchain transactions and storing tokens.
 
 >NOTE: The seed phrase is like a pin code to your MetaMask account and helps you recover it in case you lose access to it. Never ever show, or give, this seed phrase to someone, and save it somewhere safe.
 

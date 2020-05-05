@@ -61,13 +61,11 @@ installation or upgrade to a newer version."
 
 In this tutorial we'll develop our service inside the docker container.
 
-Setup a `ubuntu:18.04` docker container (with proper `SNET Daemon` version) using provided `Dockerfile`.
+Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) using provided `Dockerfile`.
 
 ```
-SNETD_VERSION="v0.1.7"
 docker build \
     --build-arg language=cpp \
-    --build-arg snetd_version=$SNETD_VERSION \
     -t snet_cpp_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
 
 ETCD_HOST=$HOME/.snet/etcd/example-cpp-service/
@@ -109,7 +107,7 @@ In this tutorial we'll implement a service with two methods:
 So we'll use this command line to create project's skeleton
 
 ```
-./create_project.sh tutorial snet math-operations 7070
+./create_project.sh tutorial my-org math-operations 7070
 cd tutorial
 ```
 
@@ -187,7 +185,7 @@ Status check(ServerContext* context, const SingleInt* input, SingleString* outpu
 ## Step 5
 
 Now we'll write a client to test our server locally (without using the
-blockchain). Edit `src/client.cc`.
+Blockchain). Edit `src/client.cc`.
 
 Look for `PROTO_TYPES` and replace the `using` statements to reflect our data
 types defined in Step 3.
@@ -249,7 +247,7 @@ At this point you should have `server` and `client` in `bin/`
 
 ## Step 7
 
-To test our server locally (without using the blockchain)
+To test our server locally (without using the Blockchain)
 
 ```
 ./bin/server &
@@ -303,11 +301,11 @@ Example:
 ```
 
 This will start the `SNET Daemon` and your service. If everything goes well you will 
-see the blockchain transaction logs and then the following messages 
+see the Blockchain transaction logs and then the following messages 
 (respectively from: your service and `SNET Daemon`):
 
 ```
-# [blockchain log]
+# [Blockchain log]
 # Server listening on 0.0.0.0:7070
 # [daemon initial log]
 # INFO[0002] Blockchain is enabled: instantiate payment validation interceptor 
@@ -319,13 +317,13 @@ see the blockchain transaction logs and then the following messages
 You can double check if it has been properly published using
 
 ```
-snet organization list-services snet
+snet organization list-services my-org
 ```
 
 Optionally you can un-publish the service
 
 ```
-snet service delete snet math-operations
+snet service delete my-org math-operations
 ```
 
 Actually, since this is just a tutorial, you are expected to un-publish your
@@ -344,7 +342,7 @@ output the new channel id (that will be used by `testServiceRequest.sh`):
 ```
 ./openChannel.sh
 
-# [blockchain log]
+# [Blockchain log]
 # #channel_id
 # 10
 ```
@@ -356,7 +354,7 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 ```
 ./testServiceRequest.sh 12 4
 
-# [blockchain log]
+# [Blockchain log]
 #   response:
 #       v: 3
 ```
@@ -364,5 +362,5 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 That's it. Remember to delete your service as explained in Step 9.
 
 ```
-snet service delete snet math-operations
+snet service delete my-org math-operations
 ```

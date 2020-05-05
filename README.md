@@ -8,7 +8,7 @@ Our Developer Portal provides documentation about the SingularityNET Platform an
 
 If you are just starting out, read the [getting started](https://dev.singularitynet.io/tutorials/getting-started) page.
 
-If you are already familiar with blockchain technology like MetaMask, Ethereum and AGI, then you may want to skip immediately to browsing the beta [Marketplace](http://beta.singularitynet.io).
+If you are already familiar with Blockchain technology like MetaMask, Ethereum and AGI, then you may want to skip immediately to browsing the beta [Marketplace](http://beta.singularitynet.io).
 
 ## Setup
 

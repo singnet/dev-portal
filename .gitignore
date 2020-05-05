@@ -1,3 +1,5 @@
+runServer.sh
+nhRunServer.sh
 # ------
 # Common
 # ------
@@ -14,9 +16,17 @@ Thumbs.db
 # -----------------------
 /node_modules
 /npm-debug.log
+/mysources
 
 # ---------------
 # Compiled assets
 # ---------------
-.sass-cache
-_site
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# ---------------
+# Project Files
+# ---------------
+/nbproject

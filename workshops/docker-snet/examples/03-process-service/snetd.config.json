@@ -1,5 +1,5 @@
 {
-  "blockchain_enabled": true,
+  "|Blockchain_enabled": true,
   "daemon_end_point": "http://127.0.0.1:8080",
   "ethereum_json_rpc_endpoint": "http://127.0.0.1:8545",
   "ipfs_end_point": "http://localhost:5002/",

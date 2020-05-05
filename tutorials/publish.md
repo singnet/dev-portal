@@ -39,8 +39,8 @@ Run this tutorial from a bash terminal.
 
 In this tutorial we will publish an example service in SingularityNET using Ropsten Test Network.
 
-We have a [Docker](https://www.docker.com/) Image set up with all the required dependencies 
-but if you prefer you can install the dependencies by yourself in your own workstation.
+We build a [Docker](https://www.docker.com/) Image using this [Dockerfile](https://github.com/singnet/dev-portal/blob/master/tutorials/docker/Dockerfile) 
+that is set up with all the required dependencies but if you prefer you can install the dependencies by yourself in your own workstation.
 
 Using a Docker Image is usually easier (you don't need to be a Docker guru to follow this tutorial).
 To go this way, just proceed to the next tutorial step.
@@ -62,6 +62,8 @@ _Note that this tutorial assumes your user is part of the `docker` group that ha
 
 -------------------------------
 
+To secure payments, to set up your own ETCD Cluster, refer to the docs [ETCD Setup](/docs/concepts/etcdsetup)
+
 Build your own tutorial Docker image directly from our git repo using the following command:
 
 ```sh
@@ -76,20 +78,21 @@ ORGANIZATION_NAME="The $USER's Organization"
 
 SERVICE_ID=example-service
 SERVICE_NAME="SNET Example Service"
-SERVICE_IP=127.0.0.1
-SERVICE_PORT=7000
-
+#define the Public IP/domain name , that will be used to access your service
+SERVICE_IP=localhost
+SERVICE_PORT=7003
+DAEMON_PORT=7000
 DAEMON_HOST=0.0.0.0
 
 USER_ID=$USER
 
-# to secure payments
-ETCD_HOST=$HOME/.snet/etcd/$SERVICE_ID/
-ETCD_CONTAINER=/opt/singnet/etcd/
-
 # to make your snet's configs persistent
 SNET_CLI_HOST=$HOME/.snet/
 SNET_CLI_CONTAINER=/root/.snet/
+
+# ETCD local storage
+ETCD_HOST=$HOME/.snet/etcd/example-service/
+ETCD_CONTAINER=/opt/singnet/etcd/
 ```
 
 Now you can run a Docker container based on this image:
@@ -104,18 +107,19 @@ docker run \
     -e SERVICE_IP=$SERVICE_IP \
     -e SERVICE_PORT=$SERVICE_PORT \
     -e DAEMON_HOST=$DAEMON_HOST \
-    -e DAEMON_PORT=$SERVICE_PORT \
+    -e DAEMON_PORT=$DAEMON_PORT \
     -e USER_ID=$USER_ID \
-    -p $SERVICE_PORT:$SERVICE_PORT \
-    -v $ETCD_HOST:$ETCD_CONTAINER \
+    -p $DAEMON_PORT:$DAEMON_PORT \
     -v $SNET_CLI_HOST:$SNET_CLI_CONTAINER \
+    -v $ETCD_HOST:$ETCD_CONTAINER \
     -ti snet_publish_service bash
 ```
 
 This will put you into a shell within the docker container. The rest of the tutorial assumes you are workings from the Docker container's prompt.
 
-You can `ctrl-d` to exit, this will stop the container. If you wish to enter the container again, just use `docker start snet_publish_service` and
-you can continue from where you left off.
+You can ctrl-d to exit, this will stop the container.
+If you wish to enter the container again, you should start it with `docker start MY_SNET_SERVICE`, then execute the bash command with
+`docker exec -ti MY_SNET_SERVICE bash` and you can continue from where you left off.
 
 ## Step 3. Setup `SNET CLI` and create your identity
 
@@ -170,7 +174,13 @@ In order to be able to publish a service you need to be an owner or a member of 
 You can create a new organization using:
  
 ```sh
-snet organization create "$ORGANIZATION_NAME" --org-id $ORGANIZATION_ID -y
+ACCOUNT=`snet account print`
+
+snet organization metadata-init "$ORGANIZATION_NAME" $ORGANIZATION_ID individual
+
+snet organization add-group default_group $ACCOUNT http://127.0.0.1:2379
+
+snet organization create $ORGANIZATION_ID
 ```
 
 In case of an already taken `ORGANIZATION_ID` replace it with a different id of your choice.
@@ -184,6 +194,8 @@ export ORGANIZATION_ID="new-org-id"
 ```
 
 If you want to join an existing organization (e.g. `snet`), ask its owner to add your public key (account) into it before proceeding.
+
+See details of organization metadata in [here](/docs/concepts/organization-metadata).
 
 ## Step 6. Download and configure example-service
 
@@ -205,24 +217,38 @@ sh buildproto.sh
 
 Service is ready to run, but first we need to publish it on SingularityNET and configure the `SNET DAEMON`.
 
+
 ## Step 7. Prepare service metadata to publish the service
 
 First we need to create a service metadata file. You can do it by running:
 
 ```sh
-snet service metadata-init SERVICE_PROTOBUF_DIR SERVICE_DISPLAY_NAME PAYMENT_ADDRESS --endpoints SERVICE_ENDPOINT --fixed-price FIXED_PRICE
+snet service \
+	metadata-init \
+	SERVICE_PROTOBUF_DIR \
+	SERVICE_DISPLAY_NAME \
+	--group-name PAYMENT_GROUP_NAME \
+	--endpoints SERVICE_ENDPOINT \
+	--fixed-price FIXED_PRICE
 ```
 
 You need to specify the following parameters:
 * `SERVICE_PROTOBUF_DIR` - Directory which contains protobuf files of your service: ```service/service_spec/``` in our example service.
 * `SERVICE_DISPLAY_NAME` - Display name of your service. You can choose any name you want. 
-* `PAYMENT_ADDRESS` - Ethereum account which will receive payments for this service. You should set it to your ethereum account. 
+* `PAYMENT_GROUP_NAME` - Name of the payment group from organization metadata published in [Step 5](#step-5-create-an-organization).
 * `SERVICE_ENDPOINT` - Endpoint which will be used to connect to your service.
 * `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 10^-8 AGI (remember that 10^-8 AGI = 1 COG).
 
 ```sh
-ACCOUNT=`snet account print`
-snet service metadata-init service/service_spec/ "$SERVICE_NAME" $ACCOUNT --endpoints http://$SERVICE_IP:$SERVICE_PORT --fixed-price 0.00000001
+
+#set the type of encoding and provide the proto files
+snet service \
+    metadata-init \
+    service/service_spec \
+    "$SERVICE_NAME" \
+    --group-name default_group \
+    --fixed-price 0.00000001 \
+    --endpoints http://$SERVICE_IP:$DAEMON_PORT
 
 # describe your service and add an URL for further service's information.
 snet service metadata-add-description --json '{"description": "Description of my Service.", "url": "https://service.users.guide"}'
@@ -254,21 +280,25 @@ Create a `SNET DAEMON` configuration file named `snetd.config.json`.
 cat > snetd.config.json << EOF
 {
    "DAEMON_END_POINT": "$DAEMON_HOST:$DAEMON_PORT",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io",
+   "BLOCKCHAIN_NETWORK_SELECTED": "ropsten",
+   "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "REGISTRY_ADDRESS_KEY": "0x5156fde2ca71da4398f8c76763c41bc9633875e4",
    "PASSTHROUGH_ENABLED": true,
-   "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
+   "PASSTHROUGH_ENDPOINT": "http://localhost:$SERVICE_PORT",
    "ORGANIZATION_ID": "$ORGANIZATION_ID",
    "SERVICE_ID": "$SERVICE_ID",
+
+
    "PAYMENT_CHANNEL_STORAGE_SERVER": {
-       "DATA_DIR": "/opt/singnet/etcd/"
-   },
+        "DATA_DIR": "/opt/singnet/etcd/"
+    },
+
+
    "LOG": {
-       "LEVEL": "debug",
-       "OUTPUT": {
-          "TYPE": "stdout"
-       }
+        "LEVEL": "debug",
+        "OUTPUT": {
+            "TYPE": "stdout"
+        }
    }
 }
 EOF
@@ -306,11 +336,11 @@ snet account deposit 0.00000010 -y
 snet account balance
 
 # open a payment channel to your service:
-snet channel open-init $ORGANIZATION_ID $SERVICE_ID 0.00000010 +10days -y
+snet channel open-init $ORGANIZATION_ID default_group 0.00000010 +10days -y
 ```
 
-`snet channel open-init` has opened and initialized a channel with 10 COGs for `$ORGANIZATION_ID/$SERVICE_ID` with 
-expiration at 10 days (57600 blocks in the future with 15 sec/blocks). 
+`snet channel open-init` has opened and initialized a channel with 10 COGs for `$ORGANIZATION_ID` with 
+expiration at 10 days (57600 blocks in the future with 15 sec/blocks). You can now use any service under this organization
 This command prints the id of the created channel, record it to use in the following commands.
 
 ```sh
@@ -318,20 +348,20 @@ This command prints the id of the created channel, record it to use in the follo
 snet account balance
 
 # look for the channel balance (CHANNEL_ID was printed by 'snet channel open-init')
-snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
-```
+snet client get-channel-state <CHANNEL_ID> http://$SERVICE_IP:$DAEMON_PORT
+````
 
 Call your service using:
 
 ```sh
-snet client call $ORGANIZATION_ID $SERVICE_ID mul '{"a":12,"b":7}' -y
+snet client call $ORGANIZATION_ID $SERVICE_ID default_group mul '{"a":12,"b":7}' -y
 ```
 
 The MPE Payment Channel has changed, see its funds using:
 
 ```sh
 # 1 COG has been spent (signed) 
-snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
+snet client get-channel-state <CHANNEL_ID> http://$SERVICE_IP:$DAEMON_PORT
 ```
 
 At this point you've spent 1 COG (service cost was defined in [Step 7](#step-7-prepare-service-metadata-to-publish-the-service)),
@@ -341,7 +371,7 @@ You can keep calling the service until your MPE Payment Channel runs out of fund
 As the service provider, you can claim spent AGIs on your service at anytime using:
 
 ```sh
-snet treasurer claim-all --endpoint $SERVICE_IP:$SERVICE_PORT -y
+snet treasurer claim-all --endpoint http;//$SERVICE_IP:$DAEMON_PORT -y
 
 # claimed funds are now in MPE
 snet account balance
@@ -359,7 +389,7 @@ Once it did, you can claim the funds using ```snet channel claim-timeout-all```:
 
 ```sh
 # Shows spent/unspent AGIs in the MPE channel
-snet client get-channel-state <CHANNEL_ID> $SERVICE_IP:$SERVICE_PORT
+snet client get-channel-state <CHANNEL_ID> http://$SERVICE_IP:$DAEMON_PORT
 snet account balance
 
 # Move funds from all expired channels to MPE

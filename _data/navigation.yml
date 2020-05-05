@@ -1,0 +1,665 @@
+header:
+    logo:
+        text:
+        image: '/assets/images/layout/logo.png'
+    nav:
+        - item_name: Home
+          item_url: '/'
+        - item_name: Docs
+          item_url: '/docs/overview/'
+        - item_name: Products
+          item_url: ''
+          subheaders:
+          -
+            title: "AI Marketplace"
+            url: "https://beta.singularitynet.io"
+          - 
+            title: "Request For AI"
+            url: "https://rfai.singularitynet.io"          
+        - item_name: Community
+          item_url: ''
+          subheaders:
+          -
+            title: "FAQ"
+            url: "https://community.singularitynet.io/c/qa"
+          - 
+            title: "Forum"
+            url: "https://community.singularitynet.io/"
+          - 
+            title: "Telegram"
+            url: "https://t.me/singularitynet"    
+    secondnav:
+        - item_name: Overview
+          item_url: '/docs/overview/'
+        - item_name: Core Concepts
+          item_url: '/docs/concepts/'
+        - item_name: AI Consumer
+          item_url: '/docs/ai-consumers/' 
+        - item_name: AI Developer
+          item_url: '/docs/ai-developers/'
+        - item_name: Platform Dev
+          item_url: '/docs/platform-dev/'  
+        - item_name: Products
+          item_url: '/products'            
+
+footer:
+    content:
+        logo:
+            text:
+            image: '/assets/images/layout/logo.png'
+        copyright: Copyright &copy; 2020 SingularityNET. All rights reserved.
+        copyright_address: Stichting SingularityNET Barbara Strozzilaan 362 1083 HN Amsterdam The Netherlands
+    social_list:
+        - network_name: github
+          profile_icon: github
+          profile_url: 'https://github.com/singnet'
+        - network_name: twitter
+          profile_icon: twitter            
+          profile_url: 'https://twitter.com/singularity_net'
+        - network_name: facebook
+          profile_icon: facebook-square            
+          profile_url: 'https://www.facebook.com/singularityNET.io'
+        - network_name: linkedin
+          profile_icon: linkedin            
+          profile_url: 'https://www.linkedin.com/company/singularitynet/'
+        - network_name: youtube
+          profile_icon: youtube            
+          profile_url: 'https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw'
+        - network_name: instagram
+          profile_icon: instagram            
+          profile_url: 'https://instagram.com/singularitynet.io'
+
+docs:
+  concepts:
+    title: Core Concepts
+    url: "/docs/concepts"
+  tutorials:
+    title: Tutorials
+    url: "/tutorials"
+  provider:
+    title: AI Developer
+    url: "/docs/ai-developers/development"
+  buyer:
+    title: AI Consumer
+    url: "/docs/ai-consumers/snet-cli-tutorial"
+
+concepts:
+  introduction:
+    title: "SingularityNET Introduction "
+    url: "/docs/concepts/"
+  blockchain:
+    title: "What is Blockchain"
+    url: "/docs/concepts/blockchain"
+  ipfs:
+    title: "IPFS "
+    url: "/docs/concepts/ipfs"
+  mpe:
+    title: "Multi-party Escrow"
+    url: "/docs/concepts/mpe"
+  staking:
+    title: "Staking"
+    url: "/docs/concepts/staking"
+  key-terms:
+    title: "Key terms"
+    url: "/docs/concepts/keyterms"
+
+
+tutorials:
+  general: 
+    title: "General service publishing tutorials"
+    url: "/tutorials/index"
+  language:
+    title: "Tutorials by programming language"
+    url: "/tutorials/index"
+  workshop:
+    title: "Workshop Tutorials"
+    url: "/tutorials/index"
+
+contribute:
+    getting-started:
+      title: Getting Started
+      excerpt: In this section you'll find basic information about the SingularityNET Developer Portal theme and how to install it and use it properly.
+      cta: Read more
+      url: '/contribute/getting-started'
+    
+    configuration:
+      title: Configuration
+      excerpt: Our theme has a lot personalisation options. Here you can go through every single one available and set it properly to your wishes.
+      cta: Read more
+      url: '/contribute/configuration'
+    
+    manage-content:
+      title: Manage Content
+      excerpt: We've prepared a special guide for content management. Let's learn how to add syntax highlighting, examples, callouts and much more.
+      cta: Read more
+      url: '/contribute/manage-content'
+
+    deployment:
+      title: Deployment
+      excerpt: The SingularityNET Development Portal is always ready to deploy! You can host your own version on private web hosting, GitHub Pages or GitLab Pages. Choose the most suitable solution and deploy!
+      cta: Read more
+      url: '/contribute/deployment'
+    
+    theme-updates:
+      title: Theme Updates
+      excerpt: Sometimes we'll add a new feature or fix small theme bugs, and you'll need to update your SingularityNET Developer Portal in case you have installed it locally. In this section you can find a full theme update guide.
+      cta: Read more
+      url: '/contribute/theme-updates'
+    
+    contribution-guidelines:
+      title: Contribution Guidelines for Repos
+      excerpt: Help build the technological singularity by contributing to the SingularityNET project.
+      cta: Read more
+      url: '/contribute/contribution-guidelines'
+
+provider:
+    getting_started:
+      title: Getting Started
+      excerpt: Welcome to the SingularityNET Developer Portal. Here is a quick overview of things you need to know to get started with our developer tools.
+      cta: Read more
+      url: '/tutorials/getting-started'
+    singularitynet:
+      title: What is SingularityNET?
+      excerpt: A brief introduction to the SingularityNET decentralized marketplace.
+      cta: Read more
+      url: '/docs/concepts'
+    daemon:
+      title: An introduction to the SingularityNET Daemon
+      excerpt: Learn about the functionalities of the daemon and how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
+      cta: Read more
+      url: '/docs/concepts/daemon'
+    registry:
+      title: SingularityNET Registry
+      excerpt: This guide will teach you how the registry is used to expose information about AI services to the outside world so consumers can find and buy these services.
+      cta: Read more
+      url: '/docs/concepts/registry'
+    naming_standards:
+      title: Naming Standards
+      excerpt: About the standardisation of naming within the SingularityNET Network.
+      cta: Read more
+      url: '/docs/concepts/naming-standards'
+    integration_guidelines:
+      title: Service Integration Guidelines
+      excerpt: This guide will help AI providers to integrate services into the platform.
+      cta: Read more
+      url: '/tutorials/integration'
+    mpe:
+      title: The Multi-Party Escrow Contract
+      excerpt: An introduction to the deposit, withdrawal, and payment channel functionalities of the Multi-Party Escrow
+      cta: Read more
+      url: '/docs/concepts/multi-party-escrow'
+    stateless_mpe:
+      title: The Stateless Client with the Multi-Party Escrow
+      excerpt: How to communicate with SingularityNET services with the stateless method.
+      cta: Read more
+      url: '/docs/concepts/mpe-stateless-client'
+    channel_storage:
+      title: Payment Channel Storage
+      excerpt: Learn how to work with a payment channel to store and process information about service payments.
+      cta: Read more
+      url: '/docs/concepts/daemon-channel-storage'
+    mpe_metadata:
+      title: Multi-Party Escrow Service Metadata
+      excerpt: Learn how to use service metadata to describe your AI services.
+      cta: Read more
+      url: '/docs/concepts/service-metadata'
+    daemon_api:
+      title: SingularityNET Daemon API
+      excerpt: Learn how to use the SingularityNET Daemon API.
+      cta: Read more
+      url: '/docs/concepts/daemon-api'
+    deploy:
+      title: Deploy SingularityNET Locally
+      excerpt: Learn how to deploy a local version of the SingularityNET Marketplace.
+      cta: Read more
+      url: '/docs/development/local-singularitynet'
+    snet-cli-params:
+      title: Using the SNET-CLI to pass parameters to a service
+      excerpt: In this document, we look at how to pass parameters to a service in the SNET-CLI and how to pass binary parameters via a command line interface.
+      cta: Read more
+      url: '/docs/concepts/snet-cli'
+    publish_service:
+      title: How to Publish a SingularityNET Service
+      excerpt: Learn how to sell your AI service on the SingularityNET Marketplace.
+      cta: Read more
+      url: '/tutorials/publish'
+    platform_docker:
+      title: Getting started with Docker (SingularityNET)
+      excerpt: Use docker to publish a SingularityNET Service
+      cta: Read more
+      url: '/workshops/docker-snet'
+    opencog_docker:
+      title: Getting started with Docker (OpenCog)
+      excerpt: Use docker to work with OpenCog tools.
+      cta: Read more
+      url: '/workshops/docker-opencog'
+    cpp_service:
+      title: How to Write a SingularityNET Service in C++
+      excerpt: Getting started with C++ for your AI Service
+      cta: Read more
+      url: '/tutorials/cpp'
+    go_service:
+      title: How to Write a SingularityNET Service in Go
+      excerpt: Getting started with Go for your AI Service
+      cta: Read more
+      url: '/tutorials/go'
+    java_service:
+      title: How to Write a SingularityNET Service in Java
+      excerpt: Getting started with Java for your AI Service
+      cta: Read more
+      url: '/tutorials/java'
+    python_service:
+      title: How to Write a SingularityNET Service in Python
+      excerpt: Getting started with Python for your AI Service
+      cta: Read more
+      url: '/tutorials/python'
+    opencog_service:
+      title: How to Write an OpenCog Service to SingularityNET
+      excerpt: Getting started with OpenCog for your AI Service
+      cta: Read more
+      url: '/tutorials/opencog'
+    newsletter:
+      title: Newsletter
+      excerpt: Receive the latest SingularityNET Developer Updates by subscribing to the newsletter below.
+      cta: Read more
+      url: '/newsletter'  
+
+buyer:
+  getting-started:
+      title: Getting Started
+      excerpt: Welcome to the SingularityNET Developer Portal. Here is a quick overview of things you need to know to get started with our developer tools.
+      cta: Read more
+      url: '/tutorials/getting-started'
+  singularitynet:
+      title: What is SingularityNET?
+      excerpt: A brief introduction to the SingularityNET decentralized marketplace.
+      cta: Read more
+      url: '/docs/concepts'
+  mpe:
+      title: The Multi-Party Escrow Contract
+      excerpt: An introduction to the deposit, withdrawal, and payment channel functionalities of the Multi-Party Escrow
+      cta: Read more
+      url: '/docs/concepts/multi-party-escrow'
+  stateless-mpe:
+      title: The Stateless Client with the Multi-Party Escrow
+      excerpt: How to communicate with SingularityNET services with the stateless method.
+      cta: Read more
+      url: '/docs/concepts/mpe-stateless-client'
+  channel-storage:
+      title: Payment Channel Storage
+      excerpt: Learn how to work with a payment channel to store and process information about service payments.
+      cta: Read more
+      url: '/docs/concepts/daemon-channel-storage'
+  snet-cli-params:
+      title: Using the SNET-CLI to pass parameters to a service
+      excerpt: In this document, we look at how to pass parameters to a service in the SNET-CLI and how to pass binary parameters via a command line interface.
+      cta: Read more
+      url: '/docs/concepts/snet-cli'
+  newsletter:
+      title: Newsletter
+      excerpt: Receive the latest SingularityNET Developer Updates by subscribing to the newsletter below.
+      cta: Read more
+      url: '/newsletter'
+
+ai-consumers:
+  Introduction:
+      title: Introduction
+      excerpt:
+      cta: Read more
+      url: '/docs/ai-consumers/'       
+  getting-started:
+    title: Getting Started
+    children:
+        registry:
+          title: Registry
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/registry'
+        mpe:
+          title: Multi-Party Escrow
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/mpe'
+        organization:
+          title: Organization
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/organization'
+        service:
+          title: Service
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/service'
+        marketplace:
+          title: Marketplace Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/marketplace'
+        snet-daemon-api:
+          title: Daemon API
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/daemon-api'          
+        keyterms:
+          title: Key Terms
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/keyterms'
+
+  payments:
+    title: Payments
+    children:
+        tokens:
+          title: Tokens
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/tokens'
+
+        paypal:
+          title: Paypal
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/paypal'
+
+  service-invocation:
+    title: Service Invocation
+    children:
+        marketplace-dapp:
+          title: Marketplace-Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/marketplace-service_invocation'
+        snet-cli:
+          title: snet-cli
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/snet-cli'
+        sdk:
+          title: SDK
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/sdk'
+  tutorials:
+    title: Tutorials
+    children:
+        create-wallet:
+          title: How to Create a Wallet?
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/wallet'
+        setup:
+          title: Setup Guide
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/setupguide'
+        invoke-serivce-snet-cli:
+          title: Invoking a Serice using snet-cli
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/invoke-service-snet-cli'
+        invoke-serivce-dapp:
+          title: Invoking a Serice using Marketplace Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/marketplace-service_invocation'
+        invoke-serivce-java-sdk:
+          title: Invoking a Serice using Java sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/java-sdk'
+        invoke-serivce-sdk:
+          title: Invoking a Serice using sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/sdk-tutorial'          
+  troubleshooting:
+      title: Troubleshooting
+      excerpt: How to communicate with SingularityNET services with the stateless method.
+      cta: Read more
+      url: '/docs/ai-consumers/troubleshooting'
+
+ai-developers:
+  Introduction:
+      title: Introduction
+      excerpt:
+      cta: Read more
+      url: '/docs/ai-developers/'
+  getting-started:
+    title: Getting Started
+    children:
+        mpe:
+          title: MPE
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/mpe'
+        registry:
+          title: Registry
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/registry'
+        organization:
+            title: Organization
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/organization'
+        service:
+            title: Service
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/service'
+        daemon:
+          title: Daemon
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/daemon'
+        mpe-stateless-client:
+          title: Stateless Client
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/mpe-stateless-client'
+        marketplace:
+            title: Marketplace Dapp
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/marketplace'
+        naming-standards:
+          title: "Naming Standards"
+          url: "/docs/ai-developers/naming-standards"           
+        keyterms:
+            title: Key Terms
+            excerpt:
+            cta: Read more
+            url: '/docs/ai-developers/keyterms'
+  payments:
+    title: Payments
+    children:
+        channel-storage: 
+          title: Payment Channel Storage
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/daemon-channel-storage'
+        mpe:
+          title: Paypal
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/paypal'
+        tokens:
+          title: Tokens
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/tokens'
+  set-up-guide:
+    title: Setup Guide
+    children:
+      grpc:
+        title: "gRPC Services"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/grpc'
+      etcd:
+        title: "etcd storage"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/etcd'
+      etcd-setup:
+        title: "etcd Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/etcdsetup'
+      create-wallet:
+        title: "Creating an Ethereum Identity"
+        excerpt: 
+        cta: Read more
+        url: '/docs/ai-developers/ethereum-identity'
+      org-setup:
+        title: "Organization Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/organization-setup'
+      collaboration:
+        title: "Collaboration"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/collaboration'        
+      service-setup:
+        title: "Service Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/service-setup'
+      daemon:
+        title: "Daemon Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/daemon-setup'
+      dapp-ui-component:
+        title: "DApp UI Component for Service"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/dapp-ui-component'
+      claims:
+        title: "Claim AGI"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/claim'              
+  tutorials:
+    title: Tutorials
+    children:
+        org-setup:
+          title: Publish Organization using snet-cli
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/organization-setup-sent-cli'
+        service-setup:
+          title: Publish Service using snet-cli
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/service-setup-snet-cli'
+        invoke-serivce-snet-cli:
+          title: Invoking a Serice using snet-cli
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/invoke-service-snet-cli'
+        invoke-serivce-dapp:
+          title: Invoking a Serice using Marketplace Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/marketplace-service_invocation'
+        invoke-serivce-java-sdk:
+          title: Invoking a Serice using Java sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/java-sdk'
+        invoke-serivce-sdk:
+          title: Invoking a Serice using sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/sdk-tutorial'          
+        tutorail:
+          title: Tutorials
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/tutorials'
+        development:
+          title: More Examples
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/development'
+  troubleshooting:
+      title: Troubleshooting
+      excerpt:
+      cta: Read more
+      url: '/docs/ai-developers/troubleshooting'
+
+platform-dev:
+  Introduction:
+      title: Introduction
+      excerpt:
+      cta: Read more
+      url: '/docs/platform-dev/'      
+  registry:
+      title: Registry
+      excerpt:
+      cta: Read more
+      url: '/docs/platform-dev/registry'
+  daemon:
+      title: Daemon
+      excerpt: How to communicate with SingularityNET services with the stateless method.
+      cta: Read more
+      url: '/docs/platform-dev/daemon'
+  mpe:
+      title: Multi-Party Escrow
+      excerpt: How to communicate with SingularityNET services with the stateless method.
+      cta: Read more
+      url: '/docs/platform-dev/mpe'
+  channel-storage:
+      title: Daemon Channel Storage
+      excerpt: Channel Storage
+      cta: Read more
+      url: '/docs/platform-dev/daemon-channel-storage'
+
+products:
+  Introduction:
+      title: Introduction
+      excerpt:
+      cta: Read more
+      url: '/products/'     
+  marketplace:
+      title: AI Marketplace
+      excerpt:
+      cta: Read more
+      url: '/products/marketplace'
+  rfai:
+      title: Request For AI Service
+      excerpt:
+      cta: Read more
+      url: '/products/rfai'
+  staking:
+    title: Staking
+    children:    
+      overview:
+        title: Overview
+        excerpt:
+        cta: Read more
+        url: '/products/staking'
+      staking-timeline:
+        title: Staking Timeline
+        excerpt:
+        cta: Read more
+        url: '/products/stake-timeline'
+      stake-window:
+        title: Stake Window
+        excerpt:
+        cta: Read more
+        url: '/products/stake-window'
+      stake-opt-out:
+        title: Stake Opt-out
+        excerpt:
+        cta: Read more
+        url: '/products/stake-opt-out'
+      stake-reward:
+        title: Stake Reward
+        excerpt:
+        cta: Read more
+        url: '/products/stake-reward'                        
+           
+

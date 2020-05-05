@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		{% include site-head.html %}
-	</head>
-	<body class="{{ site.snet.color_theme }} maintenance">
-		<div class="align-container">
-			<div class="align-inner">
-				<h1 class="maintenance__title">{{ page.page_content.title }}</h1>
-				{% if page.page_content.message %}
-					<p>{{ page.page_content.message }}</p>
-				{% endif %}
-			</div><!-- /.align-inner -->
-		</div><!-- /.align-container -->
-	</body>
+    <head>
+        {% include site-head.html %}
+    </head>
+    <body class="maintenance" >
+        {% include site-header-minimal.html %}
+        <div class="wrapper">
+            <div class="container-fluid">
+                <div class="row mt-3">
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col-6">
+                        <img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/maintenance.svg">
+                        <h1 class="text-center display-4">{{ page.page_content.title }}</h1>
+                        <p class="text-center lead">{{ page.page_content.message_1 }}</p>                          
+                        <p class="text-center mt-3"><small>{{ page.page_content.message_2 }}</small></p>                        
+                    </div>                    
+                </div>             
+            </div>
+        </div>
+    </body>
 </html>
