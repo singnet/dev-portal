@@ -5,7 +5,7 @@
 <div class="snet-mobile-first collapse" id="snet-mobile-first"> 
     <ul>
         <li>
-            <a href="#" class="snet-mobile-first-close" data-toggle="collapse" data-target="#snet-mobile-first">
+            <a class="snet-mobile-first-close" data-toggle="collapse" data-target="#snet-mobile-first">
                 <i class="material-icons">close</i>                
             </a>
         </li>
@@ -97,26 +97,25 @@
         <div class="-collapse -navbar-collapse" id="secondary-menu">
             <ul class="navbar-nav mr-auto snet-navbar_navigation">            
                 {% for item in site.data.navigation.header.secondnav %}
-                {% assign nav_class = "nav-item"%}
-                {% if page.url contains item.item_url %}
-                {% assign nav_class = "nav-item active" %}
-                {% endif %}
-                <li class="{{ nav_class }}">
-                    {% if item.item_external_url %}
-                    <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                    {% else %}
-                    <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                    {% assign nav_class = "nav-item"%}
+                    {% if page.url contains item.item_url %}
+                        {% assign nav_class = "nav-item active" %}
                     {% endif %}
-                </li>                
-
+                    <li class="{{ nav_class }}">
+                        {% if item.item_external_url %}
+                            <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                        {% else %}
+                            <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
+                        {% endif %}
+                    </li>                
                 {% endfor %}  
                 <li class="nav-item last-item-list">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">More</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">More</a>
                     <div class="dropdown-menu dropdown-menu-secondary">
                         {% for item in site.data.navigation.header.secondnav %}  
-                        {% if forloop.index > 3 %}
-                        <a class="dropdown-item" href="{{ item.item_url }}">{{ item.item_name }}</a>                    
-                        {% endif %}
+                            {% if forloop.index > 3 %}
+                                <a class="dropdown-item" href="{{ item.item_url }}">{{ item.item_name }}</a>                    
+                            {% endif %}
                         {% endfor %}                      
                     </div>                
                 </li>            
