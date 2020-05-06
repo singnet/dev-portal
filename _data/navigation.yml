@@ -310,16 +310,16 @@ ai-consumers:
   getting-started:
     title: Getting Started
     children:
-        mpe:
-          title: Multi-Party Escrow
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-consumers/mpe'
         registry:
           title: Registry
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/registry'
+        mpe:
+          title: Multi-Party Escrow
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-consumers/mpe'
         organization:
           title: Organization
           excerpt: 
@@ -335,6 +335,11 @@ ai-consumers:
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/marketplace'
+        snet-daemon-api:
+          title: Daemon API
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/daemon-api'          
         keyterms:
           title: Key Terms
           excerpt:
@@ -387,16 +392,26 @@ ai-consumers:
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/setupguide'
-        snet-cli:
-          title: snet-cli
-          excerpt: 
+        invoke-serivce-snet-cli:
+          title: Invoking a Serice using snet-cli
+          excerpt:
           cta: Read more
-          url: '/docs/ai-consumers/snet-cli-tutorial'
-        sdk:
-          title: SDK
-          excerpt: 
+          url: '/docs/ai-consumers/invoke-service-snet-cli'
+        invoke-serivce-dapp:
+          title: Invoking a Serice using Marketplace Dapp
+          excerpt:
           cta: Read more
-          url: '/docs/ai-consumers/sdk-tutorial'
+          url: '/docs/ai-consumers/marketplace-service_invocation'
+        invoke-serivce-java-sdk:
+          title: Invoking a Serice using Java sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/java-sdk'
+        invoke-serivce-sdk:
+          title: Invoking a Serice using sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-consumers/sdk-tutorial'          
   troubleshooting:
       title: Troubleshooting
       excerpt: How to communicate with SingularityNET services with the stateless method.
@@ -408,7 +423,7 @@ ai-developers:
       title: Introduction
       excerpt:
       cta: Read more
-      url: '/docs/ai-developers/'    
+      url: '/docs/ai-developers/'
   getting-started:
     title: Getting Started
     children:
@@ -458,6 +473,11 @@ ai-developers:
   payments:
     title: Payments
     children:
+        channel-storage: 
+          title: Payment Channel Storage
+          excerpt: 
+          cta: Read more
+          url: '/docs/ai-developers/daemon-channel-storage'
         mpe:
           title: Paypal
           excerpt: 
@@ -468,70 +488,92 @@ ai-developers:
           excerpt: 
           cta: Read more
           url: '/docs/ai-developers/tokens'
-  organization-setup:
-    title: Organization Setup
+  set-up-guide:
+    title: Setup Guide
     children:
-        etcd:
-          title: Etcd Setup
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/etcdsetup'
-        publish-organization:
-          title: Publish Organization on Blockchain
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/organization-setup'
-  service-setup:
-    title: Service Setup
+      grpc:
+        title: "gRPC Services"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/grpc'
+      etcd:
+        title: "etcd storage"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/etcd'
+      etcd-setup:
+        title: "etcd Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/etcdsetup'
+      create-wallet:
+        title: "Creating an Ethereum Identity"
+        excerpt: 
+        cta: Read more
+        url: '/docs/ai-developers/ethereum-identity'
+      org-setup:
+        title: "Organization Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/organization-setup'
+      collaboration:
+        title: "Collaboration"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/collaboration'        
+      service-setup:
+        title: "Service Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/service-setup'
+      daemon:
+        title: "Daemon Setup"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/daemon-setup'
+      dapp-ui-component:
+        title: "DApp UI Component for Service"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/dapp-ui-component'
+      claims:
+        title: "Claim AGI"
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/claim'              
+  tutorials:
+    title: Tutorials
     children:
-        snet-cli:
-          title: Publish Service on Blockchain
+        org-setup:
+          title: Publish Organization using snet-cli
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/organization-setup-sent-cli'
+        service-setup:
+          title: Publish Service using snet-cli
           excerpt: 
           cta: Read more
-          url: '/docs/ai-developers/service-setup'
+          url: '/docs/ai-developers/service-setup-snet-cli'
         invoke-serivce-snet-cli:
-          title: Invoking a Serice - snet-cli
+          title: Invoking a Serice using snet-cli
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/invoke-service-snet-cli'
         invoke-serivce-dapp:
-          title: Invoking a Serice - Marketplace Dapp
+          title: Invoking a Serice using Marketplace Dapp
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/marketplace-service_invocation'
+        invoke-serivce-java-sdk:
+          title: Invoking a Serice using Java sdk
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/java-sdk'
         invoke-serivce-sdk:
-          title: Invoking a Serice - sdk
+          title: Invoking a Serice using sdk
           excerpt:
           cta: Read more
-          url: '/docs/ai-developers/sdk-tutorial'
-
-  daemon-setup:
-    title: Daemon Setup
-    children:
-      snet-daemon-api:
-        title: Daemon API
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/daemon-api'
-      snet-daemon-ssl-setup:
-        title: Daemon SSL setup
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/daemon-ssl-setup'
-      snet-daemon:
-        title: Launching Daemon
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/daemon-setup'
-
-  tutorials:
-    title: Tutorials
-    children:
-        setup:
-          title: Setup Guide
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/setupguide'
+          url: '/docs/ai-developers/sdk-tutorial'          
         tutorail:
           title: Tutorials
           excerpt: 
@@ -593,6 +635,29 @@ products:
       url: '/products/rfai'
   staking:
     title: Staking
-    excerpt:
-    cta: Read more
-    url: '/products/staking'
+    children:    
+      overview:
+        title: Overview
+        excerpt:
+        cta: Read more
+        url: '/products/staking'
+      staking-timeline:
+        title: Staking Timeline
+        excerpt:
+        cta: Read more
+        url: '/products/stake-timeline'
+      stake-window:
+        title: Stake Window
+        excerpt:
+        cta: Read more
+        url: '/products/stake-window'
+      stake-opt-out:
+        title: Stake Opt-out
+        excerpt:
+        cta: Read more
+        url: '/products/stake-opt-out'
+      stake-reward:
+        title: Stake Reward
+        excerpt:
+        cta: Read more
+        url: '/products/stake-reward'

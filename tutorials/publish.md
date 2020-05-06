@@ -39,8 +39,8 @@ Run this tutorial from a bash terminal.
 
 In this tutorial we will publish an example service in SingularityNET using Ropsten Test Network.
 
-We have a [Docker](https://www.docker.com/) Image set up with all the required dependencies 
-but if you prefer you can install the dependencies by yourself in your own workstation.
+We build a [Docker](https://www.docker.com/) Image using this [Dockerfile](https://github.com/singnet/dev-portal/blob/master/tutorials/docker/Dockerfile) 
+that is set up with all the required dependencies but if you prefer you can install the dependencies by yourself in your own workstation.
 
 Using a Docker Image is usually easier (you don't need to be a Docker guru to follow this tutorial).
 To go this way, just proceed to the next tutorial step.
@@ -62,7 +62,7 @@ _Note that this tutorial assumes your user is part of the `docker` group that ha
 
 -------------------------------
 
-To secure payments, to set up your own ETCD Cluster , refer to the docs [ETCD Setup](/docs/concepts/etcdsetup)
+To secure payments, to set up your own ETCD Cluster, refer to the docs [ETCD Setup](/docs/concepts/etcdsetup)
 
 Build your own tutorial Docker image directly from our git repo using the following command:
 
@@ -80,21 +80,19 @@ SERVICE_ID=example-service
 SERVICE_NAME="SNET Example Service"
 #define the Public IP/domain name , that will be used to access your service
 SERVICE_IP=localhost
+SERVICE_PORT=7003
 DAEMON_PORT=7000
 DAEMON_HOST=0.0.0.0
 
 USER_ID=$USER
 
-# to secure payments, reference the ETCD client end point based on your etcd cluster set up, 
- 
-ETCD_ENDPOINT=https://youretcdclientendpoint:2379
-
-# we strongly recommend that you set up a https connections and download the cert to say the location below
-ETCD_CERTIFICATES=/opt/singnet/etcd/
-
 # to make your snet's configs persistent
 SNET_CLI_HOST=$HOME/.snet/
 SNET_CLI_CONTAINER=/root/.snet/
+
+# ETCD local storage
+ETCD_HOST=$HOME/.snet/etcd/example-service/
+ETCD_CONTAINER=/opt/singnet/etcd/
 ```
 
 Now you can run a Docker container based on this image:
@@ -111,17 +109,17 @@ docker run \
     -e DAEMON_HOST=$DAEMON_HOST \
     -e DAEMON_PORT=$DAEMON_PORT \
     -e USER_ID=$USER_ID \
-    -p $SERVICE_PORT:$SERVICE_PORT \
-    -e ETCD_ENDPOINT=ETCD_ENDPOINT \
-    -v $ETCD_CERTIFICATES:$ETCD_CERTIFICATES \
+    -p $DAEMON_PORT:$DAEMON_PORT \
     -v $SNET_CLI_HOST:$SNET_CLI_CONTAINER \
+    -v $ETCD_HOST:$ETCD_CONTAINER \
     -ti snet_publish_service bash
 ```
 
 This will put you into a shell within the docker container. The rest of the tutorial assumes you are workings from the Docker container's prompt.
 
-You can `ctrl-d` to exit, this will stop the container. If you wish to enter the container again, just use `docker start snet_publish_service` and
-you can continue from where you left off.
+You can ctrl-d to exit, this will stop the container.
+If you wish to enter the container again, you should start it with `docker start MY_SNET_SERVICE`, then execute the bash command with
+`docker exec -ti MY_SNET_SERVICE bash` and you can continue from where you left off.
 
 ## Step 3. Setup `SNET CLI` and create your identity
 
@@ -178,9 +176,9 @@ You can create a new organization using:
 ```sh
 ACCOUNT=`snet account print`
 
-snet organization metadata-init "$ORGANIZATION_NAME" $ORGANIZATION_ID
+snet organization metadata-init "$ORGANIZATION_NAME" $ORGANIZATION_ID individual
 
-snet organization add-group default_group $ACCOUNT $ETCD_ENDPOINT
+snet organization add-group default_group $ACCOUNT http://127.0.0.1:2379
 
 snet organization create $ORGANIZATION_ID
 ```
@@ -225,8 +223,13 @@ Service is ready to run, but first we need to publish it on SingularityNET and c
 First we need to create a service metadata file. You can do it by running:
 
 ```sh
-snet service metadata-init SERVICE_PROTOBUF_DIR SERVICE_DISPLAY_NAME \
-	--group-name PAYMENT_GROUP_NAME --endpoints SERVICE_ENDPOINT --fixed-price FIXED_PRICE
+snet service \
+	metadata-init \
+	SERVICE_PROTOBUF_DIR \
+	SERVICE_DISPLAY_NAME \
+	--group-name PAYMENT_GROUP_NAME \
+	--endpoints SERVICE_ENDPOINT \
+	--fixed-price FIXED_PRICE
 ```
 
 You need to specify the following parameters:
@@ -239,13 +242,13 @@ You need to specify the following parameters:
 ```sh
 
 #set the type of encoding and provide the proto files
-snet service metadata-init service/service_spec "$SERVICE_NAME" --encoding proto --service-type grpc --group-name default_group
-
-#set the price of the service 
-snet service metadata-set-fixed-price default_group 0.00000001
-
-#set the end points to be called 
-snet service metadata-add-endpoints default_group http://$SERVICE_IP:$DAEMON_PORT
+snet service \
+    metadata-init \
+    service/service_spec \
+    "$SERVICE_NAME" \
+    --group-name default_group \
+    --fixed-price 0.00000001 \
+    --endpoints http://$SERVICE_IP:$DAEMON_PORT
 
 # describe your service and add an URL for further service's information.
 snet service metadata-add-description --json '{"description": "Description of my Service.", "url": "https://service.users.guide"}'
@@ -277,21 +280,25 @@ Create a `SNET DAEMON` configuration file named `snetd.config.json`.
 cat > snetd.config.json << EOF
 {
    "DAEMON_END_POINT": "$DAEMON_HOST:$DAEMON_PORT",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io",
+   "BLOCKCHAIN_NETWORK_SELECTED": "ropsten",
+   "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "REGISTRY_ADDRESS_KEY": "0x5156fde2ca71da4398f8c76763c41bc9633875e4",
    "PASSTHROUGH_ENABLED": true,
-   "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
+   "PASSTHROUGH_ENDPOINT": "http://localhost:$SERVICE_PORT",
    "ORGANIZATION_ID": "$ORGANIZATION_ID",
    "SERVICE_ID": "$SERVICE_ID",
-   "payent_channel_cert_path": "$ETCD_CERTIFICATES/client.pem",
-   "payent_channel_ca_path": "$ETCD_CERTIFICATES/ca.pem",
-   "payent_channel_key_path": "$ETCD_CERTIFICATES/client-key.pem",
+
+
+   "PAYMENT_CHANNEL_STORAGE_SERVER": {
+        "DATA_DIR": "/opt/singnet/etcd/"
+    },
+
+
    "LOG": {
-       "LEVEL": "debug",
-       "OUTPUT": {
-          "TYPE": "stdout"
-       }
+        "LEVEL": "debug",
+        "OUTPUT": {
+            "TYPE": "stdout"
+        }
    }
 }
 EOF

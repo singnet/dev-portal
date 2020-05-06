@@ -161,11 +161,12 @@ A service metadata is a series of JSON-encoded information relative to the servi
 
 ```sh
 PAYMENT_ADDRESS=`snet account print`
-ORGANIZATION_ID=my_organization
+ORGANIZATION_ID=my-org
 ORGANIZATION_NAME="NameOfYourOrganization"
 
-ETCD_ENDPOINT=https://etcd.singularitynet.io:2379
-snet organization metadata-init "$ORGANIZATION_NAME" $ORGANIZATION_ID
+ETCD_ENDPOINT=http://127.0.0.1:2379
+
+snet organization metadata-init "$ORGANIZATION_NAME" $ORGANIZATION_ID individual
 snet organization add-group default_group $PAYMENT_ADDRESS $ETCD_ENDPOINT
 snet organization create $ORGANIZATION_ID
 
@@ -175,7 +176,7 @@ The above commands  will generate a `organization_metadata.json` file at the roo
 ```json
 {
     "org_name": "NameOfYourOrganization",
-    "org_id": "my_organization",
+    "org_id": "my-org",
     "groups": [
         {
             "group_name": "default_group",
@@ -188,7 +189,7 @@ The above commands  will generate a `organization_metadata.json` file at the roo
                     "connection_timeout": "100s",
                     "request_timeout": "5s",
                     "endpoints": [
-                        "http://etcd.singularitynet.io:2379"
+                        "http://127.0.0.1:2379"
                     ]
                 }
             }
@@ -222,7 +223,7 @@ You'll also need to specify:
 
 PROTOBUF_DIRECTORY=service/service_spec
 DISPLAY_NAME="DISPLAY_NAME"
-IP=https://example-service-a.singularitynet.io
+IP=http://localhost
 PORT=8088
 snet service metadata-init service/service_spec "$DISPLAY_NAME" --encoding proto --service-type grpc --group-name default_group
 
@@ -258,7 +259,7 @@ That will generate a `service_metadata.json` file at the root of your service di
                 }
             ],
             "endpoints": [
-                "https://example-service-a.singularitynet.io:8088"
+                "https://localhost:8088"
             ]
         }
     ],
@@ -276,7 +277,7 @@ Publish your service by running `snet service publish ORGANIZATION_ID SERVICE_ID
 
 ```sh
 
-snet service publish my_organization example-executable-service
+snet service publish my-org example-executable-service
 ```
 
 Confirm the transaction and the Blockchain should now be aware of your service!
@@ -290,22 +291,24 @@ To run your service, you simply need to run an instance of SNET Daemon at the sp
 
 ```json
 {
-   "DAEMON_END_POINT": "http://0.0.0.0:8088",
-   "passthrough_endpoint": "http://localhost:7003",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://kovan.infura.io",
-   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "REGISTRY_ADDRESS_KEY": "0xe331bf20044a5b24c1a744abc90c1fd711d2c08d",
-   "PASSTHROUGH_ENABLED": true,
-   "EXECUTABLE_PATH": "./service/example-executable-service.py",
-   "ORGANIZATION_ID": "my_organization",
-   "SERVICE_ID": "example-executable-service",
-
-   "LOG": {
-       "LEVEL": "debug",
-       "OUTPUT": {
-              "TYPE": "stdout"
-           }
-   }
+    "BLOCKCHAIN_NETWORK_SELECTED": "ropsten",
+    "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
+    "PASSTHROUGH_ENABLED": true,
+    "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
+    "DAEMON_END_POINT": "0.0.0.0:8088",
+    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
+    "EXECUTABLE_PATH": "./service/example-executable-service.py",
+    "ORGANIZATION_ID": "my-org",
+    "SERVICE_ID": "example-executable-service",
+    "PAYMENT_CHANNEL_STORAGE_SERVER": {
+        "DATA_DIR": "/opt/singnet/etcd/"
+    },
+    "LOG": {
+        "LEVEL": "debug",
+        "OUTPUT": {
+            "TYPE": "stdout"
+        }
+    }
 }
 ```
 
@@ -319,16 +322,16 @@ snetd serve .
 
 To call your service through the Blockchain, make sure you have sufficient funds for the transactions (check by running `snet account balance`). If you don't, deposit an amount (e.g. 10 COGs, or 10e-8 AGI) by running `snet account deposit 0.00000010`. 
  
-Create a payment channel to your service: specify its organization and service IDs, deposit some tokens into the channel and set its expiration time: `snet channel open-init ORG_ID SERVICE_ID AMOUNT EXPIRATION`. For our example, we'll deposit 0 tokens and set the payment channel to expire in 10 days:
+Create a payment channel to your service: specify its organization ID and the group name, deposit some tokens into the channel and set its expiration time: `snet channel open-init ORG_ID default_group AMOUNT EXPIRATION`. For our example, we'll deposit 0 tokens and set the payment channel to expire in 10 days:
 
 ```sh
-snet channel open-init my_organization default_group 0 +10days
+snet channel open-init my-org default_group 0.00000001 +10days
 ```
 
 Confirm the transaction and that should print the number of the channel you have opened (you can always check again by running `snet channel print-initialized`). Supposing your channel number is `450`, you will spend `0` cogs and call the service at `54.203.198.53:7018` here's an example of how to call the service you have just published:
 
 ```sh
-snet client call my_organization example-executable-service default_group add '{"a": 6.3, "b": 13.2}'
+snet client call my-org example-executable-service default_group add '{"a": 6.3, "b": 13.2}'
 ```
 
 It should then return:

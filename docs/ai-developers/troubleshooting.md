@@ -180,8 +180,7 @@ Check if the port number of your daemon matches exactly to what was deployed on 
  snet service metadata-set-freecall-signer-address default_group $SIGNERADDRESS --metadata-file $MD_FILE
 ```
 
-
-### Free call limit has been exceeded.
+### Free call limit has been exceeded
 You have exceeded the number of permitted free calls. So, calls can now be done only using the paid mode alone 
 
 - End point deployed from Service metadata should be assigned to the same port / domain the daemon is starting. 
@@ -199,7 +198,49 @@ The supported payment types are free-call / escrow
 github.com/singnet/snet-daemon/etcddb.getTlsConfig(0xc4207800c0, 0x1, 0x4)
         /ext-go/1/src/github.com/singnet/snet-daemon/etcddb/etcddb_client.go:107 +0x3f6
 ```
- Please re check the etcd end point in organization metadata ,if the end point is valid , please check if you have the correct certificates ( for https connection) on your daemon [config](https://github.com/singnet/snet-daemon/tree/master/etcddb#etcd-client-configuration)
+Please re check the etcd end point in organization metadata ,if the end point is valid , please check if you have the correct certificates ( for https connection) on your daemon [config](https://github.com/singnet/snet-daemon/tree/master/etcddb#etcd-client-configuration)
+
+### gRPC message size (RESOURCE_EXHAUSTED)
+
+If one (or more) of your components shows these kind of log:
+
+Daemon:
+```
+level=warning msg="gRPC handler returned error" error="rpc error: code = ResourceExhausted desc = Received message larger than max (5937252 vs. 4194304)"
+```
+SNET-CLI and/or your service's gRPC server:
+```
+Error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "Received message larger than max (5937252 vs. 4194304)"
+	debug_error_string = "{"created":"@1585584826.407968689","description":"Received message larger than max (5937252 vs. 4194304)","file":"src/core/ext/filters/message_size/message_size_filter.cc","file_line":191,"grpc_status":8}"
+>
+```
+
+Then you need to increase the MAX_MESSAGE_SIZE of the gRPC components, first set it in your Daemon by adding
+this key to its `snetd.config.json`:
+
+```
+"max_message_size_in_mb": 10,
+```
+
+Note: You can find out more about this key [here](https://github.com/singnet/snet-daemon#other-properties).
+
+Next step is to increase the message size in your service's gRPC server:
+
+```go
+server : = grpc.NewServer(
+        grpc.MaxSendMsgSize(10 * 1024 * 1024),
+        grpc.MaxRecvMsgSize(10 * 1024 * 1024),
+)
+```
+
+```python
+server = grpc.server(futures.ThreadPoolExecutor(max_workers=max_workers), options=[
+        ('grpc.max_send_message_length', 10 * 1024 * 1024),
+        ('grpc.max_receive_message_length', 10 * 1024 * 1024)])
+```
+A practical python example can be found [here](https://github.com/singnet/dnn-model-services/blob/master/services/sound-spleeter/service/sound_spleeter_service.py#L62).
 
 ## Common Daemon warnings (in the logs)
 

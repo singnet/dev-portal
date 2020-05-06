@@ -8,101 +8,101 @@ comments: false
 title: AI Developers
 
 ---
-# Set up
+## Service
 
-- [Python 3.6+](https://www.python.org/downloads/)
-- [Node 8+ with npm](https://nodejs.org/en/download/)
-- [SNET CLI](https://github.com/singnet/snet-cli/releases)
-    - libudev
-    - libusb 1.0
-- [SNET Daemon](https://github.com/singnet/snet-daemon/releases)
+The platform's primary reason for existence is to allow a diverse collection AI services to be bought and sold via a distributed marketplace. Anyone can publish the availability of their machine learning method, or integrated AI solution, and allow clients to interact with and pay for them directly.
 
-For example, installing the requirements using `Ubuntu 18.04`:
+These services are primarily meant to be AI or machine learning related, but there is no intrinsic limitation to what type of service can be offered. Indeed, the foundation or the community may end up implementing utility and adaptor services (such as image conversion) to allow services be composed more easily.
 
-```sh
-sudo apt-get update
-sudo apt-get install wget git
-sudo apt-get install python3 python3-pip
-sudo apt-get install nodejs npm
-sudo apt-get install libudev-dev libusb-1.0-0-dev
-sudo pip3 install snet-cli
+**A "service" is defined through it's specification and it's metadata.**
 
-# !!! Get the latest snet-daemon from Github releases
-SNETD_VERSION=`curl -s https://api.github.com/repos/singnet/snet-daemon/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'`
+## Service Specification (Protocol Buffer Definition)
 
-cd /tmp
-wget https://github.com/singnet/snet-daemon/releases/download/${SNETD_VERSION}/snet-daemon-${SNETD_VERSION}-linux-amd64.tar.gz
-tar -xvf snet-daemon-${SNETD_VERSION}-linux-amd64.tar.gz
-sudo mv snet-daemon-${SNETD_VERSION}-linux-amd64/snetd /usr/bin/snetd
-```
-
-# Publishing Service
+- Services define their API using <a href="https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition" target="_blank">protocol buffers</a>. 
+- This allows SingularityNET clients to determine the request/response schema programmatically. 
+- The first step in setting up a service on the SingularityNet Platform is to define the service definition via protocol buffers.
+- A sample proto file is available <a href="https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto" target="_blank">here</a>
 
 
-### Setting Metadata
+## Service Metadata
 
-#### Let us define the values as below
-```sh
+The service metadata is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster. To use a service, the client needs to know the following:
+- The service metadata
+- The address of Multi-Party Escrow (MPE) contract
+Fortunately, the latter is included in the metadata. 
 
-    ORGID=test-org
-    SERVICEID=test-service_id;
-    DISPLAYNAME=Display Name;
-    DOMAINNAME=https://daemondomainname;
-    PORT=8088;
-    ENDPOINT=$DOMAINNAME:$PORT  
-    PRICE=0.00000001 #for the sake of an example
-    HELPURL=https://helpurl;
-    PATHFORSERVICESPEC=/pathtoyourproto/;
-    SERVICEDESCRIPTION=Service Description;
-    SHORTDESCRIPTION=Short Description of your service;
-    CONTACTNAME=Name1;
-    EMAILID=Nam1@yourorg;
-    #Address to be registered for your Daemons
-    DAEMONADDRESS="0xDBb9b2499c283cec176e7C707Ecb495B7a961ebf"
-    FREECALLS=15
-    #The address is of the Signer , who would issue you free tokens
-    #Please note , if you are using market place Dapp , then we recommend to set the below
-    #for free call Support 
-    #for Ropsten the Signer Address is 0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F
-    #for mainnet the Signer Address is 0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf
-    SIGNERADDRESS="0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F"
-    #Tags should be in small letters 
-    TAGS=image-recognition; 
-    #create a metadata file with the same name as the service id.
-    MD_FILE="your_service.json";
+The daemon which allows access to the service, needs information about the metadata to configure the payment systems.
+
+There are three ways of providing metadata details to the clients and the daemons:
+- Simple JSON file
+- IPFS hash that points to the JSON metadata
+- Name of service in the Registry - this can be resolved to an IPFS hash, pointing to the metadata, through the Registry’s getMetadataIPFSHash method.
+
+**Note:** The client using the mpe_address from the metadata should not adhere to this as a primary source of information, for the sake of security. The client should check that this address corresponds to the expected mpe_address . 
+
+
+**Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack 
+**Note:** By default, the snet-cli adheres to this verification. 
+
+
+**Note**: 
+
+The service provider needs to publish the details about the service in the Blockchain.
+
+As a consumer, you may go the Blockchain or the Marketplace portal where the services are deployed.
+Details like Service the price of the service ,
+image depicting / related to the service , service type, description, the endpoint and how to make a request.
+
+Please note that
+- Singularity platform works on gRPC. Whenever you need to call you need a protofile.
+- File management system such as IPFS stores the location of the hash and points to the associated protofile
+    The IPFS can include a file and the same file returns same hash. 
     
+## Metadata Overview
+
 ```
-#### Run the snet-cli commands as below
- ```sh 
- 
-snet service metadata-init --metadata-file $MD_FILE `pwd`/$YOURGITREPONAME/$PATHFORSERVICESPEC "$DISPLAYNAME" --encoding proto service-type grpc --group-name default_group
- 
-snet service metadata-set-fixed-price default_group $PRICE --metadata-file $MD_FILE
+{
+    "version": 1,
+    "display_name": "Entity Disambiguation",
+    "encoding": "proto",
+    "service_type": "grpc",
+    "model_ipfs_hash": "Qmd21xqgX8fkU4fD2bFMNG2Q86wAB4GmGBekQfLoiLtXYv",
+    "mpe_address": "0x34E2EeE197EfAAbEcC495FdF3B1781a3b894eB5f",
+    "groups": [
+        {
+            "group_name": "default_group",
+            "free_calls": 12,
+            "free_call_signer_address": "0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F",
+            "daemon_address ": ["0x1234", "0x345"],
+            "pricing": [
+                {
+                    "price_model": "fixed_price",
+                    "price_in_cogs": 1,
+                    "default": true
+                }
+            ],
+            "endpoints": [
+                "https://tz-services-1.snet.sh:8005"
+            ],
+            "group_id": "EoFmN3nvaXpf6ew8jJbIPVghE5NXfYupFF7PkRmVyGQ="
+        }
+    ],
+    "assets": {
+        "hero_image": "Qmb1n3LxPXLHTUMu7afrpZdpug4WhhcmVVCEwUxjLQafq1/hero_named-entity-disambiguation.png"
+    },
+    "service_description": {
+        "url": "https://singnet.github.io/nlp-services-misc/users_guide/named-entity-disambiguation-service.html",
+        "description": "Provide further clearity regaridng entities named within a piece of text. For example, \"Paris is the capital of France\", we would want to link \"Paris\" to Paris the city not Paris Hilton in this case.",
+        "short_description": "text of 180 chars"
+    },
+    "contributors": [
+            {
+                "name": "dummy dummy",
+                "email_id": "dummy@dummy.io"
+            }
+        ]
+}
 
-snet service metadata-add-endpoints default_group $DOMAINNAME:$PORT --metadata-file $MD_FILE
-
-   
-snet service metadata-add-description --metadata-file $MD_FILE --description "$SERVICEDESCRIPTION"  --short-description "$SHORTDESCRIPTION" --url "$HELPURL"
-​
-#if you want to support free calls , you will need to do the below 
-snet service metadata-set-free-calls default_group $FREECALLS --metadata-file $MD_FILE
-
-
-snet service metadata-set-freecall-signer-address default_group $SIGNERADDRESS --metadata-file $MD_FILE
-
-
-snet service metadata-add-contributor "$CONTACTNAME" $EMAILID --metadata-file $MD_FILE
-
-snet service metadata-add-daemon-addresses default_group $DAEMONADDRESS --metadata-file $MD_FILE
-
-
-snet service metadata-add-assets service_metadata1.json hero_image
 ```
-   
-### Publish Service on Blockchain
-You need to have some ether in your wallet to publish a service
-You must be either the owner or a member to have permission to publish/delete/Modify a service
 
-```sh
-snet service publish $ORG_ID $SERVICE_ID --metadata-file $MD_FILE
-```
+For more information about how to viewing the metadata using the python module, [CLI documentation](http://snet-cli-docs.singularitynet.io/) 
