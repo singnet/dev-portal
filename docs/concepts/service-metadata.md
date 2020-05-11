@@ -35,7 +35,7 @@ The **service metadata** is the off-chain description of a SingularityNET servic
 In order to use a service, the client needs to know:
 
 * The service metadata
-* The address of [Multi-Party Escrow (MPE) contract](/docs/concepts/multi-party-escrow)
+* The address of [Multi-Party Escrow (MPE) contract](/docs/concepts/mpe)
 
 Fortunately the latter is included in the metadata. The daemon allowing access to the service also needs to know this metadata, in order to configure the necessary payment systems.
 
@@ -92,4 +92,4 @@ Fortunately, the `snet-cli` does this by default.
 
 This metadata file can be directly edited before publishing to IPFS, or manipulated by `snet-cli` through [service subcommands that have the `metadata-*` prefix](http://snet-cli-docs.singularitynet.io/service.html#Sub-commands:).
 
-The python module for manipulating this metadata directly can be found [here](https://github.com/singnet/snet-cli/blob/master/snet_cli/mpe_service_metadata.py).
+The python module for manipulating this metadata directly can be found [here](https://github.com/singnet/snet-cli/blob/master/packages/snet_cli/snet/snet_cli/mpe_service_metadata.py).

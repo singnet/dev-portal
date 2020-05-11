@@ -77,4 +77,3 @@ We maintain language-specific tutorials for a number popular languages.
 
 - [Workshops](/workshops) - Find workshop resources here.
 - [Help improve our Developer Portal and Documentation](/docs/contribute) - Our community is what makes us great!
-- [Subscribe to our newsletter](/newsletter) - We'll let you know of the latest updates, releases, and changes to the platform and marketplace.

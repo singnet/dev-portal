@@ -14,6 +14,7 @@
                             <h3 class="d-none d-md-block snet-card_title">Explore</h3>
                             <div class="snet-card_content">
                                 <ul class="snet-nav_list d-none d-md-block">
+                                    {% assign page_title = "" %}
                                     {% assign path_crumbs = page.path | split: "/" %}
                                     {% assign crumbs = path_crumbs[0] %}
                                     {% assign section = crumbs %}
@@ -60,23 +61,24 @@
                                     {% assign classname = "has-submenu"%}
                                     {% if crumbs == file_name or file_name == section_file_name and crumbs == 'index.md' %}
                                     {% assign classname = "active has-submenu test "%}
+                                    {% assign page_title=menu[1].title %}
                                     {% endif %}
                                     {% if children %}
                                     {% assign unique_id = menu[1].title | replace: " ","--" %}
 
                                     {% for child in children %}
-                                    {% assign child_url = child[1].url | split: "/" %}
-                                    {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        
-                                    {% assign child_file_name = child_url[child_url_last_inx] | append: ".md" %}
-                                    {% assign ul_class = "collapse" %}
-                                    {% assign li_class = "" %}
-                                    {% assign a_class = "collapsed" %}
-                                    {% if crumbs == child_file_name %}
-                                    {% assign ul_class = "collapse show" %}
-                                    {% assign a_class = "" %}
-                                    {% assign active_child_title = child[1].title %}
-                                    {% break %}
-                                    {% endif %}
+                                        {% assign child_url = child[1].url | split: "/" %}
+                                        {% assign child_url_last_inx = child_url.size | minus: 1 %}                                        
+                                        {% assign child_file_name = child_url[child_url_last_inx] | append: ".md" %}
+                                        {% assign ul_class = "collapse" %}
+                                        {% assign li_class = "" %}
+                                        {% assign a_class = "collapsed" %}
+                                        {% if crumbs == child_file_name %}
+                                            {% assign ul_class = "collapse show" %}
+                                            {% assign a_class = "" %}
+                                            {% assign active_child_title = child[1].title %}
+                                            {% break %}
+                                        {% endif %}
                                     {% endfor %}
                                     <li class="{{ classname }}"> <!-- The parent "li" tag should have a class "has-submenu"-->
                                         <a data-toggle="collapse" class="{{ a_class }}" href="#{{ unique_id }}"> <!-- the href should point to the unique id of inner list -->
@@ -88,7 +90,8 @@
                                             {% for child in children %}
                                             {% assign li_class = "" %}
                                             {% if active_child_title == child[1].title %}
-                                            {% assign li_class = "active" %}
+                                                {% assign page_title=active_child_title %}
+                                                {% assign li_class = "active" %}
                                             {% endif %}
                                             <li class="{{ li_class }}"><a href="{{ child[1].url }}">{{ child[1].title }}</a></li>
                                             {% endfor %}
@@ -204,7 +207,7 @@
                     <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 col-xxl-6 snet-blog_middlesection">
                         <div class="snet-card">
                             <div class="snet-card_wrapper">
-                                <h2 class="snet-card_title border-0 p-0"> {{ page.title }}</h2>
+                                <h2 class="snet-card_title border-0 p-0"> {{ page_title }}</h2>
                             </div>
                             <div class="snet-card_content">
                                 <div class="snet-card_maincontents">
@@ -242,7 +245,7 @@
                                                             <div class="snet-card_content">
                                                                 <div  class="snet-card_wrapper border-0">
                                                                     <!-- <a href="#" class="d-block mb-2 snet-card_feedbacklinks">Send Feedback</a> -->
-                                                                    <a href="{{ site.github.repository_url }}/{{ page.path }}" target="_blank" rel="noreferrer noopener" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
+                                                                    <a href="{{ site.github.issues_url }}/issues/new" target="_blank" rel="noreferrer noopener" class="d-block snet-card_feedbacklinks">Suggest Page Edits</a>                                    
                                                                 </div>
                                                             </div>
                                                         </div> 

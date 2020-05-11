@@ -73,7 +73,7 @@ This means we have one consistent protocol to be used to communicate with any se
 
 ### Service Models
 
-As noted when discussing [Services](/docs/concepts/service), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
+As noted when discussing Services, the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
 
 ## SSL
 
@@ -82,8 +82,8 @@ The daemon supports SSL termination using a developer-supplied certificate and k
 ## Authorisation and Payment
 
 Prior to invoking a service through the SingularityNET platform, a consumer must have:
-- Funded the [Multi-Party Escrow contract](/docs/concepts/multi-party-escrow); and
-- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/concepts/organization-metadata.md).
+- Funded the [Multi-Party Escrow contract](/docs/concepts/mpe); and
+- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/concepts/organization-metadata).
 
 With each invocation the daemon checks:
 - that the signature is authentic;
@@ -99,4 +99,4 @@ The daemon's behavior with respect to the [service type](#supported-service-type
 ## Payment channel state
 
 The daemon stores the payment channel state in an etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/concepts/daemon-channel-storage).
-[ETCD cluster](/docs/concepts/etcdsetup.md).
+[ETCD cluster](/docs/ai-developers/etcdsetup).
