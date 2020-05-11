@@ -107,13 +107,13 @@ concepts:
 tutorials:
   general: 
     title: "General service publishing tutorials"
-    url: "/tutorials/index"
+    url: "/tutorials/"
   language:
     title: "Tutorials by programming language"
-    url: "/tutorials/index"
+    url: "/tutorials/"
   workshop:
     title: "Workshop Tutorials"
-    url: "/tutorials/index"
+    url: "/tutorials/"
 
 ai-consumers:
   Introduction:

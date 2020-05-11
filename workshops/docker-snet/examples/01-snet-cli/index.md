@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: "Example 2: Using the SNET-CLI tool"
-description: This example shows you how to use the SNET-CLI tool.
-
 # extralink box
 extralink:
     title: All Docs

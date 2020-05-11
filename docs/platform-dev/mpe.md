@@ -4,9 +4,6 @@ layout: default
 keywords: MPE
 comments: false
 
-# Hero section
-title: AI Developers
-
 # Micro navigation
 micro_nav: true
 

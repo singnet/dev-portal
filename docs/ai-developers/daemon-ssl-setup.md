@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Daemon SSL Setup Guide
-
 # extralink box
 extralink:
     title: Tutorials

@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: AI Developers
-description: About the standardisation of naming within the SingularityNET Network.
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Service Metadata
-        url: '/docs/concepts/service-metadata'
-    next:
-        content: Software
-        url: '/docs/concepts/software'
 ---
 ## Naming standards
 Currently, a lot of flexibility is provided as to how entities in SingularityNET are defined by naming standards.

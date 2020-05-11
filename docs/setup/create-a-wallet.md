@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: How to Create a Wallet
-description: Create a wallet so you can interact with the Ethereum Blockchain
-
 # extralink box
 extralink:
     title: All Docs

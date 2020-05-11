@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Service Integration Guidelines
-description: This guide will help AI providers integrate services into the platform.
-
 # extralink box
 extralink:
     title: All Docs

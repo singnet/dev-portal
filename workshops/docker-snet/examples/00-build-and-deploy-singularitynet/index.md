@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: "Example 1: Build & Deploy"
-description: This example shows you how to build and deploy different SingularityNET components from source.
-
 # extralink box
 extralink:
     title: All Docs

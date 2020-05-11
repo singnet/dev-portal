@@ -4,10 +4,6 @@ layout: default
 keywords: token
 comments: false
 
-# Hero section
-title: Creating ethereum identity
-description: Create a wallet so you can interact with the Ethereum Blockchain
-
 # extralink box
 extralink:
     title: All Docs

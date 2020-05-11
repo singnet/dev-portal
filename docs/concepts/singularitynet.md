@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: snetd - SingularityNET Daemon
-description: Learn about the daemon - how it interacts with the SingularityNET Marketplace and the Ethereum Blockchain.
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,15 +16,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: SDK
-        url: '/docs/concepts/sdk'
-    next:
-        content: The Daemon API 
-        url: '/docs/concepts/daemon-api'
         
 ---
 The [SingularityNET daemon](https://github.com/singnet/snet-daemon) is the adapter that a service can use to interface with the SingularityNET platform.

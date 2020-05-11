@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Running SingularityNET on a Raspberry Pi
-description: Building applications for the Raspberry Pi that can use or integrate with SingularityNET
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-# page_nav:
-#     prev:
-#         content: How to Call a Service
-#         url: '/tutorials/call-a-service'
-#     next:
-#         content: How to Publish a Service
-#         url: '/tutorials/publish'
 ---
 
 ## Running snet-daemon on Raspbbery Pi
