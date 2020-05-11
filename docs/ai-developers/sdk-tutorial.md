@@ -22,11 +22,10 @@ dev_news: true
 micro_nav: true
 ---
 
-## Basic usage of js sdk on Node.js
+## Using the Node.js SDK
 [Click here](https://github.com/singnet/snet-code-examples/tree/master/nodejs/client)
 
-## Basic usage of python sdk 
-
+## Using the Python SDK
 
 For Installation steps 
 ```sh
@@ -39,5 +38,3 @@ pip3 install snet-sdk
 
 [Click here](https://github.com/singnet/snet-cli/blob/master/packages/sdk/testcases/functional_tests/test_sdk_client.py)
 
-## Basic usage of java sdk 
-*** Work in Progress, will be updated Soon ***

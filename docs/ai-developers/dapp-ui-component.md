@@ -14,7 +14,7 @@ micro_nav: true
 
 ## Overview
 
-The SingularityNET network allows developers to register their AI services on an open marketplace and charge for access. Though the expectation is that service consumers will primarily call services from code, the <a href="www.beta.singulaitynet.io" target="_bank">SingularityNET Dapp</a> offers a rich UI/UX for people to explore the services offered on the network. 
+The SingularityNET network allows developers to register their AI services on an open marketplace and charge for access. Though the expectation is that service consumers will primarily call services from code, the <a href="https://beta.singularitynet.io/" target="_bank">SingularityNET Dapp</a> offers a rich UI/UX for people to explore the services offered on the network. 
 Providing an interface for consumers to interact with the service on the marketplace is a big driver for demand. 
 
 

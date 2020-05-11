@@ -65,4 +65,3 @@ We Support popular language-specific tutorials
 
 - [Workshops](/workshops) - For workshop resources, click on this workshop link.
 - [Help improve our Developer Portal and Documentation](/docs/contribute) - Our community is what makes us great!
-- [Subscribe to our newsletter](/newsletter) - We'll let you know of the latest updates, releases, and changes to the platform and marketplace.

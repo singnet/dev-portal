@@ -17,14 +17,9 @@ micro_nav: true
 ## Alerting mechanism - Emails Alerts
 
 
-
 ### Mainnet Alerts
-Alert messages are sent through the email Id : [no-reply@signularitynet.io](no-reply@signularitynet.io) 
+Alert messages are sent through the email Id : no-reply@signularitynet.io
 Subject : The service '**service-name**' is terminated for Mainnet network
-
-### Ropsten Alerts 
-Alert messages are sent through the mail id : [test-no-reply@singularitynet.io](test-no-reply@singularitynet.io) 
-Subject : The service example-service is terminated for ropsten network
 
 
 ### What to do when I receive an alert?
