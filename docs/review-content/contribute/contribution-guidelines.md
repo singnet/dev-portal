@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Contribution Guidelines
-description: Help build the technological singularity by contributing to the SingularityNET project.
-
 # extralink box
 extralink:
     title: All docs
@@ -18,11 +14,6 @@ extralink:
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: All Developer Portal Docs
-        url: '/docs/contribute'
 ---
 
 Are you ready to contribute to SingularityNET? We'd love to have you on board, and we will help you as much as we can. 

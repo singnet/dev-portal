@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: "Example 2: Write & Publish gRPC Python Service"
-description: This example shows you how to write and publish a gRPC Python service
-
 # extralink box
 extralink:
     title: All Docs

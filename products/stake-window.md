@@ -4,9 +4,6 @@ layout: default
 keywords: staking
 comments: false
 
-# Hero section
-title: Stake Window
-
 # Micro navigation
 micro_nav: true
 

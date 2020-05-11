@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: SingularityNET Marketplace
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Concepts Overview
-        url: '/docs/concepts'
-    next:
-        content: SingularityNET Services
-        url: '/docs/concepts/service'
 ---
 
 The [SingularityNET Marketplace](http://beta.singularitynet.io) provides an easy way for people to browse available AI services and interact with them via a web interface.

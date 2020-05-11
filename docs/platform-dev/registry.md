@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: SingularityNET Registry
-description: This guide will teach you how the registry is used to expose information about AI services to the outside world so consumers can find and buy these services.
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,15 +16,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: AGI Token
-        url: '/docs/concepts/agi-token'
-    next:
-        content: Multi-Party Escrow
-        url: '/docs/concepts/multi-party-escrow'
 
 ---
 

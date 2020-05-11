@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: SingularityNET Software
-description:
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,15 +16,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Naming Standards
-        url: '/docs/concepts/naming-standards'
-    next:
-        content: snet-cli command line tool
-        url: '/docs/concepts/snet-cli'
 
 ---
 

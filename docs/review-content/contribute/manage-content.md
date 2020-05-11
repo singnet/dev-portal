@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Manage Content
-description: We've prepared a special guide for content management. Let's learn how to add syntax highlighting, examples, callouts and much more.
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: All Developer Portal Docs
-        url: '/docs/contribute'
-    next:
-        content: Deployment
-        url: '/docs/contribute/deployment'
 ---
 ## Add content
 

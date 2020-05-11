@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Stateless Client with the Multi-Party Escrow
-description: Calling SingularityNET services with the stateless method.
-
 # extralink box
 extralink:
     title: All Docs

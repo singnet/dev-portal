@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: SingularityNET Organization
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Marketplace
-        url: '/docs/concepts/marketplace'
-    next:
-        content: Organization Metadata
-        url: '/docs/concepts/organization-metadata'
 ---
 
 The platform's primary reason for existence is to allow a diverse collection AI services to be bought and sold via a distributed marketplace.

@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Service Metadata
-description: Describing your AI services to the world
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Service
-        url: '/docs/concepts/service'
-    next:
-        content: Naming Standards
-        url: '/docs/concepts/naming-standards'
 ---
 
 The **service metadata** is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster.

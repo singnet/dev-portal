@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: SingularityNET and OpenCog Workshops at DevOps 2018
-description: On the 14th of December we will be hosting our first developer workshops in Helsinki at the DevOps 2018 event in collaboration with Eficode
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,11 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Back to Workshops
-        url: '/workshops'
 ---
 
 ## Introduction

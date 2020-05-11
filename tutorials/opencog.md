@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: How to Write an OpenCog Service to SingularityNET
-description: Getting started with OpenCog for your AI Service
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Back to tutorials
-        url: '/tutorials'
-    next:
-        content: View all docs
-        url: '/docs'
 ---
 
 [atomese]: https://wiki.opencog.org/w/Atomese

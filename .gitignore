@@ -3,6 +3,8 @@ nhRunServer.sh
 duplicates.xlsx
 broken-links.log
 .gitignore
+.~lock.duplicates.xlsx#
+checkLinks.sh
 # ------
 # Common
 # ------

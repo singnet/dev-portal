@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: SingularityNET Marketplace
-
 # extralink box
 extralink:
     title: All Docs

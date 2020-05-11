@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Wallet
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,13 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-page_nav:
-    prev:
-        content: Software
-        url: '/docs/concepts/software'
-    next:
-        content: SDK
-        url: '/docs/concepts/sdk'
 ---
 
 

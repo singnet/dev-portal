@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: How to use the SingularityNET SDK
-description: Building applications the depend on SingularityNET
-
 # extralink box
 extralink:
     title: All Docs

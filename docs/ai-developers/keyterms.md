@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Key Terms
-
 ---
 
 The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to

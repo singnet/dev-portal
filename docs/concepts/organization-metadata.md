@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Organization Metadata
-description: Describing your Organization details to the world
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Organization
-        url: '/docs/concepts/Organization'
-    next:
-        content: Service
-        url: '/docs/concepts/service'
 ---
 
 The **organization metadata** is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster.

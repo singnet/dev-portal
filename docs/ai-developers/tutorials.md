@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Tutorial
-description: You're closer to being part of the SingularityNET!
-
 # extralink box
 extralink:
     title: All Docs
@@ -64,4 +60,3 @@ We Support popular language-specific tutorials
 ## Community
 
 - [Workshops](/workshops) - For workshop resources, click on this workshop link.
-- [Help improve our Developer Portal and Documentation](/docs/contribute) - Our community is what makes us great!

@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: OpenCog Workshop Examples
-description: Here you will find some of the OpenCog Workshop Examples as presented during DEVOPS2018
-
 # extralink box
 extralink:
     title: All Docs
