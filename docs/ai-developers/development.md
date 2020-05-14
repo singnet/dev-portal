@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: AI Developers
-
 # Developer Newsletter
 dev_news: true
 

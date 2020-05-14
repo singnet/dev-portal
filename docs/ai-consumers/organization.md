@@ -4,9 +4,6 @@ layout: default
 keywords: intro concepts
 comments: false
 
-# Hero section
-title: AI Consumers
-
 # Micro navigation
 micro_nav: true
 
@@ -14,7 +11,7 @@ micro_nav: true
 
 ## Organization Metadata
 
-The organization metadata is the description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster. In order to use a service, the client needs to know the following:
+The organization metadata is the description of a SingularityNET Organization and is, by default, hosted on the SingularityNET IPFS cluster. In order to use a service, the client needs to know the following:
 - The Organization metadata
 - The Service metadata
 There are three ways of providing this metadata to the clients and the daemons:
@@ -31,7 +28,7 @@ The following is the list of filed types and their description.
 **type** : Describes of this is an Individual or a Company organization contacts : Stores the contacts related to an Organization , you can have multiple contacts contact_type : Describes the contact type , example support etc; email_id : Email associated with this contact phone : Phone number associated with this contact
 **assets** : used to refer to the image associated with an Organization. Image is uploaded on to ipfs and referenced here.
 **groups** : Multiple groups can be associated with an organization, one payment type is associated with every group.
-**payment_address : Address of the Service provider who would receive the payment
+**payment_address** : Address of the Service provider who would receive the payment
 **payment_channel_storage_type** : Type of storage to manage payments ( For Example ETCD )
 **endpoints** : Storage end points for the clients to connect.
 

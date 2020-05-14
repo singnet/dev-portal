@@ -4,9 +4,6 @@ layout: default
 keywords: intro concepts
 comments: false
 
-# Hero section
-title: Set up 
-
 ---
 - [Python 3.6+](https://www.python.org/downloads/)
 

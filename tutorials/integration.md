@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Service Integration Guidelines
-description: Write and integrate new AI services to the platform.
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Back to tutorials
-        url: '/tutorials'
-    next:
-        content: View all docs
-        url: '/docs'
 ---
 
 [singnet-home]: https://www.singularitynet.io

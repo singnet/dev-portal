@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: How to Call a SingularityNET Service
-description: How to interact with services on the SingularityNET platform
-
 # extralink box
 extralink:
     title: All Docs

@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Service Metadata
-description: Describing your AI services to the world
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,21 +17,13 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Service
-        url: '/docs/concepts/service'
-    next:
-        content: Naming Standards
-        url: '/docs/concepts/naming-standards'
 ---
 
 The **service metadata** is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster.
 In order to use a service, the client needs to know:
 
 * The service metadata
-* The address of [Multi-Party Escrow (MPE) contract](/docs/concepts/multi-party-escrow)
+* The address of [Multi-Party Escrow (MPE) contract](/docs/concepts/mpe)
 
 Fortunately the latter is included in the metadata. The daemon allowing access to the service also needs to know this metadata, in order to configure the necessary payment systems.
 
@@ -92,4 +80,4 @@ Fortunately, the `snet-cli` does this by default.
 
 This metadata file can be directly edited before publishing to IPFS, or manipulated by `snet-cli` through [service subcommands that have the `metadata-*` prefix](http://snet-cli-docs.singularitynet.io/service.html#Sub-commands:).
 
-The python module for manipulating this metadata directly can be found [here](https://github.com/singnet/snet-cli/blob/master/snet_cli/mpe_service_metadata.py).
+The python module for manipulating this metadata directly can be found [here](https://github.com/singnet/snet-cli/blob/master/packages/snet_cli/snet/snet_cli/mpe_service_metadata.py).

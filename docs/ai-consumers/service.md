@@ -4,10 +4,22 @@ layout: default
 keywords: intro concepts
 comments: false
 
-# Hero section
-title: AI Consumers
-
 ---
+## Service
+
+The platform's primary reason for existence is to allow a diverse collection AI services to be bought and sold via a distributed marketplace. Anyone can publish the availability of their machine learning method, or integrated AI solution, and allow clients to interact with and pay for them directly.
+
+These services are primarily meant to be AI or machine learning related, but there is no intrinsic limitation to what type of service can be offered. Indeed, the foundation or the community may end up implementing utility and adaptor services (such as image conversion) to allow services be composed more easily.
+
+**A "service" is defined through it's specification and it's metadata.**
+
+## Service Specification (Protocol Buffer Definition)
+
+- Services define their API using <a href="https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition" target="_blank">protocol buffers</a>. 
+- This allows SingularityNET clients to determine the request/response schema programmatically. 
+- The first step in setting up a service on the SingularityNet Platform is to define the service definition via protocol buffers.
+- A sample proto file is available <a href="https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto" target="_blank">here</a>
+
 
 ## Service Metadata
 

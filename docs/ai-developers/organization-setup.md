@@ -4,9 +4,6 @@ layout: default
 keywords: intro concepts
 comments: false
 
-# Hero section
-title: AI Developers
-
 # Micro navigation
 micro_nav: true
 
@@ -35,8 +32,8 @@ The key attributes of an organization are
 
 
 * **Payment Storage**
-    - We use [etcd](etcd) for our payment storage which is defined at a group level
-    - Refer to [etcd-setup](etcdsetup) on how to set up an etcd cluster
+    - We use [etcd](/docs/ai-developers/etcd) for our payment storage which is defined at a group level
+    - Refer to [etcd-setup](/docs/ai-developers/etcdsetup) on how to set up an etcd cluster
 
 * **Payment Address**
     - This is an ethereum identity to which all payments will be processed.

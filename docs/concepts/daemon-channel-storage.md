@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Daemon Payment Channel Storage
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: The Daemon API 
-        url: '/docs/concepts/daemon-api'
-    next:
-        content: Blockchain Contracts
-        url: '/docs/concepts/Blockchain-contracts'
 ---
 
 To fulfill a request from a client to a service, a snet-daemon needs to store and process information about the service payment. This connection is called the payment channel.

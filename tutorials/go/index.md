@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: How to Write a SingularityNET Service in Go
-description: Getting started with Go for your AI Service
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Back to tutorials
-        url: '/tutorials'
-    next:
-        content: How to Write a SingularityNET Service in Java
-        url: '/tutorials/java'
 ---
 
 -------------------------------

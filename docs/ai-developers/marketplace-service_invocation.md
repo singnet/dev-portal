@@ -4,8 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Invoking a Serice using Marketplace Dapp
 
 # extralink box
 extralink:
@@ -20,14 +18,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Concepts Overview
-        url: '/docs/concepts'
-    next:
-        content: SingularityNET Services
-        url: '/docs/concepts/service'
 ---
 
 ## Calling a Service

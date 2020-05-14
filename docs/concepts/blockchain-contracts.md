@@ -4,9 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Blockchain Contracts
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,13 +17,5 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Daemon Payment Channel Storage
-        url: '/docs/concepts/daemon-channel-storage'
-    next:
-        content: AGI Token
-        url: '/docs/concepts/agi-token'
 ---
 

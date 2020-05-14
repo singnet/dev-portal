@@ -4,9 +4,6 @@ layout: default
 keywords: intro concepts
 comments: false
 
-# Hero section
-title: Introduction
-
 # Micro navigation
 micro_nav: true
 

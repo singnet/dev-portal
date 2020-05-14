@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Configuration
-description: Our theme has a lot personalisation options. Here you can go through every single one available and set it properly to your wishes.
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: All Developer Portal Docs
-        url: '/docs/contribute'
-    next:
-        content: Manage Content
-        url: '/docs/contribute/manage-content'
 ---
 ## Introduction
 
