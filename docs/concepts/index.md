@@ -4,9 +4,6 @@ layout: default
 keywords: Intro concepts,singularitynet 
 comments: false
 
-# Hero section
-title: SingularityNET introduction
-
 # Micro navigation
 micro_nav: true
 

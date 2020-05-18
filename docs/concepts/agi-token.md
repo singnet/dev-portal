@@ -3,10 +3,6 @@ layout: default
 keywords: agi token
 comments: false
 
-# Hero section
-title: AGI Token
-description:
-
 # extralink box
 extralink:
     title: All Docs
@@ -19,15 +15,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: Blockchain Contracts
-        url: '/docs/concepts/Blockchain-contracts'
-    next:
-        content: Registry Contract
-        url: '/docs/concepts/registry'
     
 ---
 

@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: "Example 3: Writing & Publishing a Command Line Python Service"
-description: This example shows you how to write and publish a Python service with the command line
-
 # extralink box
 extralink:
     title: All Docs

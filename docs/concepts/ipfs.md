@@ -3,9 +3,6 @@
 layout: default
 keywords: ipfs
 comments: false
-
-# Hero section
-title: IPFS (Interplanetary File System)
        
 ---
 

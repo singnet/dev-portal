@@ -4,9 +4,6 @@ layout: default
 keywords: staking
 comments: false
 
-# Hero section
-title: Staking
-
 # Micro navigation
 micro_nav: true
 

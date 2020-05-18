@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: How to Publish a SingularityNET Service
-description: Getting your service deployed on to the SingularityNET platform
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: Back to tutorials
-        url: '/tutorials'
-    next:
-        content: View all docs
-        url: '/docs'
 ---
 
 [naming-standards]: /docs/concepts/naming-standards

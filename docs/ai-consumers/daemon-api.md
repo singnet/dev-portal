@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Daemon API
-
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,13 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-page_nav:
-    prev:
-        content: The Daemon
-        url: '/docs/concepts/daemon'
-    next:
-        content: Daemon Payment Channel Storage
-        url: '/docs/concepts/daemon-channel-storage'
 ---
 
 `snetd`, the SingularityNET daemon, provides an API to call service methods using [multi-party escrow contract](/docs/ai-consumers/mpe) payment channels.

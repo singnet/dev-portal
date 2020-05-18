@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Request for AI (RFAI)
-description: Learn how to use the Request for AI portal, and how it works.
-
 # extralink box
 extralink:
     title: All Docs
@@ -20,15 +16,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
-# Page navigation
-page_nav:
-    prev:
-        content: MPE Stateless Client
-        url: '/docs/concepts/mpe-stateless-client'
-    next:
-        content: Back to Concepts
-        url: '/docs/concepts/'
 
 ---
 

@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Getting Started
-description: In this section you'll find basic information about the SingularityNET Developer Portal theme and how to install it and use it properly.
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: All Developer Portal Docs
-        url: '/docs/contribute'
-    next:
-        content: Configuration
-        url: '/docs/contribute/configuration'
 ---
 ## What is the SingularityNET Developer Portal Theme?
 

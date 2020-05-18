@@ -4,10 +4,6 @@ layout: default
 keywords:
 comments: false
 
-# Hero section
-title: Deployment
-description: The SingularityNET Development Portal is always ready to deploy! You can host your own version on private web hosting, GitHub Pages or GitLab Pages. Choose the most suitable solution and deploy!
-
 # extralink box
 extralink:
     title: All Docs
@@ -21,14 +17,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-# Page navigation
-page_nav:
-    prev:
-        content: All Developer Portal Docs
-        url: '/docs/contribute'
-    next:
-        content: Theme Updates
-        url: '/docs/contribute/theme-updates'
 ---
 ## Introduction
 
