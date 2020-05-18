@@ -1,7 +1,6 @@
 ---
 # Page settings
 layout: default
-keywords: concepts
 comments: false
 
 # Micro navigation
