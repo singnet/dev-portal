@@ -90,6 +90,29 @@ concepts:
   blockchain:
     title: "What is Blockchain"
     url: "/docs/concepts/blockchain"
+  ethereum:
+    title: Ethereum
+    children:
+        ethereum-overview:
+          title: Overview
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/ethereum'
+        erc20:
+          title: ERC20 Tokens
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/erc20'
+        smart-contracts:
+          title: Smart Contracts
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/smart-contracts'
+        ethereum-identity:
+          title: Identity
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/ethereum-identity'
   ipfs:
     title: "IPFS "
     url: "/docs/concepts/ipfs"
