@@ -449,7 +449,7 @@ platform-dev:
         architecture:
           title: Architecture
           excerpt: Architechtire of all key components in Daemon
-          url: '/docs/platform-dev/daemon-architecture.md'
+          url: '/docs/platform-dev/daemon-architecture'
 
   mpe:
       title: Multi-Party Escrow

@@ -20,12 +20,12 @@ Details involve Channel Id Nonce,Amount signed , Signature and the nonce of the 
 Daemon also sends back the last signed signature of the old nonce ( in case a claim is in progress or a claim was made)
 
 
-![components](/assets/img/daemon/stateservice.png)
+![Stateservice](/assets/img/daemon/stateservice.png)
 
 
 ## Pay Per use calls 
-
-## Concurrent calls 
+The client signs in for the next cumulative amount ( i.e X+P), where X is the amount last amount signed on the given Channel Id and Nonce
+![Pay per use](/assets/img/daemon/payperusecalll.png)
 
 
 ## Control Service Calls 
@@ -35,9 +35,8 @@ Daemon also sends back the last signed signature of the old nonce ( in case a cl
 
 ### Start-claim request/requests
 
-
 ### List-in-progress
 
-
+## Concurrent calls 
 
 
