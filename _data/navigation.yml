@@ -440,9 +440,17 @@ platform-dev:
       url: '/docs/platform-dev/registry'
   daemon:
       title: Daemon
-      excerpt: How to communicate with SingularityNET services with the stateless method.
-      cta: Read more
-      url: '/docs/platform-dev/daemon'
+      children:
+        introduction:
+          title: Daemon
+          excerpt: How to communicate with SingularityNET services with the stateless method.
+          cta: Read more
+          url: '/docs/platform-dev/daemon'
+        architecture:
+          title: Architecture
+          excerpt: Architechtire of all key components in Daemon
+          url: '/docs/platform-dev/daemon-architecture.md'
+
   mpe:
       title: Multi-Party Escrow
       excerpt: How to communicate with SingularityNET services with the stateless method.
