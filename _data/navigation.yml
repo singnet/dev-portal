@@ -450,7 +450,18 @@ platform-dev:
           title: Architecture
           excerpt: Architechtire of all key components in Daemon
           url: '/docs/platform-dev/daemon-architecture'
-
+  sdk:
+    title: SDK
+    children:
+      introduction:
+        title: SDK
+        excerpt: SDK
+        cta: Read more
+        url: '/docs/platform-dev/sdk'
+      architecture:
+        title: Architecture
+        excerpt: Architechtire of all key components in Daemon
+        url: '/docs/platform-dev/sdk-architecture'
   mpe:
       title: Multi-Party Escrow
       excerpt: How to communicate with SingularityNET services with the stateless method.
