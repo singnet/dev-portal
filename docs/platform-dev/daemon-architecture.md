@@ -63,6 +63,7 @@ As a first step the service provider needs to be aware of all the
 unclaimed money
 Service Provider needs to send the following message (using snet-cli/publisher portal):
 mpe_address, current_block_number, signature(“__list_unclaimed”, mpe_address, current_block_number)
+![List unclaimed](/assets/img/daemon/listUnclaimed.png)
 
 After receiving this message, daemon does the following:
 Verify that mpe_address is correct
