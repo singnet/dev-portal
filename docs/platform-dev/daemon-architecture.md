@@ -34,7 +34,6 @@ The client signs in for the next cumulative amount ( i.e X+P), where X is the am
 As a service provider one may wish to provide free calls .
 However you need some validations to ensure , that only authorized users can make this call and as a service provider you would want to 
 restrict the number of such free calls made.
-
 To even check if free calls are allowed, you need to send in Daemon
 a signature and a token 
 
@@ -46,6 +45,13 @@ The Signature validations and authentication is exactly the same as
 explained , just that the ETCD State is upated with usage accordingly
 
 ## Control Service Calls 
+
+Please note, Daemon doesnt do any claims on blockchain, it is responsible 
+ONLY for maintaining the states.
+Actual claims can done using snet-cli/publisher portal
+Daemon provides a bunch of grpc calls to retrieve data the service provider needs to make claims on block chain.
+Keeps track of claims in Progress.
+One can view all the data using cli commands in snet-daemon 
 
 ### List-unclaimed requests
 As a first step the service provider needs to be aware of all the 
