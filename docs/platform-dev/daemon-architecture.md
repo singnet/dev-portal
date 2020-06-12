@@ -28,15 +28,57 @@ The client signs in for the next cumulative amount ( i.e X+P), where X is the am
 ![Pay per use](/assets/img/daemon/payperusecalll.png)
 
 
+## Free Calls
+
+### How many free Calls are Left ? 
+As a service provider one may wish to provide free calls .
+However you need some validations to ensure , that only authorized users can make this call and as a service provider you would want to 
+restrict the number of such free calls made.
+
+To even check if free calls are allowed, you need to send in Daemon
+a signature and a token 
+
+![Free Call use](/assets/img/daemon/freecallstate.png)
+
+### Making an Actual Free Call
+If the Signatures are valid,Daemon increments the usage count by 1.
+The Signature validations and authentication is exactly the same as 
+explained , just that the ETCD State is upated with usage accordingly
+
 ## Control Service Calls 
 
 ### List-unclaimed requests
+As a first step the service provider needs to be aware of all the 
+unclaimed money
+Service Provider needs to send the following message (using snet-cli/publisher portal):
+mpe_address, current_block_number, signature(“__list_unclaimed”, mpe_address, current_block_number)
 
+After receiving this message, daemon does the following:
+Verify that mpe_address is correct
+Verify that actual block_number is not very different (+-5 blocks) from the current_block_nubmer from the signature
+Verify that message was signed by the service provider (“payment_address” in metadata).
+Send list of unclaimed payments without signatures (we don’t send signatures here just to be safe!!!)
 
 ### Start-claim request/requests
 
+using snet-cli the following message:
+mpe_address, channel_id, signature(“__start_claim”, mpe_address, channel_id, channel_nonce)
+
+After receiving this message, daemon does the following:
+Check that current channel nonce in blockchain is equal to nonce of the channel in etcd. It means that all previous payments on this channel was claimed already.
+Daemon should remove all payments with nonce < channel_nonce from payment storage.
+Verify that signature is authentic ( “payment_address” is in metadata !)
+Increase nonce in storage and send last payment with old nonce to the caller (snet-cli/publisher portal)
+
+
 ### List-in-progress
+
+Before sending a list of payments, daemon should remove all payments with nonce < blockchain nonce from payment storage (call finalize on them?). It means that daemon removes all payments which were claimed already. 
+
 
 ## Concurrent calls 
 
 
+## Signature Details 
+
+For exact details on signatures please refer to [snet-daemon](https://github.com/singnet/snet-daemon/blob/master/escrow/README.md)
