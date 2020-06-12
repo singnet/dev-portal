@@ -53,6 +53,11 @@ Daemon provides a bunch of grpc calls to retrieve data the service provider need
 Keeps track of claims in Progress.
 One can view all the data using cli commands in snet-daemon 
 
+
+No write operation on block chains are done by Daemon (will be take care of by the snet client ), Finish on the claim(reset channel amount used to zero!) should be called only after the payment is successfully claimed and block chain is updated accordingly.
+One way to determine this is by checking the nonce in the block chain with the nonce in the payment,for a given channel if the block chain nonce is greater than that of the nonce from etcd storage => that the claim is already done in block chain.
+and the Finish method is called on the claim.
+
 ### List-unclaimed requests
 As a first step the service provider needs to be aware of all the 
 unclaimed money
@@ -61,7 +66,7 @@ mpe_address, current_block_number, signature(“__list_unclaimed”, mpe_address
 
 After receiving this message, daemon does the following:
 Verify that mpe_address is correct
-Verify that actual block_number is not very different (+-5 blocks) from the current_block_nubmer from the signature
+Verify that actual block_number is not very different (+-5 blocks) from the current_block_number from the signature
 Verify that message was signed by the service provider (“payment_address” in metadata).
 Send list of unclaimed payments without signatures (we don’t send signatures here just to be safe!!!)
 
@@ -78,9 +83,11 @@ Increase nonce in storage and send last payment with old nonce to the caller (sn
 
 
 ### List-in-progress
-
+Get the list of all claims that have been initiated but not completed yet
 Before sending a list of payments, daemon should remove all payments with nonce < blockchain nonce from payment storage (call finalize on them?). It means that daemon removes all payments which were claimed already. 
 
+
+![List in Progress](/assets/img/daemon/listInProgress.png)
 
 ## Concurrent calls 
 
