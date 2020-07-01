@@ -46,7 +46,9 @@ Providing an interface for consumers to interact with the service on the marketp
 3. **Start the AI service** locally along with the snet daemon. Make sure the blockchain is disabled in the daemon configuration. 
 
 4. **Building the custom UI**
-    1. Generate `js` stubs from `.proto` files. 
+    1. Make sure you are inside the repo directory.
+    2. Check if you have an executable file `protoc-gen-ts` in the path `./node_modules/.bin/`. Else run `npm i -D ts-protoc-gen` 
+    3. Generate `js` stubs from `.proto` files. 
         For the custom UI to talk to the services on SingularityNET platform via the DApp, we are using <a href="https://github.com/improbable-eng/grpc-web" target="_blank">gRPC-web</a> by improbable-eng. Apart from the steps mentioned at the official <a href="https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/code-generation.md" target="_blank">documentation</a> to generate `js stubs` from `.proto` definitions, you also need to provide the `namespace_prefix` flag to the generator. Here is an example which illustrates the usage
         ```sh
         protoc \
@@ -57,8 +59,10 @@ Providing an interface for consumers to interact with the service on the marketp
         ```
         **uniq_name_space** should be a combination of `package_name` + `org_id` + `service_id`.
 For the following <a href="https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto" target="_blank">proto file</a> with `org_id=snet` and `service_id=example-service` the namespace_prefix would be `example_service_snet_example_service`. <br />
-        **PS: All the `-` should be replaced by `_`**    
-    2. You need to build the custom UI following the steps
+        **PS: All the `-` should be replaced by `_`**
+    4. The above script will generate four files. Copy the files `*pb.js` and `*pb_service.js` into your component's folder and ignore the rest.
+    5. Also at the top of generated files, add `/**eslint-disable */`
+    6. You need to build the custom UI following the steps
         1. Create a new directory named after the `org-id` to which this service belongs inside `src/assets/thirdPartyServices`. It could be possible that the directory already exists, in which case you can use it instead of creating a new one.
         2. Create a new directory named after the `service-id` under the newly created directory in the above step e.g. for a service with org-id: snet and service-id: example-service you will have to do the following assuming you are at the root of the `snet-dapp`
         ```sh
