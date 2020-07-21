@@ -92,6 +92,8 @@ concepts:
     url: "/docs/concepts/blockchain"
   ethereum:
     title: Ethereum
+    cta: Read more
+    url: '/docs/concepts/ethereum'
     children:
         ethereum-overview:
           title: Overview
@@ -116,12 +118,21 @@ concepts:
   ipfs:
     title: "IPFS "
     url: "/docs/concepts/ipfs"
-  mpe:
-    title: "Multi-party Escrow"
-    url: "/docs/concepts/mpe"
-  staking:
-    title: "Staking"
-    url: "/docs/concepts/staking"
+  protobuf:
+    title: "Protocol Buffers"
+    url: "/docs/concepts/protobuf"
+  grpc:
+    title: "gRPC"
+    url: "/docs/concepts/grpc"
+  distributed-storage:
+    title: "Distributed Storage"
+    url: '/docs/concepts/etcd'
+    children:
+        etcd:
+          title: etcd
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/etcd'    
   key-terms:
     title: "Key terms"
     url: "/docs/concepts/keyterms"
