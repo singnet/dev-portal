@@ -93,7 +93,6 @@ concepts:
   ethereum:
     title: Ethereum
     cta: Read more
-    url: '/docs/concepts/ethereum'
     children:
         ethereum-overview:
           title: Overview
@@ -126,16 +125,15 @@ concepts:
     url: "/docs/concepts/grpc"
   distributed-storage:
     title: "Distributed Storage"
-    url: '/docs/concepts/etcd'
     children:
         etcd:
           title: etcd
           excerpt:
           cta: Read more
           url: '/docs/concepts/etcd'    
-  key-terms:
-    title: "Key terms"
-    url: "/docs/concepts/keyterms"
+  #key-terms:
+  #  title: "Key terms"
+  #  url: "/docs/concepts/keyterms"
 
 
 tutorials:
@@ -241,22 +239,22 @@ ai-consumers:
           cta: Read more
           url: '/docs/ai-consumers/setupguide'
         invoke-serivce-snet-cli:
-          title: Invoking a Serice using snet-cli
+          title: Invoking a Service using snet-cli
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/invoke-service-snet-cli'
         invoke-serivce-dapp:
-          title: Invoking a Serice using Marketplace Dapp
+          title: Invoking a Service using Marketplace Dapp
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/marketplace-service_invocation'
         invoke-serivce-java-sdk:
-          title: Invoking a Serice using Java sdk
+          title: Invoking a Service using Java sdk
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/java-sdk'
         invoke-serivce-sdk:
-          title: Invoking a Serice using sdk
+          title: Invoking a Service using sdk
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/sdk-tutorial'          
@@ -403,22 +401,22 @@ ai-developers:
           cta: Read more
           url: '/docs/ai-developers/service-setup-snet-cli'
         invoke-serivce-snet-cli:
-          title: Invoking a Serice using snet-cli
+          title: Invoking a Service using snet-cli
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/invoke-service-snet-cli'
         invoke-serivce-dapp:
-          title: Invoking a Serice using Marketplace Dapp
+          title: Invoking a Service using Marketplace Dapp
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/marketplace-service_invocation'
         invoke-serivce-java-sdk:
-          title: Invoking a Serice using Java sdk
+          title: Invoking a Service using Java sdk
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/java-sdk'
         invoke-serivce-sdk:
-          title: Invoking a Serice using sdk
+          title: Invoking a Service using sdk
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/sdk-tutorial'          
