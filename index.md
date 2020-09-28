@@ -60,6 +60,14 @@ tools_cards:
       right_url_name: Github
       right_url_link: https://github.com/singnet/snet-cli
 
+    - title: Java SDK
+      img: 'http://placehold.jp/80x80.png'
+      description: Java SDK to invoke AI services on Java SE and Android
+      left_url_name: Download
+      left_url_link: https://jitpack.io/#singnet/snet-sdk-java
+      right_url_name: Github
+      right_url_link: https://github.com/singnet/snet-sdk-java
+
 # Email Subscription Section
 email_subscription:
       title: Stay up to date
