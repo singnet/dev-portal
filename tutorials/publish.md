@@ -328,7 +328,7 @@ snet channel open-init $ORGANIZATION_ID default_group 0.00000010 +10days -y
 ```
 
 `snet channel open-init` has opened and initialized a channel with 10 COGs for `$ORGANIZATION_ID` with 
-expiration at 10 days (57600 blocks in the future with 15 sec/blocks). You can now use any service under this organization
+expiration at 10 days (57600 blocks in the future with 15 sec/blocks). You can now use any service under this organization.
 This command prints the id of the created channel, record it to use in the following commands.
 
 ```sh
@@ -359,7 +359,7 @@ You can keep calling the service until your MPE Payment Channel runs out of fund
 As the service provider, you can claim spent AGIs on your service at anytime using:
 
 ```sh
-snet treasurer claim-all --endpoint http;//$SERVICE_IP:$DAEMON_PORT -y
+snet treasurer claim-all --endpoint http://$SERVICE_IP:$DAEMON_PORT -y
 
 # claimed funds are now in MPE
 snet account balance
