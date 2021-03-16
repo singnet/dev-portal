@@ -90,18 +90,50 @@ concepts:
   blockchain:
     title: "What is Blockchain"
     url: "/docs/concepts/blockchain"
+  ethereum:
+    title: Ethereum
+    cta: Read more
+    children:
+        ethereum-overview:
+          title: Overview
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/ethereum'
+        erc20:
+          title: ERC20 Tokens
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/erc20'
+        smart-contracts:
+          title: Smart Contracts
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/smart-contracts'
+        ethereum-address:
+          title: Address
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/ethereum-address'
   ipfs:
     title: "IPFS "
     url: "/docs/concepts/ipfs"
-  mpe:
-    title: "Multi-party Escrow"
-    url: "/docs/concepts/mpe"
-  staking:
-    title: "Staking"
-    url: "/docs/concepts/staking"
-  key-terms:
-    title: "Key terms"
-    url: "/docs/concepts/keyterms"
+  protobuf:
+    title: "Protocol Buffers"
+    url: "/docs/concepts/protobuf"
+  grpc:
+    title: "gRPC"
+    url: "/docs/concepts/grpc"
+  distributed-storage:
+    title: "Distributed Storage"
+    children:
+        etcd:
+          title: etcd
+          excerpt:
+          cta: Read more
+          url: '/docs/concepts/etcd'    
+  #key-terms:
+  #  title: "Key terms"
+  #  url: "/docs/concepts/keyterms"
 
 
 tutorials:
@@ -207,22 +239,22 @@ ai-consumers:
           cta: Read more
           url: '/docs/ai-consumers/setupguide'
         invoke-serivce-snet-cli:
-          title: Invoking a Serice using snet-cli
+          title: Invoking a Service using snet-cli
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/invoke-service-snet-cli'
         invoke-serivce-dapp:
-          title: Invoking a Serice using Marketplace Dapp
+          title: Invoking a Service using Marketplace Dapp
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/marketplace-service_invocation'
         invoke-serivce-java-sdk:
-          title: Invoking a Serice using Java sdk
+          title: Invoking a Service using Java sdk
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/java-sdk'
         invoke-serivce-sdk:
-          title: Invoking a Serice using sdk
+          title: Invoking a Service using sdk
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/sdk-tutorial'          
@@ -369,22 +401,22 @@ ai-developers:
           cta: Read more
           url: '/docs/ai-developers/service-setup-snet-cli'
         invoke-serivce-snet-cli:
-          title: Invoking a Serice using snet-cli
+          title: Invoking a Service using snet-cli
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/invoke-service-snet-cli'
         invoke-serivce-dapp:
-          title: Invoking a Serice using Marketplace Dapp
+          title: Invoking a Service using Marketplace Dapp
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/marketplace-service_invocation'
         invoke-serivce-java-sdk:
-          title: Invoking a Serice using Java sdk
+          title: Invoking a Service using Java sdk
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/java-sdk'
         invoke-serivce-sdk:
-          title: Invoking a Serice using sdk
+          title: Invoking a Service using sdk
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/sdk-tutorial'          
@@ -417,9 +449,28 @@ platform-dev:
       url: '/docs/platform-dev/registry'
   daemon:
       title: Daemon
-      excerpt: How to communicate with SingularityNET services with the stateless method.
-      cta: Read more
-      url: '/docs/platform-dev/daemon'
+      children:
+        introduction:
+          title: Daemon
+          excerpt: How to communicate with SingularityNET services with the stateless method.
+          cta: Read more
+          url: '/docs/platform-dev/daemon'
+        architecture:
+          title: Architecture
+          excerpt: Architechtire of all key components in Daemon
+          url: '/docs/platform-dev/daemon-architecture'
+  sdk:
+    title: SDK
+    children:
+      introduction:
+        title: SDK
+        excerpt: SDK
+        cta: Read more
+        url: '/docs/platform-dev/sdk'
+      architecture:
+        title: Architecture
+        excerpt: Architechtire of all key components in Daemon
+        url: '/docs/platform-dev/sdk-architecture'
   mpe:
       title: Multi-Party Escrow
       excerpt: How to communicate with SingularityNET services with the stateless method.
