@@ -493,6 +493,11 @@ products:
       excerpt:
       cta: Read more
       url: '/products/marketplace'
+  publisher:
+      title: Publisher portal
+      excerpt:
+      cta: Read more
+      url: '/products/publisher'    
   rfai:
       title: Request For AI Service
       excerpt:
