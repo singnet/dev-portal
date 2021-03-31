@@ -23,7 +23,7 @@ byuser_cards:
       description: Get started using the service on the SingularityNet platform
       urls:
       - url_name: Get Started
-        url_link: /docs/ai-consumers/mpe/
+        url_link: /docs/ai-consumers/registry/
       - url_name: How to pay for a service
         url_link: /docs/ai-consumers/paypal/
       - url_name: Invoke a service
@@ -38,7 +38,7 @@ byuser_cards:
       - url_name: Get Started
         url_link: /docs/ai-developers/mpe/
       - url_name: Setup an Organization
-        url_link: /docs/ai-developers/etcdsetup
+        url_link: /docs/ai-developers/organization-setup/
       - url_name: Setup a Service
         url_link: /docs/ai-developers/service-setup/
       - url_name: View More
