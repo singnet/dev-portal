@@ -19,15 +19,16 @@ micro_nav: true
 
 ---
 
-## <a href="http://beta.singularitynet.io" target="_blank">SingularityNET Marketplace</a> 
+## [AI Marketplace](/products/marketplace/)
 Provides an interface for people to browse and interact with available AI services through web interface.
 
-## <a href="https://rfai.singularitynet.io/" target="_blank">Request for AI Portal (RFAI)</a> 
-Allows user to request for AI services that are built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
-
-## <a href="https://publisher.singularitynet.io/" target="_blank">Publisher Portal</a> 
+## [Publisher Portal](/products/publisher/)
 Enables service developers to publish and manage their organizations and services in an easy and intutive manner. 
 You can list your services in the marketplace (Dapp), which can help users to search and use your service.
 
-## <a href="https://staking.singularitynet.io/" target="_blank">Staking</a> 
+## [Staking](/products/staking/)
 Staking is the process of holding AGI tokens for rewards to support the operations of AI marketplace. Staking will be used to increase AGI liquidity pool.
+
+## [Request for AI Portal (RFAI)](/products/rfai/)
+Allows user to request for AI services that are built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
+
