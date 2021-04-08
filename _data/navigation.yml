@@ -493,11 +493,11 @@ products:
       excerpt:
       cta: Read more
       url: '/products/marketplace'
-  rfai:
-      title: Request For AI Service
+  publisher:
+      title: Publisher portal
       excerpt:
       cta: Read more
-      url: '/products/rfai'
+      url: '/products/publisher'    
   staking:
     title: Staking
     children:    
@@ -525,6 +525,11 @@ products:
         title: Stake Reward
         excerpt:
         cta: Read more
-        url: '/products/stake-reward'                        
+        url: '/products/stake-reward'  
+  rfai:
+      title: Request For AI Service
+      excerpt:
+      cta: Read more
+      url: '/products/rfai'        
            
 
