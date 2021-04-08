@@ -27,6 +27,11 @@ Following are the example nodes for our reference.
 Infrastural diagram of ETCD Cluster setup on AWS.
 ![Etcd Cluster Infrastructure](/assets/img/etcd/etcd-cluster.png)
 
+## ETCD set up Script  
+<a id="raw-url" href="https://raw.githubusercontent.com/singnet/dev-portal/master/docs/ai-developers/etcdscript.sh">Download script</a>
+
+For detailed explanation on every step , reference the sections below
+
 ## Generating Certificates
 
 To setup the cluster, use three types of certificate, such as:
