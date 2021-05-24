@@ -18,8 +18,10 @@ RUN mkdir -p ${IPFS}
 RUN mkdir -p ${GANACHE}
 RUN mkdir -p ${ETCD}
 
+# Install nodejs version v10.11.0
+RUN npm install -g n && n v10.11.0
 # Install local Ethereum network
-RUN npm install -g ganache-cli@6.2.4 truffle@4.1.14
+RUN npm install -g ganache-cli@6.12.2
 # Install other tools
 RUN apt-get install -y lsof net-tools telnet screen vim nano
 
@@ -50,8 +52,10 @@ RUN export ETCD_VERSION=v3.3.13 && \
 
 # plaform-contracts
 WORKDIR ${ROOT}
-RUN git clone --depth 1 -b v0.3.4 https://github.com/singnet/platform-contracts
+RUN git clone https://github.com/singnet/platform-contracts
 WORKDIR ${ROOT}/platform-contracts
+# checkout by commit while v1.0.1 tag is not set
+RUN git checkout 3ce54bdf62ab47b321fb084d428c65dc149aa1f4
 RUN npm install
 COPY ./bin/deploy_contracts.sh ${BIN}
 RUN deploy_contracts.sh
