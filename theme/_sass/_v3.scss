@@ -816,3 +816,120 @@ h5 .title-anchor-link{ display: none;}
         //background: green;
     }
 }
+
+// ========================================================================================
+// New Banner Stuff
+// ========================================================================================
+.message-Banner_wrapper {
+    display: table;
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.message-Banner_mobileiconarea {
+    display: none;
+    width: 40px;
+}
+
+.message-Banner_textarea {
+    display: table-cell;
+    width: auto;
+    padding: 0 12px;
+}
+
+.message-Banner_closearea {
+    display: table-cell;
+    width: 16px;
+    cursor: pointer;
+
+    &:hover {
+        img {
+            opacity: .65;
+            animation: shake 0.2s;
+            animation-iteration-count: 2;
+        }
+    }
+}
+
+.message-Banner_text {
+    padding: 0 12px;
+    line-height: 16px;
+}
+
+@media(max-width: 1022px) {
+    .message-Banner_wrapper {
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .message-Banner_textarea .message-Banner_image {
+        display: none;
+    }
+
+    .message-Banner_mobileiconarea {
+        display: table-cell;
+    }
+
+    .message-Banner_text {
+        padding: 0;
+    }
+}
+
+
+.home-message-Banner.default {
+    background-color: rgba(64, 134, 255, 0.5);
+}
+
+.home-message-Banner.default a,
+.home-message-Banner.default a:hover {
+    color: #FFFFFF;
+    letter-spacing: 0.25px;
+}
+
+.home-message-Banner.danger {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.home-message-Banner.danger a,
+.home-message-Banner.danger a:hover {
+    color: #FFFFFF;
+    letter-spacing: 0.25px;
+}
+
+.home-message-Banner.bright {
+    background-color: rgba(128, 0, 128, 1);
+}
+.home-message-Banner.bright a,
+.home-message-Banner.bright a:hover {
+    color: #FFFFFF;
+    letter-spacing: 0.25px;
+}
+
+.home-message-Banner.success {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+.home-message-Banner.success a,
+.home-message-Banner.success a:hover {
+    color: #FFFFFF;
+    letter-spacing: 0.25px;
+}
+
+.home-message-Banner.caution {
+    background: orange;
+}
+
+.home-message-Banner.caution a,
+.home-message-Banner.caution a:hover {
+    color: #FFFFFF;
+    letter-spacing: 0.25px;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform:rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
