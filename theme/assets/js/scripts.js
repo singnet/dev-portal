@@ -233,5 +233,23 @@
 //        scrollDetect();
 //    });
 
+    //var getBannerName ="snetLocalStorage_"+$('.home-message-Banner').attr('id');
+    $( ".home-message-Banner" ).each(function() {
+        var dataAttr =$(this).attr('id');        
+        var getBannerName ="snetLocalStorage_"+dataAttr;   
+        console.log("Local Storage read for: "+getBannerName+" with value "+localStorage.getItem(getBannerName));        
+        var bannerStatus = localStorage.getItem(getBannerName);  
+        if(bannerStatus != "hidden"){
+            $('#'+dataAttr).css({"display":"block"});
+        }           
+    });    
+    
+    $('.home-message-Banner-close').click(function(){
+        var dataAttr =$(this).attr('data-banner');
+        $('#'+dataAttr).slideUp('fast');
+        var banner ="snetLocalStorage_"+dataAttr;
+        localStorage.setItem(banner, "hidden");        
+        console.log("Local Storage set for: "+banner+" with value "+localStorage.getItem(banner));
+    });    
 
 }(jQuery));
