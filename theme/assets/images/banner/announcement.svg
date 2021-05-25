@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon: annoucement</title>
+    <g id="SNET-Main-Site---v1.1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page-:-Announcement-Banner" transform="translate(-435.000000, -2.000000)">
+            <g id="Banner/V2">
+                <g id="Banner-/-One-line-/-with-Image">
+                    <g id="Group-6" transform="translate(435.000000, 2.000000)">
+                        <g id="Group-9">
+                            <g id="icon:-annoucement">
+                                <polygon id="Path" points="0 0 36 0 36 36 0 36"></polygon>
+                                <path d="M27,16.5 L27,19.5 L33,19.5 L33,16.5 L27,16.5 Z M24,26.415 C25.44,27.48 27.315,28.89 28.8,30 C29.4,29.205 30,28.395 30.6,27.6 C29.115,26.49 27.24,25.08 25.8,24 C25.2,24.81 24.6,25.62 24,26.415 Z M30.6,8.4 C30,7.605 29.4,6.795 28.8,6 C27.315,7.11 25.44,8.52 24,9.6 C24.6,10.395 25.2,11.205 25.8,12 C27.24,10.92 29.115,9.525 30.6,8.4 Z M6,13.5 C4.35,13.5 3,14.85 3,16.5 L3,19.5 C3,21.15 4.35,22.5 6,22.5 L7.5,22.5 L7.5,28.5 L10.5,28.5 L10.5,22.5 L12,22.5 L19.5,27 L19.5,9 L12,13.5 L6,13.5 Z M23.25,18 C23.25,16.005 22.38,14.205 21,12.975 L21,23.01 C22.38,21.795 23.25,19.995 23.25,18 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
