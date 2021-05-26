@@ -89,8 +89,20 @@ projects.
 
 ### Maven
 
-Add [Jitpack](https://jitpack.io) repository to the `project` section of the
-Maven `pom.xml`.
+Generate new Maven project using command:
+
+```sh
+mvn archetype:generate -DgroupId=io.singularitynet.sdk.tutorial \
+	-DartifactId=example-service-client \
+	-DarchetypeArtifactId=maven-archetype-quickstart \
+	-DarchetypeVersion=1.4 \
+	-DinteractiveMode=false
+```
+
+Go to the project directory `example-service-client` and edit `pom.xml` file.
+Set value of the `maven.compiler.source` and `maven.compiler.target` properties
+to `1.8`. Add [Jitpack](https://jitpack.io) repository to the `project` section
+of the Maven `pom.xml`.
 
 ```xml
 <repositories>
@@ -117,6 +129,9 @@ section of the `pom.xml`).
   <version>0.4.0</version>
 </dependency>
 ```
+
+Add new `<plugins></plugins>` section inside `<build></build>` section and put
+the plugins declarations below inside.
 
 Use `snet-maven-sdk-plugin` to download and unpack the API of the service. Add
 the following code under `plugins` section of the Maven `pom.xml`.
@@ -189,6 +204,18 @@ Use Protobuf and gRPC Maven plugins to compile the API of the service.
     </plugins>
   </build>
 </project>
+```
+
+Add `exec-maven-plugin` to run the application using Maven.
+```xml
+<plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>exec-maven-plugin</artifactId>
+  <version>1.6.0</version>
+  <configuration>
+    <mainClass>io.singularitynet.sdk.tutorial.App</mainClass>
+  </configuration>
+</plugin>
 ```
 
 ### Gradle
@@ -393,8 +420,13 @@ synchronous and asynchronous gRPC stubs are supported.
 
 ## Run application
 
-Compile and run the application. If it goes well you should see the following
-response on your console.
+Compile and run the application. If you are using Maven execute:
+
+```sh
+mvn package exec:java
+```
+
+If it goes well you should see the following response on your console.
 
 ```
 Response received: value: 42.0
