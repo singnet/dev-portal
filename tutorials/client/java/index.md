@@ -25,9 +25,9 @@ This tutorial explains how to create a SingularityNET service client in Java
 language. The content of the tutorial assumes reader is familiar with Java
 programming language and Maven or Gradle project management system. One can
 find the [full code of the tutorial
-application](https://github.com/singnet/snet-sdk-java/tree/0.3.1/example/tutorial)
+application](https://github.com/singnet/snet-sdk-java/tree/0.4.0/example/tutorial)
 in Java SDK repository. SingularityNET [Java SDK API
-documentation](https://jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc)
+documentation](https://jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc)
 is located at Jitpack.  In order to complete the tutorial one should have [JDK
 8 or greater](https://www.oracle.com/java/technologies/javase-downloads.html),
 [Maven](https://maven.apache.org/) or [Gradle](https://gradle.org/) and
@@ -44,7 +44,7 @@ First start the environment docker using command below.
 
 ```sh
 docker run -p 5002:5002 -p 8545:8545 -p 7000:7000 \
-    -ti singularitynet/snet-local-env:3.0.0
+    -ti singularitynet/snet-local-env:5.0.1
 ```
 
 This environment contains local Ethereum, local IPFS and local Example Service
@@ -114,7 +114,7 @@ section of the `pom.xml`).
 <dependency>
   <groupId>com.github.singnet.snet-sdk-java</groupId>
   <artifactId>snet-sdk-java</artifactId>
-  <version>0.3.0</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 
@@ -125,7 +125,7 @@ the following code under `plugins` section of the Maven `pom.xml`.
 <plugin>
   <groupId>com.github.singnet.snet-sdk-java</groupId>
   <artifactId>snet-sdk-maven-plugin</artifactId>
-  <version>0.3.0</version>
+  <version>0.4.0</version>
   <executions>
     <execution>
 
@@ -172,7 +172,7 @@ Use Protobuf and gRPC Maven plugins to compile the API of the service.
         <configuration>
           <protocArtifact>com.google.protobuf:protoc:3.5.1:exe:${os.detected.classifier}</protocArtifact>
           <pluginId>grpc-java</pluginId>
-          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.20.0:exe:${os.detected.classifier}</pluginArtifact>
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.28.0:exe:${os.detected.classifier}</pluginArtifact>
           <checkStaleness>true</checkStaleness>
           <protoSourceRoot>${project.build.directory}/proto</protoSourceRoot>
         </configuration>
@@ -205,7 +205,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.github.singnet.snet-sdk-java:snet-sdk-gradle-plugin:0.3.0'
+        classpath 'com.github.singnet.snet-sdk-java:snet-sdk-gradle-plugin:0.4.0'
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
     }
 }
@@ -227,7 +227,7 @@ repositories {
 
 dependencies {
     ...
-    implementation 'com.github.singnet.snet-sdk-java:snet-sdk-java:0.3.0'
+    implementation 'com.github.singnet.snet-sdk-java:snet-sdk-java:0.4.0'
 }
 ```
 
@@ -327,7 +327,7 @@ try {
 }
 ```
 
-[Sdk](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/client/Sdk.html)
+[Sdk](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/client/Sdk.html)
 class keeps a connection to the Ethereum endpoint and initializes Ethereum
 smart contracts API. These resources should be released when an `Sdk` instance
 is not needed anymore. 
@@ -335,7 +335,7 @@ is not needed anymore.
 ## Create service client
 
 Before opening connection to the service we need to specify a payment strategy.
-[OnDemandPaymentChannelPaymentStrategy](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/paymentstrategy/OnDemandPaymentChannelPaymentStrategy.html)
+[OnDemandPaymentChannelPaymentStrategy](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/paymentstrategy/OnDemandPaymentChannelPaymentStrategy.html)
 uses `MultiPartyEscrow` contract to pay for the service calls. It automatically
 finds an appropriate payment channel or opens the new one.  It extends the
 expiration date and adds the funds if it is required. It has two integer
@@ -346,7 +346,7 @@ channel.
 ```java
 // 40320 is a week in Ethereum blocks assuming single block is mined in 15 seconds
 OnDemandPaymentChannelPaymentStrategy paymentStrategy =
-    new OnDemandPaymentChannelPaymentStrategy(sdk, 40320, 100);
+    new OnDemandPaymentChannelPaymentStrategy(40320, 100);
 ```
 
 `sdk.newServiceClient()` call opens a gRPC connection to the service client.
@@ -367,7 +367,7 @@ Service endpoint group id has to be specified in addition to the organization
 id and service id. It is used to select a service endpoint to connect. To get a
 list of the service endpoint groups one can use `sdk.getMetadataProvider(String
 orgId, String serviceId).getServiceMetadata()` call. See [ServiceMetadata
-documentation](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/registry/ServiceMetadata.html)
+documentation](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/registry/ServiceMetadata.html)
 for details.
 
 The service client keeps the opened gRPC connection and it should be closed
@@ -409,13 +409,13 @@ because the usage of the payment channel doesn't require making transactions.
 
 There are two ways of making first call execution time predictable. First
 option is creating a payment channel in advance. Use `Sdk` and
-[BlockchainPaymentChannelManager](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/mpe/BlockchainPaymentChannelManager.html)
+[BlockchainPaymentChannelManager](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/mpe/BlockchainPaymentChannelManager.html)
 to open a channel from the application. Or use
 [snet-cli](/docs/ai-consumers/snet-cli) tool to open a channel from the command
 line.
 
 Second option is increasing a gas price by setting new value in configuration,
 see [Configuration.Builder
-documentation](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.3.0/javadoc/io/singularitynet/sdk/client/Configuration.Builder.html#setGasPrice-java.math.BigInteger-).
+documentation](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/client/Configuration.Builder.html#setGasPrice-java.math.BigInteger-).
 This way doesn't guarantee the execution time but can decrease the time to
 mine the transaction.
