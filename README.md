@@ -30,6 +30,15 @@ git clone https://github.com/singnet/dev-portal.git
 cd dev-portal
 jekyll serve
 ```
+if you get the following error
+```
+<internal:C:/Ruby30-x64/lib/ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require': cannot load such file -- webrick (LoadError)
+```
+
+then install the webrick gem using the command
+```
+gem install webrick
+```
 
 Before making a pull request, please also check all links are valid:
 

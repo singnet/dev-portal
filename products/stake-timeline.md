@@ -16,6 +16,8 @@ A single staking session has the following stages
 * Opt-out Period
 * Withdrawal Period
 
+To find out the latest dates for the staking periods, please check <a href="https://community.singularitynet.io/t/staking-dates-9-march-2021-16-may-2021/3592">this topic</a> on our forum. 
+
 Once the call for staking period is over and requests are accepted, a staking window of the specified time period begins. Tokens are locked in the staking smart contract for the duration of that window.  Towards the end of the window, two things happen:
 
 * A new call for staking period begins. There is a time window during which users can request their tokens back at the end of the current window. 

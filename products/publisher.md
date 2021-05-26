@@ -22,20 +22,18 @@ micro_nav: true
 
 ---
 
-# Publisher Portal 
-![Work in Progress](/assets/img/publisher/work_in_progress.png)
+# Introduction to the Publisher Portal 
 
 Goal is to assist the developers to easily publish and manage their organizations
 and services using the publisher portal.
 You can list your services on to the marketplace Dapp easily making it very simple for your users to search and use your service.
- *** Publisher portal will be live by March ***  
 
-The Key features to expect are as below
+The Key features are
 
 ## On boarding an Organization 
-An Interface is available to help you enter all relevant data to publish to your Organization through simple forms. This abstracts all the complexity involved while using command line interface. 
+A simple interface to enter all relevant data to publish to your Organization through simple forms. This abstracts all the complexity involved while using command line interface. 
 
-After furnishing the basic on-boarding details, a review alert mechanism is triggered for the Singnet Team, to ensure compliance with legal procedures before on-boarding any organization on to market place (Dapp)
+After furnishing the basic on-boarding details, a review alert mechanism is triggered for the SingularityNet Team, to ensure compliance with legal requirements before on-boarding any organization on to market place (Dapp)
 
 
 ## Invite Workflow - Adding members to an Organization 
@@ -47,7 +45,7 @@ The platform provides the following:
 
 
 ## Publishing an Organization on Block Chain 
-After completing the details of an Organization, a review is automatically triggered. After the Signet team approved the furnished details, publish the organization through the portal.
+After completing the details of an Organization, a review is automatically triggered. After the SingularityNet team approves the furnished details, publish the organization through the portal.
 
 
 ## Service listing Screen
@@ -60,9 +58,9 @@ To abstract the complexity while working on command line interface, you can use 
 
 
 ## Publishing a Service on a block chain 
-After entering all the details, a review process is triggered for the singularity team, to ensure the details are compliant with  legal procedures before
+After entering all the details, a review process is triggered for the SingularityNet team, to ensure the details are compliant with legal requirements before
 on-boarding any service on to market place Dapp.
 
 
 ## Claim easily from Publisher portal
-Claims can now be availed using the publisher portal.
+Claims can now be made using the publisher portal.
