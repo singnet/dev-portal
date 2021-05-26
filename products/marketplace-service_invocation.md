@@ -30,7 +30,7 @@ For example, the user finds easier to send the values in the form of input, and 
 ![marketplace](/assets/img/dapp/free_call_feature.png)
 
 
-Once your freecalls are availed, you are required to pay for any new calls to the service. For this,  you need need a wallet, some ethers in your wallet, and AGI in your wallet 
+Once your freecalls are availed, you are required to pay for any new calls to the service. For this,  you need need a wallet, some ethers in your wallet, and AGIX in your wallet 
 
 
 ***You can either pay through Metamask or through a General wallet(Paypal)***
@@ -44,7 +44,7 @@ Lets understand each of the wallet options below:
 ### Using Metamask
 **Important**: Metamask is a plugin which is used by the SingularityNET platform. This extension, allows you to perform the following in the context of the marketplace:
 
-- Transfer AGI funds into escrow, 
+- Transfer AGIX funds into escrow, 
 - Setup payment channels to enable calls to any of the listed services.
 
 Firstly, you need to Authorize the Dapp to connect to your metamask account
@@ -58,7 +58,7 @@ Steps
 1.	Let start by depositing some tokens from Metamask to the Singularity Escrow Wallet. So you can pay for service
 2.	On the Home page click on Account link
 3.	Confirm you have sufficient balance in your Metamask Wallet
-4.	In your Account details, check the Total Balance, This is the number AGI token you have in Metamask wallet
+4.	In your Account details, check the Total Balance, This is the number AGIX token you have in Metamask wallet
 5.	In the Manage your Escrow account section, Enter the amount of money you want to deposit to the Escrow wallet
 6.	Click Deposit. A Metamask Window should pop-up. If it Metamask Window does not pop-up, click on the Metamask icon on the top of your browser.
 7.	Check the transaction and click confirm.

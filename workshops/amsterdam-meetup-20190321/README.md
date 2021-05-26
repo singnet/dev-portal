@@ -90,7 +90,7 @@ Open new console and execute:
 docker exec -it snet-amsterdam-meetup bash
 # Review account balance
 snet account balance
-# Deposit AGI tokens to MPE wallet
+# Deposit AGIX tokens to MPE wallet
 snet account deposit 0.0000001
 # Open payment channel
 snet channel open-init <my-org-id> example-service 0.0000001 +10days

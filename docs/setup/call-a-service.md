@@ -23,11 +23,11 @@ micro_nav: true
 Ether is used to pay for interactions on the block chain (known as gas).
 
 The transactions you make a call to SingularityNET are:
-- Transfer AGI into the multi-party escrow account,
+- Transfer AGIX into the multi-party escrow account,
 - Create a payment channel for a service published in the SingularityNET registry, and
-- Transfer AGI into the payment channel and set the timeout
+- Transfer AGIX into the payment channel and set the timeout
 
-After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGI
+After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
 or extend the timeout for the payment channel.
 
 So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
@@ -36,11 +36,11 @@ Luckily for test networks you can [go to a faucet to request some Ether for free
 
 To use the faucet you need to [create a wallet](/docs/setup/create-a-wallet), and then provide them with your wallet's public address.
 
-## Step 2. Get some AGI
+## Step 2. Get some AGIX
 
-We provide a faucet to get AGI for either Ropsten or Kovan networks: [{{ site.data.faucets.agi }}]({{ site.data.faucets.agi }})
+We provide a faucet to get AGIX for either Ropsten or Kovan networks: [{{ site.data.faucets.agix }}]({{ site.data.faucets.agix }})
 
-You'll need a github account to authenticate, and there after you can request AGI every 24 hours.
+You'll need a github account to authenticate, and there after you can request AGIX every 24 hours.
 
 ## Step 3. Make a Call from the Marketplace
 

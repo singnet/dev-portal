@@ -78,7 +78,7 @@ byproduct_cards:
       
     - title: Staking
       img: 'staking.png'
-      description: Coming Soon. A portal for you to stake AGI tokens and get rewarded
+      description: Coming Soon. A portal for you to stake AGIX tokens and get rewarded
       url: 'javascript:void(0);'      
 
 

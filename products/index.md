@@ -24,7 +24,7 @@ Provides an interface for people to browse and interact with available AI servic
 
 
 ## [Request for AI Portal](https://rfai.singularitynet.io/) (RFAI) 
-Allows user to request for AI services that are built and deployed onto the SingularityNET Network. Users can back requests with AGI tokens as a reward for having a service developed. The AGI tokens are transferred to the developer who submits a valid solution for the request. 
+Allows user to request for AI services that are built and deployed onto the SingularityNET Network. Users can back requests with AGIX tokens as a reward for having a service developed. The AGIX tokens are transferred to the developer who submits a valid solution for the request. 
 
 ## [Publisher Portal]() 
 Enables service developers to publish and manage their organizations and services in an easy and intutive manner. 
@@ -32,4 +32,4 @@ You can list your services in the marketplace (Dapp), which can help users to se
 ***Publisher portal will be live soon***  
 
 ## [Staking]() 
-Staking is the process of holding AGI tokens for rewards to support the operations of AI marketplace. Staking will be used to increase AGI liquidity pool.
+Staking is the process of holding AGIX tokens for rewards to support the operations of AI marketplace. Staking will be used to increase AGIX liquidity pool.

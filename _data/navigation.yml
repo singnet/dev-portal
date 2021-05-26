@@ -383,7 +383,7 @@ ai-developers:
         cta: Read more
         url: '/docs/ai-developers/dapp-ui-component'
       claims:
-        title: "Claim AGI"
+        title: "Claim AGIX"
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/claim'              

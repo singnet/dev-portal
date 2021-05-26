@@ -30,11 +30,11 @@ See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full de
 Ether is used to pay for interactions on the block chain (known as gas).
 
 The transactions you make a call to SingularityNET are:
-- Transfer AGI into the multi-party escrow account,
+- Transfer AGIX into the multi-party escrow account,
 - Create a payment channel for a service published in the SingularityNET registry, and
-- Transfer AGI into the payment channel and set the timeout
+- Transfer AGIX into the payment channel and set the timeout
 
-After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGI
+After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
 or extend the timeout for the payment channel.
 
 So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
@@ -43,11 +43,11 @@ Luckily for test networks you can [go to a faucet to request some Ether for free
 
 To use the faucet you need to [create a wallet](/docs/ai-consumers/wallet), and then provide them with your wallet's public address.
 
-### Step 2. Get some AGI
+### Step 2. Get some AGIX
 
-We provide a faucet to get AGI for either Ropsten or Kovan [networks](https://faucet.singularitynet.io/)
+We provide a faucet to get AGIX for either Ropsten or Kovan [networks](https://faucet.singularitynet.io/)
 
-You'll need a github account to authenticate, and there after you can request AGI every 24 hours. 
+You'll need a github account to authenticate, and there after you can request AGIX every 24 hours. 
 
 
 ### Set an identity 
@@ -59,7 +59,7 @@ snet identity user-ropsten
 ```sh
 snet account balance # check balance (all tokens belongs to this idenity)
 snet account deposit 0.000001 # Deposit Token to MPE and Open a payment channel to the new service:
-snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGI in to the Channel
+snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGIX in to the Channel
 ```
 ### Make a call to a Service 
 

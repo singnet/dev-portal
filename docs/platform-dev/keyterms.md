@@ -76,11 +76,11 @@ The SingularityNET DApp is essentially a rich Registry explorer. It loads the Re
 MetaMask is an internet browser extension that allows users to interact with the Ethereum Blockchain and its decentralized applications. MetaMask serves as your access portal for both the Ethereum Mainnet and Ropsten.
 
 
-#### AGI
+#### AGIX
  
-AGI is the proprietary cryptocurrency token used by the SingularityNET platform. SingularityNET (AGI) is an Ethereum based token complying with ERC-20 standards. The AGI token will be used to settle a transaction over the Blockchain. 
+AGIX is the proprietary cryptocurrency token used by the SingularityNET platform. SingularityNET (AGIX) is an Ethereum based token complying with ERC-20 standards. The AGIX token will be used to settle a transaction over the Blockchain. 
  
-#### AGI Token
+#### AGIX Token
  
 Tokens can be staked for voting rights and to become an Agent or spent on goods and services on the platform.
  
