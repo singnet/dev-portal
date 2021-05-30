@@ -34,7 +34,7 @@ The transactions you make a call to SingularityNET are:
 - Create a payment channel for a service published in the SingularityNET registry, and
 - Transfer AGIX into the payment channel and set the timeout
 
-After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
+After that, you interact with the service directly and won't need to pay for further transactions unless you want to add more AGIX
 or extend the timeout for the payment channel.
 
 So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
