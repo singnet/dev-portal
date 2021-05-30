@@ -87,7 +87,7 @@ There are a couple of AI frameworks integrated to SingularityNET so you
 can just add new functionalities to services which are already published.
 
 - [Opencog][opencog]: an open-source software project aimed at directly
-confronting the AGI challenge, using mathematical and biological inspiration
+confronting the AGIX challenge, using mathematical and biological inspiration
 and professional software engineering techniques.
 
 There are tutorials with step-by-step instructions on how to extend the

@@ -6,7 +6,7 @@ title "Messages - Sequence Diagram"
 
 group deposit
 Client -[#red]> MPE : deposit(value)
-MPE -[#green]> AGI : move_tokens(client, MPE, value)
+MPE -[#green]> AGIX : move_tokens(client, MPE, value)
 MPE -[#gray]> MPE : balances[client] += value
 end
 ...
@@ -37,7 +37,7 @@ end
 group withdrawal
 Daemon -[#red]> MPE : withdraw(value)
 MPE -[#gray]> MPE : balances[service] -= value
-MPE -[#green]> AGI : move_tokens(MPE, service, value)
+MPE -[#green]> AGIX : move_tokens(MPE, service, value)
 end
 
 @enduml

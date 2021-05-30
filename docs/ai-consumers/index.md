@@ -12,7 +12,7 @@ micro_nav: true
 
 SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, and anyone on the network can be use the service using the internet connection. 
 
-Developers can charge for the usage of their services using the native AGI token.
+Developers can charge for the usage of their services using the native AGIX token.
 
 Services can span the entire gamut of offerings in artificial intelligence and machine learning. Services can provide inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. The services can be as simple as wrapping a well-known algorithm such as A* path planning, a complete end-to-end solution for an industry problem, or a standalone AI application. Developers can also deploy autonomous AI agents that interoperate with other services on the network.
 
@@ -39,6 +39,6 @@ The SingularityNET platform and network are shown as core components. The follow
 
 You can quickly jump to a particular page or use the navigation on the page to read through them. 
 
-**The Request for AI Portal (RFAI):** is a DApp through which end users and application developers request specific AI services they want added to the network and stake AGI tokens as a reward for high-quality solutions.
+**The Request for AI Portal (RFAI):** is a DApp through which end users and application developers request specific AI services they want added to the network and reward AGIX tokens as a reward for high-quality solutions.
 
 

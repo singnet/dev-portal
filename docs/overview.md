@@ -79,7 +79,7 @@ byproduct_cards:
     - title: Staking
       img: 'staking.png'
       description: A portal for you to stake AGI tokens and get rewarded
-      url: '/products/staking'      
+      url: '/products/staking' 
 
 
 # By Platform    

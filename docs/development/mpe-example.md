@@ -174,7 +174,7 @@ We are now quickly going to look at what will happen next on the **client side**
 snet identity create snet-user rpc --network local
 snet identity snet-user
 
-# deposit 100.1 AGI to MPE wallet
+# deposit 100.1 AGIX to MPE wallet
 snet account deposit 100.1 -y
 
 # open channel with our service (organization=testo service_name=tests)
@@ -193,7 +193,7 @@ First, let's request from the blockchain the list of all open channels:
 snet channel print-all-filter-sender
 ```
 
-We should have one channel with the recipient=0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB, and we should have 42 AGI in it.
+We should have one channel with the recipient=0x3b2b3C2e2E7C93db335E69D827F3CC4bC2A2A2cB, and we should have 42 AGIX in it.
 
 In order to make an actual call, the channel should be initialized (meaning: protobuf should be compiled).
 

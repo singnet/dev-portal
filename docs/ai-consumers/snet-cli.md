@@ -62,7 +62,7 @@ snet identity user-ropsten
 ```sh
 snet account balance # check balance (all tokens belongs to this idenity)
 snet account deposit 0.000001 # Deposit Token to MPE and Open a payment channel to the new service:
-snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGI in to the Channel
+snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGIX in to the Channel
 ```
 ### Make a call to a Service 
 

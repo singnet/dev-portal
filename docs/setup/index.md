@@ -26,4 +26,4 @@ Depending on your experience, you may prefer to use a [preconfigured docker imag
 
 - If you want to configure your own environment, [here is what you'll need](/docs/setup/requirements).
 - [How to create a wallet](/docs/setup/create-a-wallet)
-- [Get some AGI and ETH, and call a service](/docs/setup/call-a-service)
+- [Get some AGIX and ETH, and call a service](/docs/setup/call-a-service)

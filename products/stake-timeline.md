@@ -22,7 +22,7 @@ Once the call for staking period is over and requests are accepted, a staking wi
 
 * A new call for staking period begins. There is a time window during which users can request their tokens back at the end of the current window. 
 
-* If users don't request their tokens back, they default to be automatically re-staked in the next window, along with the reward tokens. Users can turn off auto-renewal, in which case their tokens will not be re-staked; instead, they will sit in the smart contract, available for withdrawal. Users can then withdraw their tokens at their convenience. All these operations can be done through the easy to use AGI <a href="https://staking.singularitynet.io" target="_blank">Staking DApp</a>.
+* If users don't request their tokens back, they default to be automatically re-staked in the next window, along with the reward tokens. Users can turn off auto-renewal, in which case their tokens will not be re-staked; instead, they will sit in the smart contract, available for withdrawal. Users can then withdraw their tokens at their convenience. All these operations can be done through the easy to use AGIX <a href="https://staking.singularitynet.io" target="_blank">Staking DApp</a>.
 
 Right after the staking window is over, the staking rewards are delivered to users, proportionally to their share of the overall staked pool in that window. 
 
