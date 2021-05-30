@@ -36,7 +36,7 @@ Since we are currently in the Beta stage, we only use Kovan and Ropsten Testnet 
 
 
 ## AGIX Faucet
-We have an automated faucet for distributing Kovan and Ropsten Testnet AGIX Tokens [here]({{ site.data.faucets.agix }}). You will need to login using your GitHub account and input the Ethereum address where you want to receive the AGIX token. Make sure this address is a Kovan Ethereum Address. You can request 1 AGIX token every 24 hours.
+We have an automated faucet for distributing Kovan and Ropsten Testnet AGIX Tokens [here]({{ site.data.faucets.agix }}). You will need to login using your GitHub account and input the Ethereum address where you want to receive the AGIX token. Make sure this address is a Kovan Ethereum Address. You can request 10 AGIX token every 24 hours.
 
 In order to add the Kovan Testnet AGIX you may need the following details:
 * Symbol: AGIX
