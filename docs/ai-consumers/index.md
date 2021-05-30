@@ -39,6 +39,6 @@ The SingularityNET platform and network are shown as core components. The follow
 
 You can quickly jump to a particular page or use the navigation on the page to read through them. 
 
-**The Request for AI Portal (RFAI):** is a DApp through which end users and application developers request specific AI services they want added to the network and stake AGIX tokens as a reward for high-quality solutions.
+**The Request for AI Portal (RFAI):** is a DApp through which end users and application developers request specific AI services they want added to the network and reward AGIX tokens as a reward for high-quality solutions.
 
 
