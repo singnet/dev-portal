@@ -1,41 +1,30 @@
-
-{% if site.data.navigation.header.logo.text or site.data.navigation.header.logo.image or site.data.navigation.header.nav %}   
+ {% if site.data.navigation.header.logo.text or site.data.navigation.header.logo.image or site.data.navigation.header.nav %}
 
 <!-- Mobile First Navigation -->
-<div class="snet-mobile-first collapse" id="snet-mobile-first"> 
+<div class="snet-mobile-first collapse" id="snet-mobile-first">
     <ul>
         <li>
             <a class="snet-mobile-first-close" data-toggle="collapse" data-target="#snet-mobile-first">
-                <i class="material-icons">close</i>                
+                <i class="material-icons">close</i>
             </a>
         </li>
-        {% for item in site.data.navigation.header.nav %}
-        {% assign dropdowntree = nil %}
-        {% if item.subheaders %}
-        {% assign dropdowntree = item.subheaders %}
-        {% endif %}
-        {% if dropdowntree %}
+        {% for item in site.data.navigation.header.nav %} {% assign dropdowntree = nil %} {% if item.subheaders %} {% assign dropdowntree = item.subheaders %} {% endif %} {% if dropdowntree %}
         <li>
-            <a class="" >
+            <a class="">
                 {{ item.item_name }}
-            </a>  
+            </a>
             <div class="sub-menu">
                 {% for subheader in dropdowntree %}
-                <a class="" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a>
-                {% endfor %}
-            </div>                    
+                <a class="" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a> {% endfor %}
+            </div>
         </li>
-        {% else %}
-        {% assign top_nav_class = "nav-item"%}
+        {% else %} {% assign top_nav_class = "nav-item"%}
         <li class="{{ top_nav_class }}">
             {% if item.item_external_url %}
-            <a target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-            {% else %}
-            <a href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-            {% endif %}
+            <a target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a> {% else %}
+            <a href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a> {% endif %}
         </li>
-        {% endif %}                 
-        {% endfor %}   
+        {% endif %} {% endfor %}
     </ul>
 </div>
 
@@ -67,14 +56,14 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 <header>
     <div class="shadow-wrapper">
         <div class="wrapper">
             <nav class="navbar navbar-expand-lg snet-navbar_primary">
                 <h1>
-                    <a class="navbar-brand" href="/"><img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/WhiteLogo.93b76382.svg"></a>                   
+                    <a class="navbar-brand" href="/"><img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/WhiteLogo.93b76382.svg"></a>
                 </h1>
                 <button class="navbar-toggler snet-navbar-toggler" type="button" data-toggle="collapse" data-target="#snet-mobile-first">
                     <span class="navbar-toggler-icon">
@@ -83,75 +72,55 @@
                 </button>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="navbar-nav mr-auto snet-navbar_menu">
-                        {% for item in site.data.navigation.header.nav %}
-                        {% assign dropdowntree = nil %}
-                        {% if item.subheaders %}
-                        {% assign dropdowntree = item.subheaders %}
-                        {% endif %}
-                        {% if dropdowntree %}
+                        {% for item in site.data.navigation.header.nav %} {% assign dropdowntree = nil %} {% if item.subheaders %} {% assign dropdowntree = item.subheaders %} {% endif %} {% if dropdowntree %}
                         <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" >
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown">
                                 {{ item.item_name }}
-                            </a>  
+                            </a>
                             <div class="dropdown-menu">
                                 {% for subheader in dropdowntree %}
-                                <a class="dropdown-item" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a>
-                                {% endfor %}
-                            </div>                    
+                                <a class="dropdown-item" target="_blank" href="{{subheader.url}}">{{subheader.title}}</a> {% endfor %}
+                            </div>
                         </li>
-                        {% else %}
-                        {% assign top_nav_class = "nav-item"%}
+                        {% else %} {% assign top_nav_class = "nav-item"%}
                         <li class="{{ top_nav_class }}">
                             {% if item.item_external_url %}
-                            <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                            {% else %}
-                            <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                            {% endif %}
+                            <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a> {% else %}
+                            <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a> {% endif %}
                         </li>
-                        {% endif %}                 
-                        {% endfor %}                
+                        {% endif %} {% endfor %}
                     </ul>
-                </div>           
-            </nav>         
-        </div>              
-    </div>        
+                </div>
+            </nav>
+        </div>
+    </div>
 </header>
 
 {% if page.url != "/" %}
 <nav class="navbar navbar-expand-lg snet-navbar_secondary sticky-top">
     <div class="wrapper">
-        <h1> 
+        <h1>
             Documentation
         </h1>
         <div class="-collapse -navbar-collapse" id="secondary-menu">
-            <ul class="navbar-nav mr-auto snet-navbar_navigation">            
-                {% for item in site.data.navigation.header.secondnav %}
-                    {% assign nav_class = "nav-item"%}
-                    {% if page.url contains item.item_url %}
-                        {% assign nav_class = "nav-item active" %}
-                    {% endif %}
-                    <li class="{{ nav_class }}">
-                        {% if item.item_external_url %}
-                            <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                        {% else %}
-                            <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a>
-                        {% endif %}
-                    </li>                
-                {% endfor %}  
+            <ul class="navbar-nav mr-auto snet-navbar_navigation">
+                {% for item in site.data.navigation.header.secondnav %} {% assign nav_class = "nav-item"%} {% if page.url contains item.item_url %} {% assign nav_class = "nav-item active" %} {% endif %}
+                <li class="{{ nav_class }}">
+                    {% if item.item_external_url %}
+                    <a class="nav-link" target="_blank" href="{{ item.item_external_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a> {% else %}
+                    <a class="nav-link" href="{{ item.item_url }}" title="{{ item.item_name }}">{{ item.item_name }}</a> {% endif %}
+                </li>
+                {% endfor %}
                 <li class="nav-item last-item-list">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown">More</a>
                     <div class="dropdown-menu dropdown-menu-secondary">
-                        {% for item in site.data.navigation.header.secondnav %}  
-                            {% if forloop.index > 3 %}
-                                <a class="dropdown-item" href="{{ item.item_url }}">{{ item.item_name }}</a>                    
-                            {% endif %}
-                        {% endfor %}                      
-                    </div>                
-                </li>            
+                        {% for item in site.data.navigation.header.secondnav %} {% if forloop.index > 3 %}
+                        <a class="dropdown-item" href="{{ item.item_url }}">{{ item.item_name }}</a> {% endif %} {% endfor %}
+                    </div>
+                </li>
             </ul>
-        </div>            
-    </div>       
-</nav>   
-{% endif %} 
-{% endif %} 
-<!-- Navigations End -->  
+        </div>
+    </div>
+</nav>
+{% endif %} {% endif %}
+<!-- Navigations End -->
