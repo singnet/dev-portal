@@ -14,8 +14,12 @@ header:
             title: "AI Marketplace"
             url: "https://beta.singularitynet.io"
           - 
-            title: "Request For AI"
-            url: "https://rfai.singularitynet.io"          
+            title: "AI Publisher"
+            url: "https://publisher.singularitynet.io/"     
+            
+          - 
+            title: "AGIX Staking"
+            url: "https://staking.singularitynet.io/"                 
         - item_name: Community
           item_url: ''
           subheaders:
