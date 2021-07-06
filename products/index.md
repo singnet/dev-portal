@@ -29,5 +29,5 @@ You can list your services in the marketplace (Dapp), which can help users to se
 ## [Staking](/products/staking/)
 Staking is the process of holding AGIX tokens for rewards to support the operations of AI marketplace. Staking will be used to increase AGIX liquidity pool.
 
-## [Request for AI Portal (RFAI)](/products/rfai/)
+## [Request for AI Service](/products/rfai/)
 Allows user to request for AI services that are built and deployed onto the SingularityNET Network.
