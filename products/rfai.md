@@ -19,8 +19,6 @@ micro_nav: true
 
 ---
 
-## Looking for New AI Service
-
 If you have a need for a specific AI service, we would love to know! We will discuss the details with you or use your suggestion to incentivize our network. You can request for new AI [here](https://beta.singularitynet.io/airequestform)
 
 
