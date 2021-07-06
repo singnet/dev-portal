@@ -66,11 +66,6 @@ byproduct_cards:
       description: Explore and connect to the largest open AI marketplace in the world.
       url: '/products/marketplace'
 
-    - title: Request For AI (RFAI)
-      img: 'rfai.png'
-      description: Request for an AI service that you would like built on the SingularityNet platfrom
-      url: '/products/rfai'
-
     - title: AI Publisher
       img: 'publisher.png'
       description: A portal for you to publish your AI services on the SingularityNet platfrom
