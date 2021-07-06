@@ -77,7 +77,7 @@ Steps
 1.	Let start by depositing some tokens from Metamask to the Singularity Escrow Wallet. So you can pay for service
 2.	On the Home page click on Account link
 3.	Confirm you have sufficient balance in your Metamask Wallet
-4.	In your Account details, check the Total Balance, This is the number AGI token you have in Metamask wallet
+4.	In your Account details, check the Total Balance, This is the number AGIX token you have in Metamask wallet
 5.	In the Manage your Escrow account section, Enter the amount of money you want to deposit to the Escrow wallet
 6.	Click Deposit. A Metamask Window should pop-up. If it Metamask Window does not pop-up, click on the Metamask icon on the top of your browser.
 7.	Check the transaction and click confirm.

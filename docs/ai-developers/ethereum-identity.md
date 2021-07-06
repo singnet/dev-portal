@@ -51,6 +51,6 @@ NOTE: Use the SingularityNET Marketplace in Mainnet Mode whenever you want to in
 
 Ethereum Ropsten coins are free to claim and can be used to test the platform. Ropsten Ethereum is needed to cover the Gas costs associated with transactions on the platform. Users are required to visit a [Ropsten Faucet](https://faucet.metamask.io/), which is a per-request Ropsten Ethereum distribution hub. Users provide their Ropsten Ethereum wallet address from MetaMask to the faucet and it issues a set amount of Ropsten Ethereum to the requesting wallet.
 
-### AGI Faucet (Ropsten Test Network Only)
+### AGIX Faucet (Ropsten Test Network Only)
 
-In order to have Ropsten AGI to test the platform, users are required to visit the [AGI Faucet](https://faucet.singularitynet.io/), which is a per-request Ropsten AGI distribution hub. In this case, users provide their Ropsten Ethereum wallet addresses to the Faucet, and a set amount of Ropsten AGI will be transferred to the requesting wallet. In order to receive these tokens, the user must log in via [GitHub](https://github.com/) to access the AGI Ropsten Faucet. 
+In order to have Ropsten AGIX to test the platform, users are required to visit the [AGIX XFaucet](https://faucet.singularitynet.io/), which is a per-request Ropsten AGIX distribution hub. In this case, users provide their Ropsten Ethereum wallet addresses to the Faucet, and a set amount of Ropsten AGIX will be transferred to the requesting wallet. In order to receive these tokens, the user must log in via [GitHub](https://github.com/) to access the AGIX Ropsten Faucet. 

@@ -54,7 +54,7 @@ Make sure you follow our [naming standardization guidelines](/docs/concepts/nami
 ## AI frameworks
 There are a couple of AI frameworks integrated to SingularityNET so you can just add new functionalities to services which are already published.
 
-- [OpenCog](https://opencog.org/): an open-source software project aimed at directly confronting the AGI challenge, using mathematical and biological inspiration and professional software engineering techniques. It currently ranks in the top 10 in Github for most popular AI projects!
+- [OpenCog](https://opencog.org/): an open-source software project aimed at directly confronting the AGIX challenge, using mathematical and biological inspiration and professional software engineering techniques. It currently ranks in the top 10 in Github for most popular AI projects!
 
 There are tutorials with step-by-step instructions on how to extend the existing AI framework service in order to implement new functionalities:
 - [How to write an OpenCog service for SingularityNET](/tutorials/opencog)

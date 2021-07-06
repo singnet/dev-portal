@@ -116,7 +116,7 @@ You can find more details about each sdk within the respective package folders.
 These SDKs are under active development and not ready for production use yet. If you find any bug or something doesn't work as expected, please create an issue.
 
 ##Usage
-All the SDKs assume that there is enough eth balance to cover the gas cost and AGI tokens in the wallet to cover the service execution cost.
+All the SDKs assume that there is enough eth balance to cover the gas cost and AGIX tokens in the wallet to cover the service execution cost.
 
 The SDKs chose a default Payment Channel Management Strategy,  which is the simplest form of picking an existing Payment Channel if any or creates a new Payment Channel if no channel is found. 
 

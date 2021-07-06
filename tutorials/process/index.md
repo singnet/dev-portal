@@ -308,7 +308,7 @@ snetd serve .
 
 ## Step 3) Calling your service
 
-To call your service through the Blockchain, make sure you have sufficient funds for the transactions (check by running `snet account balance`). If you don't, deposit an amount (e.g. 10 COGs, or 10e-8 AGI) by running `snet account deposit 0.00000010`. 
+To call your service through the Blockchain, make sure you have sufficient funds for the transactions (check by running `snet account balance`). If you don't, deposit an amount (e.g. 10 COGs, or 10e-8 AGIX) by running `snet account deposit 0.00000010`. 
  
 Create a payment channel to your service: specify its organization ID and the group name, deposit some tokens into the channel and set its expiration time: `snet channel open-init ORG_ID default_group AMOUNT EXPIRATION`. For our example, we'll deposit 0 tokens and set the payment channel to expire in 10 days:
 

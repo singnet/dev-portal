@@ -132,15 +132,15 @@ You can create an identity using a known key.
 
 Check more details on how to use them at ([SNET CLI](http://snet-cli-docs.singularitynet.io)).
 
-## Step 4. Get ETH and AGI
+## Step 4. Get ETH and AGIX
 
-You'll need some ETH and AGI tokens.
+You'll need some ETH and AGIX tokens.
 
 First, get the address of your account using ```snet account print``` command.
 
 Then, using your address you can get Ropsten AGIs and ETHs for free using your Github's account here:
 
-* AGI: [{{ site.data.faucets.agi }}]({{ site.data.faucets.agi }})
+* AGIX: [{{ site.data.faucets.agix }}]({{ site.data.faucets.agix }})
 * ETH: [{{ site.data.faucets.eth }}]({{ site.data.faucets.eth }})
 
 Now make sure you are on Ropsten Network, using:
@@ -225,7 +225,7 @@ You need to specify the following parameters:
 * `SERVICE_DISPLAY_NAME` - Display name of your service. You can choose any name you want. 
 * `PAYMENT_GROUP_NAME` - Name of the payment group from organization metadata published in [Step 5](#step-5-create-an-organization).
 * `SERVICE_ENDPOINT` - Endpoint which will be used to connect to your service.
-* `FIXED_PRICE` - Price in AGI for a single call to your service. We will set the price to 10^-8 AGI (remember that 10^-8 AGI = 1 COG).
+* `FIXED_PRICE` - Price in AGIX for a single call to your service. We will set the price to 10^-8 AGIX (remember that 10^-8 AGIX = 1 COG).
 
 ```sh
 

@@ -20,7 +20,7 @@ The integration of SingularityNET’s decentralized AI marketplace with PayPal r
 1.	Go to the [Marketplace portal](http://beta.singularitynet.io)
 2.	Pay for service through your Paypal account    
 3.	If you dont have a wallet , the application will create a wallet and a channel for you.
-    The application will then deposit the equivalent AGI tokens in to channel.
+    The application will then deposit the equivalent AGIX tokens in to channel.
 4.	Now you can make a call now - The Dapp components hide all the complexity on making these calls.
 
 ![marketplace](/assets/img/dapp/marketplaceimage.gif)
