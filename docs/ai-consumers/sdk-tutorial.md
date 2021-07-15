@@ -49,6 +49,8 @@ Once the required files are generated, import them into service folder and copy 
 
 Before invoking the service make sure you have your own etherium wallet with some AGIX and an infura account. You can create an infura account [here](https://infura.io)
 
+Follow these [steps](https://blog.infura.io/getting-started-with-infura-28e41844cc89/) to get infura key.
+
 Here, below example is shown for example_service. Replace the values according to the service you want to work with.
 
 ```sh
