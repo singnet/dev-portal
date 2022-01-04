@@ -23,6 +23,7 @@ gem install --user-install jekyll
 gem install --user-install jekyll-paginate
 gem install --user-install jekyll-sitemap
 gem install --user-install jemoji
+gem install --user-install feedjira
 ```
 
 ```
