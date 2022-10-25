@@ -252,11 +252,6 @@ ai-consumers:
           excerpt:
           cta: Read more
           url: '/docs/ai-consumers/marketplace-service_invocation'
-          invoke-serivce-dapp:
-          title: Invoking a Training using Marketplace Dapp
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-consumers/marketplace-service-training'
         invoke-serivce-java-sdk:
           title: Invoking a Service using Java sdk
           excerpt:
@@ -419,6 +414,11 @@ ai-developers:
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/marketplace-service_invocation'
+        invoke-serivce-dapp:
+          title: Invoking a Training using Marketplace Dapp
+          excerpt:
+          cta: Read more
+          url: '/docs/ai-developers/marketplace-service_training'
         invoke-serivce-java-sdk:
           title: Invoking a Service using Java sdk
           excerpt:
