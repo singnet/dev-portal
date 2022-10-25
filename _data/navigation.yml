@@ -414,7 +414,7 @@ ai-developers:
           excerpt:
           cta: Read more
           url: '/docs/ai-developers/marketplace-service_invocation'
-        invoke-serivce-dapp:
+        invoke-serivce-training-dapp:
           title: Invoking a Training using Marketplace Dapp
           excerpt:
           cta: Read more
