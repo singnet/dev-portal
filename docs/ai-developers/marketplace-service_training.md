@@ -51,3 +51,7 @@ The Edit button provide a new scope to change the details in the existing models
 The delete button provide a service to delete the models.
 
 ![marketplace](/assets/img/dapp/marketplace_training_models_delete.png)
+
+# Complete process video
+
+![marketplace](/assets/img/dapp/marketplace_training_models_samplevideo.mp4)
