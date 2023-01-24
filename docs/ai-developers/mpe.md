@@ -51,7 +51,7 @@ Actually, the channel is not closed and the task can still continue off line, bu
       <br>-or-
       - Extend the expiration date and add funds to the contract at any moment in time.
 
-Note: The receiver can withdraw from the channel (same as claim) only using the authorized amount by the sender.  Whenever a signature is made on a certain format which should be signed by the private key of Kevin, Jack then verifies whether the signature was authentic to Kevin, based on the agreed format.
+Note: The receiver can withdraw from the channel (same as claim) only using the authorized amount by the sender.  Whenever a signature is made on a certain format which should be signed by the private key of the sender, the receiver then verifies whether the signature was authentic to the sender, based on the agreed format.
 
 ## MPE Use cases
 
