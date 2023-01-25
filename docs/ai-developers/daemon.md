@@ -16,7 +16,7 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-        
+
 ---
 The [SingularityNET daemon](https://github.com/singnet/snet-daemon) is the adapter that a service can use to interface with the SingularityNET platform.
 
@@ -33,23 +33,23 @@ With each invocation the daemon checks for the following:
 2. the payment channel has sufficient funds, and
 3. the payment channel expiry is beyond a specified threshold (to ensure that the developer can claim the accrued funds).
 
-After performing the above checks, the request is proxied to the service. 
+After performing the above checks, the request is proxied to the service.
 
 Besides, the daemon monitors the payment states of different clients.
 
 <img src="/assets/img/daemon_diagram.jpg" width="400">
 
-After the requests are validated by the daemon, they are translated into the format recognizable by AI service. 
+After the requests are validated by the daemon, they are translated into the format recognizable by AI service.
 
-The daemon exposes a [gRPC](https://grpc.io/), so all requests are based on gRPC and [protocol buffers](https://developers.google.com/protocol-buffers/), but it can translate requests to a few different formats, as expected by the service: in addition to gRPC/Protobuf, JSON-RPC and process fork–based services (executables to be executed on a per-call basis with the input parameters on standard input) are supported. 
+The daemon exposes a [gRPC](https://grpc.io/), so all requests are based on gRPC and [protocol buffers](https://developers.google.com/protocol-buffers/), but it can translate requests to a few different formats, as expected by the service: in addition to gRPC/Protobuf, JSON-RPC and process fork–based services (executables to be executed on a per-call basis with the input parameters on standard input) are supported.
 
 This translation enables the usage of one consistent protocol  to communicate with any service on SingularityNET.
 
-The daemon and CLI also use gRPC and Protobuf for communication. 
+The daemon and CLI also use gRPC and Protobuf for communication.
 
-One can deploy multiple instances of an AI service. Each instance can have its own sidecar daemon, and all daemons are registered as endpoints in the Registry. 
+One can deploy multiple instances of an AI service. Each instance can have its own sidecar daemon, and all daemons are registered as endpoints in the Registry.
 
-When multiple instances are available, they can be grouped in to multiple instance groups (a typical reason for doing so would be to group instances in the same data center or cloud region). 
+When multiple instances are available, they can be grouped in to multiple instance groups (a typical reason for doing so would be to group instances in the same data center or cloud region).
 
 Daemons within the group coordinate to share payment status information through [etcd](https://coreos.com/etcd/).
 

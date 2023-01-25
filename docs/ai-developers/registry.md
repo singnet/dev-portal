@@ -74,4 +74,4 @@ Tags are completely optional but recommended for discoverability. Services and T
 The SingularityNET DApp is essentially a rich Registry explorer. It loads the Registry and generates UI for playing with the Services and Type Repositories registered in it.
 
 ## CLI Integration
-The SingularityNET CLI has all the tooling necessary to call any of the Registry methods. Please see the[CLI documentation](http://snet-cli-docs.singularitynet.io/)
+The SingularityNET CLI has all the tooling necessary to call any of the Registry methods. Please see the [CLI documentation](http://snet-cli-docs.singularitynet.io/)
