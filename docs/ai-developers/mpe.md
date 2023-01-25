@@ -99,31 +99,31 @@ If Kevin is buying services from Jack, they both need to enter in to a formal ag
 <br>
 <br>
 
-* Kevin makes a call and authorizes for 1 cog to Jack, (assuming the cost of the service is 1 cog) ,the status of the channel is now maintained offchain by the storage mechanism used by Daemon :
+* Kevin makes a call and authorizes for 1 cog to Jack, (assuming the cost of the service is 1 cog), the status of the channel is now maintained off-chain by the storage mechanism used by Daemon :
 
-|**Channel ID**       | 1       |The channel ID 1 is now updated off chain|
+|**Channel ID**       | 1       |The channel ID 1 is now updated off-chain|
 |-------------------- |-------- |----------------------------------|
 |**Nonce**            | 0       |Initially the Nonce is 0|
 |**Full amount**      | 100 Cogs|Amount Kevin has put into the channel is 100 Cogs|
-|**Authorized Amount**|	1       |The Authorized amount is zero.|
+|**Authorized Amount**|	1       |The Authorized amount is one.|
 |**Signature**        |	1       |No signature is required to be sent.|
 
 *	Kevin makes a call and authorizes for 2 cogs, to Jack, now the status changes as follows:
 
-|**Channel ID**       | 1       |The channel ID 1 is now updated off chain|
+|**Channel ID**       | 1       |The channel ID 1 is now updated off-chain|
 |---------------------|---------|----------------------------------|
 |**Nonce**            | 0       |Initially the Nonce is 0|
 |**Full amount**      | 100 Cogs|Amount Kevin has put into the channel is 100 Cogs|
 |**Authorized Amount**|	2 Cogs  |The Authorized amount is two.|
 |**Signature**        |	2 Cogs  |Signature is required for two.|
 
-*	Jack makes a claim using the signature from Kevin, this transaction is considered on-chain transaction.  please note the effective balance in Blockchain for this channel is now 98 and its nonce is 1,The same channel state is updated as follows even in the off chain state:
+*	Jack makes a claim using the signature from Kevin, this transaction is considered on-chain transaction.  Please note the effective balance in Blockchain for this channel is now 98 and its nonce is 1.  The same channel state is updated as follows even in the off-chain state:
 
 |**Channel ID**       | 1       |The channel ID created is 1|
 |---------------------|---------|----------------------------------|
 |**Nonce**            | 1       |Initially the Nonce was 0 but now it is 1|
 |**Full amount**      | 98 Cogs|Amount signed by Kevin was for two cogs. The full amount in the channel is 98.|
-|**Authorized Amount**|	0       |The Authorized amount is two.|
+|**Authorized Amount**|	0       |The Authorized amount is zero.|
 |**Signature**        |	0       |No signature is required to be sent|
 
 **Note:** Claims are always on-chain transaction and the Nonce gets incremented when claims are made.
