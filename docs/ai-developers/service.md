@@ -7,7 +7,7 @@ comments: false
 ---
 ## Service
 
-The platform's primary reason for existence is to allow a diverse collection AI services to be bought and sold via a distributed marketplace. Anyone can publish the availability of their machine learning method, or integrated AI solution, and allow clients to interact with and pay for them directly.
+The platform's primary reason for existence is to allow a diverse collection of AI services to be bought and sold via a distributed marketplace. Anyone can publish the availability of their machine learning method, or integrated AI solution, and allow clients to interact with and pay for them directly.
 
 These services are primarily meant to be AI or machine learning related, but there is no intrinsic limitation to what type of service can be offered. Indeed, the foundation or the community may end up implementing utility and adaptor services (such as image conversion) to allow services be composed more easily.
 

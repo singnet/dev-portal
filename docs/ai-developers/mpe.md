@@ -13,7 +13,7 @@ micro_nav: true
 
 An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account.
 
-The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-Blockchain interactions between AI Consumers and AI service providers.
+The Multi-Party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-Blockchain interactions between AI Consumers and AI service providers.
 
 
 The MPE contract comprises two main functions, which includes:
@@ -36,13 +36,13 @@ The core logical building block of the Multi-Party Escrow is a simple (“Atomic
 
 It is understood that the payment channel is on the Blockchain. So, in order to prevent direct updating on the Blockchain regularly, the payment channel state is maintained in the storage.
 
-Daemon maintains the channel state off chain as block operations involve gas cost and are slow between parties without imposing any delay by the Blockchain block formation times and compromising on transactional security.
+Daemon maintains the channel state off-chain as block operations involve gas cost and are slow between parties without imposing any delay by the Blockchain block formation times and compromising on transactional security.
 
 
 Let us consider the simple unidirectional payment channel, the main logic is as follows:
 
 1.	The sender creates an Escrow contract with a given expiration date, and funds it with a desired amount of tokens.
-2.	The sender then needs to send a small amount of tokens to the recipient each time (to the recipient) with signed authorization
+2.	The sender then needs to send a small amount of tokens to the recipient each time (to the recipient) with signed authorization.
 3.	The recipient must verify whether the signed authorization and the amount required is correct, and that amount specified does not exceed the funds being escrowed.
 4.	The channel nonce is incremented, whenever a claim happens,
 Actually, the channel is not closed and the task can still continue off line, but a new nonce need to be used.
@@ -61,7 +61,7 @@ Consider the following
 
 If Kevin is buying services from the Jack, they both need to enter in to a formal agreement with each other. A channel is created.
 
-**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity.
+**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient), Organization Id and the daemon group identity.
 
 1.	Kevin deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their AGIX tokens.
 2.	Kevin creates and opens a Payment Channel. <br>
@@ -175,10 +175,10 @@ server sends a `channelClaim` request, they can continue to work without receivi
 
 
 # MPE Stateless Client
-The Client does not have to maintain the state of the last amount it had signed
- The client can request the last state of the given payment channel from the server.
-    * The server is not able to forge this state, because it was signed by the client (of course the client should check its own signature).
-    * The server is obviously interested in saving and sending the last state, otherwise it loses money.
+The client does not have to maintain the state of the last amount it had signed.
+The client can request the last state of the given payment channel from the server.
+* The server is not able to forge this state, because it was signed by the client (of course the client should check its own signature).
+* The server is obviously interested in saving and sending the last state, otherwise it loses money.
 
 
 This section describes how the client communicates with the SingularityNET services using the Multi-Party Escrow payment channels without storing state of the payment channel.
@@ -187,10 +187,10 @@ The client needs to store the Ethereum identity as follows:
     Considering the situation in which the request to open the channel had been sent, but not yet mined. This can occur when the client request has not received any acknowledgement or the session is disconnected (it "lost" its state).
 2.	The client requests the last state of the given payment channel from the server
 
- - The server can never duplicate the state of the payment channel signed by the client (off course the client should check its own signature).
- - The server saves and sends the last state, otherwise the money lost.
+- The server can never duplicate the state of the payment channel signed by the client (off course the client should check its own signature).
+- The server saves and sends the last state, otherwise the money is lost.
 
- **Note:** A unique gRPC method is available in the daemon helps return the state of the channel (see: https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto).
+ **Note:** A unique gRPC method is available in the daemon to return the state of the channel (see: https://github.com/singnet/snet-cli/blob/master/packages/snet_cli/snet/snet_cli/resources/proto/state_service.proto).
 
  The client does not necessarily require a special call request to know the last state of the channel from the daemon.
 
@@ -200,21 +200,21 @@ The client needs to store the Ethereum identity as follows:
 
 - **current_nonce**
   <br>Current nonce of the payment channel.
-- **current_signed_amoun**t
-  <br>Last amount which were signed by client with current_nonce. If no messages were signed with the current_nonce, then this value is an empty byte string (b''), which we should interpret as 0.
-- **current_signature **
-  <br>Last signature sent by the client with current_nonce, it could be absent (empty string) if no message was signed with current nonce.
+- **current_signed_amount**
+  <br>Last amount which were signed by the client with current_nonce. If no messages were signed with current_nonce, then this value is an empty byte string (b''), which we should interpret as 0.
+- **current_signature**
+  <br>Last signature sent by the client with current_nonce, it could be absent (empty string) if no message was signed with current_nonce.
 - **oldnonce_signed_amount**
-  <br>last amount which was signed by client with nonce=current_nonce - 1.
+  <br>Last amount which was signed by the client with nonce=current_nonce - 1.
 - **oldnonce_signature**
-  <br>last signature sent by client with nonce = current_nonce - 1.
+  <br>Last signature sent by client with nonce = current_nonce - 1.
 
 **Note:** The two last values are not available in current version, if implemented, can calculate the unspent_amount in the case that current_nonce != |Blockchain_nonce.
 
 **Example**
 Assume that the server performs a close/reopen procedure for the channel. The client can proceed without confirmation from the Blockchain, because the server does not need to be dependent, or the client ensures that the request is mined before expiration of the channel.
 
-Before considering the above scenario, define the following parameters
+Before considering the above scenario, let us define the following parameters
 - |Blockchain_nonce - nonce of the channel in the Blockchain
 - |Blockchain_value - value of the channel in the Blockchain
 
@@ -233,4 +233,4 @@ In each case, the client can verify their signature is authentic and considers t
 Taking into account our assumptions, we know that current_nonce = |Blockchain_nonce + 1.
 - unspent_amount = |Blockchain_value - oldnonce_signed_amount - current_signed_amount
 
-**Note:** The server can send smaller oldnonce_signed_amount (not the actually last one which was used for channelClaim), But the server trust that the money available is actually more in the channel, which means that a likely attack has occurred through unspent_amount, which lead us  believe that there are less tokens than the actuals, and therefore the future calls need be rejected instantly (or force us to call channelAddFunds).
+**Note:** The server can send smaller oldnonce_signed_amount (not the actually last one which was used for channelClaim), But the server trust that the money available is actually more in the channel, which means that a likely attack has occurred through unspent_amount, which lead us to believe that there are less tokens than the actuals, and therefore the future calls need be rejected instantly (or force us to call channelAddFunds).
