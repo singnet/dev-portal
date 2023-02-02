@@ -14,29 +14,35 @@ micro_nav: true
 The organization metadata is the description of a SingularityNET Organization and is, by default, hosted on the SingularityNET IPFS cluster. In order to use a service, the client needs to know the following:
 - The Organization metadata
 - The Service metadata
+
 There are three ways of providing this metadata to the clients and the daemons:
 - Simple JSON file
 - IPFS hash that points to the JSON metadata
-- Name of service in the Registry 
-    The Name of service in the Registry, can be resolved to an IPFS hash, pointing to the metadata, using the Registry’s OrgMetadataURI method. 
-    **Note:** Only the Owner of the Organization can modify the metadata.
-**Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack
+- Name of service in the Registry
+
+The Name of service in the Registry, can be resolved to an IPFS hash, pointing to the metadata, using the Registry’s OrgMetadataURI method.
+**Note:** Only the Owner of the Organization can modify the metadata.
+**Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, if the IPFS client is compromised, the client system can become vulnerable to attack.
 **Note:** By default, the snet-cli adheres to this verification.
 
 ## Description of Fields in metadata file
 The following is the list of filed types and their description.
-**type** : Describes of this is an Individual or a Company organization contacts : Stores the contacts related to an Organization , you can have multiple contacts contact_type : Describes the contact type , example support etc; email_id : Email associated with this contact phone : Phone number associated with this contact
-**assets** : used to refer to the image associated with an Organization. Image is uploaded on to ipfs and referenced here.
-**groups** : Multiple groups can be associated with an organization, one payment type is associated with every group.
-**payment_address** : Address of the Service provider who would receive the payment
-**payment_channel_storage_type** : Type of storage to manage payments ( For Example ETCD )
-**endpoints** : Storage end points for the clients to connect.
+- **type** : Describes of this is an Individual or a Company organization.
+- **contacts** : Stores the contacts related to an Organization, you can have multiple contacts.
+- **contact_type** : Describes the contact type , example support etc.
+- **email_id** : Email associated with this contact.
+- **phone** : Phone number associated with this contact.
+- **assets** : Used to refer to the image associated with an Organization. Image is uploaded on to ipfs and referenced here.
+- **groups** : Multiple groups can be associated with an organization, one payment type is associated with every group.
+- **payment_address** : Address of the Service provider who would receive the payment.
+- **payment_channel_storage_type** : Type of storage to manage payments (for example ETCD).
+- **endpoints** : Storage end points for the clients to connect.
 
 ## Metadata example
 
 ```
 "org_name": "snet",
-"org_id": "snet", 
+"org_id": "snet",
 
  "type": "individual",
     "contacts": [
@@ -76,7 +82,7 @@ The following is the list of filed types and their description.
         }
       }
     }
- ] 
+ ]
 }
 
 ```
