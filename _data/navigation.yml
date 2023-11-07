@@ -552,12 +552,12 @@ products:
         title: Staking/withdrawal period
         excerpt:
         cta: Read more
-        url: '/products/cardano-staking-rewards'
+        url: '/products/cardano-staking-withdraw'
       cardano-staking-withdraw:
         title: Rewards distribution period
         excerpt:
         cta: Read more
-        url: '/products/cardano-staking-withdraw'
+        url: '/products/cardano-staking-rewards'
   rfai:
       title: Request For AI Service
       excerpt:
