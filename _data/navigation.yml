@@ -512,8 +512,8 @@ products:
       excerpt:
       cta: Read more
       url: '/products/publisher'    
-  staking:
-    title: Staking
+  ethereum-staking:
+    title: Ethereum staking
     children:    
       overview:
         title: Overview
