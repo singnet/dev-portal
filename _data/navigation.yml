@@ -539,7 +539,25 @@ products:
         title: Stake Reward
         excerpt:
         cta: Read more
-        url: '/products/stake-reward'  
+        url: '/products/stake-reward'
+  cardano-staking:
+    title: Cardano staking
+    children:
+      cardano-staking-timeline:
+        title: Staking timeline
+        excerpt:
+        cta: Read more
+        url: '/products/cardano-staking-timeline'
+      cardano-staking-rewards:
+        title: Staking/withdrawal period
+        excerpt:
+        cta: Read more
+        url: '/products/cardano-staking-rewards'
+      cardano-staking-withdraw:
+        title: Rewards distribution period
+        excerpt:
+        cta: Read more
+        url: '/products/cardano-staking-withdraw'
   rfai:
       title: Request For AI Service
       excerpt:
