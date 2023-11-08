@@ -39,9 +39,9 @@ After the Staking/Withdrawal Period is over, then comes Rewards Distribution Per
 <br>
 
 Examples of user’s behavior:
-![window 1](/assets/img/cardano-staking/window1.jpg)
+![window 3](/assets/img/cardano-staking/window3.jpg)
 <br>
 ![window 2](/assets/img/cardano-staking/window2.jpg)
 <br>
-![window 3](/assets/img/cardano-staking/window3.jpg)
+![window 1](/assets/img/cardano-staking/window1.jpg)
 
