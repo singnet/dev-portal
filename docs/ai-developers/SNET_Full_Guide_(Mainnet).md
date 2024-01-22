@@ -1,3 +1,13 @@
+---
+# Page settings
+layout: default
+keywords: onboarding
+comments: false
+
+# Micro navigation
+micro_nav: true
+---
+
 ## Port forwarding from domain to daemon host (Existing domain required)
 
 This step depends on the web server which you are using. Set the port forwarding from your <DAEMON_PORT> to <DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>

@@ -1,3 +1,13 @@
+---
+# Page settings
+layout: default
+keywords: onboarding
+comments: false
+
+# Micro navigation
+micro_nav: true
+---
+
 ### ETCD setup (Skip this step if you want to use internal ETCD. How to enable Internal ETCD)
 
 **Single node docker setup**
