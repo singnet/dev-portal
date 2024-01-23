@@ -61,7 +61,7 @@ The daemon has been written to support a variety of service implementations. Cur
 - expose a gRPC endpoint;
 - expose a JSON-RPC endpoint;
 - executables called on a per-request basis with the input parameters on `stdin`;
-- expose a simple HTTP endpoint ([tutorial](/docs/ai-developers/service-type-http.md)).
+- expose a simple HTTP endpoint ([tutorial](/docs/ai-developers/service-type-http)).
 
 Note however that the daemon exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon.
 
