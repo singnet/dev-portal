@@ -10,8 +10,8 @@ micro_nav: true
 
 ## Port forwarding from domain to daemon host (Existing domain required)
 
-This step depends on the web server which you are using. Set the port forwarding from your <DAEMON_PORT> to <DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>
-**Example**: your_awesome_domain.com:<DAEMON_PORT> --> <DAEMON_INTERNAL ADDRESS>:<DAEMON_PORT>
+This step depends on the web server which you are using. Set the port forwarding from your \<DAEMON_PORT\> to \<DAEMON_INTERNAL_ADDRESS\>:\<DAEMON_PORT\>
+**Example** : your_awesome_domain.com:\<DAEMON_PORT\> --> \<DAEMON_INTERNAL ADDRESS\>:\<DAEMON_PORT\>
 
 ### Domain certificates generation (skip of you already have SSL enabled on your domain)
 1) Install certbot following this instructions:
@@ -55,8 +55,8 @@ Certificates are valid for 90 days. You will have to restart your Daemon in futu
 ```
 3) Execute it (user must have sudo permissions)
 
-`bash docker-etcd-setup.sh`
-**!!!Data folder of the ETCD cluster will be created in docker volume named “data” mounted at /var/lib/docker/volumes. ALL YOUR EARNED MONEY WILL BE IN THIS FOLDER SO YOU SHOULDN’T LOSE IT **
+`bash docker-etcd-setup.sh`  
+**!!!Data folder of the ETCD cluster will be created in docker volume named “data” mounted at /var/lib/docker/volumes. ALL YOUR EARNED MONEY WILL BE IN THIS FOLDER SO YOU SHOULDN’T LOSE IT**
 
 4) Follow instructions of script
 5) Read important information below
@@ -294,7 +294,7 @@ print("Address: ", acct.address)
 
 2) Remember this information. You will need it while configuring daemon and publishing service
 
-Add Address (**<METERING_ADDRESS>**) when publishing your service and replace **<METERING_KEY>** with a Private key in the next step.
+Add Address (**\<METERING_ADDRESS\>**) when publishing your service and replace **\<METERING_KEY\>** with a Private key in the next step.
 
 ### Organization setup
 
@@ -310,7 +310,7 @@ OR
 
 You can create an identity with your crypto wallet private key or with seed phrases (mnemonic). You can export your private key from the wallet, and seed phrases are given upon creation of said wallet. Choose whichever you have.
 
-2) Add the organization name, id and the type of organization (use the same <ORGANIZATION_ID> for daemon configuration later in the guide)
+2) Add the organization name, id and the type of organization (use the same \<ORGANIZATION_ID\> for daemon configuration later in the guide)
 
 `snet organization metadata-init <ORG-NAME> <ORGANIZATION_ID> individual`
 
@@ -356,14 +356,14 @@ Updated organization_metadata.json:
 
 Use the same endpoint mentioned in the ETCD setup.
 
-**groups**: Multiple groups can be associated with an organization, one payment type is associated with every group. 
-**payment_address**: Address of the Service provider who would receive the payment 
-**payment_channel_storage_type**: Type of storage to manage payments (for example: ETCD)
-**endpoint**: Storage endpoint for the clients to connect.
+**groups**: Multiple groups can be associated with an organization, one payment type is associated with every group.  
+**payment_address**: Address of the Service provider who would receive the payment  
+**payment_channel_storage_type**: Type of storage to manage payments (for example: ETCD)  
+**endpoint**: Storage endpoint for the clients to connect.  
 
-Use parameters from previous steps: <group_name>, <etcd-endpoint>
+Use parameters from previous steps: \<group_name\>, \<etcd-endpoint\>
 Your full etcd endpoint is printed by docker etcd installation script in the end. Look for
-**ETCD ENDPOINT: https://<ETCD_ADDRESS>:2379** (do not include **/health** at the end if it is present)
+**ETCD ENDPOINT: https://\<ETCD_ADDRESS\>:2379** (do not include **/health** at the end if it is present)
 
 `snet organization add-group --payment-expiration-threshold 40320 <group_name> <wallet_address> <etcd-endpoint>`
 
@@ -448,12 +448,12 @@ snet service metadata-init \
 	--fixed-price FIXED_PRICE
 ```
 
-Where,
-**SERVICE_PROTOBUF_DIR** - Directory which contains protobuf files of your service
-**SERVICE_DISPLAY_NAME** - Display name of your service. You can choose any name you want.
-**PAYMENT_GROUP_NAME** - Name of the payment group from organization metadata published in organization setup, step 4
-**DAEMON_ENDPOINT** - Endpoint which will be used to connect to your service’s daemon. 
-**FIXED_PRICE** - Price in AGIX for a single call to your service. We will set the price to 10^-8 AGIX (remember that 10^-8 AGIX = 1 COG).
+Where,  
+**SERVICE_PROTOBUF_DIR** - Directory which contains protobuf files of your service  
+**SERVICE_DISPLAY_NAME** - Display name of your service. You can choose any name you want.  
+**PAYMENT_GROUP_NAME** - Name of the payment group from organization metadata published in organization setup, step 4  
+**DAEMON_ENDPOINT** - Endpoint which will be used to connect to your service’s daemon.  
+**FIXED_PRICE** - Price in AGIX for a single call to your service. We will set the price to 10^-8 AGIX (remember that 10^-8 AGIX = 1 COG).  
 
 Example: 
 
@@ -478,7 +478,7 @@ To enable metering for your service run: (get metering address from section 7)
 
 5) Publish the service on SingularityNET
 
-Now you can publish your service (service_metadata.json is used implicitly), use <ORGANIZATION_ID> and <SERVICE_ID>. Run this command:
+Now you can publish your service (service_metadata.json is used implicitly), use \<ORGANIZATION_ID\> and \<SERVICE_ID\>. Run this command:
 
 `snet service publish <ORGANIZATION_ID> <SERVICE_ID>`
 
@@ -597,8 +597,9 @@ For example, in this platform example we need to pass the following JSON as a pa
 
 Confirm the transaction when asked to. After that you should see service response to your JSON payload
 
-```Price for this call will be 0.0000001 AGI (use -y to remove this warning). 
-Proceed? (y/n): y
+```
+Price for this call will be 0.0000001 AGI (use -y to remove this warning).  
+Proceed? (y/n): y  
 value: 42.0
 ```
 
@@ -608,16 +609,19 @@ When users are calling your service they send credentials that allow you to coll
 
 `snet treasurer claim-all --endpoint <daemon-endpoint>`
 
-**If the user's payment channel closes before you have collected your payment - you will lose your money. If for whatever reason you lose data on your ETCD cluster - you won’t be able to collect tokens either. That’s because payment channel credentials are located there. It is in your best interest to properly manage ETCD and its data, and to collect payment periodically.**
+**If the user's payment channel closes before you have collected your payment - you will lose your money. If for whatever reason you lose data on your ETCD cluster - you won’t be able to collect tokens either. That’s because payment channel credentials are located there. It is in your best interest to properly manage ETCD and its data, and to collect payment periodically.**  
 
 
 ### Payment expiration threshold
 
-When you set up payment groups for your organization a special parameter was used: **--payment-expiration-threshold 40320**. This parameters makes daemon working on that group to forbid the access to your service if the user's payment channel will expire in the next 40320 blocks. It means that if users payment channel will expire in less than a week (40320 blocks * ~15 sec/block = 604800 seconds = 10080 minutes = 168 hours = 7 days) he won’t be able to use your services. This allows you to set up scheduled payment claims without worrying about your money. If you claim all payments at least once a week, users won’t be able to return their tokens after calling your services. That’s because their payment channel won’t expire before your scheduled payment collection. It is recommended to collect it twice a week. You can do it once a week, but with less margin for errors.
+When you set up payment groups for your organization a special parameter was used: **--payment-expiration-threshold 40320**. This parameters makes daemon working on that group to forbid the access to your service if the user's payment channel will expire in the next 40320 blocks. It means that if users payment channel will expire in less than a week (40320 blocks * ~15 sec/block = 604800 seconds = 10080 minutes = 168 hours = 7 days) he won’t be able to use your services. This allows you to set up scheduled payment claims without worrying about your money. If you claim all payments at least once a week, users won’t be able to return their tokens after calling your services. That’s because their payment channel won’t expire before your scheduled payment collection. It is recommended to collect it twice a week. You can do it once a week, but with less margin for errors.  
 
-Run this command twice a week (you can automate it with cron):
+Run this command twice a week (you can automate it with cron):  
 
 `snet treasurer claim-all --endpoint <daemon-endpoint>`
+    
+### Appendix - not necessary.
+
 
 ### Closing payment channel (recollecting your tokens as client)
 
@@ -626,19 +630,3 @@ When you open a payment channel to call services, you are doing this as a client
 While your payment channel is open, you can’t take your tokens back. You have to wait until it expires (in this guide it was open for +2days, so it will expire in roughly that time) before you can recollect your tokens. To do so run:
 
 `snet channel claim-timeout-all`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

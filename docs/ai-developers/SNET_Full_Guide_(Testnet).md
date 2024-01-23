@@ -20,7 +20,7 @@ micro_nav: true
 
 `bash docker-etcd-setup.sh`
 
-**!!!Data folder of the ETCD cluster will be created in your current folder with the script. You might want to move it to the desired location. ALL YOUR EARNED MONEY WILL BE IN THIS FOLDER SO YOU SHOULDN’T LOSE IT **
+**!!!Data folder of the ETCD cluster will be created in your current folder with the script. You might want to move it to the desired location. ALL YOUR EARNED MONEY WILL BE IN THIS FOLDER SO YOU SHOULDN’T LOSE IT**
 
 3) Follow instructions of script
 
@@ -247,7 +247,7 @@ OR
 
 You can create an identity with your crypto wallet private key or with seed phrases (mnemonic). You can export your private key from the wallet, and seed phrases are given upon creation of said wallet. Choose whichever you have.
 
-2) Add the organization name, id and the type of organization (use the same <ORGANIZATION_ID> for daemon configuration later in the guide)
+2) Add the organization name, id and the type of organization (use the same \<ORGANIZATION_ID\> for daemon configuration later in the guide)
 
 `snet organization metadata-init <ORG-NAME> <ORGANIZATION_ID> individual`
 
@@ -291,13 +291,13 @@ Updated organization_metadata.json:
 
 Use the same endpoint mentioned in the ETCD setup.
 
-**groups**: Multiple groups can be associated with an organization, one payment type is associated with every group. 
-**payment_address**: Address of the Service provider who would receive the payment payment_channel_storage_type: Type of storage to manage payments (for example: ETCD)
-**endpoint**: Storage endpoint for the clients to connect.
+**groups**: Multiple groups can be associated with an organization, one payment type is associated with every group.  
+**payment_address**: Address of the Service provider who would receive the payment payment_channel_storage_type: Type of storage to manage payments (for example: ETCD)  
+**endpoint**: Storage endpoint for the clients to connect.  
 
-Use parameters from previous steps: <group_name>, <etcd-endpoint>
-Your full etcd endpoint is printed by docker etcd installation script in the end. Look for
-**ETCD ENDPOINT: https://<DOMAIN_NAME>:2379** (do not include **/health** at the end if it is present)
+Use parameters from previous steps: \<group_name\>, \<etcd-endpoint\>  
+Your full etcd endpoint is printed by docker etcd installation script in the end. Look for  
+**ETCD ENDPOINT: https://\<DOMAIN_NAME\>:2379** (do not include **/health** at the end if it is present)
 
 `snet organization add-group <group_name> <wallet_address> <etcd-endpoint>`
 
@@ -383,11 +383,11 @@ snet service metadata-init \
 ```
 
 Where,
-**SERVICE_PROTOBUF_DIR** - Directory which contains protobuf files of your service
-**SERVICE_DISPLAY_NAME** - Display name of your service. You can choose any name you want.
-**PAYMENT_GROUP_NAME** - Name of the payment group from organization metadata published in organization setup, step 4
-**DAEMON_ENDPOINT** - Endpoint which will be used to connect to your services daemon. 
-**FIXED_PRICE** - Price in AGIX for a single call to your service. We will set the price to 10^-8 AGIX (remember that 10^-8 AGIX = 1 COG).
+**SERVICE_PROTOBUF_DIR** - Directory which contains protobuf files of your service  
+**SERVICE_DISPLAY_NAME** - Display name of your service. You can choose any name you want.  
+**PAYMENT_GROUP_NAME** - Name of the payment group from organization metadata published in organization setup, step 4  
+**DAEMON_ENDPOINT** - Endpoint which will be used to connect to your services daemon.  
+**FIXED_PRICE** - Price in AGIX for a single call to your service. We will set the price to 10^-8 AGIX (remember that 10^-8 AGIX = 1 COG).  
 
 Example: 
 
@@ -406,7 +406,7 @@ snet service metadata-init \
 
 4) Publish the service on SingularityNET
 
-Now you can publish your service (service_metadata.json is used implicitly), use <ORGANIZATION_ID> and <SERVICE_ID>. Run this command:
+Now you can publish your service (service_metadata.json is used implicitly), use \<ORGANIZATION_ID\> and \<SERVICE_ID\>. Run this command:
 
 `snet service publish <ORGANIZATION_ID> <SERVICE_ID>`
 
@@ -532,6 +532,8 @@ When users are calling your service they send credentials that allow you to coll
 **If the user's payment channel closes before you have collected your payment - you will lose your money. If for whatever reason you lose data on your ETCD cluster - you won’t be able to collect tokens either. That’s because payment channel credentials are located there. It is in your best interest to properly manage ETCD and its data, and to collect payment periodically.**
 
 
+### Appendix - not necessary.
+
 ### Closing payment channel (recollecting your tokens as client)
 
 
@@ -540,6 +542,7 @@ When you open a payment channel to call services, you are doing this as a client
 While your payment channel is open, you can’t take your tokens back. You have to wait until it expires (in this guide it was open for +2days, so it will expire in roughly that time) before you can recollect your tokens. To do so run:
 
 `snet channel claim-timeout-all`
+
 
 ### Switching Daemon to work with embedded ETCD
 
@@ -583,4 +586,3 @@ Make sure to write something random in token because it ensures that your cluste
   "log": {"level": "debug", "output": {"type": "stdout"}}
 }
 ```
-
