@@ -399,51 +399,66 @@ ai-developers:
   tutorials:
     title: Tutorials
     children:
-        org-setup:
-          title: Publish Organization using snet-cli
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/organization-setup-sent-cli'
-        service-setup:
-          title: Publish Service using snet-cli
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/service-setup-snet-cli'
-        invoke-serivce-snet-cli:
-          title: Invoking a Service using snet-cli
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/invoke-service-snet-cli'
-        invoke-serivce-dapp:
-          title: Invoking a Service using Marketplace Dapp
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/marketplace-service_invocation'
-        invoke-serivce-training-dapp:
-          title: Invoking a Training using Marketplace Dapp
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/marketplace-service_training'
-        invoke-serivce-java-sdk:
-          title: Invoking a Service using Java sdk
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/java-sdk'
-        invoke-serivce-sdk:
-          title: Invoking a Service using sdk
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/sdk-tutorial'          
-        tutorail:
-          title: Tutorials
-          excerpt: 
-          cta: Read more
-          url: '/docs/ai-developers/tutorials'
-        development:
-          title: More Examples
-          excerpt:
-          cta: Read more
-          url: '/docs/ai-developers/development'
+      onboarding-mainnet:
+        title: Mainnet onboarding end to end tutorial
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/SNET_Full_Guide_(Mainnet)'
+      onboarding-testnet:
+        title: Testnet onboarding end to end tutorial
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/SNET_Full_Guide_(Testnet)'
+      service-type-http: 
+        title: Integrating HTTP service
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/service-type-http'
+        # org-setup:
+        #   title: Publish Organization using snet-cli
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/organization-setup-sent-cli'
+        # service-setup:
+        #   title: Publish Service using snet-cli
+        #   excerpt: 
+        #   cta: Read more
+        #   url: '/docs/ai-developers/service-setup-snet-cli'
+        # invoke-serivce-snet-cli:
+        #   title: Invoking a Service using snet-cli
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/invoke-service-snet-cli'
+        # invoke-serivce-dapp:
+        #   title: Invoking a Service using Marketplace Dapp
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/marketplace-service_invocation'
+        # invoke-serivce-training-dapp:
+        #   title: Invoking a Training using Marketplace Dapp
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/marketplace-service_training'
+        # invoke-serivce-java-sdk:
+        #   title: Invoking a Service using Java sdk
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/java-sdk'
+        # invoke-serivce-sdk:
+        #   title: Invoking a Service using sdk
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/sdk-tutorial'          
+        # tutorail:
+        #   title: Tutorials
+        #   excerpt: 
+        #   cta: Read more
+        #   url: '/docs/ai-developers/tutorials'
+        # development:
+        #   title: More Examples
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/development'
   troubleshooting:
       title: Troubleshooting
       excerpt:
