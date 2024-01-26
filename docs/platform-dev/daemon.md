@@ -59,8 +59,10 @@ The latest version is {{ data.versions.snet-daemon }}, and can be [downloaded fr
 The daemon has been written to support a variety of service implementations. Currently, the daemon supports services that either:
 
 - expose a gRPC endpoint,
-- expose a JSON-RPC endpoint, or
-- executables called on a per-request basis with the input parameters on `stdin`
+- expose a JSON-RPC endpoint, 
+- executables called on a per-request basis with the input parameters on `stdin`, or
+- expose a HTTP endpoint ([tutorial](/docs/ai-developers/service-type-http)).
+
 
 Note however that the daemon exposes a gRPC/gRPC-Web endpoint regardless of what type of service is paired with the daemon.
 
