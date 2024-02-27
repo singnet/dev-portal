@@ -10,19 +10,27 @@ micro_nav: true
 
 ## Introduction
 
-If you want to integrate a simple http api instead of `grpc/jsonrpc/process`,
-then you need to specify the `"daemon_type":"http"` parameter in the config and prepare the API and proto file.
+If you would like to integrate a simple HTTP API instead of `gRPC/JSONRPC/process` service types, 
+then you will need to prepare the API (check for limitations) and write correct proto files. 
+Then specify the `service_type = http` parameter when creating your AI service.
 
-Currently, only POST methods are supported. 
-That is, your API can have 1 or more POST methods with a json body. 
-Also, in the config for the `service_credentials` parameter, 
-you can specify the parameters to be passed for all methods.
-For example, the secret api key in the header.
+## Scheme
 
-## Example with simple flask API
+![The scheme of the daemon's work with http services](/assets/img/daemon/daemon_http.png)
 
-Let's say we have a simple API on flask (the framework is not important). 
-The API has two methods with different inputs:
+## Limitations
+* Currently, only POST methods are supported;
+* Only json in body of request supported;
+* No streaming supported;
+* Only one proto file for service.
+
+If you run into limitations or get errors, then contact support or open an issue on github.
+We will try to help you.
+
+## Example
+
+Let's say we have a simple API on flask (the framework and programming language is not important).
+The API has two POST methods with different inputs:
 
 ```python
 #!/usr/bin/env python
@@ -76,7 +84,6 @@ message CommonOutput {
   string result = 2;
 }
 
-
 service ExampleService {
   // specify input and output types for each method
   // the method path (/calculate) should be named the same as in the proto file
@@ -84,14 +91,27 @@ service ExampleService {
   rpc process(ProcessInput) returns (CommonOutput) {}
 }
 ```
-If you need to send any additional parameters in query or headers,
-you can specify them in `service_credentials` (works only for http service type):
+
+If you need to send any additional parameters for all methods (for example, the secret api key),
+you can specify them in daemon config parameter `service_credentials`.
 The parameter accepts an array, example:
 
-```json
-[{"key": "X-Banana-API-Key",
-"value": "646bd7d4-a3e1-46ba-b742-bc4504dc5b30",
-"location": "header"}]
+```
+"service_credentials":[
+    {
+      "key": "example_body_param",
+      "value": 12345,
+      "location": "body"
+    },
+    {
+      "key": "X-API-Key",
+      "value": "546bd7d4-d3e1-46ba-b752-bc45e4dc5b39",
+      "location": "header"
+    }
+  ],
 ```
 
-Location can be: query or header
+With this example daemon will add `example_body_param` with value `12345` in body to all request to HTTP service. 
+Also, all requests to service will be with `X-API-Key` header.
+
+Location can be: query, header, body. Key and location must be string.
