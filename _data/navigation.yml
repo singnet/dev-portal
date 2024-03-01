@@ -414,6 +414,11 @@ ai-developers:
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/service-type-http'
+      training-service-guide:
+        title: Integrating training in service
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/training-guide'
         # org-setup:
         #   title: Publish Organization using snet-cli
         #   excerpt:
