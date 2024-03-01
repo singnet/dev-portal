@@ -24,7 +24,7 @@ Then specify the `service_type = http` parameter when creating your AI service.
 * No streaming supported;
 * Only one proto file for service.
 
-If you run into limitations or get errors, then contact support or open an issue on github.
+If you run into limitations or get errors, then contact support or [open an issue on github](https://github.com/singnet/snet-daemon/issues/new).
 We will try to help you.
 
 ## Example
