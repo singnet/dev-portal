@@ -24,8 +24,8 @@ The guide will consist of the following steps:
 7. [Preparing protobuf files for publishing](#proto)
 8. [Preparing service demo frontend files](#demo)
 9. [Publishing service on marketplace](#publish)
-   
-<a name="convert"><h3>1. Converting model to onnx format</h3></a>
+
+<a name="convert">1. Converting model to onnx format</a>
 This can be done multiple ways from different frameworks (pytorch, tensorflow, huggingface and etc.)
 You can find examples and instructions on how to do it in these links:
 
@@ -35,7 +35,7 @@ You can find examples and instructions on how to do it in these links:
 
 [PyTorch](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html)
 
-<a name="repo"><h3>2. Organization of the service repository</h3></a>
+<a name="repo">2. Organization of the service repository</a>
 The repository should look like:
 ```
 service_model_repo/
@@ -51,7 +51,7 @@ Where:
 3. folder `1` - contain models under version 1
 4. `config.pbtxt` - models configurations files
 
-<a name="setup"><h3>3. Setting up configuration files</h3></a>
+<a name="setup">3. Setting up configuration files</a>
 Your `config.pbtxt` for model should look something like this:
 ```
 name: "your_service"
@@ -79,7 +79,7 @@ output [
 ]
 ```
 Where:
-1. `name` - service directory name 
+1. `name` - service directory name
 2. `backend` - selected backend ([More info](https://github.com/triton-inference-server/backend))
 3. `max_batch_size` - batch size limit
 4. `input` and `output` blocks - blocks describing input and output tensors
@@ -98,7 +98,7 @@ From here you can also establish that the inputs are of type `INT` and the outpu
 
 You should adjust this config file to represent input and output format of model you use. This is just the example on how to format the file.
 
-<a name="dev"><h3>4. Local deployment and usage</h3></a>
+<a name="dev">4. Local deployment and usage</a>
 Launching the docker-based inference server:
 ```
 docker run --gpus='"device=0"' -it --shm-size=256m --rm -p8000:8000 -p8001:8001 -p8002:8002 -v /{full_path_to}/service_model_repo:/models nvcr.io/nvidia/tritonserver:23.12-py3 tritonserver --model-repository=/models
@@ -107,9 +107,6 @@ Replace {full_path_to} with absolute path to parent directory of service_model_r
 ```
 
 Building a client application (python):
-
-<details>
-  <summary>Full code</summary>
 
 ```python
 import struct
@@ -167,7 +164,6 @@ res.append({"text": text,
             "spam": prediction[3]})
 print(res)
 ```
-</details>
 
 Make call:
 
@@ -177,7 +173,7 @@ Make call:
 python client.py
 ```
 
-<a name="ens"><h3>5. Moving post and preprocessing to the backend</h3></a>
+<a name="ens">5. Moving post and preprocessing to the backend</a>
 The client application from the last part turned out to be unnecessary large. Let's move post and preprocessing to our backend to fix it.
 
 Need to use [Model Ensembles](https://github.com/triton-inference-server/tutorials/tree/main/Conceptual_Guide/Part_5-Model_Ensembles)
@@ -255,9 +251,6 @@ output [
 ```
 `ensemble_model:`
 
-<details>
-  <summary>Full code</summary>
-   
 ```
 name: "ensemble_model"
 platform: "ensemble"
@@ -326,15 +319,12 @@ ensemble_scheduling {
   ]
 }
 ```
-</details>
 
 `hate_speech_detection` the same from previous parts.
 
 Configs done, now on to model.py files.
 
 `preprocessing:`
-<details>
-  <summary>Full code</summary>
 
 ```python
 import json
@@ -465,11 +455,8 @@ class TritonPythonModel:
         """
         print("Cleaning up...")
 ```
-</details>
 
 `postprocessing:`
-<details>
-  <summary>Full code</summary>
 
 ```python
 import json
@@ -581,7 +568,6 @@ class TritonPythonModel:
         """
         print("Cleaning up...")
 ```
-</details>
 
 Everything is ready to start the server:
 ```
@@ -624,7 +610,7 @@ python client.py
 # answer: ['{"hate": "0.0007111975", "abusing": "0.0004021231", "neutral": "0.0011137378", "spam": "0.9977728"}']
 ```
 
-<a name="imp"><h3>6. Using dynamic batching and instance group</h3></a>
+<a name="imp">6. Using dynamic batching and instance group</a>
 Dynamic Batching and Concurrent Model Execution are features of Triton that improve throughput ([More info](https://github.com/triton-inference-server/tutorials/tree/main/Conceptual_Guide/Part_2-improving_resource_utilization)).
 To use them, just add the model configuration file:
 ```
@@ -651,11 +637,8 @@ dynamic_batching { }
 ```
 Also you can analyze you model using [Triton Analyzer](https://github.com/triton-inference-server/tutorials/tree/main/Conceptual_Guide/Part_2-improving_resource_utilization#measuring-performance)
 
-<a name="proto"><h3>7. Preparing proto files for publishing</h3></a>
+<a name="proto">7. Preparing proto files for publishing</a>
 Though you can use default triton protobuf files for publishing, it is not recommended. The reason is that default proto files contain configuration and management methods, which can be accessed by users. So to avoid ill intent actions from the users, proto files are reduced to contain only methods which are necessary to call the service.
-
-<details>
-  <summary>triton.proto code</summary>
 
 ```protobuf
 // This is a .proto file for platform services utilizing Triton Inference Server
@@ -1100,13 +1083,12 @@ message ModelStreamInferResponse
   ModelInferResponse infer_response = 2;
 }
 ```
-</details>
 
-<a name="demo"><h3>8. Preparing service demo frontend files</h3></a>
+<a name="demo">8. Preparing service demo frontend files</a>
 
 There is no "right" way to do it, you can approach this step in many different ways. But you can checkout [this repo](https://github.com/singnet/Hate-Speech-Triton) and use it as an working example.
 
-<a name="publish"><h3>9. Publishing service on marketplace</h3></a>
+<a name="publish">9. Publishing service on marketplace</a>
 From this point you can publish your service through [publisher portal](https://publisher.singularitynet.io/) as usual.
 
 If you are not familiar with the process of creation of organization and publishing serivces, you can follow [this guide](https://dev.singularitynet.io/docs/ai-developers/SNET_Full_Guide_(Mainnet)) to get better understanding of the parameters you must provide during this process.
