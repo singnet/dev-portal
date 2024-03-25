@@ -419,6 +419,11 @@ ai-developers:
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/training-guide'
+      triton-instructions:
+        title: Integrating Triton-based Service
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/triton-instructions'
         # org-setup:
         #   title: Publish Organization using snet-cli
         #   excerpt:
