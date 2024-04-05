@@ -424,6 +424,11 @@ ai-developers:
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/triton-instructions'
+      runpod-based-ai-service:
+        title: Integrating ServerlessGPU Service
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/runpod-based-ai-service'
         # org-setup:
         #   title: Publish Organization using snet-cli
         #   excerpt:
