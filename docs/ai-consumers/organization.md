@@ -14,10 +14,12 @@ micro_nav: true
 The organization metadata is the description of a SingularityNET Organization and is, by default, hosted on the SingularityNET IPFS cluster. In order to use a service, the client needs to know the following:
 - The Organization metadata
 - The Service metadata
+
 There are three ways of providing this metadata to the clients and the daemons:
 - Simple JSON file
 - IPFS hash that points to the JSON metadata
 - Name of service in the Registry 
+
     The Name of service in the Registry, can be resolved to an IPFS hash, pointing to the metadata, using the Registry’s OrgMetadataURI method. 
     **Note:** Only the Owner of the Organization can modify the metadata.
 **Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack

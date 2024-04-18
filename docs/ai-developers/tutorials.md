@@ -33,7 +33,7 @@ if you want to be a consumer of SingularityNET services, the follow first three 
 -   [Prerequisites](/docs/ai-developers/setupguide) - Certain conditions that need to be full-filled. prior to using decentralised AI services.
 -   [Create a Wallet](/docs/ai-developers/create-a-wallet) - You'll need a wallet with some funds to perform transactions .
 -   [How to call a service using snet-cli](/docs/ai-consumers/invoke-service-snet-cli) - Invoke the service using the command line tool.
--   [How to call a service using Dapp](/docs/ai-developers/marketplace-service_invocation)
+-   [How to call a service using Dapp](/docs/ai-consumers/marketplace-service_invocation)
 -   Invoke the service using the Market Place Dapp
 -   [Using the SDK](/docs/ai-developers/sdk-tutorial) - Invoking a AI service using the Python SDK.
 
