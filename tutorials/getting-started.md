@@ -50,7 +50,7 @@ Learn the details of the platform components.
 
 - [Registry](/docs/concepts/registry)
 - [Daemon](/docs/concepts/daemon)
-- [Multi-Party Escrow (MPE)](/docs/concepts/multi-party-escrow)
+- [Multi-Party Escrow (MPE)](/docs/ai-consumers/mpe)
 
 ## Tutorials across languages
 
