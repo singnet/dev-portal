@@ -324,7 +324,7 @@ ai-developers:
             title: Key Terms
             excerpt:
             cta: Read more
-            url: '/docs/ai-developers/keyterms'
+            url: '/docs/ai-consumers/keyterms'
   payments:
     title: Payments
     children:
