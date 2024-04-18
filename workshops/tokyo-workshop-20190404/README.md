@@ -14,7 +14,7 @@ Recommended reading from the SingularityNET profile
   - [SingularityNET Documentation](https://dev.singularitynet.io/docs)
   - [SingularityNET Daemon](http://dev.singularitynet.io/docs/concepts/daemon)
   - [SingularityNET Registry](http://dev.singularitynet.io/docs/concepts/registry)
-  - [SingularityNET MPE](http://dev.singularitynet.io/docs/concepts/multi-party-escrow)
+  - [SingularityNET MPE](http://dev.singularitynet.io/docs/ai-consumers/mpe)
 
 The tutorials can also be found here:
   - [Publisher Tutorial](https://dev.singularitynet.io/tutorials/publish/)

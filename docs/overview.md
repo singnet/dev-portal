@@ -64,7 +64,7 @@ byproduct_cards:
     - title: AI Marketplace
       img: 'marketplace.png'
       description: Explore and connect to the largest open AI marketplace in the world.
-      url: '/products/marketplace'
+      url: '/ai-developers/marketplace'
 
     - title: AI Publisher
       img: 'publisher.png'
