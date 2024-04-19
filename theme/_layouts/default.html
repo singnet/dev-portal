@@ -9,7 +9,7 @@
         <div class="wrapper">
             <div class="container-fluid mt-3">
                 <div class="row">
-                    <div class="col-12 col-md-3 snet-blog_leftsection">
+                    <div id="leftSection" class="col-12 col-md-3 snet-blog_leftsection ">
                         <div class="snet-card sticky-top sticky-with-margin">
                             <h3 class="d-none d-md-block snet-card_title">Explore</h3>
                             <div class="snet-card_content">
@@ -204,6 +204,11 @@
                             </div>
                         </div>
                     </div>
+                    <script>
+                        leftSection.onclick = function() {
+                            alert('Test alert');
+                          };
+                        </script>
                     <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 col-xxl-6 snet-blog_middlesection">
                         <div class="snet-card">
                             <div class="snet-card_wrapper">
