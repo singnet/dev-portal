@@ -12,7 +12,8 @@
                     <div id="leftSection" class="col-12 col-md-3 snet-blog_leftsection ">
                         <div class="snet-card sticky-top sticky-with-margin">
                             <h3 class="d-none d-md-block snet-card_title">Explore</h3>
-                            <div class="snet-card_content">
+                            <i id="contentSectionArrow" class="material-icons align-middle float-right e_m">expand_more</i>       
+                            <div id="leftSectionCardContent" class="snet-card_content">
                                 <ul class="snet-nav_list d-none d-md-block">
                                     {% assign page_title = "" %}
                                     {% assign path_crumbs = page.path | split: "/" %}
@@ -206,7 +207,10 @@
                     </div>
                     <script>
                         leftSection.onclick = function() {
-                            alert('Test alert');
+                            leftSection.classList.remove("col-md-3");
+                            leftSection.classList.add("col-md-1");
+                            leftSectionCardContent.classList.add("collapse");
+                            contentSectionArrow.innerHTML("expand_less")
                           };
                         </script>
                     <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 col-xxl-6 snet-blog_middlesection">
