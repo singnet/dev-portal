@@ -15,7 +15,7 @@
                                 <h3 id="leftSectionTitle" class="d-none d-md-block snet-card-title">Explore</h3>
                                 <i id="leftMenuArrow" class="material-icons align-middle float-right e_m snet-card-arrow ">expand_more</i>       
                             </div>
-                            <div id="leftSectionCardContent" class="snet-card_content">
+                            <div id="leftSectionCardContent" class="snet-card_content non-collapse">
                                 <ul class="snet-nav_list d-none d-md-block">
                                     {% assign page_title = "" %}
                                     {% assign path_crumbs = page.path | split: "/" %}
@@ -210,21 +210,19 @@
                     <script>
                         titleLeftMenu.onclick = function() {
                             const isComponentHiden = leftSection.classList.contains("hide-menu");
-                            console.log("isComponentHiden: ", isComponentHiden)
                             isComponentHiden ? showLeftSection() : hideLeftSection();
                           };
 
                           function hideLeftSection() {
                             leftSection.classList.replace("col-md-3", "col-md-1");
-                            middleSection.classList.replace("col-xxl-6", "col-xxl-7");
                             leftSectionCardContent.classList.replace("non-collapse", "collapse");
-                            leftMenuArrow.classList.toggle("hide-menu");
+                            leftMenuArrow.classList.add("hide-menu");
                           }
 
                           function showLeftSection() {
                             leftSection.classList.replace("col-md-1", "col-md-3");
-                            middleSection.classList.replace("col-xxl-7", "col-xxl-6");
                             leftSectionCardContent.classList.replace("collapse", "non-collapse");
+                            leftMenuArrow.classList.remove("hide-menu");
                           }
                     </script>
                     <div id="middleSection" class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 snet-blog_middlesection">
