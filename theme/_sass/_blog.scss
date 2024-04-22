@@ -183,6 +183,26 @@
     font-weight: 500;
 }
 
+.snet-card .snet-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.snet-card .snet-card-title h3 {
+    padding: 0;
+}
+
+.snet-card .snet-card-title .snet-card-arrow {
+    cursor: pointer;
+    rotate: -90deg;
+}
+
+.snet-card .snet-card-title .snet-card-arrow .hide-menu {
+    rotate: 0deg;
+}
+
 .last-item-list{
     display: none;
 }

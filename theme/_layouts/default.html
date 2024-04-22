@@ -11,8 +11,10 @@
                 <div class="row">
                     <div id="leftSection" class="col-12 col-md-3 snet-blog_leftsection ">
                         <div class="snet-card sticky-top sticky-with-margin">
-                            <h3 id="leftSectionTitle" class="d-none d-md-block snet-card_title">Explore</h3>
-                            <i id="contentSectionArrow" class="material-icons align-middle float-right e_m">expand_more</i>       
+                            <div id="titleLeftMenu" class="snet-card-title">
+                                <h3 id="leftSectionTitle" class="d-none d-md-block snet-card-title">Explore</h3>
+                                <i id="leftMenuArrow" class="material-icons align-middle float-right e_m snet-card-arrow ">expand_more</i>       
+                            </div>
                             <div id="leftSectionCardContent" class="snet-card_content">
                                 <ul class="snet-nav_list d-none d-md-block">
                                     {% assign page_title = "" %}
@@ -206,16 +208,27 @@
                         </div>
                     </div>
                     <script>
-                        leftSection.onclick = function() {
-                            leftSection.classList.remove("col-md-3");
-                            leftSection.classList.add("col-md-1");
-                            leftSectionCardContent.classList.add("collapse");
-                            contentSectionArrow.innerHTML("expand_less");
-                            leftSectionTitle.style.display("none")
-                            contentSectionArrow.style.rotate("90deg")
+                        titleLeftMenu.onclick = function() {
+                            const hidenComponent = leftSection.classList.toggle("col-md-1");
+                            hidenComponent ? hideLeftSection() : showLeftSection();
                           };
-                        </script>
-                    <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 col-xxl-6 snet-blog_middlesection">
+
+                          function hideLeftSection() {
+                            leftSection.classList.toggle("col-md-1");
+                            leftSection.classList.toggle("col-xxl-7");
+                            leftSectionCardContent.classList.remove("non-collapse");
+                            leftSectionCardContent.classList.add("collapse");
+                            leftMenuArrow.classList.toggle("hide-menu");
+                          }
+
+                          function showLeftSection() {
+                            leftSection.classList.toggle("col-md-1");
+                            leftSectionCardContent.classList.remove("collapse");
+                            leftSectionCardContent.classList.add("non-collapse");
+                            leftSectionTitle.style.display("block !important");
+                          }
+                    </script>
+                    <div id="middleSection" class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 col-xxl-6 snet-blog_middlesection">
                         <div class="snet-card">
                             <div class="snet-card_wrapper">
                                 <h2 class="snet-card_title border-0 p-0"> {{ page_title }}</h2>
@@ -240,7 +253,7 @@
                             </div>
                         </div>                        
                     </div>                
-                    <div class="col-12 col-sm-3 col-lg-3 col-xl-2 col-xxl-3 order-first order-sm-last snet-blog_rightsection d-none d-lg-block">
+                    <div id="rightSection" class="col-12 col-sm-3 col-lg-3 col-xl-2 col-xxl-3 order-first order-sm-last snet-blog_rightsection d-none d-lg-block">
                         <div class="sticky-top sticky-with-margin">
                             <div class="snet-card transparent">
                                 <h4 class="snet-card_title">Contents</h4>
