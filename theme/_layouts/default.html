@@ -209,23 +209,21 @@
                     </div>
                     <script>
                         titleLeftMenu.onclick = function() {
-                            const hidenComponent = leftSection.classList.toggle("col-md-1");
+                            const hidenComponent = leftSection.classList.contains("hide-menu");
                             hidenComponent ? hideLeftSection() : showLeftSection();
                           };
 
                           function hideLeftSection() {
-                            leftSection.classList.toggle("col-md-1");
-                            leftSection.classList.toggle("col-xxl-7");
-                            leftSectionCardContent.classList.remove("non-collapse");
-                            leftSectionCardContent.classList.add("collapse");
+                            leftSection.classList.replace("col-md-3", "col-md-1");
+                            middleSection.classList.replace("col-xxl-6", "col-xxl-7");
+                            leftSectionCardContent.classList.replace("non-collapse", "collapse");
                             leftMenuArrow.classList.toggle("hide-menu");
                           }
 
                           function showLeftSection() {
-                            leftSection.classList.toggle("col-md-1");
-                            leftSectionCardContent.classList.remove("collapse");
-                            leftSectionCardContent.classList.add("non-collapse");
-                            leftSectionTitle.style.display("block !important");
+                            leftSection.classList.replace("col-md-1", "col-md-3");
+                            middleSection.classList.replace("col-xxl-7", "col-xxl-6");
+                            leftSectionCardContent.classList.replace("collapse", "non-collapse");
                           }
                     </script>
                     <div id="middleSection" class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 col-xxl-6 snet-blog_middlesection">
