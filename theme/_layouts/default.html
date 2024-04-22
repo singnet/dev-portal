@@ -209,8 +209,9 @@
                     </div>
                     <script>
                         titleLeftMenu.onclick = function() {
-                            const hidenComponent = leftSection.classList.contains("hide-menu");
-                            hidenComponent ? hideLeftSection() : showLeftSection();
+                            const isComponentHiden = leftSection.classList.contains("hide-menu");
+                            console.log("isComponentHiden: ", isComponentHiden)
+                            isComponentHiden ? showLeftSection() : hideLeftSection();
                           };
 
                           function hideLeftSection() {
@@ -226,7 +227,7 @@
                             leftSectionCardContent.classList.replace("collapse", "non-collapse");
                           }
                     </script>
-                    <div id="middleSection" class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 col-xxl-6 snet-blog_middlesection">
+                    <div id="middleSection" class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 snet-blog_middlesection">
                         <div class="snet-card">
                             <div class="snet-card_wrapper">
                                 <h2 class="snet-card_title border-0 p-0"> {{ page_title }}</h2>
@@ -251,7 +252,7 @@
                             </div>
                         </div>                        
                     </div>                
-                    <div id="rightSection" class="col-12 col-sm-3 col-lg-3 col-xl-2 col-xxl-3 order-first order-sm-last snet-blog_rightsection d-none d-lg-block">
+                    <div id="rightSection" class="col-12 col-sm-3 col-lg-3 col-xl-2 order-first order-sm-last snet-blog_rightsection d-none d-lg-block">
                         <div class="sticky-top sticky-with-margin">
                             <div class="snet-card transparent">
                                 <h4 class="snet-card_title">Contents</h4>
