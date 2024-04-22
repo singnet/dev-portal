@@ -214,14 +214,16 @@
                           };
 
                           function hideLeftSection() {
-                            leftSection.classList.replace("col-md-3", "col-md-1");
+                            leftSection.classList.replace("col-md-3", "col-md-2");
+                            middleSection.classList.replace('col-xl-7', 'col-xl-8')
                             leftSectionCardContent.classList.replace("non-collapse", "collapse");
                             leftSection.classList.add("hide-menu");
                           }
 
                           function showLeftSection() {
-                            leftSection.classList.replace("col-md-1", "col-md-3");
+                            leftSection.classList.replace("col-md-2", "col-md-3");
                             leftSectionCardContent.classList.replace("collapse", "non-collapse");
+                            middleSection.classList.replace("col-xl-8", "col-xl-7")
                             leftSection.classList.remove("hide-menu");
                           }
                     </script>
