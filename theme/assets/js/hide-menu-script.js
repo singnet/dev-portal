@@ -63,7 +63,6 @@ function showLeftSection() {
 }
 
 const collapsedElement = document.getElementById('titleLeftMenu');
-console.log('collapsedElement: ', collapsedElement);
 collapsedElement.addEventListener('click', function () {
     const isComponentHiden = leftSection.classList.contains(HIDE_MENU_CLASS);
     isComponentHiden ? showLeftSection() : hideLeftSection();
