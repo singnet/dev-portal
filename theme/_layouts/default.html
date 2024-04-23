@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% include site-head.html %}
+        {% include site-head.html %}        
     </head>
     <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
         {% include site-header.html %}
@@ -9,10 +9,13 @@
         <div class="wrapper">
             <div class="container-fluid mt-3">
                 <div class="row">
-                    <div class="col-12 col-md-3 snet-blog_leftsection">
+                    <div id="leftSection" class="col-12 col-md-3 snet-blog_leftsection ">
                         <div class="snet-card sticky-top sticky-with-margin">
-                            <h3 class="d-none d-md-block snet-card_title">Explore</h3>
-                            <div class="snet-card_content">
+                            <div id="titleLeftMenu" class="snet-card-title">
+                                <h3 id="leftSectionTitle" class="d-none d-md-block snet-card-title">Explore</h3>
+                                <i id="leftMenuArrow" class="material-icons align-middle float-right e_m snet-card-arrow ">expand_more</i>       
+                            </div>
+                            <div id="leftSectionCardContent" class="snet-card_content non-collapse">
                                 <ul class="snet-nav_list d-none d-md-block">
                                     {% assign page_title = "" %}
                                     {% assign path_crumbs = page.path | split: "/" %}
@@ -204,7 +207,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 col-xxl-6 snet-blog_middlesection">
+                    <div id="middleSection" class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 snet-blog_middlesection">
                         <div class="snet-card">
                             <div class="snet-card_wrapper">
                                 <h2 class="snet-card_title border-0 p-0"> {{ page_title }}</h2>
@@ -229,7 +232,7 @@
                             </div>
                         </div>                        
                     </div>                
-                    <div class="col-12 col-sm-3 col-lg-3 col-xl-2 col-xxl-3 order-first order-sm-last snet-blog_rightsection d-none d-lg-block">
+                    <div id="rightSection" class="col-12 col-sm-3 col-lg-3 col-xl-2 order-first order-sm-last snet-blog_rightsection d-none d-lg-block">
                         <div class="sticky-top sticky-with-margin">
                             <div class="snet-card transparent">
                                 <h4 class="snet-card_title">Contents</h4>
@@ -262,6 +265,6 @@
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
-
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/hide-menu-script.js"></script>
     </body>
 </html>

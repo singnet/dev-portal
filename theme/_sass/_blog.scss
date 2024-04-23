@@ -183,6 +183,53 @@
     font-weight: 500;
 }
 
+.snet-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #F5F7F8;
+}
+
+@media only screen and (max-width:767px){
+    .snet-card-title {
+        display: none;
+    }
+}
+
+.snet-card-title h3 {
+    font-size: 20px;
+    padding: 0;
+}
+
+.snet-card-title .snet-card-arrow {
+    cursor: pointer;
+    rotate: -90deg;
+}
+
+.col-12 {
+    transition: all 0.5s;
+}
+
+.hide-menu .snet-card-title{
+    justify-content: center !important;
+}
+
+.hide-menu .snet-card-title .snet-card-arrow {
+    rotate: 0deg;
+}
+
+#leftSectionTitle {
+    transition: opacity 0.5s;
+    border-bottom: none;
+}
+
+.hide-menu .snet-card .snet-card-title #leftSectionTitle {
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
+}
+
 .last-item-list{
     display: none;
 }
