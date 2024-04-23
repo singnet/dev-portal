@@ -188,6 +188,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 12px;
+    border-bottom: 1px solid #F5F7F8;
+}
+
+@media only screen and (max-width:767px){
+    .snet-card-title {
+        display: none;
+    }
 }
 
 .snet-card-title h3 {
@@ -214,6 +221,7 @@
 
 #leftSectionTitle {
     transition: opacity 1s;
+    border-bottom: none;
 }
 
 .hide-menu .snet-card .snet-card-title #leftSectionTitle {
