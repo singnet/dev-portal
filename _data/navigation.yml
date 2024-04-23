@@ -472,6 +472,11 @@ ai-developers:
         excerpt:
         cta: Read more
         url: '/docs/ai-developers/troubleshooting'
+    FAQ:
+        title: FAQ
+        excerpt:
+        cta: Read more
+        url: '/docs/ai-developers/faq'
 
 platform-dev:
     Introduction:
