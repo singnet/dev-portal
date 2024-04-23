@@ -200,16 +200,26 @@
     rotate: -90deg;
 }
 
-.hide-menu {
-    justify-content: center;
+.col-12 {
+    transition: all 1s;
+}
+
+.hide-menu .snet-card-title{
+    justify-content: center !important;
 }
 
 .hide-menu .snet-card-title .snet-card-arrow {
     rotate: 0deg;
 }
 
+#leftSectionTitle {
+    transition: opacity 1s;
+}
+
 .hide-menu .snet-card .snet-card-title #leftSectionTitle {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
 }
 
 .last-item-list{
