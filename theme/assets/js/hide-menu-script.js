@@ -60,7 +60,8 @@ function showLeftSection() {
     leftSection.classList.remove(HIDE_MENU_CLASS);
 }
 
-titleLeftMenu.onclick = function () {
+const collapsedElement = document.getElementById('titleLeftMenu');
+collapsedElement.addEventListener('click', function () {
     const isComponentHiden = leftSection.classList.contains(HIDE_MENU_CLASS);
     isComponentHiden ? showLeftSection() : hideLeftSection();
-};
+});
