@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% include site-head.html %}
-        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/hide-menu-script.js"></script>
+        {% include site-head.html %}        
     </head>
     <body class="{{ site.snet.color_theme }}" data-spy="scroll" data-target=".js-scrollspy">
         {% include site-header.html %}
@@ -208,30 +207,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <script>
-                        titleLeftMenu.onclick = function() {
-                            const isComponentHiden = leftSection.classList.contains("hide-menu");
-                            isComponentHiden ? showLeftSection() : hideLeftSection();
-                          };
-
-                          function hideLeftSection() {
-                            leftSection.classList.replace("col-md-3", "col-md-1");
-                            middleSection.classList.replace("col-xl-7", "col-xl-9");
-                            middleSection.classList.replace("col-lg-6","col-lg-8");
-                            middleSection.classList.replace("col-md-9","col-md-11");
-                            leftSectionCardContent.classList.replace("non-collapse", "collapse");
-                            leftSection.classList.add("hide-menu");
-                          }
-
-                          function showLeftSection() {
-                            leftSection.classList.replace("col-md-1", "col-md-3");
-                            leftSectionCardContent.classList.replace("collapse", "non-collapse");
-                            middleSection.classList.replace("col-xl-9", "col-xl-7");
-                            middleSection.classList.replace("col-lg-8","col-lg-6");
-                            middleSection.classList.replace("col-md-11","col-md-9");
-                            leftSection.classList.remove("hide-menu");
-                          }
-                    </script> -->
                     <div id="middleSection" class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-7 snet-blog_middlesection">
                         <div class="snet-card">
                             <div class="snet-card_wrapper">
@@ -290,6 +265,6 @@
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
         <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
-
+        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/hide-menu-script.js"></script>
     </body>
 </html>
