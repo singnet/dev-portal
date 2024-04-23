@@ -200,8 +200,16 @@
     rotate: -90deg;
 }
 
+.hide-menu {
+    justify-content: center;
+}
+
 .hide-menu .snet-card-title .snet-card-arrow {
     rotate: 0deg;
+}
+
+.hide-menu .snet-card .snet-card-title #leftSectionTitle {
+    display: none;
 }
 
 .last-item-list{
