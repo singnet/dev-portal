@@ -396,12 +396,12 @@ ai-developers:
                 title: Mainnet onboarding end to end tutorial
                 excerpt:
                 cta: Read more
-                url: '/docs/ai-developers/SNET_Full_Guide_(Mainnet)'
+                url: '/docs/ai-developers/snet-full-guide-mainnet'
             onboarding-testnet:
                 title: Testnet onboarding end to end tutorial
                 excerpt:
                 cta: Read more
-                url: '/docs/ai-developers/SNET_Full_Guide_(Testnet)'
+                url: '/docs/ai-developers/snet-full-guide-testnet'
             service-type-http:
                 title: Integrating HTTP service
                 excerpt:

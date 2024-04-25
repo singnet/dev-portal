@@ -20,7 +20,7 @@ micro_nav: true
 
 `bash docker-etcd-setup.sh`
 
-**!!!Data folder of the ETCD cluster will be created in your current folder with the script. You might want to move it to the desired location. ALL YOUR EARNED MONEY WILL BE IN THIS FOLDER SO YOU SHOULDN’T LOSE IT**
+**!!!Data folder of the ETCD cluster will be created in the directory you are currently in. ALL YOUR EARNED MONEY WILL BE IN THIS FOLDER SO YOU SHOULDN’T LOSE IT **
 
 3) Follow instructions of script
 
@@ -49,48 +49,49 @@ If your ETCD node keeps crashing, check its logs with this command and debug it:
 
 **Result**: If everything was done correctly you would have seen ETCD INSTALLED SUCCESSFULLY. If that is the case, now you should have a running docker container with ETCD cluster and new certificates for ETCD (path to them will be printed by script, look for CERTIFICATES PATH)
 
-
 ### Daemon setup
+1) Download latest release from https://github.com/singnet/snet-daemon/releases
 
+`wget https://github.com/singnet/snet-daemon/releases/download/v5.1.2/snetd-linux-amd64-v5.1.2`
 
-1) Download binary with support of Goerli network
+(wget command for downloading snetd v5.1.2)
 
-`wget "https://drive.google.com/u/0/uc?id=1jbme-TD_HVOlyvkdcT_B0iOOzUpM9c3r&export=download" -O snetd`
+2) Make sure that snetd file is executable
 
-2) Change permissions of the file
-
-`sudo chmod +x snetd`
+`chmod +x snetd-linux-amd64-v5.1.2`
 
 3) Create config file for daemon
 
 `touch snetd.config.json`
 
+4) **(OPTIONAL)** Put executable file in `/usr/bin folder`
+
+`cp snetd-linux-amd64-v5.1.2 /usr/bin/snetd`
+
 ### Installing SNET-cli
 
 1) Prerequisites
 
-For snet-cli you need Python 3.7 (or older) with pip. Also you will need nodejs 8+ with npm
+For snet-cli you need Python 3.11 (or older) with pip. Also you will need libudev and libusb 1.0
+Install them by running:
 
-```
-sudo apt update
-sudo apt install python3 python3-pip git
-sudo apt install nodejs npm
-```
+`sudo apt install libudev-dev libusb-1.0-0-dev`
 
 2) Install new version of snet-cli:
 
-```
-git clone https://github.com/singnet/snet-cli.git
+`pip install snet.snet-cli`
 
-cd snet-cli/packages/snet_cli
-./scripts/blockchain install
-pip3 install -e .
 
-```
+3) **(OPTIONAL)** Enabling commands autocomplete
+If you want to enable auto completion of commands, you should install the following package:
 
-3) Reinitialize ubuntu session (quit and login again). Everything should be working
+`sudo apt install python3-argcomplete`
 
-4) Confirm installation with “snet” command
+`sudo activate-global-python-argcomplete`
+
+4) Reinitialize ubuntu session (quit and login again). Everything should be working
+
+5) Confirm installation with “snet” command
 
 ### gRPC Service development (example)
 
@@ -136,35 +137,27 @@ service Example {
 import time
 import logging
 import argparse
+from utility import Model
 from concurrent import futures
-
+ 
 ## Importing grpc and auto generated files ##
 import grpc
 import example_pb2
 import example_pb2_grpc
-
+ 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
-
+ 
 ## Host and port on which the server listens ##
 parser = argparse.ArgumentParser(description='')
-parser.add_argument("--host", type=str, default="0.0.0.0",  help= "host" )
+parser.add_argument("--host", type=str, default="127.0.0.1",  help= "host" )
 parser.add_argument("--port", type=int, default=8010,  help= "port" )
 args = parser.parse_args()
-
-
-class Model():
-    def __init__(self):
-        pass
-
-    def predict(self, q, t):
-        return "result1", "result2", "result3"
-
-
+ 
 ## Creating a class inherited from <name>Servicer (ExampleServicer) from Example_pb2_grpc ##
 class ExampleServicer(example_pb2_grpc.ExampleServicer):
     def __init__(self):
         self.model = Model()
-
+ 
     ## Redefining the main method from proto, which will be called ##
     ## Accepts and returns the corresponding structures defined in the proto file ##
     def call(self, request, context):
@@ -177,7 +170,7 @@ class ExampleServicer(example_pb2_grpc.ExampleServicer):
             print("Error: {}".format(e))
             raise Exception("Error: {}".format(e))
         return example_pb2.Answer(answer=result, answer2=result2, answer3=result3)
-
+ 
 ## Replacing Example with the desired <name> ##
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
@@ -185,17 +178,16 @@ def serve():
     server.add_insecure_port('{}:{}'.format(args.host, args.port))
     server.start()
     print('Server start')
-
+ 
     try:
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)
     except KeyboardInterrupt:
         server.stop(0)
-
+ 
 if __name__ == '__main__':
     logging.basicConfig()
     serve()
-
 ```
 
 5) Create a client
@@ -246,17 +238,17 @@ if __name__ == '__main__':
 
 ### Organization setup
 
-1) Create an Identity in snet-cli for Goerli, if you already have an account with ether, then you can use it, as an example:
+1) Create an Identity in snet-cli for Sepolia, if you already have an account with ether, then you can use it, as an example:
 
-`snet identity create <IDENTITY> key --private-key <PVT-KEY> --network goerli`
+`snet identity create <IDENTITY> key --private-key <PVT-KEY> --network sepolia`
 
 OR
 
-`snet identity create <IDENTITY> mnemonic --network goerli`
+`snet identity create <IDENTITY> mnemonic --network sepolia`
 
 You can create an identity with your crypto wallet private key or with seed phrases (mnemonic). You can export your private key from the wallet, and seed phrases are given upon creation of said wallet. Choose whichever you have.
 
-2) Add the organization name, id and the type of organization (use the same \<ORGANIZATION_ID\> for daemon configuration later in the guide)
+2) Add the organization name, id and the type of organization (use the same <ORGANIZATION_ID> for daemon configuration later in the guide)
 
 `snet organization metadata-init <ORG-NAME> <ORGANIZATION_ID> individual`
 
@@ -276,7 +268,7 @@ organization_metadata.json file will be created, with metadata information you p
 
 3) Add description about your organization
 
-`snet organization metadata-add-description --description "Describe your organization details here" --short-description  "This is short description of your organization" --url "c"`
+`snet organization metadata-add-description --description "Describe your organization details here" --short-description  "This is short description of your organization" --url "https://anyurlofyourorganization"`
 
 Updated organization_metadata.json:
 
@@ -300,19 +292,21 @@ Updated organization_metadata.json:
 
 Use the same endpoint mentioned in the ETCD setup.
 
-**groups**: Multiple groups can be associated with an organization, one payment type is associated with every group.  
-**payment_address**: Address of the Service provider who would receive the payment payment_channel_storage_type: Type of storage to manage payments (for example: ETCD)  
-**endpoint**: Storage endpoint for the clients to connect.  
+**groups**: Multiple groups can be associated with an organization, one payment type is associated with every group. 
+**payment_address**: Address of the Service provider who would receive the payment
+**payment_channel_storage_type**: Type of storage to manage payments (for example: ETCD)
+**endpoint**: Storage endpoint for the clients to connect.
+**--payment-expiration-threshold**: Check payment expiration threshold in the end of this document to get better understanding on how this parameter affects paymnet processing
 
-Use parameters from previous steps: \<group_name\>, \<etcd-endpoint\>  
-Your full etcd endpoint is printed by docker etcd installation script in the end. Look for  
-**ETCD ENDPOINT: https://\<DOMAIN_NAME\>:2379** (do not include **/health** at the end if it is present)
+Use parameters from previous steps: <group_name>, <etcd-endpoint>
+Your full etcd endpoint is printed by docker etcd installation script in the end. Look for
+**ETCD ENDPOINT: https://<ETCD_ADDRESS>:2379** (do not include **/health** at the end if it is present)
 
-`snet organization add-group <group_name> <wallet_address> <etcd-endpoint>`
+`snet organization add-group --payment-expiration-threshold 40320 <group_name> <wallet_address> <etcd-endpoint>`
 
 Final command should look like this:
 
-`snet organization add-group default_groups 0x06A1D29e9FfA2415434A7A571235744F8DA2a514 https://your-etcdendpont:2379`
+`snet organization add-group --payment-expiration-threshold 40320 default_group 0x06A1D29e9FfA2415434A7A571235744F8DA2a514 https://your-etcd-endpont-ip-host:2379`
 
 This section will be added to your organization_metadata.json:
 
@@ -366,7 +360,7 @@ Example:
 
 `cat organization_metadata.json`
 
-7) Publish the organization (note that this command creates a transaction, so you need to have GETH on your account wallet)
+7) Publish the organization (note that this command creates a transaction, so you need to have SETH on your account wallet)
 
 `snet organization create <ORGANIZATION_ID>`
 
@@ -392,11 +386,11 @@ snet service metadata-init \
 ```
 
 Where,
-**SERVICE_PROTOBUF_DIR** - Directory which contains protobuf files of your service  
-**SERVICE_DISPLAY_NAME** - Display name of your service. You can choose any name you want.  
-**PAYMENT_GROUP_NAME** - Name of the payment group from organization metadata published in organization setup, step 4  
-**DAEMON_ENDPOINT** - Endpoint which will be used to connect to your services daemon.  
-**FIXED_PRICE** - Price in AGIX for a single call to your service. We will set the price to 10^-8 AGIX (remember that 10^-8 AGIX = 1 COG).  
+**SERVICE_PROTOBUF_DIR** - Directory which contains protobuf files of your service
+**SERVICE_DISPLAY_NAME** - Display name of your service. You can choose any name you want.
+**PAYMENT_GROUP_NAME** - Name of the payment group from organization metadata published in organization setup, step 4
+**DAEMON_ENDPOINT** - Endpoint which will be used to connect to your service daemon. 
+**FIXED_PRICE** - Price in AGIX for a single call to your service. We will set the price to 10^-8 AGIX (remember that 10^-8 AGIX = 1 COG).
 
 Example: 
 
@@ -406,7 +400,7 @@ snet service metadata-init \
     "your-service" \
     --group-name default_groups \
     --fixed-price 0.00000001 \
-    --endpoints http://127.0.0.1:8010
+    --endpoints https://<your-domain-or-public-ip>:<port>
 ```
 
 3) Add service description
@@ -415,14 +409,13 @@ snet service metadata-init \
 
 4) Publish the service on SingularityNET
 
-Now you can publish your service (service_metadata.json is used implicitly), use \<ORGANIZATION_ID\> and \<SERVICE_ID\>. Run this command:
+Now you can publish your service (service_metadata.json is used implicitly), use <ORGANIZATION_ID> and <SERVICE_ID>. Run this command:
 
 `snet service publish <ORGANIZATION_ID> <SERVICE_ID>`
 
 Note: This command also creates a transaction, so you must have GETH on your balance
 
 Example:
-
 
 `snet service publish my_test_org my_test_service`
 
@@ -432,15 +425,15 @@ Example:
 
 ### Final configuration
 
-Copy etcd certificates to daemon host (skip if daemon and etcd are located on same host)
+1) Copy etcd certificates to daemon host (skip if daemon and etcd are located on same host)
 
 `scp /var/lib/etcd/cfssl/{client.pem,ca.pem,client-key.pem} user@daemon_host:<PATH_TO_ETCD_CERTS>`
 
-Copy domain certificates to daemon host (skip if daemon and web server are located on same host)
+2) Copy domain certificates to daemon host (skip if daemon and web server are located on same host)
 
 `scp /etc/letsencrypt/live/<DAEMON_DOMAIN>/{fullchain.pem,privkey.pem} user@daemon_host:<PATH_TO_DOMAIN_CERTS>`
 
-Adjust daemon configuration (replace all <****> with necessary data, including all certificates, organization id, service id, daemon group and addresses)
+3) Adjust daemon configuration (replace all <****> with necessary data, including all certificates, organization id, service id, daemon group and addresses)
 
 `$EDITOR snetd.config.json`
 
@@ -449,7 +442,7 @@ Add following parameters:
 ```
 {
   "blockchain_enabled": true,
-  "blockchain_network_selected": "goerli",
+  "blockchain_network_selected": "sepolia",
   "daemon_end_point": "0.0.0.0:<DAEMON_PORT>",
   "daemon_group_name": "<DAEMON_GROUP>",
   "ipfs_end_point": "http://ipfs.singularitynet.io:80",
@@ -465,12 +458,12 @@ Add following parameters:
 
 ```
 
-**Your daemon config file should look something like this:**
+Your daemon config file should look something like this:
 
 ```
 {
   "blockchain_enabled": true,
-  "blockchain_network_selected": "goerli",
+  "blockchain_network_selected": "sepolia",
   "daemon_end_point": "0.0.0.0:7000",
   "daemon_group_name": "default_group",
   "ipfs_end_point": "http://ipfs.singularitynet.io:80",
@@ -478,9 +471,9 @@ Add following parameters:
   "service_id": "my_test_service",
   "passthrough_enabled": true,
   "passthrough_endpoint": "http://127.0.0.1:8010",
-  "payment_channel_cert_path": "/var/lib/etcd/cfssl/client.pem",
-  "payment_channel_ca_path": "/var/lib/etcd/cfssl/ca.pem",
-  "payment_channel_key_path": "/var/lib/etcd/cfssl/client-key.pem",
+  "payment_channel_cert_path": "/home/user/etcd-certs/client.pem",
+  "payment_channel_ca_path": "/home/user/etcd-certs/ca.pem",
+  "payment_channel_key_path": "/home/user/etcd-certs/client-key.pem",
   "log": {"level": "debug", "output": {"type": "stdout"}}
 }
 
@@ -492,7 +485,7 @@ Add following parameters:
 
 5) If everything was configured correctly, you should see this in stdout of daemon
 
-`“DEBUG[] starting daemon” `
+`"DEBUG[] starting daemon" `
 
 ### Starting service
 
@@ -504,7 +497,6 @@ Add following parameters:
 
 ### Calling service with snet-cli
 
-
 1) Deposit in Escrow and Create a Channel
 
 To call a SNET service you need to open a payment channel with MPE on it. To get MPE run:
@@ -512,7 +504,7 @@ To call a SNET service you need to open a payment channel with MPE on it. To get
 ```
 snet account deposit 0.000001 # Deposit AGIX Token to MPE. 
 
-snet channel open-init <org_id> <group_name> 0.000001 +2days # Open a Channel (for 2 days) and transfer AGIX in to the Channel
+snet channel open-init <org_id> <group_name> 0.000001 +7days # Open a Channel (for 7 days) and transfer AGIX in to the Channel
 ```
 
 2) Make a call to a service
@@ -529,7 +521,6 @@ Confirm the transaction when asked to. After that you should see service respons
 Price for this call will be 0.0000001 AGI (use -y to remove this warning).
 Proceed? (y/n): y
 value: 42.0
-
 ```
 
 ### Claiming payment
@@ -540,18 +531,21 @@ When users are calling your service they send credentials that allow you to coll
 
 **If the user's payment channel closes before you have collected your payment - you will lose your money. If for whatever reason you lose data on your ETCD cluster - you won’t be able to collect tokens either. That’s because payment channel credentials are located there. It is in your best interest to properly manage ETCD and its data, and to collect payment periodically.**
 
+### Payment expiration threshold
 
-### Appendix - not necessary.
+When you set up payment groups for your organization a special parameter was used: **--payment-expiration-threshold 40320**. This parameters makes daemon working on that group to forbid the access to your service if the user's payment channel will expire in the next 40320 blocks. It means that if users payment channel will expire in less than a week (40320 blocks * ~15 sec/block = 604800 seconds = 10080 minutes = 168 hours = 7 days) he won’t be able to use your services. This allows you to set up scheduled payment claims without worrying about your money. If you claim all payments at least once a week, users won’t be able to return their tokens after calling your services. That’s because their payment channel won’t expire before your scheduled payment collection. It is recommended to collect it twice a week. You can do it once a week, but with less margin for errors.
+
+Run this command twice a week (you can automate it with cron):
+
+`snet treasurer claim-all --endpoint <daemon-endpoint>`
 
 ### Closing payment channel (recollecting your tokens as client)
 
-
-When you open a payment channel to call services, you are doing this as a client. So this step only purpose is to recollect your tokens from opening a testing channel. You probably won’t need it again.
+When you open a payment channel to call services, you are doing this as a client. So this step's only purpose is to recollect your tokens from opening a testing channel. You probably won’t need it again.
 
 While your payment channel is open, you can’t take your tokens back. You have to wait until it expires (in this guide it was open for +2days, so it will expire in roughly that time) before you can recollect your tokens. To do so run:
 
 `snet channel claim-timeout-all`
-
 
 ### Switching Daemon to work with embedded ETCD
 
@@ -595,3 +589,4 @@ Make sure to write something random in token because it ensures that your cluste
   "log": {"level": "debug", "output": {"type": "stdout"}}
 }
 ```
+
