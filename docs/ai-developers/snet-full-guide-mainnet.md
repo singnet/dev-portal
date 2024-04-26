@@ -10,8 +10,9 @@ micro_nav: true
 
 ## Port forwarding from domain to daemon host (Existing domain required)
 
-This step depends on the web server which you are using. Set the port forwarding from your <DAEMON_PORT> to <DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>
-**Example**: your_awesome_domain.com:<DAEMON_PORT> --> <DAEMON_INTERNAL ADDRESS>:<DAEMON_PORT>
+This step depends on the web server which you are using. Set the port forwarding from your \<DAEMON_PORT\> to \<DAEMON_INTERNAL_ADDRESS\>:\<DAEMON_PORT\>
+
+**Example** : your_awesome_domain.com:\<DAEMON_PORT\> --> \<DAEMON_INTERNAL ADDRESS\>:\<DAEMON_PORT\>
 
 ### Domain certificates generation (skip of you already have SSL enabled on your domain)
 1) Install certbot following this instructions:
