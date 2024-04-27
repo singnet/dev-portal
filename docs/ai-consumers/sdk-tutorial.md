@@ -114,7 +114,8 @@ service invoked successfully
 npm install
 ```
 
-Then update .env with your keys
+Then update .env with your keys.
+You can get the free call token from the [service](https://beta.singularitynet.io/) integration setup from install and run tab.
 
 Update aiService.js with the following points:
 
