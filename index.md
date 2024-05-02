@@ -42,7 +42,7 @@ tools_cards:
     - title: SNET Client
       description: A command line utility to interface with the SingularityNet platform
       left_url_name: Download
-      left_url_link: https://pypi.org/project/snet-cli/
+      left_url_link: https://pypi.org/project/snet.cli/
       right_url_name: Github
       right_url_link: https://github.com/singnet/snet-cli
 
@@ -56,9 +56,9 @@ tools_cards:
     - title: Python SDK
       description: Python SDK to invoke AI services on the SingularityNet platform programatically
       left_url_name: Download
-      left_url_link: https://pypi.org/project/snet-cli/
+      left_url_link: https://pypi.org/project/snet.sdk/
       right_url_name: Github
-      right_url_link: https://github.com/singnet/snet-cli
+      right_url_link: https://github.com/singnet/snet-sdk-python
 
     - title: Java SDK
       img: 'http://placehold.jp/80x80.png'
