@@ -557,7 +557,7 @@ h5 .title-anchor-link{ display: none;}
         border: #DBE3E7 solid 1px;
     }
     #snet-results-container{
-        display: none;
+        display: block;
         position: absolute;
         width: 100%;
         padding: 0;
@@ -584,11 +584,11 @@ h5 .title-anchor-link{ display: none;}
             }
         }
     }    
-    &:hover{
-        #snet-results-container{
-            display: block;
-        }        
-    }
+    // &:hover{
+    //     #snet-results-container{
+    //         display: block;
+    //     }        
+    // }
 }
 
 

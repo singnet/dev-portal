@@ -61,6 +61,28 @@
                         {% endif %}
                         {% if dropdowntree %}
                         <li class="nav-item">
+                            <div id="search-container">
+                                <input type="text" id="snet-search-input" placeholder="search...">
+                                <ul id="snet-results-container">
+                                </ul>
+                            </div> 
+                        </li>
+                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
+                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
+                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/search-script.js"></script>        
+
+                        <!-- Configuration -->
+                        <script>
+                            SimpleJekyllSearch({
+                            searchInput: document.getElementById('snet-search-input'),
+                                    resultsContainer: document.getElementById('snet-results-container'),
+                                    json: '/search.json'
+                                    })
+                        </script>    
+
+                        <li class="nav-item">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" >
                                 {{ item.item_name }}
                             </a>  
