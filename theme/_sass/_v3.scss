@@ -66,6 +66,7 @@ header{
         padding: 10px 0;
     }
     .snet-navbar_primary{
+        justify-content: space-between !important;
         padding: 11px 16px 11px 16px; 
         gap: 20px;
         h1{
@@ -746,6 +747,7 @@ h5 .title-anchor-link{ display: none;}
     /* Mobile */           
     header{
         .snet-navbar_primary{
+            justify-content: space-between !important;
             padding-left:0;
             padding-right:0;            
             h1{

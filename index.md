@@ -12,12 +12,6 @@ micro_nav: true
 
 # Features
 features:
-    - title: Search
-      description: Test search
-      icon: 'Tutorials_3.svg'
-      card-image: ''
-      url: '/search'
-
     - title: Overview
       description: A primer to get you started with working with SingularityNET tools & software and the Blockchain.
       icon: 'Tutorials_1.svg'
