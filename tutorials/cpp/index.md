@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: C++ service
+description: In this tutorial we'll create a C++ service and publish it in SingularityNET.
 
 # extralink box
 extralink:

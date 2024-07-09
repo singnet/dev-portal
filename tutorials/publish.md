@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Publish
+description:
 
 # extralink box
 extralink:

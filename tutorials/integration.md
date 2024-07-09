@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Guidelines for service integration in SingularityNET  
+description: These are guidelines to help SingularityNET developers to write/integrate new AI services to the platform.
 
 # extralink box
 extralink:

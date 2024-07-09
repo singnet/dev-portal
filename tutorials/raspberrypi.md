@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Running snet-daemon on Raspbbery Pi
+description: Running snet-daemon on Raspbbery Pi
 
 # extralink box
 extralink:

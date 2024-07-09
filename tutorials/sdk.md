@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Python SDK
+description:
 
 # extralink box
 extralink:
@@ -17,6 +19,8 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 ---
+
+# Python SDK
 
 ## Step 1. Prerequisites
 
