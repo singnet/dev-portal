@@ -260,6 +260,7 @@
             })(t) &&
                 (u(),
                 (function i(t, e) {
+                    console.log('search results: ', t);
                     var n = t.length;
                     if (0 === n) return a(o.noResultsText);
                     for (var r = 0; r < n; r++)

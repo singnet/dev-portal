@@ -4,7 +4,7 @@
   {% for page in site.pages %}
     {
 
-      "title"    : "{{ page | escape }}",
+      "title"    : "{{ page.title | escape }}",
       "url"      : "{{ site.baseurl }}{{ page.url }}",
       "category" : "{{ page.category }}",
       "keywords" : "{{ page.keywords }}",        
