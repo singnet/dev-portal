@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: software
 comments: false
+title: Intro concepts software
+description: 
 
 # extralink box
 extralink:

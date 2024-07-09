@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: MPE, example
 comments: false
 
 # Hero section

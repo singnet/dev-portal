@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Contribute deployment
+description: Contribute deployment
 
 # extralink box
 extralink:

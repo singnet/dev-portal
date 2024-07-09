@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Installing Certbot, Obtaining an SSL Certificate, Getting the certificate path, Mount certificate path, Schedule renewal of certificates
 comments: false
+title: Daemon SSl setup
+description: This section provides steps on securing your SingularityNet Daemon with Certbot
 
 # extralink box
 extralink:

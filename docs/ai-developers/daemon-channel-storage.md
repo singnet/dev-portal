@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Daemon channel, process
 comments: false
+title: Daemon channel
+description: To fulfill a request from a client to a service, a snet-daemon needs to store and process information about the service payment. 
 
 # extralink box
 extralink:
@@ -18,6 +20,7 @@ dev_news: true
 micro_nav: true
 
 ---
+## Daemon channel
 
 To fulfill a request from a client to a service, a snet-daemon needs to store and process information about the service payment. This connection is called the payment channel.
 

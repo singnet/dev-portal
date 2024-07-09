@@ -3,6 +3,8 @@
 layout: default
 keywords: intro concepts
 comments: false
+title: Publishing Service on Blockchain
+description: Publishing Service on Blockchain
 
 ---
 

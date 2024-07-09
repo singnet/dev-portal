@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Contribute guidelines
+description: Contribute guidelines
 
 # extralink box
 extralink:

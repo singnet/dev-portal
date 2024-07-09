@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Registry contract, service, organization, CLI, Dapp
 comments: false
+title: The SingularityNET Registry
+description: The SingularityNET Registry is an ERC-165–compliant smart contract 
 
 # extralink box
 extralink:
@@ -18,6 +20,8 @@ dev_news: true
 micro_nav: true
 
 ---
+
+## The SingularityNET Registry
 
 The SingularityNET Registry is an [ERC-165](https://eips.ethereum.org/EIPS/eip-165)–compliant smart contract on the Ethereum Blockchain that stores organizations, services, and type repositories. AI developers use the Registry to announce details of their services, and consumers use the Registry to find the services they need. When a user searches for a service in the [Marketplace DApp](https://beta.singularitynet.io/), it reads details of the services from the Registry, which also allows tagging of services and type repositories to enable searching and filtering.
 The Registry provides all the information needed to find and interact with AI services on the

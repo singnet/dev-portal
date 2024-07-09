@@ -2,6 +2,8 @@
 layout: default
 keywords: agix token
 comments: false
+title: AGIX
+description: The AGIX Token is an ERC-20 token
 
 # extralink box
 extralink:
@@ -17,6 +19,7 @@ dev_news: true
 micro_nav: true
     
 ---
+# AGIX Token
 
 SingularityNET uses the AGIX Token for its marketplace. The AGIX Token is an ERC-20 token hosted on the Ethereum Blockchain. Right now, we are in the `beta` phase of the SingularityNET Marketplace. That means that you will need to use Kovan or Ropsten Testnet AGIX to work with our tools. You can get Kovan or Ropsten Testnet AGIX by following the instructions [here](#agix-faucet).
 

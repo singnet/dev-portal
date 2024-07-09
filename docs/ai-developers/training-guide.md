@@ -3,6 +3,8 @@
 layout: default
 keywords: training daemon
 comments: false
+title: Training guide
+description: Training guide
 
 # Micro navigation
 micro_nav: true

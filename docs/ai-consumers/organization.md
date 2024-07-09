@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, Organization Metadata, example
 comments: false
+title: Organization
+description: The organization metadata is the description of a SingularityNET Organization
 
 # Micro navigation
 micro_nav: true

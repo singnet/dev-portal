@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: call service, cli, get AGIX
 comments: false
+title: Making a call to a SingularityNET service
+description: Making a call to a SingularityNET service
 
 # extralink box
 extralink:

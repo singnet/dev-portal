@@ -1,13 +1,16 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, GRPC, Samples
 comments: false
+title: GRPC
+description: gRPC and SingularityNet Platform
 
 # Micro navigation
 micro_nav: true
 
 ---
+# GRPC
 
 ## Overview
 

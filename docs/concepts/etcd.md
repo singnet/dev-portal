@@ -1,15 +1,17 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, ETCD
 comments: false
+title: ETCD 
+description: etcd is a distributed reliable key-value store having the following properties
 
 # Micro navigation
 micro_nav: true
 
 ---
 
-## etcd Overview
+## ETCD Overview
 
 <a href="https://github.com/etcd-io/etcd" target="_blank">etcd</a> is a distributed reliable key-value store having the following properties:
 

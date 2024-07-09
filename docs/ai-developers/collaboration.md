@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Collaboration
 comments: false
+title: Collaboration
+description: Members, Collaboration
 
 # extralink box
 extralink:

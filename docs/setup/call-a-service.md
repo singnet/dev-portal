@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Call a service
+description: Call a service
 
 # extralink box
 extralink:
@@ -17,6 +19,7 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 ---
+# Call a service
 
 ## Step 1. Get some Ether
 

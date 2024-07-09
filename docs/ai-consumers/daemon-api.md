@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: gRPC metadata, error codes, Payment Channel State API, Sequence of Calls
 comments: false
+title: SingularityNET daemon
+description: the SingularityNET daemon, provides an API to call service methods using multi-party escrow contract payment channels
 
 # extralink box
 extralink:
@@ -16,7 +18,6 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
 ---
 
 `snetd`, the SingularityNET daemon, provides an API to call service methods using [multi-party escrow contract](/docs/ai-consumers/mpe) payment channels.
@@ -31,11 +32,11 @@ A sequence diagram of a typical client/service interaction can be found in the [
 
 To pass payment data to the server when making a request, the client fills in the following gRPC metadata fields:
 
-- `snet-payment-type` - payment protocol type; currently "escrow" is the only supported value, it means that MultiPartyEscrow (MPE) contract is used for payments;
-- `snet-payment-channel-id` - id of the payment channel in MPE contract ([decimal number string](#using-decimal-numbers))
-- `snet-payment-channel-nonce` - nonce of the payment channel ([decimal number string](#using-decimal-numbers))
-- `snet-payment-channel-amount` - payment amount authorized by the client ([decimal number string](#using-decimal-numbers))
-- `snet-payment-channel-signature-bin` - client payment signature ([65 bytes in base64](#binary-data-encoding))
+-   `snet-payment-type` - payment protocol type; currently "escrow" is the only supported value, it means that MultiPartyEscrow (MPE) contract is used for payments;
+-   `snet-payment-channel-id` - id of the payment channel in MPE contract ([decimal number string](#using-decimal-numbers))
+-   `snet-payment-channel-nonce` - nonce of the payment channel ([decimal number string](#using-decimal-numbers))
+-   `snet-payment-channel-amount` - payment amount authorized by the client ([decimal number string](#using-decimal-numbers))
+-   `snet-payment-channel-signature-bin` - client payment signature ([65 bytes in base64](#binary-data-encoding))
 
 ### Using decimal numbers
 
@@ -50,34 +51,36 @@ gRPC supports sending binary data in metadata fields. To use this feature, the m
 The SingularityNET daemon uses both standard and custom gRPC error codes to provide client with information when an error occurrs. In the case that the service itself returns an error, it will be passed to the client without transformation.
 
 gRPC error codes:
-- `Unauthenticated` - payment details are incorrect;
-- `IncorrectNonce` (custom code **1000**) - payment nonce is incorrect, possible
-  reason is that service provider claimed funds and incremented the channel nonce;
-- `FailedPrecondition` - call cannot be done because another call is in progress
-  or rate restriction is applied;
-- `InvalidArgument` - payment details format is incorrect;
-- `Internal` - unexpected error, daemon state is incorrect or some subsystem is
-  unavailable, the service provider needs to resolve the issue;
+
+-   `Unauthenticated` - payment details are incorrect;
+-   `IncorrectNonce` (custom code **1000**) - payment nonce is incorrect, possible
+    reason is that service provider claimed funds and incremented the channel nonce;
+-   `FailedPrecondition` - call cannot be done because another call is in progress
+    or rate restriction is applied;
+-   `InvalidArgument` - payment details format is incorrect;
+-   `Internal` - unexpected error, daemon state is incorrect or some subsystem is
+    unavailable, the service provider needs to resolve the issue;
 
 Full list of expected error messages:
-- `Unauthenticated`:
-  - "payment signature is not valid"
-  - "payment is not signed by channel signer"
-  - "payment channel is near to be expired, expiration time: %v, current block: %v, expiration threshold: %v"
-  - "not enough tokens on payment channel, channel amount: %v, payment amount: %v"
-  - "payment channel \"%v\" not found"
-  - "income %d does not equal to price %d"
-- `IncorrectNonce`:
-  - "incorrect payment channel nonce, latest: %v, sent: %v"
-- `FailedPrecondition`:
-  - "another transaction on channel: %v is in progress"
-- `InvalidArgument`:
-  - "missing metadata"
-  - "unexpected \"snet-payment-type\", value: \"%v\""
-  - "incorrect format \"%v\": \"%v\""
-  - "incorrect binary key name \"%v\""
-  - "missing \"%v\""
-  - "too many values for key \"%v\": %v"
+
+-   `Unauthenticated`:
+    -   "payment signature is not valid"
+    -   "payment is not signed by channel signer"
+    -   "payment channel is near to be expired, expiration time: %v, current block: %v, expiration threshold: %v"
+    -   "not enough tokens on payment channel, channel amount: %v, payment amount: %v"
+    -   "payment channel \"%v\" not found"
+    -   "income %d does not equal to price %d"
+-   `IncorrectNonce`:
+    -   "incorrect payment channel nonce, latest: %v, sent: %v"
+-   `FailedPrecondition`:
+    -   "another transaction on channel: %v is in progress"
+-   `InvalidArgument`:
+    -   "missing metadata"
+    -   "unexpected \"snet-payment-type\", value: \"%v\""
+    -   "incorrect format \"%v\": \"%v\""
+    -   "incorrect binary key name \"%v\""
+    -   "missing \"%v\""
+    -   "too many values for key \"%v\": %v"
 
 ## Payment Channel State API
 
@@ -86,4 +89,4 @@ The client can get the latest payment channel state from the service using Payme
 ## Sequence of Calls
 
 Sequence diagram of calls during client/daemon interaction:
-[![Client/daemon interaction sequence diagram](/assets/img/mpe/clientDaemonInteractionSequenceDiagram.svg "Client/daemon interaction sequence diagram")](/assets/img/mpe/clientDaemonInteractionSequenceDiagram.svg)
+[![Client/daemon interaction sequence diagram](/assets/img/mpe/clientDaemonInteractionSequenceDiagram.svg 'Client/daemon interaction sequence diagram')](/assets/img/mpe/clientDaemonInteractionSequenceDiagram.svg)

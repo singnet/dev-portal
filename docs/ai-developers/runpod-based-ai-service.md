@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: runpod onboarding
+keywords: runpod onboarding, Publish the service
 comments: false
+title: Runpod based AI service
+description: Runpod based AI service
 
 # Micro navigation
 micro_nav: true

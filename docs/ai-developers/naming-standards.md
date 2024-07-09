@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Naming standards, Service URI, Service Display Name, Service Tags
 comments: false
+title: Naming standards
+description: SingularityNET are defined by naming standards
 
 # extralink box
 extralink:
@@ -16,9 +18,10 @@ dev_news: true
 
 # Micro navigation
 micro_nav: true
-
 ---
+
 ## Naming standards
+
 Currently, a lot of flexibility is provided as to how entities in SingularityNET are defined by naming standards.
 
 Initially, the naming standard can result in difficulty to recognize between capitalization and separation of words in names. But these named standard is proposed to be implemented within the code, so that the smart contracts and the software can enforce the named standard definition efficiently in SingularityNET.
@@ -29,14 +32,14 @@ This following section describes the naming standards for your reference.
 
 A service URI consists of three things:
 
-- Organization name
-- Service name
+-   Organization name
+-   Service name
 
 e.g. `snet/face-detect`
 
 Here `snet` is the organization, and `face-detect` is the service name.
 
-Service authors *should* use lowercase alphanumerics, for each of these components. Multiple word components should
+Service authors _should_ use lowercase alphanumerics, for each of these components. Multiple word components should
 be [slugified with dashes](https://docs.djangoproject.com/en/2.1/ref/utils/#django.utils.text.slugify) ([wikipedia definition of "slug"](https://en.wikipedia.org/wiki/Clean_URL#Slug)) (i.e. dashes should separate the words).
 
 This is analogous to a URL on the web. A domain name is case insensitive, and while a URL path can use capitalisation, many web applications will treat these paths as case insensitive.
@@ -53,4 +56,4 @@ These fields are 8bit characters compliance, and can support UTF-8. These fields
 
 ## Service Tags
 
-Tags should follow the style of popular sites like [Stack Overflow](https://stackoverflow.com/)). The service tags are defined in  lowercase slugified words, e.g. `example-tag` `tags-are-great` `opencog` `artificial-neural-network` etc.
+Tags should follow the style of popular sites like [Stack Overflow](https://stackoverflow.com/)). The service tags are defined in lowercase slugified words, e.g. `example-tag` `tags-are-great` `opencog` `artificial-neural-network` etc.

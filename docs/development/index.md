@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: documentation
 comments: false
 
 # Hero section

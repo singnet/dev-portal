@@ -3,6 +3,8 @@
 layout: default
 keywords: triton onboarding
 comments: false
+title: Deploying triton-based service to the SNET platform
+description: Deploying triton-based service to the SNET platform
 
 # Micro navigation
 micro_nav: true

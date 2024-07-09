@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Claiming AGIX Tokens, 
 comments: false
+title: Claim
+description: earning AGIX tokens as people interact and purchase your service
 
 # extralink box
 extralink:

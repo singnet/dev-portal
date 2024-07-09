@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Python SDK, Node.js SDK
 comments: false
+title: SDK Tutorial
+description: All about SDK
 
 # extralink box
 extralink:

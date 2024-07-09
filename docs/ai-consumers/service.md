@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, Service, Service Specification (Protocol Buffer Definition), Service Metadata
 comments: false
+title: Service
+description: About service
 
 ---
 ## Service

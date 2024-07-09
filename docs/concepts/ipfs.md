@@ -3,8 +3,11 @@
 layout: default
 keywords: ipfs
 comments: false
+title: Interplanetary File System 
+description: The Interplanetary File System (IPFS) is a synthesis of several new and existing innovations
        
 ---
+# Interplanetary File System 
 
 The Interplanetary File System (IPFS) is a synthesis of several new and existing innovations. [IPFS](https://ipfs.io) is an open-source project.
 

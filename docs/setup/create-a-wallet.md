@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Create a wallet
+description: Create a wallet
 
 # extralink box
 extralink:
@@ -18,7 +20,7 @@ dev_news: true
 micro_nav: true
 
 ---
-
+# Create a wallet
 ## Step 1. MetaMask
 
 [Metamask](https://metamask.io/) is a browser extension to interact with Blockchain enabled websites like our marketplace.

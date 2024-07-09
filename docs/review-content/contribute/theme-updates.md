@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Developer Portal thems
+description: Developer Portal thems
 
 # extralink box
 extralink:

@@ -3,6 +3,8 @@
 layout: default
 keywords: Intro concepts,singularitynet 
 comments: false
+title: Metamask
+description: Metamask
 
 # Micro navigation
 micro_nav: true

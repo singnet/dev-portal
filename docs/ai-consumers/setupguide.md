@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, Setup guid, Python 3.6+, Create a Virtual env, Node 8+ with npm, SNET CLI, SNET Daemon
 comments: false
+title: Setup guid
+description: Setup guid
 
 ---
 - [Python 3.6+](https://www.python.org/downloads/)

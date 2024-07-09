@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: Intro concepts,singularitynet 
+keywords: Intro concepts, singularitynet 
 comments: false
+title: SingularityNET
+description: ingularityNET (SNET) is an open and decentralized network of AI services
 
 # Micro navigation
 micro_nav: true

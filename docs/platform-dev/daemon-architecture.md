@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, Free Calls, pay
 comments: false
+title: Daemon architecture
+description: Daemon architecture
 
 # Micro navigation
 micro_nav: true

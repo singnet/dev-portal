@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Create an Identity, networks, Faucet
 comments: false
+title: Metamask
+description: Metamask is a browser extension for interacting with B enabled websites, such as marketplace.
 
 # extralink box
 extralink:

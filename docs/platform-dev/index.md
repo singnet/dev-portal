@@ -3,6 +3,8 @@
 layout: default
 keywords: intro concepts
 comments: false
+title: Intro concepts
+description: intro concepts
 
 # Micro navigation
 micro_nav: true

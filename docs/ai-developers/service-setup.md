@@ -1,10 +1,12 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, Protocol Buffer, service,Definition, ptotobuf, publish
 comments: false
-
+title: Service
+description: publish the service
 ---
+
 ## Service
 
 The platform's primary reason for existence is to allow a diverse collection AI services to be bought and sold via a distributed marketplace. Anyone can publish the availability of their machine learning method, or integrated AI solution, and allow clients to interact with and pay for them directly.
@@ -15,34 +17,33 @@ These services are primarily meant to be AI or machine learning related, but the
 
 ## Service Specification (Protocol Buffer Definition)
 
-- Services define their API using <a href="https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition" target="_blank">protocol buffers</a>. 
-- This allows SingularityNET clients to determine the request/response schema programmatically. 
-- The first step in setting up a service on the SingularityNet Platform is to define the service definition via protocol buffers.
-- A sample proto file is available <a href="https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto" target="_blank">here</a>
-
+-   Services define their API using <a href="https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition" target="_blank">protocol buffers</a>.
+-   This allows SingularityNET clients to determine the request/response schema programmatically.
+-   The first step in setting up a service on the SingularityNet Platform is to define the service definition via protocol buffers.
+-   A sample proto file is available <a href="https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto" target="_blank">here</a>
 
 ## Service Metadata
 
 The service metadata is the off-chain description of a SingularityNET service and is, by default, hosted on the SingularityNET IPFS cluster. To use a service, the client needs to know the following:
-- The service metadata
-- The address of Multi-Party Escrow (MPE) contract
-Fortunately, the latter is included in the metadata. 
+
+-   The service metadata
+-   The address of Multi-Party Escrow (MPE) contract
+    Fortunately, the latter is included in the metadata.
 
 The daemon which allows access to the service, needs information about the metadata to configure the payment systems.
 
 There are three ways of providing metadata details to the clients and the daemons:
-- Simple JSON file
-- IPFS hash that points to the JSON metadata
-- Name of service in the Registry - this can be resolved to an IPFS hash, pointing to the metadata, through the Registry’s getMetadataIPFSHash method.
 
-**Note:** The client using the mpe_address from the metadata should not adhere to this as a primary source of information, for the sake of security. The client should check that this address corresponds to the expected mpe_address . 
+-   Simple JSON file
+-   IPFS hash that points to the JSON metadata
+-   Name of service in the Registry - this can be resolved to an IPFS hash, pointing to the metadata, through the Registry’s getMetadataIPFSHash method.
 
+**Note:** The client using the mpe_address from the metadata should not adhere to this as a primary source of information, for the sake of security. The client should check that this address corresponds to the expected mpe_address .
 
-**Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack 
-**Note:** By default, the snet-cli adheres to this verification. 
+**Important:** Client must check that the hash of the metadata corresponds to the IPFS hash. Otherwise, If the IPFS client is compromised, the client system can become vulnerable to attack
+**Note:** By default, the snet-cli adheres to this verification.
 
-
-**Note**: 
+**Note**:
 
 The service provider needs to publish the details about the service in the Blockchain.
 
@@ -51,10 +52,11 @@ Details like Service the price of the service ,
 image depicting / related to the service , service type, description, the endpoint and how to make a request.
 
 Please note that
-- Singularity platform works on gRPC. Whenever you need to call you need a protofile.
-- File management system such as IPFS stores the location of the hash and points to the associated protofile
-    The IPFS can include a file and the same file returns same hash. 
-    
+
+-   Singularity platform works on gRPC. Whenever you need to call you need a protofile.
+-   File management system such as IPFS stores the location of the hash and points to the associated protofile
+    The IPFS can include a file and the same file returns same hash.
+
 ## Metadata Overview
 
 ```
@@ -102,4 +104,4 @@ Please note that
 
 ```
 
-For more information about how to viewing the metadata using the python module, [CLI documentation](http://snet-cli-docs.singularitynet.io/) 
+For more information about how to viewing the metadata using the python module, [CLI documentation](http://snet-cli-docs.singularitynet.io/)

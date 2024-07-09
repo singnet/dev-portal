@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: CLI, call, service
 comments: false
+title: Call to a SingularityNET service via CLI
+description: Making a call to a SingularityNET service
 
 # extralink box
 extralink:

@@ -1,11 +1,13 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, CLI, set up, service, daemon, Publishing
 comments: false
+title: Service set up via snet-cli
+description: Service set up via snet-cli
 
 ---
-# Set up
+# Service set up via snet-cli
 
 - [Python 3.6+](https://www.python.org/downloads/)
 - [Node 8+ with npm](https://nodejs.org/en/download/)
