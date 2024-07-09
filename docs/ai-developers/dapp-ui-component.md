@@ -35,12 +35,12 @@ Install [Node.js and npm](https://nodejs.org/) and [yarn](https://classic.yarnpk
 
 1. **Download the snet-dapp code**
 
-```sh
+    ```sh
     git clone git@github.com:singnet/snet-dapp.git
     cd snet-dapp
     yarn install
     cp .env.sandbox .env
-```
+    ```
 
 2.  **Update `.env` file**
 
@@ -110,7 +110,7 @@ Install [Node.js and npm](https://nodejs.org/) and [yarn](https://classic.yarnpk
     For example with org_id="snet" and service_id="example-service":
 
     ```
-    thirdPartyCustomUIComponents.addCustomUIComponent("snet", "example_service", ExampleService);
+    thirdPartyCustomUIComponents.addCustomUIComponent("snet", "example_service", ExampleServiceUI);
     ```
 
 6.  **Run the DApp**
@@ -124,50 +124,54 @@ Install [Node.js and npm](https://nodejs.org/) and [yarn](https://classic.yarnpk
     or
 
     ```sh
-    yarn start
+    npm run start
     ```
 
 7.  **Component development**
 
-    Marketplace provide to service client information about endpoint which was added from Publisher or CLI, freecalls, etc. For call request your component should get `serviceClient and isComplete` props. Example of call service:
+    To request a call, your component should use the props `service Client` and `isComplete`.
+    - `serviceClient` provides methods for calling the service.
+    - `isComplete` provides your service with information about the service's response.
+    Example of a call service:  
 
-```js
-import { ExampleService } from "./example_pb_service";
-const ExampleServiceUI = ({ serviceClient, isComplete }) => {
-    <...>
-    const parseResponse = (response) => {
-        const { message, status, statusMessage } = response;
+    ```js
+    import { ExampleService } from "./example_pb_service";
 
-        if (status !== 0) {
-        throw new Error(statusMessage);
-        }
-        setResponse(message.getResponse());
-    };
+    const ExampleServiceUI = ({ serviceClient, isComplete }) => {
 
-    const runService = () => {
-        const methodDescriptor = ExampleService.exampleServiceMethod;
-        const request = new methodDescriptor.requestType();
+        <...>
 
-        request.setUserInput(userInput);
+        const parseResponse = (response) => {
+            const { message, status, statusMessage } = response;
 
-        const props = {
-        request,
-        onEnd: (response) => parseResponse(response),
+            if (status !== 0) {
+                throw new Error(statusMessage);
+            }
+            setResponse(message.getResponse());
         };
-        //service client is props
-        serviceClient.unary(methodDescriptor, props);
+
+        const runService = () => {
+            const methodDescriptor = ExampleService.exampleServiceMethod;
+            const request = new methodDescriptor.requestType();
+
+            request.setUserInput(userInput);
+
+            const props = {
+                request,
+                onEnd: (response) => parseResponse(response),
+            };
+            //serviceClient is prop
+            serviceClient.unary(methodDescriptor, props);
+        };
+
+        <...>
+        
+        //isComplete is prop
+        if (!isComplete) {
+            return <ServiceInput />;
+        } else {
+            return <ServiceOutput />;
+        }
     };
-  <...>
-};
-```
-
-`isComplite` props can be used to render output service component
-
-```js
-if (!isComplete) {
-    return <ServiceInput />;
-} else {
-    return <ServiceOutput />;
-}
-```
-The load indication is enabled using the Marketplace, you do not need to develop this part of the application.
+    ```
+    The load indication is enabled using the Marketplace, you do not need to develop this part of the application.
