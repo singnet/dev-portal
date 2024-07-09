@@ -3,6 +3,8 @@
 layout: default
 keywords: staking, cardano
 comments: false
+title: Staking Timeline
+description: Staking Timeline
 
 # Micro navigation
 micro_nav: true

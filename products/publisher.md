@@ -6,6 +6,7 @@ comments: false
 
 # Hero section
 title: SingularityNET Marketplace - Publisher Portal
+description: Goal is to assist the developers to easily publish and manage their organizations and services using the publisher portal.
 
 # extralink box
 extralink:

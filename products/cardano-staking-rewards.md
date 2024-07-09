@@ -3,6 +3,8 @@
 layout: default
 keywords: staking, cardano
 comments: false
+title: Rewards distribution period
+description: 
 
 # Micro navigation
 micro_nav: true

@@ -3,6 +3,8 @@
 layout: default
 keywords: staking
 comments: false
+title: Staking
+description:
 
 # Micro navigation
 micro_nav: true

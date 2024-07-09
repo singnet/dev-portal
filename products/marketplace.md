@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Introduction to SingularityNET Marketplace
+description:
 
 # extralink box
 extralink:

@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Products
+description:
 
 # extralink box
 extralink:

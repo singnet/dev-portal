@@ -3,6 +3,8 @@
 layout: default
 keywords: staking, cardano
 comments: false
+title: Staking withdraw
+description:
 
 # Micro navigation
 micro_nav: true
