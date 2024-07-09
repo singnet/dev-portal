@@ -2,7 +2,7 @@
 
 <!-- Mobile First Navigation -->
 <div class="snet-mobile-first collapse" id="snet-mobile-first">
-    <ul>
+    <ul> 
         <li>
             <a class="snet-mobile-first-close" data-toggle="collapse" data-target="#snet-mobile-first">
                 <i class="material-icons">close</i>
@@ -69,6 +69,11 @@
                 <h1>
                     <a class="navbar-brand" href="/"><img src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/images/WhiteLogo.93b76382.svg"></a>
                 </h1>
+                <div id="search-container">
+                    <input type="text" id="snet-search-input" placeholder="search...">
+                    <ul id="snet-results-container">
+                    </ul>
+                </div> 
                 <button class="navbar-toggler snet-navbar-toggler" type="button" data-toggle="collapse" data-target="#snet-mobile-first">
                     <span class="navbar-toggler-icon">
                         <i class="material-icons">dehaze</i>
@@ -76,27 +81,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="navbar-nav mr-auto snet-navbar_menu">
-                        <li class="nav-item">
-                            <div id="search-container">
-                                <input type="text" id="snet-search-input" placeholder="search...">
-                                <ul id="snet-results-container">
-                                </ul>
-                            </div> 
-                        </li>
-                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
-                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
-                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
-                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
-                        <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/search-script.js"></script>        
-
-                        <!-- Configuration -->
-                        <script>
-                            SimpleJekyllSearch({
-                            searchInput: document.getElementById('snet-search-input'),
-                                    resultsContainer: document.getElementById('snet-results-container'),
-                                    json: '/search.json'
-                                    })
-                        </script>   
                         {% for item in site.data.navigation.header.nav %} {% assign dropdowntree = nil %} {% if item.subheaders %} {% assign dropdowntree = item.subheaders %} {% endif %} {% if dropdowntree %}
                         <li class="nav-item">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown">
@@ -149,3 +133,18 @@
 </nav>
 {% endif %} {% endif %}
 <!-- Navigations End -->
+
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/vendor/matchHeight.min.js"></script>
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/scripts.js"></script>
+<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.snet.baseurl }}{% endif %}/theme/assets/js/search-script.js"></script>        
+
+<!-- Configuration -->
+<script>
+    SimpleJekyllSearch({
+    searchInput: document.getElementById('snet-search-input'),
+            resultsContainer: document.getElementById('snet-results-container'),
+            json: '/search.json'
+            })
+</script> 
