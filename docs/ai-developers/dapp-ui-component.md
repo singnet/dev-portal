@@ -170,3 +170,4 @@ if (!isComplete) {
     return <ServiceOutput />;
 }
 ```
+The load indication is enabled using the Marketplace, you do not need to develop this part of the application.
