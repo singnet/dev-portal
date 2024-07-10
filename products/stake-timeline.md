@@ -1,10 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: staking
+keywords: staking, ethereum
 comments: false
-title: Stake timeline
-description: 
+title: Ethereum stake timeline
+description: Ethereum stake timeline
 
 # Micro navigation
 micro_nav: true

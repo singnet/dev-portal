@@ -1,14 +1,13 @@
 ---
 # Page settings
 layout: default
-keywords: staking
+keywords: staking, ethereum
 comments: false
-title: Stake reward
-description: 
+title: Ethereum stake reward
+description: Ethereum stake reward
 
 # Micro navigation
 micro_nav: true
-
 ---
 
 In exchange for providing their tokens to be used in this way, the AGIX token holder who has staked their tokens is provided with a certain number of bonus AGIX tokens, similarly to fiat depositors earning interest. Other rewards for staking may also be introduced in future.

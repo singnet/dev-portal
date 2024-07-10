@@ -3,8 +3,10 @@
 layout: default
 keywords:
 comments: false
+
+# Hero section
 title: RFAI
-description: 
+description: If you have a need for a specific AI service
 
 # extralink box
 extralink:
