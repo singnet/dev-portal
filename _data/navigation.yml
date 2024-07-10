@@ -254,7 +254,7 @@ ai-consumers:
                 title: Invoking a Service using Java sdk
                 excerpt:
                 cta: Read more
-                url: '/docs/ai-consumers/java-sdk'
+                url: '/docs/tutorials/client/java'
             invoke-serivce-sdk:
                 title: Invoking a Service using sdk
                 excerpt:
