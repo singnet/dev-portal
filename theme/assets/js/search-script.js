@@ -1,9 +1,9 @@
 /*!
-  * Simple-Jekyll-Search
-  * Copyright 2015-2020, Christian Fei
-  * Licensed under the MIT License.
-  */
- !(function () {
+ * Simple-Jekyll-Search
+ * Copyright 2015-2020, Christian Fei
+ * Licensed under the MIT License.
+ */
+!(function () {
     'use strict';
     var f = {
         compile: function (r) {
@@ -249,7 +249,6 @@
                 0 < e.length &&
                 (c(),
                 (function (e, n) {
-                    console.log('search results: ', e, n);
                     var r = e.length;
                     if (0 === r) return s(i.noResultsText);
                     for (let t = 0; t < r; t++)
