@@ -1,12 +1,9 @@
-{% console.log(page) %}
-<title>{{ page.title }}</title>
+<title>{% if page.description %}{{ page.title }}{% else %}{{"Dev portal"}}{% endif %}</title>
 <meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0">
 
-{% if page.description %}
-<meta name="description" content="{{ page.description }}">
-{% endif %}
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{""}}{% endif %}">
 
 {% if page.keywords %}
 <meta name="keywords" content="{{ page.keywords }}">
