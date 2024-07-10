@@ -561,6 +561,8 @@ h5 .title-anchor-link{ display: none;}
     #snet-results-container{
         display: block;
         position: absolute;
+        overflow: auto;
+        max-height: 30vh;
         width: 100%;
         padding: 0;
         left: 0;
