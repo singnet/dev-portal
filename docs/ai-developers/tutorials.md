@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: C++, Go, Java, Python, tutorials
 comments: false
+title: Tutorials
+description: Tutorials
 
 # extralink box
 extralink:

@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, AGIX Tokens, Testnet, Mainnet, Faucet
 comments: false
+title: AGIX tokens
+description: The AGIX Token is an ERC-20 token, which is hosted on the Ethereum Blockchain.
 
 # Micro navigation
 micro_nav: true

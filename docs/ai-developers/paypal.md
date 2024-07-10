@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, PayPal, service by paying, call a service
 comments: false
+title: Integration with PayPal
+description: SingularityNET’s Decentralized AI Marketplace Integration with PayPal
 
 # Micro navigation
 micro_nav: true
@@ -87,7 +89,7 @@ Steps
 11.	Confirmation message show that the token has been deposited to the Escrow wallet 
 12.	You might need to refresh if your token still appears as authorized.
 
-### To  call a service
+### To call a service
 
 1.	View a list of service from the home page.
 2.	Filter the list by using the search text box.

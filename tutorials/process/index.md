@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Process-type
+description: This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET
 
 # extralink box
 extralink:

@@ -1,24 +1,26 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, Concepts and Components
 comments: false
+title: Intro concepts
+description: SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain.
 
 # Micro navigation
 micro_nav: true
-
 ---
+
 ## Overview
 
-SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, and anyone on the network can be use the service using the internet connection. 
+SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, and anyone on the network can be use the service using the internet connection.
 
 Developers can charge for the usage of their services using the native AGIX token.
 
-Services can span the entire gamut of offerings in artificial intelligence and machine learning. Services can provide inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. The services can be as simple as wrapping a well-known algorithm such as A* path planning, a complete end-to-end solution for an industry problem, or a standalone AI application. Developers can also deploy autonomous AI agents that interoperate with other services on the network.
+Services can span the entire gamut of offerings in artificial intelligence and machine learning. Services can provide inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. The services can be as simple as wrapping a well-known algorithm such as A\* path planning, a complete end-to-end solution for an industry problem, or a standalone AI application. Developers can also deploy autonomous AI agents that interoperate with other services on the network.
 
-The SingularityNET platform contains a number of critical components that work together to enable a decentralized network of AI services to flourish. 
+The SingularityNET platform contains a number of critical components that work together to enable a decentralized network of AI services to flourish.
 
-The core components are designed to allow for a functional, scalable, and extensible system. 
+The core components are designed to allow for a functional, scalable, and extensible system.
 
 We arrived at the current architecture through a careful process, guided by a few key decisions governing Blockchain
 interactions, AI service integration, abstraction and by the goal of building an AI marketplace that is open and compliant with regulatory and legal requirements.
@@ -32,13 +34,10 @@ Finally, to make our marketplace compliant with regulations without compromising
 
 ## Concepts and Components
 
-The SingularityNET platform and network are shown as core components. The following diagram shows the key components,  associated auxiliary components and corresponding roles.
+The SingularityNET platform and network are shown as core components. The following diagram shows the key components, associated auxiliary components and corresponding roles.
 
 ![components](/assets/img/platform_components.jpg)
 
-
-You can quickly jump to a particular page or use the navigation on the page to read through them. 
+You can quickly jump to a particular page or use the navigation on the page to read through them.
 
 **The Request for AI Portal (RFAI):** is a DApp through which end users and application developers request specific AI services they want added to the network and reward AGIX tokens as a reward for high-quality solutions.
-
-

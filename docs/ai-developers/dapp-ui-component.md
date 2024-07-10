@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, UI components, storybook,  Build component locally
 comments: false
+title: UI components
+description: The SingularityNET network allows developers to register their AI services on an open marketplace and charge for access. 
 
 # Micro navigation
 micro_nav: true

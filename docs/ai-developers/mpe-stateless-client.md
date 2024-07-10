@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Multi-Party Escrow, payment channels
 comments: false
+title: Multi-Party Escrow
+description: the client that communicates with SingularityNET services using the Multi-Party Escrow payment channels
 
 # extralink box
 extralink:
@@ -17,9 +19,8 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 
-
-
 ---
+# Multi-Party Escrow
 
 In this document we demonstrate that the client that communicates with SingularityNET services using the Multi-Party Escrow payment channels does not require to store the state of the payment channel. The client only needs to store its Ethereum identity.  
 

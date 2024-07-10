@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Platform Development, MPE, multiparty escrow example
 comments: false
+title: Platform Development
+description: Platform Development
 
 # Developer Newsletter
 dev_news: true

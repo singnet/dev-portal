@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: staking
+keywords: staking, ethereum
 comments: false
+title: Ethereum staking
+description: Ethereum staking
 
 # Micro navigation
 micro_nav: true

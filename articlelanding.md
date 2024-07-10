@@ -2,9 +2,10 @@
 # Page settings
 layout: article-landing
 keywords:
+title: Article landing
+description: Article landing
 
-
-# Featrures    
+# Featrures
 features:
     - title: Quick Start
       description: A primer to get you started with working with SingularityNET tools & software and the Blockchain.
@@ -26,9 +27,9 @@ features:
 
 # Cards Row One
 row_one:
-      title: Quick Start
-      urltext: Browse All
-      url: '/docs/concepts'
+    title: Quick Start
+    urltext: Browse All
+    url: '/docs/concepts'
 
 cards_row_one:
     - title: Getting started
@@ -40,9 +41,9 @@ cards_row_one:
 
 # Cards Row Two
 row_two:
-      title: Integrating AI Services
-      urltext: Browse All
-      url: '/docs/concepts'
+    title: Integrating AI Services
+    urltext: Browse All
+    url: '/docs/concepts'
 
 cards_row_two:
     - title: Sketch symbols
@@ -57,9 +58,9 @@ cards_row_two:
 
 # Cards Row Three
 row_three:
-      title: Selling AI Services
-      urltext: Browse All
-      url: '/docs/concepts'
+    title: Selling AI Services
+    urltext: Browse All
+    url: '/docs/concepts'
 
 cards_row_three:
     - title: Frontend
@@ -74,7 +75,7 @@ cards_row_three:
 
 # Downloads Section
 downloads_section:
-      title: Downloads
+    title: Downloads
 
 download_cards:
     - title: SNET Contracts
@@ -92,8 +93,8 @@ download_cards:
 
 # Email Subscription Section
 email_subscription:
-      title: Stay up to date
-      excerpt: Be the first to know about SingularityNET developer news and get the newest tutorials, articles, and updates.
+    title: Stay up to date
+    excerpt: Be the first to know about SingularityNET developer news and get the newest tutorials, articles, and updates.
 
 # Newsletter
 dev_news: true

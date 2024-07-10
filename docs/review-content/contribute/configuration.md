@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Contribute configuration
+description: Contribute configuration
 
 # extralink box
 extralink:

@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, etcd, Payments, Free Call, FreeCall
 comments: false
+title: ETCD
+description: etcd is a distributed reliable key-value store having the following properties
 
 # Micro navigation
 micro_nav: true

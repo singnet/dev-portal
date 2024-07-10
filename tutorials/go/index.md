@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Go
+description:
 
 # extralink box
 extralink:

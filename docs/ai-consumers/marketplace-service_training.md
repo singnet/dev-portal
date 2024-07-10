@@ -1,9 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Training a model, Training concept, MetaData of Model
 comments: false
-
+title: Training
+description: Training services
 
 # extralink box
 extralink:

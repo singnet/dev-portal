@@ -3,12 +3,14 @@
 layout: default
 keywords: intro concepts
 comments: false
+title: Publishing Organization on Blockchain
+description: Publishing Organization on Blockchain
 
 # Micro navigation
 micro_nav: true
 
 ---
-#Publishing Organization on Blockchain
+# Publishing Organization on Blockchain
 
 
 ### Setting Metadata

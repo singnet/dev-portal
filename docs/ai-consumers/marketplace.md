@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Marketplace
 comments: false
+title: Introduction to SingularityNET Marketplace
+description: The The SingularityNET Marketplace is a decentralized application (DApp), which lists the available
 
 # extralink box
 extralink:

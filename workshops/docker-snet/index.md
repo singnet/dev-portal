@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Docker
+description: This example contains a Docker image and a number of simple application examples which demonstrate how to work with the SingularityNET platform.
 
 # extralink box
 extralink:

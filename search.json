@@ -9,7 +9,8 @@
       "category" : "{{ page.category }}",
       "keywords" : "{{ page.keywords }}",        
       "tags"     : "{{ page.tags | join: ', ' }}",
-      "date"     : "{{ page.date }}"
+      "date"     : "{{ page.date }}",
+      "desc"     : "{{ page.description | escape }}"
 
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}

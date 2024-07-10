@@ -3,6 +3,8 @@
 layout: default
 keywords: Intro concepts,singularitynet 
 comments: false
+title: Intro concepts
+description: Intro concepts
 
 # Micro navigation
 micro_nav: true

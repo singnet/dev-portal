@@ -1,8 +1,11 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Java
 comments: false
+title: SingularityNET service client in Java
+description: This tutorial explains how to create a SingularityNET service client in Java
+language
 
 # extralink box
 extralink:
@@ -28,7 +31,7 @@ find the [full code of the tutorial
 application](https://github.com/singnet/snet-sdk-java/tree/0.4.0/example/tutorial)
 in Java SDK repository. SingularityNET [Java SDK API
 documentation](https://jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc)
-is located at Jitpack.  In order to complete the tutorial one should have [JDK
+is located at Jitpack. In order to complete the tutorial one should have [JDK
 8 or greater](https://www.oracle.com/java/technologies/javase-downloads.html),
 [Maven](https://maven.apache.org/) or [Gradle](https://gradle.org/) and
 [Docker](https://www.docker.com/) installed on the local machine.
@@ -49,16 +52,16 @@ docker run -p 5002:5002 -p 8545:8545 -p 7000:7000 \
 
 This environment contains local Ethereum, local IPFS and local Example Service
 instances. In order to use them we need propagating three network ports from
-the environment. IPFS port `5002`, Ethereum JSON RPC  port `8545` and
+the environment. IPFS port `5002`, Ethereum JSON RPC port `8545` and
 SingularityNET daemon port `7000`.
 
 ## Setup project
 
-
 Three things are required to setup the project correctly:
-- add Java SDK as a dependency;
-- download and unpack service gRPC API protobuf;
-- compile protobuf to Java classes.
+
+-   add Java SDK as a dependency;
+-   download and unpack service gRPC API protobuf;
+-   compile protobuf to Java classes.
 
 First step is trivial, second step is done using plugin provided by
 SingularityNET SDK, third step is done using gRPC plugin. Please read next
@@ -72,13 +75,14 @@ SingularityNET SDK provides Maven and Gradle plugins which automate API
 downloading and unpacking.
 
 Plugins input number of parameters to get the API:
-- `orgId` and `serviceId` parameters specify the service we are going to use;
-- `outputDir` points to the location which is used to download the Protobuf API
-  of the service;
-- `javaPackage` sets the convenient package name to place the compiled API
-  classes;
-- `ethereumJsonRpcEndpoint` specifies the Ethereum network and RPC endpoint to
-  use.
+
+-   `orgId` and `serviceId` parameters specify the service we are going to use;
+-   `outputDir` points to the location which is used to download the Protobuf API
+    of the service;
+-   `javaPackage` sets the convenient package name to place the compiled API
+    classes;
+-   `ethereumJsonRpcEndpoint` specifies the Ethereum network and RPC endpoint to
+    use.
 
 There are couple of additional parameters in the code below. `ipfsRpcEndpoint`
 and `registryAddress` are optional we should specify them properly when we are
@@ -207,6 +211,7 @@ Use Protobuf and gRPC Maven plugins to compile the API of the service.
 ```
 
 Add `exec-maven-plugin` to run the application using Maven.
+
 ```xml
 <plugin>
   <groupId>org.codehaus.mojo</groupId>
@@ -290,7 +295,7 @@ the task which gets the API.
 protobuf {
     protoc { artifact = "com.google.protobuf:protoc:3.5.1" }
     plugins {
-        java 
+        java
         grpc { artifact = "io.grpc:protoc-gen-grpc-java:1.28.0" }
     }
     generateProtoTasks {
@@ -357,14 +362,14 @@ try {
 [Sdk](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/client/Sdk.html)
 class keeps a connection to the Ethereum endpoint and initializes Ethereum
 smart contracts API. These resources should be released when an `Sdk` instance
-is not needed anymore. 
+is not needed anymore.
 
 ## Create service client
 
 Before opening connection to the service we need to specify a payment strategy.
 [OnDemandPaymentChannelPaymentStrategy](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/paymentstrategy/OnDemandPaymentChannelPaymentStrategy.html)
 uses `MultiPartyEscrow` contract to pay for the service calls. It automatically
-finds an appropriate payment channel or opens the new one.  It extends the
+finds an appropriate payment channel or opens the new one. It extends the
 expiration date and adds the funds if it is required. It has two integer
 parameters. First parameter specifies the minimal channel lifetime in Ethereum
 blocks. Second parameter specifies the number of calls to prepay in the

@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, DAPP, alerts, NGINX, Mainnet
 comments: false
+title: Troubleshooting
+description: Troubleshooting
 
 # Micro navigation
 micro_nav: true

@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: daemon
+keywords: daemon, Supported Service Types, SSL, Authorisation and Payment, Configuration, Payment channel state
 comments: false
+title: Daemon
+description: The SingularityNET daemon is the adapter that a service can use to interface with the SingularityNET platform.
 
 # extralink box
 extralink:
@@ -18,6 +20,8 @@ dev_news: true
 micro_nav: true
         
 ---
+## Daemon
+
 The [SingularityNET daemon](https://github.com/singnet/snet-daemon) is the adapter that a service can use to interface with the SingularityNET platform.
 
 In software architecture lingo, the daemon is a [sidecar proxy](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar), —a process deployed next to a core application (the AI service, in this case) to abstract away some architectural concerns such as logging and configuration as well as entire platform aspects, such as the interaction with smart contracts or even the decision to use the Ethereum Blockchain.

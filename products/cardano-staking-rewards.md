@@ -4,12 +4,15 @@ layout: default
 keywords: staking, cardano
 comments: false
 
+# Hero section
+title: Rewards distribution period
+description: Rewards distribution period
+
 # Micro navigation
 micro_nav: true
-
 ---
 
-In exchange for providing tokens, the AGIX token holder who has staked their tokens is provided with a certain number of bonus AGIX tokens, similarly to fiat depositors earning interest. Users earn rewards for each stake window that they participate in. 
+In exchange for providing tokens, the AGIX token holder who has staked their tokens is provided with a certain number of bonus AGIX tokens, similarly to fiat depositors earning interest. Users earn rewards for each stake window that they participate in.
 
 > The essence of the Rewards Distribution Period is that in the pool the admin updates each user rewards in their stakes, which are elements of the associated list in the form of utxo. Every staking window the admin makes a promise and, with the exception of the first window, sends AGIX to pool address. The promise is a sum of AGIX that admin wants to send to the script in the next window, updating of promised amount takes place in the current window and the actual reward distribution for each user - in the future window. The reward will go to users only if they stay until the next Rewards Distribution Period.
 
@@ -17,7 +20,7 @@ During the first staking window, in the first Rewards Distribution Period, users
 
 <br>
 
-***
+---
 
 In Rewards Distribution Period the admin updates the user 's rewards according to the formula:
 
@@ -25,11 +28,8 @@ In Rewards Distribution Period the admin updates the user 's rewards according t
 
 ![formula](/assets/img/cardano-staking/formula.png)
 
-
-* rewards - rewards already earned by the user, rewards earned from previous staking windows
-* deposited - user's deposits from previous staking windows plus deposit in this staking window during the Staking/Withdrawal Period
-* newDeposit - user's deposit in this staking window 
-* totalDeposited - the sum of all deposited and accrued rewards to users in Staking/Withdrawal Period that was before current Rewards Distribution Period
-* totalRewards - how much rewards did the admin promise to deposit in the next staking window in order to distribute them among stakers
-
-
+-   rewards - rewards already earned by the user, rewards earned from previous staking windows
+-   deposited - user's deposits from previous staking windows plus deposit in this staking window during the Staking/Withdrawal Period
+-   newDeposit - user's deposit in this staking window
+-   totalDeposited - the sum of all deposited and accrued rewards to users in Staking/Withdrawal Period that was before current Rewards Distribution Period
+-   totalRewards - how much rewards did the admin promise to deposit in the next staking window in order to distribute them among stakers

@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Multi Party Escrow, MPE
 comments: false
 
 # Hero section

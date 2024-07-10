@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Python
+description:
 
 # extralink box
 extralink:

@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, Ethereum address, account, contract
 comments: false
+title: Ethereum Address 
+description: An Ethereum address is a 64 character hex string
 
 # Micro navigation
 micro_nav: true

@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Concepts
+description: Concepts
 
 # extralink box
 extralink:

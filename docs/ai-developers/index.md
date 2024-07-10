@@ -3,6 +3,8 @@
 layout: default
 keywords: intro concepts
 comments: false
+title: Concepts and Components
+description: SingularityNET (SNET) is an open and decentralized
 
 # Micro navigation
 micro_nav: true

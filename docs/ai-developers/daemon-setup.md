@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Daemon setup, Configuration, Download the latest Daemon, Key Configurations, Start Daemon
 comments: false
+title: Daemon setup
+description: Daemon setup guid
 
 ---
 

@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Supported languages
+description: In this guide, you will find the guidelines to help you write and integrate new AI services to the platform.
 
 # extralink box
 extralink:

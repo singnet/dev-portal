@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: intro concepts
+keywords: intro concepts, Smart Contracts
 comments: false
+title: Smart Contracts
+description: A Smart Contract is terms, rules and conditions of the agreement 
 
 # Micro navigation
 micro_nav: true

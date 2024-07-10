@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: onboarding
+keywords: onboarding, setup, ETCD, Daemon, Installing SNET-cli, gRPC Service development, service, organization, payment channel
 comments: false
+title: ETCD setup
+description: ETCD setup
 
 # Micro navigation
 micro_nav: true

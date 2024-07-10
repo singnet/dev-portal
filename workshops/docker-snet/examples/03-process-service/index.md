@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Process service
+description: Process service
 
 # extralink box
 extralink:
@@ -19,11 +21,12 @@ micro_nav: true
 ---
 
 Please see:
-* [snet-cli repo documentation](https://github.com/singnet/snet-cli)
-* [snet-daemon repo documentation](https://github.com/singnet/snet-daemon/)
 
+-   [snet-cli repo documentation](https://github.com/singnet/snet-cli)
+-   [snet-daemon repo documentation](https://github.com/singnet/snet-daemon/)
 
 ## Publish service to the Registry
+
 ```
 snet identity publisher
 snet service metadata_init . ProcessService $PUBLISHER_ADDR --encoding json --service_type process
@@ -34,12 +37,14 @@ snet service publish ExampleOrganization ProcessService --yes
 ```
 
 ## Start daemon
+
 ```
 cat snetd.config.json
 screen -d -m snetd-linux-amd64
 ```
 
 ## Call service
+
 ```
 snet identity caller
 snet client open_init_channel_registry ExampleOrganization ProcessService 50 57600 -y
@@ -47,6 +52,7 @@ snet client call 1 3 localhost:8080 echo '{"message": "hello"}'
 ```
 
 ## Stop service
+
 ```
 stop_service.sh
 ```

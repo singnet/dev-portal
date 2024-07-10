@@ -1,8 +1,12 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: RFAI, service
 comments: false
+
+# Hero section
+title: RFAI
+description: If you have a need for a specific AI service
 
 # extralink box
 extralink:

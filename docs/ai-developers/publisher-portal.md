@@ -1,8 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords: publisher portal
+keywords: publisher portal, organization, service, Adding members, Blockchain, Publishing
 comments: false
+title: Publisher Portal
+description: Goal is to assist the developers easily publish and manage their organizations and services
 
 # Micro navigation
 micro_nav: true
@@ -24,7 +26,7 @@ The platform provides a simple workflow to add new members, the owner just needs
  and also ensures all the required details like (Wallet address) of the member are furnished when the invitation is accepted.
  ![Invite Members](/assets/img/publisher/Invite_Workflow.png) 
 
-## Publishing an Organization on Block Chain 
+## Publishing an Organization on Blockchain 
 Once details of an Organization are entered, a review is triggered, once approved by the Signet team, you can publish the organization through the portal.
  ![Publish Organization](/assets/img/publisher/Publish_Organixation.png) 
 

@@ -3,16 +3,18 @@
 layout: default
 keywords: staking
 comments: false
+title: SingularityNET SDK for Python
+description: These instructions are for the development and use of the SingularityNET SDK for Python.
 
 # Micro navigation
 micro_nav: true
 
 ---
-#snet-sdk-python
+# snet-sdk-python
 SingularityNET SDK for Python
-##Getting Started
+## Getting Started
 These instructions are for the development and use of the SingularityNET SDK for Python.
-###Usage
+### Usage
 The SingularityNET SDK allows you to import compiled client libraries for your service or services or choice and make calls to those services programmatically from your application by setting up state channels with the providers of those services and making gRPC calls to the SingularityNET daemons for those services by selecting a channel with sufficient funding and supplying the appropriate metadata for authentication.
 Once you have installed the snet-sdk in your current environment and it's in your PYTHONPATH, you should import it and create an instance of the base sdk class:
 ```bash
@@ -66,9 +68,9 @@ For more information about gRPC and how to use it with Python, please see:
 - gRPC Basics - Python
 - gRPC Python’s documentation
 ________________________________________
-##Development
+## Development
 ## Installing
-###Prerequisites
+### Prerequisites
 - Python 3.6.5
 - Node 8+ w/npm
 ________________________________________
@@ -82,15 +84,15 @@ $ ./scripts/Blockchain install
 •	Install the package in development/editable mode
 $ pip install -e .
 ```
-###Versioning
+### Versioning
 We use SemVer for versioning. For the versions available, see the tags on this repository.
-###License
+### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 ```
 snet-sdk-java
 ```
 
-###How to build
+### How to build
 Integration testing is enabled by default. To run full build including integration tests use:
 ```
 mvn install
@@ -101,9 +103,9 @@ Running integration tests is a time consuming process so to make fast build runn
 mvn install -DskipITs
 ```
 
-#snet-sdk-js
+# snet-sdk-js
 
-##Getting Started
+## Getting Started
 This repo hosts multiple SDKs for JavaScript. Currently supported platforms
 1.	Node.js using grpc-node
 2.	Browser (Web) using grpc-web
@@ -115,13 +117,13 @@ You can find more details about each sdk within the respective package folders.
 
 These SDKs are under active development and not ready for production use yet. If you find any bug or something doesn't work as expected, please create an issue.
 
-##Usage
+## Usage
 All the SDKs assume that there is enough eth balance to cover the gas cost and AGIX tokens in the wallet to cover the service execution cost.
 
 The SDKs chose a default Payment Channel Management Strategy,  which is the simplest form of picking an existing Payment Channel if any or creates a new Payment Channel if no channel is found. 
 
 This can be easily overridden by providing your own strategy to the SDK at the time of construction. Documentation on creating custom strategies will be available soon.
-##Development
+## Development
 This is a monorepo which is setup a little differently. It does not use any external tools like lerna or any other popular tool.
 
 There are 3 packages out of which only 2 of them are published to npm
@@ -138,11 +140,11 @@ Navigate to the specific package which needs to be published and then run the fo
 npm run publish
 LICENSE file for details.
 
-#snet-sdk-Java
+# snet-sdk-Java
 
 Class diagram Image <Needed>
 
-##How to build
+## How to build
 
 Integration testing is enabled by default. To run full build including integration tests use:
 

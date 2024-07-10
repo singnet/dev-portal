@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Daemon ssl setup
+description:
 
 # extralink box
 extralink:

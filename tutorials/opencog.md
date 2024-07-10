@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Opencog service
+description:
 
 # extralink box
 extralink:
