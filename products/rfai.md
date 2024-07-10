@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: RFAI, service
 comments: false
 
 # Hero section

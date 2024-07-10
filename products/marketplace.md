@@ -1,10 +1,10 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Marketplace, services
 comments: false
 title: Introduction to SingularityNET Marketplace
-description:
+description: Introduction to SingularityNET Marketplace
 
 # extralink box
 extralink:

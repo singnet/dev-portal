@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: grpc service
+description: grpc service
 
 # extralink box
 extralink:

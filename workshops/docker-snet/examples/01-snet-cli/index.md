@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: SNET-cli
+description: SNET-cli
 
 # extralink box
 extralink:
@@ -19,9 +21,11 @@ micro_nav: true
 ---
 
 Please see:
-* [snet-cli repo documentation](https://github.com/singnet/snet-cli)
+
+-   [snet-cli repo documentation](https://github.com/singnet/snet-cli)
 
 ## Transfer tokens to the caller
+
 ```
 snet identity deployer
 snet client balance
@@ -29,6 +33,7 @@ snet contract SingularityNetToken transferTokens $CALLER_ADDR 100000000000 --tra
 ```
 
 ## Deposit tokens into MultiPartyEscrow contract
+
 ```
 snet identity caller
 snet client balance
@@ -37,11 +42,13 @@ snet client balance
 ```
 
 ## Create publisher identity
+
 ```
 snet identity create --private-key $PUBLISHER_KEY publisher key
 ```
 
 ## Create organization
+
 ```
 snet identity publisher
 snet organization create ExampleOrganization --yes

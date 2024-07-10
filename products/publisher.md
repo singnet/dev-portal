@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Publisher
 comments: false
 
 # Hero section

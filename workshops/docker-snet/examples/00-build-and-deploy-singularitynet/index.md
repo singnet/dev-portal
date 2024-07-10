@@ -3,6 +3,8 @@
 layout: default
 keywords:
 comments: false
+title: Build examples
+description: Build examples
 
 # extralink box
 extralink:
