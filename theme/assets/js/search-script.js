@@ -1,4 +1,9 @@
-!(function () {
+/*!
+  * Simple-Jekyll-Search
+  * Copyright 2015-2020, Christian Fei
+  * Licensed under the MIT License.
+  */
+ !(function () {
     'use strict';
     var f = {
         compile: function (r) {
