@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Java
 comments: false
 title: SingularityNET service client in Java
 description: This tutorial explains how to create a SingularityNET service client in Java
