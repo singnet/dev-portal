@@ -143,8 +143,16 @@
 <!-- Configuration -->
 <script>
     SimpleJekyllSearch({
-    searchInput: document.getElementById('snet-search-input'),
-            resultsContainer: document.getElementById('snet-results-container'),
-            json: '/search.json'
-            })
+        searchInput: document.getElementById('snet-search-input'),
+        resultsContainer: document.getElementById('snet-results-container'),
+        json: '/search.json',
+        templateMiddleware: function(prop, value, template) {
+            console.log("templateMiddleware: ", prop, value, template);
+        },
+        sortMiddleware: function(a, b) {
+            console.log("sortMiddleware: ", a, b);
+        },
+        limit: 100,
+        exclude: ['json']
+    });
 </script> 
