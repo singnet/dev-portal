@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package __PROJECT__;
+
+message Input {
+}
+
+message Output {
+}
+
+service ServiceDefinition {
+    rpc doSomething(Input) returns (Output) {}
+}
