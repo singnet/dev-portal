@@ -15,7 +15,7 @@ A single window has the following stages
 * Staking/Withdrawal Period
 * Rewards Distribution Period
 
-![window](/assets/img/cardano-staking/window-ntx.png, max-width: 410px)
+<img src="/assets/img/cardano-staking/window-ntx.png" alt="Cardano Staking Window" style="max-width: 410px; width: 100%; height: auto;">
 
 As the staking pool starts, the Staking/Withdrawal Period begins and users can send tokens to pool in order to stake them. Tokens aren’t locked in the on-chain script, users can withdraw their deposited amount plus earned rewards in any time during Staking/Withdrawal Period.
 
