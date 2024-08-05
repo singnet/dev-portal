@@ -541,7 +541,7 @@ products:
         cta: Read more
         url: '/products/publisher'
     ethereum-staking:
-        title: Ethereum staking (AGIX)
+        title: Ethereum staking
         children:
             overview:
                 title: Overview
@@ -585,7 +585,7 @@ products:
                 title: Rewards distribution period
                 excerpt:
                 cta: Read more
-                url: '/products/cardano-staking-rewards'
+                url: '/products/cardano-staking-rewards'          
     rfai:
         title: Request For AI Service
         excerpt:
