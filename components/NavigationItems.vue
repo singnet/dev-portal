@@ -16,9 +16,6 @@ export default {
     components: {
         NavigationItem
     },
-    created() {
-        console.log(this.item);
-    },
     props: {
         item: {
             type: Object

@@ -237,7 +237,7 @@ body {
 }
 
 .VPNavBarSearch {
-  display:flex;
+  display: flex;
   align-items: center;
 
 }
@@ -246,10 +246,22 @@ body {
   justify-content: right;
 }
 
-.VPNavBar.has-sidebar .title{
-  position:unset !important;
+.VPNavBar.has-sidebar .title {
+  position: unset !important;
 }
 
-.DocSearch-Button-Keys{
+.DocSearch-Button-Keys {
   display: none !important;
+}
+
+.vp-icon.DocSearch-Search-Icon {
+  background: black;
+}
+
+.dark .vp-icon.DocSearch-Search-Icon {
+  background: white;
+}
+
+.VPContent.has-sidebar+footer{
+  display:none;
 }
