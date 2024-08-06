@@ -30,7 +30,7 @@ If you're new to SingularityNET, this is the suggested order in which to explore
 
 ## Overview
 
-- [What is SingularityNET?](/docs/products/AIMarketplace/coreconcepts/snet) - Core concepts and components that make up SingularityNET.
+- [What is SingularityNET?](/docs/products/AIMarketplace/coreconcepts/) - Core concepts and components that make up SingularityNET.
 
 ## First Steps
 
@@ -44,33 +44,28 @@ The first three links are relevant if you want to be a consumer of SingularityNE
 These steps guide you through creating a service, and getting that service on our marketplace:
 
 - [Publish and run your own example service](/docs/products/AIMarketplace/forcomers/publish)
-- [Marketplace Requirements for Services](/docs/products/AIMarketplace/forcomers/marketplace) - How to submit your service for inclusion in the Singularity marketplace. The marketplace is a curated view of services available in the registry.
 
 ## SingularityNET Platform
 
 Learn the details of the platform components.
 
 - [Registry](/docs/products/AIMarketplace/forcomers/registry)
-- [Daemon](/docs/products/AIMarketplace/daemon/daemon)
-- [Multi-Party Escrow (MPE)](/docs/products/AIMarketplace/coreconcepts/mpe)
+- [Daemon](/docs/products/AIMarketplace/daemon/daemon-architecture)
+- [Multi-Party Escrow (MPE)](/docs/products/AIMarketplace/coreconcepts/Smart-contracts/mpe)
 
 ## Tutorials across languages
 
 We maintain language-specific tutorials for a number popular languages.
 
 - Tutorials
-	- [Build a service in C++](/docs/products/AIMarketplace/forcomers/cpp)
-	- [Build a service in Go](/docs/products/AIMarketplace/forcomers/go)
-	- [Build a service in Java](/docs/products/AIMarketplace/forcomers/java)
-	- [Build a service in Python](/docs/products/AIMarketplace/forcomers/python)
-	- [Build an Opencog service](/docs/products/AIMarketplace/forcomers/opencogx)
+	- [Build a service in C++](/docs/products/AIMarketplace/forcomers/cpp/)
+	- [Build a service in Go](/docs/products/AIMarketplace/forcomers/go/)
+	- [Build a service in Java](/docs/products/AIMarketplace/forcomers/java/)
+	- [Build a service in Python](/docs/products/AIMarketplace/forcomers/python/)
+	- [Build an Opencog service](/docs/products/AIMarketplace/forcomers/opencog)
 
 ## Advanced
 
 - [Multi-Party Escrow (MPE) - Payment Channel Storage](/docs/products/AIMarketplace/daemon/daemon-channel-storage) - Details of channels and payment works.
 - [Launch your own local copy of the SingularityNET platform](/docs/products/AIMarketplace/forcomers/local-singularitynet) - If you want to set up your own development environment of the whole platform, this is the page for you!
 - [Full automated SingularityNET platform example](/docs/products/AIMarketplace/forcomers/mpe-example)
-
-## Community
-
-- [Workshops](/workshops) - Find workshop resources here.

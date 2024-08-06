@@ -34,13 +34,14 @@ buttons:
 
 Guides to implementing a service in a number of programming languages. Is you favourite language missing? Please contribute one 😉
 
-- [Build a client in Java](/tutorials/client/java)
-- [Build a service in C++](/docs/products/AIMarketplace/forcomers/cpp)
-- [Build a service in Go](/docs/products/AIMarketplace/forcomers/go)
-- [Build a service in Java](/docs/products/AIMarketplace/forcomers/java)
-- [Build a service in Python](/docs/products/AIMarketplace/forcomers/python)
-
+<!-- TODO fix -->
+<!-- - [Build a client in Java](/tutorials/client/java) -->
+- [Build a service in C++](/docs/products/AIMarketplace/forcomers/cpp/)
+- [Build a service in Go](/docs/products/AIMarketplace/forcomers/go/)
+- [Build a service in Java](/docs/products/AIMarketplace/forcomers/java/)
+- [Build a service in Python](/docs/products/AIMarketplace/forcomers/python/)
+<!-- TODO fix
 ## Workshop Tutorials
 
 - [Use docker to publish a SingularityNET Service](/workshops/docker-snet)
-- [Getting started with Docker (OpenCog)](/workshops/docker-opencog) - Use docker to work with OpenCog tools.
+- [Getting started with Docker (OpenCog)](/workshops/docker-opencog) - Use docker to work with OpenCog tools. -->

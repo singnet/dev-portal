@@ -21,7 +21,8 @@ micro_nav: true -->
 
 ---
 
-> This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET. It assumes you have successfully installed all of SingularityNET components. To do that, refer to previous tutorials or simply run a docker container from the [Dockerfile](./Dockerfile) provided. If you choose to run a Docker container, make sure to expose a port so that SNET Daemon can communicate with the Blockchain.
+> This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET. It assumes you have successfully installed all of SingularityNET components. To do that, refer to previous tutorials or simply run a docker container from the **Dockerfile** provided. If you choose to run a Docker container, make sure to expose a port so that SNET Daemon can communicate with the Blockchain.
+<!-- TODO /*[Dockerfile](./Dockerfile)*/  -->
 
 SingularityNET is an open-source protocol and collection of smart contracts for a decentralized market of coordinated AI services. Within this framework, anyone can add an AI/machine learning service to SingularityNET for use by the network and receive network payment tokens in exchange.
 
@@ -147,7 +148,7 @@ You should copy this code into an `example-executable-service.proto` file inside
 A service metadata is a series of JSON-encoded information relative to the service that is necessary to publish it. It tells the Blockchain where to redirect client calls to (your service endpoints), its encoding, price, etc. (refer to SNET CLI's help for a list of all possible parameters). 
 
 - `PAYMENT_ADDRESS` is the public key of the blockchain key-pair that will receive the payments from client calls. 
--  set up your etcd cluster based on [etcd-setup](/docs/concepts/etcdsetup.md)
+-  set up your etcd cluster based on [etcd-setup](/docs/products/AIMarketplace/coreconcepts/etcdsetup)
 
 ```sh
 PAYMENT_ADDRESS=`snet account print`

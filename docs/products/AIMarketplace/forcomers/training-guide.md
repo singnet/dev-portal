@@ -32,7 +32,7 @@ rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
 
 ## Scheme
 
-![The scheme of the daemon's work with training methods](/assets/img/daemon/daemon_training.png)
+![The scheme of the daemon's work with training methods](/assets/images/products/AIMarketplace/daemon/daemon_training.png)
 
 ## Limitations
 
