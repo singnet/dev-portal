@@ -12,9 +12,9 @@ micro_nav: true -->
 <!-- TODO: [plugin:vite:vue] Element is missing end tag. -->
 ## Port forwarding from domain to daemon host (Existing domain required)
 
-This step depends on the web server which you are using. Set the port forwarding from your \<DAEMON_PORT\> to \<DAEMON_INTERNAL_ADDRESS\>:\<DAEMON_PORT\>
+This step depends on the web server which you are using. Set the port forwarding from your `<DAEMON_PORT>` to `<DAEMON_INTERNAL_ADDRESS>`:`<DAEMON_PORT>`
 
-**Example** : your_awesome_domain.com:\<DAEMON_PORT\> --> \<DAEMON_INTERNAL ADDRESS\>:\<DAEMON_PORT\>
+**Example** : `your_awesome_domain.com:<DAEMON_PORT>` --> `<DAEMON_INTERNAL ADDRESS>:<DAEMON_PORT>`
 
 ### Domain certificates generation (skip of you already have SSL enabled on your domain)
 1) Install certbot following this instructions:
@@ -318,7 +318,7 @@ You can create an identity with your crypto wallet private key or with seed phra
 
 organization_metadata.json file will be created, with metadata information you provided
 
-```
+```json
 {
     "org_name": "<ORG-NAME>",
     "org_id": "<ORGANIZATION_ID>",
@@ -336,7 +336,7 @@ organization_metadata.json file will be created, with metadata information you p
 
 Updated organization_metadata.json:
 
-```
+```json
 {
     "org_name": "<ORG-NAME>",
     "org_id": "<ORGANIZATION_ID>",
@@ -362,9 +362,9 @@ Use the same endpoint mentioned in the ETCD setup.
 **endpoint**: Storage endpoint for the clients to connect.
 **--payment-expiration-threshold**: Check payment expiration threshold in the end of this document to get better understanding on how this parameter affects paymnet processing
 
-Use parameters from previous steps: <group_name>, <etcd-endpoint>
+Use parameters from previous steps: `<group_name>`, `<etcd-endpoint>`
 Your full etcd endpoint is printed by docker etcd installation script in the end. Look for
-**ETCD ENDPOINT: https://<ETCD_ADDRESS>:2379** (do not include **/health** at the end if it is present)
+**`ETCD ENDPOINT: https://<ETCD_ADDRESS>:2379`** (do not include **/health** at the end if it is present)
 
 `snet organization add-group --payment-expiration-threshold 40320 <group_name> <wallet_address> <etcd-endpoint>`
 
@@ -458,7 +458,7 @@ Where,
 
 Example: 
 
-```
+```bash
 snet service metadata-init \
     service/service_spec \
     "your-service" \
@@ -479,7 +479,7 @@ To enable metering for your service run: (get metering address from section 7)
 
 5) Publish the service on SingularityNET
 
-Now you can publish your service (service_metadata.json is used implicitly), use <ORGANIZATION_ID> and <SERVICE_ID>. Run this command:
+Now you can publish your service (service_metadata.json is used implicitly), use `<ORGANIZATION_ID>` and `<SERVICE_ID>`. Run this command:
 
 `snet service publish <ORGANIZATION_ID> <SERVICE_ID>`
 
@@ -509,7 +509,7 @@ Example:
 
 Add following parameters: 
 
-```
+```json
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "main",
@@ -581,7 +581,7 @@ Your daemon config file should look something like this:
 
 To call a SNET service you need to open a payment channel with MPE on it. To get MPE run:
 
-```
+```bash
 snet account deposit 0.000001 # Deposit AGIX Token to MPE. 
 
 snet channel open-init <org_id> <group_name> 0.000001 +7days # Open a Channel (for 7 days) and transfer AGIX in to the Channel

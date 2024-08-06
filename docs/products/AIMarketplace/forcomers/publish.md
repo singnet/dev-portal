@@ -180,7 +180,7 @@ export ORGANIZATION_ID="new-org-id"
 
 If you want to join an existing organization (e.g. `snet`), ask its owner to add your public key (account) into it before proceeding.
 
-See details of organization metadata in [here](/docs/products/AIMarketplace/coreconcepts/concepts-organization).
+<!-- TODO fix See details of organization metadata in [here](/docs/products/AIMarketplace/coreconcepts/concepts-organization). -->
 
 ## Step 6. Download and configure example-service
 

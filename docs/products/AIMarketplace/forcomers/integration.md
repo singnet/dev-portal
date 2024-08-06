@@ -21,7 +21,7 @@ micro_nav: true -->
 
 ---
 
-[singnet-home]: https://www.singularitynet.io
+<!-- TODO fix [singnet-home]: https://www.singularitynet.io
 [singnet-github]: https://github.com/singnet
 [dnn-github]: https://github.com/singnet/dnn-model-services
 [contribution-guidelines]: /docs/products/AIMarketplace/forcomers
@@ -36,7 +36,7 @@ micro_nav: true -->
 [grpc]: https://grpc.io/
 [grpc-docs]: https://grpc.io/docs/
 [opencog]: https://opencog.org/
-[opencog-services]: https://github.com/singnet/opencog-services
+[opencog-services]: https://github.com/singnet/opencog-services -->
 
 # Guidelines for service integration in SingularityNET  
 
@@ -68,7 +68,7 @@ service in each of these languages:
 - [How to write a SingularityNET service in C++](/docs/products/AIMarketplace/forcomers/cpp/)
 - [How to write a SingularityNET service in Python](/docs/products/AIMarketplace/forcomers/python/)
 - [How to write a SingularityNET service in Java](/docs/products/AIMarketplace/forcomers/java/)
-- [How to write a SingularityNET service in Go](/docs/products/AIMarketplace/forcomers/go)
+- [How to write a SingularityNET service in Go](/docs/products/AIMarketplace/forcomers/go/)
 
 If you already have a gRPC service, this tutorial explains how to publish it in
 SingularityNET:

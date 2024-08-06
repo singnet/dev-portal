@@ -30,7 +30,7 @@ Finally, to make our marketplace compliant with regulations without compromising
 Here we've broken down the SingularityNET platform and network into its core components. The diagram below depicts the key components along with auxiliary components and their
 roles.
 
-![components](/assets/img/platform_components.jpg)
+![components](/assets/images/products/AIMarketplace/core-concepts/platform_components.jpg)
 
   
  You can jump directly to the thing you'd like to know more about, or use the navigation on each page to read through them in turn. 

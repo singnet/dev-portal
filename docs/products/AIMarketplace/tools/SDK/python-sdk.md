@@ -28,29 +28,28 @@ Now, the instance of the sdk can be used to instantiate clients for SingularityN
 To generate the client libraries, you need the SingularityNET Command Line Interface, or CLI, which you can download from PyPi, see https://github.com/singnet/snet-cli#installing-with-pip
 
 Once you have the CLI installed, run the following command:
-```
+``` bash
 snet sdk generate-client-library python <org_id> <service_id>
 ```
-snet sdk generate-client-library python <org_id> <service_id>
 
-Optionally, you can specify an output path; otherwise it's going to be ./client_libraries/python/<org_id>/<service_id>
+Optionally, you can specify an output path; otherwise it's going to be `./client_libraries/python/<org_id>/<service_id>`
 
-Now, by default the sdk is going to look for those client libraries in the ./grpc/<org_id>/<service_id> in the directory of the main process of the module it's being imported by.
+Now, by default the sdk is going to look for those client libraries in the `./grpc/<org_id>/<service_id>` in the directory of the main process of the module it's being imported by.
 
 Once you have the generated client libraries in place, you can create an instance of a SingularityNET service client:
 
-```
+``` python
 client = snet.client("<org_id>", "<service_id>")
 ```
 
 The client exposes the following properties and methods:
-- All of the modules from the generated client library as client.grpc.<module_name. These are temporarily added to your PYTHONPATH and imported at runtime
+- All of the modules from the generated client library as `client.grpc.<module_name>`. These are temporarily added to your `PYTHONPATH` and imported at runtime
 - Functions to open, fund and extend state channels
 - Functions to retrieve the list of state channels between you and the service provider from the Blockchain
 - Functions to get the updated state for a specific channel from the service provider, signed by yourself
 - Functions to generate and sign the required metadata to make gRPC calls to the service daemon
 This is an example of how to make a call to a SingularityNET service in the snet organization with the example-service service_id using the base SDK and client instances created as shown before:
-```
+``` python
 stub = client.grpc.example_service_pb2_grpc.CalculatorStub(client.grpc_channel)
 request = calculator.grpc.example_service_pb2.Numbers(a=10, b=12)
 result = stub.add(request)
@@ -142,7 +141,7 @@ LICENSE file for details.
 
 # snet-sdk-Java
 
-Class diagram Image <Needed>
+`Class diagram Image <Needed>`
 
 ## How to build
 

@@ -100,7 +100,7 @@ If you want to enable auto completion of commands, you should install the follow
 
 1) Create proto file `<name>.proto` (example.proto):
 
-```
+``` proto
 syntax = "proto3";
  
 package example;
@@ -135,7 +135,7 @@ service Example {
 
 4) Create a server
 
-```
+``` python
 ## Importing the necessary libraries of the service ##
 import time
 import logging
@@ -251,13 +251,13 @@ OR
 
 You can create an identity with your crypto wallet private key or with seed phrases (mnemonic). You can export your private key from the wallet, and seed phrases are given upon creation of said wallet. Choose whichever you have.
 
-2) Add the organization name, id and the type of organization (use the same <ORGANIZATION_ID> for daemon configuration later in the guide)
+2) Add the organization name, id and the type of organization (use the same `<ORGANIZATION_ID>` for daemon configuration later in the guide)
 
 `snet organization metadata-init <ORG-NAME> <ORGANIZATION_ID> individual`
 
 organization_metadata.json file will be created, with metadata information you provided
 
-```
+``` json
 {
     "org_name": "<ORG-NAME>",
     "org_id": "<ORGANIZATION_ID>",
@@ -275,7 +275,7 @@ organization_metadata.json file will be created, with metadata information you p
 
 Updated organization_metadata.json:
 
-```
+``` json
 {
     "org_name": "<ORG-NAME>",
     "org_id": "<ORGANIZATION_ID>",
@@ -301,9 +301,9 @@ Use the same endpoint mentioned in the ETCD setup.
 **endpoint**: Storage endpoint for the clients to connect.
 **--payment-expiration-threshold**: Check payment expiration threshold in the end of this document to get better understanding on how this parameter affects paymnet processing
 
-Use parameters from previous steps: <group_name>, <etcd-endpoint>
+Use parameters from previous steps: `<group_name>`, `<etcd-endpoint>`
 Your full etcd endpoint is printed by docker etcd installation script in the end. Look for
-**ETCD ENDPOINT: https://<ETCD_ADDRESS>:2379** (do not include **/health** at the end if it is present)
+**`ETCD ENDPOINT: https://<ETCD_ADDRESS>:2379`** (do not include **/health** at the end if it is present)
 
 `snet organization add-group --payment-expiration-threshold 40320 <group_name> <wallet_address> <etcd-endpoint>`
 
@@ -313,7 +313,7 @@ Final command should look like this:
 
 This section will be added to your organization_metadata.json:
 
-```
+``` json
 "groups": [
         {
             "group_name": "default_groups",
@@ -379,7 +379,7 @@ Example:
 
 First we need to create a service metadata file. You can do it by running:
 
-```
+``` bash
 snet service metadata-init \
 	SERVICE_PROTOBUF_DIR \
 	SERVICE_DISPLAY_NAME \
@@ -397,7 +397,7 @@ Where,
 
 Example: 
 
-```
+``` bash
 snet service metadata-init \
     service/service_spec \
     "your-service" \
@@ -412,7 +412,7 @@ snet service metadata-init \
 
 4) Publish the service on SingularityNET
 
-Now you can publish your service (service_metadata.json is used implicitly), use <ORGANIZATION_ID> and <SERVICE_ID>. Run this command:
+Now you can publish your service (service_metadata.json is used implicitly), use `<ORGANIZATION_ID>` and `<SERVICE_ID>`. Run this command:
 
 `snet service publish <ORGANIZATION_ID> <SERVICE_ID>`
 
@@ -442,7 +442,7 @@ Example:
 
 Add following parameters: 
 
-```
+``` json
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "sepolia",
@@ -463,7 +463,7 @@ Add following parameters:
 
 Your daemon config file should look something like this:
 
-```
+``` json
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "sepolia",
@@ -504,7 +504,7 @@ Your daemon config file should look something like this:
 
 To call a SNET service you need to open a payment channel with MPE on it. To get MPE run:
 
-```
+``` bash
 snet account deposit 0.000001 # Deposit AGIX Token to MPE. 
 
 snet channel open-init <org_id> <group_name> 0.000001 +7days # Open a Channel (for 7 days) and transfer AGIX in to the Channel

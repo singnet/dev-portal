@@ -21,10 +21,10 @@ micro_nav: true -->
 
 ---
 
-[atomese]: https://wiki.opencog.org/w/Atomese
+<!--TODO fix [atomese]: https://wiki.opencog.org/w/Atomese
 [scheme]: https://wiki.opencog.org/wikihome/index.php/Scheme
 [services-readme]: https://github.com/singnet/opencog-services
-[contribution-guidelines]: /docs/products/AIMarketplace/forcomers
+[contribution-guidelines]: /docs/products/AIMarketplace/forcomers -->
 
 
 
