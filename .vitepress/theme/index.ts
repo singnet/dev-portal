@@ -1,7 +1,7 @@
-import Home from "../../components/Home.vue";
-import Video from "../../components/Video.vue";
-import SpriteIcon from "../../components/SpriteIcon.vue";
-import Footer from "../../components/Footer.vue";
+import Home from "../../components/Home/Home.vue";
+import Video from "../../components/Common/Video.vue";
+import SpriteIcon from "../../components/Common/SpriteIcon.vue";
+import Footer from "../../components/Footer/Footer.vue";
 import DefaultTheme from "vitepress/theme";
 import type { Theme } from "vitepress";
 import { h } from "vue";
@@ -12,7 +12,6 @@ export default {
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       "layout-bottom": () => h(Footer),
-      
     });
   },
   enhanceApp({ app, router, siteData }) {

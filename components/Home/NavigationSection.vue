@@ -3,9 +3,10 @@
         <NavigationCard v-for="item in docsConfig" :item="item" />
     </div>
 </template>
+
 <script>
 import NavigationCard from "./NavigationCard.vue";
-import docsConfig from "../config/content/docsConfig";
+import docsConfig from "../../config/content/docsConfig";
 
 export default {
     components: {
@@ -18,9 +19,10 @@ export default {
     }
 }
 </script>
-<style>
+
+<style scoped>
 .navigation-section-container {
-    padding-top: 5%;
+    padding-top: 3%;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;

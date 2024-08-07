@@ -10,6 +10,7 @@
         </div>
     </div>
 </template>
+
 <script>
 import NavigationItem from './NavigationItem.vue';
 export default {
@@ -23,6 +24,7 @@ export default {
     }
 }
 </script>
+
 <style scoped>
 .navigation-items {
     box-sizing: border-box;

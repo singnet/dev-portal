@@ -10,6 +10,7 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
     props: {
@@ -33,6 +34,7 @@ export default {
     }
 }
 </script>
+
 <style scoped>
 .navigation-item {
     display: flex;

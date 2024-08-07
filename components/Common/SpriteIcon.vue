@@ -3,6 +3,7 @@
         <use :xlink:href="`/assets/images/sprite.svg#${textIconID}`"/>
     </svg>
 </template>
+
 <script>
     export default {
         props: {

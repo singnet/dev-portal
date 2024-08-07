@@ -11,11 +11,13 @@
         </h2>
     </div>
 </template>
+
 <script>
 export default {
 
 }
 </script>
+
 <style scoped>
 .home-header-container h1,
 .home-header-container h2 {
@@ -26,14 +28,14 @@ export default {
 }
 
 .home-header-container h1 {
-    font-size: 36px;
-    line-height: 45px;
+    font-size: 30px;
+    line-height: 35px;
     margin-bottom: 25px;
 }
 
 .home-header-container h2 {
     margin-bottom: 5px;
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 22px;
+    line-height: 25px;
 }
 </style>

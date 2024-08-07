@@ -4,6 +4,7 @@
         <NavigationSection />
     </div>
 </template>
+
 <script>
 import HomeHeader from "./HomeHeader.vue";
 import NavigationSection from "./NavigationSection.vue";
@@ -15,9 +16,10 @@ export default {
     }
 }
 </script>
-<style>
+
+<style scoped>
 .home-container {
-    padding-top: 5%;
+    padding-top: 3%;
     min-height: 100vh;
 }
 </style>
