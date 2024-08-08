@@ -14,6 +14,5 @@ Guides to implementing a service in a number of programming languages. Is you fa
 - [Build a service in Java](/docs/products/AIMarketplace/forcomers/java/)
 - [Build a service in Python](/docs/products/AIMarketplace/forcomers/python/)
 ## Workshop Tutorials
-
-- [Use docker to publish a SingularityNET Service](/docs/products/AIMarketplace/forcomers/docker-snet)
-- [Getting started with Docker (OpenCog)](/docs/products/AIMarketplace/forcomers/docker-opencog) - Use docker to work with OpenCog tools.
+- [Use docker to publish a SingularityNET Service](/docs/products/AIMarketplace/forcomers/docker-snet/)
+- [Getting started with Docker (OpenCog)](/docs/products/AIMarketplace/forcomers/docker-opencog/) - Use docker to work with OpenCog tools.
