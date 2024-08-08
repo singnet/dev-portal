@@ -1,25 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: Introduction to SingularityNET Marketplace, Requirements
-comments: false
-title: Marketplace
-description: The SingularityNET Marketplace is a decentralized application (DApp)
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Market Place
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
----
 ## Introduction to SingularityNET Marketplace
 
 [The SingularityNET Marketplace](http://beta.singularitynet.io)  is a decentralized application (DApp), which lists the available AI services and helps you to interact with those services through web interface abstracting all the complexity in invoking a service. It also processes payment for services (through MetaMask/General Wallet)  and conduct service ratings.

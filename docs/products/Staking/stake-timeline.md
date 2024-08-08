@@ -1,16 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: staking, ethereum
-comments: false
-title: Ethereum stake timeline
-description: Ethereum stake timeline
-
-# Micro navigation
-micro_nav: true -->
-
----
-
 A single staking session has the following stages
 
 * Stake window Period

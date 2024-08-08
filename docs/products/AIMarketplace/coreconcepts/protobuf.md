@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, Protobuf
-comments: false
-title: Protocol Buffers
-description: What is a Protocol Buffers?
-
-# Micro navigation
-micro_nav: true
-
---- -->
 # Protocol Buffers
 
 Protocol Buffers also know as Protobuf, is a method of data serialization. It provides a simple and efficient way of describing data that is to be stored or exchanged between systems. Its similar to XML and JSON but is

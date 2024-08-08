@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: staking
-comments: false
-title: SingularityNET SDK for Python
-description: These instructions are for the development and use of the SingularityNET SDK for Python.
-
-# Micro navigation
-micro_nav: true -->
-
----
 # snet-sdk-python
 SingularityNET SDK for Python
 ## Getting Started

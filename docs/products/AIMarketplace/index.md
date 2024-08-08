@@ -2,7 +2,7 @@ Our links:
 
 ## Core concepts
 
-<!-- TODO fix [Blockchain](/docs/products/AIMarketplace/coreconcepts/blockchain) -->
+[Blockchain](/docs/products/About-technologies/blockchain)
 
 [erc20](/docs/products/AIMarketplace/coreconcepts/erc20)
 
@@ -69,7 +69,7 @@ Our links:
 
 [Local singularity](/docs/products/AIMarketplace/forcomers/local-singularitynet)
 
-<!-- TODO fix [Marketplace](/docs/products/AIMarketplace/forcomers/marketplace) -->
+[Marketplace](/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/marketplace)
 
 [metamask](/docs/products/AIMarketplace/forcomers/metamask)
 

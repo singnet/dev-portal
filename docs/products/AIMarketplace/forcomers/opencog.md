@@ -1,30 +1,8 @@
-<!-- ---
-# Page settings
-layout: default
-keywords:
-comments: false
-title: Opencog service
-description:
 
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
----
-
-<!--TODO fix [atomese]: https://wiki.opencog.org/w/Atomese
+[atomese]: https://wiki.opencog.org/w/Atomese
 [scheme]: https://wiki.opencog.org/wikihome/index.php/Scheme
 [services-readme]: https://github.com/singnet/opencog-services
-[contribution-guidelines]: /docs/products/AIMarketplace/forcomers -->
+[contribution-guidelines]: /docs/products/AIMarketplace/forcomers/contribution-guidelines
 
 
 

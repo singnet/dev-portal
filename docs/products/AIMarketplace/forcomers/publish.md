@@ -1,27 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords:
-comments: false
-title: Publish
-description:
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
----
-
-
 ## Step 1. Dependencies
 
 Run this tutorial from a bash terminal.
@@ -180,7 +156,7 @@ export ORGANIZATION_ID="new-org-id"
 
 If you want to join an existing organization (e.g. `snet`), ask its owner to add your public key (account) into it before proceeding.
 
-<!-- TODO fix See details of organization metadata in [here](/docs/products/AIMarketplace/coreconcepts/concepts-organization). -->
+See details of organization metadata in [here](/docs/products/About-technologies/concepts-organization).
 
 ## Step 6. Download and configure example-service
 

@@ -1,33 +1,20 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: triton onboarding, Guideline, python
-comments: false
-title: Integrating Triton-based Service
-description: Guideline for deploying service with examples of code
-
-# Micro navigation
-micro_nav: true -->
----
-
 # Deploying triton-based service to the SNET platform
 This document provides all necessary information on how to deploy your AI service using Triton Inference Server and publish it to the SingularityNET platform.
 
 This is a general instruction, if you want to see ready-to-deploy service - you can referense [this repository](https://github.com/singnet/Hate-Speech-Triton)
-<!-- TODO: does not clicking on links -->
 ## Guideline for deploying service
 The guide will consist of the following steps:
-1. [Converting model to onnx format](#convert)
-2. [Organization of the service repository](#repo)
-3. [Setting up configuration files](#setup)
-4. [Local deployment and usage](#dev)
-5. [Moving post and preprocessing to the backend](#ens)
-6. [Using dynamic batching and instance group](#imp)
-7. [Preparing protobuf files for publishing](#proto)
-8. [Preparing service demo frontend files](#demo)
-9. [Publishing service on marketplace](#publish)
+1. [Converting model to onnx format](#converting-model-to-onnx-format)
+2. [Organization of the service repository](#organization-of-the-service-repository)
+3. [Setting up configuration files](#setting-up-configuration-files)
+4. [Local deployment and usage](#local-deployment-and-usage)
+5. [Moving post and preprocessing to the backend](#moving-post-and-preprocessing-to-the-backend)
+6. [Using dynamic batching and instance group](#using-dynamic-batching-and-instance-group)
+7. [Preparing protobuf files for publishing](#preparing-proto-files-for-publishing)
+8. [Preparing service demo frontend files](#preparing-service-demo-frontend-files)
+9. [Publishing service on marketplace](#publishing-service-on-marketplace)
 
-<a name="convert">1. Converting model to onnx format</a>
+### Converting model to onnx format
 This can be done multiple ways from different frameworks (pytorch, tensorflow, huggingface and etc.)
 You can find examples and instructions on how to do it in these links:
 
@@ -37,7 +24,7 @@ You can find examples and instructions on how to do it in these links:
 
 [PyTorch](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html)
 
-<a name="repo">2. Organization of the service repository</a>
+### Organization of the service repository
 The repository should look like:
 ```
 service_model_repo/
@@ -53,7 +40,7 @@ Where:
 3. folder `1` - contain models under version 1
 4. `config.pbtxt` - models configurations files
 
-<a name="setup">3. Setting up configuration files</a>
+### Setting up configuration files
 Your `config.pbtxt` for model should look something like this:
 ```
 name: "your_service"
@@ -100,7 +87,7 @@ From here you can also establish that the inputs are of type `INT` and the outpu
 
 You should adjust this config file to represent input and output format of model you use. This is just the example on how to format the file.
 
-<a name="dev">4. Local deployment and usage</a>
+### Local deployment and usage
 Launching the docker-based inference server:
 ```
 docker run --gpus='"device=0"' -it --shm-size=256m --rm -p8000:8000 -p8001:8001 -p8002:8002 -v /{full_path_to}/service_model_repo:/models nvcr.io/nvidia/tritonserver:23.12-py3 tritonserver --model-repository=/models
@@ -175,7 +162,7 @@ Make call:
 python client.py
 ```
 
-<a name="ens">5. Moving post and preprocessing to the backend</a>
+### Moving post and preprocessing to the backend
 The client application from the last part turned out to be unnecessary large. Let's move post and preprocessing to our backend to fix it.
 
 Need to use [Model Ensembles](https://github.com/triton-inference-server/tutorials/tree/main/Conceptual_Guide/Part_5-Model_Ensembles)
@@ -612,7 +599,7 @@ python client.py
 # answer: ['{"hate": "0.0007111975", "abusing": "0.0004021231", "neutral": "0.0011137378", "spam": "0.9977728"}']
 ```
 
-<a name="imp">6. Using dynamic batching and instance group</a>
+### Using dynamic batching and instance group
 Dynamic Batching and Concurrent Model Execution are features of Triton that improve throughput ([More info](https://github.com/triton-inference-server/tutorials/tree/main/Conceptual_Guide/Part_2-improving_resource_utilization)).
 To use them, just add the model configuration file:
 ```
@@ -639,7 +626,7 @@ dynamic_batching { }
 ```
 Also you can analyze you model using [Triton Analyzer](https://github.com/triton-inference-server/tutorials/tree/main/Conceptual_Guide/Part_2-improving_resource_utilization#measuring-performance)
 
-<a name="proto">7. Preparing proto files for publishing</a>
+### Preparing proto files for publishing
 Though you can use default triton protobuf files for publishing, it is not recommended. The reason is that default proto files contain configuration and management methods, which can be accessed by users. So to avoid ill intent actions from the users, proto files are reduced to contain only methods which are necessary to call the service.
 
 ```protobuf
@@ -1086,11 +1073,11 @@ message ModelStreamInferResponse
 }
 ```
 
-<a name="demo">8. Preparing service demo frontend files</a>
+### Preparing service demo frontend files
 
 There is no "right" way to do it, you can approach this step in many different ways. But you can checkout [this repo](https://github.com/singnet/Hate-Speech-Triton) and use it as an working example.
 
-<a name="publish">9. Publishing service on marketplace</a>
+### Publishing service on marketplace
 From this point you can publish your service through [publisher portal](https://publisher.singularitynet.io/) as usual.
 
 If you are not familiar with the process of creation of organization and publishing serivces, you can follow [this guide](https://dev.singularitynet.io/docs/ai-developers/SNET_Full_Guide_(Mainnet)) to get better understanding of the parameters you must provide during this process.

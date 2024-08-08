@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, ERC-20, tokens, Ethereum ecosystem
-comments: false
-title: ERC-20
-description: ERC-20 is a standard interface for tokens
-
-# Micro navigation
-micro_nav: true
-
---- -->
 # ERC-20
 ERC-20 is a standard interface for tokens. It allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges. The ERC-20 standard is documented <a href="https://eips.ethereum.org/EIPS/eip-20" target="_blank">here</a>
 

@@ -1,26 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords:
-comments: false
-# Hero section
-title: SingularityNET Registry
-description: This guide will teach you how the registry is used to expose information about AI services to the outside world so consumers can find and buy these services.
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
----
 The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorizations. 
 
 **Note**: SDK uses gRPC protocol for communication.

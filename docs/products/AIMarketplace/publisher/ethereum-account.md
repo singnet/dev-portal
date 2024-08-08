@@ -1,12 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: Intro concepts, Ethereum Account
-comments: false
-title: Ethereum Account
-description: Ethereum Account -->
-
----
 # Ethereum Account
 
 ## How to create an ethereum wallet

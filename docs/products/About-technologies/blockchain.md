@@ -1,16 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-comments: false
-title: Blockchain
-description: What is a blockchain?
-keywords: blockchain
-
-# Micro navigation
-micro_nav: true
-
---- -->
-
 ## What is blockchain
 
 Blockchain is a public, open distributed ledger that can record transactions between two parties efficiently and in a verifiable and permanent way

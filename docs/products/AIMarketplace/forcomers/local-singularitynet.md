@@ -1,27 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: SingularityNET, launch
-comments: false
-description: launching a fully functional local SingularityNET environment
-
-# Hero section
-title: Launch a local SingularityNET network
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
----
 # Launch a local SingularityNET network
 
 This tutorial describes the process of launching a fully functional local SingularityNET environment. You can publish services, call them and have full control over a local Blockchain network for development and testing.

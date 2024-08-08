@@ -1,25 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: call service, Metamask, Marketplace Requirements, withdraw, deposit, paypal, Depositing tokens, Escrow Wallet
-comments: false
-title: Calling a Service
-description: All complexity of invoking a service is abstracted from the users.
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Market Place
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
----
-
 ## Calling a Service
 
 All complexity of invoking a service is abstracted from the users.

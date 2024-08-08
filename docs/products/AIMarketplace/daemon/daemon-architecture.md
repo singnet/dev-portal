@@ -1,16 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, Free Calls, pay
-comments: false
-title: Daemon architecture
-description: Daemon architecture
-
-# Micro navigation
-micro_nav: true
-
---- -->
-
 ## State Service Calls 
 
 As the name suggests, this call will be used by the client to determine the next amount to sign to make a service call. 

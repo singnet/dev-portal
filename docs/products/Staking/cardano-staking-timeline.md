@@ -1,16 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: staking, cardano
-comments: false
-title: Staking Timeline
-description: Staking Timeline
-
-# Micro navigation
-micro_nav: true -->
-
----
-
 A single window has the following stages
 * Staking/Withdrawal Period
 * Rewards Distribution Period

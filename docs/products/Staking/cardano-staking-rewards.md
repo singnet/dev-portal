@@ -1,17 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: staking, cardano
-comments: false
-
-# Hero section
-title: Rewards distribution period
-description: Rewards distribution period
-
-# Micro navigation
-micro_nav: true -->
----
-
 In exchange for providing tokens, the AGIX token holder who has staked their tokens is provided with a certain number of bonus AGIX tokens, similarly to fiat depositors earning interest. Users earn rewards for each stake window that they participate in.
 
 > The essence of the Rewards Distribution Period is that in the pool the admin updates each user rewards in their stakes, which are elements of the associated list in the form of utxo. Every staking window the admin makes a promise and, with the exception of the first window, sends AGIX to pool address. The promise is a sum of AGIX that admin wants to send to the script in the next window, updating of promised amount takes place in the current window and the actual reward distribution for each user - in the future window. The reward will go to users only if they stay until the next Rewards Distribution Period.

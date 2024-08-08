@@ -1,12 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, ETCD CLUSTER, Infrastructure Diagram, ETCD set up Script, Generating Certificates, Download, Install & Configuring the ETCD Cluster, cfssl, CA options, server certificate, client certificate
-comments: false
-title: ETCD setup
-description: Step-by-step guideline to start the ETCD cluster
---- -->
-
 # SETTING UP ETCD CLUSTER
 
 Starting an etcd cluster normally requires each member to be familiar with other members in the cluster. Also, you need to determine in advance the public and private IP addresses of the system before setting up the cluster.

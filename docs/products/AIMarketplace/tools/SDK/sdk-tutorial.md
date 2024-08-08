@@ -1,25 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: Python SDK, Node.js SDK, Service
-comments: false
-title: SDK Tutorial
-description: Step-by-step tutorial about using SDK
-
-# extralink box
-extralink:
-  title: All Docs
-  title_url: "/docs"
-  external_url: false
-  description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
---- -->
-
 ## Using the python SDK
 
 Create a directory and a virtual environment for python by following below example

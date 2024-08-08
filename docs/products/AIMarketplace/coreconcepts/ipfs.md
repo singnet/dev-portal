@@ -1,12 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: ipfs, peer-to-peer network
-comments: false
-title: Interplanetary File System 
-description: What is an Interplanetary File System?
-       
---- -->
 # Interplanetary File System 
 
 The Interplanetary File System (IPFS) is a synthesis of several new and existing innovations. [IPFS](https://ipfs.io) is an open-source project.

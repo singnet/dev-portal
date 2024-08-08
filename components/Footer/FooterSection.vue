@@ -11,9 +11,9 @@
             </div>
             <div class="footer-section-items">
                 <div v-for="footerSectionItem in footerSectionData.items" class="footer-section-item">
-                    <p>
+                    <a :href="footerSectionItem.link" :title="footerSectionItem.link">
                         {{ footerSectionItem.text }}
-                    </p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -30,9 +30,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .footer-section {
     margin-right: auto;
+}
+
+.footer-section-item{
+    padding-bottom: 15px;
 }
 
 .footer-section:first-child {
@@ -62,5 +66,11 @@ export default {
 .footer-section {
     padding: 20px;
     padding-top: 10px;
+}
+.footer-section-item a:hover{
+    color: var(--vp-c-white);
+}
+.footer-section-item a{
+    color: var(--vp-c-lightgray)
 }
 </style>

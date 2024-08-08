@@ -1,29 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: Multi Party Escrow, MPE
-comments: false
-
-# Hero section
-title: "Multi Party Escrow: Front to back example."
-description: Using the MPE payment system in SingularityNET with one replica configuration.
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
- -->
-
----
-
 You can find script for this example and instruction how to run it inside a docker [here (example 1)](https://github.com/singnet/dev-portal/tree/master/src/example1).
 
 We will demonstrate the following:

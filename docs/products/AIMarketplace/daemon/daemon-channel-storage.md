@@ -1,25 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: Daemon channel, process, Etcd storage, embedded etcd cluster, Replicas to etcd nodes
-comments: false
-title: Daemon channel
-description: To fulfill a request from a client to a service, a snet-daemon needs to store and process information about the service payment. 
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
-
---- -->
 ## Daemon channel
 
 To fulfill a request from a client to a service, a snet-daemon needs to store and process information about the service payment. This connection is called the payment channel.
@@ -113,14 +91,9 @@ Starting an etcd node requires at least the following parameters:
   ```
 * **initial-cluster-token**: initial cluster token for the etcd cluster during bootstrap
 
-<!-- TODO upload-->
-<!-- The following Go code is used to start etcd node and use etcd client:
-* [etcd_storage_server.go](/src/etcddb/etcd_storage_server.go)
-* [etcd_storage_client.go](/src/etcddb/etcd_storage_client.go)
+There are some [throughput tests](/docs/products/AIMarketplace/daemon/explanation-etcd) which run several etcd nodes locally and measure number of writes, and compare and set requests per seconds.
 
-There are some [throughput tests](/src/etcddb) which run several etcd nodes locally and measure number of writes, and compare and set requests per seconds.
-
-Note: because all etcd nodes were run locally, the results can be different from when each etcd node is ran on its own separated server. -->
+Note: because all etcd nodes were run locally, the results can be different from when each etcd node is ran on its own separated server.
 
 ### etcd cluster size
 

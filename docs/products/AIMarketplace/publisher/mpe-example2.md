@@ -1,28 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: MPE, example
-comments: false
-
-# Hero section
-title: Front-to-Back Example 2
-description: Using the MPE payment system in SingularityNET with one replica configuration.
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
----
-
 > NOTE: You can find the script files for this example on Github [here](https://github.com/singnet/dev-portal/tree/master/src/example2)
 
 # DESCRIPTION

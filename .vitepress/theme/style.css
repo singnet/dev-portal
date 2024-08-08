@@ -129,8 +129,30 @@ header span {
   user-select: none;
 }
 
-.VPNavScreenMenuLink {
-  color: var(--vp-c-white);
+.vpi-more-horizontal.icon {
+  background: var(--vp-c-white);
+}
+
+header a.active,
+header span:hover,
+.title span,
+.dark div.titles span,
+.dark .VPNavScreenMenuLink,
+.dark .VPNavScreenMenuLink,
+.dark .VPNavScreenMenuGroup span{
+  color: var(--vp-c-white) !important
+}
+
+div.titles span,
+.VPNavScreenMenu.menu nav,
+.VPNavScreenMenuGroup span {
+  color: var(--vp-c-black) !important
+}
+
+header a.VPLink.link.VPNavBarMenuLink,
+header button span,
+.vpi-chevron-down.text-icon {
+  color: var(--vp-c-lightgray)
 }
 
 .vp-doc.container {
@@ -139,7 +161,9 @@ header span {
 }
 
 
-.dark .VPNavBar.has-sidebar.top {
+.dark .VPNavBar.has-sidebar.top,
+.dark .content-body,
+.dark .VPNavBar .wrapper {
   background: var(--vp-c-black) !important;
 }
 
@@ -147,24 +171,9 @@ header span {
   border-bottom-color: transparent !important;
 }
 
-.content-body {
-  background: var(--vp-c-purple) !important;
-}
-
-.dark .content-body {
-  background: var(--vp-c-black) !important;
-}
-
+.content-body,
 .VPNavBar .wrapper {
-  background: var(--vp-c-purple);
-}
-
-.dark .VPNavBar .wrapper {
-  background: var(--vp-c-black);
-}
-
-.dark .VPNavScreenMenuLink {
-  color: var(--vp-c-white);
+  background: var(--vp-c-purple) !important;
 }
 
 .VPContent.is-home {
@@ -191,13 +200,12 @@ img {
   margin: auto;
 }
 
-.VPNavBarMenu.menu span {
+.VPNavBarMenu.menu span,
+.VPNavScreenMenu.menu span,
+.VPLink.link.VPNavScreenMenuLink{
   font-size: 16px;
 }
 
-.VPNavScreenMenu.menu nav {
-  color: var(--vp-c-black);
-}
 
 body {
   font-family: Mulish;
@@ -207,18 +215,19 @@ body {
   font-weight: 500 !important;
 }
 
-.vp-icon.DocSearch-Search-Icon {
-  color: var(--vp-c-white);
+.content-body .container span,
+.dark .vp-icon.DocSearch-Search-Icon {
+  background: var(--vp-c-white) !important;
 }
 
-.content-body .container span {
-  background: white !important;
+.vp-icon.DocSearch-Search-Icon {
+  background: var(--vp-c-default-1);
 }
 
 .VPNavBarSearch {
   display: flex;
   align-items: center;
-
+  justify-content: flex-end;
 }
 
 .VPNav .container {
@@ -233,14 +242,6 @@ body {
   display: none !important;
 }
 
-.vp-icon.DocSearch-Search-Icon {
-  background: black;
-}
-
-.dark .vp-icon.DocSearch-Search-Icon {
-  background: white;
-}
-
-.VPContent.has-sidebar+footer{
-  display:none;
+.VPContent.has-sidebar+footer {
+  display: none;
 }

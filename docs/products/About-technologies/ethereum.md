@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, Ethereum
-comments: false
-title: Ethereum
-description: What is an Ethereum?
-
-# Micro navigation
-micro_nav: true
-
---- -->
 # Ethereum 
 Ethereum is an open source, public, blockchain-based distributed computing platform and operating system featuring smart contract (scripting) functionality. It supports a modified version of Nakamoto consensus via transaction-based state transitions.
 

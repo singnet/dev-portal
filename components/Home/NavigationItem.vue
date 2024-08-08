@@ -4,7 +4,7 @@
             <SpriteIcon v-if="textIconID" :textIconID="textIconID"/>
         </div>
         <div class="navigation-item-text">
-            <a title="AI Platform Ecosystem" :href="link">
+            <a :title="link" :href="link">
                 {{ text }}
             </a>
         </div>

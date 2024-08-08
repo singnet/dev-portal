@@ -1,25 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: Installing Certbot, Obtaining an SSL Certificate, Getting the certificate path, Mount certificate path, Schedule renewal of certificates
-comments: false
-title: Daemon SSl setup
-description: This section provides steps on securing your SingularityNet Daemon with Certbot
-
-# extralink box
-extralink:
-    title: Tutorials
-    title_url: '/tutorials'
-    external_url: false
-    description: See all tutorials here
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
-       
---- -->
 ## Introduction
 
 This section provides steps on securing your SingularityNet Daemon with Certbot from <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a>.

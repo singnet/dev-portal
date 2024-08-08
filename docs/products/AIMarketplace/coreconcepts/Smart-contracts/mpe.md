@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: MPE, Multi-party Escrow, unidirectional Payment Channel, Claiming funds, recipient Claims funds from the Channel, Contract Addresses
-comments: false
-title: Multi-party Escrow
-description: Explanation of MPE and Payment channel, MPE use cases
-
-# Micro navigation
-micro_nav: true -->
----
-
 ## Introduction to MPE
 
 An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account.

@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: staking, ethereum
-comments: false
-title: Ethereum stake reward
-description: Ethereum stake reward
-
-# Micro navigation
-micro_nav: true -->
----
-
 In exchange for providing their tokens to be used in this way, the AGIX token holder who has staked their tokens is provided with a certain number of bonus AGIX tokens, similarly to fiat depositors earning interest. Other rewards for staking may also be introduced in future.
 
 For the AGIX token owner who has bought tokens in advance of needing to use them for purchasing AI services, the tokens on their own are typically not providing any immediate value until used for payment. By implementing staking, people in this position are provided with a way to obtain some short-term value from these tokens, while holding onto them and waiting for the right time to use them.

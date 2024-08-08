@@ -1,28 +1,4 @@
-<!-- ---
-# Page settings
-layout: default
-keywords:
-comments: false
-title: Process-type
-description: This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
----
-
 > This tutorial will guide you through the steps required to have a process-type service registered onto the SingularityNET. It assumes you have successfully installed all of SingularityNET components. To do that, refer to previous tutorials or simply run a docker container from the **Dockerfile** provided. If you choose to run a Docker container, make sure to expose a port so that SNET Daemon can communicate with the Blockchain.
-<!-- TODO /*[Dockerfile](./Dockerfile)*/  -->
 
 SingularityNET is an open-source protocol and collection of smart contracts for a decentralized market of coordinated AI services. Within this framework, anyone can add an AI/machine learning service to SingularityNET for use by the network and receive network payment tokens in exchange.
 

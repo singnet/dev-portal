@@ -1,16 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: staking, ethereum
-comments: false
-title: Ethereum stake window
-description: Ethereum stake window
-
-# Micro navigation
-micro_nav: true -->
-
----
-
 AGIX token staking will happen in fixed time period windows -- if you stake your tokens, they'll be locked in the staking smart contract for at least one window. Before that window of time begins, there is a call for staking period, which lasts a fixed period again. 
 
 During that call for staking period, any AGIX token holder can submit a request for staking through our AGIX <a href="https://staking.singularitynet.io" target="_blank">Staking DApp</a>. There is a minimum amount of AGIX that can be staked, largely to ensure the operation is worthwhile for both the staker and the foundation, considering the gas costs of moving the tokens into the staking smart contract and then out of it along with rewards.

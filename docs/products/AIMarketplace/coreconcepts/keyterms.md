@@ -1,13 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: IPFS, Registry, Smart Contract, MultipPartyEscrow Contract, Channel, Daemon , SDK, Snet-Cli, On-Chain & Off-Chain Transaction, Signature, Wallet/Address, Dapp, Metamask, AGIX, AGIX Token, Cogs, ETCD, Gas and Gas Cost, Gas Strategy ( Slow , Medium and Fast), Infura
-comments: false
-title: Keyterms
-description: Basic keyterms explanation -->
-
----
-
 #### IPFS
 
 The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to

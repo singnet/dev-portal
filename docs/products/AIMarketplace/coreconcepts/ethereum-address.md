@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, Ethereum address, account, contract, private key, hexadecimal
-comments: false
-title: Ethereum Address 
-description: What is an Ethereum address?
-
-# Micro navigation
-micro_nav: true
-
---- -->
 # Ethereum Address
 
 An Ethereum address is a 64 character hex string generated subject to various rules defined in the <a href="https://ethereum.github.io/yellowpaper/paper.pdf" target="_blank">Ethereum yellow paper</a>. It represents a unique account on the Ethereum network and has an associated private key. This private key is requried to prove ownership of the address and has to be kept safe.

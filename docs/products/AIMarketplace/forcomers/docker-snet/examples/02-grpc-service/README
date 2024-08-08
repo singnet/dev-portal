@@ -1,0 +1,40 @@
+#
+# This example demonstrates how to write and publish gRPC Python service
+# [snet-cli repo documentation](https://github.com/singnet/snet-cli)
+# [snet-daemon repo documentation](https://github.com/singnet/snet-daemon/)
+# [gRPC python quickstart](https://grpc.io/docs/quickstart/python.html)
+#
+
+# compile service API
+cat echo_service.proto
+python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. ./echo_service.proto
+
+# start service server
+cat echo_service.py
+python3 echo_service.py &
+
+# check that service works
+cat echo_client.py
+python3 echo_client.py
+
+# publish service to the Registry
+snet identity publisher
+snet service metadata-init . EchoService $PUBLISHER_ADDR --encoding proto --service-type grpc
+snet service metadata-set-fixed-price 3
+snet service metadata-add-endpoints http://127.0.0.1:8080
+cat service_metadata.json
+snet service publish ExampleOrganizationId EchoService --yes
+
+# start daemon
+cat snetd.config.json
+snetd-linux-amd64 &
+
+# call service via SingularityNet
+snet identity caller
+snet channel open-init ExampleOrganizationId EchoService 50 57600 -y
+snet client call 0 3 localhost:8080 echo '{"message": "hello"}'
+
+# stop the service
+stop_service.sh
+
+# next example

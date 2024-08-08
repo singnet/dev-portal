@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, paying through PayPal
-comments: false
-title: Integration with PayPal
-description: SingularityNET’s Decentralized AI Marketplace Integration with PayPal for consumers
-
-# Micro navigation
-micro_nav: true -->
----
-
 ## SingularityNET’s Decentralized AI Marketplace Integration with PayPal
 
 The integration of SingularityNET’s decentralized AI marketplace with PayPal represents a significant step in the direction of wide adoption of the platform. It makes it easier for more AI users to leverage the platform, thus increasing the likelihood that data scientists and developers will feel incentivized to consider SingularityNET a viable alternative pathway to monetize their expertise. This integration represents a large opportunity for SingularityNET and our community.

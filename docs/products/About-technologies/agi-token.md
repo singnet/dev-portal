@@ -1,24 +1,3 @@
-<!-- ---
-layout: default
-keywords: agix token
-comments: false
-title: AGIX
-description: The AGIX Token is an ERC-20 token
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: true
-    description: Find an overview of our full documentation here.
-
-# Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
-     -->
----
 # AGIX Token
 
 SingularityNET uses the AGIX Token for its marketplace. The AGIX Token is an ERC-20 token hosted on the Ethereum Blockchain. Right now, we are in the `beta` phase of the SingularityNET Marketplace. That means that you will need to use Kovan or Ropsten Testnet AGIX to work with our tools. You can get Kovan or Ropsten Testnet AGIX by following the instructions [here](#agix-faucet).
@@ -38,12 +17,12 @@ Since we are currently in the Beta stage, we only use Kovan and Ropsten Testnet 
 </div>
 
 
-<!-- TODO fix ## AGIX Faucet
-We have an automated faucet for distributing Kovan and Ropsten Testnet AGIX Tokens [here]({{ site.data.faucets.agix }}). You will need to login using your GitHub account and input the Ethereum address where you want to receive the AGIX token. Make sure this address is a Kovan Ethereum Address. You can request 10 AGIX token every 24 hours.
+## AGIX Faucet
+We have an automated faucet for distributing Kovan and Ropsten Testnet AGIX Tokens [here]. You will need to login using your GitHub account and input the Ethereum address where you want to receive the AGIX token. Make sure this address is a Kovan Ethereum Address. You can request 10 AGIX token every 24 hours.
 
 In order to add the Kovan Testnet AGIX you may need the following details:
 * Symbol: AGIX
 * Decimals: 8
 * Kovan Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
 
-You can request Kovan or Ropsten Testnet Ether [here]({{ site.data.faucets.eth }}). -->
+You can request Kovan or Ropsten Testnet Ether [here]

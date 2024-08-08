@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, Smart Contracts, Blockchain, Ethereum, MPE
-comments: false
-title: Smart Contracts
-description: What is a smart contract?
-
-# Micro navigation
-micro_nav: true
-
---- -->
 # Smart Contracts
 
 A Smart Contract is terms, rules and conditions of the agreement established by all counter parties translated as code into Blockchain. The code and logic in the contract is available on the ledger​.

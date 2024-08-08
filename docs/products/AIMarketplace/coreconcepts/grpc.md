@@ -1,16 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, gRPC, SingulartiyNet Daemon
-comments: false
-title: gRPC
-description: What is a gRPC?
-
-# Micro navigation
-micro_nav: true
-
---- -->
-
 # gRPC
 
 gRPC is a modern open source high performance RPC framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in last mile of distributed computing to connect devices, mobile applications and browsers to backend services. By default, gRPC uses <a href="https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition" target="_blank">protocol buffers</a> as the Interface Definition Language (IDL) for describing both the service interface and the structure of the payload messages. gRPC <a href="https://grpc.io/docs/">Docs</a> is the recommended starting point to understand how this works.

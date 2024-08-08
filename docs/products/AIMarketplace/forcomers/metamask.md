@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: Intro concepts,singularitynet 
-comments: false
-title: Metamask
-description: Metamask
-
-# Micro navigation
-micro_nav: true -->
-
----
 Metamask is a plugin which is used by the SingularityNET platform.
 
 ## How to get metamask

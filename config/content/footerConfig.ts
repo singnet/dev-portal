@@ -7,45 +7,12 @@ export default [
         isInverted: true,
         items: [
             {
-                link: "/docs",
-                text: "Contact us",
+                link: "/",
+                text: "Home",
             },
             {
                 link: "/docs",
-                text: "Foundation Site",
-            },
-            {
-                link: "/docs",
-                text: "Singularity Studio",
-            },
-            {
-                link: "/docs",
-                text: "White paper",
-            },
-            {
-                link: "/docs",
-                text: "Jobs",
-            },
-        ],
-    },
-    {
-        title: "Quick Start",
-        items: [
-            {
-                link: "/docs",
-                text: "Overview",
-            },
-            {
-                link: "/docs",
-                text: "Getting Started",
-            },
-            {
-                link: "/docs",
-                text: "Core Concepts",
-            },
-            {
-                link: "/docs",
-                text: "Key terms",
+                text: "Docs",
             },
         ],
     },
@@ -53,16 +20,16 @@ export default [
         title: "Products",
         items: [
             {
-                link: "/docs",
+                link: "https://beta.singularitynet.io/",
                 text: "AI Marketplace",
             },
             {
-                link: "/docs",
-                text: "AI Publisher",
+                link: "https://staking.singularitynet.io/howitworks",
+                text: "AGIX Staking",
             },
             {
-                link: "/docs",
-                text: "AGIX Staking",
+                link: "https://publisher.singularitynet.io/",
+                text: "AI Publisher",
             },
         ],
     },
@@ -70,19 +37,61 @@ export default [
         title: "Community",
         items: [
             {
-                link: "/docs",
-                text: "Blog",
+                link: "http://blog.singularitynet.io/",
+                text: "Official Blog",
             },
             {
-                link: "/docs",
+                link: "https://community.singularitynet.io/",
                 text: "Forum",
             },
             {
-                link: "/docs",
+                link: "https://telegram.me/singularitynet",
                 text: "Telegram",
             },
         ],
     },
+    {
+        title: "Ecosystem",
+        items: [
+            {
+                link: "https://singularitynet.io/ecosystem/singularitydao/",
+                text: "SingularityDAO",
+            },
+            {
+                link: "https://singularitynet.io/ecosystem/rejuve/",
+                text: "Rejuve",
+            },
+            {
+                link: "https://singularitynet.io/ecosystem/nunet/",
+                text: "Nunet",
+            },
+        ]
+    },
+    {
+        title: "Social Media",
+        items:[
+            {
+                link: "https://twitter.com/singularity_net",
+                text: "Twitter",
+            },
+            {
+                link: "https://www.facebook.com/singularityNET.io",
+                text: "Facebook",
+            },
+            {
+                link: "https://www.linkedin.com/company/singularitynet/",
+                text: "LinkedIn",
+            },
+            {
+                link: "https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw",
+                text: "YouTube",
+            },
+            {
+                link: "https://instagram.com/singularitynet.io",
+                text: "Instagram",
+            },
+        ]
+    }
 ];
 
 export const copyright = {

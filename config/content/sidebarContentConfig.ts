@@ -12,6 +12,10 @@ export default [
         link: "/docs/products/About-technologies/ethereum",
       },
       {
+        text: "AGI Token",
+        link: "/docs/products/About-technologies/agi-token",
+      },
+      {
         text: "Concepts of organization",
         link: "/docs/products/About-technologies/concepts-organization",
       },

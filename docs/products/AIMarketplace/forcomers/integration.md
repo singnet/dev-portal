@@ -1,42 +1,18 @@
-<!-- ---
-# Page settings
-layout: default
-keywords:
-comments: false
-title: Guidelines for service integration in SingularityNET  
-description: These are guidelines to help SingularityNET developers to write/integrate new AI services to the platform.
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
----
-
-<!-- TODO fix [singnet-home]: https://www.singularitynet.io
+[singnet-home]: https://www.singularitynet.io
 [singnet-github]: https://github.com/singnet
 [dnn-github]: https://github.com/singnet/dnn-model-services
-[contribution-guidelines]: /docs/products/AIMarketplace/forcomers
-[docs-templates]: templates
-[cpp-tutorial]: /tutorials/cpp
-[java-tutorial]: /tutorials/java
-[go-tutorial]: /tutorials/go
-[python-tutorial]: /tutorials/python
+[contribution-guidelines]: /docs/products/AIMarketplace/forcomers/contribution-guidelines
+[cpp-tutorial]: /docs/products/AIMarketplace/forcomers/cpp
+[java-tutorial]: /docs/products/AIMarketplace/forcomers/java
+[go-tutorial]: /docs/products/AIMarketplace/forcomers/go
+[python-tutorial]: /docs/products/AIMarketplace/forcomers/python
 [opencog-tutorial]: /docs/products/AIMarketplace/forcomers/opencog
 [service-tutorial]: /docs/products/AIMarketplace/forcomers/publish
 [naming-standards]: /docs/products/AIMarketplace/forcomers/naming-standards
 [grpc]: https://grpc.io/
 [grpc-docs]: https://grpc.io/docs/
 [opencog]: https://opencog.org/
-[opencog-services]: https://github.com/singnet/opencog-services -->
+[opencog-services]: https://github.com/singnet/opencog-services
 
 # Guidelines for service integration in SingularityNET  
 
@@ -114,7 +90,7 @@ is fully compliant with these guidelines.
 
 All the following documentation is mandatory for any service.
 
-1. **README** (see our recommended [templates][docs-templates]) describing the
+1. **README** describing the
 structure of the repository and how to build/test the service. This is a sort
 of "developer's guide" aimed at people interested in extending or reusing the
 service.
@@ -132,5 +108,5 @@ is fully compliant with these guidelines.
 ## <a name="contributing"></a> Contributing to existing projects
 
 SingularityNET have several AI service integration projects. See our
-[github][singnet-github] for a list of them. Before contributing to any of
-thees, please read our [contribution guidelines][contribution-guidelines].
+[github][singnet-github] for a list of them.
+Before contributing to any of thees, please read our [contribution-guidelines].

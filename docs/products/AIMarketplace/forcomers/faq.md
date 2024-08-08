@@ -1,16 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: faq, singularitynet, get test coins, CLI, use older versions, Exception, Netowrk sepolia is not in config, execution reverted unauthorized invocation error, daemon, crashes, enabling SSL support via X509 keypair, PaymentChannelStorageClient, Publisher, Marketplace, service is down, service is offline, issue
-comments: false
-title: Frequently Asked Questions
-description: Frequently Asked Questions about CLI, Daemon, Publisher, Marketplace
-
-# Micro navigation
-micro_nav: true -->
-
----
-
 # Frequently Asked Questions
 
 # General:

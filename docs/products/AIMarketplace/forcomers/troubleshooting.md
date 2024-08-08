@@ -1,16 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: intro concepts, DAPP, alerts, NGINX, Mainnet, ETCD, Unable to create etcd client, Payment signer is not valid for free calls, Free call limit has been exceeded, Rate limiting, too many requests to handle, Unexpected payment type, Unable to publish metrics, issues, troubles
-comments: false
-title: Troubleshooting for developers
-description: Troubleshooting the most common developers errors
-
-# Micro navigation
-micro_nav: true -->
-
----
-
 ## Troubleshooting
 
 ## Alerting mechanism - Emails Alerts

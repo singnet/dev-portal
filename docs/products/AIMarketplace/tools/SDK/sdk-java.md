@@ -1,25 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: Java, tutorial, SDK, Maven, Gradle
-comments: false
-title: SingularityNET service client in Java
-description: This tutorial explains how to create a SingularityNET service client in Java language
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true -->
-
-
 ## Overview
 
 This tutorial explains how to create a SingularityNET service client in Java

@@ -1,24 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: SDK in JAVA, SDK in Python, SDK in NodeJS, Android platforms, SDK for Javascript
-comments: false
-title: SDK Introduction
-description: All information about SDK
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
---- -->
 # Introduction to SDK
 
 SDK is a tool for AI customers to make calls to services.

@@ -1,15 +1,3 @@
-<!-- ---
-# Page settings
-layout: default
-keywords: training daemon
-comments: false
-title: Integrating training in service
-description: Step-by-step guideline for integrating training in service
-
-# Micro navigation
-micro_nav: true -->
----
-
 ## Introduction
 
 The AI developer needs to implement 3 methods for daemon [training.proto](https://github.com/semyon-dev/snet-daemon/blob/master/training/training.proto).
