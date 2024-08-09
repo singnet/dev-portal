@@ -541,7 +541,7 @@ products:
         cta: Read more
         url: '/products/publisher'
     ethereum-staking:
-        title: Ethereum staking
+        title: Ethereum staking AGIX
         children:
             overview:
                 title: Overview
@@ -569,7 +569,7 @@ products:
                 cta: Read more
                 url: '/products/stake-reward'
     cardano-staking:
-        title: Cardano staking
+        title: Cardano staking AGIX
         children:
             cardano-staking-timeline:
                 title: Staking timeline
@@ -585,7 +585,25 @@ products:
                 title: Rewards distribution period
                 excerpt:
                 cta: Read more
-                url: '/products/cardano-staking-rewards'
+                url: '/products/cardano-staking-rewards' 
+    cardano-staking-ntx:
+        title: Cardano staking NTX
+        children: 
+            cardano-staking-timline-ntx:
+                title: Staking timeline
+                excerpt:
+                cta: Read more 
+                url: '/products/cardano-staking-timeline-ntx'
+            cardano-staking-rewards-ntx:
+                title: Staking/withdrawal period
+                excerpt:
+                cta: Read more
+                url: '/products/cardano-staking-withdraw-ntx'
+            cardano-staking-withdraw-ntx:
+                title: Rewards distribution period
+                excerpt:
+                cta: Read more
+                url: '/products/cardano-staking-rewards-ntx'  
     rfai:
         title: Request For AI Service
         excerpt:

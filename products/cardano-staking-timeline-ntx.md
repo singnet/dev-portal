@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords: staking, cardano, agix
+keywords: staking, cardano, ntx
 comments: false
 title: Staking Timeline
 description: Staking Timeline
@@ -15,7 +15,7 @@ A single window has the following stages
 * Staking/Withdrawal Period
 * Rewards Distribution Period
 
-![window](/assets/img/cardano-staking/window.jpg)
+<img src="/assets/img/cardano-staking/window-ntx.png" alt="Cardano Staking Window" style="max-width: 410px; width: 100%; height: auto;">
 
 As the staking pool starts, the Staking/Withdrawal Period begins and users can send tokens to pool in order to stake them. Tokens aren’t locked in the on-chain script, users can withdraw their deposited amount plus earned rewards in any time during Staking/Withdrawal Period.
 
@@ -25,25 +25,25 @@ After the Staking/Withdrawal Period is over, then comes Rewards Distribution Per
 
 <br>
   Example of accruing rewards logic for user:
-  * Window 1: User deposits 5 AGIX
-    * New deposit = 5 AGIX
-    * Rewards = 0 AGIX
-  * Window 2: User deposits 10 AGIX
-    * Confirmed stake  = 5 AGIX
-    * New deposit = 10 AGIX
-    * Rewards (1) are accrued to user for 5 AGIX stake
+  * Window 1: User deposits 5 NTX
+    * New deposit = 5 NTX
+    * Rewards = 0 NTX
+  * Window 2: User deposits 10 NTX
+    * Confirmed stake  = 5 NTX
+    * New deposit = 10 NTX
+    * Rewards (1) are accrued to user for 5 NTX stake
   * Window 3: User doesn’t deposit anything
-    * Confirmed stake = 15 AGIX
-    * Rewards (2) are accrued to user for 15 AGIX stake + rewards(1)
+    * Confirmed stake = 15 NTX
+    * Rewards (2) are accrued to user for 15 NTX stake + rewards(1)
   * Window 4:
-    * User’s final (confirmed) stake = 15 AGIX
-    * Rewards are accrued to user for 15 AGIX stake + rewards(2)
+    * User’s final (confirmed) stake = 15 NTX
+    * Rewards are accrued to user for 15 NTX stake + rewards(2)
 <br>
 
 Examples of user’s behavior:
-![window 3](/assets/img/cardano-staking/window3.jpg)
+![window 3](/assets/img/cardano-staking/window3-ntx.png)
 <br>
-![window 2](/assets/img/cardano-staking/window2.jpg)
+![window 2](/assets/img/cardano-staking/window2-ntx.png)
 <br>
-![window 1](/assets/img/cardano-staking/window1.jpg)
+![window 1](/assets/img/cardano-staking/window1-ntx.png)
 
