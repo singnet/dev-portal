@@ -3,8 +3,8 @@
 layout: default
 keywords: staking, ethereum
 comments: false
-title: Ethereum staking
-description: Ethereum staking
+title: Ethereum staking (AGIX)
+description: Ethereum staking (AGIX)
 
 # Micro navigation
 micro_nav: true
