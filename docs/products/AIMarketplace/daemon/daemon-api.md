@@ -1,8 +1,8 @@
-`snetd`, the SingularityNET daemon, provides an API to call service methods using [multi-party escrow contract](/docs/products/AIMarketplace/coreconcepts/Smart-contracts/mpe) payment channels.
+`snetd`, the SingularityNET daemon, provides an API to call service methods using [multi-party escrow contract](/docs/products/AIMarketplace/coreconcepts/Smart-contracts/mpe.md) payment channels.
 
 To call a published service's method, the client sends payment details via gRPC metadata, as described in the section [gRPC metadata](#grpc-metadata). The server will return one of the [gRPC error codes](#grpc-error-codes) in response.
 
-There are two situations where the client may want to get the payment channel state from the service: an `IncorrectNonce` in response, or when starting an service interaction for the first time. The payment channel state can be retrieved via the [payment channel state API](#payment-channel-state-api).
+There are two situations where the client may want to get the payment channel state from the service: an `IncorrectNonce` in response, or when starting an service interaction for the first time. The payment channel state can be retrieved via the [payment channel state API](#payment-channel-state-api.md).
 
 A sequence diagram of a typical client/service interaction can be found in the [Sequence of Calls](#sequence-of-calls) section.
 

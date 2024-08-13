@@ -41,7 +41,7 @@ $ ./build/snetd-linux-amd64 init
 
 * **ssl_cert and ssl_key**
   <br/>
-  If you are using your own certificates (or from Let's Encrypt as described [here](/docs/products/AIMarketplace/daemon/daemon-ssl-setup)) add the following two entries to the daemon config
+  If you are using your own certificates (or from Let's Encrypt as described [here](/docs/products/AIMarketplace/daemon/daemon-ssl-setup.md)) add the following two entries to the daemon config
    ```json
    "ssl_cert": "/etc/letsencrypt/live/<daemon_domain>/fullchain.pem",
    "ssl_key": "/etc/letsencrypt/live/<daemon_domain>/privkey.pem",

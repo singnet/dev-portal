@@ -124,7 +124,7 @@ You should copy this code into an `example-executable-service.proto` file inside
 A service metadata is a series of JSON-encoded information relative to the service that is necessary to publish it. It tells the Blockchain where to redirect client calls to (your service endpoints), its encoding, price, etc. (refer to SNET CLI's help for a list of all possible parameters). 
 
 - `PAYMENT_ADDRESS` is the public key of the blockchain key-pair that will receive the payments from client calls. 
--  set up your etcd cluster based on [etcd-setup](/docs/products/AIMarketplace/coreconcepts/etcdsetup)
+-  set up your etcd cluster based on [etcd-setup](/docs/products/AIMarketplace/coreconcepts/etcdsetup.md)
 
 ```sh
 PAYMENT_ADDRESS=`snet account print`

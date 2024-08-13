@@ -2,7 +2,7 @@
 [atomese]: https://wiki.opencog.org/w/Atomese
 [scheme]: https://wiki.opencog.org/wikihome/index.php/Scheme
 [services-readme]: https://github.com/singnet/opencog-services
-[contribution-guidelines]: /docs/products/AIMarketplace/forcomers/contribution-guidelines
+[contribution-guidelines]: /docs/products/AIMarketplace/forcomers/contribution-guidelines.md
 
 
 

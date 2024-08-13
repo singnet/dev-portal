@@ -250,7 +250,7 @@ export default [
   {
     text: "Staking",
     collapsed: true,
-    link:"/docs/products/Staking/staking",
+    link:"/docs/products/Staking/",
     items:[
       {
         text:"Stake window",

@@ -48,6 +48,6 @@ Most probable cause for this behaviour is outdated domain certificates which you
 
 ## I started my service and daemon, but marketplace still shows that service is offline
 Marketplace updates the status of the service on specified schedule, if you want to update it immediately you can send a GET request to this API, replace `org-id` and `service-id` with your org and service respectively
-```url
+```
 https://marketplace-mt-v2.singularitynet.io/service-status/org/<org-id>/service/<service-id>/health/reset
 ```

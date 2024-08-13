@@ -1,39 +1,47 @@
 <template>
-    <div class="navigation-card">
-        <div class="image-container">
-            <img :src="item?.imageSrc" alt="market">
-        </div>
-        <div class="card-title">
-            <div class="card-title-icon">
-                <SpriteIcon v-if="item.textIconID" :textIconID="item.textIconID" />
+        <div class="navigation-card" @click="redirect">
+            <div class="image-container">
+                <img :src="item?.imageSrc" alt="market">
             </div>
-            <div class="card-title-text">
-                <p :title="item.text">
-                    {{ item?.text }}
+            <div class="card-title">
+                <div class="card-title-icon">
+                    <SpriteIcon v-if="item.textIconID" :textIconID="item.textIconID" />
+                </div>
+                <div class="card-title-text">
+                    <p :title="item.text">
+                        {{ item?.text }}
+                    </p>
+                </div>
+            </div>
+            <div class="card-description">
+                <p>
+                    {{ item?.description }}
                 </p>
             </div>
+            <div class="card-redirect">
+                <div class="card-redirect-text">
+                    <p>
+                        Go to the section 
+                    </p>
+                </div>
+                <div class="card-redirect-icon">
+                    <SpriteIcon :textIconID="'arrow-icon'" :width="'19px'" :height="'10px'" />
+                </div>
+            </div>
         </div>
-        <div class="card-description">
-            <p>
-                {{ item?.description }}
-            </p>
-        </div>
-        <div class="card-tree">
-            <NavigationItems v-if="item?.items" v-for="navigationSectionContent in item?.items"
-                :item="navigationSectionContent" />
-        </div>
-    </div>
 </template>
 
 <script>
-import NavigationItems from './NavigationItems.vue';
+
 export default {
-    components: {
-        NavigationItems
-    },
     props: {
         item: {
             type: Object
+        }
+    },
+    methods: {
+        redirect() {
+            window.location.href = this.item.link;
         }
     }
 }
@@ -49,6 +57,19 @@ export default {
     border-style: solid;
     border-color: var(--vp-c-lightgray);
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-redirect{
+    color: blue;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.navigation-card:hover .card-redirect{
+    text-decoration: underline;
 }
 
 .dark .navigation-card {
@@ -82,7 +103,7 @@ export default {
 }
 
 .navigation-card .card-title-text p {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 30px;
     overflow: hidden;
     white-space: nowrap;
@@ -101,5 +122,8 @@ export default {
 .navigation-card .card-description p {
     font-size: 16px;
     line-height: 24px;
+}
+.card-redirect p{
+    line-height: unset;
 }
 </style>

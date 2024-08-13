@@ -204,7 +204,7 @@ Add `exec-maven-plugin` to run the application using Maven.
 Add Maven Central and [Jitpack](https://jitpack.io) repositories and apply SingularityNET and
 Protobuf plugins in `build.gradle` file.
 
-```gradle
+```kotlin
 buildscript {
     repositories {
         jcenter()
@@ -225,7 +225,7 @@ apply plugin: 'com.google.protobuf'
 Add Jitpack repository and add SingularityNET SDK artifact as a project
 dependency.
 
-```gradle
+```kotlin
 repositories {
     ...
     maven {
@@ -243,7 +243,7 @@ Add new task which uses SingularityNET plugin to get the API of the service and
 unpack it into the `proto` directory. Add target directory into the Protobuf
 source set.
 
-```gradle
+```kotlin
 task getExampleServiceApi(type: io.singularitynet.sdk.gradle.GetSingularityNetServiceApi) {
     orgId = 'example-org'
     serviceId = 'example-service'
@@ -267,7 +267,7 @@ sourceSets {
 Configure Protobuf plugin to compile the API of the service. Add dependency on
 the task which gets the API.
 
-```gradle
+```kotlin
 protobuf {
     protoc { artifact = "com.google.protobuf:protoc:3.5.1" }
     plugins {
@@ -424,7 +424,7 @@ There are two ways of making first call execution time predictable. First
 option is creating a payment channel in advance. Use `Sdk` and
 [BlockchainPaymentChannelManager](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/mpe/BlockchainPaymentChannelManager.html)
 to open a channel from the application. Or use
-[snet-cli](/docs/products/AIMarketplace/tools/CLI/snet-cli) tool to open a channel from the command
+[snet-cli](/docs/products/AIMarketplace/tools/CLI/snet-cli.md) tool to open a channel from the command
 line.
 
 Second option is increasing a gas price by setting new value in configuration,

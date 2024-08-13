@@ -12,7 +12,7 @@ To learn more about this, watch the video uploaded on the website or  read about
 
 You can also create an identity using the snet-cli commands
 for further details [click here](http://snet-cli-docs.singularitynet.io/identity.html)
-``` editorconfig
+``` bash
 snet identity create [-h] [--mnemonic MNEMONIC] [--private-key PRIVATE_KEY]
                      [--keystore-path KEYSTORE_PATH] [--network NETWORK]
                      [--wallet-index WALLET_INDEX]

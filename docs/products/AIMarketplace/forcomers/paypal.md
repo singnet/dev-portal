@@ -12,4 +12,4 @@ The integration of SingularityNET’s decentralized AI marketplace with PayPal r
 
 ![marketplace](/public/assets/images/products/AIMarketplace/forcomers/marketplaceimage.gif)
 
-For more details refer to the [page](/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/marketplace-service_invocation)
+For more details refer to the [page](/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/marketplace-service_invocation.md)

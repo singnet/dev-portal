@@ -15,7 +15,7 @@ or extend the timeout for the payment channel.
 So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
 
 
-To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/forcomers/wallet), and then provide them with your wallet's public address.
+To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/forcomers/wallet.md), and then provide them with your wallet's public address.
 
 ## Step 2. Get some AGIX
 

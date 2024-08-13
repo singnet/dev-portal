@@ -16,7 +16,7 @@ Registry’s data hierarchy. Service developers can (and should) register an org
 put all of their services underneath it.
 
 An organization registration record has a name, an owner address (in the identity sense), a collection of member addresses, a collection of services. Its Registry entry contains a name,members, and IPFS hash. the IPFS hash is the link to the metadata file on IPFS , this file has all the necessary information about the recipient address for payment and the storage details to keep track of all off-chain channel state. Services and type repositories registered under a given organization are said to be owned by that organization. The list of members is a primitive access-management structure. Members of an organization cannot change the organization owner or delete the organization or even update the metadata, members can however create , update and delete services under an organization.
-Organization metadata is described in detail [here](/docs/products/AIMarketplace/forcomers/organization).
+Organization metadata is described in detail [here](/docs/products/AIMarketplace/forcomers/organization.md).
 
 ### Service
 A service represents a single AI algorithm. Its Registry entry contains all the necessary
@@ -36,7 +36,7 @@ request format (gRPC, JSON-RPC or process);
 * A list of daemon endpoints, aggregated into one or more groups;
 * pricing information; and
 * an IPFS hash for the service API model.
-* Service metata is described in detail [here](/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/service).
+* Service metata is described in detail [here](/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/service.md).
 
 ### Type Repository
 A type repository is a Registry entry where a service developer lists service metadata, such as

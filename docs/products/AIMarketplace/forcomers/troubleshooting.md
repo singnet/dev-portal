@@ -100,7 +100,7 @@ Hence, only those requests with grpc specified  content-type application/grpc+(p
 
 ### Setting up your own ETCD cluster 
 
-To set up your own ETCD cluster please follow the [link](/docs/products/AIMarketplace/coreconcepts/etcdsetup)
+To set up your own ETCD cluster please follow the [link](/docs/products/AIMarketplace/coreconcepts/etcdsetup.md)
 
 ### Certificates for ETCD 
 

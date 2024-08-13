@@ -6,7 +6,7 @@ This tutorial describes the process of launching a fully functional local Singul
 
 This document describes the process of the environment setup in Ubuntu 18.04. Some commands can be different under other linux distributions.
 
-> TIP: [Here](/docs/products/AIMarketplace/publisher/mpe-example1) you can find an instruction how to run SingularityNet platform locally inside a docker container, and how to run simple front-to-back example in it.
+> TIP: [Here](/docs/products/AIMarketplace/publisher/mpe-example1.md) you can find an instruction how to run SingularityNet platform locally inside a docker container, and how to run simple front-to-back example in it.
 
 ### Go toolset
 

@@ -91,7 +91,7 @@ Starting an etcd node requires at least the following parameters:
   ```
 * **initial-cluster-token**: initial cluster token for the etcd cluster during bootstrap
 
-There are some [throughput tests](/docs/products/AIMarketplace/daemon/explanation-etcd) which run several etcd nodes locally and measure number of writes, and compare and set requests per seconds.
+There are some [throughput tests](/docs/products/AIMarketplace/daemon/explanation-etcd.md) which run several etcd nodes locally and measure number of writes, and compare and set requests per seconds.
 
 Note: because all etcd nodes were run locally, the results can be different from when each etcd node is ran on its own separated server.
 
