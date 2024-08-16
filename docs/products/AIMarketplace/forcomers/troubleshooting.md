@@ -1,4 +1,4 @@
-## Troubleshooting
+# Troubleshooting
 
 ## Alerting mechanism - Emails Alerts
 
