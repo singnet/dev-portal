@@ -1,26 +1,47 @@
 export default [
     {
-        text: "AI Platform Ecosystem",
-        textIconID: "marketplace-icon",
-        imageSrc: "/assets/images/common/platform.png",
-        description:
-            "Explore, publish, and integrate AI services on AI Marketplace's docs.",
-        link: "/docs/products/AIMarketplace/"
+        text: "Airdrop",
+        textIconID: "airdrop-icon",
+        imageSrc: "/assets/images/common/airdrop.png",
+        description: "All relevant documentation about the Airdrop in SingularityNET.",
+        link: "/docs/products/Airdrop/"
+    },
+    {
+        text: "Bridge",
+        textIconID:"bridge-icon",
+        imageSrc:"/assets/images/common/bridge.png",
+        description: "All relevant documentation about the Bridge project",
+        link: "/docs/products/Bridge/",
     },
     {
         text: "Staking",
         textIconID: "staking-icon",
         imageSrc: "/assets/images/common/staking.png",
         description:
-            "By staking AGIX tokens, you support the operations of our blockchain network and in doing so you will be rewarded with more AGIX tokens for your contributions.",
+            "All relevant documentation about the Staking project.",
         link: "/docs/products/Staking/"
     },
     {
-        text: "about technologies",
+        text: "AI Platform Ecosystem",
         textIconID: "marketplace-icon",
+        imageSrc: "/assets/images/common/platform.png",
+        description:
+            "Explore, publish, and integrate AI services on AI Marketplace's docs.",
+        link: "/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/marketplace"
+    },
+    {
+        text: "About technologies",
+        textIconID: "techs-icon",
         imageSrc: "/assets/images/common/techs.png",
         description:
-            "Some technologies that we use",
-        link: "/docs/products/About-technologies/Blockchain"
+            "A documentary overview of the stack of all technologies that are used in our projects",
+        link: "/docs/products/About-technologies/blockchain"
+    },
+    {
+        text: "WaLT",
+        textIconID: "walt-icon",
+        imageSrc: "/assets/images/common/walt.png",
+        description: "Connect Linked Wallet Tool",
+        link: "/docs/products/WaLT/"
     }
 ];

@@ -27,6 +27,7 @@ export default [
   },
   {
     text: "AI Marketplace",
+    link:"/docs/",
     collapsed: false,
     items: [
       {
@@ -253,6 +254,10 @@ export default [
     link:"/docs/products/Staking/",
     items:[
       {
+        text: "Staking overview",
+        link: "/docs/products/Staking/overview"
+      },
+      {
         text:"Stake window",
         link:"/docs/products/Staking/stake-window"
       },
@@ -279,6 +284,104 @@ export default [
       {
         text:"Cardano Staking Rewards",
         link:"/docs/products/Staking/cardano-staking-rewards"
+      }
+    ]
+  },
+  {
+    text: "WaLT",
+    collapsed: true,
+    link: "/docs/products/WaLT/",
+    items:[
+      {
+        text: "What is the WaLT?",
+        link: "/docs/products/WaLT/about" 
+      },
+      {
+        text: "How to Use",
+        link: "/docs/products/WaLT/howtouse",
+      },
+      {
+        text: "Frequently Asked Questions",
+        link: "/docs/products/WaLT/faq"
+      }
+    ]
+  },
+  {
+    text: "Bridge",
+    collapsed: true,
+    link: "/docs/products/Bridge/",
+    items:[
+      {
+        text: "Overview",
+        link:"/docs/products/Bridge/selecting-networks"
+      },
+      {
+        text: "Troubles",
+        link:"/docs/products/Bridge/troubles"
+      },
+      {
+        text: "FAQ",
+        link: "/docs/products/Bridge/faq"
+      },
+      {
+        text: "Ethereum-Binance",
+        link: "/docs/products/Bridge/eth-to-binance"
+      },
+      {
+        text:"Testing",
+        collapsed: true,
+        items: [
+        {
+          text: "Prerequisites",
+          link: "/docs/products/Bridge/testing/prerequisites"
+        },
+        {
+          text: "Connecting wallets",
+          link: "/docs/products/Bridge/testing/connecting-wallets"
+        },
+        {
+          text: "Ethereum to Cardano Conversion",
+          link: "/docs/products/Bridge/testing/eth-to-cardano-conversion"
+        },
+        {
+          text: "Cardano to Ethereum Conversion",
+          link: "/docs/products/Bridge/testing/cardano-to-eth-conversion"
+        },
+        ]
+      }
+    ]
+  },
+  {
+    text: "Airdrop",
+    link: "/docs/products/Airdrop/",
+    collapsed: true,
+    items: [
+      {
+        text: "Overview",
+        link: "/docs/products/Airdrop/overview"
+      },
+      {
+        text: "Registration",
+        link: "/docs/products/Airdrop/Registration/",
+        collapsed: true,
+        items: [
+          {
+            text: "Connect wallet",
+            link: "/docs/products/Airdrop/Registration/connect-wallet"
+          },
+          {
+            text: "Register",
+            link: "/docs/products/Airdrop/Registration/register"
+          },
+        ],
+      },
+      {
+        text: "Claim",
+        link: "/docs/products/Airdrop/claim"
+      },
+      {
+        text: "FAQ",
+        link: "/docs/products/Airdrop/faq"
       }
     ]
   }
