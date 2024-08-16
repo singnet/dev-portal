@@ -1,7 +1,6 @@
 import SpriteIcon from "/components/Common/SpriteIcon.vue";
 import Home from "/components/Home/Home.vue";
 import Video from "/components/Common/Video.vue";
-import SidebarToggle from "/components/Common/SidebarToggle.vue";
 import Footer from "/components/Footer/Footer.vue";
 import DefaultTheme from "vitepress/theme";
 import type { Theme } from "vitepress";
@@ -13,7 +12,6 @@ export default {
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       "layout-bottom": () => h(Footer),
-      "page-top": () => h(SidebarToggle)
     });
   },
   enhanceApp({ app, router, siteData }) {
