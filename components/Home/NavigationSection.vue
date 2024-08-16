@@ -22,10 +22,17 @@ export default {
 
 <style scoped>
 .navigation-section-container {
-    padding-top: 3%;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 60px;
 }
+.dark .card-redirect svg{
+    fill: #ffffff !important;
+}
+
+.card-redirect svg{
+    fill: #3C3C43;
+}
+
 </style>

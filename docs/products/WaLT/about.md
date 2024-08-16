@@ -1,0 +1,4 @@
+# What is the WaLT?
+AGIX is a multichain asset that is both available on Ethereum and Cardano. The [Wallet Linking Tool](https://mywallets.singularitynet.io/) makes it easier for processes such as voting or airdrops to take the total amount of AGIX you are holding into account, without the need to go through the same process again with multiple wallets.
+
+The tool can be used on any voting event organized by SingularityNET. You can also add your ID to other platforms such as [deepfunding.ai](https://deepfunding.ai). By doing so, your platform ID (and collected reputation) will be related to your voting activity. This may increase your voting weights significantly!
