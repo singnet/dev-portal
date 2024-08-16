@@ -9,6 +9,9 @@
         <h2>
             SingularityNET lets anyone create, share, and monetize AI services at scale.
         </h2>
+        <h1>
+            Products docs
+        </h1>
     </div>
 </template>
 
@@ -31,6 +34,7 @@ export default {
     font-size: 30px;
     line-height: 35px;
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .home-header-container h2 {
