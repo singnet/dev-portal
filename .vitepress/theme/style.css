@@ -295,12 +295,6 @@ body {
   transform: translate(0, 0);
 }
 
-@media (max-width: 1024px) {
-  :root {
-    --vp-sidebar-width: 215px;
-  }
-}
-
 @media (min-width: 1770px) {
   :root {
     --vp-layout-max-width: var(--vp-layout-max-width-large-screen);
@@ -308,5 +302,25 @@ body {
 
   .content-container {
     max-width: 100% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --vp-sidebar-width: 215px;
+  }
+}
+
+@media (max-width: 768px) {
+  .VPImage.logo {
+    max-width: 115px;
+  }
+  
+  header span {
+    font-size: 14px;
+  }
+
+  header .wrapper {
+    padding: 0 10px !important;
   }
 }
