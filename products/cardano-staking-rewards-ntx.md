@@ -5,8 +5,8 @@ keywords: staking, cardano, ntx
 comments: false
 
 # Hero section
-title: Rewards distribution period
-description: Rewards distribution period
+title: Rewards Distribution Period
+description: Rewards Distribution Period
 
 # Micro navigation
 micro_nav: true

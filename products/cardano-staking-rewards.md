@@ -5,7 +5,7 @@ keywords: staking, cardano
 comments: false
 
 # Hero section
-title: Rewards distribution period
+title: Rewards Distribution Period
 description: Rewards distribution period
 
 # Micro navigation
