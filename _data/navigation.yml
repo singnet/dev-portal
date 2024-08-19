@@ -572,17 +572,17 @@ products:
         title: Cardano staking AGIX
         children:
             cardano-staking-timeline:
-                title: Staking timeline
+                title: Staking Timeline
                 excerpt:
                 cta: Read more
                 url: '/products/cardano-staking-timeline'
             cardano-staking-rewards:
-                title: Staking/withdrawal period
+                title: Staking/withdrawal Period
                 excerpt:
                 cta: Read more
                 url: '/products/cardano-staking-withdraw'
             cardano-staking-withdraw:
-                title: Rewards distribution period
+                title: Rewards Distribution Period
                 excerpt:
                 cta: Read more
                 url: '/products/cardano-staking-rewards' 
@@ -590,17 +590,17 @@ products:
         title: Cardano staking NTX
         children: 
             cardano-staking-timline-ntx:
-                title: Staking timeline
+                title: Staking Timeline
                 excerpt:
                 cta: Read more 
                 url: '/products/cardano-staking-timeline-ntx'
             cardano-staking-rewards-ntx:
-                title: Staking/withdrawal period
+                title: Staking/withdrawal Period
                 excerpt:
                 cta: Read more
                 url: '/products/cardano-staking-withdraw-ntx'
             cardano-staking-withdraw-ntx:
-                title: Rewards distribution period
+                title: Rewards Distribution Period
                 excerpt:
                 cta: Read more
                 url: '/products/cardano-staking-rewards-ntx'  
