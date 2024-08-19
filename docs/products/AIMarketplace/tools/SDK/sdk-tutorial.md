@@ -1,31 +1,20 @@
 ## Using the python SDK
+Currently, Python 3.10 or higher is required to use the SDK from version 3.2.0  
 
 Create a directory and a virtual environment for python by following below example
 ```sh
 mkdir service
 cd service
-python3.7 -m venv env #check your python version and set this accordingly , 
-source env/bin/activate #activate your virtual environment
+python3.10 -m venv env # сheck your python version and set this accordingly , 
+source env/bin/activate # activate your virtual environment
 ```
 Install the SDK using PIP
 ```sh
 pip install snet.sdk
 ```
-To generate the required gRPC client libraries, you need the SingularityNET Command Line Interface, or CLI, which you can install using pip
-```sh
-pip install snet-cli
-```
-Generate the required grpc stubs by using the below command. Here, replace **org_id** and **service_id** with service details that you want to invoke using SDK.
+Previously, for the SDK to work, you had to download and generate pb files for the called service yourself and import them.
 
-
-This command will generate stubs in given output location as 
-org_id/service_id/python/stub_pb2.py
-org_id/service_id/python/stub_pb2_grpc.py
-
-```sh
-snet sdk generate-client-library python org_id service_id output_location
-```
-Once the required files are generated, import them into service folder and copy the below code into a python file service.py into the same directory.
+Now it will happen automatically for this you just need to run the code with a call to the service for the first time.
 
 Before invoking the service make sure you have your own etherium wallet with some AGIX and an infura account. You can create an infura account [here](https://infura.io)
 
@@ -33,44 +22,82 @@ Follow these [steps](https://blog.infura.io/getting-started-with-infura-28e41844
 
 Here, below example is shown for example_service. Replace the values according to the service you want to work with.
 
-```sh
-from snet.sdk import SnetSDK
-import example_service_pb2
-import example_service_pb2_grpc
+### Usage
 
-def invoke_service():
-    config ={
-       "private_key": "<your wallet's private key>",
-       "eth_rpc_endpoint": "https://mainnet.infura.io/v3/<your infura key>",
-       "org_id": "snet",
-       "service_id": "example_service",
+To call a SingularityNET service, the user must be able to deposit funds (AGIX tokens) to the [Multi-Party Escrow](https://dev.singularitynet.io/docs/concepts/multi-party-escrow/) Smart Contract.
+To deposit these tokens or do any other transaction on the Ethereum blockchain, the user must possess an Ethereum identity with available Ether.
+
+Once you have installed snet-sdk in your current environment, you can import it into your Python script and create an instance of the base sdk class:
+```python
+from snet import sdk
+config = {
+        "private_key": 'YOUR_PRIVATE_WALLET_KEY',
+        "eth_rpc_endpoint": f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
+        "email": "your@email.com",
+        "concurrency": False,
+        "identity_name": "local_name_for_that_identity",
+        "identity_type": "key",
+        "network": "sepolia",
+        "force_update": False
     }
-    sdk = SnetSDK(config=config)
-    service_client = sdk.create_service_client(
-       org_id=config["org_id"],
-       service_id=config["service_id"],
-       service_stub=example_service_pb2_grpc.CalculatorStub
-    )
-    request = example_service_pb2.Numbers(a=10, b=6)
-    response = service_client.service.add(request)
-    print(f"result :: {response}"")
-    print("service invoked successfully")
 
-if __name__ == '__main__':
-    invoke_service()
-    
+snet_sdk = sdk.SnetSDK(config)
 ```
 
-In the above shown example the SNET SDK is initialized with required config values.Then service client is prepared for the required service we want to invoke using the appropriate stub file (CalulaculatorStub). Finally, the service is invoked by calling service_client.service.method_name(arguments).
+##### List organizations and their services
 
-Invoke service by running below command
+You can use the sdk client instance`s methods get_organization_list() to list all organizations and get_services_list("org_id") to list all services of a given organization.  
+
+```python
+print(snet_sdk.get_organization_list())
+print(snet_sdk.get_services_list("26072b8b6a0e448180f8c0e702ab6d2f"))
 ```
-python service.py
+
+##### Free call configuration
+
+If you want to use the free calls you will need to pass these arguments to the create_service_client() method:
+
+```         
+"free_call_auth_token-bin":"f2548d27ffd319b9c05918eeac15ebab934e5cfcd68e1ec3db2b92765",
+"free-call-token-expiry-block":172800,
 ```
-output from code
+You can receive these for a given service from the [Dapp](https://beta.singularitynet.io/)
+#### Calling the service
+Now, the instance of the sdk can be used to create the service client instances.  
+Continuing from the previous code here is an example using `Exampleservice` from the `26072b8b6a0e448180f8c0e702ab6d2f` organization:
+
+```python
+service_client = snet_sdk.create_service_client(org_id="26072b8b6a0e448180f8c0e702ab6d2f", 
+                                                service_id="Exampleservice",
+                                                group_name="default_group")
 ```
-value: 16.0
-service invoked successfully
+Creating a service client with free calls included would look like this:
+```python
+service_client = snet_sdk.create_service_client(org_id="26072b8b6a0e448180f8c0e702ab6d2f", 
+                                                service_id="Exampleservice",
+                                                group_name="default_group",
+                                                free_call_auth_token_bin="f2548d27ffd319b9c05918eeac15ebab934e5cfcd68e1ec3db2b92765",
+                                                free_call_token_expiry_block=172800)
+```
+
+After executing this code, you should have client libraries created for this service. They are located at the following path: `~/.snet/org_id/service_id/python/`
+
+Note: Currently you can only save files to `~/.snet/`. We will fix this in the future.   
+```python
+service_client.deposit_and_open_channel(123456, 33333)
+```
+`deposit_and_open_channel(amount, expiration)` function deposits the specified amount of AGIX tokens in cogs into an MPE smart contract and opens a payment channel. Expiration is payment channel's TTL in blocks.    
+The instance of service_client that has been generated can be utilized to invoke the methods that the service offers. You can list these using the get_services_and_messages_info_as_pretty_string() method:
+```python
+print(service_client.get_services_and_messages_info_as_pretty_string())
+```
+
+To invoke the service`s methods, you can use the the call_rpc() method. This method requires the names of the method and data object, along with the data itself, to be passed into it. 
+To continue with our example, here’s a call to the *mul* method of the *Exampleservice* from the *26072b8b6a0e448180f8c0e702ab6d2f* organization:
+
+```python
+result = service_client.call_rpc("mul", "Numbers", a=20, b=3)
+print(f"Calculating 20 * 3: {result}") #  Calculating 20 * 3: 60.0
 ```
 
 ## Using the Node.js SDK
