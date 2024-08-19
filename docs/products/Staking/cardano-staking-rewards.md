@@ -1,3 +1,4 @@
+# Rewards Distribution Period
 In Rewards Distribution Period the admin updates the user 's rewards according to the formula:
 
 <br>

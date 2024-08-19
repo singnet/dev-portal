@@ -1,3 +1,4 @@
+# Staking Timeline
 A single window has the following stages
 * Staking/Withdrawal Period
 * Rewards Distribution Period
