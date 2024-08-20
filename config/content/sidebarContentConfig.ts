@@ -284,7 +284,19 @@ export default [
       {
         text:"Cardano Staking Rewards",
         link:"/docs/products/Staking/cardano-staking-rewards"
-      }
+      },
+      {
+        text: "Cardano Staking withdraw NTX",
+        link: "/docs/products/Staking/cardano-staking-withdraw-ntx"
+      },
+      {
+        text: "Cardano Staking Timeline NTX",
+        link: "/docs/products/Staking/cardano-staking-timeline-ntx"
+      },
+      {
+        text: "Cardano Staking Rewards NTX",
+        link: "/docs/products/Staking/cardano-staking-rewards-ntx"
+      },
     ]
   },
   {
