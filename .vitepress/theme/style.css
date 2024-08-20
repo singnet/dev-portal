@@ -324,3 +324,11 @@ body {
     padding: 0 10px !important;
   }
 }
+
+@media (max-width: 350px) {
+  header a span {
+    position: absolute;
+    bottom: 8px;
+    left: 10%;
+  }
+}
