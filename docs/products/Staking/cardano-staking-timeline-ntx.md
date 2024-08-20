@@ -10,7 +10,7 @@ A single window has the following stages
 
 As the staking pool starts, the Staking/Withdrawal Period begins and users can send tokens to pool in order to stake them. Tokens aren’t locked in the on-chain script, users can withdraw their deposited amount plus earned rewards in any time during Staking/Withdrawal Period.
 
-Tokens must be deposited **before* * the start of the Staking/Withdrawal Period for which user want to receive a reward.
+Tokens must be deposited **before** the start of the Staking/Withdrawal Period for which user want to receive a reward.
 
 After the Staking/Withdrawal Period is over, then comes Rewards Distribution Period. For past Staking/Wintdrawal Period in current window the staking rewards are accrued to users, proportionally to their share of the overall staked pool in that period.
 
