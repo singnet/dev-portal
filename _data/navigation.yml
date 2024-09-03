@@ -255,11 +255,16 @@ ai-consumers:
                 excerpt:
                 cta: Read more
                 url: '/docs/tutorials/client/java'
-            invoke-serivce-sdk:
-                title: Invoking a Service using sdk
+            invoke-serivce-nodejs-sdk:
+                title: Using the Node.js SDK
                 excerpt:
                 cta: Read more
                 url: '/docs/ai-consumers/sdk-tutorial'
+            invike-service-python-sdk:
+                title: Python SDK Getting Started Guide
+                excerpt:
+                cta: Read more
+                url: '/docs/ai-consumers/sdk-tutorial-python'
     troubleshooting:
         title: Troubleshooting
         excerpt: How to communicate with SingularityNET services with the stateless method.
@@ -452,11 +457,16 @@ ai-developers:
                 #   excerpt:
                 #   cta: Read more
                 #   url: '/docs/ai-consumers/java-sdk'
-                # invoke-serivce-sdk:
-                #   title: Invoking a Service using sdk
+                # invoke-serivce-nodejs-sdk:
+                #   title: Using the Node.js SDK
                 #   excerpt:
                 #   cta: Read more
                 #   url: '/docs/ai-developers/sdk-tutorial'
+                # invike-service-python-sdk:
+                #   title: Python SDK Getting Started Guide
+                #   excerpt:
+                #   cta: Read more
+                #   url: '/docs/ai-consumers/sdk-tutorial-python'
                 # tutorail:
                 #   title: Tutorials
                 #   excerpt:
