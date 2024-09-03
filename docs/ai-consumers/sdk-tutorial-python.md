@@ -19,25 +19,6 @@ dev_news: true
 # Micro navigation
 micro_nav: true
 ---
-
-## Package
-
-The package is published in PyPI at the following link:
-
-|Package                                       |Description                                                          |
-|----------------------------------------------|---------------------------------------------------------------------|
-|[snet.sdk](https://pypi.org/project/snet.sdk/)|Integrate SingularityNET services seamlessly into Python applications|
-
-### Core concepts
-
-The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
-To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
-To handle payment of services, SingularityNET uses 
-[Ethereum state channels](https://dev.singularitynet.io/docs/concepts/multi-party-escrow/).
-The SingularityNET SDK abstracts and manages state channels with service providers on behalf of the user and 
-handles authentication with the SingularityNET services.
-
-## Getting Started  
   
 These instructions are for the development and use of the SingularityNET SDK for Python.
 
@@ -288,34 +269,3 @@ print(messages)
 ###### 1 This method uses a call to a paid smart contract function.
 
 ---
-
-## Development
-
-### Installing
-
-#### Prerequisites
-
-* [Python 3.10](https://www.python.org/downloads/release/python-31012/)  
-
----
-
-* Clone the git repository  
-```bash  
-$ git clone git@github.com:singnet/snet-sdk-python.git
-$ cd snet-sdk-python
-```
-
-* Install the required dependencies
-```bash
-$ pip install -r requirements.txt
-```
-
-* Install the package in development/editable mode  
-```bash  
-$ pip install -e .
-```
-
-## License  
-  
-This project is licensed under the MIT License - see the
-[LICENSE](https://github.com/singnet/snet-sdk-python/blob/master/LICENSE) file for details.

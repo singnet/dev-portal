@@ -256,7 +256,7 @@ ai-consumers:
                 cta: Read more
                 url: '/docs/tutorials/client/java'
             invoke-serivce-nodejs-sdk:
-                title: Using the Node.js SDK
+                title: Invoking A Service Using Node.Js SDK
                 excerpt:
                 cta: Read more
                 url: '/docs/ai-consumers/sdk-tutorial'
@@ -458,7 +458,7 @@ ai-developers:
                 #   cta: Read more
                 #   url: '/docs/ai-consumers/java-sdk'
                 # invoke-serivce-nodejs-sdk:
-                #   title: Using the Node.js SDK
+                #   title: Invoking A Service Using Node.Js SDK
                 #   excerpt:
                 #   cta: Read more
                 #   url: '/docs/ai-developers/sdk-tutorial'
