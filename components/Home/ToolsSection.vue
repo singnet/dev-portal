@@ -84,8 +84,9 @@ export default {
     },
     computed: {
         isMobile() {
-            console.log(window);
-            
+        if (typeof window === 'undefined') {
+            return false;
+        }
             return window.screen.width < 640;
         }
     }
