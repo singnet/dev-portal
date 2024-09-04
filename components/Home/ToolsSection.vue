@@ -30,16 +30,20 @@
 <script>
 import ToolsComponent from "./ToolsComponent.vue";
 import toolsConfig from "../../config/content/toolsConfig.ts";
-import Slider from "../Common/Slider.vue";
 import { Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide} from 'swiper/vue';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import { register } from 'swiper/element/bundle';
+register();
 
 export default {
     components: {
         ToolsComponent,
         Swiper,
         SwiperSlide,
-        Slider
     },
     setup() {
       return {
@@ -95,7 +99,6 @@ export default {
     flex-direction: column;
     gap: 40px;
     border-radius: 25px;
-    backdrop-filter: blur(10px);
 }
 
 .tools-header-component {
