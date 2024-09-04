@@ -1,7 +1,7 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: SDK, NodeJS 
 comments: false
 title: NodeJS SDK
 description:
