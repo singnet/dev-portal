@@ -34,7 +34,7 @@ We support SDK for the below three languages
 
 - [SDK in JAVA](/tutorials/client/java/)
 - [SDK in Python](/tutorials/sdk)
-- SDK in NodeJS
+- [SDK in NodeJS](/tutorials/nodejs-sdk)
 
 All SDKs provided adhere to the same design standard and strategy
 
