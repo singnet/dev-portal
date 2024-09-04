@@ -35,7 +35,7 @@ export default [
         imageSrc: "/assets/images/common/techs.png",
         description:
             "A documentary overview of the stack of all technologies that are used in our projects",
-        link: "/docs/products/About-technologies/blockchain"
+        link: "/docs/products/AboutTechnologies/blockchain"
     },
     {
         text: "WaLT",
