@@ -1,10 +1,28 @@
 <template>
-    <div class="tools-section-container border-conteiner">
-        <h1 class="tools-header">
-            Tools & Resources
-        </h1>
+    <div class="tools-section-container">
+        <div class="tools-header">
+            <h1>
+                Tools & Resources
+            </h1>
+        </div>
         <div class="tools-items-container">
-            <ToolsComponent v-for="item in toolsConfig" :item="item" />
+            <div class="tools-header-component">
+                <img src="../../public/assets/images/common/toolsImage.png" alt="tools">
+                <p>On our website you will find a convenient block with tools and tools for creating your ideal web resource. Start your creation journey now!</p>
+            </div>
+            <swiper
+                v-if="!isMobile"
+                class="swiper-container"
+                v-bind="swiperOptions"
+            >
+                <swiper-slide v-for="item in toolsConfig" :key="item.text">
+                     <ToolsComponent  :item="item" />
+                </swiper-slide>
+            </swiper>
+            <div v-else v-for="item in toolsConfig" :key="item.text">
+                <ToolsComponent  :item="item" />
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </template>
@@ -12,48 +30,129 @@
 <script>
 import ToolsComponent from "./ToolsComponent.vue";
 import toolsConfig from "../../config/content/toolsConfig.ts";
+import Slider from "../Common/Slider.vue";
+import { Pagination, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide} from 'swiper/vue';
 
 export default {
     components: {
-        ToolsComponent
+        ToolsComponent,
+        Swiper,
+        SwiperSlide,
+        Slider
+    },
+    setup() {
+      return {
+        modules: [Pagination, A11y],
+      };
     },
     data() {
         return {
-            toolsConfig
+            toolsConfig,
+            toolsCardsLength: toolsConfig.length,
+            swiperOptions: {
+                effect: 'creative',
+                creativeEffect: {
+                    limitProgress: 2,
+                    prev: {
+                        opacity: 0.6,
+                        translate: [0, '70%', 10],
+                    },
+                    next: {
+                        translate: [0, '-100%', -100],
+                    },
+                },
+                spaceBetween: 20,
+                direction: 'vertical',
+                pagination: {
+                    clickable: true,
+                },
+                loop: true,
+                mousewheel: {
+                    thresholdDelta: 70
+                },
+                keyboard: {
+                    enabled: true
+                },
+                slidesPerView: 3
+            }
+        }
+    },
+    computed: {
+        isMobile() {
+            console.log(window);
+            
+            return window.screen.width < 640;
         }
     }
-}
+};
 </script>
 
 <style scoped>
 .tools-section-container {
-    padding: 36px;
     justify-content: center;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    border: 1px solid purple;
     border-radius: 25px;
-    background: linear-gradient(135deg, #7747FF1A, #8F00FF1A);
     backdrop-filter: blur(10px);
 }
 
+.tools-header-component {
+    margin-top: 20px;
+}
+
+.tools-header-component {
+    border-radius: 25px;
+    box-shadow: 0 0 20px var(--vp-c-lightgray);
+    background: var(--vp-c-bg) 70%;;
+    padding: 24px;
+    height: min-content;
+}
+
 .tools-items-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 30px;
     justify-content: space-between;
+    grid-template-columns: 1fr 2fr;
+}
+
+.tools-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 500px;
+}
+
+.swiper-container {
+    max-height: 700px;
+    padding: 20px 40px 20px 20px;
+    width: 100%;
+}
+
+:deep(.swiper-slide) {
+  min-height: 200px;
+}
+:deep(.swiper-pagination-bullet) {
+    background-color: var(--vp-c-accent);
+}
+
+:deep(.swiper-pagination-bullets) {
+    top: 20%;
 }
 
 .tools-header {
     text-align: center;
 }
 
-.border-conteiner::after {
-    transform: translate(8px, 4px);
-}
+@media (max-width: 1024px) {
+    .tools-header-component {
+        display: none;
+    }
 
-.border-conteiner::before {
-    transform: translate(14px, 7px);
+    .tools-items-container {
+        grid-template-columns: 1fr
+    }
 }
 
 </style>

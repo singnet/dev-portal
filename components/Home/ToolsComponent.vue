@@ -3,7 +3,7 @@
         <div class="tool-info">
             <h1 class="tool-title">
                     {{ item?.text }}
-                </h1>
+            </h1>
             <p class="tool-description">
                 {{ item?.description }}
             </p>
@@ -17,16 +17,16 @@
 <script>
 
 export default {
-    props: {
-        item: {
-            type: Object
-        }
-    },
-    methods: {
-        redirect() {
-            window.location.href = this.item.link;
-        }
+props: {
+    item: {
+        type: Object
     }
+},
+methods: {
+    redirect() {
+        window.location.href = this.item.link;
+    }
+}
 }
 </script>
 
@@ -34,7 +34,6 @@ export default {
     p, h1 {
         padding: 0 !important;
         margin: 0 !important;
-        text-align: center !important;
     }
 
     h1 {
@@ -42,13 +41,15 @@ export default {
     }
 
     .tool-card {
-        padding: 20px;
-        width: 310px;
-        height: 190px;
         display: flex;
-        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
         justify-content: space-between;
-        gap: 10px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px var(--vp-c-lightgray);
+        background: var(--vp-c-bg) 70%;
+        padding: 24px;
     }
 
 
@@ -85,4 +86,18 @@ export default {
         display: flex;
     }
 
+    @media (max-width: 400px) {
+        .tool-card h1 {
+            font-size: 20px !important;
+        }
+
+        .tool-card {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .tool-description {
+            font-size: 16px;
+        }
+}
 </style>
