@@ -1,33 +1,34 @@
 export default [
   {
     text: "About technologies",
+    link:"/docs/products/AboutTechnologies",
     collapsed: true,
     items: [
       {
         text: "Blockchain",
-        link: "/docs/products/About-technologies/blockchain",
+        link: "/docs/products/AboutTechnologies/blockchain",
       },
       {
         text: "Ethereum",
-        link: "/docs/products/About-technologies/ethereum",
+        link: "/docs/products/AboutTechnologies/ethereum",
       },
       {
         text: "AGI Token",
-        link: "/docs/products/About-technologies/agi-token",
+        link: "/docs/products/AboutTechnologies/agi-token",
       },
       {
         text: "Concepts of organization",
-        link: "/docs/products/About-technologies/concepts-organization",
+        link: "/docs/products/AboutTechnologies/concepts-organization",
       },
       {
         text: "Introduction in SDK",
-        link: "/docs/products/About-technologies/sdk",
+        link: "/docs/products/AboutTechnologies/sdk",
       },
     ]
   },
   {
     text: "AI Marketplace",
-    link:"/docs/",
+    link:"/docs/products/AIMarketplace",
     collapsed: false,
     items: [
       {
@@ -325,6 +326,10 @@ export default [
     items:[
       {
         text: "Overview",
+        link:"/docs/products/Bridge/overview"
+      },
+      {
+        text: "Selecting Networks",
         link:"/docs/products/Bridge/selecting-networks"
       },
       {

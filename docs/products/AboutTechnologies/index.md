@@ -1,0 +1,1 @@
+<SectionNavigationGrid sectionName="About technologies" />

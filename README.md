@@ -37,6 +37,14 @@ npm run dev
 
 If you want to update the documentation, change the corresponding files in `/docs/products/`. To add documentation files, place them in the appropriate product section and do not forget to add them to the sidebar (add the data to the `/config/content/sidebarContentConfig.ts` to the appropriate section). If a new documentation page requires images, add them to the appropriate folder in `/public/assets/images/`
 
+The new section must contain index.md file with the following component:
+
+```js
+<SectionNavigationGrid sectionName='<sectionName>' />
+```
+
+where the section name corresponds to the section name in `/config/content/sidebarContentConfig.ts`
+
 ## Add new component
 
 If you want to add a new one .vue component, you need to add these files to the appropriate folder in the `/components/` section or create a new folder if the existing ones are not suitable. Do not forget import new components in `/.vitepress/theme/index.ts`
@@ -73,7 +81,7 @@ export default {
 
 ## Update existing config
 
-if you want to change an existing config, you need to find the required file in the `/config/content` folder and change the required part. **Important**: Each config file has its own structure and in order not to cause conflicts, you need to adhere to it. 
+if you want to change an existing config, you need to find the required file in the `/config/content` folder and change the required part. **Important**: Each config file has its own structure and in order not to cause conflicts, you need to adhere to it.
 Also, some config files require an icon, they need to be added to an existing file (`/public/assets/images/sprite.svg`) and add an id to them
 
 Example of adding an icon to a `sprite.svg`
@@ -90,6 +98,7 @@ Example of adding an icon to a `sprite.svg`
     ...
 </svg>
 ```
+
 Usage in components:
 
 ```html

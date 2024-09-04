@@ -1,6 +1,7 @@
 import SpriteIcon from "/components/Common/SpriteIcon.vue";
 import Home from "/components/Home/Home.vue";
 import Video from "/components/Common/Video.vue";
+import SectionNavigationGrid from "/components/Common/SectionNavigationGrid.vue";
 import Footer from "/components/Footer/Footer.vue";
 import DefaultTheme from "vitepress/theme";
 import type { Theme } from "vitepress";
@@ -18,5 +19,6 @@ export default {
     app.component("Home", Home);
     app.component("Video", Video);
     app.component("SpriteIcon", SpriteIcon);
+    app.component("SectionNavigationGrid", SectionNavigationGrid);
   },
 } satisfies Theme;
