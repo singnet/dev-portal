@@ -1,7 +1,7 @@
 export default [
   {
     text: "About technologies",
-    link:"/docs/products/AboutTechnologies",
+    link:"/docs/products/AboutTechnologies/",
     collapsed: true,
     items: [
       {
@@ -24,11 +24,11 @@ export default [
         text: "Introduction in SDK",
         link: "/docs/products/AboutTechnologies/sdk",
       },
-    ]
+    ],
   },
   {
     text: "AI Marketplace",
-    link:"/docs/products/AIMarketplace",
+    link:"/docs/products/AIMarketplace/",
     collapsed: false,
     items: [
       {
@@ -57,7 +57,7 @@ export default [
                 text: "Marketplace service training",
                 link: "/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/marketplace-service_training",
               },
-            ]
+            ],
           },
           {
             text:"Smart contracts",
@@ -72,7 +72,7 @@ export default [
                 text: "MPE Stateless Client",
                 link: "/docs/products/AIMarketplace/coreconcepts/Smart-contracts/mpe-stateless-client"
               }
-            ]
+            ],
           },
           
           {
@@ -131,7 +131,7 @@ export default [
       {
         text: "For comers",
         collapsed: true,
-        link: "/docs/products/AIMarketplace/forcomers",
+        link: "/docs/products/AIMarketplace/forcomers/",
         items: [
           {
             text: "Call a service",

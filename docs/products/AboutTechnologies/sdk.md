@@ -13,7 +13,8 @@ We support SDK for the below three languages
 
 - [SDK in JAVA](/docs/products/AIMarketplace/tools/SDK/sdk-java)
 - [SDK in Python](/docs/products/AIMarketplace/tools/SDK/sdk-python-tutorial)
-- SDK in NodeJS
+- [SDK in NodeJS](/docs/products/AIMarketplace/tools/SDK/nodejs-sdk)
+
 
 All SDKs provided adhere to the same design standard and strategy
 
