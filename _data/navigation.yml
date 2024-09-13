@@ -219,9 +219,45 @@ ai-consumers:
                 url: '/docs/ai-consumers/snet-cli'
             sdk:
                 title: SDK
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/sdk'
+                children:
+                    introduction:
+                        title: introduction
+                        excerpt:
+                        cta: Read more
+                        url: '/docs/ai-consumers/sdk'
+                    python-sdk:
+                        title: Python SDK
+                        children:
+                            introduction:
+                                title: First Steps
+                                excerpt:
+                                cta: Read more
+                                url: '/docs/ai-consumers/python-sdk-first-steps'
+                            documentation:
+                                title: Technical Documentation
+                                excerpt:
+                                cta: Read more
+                                url: '/docs/ai-consumers/python-sdk-documentation'
+                            calculator-example:
+                                title: Calculator Example
+                                excerpt:
+                                cta: Read more
+                                url: '/docs/ai-consumers/python-sdk-calculator-example'
+                            console-app-example:
+                                title: Console App Example
+                                excerpt:
+                                cta: Read more
+                                url: '/docs/ai-consumers/python-sdk-console-app-example'
+                    java-sdk:
+                        title: Java SDK
+                        excerpt:
+                        cta: Read more
+                        url: '/docs/ai-consumers/java-sdk-first-steps'
+                    nodejs-sdk:
+                        title: Node.Js SDK
+                        excerpt:
+                        cta: Read more
+                        url: '/docs/ai-consumers/nodejs-sdk-first-steps'
     tutorials:
         title: Tutorials
         children:
