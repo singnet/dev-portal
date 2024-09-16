@@ -80,9 +80,9 @@ docs:
     buyer:
         title: AI Consumer
         url: '/docs/ai-consumers/snet-cli-tutorial'
-    python-sdk:
-        title: Python SDK
-        url: '/docs/python-sdk'
+#    python-sdk:
+#        title: Python SDK
+#        url: '/docs/python-sdk'
 
 
 concepts:
