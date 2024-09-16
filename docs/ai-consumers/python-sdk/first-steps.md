@@ -1,9 +1,9 @@
 ---
 # Page settings
 layout: default
-keywords:
+keywords: Python SDK, first steps
 comments: false
-title: Python SDK
+title: Python SDK first steps
 description:
 
 # extralink box

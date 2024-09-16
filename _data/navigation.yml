@@ -144,6 +144,28 @@ tutorials:
         title: 'Workshop Tutorials'
         url: '/tutorials/'
 
+python-sdk:
+    first-steps:
+        title: First Steps
+        excerpt:
+        cta: Read more
+        url: '/ai-consumers/python-sdk/first-steps'
+    documentation:
+        title: Documentation
+        excerpt:
+        cta: Read more
+        url: '/ai-consumers/python-sdk/documentation'
+    calculator-example:
+        title: Calculator Example
+        excerpt:
+        cta: Read more
+        url: '/ai-consumers/python-sdk/calculator-example'
+    console-app-example:
+        title: Console App Example
+        excerpt:
+        cta: Read more
+        url: '/ai-consumers/python-sdk/console-app-example'
+
 ai-consumers:
     Introduction:
         title: Introduction
