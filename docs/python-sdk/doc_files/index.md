@@ -34,9 +34,9 @@ A getting started guide for the SNET SDK for Python is available [here](https://
 
 ### Modules
 
-1. [\_\_init\_\_](docs/python-sdk/doc_files/init)
-2. [account](docs/python-sdk/doc_files/account)
-3. [service_client](docs//python-sdk/doc_files/service_client)
+1. [\_\_init\_\_](init)
+2. [account](account)
+3. [service_client](service_client)
 4. [concurrency_manager](docs/python-sdk/doc_files/concurrency_manager)
 5. [config](docs/python-sdk/doc_files/config)
 6. [client_lib_generator](docs/python-sdk/doc_files/client_lib_generator)

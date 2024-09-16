@@ -158,7 +158,7 @@ python-sdk:
         title: Documentation
         excerpt:
         cta: Read more
-        url: '/docs/python-sdk/documentation'
+        url: '/docs/python-sdk/doc_files/'
     calculator-example:
         title: Calculator Example
         excerpt:
