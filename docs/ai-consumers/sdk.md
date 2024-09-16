@@ -33,7 +33,7 @@ authorisations.
 We support SDK for the below three languages 
 
 - [SDK in JAVA](/tutorials/client/java/)
-- [SDK in Python](/ai-consumers/python-sdk/first-steps)
+- [SDK in Python](/docs/ai-consumers/python-sdk/first-steps)
 - [SDK in NodeJS](/tutorials/nodejs-sdk)
 
 All SDKs provided adhere to the same design standard and strategy
