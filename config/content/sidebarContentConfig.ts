@@ -230,17 +230,123 @@ export default [
             text: "SDK",
             collapsed: true,
             link: "/docs/products/AIMarketplace/tools/SDK/concepts-sdk",
-            items:[
-            {
-              text: "Architecture of SDK",
-              link: "/docs/products/AIMarketplace/tools/SDK/sdk-architecture",
-            },
-            {
-              text: "SDK Tutorial",
-              link: "/docs/products/AIMarketplace/tools/SDK/sdk-tutorial",
-            },
+            items: [
+                {
+                  text: "Architecture of SDK",
+                  link: "/docs/products/AIMarketplace/tools/SDK/sdk-architecture",
+                },
+                {
+                  text: "SDK Tutorial",
+                  link: "/docs/products/AIMarketplace/tools/SDK/sdk-tutorial",
+                },
+                {
+                  text: "Python SDK",
+                  collapsed: true,
+                  link: "/docs/products/AIMarketplace/tools/SDK/python-sdk-first-steps",
+                  items:[
+                      {
+                        text: "Getting started guide",
+                        link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/getting-started-guide",
+                      },
+                      {
+                        text: "Calculator example",
+                        link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/calculator",
+                      },
+                      {
+                        text: "Console App example",
+                        link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/console-app",
+                      },
+                      {
+                        text: "Documentation",
+                        collapsed: true,
+                        link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation",
+                        items:[
+                            {
+                              text: "init",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/init",
+                            },
+                            {
+                              text: "account",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/account",
+                            },
+                            {
+                              text: "service_client",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/service-client",
+                            },
+                            {
+                              text: "config",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/config",
+                            },
+                            {
+                              text: "client_lib_generator",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/client-lib-generator",
+                            },
+                            {
+                              text: "concurrency_manager",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/concurrency-manager",
+                            },
+                            {
+                              text: "service_metadata",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/service-metadata",
+                            },
+                            {
+                              text: "metadata_provider",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/metadata-provider",
+                            },
+                            {
+                              text: "ipfs_metadata_provider",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/ipfs-metadata-provider",
+                            },
+                            {
+                              text: "mpe_contract",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/mpe-contract",
+                            },
+                            {
+                              text: "payment_channel",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/payment-channel",
+                            },
+                            {
+                              text: "payment_channel_provider",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/payment-channel-provider",
+                            },
+                            {
+                              text: "payment_strategy",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/payment-strategy",
+                            },
+                            {
+                              text: "default_payment_strategy",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/default-payment-strategy",
+                            },
+                            {
+                              text: "freecall_payment_strategy",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/freecall-payment-strategy",
+                            },
+                            {
+                              text: "paidcall_payment_strategy",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/paidcall-payment-strategy",
+                            },
+                            {
+                              text: "prepaid_payment_strategy",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/prepaid-payment-strategy",
+                            },
+                            {
+                              text: "training",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/training",
+                            },
+                            {
+                              text: "utils",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/utils",
+                            },
+                            {
+                              text: "ipfs_utils",
+                              link: "/docs/products/AIMarketplace/tools/SDK/pythonSDK/documentation/ipfs-utils",
+                            },
+                        ]
+                      },
+                  ]
+                },
             ]
-          }
+          },
         ]
       },
       {
