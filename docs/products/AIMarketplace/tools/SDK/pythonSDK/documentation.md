@@ -10,7 +10,7 @@ To communicate between clients and services, SingularityNET uses [gRPC](https://
 To handle payment of services, SingularityNET uses [Ethereum state channels](https://dev.singularitynet.io/docs/concepts/multi-party-escrow/).
 The SingularityNET SDK abstracts and manages state channels with service providers on behalf of the user and handles authentication with the SingularityNET services.
 
-A getting started guide for the SNET SDK for Python is available [here](https://github.com/singnet/snet-sdk-python/blob/master/README.md).
+A getting started guide for the SNET SDK for Python is available [here](getting-started-guide).
 
 ### Modules
 

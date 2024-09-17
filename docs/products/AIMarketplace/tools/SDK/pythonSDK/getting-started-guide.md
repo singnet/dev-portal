@@ -27,7 +27,7 @@ These instructions are for the development and use of the SingularityNET SDK for
 ### Usage
 
 To call a service on a SingularityNET platform, the user must be able to deposit funds (AGIX tokens) to the 
-[Multi-Party Escrow](https://dev.singularitynet.io/docs/concepts/multi-party-escrow/) Smart Contract.
+[Multi-Party Escrow](/docs/products/AIMarketplace/coreconcepts/Smart-contracts/mpe) Smart Contract.
 To deposit these tokens or do any other transaction on the Ethereum blockchain.
 
 Once you have installed snet-sdk in your current environment, you can import it into your Python script and create an 
