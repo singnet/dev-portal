@@ -3,21 +3,37 @@
         <h1 class="navigation-section-title">
             Products docs
         </h1>
-        <NavigationCard v-for="item in docsConfig" :item="item" />
+        <NavigationCard v-for="item in navigationCards" :item="item" />
     </div>
 </template>
 
-<script>
+<script >
 import NavigationCard from "./NavigationCard.vue";
 import docsConfig from "../../config/content/docsConfig";
+import { useData } from 'vitepress'
 
 export default {
     components: {
         NavigationCard
     },
-    data() {
-        return {
-            docsConfig
+    // data() {
+    //     return {
+    //         docsConfig
+    //     }
+    // },
+    setup() {
+        // const { isDark } = useData()
+        // console.log("isDark: ", isDark);
+        // const themeFolder = isDark ? 'dark' : 'light';
+    },
+    computed: {
+        // isDark(){
+        //     const { isDark } = useData()
+        //     return isDark.value
+        // },
+        navigationCards() {
+            const { isDark } = useData()
+            return docsConfig(isDark.value)
         }
     }
 }

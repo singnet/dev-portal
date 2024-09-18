@@ -1,6 +1,7 @@
 <template>
     <div class="navigation-card" @click="redirect">
         <div class="image-container">
+            {{ item?.imageSrc }}
             <img :src="item?.imageSrc" alt="market">
         </div>
         <div class="card-body">
