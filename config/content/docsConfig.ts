@@ -13,7 +13,7 @@ export default (isDark) => {
     {
         text: "Bridge",
         textIconID:"bridge-icon",
-        imageSrc:`/asets/images/common/${themeFolder}/bridge.png`,
+        imageSrc:`/assets/images/common/${themeFolder}/bridge.png`,
         description: "All relevant documentation about the Bridge project",
         link: "/docs/products/Bridge/",
     },

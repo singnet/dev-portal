@@ -179,7 +179,11 @@ header button span,
 }
 
 .VPContent.is-home {
-  background: url(/assets/images/common/background_home.png) center/cover !important;
+  background: url(/assets/images/common/light/background_home.png) center/cover !important;
+}
+
+.dark .VPContent.is-home {
+  background: url(/assets/images/common/dark/background_home.png) center/cover !important;
 }
 
 .items {

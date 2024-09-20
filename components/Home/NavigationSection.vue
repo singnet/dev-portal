@@ -7,36 +7,20 @@
     </div>
 </template>
 
-<script >
+
+<script setup>
 import NavigationCard from "./NavigationCard.vue";
 import docsConfig from "../../config/content/docsConfig";
-import { useData } from 'vitepress'
+import { computed } from 'vue'
 
-export default {
-    components: {
-        NavigationCard
-    },
-    // data() {
-    //     return {
-    //         docsConfig
-    //     }
-    // },
-    setup() {
-        // const { isDark } = useData()
-        // console.log("isDark: ", isDark);
-        // const themeFolder = isDark ? 'dark' : 'light';
-    },
-    computed: {
-        // isDark(){
-        //     const { isDark } = useData()
-        //     return isDark.value
-        // },
-        navigationCards() {
-            const { isDark } = useData()
-            return docsConfig(isDark.value)
-        }
-    }
-}
+import { useData } from 'vitepress'
+const { isDark } = useData()
+
+const navigationCards = computed(() => { 
+    return docsConfig(isDark.value);
+})
+console.log("navigationCards: ", navigationCards);
+
 </script>
 
 <style scoped>
