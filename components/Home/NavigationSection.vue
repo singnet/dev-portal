@@ -3,24 +3,24 @@
         <h1 class="navigation-section-title">
             Products docs
         </h1>
-        <NavigationCard v-for="item in navigationCards" :item="item" />
+        <NavigationCard v-for="item in docsConfig" :item="item" />
     </div>
 </template>
 
-
-<script setup>
+<script>
 import NavigationCard from "./NavigationCard.vue";
 import docsConfig from "../../config/content/docsConfig";
-import { computed } from 'vue'
 
-import { useData } from 'vitepress'
-const { isDark } = useData()
-
-const navigationCards = computed(() => { 
-    return docsConfig(isDark.value);
-})
-console.log("navigationCards: ", navigationCards);
-
+export default {
+    components: {
+        NavigationCard
+    },
+    data() {
+        return {
+            docsConfig
+        }
+    }
+}
 </script>
 
 <style scoped>
