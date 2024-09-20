@@ -1,7 +1,7 @@
 <template>
     <div class="navigation-card" @click="redirect">
         <div class="image-container">
-            <img :src="item?.imageSrc" alt="market">
+            <ThemedImage :srcPath="item?.imageSrc" :alt="item?.text" />
         </div>
         <div class="card-body">
             <div class="card-info">
@@ -33,12 +33,16 @@
 </template>
 
 <script>
+import ThemedImage from '../Common/ThemedImage.vue';
 
 export default {
 props: {
     item: {
         type: Object
     }
+},
+components: {
+    ThemedImage
 },
 methods: {
     redirect() {
