@@ -4,9 +4,9 @@
 
 Entities:
 1. [MetadataProvider](#abstract-class-metadataprovider)
-   - [fetch_org_metadata](#fetch_org_metadata)
-   - [fetch_service_metadata](#fetch_service_metadata)
-   - [enhance_service_group_details](#enhance_service_group_details)
+   - [fetch_org_metadata](#abstract-fetch-org-metadata)
+   - [fetch_service_metadata](#abstract-fetch-service-metadata)
+   - [enhance_service_group_details](#abstract-enhance-service-group-details)
 
 ### Abstract Class `MetadataProvider`
 

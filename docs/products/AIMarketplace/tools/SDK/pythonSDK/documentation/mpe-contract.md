@@ -4,15 +4,15 @@
 
 Entities:
 1. [MPEContract](#class-mpecontract)
-   - [\_\_init\_\_](#__init__)
+   - [\_\_init\_\_](#init)
    - [balance](#balance)
    - [deposit](#deposit)
-   - [open_channel](#open_channel)
-   - [deposit_and_open_channel](#deposit_and_open_channel)
-   - [channel_add_funds](#channel_add_funds)
-   - [channel_extend](#channel_extend)
-   - [channel_extend_and_add_funds](#channel_extend_and_add_funds)
-   - [_fund_escrow_account](#_fund_escrow_account)
+   - [open_channel](#open-channel)
+   - [deposit_and_open_channel](#deposit-and-open-channel)
+   - [channel_add_funds](#channel-add-funds)
+   - [channel_extend](#channel-extend)
+   - [channel_extend_and_add_funds](#channel-extend-and-add-funds)
+   - [_fund_escrow_account](#fund-escrow-account)
 
 ### Class `MPEContract`
 

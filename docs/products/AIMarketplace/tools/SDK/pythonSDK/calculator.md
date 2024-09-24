@@ -1,4 +1,3 @@
-
 ## Tutorial on developing a console calculator
 
 This is an example of how to use SingularityNET Python SDK to create a console calculator that works using a service 
@@ -44,20 +43,15 @@ _Note:_ don't forget to import `snet.sdk` package.
 ```python
 from snet import sdk
 
-config = {
-    "private_key": 'APP_PROVIDER_PRIVATE_KEY',
-    "eth_rpc_endpoint": f"https://sepolia.infura.io/v3/INFURE_API_KEY",
-    "concurrency": False,
-    "identity_name": "NAME",
-    "identity_type": "key",
-    "network": "sepolia",
-    "force_update": False
-}
+config = sdk.config.Config(private_key="YOUR_PRIVATE_KEY",
+                               eth_rpc_endpoint=f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
+                               concurrency=False,
+                               force_update=False)
 
 snet_sdk = sdk.SnetSDK(config)
 ```
 
-Here you need to set private values: `private_key`, `eth_rpc_endpoint`, `identity_name` and possibly change some others.
+Here you need to set private values: `private_key`, `eth_rpc_endpoint`and possibly change some others.
 
 Calculator service is deployed on the sepolia network. To create a client of this service we need to pass `org_id`, 
 `service_id` and `group_name` to `create_service_client` method:

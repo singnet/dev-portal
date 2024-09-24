@@ -4,11 +4,11 @@
 
 Entities:
 1. [PaymentChannelProvider](#class-paymentchannelprovider)
-   - [\_\_init\_\_](#__init__)
-   - [get_past_open_channels](#get_past_open_channels)
-   - [open_channel](#open_channel)
-   - [deposit_and_open_channel](#deposit_and_open_channel)
-   - [_get_newly_opened_channel](#_get_newly_opened_channel)
+   - [\_\_init\_\_](#init)
+   - [get_past_open_channels](#get-past-open-channels)
+   - [open_channel](#open-channel)
+   - [deposit_and_open_channel](#deposit-and-open-channel)
+   - [_get_newly_opened_channel](#get-newly-opened-channel)
 
 ### Class `PaymentChannelProvider`
 

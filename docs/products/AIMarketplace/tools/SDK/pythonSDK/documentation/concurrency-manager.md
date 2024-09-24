@@ -4,13 +4,13 @@
 
 Entities:
 1. [ConcurrencyManager](#class-concurrencymanager)
-   - [\_\_init\_\_](#__init__)
-   - [concurrent_calls](#concurrent_calls)
-   - [get_token](#get_token)
-   - [__get_token](#__get_token)
-   - [__get_stub_for_get_token](#__get_stub_for_get_token)
-   - [__get_token_for_amount](#__get_token_for_amount)
-   - [record_successful_call](#record_successful_call)
+   - [\_\_init\_\_](#init)
+   - [concurrent_calls](#concurrent-calls)
+   - [get_token](#get-token)
+   - [__get_token](#gettoken)
+   - [__get_stub_for_get_token](#get-stub-for-get-token)
+   - [__get_token_for_amount](#get-token-for-amount)
+   - [record_successful_call](#record-successful-call)
 
 ### Class `ConcurrencyManager`
 

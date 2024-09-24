@@ -4,10 +4,10 @@
 
 Entities:
 1. [ClientLibGenerator](#class-clientlibgenerator)
-   - [\_\_init\_\_](#__init__)
-   - [generate_client_library](#generate_client_library)
-   - [_get_service_metadata_from_registry](#_get_service_metadata_from_registry)
-   - [_get_service_registration](#_get_service_registration)
+   - [\_\_init\_\_](#init)
+   - [generate_client_library](#generate-client-library)
+   - [_get_service_metadata_from_registry](#get-service-metadata-from-registry)
+   - [_get_service_registration](#get-service-registration)
 
 ### Class `ClientLibGenerator`
 

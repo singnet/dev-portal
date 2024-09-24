@@ -4,13 +4,13 @@
 
 Entities:
 1. [PrePaidPaymentStrategy](#class-prepaidpaymentstrategy)
-   - [\_\_init\_\_](#__init__)
-   - [get_price](#get_price)
-   - [get_payment_metadata](#get_payment_metadata)
-   - [get_concurrency_token_and_channel](#get_concurrency_token_and_channel)
-   - [select_channel](#select_channel)
-   - [_has_sufficient_funds](#static-_has_sufficient_funds)
-   - [_is_valid](#static-_is_valid)
+   - [\_\_init\_\_](#init)
+   - [get_price](#get-price)
+   - [get_payment_metadata](#get-payment-metadata)
+   - [get_concurrency_token_and_channel](#get-concurrency-token-and-channel)
+   - [select_channel](#select-channel)
+   - [_has_sufficient_funds](#static-has-sufficient-funds)
+   - [_is_valid](#static-is-valid)
 
 
 ### Class `PrePaidPaymentStrategy`

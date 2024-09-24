@@ -4,11 +4,11 @@
 
 Entities:
 1. [DefaultPaymentStrategy](#class-defaultpaymentstrategy)
-   - [\_\_init\_\_](#__init__)
-   - [set_concurrency_token](#set_concurrency_token)
-   - [set_channel](#set_channel)
-   - [get_payment_metadata](#get_payment_metadata)
-   - [get_concurrency_token_and_channel](#get_concurrency_token_and_channel)
+   - [\_\_init\_\_](#init)
+   - [set_concurrency_token](#set-concurrency-token)
+   - [set_channel](#set-channel)
+   - [get_payment_metadata](#get-payment-metadata)
+   - [get_concurrency_token_and_channel](#get-concurrency-token-and-channel)
 
 ### Class `DefaultPaymentStrategy`
 

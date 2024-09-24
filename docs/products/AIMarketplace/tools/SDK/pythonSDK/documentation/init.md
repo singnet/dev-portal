@@ -1,23 +1,20 @@
-
 ## module: sdk.\_\_init\_\_
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/__init__.py) to GitHub
 
 Entities:
 1. [SnetSDK](#class-snetsdk)
-   - [\_\_init\_\_](#__init__)
-   - [setup_config](#setup_config)
-   - [set_session_identity](#set_session_identity)
-   - [create_service_client](#create_service_client)
-   - [get_service_stub](#get_service_stub)
-   - [get_path_to_pb_files](#get_path_to_pb_files)
-   - [get_module_by_keyword](#get_module_by_keyword)
-   - [get_service_metadata](#get_service_metadata)
-   - [_get_first_group](#_get_first_group)
-   - [_get_group_by_group_name](#_get_group_by_group_name)
-   - [_get_service_group_details](#_get_service_group_details)
-   - [get_organization_list](#get_organization_list)
-   - [get_services_list](#get_services_list)
+   - [\_\_init\_\_](#init)
+   - [create_service_client](#create-service-client)
+   - [get_service_stub](#get-service-stub)
+   - [get_path_to_pb_files](#get-path-to-pb-files)
+   - [get_module_by_keyword](#get-module-by-keyword)
+   - [get_service_metadata](#get-service-metadata)
+   - [_get_first_group](#get-first-group)
+   - [_get_group_by_group_name](#get-group-by-group-name)
+   - [_get_service_group_details](#get-service-group-details)
+   - [get_organization_list](#get-organization-list)
+   - [get_services_list](#get-services-list)
 
 ### Class `SnetSDK`
 
@@ -32,7 +29,7 @@ It provides methods for creating service clients, managing identities, and confi
 
 #### attributes
 
-- `_sdk_config` (dict): The SDK configuration.
+- `_sdk_config` (Config): An instance of the `Config` class.
 - `_metadata_provider` (MetadataProvider): An instance of the `MetadataProvider` class. _Note_: There is currently only 
 one implementation of `MetadataProvider` which is `IPFSMetadataProvider`, so this attribute can only be initialized to 
 `IPFSMetadataProvider` at this time.
@@ -53,46 +50,11 @@ Instantiates the MPE contract with the specified contract address if provided, o
 Instantiates the IPFS client with the specified IPFS endpoint if provided, otherwise uses the default IPFS endpoint.
 Instantiates the Registry contract with the specified contract address if provided, otherwise uses the default Registry 
 contract. Instantiates the Account object with the specified Web3 client, SDK configuration, and MPE contract.
-Creates an instance of the "Config" class, passing `_sdk_config` to it, and calls the `setup_config` method with this 
-instance as an argument.
 
 ###### args:
 
-- `sdk_config` (dict): A dictionary containing the SDK configuration.
+- `sdk_config` (Config): A `Config` object containing the SDK configuration.
 - `metadata_provider` (MetadataProvider): A `MetadataProvider` object. Defaults to _None_.
-
-###### returns:
-
-- _None_
-
-#### `setup_config`
-
-Sets up the configuration for the SnetSDK instance. This function checks the network and identity_name in 
-the configuration and sets up the configuration accordingly. If the network is specified, and it is different from 
-the current session network, it sets the session network. If the identity_name is specified, it sets the session identity.
-If there are no identities in the configuration, it checks if the identity is selected and raises an exception if not.
-
-###### args:
-
-- config (Config): The `snet.cli.config.Congig` instance.
-
-###### returns:
-
-- _None_
-
-###### raises:
-
-- Exception: If the identity name is not passed or selected.
-
-#### `set_session_identity`
-
-Sets the session identity in the given config.
-
-###### args:
-
-- `identity_name` (str): The name of the identity to set.
-- `config` (Config): The `snet.cli.config.Congig` object to modify.
-- `out_f` (TextIO): The output to write messages to.
 
 ###### returns:
 
