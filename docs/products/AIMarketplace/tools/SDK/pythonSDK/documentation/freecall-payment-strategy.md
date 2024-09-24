@@ -4,9 +4,9 @@
 
 Entities:
 1. [FreeCallPaymentStrategy](#class-freecallpaymentstrategy)
-   - [is_free_call_available](#is_free_call_available)
-   - [get_payment_metadata](#get_payment_metadata)
-   - [generate_signature](#generate_signature)
+   - [is_free_call_available](#is-free-call-available)
+   - [get_payment_metadata](#get-payment-metadata)
+   - [generate_signature](#generate-signature)
 
 ### Class `FreeCallPaymentStrategy`
 

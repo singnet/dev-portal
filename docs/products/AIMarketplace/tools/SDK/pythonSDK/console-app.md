@@ -1,4 +1,3 @@
-
 ## Tutorial on developing a console application
 
 This is an example of how to use SingularityNET Python SDK to create a console application that uses all the 
@@ -80,20 +79,15 @@ from snet import sdk
 SDK configuration that is configured by the application provider.
 To run the application you need to change the 'private_key', 'eth_rpc_endpoint' and 'identity_name' values.
 """
-config = {
-    "private_key": 'APP_PROVIDER_PRIVATE_KEY',
-    "eth_rpc_endpoint": f"https://sepolia.infura.io/v3/APP_PROVIDER_INFURA_API_KEY",
-    "concurrency": False,
-    "identity_name": "NAME",
-    "identity_type": "key",
-    "network": "sepolia",
-    "force_update": False
-}
+config = sdk.config.Config(private_key="YOUR_PRIVATE_KEY",
+                               eth_rpc_endpoint=f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
+                               concurrency=False,
+                               force_update=False)
 
 snet_sdk = sdk.SnetSDK(config)  # the 'SnetSDK' instance
 ```
 
-Here you need to set private values: `private_key`, `eth_rpc_endpoint`, `identity_name` and possibly change some others.
+Here you need to set private values: `private_key`, `eth_rpc_endpoint` and possibly change some others.
 
 #### Global variables
 

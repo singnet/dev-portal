@@ -4,12 +4,12 @@
 
 Entities:
 1. [PaymentChannel](#class-paymentchannel)
-   - [\_\_init\_\_](#__init__)
-   - [add_funds](#add_funds)
-   - [extend_expiration](#extend_expiration)
-   - [extend_and_add_funds](#extend_and_add_funds)
-   - [sync_state](#sync_state)
-   - [_get_current_channel_state](#_get_current_channel_state)
+   - [\_\_init\_\_](#init)
+   - [add_funds](#add-funds)
+   - [extend_expiration](#extend-expiration)
+   - [extend_and_add_funds](#extend-and-add-funds)
+   - [sync_state](#sync-state)
+   - [_get_current_channel_state](#get-current-channel-state)
 
 ### Class `PaymentChannel`
 

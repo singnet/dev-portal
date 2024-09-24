@@ -3,9 +3,9 @@
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/payment_strategies/payment_strategy.py) to GitHub
 
 Entities:
-1. [PaymentStrategy](#class-paymentstrategy)
-   - [get_payment_metadata](#get_payment_metadata)
-   - [get_price](#get_price)
+1. [PaymentStrategy](#abstract-class-paymentstrategy)
+   - [get_payment_metadata](#abstract-get-payment-metadata)
+   - [get_price](#abstract-get-price)
 
 ### Abstract Class `PaymentStrategy`
 
