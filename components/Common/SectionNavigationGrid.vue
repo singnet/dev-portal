@@ -39,9 +39,13 @@ export default {
     border-radius: 8px;
     text-align: center;
     border: 1px solid var(--vp-c-divider);
-    background-color: var(--vp-sidebar-bg-color);
     text-decoration: none;
     color: var(--vp-c-text-1);
+}
+
+.dark .section-navigation-block {
+    background-color: #1e1c4940;
+    box-shadow: 0 0 20px rgb(87, 0, 169, 0.35) !important;
 }
 
 .section-navigation-block:hover {

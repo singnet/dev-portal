@@ -33,6 +33,7 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: var(--vp-c-white);
   --vp-button-brand-bg: var(--vp-c-brand-3);
@@ -43,22 +44,26 @@
   --vp-button-brand-active-text: var(--vp-c-white);
   --vp-button-brand-active-bg: var(--vp-c-brand-1);
   --vp-button-gradient: linear-gradient(0deg, rgba(208, 149, 255, 0.2), rgba(208, 149, 255, 0.2)), linear-gradient(90deg, rgba(158, 0, 255, 0.2) 34.81%, rgba(0, 102, 255, 0.2) 99.81%);
+
   --vp-custom-block-tip-border: transparent;
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg,
       #bd34fe 30%,
       #41d1ff);
-
   --vp-home-hero-image-background-image: linear-gradient(-45deg,
       #bd34fe 50%,
       #47caff 50%);
   --vp-home-hero-image-filter: blur(44px);
+
   --vp-accent-border: purple;
   --vp-light-card: rgba(255, 255, 255, 0.15);
   --vp-dark-card: rgba(164, 164, 164, 0.15);
+
+  --vp-shadow-1: 0 0 70px rgba(110, 33, 157, 0.5);
 
   --vp-nav-height: 70px;
   --vp-nav-logo-height: 45px;
@@ -68,7 +73,7 @@
 }
 
 .dark {
-  --vp-sidebar-bg-color: rgba(22, 22, 24, 0.6);
+  --vp-sidebar-bg-color: rgba(0, 0, 0, 0.5);
 }
 
 @font-face {
@@ -137,7 +142,7 @@
 
 header span {
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 100;
   user-select: none;
 }
 
@@ -196,6 +201,10 @@ header button span,
   background-image: url("assets/images/common/dark/background_home.png"),  linear-gradient(155.44deg, rgba(2, 0, 53, 0.8) 0.81%, rgba(2, 0, 53, 0.8) 17.76%, rgba(6, 0, 113, 0.8) 103.54%) !important;
 }
 
+.VPDoc img {
+  border-radius: 20px;
+}
+
 
 .VPContent  {
   background: center/cover url(/assets/images/common/light/background_docs.png) fixed !important;
@@ -220,6 +229,7 @@ header button span,
   text-overflow: ellipsis;
   width: 100%;
 }
+
 
 img {
   margin: auto;
