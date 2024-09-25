@@ -41,10 +41,11 @@ export default {
     border: 1px solid var(--vp-c-divider);
     background-color: var(--vp-sidebar-bg-color);
     text-decoration: none;
+    color: var(--vp-c-text-1);
 }
 
 .section-navigation-block:hover {
-    border-color: var(--vp-c-brand-1);
+    border-color: var(--vp-c-accent);
 }
 
 @media (max-width: 768px) {

@@ -1,6 +1,6 @@
 <template>
     <div class="home-header-container">
-        <h1>
+        <h1 class="page-title">
             Welcome to the <span class="gradient-text">AI Dev</span> Community
         </h1>
         <h2>
@@ -19,23 +19,19 @@ export default {
 </script>
 
 <style scoped>
-.home-header-container h1,
+.page-title {
+    font-size: 55px;
+    font-weight: 600;
+    line-height: 45px;
+    margin: 25px auto;
+    text-align: center;
+}
+
 .home-header-container h2 {
     padding: 0;
     margin: 0;
     border: none;
     text-align: center;
-}
-
-.home-header-container h1 {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 35px;
-    margin-bottom: 25px;
-    margin-top: 25px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
 }
 
 .home-header-container h2 {
@@ -51,12 +47,15 @@ export default {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--vp-c-black);
+    margin: 0 10px;
+    font-size: 57px;
+    font-weight: 800;
 }
 
-@media (max-width: 640px) {
-    .home-header-container h1 {
+@media (max-width: 770px) {
+    .page-title {
         font-size: 24px;
-        display: block;
+        line-height: 30px;
     }
 }
 </style>

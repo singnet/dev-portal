@@ -1,5 +1,5 @@
 <template>
-    <div class="tool-card">
+    <div class="tool-card card">
         <div class="tool-info">
             <h1 class="tool-title">
                     {{ item?.text }}
@@ -46,9 +46,6 @@ methods: {
         align-items: center;
         width: 100%;
         justify-content: space-between;
-        border-radius: 25px;
-        box-shadow: 0 0 10px var(--vp-c-lightgray);
-        background: var(--vp-c-bg) 70%;
         padding: 24px;
     }
 

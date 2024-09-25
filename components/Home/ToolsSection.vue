@@ -6,7 +6,7 @@
             </h1>
         </div>
         <div class="tools-items-container">
-            <div class="tools-header-component">
+            <div class="tools-header-component card">
                 <ThemedImage srcPath="tools.png" alt="tools" />
                 <p>On our website you will find a convenient block with tools and tools for creating your ideal web resource. Start your creation journey now!</p>
             </div>
@@ -106,9 +106,6 @@ export default {
 
 .tools-header-component {
     margin-top: 20px;
-    border-radius: 25px;
-    box-shadow: 0 0 20px var(--vp-c-lightgray);
-    background: var(--vp-c-bg) 70%;;
     padding: 24px;
     height: min-content;
 }

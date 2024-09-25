@@ -26,7 +26,7 @@ export default {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 130px;
 }
 
 .dark .card-redirect svg{

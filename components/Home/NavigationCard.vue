@@ -1,5 +1,5 @@
 <template>
-    <div class="navigation-card" @click="redirect">
+    <div class="navigation-card card" @click="redirect">
         <div class="image-container">
             <ThemedImage :srcPath="item?.imageSrc" :alt="item?.text" />
         </div>
@@ -57,9 +57,6 @@ methods: {
 .navigation-card {
     padding: 25px;
     width: 310px;
-    border-radius: 25px;
-    box-shadow: 0 0 20px var(--vp-c-lightgray);
-    background: var(--vp-c-bg) 70%;
     cursor: pointer;
     display: flex;
     flex-direction: column;
