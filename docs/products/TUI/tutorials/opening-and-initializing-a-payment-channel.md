@@ -2,7 +2,7 @@
 
 Using the left navigation bar, switch to the client menu.&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../public/assets/images/products/TUI/image.png" alt=""><figcaption></figcaption></figure>
 
 Then navigate to the "[Channel Open Initialize](../menus/client/channels-menu/initialize-open-page/open-initialize.md)" Page, which can be found at:
 
@@ -12,7 +12,7 @@ Then navigate to the "[Channel Open Initialize](../menus/client/channels-menu/in
 
 If you have arrived at the correct page, you should see the menu shown below
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../public/assets/images/products/TUI/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Fill out the fields according to which organization you would like to create a channel with, and how many AGIX tokens you would like to add to the channel.&#x20;
 
