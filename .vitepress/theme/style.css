@@ -62,7 +62,8 @@
   --vp-accent-border: purple;
   --vp-light-card: rgba(255, 255, 255, 0.15);
   --vp-dark-card: rgba(164, 164, 164, 0.15);
-
+  
+  --vp-scroll-thumb-color: #80788d;
   --vp-shadow-1: 0 0 70px rgba(110, 33, 157, 0.5);
 
   --vp-nav-height: 70px;
@@ -212,6 +213,16 @@ header button span,
 
 .dark .VPContent  {
   background: center/cover url(/assets/images/common/dark/background_docs.png) fixed !important;
+}
+
+.VPSidebar::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--vp-sidebar-bg-color);
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+  background: var(--vp-scroll-thumb-color);
+  border-radius: 10px;
 }
 
 .items {
