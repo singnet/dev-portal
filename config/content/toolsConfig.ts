@@ -24,4 +24,9 @@ export default [
         description: "Java SDK to invoke AI services on Java SE and Android platforms",
         link: "https://github.com/singnet/snet-sdk-java",
     },
+    {
+        text: "SNET TUI",
+        description: "Mouse-centric text user interface to simplify interacting with the SingularityNET command line interface",
+        link: "https://github.com/singnet/TUI",
+    },
 ]
