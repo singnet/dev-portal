@@ -59,28 +59,28 @@ export default {
             swiperOptions: {
                 effect: 'creative',
                 creativeEffect: {
-                    limitProgress: 2,
+                    limitProgress: 5,
                     prev: {
-                        opacity: 0.6,
-                        translate: [0, '70%', 10],
+                        opacity: 0.8,
+                        translate: ["1%", '110%', 0],
                     },
                     next: {
-                        translate: [0, '-100%', -100],
+                        translate: ["0%", '-110%', 0],
                     },
                 },
-                spaceBetween: 20,
                 direction: 'vertical',
                 pagination: {
                     clickable: true,
                 },
                 loop: true,
                 mousewheel: {
-                    thresholdDelta: 70
+                    thresholdDelta: 80
                 },
                 keyboard: {
                     enabled: true
                 },
-                slidesPerView: 3
+                slidesPerView: 3,
+                loop: true,
             }
         }
     },
@@ -105,7 +105,6 @@ export default {
 }
 
 .tools-header-component {
-    margin-top: 20px;
     padding: 24px;
     height: min-content;
 }
@@ -125,20 +124,25 @@ export default {
 }
 
 .swiper-container {
-    max-height: 700px;
-    padding: 20px 40px 20px 20px;
+    max-height: 500px;
+    padding: 0 40px 20px 20px;
     width: 100%;
 }
 
 :deep(.swiper-slide) {
-  min-height: 200px;
+  min-height: 150px;
 }
+
 :deep(.swiper-pagination-bullet) {
     background-color: var(--vp-c-accent);
 }
 
 :deep(.swiper-pagination-bullets) {
     top: 20%;
+}
+
+:deep(.swiper-slide-visible) {
+    opacity: 1 !important;
 }
 
 .tools-header {

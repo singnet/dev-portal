@@ -47,6 +47,7 @@ methods: {
         width: 100%;
         justify-content: space-between;
         padding: 24px;
+        margin-top: 20px
     }
 
 
