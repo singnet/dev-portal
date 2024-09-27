@@ -70,7 +70,7 @@ If Kevin is buying services from the Kevin, they both need to enter in to a form
 
 ### Diagram showcasing how Kevin and Jack Communicate
 
-![How sellers and buyers interact](/public/assets/images/products/AIMarketplace/core-concepts/persona.png)
+![How sellers and buyers interact](/assets/images/products/AIMarketplace/core-concepts/persona.png)
 
 ### State management of the channel
 

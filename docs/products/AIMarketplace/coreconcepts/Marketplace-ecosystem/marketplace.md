@@ -6,7 +6,7 @@ For example, if you publish a new organization, a new service, the marketplace r
 
 The following image shows the contents from the marketplace.
 
-![marketplace](/public/assets/images/products/AIMarketplace/forcomers/dapp_landing_page.png)
+![marketplace](/assets/images/products/AIMarketplace/forcomers/dapp_landing_page.png)
 
 The decentralized application (DApp) does the following:
 - Reads data from the on-chain Registry and pairs it with off-chain metadata.
