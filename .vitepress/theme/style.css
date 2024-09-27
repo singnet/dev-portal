@@ -8,6 +8,7 @@
   --vp-c-accent: #4086FF;
 
   --vp-sidebar-bg-color: rgba(246, 246, 247, 0.6);
+  --vp-sidebar-bg-color-non-transparent: rgb(246, 246, 247);
 
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
@@ -77,6 +78,7 @@
 
 .dark {
   --vp-sidebar-bg-color: rgba(0, 0, 0, 0.5);
+  --vp-sidebar-bg-color-non-transparent: rgb(0, 0, 0);
 }
 
 @font-face {
@@ -377,6 +379,7 @@ body {
 @media (max-width: 960px) {
   .VPSidebar {
     max-width: var(--vp-sidebar-width) !important;
+    background-color: var(--vp-sidebar-bg-color-non-transparent) !important;
   }
 }
 
