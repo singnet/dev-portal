@@ -57,5 +57,9 @@ export default {
         font-size: 24px;
         line-height: 30px;
     }
+
+    .gradient-text {
+        font-size: 32px;
+    }
 }
 </style>

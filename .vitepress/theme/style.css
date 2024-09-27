@@ -295,10 +295,6 @@ body {
   justify-content: right;
 }
 
-/* .VPNavBar.has-sidebar .title {
-  position: unset !important;
-} */
-
 .DocSearch-Button-Keys {
   display: none !important;
 }
