@@ -295,9 +295,9 @@ body {
   justify-content: right;
 }
 
-.VPNavBar.has-sidebar .title {
+/* .VPNavBar.has-sidebar .title {
   position: unset !important;
-}
+} */
 
 .DocSearch-Button-Keys {
   display: none !important;
@@ -381,9 +381,7 @@ body {
     max-width: var(--vp-sidebar-width) !important;
     background-color: var(--vp-sidebar-bg-color-non-transparent) !important;
   }
-}
-
-@media (max-width: 768px) {
+  
   .VPImage.logo {
     max-width: 115px;
   }
