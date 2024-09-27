@@ -3,8 +3,10 @@ import generalConfig from "../config/content/generalConfig";
 import navContent from "../config/content/navContentConfig";
 import sidebarContent from "../config/content/sidebarContentConfig";
 import markdownConfig from '../config/markdown/markdownConfig';
+import assetsLinks from "../config/mediaLinks/assetsLinks";
 
 export default defineConfig({
+  head: assetsLinks,
   title: generalConfig.siteName,
   description: generalConfig.siteDescription,
   themeConfig: {

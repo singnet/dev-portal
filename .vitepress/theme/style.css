@@ -220,11 +220,11 @@ header button span,
 }
 
 .VPContent.is-home {
-  background: url(/assets/images/common/light/background_home.png) center/cover !important;
+  background: url(/assets/images/common/light/background_home.webp) center/cover !important;
 }
 
 .dark .VPContent.is-home {
-  background-image: url("assets/images/common/dark/background_home.png"),  linear-gradient(155.44deg, rgba(2, 0, 53, 0.8) 0.81%, rgba(2, 0, 53, 0.8) 17.76%, rgba(6, 0, 113, 0.8) 103.54%) !important;
+  background-image: url(/assets/images/common/dark/background_home.webp), linear-gradient(155.44deg, rgba(2, 0, 53, 0.8) 0.81%, rgba(2, 0, 53, 0.8) 17.76%, rgba(6, 0, 113, 0.8) 103.54%) !important;
 }
 
 .VPDoc img {
@@ -233,11 +233,11 @@ header button span,
 
 
 .VPContent  {
-  background: center/cover url(/assets/images/common/light/background_docs.png) fixed !important;
+  background: center/cover url(/assets/images/common/light/background_docs.webp) fixed !important;
 }
 
 .dark .VPContent  {
-  background: center/cover url(/assets/images/common/dark/background_docs.png) fixed !important;
+  background: center/cover url(/assets/images/common/dark/background_docs.webp) fixed !important;
 }
 
 .items {
