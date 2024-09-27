@@ -71,6 +71,8 @@
   --default-padding: 32px;
   --vp-layout-max-width-large-screen: 1800px;
   --vp-sidebar-width: 390px;
+  --vp-scroll-width: 5px;
+  --vp-scroll-height: 5px;
 }
 
 .dark {
@@ -128,6 +130,23 @@
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: var(--vp-scroll-width);
+  height: var(--vp-scroll-height);
+  background-color: var(--vp-sidebar-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-scroll-thumb-color);
+  border-radius: 10px;
+}
+
+html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
+body { overflow-y: scroll; }
+
 .wrapper {
   padding: 0 32px !important;
 }
@@ -139,6 +158,10 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+.VPNav {
+  width: 100vw !important;
 }
 
 header span {
@@ -213,16 +236,6 @@ header button span,
 
 .dark .VPContent  {
   background: center/cover url(/assets/images/common/dark/background_docs.png) fixed !important;
-}
-
-.VPSidebar::-webkit-scrollbar {
-  width: 5px;
-  background-color: var(--vp-sidebar-bg-color);
-}
-
-.VPSidebar::-webkit-scrollbar-thumb {
-  background: var(--vp-scroll-thumb-color);
-  border-radius: 10px;
 }
 
 .items {
