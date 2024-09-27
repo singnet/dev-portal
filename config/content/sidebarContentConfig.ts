@@ -505,7 +505,465 @@ export default [
       {
         text: "FAQ",
         link: "/docs/products/Airdrop/faq"
-      }
+      },
+    ],
+  },
+  {
+    text: "TUI",
+    link: "/docs/products/TUI/",
+    collapsed: true,
+    items: [
+      {
+        text: "Getting Started",
+        link: "/docs/products/TUI/getting-started/",
+        collapsed: true,
+        items: [
+          {
+            text: "Installation",
+            link: "/docs/products/TUI/getting-started/installation",
+          },
+          {
+            text: "First time start up",
+            link: "/docs/products/TUI/getting-started/first-time-start-up",
+          },
+          {
+            text: "Execution",
+            link: "/docs/products/TUI/getting-started/execution",
+          },
+        ]
+      },
+      {
+        text: "Menus",
+        link: "/docs/products/TUI/menus/",
+        collapsed: true,
+        items:[
+          {
+            text: "Account",
+            link: "/docs/products/TUI/menus/account/",
+            collapsed: true,
+            items:[
+              {            
+                text: "Identify page",
+                link: "/docs/products/TUI/menus/account/identity-page/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Create identity page",
+                    link: "/docs/products/TUI/menus/account/identity-page/create-identity-page",
+                    collapsed: true,
+                  },
+                ],
+              },
+              {
+                text: "Treasurer",
+                link: "/docs/products/TUI/menus/account/treasurer/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Claim",
+                    link: "/docs/products/TUI/menus/account/treasurer/claim",
+                    collapsed: true,
+                  },
+                  {
+                    text: "Claim all",
+                    link: "/docs/products/TUI/menus/account/treasurer/claim-all",
+                    collapsed: true,
+                  },
+                  {
+                    text: "Claim expired",
+                    link: "/docs/products/TUI/menus/account/treasurer/claim-expired",
+                    collapsed: true,
+                  },
+                ],
+              },
+              {
+                text: "Deposit",
+                link: "/docs/products/TUI/menus/account/deposit",
+              },
+              {
+                text: "Transfer",
+                link: "/docs/products/TUI/menus/account/transfer",
+              },
+              {
+                text: "Withdraw",
+                link: "/docs/products/TUI/menus/account/withdraw",
+              }
+            ],
+          },
+          {
+            text: "Client",
+            link: "/docs/products/TUI/menus/client/",
+            collapsed: true,
+            items:[
+              {
+                text: "Channels menu",
+                link: "/docs/products/TUI/menus/client/channels-menu/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Claim page",
+                    link: "/docs/products/TUI/menus/client/channels-menu/claim-page/",
+                    collapsed: true,
+                    items:[
+                      {
+                        text: "Claim timeout",
+                        link: "/docs/products/TUI/menus/client/channels-menu/claim-page/claim-timeout",
+                      },
+                      {
+                        text: "Claim all timeout",
+                        link: "/docs/products/TUI/menus/client/channels-menu/claim-page/claim-all-timeout",
+                      },
+                    ],
+                  },
+                  {
+                    text: "Extend page",
+                    link: "/docs/products/TUI/menus/client/channels-menu/extend-page/",
+                    collapsed: true,
+                    items:[
+                      {
+                        text: "Extend add",
+                        link: "/docs/products/TUI/menus/client/channels-menu/extend-page/extend-add",
+                      },
+                      {
+                        text: "Extend add organization",
+                        link: "/docs/products/TUI/menus/client/channels-menu/extend-page/extend-add-organization",
+                      },
+                    ],
+                  },
+                  {
+                    text: "Initialize open page",
+                    link: "/docs/products/TUI/menus/client/channels-menu/initialize-open-page/",
+                    collapsed: true,
+                    items:[
+                      {
+                        text: "Initialize",
+                        link: "/docs/products/TUI/menus/client/channels-menu/initialize-open-page/initialize",
+                      },
+                      {
+                        text: "Initialize metadata",
+                        link: "/docs/products/TUI/menus/client/channels-menu/initialize-open-page/initialize-metadata",
+                      },
+                      {
+                        text: "Open initialize",
+                        link: "/docs/products/TUI/menus/client/channels-menu/initialize-open-page/open-initialize",
+                      },
+                      {
+                        text: "Open initialize metadata",
+                        link: "/docs/products/TUI/menus/client/channels-menu/initialize-open-page/open-initialize-metadata",
+                      },
+                    ],
+                  },
+                  {
+                    text: "Print page",
+                    link: "/docs/products/TUI/menus/client/channels-menu/print-page/",
+                    collapsed: true,
+                    items:[
+                      {
+                        text: "Print all channels filter group",
+                        link: "/docs/products/TUI/menus/client/channels-menu/print-page/print-all-channels-filter-group", 
+                      },
+                      {
+                        text: "Print all channels filter sender",
+                        link: "/docs/products/TUI/menus/client/channels-menu/print-page/print-all-channels-filter-sender",
+                      },
+                      {
+                        text: "Print all channels filter group sender",
+                        link: "/docs/products/TUI/menus/client/channels-menu/print-page/print-all-channels-filter-group-sender",
+                      },
+                      {
+                        text: "Print all channels filter group recipient",
+                        link: "/docs/products/TUI/menus/client/channels-menu/print-page/print-all-channels-filter-recipient",
+                      },
+                      {
+                        text: "Print initialized channels",
+                        link: "/docs/products/TUI/menus/client/channels-menu/print-page/print-initialized-channels",
+                      },
+                      {
+                        text: "Print initialized channels filter organization",
+                        link: "/docs/products/TUI/menus/client/channels-menu/print-page/print-initialized-channels-filter-organization",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                text: "Call",
+                link: "/docs/products/TUI/menus/client/call",
+              },
+              {
+                text: "Call low level",
+                link: "/docs/products/TUI/menus/client/call-low-level",
+              },
+              {
+                text: "Get channel state",
+                link: "/docs/products/TUI/menus/client/get-channel-state",
+              },
+            ],
+          },
+          {
+            text: "Organization",
+            link: "/docs/products/TUI/menus/organization/",
+            collapsed: true,
+            items:[
+              {
+                text: "Groups page",
+                link: "/docs/products/TUI/menus/organization/groups-page/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Add a group",
+                    link: "/docs/products/TUI/menus/organization/groups-page/add-a-group",
+                  },
+                  {
+                    text: "Update group",
+                    link: "/docs/products/TUI/menus/organization/groups-page/update-group",
+                  },
+                ],
+              },
+              {
+                text: "Manage page",
+                link: "/docs/products/TUI/menus/organization/manage-page/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Create organization",
+                    link: "/docs/products/TUI/menus/organization/manage-page/create-organization",
+                  },
+                  {
+                    text: "Delete organization",
+                    link: "/docs/products/TUI/menus/organization/manage-page/delete-organization",
+                  },
+                ],
+              },
+              {
+                text: "Members page",
+                link: "/docs/products/TUI/menus/organization/members-page/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Manage members",
+                    link: "/docs/products/TUI/menus/organization/members-page/manage-members",
+                  },
+                  {
+                    text: "Change organization owner",
+                    link: "/docs/products/TUI/menus/organization/members-page/change-organization-owner",
+                  },
+                ],
+              },
+              {
+                text: "Metadata page",
+                link: "/docs/products/TUI/menus/organization/metadata-page/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Add description",
+                    link: "/docs/products/TUI/menus/organization/metadata-page/add-description",
+                  },
+                  {
+                    text: "Initialize metadata",
+                    link: "/docs/products/TUI/menus/organization/metadata-page/initialize-metadata",
+                  },
+                  {
+                    text: "Manage assets",
+                    link: "/docs/products/TUI/menus/organization/metadata-page/manage-assets",
+                  },
+                  {
+                    text: "Manage contacts",
+                    link: "/docs/products/TUI/menus/organization/metadata-page/manage-contacts",
+                  },
+                  {
+                    text: "Print metadata",
+                    link: "/docs/products/TUI/menus/organization/metadata-page/print-metadata",
+                  },
+                  {
+                    text: "Update metadata",
+                    link: "/docs/products/TUI/menus/organization/metadata-page/update-metadata",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            text: "Services",
+            link: "/docs/products/TUI/menus/services/",
+            collapsed: true,
+            items:[
+              {
+                text: "Manage page",
+                link: "/docs/products/TUI/menus/services/manage-page/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Publish Service",
+                    link: "/docs/products/TUI/menus/services/manage-page/publish-service",
+                  },
+                  {
+                    text: "Delete service",
+                    link: "/docs/products/TUI/menus/services/manage-page/delete-service",
+                  },
+                ],
+              },
+              {
+                text: "Metadata menu",
+                link: "/docs/products/TUI/menus/services/metadata-menu/",
+                collapsed: true,
+                items:[
+                  {
+                    text: "Add/remove page",
+                    link: "/docs/products/TUI/menus/services/metadata-menu/add-remove-page/",
+                    collapsed: true,
+                    items:[
+                      {
+                        text: "Add/remove description",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/add-remove-page/add-service-description",
+                      },
+                      {
+                        text: "Add/remove daemon address",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/add-remove-page/add-remove-daemon-address",
+                      },
+                      {
+                        text: "Add/remove service metadata assets",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/add-remove-page/add-remove-service-metadata-assets",
+                      },
+                      {
+                        text: "Add/remove service metadata groups",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/add-remove-page/add-remove-service-metadata-groups",
+                      },
+                      {
+                        text: "Add/remove service metadata media",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/add-remove-page/add-remove-service-metadata-media",
+                      },
+                    ]
+                  },
+                  {
+                    text: "Get page",
+                    link: "/docs/products/TUI/menus/services/metadata-menu/get-page/",
+                    collapsed: true,
+                    items:[
+                      {
+                        text: "Service status",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/get-page/service-status",
+                      },
+                      {
+                        text: "API metadata",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/get-page/api-metadata",
+                      },
+                      {
+                        text: "API registry",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/get-page/api-registry",
+                      },
+                    ]
+                  },
+                  {
+                    text: "Set page",
+                    link: "/docs/products/TUI/menus/services/metadata-menu/set-page/",
+                    collapsed: true,
+                    items:[
+                      {
+                        text: "Set fixed price",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/set-page/set-fixed-price",
+                      },
+                      {
+                        text: "Set free calls",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/set-page/set-free-calls",
+                      },
+                      {
+                        text: "Set free call signer address",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/set-page/set-free-call-signer-address",
+                      },
+                      {
+                        text: "Set method price",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/set-page/set-method-price",
+                      },
+                      {
+                        text: "Set model",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/set-page/set-model",
+                      },
+                    ],
+                  },
+                  {
+                    text: "Update page",
+                    link: "/docs/products/TUI/menus/services/metadata-menu/update-page/",
+                    collapsed: true,
+                    items:[
+                      {
+                        text: "Update service daemon address",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/update-page/update-service-daemon-address",
+                      },
+                      {
+                        text: "Update metadata",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/update-page/update-metadata",
+                      },
+                      {
+                        text: "Validate metadata",
+                        link: "/docs/products/TUI/menus/services/metadata-menu/update-page/validate-metadata",
+                      },
+                    ]
+                  },
+                  {
+                    text: "Initialize service metadata",
+                    link: "/docs/products/TUI/menus/services/metadata-menu/initialize-service-metadata",
+                  },
+                ]
+              },
+              {
+                text: "View all page",
+                link: "/docs/products/TUI/menus/services/view-all-page",
+              },
+            ],
+          },
+          {
+            text: "Custom command",
+            link: "/docs/products/TUI/menus/custom-command",
+          },
+        ]
+      },
+      {
+        text: "Tutorials",
+        link: "/docs/products/TUI/tutorials/",
+        collapsed: true,
+        items:[
+          {
+            text: "Adding funds to wallet",
+            link: "/docs/products/TUI/tutorials/adding-funds-to-wallet",
+          },
+          {
+            text: "Invoke a service with the TUI",
+            link: "/docs/products/TUI/tutorials/invoke-a-service-with-the-tui",
+          },
+          {
+            text: "Opening and Initializing a payment channel",
+            link: "/docs/products/TUI/tutorials/opening-and-initializing-a-payment-channel",
+          },
+        ],
+      },
+      {
+        text: "FAQ",
+        link: "/docs/products/TUI/faq/",
+        collapsed: true,
+        items: [
+          {
+            text: "Could not retrieve account information",
+            link: "/docs/products/TUI/faq/could-not-retrieve-account-information",
+          },
+          {
+            text: "How do I select text, and copy/paste?",
+            link: "/docs/products/TUI/faq/how-do-i-select-text-and-copy-paste",
+          },
+          {
+            text: "I want to use my keyboard instead of my mouse!",
+            link: "/docs/products/TUI/faq/i-want-to-use-my-keyboard-instead-of-my-mouse",
+          },
+          {
+            text: "JSON Serialization on Windows",
+            link: "/docs/products/TUI/faq/json-serialization-on-windows",
+          },
+          {
+            text: "The TUI looks really bad on my screen! What do I do?",
+            link: "/docs/products/TUI/faq/the-tui-looks-really-bad-on-my-screen-what-do-i-do",
+          },
+        ]  
+      },
     ]
   }
 ];
