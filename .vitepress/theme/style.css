@@ -362,6 +362,14 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
+.aside:not(:has(li)) {
+  width: 0 !important;
+}
+
+.aside:not(:has(li)) .aside-container {
+  display: none;
+}
+
 @media (min-width: 1770px) {
   :root {
     --vp-layout-max-width: var(--vp-layout-max-width-large-screen);

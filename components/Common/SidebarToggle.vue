@@ -19,8 +19,14 @@
 <script setup>
 import { ref } from "vue";
 
+const SidebarStates = {
+  OPEN: "open",
+  CLOSED: "closed",
+}
+
 const { body } = document;
-const isSidebarOpen = ref(localStorage.getItem("isSidebarOpen") === "true");
+const storedIsSidebarOpenState = localStorage.getItem("isSidebarOpen");
+const isSidebarOpen = ref(!storedIsSidebarOpenState || storedIsSidebarOpenState === SidebarStates.OPEN);
 
 const toggleClassName = () => {
   if (isSidebarOpen.value) {
@@ -32,7 +38,7 @@ const toggleClassName = () => {
 
 const toggle = () => {
   isSidebarOpen.value = !isSidebarOpen.value;
-  localStorage.setItem('isSidebarOpen', isSidebarOpen.value);
+  localStorage.setItem('isSidebarOpen', isSidebarOpen.value ? SidebarStates.OPEN : SidebarStates.CLOSED);
   toggleClassName();
 }
 
