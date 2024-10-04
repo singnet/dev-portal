@@ -74,11 +74,21 @@
   --vp-sidebar-width: 390px;
   --vp-scroll-width: 5px;
   --vp-scroll-height: 5px;
+
+  --feedback-form-transition: .3s;
+
+  --feedback-form-background: rgba(255, 255, 255, 0.90);
+  --feedback-form-font-color: #666666;
+  --feedback-form-input-background: #FAFAFA;
 }
 
 .dark {
   --vp-sidebar-bg-color: rgba(0, 0, 0, 0.5);
   --vp-sidebar-bg-color-non-transparent: rgb(0, 0, 0);
+
+  --feedback-form-background: rgba(6, 3, 12, 0.62);
+  --feedback-form-font-color: #DBD7E4;
+  --feedback-form-input-background: rgba(195, 184, 224, 0.12);
 }
 
 @font-face {
