@@ -156,7 +156,7 @@ print(res)
 
 Make call:
 
-```
+```sh
 # pip install tritonclient[http]
 
 python client.py

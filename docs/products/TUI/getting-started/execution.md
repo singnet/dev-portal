@@ -10,19 +10,19 @@ To start the TUI normally, you just need to execute the run script written for y
 
 #### Linux
 
-```
+```sh
 bash linux_run.sh
 ```
 
 #### MacOS
 
-```
+```sh
 bash macos_run.sh
 ```
 
 #### Windows
 
-```
+```powershell
 .\windows_run.bat
 ```
 

@@ -17,7 +17,7 @@ This document describes the process of the environment setup in Ubuntu 18.04. So
 
 Part of the code is written in [Go](https://golang.org) language so you need a set of tools to compile Go code and manage Go dependencies.
 
-```
+```sh
 sudo apt-get install golang go-dep golang-goprotobuf-dev golint
 ```
 
@@ -28,7 +28,7 @@ sudo apt-get install golang go-dep golang-goprotobuf-dev golint
 
 [Truffle](https://truffleframework.com/truffle) and [Ganache](https://truffleframework.com/ganache) are used to develop and test Ethereum contracts so NodeJS development tools are required.
 
-```
+```sh
 sudo apt-get install nodejs npm
 ```
 
@@ -43,7 +43,7 @@ IPFS is used to keep RPC models of the services which are published via Singular
 
 Part of the code is written in Python so you need a Python interpreter and Pip as python package manager.
 
-```
+```sh
 sudo apt-get install python3 python3-pip
 ```
 
@@ -52,7 +52,7 @@ sudo apt-get install python3 python3-pip
 - libudev
 - libusb 1.0
 
-```
+```sh
 sudo apt-get install libudev-dev libusb-1.0-0-dev
 ```
 

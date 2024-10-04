@@ -351,8 +351,23 @@ export default [
       },
       {
         text:"Publisher",
-        link:"/docs/products/AIMarketplace/publisher/publisher-portal",
-      }
+        link:"/docs/products/AIMarketplace/publisher/",
+        collapsed: true,
+        items: [
+          {
+            text: "What is Publisher?",
+            link: "/docs/products/AIMarketplace/puclisher/overview"
+          },
+          {
+            text: "Text Quickstart Guide",
+            link:"/docs/products/AIMarketplace/publisher/text-guide"
+          },
+          {
+            text: "Video Quickstart Guide",
+            link:"/docs/products/AIMarketplace/publisher/video-guide"
+          }
+        ],
+      },
     ],
   },
   {

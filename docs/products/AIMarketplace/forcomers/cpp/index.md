@@ -42,7 +42,7 @@ docker run -p 7000:7000 -v $ETCD_HOST:$ETCD_CONTAINER -ti snet_cpp_service bash
 
 From this point we follow the tutorial in the Docker container's prompt.
 
-```
+```sh
 cd dev-portal/tutorials/cpp
 ```
 
@@ -50,7 +50,7 @@ cd dev-portal/tutorials/cpp
 
 Create the skeleton structure for your service's project
 
-```
+```sh
 ./create_project.sh PROJECT_NAME ORGANIZATION_ID SERVICE_ID SERVICE_PORT
 ```
 
@@ -73,7 +73,7 @@ In this tutorial we'll implement a service with two methods:
 
 So we'll use this command line to create project's skeleton
 
-```
+```sh
 ./create_project.sh tutorial my-org math-operations 7070
 cd tutorial
 ```
@@ -168,7 +168,7 @@ Now look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```
+```c++
 void doSomething(int argc, char** argv) {
 
     int n1 = atoi(argv[1]);
@@ -206,7 +206,7 @@ void doSomething(int argc, char** argv) {
 
 To build the service:
 
-```
+```sh
 ./build.sh
 ```
 
@@ -216,14 +216,14 @@ At this point you should have `server` and `client` in `bin/`
 
 To test our server locally (without using the Blockchain)
 
-```
+```sh
 ./bin/server &
 ./bin/client 12 4
 ```
 
 You should have something like the following output:
 
-```
+```sh
 ./bin/server &
 
 # [1] 4217
@@ -255,7 +255,7 @@ First, make sure you killed the `server` process started in Step 7.
 Then
 publish and start your service:
 
-```
+```sh
 ./publishAndStartService.sh PAYMENT_ADDRESS
 ```
 
@@ -263,7 +263,7 @@ Replace `PAYMENT_ADDRESS` by your public key (wallet).
 
 Example:
 
-```
+```sh
 ./publishAndStartService.sh 0x501e8c58E6C16081c0AbCf80Ce2ABb6b3f91E717
 ```
 
@@ -283,13 +283,13 @@ see the Blockchain transaction logs and then the following messages
 
 You can double check if it has been properly published using
 
-```
+```sh
 snet organization list-services my-org
 ```
 
 Optionally you can un-publish the service
 
-```
+```sh
 snet service delete my-org math-operations
 ```
 
@@ -306,7 +306,7 @@ You can test your service making requests in command line:
 The `openChannel.sh` script will open and initialize a new payment channel, it'll 
 output the new channel id (that will be used by `testServiceRequest.sh`):
 
-```
+```sh
 ./openChannel.sh
 
 # [Blockchain log]
@@ -318,7 +318,7 @@ In this example the channel id is `10`.
 
 Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 
-```
+```sh
 ./testServiceRequest.sh 12 4
 
 # [Blockchain log]
@@ -328,6 +328,6 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 
 That's it. Remember to delete your service as explained in Step 9.
 
-```
+```sh
 snet service delete my-org math-operations
 ```

@@ -33,13 +33,13 @@ The `snet` CLI tool is your swiss army knife for working with SingularityNET. It
 
 You can install the CLI with pip:
 
-```
+```sh
 sudo pip3 install snet-cli
 ```
 
 You then need to create an identity that matches your metamask account, since this is where the faucets sent all your test tokens too.
 
-```
+```sh
 snet identity create YOURNAME key
 ```
 
@@ -53,7 +53,7 @@ SingularityNET takes your security seriously and any vulnerabilities can be repo
 
 TODO
 
-```
+```sh
 snet client call ...
 ```
 

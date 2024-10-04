@@ -1,3 +1,4 @@
+# Stake timeline
 A single staking session has the following stages
 
 * Stake window Period

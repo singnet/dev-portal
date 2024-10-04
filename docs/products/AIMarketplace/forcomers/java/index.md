@@ -31,7 +31,7 @@ docker run -p 7000:7000 -v $ETCD_HOST:$ETCD_CONTAINER -ti snet_java_service bash
 
 From this point we follow the tutorial in the Docker container's prompt.
 
-```
+```sh
 cd dev-portal/tutorials/java
 ```
 
@@ -39,7 +39,7 @@ cd dev-portal/tutorials/java
 
 Create the skeleton structure for your service's project
 
-```
+```sh
 ./create_project.sh PROJECT_NAME ORGANIZATION_ID SERVICE_ID SERVICE_PORT
 ```
 
@@ -62,7 +62,7 @@ In this tutorial we'll implement a service with two methods:
 
 So we'll use this command line to create project's skeleton
 
-```
+```sh
 ./create_project.sh tutorial my-org math-operations 7070
 cd tutorial
 ```
@@ -79,7 +79,7 @@ Take a look at https://developers.google.com/protocol-buffers/docs/overview to
 understand everything you can do in the `.proto` file.
 
 Edit the proto file:
-```
+```sh
 nano src/main/java/service_spec/tutorial.proto
 ```
 
@@ -119,7 +119,7 @@ In order to actually implement our API we need to edit the `JavaServer.java file
 
 Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```
+```java
 
 @Override
 public void div(IntPair request, StreamObserver<SingleInt> responseObserver) {
@@ -139,7 +139,7 @@ Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```
+```java
 public void div(int a, int b) {
     logger.info("Trying to divide "+a+" by "+ b);
     IntPair request = IntPair.newBuilder().setA(a).setB(b).build();
@@ -164,12 +164,12 @@ Note 1: protobuf compile is embedded in the commands below. For more details, pl
 Note 2: On you project name, used in the previous command `./create_project.sh`
 
 To generate a server application:
-```
+```sh
 sh build.sh tutorial server
 ```
 
 To generate a client application:
-```
+```sh
 sh build.sh tutorial client
 ```
 
@@ -177,17 +177,17 @@ sh build.sh tutorial client
 
 To test our server locally (without using the Blockchain)
 
-```
+```sh
 java -jar ./bin/JavaServer.jar &
 ```
 In a new terminal instance
-```
+```sh
 java -jar ./bin/JavaClient.jar 12 4
 ```
 
 You should have something like the following output:
 
-```
+```sh
 java -jar ./bin/JavaServer.jar &
 
 # [1] 1627
@@ -222,7 +222,7 @@ First, make sure you killed the `server` process started in Step 7.
 Then
 publish and start your service:
 
-```
+```sh
 ./publishAndStartService.sh PAYMENT_ADDRESS
 ```
 
@@ -230,7 +230,7 @@ Replace `PAYMENT_ADDRESS` by your public key (wallet).
 
 Example:
 
-```
+```sh
 ./publishAndStartService.sh 0x501e8c58E6C16081c0AbCf80Ce2ABb6b3f91E717
 ```
 
@@ -250,13 +250,13 @@ see the Blockchain transaction logs and then the following messages
 
 You can double check if it has been properly published using
 
-```
+```sh
 snet organization list-services my-org
 ```
 
 Optionally you can un-publish the service
 
-```
+```sh
 snet service delete my-org math-operations
 ```
 
@@ -273,7 +273,7 @@ You can test your service making requests in command line:
 The `openChannel.sh` script will open and initialize a new payment channel, it'll 
 output the new channel id (that will be used by `testServiceRequest.sh`):
 
-```
+```sh
 ./openChannel.sh
 
 # [Blockchain log]
@@ -285,7 +285,7 @@ In this example the channel id is `10`.
 
 Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 
-```
+```sh
 ./testServiceRequest.sh 12 4
 
 # [Blockchain log]
@@ -295,6 +295,6 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 
 That's it. Remember to delete your service as explained in Step 9.
 
-```
+```sh
 snet service delete my-org math-operations
 ```

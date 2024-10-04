@@ -182,7 +182,7 @@ if __name__ == '__main__':
 
 5) Create a client
 
-```
+```py
 import os
 import sys
 import time
@@ -336,7 +336,7 @@ Example:
 
 Add in any contact details related to your organization
 
-```
+```sh
 snet organization metadata-add-contact [-h] [--phone PHONE] [--email EMAIL]
                                        [--metadata-file METADATA_FILE]
                                        contact_type
@@ -549,7 +549,7 @@ When adding an endpoint to your organization set the protocol to http instead of
 2) Add payment_channel_storage_server parameters and REMOVE certificate paths from your daemon config:
 
 Make sure to write something random in token because it ensures that your cluster is different from others
-```
+```json
 {
   **"blockchain_enabled": true,**
   "blockchain_network_selected": "goerli",

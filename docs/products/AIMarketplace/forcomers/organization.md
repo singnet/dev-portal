@@ -25,7 +25,7 @@ The following is the list of filed types and their description.
 
 ## Metadata example
 
-```
+```json
 "org_name": "snet",
 "org_id": "snet", 
 
