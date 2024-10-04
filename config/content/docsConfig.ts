@@ -27,7 +27,7 @@ export default [
         imageSrc: "platform.png",
         description:
             "Explore, publish, and integrate AI services on AI Marketplace's docs.",
-        link: "/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/marketplace"
+        link: "/docs/products/AIMarketplace/"
     },
     {
         text: "About technologies",
@@ -35,7 +35,7 @@ export default [
         imageSrc: "techs.png",
         description:
             "A documentary overview of the stack of all technologies that are used in our projects",
-        link: "/docs/products/AboutTechnologies/blockchain"
+        link: "/docs/products/AboutTechnologies/"
     },
     {
         text: "WaLT",

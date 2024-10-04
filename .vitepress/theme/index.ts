@@ -3,6 +3,7 @@ import Home from "/components/Home/Home.vue";
 import Video from "/components/Common/Video.vue";
 import SectionNavigationGrid from "/components/Common/SectionNavigationGrid.vue";
 import SidebarToggle from "/components/Common/SidebarToggle.vue";
+import FeedBackForm from "/components/Common/FeedBackForm.vue";
 import Footer from "/components/Footer/Footer.vue";
 import DefaultTheme from "vitepress/theme";
 import type { Theme } from "vitepress";
@@ -16,6 +17,7 @@ export default {
       "layout-bottom": () => h(Footer),
       "sidebar-nav-before": () => h(SidebarToggle),
       // "doc-before": () => h(SidebarToggle),
+      "layout-top": () => h(FeedBackForm),
     });
   },
   enhanceApp({ app, router, siteData }) {
