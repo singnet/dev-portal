@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev .",
+    "dev": "vitepress dev . --host",
     "build": "vitepress build .",
     "preview": "vitepress preview ."
   },
