@@ -16,34 +16,56 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-
+<script>
 const SidebarStates = {
   OPEN: "open",
   CLOSED: "closed",
 }
 
-const { body } = document;
-const storedIsSidebarOpenState = localStorage.getItem("isSidebarOpen");
-const isSidebarOpen = ref(!storedIsSidebarOpenState || storedIsSidebarOpenState === SidebarStates.OPEN);
+export default {
+  data() {
+    return {
+      isSidebarOpen: true
+    }
+  },
+  created() {
+    if (typeof window === 'undefined') {
+      return;
+    }
 
-const toggleClassName = () => {
-  if (isSidebarOpen.value) {
-    body.classList.remove('sidebar-closed');
-  } else {
-    body.classList.add('sidebar-closed');
+    const storedIsSidebarOpenState = window.localStorage.getItem("isSidebarOpen");
+
+    this.isSidebarOpen = !storedIsSidebarOpenState || storedIsSidebarOpenState === SidebarStates.OPEN;
+
+    this.toggleClassName();
+  },
+  methods: {
+    toggleClassName() {
+      if (typeof window === 'undefined') {
+        return;
+      }
+
+      const bodyClassList = window.document.body.classList;
+
+      if (this.isSidebarOpen) {
+        bodyClassList.remove('sidebar-closed');
+      } else {
+        bodyClassList.add('sidebar-closed');
+      }
+    },
+    toggle() {
+      if (typeof window === 'undefined') {
+        return;
+      }
+
+      this.isSidebarOpen = !this.isSidebarOpen;
+
+      this.toggleClassName();
+
+      window.localStorage.setItem('isSidebarOpen', this.isSidebarOpen ? SidebarStates.OPEN : SidebarStates.CLOSED);
+    }
   }
 }
-
-const toggle = () => {
-  isSidebarOpen.value = !isSidebarOpen.value;
-  localStorage.setItem('isSidebarOpen', isSidebarOpen.value ? SidebarStates.OPEN : SidebarStates.CLOSED);
-  toggleClassName();
-}
-
-toggleClassName();
-
 </script>
 
 <style>
