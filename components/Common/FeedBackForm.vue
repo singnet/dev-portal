@@ -34,11 +34,6 @@
                         <label for="category">
                             Support category
                         </label>
-                        <!-- <select id="category" v-model="category" placeholder="Select a category">
-                            <option value="question">Question</option>
-                            <option value="bug">Bug</option>
-                            <option value="feedback">Feedback</option>
-                        </select> -->
                         <DropdownList :options="options" @select="selectCategory"/>
                     </div>
                 </fieldset>
