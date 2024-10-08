@@ -51,7 +51,7 @@ Please note that
     
 ## Metadata Overview
 
-```
+```json
 {
     "version": 1,
     "display_name": "Entity Disambiguation",

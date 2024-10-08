@@ -13,7 +13,7 @@ The application should request additional parameters for a specific command afte
 
 So, the application must have the next console interface:
 
-```commandline
+```
 Hello, welcome to the Snet SDK console application!
 To use the application, type the name of the command you want to execute.
 Available commands:
@@ -61,7 +61,7 @@ Services:
 
 Before the beginning we need to install `snet.sdk` package:
 
-```commandline
+```sh
 pip install snet.sdk
 ```
 

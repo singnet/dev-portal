@@ -19,7 +19,7 @@ In this tutorial we'll create a Python service and publish it in SingularityNET.
 
 Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) using provided `Dockerfile`.
 
-```
+```sh
 docker build \
     --build-arg language=python \
     -t snet_python_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
@@ -31,7 +31,7 @@ docker run -p 7000:7000 -v $ETCD_HOST:$ETCD_CONTAINER -ti snet_python_service ba
 
 From this point we follow the tutorial in the Docker container's prompt.
 
-```
+```sh
 cd dev-portal/tutorials/python
 ```
 
@@ -39,7 +39,7 @@ cd dev-portal/tutorials/python
 
 Create the skeleton structure for your service's project
 
-```
+```sh
 ./create_project.sh PROJECT_NAME ORGANIZATION_ID SERVICE_ID SERVICE_PORT
 ```
 
@@ -62,7 +62,7 @@ In this tutorial we'll implement a service with two methods:
 
 So we'll use this command line to create project's skeleton
 
-```
+```sh
 ./create_project.sh tutorial my-org math-operations 7070
 cd /opt/singnet/tutorial
 ```
@@ -113,7 +113,7 @@ In order to actually implement our API we need to edit `server.py`.
 
 Look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```
+```py
 class ServiceDefinition(pb2_grpc.ServiceDefinitionServicer):
     def __init__(self):
         self.a = 0
@@ -140,7 +140,7 @@ Blockchain). Edit `client.py`.
 Look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
-```
+```py
 def doSomething(channel):
     a = 12
     b = 4
@@ -158,7 +158,7 @@ def doSomething(channel):
 
 To compile the protobuf file:
 
-```
+```sh
 ./build.sh
 ```
 
@@ -166,14 +166,14 @@ To compile the protobuf file:
 
 To test our server locally (without using the Blockchain)
 
-```
+```sh
 python3 server.py &
 python3 client.py 12 4
 ```
 
 You should have something like the following output:
 
-```
+```sh
 python3 server.py &
 
 # [1] 4217
@@ -204,7 +204,7 @@ First, make sure you killed the `server` process started in Step 7.
 Then
 publish and start your service:
 
-```
+```sh
 ./publishAndStartService.sh PAYMENT_ADDRESS
 ```
 
@@ -212,7 +212,7 @@ Replace `PAYMENT_ADDRESS` by your public key (wallet).
 
 Example:
 
-```
+```sh
 ./publishAndStartService.sh 0x501e8c58E6C16081c0AbCf80Ce2ABb6b3f91E717
 ```
 
@@ -232,13 +232,13 @@ see the Blockchain transaction logs and then the following messages
 
 You can double check if it has been properly published using
 
-```
+```sh
 snet organization list-services my-org
 ```
 
 Optionally you can un-publish the service
 
-```
+```sh
 snet service delete my-org math-operations
 ```
 
@@ -255,7 +255,7 @@ You can test your service making requests in command line:
 The `openChannel.sh` script will open and initialize a new payment channel, it'll 
 output the new channel id (that will be used by `testServiceRequest.sh`):
 
-```
+```sh
 ./openChannel.sh
 
 # [Blockchain log]
@@ -267,7 +267,7 @@ In this example the channel id is `10`.
 
 Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 
-```
+```sh
 ./testServiceRequest.sh 12 4
 
 # [Blockchain log]
@@ -277,6 +277,6 @@ Now you can run `testServiceRequest.sh VALUE_A VALUE_B`:
 
 That's it. Remember to delete your service as explained in Step 9.
 
-```
+```sh
 snet service delete my-org math-operations
 ```

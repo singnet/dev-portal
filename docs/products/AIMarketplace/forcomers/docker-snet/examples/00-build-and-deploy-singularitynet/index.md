@@ -21,7 +21,7 @@ micro_nav: true
 ---
 
 ## Build and deploy SingularityNet contracts
-```
+```sh
 cd ${SINGNET}/platform-contracts # go to the platform-contracts repository
 npm install                      # install dependencies
 npm run compile                  # compile contracts
@@ -31,7 +31,7 @@ truffle migrate --network local  # deploy contracts to the local network
 ```
 
 ## Build and install snet-cli
-```
+```sh
 cd ${SINGNET}/snet-cli           # go to the snet-cli repository
 ./scripts/Blockchain install     # install contract dependencies
 pip install -e .                 # install snet-cli
@@ -39,7 +39,7 @@ cat ~/.snet/config               # look at snet-cli configuration
 ```
 
 ## Build and install SingularityNet daemon
-```
+```sh
 cd ${SINGNET}/snet-daemon                   # go to the daemon repository
 ./scripts/install                           # install dependencies
 ./scripts/build linux amd64                 # build daemon

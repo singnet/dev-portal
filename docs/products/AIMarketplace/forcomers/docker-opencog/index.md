@@ -9,7 +9,7 @@ Prerequisites:
 The demo requires docker and 64-bit OS and about 6GB of storage for the docker image and data.
 
 To run the demo, clone this repository as follows:
-```
+```sh
 git clone https://github.com/singnet/opencog-workshops.git
 ```
 
@@ -17,19 +17,19 @@ git clone https://github.com/singnet/opencog-workshops.git
 
 To load tar image:
 
-```
+```sh
 docker load -i demo-opencog.tar
 ```
 
 To build docker image instead run:
 
-```
+```sh
 docker build docker -t demo-opencog
 ```
 
 To start docker with simple examples notebook:  
 
-```
+```sh
 docker run -p8888:8888  -it demo-opencog /home/relex/opencog-intro-master/notebook.sh
 ```
 
@@ -38,18 +38,18 @@ If the notebook is successully started you should be able to open it at localhos
 ## Running the VQA Demo
 Fetch data for the VQA demo(on host, not inside a container):
 
-```
+```sh
 wget https://s3-us-west-2.amazonaws.com/abelikov/data-small.tar.gz
 ```
 
 Unpack:
-```
+```sh
 tar -xvf data-small.tar.gz
 ```
 
 To start VQA demo:
 
-```
+```sh
 docker run -p8889:8888 -v `pwd`/data:/home/relex/projects/data -it demo-opencog /home/relex/projects/semantic-vision-1/experiments/opencog/pattern_matcher_vqa/vqa
 ```
 

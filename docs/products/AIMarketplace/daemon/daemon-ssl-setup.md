@@ -18,7 +18,7 @@ We use the certbot authenticator to obtain an SSL Certificate. The certbot authe
 
 Here is an example of the running the `sudo certbot certonly` command, for `<daemon_domain>`
 
-```
+```bash
 $ sudo certbot certonly
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 
@@ -78,7 +78,7 @@ IMPORTANT NOTES:
 ## Step 3 — Getting the certificate path
 Get the certificate path and key using the command: `sudo certbot certificates`. This is needed for configuring the SingularityNet daemon
 
-```
+```bash
 $ sudo certbot certificates
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 
@@ -96,7 +96,7 @@ Found the following certs:
 Based on the certificate paths from above, mount the certificate dir as a volume in your docker container. Note that the certificates
 may be symbolic links, so you can't just mount `/etc/letsencrypt/live/<daemon_domain>/`.
 
-```
+```bash
 $ sudo ls -la /etc/letsencrypt/live/<daemon_domain>/
 total 12
 drwxr-xr-x 2 root root 4096 Feb 22 00:22 .
@@ -112,7 +112,7 @@ Directory listing shows us that the link is relative and jumps two directories a
 This means we need to mount `/etc/letsencrypt` (or mount where it points, e.g. `/etc/letsencrypt/archive/<daemon_domain>`, 
 but this could break if certbot changes how it stores certs and manages renewals)
 
-```
+```bash
 $ docker run -v /etc/letsencrypt:/etc/letsencrypt [...]
 ```
 
@@ -129,7 +129,7 @@ When the certificate updates, you'll have to restart your services so that snet 
 
 To do this, you can add a script to `/etc/letsencrypt/renewal-hooks/deploy`
 
-```
+```bash
 $ sudo bash -c 'cat > /etc/letsencrypt/renewal-hooks/deploy/restart_services.sh'
 #!/bin/bash
 docker restart [SERVICE_CONTAINER_NAME]

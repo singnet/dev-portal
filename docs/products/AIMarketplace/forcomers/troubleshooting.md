@@ -23,7 +23,7 @@ The platform uses exponential back-off retry to test the health of the service. 
 ### How to configure service metadata to receive alerts ?
 Obtain the latest version of snet-cli and run the following command:
 
-```
+```sh
 snet service metadata-add-contributor <CONTACTNAME> <EMAILID> --metadata-file <MD_FILE>
 ```
 
@@ -148,7 +148,7 @@ Daemon addresses are registered for a given Org, Group id  and service id .
 You need to re-publish the service again with the correct public address . Please use the 
 Following command to do so 
 
-```
+```bash
 snet service metadata-add-daemon-addresses default_group $DAEMONADDRESS --metadata-file $MD_FILE
 ```
 
@@ -201,7 +201,7 @@ Error: <_InactiveRpcError of RPC that terminated with:
 Then you need to increase the MAX_MESSAGE_SIZE of the gRPC components, first set it in your Daemon by adding
 this key to its `snetd.config.json`:
 
-```
+```json
 "max_message_size_in_mb": 10,
 ```
 
@@ -260,7 +260,7 @@ You need to manually configure the path to refer to this binary.
 
 ### How do I get the latest version of snet-Client 
 
-```
+```bash
 pip install --upgrade snet-cli  
 ```
  
@@ -268,7 +268,7 @@ pip install --upgrade snet-cli
 
 ### When there is proto change?
 Ensure that you re deploy the service with the latest proto 
-```
+```bash
 snet service metadata-init --metadata-file $MD_FILE `pwd`/$YOURGITREPONAME/$PATHFORSERVICESPEC "$DISPLAYNAME" --encoding proto --service-type grpc --group-name default_group
 ```
 Also make sure  your stubs are updated on the Dapp Components

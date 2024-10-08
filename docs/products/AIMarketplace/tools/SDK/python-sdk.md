@@ -63,7 +63,7 @@ ________________________________________
 ________________________________________
 Clone the git repository
 
-```
+```sh
 $ git clone git@github.com:singnet/snet-sdk-python.git
 $ cd snet-sdk-python
 •	Install development/test Blockchain dependencies
@@ -75,18 +75,18 @@ $ pip install -e .
 We use SemVer for versioning. For the versions available, see the tags on this repository.
 ### License
 This project is licensed under the MIT License - see the LICENSE file for details.
-```
+```sh
 snet-sdk-java
 ```
 
 ### How to build
 Integration testing is enabled by default. To run full build including integration tests use:
-```
+```sh
 mvn install
 ```
 
 Running integration tests is a time consuming process so to make fast build running unit tests only use:
-```
+```sh
 mvn install -DskipITs
 ```
 
@@ -135,12 +135,12 @@ LICENSE file for details.
 
 Integration testing is enabled by default. To run full build including integration tests use:
 
-```
+```sh
 mvn install
 ```
 
 Running integration tests is a time consuming process so to make fast build running unit tests only use:
 
-```
+```sh
 mvn install -DskipITs
 ```

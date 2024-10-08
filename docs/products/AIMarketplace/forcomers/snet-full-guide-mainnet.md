@@ -36,7 +36,7 @@ Certificates are valid for 90 days. You will have to restart your Daemon in futu
 
 2) If you want to host your ETCD node on a separate network/Ethernet you should add its domain name in the configuration. To do so add the domain to hosts section of server.json file:
 
-```
+```json
  \"hosts\": [
         \"${public_ip}\",
         \"${private_ip}\",
@@ -160,7 +160,7 @@ service Example {
 
 4) Create a server
 
-```
+```py
 ## Importing the necessary libraries of the service ##
 import time
 import logging
@@ -220,7 +220,7 @@ if __name__ == '__main__':
 
 5) Create a client
 
-```
+```py
 import os
 import sys
 import time
@@ -270,7 +270,7 @@ if __name__ == '__main__':
 
 All necessary packets should be already installed if you installed snet-cli
 
-```
+```py
 from eth_account import Account
 import secrets
 
@@ -362,7 +362,7 @@ Final command should look like this:
 
 This section will be added to your organization_metadata.json:
 
-```
+```json
 "groups": [
         {
             "group_name": "default_groups",
@@ -398,7 +398,7 @@ Example:
 
 Add in any contact details related to your organization
 
-```
+```sh
 snet organization metadata-add-contact [-h] [--phone PHONE] [--email EMAIL]
                                        [--metadata-file METADATA_FILE]
                                        contact_type
@@ -428,7 +428,7 @@ Example:
 
 First we need to create a service metadata file. You can do it by running:
 
-```
+```sh
 snet service metadata-init \
 	SERVICE_PROTOBUF_DIR \
 	SERVICE_DISPLAY_NAME \
@@ -523,7 +523,7 @@ Add following parameters:
 
 Your daemon config file should look something like this:
 
-```
+```js
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "main",

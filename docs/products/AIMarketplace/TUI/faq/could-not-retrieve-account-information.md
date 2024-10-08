@@ -51,7 +51,7 @@ snet identity create &#x3C;Identity_Name> ledger --network &#x3C;mainnet | sepol
 
 Run the following command to switch to the new identity you have created
 
-```
+```sh
 snet identity <Identity_Name_of_new_identity>
 ```
 
@@ -61,7 +61,7 @@ snet identity <Identity_Name_of_new_identity>
 
 Just check if the CLI can print your account balance, if it can you have a valid identity.&#x20;
 
-```
+```sh
 snet account balance
 ```
 

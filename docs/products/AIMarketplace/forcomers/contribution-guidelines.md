@@ -46,7 +46,7 @@ Before you submit your pull request consider the following guidelines:
 -   Commit your changes using a descriptive commit message that follows our
     [commit message conventions](#commit-message-format).
 
-    ```shell
+    ```sh
     git commit -a
     ```
 
@@ -130,7 +130,7 @@ automatically closing the issues referenced in your commit.
 ### Example
 For example, here is a good commit message:
 
-```
+```sh
 upgrade to Python 3.6.1
 
 upgrade the project builds to use the new Python 3.6.1,

@@ -100,7 +100,7 @@ snet client call <org_id> <service_id> <group_name> add p.txt
 ```
 
 ##### via stdin
-```
+```sh
 echo '{"a":10,"b":32}' | snet client call <org_id> <service_id> <group_name> add
 ```
 

@@ -20,7 +20,7 @@ In this tutorial we'll create an Opencog service and publish it in SingularityNE
 
 Setup and run a docker container.
 
-```
+```sh
 $ git clone https://github.com/singnet/opencog-services.git
 $ docker build -t opencog_service_dev opencog-services/Docker/
 $ docker run --name OPENCOG_SERVICE_DEV -ti opencog_service_dev /bin/bash
@@ -34,7 +34,7 @@ SingularityNET. `bin/server` is the executable that actually listen for requests
 
 Note that there's **only one** Opencog service, which expects comands like this:
 
-```
+```sh
 # ./bin/client sync Echo foo bar
 foo bar
 ```
@@ -63,7 +63,7 @@ For the C++ command, we need to implement a C++ class (with separated .h and .cc
 The class is supposed to have the exact name of the command in `CamelCase` notation.
 So the header file `src/cpp-services/HelloWorld.h` will look like this:
 
-```
+```cpp
 #ifndef _OPENCOGSERVICES_HELLOWORLD_H
 #define _OPENCOGSERVICES_HELLOWORLD_H
 
@@ -102,7 +102,7 @@ arguments.
 So we only need to implement `execute()` in `src/cpp-services/HelloWorld.cc`. In our case it may
 look like this:
 
-```
+```cpp
 #include "HelloWorld.h"
 
 using namespace opencogservices;
@@ -131,7 +131,7 @@ the command and C++ class, you are supposed to use the exact same name.
 
 To compile our new command just cd to `src/` and:
 
-```
+```sh
 # make clean
 # make
 ```
@@ -169,13 +169,13 @@ So we're done with the Scheme command.
 We are ready to test our two new commands. `cd` to the root directory and start
 the server:
 
-```
+```sh
 # ./bin/server &
 ```
 
 Now call our new commands:
 
-```
+```sh
 # ./bin/client sync HelloWorld
 Hello World
 # ./bin/client sync HelloWorld2
@@ -192,7 +192,7 @@ then in the SingularityNET Opencog service. Make sure you read our
 Before issuing a PR, chek if your new commands implementation is compliant
 with some basic standards for tests and documentation. in the root directory run:
 
-```
+```sh
 # ./scripts/compliance_check.sh
 tests/HelloWorld is mising
 tests/HelloWorld/testCases.txt is mising
@@ -207,14 +207,14 @@ for a regression test and a `.md` documentation for our new commands.
 
 First, we'll create the test cases for both commands.
 
-```
+```sh
 # cd tests
 # mkdir -p HelloWorld/baseline
 ```
 
 Create a new file `HelloWorld/testCases.txt` like this:
 
-```
+```json
 {"test-cases": [
 {"input": "", "output": "t.txt"}
 ]}
@@ -257,7 +257,7 @@ the documents of other commands as template for your own.
 
 Use a MarkDown previewer of your choice. When you are done with the documentation, call:
 
-```
+```sh
 # ./scripts/buildDocs.sh
 ```
 
