@@ -9,6 +9,7 @@ export default defineConfig({
   head: assetsLinks,
   title: generalConfig.siteName,
   description: generalConfig.siteDescription,
+  lastUpdated: true,
   themeConfig: {
     logo: "/assets/images/common/logo.svg",
     nav: navContent,
