@@ -21,7 +21,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card-redirect">
+            <div class="card-redirect gradient-border">
                 <div class="card-redirect-text">
                     <p>
                         Go to the section <SpriteIcon :textIconID="'arrow-icon'" :width="'19px'" :height="'10px'" />
@@ -156,23 +156,8 @@ svg {
     color: var(--vp-c-white);
 }
 
-.card-redirect::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50px; 
-    border: 2px solid transparent;
-    background: linear-gradient(0deg, rgba(158, 0, 255, 1),
-    rgba(212, 76, 206, 1),
-    rgba(40, 40, 218, 1)) border-box;
-    -webkit-mask:
-        linear-gradient(#fff 0 0) padding-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
+.gradient-border::before {
+    border-radius: 50px;
 }
 
 @media (max-width: 640px) {
