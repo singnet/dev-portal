@@ -85,7 +85,10 @@ export default {
                 this.category
         },
         isMobile() {
-            return window.innerWidth < 450
+            if (typeof window === 'undefined') {
+                return;
+            }
+            return window.innerWidth < 450;
         }
     },
     methods: {
