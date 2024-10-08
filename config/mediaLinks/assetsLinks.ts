@@ -1,6 +1,7 @@
 import { HeadConfig } from "vitepress";
 
 export default [
+        ['link', { rel: 'icon', href: '/favicon.ico' }],
         ['link', {rel: 'prefetch', href: '/assets/images/common/dark/background_docs.webp'}],
         ['link', {rel: 'prefetch', href: '/assets/images/common/light/background_docs.webp'}],
         ['link', {rel: 'prefetch', href: '/assets/images/common/light/airdrop.png'}],
