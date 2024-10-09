@@ -2,7 +2,7 @@
 
 Add service description
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.02.24 PM.png" alt=""><figcaption><p>Add service description page</p></figcaption></figure>
+![Add service description page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.02.24PM.png)Add service description page
 
 ```bash
 # Format of the command in the SNET CLI

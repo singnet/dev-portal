@@ -2,7 +2,7 @@
 
 Low level function for calling the server. Service should be already initialized.
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.17.01 PM.png" alt=""><figcaption><p>Call low-level page</p></figcaption></figure>
+![Call low-level page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.17.01PM.png)Call low-level page
 
 ```bash
 # Format of the command in the SNET CLI

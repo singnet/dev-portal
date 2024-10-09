@@ -1,6 +1,6 @@
 # Client
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.15.31 PM.png" alt=""><figcaption><p>Client page</p></figcaption></figure>
+![Client page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.15.31PM.png)Client page
 
 **Overview**
 

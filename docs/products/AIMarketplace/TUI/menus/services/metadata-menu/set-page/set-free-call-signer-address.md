@@ -2,7 +2,7 @@
 
 Set free calls for group for service
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.01.03 PM.png" alt=""><figcaption><p>Set Free-call Signer Address page</p></figcaption></figure>
+![Set Free-call Signer Address page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.01.03PM.png)Set Free-call Signer Address page
 
 ```bash
 # Format of the command in the SNET CLI

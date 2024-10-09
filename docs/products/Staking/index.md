@@ -20,7 +20,7 @@ To make the fiat-crypto gateway work on the back end requires the operator of th
 
 Doing all these exchanges, in practice, requires a “liquidity pool” of AGIX tokens that can be provided in exchange for fiat as needed. The operator of the fiat-to-AGIX and AGIX-to-fiat exchanges need to have some AGIX tokens and some fiat currency on hand so that when someone needs to change AGIX for fiat, it has the fiat; and vice-versa when someone needs to change fiat for AGIX, it has the AGIX.
 
-![staking](/public/assets/images/products/Staking/staking_flow.jpeg)
+![staking](/assets/images/products/Staking/staking_flow.jpeg)
 
 Staking is an elegant way of securing an additional pool of AGIX tokens usable for mediating the exchanges this gateway requires.
 

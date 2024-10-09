@@ -2,7 +2,7 @@
 
 Add assets to metadata, valid asset types are \[hero\_image,images]. Or remove ALL assets of a given type valid asset types are \[hero\_image,images]
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.03.18 PM.png" alt=""><figcaption></figcaption></figure>
+![Add/Remove Service Metadata Assets Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.03.18PM.png)
 
 ```bash
 # Format of the commands in the SNET CLI

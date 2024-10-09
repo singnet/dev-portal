@@ -2,7 +2,7 @@
 
 Print initialized channels for the given org (all payment group).
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.34.14 PM.png" alt=""><figcaption></figcaption></figure>
+![Print Initialized Channels Filter Organization](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.34.14PM.png)
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

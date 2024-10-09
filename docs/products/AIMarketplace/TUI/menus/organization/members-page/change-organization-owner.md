@@ -2,7 +2,7 @@
 
 Change Organization’s owner
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 8.44.45 PM.png" alt=""><figcaption><p>Change organization owner page</p></figcaption></figure>
+![Change organization owner page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.44.45PM.png)Change organization owner page
 
 ```bash
 # Format of the commands in the SNET CLI

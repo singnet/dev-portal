@@ -2,7 +2,7 @@
 
 Transfer AGI tokens inside MPE wallet
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 7.29.07 AM.png" alt=""><figcaption><p>Transfer Page</p></figcaption></figure>
+![Transfer Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at7.29.07AM.png)Transfer Page
 
 ```bash
 # Format of the command in the SNET CLI

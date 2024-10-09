@@ -2,7 +2,7 @@
 
 Validates if created metadata is consistent
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.04.33 PM.png" alt=""><figcaption><p>Validate metadata page</p></figcaption></figure>
+![Validate metadata page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.04.33PM.png)Validate metadata page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

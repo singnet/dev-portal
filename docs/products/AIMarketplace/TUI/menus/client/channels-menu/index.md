@@ -1,6 +1,6 @@
 # Channels Menu
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.18.36 PM.png" alt=""><figcaption><p>Channels Menu</p></figcaption></figure>
+![Channels Menu](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.18.36PM.png)Channels Menu
 
 **Overview**
 

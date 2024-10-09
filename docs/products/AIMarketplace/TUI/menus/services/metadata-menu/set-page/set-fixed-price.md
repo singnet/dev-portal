@@ -2,7 +2,7 @@
 
 Set pricing model as fixed price for all methods
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.00.17 PM.png" alt=""><figcaption><p>Set Fixed Price page</p></figcaption></figure>
+![Set Fixed Price page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.00.17PM.png)Set Fixed Price page
 
 ```bash
 # Format of the command in the SNET CLI

@@ -2,7 +2,7 @@
 
 Print all channels for the given sender.
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.34.32 PM.png" alt=""><figcaption><p>Print All Channels Filter Sender Page</p></figcaption></figure>
+![Print All Channels Filter Sender Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.34.32PM.png)Print All Channels Filter Sender Page
 
 ```bash
 # Format of the command in the SNET CLI

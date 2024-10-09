@@ -2,7 +2,7 @@
 
 Set pricing model as method price for all methods
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.00.34 PM.png" alt=""><figcaption><p>Set method price page</p></figcaption></figure>
+![Set method price page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.00.34PM.png)Set method price page
 
 ```bash
 # Format of the command in the SNET CLI

@@ -2,7 +2,7 @@
 
 Delete service registration from registry
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.06.52 PM.png" alt=""><figcaption><p>Delete Service page</p></figcaption></figure>
+![Delete Service page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.06.52PM.png)Delete Service page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

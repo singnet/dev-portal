@@ -2,7 +2,7 @@
 
 Call server. We ask state of the channel from the server if needed. Channel should be already initialized.
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.16.25 PM.png" alt=""><figcaption><p>Call service page</p></figcaption></figure>
+![Call service page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.16.25PM.png)Call service page
 
 ```bash
 # Format of the command in the SNET CLI
