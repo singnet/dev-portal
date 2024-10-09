@@ -9,14 +9,13 @@ const { srcPath, alt } = defineProps(['srcPath', 'alt']);
 
 const { isDark } = useData()
 
-const themeFolder = (isDarkTheme) => isDarkTheme ? 'dark' : 'light';
+const themeFolder = (isDarkTheme) => {
+    console.log("isDarkTheme: ", isDarkTheme);
+    return isDarkTheme ? 'dark' : 'light'
+};
 
 const src = computed(() => {
     console.log("isDark: ", isDark);
-    
-    if (typeof isDark.value === "undefined") {
-        return `/assets/images/common/dark/${srcPath}`
-    }
     return `/assets/images/common/${themeFolder(isDark.value)}/${srcPath}`
 })
 
