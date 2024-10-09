@@ -60,7 +60,7 @@ export default {
     data() {
         return {
             isRequestHandling: false,
-            requestIsSend: true,
+            requestIsSend: false,
             isFormDisplayed: false,
             name: '',
             email: '',
