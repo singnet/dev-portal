@@ -1,26 +1,26 @@
 <template>
-    <div class="current-section" :class="{ 'active': isActive }">
+    <a class="current-section" :href="sectionData.path" :class="{ 'active': isActive }"
+        @click="$emit('location-update')">
         <div class="section-icon">
-            <SpriteIcon :textIconID="textIconID" />
+            <SpriteIcon :textIconID="sectionData.textIconID" />
         </div>
         <div class="section-name">
-            {{ name }}
+            {{ sectionData.name }}
         </div>
-    </div>
+    </a>
 </template>
 <script>
 import SpriteIcon from "../Common/SpriteIcon.vue";
 
 export default {
+    emits: ['location-update'],
     components: {
         SpriteIcon
     },
     props: {
-        name: {
-            type: String,
-        },
-        textIconID: {
-            type: String,
+        sectionData: {
+            type: Object,
+            required: true,
         },
         isActive: {
             type: Boolean,
@@ -36,7 +36,7 @@ export default {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    color: var(--vp-c-text-1);
+    color: var(--vp-c-text-2);
     margin-right: auto;
 }
 

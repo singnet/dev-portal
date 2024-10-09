@@ -22,6 +22,14 @@ const SidebarStates = {
   CLOSED: "closed",
 }
 
+const SidebarLocalSstorageKeys = {
+    IS_SIDEBAR_OPEN: "isSidebarOpen"
+}
+
+const SidebarContollingClassNames = {
+  SIDEBAR_CLOSSED: "sidebar-closed",
+}
+
 export default {
   data() {
     return {
@@ -33,7 +41,7 @@ export default {
       return;
     }
 
-    const storedIsSidebarOpenState = window.localStorage.getItem("isSidebarOpen");
+    const storedIsSidebarOpenState = window.localStorage.getItem(SidebarLocalSstorageKeys.IS_SIDEBAR_OPEN);
 
     this.isSidebarOpen = !storedIsSidebarOpenState || storedIsSidebarOpenState === SidebarStates.OPEN;
 
@@ -48,9 +56,9 @@ export default {
       const bodyClassList = window.document.body.classList;
 
       if (this.isSidebarOpen) {
-        bodyClassList.remove('sidebar-closed');
+        bodyClassList.remove(SidebarContollingClassNames.SIDEBAR_CLOSSED);
       } else {
-        bodyClassList.add('sidebar-closed');
+        bodyClassList.add(SidebarContollingClassNames.SIDEBAR_CLOSSED);
       }
     },
     toggle() {
@@ -62,7 +70,7 @@ export default {
 
       this.toggleClassName();
 
-      window.localStorage.setItem('isSidebarOpen', this.isSidebarOpen ? SidebarStates.OPEN : SidebarStates.CLOSED);
+      window.localStorage.setItem(SidebarLocalSstorageKeys.IS_SIDEBAR_OPEN, this.isSidebarOpen ? SidebarStates.OPEN : SidebarStates.CLOSED);
     }
   }
 }
@@ -138,7 +146,7 @@ export default {
 }
 
 @media (max-width: 960px) {
-  .sidebar-toggler {
+  .sidebar-toggler-container {
     display: none;
   }
 }

@@ -1,6 +1,6 @@
 export default [
   { text: "Home", link: "/", activeMatch: '' },
-  { text: "Docs", link: "/docs", activeMatch: '/docs' },
+  { text: "Docs", link: "/docs/index.md", activeMatch: '/docs' },
   {
     text: "Products",
     items: [

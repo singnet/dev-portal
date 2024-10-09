@@ -1,3 +1,11 @@
+export const RootSections = {
+    DOCS: {
+        name: "/Docs",
+        path: "/docs/",
+        textIconID: "techs-icon",
+    }
+}
+
 export const Products = {
     TECHNOLOGIES: {
         name: "About Technologies",
@@ -981,6 +989,13 @@ export const AirdropSection = [
     },
 ];
 
+export const DocsSection = [
+    {
+        text: "Welcome",
+        link: "/docs/"
+    }
+]
+
 export default {
     [Products.TECHNOLOGIES.path]: TechnologiesSection,
     [Products.MARKETPLACE.path]: MarketplaceSection,
@@ -988,4 +1003,5 @@ export default {
     [Products.WALT.path]: WALTSection,
     [Products.BRIDGE.path]: BridgeSection,
     [Products.AIRDROP.path]: AirdropSection,
+    [RootSections.DOCS.path]: DocsSection,
 };

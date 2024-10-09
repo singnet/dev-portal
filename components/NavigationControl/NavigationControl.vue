@@ -2,8 +2,11 @@
     <div class="navigation-control">
         <!-- <div class="navigation-control" @mouseleave="closeSectionsMenu"> -->
         <div class="control-header">
-            <NavigationControlSection :name="currentSection.name" :textIconID="currentSection.textIconID"
-                :isActive="true" @click="navigate(currentSection.path)" />
+            <NavigationControlSection v-if="currentSection" :sectionData="currentSection" :isActive="true"
+                @location-update="updateLocation" />
+            <div class="sections-title" v-else>
+                Portal sections
+            </div>
             <div class="sections-menu-toggler" :class="{ 'active': isSectionsMenuOpen }" @click="toggleSectionsMenu">
                 <SpriteIcon :textIconID="'section-menu-icon'" />
             </div>
@@ -11,8 +14,7 @@
         </div>
         <div class="sections-menu" :class="{ 'closed': !isSectionsMenuOpen }">
             <div v-for="sectionsItem in otherSections" :key="sectionsItem.name" class="sections-menu-item">
-                <NavigationControlSection :name="sectionsItem.name" :textIconID="sectionsItem.textIconID"
-                    @click="navigate(sectionsItem.path)" />
+                <NavigationControlSection :sectionData="sectionsItem" @location-update="updateLocation" />
             </div>
         </div>
     </div>
@@ -21,9 +23,24 @@
 import SidebarToggle from "./SidebarToggle.vue";
 import SpriteIcon from "../Common/SpriteIcon.vue";
 import NavigationControlSection from "./NavigationControlSection.vue"
-import { Products as Sections } from "../../config/content/sidebarContentConfig";
+import { Products as Sections, RootSections } from "../../config/content/sidebarContentConfig";
+
+const SectionsMenuStates = {
+    OPEN: "open",
+    CLOSED: "closed",
+}
+
+const MenuLocalSstorageKeys = {
+    IS_MENU_OPEN: "isSectionsMenuOpen"
+}
 
 export default {
+    props: {
+        areDocsExcluded: {
+            type: Boolean,
+            default: true,
+        }
+    },
     components: {
         NavigationControlSection,
         SidebarToggle,
@@ -32,46 +49,85 @@ export default {
     data() {
         return {
             sections: Object.values(Sections),
+            currentLocation: "",
             isSectionsMenuOpen: false,
         }
     },
+    created() {
+        if (typeof window === 'undefined') {
+            return;
+        }
+
+        this.updateLocation();
+
+        if (this.currentLocation === RootSections.DOCS.path) {
+            this.isSectionsMenuOpen = true;
+            return;
+        }
+
+        const storedIsSectionsMenuOpenState = window.localStorage.getItem(MenuLocalSstorageKeys.IS_MENU_OPEN);
+
+        this.isSectionsMenuOpen =
+            !storedIsSectionsMenuOpenState || storedIsSectionsMenuOpenState === SectionsMenuStates.OPEN;
+    },
     computed: {
-        currentLocation() {
-            return typeof window !== 'undefined' ? window.location.pathname : "";
-        },
         currentSection() {
-            return this.sections.find(section => this.currentLocation.includes(section.path)) || this.sections[0];
+            if (this.currentLocation === RootSections.DOCS.path) {
+                return null;
+            }
+            return this.sections.find(section => this.currentLocation.includes(section.path));
         },
         otherSections() {
-            return this.sections.filter(section => section.name !== this.currentSection.name);
+            const prefilteredSections = this.areDocsExcluded
+                ? this.sections.filter(section => section.name !== RootSections.DOCS.name)
+                : this.sections;
+
+            if (!this.currentSection) {
+                return prefilteredSections;
+            }
+
+            return prefilteredSections.filter(section => section.name !== this.currentSection.name);
         }
     },
     methods: {
-        toggleSectionsMenu() {
-            this.isSectionsMenuOpen = !this.isSectionsMenuOpen;
+        updateLocation() {
+            this.currentLocation = typeof window !== 'undefined' ? window.location.pathname : "";
         },
-        openSectionsMenu() {
-            this.isSectionsMenuOpen = true
-        },
-        closeSectionsMenu() {
-            this.isSectionsMenuOpen = false
-        },
-        navigate(pathname) {
+        setLocalStorageIsOpenValue(isMenuOpen) {
             if (typeof window === 'undefined') {
                 return;
             }
 
-            window.location.pathname = pathname;
-        }
+            window.localStorage.setItem(
+                MenuLocalSstorageKeys.IS_MENU_OPEN,
+                isMenuOpen ? SectionsMenuStates.OPEN : SectionsMenuStates.CLOSED
+            );
+        },
+        toggleSectionsMenu() {
+            this.isSectionsMenuOpen = !this.isSectionsMenuOpen;
+            this.setLocalStorageIsOpenValue(this.isSectionsMenuOpen);
+        },
+        openSectionsMenu() {
+            this.isSectionsMenuOpen = true;
+            this.setLocalStorageIsOpenValue(true);
+        },
+        closeSectionsMenu() {
+            this.isSectionsMenuOpen = false;
+            this.setLocalStorageIsOpenValue(false);
+        },
     }
 }
 </script>
 <style scoped>
 .navigation-control {
-    padding-top: 25px;
+    padding-top: 8px;
     padding-bottom: 10px;
     flex: 1 0 auto;
     border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.sidebar-closed .navigation-control {
+    border-bottom: none;
 }
 
 .sidebar-closed .sections-menu,
@@ -83,6 +139,12 @@ export default {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: flex-end;
+}
+
+.sections-title {
+    font-weight: 500;
+    margin-right: auto;
 }
 
 .sections-menu-toggler {
