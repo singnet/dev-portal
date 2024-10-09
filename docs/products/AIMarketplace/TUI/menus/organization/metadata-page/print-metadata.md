@@ -2,7 +2,7 @@
 
 Print metadata for given organization
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 8.31.47 PM.png" alt=""><figcaption><p>Print Organization Metadata page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 8.31.47 PM.png" alt=""><figcaption><p>Print Organization Metadata page</p></figcaption></figure>
 
 ```bash
 # Format of the command in the SNET CLI

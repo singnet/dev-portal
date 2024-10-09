@@ -2,7 +2,7 @@
 
 Print all channels for the given group and sender.
 
-<figure><img src="../../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-17 at 6.35.20 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.35.20 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 # Format of the command in the SNET CLI

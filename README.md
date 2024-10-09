@@ -40,10 +40,10 @@ If you want to update the documentation, change the corresponding files in `/doc
 The new section must contain index.md file with the following component:
 
 ```js
-<SectionNavigationGrid sectionName='<sectionName>' />
+<SectionNavigationGrid sectionRoot='<sectionRoot>' />
 ```
 
-where the section name corresponds to the section name in `/config/content/sidebarContentConfig.ts`
+where the `sectionRoot` corresponds to the `Product` from `/config/content/sidebarContentConfig.ts`
 
 ## Add new component
 

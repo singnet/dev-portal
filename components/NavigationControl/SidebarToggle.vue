@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar-toggler-container">
     <button @click="toggle" class="sidebar-toggler">
-      <svg v-if="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"
+      <svg v-if="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 17"
         fill="none">
         <rect x="1" y="1" width="18" height="15" rx="3" stroke="#D6D6D6" stroke-width="2" />
         <rect x="4.75" y="4.75" width="1.5" height="7.5" rx="0.75" stroke="#D6D6D6" stroke-width="1.5" />
@@ -70,14 +70,15 @@ export default {
 
 <style>
 .sidebar-toggler-container {
-  position: relative;
+  flex-shrink: 0;
+  width: 20px;
+  height: 18px;
 }
 
 .sidebar-toggler {
-  z-index: 500;
-  position: absolute;
-  right: -23px;
-  top: 17px;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .VPContent {
@@ -87,6 +88,10 @@ export default {
 @media (min-width: 960px) {
   :root {
     --aside-padding: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2);
+  }
+
+  .sidebar-closed .sidebar-toggler {
+    z-index: 500;
   }
 
   .sidebar-toggler rect,
@@ -118,7 +123,8 @@ export default {
 
   .sidebar-closed .VPSidebar {
     box-shadow: none !important;
-    transform: translateX(-75%) !important;
+    transform: translateX(-300px) !important;
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2) !important;
     background-color: transparent !important;
   }
 

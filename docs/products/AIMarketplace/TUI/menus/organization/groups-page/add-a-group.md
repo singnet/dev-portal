@@ -2,7 +2,7 @@
 
 Add group to organization in local organization metadata&#x20;
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 8.39.25 PM.png" alt=""><figcaption><p>Add Group page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 8.39.25 PM.png" alt=""><figcaption><p>Add Group page</p></figcaption></figure>
 
 ```bash
 # Format of the command in the SNET CLI

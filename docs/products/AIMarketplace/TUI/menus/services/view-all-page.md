@@ -1,6 +1,6 @@
 # View All Page
 
-<figure><img src="../../../../../public/assets/images/products/TUI/Screenshot 2024-08-17 at 6.11.15 PM.png" alt=""><figcaption><p>Services View All page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.11.15 PM.png" alt=""><figcaption><p>Services View All page</p></figcaption></figure>
 
 **Overview**
 

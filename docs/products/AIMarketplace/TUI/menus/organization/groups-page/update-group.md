@@ -2,7 +2,7 @@
 
 Update group of organization
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 8.39.37 PM.png" alt=""><figcaption><p>Update group page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 8.39.37 PM.png" alt=""><figcaption><p>Update group page</p></figcaption></figure>
 
 ```bash
 # Format of the command in the SNET CLI

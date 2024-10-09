@@ -2,7 +2,7 @@
 
 Add or remove a group from a service's metadata
 
-<figure><img src="../../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-17 at 6.02.40 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.02.40 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 # Format of the commands in the SNET CLI

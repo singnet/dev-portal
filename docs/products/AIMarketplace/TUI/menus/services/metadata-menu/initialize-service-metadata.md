@@ -2,7 +2,7 @@
 
 Init metadata file with providing protobuf directory (which we publish in IPFS) and display\_name (optionally encoding, service\_type and payment\_expiration\_threshold)
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-17 at 5.58.32 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 5.58.32 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 # Format of the command in the SNET CLI

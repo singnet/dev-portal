@@ -2,7 +2,7 @@
 
 Add description to (local) metadata
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 8.32.41 PM.png" alt=""><figcaption><p>Add description page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 8.32.41 PM.png" alt=""><figcaption><p>Add description page</p></figcaption></figure>
 
 ```
 # Format of the command in the SNET CLI

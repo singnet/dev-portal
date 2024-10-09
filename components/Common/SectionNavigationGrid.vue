@@ -1,27 +1,21 @@
 <template>
-    <div class="section-navigation-container" >
-        <a 
-            class="section-navigation-block" 
-            v-for="item in items"
-            :key="item.link"
-            :href="item.link" 
-        >
-            {{item.text}}
+    <div class="section-navigation-container">
+        <a class="section-navigation-block" v-for="item in sectionContent" :key="item.link" :href="item.link">
+            {{ item.text }}
         </a>
     </div>
 </template>
 
 <script>
-import sidebarContentConfig from '../../config/content/sidebarContentConfig';
+import sidebarContentConfig, { Products } from '../../config/content/sidebarContentConfig';
 
 export default {
     props: {
-        sectionName: String,
+        sectionRoot: String,
     },
     computed: {
-        items() {
-            const [currentSection] = sidebarContentConfig.filter(item => item.text === this.sectionName)
-            return currentSection.items;
+        sectionContent() {
+            return sidebarContentConfig[this.sectionRoot];
         }
     }
 }

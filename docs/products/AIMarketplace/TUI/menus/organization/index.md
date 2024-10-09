@@ -1,6 +1,6 @@
 # Organization
 
-<figure><img src="../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 8.43.00 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 8.43.00 PM.png" alt=""><figcaption></figcaption></figure>
 
 **Overview**
 

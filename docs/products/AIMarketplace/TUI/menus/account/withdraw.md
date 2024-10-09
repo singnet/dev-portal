@@ -2,7 +2,7 @@
 
 Withdraw AGI tokens from MPE wallet
 
-<figure><img src="../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 7.29.40 AM.png" alt=""><figcaption><p>Withdraw Page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 7.29.40 AM.png" alt=""><figcaption><p>Withdraw Page</p></figcaption></figure>
 
 ```bash
 # Format of the command in the SNET CLI

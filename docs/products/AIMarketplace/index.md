@@ -1,1 +1,1 @@
-<SectionNavigationGrid sectionName="AI Marketplace" />
+<SectionNavigationGrid sectionRoot="/docs/products/AIMarketplace/" />

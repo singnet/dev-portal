@@ -2,7 +2,7 @@
 
 ## How to register on Publisher?
 
-1. Go to the page [here](publisher.singularitynet.io)
+1. Go to the page [here](https://publisher.singularitynet.io/)
 2. Select type of company: Organization, Individual or Accept Invitation
 ![Registration](/public/assets/images/products/AIMarketplace/publisher/1Registration.png)
 3. Org ID: Identification for your company. You can choose every available id. this data will be used by users when accessing via the CLI

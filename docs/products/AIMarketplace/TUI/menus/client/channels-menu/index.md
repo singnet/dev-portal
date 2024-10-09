@@ -1,6 +1,6 @@
 # Channels Menu
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-17 at 6.18.36 PM.png" alt=""><figcaption><p>Channels Menu</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.18.36 PM.png" alt=""><figcaption><p>Channels Menu</p></figcaption></figure>
 
 **Overview**
 

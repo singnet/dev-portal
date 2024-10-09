@@ -1,1 +1,1 @@
-<SectionNavigationGrid sectionName="About technologies" />
+<SectionNavigationGrid sectionRoot="/docs/products/AboutTechnologies/" />

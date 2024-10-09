@@ -6,7 +6,7 @@
 * **Create Identity Page**: Enables the creation of a new identity, requiring details like identity name, wallet key, and network selection.
 * **Delete Identity**: Allows users to remove an existing identity by providing the identity name.
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 7.27.06 AM.png" alt=""><figcaption><p>Identity Page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 7.27.06 AM.png" alt=""><figcaption><p>Identity Page</p></figcaption></figure>
 
 **Detailed Structure and Features**
 

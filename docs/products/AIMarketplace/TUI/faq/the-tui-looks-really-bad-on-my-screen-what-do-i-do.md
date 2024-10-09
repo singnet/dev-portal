@@ -35,7 +35,7 @@ However, this still doesn't change the fact that the default MacOS terminal is l
 
 For "missing glyphs" issues like the screenshot below, or any other strange visual bugs you may encounter, utilize the [Windows Terminal](https://github.com/microsoft/terminal?tab=readme-ov-file#microsoft-store-recommended) emulator.&#x20;
 
-<figure><img src="../../../../public/assets/images/products/TUI/TUI Windows visual bug.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/TUI Windows visual bug.png" alt=""><figcaption></figcaption></figure>
 
 You can install it from the [Windows Store](https://aka.ms/terminal) directly, this is the recommended installation.
 

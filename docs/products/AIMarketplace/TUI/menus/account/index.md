@@ -1,6 +1,6 @@
 # Account
 
-<figure><img src="../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 6.04.43 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 6.04.43 PM.png" alt=""><figcaption></figcaption></figure>
 
 **Overview**
 

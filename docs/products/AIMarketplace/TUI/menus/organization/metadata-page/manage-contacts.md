@@ -2,7 +2,7 @@
 
 Add/Remove-all contact(s) in your local organization metadata
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-16 at 8.35.24 PM.png" alt=""><figcaption><p>Manage Contacts page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 8.35.24 PM.png" alt=""><figcaption><p>Manage Contacts page</p></figcaption></figure>
 
 ```bash
 # Format of the commands in the SNET CLI

@@ -2,7 +2,7 @@
 
 Create an Organization
 
-<figure><img src="../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-17 at 5.57.58 PM.png" alt=""><figcaption><p>Create Organization page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 5.57.58 PM.png" alt=""><figcaption><p>Create Organization page</p></figcaption></figure>
 
 ```bash
 # Format of the commands in the SNET CLI

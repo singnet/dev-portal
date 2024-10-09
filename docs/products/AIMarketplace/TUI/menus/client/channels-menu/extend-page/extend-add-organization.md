@@ -2,7 +2,7 @@
 
 Set new expiration and add funds for the channel for the given service
 
-<figure><img src="../../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-17 at 6.23.49 PM.png" alt=""><figcaption><p>Extend Add Organization page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.23.49 PM.png" alt=""><figcaption><p>Extend Add Organization page</p></figcaption></figure>
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>snet channel extend-add-for-org [-h] [--registry-at REGISTRY_AT]

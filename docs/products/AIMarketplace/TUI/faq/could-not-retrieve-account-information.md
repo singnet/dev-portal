@@ -8,7 +8,7 @@ The issue comes into play when your default identity is invalid, meaning your de
 
 Therefore, you will always run into the error below, when trying to start the TUI, the application is attempting to print your account balance, but it cannot because your default identity is invalid.&#x20;
 
-<figure><img src="../../../../public/assets/images/products/TUI/Screenshot 2024-08-15 at 6.50.11 AM.png" alt=""><figcaption><p>Invalid identity error on login</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-15 at 6.50.11 AM.png" alt=""><figcaption><p>Invalid identity error on login</p></figcaption></figure>
 
 ### Step 1: Activate CLI-only mode
 
@@ -20,7 +20,7 @@ First things first, you need to activate the CLI-only mode, you can find exact i
 
 You then need to utilize this CLI command to create a new, valid, identity:
 
-<figure><img src="../../../../public/assets/images/products/TUI/Screenshot 2024-08-15 at 7.02.38 AM.png" alt=""><figcaption><p>CLI create identity command documentation</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-15 at 7.02.38 AM.png" alt=""><figcaption><p>CLI create identity command documentation</p></figcaption></figure>
 
 <pre class="language-bash"><code class="lang-bash"># NOTE: The &#x3C;> is shorthand for "fill this information in here"
 # NOTE 2: For network choose mainnet or sepolia for testnet

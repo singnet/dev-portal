@@ -90,7 +90,7 @@ Once you have restarted your machine, start the script again. Finally, it will g
 
 Running the application for the first time will prompt you with the Identity Creation menu. The TUI needs to have the default identity setup, so it can display your account&#x20;
 
-<figure><img src="../../../../public/assets/images/products/TUI/TUI Identity create.png" alt=""><figcaption><p>Identity creation menu</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/TUI Identity create.png" alt=""><figcaption><p>Identity creation menu</p></figcaption></figure>
 
 Here, just create an account with whatever account name you would like. It is only utilized locally for managing/differentiating identities.&#x20;
 
@@ -98,7 +98,7 @@ Then, add your crypto wallet's private key. We support wallets like MetaMask, Co
 
 Upon successful identity creation, the TUI will redirect you to the account page:
 
-<figure><img src="../../../../public/assets/images/products/TUI/TUI Account Page.png" alt=""><figcaption><p>Account Page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/TUI Account Page.png" alt=""><figcaption><p>Account Page</p></figcaption></figure>
 
 You now have full access to all the functionality of the TUI/CLI. You can find some additional information on the [Menus here](../menus/), you will find some guides on performing different operations with the TUI in the [Tutorials section](../tutorials/), or you can move on to learning about some of the execution flags for the TUI.&#x20;
 

@@ -2,7 +2,7 @@
 
 Claim all channels which are close to expiration date. We also claim all pending ‘payments in progress’ in case we ‘lost’ some payments.
 
-<figure><img src="../../../../../../public/assets/images/products/TUI//Screenshot 2024-08-16 at 7.23.00 AM.png" alt=""><figcaption><p>Claim expired page</p></figcaption></figure>
+<figure><img src="/assets/images/products/TUI//Screenshot 2024-08-16 at 7.23.00 AM.png" alt=""><figcaption><p>Claim expired page</p></figcaption></figure>
 
 ```bash
 # Format of the command in the SNET CLI

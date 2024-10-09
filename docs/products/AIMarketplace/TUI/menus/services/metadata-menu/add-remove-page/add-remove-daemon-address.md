@@ -2,7 +2,7 @@
 
 Add or remove an Ethereum public address of the daemon, in a given payment group of a service
 
-<figure><img src="../../../../../../../public/assets/images/products/TUI/Screenshot 2024-08-17 at 6.03.04 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.03.04 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 # Format of the commands in the SNET CLI
