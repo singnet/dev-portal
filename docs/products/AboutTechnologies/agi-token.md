@@ -17,8 +17,8 @@ Since we are currently in the Beta stage, we only use Kovan and Ropsten Testnet 
 </div>
 
 
-## AGIX Faucet
-Sepolia AGIX Faucet
+## Sepolia AGIX Faucet
+
 We have an automated faucet for distributing Sepolia Testnet AGIX Tokens [here](https://faucet.singularitynet.io/). You need connect test metamask account (click Connect wallet) and sign transaction (click Get tokens) where you want to receive the AGIX token. You can request 1000 AGIX token anytime. You will have to pay the commission in Sepolia ETH.
 
 Symbol: AGIX
