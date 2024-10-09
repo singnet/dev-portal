@@ -168,6 +168,9 @@ export default {
     padding-bottom: 10px;
     max-height: 300px;
     transition: .3s max-height;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
 }
 
 .sections-menu.closed {
