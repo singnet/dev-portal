@@ -22,13 +22,13 @@
                         <label for="email">
                             Email
                         </label>
-                        <input id="email"  v-model="email" placeholder="Enter your email" />
+                        <input id="email" :class="{'error-field': !isValidEmail(email) && email}" v-model="email" placeholder="Enter your email" />
                     </div>
                     <div class="form-field">
                         <label for="Feedback">
-                            Feedback
+                            Your text 
                         </label>
-                        <textarea id="Feedback" v-model="feedback" placeholder="Enter your feedback" />
+                        <textarea id="Feedback" v-model="feedback" placeholder="Enter your text" />
                     </div>
                     <div class="form-field">
                         <label for="category">
@@ -38,10 +38,12 @@
                     </div>
                 </fieldset>
                 <div class="submit-btn-container" :class="{'gradient-border': isSubmitAvailible}">
-                    <button class="submit-button" type="button" :disabled="!isSubmitAvailible" @click="sendFeedback">Submit</button>
+                    <button class="submit-button" type="button" :disabled="!isSubmitAvailible || isRequestHandling" @click="sendFeedback">Submit</button>
                 </div>
             </form>
         </div>
+        <div class="ready-alert" :class="{ 'hidden': !requestIsSend }">Thank you!
+            Our technical support will get in touch with you soon!</div>
         <div class="feedback-form-launcher" :class="{ 'hidden': isFormDisplayed }">
             <button @click="toggleFormVisibility">
                 <img src="/assets/images/common/feedback.png" alt="feedback" />
@@ -57,6 +59,8 @@ import endpoints from '../../utils/constants/endpoints';
 export default {
     data() {
         return {
+            isRequestHandling: false,
+            requestIsSend: true,
             isFormDisplayed: false,
             name: '',
             email: '',
@@ -75,7 +79,7 @@ export default {
     computed: {
         isSubmitAvailible() {
             return this.name &&
-                this.email &&
+                this.isValidEmail(this.email) &&
                 this.feedback &&
                 this.category
         },
@@ -84,9 +88,18 @@ export default {
                 return;
             }
             return window.innerWidth < 450;
-        }
+        },
     },
     methods: {
+        isValidEmail(value) {
+            const regexEmail = new RegExp(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+            if (regexEmail.test(value)) {
+                return true;
+            }
+            return false;
+        },
         toggleFormVisibility() {
             this.isFormDisplayed = !this.isFormDisplayed;
         },
@@ -98,6 +111,11 @@ export default {
             this.email = '';
             this.feedback = '';
             this.category = 'question';
+        },
+        async showAlert() {
+            this.requestIsSend = true;
+                await new Promise(r => setTimeout(r, 2000));
+                this.requestIsSend = false;
         },
         async sendFeedback() {
             try {
@@ -120,11 +138,17 @@ export default {
                         attachment_details: {},
                     })
                 };
-                await fetch(endpoints.FEEDBACK, options);
+                if (!this.isRequestHandling) {
+                    this.isRequestHandling = true;
+                    await fetch(endpoints.FEEDBACK, options);
+                }
+                await this.showAlert();
             } catch (error) {
                 console.log("error on feedback request: ", error);
             } finally {
                 this.resetForm();
+                this.isRequestHandling = false;
+                this.isFormDisplayed = false;
             }
         }    
     }
@@ -136,7 +160,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 100%;
+    width: 100px;
     position: fixed;
     bottom: 50px;
     right: 30px;
@@ -166,6 +190,7 @@ export default {
     background: var(--feedback-form-background);
 }
 
+.ready-alert.hidden,
 .feedback-form.hidden,
 .feedback-form-launcher.hidden {
     visibility: hidden;
@@ -182,8 +207,11 @@ export default {
     margin-bottom: 16px;
 }
 
-fieldset,
-form {
+input {
+    border: 1px solid transparent
+}
+
+fieldset, form {
     border: none !important;
 }
 
@@ -239,6 +267,10 @@ form {
     appearance: auto;
 }
 
+.error-field {
+    border: 1px solid var(--vp-c-danger-1);
+}
+
 .submit-btn-container {
     position: relative;
 }
@@ -285,6 +317,18 @@ form {
     transform: scale(1.1);
 }
 
+.ready-alert {
+    width: 200px;
+    position: absolute;
+    right: 100px;
+    bottom: 30px;
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--vp-c-green-1);
+    background-color: var(--vp-c-green-soft);
+    transition: var(--feedback-form-transition) all;
+}
+
 @media (max-width: 450px) {
     .feedback-form {
         width: 100%;
@@ -293,7 +337,9 @@ form {
     }
     .feedback-form-holder {
         right: 0;
-        bottom: 0
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
     }
 }
 </style>
