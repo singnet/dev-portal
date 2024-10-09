@@ -55,6 +55,6 @@ You can bypass this by changing your terminal settings, [as detailed here. ](htt
 
 Or if your terminal has a toolbar, you can paste text through the following menu selection:
 
-<figure><img src="/assets/images/products/TUI/TUI Windows Paste.png" alt=""><figcaption><p>Windows Menu Paste</p></figcaption></figure>
+![Windows Menu Paste](/assets/images/products/AIMarketplace/TUI/TUIWindowsPaste.png)Windows Menu Paste
 
 A complete and easy fix to the issue, however, is to install [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?ocid=webpdpshare), as detailed in [this part of the FAQ](./the-tui-looks-really-bad-on-my-screen-what-do-i-do.md)

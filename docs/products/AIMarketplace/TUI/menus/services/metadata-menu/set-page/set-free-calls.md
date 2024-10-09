@@ -2,7 +2,7 @@
 
 Set free calls for group for service
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.00.51 PM.png" alt=""><figcaption><p>Set Free Calls page</p></figcaption></figure>
+![Set Free Calls page](/assets/images/products/AIMarketplace/TUI/Screenshot 2024-08-17 at 6.00.51 PM.png)Set Free Calls page
 
 ```bash
 # Format of the command in the SNET CLI

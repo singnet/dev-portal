@@ -10,6 +10,6 @@ The integration of SingularityNET’s decentralized AI marketplace with PayPal r
    The application will then deposit the equivalent AGIX tokens in to channel.
 4. Now you can make a call now - The Dapp components hide all the complexity on making these calls.
 
-![marketplace](/public/assets/images/products/AIMarketplace/forcomers/marketplaceimage.gif)
+![marketplace](/assets/images/products/AIMarketplace/forcomers/marketplaceimage.gif)
 
 For more details refer to the [page](/docs/products/AIMarketplace/coreconcepts/Marketplace-ecosystem/marketplace-service_invocation.md)

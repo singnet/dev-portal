@@ -1,6 +1,6 @@
 # Organization
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-16 at 8.43.00 PM.png" alt=""><figcaption></figcaption></figure>
+![Organization Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.43.00PM.png)Organization Page
 
 **Overview**
 

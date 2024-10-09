@@ -1,4 +1,4 @@
-![logo](/public/assets/images/common/logo.svg)
+![logo](/assets/images/common/logo.svg)
 
 Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io)
 
@@ -35,7 +35,7 @@ npm run dev
 
 ## Update/Add Documents
 
-If you want to update the documentation, change the corresponding files in `/docs/products/`. To add documentation files, place them in the appropriate product section and do not forget to add them to the sidebar (add the data to the `/config/content/sidebarContentConfig.ts` to the appropriate section). If a new documentation page requires images, add them to the appropriate folder in `/public/assets/images/`
+If you want to update the documentation, change the corresponding files in `/docs/products/`. To add documentation files, place them in the appropriate product section and do not forget to add them to the sidebar (add the data to the `/config/content/sidebarContentConfig.ts` to the appropriate section). If a new documentation page requires images, add them to the appropriate folder in `/assets/images/`
 
 The new section must contain index.md file with the following component:
 
@@ -82,7 +82,7 @@ export default {
 ## Update existing config
 
 if you want to change an existing config, you need to find the required file in the `/config/content` folder and change the required part. **Important**: Each config file has its own structure and in order not to cause conflicts, you need to adhere to it.
-Also, some config files require an icon, they need to be added to an existing file (`/public/assets/images/sprite.svg`) and add an id to them
+Also, some config files require an icon, they need to be added to an existing file (`/assets/images/sprite.svg`) and add an id to them
 
 Example of adding an icon to a `sprite.svg`
 

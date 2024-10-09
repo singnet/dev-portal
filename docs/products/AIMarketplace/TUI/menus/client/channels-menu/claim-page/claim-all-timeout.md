@@ -2,7 +2,7 @@
 
 Claim all expired channels which have current identity as a sender.
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.36.07 PM.png" alt=""><figcaption></figcaption></figure>
+![Claim All](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.36.07PM.png)
 
 ```bash
 # Format of the command in the SNET CLI

@@ -18,5 +18,5 @@ Right after the staking window is over, the staking rewards are delivered to use
 
 The diagram below shows the timeline (with sample time periods) of the key events (calls for staking, withdrawal windows, rewards delivery and the chaining of consecutive staking windows)
 
-![staking](/public/assets/images/products/Staking/staking_sequence.jpg)
+![staking](/assets/images/products/Staking/staking_sequence.jpg)
 

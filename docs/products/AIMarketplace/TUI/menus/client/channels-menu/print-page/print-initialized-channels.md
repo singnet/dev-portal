@@ -2,7 +2,7 @@
 
 Print your initialized channels.
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.34.01 PM.png" alt=""><figcaption><p>Print Initialized Channels Page</p></figcaption></figure>
+![Print Initialized Channels Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.34.01PM.png) Print Initialized Channels Page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

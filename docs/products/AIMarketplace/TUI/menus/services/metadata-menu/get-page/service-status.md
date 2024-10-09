@@ -2,7 +2,7 @@
 
 Print service status
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.05.25 PM.png" alt=""><figcaption><p>Print service status page</p></figcaption></figure>
+![Print service status page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.05.25PM.png)Print service status page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

@@ -4,7 +4,7 @@
 
 1. Go to the page [here](https://publisher.singularitynet.io/)
 2. Select type of company: Organization, Individual or Accept Invitation
-![Registration](/public/assets/images/products/AIMarketplace/publisher/1Registration.png)
+![Registration](/assets/images/products/AIMarketplace/publisher/1Registration.png)
 3. Org ID: Identification for your company. You can choose every available id. this data will be used by users when accessing via the CLI
 4. Organization name: Consumers will see it
 5. DUNS Number: Optional field. You can skip it if you don't have this number.
@@ -12,38 +12,38 @@
 7. Phone number: Optional field. Your company’s number including your country code.
 8. Registered Address: Optional field. Your organization’s registered address
 9. Mailing Address: Optional field. Your organization’s mailing address. By default, it is the same as the registration address
-![Description](/public/assets/images/products/AIMarketplace/publisher/2Descript.png)
+![Description](/assets/images/products/AIMarketplace/publisher/2Descript.png)
 10. Short description: Preview description of your company. Max 160 characters.
 11. Long description: Expanded description of your company. Max 5000 characters.
 12. Organization Profile Image. Every organization have a profile image. This profile picture will be visible to consumers
 13. Support email: This email needs to AI Marketplace users to contact you about questions and other.
 14. Support Number: Optional field. Contact number for customers.
-![Payment Address](/public/assets/images/products/AIMarketplace/publisher/3PaymentAddress.png)
+![Payment Address](/assets/images/products/AIMarketplace/publisher/3PaymentAddress.png)
 15. Payment address: The Ethereum address to which all payments will be processed for this group. The address of the etcd you have deployed should be here. It doesn’t matter if it’s public or local, the main thing is that the daemon can reach etcd through it.
 16. ETCD Endpoint: all the ETCD endpoints that will be used. Details [here](/docs/products/AIMarketplace/coreconcepts/etcd)
-![Capture From Metamask](/public/assets/images/products/AIMarketplace/publisher/4CaptureFromMetamask.png)
+![Capture From Metamask](/assets/images/products/AIMarketplace/publisher/4CaptureFromMetamask.png)
 17. Connect MetaMask: This is necessary to confirm your account ownership this address will be used to confirm any changes associated with this organization. you must have an active metamask extension and give it access to this site.
-![Metamask](/public/assets/images/products/AIMarketplace/publisher/5Metamask.png)
+![Metamask](/assets/images/products/AIMarketplace/publisher/5Metamask.png)
 ## How to create a service?
 
-![Create New Service](/public/assets/images/products/AIMarketplace/publisher/7CreateNewService.png)
+![Create New Service](/assets/images/products/AIMarketplace/publisher/7CreateNewService.png)
 1. AI Service Name: max 50 char
 2. Service ID: Identification for your service. You can choose every available id. This data will be used by users when accessing via the CLI
 3. Short description: Preview description of your service. Max 160 characters.
 4. Long description: Expanded description of your company. Max 5000 characters.
-![ID + Description](/public/assets/images/products/AIMarketplace/publisher/8ID+Description.png)
+![ID + Description](/assets/images/products/AIMarketplace/publisher/8ID+Description.png)
 5. Tags: The tags will be shown on the page od your service on the marketplace, as well as help users find your service by keywords. You can add up to 20 tags
 6. Project URL: Your service’s website must be publicly available and the domain name must be associated with your organization
 7. Contributors
 8. AI Service Profile Image: This picture will be visible to consumers on marketplace page
-![Tags](/public/assets/images/products/AIMarketplace/publisher/9Tags.png)
+![Tags](/assets/images/products/AIMarketplace/publisher/9Tags.png)
 9. Enable Demo: If your service should be available only through the CLI/SDK, then set the Enable Demo flag to off.
 10. Upload Demo Files: If your service should be available on the marketplace, then upload files for your interface.
 11. AI Service price: the price of one service request.
 12. Demo Free Calls: number of free demo calls to your service
 13. Daemon endpoint: Daemon endpoint is the public address where you plan to host the daemon. Must start with http/https.
 14. Daemon Addresses: The Ethereum public address
-![Price](/public/assets/images/products/AIMarketplace/publisher/11Price+Endpoints+Addresses.png)
+![Price](/assets/images/products/AIMarketplace/publisher/11Price+Endpoints+Addresses.png)
 How to get: Open PyCharm and run a program that will generate an address and a private key:
 ```py
 from eth_account import Account
@@ -53,21 +53,21 @@ print(‘Your private key: ’ + accut.key.hex())
 ```
 15. Type of your service: You need to choose the appropriate type of service
 16. Upload the Proto files: .zip file that contains proto files of your AI service
-![Proto](/public/assets/images/products/AIMarketplace/publisher/12Proto.png)
+![Proto](/assets/images/products/AIMarketplace/publisher/12Proto.png)
 17. Waiting...
 18. Launch AI Service: Confirm in MetaMask
-![Confirmation Metamask](/public/assets/images/products/AIMarketplace/publisher/13ConfirmationMetamask.png)
+![Confirmation Metamask](/assets/images/products/AIMarketplace/publisher/13ConfirmationMetamask.png)
 ## How to create&start Daemon (billing & service setup)
 
 ### It requires some preparation:
-![Infura](/public/assets/images/products/AIMarketplace/publisher/14Infura.png)
+![Infura](/assets/images/products/AIMarketplace/publisher/14Infura.png)
 1. Create an Infura account that will be used by your daemon to interact with the blockchain and generate API key
 2. The address of your generated key must be specified in the daemon config. It will be used to validate daemon calls on the blockchain network
 After downloading the service and publishing it (PUBLISHED status), you can complete the daemon config
 
 1. Passthrough_endpoint is the endpoint on which your service is located, to which the daemon will send user requests.
 2. Pvt_key_for_metering – key that we generate in Infura
-![Daemon Config](/public/assets/images/products/AIMarketplace/publisher/15DaemonConfig.png)
+![Daemon Config](/assets/images/products/AIMarketplace/publisher/15DaemonConfig.png)
 3. Copy config or download a JSON file
 
 The JSON file will look something like this
@@ -93,7 +93,7 @@ The JSON file will look something like this
 ```
 ### Now we will install the daemon and run it with the downloaded config
 1. Download daemon config according to your system
-![Download Daemon](/public/assets/images/products/AIMarketplace/publisher/16DownloadDaemon.png)
+![Download Daemon](/assets/images/products/AIMarketplace/publisher/16DownloadDaemon.png)
 
 2. Change rules on Daemon file using ‘chmod’ util
 ```sh
@@ -101,10 +101,10 @@ chmod +x snetd-linux-amd64-v5.1.3
 ```
 3. Start screen util (If you haven't this util you need install it). It is necessary that the session with started demon does not end when you close terminal.
 screen -S YourName
-![Screen](/public/assets/images/products/AIMarketplace/publisher/17chmod+screen.png)
+![Screen](/assets/images/products/AIMarketplace/publisher/17chmod+screen.png)
 4. Start Daemon in this session
 ./snetd-linux-amd64-v5.1.3 -c snetd.config.json
-![Config](/public/assets/images/products/AIMarketplace/publisher/18Config.png)
+![Config](/assets/images/products/AIMarketplace/publisher/18Config.png)
 5. Press Ctrl + A + D to disconnect from screen session
 6. Check daemon:
 ```sh

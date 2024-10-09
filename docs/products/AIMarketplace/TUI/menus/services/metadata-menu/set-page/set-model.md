@@ -2,7 +2,7 @@
 
 Publish protobuf model in ipfs and update existing metadata file
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.00.03 PM.png" alt=""><figcaption><p>Set Model page</p></figcaption></figure>
+![Set Model page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.00.03PM.png)Set Model page
 
 ```bash
 # Format of the command in the SNET CLI

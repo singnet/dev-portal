@@ -1,6 +1,6 @@
 # View All Page
 
-<figure><img src="/assets/images/products/TUI/Screenshot 2024-08-17 at 6.11.15 PM.png" alt=""><figcaption><p>Services View All page</p></figcaption></figure>
+![Services View All page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.11.15PM.png)Services View All page
 
 **Overview**
 

@@ -50,4 +50,4 @@ In such cases always, check the Transactions page to see the current status befo
 
 If your transaction is taking a lot of time, you may wish to speed it up as shown below 
 
-![faq](/public/assets/images/products/Bridge/faq.png)
+![faq](/assets/images/products/Bridge/faq.png)

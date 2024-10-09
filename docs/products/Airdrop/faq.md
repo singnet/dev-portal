@@ -47,4 +47,4 @@ Transactions on blockchain take time , you may wish to speed up you transaction 
 
 Please go the waller connected and manually disconnect the site connected 
 
-![1](/public/assets/images/products/Bridge/disconnect-wallet.png)
+![1](/assets/images/products/Bridge/disconnect-wallet.png)
