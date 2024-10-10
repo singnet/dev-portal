@@ -31,8 +31,6 @@ funds into the contract, opening a channel, adding funds to a channel, extending
 - `web3` (Web3): An instance of the Web3 class for interacting with the Ethereum blockchain.
 - `contract` (Contract): An instance of the `Contract` class from the `web3` library for interacting 
 with the MultiPartyEscrow contract.
-- `event_topics` (list): A list of event topics for the MultiPartyEscrow contract.
-- `deployment_block` (int | BlockNumber): The block number at which the MultiPartyEscrow contract was deployed.
 
 #### methods
 
