@@ -1,7 +1,11 @@
 <template>
-     
-    <div class="dropdown-holder" @mouseover="isOptionsShown = true" @mouseleave="isOptionsShown = false">
-        <div>{{ selectedItem.title }}</div>
+    <div ref="dropdownHolder" class="dropdown-holder" @click="toggleVisibility">
+        <div class="dropdown-title">
+            <div>{{ selectedItem.title }}</div>
+            <div class="arrow-svg-container" :class="{'arrow-turn': isOptionsShown}">
+                <SpriteIcon :textIconID="'short-arrow-icon'" :width="'10px'" :height="'6px'" />
+            </div>
+        </div>
         <transition name="fade">
         <div v-show="isOptionsShown" class="options-holder">
             <div 
@@ -27,10 +31,24 @@ export default {
             selectedItem: this.options[0]
         }
     },
+    mounted() {
+        window.addEventListener('click', this.closeOnBackdropClicks)
+    },
+    beforeUnmount() {
+        window.removeEventListener('click', this.closeOnBackdropClicks)
+    },
     methods: {
-        selectItem(item){
+        selectItem(item) {
             this.selectedItem = item;
             this.$emit('select', item)
+        },
+        toggleVisibility() {
+            this.isOptionsShown = !this.isOptionsShown
+        },
+        closeOnBackdropClicks(event) {
+            if (event.target !== this.$refs.dropdownHolder && !event.composedPath().includes(this.$refs.dropdownHolder)) {
+                this.isOptionsShown = false;
+            }
         }
     }
 }
@@ -47,6 +65,12 @@ export default {
         padding: 8px 12px;
         background-color: var(--feedback-form-input-background);
     }
+    
+    .dropdown-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .options-holder {
         width: 100%;
@@ -60,17 +84,26 @@ export default {
         padding: 5px 8px;
         border-radius: 8px;
         cursor: pointer;
-        transition: all .3s
+        transition: all var(--feedback-form-transition);
     }
 
     .option:hover {
         background-color: var(--vp-c-default-soft);
         color: var(--vp-c-brand-1);
-        transition: all .3s
+        transition: all var(--feedback-form-transition);
+    }
+
+    .arrow-svg-container {
+        transition: all var(--feedback-form-transition);
+    }
+
+    .arrow-turn {
+        transform: rotate(180deg);
+        transition: all var(--feedback-form-transition);
     }
 
     .fade-enter-active, .fade-leave-active {
-        transition: all .3s
+        transition: all var(--feedback-form-transition);
     }
 
     .fade-enter, .fade-leave-to {

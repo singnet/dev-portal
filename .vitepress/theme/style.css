@@ -78,7 +78,7 @@
 
   --feedback-form-transition: .3s;
 
-  --feedback-form-background: rgba(255, 255, 255, 0.90);
+  --feedback-form-background: rgba(255, 255, 255, 1);
   --feedback-form-font-color: #666666;
   --feedback-form-input-background: #FAFAFA;
 }
