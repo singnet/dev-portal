@@ -95,35 +95,35 @@
 }
 
 @font-face {
-  font-family: 'Mulish';
+  font-family: 'Mulish-Light';
   src: url(/assets/fonts/Mulish-Light.ttf);
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Mulish";
+  font-family: "Mulish-Regular";
   src: url(/assets/fonts/Mulish-Regular.ttf);
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Mulish";
+  font-family: "Mulish-Medium";
   src: url(/assets/fonts/Mulish-Medium.ttf);
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Mulish';
+  font-family: 'Mulish-Bold';
   src: url(/assets/fonts/Mulish-Bold.ttf);
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Mulish';
+  font-family: 'Mulish-ExtraBold';
   src: url(/assets/fonts/Mulish-ExtraBold.ttf);
   font-weight: 800;
   font-style: normal;
@@ -148,7 +148,7 @@
 ::-webkit-scrollbar {
   width: var(--vp-scroll-width);
   height: var(--vp-scroll-height);
-  background-color: var(--vp-sidebar-bg-color);
+  background-color: var(--vp-scroll-background);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -206,6 +206,9 @@ header button span,
   max-width: calc(var(--vp-layout-max-width) - 64px)
 }
 
+.vp-doc p {
+  font-size: 18px;
+}
 
 .dark .VPNavBar.has-sidebar.top,
 .dark .content-body,
@@ -272,7 +275,7 @@ img {
 
 
 body {
-  font-family: Mulish;
+  font-family: Mulish-Regular;
 }
 
 .VPNavBarMenu.menu span {
