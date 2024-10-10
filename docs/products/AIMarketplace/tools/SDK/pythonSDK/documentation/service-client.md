@@ -58,6 +58,7 @@ the `PaymentStrategy` inheritor classes.
 - `grpc_channel` (grpc.Channel): The gRPC channel with interceptor.
 - `payment_channel_provider` (PaymentChannelProvider): An instance of the `PaymentChannelProvider` class for 
 working with channels and interacting with MPE.
+- `payment_channel_state_service_client` (Any): Stub for interacting with PaymentChannelStateService via gRPC.
 - `service` (Any): The gRPC service stub instance.
 - `pb2_module` (ModuleType): The imported protobuf module.
 - `payment_channels` (list[PaymentChannel]): The list of payment channels.
@@ -86,6 +87,7 @@ Initializes a new instance of the class.
 - `account` (Account): An instance of the `Account` class.
 - `sdk_web3` (Web3): The `Web3` instance.
 - `pb2_module` (str | ModuleType): The module containing the gRPC message definitions.
+- `payment_channel_provider` (PaymentChannelProvider): The payment channel provider instance.
 
 ###### returns:
 
