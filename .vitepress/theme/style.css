@@ -64,6 +64,7 @@
   --vp-light-card: rgba(255, 255, 255, 0.15);
   --vp-dark-card: rgba(164, 164, 164, 0.15);
   
+  --vp-scroll-background: var(--vp-c-lightgray);;
   --vp-scroll-thumb-color: #80788d;
   --vp-shadow-1: 0 0 70px rgba(110, 33, 157, 0.5);
 
@@ -86,7 +87,9 @@
   --vp-sidebar-bg-color: rgba(0, 0, 0, 0.5);
   --vp-sidebar-bg-color-non-transparent: rgb(0, 0, 0);
 
-  --feedback-form-background: rgba(6, 3, 12, 0.62);
+  --vp-scroll-background: var(--vp-c-gray);
+
+  --feedback-form-background: rgba(15, 13, 18, 1);
   --feedback-form-font-color: #DBD7E4;
   --feedback-form-input-background: rgba(195, 184, 224, 0.12);
 }
@@ -153,12 +156,6 @@
   border-radius: 10px;
 }
 
-html {
-  margin-left: calc(100vw - 100%);
-  margin-right: 0;
-}
-body { overflow-y: scroll; }
-
 .wrapper {
   padding: 0 32px !important;
 }
@@ -170,10 +167,6 @@ body { overflow-y: scroll; }
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
-}
-
-.VPNav {
-  width: 100vw !important;
 }
 
 header span {
@@ -243,11 +236,11 @@ header button span,
 
 
 .VPContent  {
-  background: center/cover url(/assets/images/common/light/background_docs.webp) fixed !important;
+  background: center/cover url(/assets/images/common/light/background_docs.svg) fixed !important;
 }
 
 .dark .VPContent  {
-  background: center/cover url(/assets/images/common/dark/background_docs.webp) fixed !important;
+  background: center/cover url(/assets/images/common/dark/background_docs.svg) fixed !important;
 }
 
 .items {
