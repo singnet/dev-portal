@@ -1,6 +1,5 @@
 <template>
-    <a class="current-section" :href="sectionData.path" :class="{ 'active': isActive }"
-        @click="$emit('location-update')">
+    <a class="current-section" :href="sectionData.path" :class="{ 'active': isActive }">
         <div class="section-icon">
             <SpriteIcon :textIconID="sectionData.textIconID" />
         </div>
@@ -13,7 +12,6 @@
 import SpriteIcon from "../Common/SpriteIcon.vue";
 
 export default {
-    emits: ['location-update'],
     components: {
         SpriteIcon
     },
