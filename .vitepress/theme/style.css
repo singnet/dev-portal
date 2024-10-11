@@ -95,35 +95,35 @@
 }
 
 @font-face {
-  font-family: 'Mulish-Light';
+  font-family: "Mulish";
   src: url(/assets/fonts/Mulish-Light.ttf);
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Mulish-Regular";
+  font-family: "Mulish";
   src: url(/assets/fonts/Mulish-Regular.ttf);
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Mulish-Medium";
+  font-family: "Mulish";
   src: url(/assets/fonts/Mulish-Medium.ttf);
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Mulish-Bold';
+  font-family: 'Mulish';
   src: url(/assets/fonts/Mulish-Bold.ttf);
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Mulish-ExtraBold';
+  font-family: 'Mulish';
   src: url(/assets/fonts/Mulish-ExtraBold.ttf);
   font-weight: 800;
   font-style: normal;
@@ -275,7 +275,8 @@ img {
 
 
 body {
-  font-family: Mulish-Regular;
+  font-family: Mulish;
+  font-weight: 500;
 }
 
 .VPNavBarMenu.menu span {
