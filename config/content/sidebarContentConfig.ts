@@ -2,6 +2,7 @@ export const RootSections = {
     DOCS: {
         name: "/Docs",
         path: "/docs/",
+        documentPath: "/docs/index.md",
         textIconID: "techs-icon",
     }
 }

@@ -2,8 +2,7 @@
     <div class="navigation-control">
         <!-- <div class="navigation-control" @mouseleave="closeSectionsMenu"> -->
         <div class="control-header">
-            <NavigationControlSection v-if="currentSection" :sectionData="currentSection" :isActive="true"
-                @location-update="updateLocation" />
+            <NavigationControlSection v-if="currentSection" :sectionData="currentSection" :isActive="true" />
             <div class="sections-title" v-else>
                 Portal sections
             </div>
@@ -14,7 +13,7 @@
         </div>
         <div class="sections-menu" :class="{ 'closed': !isSectionsMenuOpen }">
             <div v-for="sectionsItem in otherSections" :key="sectionsItem.name" class="sections-menu-item">
-                <NavigationControlSection :sectionData="sectionsItem" @location-update="updateLocation" />
+                <NavigationControlSection :sectionData="sectionsItem" />
             </div>
         </div>
     </div>
@@ -24,6 +23,7 @@ import SidebarToggle from "./SidebarToggle.vue";
 import SpriteIcon from "../Common/SpriteIcon.vue";
 import NavigationControlSection from "./NavigationControlSection.vue"
 import { Products as Sections, RootSections } from "../../config/content/sidebarContentConfig";
+import { useData } from "vitepress";
 
 const SectionsMenuStates = {
     OPEN: "open",
@@ -46,10 +46,17 @@ export default {
         SidebarToggle,
         SpriteIcon
     },
+    setup() {
+        const { page: pageData } = useData();
+
+        return {
+            pageData
+        }
+    },
     data() {
         return {
-            sections: Object.values(Sections),
             currentLocation: "",
+            sections: Object.values(Sections),
             isSectionsMenuOpen: false,
         }
     },
@@ -60,7 +67,7 @@ export default {
 
         this.updateLocation();
 
-        if (this.currentLocation === RootSections.DOCS.path) {
+        if (this.isDocsRootDisplayed) {
             this.isSectionsMenuOpen = true;
             return;
         }
@@ -70,11 +77,21 @@ export default {
         this.isSectionsMenuOpen =
             !storedIsSectionsMenuOpenState || storedIsSectionsMenuOpenState === SectionsMenuStates.OPEN;
     },
+    watch: {
+        pageData() {
+            this.updateLocation();
+        }
+    },
     computed: {
+        isDocsRootDisplayed() {
+            return this.currentLocation === RootSections.DOCS.documentPath;
+        },
         currentSection() {
-            if (this.currentLocation === RootSections.DOCS.path) {
+            if (this.isDocsRootDisplayed) {
+                this.isSectionsMenuOpen = true;
                 return null;
             }
+
             return this.sections.find(section => this.currentLocation.includes(section.path));
         },
         otherSections() {
@@ -91,7 +108,7 @@ export default {
     },
     methods: {
         updateLocation() {
-            this.currentLocation = typeof window !== 'undefined' ? window.location.pathname : "";
+            this.currentLocation = `/${this.pageData.filePath}`;
         },
         setLocalStorageIsOpenValue(isMenuOpen) {
             if (typeof window === 'undefined') {
