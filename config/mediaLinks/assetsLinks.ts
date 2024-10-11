@@ -1,9 +1,9 @@
 import { HeadConfig } from "vitepress";
 
-type link = ['link', {
+type LinkType = ['link', {
   rel: string,
   href: string,
-  as?: string,
+  as: string,
   type?: string,
   crossorigin?: string
 }]
@@ -30,11 +30,11 @@ const fonts = [
 ]
 
 const formThemedImageLinks = () => {
-  let themedImagesLinks: link[] = [];
+  let themedImagesLinks: LinkType[] = [];
   themedImages.forEach(themedImage => {
     themes.forEach(theme => {
       themedImagesLinks.push(
-        ['link', { rel: 'preload', href: `/assets/images/common/${theme}/${themedImage}` }]
+        ['link', { rel: 'prefetch', as: 'image', href: `/assets/images/common/${theme}/${themedImage}` }]
       );
     })
   })
@@ -43,7 +43,7 @@ const formThemedImageLinks = () => {
 }
 
 const formFontsLinks = () => {
-  let fontsLinks: link[] = [];
+  let fontsLinks: LinkType[] = [];
   fonts.forEach(font => {
     fontsLinks.push(
       ['link', {
@@ -53,7 +53,7 @@ const formFontsLinks = () => {
         type: 'font/ttf',
         crossorigin: ''
       }
-  ]
+    ]
       );
   })
 
@@ -64,5 +64,5 @@ export default [
     ...formThemedImageLinks(),
     ...formFontsLinks(),
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', {rel: 'preload', href: '/assets/images/common/feedback.webp'}],
+    ['link', {rel: 'preload', href: '/assets/images/common/feedback.webp', as: 'image'}],
 ] as HeadConfig[];
