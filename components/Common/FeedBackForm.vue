@@ -46,7 +46,7 @@
             Our technical support will get in touch with you soon!</div>
         <div class="feedback-form-launcher" :class="{ 'hidden': isFormDisplayed }">
             <button @click="toggleFormVisibility">
-                <img src="/assets/images/common/feedback.png" alt="feedback" />
+                <img src="/assets/images/common/feedback.webp" alt="feedback" />
             </button>
         </div>
     </div>

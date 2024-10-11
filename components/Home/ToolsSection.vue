@@ -7,7 +7,7 @@
         </div>
         <div class="tools-items-container">
             <div class="tools-header-component card">
-                <ThemedImage srcPath="tools.png" alt="tools" />
+                <ThemedImage srcPath="tools.webp" alt="tools" />
                 <p>On our website you will find a convenient block with tools and tools for creating your ideal web resource. Start your creation journey now!</p>
             </div>
             <swiper
