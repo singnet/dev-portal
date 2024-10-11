@@ -50,7 +50,7 @@ export const TechnologiesSection = [
         link: "/docs/products/AboutTechnologies/ethereum",
     },
     {
-        text: "AGI Token",
+        text: "AGIX Token",
         link: "/docs/products/AboutTechnologies/agi-token",
     },
     {

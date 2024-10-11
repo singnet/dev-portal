@@ -64,6 +64,7 @@
   --vp-light-card: rgba(255, 255, 255, 0.15);
   --vp-dark-card: rgba(164, 164, 164, 0.15);
   
+  --vp-scroll-background: var(--vp-c-lightgray);;
   --vp-scroll-thumb-color: #80788d;
   --vp-shadow-1: 0 0 70px rgba(110, 33, 157, 0.5);
 
@@ -77,7 +78,7 @@
 
   --feedback-form-transition: .3s;
 
-  --feedback-form-background: rgba(255, 255, 255, 0.90);
+  --feedback-form-background: rgba(255, 255, 255, 1);
   --feedback-form-font-color: #666666;
   --feedback-form-input-background: #FAFAFA;
 }
@@ -86,13 +87,15 @@
   --vp-sidebar-bg-color: rgba(0, 0, 0, 0.5);
   --vp-sidebar-bg-color-non-transparent: rgb(0, 0, 0);
 
-  --feedback-form-background: rgba(6, 3, 12, 0.62);
+  --vp-scroll-background: var(--vp-c-gray);
+
+  --feedback-form-background: rgba(15, 13, 18, 1);
   --feedback-form-font-color: #DBD7E4;
   --feedback-form-input-background: rgba(195, 184, 224, 0.12);
 }
 
 @font-face {
-  font-family: 'Mulish';
+  font-family: "Mulish";
   src: url(/assets/fonts/Mulish-Light.ttf);
   font-weight: 400;
   font-style: normal;
@@ -145,19 +148,13 @@
 ::-webkit-scrollbar {
   width: var(--vp-scroll-width);
   height: var(--vp-scroll-height);
-  background-color: var(--vp-sidebar-bg-color);
+  background-color: var(--vp-scroll-background);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--vp-scroll-thumb-color);
   border-radius: 10px;
 }
-
-html {
-  margin-left: calc(100vw - 100%);
-  margin-right: 0;
-}
-body { overflow-y: scroll; }
 
 .wrapper {
   padding: 0 32px !important;
@@ -170,10 +167,6 @@ body { overflow-y: scroll; }
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
-}
-
-.VPNav {
-  width: 100vw !important;
 }
 
 header span {
@@ -213,6 +206,9 @@ header button span,
   max-width: calc(var(--vp-layout-max-width) - 64px)
 }
 
+.vp-doc p {
+  font-size: 18px;
+}
 
 .dark .VPNavBar.has-sidebar.top,
 .dark .content-body,
@@ -243,11 +239,11 @@ header button span,
 
 
 .VPContent  {
-  background: center/cover url(/assets/images/common/light/background_docs.webp) fixed !important;
+  background: center/cover url(/assets/images/common/light/background_docs.svg) fixed !important;
 }
 
 .dark .VPContent  {
-  background: center/cover url(/assets/images/common/dark/background_docs.webp) fixed !important;
+  background: center/cover url(/assets/images/common/dark/background_docs.svg) fixed !important;
 }
 
 .items {
@@ -280,6 +276,7 @@ img {
 
 body {
   font-family: Mulish;
+  font-weight: 500;
 }
 
 .VPNavBarMenu.menu span {

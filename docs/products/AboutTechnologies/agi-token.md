@@ -17,12 +17,15 @@ Since we are currently in the Beta stage, we only use Kovan and Ropsten Testnet 
 </div>
 
 
-## AGIX Faucet
-We have an automated faucet for distributing Kovan and Ropsten Testnet AGIX Tokens [here]. You will need to login using your GitHub account and input the Ethereum address where you want to receive the AGIX token. Make sure this address is a Kovan Ethereum Address. You can request 10 AGIX token every 24 hours.
+## Sepolia AGIX Faucet
 
-In order to add the Kovan Testnet AGIX you may need the following details:
-* Symbol: AGIX
-* Decimals: 8
-* Kovan Token Address: [0x3b226ff6aad7851d3263e53cb7688d13a07f6e81](https://kovan.etherscan.io/address/0x3b226ff6aad7851d3263e53cb7688d13a07f6e81)
+We have an automated faucet for distributing Sepolia Testnet AGIX Tokens [here](https://faucet.singularitynet.io/). You need connect test metamask account (click Connect wallet) and sign transaction (click Get tokens) where you want to receive the AGIX token. You can request 1000 AGIX token anytime. You will have to pay the commission in Sepolia ETH.
 
-You can request Kovan or Ropsten Testnet Ether [here]
+Symbol: AGIX
+
+Decimals: 8
+
+Kovan Token Address: 
+[0xf703b9aB8931B6590CFc95183be4fEf278732016](https://sepolia.etherscan.io/address/0xf703b9aB8931B6590CFc95183be4fEf278732016)
+
+You can request Sepolia Ether [here](https://www.infura.io/faucet/sepolia), but you will need to have some real ETH on the Mainnet network

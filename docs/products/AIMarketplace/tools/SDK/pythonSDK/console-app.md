@@ -376,5 +376,5 @@ def open_channel():
 ```
 
 The entire application code can be viewed at the 
-[link](https://github.com/Arondondon/snet-sdk-python/blob/depelopment-app-example/examples/console_app.py) to GitHub.
+[link](https://github.com/singnet/snet-sdk-python/blob/master/examples/console_app.py) to GitHub.
 

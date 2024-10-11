@@ -11,8 +11,12 @@ const { isDark } = useData()
 
 const themeFolder = (isDarkTheme) => isDarkTheme ? 'dark' : 'light';
 
-const src = computed(() => { 
-    return `/assets/images/common/${themeFolder(isDark.value)}/${srcPath}`
+const src = computed(() => {
+    console.log("isDark.value: ", isDark.value);
+    console.log("themeFolder: ", themeFolder(isDark.value));
+    console.log("src: ", `/assets/images/common/${themeFolder(isDark.value)}/${srcPath}`);  
+    
+    return `/assets/images/common/${themeFolder(isDark.value)}/${srcPath}`;
 })
 
 </script>

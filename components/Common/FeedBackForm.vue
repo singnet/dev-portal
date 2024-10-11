@@ -4,14 +4,17 @@
             <div class="form-header">
                 <h2>Feedback form</h2>
                 <button @click="toggleFormVisibility">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" width="15px" viewBox="0 0 20 20">
-                        <line x1="0" y1="00" x2="20" y2="20" stroke-linecap="round" />
-                        <line x1="0" y1="20" x2="20" y2="0" stroke-linecap="round" />
-                    </svg>
+                    <SpriteIcon :textIconID="'close-icon'" :width="'15px'" :height="'15px'" />
                 </button>
             </div>
             <form>
                 <fieldset>
+                    <div class="form-field">
+                        <label for="category">
+                            Support category
+                        </label>
+                        <DropdownList :options="options" @select="selectCategory"/>
+                    </div>
                     <div class="form-field">
                         <label for="name">
                             Name
@@ -30,23 +33,20 @@
                         </label>
                         <textarea id="Feedback" v-model="feedback" placeholder="Enter your text" />
                     </div>
-                    <div class="form-field">
-                        <label for="category">
-                            Support category
-                        </label>
-                        <DropdownList :options="options" @select="selectCategory"/>
-                    </div>
                 </fieldset>
                 <div class="submit-btn-container" :class="{'gradient-border': isSubmitAvailible}">
-                    <button class="submit-button" type="button" :disabled="!isSubmitAvailible || isRequestHandling" @click="sendFeedback">Submit</button>
+                    <button class="submit-button" type="button" :disabled="!isSubmitAvailible || isRequestHandling" @click="sendFeedback">
+                        <SpriteIcon v-if="isRequestHandling" :textIconID="'double-check-icon'" :width="'35px'" :height="'20px'"/>
+                        <span v-else>Submit</span>
+                    </button>
                 </div>
             </form>
         </div>
-        <div class="ready-alert" :class="{ 'hidden': !requestIsSend }">Thank you!
+        <div class="ready-alert" :class="{ 'hidden': !isRequestSent }">Thank you!
             Our technical support will get in touch with you soon!</div>
         <div class="feedback-form-launcher" :class="{ 'hidden': isFormDisplayed }">
             <button @click="toggleFormVisibility">
-                <img src="/assets/images/common/feedback.png" alt="feedback" />
+                <img src="/assets/images/common/feedback.webp" alt="feedback" />
             </button>
         </div>
     </div>
@@ -60,7 +60,7 @@ export default {
     data() {
         return {
             isRequestHandling: false,
-            requestIsSend: false,
+            isRequestSent: false,
             isFormDisplayed: false,
             name: '',
             email: '',
@@ -113,9 +113,9 @@ export default {
             this.category = 'question';
         },
         async showAlert() {
-            this.requestIsSend = true;
+            this.isRequestSent = true;
                 await new Promise(r => setTimeout(r, 2000));
-                this.requestIsSend = false;
+                this.isRequestSent = false;
         },
         async sendFeedback() {
             try {
@@ -142,13 +142,14 @@ export default {
                     this.isRequestHandling = true;
                     await fetch(endpoints.FEEDBACK, options);
                 }
+                this.isFormDisplayed = false;
                 await this.showAlert();
             } catch (error) {
+                this.isFormDisplayed = false;
                 console.log("error on feedback request: ", error);
             } finally {
                 this.resetForm();
                 this.isRequestHandling = false;
-                this.isFormDisplayed = false;
             }
         }    
     }
@@ -283,6 +284,10 @@ fieldset, form {
     border-radius: 8px;
     width: 100%;
     cursor: pointer;
+}
+
+.submit-button svg {
+    margin: 0 auto;
 }
 
 .submit-button:disabled {

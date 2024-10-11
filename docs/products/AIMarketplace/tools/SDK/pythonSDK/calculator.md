@@ -130,5 +130,5 @@ created instance of the ServiceClient class - `calc_client`, using `call_rpc` me
 on the screen.
 
 The entire application code can be viewed at the 
-[link](https://github.com/Arondondon/snet-sdk-python/blob/depelopment-app-example/examples/calculator.py) to GitHub.
+[link](https://github.com/singnet/snet-sdk-python/blob/master/examples/calculator.py) to GitHub.
 

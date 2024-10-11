@@ -6,6 +6,10 @@ import markdownConfig from '../config/markdown/markdownConfig';
 import assetsLinks from "../config/mediaLinks/assetsLinks";
 
 export default defineConfig({
+  appearance: {
+    // @ts-expect-error not fully supported yet
+    initialValue: 'light'
+  },
   head: assetsLinks,
   title: generalConfig.siteName,
   description: generalConfig.siteDescription,

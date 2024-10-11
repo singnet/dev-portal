@@ -18,33 +18,29 @@ pip install snet.sdk
 
 Here's an example of calling a service using the SDK
 
-Once you have installed snet-sdk in your current environment and it's in your PYTHONPATH, you should create an identity, import snet-sdk and create an instance of the base sdk class. The SDK instance is then used to create service client instances. Finally, the generated service_client instance can be used to call methods provided by the service.
-
-```bash
-snet identity create --private-key "MY_PRIVATE_KEY" test key
-```
+Once you have installed snet-sdk in your current environment, you should import snet-sdk 
+and create an instance of the base sdk class. The SDK instance is then used to create service client instances. 
+Finally, the generated service_client instance can be used to call methods provided by the service.
 
 ```python
 from snet import sdk
 
-org_id = "26072b8b6a0e448180f8c0e702ab6d2f"
-service_id = "Exampleservice"
-group_name="default_group"
-
-
-config = {
-    "private_key": MY_PRIVATE_KEY,
-    "eth_rpc_endpoint": "https://sepolia.infura.io/v3/09027f4a13e841d48dbfefc67e7685d5",
-    "email":"test@test.com",
-    "concurrency": False,
-    "org_id": org_id,
-    "service_id": service_id
-}
+config = sdk.config.Config(private_key='YOUR_PRIVATE_KEY',
+                eth_rpc_endpoint=f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
+                concurrency=False,
+                force_update=False)
 
 snet_sdk = sdk.SnetSDK(config)
-service_client = snet_sdk.create_service_client(org_id, service_id, group_name)
+
+org_id = "26072b8b6a0e448180f8c0e702ab6d2f"
+service_id = "Exampleservice"
+group_name = "default_group"
+service_client = snet_sdk.create_service_client(org_id=org_id, service_id=service_id, group_name=group_name)
+
 result = service_client.call_rpc("mul", "Numbers", a=20, b=3)
 print(f"Performing 20 * 3: {result}")
+
+# Performing 20 * 3: 60
 ```
 
 After executing this code, you should have client libraries created for this service. They are located in the following path: ~/.snet/org_id/service_id/python/.
