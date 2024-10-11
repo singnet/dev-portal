@@ -19,7 +19,7 @@ In this tutorial we'll create a Java service and publish it in SingularityNET.
 
 Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) using provided `Dockerfile`.
 
-```
+```sh
 docker build \
     --build-arg language=java \
     -t snet_java_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
@@ -85,7 +85,7 @@ nano src/main/java/service_spec/tutorial.proto
 
 In this tutorial our proto file should be like this:
 
-```
+```proto
 syntax = "proto3";
 
 option java_generic_services = true;

@@ -13,23 +13,23 @@ For start development you need:
 
 Copy repository:
 
-```
+```sh
 git clone https://github.com/singnet/dev-portal-v2.git
 ```
 
-```
+```sh
 cd dev-portal-v2
 ```
 
 then install dependencies:
 
-```
+```sh
 npm install
 ```
 
 and run project:
 
-```
+```sh
 npm run dev
 ```
 

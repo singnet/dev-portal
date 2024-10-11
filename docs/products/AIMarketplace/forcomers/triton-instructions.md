@@ -42,7 +42,7 @@ Where:
 
 ### Setting up configuration files
 Your `config.pbtxt` for model should look something like this:
-```
+```proto
 name: "your_service"
 backend: "onnxruntime"
 max_batch_size : 0
@@ -89,7 +89,7 @@ You should adjust this config file to represent input and output format of model
 
 ### Local deployment and usage
 Launching the docker-based inference server:
-```
+```sh
 docker run --gpus='"device=0"' -it --shm-size=256m --rm -p8000:8000 -p8001:8001 -p8002:8002 -v /{full_path_to}/service_model_repo:/models nvcr.io/nvidia/tritonserver:23.12-py3 tritonserver --model-repository=/models
 
 Replace {full_path_to} with absolute path to parent directory of service_model_repo folder
@@ -193,7 +193,7 @@ hatespeech_repo/
 After write configs:
 
 `preprocessing:`
-```
+```proto
 name: "preprocessing"
 backend: "python"
 max_batch_size: 0
@@ -559,7 +559,7 @@ class TritonPythonModel:
 ```
 
 Everything is ready to start the server:
-```
+```sh
 docker run --gpus='"device=0"' -it --shm-size=256m --rm -p8000:8000 -p8001:8001 -p8002:8002 -v /{full_path_to}/service_model_repo:/models nvcr.io/nvidia/tritonserver:23.12-py3 tritonserver --model-repository=/models
 ```
 
@@ -593,7 +593,7 @@ output_data = results.as_numpy("answer").astype(str)
 print(output_data)
 ```
 Then run client application:
-```
+```sh
 # conda activate env_name
 python client.py
 # answer: ['{"hate": "0.0007111975", "abusing": "0.0004021231", "neutral": "0.0011137378", "spam": "0.9977728"}']

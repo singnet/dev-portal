@@ -80,7 +80,7 @@ understand everything you can do in the `.proto` file.
 
 In this tutorial our `./service_spec/tutorial.proto` will be like this:
 
-```
+```proto
 syntax = "proto3";
 
 package tutorial;

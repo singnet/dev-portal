@@ -303,7 +303,7 @@ snet client call my-org example-executable-service default_group add '{"a": 6.3,
 
 It should then return:
 
-```
+```sh
 value: 19.5
 ```
 

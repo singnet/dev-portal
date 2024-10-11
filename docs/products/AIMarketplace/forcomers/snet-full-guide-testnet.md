@@ -507,7 +507,7 @@ For example, in this platform example we need to pass the following JSON as a pa
 
 Confirm the transaction when asked to. After that you should see service response to your JSON payload
 
-```
+```sh
 Price for this call will be 0.0000001 AGI (use -y to remove this warning).
 Proceed? (y/n): y
 value: 42.0
