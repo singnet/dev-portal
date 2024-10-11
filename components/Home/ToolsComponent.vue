@@ -2,10 +2,10 @@
     <div class="tool-card card">
         <div class="tool-info">
             <h1 class="tool-title">
-                    {{ item?.text }}
+                    {{ item.text }}
             </h1>
             <p class="tool-description">
-                {{ item?.description }}
+                {{ item.description }}
             </p>
         </div>
         <div class="tool-redirect" @click="redirect">
@@ -19,7 +19,8 @@
 export default {
 props: {
     item: {
-        type: Object
+        type: Object,
+        required: true,
     }
 },
 methods: {

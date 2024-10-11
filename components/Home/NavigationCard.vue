@@ -1,7 +1,7 @@
 <template>
     <div class="navigation-card card" @click="redirect">
         <div class="image-container">
-            <ThemedImage :srcPath="item?.imageSrc" :alt="item?.text" />
+            <ThemedImage v-if="item.imageFileName" :imageFileName="item.imageFileName" :alt="item.text" />
         </div>
         <div class="card-body">
             <div class="card-info">
@@ -24,7 +24,8 @@
             <div class="card-redirect gradient-border">
                 <div class="card-redirect-text">
                     <p>
-                        Go to the section <SpriteIcon :textIconID="'arrow-icon'" :width="'19px'" :height="'10px'" />
+                        Go to the section 
+                        <SpriteIcon :textIconID="'arrow-icon'" :width="'19px'" :height="'10px'" />
                     </p>
                 </div>
             </div>
@@ -32,23 +33,28 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import ThemedImage from '../Common/ThemedImage.vue';
 
 export default {
-props: {
-    item: {
-        type: Object
+    props: {
+        item: {
+            type: Object,
+            required: true,
+        }
+    },
+    components: {
+        ThemedImage
+    },
+    methods: {
+        redirect(): void {
+            if (typeof window === 'undefined') {
+                return;
+            }
+
+            window.location.href = this.item.link;
+        }
     }
-},
-components: {
-    ThemedImage
-},
-methods: {
-    redirect() {
-        window.location.href = this.item.link;
-    }
-}
 }
 
 </script>
@@ -63,7 +69,7 @@ methods: {
     gap: 10px;
 }
 
-.navigation-card .image-container img{
+.navigation-card .image-container img {
     border-radius: 20px;
     width: 265px;
     height: 135px;
@@ -138,8 +144,8 @@ svg {
     display: flex;
 }
 
-.card-redirect:hover, 
-.card-redirect::before  {
+.card-redirect:hover,
+.card-redirect::before {
     box-shadow: 0 0 10px var(--vp-accent-border);
 
 }
@@ -152,7 +158,7 @@ svg {
     fill: black !important;
 }
 
-.dark .card-redirect{
+.dark .card-redirect {
     color: var(--vp-c-white);
 }
 
@@ -165,5 +171,4 @@ svg {
         white-space: wrap;
     }
 }
-
 </style>

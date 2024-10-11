@@ -7,20 +7,17 @@
         </div>
         <div class="tools-items-container">
             <div class="tools-header-component card">
-                <ThemedImage srcPath="tools.webp" alt="tools" />
-                <p>On our website you will find a convenient block with tools and tools for creating your ideal web resource. Start your creation journey now!</p>
+                <ThemedImage :imageFileName="'tools.webp'" alt="tools" />
+                <p>On our website you will find a convenient block with tools and tools for creating your ideal web
+                    resource. Start your creation journey now!</p>
             </div>
-            <swiper
-                v-if="!isMobile"
-                class="swiper-container"
-                v-bind="swiperOptions"
-            >
+            <swiper v-if="!isMobile" class="swiper-container" v-bind="swiperOptions">
                 <swiper-slide v-for="item in toolsConfig" :key="item.text">
-                     <ToolsComponent  :item="item" />
+                    <ToolsComponent :item="item" />
                 </swiper-slide>
             </swiper>
             <div v-else v-for="item in toolsConfig" :key="item.text">
-                <ToolsComponent  :item="item" />
+                <ToolsComponent :item="item" />
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -31,7 +28,7 @@
 import ToolsComponent from "./ToolsComponent.vue";
 import toolsConfig from "../../config/content/toolsConfig.ts";
 import { Pagination, A11y } from 'swiper/modules';
-import { Swiper, SwiperSlide} from 'swiper/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import ThemedImage from "../Common/ThemedImage.vue";
 
 import 'swiper/css';
@@ -48,9 +45,9 @@ export default {
         ThemedImage
     },
     setup() {
-      return {
-        modules: [Pagination, A11y],
-      };
+        return {
+            modules: [Pagination, A11y],
+        };
     },
     data() {
         return {
@@ -86,9 +83,9 @@ export default {
     },
     computed: {
         isMobile() {
-        if (typeof window === 'undefined') {
-            return false;
-        }
+            if (typeof window === 'undefined') {
+                return false;
+            }
             return window.screen.width < 640;
         }
     }
@@ -130,7 +127,7 @@ export default {
 }
 
 :deep(.swiper-slide) {
-  min-height: 150px;
+    min-height: 150px;
 }
 
 :deep(.swiper-pagination-bullet) {
@@ -158,5 +155,4 @@ export default {
         grid-template-columns: 1fr
     }
 }
-
 </style>

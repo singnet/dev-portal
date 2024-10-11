@@ -1,22 +1,43 @@
 <template>
-    <img :src=src :alt=alt />
+    <img :src="imageSrc" :alt="alt" />
 </template>
 
-<script setup>
-import { computed } from 'vue'
+<script lang="ts">
 import { useData } from 'vitepress'
-const { srcPath, alt } = defineProps(['srcPath', 'alt']);
 
-const { isDark } = useData()
+export const THEME_FOLDER_LOCATION: string = "/assets/images/common/";
 
-const themeFolder = (isDarkTheme) => isDarkTheme ? 'dark' : 'light';
+export const enum ThemeResourcesFolderNames {
+    DARK = "dark",
+    LIGHT = "light",
+}
 
-const src = computed(() => {
-    console.log("isDark.value: ", isDark.value);
-    console.log("themeFolder: ", themeFolder(isDark.value));
-    console.log("src: ", `/assets/images/common/${themeFolder(isDark.value)}/${srcPath}`);  
-    
-    return `/assets/images/common/${themeFolder(isDark.value)}/${srcPath}`;
-})
+export default {
+    setup() {
+        const { isDark } = useData();
+
+        return {
+            isDark
+        }
+    },
+    props: {
+        imageFileName: {
+            type: String,
+            required: true,
+        },
+        alt: {
+            type: String,
+            required: true,
+        }
+    },
+    computed: {
+        themeFolder(): string {
+            return `${this.isDark ? ThemeResourcesFolderNames.DARK : ThemeResourcesFolderNames.LIGHT}/`;
+        },
+        imageSrc(): string {
+            return `${THEME_FOLDER_LOCATION}${this.themeFolder}${this.imageFileName}`;
+        }
+    }
+}
 
 </script>

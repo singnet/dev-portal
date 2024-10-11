@@ -10,6 +10,7 @@ export default defineConfig({
     // @ts-expect-error not fully supported yet
     initialValue: 'light'
   },
+  cleanUrls: true,
   head: assetsLinks,
   title: generalConfig.siteName,
   description: generalConfig.siteDescription,

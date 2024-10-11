@@ -7,7 +7,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import NavigationCard from "./NavigationCard.vue";
 import docsConfig from "../../config/content/docsConfig";
 
