@@ -1,29 +1,68 @@
 import { HeadConfig } from "vitepress";
 
+type link = ['link', {
+  rel: string,
+  href: string,
+  as?: string,
+  type?: string,
+  crossorigin?: string
+}]
+
+const themes = ['dark', 'light']
+
+const themedImages = [
+  "background_docs.svg",
+  "airdrop.webp",
+  "bridge.webp",
+  "platform.webp",
+  "staking.webp",
+  "techs.webp",
+  "tools.webp",
+  "walt.webp"
+];
+
+const fonts = [
+  "Mulish-Light.ttf",
+  "Mulish-Regular.ttf",
+  "Mulish-Medium.ttf",
+  "Mulish-Bold.ttf",
+  "Mulish-ExtraBold.ttf"
+]
+
+const formThemedImageLinks = () => {
+  let themedImagesLinks: link[] = [];
+  themedImages.forEach(themedImage => {
+    themes.forEach(theme => {
+      themedImagesLinks.push(
+        ['link', { rel: 'preload', href: `/assets/images/common/${theme}/${themedImage}` }]
+      );
+    })
+  })
+
+  return themedImagesLinks;
+}
+
+const formFontsLinks = () => {
+  let fontsLinks: link[] = [];
+  fonts.forEach(font => {
+    fontsLinks.push(
+      ['link', {
+        rel: 'preconnect',
+        href: `/assets/fonts/${font}`,
+        as: 'font',
+        type: 'font/ttf',
+        crossorigin: ''
+      }
+  ]
+      );
+  })
+
+  return fontsLinks;
+}
+
 export default [
-        ['link', { rel: 'icon', href: '/favicon.ico' }],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/dark/background_docs.svg'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/dark/airdrop.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/dark/bridge.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/dark/platform.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/dark/staking.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/dark/techs.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/dark/tools.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/dark/walt.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/light/staking.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/light/airdrop.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/light/background_docs.svg'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/light/bridge.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/light/platform.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/light/techs.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/light/tools.png'}],
-        ['link', {rel: 'prefetch', href: '/assets/images/common/light/walt.png'}],
-        ['link', {
-              rel: 'preload',
-              href: '/assets/fonts/Mulish-Light.ttf',
-              as: 'font',
-              type: 'font/ttf',
-              crossorigin: ''
-            }
-          ]
-    ] as HeadConfig[];
+    ...formThemedImageLinks(),
+    ...formFontsLinks(),
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', {rel: 'preload', href: '/assets/images/common/feedback.webp'}],
+] as HeadConfig[];
