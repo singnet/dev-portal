@@ -9,8 +9,7 @@
         <transition name="fade">
         <div v-show="isOptionsShown" class="options-holder">
             <div 
-                v-for="option in options" 
-                :key="option.value" 
+                v-for="option in options"
                 :value="option.value" 
                 @click="selectItem(option)" 
                 class="option"
@@ -22,13 +21,25 @@
     </div>
 </template>
 
-<script>
+<script lang=ts>
+import type { PropType } from 'vue'
+
+export interface OptionType {
+    value: String,
+    title: String
+}
+
 export default { 
-    props: ['options'],
+    props: {
+        options: {
+                type: [Object] as PropType<OptionType[]>,
+                required: true,
+            },
+    },
     data() {
         return {
             isOptionsShown: false,
-            selectedItem: this.options[0]
+            selectedItem: this.options[0] as OptionType
         }
     },
     mounted() {
@@ -38,14 +49,14 @@ export default {
         window.removeEventListener('click', this.closeOnBackdropClicks)
     },
     methods: {
-        selectItem(item) {
+        selectItem(item: OptionType) {
             this.selectedItem = item;
             this.$emit('select', item)
         },
         toggleVisibility() {
             this.isOptionsShown = !this.isOptionsShown
         },
-        closeOnBackdropClicks(event) {
+        closeOnBackdropClicks(event: Event) {
             if (event.target !== this.$refs.dropdownHolder && !event.composedPath().includes(this.$refs.dropdownHolder)) {
                 this.isOptionsShown = false;
             }

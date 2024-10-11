@@ -52,25 +52,32 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import DropdownList from './DropdownList.vue';
 import endpoints from '../../utils/constants/endpoints';
+import { OptionType } from './DropdownList.vue';
+
+const enum FeedbackCategory {
+    QUESTION = 'question',
+    BUG = 'bug',
+    FEEDBACK = 'feedback',
+}
 
 export default {
     data() {
         return {
-            isRequestHandling: false,
-            isRequestSent: false,
-            isFormDisplayed: false,
-            name: '',
-            email: '',
-            feedback: '',
-            category: 'question',
+            isRequestHandling: false as boolean,
+            isRequestSent: false as boolean,
+            isFormDisplayed: false as boolean,
+            name: '' as string,
+            email: '' as string,
+            feedback: '' as string,
+            category: 'question' as FeedbackCategory,
             options: [
                 {value: "question", title: "Question"},
                 {value: "bug", title: "Bug"},
                 {value: "feedback", title: "Feedback"},
-            ]
+            ] as OptionType[]
         }
     },
     components: {
@@ -91,7 +98,7 @@ export default {
         },
     },
     methods: {
-        isValidEmail(value) {
+        isValidEmail(value: string) {
             const regexEmail = new RegExp(
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             );
@@ -103,7 +110,7 @@ export default {
         toggleFormVisibility() {
             this.isFormDisplayed = !this.isFormDisplayed;
         },
-        selectCategory(option) {
+        selectCategory(option: OptionType) {
             this.category = option.value;
         },
         resetForm() {
@@ -119,7 +126,7 @@ export default {
         },
         async sendFeedback() {
             try {
-                let options = {
+                const options: RequestInit  = {
                     method: 'POST',
                     mode: 'cors',
                     headers: {
