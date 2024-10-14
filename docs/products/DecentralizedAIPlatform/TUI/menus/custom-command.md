@@ -14,7 +14,7 @@ In essence, the page is very simple:
 
 * This is your base command (eg: account, identity, network, session, etc.)
 * You can think of this is the object your command is affecting/altering
-* A list of these can be found on the left-side purple navigation bar on the [CLI documentation](../../tools/CLI/snet-cli.md)
+* A list of these can be found on the left-side purple navigation bar on the [CLI documentation](../../CLI/snet-cli)
 
 ### Sub-command Input
 
@@ -29,7 +29,7 @@ In essence, the page is very simple:
 
 ### Command Arguments Input
 
-* These are just the arguments for your command, these differ between sub-commands, so you should look at the [CLI documentation](../../tools/CLI/snet-cli.md) to understand exactly what parameters are required (or utilize the built-in page in the TUI if it exists)
+* These are just the arguments for your command, these differ between sub-commands, so you should look at the [CLI documentation](../../CLI/snet-cli) to understand exactly what parameters are required (or utilize the built-in page in the TUI if it exists)
 * They MUST be seperated by spaces, not commas or anything else, and be in the order of **"POSITIONAL NAMED OPTIONAL"**
 
 ### Working Directory Input

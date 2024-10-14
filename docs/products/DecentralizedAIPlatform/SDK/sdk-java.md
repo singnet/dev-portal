@@ -424,7 +424,7 @@ There are two ways of making first call execution time predictable. First
 option is creating a payment channel in advance. Use `Sdk` and
 [BlockchainPaymentChannelManager](https://javadoc.jitpack.io/com/github/singnet/snet-sdk-java/snet-sdk-java/0.4.0/javadoc/io/singularitynet/sdk/mpe/BlockchainPaymentChannelManager.html)
 to open a channel from the application. Or use
-[snet-cli](/docs/products/AIMarketplace/tools/CLI/snet-cli.md) tool to open a channel from the command
+[snet-cli](/docs/products/DecentralizedAIPlatform/CLI/snet-cli) tool to open a channel from the command
 line.
 
 Second option is increasing a gas price by setting new value in configuration,
