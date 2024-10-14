@@ -1,7 +1,7 @@
 <template>
-    <div class="navigation-card card" @click="redirect">
+    <a class="navigation-card card" :href="item.link">
         <div class="image-container">
-            <ThemedImage :srcPath="item?.imageSrc" :alt="item?.text" />
+            <ThemedImage v-if="item.imageFileName" :imageFileName="item.imageFileName" :alt="item.text" />
         </div>
         <div class="card-body">
             <div class="card-info">
@@ -11,44 +11,41 @@
                     </div>
                     <div class="card-title-text">
                         <p :title="item.text">
-                            {{ item?.text }}
+                            {{ item.text }}
                         </p>
                     </div>
                 </div>
                 <div class="card-description">
                     <p>
-                        {{ item?.description }}
+                        {{ item.description }}
                     </p>
                 </div>
             </div>
             <div class="card-redirect gradient-border">
                 <div class="card-redirect-text">
                     <p>
-                        Go to the section <SpriteIcon :textIconID="'arrow-icon'" :width="'19px'" :height="'10px'" />
+                        Go to the section 
+                        <SpriteIcon :textIconID="'arrow-icon'" :width="'19px'" :height="'10px'" />
                     </p>
                 </div>
             </div>
         </div>
-    </div>
+    </a>
 </template>
 
-<script>
+<script lang="ts">
 import ThemedImage from '../Common/ThemedImage.vue';
 
 export default {
-props: {
-    item: {
-        type: Object
+    props: {
+        item: {
+            type: Object,
+            required: true,
+        }
+    },
+    components: {
+        ThemedImage
     }
-},
-components: {
-    ThemedImage
-},
-methods: {
-    redirect() {
-        window.location.href = this.item.link;
-    }
-}
 }
 
 </script>
@@ -61,9 +58,10 @@ methods: {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-decoration: none;
 }
 
-.navigation-card .image-container img{
+.navigation-card .image-container img {
     border-radius: 20px;
     width: 265px;
     height: 135px;
@@ -138,8 +136,8 @@ svg {
     display: flex;
 }
 
-.card-redirect:hover, 
-.card-redirect::before  {
+.card-redirect:hover,
+.card-redirect::before {
     box-shadow: 0 0 10px var(--vp-accent-border);
 
 }
@@ -152,7 +150,7 @@ svg {
     fill: black !important;
 }
 
-.dark .card-redirect{
+.dark .card-redirect {
     color: var(--vp-c-white);
 }
 
@@ -165,5 +163,4 @@ svg {
         white-space: wrap;
     }
 }
-
 </style>

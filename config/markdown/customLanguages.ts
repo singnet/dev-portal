@@ -2,10 +2,9 @@ import type { LanguageRegistration } from "shiki";
 
 import protobufGrammar from "../../assets/languages/proto3.tmLanguage.json";
 
-const protobuf = {
+const protobufLanguage: LanguageRegistration = {
     ...protobufGrammar,
-    aliases: ["protobuf"],
+    aliases: ["protobuf", "proto"],
 };
 
-// @ts-ignore
-export default [protobuf] as LanguageRegistration[];
+export default [protobufLanguage];

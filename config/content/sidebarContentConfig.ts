@@ -1,13 +1,25 @@
-export const RootSections = {
+import type { DefaultTheme } from "vitepress";
+export interface ISectionData {
+    name: string;
+    path: string;
+    documentPath?: string;
+    textIconID?: string;
+}
+
+export interface ISiteSections {
+    [sectionID: string]: ISectionData;
+}
+
+export const RootSections: ISiteSections = {
     DOCS: {
         name: "/Docs",
         path: "/docs/",
         documentPath: "/docs/index.md",
         textIconID: "techs-icon",
-    }
-}
+    },
+};
 
-export const Products = {
+export const Products: ISiteSections = {
     TECHNOLOGIES: {
         name: "About Technologies",
         path: "/docs/products/AboutTechnologies/",
@@ -45,7 +57,7 @@ export const Products = {
     },
 };
 
-export const TechnologiesSection = [
+export const TechnologiesSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Blockchain",
         link: "/docs/products/AboutTechnologies/blockchain",
@@ -993,7 +1005,7 @@ export const StakingSection = [
     },
 ];
 
-export const WALTSection = [
+export const WALTSection: DefaultTheme.SidebarItem[] = [
     {
         text: "How to Use",
         link: "/docs/products/WaLT/howtouse",
@@ -1004,7 +1016,7 @@ export const WALTSection = [
     },
 ];
 
-export const BridgeSection = [
+export const BridgeSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Selecting Networks",
         link: "/docs/products/Bridge/selecting-networks",
@@ -1045,7 +1057,7 @@ export const BridgeSection = [
     },
 ];
 
-export const AirdropSection = [
+export const AirdropSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Registration",
         link: "/docs/products/Airdrop/Registration/",
@@ -1071,12 +1083,12 @@ export const AirdropSection = [
     },
 ];
 
-export const DocsSection = [
+export const DocsSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Welcome",
-        link: "/docs/"
-    }
-]
+        link: "/docs/",
+    },
+];
 
 export default {
     [Products.TECHNOLOGIES.path]: TechnologiesSection,
@@ -1087,4 +1099,4 @@ export default {
     [Products.AIRDROP.path]: AirdropSection,
     [Products.PLATFORM.path]: PlatformSection,
     [RootSections.DOCS.path]: DocsSection,
-};
+} as DefaultTheme.Sidebar;

@@ -1,22 +1,30 @@
+export interface HomeSectionItem {
+    text: string;
+    textIconID: string;
+    imageFileName: string;
+    description: string;
+    link: string;
+}
+
 export default [
     {
         text: "Airdrop",
         textIconID: "airdrop-icon",
-        imageSrc: "airdrop.webp",
+        imageFileName: "airdrop.webp",
         description: "All relevant documentation about the Airdrop in SingularityNET.",
         link: "/docs/products/Airdrop/"
     },
     {
         text: "Bridge",
         textIconID:"bridge-icon",
-        imageSrc:"bridge.webp",
+        imageFileName:"bridge.webp",
         description: "All relevant documentation about the Bridge project",
         link: "/docs/products/Bridge/",
     },
     {
         text: "Staking",
         textIconID: "staking-icon",
-        imageSrc: "staking.webp",
+        imageFileName: "staking.webp",
         description:
             "All relevant documentation about the Staking project.",
         link: "/docs/products/Staking/"
@@ -24,7 +32,7 @@ export default [
     {
         text: "AI Platform Ecosystem",
         textIconID: "marketplace-icon",
-        imageSrc: "platform.webp",
+        imageFileName: "platform.webp",
         description:
             "Explore, publish, and integrate AI services on AI Marketplace's docs.",
         link: "/docs/products/AIMarketplace/"
@@ -32,7 +40,7 @@ export default [
     {
         text: "About technologies",
         textIconID: "techs-icon",
-        imageSrc: "techs.webp",
+        imageFileName: "techs.webp",
         description:
             "A documentary overview of the stack of all technologies that are used in our projects",
         link: "/docs/products/AboutTechnologies/"
@@ -40,8 +48,8 @@ export default [
     {
         text: "WaLT",
         textIconID: "walt-icon",
-        imageSrc: "walt.webp",
+        imageFileName: "walt.webp",
         description: "Connect Linked Wallet Tool",
         link: "/docs/products/WaLT/"
     }
-];
+] as HomeSectionItem[];

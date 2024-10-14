@@ -1,22 +1,31 @@
 <template>
     <svg :width="width" :height="height">
-        <use :xlink:href="`/assets/images/sprite.svg#${textIconID}`"/>
+        <use :xlink:href="iconFullPath"/>
     </svg>
 </template>
 
-<script>
+<script lang="ts">
+    const SVG_SPRITE_LINK_PATH: string = "/assets/images/sprite.svg#";
+
     export default {
         props: {
             textIconID: {
-                type: String
+                type: String,
+                required: true,
+                default: "",
             },
             width: {
+                type: String,
                 required: false,
-                type: String
             },
             height: {
+                type: String,
                 required: false,
-                type: String
+            }
+        },
+        computed: {
+            iconFullPath(): string {
+                return `${SVG_SPRITE_LINK_PATH}${this.textIconID}`;
             }
         }
     }

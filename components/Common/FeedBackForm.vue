@@ -1,6 +1,6 @@
 <template>
     <div class="feedback-form-holder">
-        <div class="feedback-form" :class="{'gradient-border': !isMobile, 'hidden': !isFormDisplayed }">
+        <div class="feedback-form" :class="{ 'gradient-border': !isMobile, 'hidden': !isFormDisplayed }">
             <div class="form-header">
                 <h2>Feedback form</h2>
                 <button @click="toggleFormVisibility">
@@ -13,7 +13,7 @@
                         <label for="category">
                             Support category
                         </label>
-                        <DropdownList :options="options" @select="selectCategory"/>
+                        <DropdownList :options="options" @select="selectCategory" />
                     </div>
                     <div class="form-field">
                         <label for="name">
@@ -25,18 +25,21 @@
                         <label for="email">
                             Email
                         </label>
-                        <input id="email" :class="{'error-field': !isValidEmail(email) && email}" v-model="email" placeholder="Enter your email" />
+                        <input id="email" :class="{ 'error-field': email && !isEmailValid(email) }" v-model="email"
+                            placeholder="Enter your email" />
                     </div>
                     <div class="form-field">
                         <label for="Feedback">
-                            Your text 
+                            Your text
                         </label>
                         <textarea id="Feedback" v-model="feedback" placeholder="Enter your text" />
                     </div>
                 </fieldset>
-                <div class="submit-btn-container" :class="{'gradient-border': isSubmitAvailible}">
-                    <button class="submit-button" type="button" :disabled="!isSubmitAvailible || isRequestHandling" @click="sendFeedback">
-                        <SpriteIcon v-if="isRequestHandling" :textIconID="'double-check-icon'" :width="'35px'" :height="'20px'"/>
+                <div class="submit-btn-container" :class="{ 'gradient-border': isSubmitAvailable }">
+                    <button class="submit-button" type="button" :disabled="!isSubmitAvailable || isRequestHandling"
+                        @click="sendFeedback">
+                        <SpriteIcon v-if="isRequestHandling" :textIconID="'double-check-icon'" :width="'35px'"
+                            :height="'20px'" />
                         <span v-else>Submit</span>
                     </button>
                 </div>
@@ -52,74 +55,82 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import DropdownList from './DropdownList.vue';
 import endpoints from '../../utils/constants/endpoints';
+import { OptionType } from './DropdownList.vue';
+
+const enum FeedbackCategory {
+    QUESTION = 'question',
+    BUG = 'bug',
+    FEEDBACK = 'feedback',
+}
+
+const MOBILE_SCREEN_WIDTH_BREAKPOINT: number = 450; // px
+
+const EMAIL_VALIDATION_REGEX: RegExp = new RegExp(
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+);
 
 export default {
     data() {
         return {
-            isRequestHandling: false,
-            isRequestSent: false,
-            isFormDisplayed: false,
-            name: '',
-            email: '',
-            feedback: '',
-            category: 'question',
+            isRequestHandling: false as boolean,
+            isRequestSent: false as boolean,
+            isFormDisplayed: false as boolean,
+            name: '' as string,
+            email: '' as string,
+            feedback: '' as string,
+            category: 'question' as FeedbackCategory,
             options: [
-                {value: "question", title: "Question"},
-                {value: "bug", title: "Bug"},
-                {value: "feedback", title: "Feedback"},
-            ]
+                { value: "question", title: "Question" },
+                { value: "bug", title: "Bug" },
+                { value: "feedback", title: "Feedback" },
+            ] as OptionType[]
         }
     },
     components: {
         DropdownList
     },
     computed: {
-        isSubmitAvailible() {
+        isSubmitAvailable(): boolean {
             return this.name &&
-                this.isValidEmail(this.email) &&
+                this.isEmailValid(this.email) &&
                 this.feedback &&
                 this.category
         },
-        isMobile() {
+        isMobile(): boolean {
             if (typeof window === 'undefined') {
-                return;
+                return false;
             }
-            return window.innerWidth < 450;
+
+            return window.innerWidth < MOBILE_SCREEN_WIDTH_BREAKPOINT;
         },
     },
     methods: {
-        isValidEmail(value) {
-            const regexEmail = new RegExp(
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
-            if (regexEmail.test(value)) {
-                return true;
-            }
-            return false;
+        isEmailValid(value: string): boolean {
+            return EMAIL_VALIDATION_REGEX.test(value);
         },
-        toggleFormVisibility() {
+        toggleFormVisibility(): void {
             this.isFormDisplayed = !this.isFormDisplayed;
         },
-        selectCategory(option) {
+        selectCategory(option: OptionType): void {
             this.category = option.value;
         },
-        resetForm() {
+        resetForm(): void {
             this.name = '';
             this.email = '';
             this.feedback = '';
             this.category = 'question';
         },
-        async showAlert() {
+        async showAlert(): Promise<void> {
             this.isRequestSent = true;
-                await new Promise(r => setTimeout(r, 2000));
-                this.isRequestSent = false;
+            await new Promise(r => setTimeout(r, 2000));
+            this.isRequestSent = false;
         },
-        async sendFeedback() {
+        async sendFeedback(): Promise<void> {
             try {
-                let options = {
+                const options: RequestInit = {
                     method: 'POST',
                     mode: 'cors',
                     headers: {
@@ -151,7 +162,7 @@ export default {
                 this.resetForm();
                 this.isRequestHandling = false;
             }
-        }    
+        }
     }
 }
 </script>
@@ -212,7 +223,8 @@ input {
     border: 1px solid transparent
 }
 
-fieldset, form {
+fieldset,
+form {
     border: none !important;
 }
 
@@ -340,6 +352,7 @@ fieldset, form {
         border-radius: 8px 8px 0 0;
         box-shadow: 0 0 10px var(--vp-accent-border);
     }
+
     .feedback-form-holder {
         right: 0;
         bottom: 0;

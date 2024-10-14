@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import HomeHeader from "./HomeHeader.vue";
 import NavigationSection from "./NavigationSection.vue";
 import ToolsSection from "./ToolsSection.vue";

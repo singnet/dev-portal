@@ -1,12 +1,12 @@
 <template>
     <div class="video-container">
         <video controls>
-            <source :src="src" :type="type"></source>
-        </video>  
+            <source :src="src" :type="type" />
+        </video>
     </div>
 </template>
 
-<script>
+<script lang=ts>
 export default {
     props: {
         src: {
