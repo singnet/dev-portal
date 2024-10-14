@@ -8,7 +8,7 @@
                 {{ item.description }}
             </p>
         </div>
-        <a class="tool-redirect">
+        <a class="tool-redirect" :href="item.link">
             <SpriteIcon :textIconID="'github-icon'" :width="'18px'" :height="'18px'" />
             <p>GitHub</p>
         </a>

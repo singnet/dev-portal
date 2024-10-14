@@ -57,6 +57,7 @@ export default {
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    color: var(--vp-c-text-1) !important;
     gap: 10px;
     text-decoration: none;
 }
@@ -137,9 +138,9 @@ svg {
 }
 
 .card-redirect:hover,
-.card-redirect::before {
+.card-redirect::before,
+.navigation-card:hover .card-redirect {
     box-shadow: 0 0 10px var(--vp-accent-border);
-
 }
 
 .dark .card-redirect svg {
