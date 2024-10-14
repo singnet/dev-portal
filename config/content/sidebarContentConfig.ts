@@ -82,6 +82,10 @@ export const TechnologiesSection: DefaultTheme.SidebarItem[] = [
 
 export const PlatformSection: DefaultTheme.SidebarItem[] = [
     {
+        text: "What is Decentralized AI Platform?",
+        link:"/docs/products/DecentralizedAIPlatform/",
+    },
+    {
         text: "I am AI Consumer",
         link: "/docs/products/DecentralizedAIPlatform/IAmAIConsumer"
     },
@@ -952,6 +956,10 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
 
 export const StakingSection: DefaultTheme.SidebarItem[] = [
     {
+        text: "What is Staking?",
+        link:"/docs/products/Staking/",
+    },
+    {
         text: "Ethereum Staking",
         collapsed: true,
         items: [
@@ -1007,6 +1015,10 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
 
 export const WALTSection: DefaultTheme.SidebarItem[] = [
     {
+        text: "What is WaLT?",
+        link:"/docs/products/WaLT/",
+    },
+    {
         text: "How to Use",
         link: "/docs/products/WaLT/howtouse",
     },
@@ -1017,6 +1029,10 @@ export const WALTSection: DefaultTheme.SidebarItem[] = [
 ];
 
 export const BridgeSection: DefaultTheme.SidebarItem[] = [
+    {
+        text: "What is Bridge?",
+        link:"/docs/products/Bridge/",
+    },
     {
         text: "Selecting Networks",
         link: "/docs/products/Bridge/selecting-networks",
@@ -1058,6 +1074,10 @@ export const BridgeSection: DefaultTheme.SidebarItem[] = [
 ];
 
 export const AirdropSection: DefaultTheme.SidebarItem[] = [
+    {
+        text: "What is AirDrop?",
+        link:"/docs/products/Airdrop/",
+    },
     {
         text: "Registration",
         link: "/docs/products/Airdrop/Registration/",
