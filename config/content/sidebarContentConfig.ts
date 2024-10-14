@@ -38,6 +38,11 @@ export const Products = {
         path: "/docs/products/Airdrop/",
         textIconID: "airdrop-icon",
     },
+    PLATFORM:{
+        name: "Decentralized AI Platform",
+        path: "/docs/products/DecentralizedAIPlatform/",
+        textIconID: "marketplace-icon",
+    },
 };
 
 export const TechnologiesSection = [
@@ -60,6 +65,131 @@ export const TechnologiesSection = [
     {
         text: "Introduction in SDK",
         link: "/docs/products/AboutTechnologies/sdk",
+    },
+];
+
+export const PlatformSection = [
+    {
+        text: "I am AI Consumer",
+        link: "/docs/products/DecentralizedAIPlatform/IAmAIConsumer"
+    },
+    {
+        text: "I am AI Developer",
+        link: "/docs/products/DecentralizedAIPlatform/IAmAIDeveloper"
+    },
+    {
+        text: "Quick Start Guides",
+        link: "",
+        collapsed: true,
+        items: [
+            {
+                text: "Getting Ready to Onboard CheckUp",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp",
+            },
+            {
+                text: "Service Onboarding via Publisher",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher",
+            },
+            {
+                text: "Service Onboarding via CLI",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaCLI",
+            },
+            {
+                text: "Service Onboarding via TUI",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaTUI",
+            },
+            {
+                text: "Service Calling via CLI",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI",
+            },
+            {
+                text: "Service Calling via TUI",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaTUI",
+            },
+            {
+                text: "Service Calling via SDK",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK",
+            },
+        ],
+    },
+    {
+        text: "Core Concepts",
+        link: "",
+        collapsed: true,
+        items: [],
+    },
+    {
+        text: "Daemon",
+        link: "",
+        collapsed: true,
+        items: [],
+    },
+    {
+        text: "CLI",
+        link: "",
+        collapsed: true,
+        items: [],
+    },
+    {
+        text: "TUI",
+        link: "",
+        collapsed: true,
+        items: [],
+    },
+    {
+        text: "Publisher Portal",
+        link: "",
+        collapsed: true,
+        items: [],
+    },
+    {
+        text: "SDK",
+        link: "/docs/products/DecentralizedAIPlatform/SDK/",
+        collapsed: true,
+        items: [
+            {
+                text: "Python SDK",
+                link:"",
+                collapsed: true,
+                items:[],
+            },
+            {
+                text: "NodeJS SDK",
+                link:"",
+                collapsed: true,
+                items:[],
+            },
+            {
+                text: "WebJS SDK",
+                link:"",
+                collapsed: true,
+                items:[],
+            },
+            {
+                text: "Java SDK",
+                link:"",
+                collapsed: true,
+                items:[],
+            },
+        ],
+    },
+    {
+        text: "UI Sandbox",
+        link: "",
+        collapsed: true,
+        items: [],
+    },
+    {
+        text: "UI Boilerplate",
+        link: "",
+        collapsed: true,
+        items: [],
+    },
+    {
+        text: "Used Technologies",
+        link: "",
+        collapsed: true,
+        items: [],
     },
 ];
 
@@ -1004,5 +1134,6 @@ export default {
     [Products.WALT.path]: WALTSection,
     [Products.BRIDGE.path]: BridgeSection,
     [Products.AIRDROP.path]: AirdropSection,
+    [Products.PLATFORM.path]: PlatformSection,
     [RootSections.DOCS.path]: DocsSection,
 };

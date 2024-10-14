@@ -5,7 +5,9 @@ There will be no cost borne by the consumer in calling these methods,
 pricing will apply when you actually call the training methods defined. 
 AI consumer will call all these methods:
 
-```protobuf
+```proto
+syntax = "proto3";
+
 rpc create_model(CreateModelRequest) returns (ModelDetailsResponse)
 rpc delete_model(UpdateModelRequest) returns (ModelDetailsResponse) 
 rpc get_model_status(ModelDetailsRequest) returns (ModelDetailsResponse)
@@ -13,7 +15,9 @@ rpc get_model_status(ModelDetailsRequest) returns (ModelDetailsResponse)
 
 Daemon will implement, however the AI developer should skip implementing these:
 
-```protobuf
+```proto
+syntax = "proto3";
+
 rpc update_model_access(UpdateModelRequest) returns (ModelDetailsResponse)
 rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
 ```
@@ -31,7 +35,7 @@ rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
 
 1. Write your service proto file with training methods. You should mark training methods with trainingMethodIndicator from training.proto (import it):
 
-    ```protobuf
+    ```proto
     syntax = "proto3";
     import "training.proto";
     package example_service;
@@ -52,7 +56,7 @@ rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
     ```
     
     Also you can import and use [pricing.proto (more detailed about pricing)](https://github.com/singnet/snet-daemon/blob/master/pricing/pricing.proto):
-    ```protobuf
+    ```proto
     option (pricing.my_method_option).estimatePriceMethod = "/example_service.Calculator/dynamic_pricing_add";
     ```
 
@@ -60,13 +64,13 @@ rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
 For example, we will use Python. 
 
     Install grpc tools for python:
-    ```
+    ```sh
     pip3 install grpc
     pip3 install grpcio-tools
     ```
     
     Then generate pb files for training.proto and for your service.proto:
-    ```
+    ```sh
     python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. training.proto
     python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. service.proto
     ```

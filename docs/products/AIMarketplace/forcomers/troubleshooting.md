@@ -29,12 +29,13 @@ snet service metadata-add-contributor <CONTACTNAME> <EMAILID> --metadata-file <M
 
 Your metadata snippet should look like the following:
 
-```
+```json
 "contributors": [
            {
                "name": "dummy dummy",
                "email_id": "dummy@dummy.io"
            }
+]
 
 ```
 
@@ -111,7 +112,7 @@ To renew the ETCD Client Certificates for SNET Organisation:
 For other Organizations, follow the below steps to regenerate the etcd client certificates.
 - Download the cfssl & cfssljson using the below commands
 
-```
+```sh
 [curl -s -L -o cfssl] (https://pkg.cfssl.org/R1.2/cfssl_linux-amd64) 
 [curl -s -L -o cfssl] (https://pkg.cfssl.org/R1.2/cfssl_linux-amd64)
 ```
@@ -190,7 +191,7 @@ Daemon:
 level=warning msg="gRPC handler returned error" error="rpc error: code = ResourceExhausted desc = Received message larger than max (5937252 vs. 4194304)"
 ```
 SNET-CLI and/or your service's gRPC server:
-```
+```sh
 Error: <_InactiveRpcError of RPC that terminated with:
 	status = StatusCode.RESOURCE_EXHAUSTED
 	details = "Received message larger than max (5937252 vs. 4194304)"
@@ -234,7 +235,7 @@ Ignore: This was more towards the operator UI use case, need modification in the
 ### msg="error determining current block" error="403 Forbidden
 Add the the following link: 
 
-```
+```json
 "ethereum_json_rpc_endpoint": "https://mainnet.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2" 
 ```
 In your daemon configuration. Ideally  you should have your own project Id on infura. 

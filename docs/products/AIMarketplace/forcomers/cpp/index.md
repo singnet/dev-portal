@@ -20,7 +20,7 @@ In this tutorial we'll create a C++ service and publish it in SingularityNET.
 Setup and run a docker container. We'll install C++ gRPC stuff in a container
 because of this warning from the authors: 
 
-```
+```sh
 "WARNING: After installing with make install there is no easy way to uninstall,
 which can cause issues if you later want to remove the grpc and/or protobuf
 installation or upgrade to a newer version."
@@ -30,7 +30,7 @@ In this tutorial we'll develop our service inside the docker container.
 
 Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) using provided `Dockerfile`.
 
-```
+```sh
 docker build \
     --build-arg language=cpp \
     -t snet_cpp_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
@@ -91,7 +91,7 @@ understand everything you can do in the `.proto` file.
 
 In this tutorial our `src/service_spec/tutorial.proto` will be like this:
 
-```
+```proto
 syntax = "proto3";
 
 package tutorial;
@@ -125,7 +125,7 @@ In order to actually implement our API we need to edit `src/server.cc`.
 Look for `PROTO_TYPES` and replace the `using` statements to reflect our data
 types defined in step 3.
 
-```
+```cpp
 using tutorial::ServiceDefinition;
 using tutorial::IntPair;
 using tutorial::SingleInt;
@@ -134,7 +134,7 @@ using tutorial::SingleString;
 
 Now look for `SERVICE_API` and replace `doSomething()` by our actual API methods:
 
-```
+```cpp
 Status div(ServerContext* context, const IntPair* input, SingleInt* output) override {
     output->set_v(input->a() / input->b());
     return Status::OK;
@@ -157,7 +157,7 @@ Blockchain). Edit `src/client.cc`.
 Look for `PROTO_TYPES` and replace the `using` statements to reflect our data
 types defined in Step 3.
 
-```
+```cpp
 using tutorial::ServiceDefinition;
 using tutorial::IntPair;
 using tutorial::SingleInt;
@@ -168,7 +168,7 @@ Now look for `TEST_CODE` and replace `doSomething()` implementation by our
 testing code:
 
 
-```c++
+```cpp
 void doSomething(int argc, char** argv) {
 
     int n1 = atoi(argv[1]);

@@ -100,7 +100,7 @@ We prefer well formatted commit messages - it makes it easier to understand what
 
 Each commit message consists of a **header**, a **body** and a **footer**.
 
-```
+```sh
 <header>
 <BLANK LINE>
 <body>

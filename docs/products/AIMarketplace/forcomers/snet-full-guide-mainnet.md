@@ -125,7 +125,7 @@ If you want to enable auto completion of commands, you should install the follow
 
 1) Create proto file `<name>.proto` (example.proto):
 
-```
+```proto
 syntax = "proto3";
  
 package example;
@@ -523,7 +523,7 @@ Add following parameters:
 
 Your daemon config file should look something like this:
 
-```js
+```json
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "main",
@@ -585,7 +585,7 @@ For example, in this platform example we need to pass the following JSON as a pa
 
 Confirm the transaction when asked to. After that you should see service response to your JSON payload
 
-```
+```sh
 Price for this call will be 0.0000001 AGI (use -y to remove this warning).
 Proceed? (y/n): y
 value: 42.0

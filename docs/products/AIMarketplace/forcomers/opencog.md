@@ -147,7 +147,7 @@ all the arguments to the function).
 
 So our Scheme file `src/scm-services/HelloWorld2.scm` will look like this:
 
-```
+```cpp
 (define (execute args)
     "Hello World 2"
 )
@@ -228,13 +228,13 @@ case and second one is the name of the file (which is expected to be in
 
 We have only one test case so create `HelloWorld/baseline/t.txt` like this:
 
-```
+```txt
 Hello World
 ```
 
 Execute integration tests:
 
-```
+```sh
 ./bin/runTests
 Runing tests for Echo...
 Runing tests for EchoScheme...
@@ -279,7 +279,7 @@ You are ready to submit your PR. Read our
 
 The superclass inherited by your command has a couple of helper methods and variables.
 
-```
+```cpp
     opencog::AtomSpace atomSpace;
 
     virtual void loadModules();

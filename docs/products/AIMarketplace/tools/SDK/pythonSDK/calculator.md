@@ -10,7 +10,7 @@ transactions and service calls.
 
 So, the application must have the next console interface:
 
-```
+```powershell
 Welcome to the calculator powered by SingularityNET platform!
 Please type the expression you want to calculate, e.g. 2 + 3.
 Type 'exit' to exit the program.
