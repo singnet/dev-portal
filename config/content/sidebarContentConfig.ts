@@ -80,7 +80,7 @@ export const TechnologiesSection: DefaultTheme.SidebarItem[] = [
     },
 ];
 
-export const PlatformSection = [
+export const PlatformSection: DefaultTheme.SidebarItem[] = [
     {
         text: "I am AI Consumer",
         link: "/docs/products/DecentralizedAIPlatform/IAmAIConsumer"
@@ -868,7 +868,7 @@ export const PlatformSection = [
     },
 ];
 
-export const MarketplaceSection = [
+export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
     {
         text: "For comers",
         collapsed: true,
@@ -950,7 +950,7 @@ export const MarketplaceSection = [
     },
 ];
 
-export const StakingSection = [
+export const StakingSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Ethereum Staking",
         collapsed: true,
