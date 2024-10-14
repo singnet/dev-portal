@@ -2,24 +2,24 @@
     <div class="footer-copyright-section">
         <div class="copyright-text">
             <p>
-                {{ copyright.text }}
+                {{ copyrightSection.text }}
             </p>
         </div>
         <div class="copyright-message">
             <p>
-                {{ copyright.message }}
+                {{ copyrightSection.message }}
             </p>
         </div>
     </div>
 </template>
 
-<script>
-import { copyright } from "../../config/content/footerConfig";
+<script lang="ts">
+import { copyrightSection } from "../../config/content/footerConfig";
 
 export default {
     data() {
         return {
-            copyright
+            copyrightSection
         }
     }
 }

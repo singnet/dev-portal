@@ -1017,4 +1017,4 @@ export default {
     [Products.BRIDGE.path]: BridgeSection,
     [Products.AIRDROP.path]: AirdropSection,
     [RootSections.DOCS.path]: DocsSection,
-} as DefaultTheme.SidebarItem;
+} as DefaultTheme.Sidebar;

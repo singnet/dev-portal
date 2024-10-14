@@ -1,5 +1,5 @@
 <template>
-    <div class="navigation-card card" @click="redirect">
+    <a class="navigation-card card" :href="item.link">
         <div class="image-container">
             <ThemedImage v-if="item.imageFileName" :imageFileName="item.imageFileName" :alt="item.text" />
         </div>
@@ -11,13 +11,13 @@
                     </div>
                     <div class="card-title-text">
                         <p :title="item.text">
-                            {{ item?.text }}
+                            {{ item.text }}
                         </p>
                     </div>
                 </div>
                 <div class="card-description">
                     <p>
-                        {{ item?.description }}
+                        {{ item.description }}
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </a>
 </template>
 
 <script lang="ts">
@@ -45,15 +45,6 @@ export default {
     },
     components: {
         ThemedImage
-    },
-    methods: {
-        redirect(): void {
-            if (typeof window === 'undefined') {
-                return;
-            }
-
-            window.location.href = this.item.link;
-        }
     }
 }
 
@@ -67,6 +58,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-decoration: none;
 }
 
 .navigation-card .image-container img {

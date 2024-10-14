@@ -13,7 +13,7 @@
     </footer>
 </template>
 
-<script>
+<script lang="ts">
 import FooterSection from './FooterSection.vue';
 import CopyrightSection from './CopyrightSection.vue';
 import footerConfig from "../../config/content/footerConfig";

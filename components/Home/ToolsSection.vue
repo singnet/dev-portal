@@ -11,6 +11,7 @@
                 <p>On our website you will find a convenient block with tools and tools for creating your ideal web
                     resource. Start your creation journey now!</p>
             </div>
+            <!-- @vue-ignore -->
             <swiper v-if="!isMobile" class="swiper-container" v-bind="swiperOptions">
                 <swiper-slide v-for="item in toolsConfig" :key="item.text">
                     <ToolsComponent :item="item" />
@@ -24,18 +25,47 @@
     </div>
 </template>
 
-<script>
-import ToolsComponent from "./ToolsComponent.vue";
-import toolsConfig from "../../config/content/toolsConfig.ts";
+<script lang="ts">
 import { Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import type { SwiperOptions } from 'swiper/types';
+import { IToolsSectionItem } from '../../config/content/toolsConfig.ts';
+import ToolsComponent from "./ToolsComponent.vue";
+import toolsConfig from "../../config/content/toolsConfig.ts";
 import ThemedImage from "../Common/ThemedImage.vue";
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { register } from 'swiper/element/bundle';
 register();
+
+const swiperOptions: SwiperOptions = {
+    effect: 'creative',
+    creativeEffect: {
+        limitProgress: 5,
+        prev: {
+            opacity: 0.8,
+            translate: ["1%", '110%', 0],
+        },
+        next: {
+            translate: ["0%", '-110%', 0],
+        },
+    },
+    direction: 'vertical',
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    mousewheel: {
+        thresholdDelta: 80
+    },
+    keyboard: {
+        enabled: true
+    },
+    slidesPerView: 3,
+}
+
+const MOBILE_SCREEN_WIDTH_BREAKPOINT: number = 640; // px
 
 export default {
     components: {
@@ -51,42 +81,17 @@ export default {
     },
     data() {
         return {
-            toolsConfig,
-            toolsCardsLength: toolsConfig.length,
-            swiperOptions: {
-                effect: 'creative',
-                creativeEffect: {
-                    limitProgress: 5,
-                    prev: {
-                        opacity: 0.8,
-                        translate: ["1%", '110%', 0],
-                    },
-                    next: {
-                        translate: ["0%", '-110%', 0],
-                    },
-                },
-                direction: 'vertical',
-                pagination: {
-                    clickable: true,
-                },
-                loop: true,
-                mousewheel: {
-                    thresholdDelta: 80
-                },
-                keyboard: {
-                    enabled: true
-                },
-                slidesPerView: 3,
-                loop: true,
-            }
+            toolsConfig: toolsConfig as IToolsSectionItem[],
+            swiperOptions,
         }
     },
     computed: {
-        isMobile() {
+        isMobile(): boolean {
             if (typeof window === 'undefined') {
                 return false;
             }
-            return window.screen.width < 640;
+
+            return window.screen.width < MOBILE_SCREEN_WIDTH_BREAKPOINT;
         }
     }
 };

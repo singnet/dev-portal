@@ -1,3 +1,5 @@
+import type { DefaultTheme } from "vitepress";
+
 export default [
   { text: "Home", link: "/", activeMatch: '' },
   { text: "Docs", link: "/docs/", activeMatch: '/docs' },
@@ -35,4 +37,4 @@ export default [
     },
     ],
   },
-];
+] as DefaultTheme.NavItem[];

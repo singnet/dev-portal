@@ -20,11 +20,12 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     props: {
         footerSectionData: {
-            type: Object
+            type: Object,
+            required: true,
         }
     }
 }

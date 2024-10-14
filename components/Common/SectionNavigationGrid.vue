@@ -6,15 +6,16 @@
     </div>
 </template>
 
-<script>
-import sidebarContentConfig, { Products } from '../../config/content/sidebarContentConfig';
+<script lang="ts">
+import type { DefaultTheme } from "vitepress";
+import sidebarContentConfig from '../../config/content/sidebarContentConfig';
 
 export default {
     props: {
         sectionRoot: String,
     },
     computed: {
-        sectionContent() {
+        sectionContent(): DefaultTheme.SidebarItem[] {
             return sidebarContentConfig[this.sectionRoot];
         }
     }

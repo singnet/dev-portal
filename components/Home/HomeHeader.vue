@@ -12,7 +12,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
 
 }
@@ -42,8 +42,8 @@ export default {
 
 .gradient-text {
     background: linear-gradient(90deg, rgba(158, 0, 255, 1),
-        rgba(212, 76, 206, 1),
-        rgba(40, 40, 218, 1));
+            rgba(212, 76, 206, 1),
+            rgba(40, 40, 218, 1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--vp-c-black);

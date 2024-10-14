@@ -1,3 +1,9 @@
+export interface IToolsSectionItem {
+    text: string,
+    description: string,
+    link: string,
+}
+
 export default [
     {
         text: "SNET Contracts",
@@ -29,4 +35,4 @@ export default [
         description: "Mouse-centric text user interface to simplify interacting with the SingularityNET command line interface",
         link: "https://github.com/singnet/TUI",
     },
-]
+] as IToolsSectionItem[]
