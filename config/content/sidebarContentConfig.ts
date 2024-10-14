@@ -37,7 +37,7 @@ export const Products = {
         path: "/docs/products/Airdrop/",
         textIconID: "airdrop-icon",
     },
-    DECENTRALIZEDAIPLATFORM:{
+    PLATFORM:{
         name: "Decentralized AI Platform",
         path: "/docs/products/DecentralizedAIPlatform/",
         textIconID: "marketplace-icon",
@@ -67,7 +67,7 @@ export const TechnologiesSection = [
     },
 ];
 
-export const DecentralizedAIPlatform = [
+export const PlatformSection = [
     {
         text: "I am AI Consumer",
         link: "/docs/products/DecentralizedAIPlatform/IAmAIConsumer"
@@ -83,45 +83,31 @@ export const DecentralizedAIPlatform = [
         items: [
             {
                 text: "Getting Ready to Onboard CheckUp",
-                link:"docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp",
-                collapsed: true,
-                items:[],
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp",
             },
             {
                 text: "Service Onboarding via Publisher",
-                link:"docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher",
-                collapsed: true,
-                items:[],
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher",
             },
             {
                 text: "Service Onboarding via CLI",
-                link:"docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaCLI",
-                collapsed: true,
-                items:[],
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaCLI",
             },
             {
                 text: "Service Onboarding via TUI",
-                link:"docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaTUI",
-                collapsed: true,
-                items:[],
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaTUI",
             },
             {
                 text: "Service Calling via CLI",
-                link:"docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI",
-                collapsed: true,
-                items:[],
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI",
             },
             {
                 text: "Service Calling via TUI",
-                link:"docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaTUI",
-                collapsed: true,
-                items:[],
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaTUI",
             },
             {
                 text: "Service Calling via SDK",
-                link:"docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp",
-                collapsed: true,
-                items:[],
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK",
             },
         ],
     },
@@ -1147,6 +1133,6 @@ export default {
     [Products.WALT.path]: WALTSection,
     [Products.BRIDGE.path]: BridgeSection,
     [Products.AIRDROP.path]: AirdropSection,
-    [Products.DECENTRALIZEDAIPLATFORM.path]: DecentralizedAIPlatform,
+    [Products.PLATFORM.path]: PlatformSection,
     [RootSections.DOCS.path]: DocsSection,
 };
