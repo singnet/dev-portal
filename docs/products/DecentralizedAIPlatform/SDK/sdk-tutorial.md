@@ -1,4 +1,4 @@
- - [Using the python SDK](/docs/products/AIMarketplace/tools/SDK/sdk-python-tutorial.md)
+ - [Using the python SDK](/docs/products/DecentralizedAIPlatform/SDK/sdk-python-tutorial)
 ## Using the Node.js SDK
 
 ### Download the Node.js boilerplate code

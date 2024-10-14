@@ -28,7 +28,7 @@ _Note that this tutorial assumes your user is part of the `docker` group that ha
 
 ---
 
-To secure payments, to set up your own ETCD Cluster, refer to the docs [ETCD Setup](/docs/products/AIMarketplace/coreconcepts/etcdsetup.md)
+To secure payments, to set up your own ETCD Cluster, refer to the docs [ETCD Setup](/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup)
 
 Build your own tutorial Docker image directly from our git repo using the following command:
 
