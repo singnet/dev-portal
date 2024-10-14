@@ -16,22 +16,20 @@
                 <NavigationControlSection :sectionData="sectionsItem" />
             </div>
         </div>
+        <NavigationTreeControl />
     </div>
 </template>
 <script>
 import SidebarToggle from "./SidebarToggle.vue";
 import SpriteIcon from "../Common/SpriteIcon.vue";
-import NavigationControlSection from "./NavigationControlSection.vue"
+import NavigationControlSection from "./NavigationControlSection.vue";
+import NavigationTreeControl from "./NavigationTreeControl.vue";
+import LocalStorageFlagsService from "../../services/LocalStorageFlagsService";
 import { Products as Sections, RootSections } from "../../config/content/sidebarContentConfig";
 import { useData } from "vitepress";
 
-const SectionsMenuStates = {
-    OPEN: "open",
-    CLOSED: "closed",
-}
-
-const MenuLocalSstorageKeys = {
-    IS_MENU_OPEN: "isSectionsMenuOpen"
+const MenuLocalStorageKeys = {
+    IS_MENU_OPEN: "isSectionsMenuOpen",
 }
 
 export default {
@@ -43,6 +41,7 @@ export default {
     },
     components: {
         NavigationControlSection,
+        NavigationTreeControl,
         SidebarToggle,
         SpriteIcon
     },
@@ -61,10 +60,6 @@ export default {
         }
     },
     created() {
-        if (typeof window === 'undefined') {
-            return;
-        }
-
         this.updateLocation();
 
         if (this.isDocsRootDisplayed) {
@@ -72,15 +67,15 @@ export default {
             return;
         }
 
-        const storedIsSectionsMenuOpenState = window.localStorage.getItem(MenuLocalSstorageKeys.IS_MENU_OPEN);
-
-        this.isSectionsMenuOpen =
-            !storedIsSectionsMenuOpenState || storedIsSectionsMenuOpenState === SectionsMenuStates.OPEN;
+        this.isSectionsMenuOpen = LocalStorageFlagsService.getIsActive(MenuLocalStorageKeys.IS_MENU_OPEN)
     },
     watch: {
         pageData() {
             this.updateLocation();
-        }
+        },
+        isSectionsMenuOpen() {
+            LocalStorageFlagsService.setIsActive(MenuLocalStorageKeys.IS_MENU_OPEN, this.isSectionsMenuOpen);
+        },
     },
     computed: {
         isDocsRootDisplayed() {
@@ -95,42 +90,30 @@ export default {
             return this.sections.find(section => this.currentLocation.includes(section.path));
         },
         otherSections() {
-            const prefilteredSections = this.areDocsExcluded
+            const preFilteredSections = this.areDocsExcluded
                 ? this.sections.filter(section => section.name !== RootSections.DOCS.name)
                 : this.sections;
 
             if (!this.currentSection) {
-                return prefilteredSections;
+                return preFilteredSections;
             }
 
-            return prefilteredSections.filter(section => section.name !== this.currentSection.name);
+            return preFilteredSections.filter(section => section.name !== this.currentSection.name);
         }
     },
     methods: {
         updateLocation() {
             this.currentLocation = `/${this.pageData.filePath}`;
         },
-        setLocalStorageIsOpenValue(isMenuOpen) {
-            if (typeof window === 'undefined') {
-                return;
-            }
-
-            window.localStorage.setItem(
-                MenuLocalSstorageKeys.IS_MENU_OPEN,
-                isMenuOpen ? SectionsMenuStates.OPEN : SectionsMenuStates.CLOSED
-            );
-        },
         toggleSectionsMenu() {
             this.isSectionsMenuOpen = !this.isSectionsMenuOpen;
-            this.setLocalStorageIsOpenValue(this.isSectionsMenuOpen);
+            this.updateStorageValue();
         },
         openSectionsMenu() {
             this.isSectionsMenuOpen = true;
-            this.setLocalStorageIsOpenValue(true);
         },
         closeSectionsMenu() {
             this.isSectionsMenuOpen = false;
-            this.setLocalStorageIsOpenValue(false);
         },
     }
 }

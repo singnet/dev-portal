@@ -17,17 +17,14 @@
 </template>
 
 <script>
-const SidebarStates = {
-  OPEN: "open",
-  CLOSED: "closed",
+import LocalStorageFlagsService from '../../services/LocalStorageFlagsService';
+
+const SidebarLocalStorageKeys = {
+  IS_SIDEBAR_OPEN: "isSidebarOpen"
 }
 
-const SidebarLocalSstorageKeys = {
-    IS_SIDEBAR_OPEN: "isSidebarOpen"
-}
-
-const SidebarContollingClassNames = {
-  SIDEBAR_CLOSSED: "sidebar-closed",
+const SidebarControllingClassNames = {
+  SIDEBAR_CLOSED: "sidebar-closed",
 }
 
 export default {
@@ -37,17 +34,19 @@ export default {
     }
   },
   created() {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    const storedIsSidebarOpenState = window.localStorage.getItem(SidebarLocalSstorageKeys.IS_SIDEBAR_OPEN);
-
-    this.isSidebarOpen = !storedIsSidebarOpenState || storedIsSidebarOpenState === SidebarStates.OPEN;
-
+    this.isSidebarOpen = LocalStorageFlagsService.getIsActive(SidebarLocalStorageKeys.IS_SIDEBAR_OPEN);
     this.toggleClassName();
   },
+  watch: {
+    isSidebarOpen() {
+      this.toggleClassName();
+      LocalStorageFlagsService.setIsActive(SidebarLocalStorageKeys.IS_SIDEBAR_OPEN, this.isSidebarOpen);
+    }
+  },
   methods: {
+    toggle() {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    },
     toggleClassName() {
       if (typeof window === 'undefined') {
         return;
@@ -56,22 +55,11 @@ export default {
       const bodyClassList = window.document.body.classList;
 
       if (this.isSidebarOpen) {
-        bodyClassList.remove(SidebarContollingClassNames.SIDEBAR_CLOSSED);
+        bodyClassList.remove(SidebarControllingClassNames.SIDEBAR_CLOSED);
       } else {
-        bodyClassList.add(SidebarContollingClassNames.SIDEBAR_CLOSSED);
+        bodyClassList.add(SidebarControllingClassNames.SIDEBAR_CLOSED);
       }
     },
-    toggle() {
-      if (typeof window === 'undefined') {
-        return;
-      }
-
-      this.isSidebarOpen = !this.isSidebarOpen;
-
-      this.toggleClassName();
-
-      window.localStorage.setItem(SidebarLocalSstorageKeys.IS_SIDEBAR_OPEN, this.isSidebarOpen ? SidebarStates.OPEN : SidebarStates.CLOSED);
-    }
   }
 }
 </script>
