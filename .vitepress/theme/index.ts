@@ -17,18 +17,24 @@ export default {
     extends: DefaultTheme,
     Layout() {
         const router = useRouter();
-        const layoutKey = ref(router.route.path);
+        const layoutKey = ref<string>("default");
+
+        if(router.route.path.includes("/docs/")) {
+          layoutKey.value = router.route.path;
+        }
 
         watch(
             () => router.route.path,
             (newPath, oldPath) => {
-              console.log("PATH changed");
+              console.log("PATH changed from", oldPath, "to", newPath);
               
                 if (newPath !== oldPath) {
                     layoutKey.value = newPath;
                 }
             }
         );
+
+        console.log("LC ", layoutKey.value);
 
         return h(
             DefaultTheme.Layout,
