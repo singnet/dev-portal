@@ -379,6 +379,11 @@ ai-developers:
                 excerpt:
                 cta: Read more
                 url: '/docs/ai-developers/service-setup'
+            filecoin:
+                title: 'FileCoin Storage Provider'
+                excerpt:
+                cta: Read more
+                url: '/docs/ai-developers/filecoin'
             daemon:
                 title: 'Daemon Setup'
                 excerpt:
