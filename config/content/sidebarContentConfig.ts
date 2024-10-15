@@ -836,9 +836,22 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "WebJS SDK",
-                link:"",
+                link:"/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide",
                 collapsed: true,
-                items:[],
+                items:[
+                    {
+                        text: "Getting started guide",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide",
+                    },
+                    {
+                        text: "Calculator example",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/calculator",
+                    },
+                    {
+                        text: "Get service info and metamask wallet interuction",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/service-info",
+                    },
+                ],
             },
             {
                 text: "Java SDK",
