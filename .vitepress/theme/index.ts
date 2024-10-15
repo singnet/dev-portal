@@ -10,37 +10,12 @@ import type { Theme } from "vitepress";
 import { h } from "vue";
 import "./style.css";
 
-import { ref, watch } from "vue";
-import { useRouter } from "vitepress";
-
 export default {
     extends: DefaultTheme,
     Layout() {
-        const router = useRouter();
-        const layoutKey = ref<string>("default");
-
-        if(router.route.path.includes("/docs/")) {
-          layoutKey.value = router.route.path;
-        }
-
-        watch(
-            () => router.route.path,
-            (newPath, oldPath) => {
-              console.log("PATH changed from", oldPath, "to", newPath);
-              
-                if (newPath !== oldPath) {
-                    layoutKey.value = newPath;
-                }
-            }
-        );
-
-        console.log("LC ", layoutKey.value);
-
         return h(
             DefaultTheme.Layout,
-            {
-                key: layoutKey.value,
-            },
+            null,
             {
                 "layout-bottom": () => h(Footer),
                 "sidebar-nav-before": () => h(NavigationControl),
