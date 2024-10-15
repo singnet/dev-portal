@@ -6,14 +6,13 @@ This document describes the mandatory items that must be implemented in order to
 
 First and most important, you must have a service that is able to accept requests and return responses to them.
 
-### 2. .proto file of your AI service
+### 2. Created .proto file of your AI service
 
-Requires the creation of the described .proto interfaces of your service calls to the Daemon via GRPC Protocol.
+Requires the creation of the described [.proto](https://protobuf.dev/) interfaces of your service calls to the Daemon via GRPC Protocol.
 
 ### 3. Ethereum Wallet
 
-You will need a metamask wallet and some ETH for transactions (about 0.01 ETH) to publish the organization and publish the service
-https://metamask.io/
+You will need a [metamask wallet](https://metamask.io/) and some ETH for transactions (about 0.01 ETH) to publish the organization and publish the service
 
 ### 4. Account on Publisher Portal (optional if you want to use CLI/TUI)
 
@@ -33,15 +32,15 @@ If you want to use a domain name to access your service, you will need to purcha
 ### 7. ETCD set up on Virtual Machine
 
 In the process of publishing your service, you will have to install and configure:
-ETCD database https://etcd.io/ and security certificates (more details in the instructions).
+[ETCD database](https://etcd.io/) and security certificates (more details in the instructions).
 
 ### 8. Daemon up and running on Virtual Machine
 
 In the process of publishing your service, you will have to install and configure:
-Latest version of Daemon for your service. It must also be installed and configured. (https://github.com/singnet/snet-daemon).
+Latest version of [Daemon](https://github.com/singnet/snet-daemon) for your service. It must also be installed and configured.
 
 Note! Your ETCD, Daemon and services can be on different machines or on one - on your preference.
-To make sure everything works and test your service, you can go through the exact same process on Sepolia testnet (https://testnet-publisher.singularitynet.io).
+To make sure everything works and test your service, you can go through the exact same process in Sepolia testnet on test publisher portal: https://testnet-publisher.singularitynet.io
 
 And if ready for publish your service use: https://publisher.singularitynet.io/
 
@@ -53,8 +52,7 @@ And if ready for publish your service use: https://publisher.singularitynet.io/
 
 Register an account to create and publish an organization and services: https://publisher.singularitynet.io/
 
-You will need a metamask wallet and some ETH for transactions (about 0.01 ETH) to publish the organization and publish the service 
-https://metamask.io/
+You will need a [metamask](https://metamask.io/) wallet and some ETH for transactions (about 0.01 ETH) to publish the organization and publish the service 
 
 ## Step 2: Setting up the environment
 
@@ -68,7 +66,7 @@ To make sure everything works and test your service, you can go through the exac
 
 ## Step 4: Publish
 
-After setting up the environment and connecting the service to the daemon, you will need to collect all the data and go through the update process on the platform. (https://publisher.singularitynet.io/).
+After setting up the environment and connecting the service to the daemon, you will need to collect all the data and go through the update process on the [platform](https://publisher.singularitynet.io/).
 
 An alternative publishing option is to publish via the CLI / TUI.
 
