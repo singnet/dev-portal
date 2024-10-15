@@ -10,19 +10,42 @@ import type { Theme } from "vitepress";
 import { h } from "vue";
 import "./style.css";
 
+import { ref, watch } from "vue";
+import { useRouter } from "vitepress";
+
 export default {
-  extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      "layout-bottom": () => h(Footer),
-      "sidebar-nav-before": () => h(NavigationControl),
-      "layout-top": () => h(FeedBackForm),
-    });
-  },
-  enhanceApp({ app }) {
-    app.component("Home", Home);
-    app.component("Video", Video);
-    app.component("SpriteIcon", SpriteIcon);
-    app.component("SectionNavigationGrid", SectionNavigationGrid);
-  },
+    extends: DefaultTheme,
+    Layout() {
+        const router = useRouter();
+        const layoutKey = ref(router.route.path);
+
+        watch(
+            () => router.route.path,
+            (newPath, oldPath) => {
+              console.log("PATH changed");
+              
+                if (newPath !== oldPath) {
+                    layoutKey.value = newPath;
+                }
+            }
+        );
+
+        return h(
+            DefaultTheme.Layout,
+            {
+                key: layoutKey.value,
+            },
+            {
+                "layout-bottom": () => h(Footer),
+                "sidebar-nav-before": () => h(NavigationControl),
+                "layout-top": () => h(FeedBackForm),
+            }
+        );
+    },
+    enhanceApp({ app, router }) {
+        app.component("Home", Home);
+        app.component("Video", Video);
+        app.component("SpriteIcon", SpriteIcon);
+        app.component("SectionNavigationGrid", SectionNavigationGrid);
+    },
 } satisfies Theme;
