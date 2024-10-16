@@ -61,7 +61,7 @@ print(‘Your private key: ’ + accut.key.hex())
 
 ### It requires some preparation:
 ![Infura](/assets/images/products/AIMarketplace/publisher/14Infura.png)
-1. Create an Infura account that will be used by your daemon to interact with the blockchain and generate API key
+1. Create an [Infura](https://www.infura.io/) account that will be used by your daemon to interact with the blockchain and generate API key
 2. The address of your generated key must be specified in the daemon config. It will be used to validate daemon calls on the blockchain network
 After downloading the service and publishing it (PUBLISHED status), you can complete the daemon config
 

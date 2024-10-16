@@ -115,7 +115,7 @@ There are 3 possible modifiers:
 
 For example, if you pass the following JSON as a parameter, then as an "image" parameter we will use the base64 encoded content of "1.jpeg"
 
-```sh
+```json
 '{"image_type": "jpg", "file@b64encode@image": "1.jpeg"}'
 ```
 
