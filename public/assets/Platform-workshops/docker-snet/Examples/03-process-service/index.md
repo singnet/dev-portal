@@ -1,25 +1,3 @@
----
-# Page settings
-layout: default
-keywords:
-comments: false
-title: Process service
-description: Process service
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
----
-
 Please see:
 
 -   [snet-cli repo documentation](https://github.com/singnet/snet-cli)
@@ -56,5 +34,3 @@ snet client call 1 3 localhost:8080 echo '{"message": "hello"}'
 ```sh
 stop_service.sh
 ```
-
-> Next Example

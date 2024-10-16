@@ -1,10 +1,12 @@
+# Publish proccess
+
 ## Step 1. Dependencies
 
 Run this tutorial from a bash terminal.
 
 In this tutorial we will publish an example service in SingularityNET using Ropsten Test Network.
 
-We build a [Docker](https://www.docker.com/) Image using this [Dockerfile](https://github.com/singnet/dev-portal/blob/master/tutorials/docker/Dockerfile)
+We build a [Docker](https://www.docker.com/) Image using this [Dockerfile](https://github.com/singnet/dev-portal-v2/docs/products/AIMarketplace/Forcomers/Dockerfile)
 that is set up with all the required dependencies but if you prefer you can install the dependencies by yourself in your own workstation.
 
 Using a Docker Image is usually easier (you don't need to be a Docker guru to follow this tutorial).
@@ -33,7 +35,7 @@ To secure payments, to set up your own ETCD Cluster, refer to the docs [ETCD Set
 Build your own tutorial Docker image directly from our git repo using the following command:
 
 ```sh
-docker build -t snet_publish_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
+docker build -t snet_publish_service https://github.com/singnet/dev-portal-v2.git#master:docs/products/AIMarketplace/Forcomers/Dockerfile
 ```
 
 Setup environment variables (they are explained later in this tutorial as they're used):

@@ -1,4 +1,4 @@
-## Daemon
+# Daemon
 
 The [SingularityNET daemon](https://github.com/singnet/snet-daemon) is the adapter that a service can use to interface with the SingularityNET platform.
 

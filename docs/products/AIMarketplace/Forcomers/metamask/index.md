@@ -1,6 +1,8 @@
+# Metamask
+
 Metamask is a plugin which is used by the SingularityNET platform.
 
-## How to get metamask
+## How to get Metamask
 To get the metamask plugin [install](https://metamask.io/download.html)
 
 ## Wallets in Metamask 

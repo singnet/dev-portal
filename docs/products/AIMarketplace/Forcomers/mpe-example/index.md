@@ -1,4 +1,4 @@
-You can find script for this example and instruction how to run it inside a docker [here (example 1)](https://github.com/singnet/dev-portal/tree/master/src/example1).
+You can find script for this example and instruction how to run it inside a docker [here (example 1)](https://github.com/singnet/dev-portal-v2/public/assets/Platform-workshops/docker-snet/Examples).
 
 We will demonstrate the following:
 

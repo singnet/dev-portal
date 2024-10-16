@@ -1,3 +1,5 @@
+# Wallet creation guide
+
 ## Step 1. Metamask
                                                                                                                 
 [Metamask](https://metamask.io/) is a browser extension for interacting with B enabled websites, such as marketplace.

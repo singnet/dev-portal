@@ -1,4 +1,4 @@
-> NOTE: if you are reading this on the developer portal, please be aware that there are additional Go files in the repository found [here](https://github.com/singnet/dev-portal/tree/master/src/etcddb)
+> NOTE: if you are reading this on the developer portal, please be aware that there are additional Go files in the repository found [here](https://github.com/singnet/dev-portal-v2/public/assets/etcddb)
 
 # etcd throughput
 

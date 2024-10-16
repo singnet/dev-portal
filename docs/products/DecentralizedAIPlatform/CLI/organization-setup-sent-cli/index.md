@@ -1,3 +1,5 @@
+# Organization setup via CLI
+
 ## Publishing Organization on Blockchain using snet-cli
 
 

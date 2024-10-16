@@ -1,3 +1,5 @@
+# Daemon setup
+
 ## Get the Latest Binary 
 Download the latest Daemon [here](https://github.com/singnet/snet-daemon/releases/latest)
 
