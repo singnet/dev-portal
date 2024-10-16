@@ -16,7 +16,7 @@ The package is published in PyPI at the following link:
 The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
 To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
 To handle payment of services, SingularityNET uses 
-[Ethereum state channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe).
+[Ethereum state channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 The SingularityNET SDK abstracts and manages state channels with service providers on behalf of the user and 
 handles authentication with the SingularityNET services.
 
@@ -27,7 +27,7 @@ These instructions are for the development and use of the SingularityNET SDK for
 ### Usage
 
 To call a service on a SingularityNET platform, the user must be able to deposit funds (AGIX tokens) to the 
-[Multi-Party Escrow](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe) Smart Contract.
+[Multi-Party Escrow](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/) Smart Contract.
 To deposit these tokens or do any other transaction on the Ethereum blockchain.
 
 Once you have installed snet-sdk in your current environment, you can import it into your Python script and create an 
