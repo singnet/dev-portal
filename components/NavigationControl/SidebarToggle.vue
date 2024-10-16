@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .sidebar-toggler-container {
   flex-shrink: 0;
   width: 20px;
