@@ -14,7 +14,7 @@ We will demonstrate the following:
 
 ## Preparation
 
-Please start by following the tutorial [How to Build and Deploy SingularityNET Locally](/docs/products/AIMarketplace/forcomers/local-singularitynet.md).
+Please start by following the tutorial [How to Build and Deploy SingularityNET Locally](/docs/products/AIMarketplace/Forcomers/local-singularitynet/).
 
 The following example can also be executed on the kovan test net, but you will need to make sure that your organization name has not already been taken and you should probably also use another account to collect payments from the client side (see the KOVAN warnings below).
 

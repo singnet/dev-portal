@@ -1,14 +1,14 @@
 [singnet-home]: https://www.singularitynet.io
 [singnet-github]: https://github.com/singnet
 [dnn-github]: https://github.com/singnet/dnn-model-services
-[contribution-guidelines]: /docs/products/AIMarketplace/forcomers/contribution-guidelines.md
-[cpp-tutorial]: /docs/products/AIMarketplace/forcomers/cpp/index.md
-[java-tutorial]: /docs/products/AIMarketplace/forcomers/java/index.md
-[go-tutorial]: /docs/products/AIMarketplace/forcomers/go/index.md
-[python-tutorial]: /docs/products/AIMarketplace/forcomers/python/index.md
-[opencog-tutorial]: /docs/products/AIMarketplace/forcomers/opencog.md
-[service-tutorial]: /docs/products/AIMarketplace/forcomers/publish.md
-[naming-standards]: /docs/products/AIMarketplace/forcomers/naming-standards.md
+[contribution-guidelines]: /docs/products/AIMarketplace/Forcomers/contribution-guidelines/.md
+[cpp-tutorial]: /docs/products/AIMarketplace/Forcomers/Platform-workshops/cpp/index.md
+[java-tutorial]: /docs/products/AIMarketplace/Forcomers/Platform-workshops/java/index.md
+[go-tutorial]: /docs/products/AIMarketplace/Forcomers/Platform-workshops/go/index.md
+[python-tutorial]: /docs/products/AIMarketplace/Forcomers/Platform-workshops/python/index.md
+[opencog-tutorial]: /docs/products/AIMarketplace/Forcomers/opencog/.md
+[service-tutorial]: /docs/products/AIMarketplace/Forcomers/publish/.md
+[naming-standards]: /docs/products/AIMarketplace/Forcomers/naming-standards/.md
 [grpc]: https://grpc.io/
 [grpc-docs]: https://grpc.io/docs/
 [opencog]: https://opencog.org/
@@ -41,10 +41,10 @@ available [here][grpc-docs].
 There are tutorials with step-by-step instructions for implementing a new
 service in each of these languages:
 
-- [How to write a SingularityNET service in C++](/docs/products/AIMarketplace/forcomers/cpp/index.md)
-- [How to write a SingularityNET service in Python](/docs/products/AIMarketplace/forcomers/python/index.md)
-- [How to write a SingularityNET service in Java](/docs/products/AIMarketplace/forcomers/java/index.md)
-- [How to write a SingularityNET service in Go](/docs/products/AIMarketplace/forcomers/go/index.md)
+- [How to write a SingularityNET service in C++](/docs/products/AIMarketplace/Forcomers/Platform-workshops/cpp/index.md)
+- [How to write a SingularityNET service in Python](/docs/products/AIMarketplace/Forcomers/Platform-workshops/python/index.md)
+- [How to write a SingularityNET service in Java](/docs/products/AIMarketplace/Forcomers/Platform-workshops/java/index.md)
+- [How to write a SingularityNET service in Go](/docs/products/AIMarketplace/Forcomers/Platform-workshops/go/index.md)
 
 If you already have a gRPC service, this tutorial explains how to publish it in
 SingularityNET:

@@ -10,10 +10,11 @@ export default defineConfig({
     // @ts-expect-error not fully supported yet
     initialValue: 'light'
   },
+  cleanUrls: true,
+  lastUpdated: true,
   head: assetsLinks,
   title: generalConfig.siteName,
   description: generalConfig.siteDescription,
-  lastUpdated: true,
   themeConfig: {
     logo: "/assets/images/common/logo.svg",
     nav: navContent,

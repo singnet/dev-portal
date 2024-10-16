@@ -61,7 +61,7 @@ The daemon supports SSL termination using a developer-supplied certificate and k
 
 Prior to invoking a service through the SingularityNET platform, the consumer must have completed the following:
 - Funded the [Multi-Party Escrow contract](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe);
-- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/products/AIMarketplace/forcomers/organization.md).
+- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/products/AIMarketplace/Forcomers/organization/.md).
 
 With each invocation the daemon checks for the following
 - that the signature is authentic;

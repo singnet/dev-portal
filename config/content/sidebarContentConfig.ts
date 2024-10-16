@@ -72,7 +72,7 @@ export const TechnologiesSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Concepts of organization",
-        link: "/docs/products/AboutTechnologies/concepts-organization",
+        link: "/docs/products/AboutTechnologies/concepts-organization/",
     },
     {
         text: "Introduction in SDK",
@@ -889,79 +889,79 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
     {
         text: "For comers",
         collapsed: true,
-        link: "/docs/products/AIMarketplace/forcomers/",
+        link: "/docs/products/AIMarketplace/Forcomers/",
         items: [
             {
                 text: "Call a service",
-                link: "/docs/products/AIMarketplace/forcomers/call-a-service",
+                link: "/docs/products/AIMarketplace/Forcomers/call-a-service/",
             },
             {
                 text: "Integration",
-                link: "/docs/products/AIMarketplace/forcomers/integration",
+                link: "/docs/products/AIMarketplace/Forcomers/integration/",
             },
             {
                 text: "Local Singularity",
-                link: "/docs/products/AIMarketplace/forcomers/local-singularitynet",
+                link: "/docs/products/AIMarketplace/Forcomers/local-singularitynet/",
             },
             {
                 text: "MetaMask",
-                link: "/docs/products/AIMarketplace/forcomers/metamask",
+                link: "/docs/products/AIMarketplace/Forcomers/metamask",
             },
             {
                 text: "OpenCog",
-                link: "/docs/products/AIMarketplace/forcomers/opencog",
+                link: "/docs/products/AIMarketplace/Forcomers/opencog/",
             },
             {
                 text: "Organization",
-                link: "/docs/products/AIMarketplace/forcomers/organization",
+                link: "/docs/products/AIMarketplace/Forcomers/organization/",
             },
             {
                 text: "Publish",
-                link: "/docs/products/AIMarketplace/forcomers/publish",
+                link: "/docs/products/AIMarketplace/Forcomers/publish/",
             },
             {
                 text: "RasberryPI",
-                link: "/docs/products/AIMarketplace/forcomers/raspberrypi",
+                link: "/docs/products/AIMarketplace/Forcomers/raspberrypi",
             },
             {
                 text: "Registry",
-                link: "/docs/products/AIMarketplace/forcomers/registry",
+                link: "/docs/products/AIMarketplace/Forcomers/registry/",
             },
             {
                 text: "Requirements",
-                link: "/docs/products/AIMarketplace/forcomers/requirements",
+                link: "/docs/products/AIMarketplace/Forcomers/requirements/",
             },
             {
                 text: "Setup Guide",
-                link: "/docs/products/AIMarketplace/forcomers/setupguide",
+                link: "/docs/products/AIMarketplace/Forcomers/setupguide/",
             },
             {
                 text: "Wallet",
-                link: "/docs/products/AIMarketplace/forcomers/wallet",
+                link: "/docs/products/AIMarketplace/Forcomers/wallet/",
             },
             {
                 text: "Claim",
-                link: "/docs/products/AIMarketplace/forcomers/claim",
+                link: "/docs/products/AIMarketplace/Forcomers/claim",
             },
             {
                 text: "PayPal",
-                link: "/docs/products/AIMarketplace/forcomers/paypal",
+                link: "/docs/products/AIMarketplace/Forcomers/paypal",
             },
             {
                 text: "Guide for testnet",
-                link: "/docs/products/AIMarketplace/forcomers/snet-full-guide-testnet",
+                link: "/docs/products/AIMarketplace/Forcomers/snet-full-guide-testnet",
             },
             {
                 text: "Guide for mainnet",
-                link: "/docs/products/AIMarketplace/forcomers/snet-full-guide-mainnet",
+                link: "/docs/products/AIMarketplace/Forcomers/snet-full-guide-mainnet",
             },
             {
                 text: "FAQ",
-                link: "/docs/products/AIMarketplace/forcomers/faq",
+                link: "/docs/products/AIMarketplace/Forcomers/faq",
             },
             {
                 text: "Troubleshooting",
-                link: "/docs/products/AIMarketplace/forcomers/troubleshooting",
+                link: "/docs/products/AIMarketplace/Forcomers/troubleshooting",
             },
         ],
     },
