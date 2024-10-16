@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .sidebar-toggler-container {
   flex-shrink: 0;
   width: 20px;
@@ -133,7 +133,7 @@ export default {
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 960px) and (min-width: 440px) {
   .sidebar-toggler-container {
     display: none;
   }

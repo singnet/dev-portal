@@ -9,8 +9,8 @@
             <div class="sections-menu-toggler" :class="{ 'active': isSectionsMenuOpen }" @click="toggleSectionsMenu">
                 <SpriteIcon :textIconID="'section-menu-icon'" />
             </div>
-            <SidebarToggle v-if="!isMobile" />
-            <SidebarToggleMobile v-else />
+            <SidebarToggleMobile v-if="isMobile" />
+            <SidebarToggle v-else />
         </div>
         <div class="sections-menu" :class="{ 'closed': !isSectionsMenuOpen }">
             <div v-for="sectionsItem in otherSections" :key="sectionsItem.name" class="sections-menu-item">

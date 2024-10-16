@@ -34,4 +34,19 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+.sidebar-toggler rect,
+  .sidebar-closed .sidebar-toggler:hover rect {
+    stroke: #3C3C43;
+  }
+
+  .dark .sidebar-toggler rect,
+  .dark .sidebar-closed .sidebar-toggler:hover rect {
+    stroke: #D6D6D6;
+  }
+
+  .sidebar-toggler:hover rect,
+  .sidebar-closed .sidebar-toggler rect {
+    stroke: #4086FF;
+  }
 </style>
