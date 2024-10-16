@@ -4,7 +4,7 @@ SDK is a tool for AI customers to make calls to services.
 
 The SDK simplifies the process of integrating with SingularityNET services and
 provides tooling to automatically augment gRPC client stubs with the necessary
-authorisations.
+authorizations.
 
 **Note**:  SDK uses gRPC protocol for communication 
 
