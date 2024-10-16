@@ -19,7 +19,7 @@ These instructions are for the development and use of the SingularityNET SDK for
 The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
 To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
 To handle payment of services, SingularityNET uses
-[Ethereum state channels](/docs/products/AIMarketplace/coreconcepts/Smart-contracts/mpe).
+[Ethereum state channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe).
 The SingularityNET SDK abstracts and manages state channels with service providers on behalf of the user and
 handles authentication with the SingularityNET services.
 
