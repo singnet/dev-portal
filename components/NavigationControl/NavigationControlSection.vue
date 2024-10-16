@@ -8,8 +8,9 @@
         </div>
     </a>
 </template>
-<script>
+<script lang="ts">
 import SpriteIcon from "../Common/SpriteIcon.vue";
+import type { DefaultTheme } from "vitepress";
 
 export default {
     components: {
@@ -17,7 +18,7 @@ export default {
     },
     props: {
         sectionData: {
-            type: Object,
+            type: Object as PropType<DefaultTheme.SidebarItem>,
             required: true,
         },
         isActive: {
