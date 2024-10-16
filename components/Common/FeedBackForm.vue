@@ -305,6 +305,7 @@ form {
 .submit-button:disabled {
     background-color: var(--feedback-form-input-background);
     color: var(--vp-c-lightgray);
+    pointer-events: none;
 }
 
 .dark .submit-button:disabled {
