@@ -115,8 +115,8 @@ There are 3 possible modifiers:
 
 For example, if you pass the following JSON as a parameter, then as an "image" parameter we will use the base64 encoded content of "1.jpeg"
 
-```sh
-'{"image_type": "jpg", "file@b64encode@image": "1.jpeg"}'
+```json
+{"image_type": "jpg", "file@b64encode@image": "1.jpeg"}
 ```
 
 If we remove the b64encode modifier from the previous example, then we will pass 1.jpeg image in binary format without base64 encoding.  

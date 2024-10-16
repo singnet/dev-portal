@@ -68,6 +68,7 @@ certificates are about to expire for service %s for %s network.
 
 ### NGINX
 Since there is no direct support for grpc-web(dapp)from nginx, we can make a below hack in the config file of the nginx to work with both grpc-web(dapp) and grpc(sdk,snet-cli) calls.
+```powershell
 server {
     listen 1449 ssl http2;
     server_name `domain-name`;
@@ -94,6 +95,7 @@ server {
     }
     grpc_pass grpc://reroute_url;
     }}
+```
  
 The above config works based on the content-type of the request. Whenever the grpc-web(dapp) makes a call to nginx, the content-type would be application/grpc-web and this content-type is not been handled by nginx with grpc_pass.
 Hence, only those requests with grpc specified  content-type application/grpc+(proto|json|customType) works with grpc_pass while rest of the requests will work with proxy_pass.
