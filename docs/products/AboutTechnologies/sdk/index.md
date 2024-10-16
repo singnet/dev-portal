@@ -4,7 +4,7 @@ SDK is a tool for AI customers to make calls to services.
 
 The SDK simplifies the process of integrating with SingularityNET services and
 provides tooling to automatically augment gRPC client stubs with the necessary
-authorisations.
+authorizations.
 
 **Note**:  SDK uses gRPC protocol for communication 
 
@@ -34,7 +34,7 @@ definitions, so that the services can be invoked with minimal fuss.
 SE and Android platforms. Source code can be found at [GitHub
 repo](https://github.com/singnet/snet-sdk-java) and artifacts are published at
 [Jitpack repo](https://jitpack.io/#singnet/snet-sdk-java). [Java
-tutorial](/docs/products/AIMarketplace/forcomers/java/) is available on
+tutorial](/docs/products/AIMarketplace/Forcomers/Platform-workshops/java/) is available on
 SingularityNET dev portal. Preliminary version of [Android related
 notes](https://github.com/singnet/snet-sdk-java/tree/master/plugin/gradle) and
 [code examples](https://github.com/singnet/snet-sdk-java/tree/master/example)
