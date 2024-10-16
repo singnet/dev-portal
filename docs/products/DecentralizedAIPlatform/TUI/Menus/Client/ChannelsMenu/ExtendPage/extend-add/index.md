@@ -1,0 +1,21 @@
+# Extend Add
+
+Set new expiration for the channel and add funds
+
+![Extend Add page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.23.35PM.png)Extend Add page
+
+<pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
+</strong>
+snet channel extend-add [-h] [--expiration EXPIRATION] [--force]
+                        [--amount AMOUNT]
+                        [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                        [--gas-price GAS_PRICE] [--wallet-index WALLET_INDEX]
+                        [--yes] [--quiet | --verbose]
+                        CHANNEL_ID
+</code></pre>
+
+User flow:
+
+* Input the channel id
+* Input any optional parameters you would like
+* Click the "Extend Add" button
