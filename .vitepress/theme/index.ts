@@ -11,18 +11,22 @@ import { h } from "vue";
 import "./style.css";
 
 export default {
-  extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      "layout-bottom": () => h(Footer),
-      "sidebar-nav-before": () => h(NavigationControl),
-      "layout-top": () => h(FeedBackForm),
-    });
-  },
-  enhanceApp({ app }) {
-    app.component("Home", Home);
-    app.component("Video", Video);
-    app.component("SpriteIcon", SpriteIcon);
-    app.component("SectionNavigationGrid", SectionNavigationGrid);
-  },
+    extends: DefaultTheme,
+    Layout() {
+        return h(
+            DefaultTheme.Layout,
+            null,
+            {
+                "layout-bottom": () => h(Footer),
+                "sidebar-nav-before": () => h(NavigationControl),
+                "layout-top": () => h(FeedBackForm),
+            }
+        );
+    },
+    enhanceApp({ app, router }) {
+        app.component("Home", Home);
+        app.component("Video", Video);
+        app.component("SpriteIcon", SpriteIcon);
+        app.component("SectionNavigationGrid", SectionNavigationGrid);
+    },
 } satisfies Theme;

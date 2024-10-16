@@ -1,3 +1,7 @@
+---
+layout: doc
+---
+
  - [Using the python SDK](/docs/products/DecentralizedAIPlatform/SDK/sdk-python-tutorial)
 ## Using the Node.js SDK
 
