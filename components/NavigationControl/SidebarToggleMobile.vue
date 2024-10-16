@@ -11,11 +11,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     methods: {
         closeSideBar() {
-            const VPBackdrop = document.getElementsByClassName("VPBackdrop")[0];
+            if (typeof window === 'undefined') {
+                return;
+            }
+
+            const VPBackdrop: HTMLElement  = window.document.getElementsByClassName("VPBackdrop")[0] as HTMLElement;
             VPBackdrop.click();
         }
     }
