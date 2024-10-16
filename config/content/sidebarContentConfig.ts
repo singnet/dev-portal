@@ -159,7 +159,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Smart contracts",
                 collapsed: true,
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/smart-contracts",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/",
                 items: [
                     {
                         text: "MPE",
@@ -888,9 +888,36 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
 export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
     {
         text: "For comers",
-        collapsed: true,
+        collapsed: false,
         link: "/docs/products/AIMarketplace/Forcomers/",
         items: [
+            {
+                text: "Platform workshops",
+                link: "",
+                collapsed: true,
+                items:[
+                    {
+                        text: "Python",
+                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/python/",
+                    },
+                    {
+                        text: "C++",
+                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/cpp/",
+                    },
+                    {
+                        text: "Go",
+                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/go/",
+                    },
+                    {
+                        text: "Java",
+                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/java/",
+                    },
+                    {
+                        text: "Docker SNET",
+                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/Docker-snet/",
+                    },
+                ]
+            },
             {
                 text: "Call a service",
                 link: "/docs/products/AIMarketplace/Forcomers/call-a-service/",
