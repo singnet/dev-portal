@@ -133,7 +133,7 @@ export default {
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 960px) and (min-width: 440px) {
   .sidebar-toggler-container {
     display: none;
   }

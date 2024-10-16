@@ -9,7 +9,8 @@
             <div class="sections-menu-toggler" :class="{ 'active': isSectionsMenuOpen }" @click="toggleSectionsMenu">
                 <SpriteIcon :textIconID="'section-menu-icon'" />
             </div>
-            <SidebarToggle />
+            <SidebarToggleMobile v-if="isMobile" />
+            <SidebarToggle v-else />
         </div>
         <div class="sections-menu" :class="{ 'closed': !isSectionsMenuOpen }">
             <div v-for="sectionsItem in otherSections" :key="sectionsItem.name" class="sections-menu-item">
@@ -27,6 +28,7 @@ import NavigationTreeControl from "./NavigationTreeControl.vue";
 import LocalStorageFlagsService from "../../services/LocalStorageFlagsService";
 import { Products as Sections, RootSections } from "../../config/content/sidebarContentConfig";
 import { useData } from "vitepress";
+import SidebarToggleMobile from "./SidebarToggleMobile.vue";
 
 const MenuLocalStorageKeys = {
     IS_MENU_OPEN: "isSectionsMenuOpen",
@@ -43,6 +45,7 @@ export default {
         NavigationControlSection,
         NavigationTreeControl,
         SidebarToggle,
+        SidebarToggleMobile,
         SpriteIcon
     },
     setup() {
@@ -99,6 +102,13 @@ export default {
             }
 
             return preFilteredSections.filter(section => section.name !== this.currentSection.name);
+        },
+        isMobile() {
+            if (typeof window === 'undefined') {
+                return;
+            }
+            
+            return window.innerWidth <= 440
         }
     },
     methods: {
