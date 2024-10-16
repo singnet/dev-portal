@@ -2,7 +2,7 @@
 
 ### Step 1: Deposit AGIX in MPE
 
-Once you have some AGIX in your wallet, you can deposit it into your [Multi-party Escrow](https://dev.singularitynet.io/docs/ai-developers/mpe/) with the [deposit page](../menus/account/deposit.md) (found in the account page), as shown below.&#x20;
+Once you have some AGIX in your wallet, you can deposit it into your [Multi-party Escrow](https://dev.singularitynet.io/docs/ai-developers/mpe/) with the [deposit page](/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/deposit/) (found in the account page), as shown below.&#x20;
 
 ![Account Deposit Page](/assets/images/products/AIMarketplace/TUI/TUIDeposit.png)Account Deposit Page
 
@@ -24,7 +24,7 @@ Using the left navigation bar, switch to the client menu.&#x20;
 
 ![Client Page](/assets/images/products/AIMarketplace/TUI/TUIClientPage.png)Client Page
 
-Then navigate to the "[Channel Open Initialize](../menus/client/channels-menu/initialize-open-page/open-initialize.md)" Page, which can be found at:
+Then navigate to the "[Channel Open Initialize](/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/open-initialize/)" Page, which can be found at:
 
 ```
 "Client Page" -> "Channels Page" -> "Initialize/Open Page" -> "Open Initialize Page"
@@ -32,7 +32,7 @@ Then navigate to the "[Channel Open Initialize](../menus/client/channels-menu/in
 
 If you have arrived at the correct page, you should see the menu shown below
 
-![Channel Open Initialize page](/assets/images/products/AIMarketplace/TUI/TUI Channel Open-Init.png)Channel Open Initialize page
+![Channel Open Initialize page](/assets/images/products/AIMarketplace/TUI/TUIChannel Open-Init.png)Channel Open Initialize page
 
 Fill out the fields according to which organization you would like to create a channel with, and how many AGIX tokens you would like to add to the channel.&#x20;
 
@@ -58,13 +58,13 @@ Proceed with the channel creation, and you will receive one more dialogue indica
 
 Once you have opened and initialized a channel, with AGIX deposited in it. You can invoke services from the organization you initialized the channel for.&#x20;
 
-Navigate to the client page, and open the "[Call](../menus/client/call.md)" Menu. You should be greeted with the menu below
+Navigate to the client page, and open the "[Call](/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/call/)" Menu. You should be greeted with the menu below
 
 ![Client Call Menu - Filled out with example details](/assets/images/products/AIMarketplace/TUI/TUIClientCall.png)Client Call Menu - Filled out with example details
 
 As you can see pictured above, we have filled out the basic details to call the "add" function under the `ExampleService` service, created by SingularityNET. You must do the same for whatever service you are trying to call.&#x20;
 
-<mark style="color:red;">NOTE</mark>: In the parameters input, you can utilize a path to a JSON file, containing your service call parameters, or you can directly insert JSON into the service call. You may run into issues with sending JSON directly in the service call as pictured above (usually only on Windows), you can find more information in the [FAQ](../faq/).
+<mark style="color:red;">NOTE</mark>: In the parameters input, you can utilize a path to a JSON file, containing your service call parameters, or you can directly insert JSON into the service call. You may run into issues with sending JSON directly in the service call as pictured above (usually only on Windows), you can find more information in the [FAQ](/docs/products/DecentralizedAIPlatform/TUI/FAQ/).
 
 Once you have inserted all the necessary information, you can scroll down and click on `View Server Call Price`. This should display a confirmation dialogue on your screen, detailing the AGIX cost of the service invocation you would like to execute.&#x20;
 

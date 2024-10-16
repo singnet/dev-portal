@@ -18,7 +18,7 @@ The first three links are relevant if you want to be a consumer of SingularityNE
 - [Prerequisities](/docs/products/AIMarketplace/Forcomers/requirements/) - What do you need to do before you can start working with decentralised AI services.
 - [Create a Wallet](/docs/products/AIMarketplace/Forcomers/wallet/) - To make transactions you'll need a wallet with some funds.
 - [How to call a service](/docs/products/AIMarketplace/Forcomers/call-a-service/) - Covers trying out a service in the marketplace, and calling it from our command line tool.
-- [Using the SDK](/docs/products/DecentralizedAIPlatform/SDK/python-sdk) - Calling a service using the Python SDK.
+- [Using the SDK](/docs/products/DecentralizedAIPlatform/SDK/python-sdk/) - Calling a service using the Python SDK.
 
 These steps guide you through creating a service, and getting that service on our marketplace:
 
@@ -29,8 +29,8 @@ These steps guide you through creating a service, and getting that service on ou
 Learn the details of the platform components.
 
 - [Registry](/docs/products/AIMarketplace/Forcomers/registry/)
-- [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/daemon-architecture)
-- [Multi-Party Escrow (MPE)](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe)
+- [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/daemon-architecture/)
+- [Multi-Party Escrow (MPE)](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/)
 
 ## Tutorials across languages
 
@@ -45,6 +45,6 @@ We maintain language-specific tutorials for a number popular languages.
 
 ## Advanced
 
-- [Multi-Party Escrow (MPE) - Payment Channel Storage](/docs/products/DecentralizedAIPlatform/Daemon/daemon-channel-storage) - Details of channels and payment works.
+- [Multi-Party Escrow (MPE) - Payment Channel Storage](/docs/products/DecentralizedAIPlatform/Daemon/daemon-channel-storage/) - Details of channels and payment works.
 - [Launch your own local copy of the SingularityNET platform](/docs/products/AIMarketplace/Forcomers/local-singularitynet/) - If you want to set up your own development environment of the whole platform, this is the page for you!
 - [Full automated SingularityNET platform example](/docs/products/AIMarketplace/Forcomers/mpe-example/)

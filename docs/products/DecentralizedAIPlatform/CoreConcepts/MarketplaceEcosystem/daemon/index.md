@@ -51,17 +51,17 @@ This means we have one consistent protocol to be used to communicate with any se
 
 ### Service Models
 
-As noted when discussing [Services](/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service.md), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
+As noted when discussing [Services](/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service/), the service API is defined using [protobuf](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition).
 
 ## SSL
 
-The daemon supports SSL termination using a developer-supplied certificate and keyfile. For more information, refer to  [SSL guide](/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup) on how to setup with [Let's Encrypt](https://letsencrypt.org/).
+The daemon supports SSL termination using a developer-supplied certificate and keyfile. For more information, refer to  [SSL guide](/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/) on how to setup with [Let's Encrypt](https://letsencrypt.org/).
 
 ## Authorisation and Payment
 
 Prior to invoking a service through the SingularityNET platform, the consumer must have completed the following:
-- Funded the [Multi-Party Escrow contract](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe);
-- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/products/AIMarketplace/Forcomers/organization/.md).
+- Funded the [Multi-Party Escrow contract](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/);
+- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/products/AIMarketplace/Forcomers/organization/).
 
 With each invocation the daemon checks for the following
 - that the signature is authentic;
@@ -76,4 +76,4 @@ The daemon's behavior with respect to the [service type](#supported-service-type
 
 ## Payment channel state
 
-The daemon stores the payment channel state in the etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/products/DecentralizedAIPlatform/Daemon/daemon-channel-storage).
+The daemon stores the payment channel state in the etcddb cluster. This cluster can either be an embedded etcd instance that runs in connection with each snetd replica (default) or an externally configured cluster. This is detailed [here](/docs/products/DecentralizedAIPlatform/Daemon/daemon-channel-storage/).

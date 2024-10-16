@@ -57,4 +57,4 @@ Or if your terminal has a toolbar, you can paste text through the following menu
 
 ![Windows Menu Paste](/assets/images/products/AIMarketplace/TUI/TUIWindowsPaste.png)Windows Menu Paste
 
-A complete and easy fix to the issue, however, is to install [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?ocid=webpdpshare), as detailed in [this part of the FAQ](./the-tui-looks-really-bad-on-my-screen-what-do-i-do.md)
+A complete and easy fix to the issue, however, is to install [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?ocid=webpdpshare), as detailed in [this part of the FAQ](/docs/products/DecentralizedAIPlatform/TUI/FAQ/the-tui-looks-really-bad-on-my-screen-what-do-i-do/)

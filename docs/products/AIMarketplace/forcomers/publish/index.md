@@ -10,7 +10,7 @@ that is set up with all the required dependencies but if you prefer you can inst
 Using a Docker Image is usually easier (you don't need to be a Docker guru to follow this tutorial).
 To go this way, just proceed to the next tutorial step.
 
-If you want to install the dependencies by yourself, check all the [requirements](/docs/products/AIMarketplace/Forcomers/requirements/.md)
+If you want to install the dependencies by yourself, check all the [requirements](/docs/products/AIMarketplace/Forcomers/requirements/)
 here and jump to [Step 3](#step-3-setup-snet-cli-and-create-your-identity).
 
 ## Step 2. Setup a Docker container
@@ -28,7 +28,7 @@ _Note that this tutorial assumes your user is part of the `docker` group that ha
 
 ---
 
-To secure payments, to set up your own ETCD Cluster, refer to the docs [ETCD Setup](/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup)
+To secure payments, to set up your own ETCD Cluster, refer to the docs [ETCD Setup](/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup/)
 
 Build your own tutorial Docker image directly from our git repo using the following command:
 

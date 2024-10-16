@@ -4,7 +4,7 @@ Using the left navigation bar, switch to the client menu.&#x20;
 
 ![Opening and Initializing a payment](/assets/images/products/AIMarketplace/TUI/image.png)
 
-Then navigate to the "[Channel Open Initialize](../menus/client/channels-menu/initialize-open-page/open-initialize.md)" Page, which can be found at:
+Then navigate to the "[Channel Open Initialize](/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/open-initialize/)" Page, which can be found at:
 
 ```
 "Client Page" -> "Channels Page" -> "Initialize/Open Page" -> "Open Initialize Page"

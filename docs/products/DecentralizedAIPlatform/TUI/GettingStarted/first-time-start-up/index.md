@@ -100,6 +100,6 @@ Upon successful identity creation, the TUI will redirect you to the account page
 
 ![Account Page](/assets/images/products/AIMarketplace/TUI/TUIAccountPage.png)
 
-You now have full access to all the functionality of the TUI/CLI. You can find some additional information on the [Menus here](../menus/), you will find some guides on performing different operations with the TUI in the [Tutorials section](../tutorials/), or you can move on to learning about some of the execution flags for the TUI.&#x20;
+You now have full access to all the functionality of the TUI/CLI. You can find some additional information on the [Menus here](/docs/products/DecentralizedAIPlatform/TUI/Menus/), you will find some guides on performing different operations with the TUI in the [Tutorials section](/docs/products/DecentralizedAIPlatform/TUI/Tutorials/), or you can move on to learning about some of the execution flags for the TUI.&#x20;
 
-<mark style="color:red;">NOTE</mark>: If the TUI doesn't look great on your terminal, or you're running into some really weird problem, please check out the [FAQ](../faq/the-tui-looks-really-bad-on-my-screen-what-do-i-do.md) section for some recommendations&#x20;
+<mark style="color:red;">NOTE</mark>: If the TUI doesn't look great on your terminal, or you're running into some really weird problem, please check out the [FAQ](/docs/products/DecentralizedAIPlatform/TUI/FAQ/the-tui-looks-really-bad-on-my-screen-what-do-i-do/) section for some recommendations&#x20;

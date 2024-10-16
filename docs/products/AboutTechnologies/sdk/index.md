@@ -11,9 +11,9 @@ authorizations.
 
 We support SDK for the below three languages 
 
-- [SDK in JAVA](/docs/products/DecentralizedAIPlatform/SDK/sdk-java)
-- [SDK in Python](/docs/products/DecentralizedAIPlatform/SDK/sdk-python-tutorial)
-- [SDK in NodeJS](/docs/products/DecentralizedAIPlatform/SDK/nodejs-sdk)
+- [SDK in JAVA](/docs/products/DecentralizedAIPlatform/SDK/sdk-java/)
+- [SDK in Python](/docs/products/DecentralizedAIPlatform/SDK/sdk-python-tutorial/)
+- [SDK in NodeJS](/docs/products/DecentralizedAIPlatform/SDK/nodejs-sdk/)
 
 
 All SDKs provided adhere to the same design standard and strategy
@@ -42,7 +42,7 @@ are available at GitHub.
 
 Currently, a fully functional a [preliminary version of a Python
 SDK](https://github.com/singnet/snet-sdk-python) is available, which forms the
-basis for the [SDK tutorial](/docs/products/DecentralizedAIPlatform/SDK/sdk-tutorial), but has  [some design
+basis for the [SDK tutorial](/docs/products/DecentralizedAIPlatform/SDK/sdk-tutorial/), but has  [some design
 improvements](https://github.com/singnet/snet-sdk-python/issues/16).
 
 Work is in process towards an [SDK for
@@ -50,6 +50,6 @@ Javascript](https://github.com/singnet/snet-sdk-js), and intend to support
 other popular languages and welcome third party contributions for people's
 favourite languages.
 
-As these SDKs become stable the [SDK tutorial](/docs/products/DecentralizedAIPlatform/SDK/sdk-tutorial) will be
+As these SDKs become stable the [SDK tutorial](/docs/products/DecentralizedAIPlatform/SDK/sdk-tutorial/) will be
 periodically updated to to include details supporting each programming
 language.

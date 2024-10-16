@@ -17,7 +17,7 @@ So how do you get Ether? The mainnet requires you to buy or mine it, but we're g
 
 Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.ropsten.be/).
 
-To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/Forcomers/wallet/.md), and then provide them with your wallet's public address.
+To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/Forcomers/wallet/), and then provide them with your wallet's public address.
 
 ### Step 2. Get some AGIX
 
@@ -52,7 +52,7 @@ There are three ways of passing this JSON:
 * via JSON file; and
 * via stdin.
 
-For example, in [this platform example](/docs/products/AIMarketplace/Forcomers/mpe-example/.md#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
+For example, in [this platform example](/docs/products/AIMarketplace/Forcomers/mpe-example/) we need to pass the following JSON as a parameter for the "add" method to our service:
 
 ```json
 {"a": 10, "b": 32}

@@ -2,7 +2,7 @@
 layout: doc
 ---
 
- - [Using the python SDK](/docs/products/DecentralizedAIPlatform/SDK/sdk-python-tutorial)
+ - [Using the python SDK](/docs/products/DecentralizedAIPlatform/SDK/sdk-python-tutorial/)
 ## Using the Node.js SDK
 
 ### Download the Node.js boilerplate code
@@ -34,7 +34,7 @@ Update aiService.js with the following points:
 
 Example `aiService.js` configured for example service
 
-```sh
+```js
 import dotenv from "dotenv";
 import SnetSDK, { DefaultPaymentStrategy } from "snet-sdk";
 /**

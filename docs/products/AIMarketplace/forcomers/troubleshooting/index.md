@@ -103,12 +103,12 @@ Hence, only those requests with grpc specified  content-type application/grpc+(p
 
 ### Setting up your own ETCD cluster 
 
-To set up your own ETCD cluster please follow the [link](/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup)
+To set up your own ETCD cluster please follow the [link](/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup/)
 
 ### Certificates for ETCD 
 
 To renew the ETCD Client Certificates for SNET Organisation:
-- Run the [et]cd-client-certificates-generation](https://eu-central-1.console.aws.amazon.com/codesuite/codebuild/projects/etcd-client-certificates-generation/history?region=eu-central-1) job.
+- Run the [etcd-client-certificates-generation](https://eu-central-1.console.aws.amazon.com/codesuite/codebuild/projects/etcd-client-certificates-generation/history?region=eu-central-1) job.
 - This task generates the client-certificates in this [path](https://s3.console.aws.amazon.com/s3/buckets/codepipeline-us-east-1-publish/etcd/certificates/?region=us-east-1&tab=overview).
         
 For other Organizations, follow the below steps to regenerate the etcd client certificates.
