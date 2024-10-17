@@ -44,7 +44,7 @@ snet_sdk = sdk.SnetSDK(config)
 ```
 
 The `config` parameter is an instance of the `Config` class.
-See [config.py](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/config) 
+See [config.py](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/config/) 
 for a reference.
 
 ##### Config parameters description

@@ -238,6 +238,69 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Service setup via CLI",
                 link: "/docs/products/DecentralizedAIPlatform/CLI/service-setup-snet-cli/",
             },
+            {
+                text: "Manual",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/",
+                collapsed: true,
+                items: [
+                    {
+                        text: "Account",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Account/",
+                    },
+                    {
+                        text: "Channel",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Channel/",
+                    },
+                    {
+                        text: "Client",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Client/",
+                    },
+                    {
+                        text: "Contract",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Contract/",
+                    },
+                    {
+                        text: "Identity",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Identity/",
+                    },
+                    {
+                        text: "Network",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Network/",
+                    },
+                    {
+                        text: "Organization",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Organization/",
+                    },
+                    {
+                        text: "Sdk",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Sdk/",
+                    },
+                    {
+                        text: "Service",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Service/",
+                    },
+                    {
+                        text: "Session",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Session/",
+                    },
+                    {
+                        text: "Set",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Set/",
+                    },
+                    {
+                        text: "Treasurer",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Treasurer/",
+                    },
+                    {
+                        text: "Unset",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Unset/",
+                    },
+                    {
+                        text: "Version",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Version/",
+                    },
+                ],
+            },
         ],
     },
     {
