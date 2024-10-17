@@ -23,7 +23,8 @@
 16. ETCD Endpoint: all the ETCD endpoints that will be used. Details [here](/docs/products/DecentralizedAIPlatform/CoreConcepts/etcd/)
 ![Capture From Metamask](/assets/images/products/AIMarketplace/publisher/4CaptureFromMetamask.png)
 17. Connect MetaMask: This is necessary to confirm your account ownership this address will be used to confirm any changes associated with this organization. you must have an active metamask extension and give it access to this site.
-![Metamask](/assets/images/products/AIMarketplace/publisher/5Metamask.png)
+<img src="/assets/images/products/AIMarketplace/publisher/5Metamask.png" style="width:40%">
+
 ## How to create a service?
 
 ![Create New Service](/assets/images/products/AIMarketplace/publisher/7CreateNewService.png)
@@ -56,7 +57,8 @@ print(‘Your private key: ’ + accut.key.hex())
 ![Proto](/assets/images/products/AIMarketplace/publisher/12Proto.png)
 17. Waiting...
 18. Launch AI Service: Confirm in MetaMask
-![Confirmation Metamask](/assets/images/products/AIMarketplace/publisher/13ConfirmationMetamask.png)
+<img src="/assets/images/products/AIMarketplace/publisher/13ConfirmationMetamask.png" style="width:40%">
+
 ## How to create&start Daemon (billing & service setup)
 
 ### It requires some preparation:
