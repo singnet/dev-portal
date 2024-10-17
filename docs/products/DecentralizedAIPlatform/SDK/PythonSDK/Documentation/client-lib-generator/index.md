@@ -6,8 +6,6 @@ Entities:
 1. [ClientLibGenerator](#class-clientlibgenerator)
    - [\_\_init\_\_](#init)
    - [generate_client_library](#generate-client-library)
-   - [_get_service_metadata_from_registry](#get-service-metadata-from-registry)
-   - [_get_service_registration](#get-service-registration)
 
 ### Class `ClientLibGenerator`
 
@@ -21,8 +19,7 @@ This class is used to generate client library files for a given service.
 
 #### attributes
 
-- `sdk_config` (Config): An instance of the `Config` class
-- `registry_contract` (web3.contract.Contract): An instance of the `Contract` class (from `snet.cli`) for interacting with the Registry contract.
+- `_metadata_provider` (StorageProvider): An instance of the `StorageProvider` class.
 - `org_id` (str): The organization ID of the service.
 - `service_id` (str): The service ID.
 - `language` (str): The language of the client library. Default is `python`.
@@ -36,8 +33,7 @@ Initializes a new instance of the class. Initializes the attributes by arguments
 
 ###### args:
 
-- `sdk_config` (Config): An instance of the `Config` class
-- `registry_contract` (web3.contract.Contract): An instance of the `Contract` class (from `snet.cli`) for interacting with the Registry contract.
+- `metadata_provider` (StorageProvider): An instance of the `StorageProvider` class.
 - `org_id` (str): The organization ID of the service.
 - `service_id` (str): The service ID.
 
@@ -49,27 +45,9 @@ Initializes a new instance of the class. Initializes the attributes by arguments
 
 Generates client library stub files based on specified organization and service ids, including:
 - getting service metadata from Registry
-- getting .proto file from IPFS
+- getting archived proto files from IPFS or FileCoin and extracting them
 - compiling .proto file to stub file and saving it in a given directory
 
-#### `_get_service_metadata_from_registry`
-
-Retrieves service metadata. Fetches the service registration from the Registry contract, extracts the metadata URI, 
-downloads the metadata from IPFS, and parses it into a `MPEServiceMetadata` object.
-
 ###### returns:
 
-- The service metadata. (MPEServiceMetadata)
-
-#### `_get_service_registration`
-
-Retrieves the service registration from the Registry contract using the `getServiceRegistrationById` function of it.
-
-###### returns:
-
-- Dictionary containing the service registration. (dict[str, Any])
-
-###### raises:
-
-- `Exception`: If the service with the specified ID is not found in the organization.
-
+- _None_

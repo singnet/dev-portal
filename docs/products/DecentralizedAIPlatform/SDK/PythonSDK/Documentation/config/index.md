@@ -35,6 +35,8 @@ and regenerating them every time.
   - `registry_contract_address` (str): The address of the Registry smart contract.
   - `signer_private_key` (str): The private key of the signer. Used to sign the service call. Equals to `private_key` 
 by default.
+  - `lighthouse_token` (str): The Lighthouse token used to access the Lighthouse storage provider. Defaults to " ". 
+Currently, it can't be changed.
 
 #### methods
 
