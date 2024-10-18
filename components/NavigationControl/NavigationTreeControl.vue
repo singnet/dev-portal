@@ -1,6 +1,6 @@
 <template>
     <div class="navigation-tree-control-container">
-        <button v-if="operationMode" class="navigation-tree-control" @click="changeOperationMode">
+        <button v-if="operationMode" class="navigation-tree-control" @click.stop="changeOperationMode">
             <span>{{ controlButtonContent.label }}</span>
             <SpriteIcon :textIconID="controlButtonContent.textIconID" />
         </button>
@@ -128,7 +128,11 @@ export default {
 
             sidebar.addEventListener('click', this.runExcludingMode);
         },
-        runExcludingMode(event: Event): void {
+        runExcludingMode(event: PointerEvent): void {
+            if (!event.clientX && !event.clientY) {
+                return;
+            }
+
             event.stopPropagation();
 
             if (this.operationMode !== NavigationTreeOperationModes.EXCLUDING) {
@@ -183,33 +187,42 @@ export default {
 
             return Array.from(window.document.querySelectorAll(NavigationSelectors.COLLAPSIBLE_GROUP));
         },
+        getSidebarGroupNestingLevel(sidebarGroup: HTMLElement): number | null {
+            const classListValues = Array.from(sidebarGroup.classList);
+            const currentNestingLevelClassName: string | undefined =
+                classListValues.find((className: string) => className.includes(NavigationNestingLevelsClassNames.TEMPLATE));
+
+            if (!currentNestingLevelClassName) {
+                return null;
+            }
+
+            return +currentNestingLevelClassName.substring(currentNestingLevelClassName.length - 1)
+        },
+        getParentSidebarGroup(sidebarGroup: HTMLElement): HTMLElement | null {
+            const currentGroupNestingLevel = this.getSidebarGroupNestingLevel(sidebarGroup);
+
+            if (!currentGroupNestingLevel) {
+                return null
+            }
+
+            const parentGroupNestingLevel = currentGroupNestingLevel - 1 // lover numbers are higher Nesting Levels
+
+            return sidebarGroup.closest(`.${NavigationNestingLevelsClassNames.TEMPLATE}${parentGroupNestingLevel}`);
+        },
         getClosestNestedSidebarGroupsList(interactedGroup: HTMLElement): HTMLElement[] {
-            const nestedSidebarGroupsList: HTMLElement[] = [];
+            const nestedSidebarGroupsList: HTMLElement[] = [interactedGroup];
 
             let currentGroup: HTMLElement = interactedGroup;
 
-            nestedSidebarGroupsList.push(currentGroup);
-
             while (!currentGroup.classList.contains(NavigationNestingLevelsClassNames.ROOT)) {
-                const classListValues = Array.from(currentGroup.classList);
-                const currentNestingLevelClassName: string | undefined = 
-                    classListValues.find((className: string) => className.includes(NavigationNestingLevelsClassNames.TEMPLATE));
+                const parentSidebarGroup = this.getParentSidebarGroup(currentGroup);
 
-                if (!currentNestingLevelClassName) {
+                if (!parentSidebarGroup) {
                     break;
                 }
 
-                const currentLevelNumber: number = +currentNestingLevelClassName.substring(currentNestingLevelClassName.length - 1);
-
-                const nextGroup: HTMLElement | null = 
-                    currentGroup.closest(`.${NavigationNestingLevelsClassNames.TEMPLATE}${currentLevelNumber - 1}`);
-
-                if(!nextGroup) {
-                    break;
-                }
-
-                nestedSidebarGroupsList.push(nextGroup);
-                currentGroup = nextGroup;
+                nestedSidebarGroupsList.push(parentSidebarGroup);
+                currentGroup = parentSidebarGroup;
             }
 
             return nestedSidebarGroupsList;
@@ -256,12 +269,7 @@ export default {
                 return;
             }
 
-            console.log("ignoredGroups", ignoredGroups);
-            
             const filteredGroupsList = this.sidebarGroups.filter((sidebarGroup: HTMLElement) => !ignoredGroups.includes(sidebarGroup));
-
-            console.log("filteredGroupsList", filteredGroupsList);
-
 
             if (!filteredGroupsList?.length) {
                 return

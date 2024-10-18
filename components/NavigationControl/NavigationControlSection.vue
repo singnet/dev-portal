@@ -9,8 +9,9 @@
     </a>
 </template>
 <script lang="ts">
+import { PropType } from "vue";
+import { ISectionData } from "../../config/content/sidebarContentConfig";
 import SpriteIcon from "../Common/SpriteIcon.vue";
-import type { DefaultTheme } from "vitepress";
 
 export default {
     components: {
@@ -18,7 +19,7 @@ export default {
     },
     props: {
         sectionData: {
-            type: Object as PropType<DefaultTheme.SidebarItem>,
+            type: Object as PropType<ISectionData>,
             required: true,
         },
         isActive: {

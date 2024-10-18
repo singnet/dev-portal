@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar-toggler-container">
-    <button @click="toggleSidebar" class="sidebar-toggler">
+    <button @click.stop="toggleSidebar" class="sidebar-toggler">
       <svg v-if="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 17"
         fill="none">
         <rect x="1" y="1" width="18" height="15" rx="3" stroke="#D6D6D6" stroke-width="2" />

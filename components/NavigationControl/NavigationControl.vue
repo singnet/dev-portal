@@ -6,7 +6,7 @@
             <div class="sections-title" v-else>
                 Portal sections
             </div>
-            <div class="sections-menu-toggler" :class="{ 'active': isSectionsMenuOpen }" @click="toggleSectionsMenu">
+            <div class="sections-menu-toggler" :class="{ 'active': isSectionsMenuOpen }" @click.stop="toggleSectionsMenu">
                 <SpriteIcon :textIconID="'section-menu-icon'" />
             </div>
             <SidebarToggleMobile v-if="isMobile" />

@@ -40,10 +40,10 @@
     <symbol id="section-menu-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M12 16H16V12H12M12 10H16V6H12M6 4H10V0H6M12 4H16V0H12M6 10H10V6H6M0 10H4V6H0M0 16H4V12H0M6 16H10V12H6M0 4H4V0H0V4Z" fill="#666666" />
     </symbol>
-    <symbol id="single-branch" width="8" height="12" viewBox="0 0 8 12" fill="none">
+    <symbol id="single-branch" width="8" height="12" viewBox="0 0 8 11" fill="none">
         <path d="M0 10.58L4.94467 6L0 1.41L1.52227 0L8 6L1.52227 12L0 10.58Z" fill="#666666"/>
     </symbol>
-    <symbol id="all-branches" width="13" height="12" viewBox="0 0 13 12" fill="none">
+    <symbol id="all-branches" width="13" height="12" viewBox="0 0 13 11" fill="none">
         <path d="M0 10.58L4.94467 6L0 1.41L1.52227 0L8 6L1.52227 12L0 10.58Z" fill="#666666"/>
         <path d="M5 10.58L9.94467 6L5 1.41L6.52227 0L13 6L6.52227 12L5 10.58Z" fill="#666666"/>
     </symbol>
