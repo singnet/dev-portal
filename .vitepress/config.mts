@@ -8,7 +8,7 @@ import assetsLinks from "../config/mediaLinks/assetsLinks";
 export default defineConfig({
   appearance: {
     // @ts-expect-error not fully supported yet
-    initialValue: 'dark'
+    initialValue: 'true'
   },
   cleanUrls: true,
   lastUpdated: true,
