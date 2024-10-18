@@ -6,7 +6,7 @@
             <div class="sections-title" v-else>
                 Portal sections
             </div>
-            <div class="sections-menu-toggler" :class="{ 'active': isSectionsMenuOpen }" @click="toggleSectionsMenu">
+            <div class="sections-menu-toggler" :class="{ 'active': isSectionsMenuOpen }" @click.stop="toggleSectionsMenu">
                 <SpriteIcon :textIconID="'section-menu-icon'" />
             </div>
             <SidebarToggleMobile v-if="isMobile" />
@@ -20,18 +20,18 @@
         <NavigationTreeControl />
     </div>
 </template>
-<script>
+<script lang="ts">
 import SidebarToggle from "./SidebarToggle.vue";
 import SpriteIcon from "../Common/SpriteIcon.vue";
-import NavigationControlSection from "./NavigationControlSection.vue";
-import NavigationTreeControl from "./NavigationTreeControl.vue";
-import LocalStorageFlagsService from "../../services/LocalStorageFlagsService";
-import { Products as Sections, RootSections } from "../../config/content/sidebarContentConfig";
-import { useData } from "vitepress";
 import SidebarToggleMobile from "./SidebarToggleMobile.vue";
+import NavigationTreeControl from "./NavigationTreeControl.vue";
+import NavigationControlSection from "./NavigationControlSection.vue";
+import LocalStorageFlagsService from "../../services/LocalStorageFlagsService";
+import { Products as Sections, RootSections, ISectionData } from "../../config/content/sidebarContentConfig";
+import { useData } from "vitepress";
 
-const MenuLocalStorageKeys = {
-    IS_MENU_OPEN: "isSectionsMenuOpen",
+const enum MenuLocalStorageKeys {
+    IS_MENU_OPEN = "isSectionsMenuOpen",
 }
 
 export default {
@@ -57,9 +57,9 @@ export default {
     },
     data() {
         return {
-            currentLocation: "",
-            sections: Object.values(Sections),
-            isSectionsMenuOpen: false,
+            currentLocation: "" as string,
+            sections: Object.values(Sections) as ISectionData[],
+            isSectionsMenuOpen: false as boolean,
         }
     },
     created() {
@@ -73,56 +73,55 @@ export default {
         this.isSectionsMenuOpen = LocalStorageFlagsService.getIsActive(MenuLocalStorageKeys.IS_MENU_OPEN)
     },
     watch: {
-        pageData() {
+        pageData(): void {
             this.updateLocation();
         },
-        isSectionsMenuOpen() {
+        isSectionsMenuOpen(): void {
             LocalStorageFlagsService.setIsActive(MenuLocalStorageKeys.IS_MENU_OPEN, this.isSectionsMenuOpen);
         },
     },
     computed: {
-        isDocsRootDisplayed() {
+        isDocsRootDisplayed(): boolean {
             return this.currentLocation === RootSections.DOCS.documentPath;
         },
-        currentSection() {
+        currentSection(): ISectionData | null {
             if (this.isDocsRootDisplayed) {
                 this.isSectionsMenuOpen = true;
                 return null;
             }
 
-            return this.sections.find(section => this.currentLocation.includes(section.path));
+            return this.sections.find((section: ISectionData) => this.currentLocation.includes(section.path));
         },
-        otherSections() {
+        otherSections(): ISectionData[] {
             const preFilteredSections = this.areDocsExcluded
-                ? this.sections.filter(section => section.name !== RootSections.DOCS.name)
+                ? this.sections.filter((section: ISectionData) => section.name !== RootSections.DOCS.name)
                 : this.sections;
 
             if (!this.currentSection) {
                 return preFilteredSections;
             }
 
-            return preFilteredSections.filter(section => section.name !== this.currentSection.name);
+            return preFilteredSections.filter((section: ISectionData) => section.name !== this.currentSection.name);
         },
         isMobile() {
             if (typeof window === 'undefined') {
                 return;
             }
-            
+
             return window.innerWidth <= 440
         }
     },
     methods: {
-        updateLocation() {
+        updateLocation(): void {
             this.currentLocation = `/${this.pageData.filePath}`;
         },
-        toggleSectionsMenu() {
+        toggleSectionsMenu(): void {
             this.isSectionsMenuOpen = !this.isSectionsMenuOpen;
-            this.updateStorageValue();
         },
-        openSectionsMenu() {
+        openSectionsMenu(): void {
             this.isSectionsMenuOpen = true;
         },
-        closeSectionsMenu() {
+        closeSectionsMenu(): void {
             this.isSectionsMenuOpen = false;
         },
     }
@@ -131,18 +130,17 @@ export default {
 <style scoped>
 .navigation-control {
     padding-top: 8px;
-    padding-bottom: 10px;
     flex: 1 0 auto;
-    border-bottom: 1px solid var(--vp-c-divider);
 }
 
-.sidebar-closed .navigation-control {
-    border-bottom: none;
+.navigation-control .sections-menu {
+    border-bottom: 1px solid var(--vp-c-divider);
 }
 
 .sidebar-closed .sections-menu,
 .sidebar-closed .sections-menu-toggler {
     visibility: hidden;
+    border-bottom: none;
 }
 
 .control-header {
@@ -170,7 +168,7 @@ export default {
 
 .sections-menu-toggler:hover,
 .sections-menu-toggler.active {
-    filter: brightness(0) saturate(100%) invert(48%) sepia(55%) saturate(3955%) hue-rotate(203deg) brightness(102%) contrast(101%);
+    filter: var(--vp-icons-active-filter);
 }
 
 .sections-menu {

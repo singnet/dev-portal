@@ -45,6 +45,7 @@
   --vp-button-brand-active-text: var(--vp-c-white);
   --vp-button-brand-active-bg: var(--vp-c-brand-1);
   --vp-button-gradient: linear-gradient(0deg, rgba(208, 149, 255, 0.2), rgba(208, 149, 255, 0.2)), linear-gradient(90deg, rgba(158, 0, 255, 0.2) 34.81%, rgba(0, 102, 255, 0.2) 99.81%);
+  --vp-icons-active-filter: brightness(0) saturate(100%) invert(48%) sepia(55%) saturate(3955%) hue-rotate(203deg) brightness(102%) contrast(101%);
 
   --vp-custom-block-tip-border: transparent;
   --vp-custom-block-tip-text: var(--vp-c-text-1);

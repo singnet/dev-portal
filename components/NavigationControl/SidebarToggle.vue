@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar-toggler-container">
-    <button @click="toggle" class="sidebar-toggler">
+    <button @click.stop="toggleSidebar" class="sidebar-toggler">
       <svg v-if="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 17"
         fill="none">
         <rect x="1" y="1" width="18" height="15" rx="3" stroke="#D6D6D6" stroke-width="2" />
@@ -16,38 +16,38 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import LocalStorageFlagsService from '../../services/LocalStorageFlagsService';
 
-const SidebarLocalStorageKeys = {
-  IS_SIDEBAR_OPEN: "isSidebarOpen"
+const enum SidebarLocalStorageKeys {
+  IS_SIDEBAR_OPEN = "isSidebarOpen"
 }
 
-const SidebarControllingClassNames = {
-  SIDEBAR_CLOSED: "sidebar-closed",
+const enum SidebarControllingClassNames {
+  SIDEBAR_CLOSED = "sidebar-closed",
 }
 
 export default {
   data() {
     return {
-      isSidebarOpen: true
+      isSidebarOpen: true as boolean,
     }
   },
   created() {
     this.isSidebarOpen = LocalStorageFlagsService.getIsActive(SidebarLocalStorageKeys.IS_SIDEBAR_OPEN);
-    this.toggleClassName();
+    this.toggleSidebarClassNameOnDocument();
   },
   watch: {
     isSidebarOpen() {
-      this.toggleClassName();
+      this.toggleSidebarClassNameOnDocument();
       LocalStorageFlagsService.setIsActive(SidebarLocalStorageKeys.IS_SIDEBAR_OPEN, this.isSidebarOpen);
     }
   },
   methods: {
-    toggle() {
+    toggleSidebar(): void {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
-    toggleClassName() {
+    toggleSidebarClassNameOnDocument(): void {
       if (typeof window === 'undefined') {
         return;
       }
