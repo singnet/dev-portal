@@ -852,7 +852,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/calculator/",
                     },
                     {
-                        text: "Get service info and metamask wallet interuction",
+                        text: "Service info and Metamask wallet",
                         link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/service-info/",
                     },
                 ],
