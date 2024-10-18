@@ -1,3 +1,5 @@
+# Daemon SSL setup
+
 ## Introduction
 
 This section provides steps on securing your SingularityNet Daemon with Certbot from <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a>.

@@ -1,4 +1,4 @@
-## Why support for Training on platform ? 
+# Why support for Training on platform ? 
 Currently all calls on the market place dapp are Inference call
 SingularityNET is solving this difficulty for AI systems on the Platform and Marketplace by allowing developers to offer multiple training models of their algorithm. The end-user can pick whether it wants to use the model trained on chest x-rays or the one trained on dental x-rays. The end-user can even provide their own training data to create a unique training model specifically suited to their exact data. This multi-model opportunity will allow developers to offer flexible, trainable, and customizable AI’s through our decentralized Marketplace, to better serve AI consumers - and enable access to high-quality AI services for all. This Platform upgrade is well underway, with functionality added to the Platform daemon already. The next step will be to upgrade the SDK, Marketplace front-end, publisher, and other systems to support multi-model AIs and model training calls.
 **Please note**:The Model Is stored at the AI developers end

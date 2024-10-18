@@ -1,25 +1,3 @@
----
-# Page settings
-layout: default
-keywords:
-comments: false
-title: Build examples
-description: Build examples
-
-# extralink box
-extralink:
-    title: All Docs
-    title_url: '/docs'
-    external_url: false
-    description: Find an overview of our full documentation here.
-
-# Developer Newsletter
-dev_news: true
-
-# Micro navigation
-micro_nav: true
----
-
 ## Build and deploy SingularityNet contracts
 ```sh
 cd ${SINGNET}/platform-contracts # go to the platform-contracts repository
@@ -45,6 +23,3 @@ cd ${SINGNET}/snet-daemon                   # go to the daemon repository
 ./scripts/build linux amd64                 # build daemon
 cp ./build/snetd-linux-amd64 ${GOPATH}/bin  # copy binary to the $PATH
 ```
-
-
-> Next Example

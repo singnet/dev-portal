@@ -1,4 +1,4 @@
-## The SingularityNET command line interface (CLI)
+# The SingularityNET command line interface (CLI)
 
 The SingularityNET command line interface (CLI) is the primary tool for interacting with the
 platform's smart contracts, managing deployed services, and managing funds. It is aimed at service providers. In the near future, it will be supplemented by a web-based dashboard and control panel.

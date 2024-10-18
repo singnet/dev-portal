@@ -14,7 +14,7 @@ If you find a bug in the source code or a mistake in the documentation, you can 
 **Please see the Submission Guidelines below**.
 
 ## Feature Requests
-You can request a new feature by submitting a ticket to any of our repositories in the issues tab. For example, if you would like to give feedback about our Developer Portal, please do that [here](https://github.com/singnet/dev-portal/issues).
+You can request a new feature by submitting a ticket to any of our repositories in the issues tab. For example, if you would like to give feedback about our Developer Portal, please do that [here](https://github.com/singnet/dev-portal-v2/issues).
 
 If you would like to implement a new feature then consider what kind of change it is:
 -   **Major Changes** that you wish to contribute to the project should be discussed first. Please open a ticket which clearly states that it is a feature request in the title and explain clearly what you want to achieve in the description, and the developers team will discuss with you what should be done in that ticket. You can then start working on a Pull Request.
@@ -140,4 +140,4 @@ Fix #1234
 ```
 
 ## Developer Portal
-If you would like to contribute by helping us improve, expand, or otherwise enhance the SingularityNET Developer Portal you are welcome to do so. You can send a PR for simple changes, or first open an issue for big changes [here](https://github.com/singnet/dev-portal/issues).
+If you would like to contribute by helping us improve, expand, or otherwise enhance the SingularityNET Developer Portal you are welcome to do so. You can send a PR for simple changes, or first open an issue for big changes [here](https://github.com/singnet/dev-portal-v2/issues).

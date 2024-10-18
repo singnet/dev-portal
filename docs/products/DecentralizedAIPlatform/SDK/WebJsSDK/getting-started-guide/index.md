@@ -89,7 +89,7 @@ Update your **package.json** scripts to use **react-app-rewired** instead of **r
 }
 ```
 
-### Usage
+### Configuring the snet-sdk-web
 
 The SingularityNET SDK allows you to import compiled client libraries for your service or services of choice and make calls to those services programmatically from your application by setting up state channels with the providers of those services and making gRPC calls to the SingularityNET daemons for those services by selecting a channel with sufficient funding and supplying the appropriate metadata for authentication.
 
@@ -118,6 +118,8 @@ You can find a sample config below
 **Note:** `rpcEndpoint` is optional, you should provide this if you are getting block size limit exceeded error. This is usually happens when you are using any web social auth providers.
 
 **Debugging Tip:** To view debug logs, enable verbose mode in your browser's developer console.
+
+### Service Calling
 
 Now, the instance of the sdk can be used to instantiate clients for SingularityNET services. To interact with those services, the sdk needs to be supplied with the compiled gRPC client libraries.
 

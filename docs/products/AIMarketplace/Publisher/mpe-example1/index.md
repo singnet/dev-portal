@@ -1,4 +1,4 @@
-> NOTE: You can find the script files for this example on Github [here](https://github.com/singnet/dev-portal/tree/master/src/example1)
+> NOTE: You can find the script files for this example on Github [here](https://github.com/singnet/dev-portal-v2/tree/master/src/example1)
 
 ## DESCRIPTION
 
@@ -19,7 +19,7 @@ Test should be run on a clean environment in the given order.
 ```sh
 #I. Download example scripts and make sure that scripts are in the current directory.
 
-git clone https://github.com/singnet/dev-portal
+git clone https://github.com/singnet/dev-portal-v2
 cd dev-portal/docs/all/mpe/front-to-back-examples/scripts/example1
 
 #II. Run ubuntu:latest docker container and "mount" ./ to /example1

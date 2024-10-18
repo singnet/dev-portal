@@ -1,3 +1,5 @@
+# Concept of organization
+
 The platform's primary reason for existence is to allow a diverse collection AI services to be bought and sold via a distributed marketplace.
 Anyone can publish the availability of their machine learning method, or integrated AI solution, and allow clients to interact with and pay for them
 directly.

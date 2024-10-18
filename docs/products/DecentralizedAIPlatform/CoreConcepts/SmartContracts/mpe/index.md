@@ -1,4 +1,4 @@
-## Introduction to MPE
+# Introduction to MPE
 
 An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account.
 

@@ -1,4 +1,4 @@
-## State Service Calls 
+# State Service Calls 
 
 As the name suggests, this call will be used by the client to determine the next amount to sign to make a service call. 
 

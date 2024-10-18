@@ -33,7 +33,7 @@ Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) usi
 ```sh
 docker build \
     --build-arg language=cpp \
-    -t snet_cpp_service https://github.com/singnet/dev-portal.git#master:/tutorials/docker
+    -t snet_cpp_service https://github.com/singnet/dev-portal-v2.git#master:docs/products/AIMarketplace/Forcomers/Dockerfile
 
 ETCD_HOST=$HOME/.snet/etcd/example-cpp-service/
 ETCD_CONTAINER=/opt/singnet/etcd/

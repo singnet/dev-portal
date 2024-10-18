@@ -1,4 +1,4 @@
-## Daemon channel
+# Daemon channel
 
 To fulfill a request from a client to a service, a snet-daemon needs to store and process information about the service payment. This connection is called the payment channel.
 

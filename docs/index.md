@@ -1,5 +1,5 @@
 # Welcome 
-to the [SingularityNET Developer Portal](https://dev.singularitynet.io).
+to the [SingularityNET Developer Portal](/).
 
 Our Developer Portal provides documentation about the SingularityNET Platform and Marketplace. As a service developer, you will learn how to build and access AI services that are published onto the network. As a client of SingularityNET services, you learn to integrate your software with SingularityNET services that other people have published.
 
