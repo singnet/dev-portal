@@ -23,6 +23,15 @@ const enum NavigationTreeLocalStorageKeys {
 const enum NavigationTreeClassNames {
     COLLAPSED = "collapsed",
     HAS_ACTIVE = "has-active",
+}
+
+const enum NavigationNestingLevelsClassNames {
+    TEMPLATE = "level-",
+    ROOT = "level-0",
+}
+
+const enum NavigationSelectors {
+    CARET = ".caret",
     COLLAPSIBLE_GROUP = ".VPSidebarItem.collapsible",
 }
 
@@ -63,6 +72,7 @@ export default {
     },
     mounted() {
         this.update();
+        this.setupExcludingMode();
     },
     computed: {
         controlButtonContent() {
@@ -89,7 +99,7 @@ export default {
     },
     methods: {
         [NavigationTreeOperationModes.EXCLUDING]() {
-            this.closeAllSidebarGroups();
+            this.closeAllSidebarGroups(true);
         },
         [NavigationTreeOperationModes.EXPANDED]() {
             this.openAllSidebarGroups();
@@ -104,6 +114,44 @@ export default {
 
             this.initOperationMode();
             this.handleOperationModeChange();
+        },
+        setupExcludingMode(): void {
+            if (typeof window === "undefined") {
+                return;
+            }
+
+            const sidebar: HTMLElement | null = window.document.querySelector('#VPSidebarNav');
+
+            if (!sidebar) {
+                return;
+            }
+
+            sidebar.addEventListener('click', this.runExcludingMode);
+        },
+        runExcludingMode(event: Event): void {
+            event.stopPropagation();
+
+            if (this.operationMode !== NavigationTreeOperationModes.EXCLUDING) {
+                return;
+            }
+
+            if (!this.sidebarGroups?.length) {
+                return;
+            }
+
+            if (!event.target) {
+                return;
+            }
+
+            // @ts-ignore
+            const currentGroup: HTMLElement | null = event.target.closest(NavigationSelectors.COLLAPSIBLE_GROUP);
+
+            if (!currentGroup) {
+                return;
+            }
+
+            const nestedGroupTree: HTMLElement[] = this.getClosestNestedSidebarGroupsList(currentGroup);
+            this.closeAllSidebarGroupsExcept(nestedGroupTree);
         },
         initOperationMode(): void {
             const storedOperationMode: string | null =
@@ -128,27 +176,98 @@ export default {
             LocalStorageService.setLocalStorageRecord(NavigationTreeLocalStorageKeys.OPERATION_MODE, this.operationMode);
             this.handleOperationModeChange();
         },
-        getSidebarGroupsFromDocument(): NodeList | null {
+        getSidebarGroupsFromDocument(): HTMLElement[] | null {
             if (typeof window === "undefined") {
                 return null;
             }
 
-            return window.document.querySelectorAll(NavigationTreeClassNames.COLLAPSIBLE_GROUP);
+            return Array.from(window.document.querySelectorAll(NavigationSelectors.COLLAPSIBLE_GROUP));
         },
-        openSidebarGroup(sidebarGroup: HTMLElement): void {
-            sidebarGroup.classList.remove(NavigationTreeClassNames.COLLAPSED);
+        getClosestNestedSidebarGroupsList(interactedGroup: HTMLElement): HTMLElement[] {
+            const nestedSidebarGroupsList: HTMLElement[] = [];
+
+            let currentGroup: HTMLElement = interactedGroup;
+
+            nestedSidebarGroupsList.push(currentGroup);
+
+            while (!currentGroup.classList.contains(NavigationNestingLevelsClassNames.ROOT)) {
+                const classListValues = Array.from(currentGroup.classList);
+                const currentNestingLevelClassName: string | undefined = 
+                    classListValues.find((className: string) => className.includes(NavigationNestingLevelsClassNames.TEMPLATE));
+
+                if (!currentNestingLevelClassName) {
+                    break;
+                }
+
+                const currentLevelNumber: number = +currentNestingLevelClassName.substring(currentNestingLevelClassName.length - 1);
+
+                const nextGroup: HTMLElement | null = 
+                    currentGroup.closest(`.${NavigationNestingLevelsClassNames.TEMPLATE}${currentLevelNumber - 1}`);
+
+                if(!nextGroup) {
+                    break;
+                }
+
+                nestedSidebarGroupsList.push(nextGroup);
+                currentGroup = nextGroup;
+            }
+
+            return nestedSidebarGroupsList;
         },
-        closeSidebarGroup(sidebarGroup: HTMLElement): void {
-            if (sidebarGroup.classList.contains(NavigationTreeClassNames.HAS_ACTIVE)) {
+        toggleSidebarGroup(sidebarGroup: HTMLElement): void {
+            const indicator: HTMLElement | null = sidebarGroup.querySelector(NavigationSelectors.CARET);
+
+            if (!indicator) {
                 return;
             }
-            sidebarGroup.classList.add(NavigationTreeClassNames.COLLAPSED);
+
+            indicator.click();
+        },
+        openSidebarGroup(sidebarGroup: HTMLElement): void {
+            const { classList } = sidebarGroup;
+
+            if (!classList.contains(NavigationTreeClassNames.COLLAPSED)) {
+                return;
+            }
+
+            this.toggleSidebarGroup(sidebarGroup);
+        },
+        closeSidebarGroup(sidebarGroup: HTMLElement, isActiveIgnored: boolean = false): void {
+            const { classList } = sidebarGroup;
+
+            if (isActiveIgnored && classList.contains(NavigationTreeClassNames.HAS_ACTIVE)) {
+                return;
+            }
+
+            if (classList.contains(NavigationTreeClassNames.COLLAPSED)) {
+                return;
+            }
+
+            this.toggleSidebarGroup(sidebarGroup);
         },
         openAllSidebarGroups(): void {
             this.sidebarGroups.forEach((sidebarGroup: HTMLElement) => this.openSidebarGroup(sidebarGroup));
         },
-        closeAllSidebarGroups(): void {
-            this.sidebarGroups.forEach((sidebarGroup: HTMLElement) => this.closeSidebarGroup(sidebarGroup));
+        closeAllSidebarGroups(isActiveIgnored: boolean = false): void {
+            this.sidebarGroups.forEach((sidebarGroup: HTMLElement) => this.closeSidebarGroup(sidebarGroup, isActiveIgnored));
+        },
+        closeAllSidebarGroupsExcept(ignoredGroups: HTMLElement[], isActiveIgnored: boolean = false): void {
+            if (!ignoredGroups?.length) {
+                return;
+            }
+
+            console.log("ignoredGroups", ignoredGroups);
+            
+            const filteredGroupsList = this.sidebarGroups.filter((sidebarGroup: HTMLElement) => !ignoredGroups.includes(sidebarGroup));
+
+            console.log("filteredGroupsList", filteredGroupsList);
+
+
+            if (!filteredGroupsList?.length) {
+                return
+            }
+
+            filteredGroupsList.forEach((sidebarGroup: HTMLElement) => this.closeSidebarGroup(sidebarGroup, isActiveIgnored));
         }
     }
 }
