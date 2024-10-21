@@ -2,7 +2,7 @@
 
 Print all channels for the given group and sender.
 
-![Print All Channels Filter Group Sender](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.35.20PM.png)
+![Print All Channels Filter Group Sender](/assets/images/products/AIMarketplace/TUI/PrintAllChannelsForGroupAndSenderPage.webp)
 
 ```bash
 # Format of the command in the SNET CLI

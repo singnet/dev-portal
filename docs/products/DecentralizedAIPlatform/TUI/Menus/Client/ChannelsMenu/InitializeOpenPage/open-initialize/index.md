@@ -2,7 +2,7 @@
 
 Open and initialize channel using organization metadata from Registry
 
-![Open Initialize Channel Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.22.25PM.png)Open Initialize Channel Page
+![Open Initialize Channel Page](/assets/images/products/AIMarketplace/TUI/ChannelOpenInitializePage.webp)Open Initialize Channel Page
 
 ```bash
 # Format of the command in the SNET CLI

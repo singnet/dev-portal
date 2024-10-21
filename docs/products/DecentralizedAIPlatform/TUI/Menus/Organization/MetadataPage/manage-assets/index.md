@@ -2,7 +2,7 @@
 
 Add assets or remove all assets from local organization metadata
 
-![Manage Assets Organization Metdata page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.34.07PM.png)Manage Assets Organization Metdata page
+![Manage Assets Organization Metadata page](/assets/images/products/AIMarketplace/TUI/ManageAssetsPage.webp)Manage Assets Organization Metdata page
 
 ```sh
 # Format of the commands in the SNET CLI

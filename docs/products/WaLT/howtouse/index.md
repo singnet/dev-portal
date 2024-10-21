@@ -1,5 +1,7 @@
 # Wallets service instructions
 
+## How to use WaLT?
+
 Move to [Wallet Linking Tool website](https://mywallets.singularitynet.io/)
 
 Connect all your wallets that contain AGIX, both on Ethereum and Cardano and add them to a single collection ID. The total balance of all linked wallets will determine the amount of RJV you are entitled to purchase.

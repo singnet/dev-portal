@@ -2,7 +2,7 @@
 
 Init metadata file with providing protobuf directory (which we publish in IPFS) and display\_name (optionally encoding, service\_type and payment\_expiration\_threshold)
 
-![Initialize Service Metadata Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at5.58.32PM.png) Initialize Service Metadata Page
+![Initialize Service Metadata Page](/assets/images/products/AIMarketplace/TUI/ServiceMetadataInitializationPage.webp) Initialize Service Metadata Page
 
 ```bash
 # Format of the command in the SNET CLI

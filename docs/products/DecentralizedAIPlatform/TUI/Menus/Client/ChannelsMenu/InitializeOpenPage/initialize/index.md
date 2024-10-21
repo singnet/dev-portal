@@ -2,7 +2,7 @@
 
 Initialize channel taking org metadata from Registry
 
-![Initialize Channel page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.18.57PM.png)Initialize Channel page
+![Initialize Channel page](/assets/images/products/AIMarketplace/TUI/ChannelInitializePage.webp)Initialize Channel page
 
 ```bash
 # Format of the command in the SNET CLI

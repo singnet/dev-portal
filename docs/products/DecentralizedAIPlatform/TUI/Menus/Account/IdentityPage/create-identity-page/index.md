@@ -2,7 +2,7 @@
 
 Create a new identity
 
-![Create Identity Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at7.27.50AM.png)Create Identity Page
+![Create Identity Page](/assets/images/products/AIMarketplace/TUI/GetStartedWithTheTUI.webp)Create Identity Page
 
 ```bash
 # Format of the command in the SNET CLI

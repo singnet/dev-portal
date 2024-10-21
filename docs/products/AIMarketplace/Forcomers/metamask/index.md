@@ -10,16 +10,16 @@ Once you have installed and set up your metamask,
 Click on the icon on the top right of your metamask window. 
 you could pick any of the options below 
 
-![wallet options](/assets/images/products/AIMarketplace/forcomers/metamaskwalletoptions.png)
+![wallet options](/assets/images/products/AIMarketplace/forcomers/metamaskwalletoptions.webp)
 
 ### Create a wallet
-![wallet options](/assets/images/products/AIMarketplace/forcomers/createwallet.png)
+![wallet options](/assets/images/products/AIMarketplace/forcomers/createwallet.webp)
 
 ### Import an existing wallet
-![import options](/assets/images/products/AIMarketplace/forcomers/importwallet.png)
+![import options](/assets/images/products/AIMarketplace/forcomers/importwallet.webp)
 
 ### Connect to a hardware wallet
-![hardware options](/assets/images/products/AIMarketplace/forcomers/hardwarewallet.png)
+![hardware options](/assets/images/products/AIMarketplace/forcomers/hardwarewallet.webp)
 
 
 

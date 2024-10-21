@@ -2,7 +2,7 @@
 
 Update metadata on blockchain, pulling from local metadata file
 
-![Update Metadata](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.35.52PM.png) Update Metadata Page
+![Update Metadata](/assets/images/products/AIMarketplace/TUI/UpdateMetadataPage.webp) Update Metadata Page
 
 ```bash
 # Format of the command in the SNET CLI

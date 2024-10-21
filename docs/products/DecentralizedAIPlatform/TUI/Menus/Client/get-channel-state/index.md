@@ -2,7 +2,7 @@
 
 Get channel state in stateless manner
 
-![Get Channel State page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.17.28PM.png)Get Channel State page
+![Get Channel State page](/assets/images/products/AIMarketplace/TUI/ClientChannelStatePage.webp)Get Channel State page
 
 ```bash
 # Format of the command in the SNET CLI

@@ -2,7 +2,7 @@
 
 Initiates the process to deposit AGIX tokens into the MPE wallet.
 
-![Deposit Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at7.30.09AM.png)Deposit Page
+![Deposit Page](/assets/images/products/AIMarketplace/TUI/DepositAGIX.webp)Deposit Page
 
 ```bash
 # Format of the command in the SNET CLI

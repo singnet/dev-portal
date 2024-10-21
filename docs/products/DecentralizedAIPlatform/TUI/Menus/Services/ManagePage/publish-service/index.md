@@ -2,7 +2,7 @@
 
 Publish service with given metadata
 
-![Publish service page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.06.26PM.png)Publish service page
+![Publish service page](/assets/images/products/AIMarketplace/TUI/ServicePublishingPage.webp)Publish service page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>
