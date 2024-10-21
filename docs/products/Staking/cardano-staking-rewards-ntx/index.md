@@ -13,7 +13,7 @@ In Rewards Distribution Period the admin updates the user 's rewards according t
 
 <br>
 
-![formula](/assets/images/products/Staking/formula.png)
+![formula](/assets/images/products/Staking/formula.webp)
 
 -   rewards - rewards already earned by the user, rewards earned from previous staking windows
 -   deposited - user's deposits from previous staking windows plus deposit in this staking window during the Staking/Withdrawal Period
