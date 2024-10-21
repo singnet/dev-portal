@@ -90,7 +90,7 @@ Once you have restarted your machine, start the script again. Finally, it will g
 
 Running the application for the first time will prompt you with the Identity Creation menu. The TUI needs to have the default identity setup, so it can display your account&#x20;
 
-![Identity creation menu](/assets/images/products/AIMarketplace/TUI/TUIIdentityCreate.png) Identity creation menu
+![Identity creation menu](/public/assets/images/products/AIMarketplace/TUI/TUIIdentityCreate.webp) Identity creation menu
 
 Here, just create an account with whatever account name you would like. It is only utilized locally for managing/differentiating identities.&#x20;
 
@@ -98,7 +98,7 @@ Then, add your crypto wallet's private key. We support wallets like MetaMask, Co
 
 Upon successful identity creation, the TUI will redirect you to the account page:
 
-![Account Page](/assets/images/products/AIMarketplace/TUI/TUIAccountPage.png)
+![Account Page](/assets/images/products/AIMarketplace/TUI/TUIAccountPage.webp)
 
 You now have full access to all the functionality of the TUI/CLI. You can find some additional information on the [Menus here](/docs/products/DecentralizedAIPlatform/TUI/Menus/), you will find some guides on performing different operations with the TUI in the [Tutorials section](/docs/products/DecentralizedAIPlatform/TUI/Tutorials/), or you can move on to learning about some of the execution flags for the TUI.&#x20;
 

@@ -2,7 +2,7 @@
 
 Print metadata for given organization
 
-![](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.31.47PM.png)Print Organization Metadata page
+![](/assets/images/products/AIMarketplace/TUI/OrganizationMetadataPage.webp)Print Organization Metadata page
 
 ```bash
 # Format of the command in the SNET CLI

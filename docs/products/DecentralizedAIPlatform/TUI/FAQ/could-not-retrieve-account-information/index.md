@@ -8,7 +8,7 @@ The issue comes into play when your default identity is invalid, meaning your de
 
 Therefore, you will always run into the error below, when trying to start the TUI, the application is attempting to print your account balance, but it cannot because your default identity is invalid.&#x20;
 
-![Invalid identity error on login](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-15at6.50.11AM.png)
+![Invalid identity error on login](/public/assets/images/products/AIMarketplace/TUI/ErrorPleaseEnsureYouHaveCreatedAValidIdentity.webp)
 Invalid identity error on login
 
 
@@ -22,7 +22,7 @@ First things first, you need to activate the CLI-only mode, you can find exact i
 
 You then need to utilize this CLI command to create a new, valid, identity:
 
-![CLI create identity command documentation](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-15at7.02.38AM.png)
+![CLI create identity command documentation](/assets/images/products/AIMarketplace/TUI/CreateANewIdentityCommand.webp)
 
 <pre class="language-bash"><code class="lang-bash"># NOTE: The &#x3C;> is shorthand for "fill this information in here"
 # NOTE 2: For network choose mainnet or sepolia for testnet

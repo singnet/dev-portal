@@ -2,7 +2,7 @@
 
 Create an Organization
 
-![Create Organization page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at5.57.58PM.png)Create Organization page
+![Create Organization page](/assets/images/products/AIMarketplace/TUI/CreateOrganizationPage.webp)Create Organization page
 
 ```bash
 # Format of the commands in the SNET CLI

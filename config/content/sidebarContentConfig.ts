@@ -167,7 +167,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                     {
                         text: "MPE Stateless Client",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe-stateless-Client/",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe-stateless-client/",
                     },
                 ],
             },
@@ -204,9 +204,21 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Daemon",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/Daemon/",
         collapsed: true,
         items: [
+            {
+                text: "What is Daemon?",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/",
+            },
+            {
+                text: "Daemon Setup",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-setup/",
+            },
+            {
+                text: "Daemon API",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-api/",
+            },
             {
                 text: "Daemon architecture",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-architecture/",
@@ -218,10 +230,6 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Daemon SSL Setup",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/",
-            },
-            {
-                text: "Daemon Setup",
-                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-setup/",
             },
         ],
     },
@@ -308,6 +316,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/TUI/",
         collapsed: true,
         items: [
+            {
+                text: "What is TUI?",
+                link: "/docs/products/DecentralizedAIPlatform/TUI/",
+            },
             {
                 text: "Getting Started",
                 link: "/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/",
@@ -502,16 +514,16 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         items: [
                             {
                                 text: "Groups page",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/groups-page/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Add a group",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/groups-page/add-a-group/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/add-a-group/",
                                     },
                                     {
                                         text: "Update group",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/groups-page/update-group/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/update-group/",
                                     },
                                 ],
                             },
@@ -1152,28 +1164,6 @@ export const BridgeSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Ethereum-Binance",
         link: "/docs/products/Bridge/eth-to-binance/",
-    },
-    {
-        text: "Testing",
-        collapsed: true,
-        items: [
-            {
-                text: "Prerequisites",
-                link: "/docs/products/Bridge/testing/prerequisites/",
-            },
-            {
-                text: "Connecting wallets",
-                link: "/docs/products/Bridge/testing/connecting-wallets/",
-            },
-            {
-                text: "Ethereum to Cardano Conversion",
-                link: "/docs/products/Bridge/testing/eth-to-cardano-conversion/",
-            },
-            {
-                text: "Cardano to Ethereum Conversion",
-                link: "/docs/products/Bridge/testing/cardano-to-eth-conversion/",
-            },
-        ],
     },
 ];
 

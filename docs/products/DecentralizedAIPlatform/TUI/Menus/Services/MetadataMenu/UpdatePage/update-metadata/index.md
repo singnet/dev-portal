@@ -2,7 +2,7 @@
 
 Publish metadata in IPFS and update existed service
 
-![Update service metadata page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.04.48PM.png)Update service metadata page
+![Update service metadata page](/assets/images/products/AIMarketplace/TUI/UpdateServiceMetadataPage.webp)Update service metadata page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

@@ -2,7 +2,7 @@
 
 Update daemon addresses to the groups
 
-![Update daemon address page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.04.21PM.png)Update daemon address page
+![Update daemon address page](/assets/images/products/AIMarketplace/TUI/UpdateServiceDaemonAddressPage.webp)Update daemon address page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

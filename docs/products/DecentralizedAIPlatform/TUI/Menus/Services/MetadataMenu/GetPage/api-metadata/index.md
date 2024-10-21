@@ -2,7 +2,7 @@
 
 Extract service api (model) to the given protodir. Get model\_ipfs\_hash from metadata
 
-![Service API Metadata page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.05.40PM.png)Service API Metadata page
+![Service API Metadata page](/assets/images/products/AIMarketplace/TUI/ServiceAPIMetadataPage.webp)Service API Metadata page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

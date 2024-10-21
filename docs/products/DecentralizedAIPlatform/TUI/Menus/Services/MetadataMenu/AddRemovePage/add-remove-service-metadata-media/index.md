@@ -2,7 +2,7 @@
 
 Add or remove (all) media in the service metadata
 
-![Add/Remove Service Media page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.03.31PM.png)Add/Remove Service Media page
+![Add/Remove Service Media page](/assets/images/products/AIMarketplace/TUI/AddRemoveServiceMediaPage.webp)Add/Remove Service Media page
 
 ```bash
 # Format of the commands in the SNET CLI

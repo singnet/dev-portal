@@ -2,7 +2,7 @@
 
 Initialize metadata for organization (locally)
 
-![Initialize Metadata page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.32.14PM.png)Initialize Metadata page
+![Initialize Metadata page](/assets/images/products/AIMarketplace/TUI/InitializeMetadataPage.webp)Initialize Metadata page
 
 ```bash
 # Format of the command in the SNET CLI
