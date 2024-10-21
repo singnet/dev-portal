@@ -20,7 +20,6 @@
             <div v-else v-for="item in toolsConfig" :key="item.text">
                 <ToolsComponent :item="item" />
             </div>
-            <div class="swiper-pagination"></div>
         </div>
     </div>
 </template>
@@ -102,13 +101,14 @@ export default {
     justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     border-radius: 25px;
 }
 
 .tools-header-component {
     padding: 24px;
     height: min-content;
+    margin-top: 20px;
 }
 
 .tools-items-container {
