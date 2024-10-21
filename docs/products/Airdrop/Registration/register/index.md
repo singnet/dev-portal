@@ -7,12 +7,12 @@ Once the registration window **opens** and if you are eligible , you would see s
 
 Click on the Register button , you will be prompted to use your wallet to sign and authroize your registration , 
 
-![1](/assets/images/products/Bridge/autorize-registration.png)
+![1](/assets/images/products/Bridge/autorize-registration.webp)
 
 On successful registation you would see a screen like the below 
 
-![1](/assets/images/products/Bridge/successful-registration.png)
+![1](/assets/images/products/Bridge/successful-registration.webp)
 
 If you are not eligible for registration , you would see something as shown below 
 
-![1](/assets/images/products/Bridge/not-eligable.png)
+![1](/assets/images/products/Bridge/not-eligable.webp)
