@@ -899,7 +899,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     {
                         text: "Getting started guide",
                         link: "/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
-                    }
+                    },
                 ],
             },
             {
