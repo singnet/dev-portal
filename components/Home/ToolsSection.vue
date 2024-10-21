@@ -8,7 +8,7 @@
         <div class="tools-items-container">
             <div class="tools-header-component card">
                 <ThemedImage :imageFileName="'tools.webp'" alt="tools" />
-                <p>On our website you will find a convenient block with tools and tools for creating your ideal web
+                <p>On our website you will find a convenient block with tools for creating your ideal web
                     resource. Start your creation journey now!</p>
             </div>
             <!-- @vue-ignore -->
@@ -42,13 +42,13 @@ register();
 const swiperOptions: SwiperOptions = {
     effect: 'creative',
     creativeEffect: {
-        limitProgress: 5,
+        limitProgress: 3,
         prev: {
-            opacity: 0.8,
-            translate: ["1%", '110%', 0],
+            opacity: 0.1,
+            translate: ["0%", '100%', 0],
         },
         next: {
-            translate: ["0%", '-110%', 0],
+            translate: ["0%", '100%', 0],
         },
     },
     direction: 'vertical',
@@ -92,8 +92,8 @@ export default {
             }
 
             return window.screen.width < MOBILE_SCREEN_WIDTH_BREAKPOINT;
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -127,7 +127,7 @@ export default {
 
 .swiper-container {
     max-height: 500px;
-    padding: 0 40px 20px 20px;
+    padding: 0 40px;
     width: 100%;
 }
 
