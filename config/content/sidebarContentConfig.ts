@@ -1101,28 +1101,6 @@ export const BridgeSection: DefaultTheme.SidebarItem[] = [
         text: "Ethereum-Binance",
         link: "/docs/products/Bridge/eth-to-binance/",
     },
-    {
-        text: "Testing",
-        collapsed: true,
-        items: [
-            {
-                text: "Prerequisites",
-                link: "/docs/products/Bridge/Testing/prerequisites/",
-            },
-            {
-                text: "Connecting wallets",
-                link: "/docs/products/Bridge/Testing/connecting-wallets/",
-            },
-            {
-                text: "Ethereum to Cardano Conversion",
-                link: "/docs/products/Bridge/Testing/eth-to-cardano-conversion/",
-            },
-            {
-                text: "Cardano to Ethereum Conversion",
-                link: "/docs/products/Bridge/Testing/cardano-to-eth-conversion/",
-            },
-        ],
-    },
 ];
 
 export const AirdropSection: DefaultTheme.SidebarItem[] = [
