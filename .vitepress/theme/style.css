@@ -379,6 +379,11 @@ body {
   }
 }
 
+.VPSidebar {
+  margin-top: var(--vp-nav-height) !important;
+  padding-top: 0 !important;;
+}
+
 @media (max-width: 960px) {
   .VPSidebar {
     max-width: var(--vp-sidebar-width) !important;
