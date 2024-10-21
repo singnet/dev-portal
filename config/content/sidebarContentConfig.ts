@@ -804,7 +804,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Python SDK",
                 collapsed: true,
-                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/",
+                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/",
                 items: [
                     {
                         text: "Getting started guide",
