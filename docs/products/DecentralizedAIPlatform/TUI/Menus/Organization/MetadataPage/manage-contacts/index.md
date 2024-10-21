@@ -2,7 +2,7 @@
 
 Add/Remove-all contact(s) in your local organization metadata
 
-![Manage Contacts page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.35.24PM.png)Manage Contacts page
+![Manage Contacts page](/assets/images/products/AIMarketplace/TUI/ManageContactsPage.webp)Manage Contacts page
 
 ```bash
 # Format of the commands in the SNET CLI

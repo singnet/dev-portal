@@ -1,6 +1,6 @@
 # Channels Menu
 
-![Channels Menu](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.18.36PM.png)Channels Menu
+![Channels Menu](/assets/images/products/AIMarketplace/TUI/ChannelPage.webp)Channels Menu
 
 **Overview**
 

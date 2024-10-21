@@ -2,7 +2,7 @@
 
 Update group of organization
 
-![Update group page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.39.37PM.png)Update group page
+![Update group page](/assets/images/products/AIMarketplace/TUI/UpdateOrganizationGroupPage.webp)Update group page
 
 ```bash
 # Format of the command in the SNET CLI

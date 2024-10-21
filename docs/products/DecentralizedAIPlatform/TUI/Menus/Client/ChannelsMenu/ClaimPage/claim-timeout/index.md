@@ -2,7 +2,7 @@
 
 Claim a specific expired channel
 
-![Claim Timeout Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.35.52PM.png)Claim Timeout Page
+![Claim Timeout Page](/assets/images/products/AIMarketplace/TUI/ChannelClaimTimeoutPage.webp)Claim Timeout Page
 
 ```bash
 # Format of the command in the SNET CLI

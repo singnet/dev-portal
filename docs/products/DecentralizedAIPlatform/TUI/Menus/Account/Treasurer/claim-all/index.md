@@ -2,7 +2,7 @@
 
 Claim all channels. We also claim all pending ‘payments in progress’ in case we ‘lost’ some payments.
 
-![Claim All Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at7.23.20AM.png)Claim All page
+![Claim All Page](/assets/images/products/AIMarketplace/TUI/ClaimAllPaymentsPage.webp)Claim All page
 
 ```bash
 # Format of the command in the SNET CLI

@@ -2,7 +2,7 @@
 
 Print service status
 
-![Print service status page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.05.25PM.png)Print service status page
+![Print service status page](/assets/images/products/AIMarketplace/TUI/ServiceStatusPage.webp)Print service status page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

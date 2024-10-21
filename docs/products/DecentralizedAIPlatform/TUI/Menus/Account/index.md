@@ -1,6 +1,6 @@
 # Account
 
-![Account](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at6.04.43PM.png)
+![Account](/assets/images/products/AIMarketplace/TUI/AccountPage.webp)
 
 **Overview**
 

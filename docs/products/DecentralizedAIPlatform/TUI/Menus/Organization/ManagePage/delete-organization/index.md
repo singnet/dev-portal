@@ -2,7 +2,7 @@
 
 Delete an organization
 
-![Delete organization page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.49.29PM.png)Delete organization page
+![Delete organization page](/assets/images/products/AIMarketplace/TUI/DeleteOrganizationPage.webp)Delete organization page
 
 ```bash
 # Format of the commands in the SNET CLI

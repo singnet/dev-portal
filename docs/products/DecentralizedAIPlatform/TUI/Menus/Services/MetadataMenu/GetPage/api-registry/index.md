@@ -2,7 +2,7 @@
 
 Extract service api (model) to the given protodir. Get metadata from registry
 
-![Get Service API Registry page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.05.57PM.png)Get Service API Registry page
+![Get Service API Registry page](/assets/images/products/AIMarketplace/TUI/ServiceAPIRegistryPage.webp)Get Service API Registry page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>
