@@ -238,6 +238,69 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Service setup via CLI",
                 link: "/docs/products/DecentralizedAIPlatform/CLI/service-setup-snet-cli/",
             },
+            {
+                text: "Manual",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/",
+                collapsed: true,
+                items: [
+                    {
+                        text: "Account",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Account/",
+                    },
+                    {
+                        text: "Channel",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Channel/",
+                    },
+                    {
+                        text: "Client",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Client/",
+                    },
+                    {
+                        text: "Contract",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Contract/",
+                    },
+                    {
+                        text: "Identity",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Identity/",
+                    },
+                    {
+                        text: "Network",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Network/",
+                    },
+                    {
+                        text: "Organization",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Organization/",
+                    },
+                    {
+                        text: "Sdk",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Sdk/",
+                    },
+                    {
+                        text: "Service",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Service/",
+                    },
+                    {
+                        text: "Session",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Session/",
+                    },
+                    {
+                        text: "Set",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Set/",
+                    },
+                    {
+                        text: "Treasurer",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Treasurer/",
+                    },
+                    {
+                        text: "Unset",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Unset/",
+                    },
+                    {
+                        text: "Version",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Version/",
+                    },
+                ],
+            },
         ],
     },
     {
@@ -729,104 +792,100 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Python SDK",
                 collapsed: true,
-                link: "/docs/products/DecentralizedAIPlatform/SDK/python-sdk-first-steps/",
+                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/",
                 items: [
                     {
                         text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/",
                     },
                     {
                         text: "Calculator example",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/calculator",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/calculator/",
                     },
                     {
                         text: "Console App example",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/console-app",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/console-app/",
                     },
                     {
                         text: "Documentation",
                         collapsed: true,
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/",
                         items: [
                             {
                                 text: "init",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/init",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/init/",
                             },
                             {
                                 text: "account",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/account",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/account/",
                             },
                             {
                                 text: "service_client",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/service-client",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/service-client/",
                             },
                             {
                                 text: "config",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/config",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/config/",
                             },
                             {
                                 text: "client_lib_generator",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/client-lib-generator",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/client-lib-generator/",
                             },
                             {
                                 text: "concurrency_manager",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/concurrency-manager",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/concurrency-manager/",
                             },
                             {
                                 text: "service_metadata",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/service-metadata",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/service-metadata/",
                             },
                             {
-                                text: "metadata_provider",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/metadata-provider",
-                            },
-                            {
-                                text: "ipfs_metadata_provider",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/ipfs-metadata-provider",
+                                text: "storage_provider",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/storage-provider/",
                             },
                             {
                                 text: "mpe_contract",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/mpe-contract",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/mpe-contract/",
                             },
                             {
                                 text: "payment_channel",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/payment-channel",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/payment-channel/",
                             },
                             {
                                 text: "payment_channel_provider",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/payment-channel-provider",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/payment-channel-provider/",
                             },
                             {
                                 text: "payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/payment-strategy/",
                             },
                             {
                                 text: "default_payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/default-payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/default-payment-strategy/",
                             },
                             {
                                 text: "freecall_payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/freecall-payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/freecall-payment-strategy/",
                             },
                             {
                                 text: "paidcall_payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/paidcall-payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/paidcall-payment-strategy/",
                             },
                             {
                                 text: "prepaid_payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/prepaid-payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/prepaid-payment-strategy/",
                             },
                             {
                                 text: "training",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/training",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/training/",
                             },
                             {
                                 text: "utils",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/utils",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/utils/",
                             },
                             {
                                 text: "ipfs_utils",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/ipfs-utils",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/ipfs-utils/",
                             },
                         ],
                     },
@@ -834,9 +893,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "NodeJS SDK",
-                link:"",
+                link:"/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
                 collapsed: true,
-                items:[],
+                items:[
+                    {
+                        text: "Getting started guide",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
+                    }
+                ],
             },
             {
                 text: "WebJS SDK",

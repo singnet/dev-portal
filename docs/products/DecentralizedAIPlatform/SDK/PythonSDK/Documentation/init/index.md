@@ -30,16 +30,14 @@ It provides methods for creating service clients, managing identities, and confi
 #### attributes
 
 - `_sdk_config` (Config): An instance of the `Config` class.
-- `_metadata_provider` (MetadataProvider): An instance of the `MetadataProvider` class. _Note_: There is currently only 
-one implementation of `MetadataProvider` which is `IPFSMetadataProvider`, so this attribute can only be initialized to 
-`IPFSMetadataProvider` at this time.
+- `_metadata_provider` (StorageProvider): An instance of the `StorageProvider` class for fetching metadata and .proto files.
 - `web3` (Web3): An instance of the `Web3` class for interacting with the Ethereum blockchain.
 - `mpe_contract` (MPEContract): An instance of the `MPEContract` class for interacting with the MultiPartyEscrow contract.
-- `ipfs_client` (ipfshttpclient.Client): An instance of the `ipfshttpclient.Client` class for interacting with the 
-InterPlanetary File System.
-- `registry_contract` (Contract): An instance of the `Contract` class (from `snet.cli`) for interacting with the Registry contract.
+- `registry_contract` (Contract): An instance of the `Contract` class for interacting with the Registry contract.
 - `account` (Account): An instance of the `Account` class for interacting with the MultiPartyEscrow and 
 SingularityNetToken contracts.
+- `payment_channel_provider` (PaymentChannelProvider): An instance of the `PaymentChannelProvider` class for managing 
+payment channels.
 
 #### methods
 

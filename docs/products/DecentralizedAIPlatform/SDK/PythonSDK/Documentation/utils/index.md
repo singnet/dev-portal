@@ -12,6 +12,8 @@ Entities:
 7. [get_address_from_private](#function-get-address-from-private)
 8. [add_to_path](#class-add-to-path)
 9. [find_file_by_keyword](#function-find-file-by-keyword)
+10. [bytesuri_to_hash](#function-bytesuri-to-hash)
+11. [safe_extract_proto](#function-safe-extract-proto)
 
 
 ### Function `safe_address_converter`
@@ -30,7 +32,7 @@ Checks if the address is a valid checksum address and returns it, otherwise rais
 
 - `Exception`: If the address isn't a valid checksum address.
 
-### Function `type_converter`
+### Function `type_converter
 
 Creates a function that converts a value to the specified type.
 
@@ -138,3 +140,42 @@ Finds a file by keyword in the current directory and subdirectories.
 
 - The name of the file that contains the keyword, or `None` if no file is found. (AnyStr | None)
 
+### Function `bytesuri_to_hash`
+
+Decodes a bytes URI and splits it into prefix and hash.
+
+###### args:
+
+- `s` (bytes): The bytes URI to convert.
+- `to_decode` (bool): Whether to decode the bytes URI. Defaults to `True`.
+
+###### returns:
+
+- The prefix extracted from the URI. (str)
+- The hash extracted from the URI. (str)
+
+###### raises:
+
+- `Exception`: If the input is not an IPFS or Filecoin URI.
+
+### Function `safe_extract_proto`
+
+This function safely extracts a tar file to a specified directory. It checks for potential security risks by:
+- Ensuring the tar file does not contain directories
+- Ensuring all contents are files
+- Removing any existing files with the same name before extraction
+
+If any of these checks fail, it raises an exception. Otherwise, it extracts the tar file to the specified directory.
+
+###### args:
+
+- `spec_tar` (bytes): The tar file to extract.
+- `protodir` (str): The directory to extract the tar file to.
+
+###### returns:
+
+- _None_
+
+###### raises:
+
+- `Exception`: If the tarball contains directories or non-file entries.
