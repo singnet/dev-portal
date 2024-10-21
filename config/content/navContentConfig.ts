@@ -18,6 +18,27 @@ export default [
                 text: "AI Publisher",
                 link: "https://publisher.singularitynet.io/",
             },
+            {
+                text: "Linking Wallet Tool",
+                link: "https://mywallets.singularitynet.io/",
+            },
+            {
+                text: "Bridge",
+                items: [
+                    {
+                        text: "Ethereum-Cardano",
+                        link: "https://bridge.singularitynet.io/",
+                    },
+                    {
+                        text: "Ethereum-Binance",
+                        link: "https://bsc-bridge.singularitynet.io/",
+                    },
+                    {
+                        text: "Cardano AGIX-ASI",
+                        link: "https://asi-migration.singularitynet.io/",
+                    },
+                ]
+            },
         ],
     },
     {
@@ -26,6 +47,10 @@ export default [
             {
                 text: "Blog",
                 link: "http://blog.singularitynet.io/",
+            },
+            {
+                text: "Mattermost",
+                link: "https://chat.singularitynet.io/chat/channels/town-square",
             },
             {
                 text: "Forum",
