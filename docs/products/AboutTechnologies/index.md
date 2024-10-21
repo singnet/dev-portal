@@ -58,7 +58,7 @@ The SingularityNET DApp is essentially a rich Registry explorer. It loads the Re
 
 ### Metamask
 
-MetaMask is an internet browser extension that allows users to interact with the Ethereum Blockchain and its decentralized applications. MetaMask serves as your access portal for both the Ethereum Mainnet and Ropsten.
+MetaMask is an internet browser extension that allows users to interact with the Ethereum Blockchain and its decentralized applications. MetaMask serves as your access portal for both the Ethereum Mainnet and Sepolia.
 
 ### AGIX
 
