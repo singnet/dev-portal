@@ -93,29 +93,43 @@ Update your **package.json** scripts to use **react-app-rewired** instead of **r
 
 The SingularityNET SDK allows you to import compiled client libraries for your service or services of choice and make calls to those services programmatically from your application by setting up state channels with the providers of those services and making gRPC calls to the SingularityNET daemons for those services by selecting a channel with sufficient funding and supplying the appropriate metadata for authentication.
 
-```javascript
+```js
+// sdkConfig.js file
 import SnetSDK from 'snet-sdk-web';
 
-import config from './config';
+const config = {
+    web3Provider: window.ethereum,
+    networkId: '11155111',
+    defaultGasPrice: '4700000',
+    defaultGasLimit: '210000',
+    ipfsEndpoint: 'http://ipfs.YOUR_ORGANIZATION.io:80',
+    rpcEndpoint: 'https://sepolia.infura.io/v3/YOUR_INFURA_KEY',
+};
 
-const sdk = new SnetSDK(config);
+const initSDK = async () => {
+    try {
+        const web3Provider = window.ethereum;
+        sdk = new SnetSDK(config);
+        await sdk.setupAccount();
+        return sdk;
+    } catch (error) {
+        throw error;
+    }
+};
 ```
 
-You can find a sample config below
-
-```json
-{
-  "web3Provider": window.web3.currentProvider,
-  "networkId": "3",
-  "ipfsEndpoint": "http://ipfs.organization.io:80",
-  "defaultGasPrice": "4700000",
-  "defaultGasLimit": "210000",
-  "rpcEndpoint": "https://ropsten.infura.io/v3/1234567890"
-}
-
-```
+| Variable Name   | Description                                                                              | Default value                      |
+| --------------- | ---------------------------------------------------------------------------------------- | ---------------------------------- |
+| web3Provider    | A URL or one of the Web3 provider classes.                                               | -                                  |
+| networkId       | Ethereum network ID.                                                                     | -                                  |
+| defaultGasPrice | The gas price to be used in case of fetching the gas price form the blockchain fails.    | 4700000                            |
+| defaultGasLimit | The gas limit to be used in case of fetching the gas estimate from the blockchain fails. | 210000                             |
+| ipfsEndpoint    | A URL for fetching service related metadata.                                             | `http://ipfs.singularitynet.io:80` |
+| rpcEndpoint     | RPC endpoints serve as gateways for Web3 applications to connect with blockchain nodes   | -                                  |
 
 **Note:** `rpcEndpoint` is optional, you should provide this if you are getting block size limit exceeded error. This is usually happens when you are using any web social auth providers.
+
+**Note:** `ipfsEndpoint` is optional, you should provide this if you want using your ipfs.
 
 **Debugging Tip:** To view debug logs, enable verbose mode in your browser's developer console.
 
