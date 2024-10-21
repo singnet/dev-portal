@@ -893,9 +893,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "NodeJS SDK",
-                link:"",
+                link:"/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
                 collapsed: true,
-                items:[],
+                items:[
+                    {
+                        text: "Getting started guide",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
+                    }
+                ],
             },
             {
                 text: "WebJS SDK",

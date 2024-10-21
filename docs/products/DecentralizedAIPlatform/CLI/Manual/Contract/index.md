@@ -1,7 +1,7 @@
 # Contract
 
 ```sh
-	usage: snet contract [-h] CONTRACT ... 
+usage: snet contract [-h] CONTRACT ...
 ```
 
 ## contracts
@@ -15,12 +15,13 @@ TokenConversionManager, TokenStake
 
 ## Sub-commands
 
-### MultiPartyEscrow
+## MultiPartyEscrow
 
 MultiPartyEscrow contract
 
 ```sh
-	snet contract MultiPartyEscrow [-h] [--at ADDRESS] FUNCTION ... 
+snet contract MultiPartyEscrow [-h]
+                               [--at ADDRESS] FUNCTION ...
 ```
 
 #### contract identity arguments
@@ -29,7 +30,7 @@ MultiPartyEscrow contract
 
     
 
-> contract address
+\> contract address
 
 #### MultiPartyEscrow functions
 
@@ -49,7 +50,11 @@ channelAddFunds, channelExtendAndAddFunds, channelClaimTimeout
 balances function
 
 ```sh
-	snet contract MultiPartyEscrow balances [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] ADDRESS 
+snet contract MultiPartyEscrow balances [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] ADDRESS
 ```
 
 ###### Positional Arguments
@@ -106,7 +111,11 @@ Default: `False`
 channels function
 
 ```sh
-	snet contract MultiPartyEscrow channels [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] UINT256 
+snet contract MultiPartyEscrow channels [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] UINT256
 ```
 
 ###### Positional Arguments
@@ -163,7 +172,11 @@ Default: `False`
 nextChannelId function
 
 ```sh
-	snet contract MultiPartyEscrow nextChannelId [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract MultiPartyEscrow nextChannelId [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -214,7 +227,11 @@ Default: `False`
 token function
 
 ```sh
-	snet contract MultiPartyEscrow token [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract MultiPartyEscrow token [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -265,7 +282,11 @@ Default: `False`
 usedMessages function
 
 ```sh
-	snet contract MultiPartyEscrow usedMessages [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] BYTES32 
+snet contract MultiPartyEscrow usedMessages [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] BYTES32
 ```
 
 ###### Positional Arguments
@@ -322,7 +343,11 @@ Default: `False`
 deposit function
 
 ```sh
-	snet contract MultiPartyEscrow deposit [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] value_UINT256 
+snet contract MultiPartyEscrow deposit [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] value_UINT256
 ```
 
 ###### Positional Arguments
@@ -379,7 +404,11 @@ Default: `False`
 withdraw function
 
 ```sh
-	snet contract MultiPartyEscrow withdraw [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] value_UINT256 
+snet contract MultiPartyEscrow withdraw [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] value_UINT256
 ```
 
 ###### Positional Arguments
@@ -436,7 +465,11 @@ Default: `False`
 transfer function
 
 ```sh
-	snet contract MultiPartyEscrow transfer [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] receiver_ADDRESS value_UINT256 
+snet contract MultiPartyEscrow transfer [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] receiver_ADDRESS value_UINT256
 ```
 
 ###### Positional Arguments
@@ -496,7 +529,11 @@ Default: `False`
 openChannel function
 
 ```sh
-	snet contract MultiPartyEscrow openChannel [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] signer_ADDRESS recipient_ADDRESS groupId_BYTES32 value_UINT256 expiration_UINT256 
+snet contract MultiPartyEscrow openChannel [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] signer_ADDRESS recipient_ADDRESS groupId_BYTES32 value_UINT256 expiration_UINT256
 ```
 
 ###### Positional Arguments
@@ -565,7 +602,11 @@ Default: `False`
 openChannelByThirdParty function
 
 ```sh
-	snet contract MultiPartyEscrow openChannelByThirdParty [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] sender_ADDRESS signer_ADDRESS recipient_ADDRESS groupId_BYTES32 value_UINT256 expiration_UINT256 messageNonce_UINT256 v_UINT8 r_BYTES32 s_BYTES32 
+snet contract MultiPartyEscrow openChannelByThirdParty [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] sender_ADDRESS signer_ADDRESS recipient_ADDRESS groupId_BYTES32 value_UINT256 expiration_UINT256 messageNonce_UINT256 v_UINT8 r_BYTES32 s_BYTES32
 ```
 
 ###### Positional Arguments
@@ -649,7 +690,11 @@ Default: `False`
 depositAndOpenChannel function
 
 ```sh
-	snet contract MultiPartyEscrow depositAndOpenChannel [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] signer_ADDRESS recipient_ADDRESS groupId_BYTES32 value_UINT256 expiration_UINT256 
+snet contract MultiPartyEscrow depositAndOpenChannel [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] signer_ADDRESS recipient_ADDRESS groupId_BYTES32 value_UINT256 expiration_UINT256
 ```
 
 ###### Positional Arguments
@@ -718,7 +763,11 @@ Default: `False`
 multiChannelClaim function
 
 ```sh
-	snet contract MultiPartyEscrow multiChannelClaim [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] channelIds_UINT256 actualAmounts_UINT256 plannedAmounts_UINT256 isSendbacks_BOOL v_UINT8 r_BYTES32 s_BYTES32 
+snet contract MultiPartyEscrow multiChannelClaim [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] channelIds_UINT256 actualAmounts_UINT256 plannedAmounts_UINT256 isSendbacks_BOOL v_UINT8 r_BYTES32 s_BYTES32
 ```
 
 ###### Positional Arguments
@@ -793,7 +842,11 @@ Default: `False`
 channelClaim function
 
 ```sh
-	snet contract MultiPartyEscrow channelClaim [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] channelId_UINT256 actualAmount_UINT256 plannedAmount_UINT256 v_UINT8 r_BYTES32 s_BYTES32 isSendback_BOOL 
+snet contract MultiPartyEscrow channelClaim [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] channelId_UINT256 actualAmount_UINT256 plannedAmount_UINT256 v_UINT8 r_BYTES32 s_BYTES32 isSendback_BOOL
 ```
 
 ###### Positional Arguments
@@ -868,7 +921,11 @@ Default: `False`
 channelExtend function
 
 ```sh
-	snet contract MultiPartyEscrow channelExtend [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] channelId_UINT256 newExpiration_UINT256 
+snet contract MultiPartyEscrow channelExtend [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] channelId_UINT256 newExpiration_UINT256
 ```
 
 ###### Positional Arguments
@@ -928,7 +985,11 @@ Default: `False`
 channelAddFunds function
 
 ```sh
-	snet contract MultiPartyEscrow channelAddFunds [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] channelId_UINT256 amount_UINT256 
+snet contract MultiPartyEscrow channelAddFunds [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] channelId_UINT256 amount_UINT256
 ```
 
 ###### Positional Arguments
@@ -988,7 +1049,11 @@ Default: `False`
 channelExtendAndAddFunds function
 
 ```sh
-	snet contract MultiPartyEscrow channelExtendAndAddFunds [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] channelId_UINT256 newExpiration_UINT256 amount_UINT256 
+snet contract MultiPartyEscrow channelExtendAndAddFunds [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] channelId_UINT256 newExpiration_UINT256 amount_UINT256
 ```
 
 ###### Positional Arguments
@@ -1051,7 +1116,11 @@ Default: `False`
 channelClaimTimeout function
 
 ```sh
-	snet contract MultiPartyEscrow channelClaimTimeout [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] channelId_UINT256 
+snet contract MultiPartyEscrow channelClaimTimeout [-h]
+                               [--transact]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose] channelId_UINT256
 ```
 
 ###### Positional Arguments
@@ -1103,12 +1172,13 @@ Verbose transaction printing
 
 Default: `False`
 
-### Registry
+## Registry
 
 Registry contract
 
 ```sh
-	snet contract Registry [-h] [--at ADDRESS] FUNCTION ... 
+snet contract Registry [-h]
+                       [--at ADDRESS] FUNCTION ...
 ```
 
 #### contract identity arguments
@@ -1117,7 +1187,7 @@ Registry contract
 
     
 
-> contract address
+\> contract address
 
 #### Registry functions
 
@@ -1139,7 +1209,11 @@ listServicesForOrganization, getServiceRegistrationById
 supportsInterface function
 
 ```sh
-	snet contract Registry supportsInterface [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] interfaceId_BYTES4 
+snet contract Registry supportsInterface [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] interfaceId_BYTES4
 ```
 
 ###### Positional Arguments
@@ -1196,7 +1270,11 @@ Default: `False`
 createOrganization function
 
 ```sh
-	snet contract Registry createOrganization [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 orgMetadataURI_BYTES members_ADDRESS 
+snet contract Registry createOrganization [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 orgMetadataURI_BYTES members_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -1259,7 +1337,11 @@ Default: `False`
 changeOrganizationOwner function
 
 ```sh
-	snet contract Registry changeOrganizationOwner [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 newOwner_ADDRESS 
+snet contract Registry changeOrganizationOwner [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 newOwner_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -1319,7 +1401,11 @@ Default: `False`
 changeOrganizationMetadataURI function
 
 ```sh
-	snet contract Registry changeOrganizationMetadataURI [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 orgMetadataURI_BYTES 
+snet contract Registry changeOrganizationMetadataURI [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 orgMetadataURI_BYTES
 ```
 
 ###### Positional Arguments
@@ -1379,7 +1465,11 @@ Default: `False`
 addOrganizationMembers function
 
 ```sh
-	snet contract Registry addOrganizationMembers [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 newMembers_ADDRESS 
+snet contract Registry addOrganizationMembers [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 newMembers_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -1439,7 +1529,11 @@ Default: `False`
 removeOrganizationMembers function
 
 ```sh
-	snet contract Registry removeOrganizationMembers [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 existingMembers_ADDRESS 
+snet contract Registry removeOrganizationMembers [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 existingMembers_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -1499,7 +1593,11 @@ Default: `False`
 deleteOrganization function
 
 ```sh
-	snet contract Registry deleteOrganization [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 
+snet contract Registry deleteOrganization [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32
 ```
 
 ###### Positional Arguments
@@ -1556,7 +1654,11 @@ Default: `False`
 createServiceRegistration function
 
 ```sh
-	snet contract Registry createServiceRegistration [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 serviceId_BYTES32 metadataURI_BYTES 
+snet contract Registry createServiceRegistration [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 serviceId_BYTES32 metadataURI_BYTES
 ```
 
 ###### Positional Arguments
@@ -1619,7 +1721,11 @@ Default: `False`
 updateServiceRegistration function
 
 ```sh
-	snet contract Registry updateServiceRegistration [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 serviceId_BYTES32 metadataURI_BYTES 
+snet contract Registry updateServiceRegistration [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 serviceId_BYTES32 metadataURI_BYTES
 ```
 
 ###### Positional Arguments
@@ -1682,7 +1788,11 @@ Default: `False`
 deleteServiceRegistration function
 
 ```sh
-	snet contract Registry deleteServiceRegistration [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 serviceId_BYTES32 
+snet contract Registry deleteServiceRegistration [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 serviceId_BYTES32
 ```
 
 ###### Positional Arguments
@@ -1742,7 +1852,11 @@ Default: `False`
 listOrganizations function
 
 ```sh
-	snet contract Registry listOrganizations [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract Registry listOrganizations [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -1793,7 +1907,11 @@ Default: `False`
 getOrganizationById function
 
 ```sh
-	snet contract Registry getOrganizationById [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 
+snet contract Registry getOrganizationById [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32
 ```
 
 ###### Positional Arguments
@@ -1850,7 +1968,11 @@ Default: `False`
 listServicesForOrganization function
 
 ```sh
-	snet contract Registry listServicesForOrganization [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 
+snet contract Registry listServicesForOrganization [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32
 ```
 
 ###### Positional Arguments
@@ -1907,7 +2029,11 @@ Default: `False`
 getServiceRegistrationById function
 
 ```sh
-	snet contract Registry getServiceRegistrationById [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] orgId_BYTES32 serviceId_BYTES32 
+snet contract Registry getServiceRegistrationById [-h]
+                       [--transact]
+                       [--wallet-index WALLET_INDEX]
+                       [--yes]
+                       [--quiet | --verbose] orgId_BYTES32 serviceId_BYTES32
 ```
 
 ###### Positional Arguments
@@ -1962,13 +2088,13 @@ Verbose transaction printing
 
 Default: `False`
 
-### SingularityNetToken
+## SingularityNetToken
 
 SingularityNetToken contract
 
 ```sh
-	snet contract SingularityNetToken [-h] [--at ADDRESS] FUNCTION ...
-
+snet contract SingularityNetToken [-h]
+                                  [--at ADDRESS] FUNCTION ...
 ```
 
 #### contract identity arguments
@@ -1977,7 +2103,7 @@ SingularityNetToken contract
 
     
 
-> contract address
+\> contract address
 
 #### SingularityNetToken functions
 
@@ -1998,7 +2124,11 @@ transferFrom, mint, pause, unpause
 DEFAULT_ADMIN_ROLE function
 
 ```sh
-	snet contract SingularityNetToken DEFAULT_ADMIN_ROLE [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken DEFAULT_ADMIN_ROLE [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -2049,7 +2179,11 @@ Default: `False`
 MINTER_ROLE function
 
 ```sh
-	snet contract SingularityNetToken MINTER_ROLE [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken MINTER_ROLE [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -2100,7 +2234,11 @@ Default: `False`
 PAUSER_ROLE function
 
 ```sh
-	snet contract SingularityNetToken PAUSER_ROLE [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken PAUSER_ROLE [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -2151,7 +2289,11 @@ Default: `False`
 allowance function
 
 ```sh
-	snet contract SingularityNetToken allowance [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] owner_ADDRESS spender_ADDRESS 
+snet contract SingularityNetToken allowance [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] owner_ADDRESS spender_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -2211,7 +2353,11 @@ Default: `False`
 approve function
 
 ```sh
-	snet contract SingularityNetToken approve [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] spender_ADDRESS amount_UINT256 
+snet contract SingularityNetToken approve [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] spender_ADDRESS amount_UINT256
 ```
 
 ###### Positional Arguments
@@ -2271,7 +2417,11 @@ Default: `False`
 balanceOf function
 
 ```sh
-	snet contract SingularityNetToken balanceOf [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] account_ADDRESS 
+snet contract SingularityNetToken balanceOf [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] account_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -2328,7 +2478,11 @@ Default: `False`
 burn function
 
 ```sh
-	snet contract SingularityNetToken burn [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] amount_UINT256 
+snet contract SingularityNetToken burn [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] amount_UINT256
 ```
 
 ###### Positional Arguments
@@ -2385,7 +2539,11 @@ Default: `False`
 burnFrom function
 
 ```sh
-	snet contract SingularityNetToken burnFrom [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] account_ADDRESS amount_UINT256 
+snet contract SingularityNetToken burnFrom [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] account_ADDRESS amount_UINT256
 ```
 
 ###### Positional Arguments
@@ -2445,7 +2603,11 @@ Default: `False`
 decimals function
 
 ```sh
-	snet contract SingularityNetToken decimals [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken decimals [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -2496,7 +2658,11 @@ Default: `False`
 decreaseAllowance function
 
 ```sh
-	snet contract SingularityNetToken decreaseAllowance [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] spender_ADDRESS subtractedValue_UINT256 
+snet contract SingularityNetToken decreaseAllowance [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] spender_ADDRESS subtractedValue_UINT256
 ```
 
 ###### Positional Arguments
@@ -2556,7 +2722,11 @@ Default: `False`
 getRoleAdmin function
 
 ```sh
-	snet contract SingularityNetToken getRoleAdmin [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] role_BYTES32 
+snet contract SingularityNetToken getRoleAdmin [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] role_BYTES32
 ```
 
 ###### Positional Arguments
@@ -2613,7 +2783,11 @@ Default: `False`
 getRoleMember function
 
 ```sh
-	snet contract SingularityNetToken getRoleMember [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] role_BYTES32 index_UINT256 
+snet contract SingularityNetToken getRoleMember [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] role_BYTES32 index_UINT256
 ```
 
 ###### Positional Arguments
@@ -2673,7 +2847,11 @@ Default: `False`
 getRoleMemberCount function
 
 ```sh
-	snet contract SingularityNetToken getRoleMemberCount [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] role_BYTES32 
+snet contract SingularityNetToken getRoleMemberCount [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] role_BYTES32
 ```
 
 ###### Positional Arguments
@@ -2730,7 +2908,11 @@ Default: `False`
 grantRole function
 
 ```sh
-	snet contract SingularityNetToken grantRole [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] role_BYTES32 account_ADDRESS 
+snet contract SingularityNetToken grantRole [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] role_BYTES32 account_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -2790,7 +2972,11 @@ Default: `False`
 hasRole function
 
 ```sh
-	snet contract SingularityNetToken hasRole [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] role_BYTES32 account_ADDRESS 
+snet contract SingularityNetToken hasRole [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] role_BYTES32 account_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -2850,7 +3036,11 @@ Default: `False`
 increaseAllowance function
 
 ```sh
-	snet contract SingularityNetToken increaseAllowance [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] spender_ADDRESS addedValue_UINT256 
+snet contract SingularityNetToken increaseAllowance [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] spender_ADDRESS addedValue_UINT256
 ```
 
 ###### Positional Arguments
@@ -2910,7 +3100,11 @@ Default: `False`
 name function
 
 ```sh
-	snet contract SingularityNetToken name [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken name [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -2961,7 +3155,11 @@ Default: `False`
 paused function
 
 ```sh
-	snet contract SingularityNetToken paused [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken paused [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3012,7 +3210,11 @@ Default: `False`
 renounceRole function
 
 ```sh
-	snet contract SingularityNetToken renounceRole [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] role_BYTES32 account_ADDRESS 
+snet contract SingularityNetToken renounceRole [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] role_BYTES32 account_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -3072,7 +3274,11 @@ Default: `False`
 revokeRole function
 
 ```sh
-	snet contract SingularityNetToken revokeRole [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] role_BYTES32 account_ADDRESS 
+snet contract SingularityNetToken revokeRole [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] role_BYTES32 account_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -3132,7 +3338,11 @@ Default: `False`
 symbol function
 
 ```sh
-	snet contract SingularityNetToken symbol [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken symbol [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3183,7 +3393,11 @@ Default: `False`
 totalSupply function
 
 ```sh
-	snet contract SingularityNetToken totalSupply [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken totalSupply [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3234,7 +3448,11 @@ Default: `False`
 transfer function
 
 ```sh
-	snet contract SingularityNetToken transfer [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] recipient_ADDRESS amount_UINT256 
+snet contract SingularityNetToken transfer [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] recipient_ADDRESS amount_UINT256
 ```
 
 ###### Positional Arguments
@@ -3294,7 +3512,11 @@ Default: `False`
 transferFrom function
 
 ```sh
-	snet contract SingularityNetToken transferFrom [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] sender_ADDRESS recipient_ADDRESS amount_UINT256 
+snet contract SingularityNetToken transferFrom [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] sender_ADDRESS recipient_ADDRESS amount_UINT256
 ```
 
 ###### Positional Arguments
@@ -3357,7 +3579,11 @@ Default: `False`
 mint function
 
 ```sh
-	snet contract SingularityNetToken mint [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] to_ADDRESS amount_UINT256 
+snet contract SingularityNetToken mint [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose] to_ADDRESS amount_UINT256
 ```
 
 ###### Positional Arguments
@@ -3417,7 +3643,11 @@ Default: `False`
 pause function
 
 ```sh
-	snet contract SingularityNetToken pause [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken pause [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3468,7 +3698,11 @@ Default: `False`
 unpause function
 
 ```sh
-	snet contract SingularityNetToken unpause [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract SingularityNetToken unpause [-h]
+                                  [--transact]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3514,13 +3748,13 @@ Verbose transaction printing
 
 Default: `False`
 
-### TokenConversionManager
+## TokenConversionManager
 
 TokenConversionManager contract
 
 ```sh
-	snet contract TokenConversionManager [-h] [--at ADDRESS] FUNCTION ...
-
+snet contract TokenConversionManager [-h]
+                                     [--at ADDRESS] FUNCTION ...
 ```
 
 #### contract identity arguments
@@ -3529,7 +3763,7 @@ TokenConversionManager contract
 
     
 
-> contract address
+\> contract address
 
 #### TokenConversionManager functions
 
@@ -3548,7 +3782,11 @@ updateAuthorizer, updateConfigurations, conversionOut, conversionIn
 conversionAuthorizer function
 
 ```sh
-	snet contract TokenConversionManager conversionAuthorizer [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenConversionManager conversionAuthorizer [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3599,7 +3837,11 @@ Default: `False`
 maxSupply function
 
 ```sh
-	snet contract TokenConversionManager maxSupply [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenConversionManager maxSupply [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3650,7 +3892,11 @@ Default: `False`
 owner function
 
 ```sh
-	snet contract TokenConversionManager owner [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenConversionManager owner [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3701,7 +3947,11 @@ Default: `False`
 perTxnMaxAmount function
 
 ```sh
-	snet contract TokenConversionManager perTxnMaxAmount [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenConversionManager perTxnMaxAmount [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3752,7 +4002,11 @@ Default: `False`
 perTxnMinAmount function
 
 ```sh
-	snet contract TokenConversionManager perTxnMinAmount [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenConversionManager perTxnMinAmount [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3803,7 +4057,11 @@ Default: `False`
 renounceOwnership function
 
 ```sh
-	snet contract TokenConversionManager renounceOwnership [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenConversionManager renounceOwnership [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3854,7 +4112,11 @@ Default: `False`
 token function
 
 ```sh
-	snet contract TokenConversionManager token [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenConversionManager token [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -3905,7 +4167,11 @@ Default: `False`
 transferOwnership function
 
 ```sh
-	snet contract TokenConversionManager transferOwnership [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] newOwner_ADDRESS 
+snet contract TokenConversionManager transferOwnership [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose] newOwner_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -3962,7 +4228,11 @@ Default: `False`
 usedSignatures function
 
 ```sh
-	snet contract TokenConversionManager usedSignatures [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] BYTES32 
+snet contract TokenConversionManager usedSignatures [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose] BYTES32
 ```
 
 ###### Positional Arguments
@@ -4019,7 +4289,11 @@ Default: `False`
 updateAuthorizer function
 
 ```sh
-	snet contract TokenConversionManager updateAuthorizer [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] newAuthorizer_ADDRESS 
+snet contract TokenConversionManager updateAuthorizer [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose] newAuthorizer_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -4076,7 +4350,11 @@ Default: `False`
 updateConfigurations function
 
 ```sh
-	snet contract TokenConversionManager updateConfigurations [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] perTxnMinAmount_UINT256 perTxnMaxAmount_UINT256 maxSupply_UINT256 
+snet contract TokenConversionManager updateConfigurations [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose] perTxnMinAmount_UINT256 perTxnMaxAmount_UINT256 maxSupply_UINT256
 ```
 
 ###### Positional Arguments
@@ -4139,7 +4417,11 @@ Default: `False`
 conversionOut function
 
 ```sh
-	snet contract TokenConversionManager conversionOut [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] amount_UINT256 conversionId_BYTES32 v_UINT8 r_BYTES32 s_BYTES32 
+snet contract TokenConversionManager conversionOut [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose] amount_UINT256 conversionId_BYTES32 v_UINT8 r_BYTES32 s_BYTES32
 ```
 
 ###### Positional Arguments
@@ -4208,7 +4490,11 @@ Default: `False`
 conversionIn function
 
 ```sh
-	snet contract TokenConversionManager conversionIn [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] to_ADDRESS amount_UINT256 conversionId_BYTES32 v_UINT8 r_BYTES32 s_BYTES32 
+snet contract TokenConversionManager conversionIn [-h]
+                                     [--transact]
+                                     [--wallet-index WALLET_INDEX]
+                                     [--yes]
+                                     [--quiet | --verbose] to_ADDRESS amount_UINT256 conversionId_BYTES32 v_UINT8 r_BYTES32 s_BYTES32
 ```
 
 ###### Positional Arguments
@@ -4275,12 +4561,13 @@ Verbose transaction printing
 
 Default: `False`
 
-### TokenStake
+## TokenStake
 
 TokenStake contract
 
 ```sh
-	snet contract TokenStake [-h] [--at ADDRESS] FUNCTION ... 
+snet contract TokenStake [-h]
+                         [--at ADDRESS] FUNCTION ...
 ```
 
 #### contract identity arguments
@@ -4289,7 +4576,7 @@ TokenStake contract
 
     
 
-> contract address
+\> contract address
 
 #### TokenStake functions
 
@@ -4311,7 +4598,11 @@ getStakeInfo
 balances function
 
 ```sh
-	snet contract TokenStake balances [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] ADDRESS 
+snet contract TokenStake balances [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] ADDRESS
 ```
 
 ###### Positional Arguments
@@ -4368,7 +4659,11 @@ Default: `False`
 currentStakeMapIndex function
 
 ```sh
-	snet contract TokenStake currentStakeMapIndex [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenStake currentStakeMapIndex [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -4419,7 +4714,11 @@ Default: `False`
 maxMigrationBlocks function
 
 ```sh
-	snet contract TokenStake maxMigrationBlocks [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenStake maxMigrationBlocks [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -4470,7 +4769,11 @@ Default: `False`
 owner function
 
 ```sh
-	snet contract TokenStake owner [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenStake owner [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -4521,7 +4824,11 @@ Default: `False`
 renounceOwnership function
 
 ```sh
-	snet contract TokenStake renounceOwnership [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenStake renounceOwnership [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -4572,7 +4879,11 @@ Default: `False`
 stakeMap function
 
 ```sh
-	snet contract TokenStake stakeMap [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] UINT256 
+snet contract TokenStake stakeMap [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] UINT256
 ```
 
 ###### Positional Arguments
@@ -4629,7 +4940,11 @@ Default: `False`
 token function
 
 ```sh
-	snet contract TokenStake token [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenStake token [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -4680,7 +4995,11 @@ Default: `False`
 tokenOperator function
 
 ```sh
-	snet contract TokenStake tokenOperator [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenStake tokenOperator [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -4731,7 +5050,11 @@ Default: `False`
 transferOwnership function
 
 ```sh
-	snet contract TokenStake transferOwnership [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] newOwner_ADDRESS 
+snet contract TokenStake transferOwnership [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] newOwner_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -4788,7 +5111,11 @@ Default: `False`
 windowTotalStake function
 
 ```sh
-	snet contract TokenStake windowTotalStake [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenStake windowTotalStake [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -4839,7 +5166,11 @@ Default: `False`
 updateOperator function
 
 ```sh
-	snet contract TokenStake updateOperator [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] newOperator_ADDRESS 
+snet contract TokenStake updateOperator [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] newOperator_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -4896,7 +5227,11 @@ Default: `False`
 withdrawToken function
 
 ```sh
-	snet contract TokenStake withdrawToken [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] value_UINT256 
+snet contract TokenStake withdrawToken [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] value_UINT256
 ```
 
 ###### Positional Arguments
@@ -4953,85 +5288,21 @@ Default: `False`
 openForStake function
 
 ```sh
-	snet contract TokenStake openForStake [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] startPeriod_UINT256 submissionEndPeriod_UINT256 approvalEndPeriod_UINT256 requestWithdrawStartPeriod_UINT256 endPeriod_UINT256 windowRewardAmount_UINT256 minStake_UINT256 openForExternal_BOOL 
+snet contract TokenStake openForStake [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] startPeriod_UINT256 submissionEndPeriod_UINT256 approvalEndPeriod_UINT256 requestWithdrawStartPeriod_UINT256 endPeriod_UINT256 windowRewardAmount_UINT256 minStake_UINT256 openForExternal_BOOL
 ```
 
 ###### Positional Arguments
 
-`startPeriod_UINT256`
-
-    
-`submissionEndPeriod_UINT256`
-
-    
-`approvalEndPeriod_UINT256`
-
-    
-`requestWithdrawStartPeriod_UINT256`
-
-    
-`endPeriod_UINT256`
-
-    
-`windowRewardAmount_UINT256`
-
-    
-`minStake_UINT256`
-
-    
-`openForExternal_BOOL`
-
-    
-
-###### Named Arguments
-
-`--transact`
-
-    
-
-Invoke contract function as transaction
-
-Default: `'call'`
-
-###### transaction arguments
-
-`--wallet-index`
-
-    
-
-Wallet index of account to use for signing (defaults to
-session.identity.default_wallet_index)
-
-`--yes, -y`
-
-    
-
-Skip interactive confirmation of transaction payload
-
-Default: `False`
-
-`--quiet, -q`
-
-    
-
-Quiet transaction printing
-
-Default: `False`
-
-`--verbose, -v`
-
-    
-
-Verbose transaction printing
-
-Default: `False`
-
-##### submitStake
-
-submitStake function
-
 ```sh
-	snet contract TokenStake submitStake [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeAmount_UINT256 
+Period_UINT256` `submissionEndPeriod_UINT256` `approvalEndPeriod_UINT256` `requestWithdrawStartPeriod_UINT256` `endPeriod_UINT256` `windowRewardAmount_UINT256` `minStake_UINT256` `openForExternal_BOOL` ###### Named Arguments `--transact` Invoke contract function as transaction Default: `'call'` ###### transaction arguments `--wallet-index` Wallet index of account to use for signing (defaults to session.identity.default_wallet_index) `--yes, -y` Skip interactive confirmation of transaction payload Default: `False` `--quiet, -q` Quiet transaction printing Default: `False` `--verbose, -v` Verbose transaction printing Default: `False` ##### submitStake submitStake function start snet contract TokenStake submitStake [-h]
+                                                                          [--transact]
+                                                                          [--wallet-index WALLET_INDEX]
+                                                                          [--yes]
+                                                                          [--quiet | --verbose] stakeAmount_UINT256
 ```
 
 ###### Positional Arguments
@@ -5088,7 +5359,11 @@ Default: `False`
 withdrawStake function
 
 ```sh
-	snet contract TokenStake withdrawStake [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeMapIndex_UINT256 stakeAmount_UINT256 
+snet contract TokenStake withdrawStake [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] stakeMapIndex_UINT256 stakeAmount_UINT256
 ```
 
 ###### Positional Arguments
@@ -5148,7 +5423,11 @@ Default: `False`
 rejectStake function
 
 ```sh
-	snet contract TokenStake rejectStake [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS 
+snet contract TokenStake rejectStake [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -5208,7 +5487,11 @@ Default: `False`
 requestForClaim function
 
 ```sh
-	snet contract TokenStake requestForClaim [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeMapIndex_UINT256 autoRenewal_BOOL 
+snet contract TokenStake requestForClaim [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] stakeMapIndex_UINT256 autoRenewal_BOOL
 ```
 
 ###### Positional Arguments
@@ -5268,7 +5551,11 @@ Default: `False`
 computeAndAddReward function
 
 ```sh
-	snet contract TokenStake computeAndAddReward [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS 
+snet contract TokenStake computeAndAddReward [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -5328,7 +5615,11 @@ Default: `False`
 updateRewards function
 
 ```sh
-	snet contract TokenStake updateRewards [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS 
+snet contract TokenStake updateRewards [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS
 ```
 
 ###### Positional Arguments
@@ -5388,7 +5679,11 @@ Default: `False`
 claimStake function
 
 ```sh
-	snet contract TokenStake claimStake [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeMapIndex_UINT256 
+snet contract TokenStake claimStake [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] stakeMapIndex_UINT256
 ```
 
 ###### Positional Arguments
@@ -5445,85 +5740,21 @@ Default: `False`
 migrateStakeWindow function
 
 ```sh
-	snet contract TokenStake migrateStakeWindow [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] startPeriod_UINT256 submissionEndPeriod_UINT256 approvalEndPeriod_UINT256 requestWithdrawStartPeriod_UINT256 endPeriod_UINT256 windowRewardAmount_UINT256 minStake_UINT256 openForExternal_BOOL 
+snet contract TokenStake migrateStakeWindow [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] startPeriod_UINT256 submissionEndPeriod_UINT256 approvalEndPeriod_UINT256 requestWithdrawStartPeriod_UINT256 endPeriod_UINT256 windowRewardAmount_UINT256 minStake_UINT256 openForExternal_BOOL
 ```
 
 ###### Positional Arguments
 
-`startPeriod_UINT256`
-
-    
-`submissionEndPeriod_UINT256`
-
-    
-`approvalEndPeriod_UINT256`
-
-    
-`requestWithdrawStartPeriod_UINT256`
-
-    
-`endPeriod_UINT256`
-
-    
-`windowRewardAmount_UINT256`
-
-    
-`minStake_UINT256`
-
-    
-`openForExternal_BOOL`
-
-    
-
-###### Named Arguments
-
-`--transact`
-
-    
-
-Invoke contract function as transaction
-
-Default: `'call'`
-
-###### transaction arguments
-
-`--wallet-index`
-
-    
-
-Wallet index of account to use for signing (defaults to
-session.identity.default_wallet_index)
-
-`--yes, -y`
-
-    
-
-Skip interactive confirmation of transaction payload
-
-Default: `False`
-
-`--quiet, -q`
-
-    
-
-Quiet transaction printing
-
-Default: `False`
-
-`--verbose, -v`
-
-    
-
-Verbose transaction printing
-
-Default: `False`
-
-##### migrateStakes
-
-migrateStakes function
-
 ```sh
-	snet contract TokenStake migrateStakes [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS stakeAmount_UINT256 
+Period_UINT256` `submissionEndPeriod_UINT256` `approvalEndPeriod_UINT256` `requestWithdrawStartPeriod_UINT256` `endPeriod_UINT256` `windowRewardAmount_UINT256` `minStake_UINT256` `openForExternal_BOOL` ###### Named Arguments `--transact` Invoke contract function as transaction Default: `'call'` ###### transaction arguments `--wallet-index` Wallet index of account to use for signing (defaults to session.identity.default_wallet_index) `--yes, -y` Skip interactive confirmation of transaction payload Default: `False` `--quiet, -q` Quiet transaction printing Default: `False` `--verbose, -v` Verbose transaction printing Default: `False` ##### migrateStakes migrateStakes function start snet contract TokenStake migrateStakes [-h]
+                                                                          [--transact]
+                                                                          [--wallet-index WALLET_INDEX]
+                                                                          [--yes]
+                                                                          [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS stakeAmount_UINT256
 ```
 
 ###### Positional Arguments
@@ -5586,7 +5817,11 @@ Default: `False`
 getStakeHolders function
 
 ```sh
-	snet contract TokenStake getStakeHolders [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet contract TokenStake getStakeHolders [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 ###### Named Arguments
@@ -5637,7 +5872,11 @@ Default: `False`
 getStakeInfo function
 
 ```sh
-	snet contract TokenStake getStakeInfo [-h] [--transact] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS 
+snet contract TokenStake getStakeInfo [-h]
+                         [--transact]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose] stakeMapIndex_UINT256 staker_ADDRESS
 ```
 
 ###### Positional Arguments

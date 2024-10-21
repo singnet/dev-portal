@@ -1,25 +1,18 @@
 # Account
 
 ```sh
-	usage: snet account [-h] COMMAND ... 
+usage: snet account [-h] COMMAND ...
 ```
 
 ## Commands
 
-`COMMAND`
-
-    
-
-Possible choices: print, balance, deposit, withdraw, transfer
-
-## Sub-commands
-
-### print
+## print
 
 Print the current ETH account
 
 ```sh
-	snet account print [-h] [--wallet-index WALLET_INDEX] 
+snet account print [-h]
+                   [--wallet-index WALLET_INDEX]
 ```
 
 #### optional call arguments
@@ -31,14 +24,16 @@ Print the current ETH account
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### balance
+## balance
 
 Print balance of AGIX tokens and balance of MPE wallet
 
 ```sh
-	snet account balance [-h] [--account ACCOUNT] [--singularitynettoken-at
-SINGULARITYNETTOKEN_AT] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--wallet-
-index WALLET_INDEX] 
+snet account balance [-h]
+                     [--account ACCOUNT]
+                     [--singularitynettoken-at SINGULARITYNETTOKEN_AT]
+                     [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                     [--wallet- index WALLET_INDEX]
 ```
 
 #### Named Arguments
@@ -72,12 +67,17 @@ Address of MultiPartyEscrow contract, if not specified we read address from
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### deposit
+## deposit
 
 Deposit AGIX tokens to MPE wallet
 
 ```sh
-	snet account deposit [-h] [--singularitynettoken-at SINGULARITYNETTOKEN_AT] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] AMOUNT 
+snet account deposit [-h]
+                     [--singularitynettoken-at SINGULARITYNETTOKEN_AT]
+                     [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                     [--wallet-index WALLET_INDEX]
+                     [--yes]
+                     [--quiet | --verbose] AMOUNT
 ```
 
 #### Positional Arguments
@@ -137,12 +137,16 @@ Verbose transaction printing
 
 Default: `False`
 
-### withdraw
+## withdraw
 
 Withdraw AGIX tokens from MPE wallet
 
 ```sh
-	snet account withdraw [-h] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] AMOUNT 
+snet account withdraw [-h]
+                      [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                      [--wallet-index WALLET_INDEX]
+                      [--yes]
+                      [--quiet | --verbose] AMOUNT
 ```
 
 #### Positional Arguments
@@ -195,12 +199,16 @@ Verbose transaction printing
 
 Default: `False`
 
-### transfer
+## transfer
 
 Transfer AGIX tokens inside MPE wallet
 
 ```sh
-	snet account transfer [-h] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] RECEIVER AMOUNT 
+snet account transfer [-h]
+                      [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                      [--wallet-index WALLET_INDEX]
+                      [--yes]
+                      [--quiet | --verbose] RECEIVER AMOUNT
 ```
 
 #### Positional Arguments

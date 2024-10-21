@@ -1,35 +1,30 @@
 # Identity
 
 ```sh
-	usage: snet identity [-h] ACTION ... 
+usage: snet identity [-h] COMMAND ...
 ```
 
-## actions
+## Commands
 
-`ACTION`
-
-    
-
-Possible choices: list, create, delete, andrey
-
-## Sub-commands
-
-### list
+## list
 
 List of identities
 
 ```sh
-	snet identity list [-h] 
+snet identity list [-h]
 ```
 
-### create
+## create
 
 Create a new identity
 
 ```sh
-	snet identity create [-h] [--mnemonic MNEMONIC] [--private-key
-PRIVATE_KEY] [--keystore-path KEYSTORE_PATH] [--network NETWORK] [--wallet-
-index WALLET_INDEX] IDENTITY_NAME IDENTITY_TYPE 
+snet identity create [-h]
+                     [--mnemonic MNEMONIC]
+                     [--private-key PRIVATE_KEY]
+                     [--keystore-path KEYSTORE_PATH]
+                     [--network NETWORK]
+                     [--wallet- index WALLET_INDEX] IDENTITY_NAME IDENTITY_TYPE
 ```
 
 #### Positional Arguments
@@ -84,12 +79,12 @@ Default wallet index for this account (default is 0)
 
 Default: `0`
 
-### delete
+## delete
 
 Delete an identity
 
 ```sh
-	snet identity delete [-h] IDENTITY_NAME 
+snet identity delete [-h] IDENTITY_NAME
 ```
 
 #### Positional Arguments
@@ -102,11 +97,11 @@ Possible choices: andrey
 
 Name of identity to delete from [‘andrey’]
 
-### andrey
+## andrey
 
 Switch to andrey identity
 
 ```sh
-	snet identity andrey [-h] 
+snet identity andrey [-h]
 ```
 

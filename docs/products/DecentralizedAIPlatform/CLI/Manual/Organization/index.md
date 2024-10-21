@@ -1,31 +1,19 @@
 # Organization
 
 ```sh
-	usage: snet organization [-h] COMMAND ... 
+usage: snet organization [-h] COMMAND ...
 ```
 
-## Organization commands
+## Commands
 
-`COMMAND`
-
-    
-
-Possible choices: metadata-init, print-metadata, add-group, update-group,
-metadata-add-description, metadata-add-assets, metadata-remove-assets,
-metadata-remove-all-assets, metadata-add-contact, metadata-remove-all-
-contacts, metadata-remove-contacts, list, list-org-names, list-my, list-
-services, info, create, update-metadata, change-owner, add-members, rem-
-members, delete
-
-## Sub-commands
-
-### metadata-init
+## metadata-init
 
 Initialize metadata for organization
 
 ```sh
-	snet organization metadata-init [-h] [--registry-at REGISTRY_AT]
-[--metadata-file METADATA_FILE] ORG_NAME ORG_ID ORG_TYPE 
+snet organization metadata-init [-h]
+                                [--registry-at REGISTRY_AT]
+                                [--metadata-file METADATA_FILE] ORG_NAME ORG_ID ORG_TYPE
 ```
 
 #### Positional Arguments
@@ -66,12 +54,12 @@ Service metadata json file (default organization_metadata.json)
 
 Default: `'organization_metadata.json'`
 
-### print-metadata
+## print-metadata
 
 Print metadata for given organization
 
 ```sh
-	snet organization print-metadata [-h] org_id 
+snet organization print-metadata [-h] org_id
 ```
 
 #### Positional Arguments
@@ -82,17 +70,18 @@ Print metadata for given organization
 
 Organization Id
 
-### add-group
+## add-group
 
 Add group to organization
 
 ```sh
-	snet organization add-group [-h] [--payment-expiration-threshold
-PAYMENT_EXPIRATION_THRESHOLD] [--payment-channel-storage-type
-PAYMENT_CHANNEL_STORAGE_TYPE] [--payment-channel-connection-timeout
-PAYMENT_CHANNEL_CONNECTION_TIMEOUT] [--payment-channel-request-timeout
-PAYMENT_CHANNEL_REQUEST_TIMEOUT] [--metadata-file METADATA_FILE] [--registry-
-at REGISTRY_AT] group_name payment_address [endpoints ...] 
+snet organization add-group [-h]
+                            [--payment-expiration-threshold PAYMENT_EXPIRATION_THRESHOLD]
+                            [--payment-channel-storage-type PAYMENT_CHANNEL_STORAGE_TYPE]
+                            [--payment-channel-connection-timeout PAYMENT_CHANNEL_CONNECTION_TIMEOUT]
+                            [--payment-channel-request-timeout PAYMENT_CHANNEL_REQUEST_TIMEOUT]
+                            [--metadata-file METADATA_FILE]
+                            [--registry- at REGISTRY_AT] group_name payment_address [endpoints ...]
 ```
 
 #### Positional Arguments
@@ -163,18 +152,20 @@ Default: `'organization_metadata.json'`
 
 Address of Registry contract, if not specified we read address from “networks”
 
-### update-group
+## update-group
 
 Update group of organization
 
 ```sh
-	snet organization update-group [-h] [--payment-address PAYMENT_ADDRESS]
-[--endpoints [ENDPOINTS ...]] [--payment-expiration-threshold
-PAYMENT_EXPIRATION_THRESHOLD] [--payment-channel-storage-type
-PAYMENT_CHANNEL_STORAGE_TYPE] [--payment-channel-connection-timeout
-PAYMENT_CHANNEL_CONNECTION_TIMEOUT] [--payment-channel-request-timeout
-PAYMENT_CHANNEL_REQUEST_TIMEOUT] [--metadata-file METADATA_FILE] [--registry-
-at REGISTRY_AT] group_id 
+snet organization update-group [-h]
+                               [--payment-address PAYMENT_ADDRESS]
+                               [--endpoints [ENDPOINTS ...]]
+                               [--payment-expiration-threshold PAYMENT_EXPIRATION_THRESHOLD]
+                               [--payment-channel-storage-type PAYMENT_CHANNEL_STORAGE_TYPE]
+                               [--payment-channel-connection-timeout PAYMENT_CHANNEL_CONNECTION_TIMEOUT]
+                               [--payment-channel-request-timeout PAYMENT_CHANNEL_REQUEST_TIMEOUT]
+                               [--metadata-file METADATA_FILE]
+                               [--registry- at REGISTRY_AT] group_id
 ```
 
 #### Positional Arguments
@@ -237,14 +228,16 @@ Default: `'organization_metadata.json'`
 
 Address of Registry contract, if not specified we read address from “networks”
 
-### metadata-add-description
+## metadata-add-description
 
 Add description to metadata
 
 ```sh
-	snet organization metadata-add-description [-h] [--description
-DESCRIPTION] [--short-description SHORT_DESCRIPTION] [--url URL] [--metadata-
-file METADATA_FILE] 
+snet organization metadata-add-description [-h]
+                                           [--description DESCRIPTION]
+                                           [--short-description SHORT_DESCRIPTION]
+                                           [--url URL]
+                                           [--metadata- file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -275,13 +268,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'organization_metadata.json'`
 
-### metadata-add-assets
+## metadata-add-assets
 
 Add assets to metadata, valid asset types are [hero_image]
 
 ```sh
-	snet organization metadata-add-assets [-h] [--metadata-file
-METADATA_FILE] ASSET_FILE_PATH ASSET_TYPE 
+snet organization metadata-add-assets [-h]
+                                      [--metadata-file METADATA_FILE] ASSET_FILE_PATH ASSET_TYPE
 ```
 
 #### Positional Arguments
@@ -308,13 +301,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'organization_metadata.json'`
 
-### metadata-remove-assets
+## metadata-remove-assets
 
 Remove asset of a given type valid asset types are [hero_image]
 
 ```sh
-	snet organization metadata-remove-assets [-h] [--metadata-file
-METADATA_FILE] ASSET_TYPE 
+snet organization metadata-remove-assets [-h]
+                                         [--metadata-file METADATA_FILE] ASSET_TYPE
 ```
 
 #### Positional Arguments
@@ -335,13 +328,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'organization_metadata.json'`
 
-### metadata-remove-all-assets
+## metadata-remove-all-assets
 
 Remove all assets from metadata
 
 ```sh
-	snet organization metadata-remove-all-assets [-h] [--metadata-file
-METADATA_FILE] 
+snet organization metadata-remove-all-assets [-h]
+                                             [--metadata-file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -354,13 +347,15 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'organization_metadata.json'`
 
-### metadata-add-contact
+## metadata-add-contact
 
 Add contact in organization metadata
 
 ```sh
-	snet organization metadata-add-contact [-h] [--phone PHONE] [--email
-EMAIL] [--metadata-file METADATA_FILE] contact_type 
+snet organization metadata-add-contact [-h]
+                                       [--phone PHONE]
+                                       [--email EMAIL]
+                                       [--metadata-file METADATA_FILE] contact_type
 ```
 
 #### Positional Arguments
@@ -393,13 +388,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'organization_metadata.json'`
 
-### metadata-remove-all-contacts
+## metadata-remove-all-contacts
 
 Remove all contacts
 
 ```sh
-	snet organization metadata-remove-all-contacts [-h] [--metadata-file
-METADATA_FILE] 
+snet organization metadata-remove-all-contacts [-h]
+                                               [--metadata-file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -412,13 +407,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'organization_metadata.json'`
 
-### metadata-remove-contacts
+## metadata-remove-contacts
 
 Remove all contacts
 
 ```sh
-	snet organization metadata-remove-contacts [-h] [--metadata-file
-METADATA_FILE] CONTACT_TYPE 
+snet organization metadata-remove-contacts [-h]
+                                           [--metadata-file METADATA_FILE] CONTACT_TYPE
 ```
 
 #### Positional Arguments
@@ -439,13 +434,14 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'organization_metadata.json'`
 
-### list
+## list
 
 List of Organizations Ids
 
 ```sh
-	snet organization list [-h] [--registry-at REGISTRY_ADDRESS] [--wallet-
-index WALLET_INDEX] 
+snet organization list [-h]
+                       [--registry-at REGISTRY_ADDRESS]
+                       [--wallet- index WALLET_INDEX]
 ```
 
 #### contract identity arguments
@@ -465,13 +461,14 @@ registry contract address (defaults to session.current_registry_at)
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### list-org-names
+## list-org-names
 
 List Organizations Names and Ids
 
 ```sh
-	snet organization list-org-names [-h] [--registry-at REGISTRY_ADDRESS]
-[--wallet-index WALLET_INDEX] 
+snet organization list-org-names [-h]
+                                 [--registry-at REGISTRY_ADDRESS]
+                                 [--wallet-index WALLET_INDEX]
 ```
 
 #### contract identity arguments
@@ -491,13 +488,14 @@ registry contract address (defaults to session.current_registry_at)
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### list-my
+## list-my
 
 Print organization which has the current identity as the owner or as a member
 
 ```sh
-	snet organization list-my [-h] [--registry-at REGISTRY_ADDRESS]
-[--wallet-index WALLET_INDEX] 
+snet organization list-my [-h]
+                          [--registry-at REGISTRY_ADDRESS]
+                          [--wallet-index WALLET_INDEX]
 ```
 
 #### contract identity arguments
@@ -517,13 +515,14 @@ registry contract address (defaults to session.current_registry_at)
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### list-services
+## list-services
 
 List Organization’s services
 
 ```sh
-	snet organization list-services [-h] [--registry-at REGISTRY_ADDRESS]
-[--wallet-index WALLET_INDEX] ORG_ID 
+snet organization list-services [-h]
+                                [--registry-at REGISTRY_ADDRESS]
+                                [--wallet-index WALLET_INDEX] ORG_ID
 ```
 
 #### Positional Arguments
@@ -551,13 +550,14 @@ registry contract address (defaults to session.current_registry_at)
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### info
+## info
 
 Organization’s Information
 
 ```sh
-	snet organization info [-h] [--registry-at REGISTRY_ADDRESS] [--wallet-
-index WALLET_INDEX] ORG_ID 
+snet organization info [-h]
+                       [--registry-at REGISTRY_ADDRESS]
+                       [--wallet- index WALLET_INDEX] ORG_ID
 ```
 
 #### Positional Arguments
@@ -585,12 +585,19 @@ registry contract address (defaults to session.current_registry_at)
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### create
+## create
 
 Create an Organization
 
 ```sh
-	snet organization create [-h] [--metadata-file METADATA_FILE] [--members ORG_MEMBERS] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] [--registry-at REGISTRY_ADDRESS] [--storage {ipfs,filecoin}] ORG_ID 
+snet organization create [-h]
+                         [--metadata-file METADATA_FILE]
+                         [--members ORG_MEMBERS]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
+                         [--registry-at REGISTRY_ADDRESS]
+                         [--storage {ipfs,filecoin}] ORG_ID
 ```
 
 #### Positional Arguments
@@ -668,12 +675,19 @@ Default: `False`
 
 registry contract address (defaults to session.current_registry_at)
 
-### update-metadata
+## update-metadata
 
 Update metadata for an Organization
 
 ```sh
-	snet organization update-metadata [-h] [--metadata-file METADATA_FILE] [--members ORG_MEMBERS] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] [--registry-at REGISTRY_ADDRESS] [--storage {ipfs,filecoin}] ORG_ID 
+snet organization update-metadata [-h]
+                                  [--metadata-file METADATA_FILE]
+                                  [--members ORG_MEMBERS]
+                                  [--wallet-index WALLET_INDEX]
+                                  [--yes]
+                                  [--quiet | --verbose]
+                                  [--registry-at REGISTRY_ADDRESS]
+                                  [--storage {ipfs,filecoin}] ORG_ID
 ```
 
 #### Positional Arguments
@@ -751,12 +765,16 @@ Default: `False`
 
 registry contract address (defaults to session.current_registry_at)
 
-### change-owner
+## change-owner
 
 Change Organization’s owner
 
 ```sh
-	snet organization change-owner [-h] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] [--registry-at REGISTRY_ADDRESS] ORG_ID OWNER_ADDRESS 
+snet organization change-owner [-h]
+                               [--wallet-index WALLET_INDEX]
+                               [--yes]
+                               [--quiet | --verbose]
+                               [--registry-at REGISTRY_ADDRESS] ORG_ID OWNER_ADDRESS
 ```
 
 #### Positional Arguments
@@ -814,12 +832,16 @@ Default: `False`
 
 registry contract address (defaults to session.current_registry_at)
 
-### add-members
+## add-members
 
 Add members to Organization
 
 ```sh
-	snet organization add-members [-h] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] [--registry-at REGISTRY_ADDRESS] ORG_ID ORG_MEMBERS 
+snet organization add-members [-h]
+                              [--wallet-index WALLET_INDEX]
+                              [--yes]
+                              [--quiet | --verbose]
+                              [--registry-at REGISTRY_ADDRESS] ORG_ID ORG_MEMBERS
 ```
 
 #### Positional Arguments
@@ -877,12 +899,16 @@ Default: `False`
 
 registry contract address (defaults to session.current_registry_at)
 
-### rem-members
+## rem-members
 
 Remove members from Organization
 
 ```sh
-	snet organization rem-members [-h] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] [--registry-at REGISTRY_ADDRESS] ORG_ID ORG_MEMBERS 
+snet organization rem-members [-h]
+                              [--wallet-index WALLET_INDEX]
+                              [--yes]
+                              [--quiet | --verbose]
+                              [--registry-at REGISTRY_ADDRESS] ORG_ID ORG_MEMBERS
 ```
 
 #### Positional Arguments
@@ -940,12 +966,16 @@ Default: `False`
 
 registry contract address (defaults to session.current_registry_at)
 
-### delete
+## delete
 
 Delete an Organization
 
 ```sh
-	snet organization delete [-h] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] [--registry-at REGISTRY_ADDRESS] ORG_ID 
+snet organization delete [-h]
+                         [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
+                         [--registry-at REGISTRY_ADDRESS] ORG_ID
 ```
 
 #### Positional Arguments

@@ -1,30 +1,28 @@
 # Client
 
 ```sh
-	usage: snet client [-h] COMMAND ... 
+usage: snet client [-h] COMMAND ...
 ```
 
 ## Commands
 
-`COMMAND`
-
-    
-
-Possible choices: call, call-lowlevel, get-channel-state
-
-## Sub-commands
-
-### call
+## call
 
 Call server. We ask state of the channel from the server if needed. Channel
 should be already initialized.
 
 ```sh
-	snet client call [-h] [--service SERVICE] [--wallet-index WALLET_INDEX]
-                          [--multipartyescrow-at MULTIPARTYESCROW_AT] [--save-response FILENAME]
-                          [--save-field SAVE_FIELD SAVE_FIELD] [--endpoint ENDPOINT] [--channel-id
-                          CHANNEL_ID] [--from-block FROM_BLOCK] [--yes] [--skip-update-check] ORG_ID
-                          SERVICE_ID group_name METHOD [PARAMS] 
+snet client call [-h]
+                 [--service SERVICE]
+                 [--wallet-index WALLET_INDEX]
+                 [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                 [--save-response FILENAME]
+                 [--save-field SAVE_FIELD SAVE_FIELD]
+                 [--endpoint ENDPOINT]
+                 [--channel-id CHANNEL_ID]
+                 [--from-block FROM_BLOCK]
+                 [--yes]
+                 [--skip-update-check] ORG_ID SERVICE_ID group_name METHOD [PARAMS]
 ```
 
 #### Positional Arguments
@@ -136,16 +134,19 @@ Default: `False`
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### call-lowlevel
+## call-lowlevel
 
 Low level function for calling the server. Service should be already
 initialized.
 
 ```sh
-	snet client call-lowlevel [-h] [--service SERVICE] [--wallet-index
-WALLET_INDEX] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--save-response
-FILENAME] [--save-field SAVE_FIELD SAVE_FIELD] [--endpoint ENDPOINT] ORG_ID
-SERVICE_ID group_name CHANNEL_ID NONCE AMOUNT_IN_COGS METHOD [PARAMS] 
+snet client call-lowlevel [-h]
+                          [--service SERVICE]
+                          [--wallet-index WALLET_INDEX]
+                          [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                          [--save-response FILENAME]
+                          [--save-field SAVE_FIELD SAVE_FIELD]
+                          [--endpoint ENDPOINT] ORG_ID SERVICE_ID group_name CHANNEL_ID NONCE AMOUNT_IN_COGS METHOD [PARAMS]
 ```
 
 #### Positional Arguments
@@ -244,13 +245,14 @@ Service endpoint (by default we read it from metadata)
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### get-channel-state
+## get-channel-state
 
 Get channel state in stateless manner
 
 ```sh
-	snet client get-channel-state [-h] [--multipartyescrow-at
-MULTIPARTYESCROW_AT] [--wallet-index WALLET_INDEX] CHANNEL_ID ENDPOINT 
+snet client get-channel-state [-h]
+                              [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                              [--wallet-index WALLET_INDEX] CHANNEL_ID ENDPOINT
 ```
 
 #### Positional Arguments

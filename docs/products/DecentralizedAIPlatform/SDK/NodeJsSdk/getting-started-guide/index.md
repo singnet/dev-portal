@@ -1,0 +1,220 @@
+# Node.js SDK
+
+SingularityNET SDK for Node.js
+
+## Package
+
+| Package                                      | Description                                               |
+|----------------------------------------------|-----------------------------------------------------------|
+| [snet-sdk](https://www.npmjs.com/package/snet-sdk) | Integrate SingularityNET services seamlessly into Node.js applications |
+
+
+### Core concepts
+The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
+To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
+To handle payment of services, SingularityNET uses [Ethereum state channels](https://dev.singularitynet.io/docs/ai-consumers/mpe/).
+The SingularityNET SDK abstracts and manages state channels with service providers
+on behalf of the user and handles authentication with the SingularityNET services.
+
+## Getting Started
+
+### Step 1. Prerequisites
+
+To work with the `snet-sdk` on the Node.js platform, ensure that you have the following versions installed:
+
+- **Node.js** version 18 or higher.
+- **npm** version 8 or higher.
+
+Check the installed versions with the following commands:
+
+```bash
+node -v
+npm -v
+```
+
+### Step 2. Install the SDK
+
+Install the SDK using npm:
+
+```bash
+npm install snet-sdk
+```
+
+### Step 3. Configuration Setup
+
+Create a configuration file (e.g., `config.js`) to store your SingularityNET SDK settings. Below is a sample configuration setup:
+
+```json
+{
+  "web3Provider": "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID",
+  "privateKey": "0xYOUR_PRIVATE_KEY",
+  "networkId": "1",
+  "ipfsEndpoint": "https://ipfs.singularitynet.io",
+  "defaultGasPrice": "4700000",
+  "defaultGasLimit": "210000"
+}
+```
+
+#### Explanation of Configuration Keys:
+
+- **web3Provider**: URL of the Web3 provider to interact with the Ethereum network.
+- **privateKey**: Private key of your Ethereum account for signing transactions.
+- **networkId**: Ethereum network ID (e.g., `1` for Mainnet, `11155111` for Sepolia).
+- **ipfsEndpoint**: SingularityNET’s IPFS node endpoint.
+- **defaultGasPrice**: Gas price for transactions (in wei).
+- **defaultGasLimit**: Gas limit for transactions.
+
+Make sure to replace the placeholder values with your actual credentials and network information.
+
+Now, the instance of the sdk can be used to instantiate clients for SingularityNET services.
+To interact with those services, the sdk needs to be supplied with the compiled gRPC client libraries.
+
+### Step 4. Generate gRPC Client Libraries
+
+To interact with specific SingularityNET services, you need to generate gRPC client libraries using the SingularityNET CLI.
+
+#### Install the CLI via pip:
+
+```bash
+pip install snet-cli
+```
+
+For more detailed instructions, refer to the [SingularityNET CLI documentation](https://github.com/singnet/snet-cli#installing-with-pip).
+
+#### Generate the gRPC Client Library:
+
+Use the CLI to generate the gRPC client library for the service you want to use. Replace `<org_id>` and `<service_id>` with the appropriate organization and service identifiers.
+
+```bash
+snet sdk generate-client-library nodejs <org_id> <service_id>
+```
+
+The generated client libraries will be located in the directory `./client_libraries/nodejs/<hash>/<org_id>/<service_id>` unless you specify a different output path.
+
+Once you have the generated gRPC client libraries, you can create an instance of a SingularityNET service client.
+
+### Step 5. Call a service
+
+After setting up the configuration and generating the necessary gRPC client libraries, you can start using the SDK in your application:
+
+#### Import and Initialize the SDK: use the configuration file to initialize an SDK instance.
+
+```javascript
+import SnetSDK from 'snet-sdk';
+import config from './config'; // Path to your config file
+
+const sdk = new SnetSDK(config);
+```
+
+#### Create a Service Client: use the generated gRPC client libraries to create a service client instance.
+
+```javascript
+const SnetSDK = require('snet-sdk');
+const config = require('./config'); // Adjust path as necessary
+const grpc = require('./path_to_generated_grpc_js_file'); // Adjust path as necessary
+
+const sdk = new SnetSDK.default(config);
+const client = await sdk.createServiceClient("<org_id>", "<service_id>", grpc.<ClientStub>);
+```
+
+
+#### Make Service Calls: use the service client to make calls to the SingularityNET service.
+
+```javascript
+const methodDescriptor = grpc.<ServiceStub>.<methodName>;
+const request = new methodDescriptor.requestType();
+request.<serviceSetMethod>("<message>");
+
+client.service.<methodName>(request, (err, result) => {
+    if (err) {
+        console.error("GRPC call failed", err);
+    } else {
+        console.log("Result:", result.toString());
+    }
+});
+```
+
+#### Example code for calling a service:
+
+Here’s a complete example demonstrating how to call a service method:
+
+```javascript
+const SnetSDK = require('snet-sdk');
+const config = require('./config');  // Path to the configuration file
+const grpc = require('./path_to_generated_grpc_js_file');  // Path to the generated libraries
+
+async function callService() {
+    const sdk = new SnetSDK.default(config);
+    const client = await sdk.createServiceClient("<org_id>", "<service_id>", grpc.<ClientStub>);
+    
+    const methodDescriptor = grpc.<ServiceStub>.<methodName>;
+    const request = new methodDescriptor.requestType();
+    request.<serviceSetMethod>("<message>");
+    
+    client.service.<methodName>(request, (err, result) => {
+        if (err) {
+            console.error("GRPC call failed", err);
+        } else {
+            console.log("Result:", result.toString());
+        }
+    });
+}
+
+callService();
+```
+
+Replace `<org_id>`, `<service_id>`, `<methodName>`, `<serviceSetMethod>`, and `<message>` with the appropriate values for your service.
+
+## Concurrency Support and Advanced Features
+
+### Concurrency
+
+SDK exposes two methods to facilitate concurrent service calls.
+
+- `getConcurrencyTokenAndChannelId`
+- `setConcurrencyTokenAndChannelId`
+
+In the consumer, you should call the `getConcurrencyTokenAndChannelId()` in the master thread.
+It will return the concurrency token and the channel id. Pass both of them to worker threads and the set the same in the respective instances using `setConcurrencyTokenAndChannelId`.
+
+SDK also exposes the class `DefaultPaymentStrategy` to handle the payment metadata for concurrent calls. Initialize the `DefaultPaymentStrategy` with the number of calls you would want to run concurrently.
+
+#### Example of making concurrent service calls:
+
+```javascript
+import SnetSDK, { DefaultPaymentStrategy } from "snet-sdk";
+import cluster from "cluster";
+
+const sdk = new SnetSDK(config);
+
+const main = async () => {
+    const paymentStrategy = new DefaultPaymentStrategy(4);
+    const serviceClient = await sdk.createServiceClient("<org_id>", "<service_id>", grpc.<ClientStub>, "default_group", paymentStrategy);
+    
+    if (cluster.isMaster) {
+        const { concurrencyToken, channelId } = await serviceClient.getConcurrencyTokenAndChannelId();
+        const worker = cluster.fork();
+        worker.on("message", message => {
+            worker.send({ concurrencyToken, channelId });
+        });
+    } else {
+        process.on("message", async (message) => {
+            serviceClient.setConcurrencyTokenAndChannelId(message.concurrencyToken, message.channelId);
+            const request = new grpc.<ClientStub>.requestType();
+            request.setA(6);
+            request.setB(7);
+            serviceClient.service.mul(request, (err, result) => {
+                if (err) {
+                    console.error("Service failed with error", err);
+                } else {
+                    console.log("Service response:", result);
+                }
+            });
+        });
+    }
+};
+
+main();
+```
+
+This example shows how to manage concurrency using the SingularityNET SDK in Node.js.

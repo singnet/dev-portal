@@ -3,7 +3,7 @@
 SingularityNET CLI
 
 ```sh
-	usage: snet [-h] [--print-traceback] COMMAND ... 
+usage: snet [-h] [--print-traceback] COMMAND ...
 ```
 
 ## Named Arguments

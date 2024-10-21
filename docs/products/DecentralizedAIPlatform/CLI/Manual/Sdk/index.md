@@ -1,27 +1,20 @@
 # Sdk
 
 ```sh
-	usage: snet sdk [-h] COMMAND ... 
+usage: snet sdk [-h] COMMAND ...
 ```
 
 ## Commands
 
-`COMMAND`
-
-    
-
-Possible choices: generate-client-library
-
-## Sub-commands
-
-### generate-client-library
+## generate-client-library
 
 Generate compiled client libraries to call services using your language of
 choice
 
 ```sh
-	snet sdk generate-client-library [-h] [--registry-at REGISTRY_AT]
-[--wallet-index WALLET_INDEX] LANGUAGE ORG_ID SERVICE_ID [PROTO_DIR] 
+snet sdk generate-client-library [-h]
+                                 [--registry-at REGISTRY_AT]
+                                 [--wallet-index WALLET_INDEX] LANGUAGE ORG_ID SERVICE_ID [PROTO_DIR]
 ```
 
 #### Positional Arguments

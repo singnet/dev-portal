@@ -1,38 +1,18 @@
 # Service
 
 ```sh
-	usage: snet service [-h] COMMAND ... 
+usage: snet service [-h] COMMAND ...
 ```
 
 ## Commands
 
-`COMMAND`
-
-    
-
-Possible choices: metadata-init-utility, metadata-init, metadata-set-api,
-metadata-set-fixed-price, metadata-set-method-price, metadata-add-group,
-metadata-remove-group, metadata-add-daemon-addresses, metadata-remove-all-
-daemon-addresses, metadata-update-daemon-addresses, metadata-add-endpoints,
-metadata-remove-all-endpoints, metadata-set-free-calls, metadata-set-freecall-
-signer-address, metadata-add-assets, metadata-remove-assets, metadata-remove-
-all-assets, metadata-add-media, metadata-remove-media, metadata-remove-all-
-media, metadata-swap-media-order, metadata-change-media-order, metadata-
-update-endpoints, metadata-add-description, metadata-add-contributor,
-metadata-remove-contributor, validate-metadata, publish, publish-in-ipfs,
-publish-in-filecoin, update-metadata, update-add-tags, update-remove-tags,
-print-metadata, metadata-add-tags, metadata-remove-tags, print-service-status,
-print-tags, get-api-metadata, get-api-registry, delete
-
-## Sub-commands
-
-### metadata-init-utility
+## metadata-init-utility
 
 Utility to create service metadata file
 
 ```sh
-	snet service metadata-init-utility [-h] [--metadata-file METADATA_FILE]
-
+snet service metadata-init-utility [-h]
+                                   [--metadata-file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -45,18 +25,22 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-init
+## metadata-init
 
 Init metadata file with providing protobuf directory (which we publish in IPFS
 or FileCoin) and display_name (optionally encoding, service_type and
 payment_expiration_threshold)
 
 ```sh
-	snet service metadata-init [-h] [--metadata-file METADATA_FILE]
-[--multipartyescrow-at MULTIPARTYESCROW_AT] [--group-name GROUP_NAME]
-[--endpoints [ENDPOINTS ...]] [--fixed-price FIXED_PRICE] [--encoding
-{proto,json}] [--service-type {grpc,http,jsonrpc,process}] [--storage
-{ipfs,filecoin}] PROTO_DIR DISPLAY_NAME 
+snet service metadata-init [-h]
+                           [--metadata-file METADATA_FILE]
+                           [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                           [--group-name GROUP_NAME]
+                           [--endpoints [ENDPOINTS ...]]
+                           [--fixed-price FIXED_PRICE]
+                           [--encoding {proto,json}]
+                           [--service-type {grpc,http,jsonrpc,process}]
+                           [--storage {ipfs,filecoin}] PROTO_DIR DISPLAY_NAME
 ```
 
 #### Positional Arguments
@@ -140,13 +124,14 @@ Choose storage for uploading metadata/protobuf file (defaults to ‘ipfs’)
 
 Default: `'ipfs'`
 
-### metadata-set-api
+## metadata-set-api
 
 Publish protobuf model in ipfs or filecoin and update existed metadata file
 
 ```sh
-	snet service metadata-set-api [-h] [--metadata-file METADATA_FILE]
-[--storage {ipfs,filecoin}] PROTO_DIR 
+snet service metadata-set-api [-h]
+                              [--metadata-file METADATA_FILE]
+                              [--storage {ipfs,filecoin}] PROTO_DIR
 ```
 
 #### Positional Arguments
@@ -177,13 +162,13 @@ Choose storage for uploading metadata/protobuf file (defaults to ‘ipfs’)
 
 Default: `'ipfs'`
 
-### metadata-set-fixed-price
+## metadata-set-fixed-price
 
 Set pricing model as fixed price for all methods
 
 ```sh
-	snet service metadata-set-fixed-price [-h] [--metadata-file
-METADATA_FILE] group_name PRICE 
+snet service metadata-set-fixed-price [-h]
+                                      [--metadata-file METADATA_FILE] group_name PRICE
 ```
 
 #### Positional Arguments
@@ -210,13 +195,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-set-method-price
+## metadata-set-method-price
 
 Set pricing model as method price for all methods
 
 ```sh
-	snet service metadata-set-method-price [-h] [--metadata-file
-METADATA_FILE] group_name package_name service_name method PRICE 
+snet service metadata-set-method-price [-h]
+                                       [--metadata-file METADATA_FILE] group_name package_name service_name method PRICE
 ```
 
 #### Positional Arguments
@@ -261,13 +246,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-add-group
+## metadata-add-group
 
 Add new group of replicas
 
 ```sh
-	snet service metadata-add-group [-h] [--metadata-file METADATA_FILE]
-GROUP_NAME 
+snet service metadata-add-group [-h]
+                                [--metadata-file METADATA_FILE] GROUP_NAME
 ```
 
 #### Positional Arguments
@@ -288,13 +273,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-group
+## metadata-remove-group
 
 remove group from service
 
 ```sh
-	snet service metadata-remove-group [-h] [--metadata-file METADATA_FILE]
-GROUP_NAME 
+snet service metadata-remove-group [-h]
+                                   [--metadata-file METADATA_FILE] GROUP_NAME
 ```
 
 #### Positional Arguments
@@ -315,13 +300,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-add-daemon-addresses
+## metadata-add-daemon-addresses
 
 add Ethereum public addresses of daemon in given payment group of service
 
 ```sh
-	snet service metadata-add-daemon-addresses [-h] [--metadata-file
-METADATA_FILE] group_name DAEMON ADDRESSES [DAEMON ADDRESSES ...] 
+snet service metadata-add-daemon-addresses [-h]
+                                           [--metadata-file METADATA_FILE] group_name DAEMON ADDRESSES [DAEMON ADDRESSES ...]
 ```
 
 #### Positional Arguments
@@ -348,13 +333,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-all-daemon-addresses
+## metadata-remove-all-daemon-addresses
 
 Remove all daemon addresses from metadata
 
 ```sh
-	snet service metadata-remove-all-daemon-addresses [-h] [--metadata-file
-METADATA_FILE] group_name 
+snet service metadata-remove-all-daemon-addresses [-h]
+                                                  [--metadata-file METADATA_FILE] group_name
 ```
 
 #### Positional Arguments
@@ -375,13 +360,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-update-daemon-addresses
+## metadata-update-daemon-addresses
 
 Update daemon addresses to the groups
 
 ```sh
-	snet service metadata-update-daemon-addresses [-h] [--metadata-file
-METADATA_FILE] group_name DAEMON ADDRESSES [DAEMON ADDRESSES ...] 
+snet service metadata-update-daemon-addresses [-h]
+                                              [--metadata-file METADATA_FILE] group_name DAEMON ADDRESSES [DAEMON ADDRESSES ...]
 ```
 
 #### Positional Arguments
@@ -408,13 +393,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-add-endpoints
+## metadata-add-endpoints
 
 Add daemon endpoints to the groups
 
 ```sh
-	snet service metadata-add-endpoints [-h] [--metadata-file METADATA_FILE]
-group_name ENDPOINTS [ENDPOINTS ...] 
+snet service metadata-add-endpoints [-h]
+                                    [--metadata-file METADATA_FILE] group_name ENDPOINTS [ENDPOINTS ...]
 ```
 
 #### Positional Arguments
@@ -441,13 +426,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-all-endpoints
+## metadata-remove-all-endpoints
 
 Remove all endpoints from metadata
 
 ```sh
-	snet service metadata-remove-all-endpoints [-h] [--metadata-file
-METADATA_FILE] group_name 
+snet service metadata-remove-all-endpoints [-h]
+                                           [--metadata-file METADATA_FILE] group_name
 ```
 
 #### Positional Arguments
@@ -468,13 +453,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-set-free-calls
+## metadata-set-free-calls
 
 Set free calls for group for service
 
 ```sh
-	snet service metadata-set-free-calls [-h] [--metadata-file
-METADATA_FILE] GROUP_NAME free_calls 
+snet service metadata-set-free-calls [-h]
+                                     [--metadata-file METADATA_FILE] GROUP_NAME free_calls
 ```
 
 #### Positional Arguments
@@ -503,13 +488,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-set-freecall-signer-address
+## metadata-set-freecall-signer-address
 
 Set free calls for group for service
 
 ```sh
-	snet service metadata-set-freecall-signer-address [-h] [--metadata-file
-METADATA_FILE] GROUP_NAME signer_address 
+snet service metadata-set-freecall-signer-address [-h]
+                                                  [--metadata-file METADATA_FILE] GROUP_NAME signer_address
 ```
 
 #### Positional Arguments
@@ -537,13 +522,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-add-assets
+## metadata-add-assets
 
 Add assets to metadata, valid asset types are [hero_image,images]
 
 ```sh
-	snet service metadata-add-assets [-h] [--metadata-file METADATA_FILE]
-asset_file_path asset_type 
+snet service metadata-add-assets [-h]
+                                 [--metadata-file METADATA_FILE] asset_file_path asset_type
 ```
 
 #### Positional Arguments
@@ -570,13 +555,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-assets
+## metadata-remove-assets
 
 Remove asset of a given type valid asset types are [hero_image,images]
 
 ```sh
-	snet service metadata-remove-assets [-h] [--metadata-file METADATA_FILE]
-asset_type 
+snet service metadata-remove-assets [-h]
+                                    [--metadata-file METADATA_FILE] asset_type
 ```
 
 #### Positional Arguments
@@ -597,13 +582,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-all-assets
+## metadata-remove-all-assets
 
 Remove all assets from metadata
 
 ```sh
-	snet service metadata-remove-all-assets [-h] [--metadata-file
-METADATA_FILE] 
+snet service metadata-remove-all-assets [-h]
+                                        [--metadata-file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -616,13 +601,14 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-add-media
+## metadata-add-media
 
 Add media to metadata
 
 ```sh
-	snet service metadata-add-media [-h] [--hero_image] [--metadata-file
-METADATA_FILE] MEDIA_URL 
+snet service metadata-add-media [-h]
+                                [--hero_image]
+                                [--metadata-file METADATA_FILE] MEDIA_URL
 ```
 
 #### Positional Arguments
@@ -651,13 +637,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-media
+## metadata-remove-media
 
 Remove media of asset type
 
 ```sh
-	snet service metadata-remove-media [-h] [--metadata-file METADATA_FILE]
-ORDER 
+snet service metadata-remove-media [-h]
+                                   [--metadata-file METADATA_FILE] ORDER
 ```
 
 #### Positional Arguments
@@ -678,13 +664,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-all-media
+## metadata-remove-all-media
 
 Remove all existing media
 
 ```sh
-	snet service metadata-remove-all-media [-h] [--metadata-file
-METADATA_FILE] 
+snet service metadata-remove-all-media [-h]
+                                       [--metadata-file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -697,13 +683,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-swap-media-order
+## metadata-swap-media-order
 
 Swap media order
 
 ```sh
-	snet service metadata-swap-media-order [-h] [--metadata-file
-METADATA_FILE] FROM TO 
+snet service metadata-swap-media-order [-h]
+                                       [--metadata-file METADATA_FILE] FROM TO
 ```
 
 #### Positional Arguments
@@ -730,13 +716,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-change-media-order
+## metadata-change-media-order
 
 Reassign all individual media order
 
 ```sh
-	snet service metadata-change-media-order [-h] [--metadata-file
-METADATA_FILE] 
+snet service metadata-change-media-order [-h]
+                                         [--metadata-file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -749,13 +735,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-update-endpoints
+## metadata-update-endpoints
 
 Remove all endpoints from the group and add new ones
 
 ```sh
-	snet service metadata-update-endpoints [-h] [--metadata-file
-METADATA_FILE] group_name endpoints [endpoints ...] 
+snet service metadata-update-endpoints [-h]
+                                       [--metadata-file METADATA_FILE] group_name endpoints [endpoints ...]
 ```
 
 #### Positional Arguments
@@ -782,14 +768,17 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-add-description
+## metadata-add-description
 
 Add service description
 
 ```sh
-	snet service metadata-add-description [-h] [--json JSON] [--url URL]
-[--description DESCRIPTION] [--short-description SHORT_DESCRIPTION]
-[--metadata-file METADATA_FILE] 
+snet service metadata-add-description [-h]
+                                      [--json JSON]
+                                      [--url URL]
+                                      [--description DESCRIPTION]
+                                      [--short-description SHORT_DESCRIPTION]
+                                      [--metadata-file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -826,13 +815,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-add-contributor
+## metadata-add-contributor
 
 Add contributor
 
 ```sh
-	snet service metadata-add-contributor [-h] [--metadata-file
-METADATA_FILE] name email_id 
+snet service metadata-add-contributor [-h]
+                                      [--metadata-file METADATA_FILE] name email_id
 ```
 
 #### Positional Arguments
@@ -859,13 +848,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-contributor
+## metadata-remove-contributor
 
 Add contributor
 
 ```sh
-	snet service metadata-remove-contributor [-h] [--metadata-file
-METADATA_FILE] email_id 
+snet service metadata-remove-contributor [-h]
+                                         [--metadata-file METADATA_FILE] email_id
 ```
 
 #### Positional Arguments
@@ -886,13 +875,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### validate-metadata
+## validate-metadata
 
 Validates if created metadata is consistent
 
 ```sh
-	snet service validate-metadata [-h] [--metadata-file METADATA_FILE]
-
+snet service validate-metadata [-h]
+                               [--metadata-file METADATA_FILE]
 ```
 
 #### Named Arguments
@@ -905,12 +894,20 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### publish
+## publish
 
 Publish service with given metadata
 
 ```sh
-	snet service publish [-h] [--metadata-file METADATA_FILE] [--update-mpe-address] [--storage {ipfs,filecoin}] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--registry-at REGISTRY_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] ORG_ID SERVICE_ID 
+snet service publish [-h]
+                     [--metadata-file METADATA_FILE]
+                     [--update-mpe-address]
+                     [--storage {ipfs,filecoin}]
+                     [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                     [--registry-at REGISTRY_AT]
+                     [--wallet-index WALLET_INDEX]
+                     [--yes]
+                     [--quiet | --verbose] ORG_ID SERVICE_ID
 ```
 
 #### Positional Arguments
@@ -1001,12 +998,19 @@ Verbose transaction printing
 
 Default: `False`
 
-### publish-in-ipfs
+## publish-in-ipfs
 
 Publish metadata only in IPFS, without publishing in Registry
 
 ```sh
-	snet service publish-in-ipfs [-h] [--metadata-file METADATA_FILE] [--update-mpe-address] [--storage {ipfs,filecoin}] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet service publish-in-ipfs [-h]
+                             [--metadata-file METADATA_FILE]
+                             [--update-mpe-address]
+                             [--storage {ipfs,filecoin}]
+                             [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                             [--wallet-index WALLET_INDEX]
+                             [--yes]
+                             [--quiet | --verbose]
 ```
 
 #### Named Arguments
@@ -1077,12 +1081,19 @@ Verbose transaction printing
 
 Default: `False`
 
-### publish-in-filecoin
+## publish-in-filecoin
 
 Publish metadata only in FileCoin, without publishing in Registry
 
 ```sh
-	snet service publish-in-filecoin [-h] [--metadata-file METADATA_FILE] [--update-mpe-address] [--storage {ipfs,filecoin}] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet service publish-in-filecoin [-h]
+                                 [--metadata-file METADATA_FILE]
+                                 [--update-mpe-address]
+                                 [--storage {ipfs,filecoin}]
+                                 [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                                 [--wallet-index WALLET_INDEX]
+                                 [--yes]
+                                 [--quiet | --verbose]
 ```
 
 #### Named Arguments
@@ -1153,12 +1164,20 @@ Verbose transaction printing
 
 Default: `False`
 
-### update-metadata
+## update-metadata
 
 Publish metadata in IPFS or FileCoin and update existed service
 
 ```sh
-	snet service update-metadata [-h] [--metadata-file METADATA_FILE] [--update-mpe-address] [--storage {ipfs,filecoin}] [--multipartyescrow-at MULTIPARTYESCROW_AT] [--registry-at REGISTRY_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] ORG_ID SERVICE_ID 
+snet service update-metadata [-h]
+                             [--metadata-file METADATA_FILE]
+                             [--update-mpe-address]
+                             [--storage {ipfs,filecoin}]
+                             [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                             [--registry-at REGISTRY_AT]
+                             [--wallet-index WALLET_INDEX]
+                             [--yes]
+                             [--quiet | --verbose] ORG_ID SERVICE_ID
 ```
 
 #### Positional Arguments
@@ -1249,12 +1268,16 @@ Verbose transaction printing
 
 Default: `False`
 
-### update-add-tags
+## update-add-tags
 
 Add tags to existed service registration
 
 ```sh
-	snet service update-add-tags [-h] [--registry-at REGISTRY_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] ORG_ID SERVICE_ID TAGS [TAGS ...] 
+snet service update-add-tags [-h]
+                             [--registry-at REGISTRY_AT]
+                             [--wallet-index WALLET_INDEX]
+                             [--yes]
+                             [--quiet | --verbose] ORG_ID SERVICE_ID TAGS [TAGS ...]
 ```
 
 #### Positional Arguments
@@ -1320,12 +1343,16 @@ Verbose transaction printing
 
 Default: `False`
 
-### update-remove-tags
+## update-remove-tags
 
 Remove tags from existed service registration
 
 ```sh
-	snet service update-remove-tags [-h] [--registry-at REGISTRY_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] ORG_ID SERVICE_ID TAGS [TAGS ...] 
+snet service update-remove-tags [-h]
+                                [--registry-at REGISTRY_AT]
+                                [--wallet-index WALLET_INDEX]
+                                [--yes]
+                                [--quiet | --verbose] ORG_ID SERVICE_ID TAGS [TAGS ...]
 ```
 
 #### Positional Arguments
@@ -1391,13 +1418,13 @@ Verbose transaction printing
 
 Default: `False`
 
-### print-metadata
+## print-metadata
 
 Print service metadata from registry
 
 ```sh
-	snet service print-metadata [-h] [--registry-at REGISTRY_AT] ORG_ID
-SERVICE_ID 
+snet service print-metadata [-h]
+                            [--registry-at REGISTRY_AT] ORG_ID SERVICE_ID
 ```
 
 #### Positional Arguments
@@ -1422,13 +1449,13 @@ Id of service
 
 Address of Registry contract, if not specified we read address from “networks”
 
-### metadata-add-tags
+## metadata-add-tags
 
 Add new tags to service
 
 ```sh
-	snet service metadata-add-tags [-h] [--metadata-file METADATA_FILE] TAGS
-[TAGS ...] 
+snet service metadata-add-tags [-h]
+                               [--metadata-file METADATA_FILE] TAGS [TAGS ...]
 ```
 
 #### Positional Arguments
@@ -1451,13 +1478,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### metadata-remove-tags
+## metadata-remove-tags
 
 Remove tags from service
 
 ```sh
-	snet service metadata-remove-tags [-h] [--metadata-file METADATA_FILE]
-TAGS [TAGS ...] 
+snet service metadata-remove-tags [-h]
+                                  [--metadata-file METADATA_FILE] TAGS [TAGS ...]
 ```
 
 #### Positional Arguments
@@ -1480,13 +1507,14 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### print-service-status
+## print-service-status
 
 Print service status
 
 ```sh
-	snet service print-service-status [-h] [--registry-at REGISTRY_AT]
-[--group-name GROUP_NAME] ORG_ID SERVICE_ID 
+snet service print-service-status [-h]
+                                  [--registry-at REGISTRY_AT]
+                                  [--group-name GROUP_NAME] ORG_ID SERVICE_ID
 ```
 
 #### Positional Arguments
@@ -1518,13 +1546,13 @@ Address of Registry contract, if not specified we read address from “networks�
 Name of the payment group. Parameter should be specified only for services
 with several payment groups
 
-### print-tags
+## print-tags
 
 Print tags for given service from registry
 
 ```sh
-	snet service print-tags [-h] [--registry-at REGISTRY_AT] ORG_ID
-SERVICE_ID 
+snet service print-tags [-h]
+                        [--registry-at REGISTRY_AT] ORG_ID SERVICE_ID
 ```
 
 #### Positional Arguments
@@ -1549,13 +1577,13 @@ Id of service
 
 Address of Registry contract, if not specified we read address from “networks”
 
-### get-api-metadata
+## get-api-metadata
 
 Extract service api (model) to the given protodir. Get existed metadata
 
 ```sh
-	snet service get-api-metadata [-h] [--metadata-file METADATA_FILE]
-PROTO_DIR 
+snet service get-api-metadata [-h]
+                              [--metadata-file METADATA_FILE] PROTO_DIR
 ```
 
 #### Positional Arguments
@@ -1576,13 +1604,13 @@ Service metadata json file (default service_metadata.json)
 
 Default: `'service_metadata.json'`
 
-### get-api-registry
+## get-api-registry
 
 Extract service api (model) to the given protodir. Get metadata from registry
 
 ```sh
-	snet service get-api-registry [-h] [--registry-at REGISTRY_AT] ORG_ID
-SERVICE_ID PROTO_DIR 
+snet service get-api-registry [-h]
+                              [--registry-at REGISTRY_AT] ORG_ID SERVICE_ID PROTO_DIR
 ```
 
 #### Positional Arguments
@@ -1613,12 +1641,16 @@ Directory to which extract api (model)
 
 Address of Registry contract, if not specified we read address from “networks”
 
-### delete
+## delete
 
 Delete service registration from registry
 
 ```sh
-	snet service delete [-h] [--registry-at REGISTRY_AT] [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] ORG_ID SERVICE_ID 
+snet service delete [-h]
+                    [--registry-at REGISTRY_AT]
+                    [--wallet-index WALLET_INDEX]
+                    [--yes]
+                    [--quiet | --verbose] ORG_ID SERVICE_ID
 ```
 
 #### Positional Arguments

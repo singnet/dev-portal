@@ -1,26 +1,17 @@
 # Treasurer
 
 ```sh
-	usage: snet treasurer [-h] COMMAND ... 
+usage: snet treasurer [-h] COMMAND ...
 ```
 
 ## Commands
 
-`COMMAND`
-
-    
-
-Possible choices: print-unclaimed, claim, claim-all, claim-expired
-
-## Sub-commands
-
-### print-unclaimed
+## print-unclaimed
 
 Print unclaimed payments
 
 ```sh
-	snet treasurer print-unclaimed [-h] --endpoint ENDPOINT [--wallet-index
-WALLET_INDEX] 
+snet treasurer print-unclaimed [-h] --endpoint ENDPOINT [--wallet-index WALLET_INDEX]
 ```
 
 #### Named Arguments
@@ -40,13 +31,15 @@ Daemon endpoint
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-### claim
+## claim
 
 Claim given channels. We also claim all pending ‘payments in progress’ in case
 we ‘lost’ some payments.
 
 ```sh
-	snet treasurer claim [-h] --endpoint ENDPOINT [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] CHANNELS [CHANNELS ...] 
+snet treasurer claim [-h] --endpoint ENDPOINT [--wallet-index WALLET_INDEX]
+                     [--yes]
+                     [--quiet | --verbose] CHANNELS [CHANNELS ...]
 ```
 
 #### Positional Arguments
@@ -98,13 +91,15 @@ Verbose transaction printing
 
 Default: `False`
 
-### claim-all
+## claim-all
 
 Claim all channels. We also claim all pending ‘payments in progress’ in case
 we ‘lost’ some payments.
 
 ```sh
-	snet treasurer claim-all [-h] --endpoint ENDPOINT [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet treasurer claim-all [-h] --endpoint ENDPOINT [--wallet-index WALLET_INDEX]
+                         [--yes]
+                         [--quiet | --verbose]
 ```
 
 #### Named Arguments
@@ -148,13 +143,16 @@ Verbose transaction printing
 
 Default: `False`
 
-### claim-expired
+## claim-expired
 
 Claim all channels which are close to expiration date. We also claim all
 pending ‘payments in progress’ in case we ‘lost’ some payments.
 
 ```sh
-	snet treasurer claim-expired [-h] [--expiration-threshold EXPIRATION_THRESHOLD] --endpoint ENDPOINT [--wallet-index WALLET_INDEX] [--yes] [--quiet | --verbose] 
+snet treasurer claim-expired [-h]
+                             [--expiration-threshold EXPIRATION_THRESHOLD] --endpoint ENDPOINT [--wallet-index WALLET_INDEX]
+                             [--yes]
+                             [--quiet | --verbose]
 ```
 
 #### Named Arguments

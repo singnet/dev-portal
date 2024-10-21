@@ -1,34 +1,27 @@
 # Network
 
 ```sh
-	usage: snet network [-h] NETWORK ... 
+usage: snet network [-h] COMMAND ...
 ```
 
-## networks
+## Commands
 
-`NETWORK`
-
-    
-
-Possible choices: list, create, mainnet, goerli, sepolia
-
-## Sub-commands
-
-### list
+## list
 
 List of networks
 
 ```sh
-	snet network list [-h] 
+snet network list [-h]
 ```
 
-### create
+## create
 
 Create a new network
 
 ```sh
-	snet network create [-h] [--default-gas-price DEFAULT_GAS_PRICE]
-[--skip-check] network_name eth_rpc_endpoint 
+snet network create [-h]
+                    [--default-gas-price DEFAULT_GAS_PRICE]
+                    [--skip-check] network_name eth_rpc_endpoint
 ```
 
 #### Positional Arguments
@@ -64,27 +57,27 @@ Skip check that eth_rpc_endpoint is valid
 
 Default: `False`
 
-### mainnet
+## mainnet
 
 Switch to mainnet network
 
 ```sh
-	snet network mainnet [-h] 
+snet network mainnet [-h]
 ```
 
-### goerli
+## goerli
 
 Switch to goerli network
 
 ```sh
-	snet network goerli [-h] 
+snet network goerli [-h]
 ```
 
-### sepolia
+## sepolia
 
 Switch to sepolia network
 
 ```sh
-	snet network sepolia [-h] 
+snet network sepolia [-h]
 ```
 
