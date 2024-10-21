@@ -204,9 +204,17 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Daemon",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/Daemon/",
         collapsed: true,
         items: [
+            {
+                text: "What is Daemon?",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/",
+            },
+            {
+                text: "Daemon API",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-api/",
+            },
             {
                 text: "Daemon architecture",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-architecture/",
@@ -245,6 +253,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/TUI/",
         collapsed: true,
         items: [
+            {
+                text: "What is TUI?",
+                link: "/docs/products/DecentralizedAIPlatform/TUI/",
+            },
             {
                 text: "Getting Started",
                 link: "/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/",
