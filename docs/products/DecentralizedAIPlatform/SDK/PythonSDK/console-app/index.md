@@ -1,9 +1,9 @@
-## Tutorial on developing a console application
+# Tutorial on developing a console application
 
 This is an example of how to use SingularityNET Python SDK to create a console application that uses all the 
 core functionality of the SDK.
 
-### Description
+## Description
 
 It is assumed that there is an application provider (developer), who pays for all the
 transactions and service calls.
@@ -55,9 +55,9 @@ Services:
 >>> exit
 ```
 
-### Development
+## Development
 
-#### Install package
+### Install package
 
 Before the beginning we need to install `snet.sdk` package:
 
@@ -65,7 +65,7 @@ Before the beginning we need to install `snet.sdk` package:
 pip install snet.sdk
 ```
 
-#### Configuration
+### Configuration
 
 Firstly, we need to configure sdk and service client. So we create a config dict and then an sdk instance with
 that config. 
@@ -89,7 +89,7 @@ snet_sdk = sdk.SnetSDK(config)  # the 'SnetSDK' instance
 
 Here you need to set private values: `private_key`, `eth_rpc_endpoint` and possibly change some others.
 
-#### Global variables
+### Global variables
 
 The application will locally store created service clients as well as open payment channels for these services.
 In addition, there must be an active service - the one for which methods are called, channels are opened, etc.
@@ -157,7 +157,7 @@ active_commands: dict = commands["main"] # the list of available commands in the
 
 `active_commands` is changed when changing menu. 
 
-#### Main function
+### Main function
 
 ```python
 def main():
@@ -201,7 +201,7 @@ The "main" function processes user input, calls the necessary functions, and als
 corresponding command is entered) by changing the values of the "active_commands" and "prefix" variables. Of course, 
 all this happens in an "infinite" loop (until the "exit" command is called).
 
-#### Functions for commands
+### Functions for commands
 
 There are lots of functions to implement, that can be viewed in `commands` dict. For example, `list_services_for_org`,
 `deposit`, `create_service_client`, `call`, `open_channel`, etc. All these functions use SDK functionality and 
@@ -211,7 +211,7 @@ if necessary and possible.
 Not all functions will be described here, but the full program code with comments can be viewed at the 
 [link](https://github.com/Arondondon/snet-sdk-python/blob/depelopment-app-example/examples/console_app.py) to GitHub
 
-###### list_services_for_org
+##### list_services_for_org
 
 The function, which is called when the user enters the command 'services' in the main menu.
 Prints the list of services IDs, related to the organization specified by the user.
@@ -224,7 +224,7 @@ def list_services_for_org():
     print(*map(lambda x: '\t' + x, snet_sdk.get_services_list(org_id=org_id)), sep="\n")
 ```
 
-###### create_service_client
+##### create_service_client
 
 The function, which is called when the user enters the command 'add' in the service menu.
 Creates a service client, related to the service specified by the user, and adds it to the
@@ -244,7 +244,7 @@ def create_service_client():
         active_service = service
 ```
 
-###### commands_help
+##### commands_help
 
 The function, which is called when the user enters the command 'help' in any menu.
 Prints the list of available commands with descriptions depending on the active menu.
@@ -257,7 +257,7 @@ def commands_help():
         print(f'\t{command[0]} - {command[1][1]}')
 ```
 
-###### call
+##### call
 
 The function, which is called when the user enters the command 'call' in the service menu.
 Calls the method specified by the user of the active service using `call_rpc` method. It gets data about the service
@@ -301,7 +301,7 @@ def call():
     print("Result:", *map(lambda x: f"{x[0]}: {x[1]}", outputs.items()), sep="\n")
 ```
 
-###### update_channels
+##### update_channels
 
 The function, which is called when the user enters the command 'update' in the channel menu.
 Updates the list of open channels stored in 'channels'. Gets the list of open channels using
@@ -334,7 +334,7 @@ Continue? (y/n): """).strip() == 'y'
     print("Channels updated! Enter 'list' to print the updated list.")
 ```
 
-###### open_channel
+##### open_channel
 
 The function, which is called when the user enters the command 'open' in the channel menu.
 Opens a new channel for the active service. Checks the balance of the MPE contract and asks the user

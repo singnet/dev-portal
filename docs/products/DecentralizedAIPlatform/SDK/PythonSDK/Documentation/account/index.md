@@ -1,9 +1,9 @@
 
-## module: sdk.account
+# module : sdk.account
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/account.py) to GitHub
 
-Entities:
+## Entities:
 1. [TransactionError](#class-transactionerror)
    - [\_\_init\_\_](#init)
    - [\_\_str\_\_](#str)
@@ -19,58 +19,58 @@ Entities:
    - [approve_transfer](#approve-transfer)
    - [allowance](#allowance)
 
-### Class `TransactionError`
+## Class `TransactionError`
 
 extends: `Exception`
 
 is extended by: -
 
-#### description
+### description
 
 `TransactionError` is a custom exception class that is raised when an Ethereum transaction receipt has a status of 0. 
 This indicates that the transaction failed. Can provide a custom message. Optionally includes receipt
 
-#### attributes
+### attributes
 
 - `message` (str): The exception message.
 - `receipt` (dict): The transaction receipt.
 
-#### methods
+### methods
 
-#### `__init__`
+### `__init__`
 
 Initializes the exception with the provided message and receipt.
 
-###### args:
+##### args:
 
 - `message` (str): The exception message.
 - `receipt` (dict): The transaction receipt. Defaults to _None_.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `__str__`
+### `__str__`
 
 Returns a string representation of the `TransactionError` object.
 
-###### returns:
+##### returns:
 
 - A string containing the `message` attribute of the TransactionError object. (str)
 
-### Class `Account`
+## Class `Account`
 
 extends: -
 
 is extended by: -
 
-#### description
+### description
 
 `Account` is responsible for managing the Ethereum account associated with the SingularityNET platform. 
 It provides methods for interacting with the MultiPartyEscrow contract, the SingularityNetToken contract, and 
 the Ethereum blockchain.
 
-#### attributes
+### attributes
 
 - `config` (dict): The configuration settings for the account. _Note_: In fact, this is the same config 
 from `SnetSDK`.
@@ -85,125 +85,125 @@ with the SingularityNET AGIX Token contract.
 - `signer_address` (str): The Ethereum address used for signing transactions.
 - `nonce` (int): The nonce value for the account.
 
-#### methods
+### methods
 
-#### `__init__`
+### `__init__`
 
 Initializes a new instance of the `Account` class.
 
-###### args:
+##### args:
 
 - `w3` (Web3): An instance of the `Web3` class.
 - `config` (dict): A dictionary containing the configuration settings.
 - `mpe_contract` (MPEContract): An instance of the `MPEContract` class.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `_get_nonce`
+### `_get_nonce`
 
 Returns the next nonce for a transaction.
 
-###### returns:
+##### returns:
 
 - The next nonce for a transaction. (int)
 
-#### `_get_gas_price`
+### `_get_gas_price`
 
 Calculates the gas price for a transaction.
 
 Retrieves the current gas price from the Ethereum network using the web3 and increases it 
 according to a certain algorithm so that the transaction goes faster.
 
-###### returns:
+##### returns:
 
 - The calculated gas price. (int)
 
-#### `_send_signed_transaction`
+### `_send_signed_transaction`
 
 Sends a signed transaction to the Ethereum blockchain.
 
 Builds a transaction using the given contract function and arguments, signs it with the private key of the account, 
 and sends it to the Ethereum blockchain.
 
-###### args:
+##### args:
 
 - `contract_fn`: The contract function to be called.
 - `*args`: The arguments to pass to the contract function.
 
-###### returns:
+##### returns:
 
 - Hash of the sent transaction. (HexStr | str)
 
-#### `send_transaction`
+### `send_transaction`
 
 Sends a transaction by calling the given contract function with the provided arguments.
 
-###### args:
+##### args:
 
 - `contract_fn`: The contract function to be called.
 - `*args`: The arguments to pass to the contract function.
 
-###### returns:
+##### returns:
 
 - The transaction receipt indicating the success or failure of the transaction. (TxReceipt)
 
-#### `_parse_receipt`
+### `_parse_receipt`
 
 Parses the receipt of a transaction and returns the result as a JSON string.
 
-###### args:
+##### args:
 
 - `receipt` (TxReceipt): The receipt of the transaction.
 - `event` (Event): The event to process the receipt with.
 - `encoder` (JSONEncoder): The JSON encoder to use. Defaults to json.JSONEncoder.
 
-###### returns:
+##### returns:
 
 - The result of processing the receipt as a JSON string. (str)
 
-###### raises:
+##### raises:
 
 - TransactionError: If the transaction status is 0, indicating a failed transaction.
 
-#### `escrow_balance`
+### `escrow_balance`
 
 Retrieves the escrow balance for the current account.
 
-###### returns:
+##### returns:
 
 - The escrow balance in cogs. (int)
 
-#### `deposit_to_escrow_account`
+### `deposit_to_escrow_account`
 
 Deposit the specified amount of AGIX tokens in cogs into the MPE account.
 
-###### args:
+##### args:
 
 - `amount_in_cogs` (int): The amount of AGIX tokens in cogs to deposit.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `approve_transfer`
+### `approve_transfer`
 
 Approves a transfer of a specified amount of AGIX tokens in cogs to the MPE contract.
 
-###### args:
+##### args:
 
 - `amount_in_cogs` (int): The amount of AGIX tokens in cogs to approve for transfer.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `allowance`
+### `allowance`
 
 Retrieves the allowance of the current account for the MPE contract.
 
-###### returns:
+##### returns:
 
 - The allowance in cogs. (int)
 

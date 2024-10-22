@@ -2,7 +2,7 @@
 
 SingularityNET SDK for Python
 
-### Core concepts
+## Core concepts
 
 The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
 To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
@@ -11,7 +11,7 @@ The SingularityNET SDK abstracts and manages state channels with service provide
 
 A getting started guide for the SNET SDK for Python is available [here](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/).
 
-### Modules
+## Modules
 
 1. [\_\_init\_\_](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/init/)
 2. [account](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/account/)

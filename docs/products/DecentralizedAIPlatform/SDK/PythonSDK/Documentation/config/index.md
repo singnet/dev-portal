@@ -1,8 +1,9 @@
-## module: sdk.config
+
+# module : sdk.config
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/config.py) to GitHub
 
-Entities:
+## Entities:
 1. [Config](#class-config)
    - [\_\_init\_\_](#init)
    - [\_\_getitem\_\_](#getitem)
@@ -10,17 +11,17 @@ Entities:
    - [get_ipfs_endpoint](#get-ipfs-endpoint)
 
 
-### Class `Config`
+## Class `Config`
 
 extends: -
 
 is extended by: -
 
-#### description
+### description
 
 This is a configuration manager for the SDK. It is responsible for handling configuration settings for the SDK.
 
-#### attributes
+### attributes
 
 - `__config` (dict): The dictionary containing:
   - `private_key` (str): Your wallet's private key that will be used to pay for calls. Is **required** in config.
@@ -38,13 +39,13 @@ by default.
   - `lighthouse_token` (str): The Lighthouse token used to access the Lighthouse storage provider. Defaults to " ". 
 Currently, it can't be changed.
 
-#### methods
+### methods
 
-#### `__init__`
+### `__init__`
 
 Initializes a new instance of the class. Sets `__config` fields from passed arguments.
 
-###### args:
+##### args:
 
 - `private_key` (str): Your wallet's private key that will be used to pay for calls. Is **required** in config.
 - `eth_rpc_endpoint` (str): RPC endpoint that is used to access the Ethereum network. Is **required** in config.
@@ -59,41 +60,41 @@ and regenerating them every time. Defaults to _False_.
 - `signer_private_key` (str): The private key of the signer. Used to sign the service call. Equals to `private_key` 
 by default.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `__getitem__`
+### `__getitem__`
 
 Overrides the `__getitem__` Python special method. Returns the value associated with the given key from 
 the `__config` dict.
 
-###### args:
+##### args:
 
 - `key` (str): The key of the value to retrieve.
 
-###### returns:
+##### returns:
 
 - The value associated with the given key. (Any)
 
-#### `get`
+### `get`
 
 Returns the value associated with the given key from the `__config` dict or the default value if the key is not found.
 
-###### args:
+##### args:
 
 - `key` (str): The key of the value to retrieve.
 - `default` (Any): The default value to return if the key is not found. Defaults to _None_.
 
-###### returns:
+##### returns:
 
 - The value associated with the given key or the default value if the key is not found. (Any)
 
-#### `get_ipfs_endpoint`
+### `get_ipfs_endpoint`
 
 Returns the `ipfs_endpoint` field value from the `__config` dict.
 
-###### returns:
+##### returns:
 
 - The IPFS endpoint. (str)
 

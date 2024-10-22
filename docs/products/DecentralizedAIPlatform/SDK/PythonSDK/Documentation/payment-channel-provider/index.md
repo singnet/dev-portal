@@ -1,8 +1,9 @@
-## module: sdk.mpe.payment_channel_provider
+
+# module : sdk.mpe.payment_channel_provider
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/mpe/payment_channel_provider.py) to GitHub
 
-Entities:
+## Entities:
 1. [PaymentChannelProvider](#class-paymentchannelprovider)
    - [\_\_init\_\_](#init)
    - [update_cache](#update-cache)
@@ -14,17 +15,17 @@ Entities:
    - [deposit_and_open_channel](#deposit-and-open-channel)
    - [_get_newly_opened_channel](#get-newly-opened-channel)
 
-### Class `PaymentChannelProvider`
+## Class `PaymentChannelProvider`
 
 extends: `object`
 
 is extended by: -
 
-#### description
+### description
 
 A class for managing payment channels.
 
-#### attributes
+### attributes
 
 - `web3` (Web3): An instance of the `Web3` class for interacting with the Ethereum blockchain.
 - `mpe_contract` (MPEContract): An instance of the `MPEContract` class for interacting with the MultiPartyEscrow contract.
@@ -35,72 +36,72 @@ with the MultiPartyEscrow contract.
 - `channels_file` (Path): The path to the cache file for payment channels. 
 Equals to `~/.snet/cache/mpe/MPE_ADDRESS/channels.pickle`.
 
-#### methods
+### methods
 
-#### `__init__`
+### `__init__`
 
 Initializes a new instance of the class. 
 
-###### args:
+##### args:
 
 - `w3` (Web3): An instance of the `Web3` class for interacting with the Ethereum blockchain.
 - payment_channel_state_service_client` (ServiceStub): A stub for interacting with PaymentChannelStateService via gRPC.
 - `mpe_contract` (MPEContract): An instance of the `MPEContract` class for interacting with the MultiPartyEscrow contract.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `update_cache`
+### `update_cache`
 
 Updates the cache with channels from blockchain logs for the MPE contract. Cache is stored as a pickle file.
 It stores the list of payment channels and last read block number. If there is no cache, logs are retrieved starting 
 from the deployment block up to the current block, and the following times, starting from the last read block.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `_event_data_args_to_dict`
+### `_event_data_args_to_dict`
 
 Converts event data into a dictionary, keeping only the required fields.
 
-###### args:
+##### args:
 
 - `event_data` (dict[str, Any]): The event to convert to a dictionary.
 
-###### returns:
+##### returns:
 
 - A dictionary containing the event data. (dict[str, Any])
 
-#### `_get_all_channels_from_blockchain_logs_to_dicts`
+### `_get_all_channels_from_blockchain_logs_to_dicts`
 
 Retrieves all payment channels from the blockchain logs with a given block range and returns them as a list 
 of dictionaries.
 
-###### args:
+##### args:
 
 - `starting_block_number` (int): The starting block number of the block range.
 - `to_block_number` (int): The ending block number of the block range.
 
-###### returns:
+##### returns:
 
 - A list of payment channel dictionaries. (list[dict[str, Any]])
 
-#### `_get_channels_from_cache`
+### `_get_channels_from_cache`
 
 Updates cache with using `update_cache` and retrieves all payment channels from the cache.
 
-###### returns:
+##### returns:
 
 - A list of payment channel dictionaries. (list[dict[str, Any]])
 
-#### `get_past_open_channels`
+### `get_past_open_channels`
 
 Extracts a list of all past open payment channels from the cache, filters it by account and payment group, 
 and returns it.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object to filter the channels by its address and signer address.
 - `payment_address` (str): The payment address to filter the channels by.
@@ -108,16 +109,16 @@ and returns it.
 - `payment_channel_state_service_client` (Any): Stub for interacting with PaymentChannelStateService via gRPC to 
 pass it to PaymentChannel instances.
 
-###### returns:
+##### returns:
 
 - A list of payment channels. (list[PaymentChannel])
 
-#### `open_channel`
+### `open_channel`
 
 Opens a payment channel with the specified amount of AGIX tokens in cogs (taken from MPE) and expiration time. 
 And then returns it.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object used to send the transaction.
 - `amount` (int): The amount of AGIX tokens in cogs to deposit into the channel.
@@ -127,16 +128,16 @@ And then returns it.
 - `payment_channel_state_service_client` (Any): Stub for interacting with PaymentChannelStateService via gRPC to 
 pass it to PaymentChannel instances.
 
-###### returns:
+##### returns:
 
 - The newly opened payment channel. (PaymentChannel)
 
-#### `deposit_and_open_channel`
+### `deposit_and_open_channel`
 
 Opens a payment channel with the specified amount of AGIX tokens in cogs (which are previously deposited on MPE) 
 and expiration time. And then returns it.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object used to send the transaction.
 - `amount` (int): The amount of AGIX tokens in cogs to deposit into the channel.
@@ -146,15 +147,15 @@ and expiration time. And then returns it.
 - `payment_channel_state_service_client` (Any): Stub for interacting with PaymentChannelStateService via gRPC to 
 pass it to PaymentChannel instances.
 
-###### returns:
+##### returns:
 
 - The newly opened payment channel. (PaymentChannel)
 
-#### `_get_newly_opened_channel`
+### `_get_newly_opened_channel`
 
 Retrieves the newly opened payment channel from cache (which is previously updated) based on the given data.
 
-###### args:
+##### args:
 
 - `receipt` (dict): The receipt of the transaction that opened the payment channel.
 - `account` (Account): The account object associated with the payment channel.
@@ -163,11 +164,11 @@ Retrieves the newly opened payment channel from cache (which is previously updat
 - `payment_channel_state_service_client` (Any): Stub for interacting with PaymentChannelStateService via gRPC to 
 pass it to PaymentChannel instances.
 
-###### returns:
+##### returns:
 
 - The newly opened payment channel. (PaymentChannel)
 
-###### raises:
+##### raises:
 
 - Exception: If no payment channels are found for the given data.
 

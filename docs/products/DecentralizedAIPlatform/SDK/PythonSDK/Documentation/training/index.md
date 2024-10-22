@@ -1,8 +1,9 @@
-## module: sdk.training.training.py
+
+# module : sdk.training.training.py
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/training/training.py) to GitHub
 
-Entities:
+## Entities:
 1. [ModelMethodMessage](#class-modelmethodmessage)
 2. [TrainingModel](#class-trainingmodel)
    - [\_\_init\_\_](#init)
@@ -13,17 +14,17 @@ Entities:
    - [update_model_access](#update-model-access)
    - [get_all_models](#get-all-models)
 
-### Class `ModelMethodMessage`
+## Class `ModelMethodMessage`
 
 extends: `Enum`
 
 is extended by: -
 
-#### description
+### description
 
 This is an `enum` that represents the available methods that can be called in the training grpc service.
 
-#### members
+### members
 
 - `CreateModel` (str): The method to create a new model.
 - `GetModelStatus` (str): The method to get the status of a model.
@@ -31,53 +32,53 @@ This is an `enum` that represents the available methods that can be called in th
 - `DeleteModel` (str): The method to delete a model.
 - `GetAllModels` (str): The method to get all models.
 
-### Class `TrainingModel`
+## Class `TrainingModel`
 
 extends: -
 
 is extended by: -
 
-#### description
+### description
 
 This is a class that represents a training gRPC service.
 
-#### attributes
+### attributes
 
 - `training_pb2` (ModuleType): The gRPC service module.
 - `training_pb2_grpc` (ModuleType): The gRPC service module.
 
-#### methods
+### methods
 
-#### `__init__`
+### `__init__`
 
 Initializes a new instance of the class. Imports gRPC service modules.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `_invoke_model`
+### `_invoke_model`
 
 Invokes the model by establishing a gRPC channel and generating an authorization request.
 
-###### args:
+##### args:
 
 - `service_client` (ServiceClient): The client object for the service.
 - `msg` (ModelMethodMessage): The message containing the method to be invoked.
 
-###### returns:
+##### returns:
 
 - A tuple containing the authorization request and the gRPC channel. (tuple[AuthorizationDetails, grpc.Channel])
 
-###### raises:
+##### raises:
 
 - `ValueError`: If the scheme in the service metadata is not supported.
 
-#### `create_model`
+### `create_model`
 
 Calls the `create_model` method in the gRPC training service stub to create a new model.
 
-###### args:
+##### args:
 
 - `service_client` (ServiceClient): The client object for the service.
 -  `grpc_method_name` (str): The name of the gRPC method to be invoked.
@@ -88,49 +89,49 @@ Calls the `create_model` method in the gRPC training service stub to create a ne
 - `is_publicly_accessible` (bool): Whether the model is publicly accessible. Defaults to False.
 - `address_list` (list[str]): A list of addresses. Defaults to None.
 
-###### returns:
+##### returns:
 
 - The response from the create model request. (Any)
 
 _Note_: Returns an exception if an error occurs during the create model request.
 
-#### `get_model_status`
+### `get_model_status`
 
 Calls the `get_model_status` method in the gRPC training service stub to get a model status.
 
-###### args:
+##### args:
 
 - `service_client` (ServiceClient): The client object for the service.
 - `model_id` (str): The ID of the model whose status to be retrieved.
 
-###### returns:
+##### returns:
 
 - The response from the get model status request. (Any)
 
 _Note_: Returns an exception if an error occurs during the get model status request.
 
-#### `delete_model`
+### `delete_model`
 
 Calls the `delete_model` method in the gRPC training service stub to delete a model.
 
-###### args:
+##### args:
 
 - `service_client` (ServiceClient): The client object for the service.
 - `model_id` (str): The ID of the model to be deleted.
 - `grpc_service_name` (str): The name of the gRPC service. Defaults to 'service'.
 - `grpc_method_name` (str): The name of the gRPC method to be invoked.
 
-###### returns:
+##### returns:
 
 - The response from the delete model request. (Any)
 
 _Note_: Returns an exception if an error occurs during the delete model request.
 
-#### `update_model_access`
+### `update_model_access`
 
 Calls the `update_model_access` method in the gRPC training service stub to update the access of a model.
 
-###### args:
+##### args:
 
 - `service_client` (ServiceClient): The client object for the service.
 - `model_id` (str): The ID of the model whose access to be updated.
@@ -141,23 +142,23 @@ Calls the `update_model_access` method in the gRPC training service stub to upda
 - `grpc_service_name` (str): The name of the gRPC service. Defaults to 'service'.
 - `address_list` (list[str]): A list of addresses.
 
-###### returns:
+##### returns:
 
 - The response from the update model access request. (Any)
 
 _Note_: Returns an exception if an error occurs during the update model access request.
 
-#### `get_all_models`
+### `get_all_models`
 
 Calls the `get_all_models` method in the gRPC training service stub to get all models.
 
-###### args:
+##### args:
 
 - `service_client` (ServiceClient): The client object for the service.
 - `grpc_method_name` (str): The name of the gRPC method to be invoked.
 - `grpc_service_name` (str): The name of the gRPC service. Defaults to 'service'.
 
-###### returns:
+##### returns:
 
 - The response from the get all models request. (Any)
 

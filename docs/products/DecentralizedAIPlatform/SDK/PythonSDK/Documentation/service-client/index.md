@@ -1,9 +1,10 @@
 
-## module: sdk.service_client
+
+# module : sdk.service_client
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/service_client.py) to GitHub
 
-Entities:
+## Entities:
 1. [ServiceClient](#class-serviceclient)
    - [\_\_init\_\_](#init)
    - [call_rpc](#call-rpc)
@@ -31,19 +32,19 @@ Entities:
    - [get_services_and_messages_info](#get-services-and-messages-info)
    - [get_services_and_messages_info_as_pretty_string](#get-services-and_messages-info-as-pretty_string)
 
-### Class `ServiceClient`
+## Class `ServiceClient`
 
 extends: -
 
 is extended by: -
 
-#### description
+### description
 
 This class is responsible for creating a client for interacting with a service. 
 It initializes various attributes and sets up a gRPC channel for communication with the service. 
 The class is used to manage the communication and payment channel management for a service in the SDK.
 
-#### attributes
+### attributes
 
 - `org_id` (str): The organization id.
 - `service_id` (str): The service id.
@@ -68,13 +69,13 @@ SingularityNetToken contracts.
 - `sdk_web3` (Web3): The `Web3` instance.
 - `mpe_address` (str): The MPE contract address.
 
-#### methods
+### methods
 
-#### `__init__`
+### `__init__`
 
 Initializes a new instance of the class.
 
-###### args:
+##### args:
 
 - `org_id` (str): The ID of the organization.
 - `service_id` (str): The ID of the service.
@@ -89,46 +90,46 @@ Initializes a new instance of the class.
 - `pb2_module` (str | ModuleType): The module containing the gRPC message definitions.
 - `payment_channel_provider` (PaymentChannelProvider): The payment channel provider instance.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `call_rpc`
+### `call_rpc`
 
 Calls an RPC method on the service client and returns its result.
 
-###### args:
+##### args:
 
 - `rpc_name` (str): The name of the RPC method to call.
 - `message_class` (str): The name of the message class to use for the request.
 - `**kwargs`: Keyword arguments to pass to the message class constructor, in fact, these are the values 
 that are passed to the called method as arguments.
 
-###### returns:
+##### returns:
 
 - The response from the RPC method call. (Any)
 
-#### `_generate_grpc_stub`
+### `_generate_grpc_stub`
 
 Generates a gRPC stub instance for the given service stub.
 
-###### args:
+##### args:
 
 - `service_stub` (ServiceStub): The gRPC service stub.
 
-###### returns:
+##### returns:
 
 -  stub_instance (object): The generated gRPC stub instance.
 
-#### `get_grpc_base_channel`
+### `get_grpc_base_channel`
 
 Returns the base gRPC channel used by the service client.
 
-###### returns:
+##### returns:
 
 - `self.__base_grpc_channel` (grpc.Channel)
 
-#### `_get_grpc_channel`
+### `_get_grpc_channel`
 
 Returns a gRPC channel based on the provided endpoint. 
 
@@ -141,39 +142,39 @@ an insecure channel is created using the channel endpoint. If the scheme is "htt
 created using the channel endpoint and the root certificates. If the scheme is neither "http" nor "https", 
 a ValueError is raised with an error message.
 
-###### returns:
+##### returns:
 
 - The gRPC channel based on the provided endpoint. (grpc.Channel)
 
-###### raises:
+##### raises:
 
 - ValueError: If the scheme in the service metadata is neither "http" nor "https".
 
-#### `_get_service_call_metadata`
+### `_get_service_call_metadata`
 
 Retrieves the metadata required for making a service call using the payment strategy.
 
-###### returns:
+##### returns:
 
 - Payment metadata. (list[tuple[str, Any]])
 
 <!-- TODO: implement method "_intercept_call"-->
 
-#### `_filter_existing_channels_from_new_payment_channels`
+### `_filter_existing_channels_from_new_payment_channels`
 
 Filters the new channel list so that only those that are not yet among the existing ones remain, 
 and returns them as a list.
 
-###### args:
+##### args:
 
 - `new_payment_channels` (list[PaymentChannel]): A list of `PaymentChannel` objects representing the new 
 payment channels to filter.
 
-###### returns:
+##### returns:
 
 - A list of the new payment channels that are not already in the `self.payment_channels` list. (list[PaymentChannel])
 
-#### `load_open_channels`
+### `load_open_channels`
 
 Load open payment channels and update the payment channels list. 
 
@@ -182,36 +183,36 @@ group ID, and last read block. It then filters out any existing channels from th
 updates the payment channels list with the new channels. Finally, it updates the last read block with the 
 current block number and returns the updated payment channels list. 
 
-###### returns:
+##### returns:
 
 - The updated payment channels list. (list[PaymentChannel])
 
-#### `get_current_block_number`
+### `get_current_block_number`
 
 Returns the current block number from the Ethereum blockchain using Web3.
 
-###### returns:
+##### returns:
 
 - The current block number. (int)
 
-#### `update_channel_states`
+### `update_channel_states`
 
 Updates the state of each channel in the `payment_channels` list.
 
-###### returns:
+##### returns:
 
 - `self.payment_channels` with updated states. (list[PaymentChannel]) 
 
-#### `default_channel_expiration`
+### `default_channel_expiration`
 
 Returns the default expiration time for the payment channel, calculated as the current block number 
 plus the expiry threshold.
 
-###### returns:
+##### returns:
 
 - The default expiration time for a payment channel (block number). (int)
 
-#### `_generate_payment_channel_state_service_client`
+### `_generate_payment_channel_state_service_client`
 
 Generates a payment channel state service client.
 
@@ -219,139 +220,139 @@ Creates a gRPC channel using the base channel and imports the necessary modules 
 state service. It then uses the imported module to create a PaymentChannelStateServiceStub object, which 
 is the client for the payment channel state service.
 
-###### returns:
+##### returns:
 
 - Payment channel state service client stub. (Any)
 
-#### `open_channel`
+### `open_channel`
 
 Opens a payment channel with the specified amount of AGIX tokens in cogs and expiration time.
 
-###### args:
+##### args:
 
 - `amount` (int): The amount of AGIX tokens in cogs to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
-###### returns:
+##### returns:
 
 - Newly opened payment channel. (PaymentChannel)
 
-#### `deposit_and_open_channel`
+### `deposit_and_open_channel`
 
 Deposits the specified amount of tokens into the MPE smart contract and opens a payment channel 
 with its amount of AGIX tokens in cogs and expiration time.
 
-###### args:
+##### args:
 
 - `amount` (int): The amount of AGIX tokens in cogs to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
-###### returns:
+##### returns:
 
 - Newly opened payment channel. (PaymentChannel)
 
-#### `get_price`
+### `get_price`
 
 Returns the price in cogs of the service group's pricing.
 
-###### returns:
+##### returns:
 
 - The price in cogs of the service group's pricing. (int)
 
-#### `generate_signature`
+### `generate_signature`
 
 Generates a signature for the given message using the account's signer private key.
 
-###### args:
+##### args:
 
 - `message` (str | bytes): The message to sign.
 
-###### returns:
+##### returns:
 
 - The generated signature. (bytes)
 
-#### `generate_training_signature`
+### `generate_training_signature`
 
 Generates a training signature by signing a message using the account's signer private key.
 
-###### args:
+##### args:
 
 - `text` (str): The text to be included in the message.
 - `address` (str): The address to be included in the message.
 - `block_number` (int): The block number to be included in the message.
 
-###### returns:
+##### returns:
 
 - The generated training signature. (str | bytes)
 
-#### `get_free_call_config`
+### `get_free_call_config`
 
 Retrieves the free call configuration from the `self.options` dict.
 
-###### returns:
+##### returns:
 
 - A tuple containing the email, free call auth token bin, and free call token expiry block. (tuple[str, str, int])
 
-#### `get_service_details`
+### `get_service_details`
 
 Retrieves the details of the service.
 
-###### returns:
+##### returns:
 
 - A tuple containing the organization ID, service ID, group ID, and the first endpoint for the group. 
 (tuple[str, str, str, str])
 
-#### `get_concurrency_flag`
+### `get_concurrency_flag`
 
 Returns the value of the `concurrency` option from the `self.options` dict.
 If the option is not present, it returns `True` by default.
 
-###### returns:
+##### returns:
 
 - A value indicating whether concurrency is enabled or not. (bool)
 
-#### `get_concurrency_token_and_channel`
+### `get_concurrency_token_and_channel`
 
 Retrieves the concurrency token and channel from the payment strategy.
 
-###### returns:
+##### returns:
 
 -  The concurrency token and channel obtained from the payment strategy. (tuple[str, PaymentChannel])
 
-#### `set_concurrency_token_and_channel`
+### `set_concurrency_token_and_channel`
 
 Sets the concurrency token and channel for the payment strategy.
 
-###### args:
+##### args:
 
 - `token` (str): The concurrency token.
 - `channel` (PaymentChannel): The payment channel.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `get_path_to_pb_files`
+### `get_path_to_pb_files`
 
 Returns the path to the directory containing the protobuf files for a given organization and service.
 
-###### args:
+##### args:
 
 - `org_id` (str): The ID of the organization.
 - `service_id` (str): The ID of the service.
 
-###### returns:
+##### returns:
 
 - The path to the directory containing the protobuf files. (str)
 
-#### `get_services_and_messages_info`
+### `get_services_and_messages_info`
 
 Retrieves information about services and messages defined in a protobuf file.
 
 This function reads the content of a protobuf file and extracts information about the services and messages defined in it. 
 It uses regular expressions to match service definitions, RPC methods, message definitions, and fields within messages.
 
-###### returns:
+##### returns:
 
 - A tuple containing:
   - services (dict): A dictionary containing information about the services defined in the protobuf file.
@@ -363,7 +364,7 @@ It uses regular expressions to match service definitions, RPC methods, message d
     
   (tuple[dict[str, list], dict[str, list]])
 
-#### `get_services_and_messages_info_as_pretty_string`
+### `get_services_and_messages_info_as_pretty_string`
 
 Retrieves information about the services and messages defined in the protobuf file and returns it as a
 formatted string. 
@@ -371,6 +372,6 @@ formatted string.
 _Note_: it first calls the [get_services_and_messages_info](#get_services_and_messages_info) method and then converts 
 the result into a formatted string. 
 
-###### returns:
+##### returns:
 
 - A formatted string containing information about the services and messages defined in the protobuf file. (str)
