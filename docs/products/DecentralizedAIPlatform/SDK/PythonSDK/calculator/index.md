@@ -1,9 +1,9 @@
-## Tutorial on developing a console calculator
+# Tutorial on developing a console calculator
 
 This is an example of how to use SingularityNET Python SDK to create a console calculator that works using a service 
 on the SingularityNET platform.
 
-### Description
+## Description
 
 It is assumed that there is an application provider (developer), who pays for all the
 transactions and service calls.
@@ -23,9 +23,9 @@ Calculating 103 - 82...
 Calculator> exit
 ```
 
-### Development
+## Development
 
-#### Install package
+### Install package
 
 Before the beginning we need to install `snet.sdk` package:
 
@@ -33,7 +33,7 @@ Before the beginning we need to install `snet.sdk` package:
 pip install snet.sdk
 ```
 
-#### Configuration
+### Configuration
 
 Firstly, we need to configure sdk and service client. So we create a config dict and then an sdk instance with
 that config. 
@@ -61,7 +61,7 @@ calc_client = snet_sdk.create_service_client(org_id="26072b8b6a0e448180f8c0e702a
                                              service_id="Exampleservice", group_name="default_group")
 ```
 
-#### User input parsing
+### User input parsing
 
 Secondly, we need to write a function that will process and parse user input. 
 
@@ -85,7 +85,7 @@ def parse_expression(expression):
 This function splits the passed expression entered by the user into separate elements and checks their correctness. 
 In case of invalid input, exceptions are thrown, otherwise three elements of the required types are returned.
 
-#### Main cycle
+### Main cycle
 
 The calculator service accepts the name of the method on which the arithmetic operation depends. Therefore, we will 
 add a dictionary to match the operation symbol and the method name in the service.

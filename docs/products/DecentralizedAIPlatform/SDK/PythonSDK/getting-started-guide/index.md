@@ -47,7 +47,7 @@ The `config` parameter is an instance of the `Config` class.
 See [config.py](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/config/) 
 for a reference.
 
-##### Config parameters description
+#### Config parameters description
 
 - `private_key`: Your wallet's private key that will be used to pay for calls. Is **required** in config;   
 - `eth_rpc_endpoint`: RPC endpoint that is used to access the Ethereum network. Is **required** in config;
@@ -199,7 +199,7 @@ payment_channel.extend_and_add_funds(amount=123456, expiration=33333)
 
 ## Other useful features
 
-#### Get the current block number
+### Get the current block number
 
 Service client also provides several useful functions. If you need to find out the number of 
 the current block in the blockchain, there is a `get_current_block_number()` method for this:
@@ -210,7 +210,7 @@ print(f"Current block is {block_number}")
 # Current block is 6574322
 ```
 
-#### Get the service call price
+### Get the service call price
 
 To find out the price of calling a service function, you need to use the `get_price()` method:
 
@@ -220,7 +220,7 @@ print(f"The price in cogs for calling the service {service_client.service_id} is
 # The price in cogs for calling the service Exampleservice is 1
 ```
 
-#### Get the metadata of the service
+### Get the metadata of the service
 
 The metadata of services is stored in IPFS. To view it, you need to call the `get_service_metadata()` method, passing 
 the organization id and the service id to it.
@@ -248,7 +248,7 @@ print(*service_metadata.get_all_endpoints_for_group(group_name="default_group"),
 # http://node1.naint.tech:62400
 ```
 
-#### Get raw services and messages info
+### Get raw services and messages info
 
 In the section [Calling the service](#calling-the-service) we already talked about the function 
 `get_services_and_messages_info_as_pretty_string()`, with which you can get information about the methods and 

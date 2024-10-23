@@ -1,8 +1,9 @@
-## module: sdk.mpe.payment_channel
+
+# module : sdk.mpe.payment_channel
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/mpe/payment_channel.py) to GitHub
 
-Entities:
+## Entities:
 1. [PaymentChannel](#class-paymentchannel)
    - [\_\_init\_\_](#init)
    - [add_funds](#add-funds)
@@ -11,18 +12,18 @@ Entities:
    - [sync_state](#sync-state)
    - [_get_current_channel_state](#get-current-channel-state)
 
-### Class `PaymentChannel`
+## Class `PaymentChannel`
 
 extends: -
 
 is extended by: -
 
-#### description
+### description
 
 The PaymentChannel (payment_channel.py:8-65:135) class is responsible for managing a payment channel 
 in the SingularityNET platform.
 
-#### attributes
+### attributes
 
 - `channel_id` (int): The ID of the payment channel.
 - `web3` (Web3): An instance of the `Web3` class for interacting with the Ethereum blockchain.
@@ -33,13 +34,13 @@ in the SingularityNET platform.
   - `nonce` (int): The current nonce of the payment channel.
   - `last_signed_amount` (int): The last signed amount of the payment channel.
 
-#### methods
+### methods
 
-#### `__init__`
+### `__init__`
 
 Initializes a new instance of the class. 
 
-###### args:
+##### args:
 
 - `channel_id` (str): The ID of the payment channel.
 - `w3` (Web3): An instance of the `Web3` class for interacting with the Ethereum blockchain.
@@ -47,60 +48,60 @@ Initializes a new instance of the class.
 - `payment_channel_state_service_client` (ServiceStub): A stub for interacting with PaymentChannelStateService via gRPC.
 - `mpe_contract` (MPEContract): An instance of the `MPEContract` class for interacting with the MultiPartyEscrow contract.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `add_funds`
+### `add_funds`
 
 Adds funds to the payment channel.
 
-###### args:
+##### args:
 
 - `amount` (int): The amount of funds to add to the payment channel.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `extend_expiration`
+### `extend_expiration`
 
 Extends the expiration time of the payment channel.
 
-###### args:
+##### args:
 
 - `expiration` (int): The new expiration time of the payment channel in blocks.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `extend_and_add_funds`
+### `extend_and_add_funds`
 
 Extends the expiration time of a payment channel and adds funds to it.
 
-###### args:
+##### args:
 
 - `expiration` (int): The new expiration time of the payment channel in blocks.
 - `amount` (int): The amount of funds to add to the channel.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `sync_state`
+### `sync_state`
 
 This method gets the channel state data from the MPE and the daemon and updates all values of the state field.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `_get_current_channel_state`
+### `_get_current_channel_state`
 
 Receives channel state data from the daemon via gRPC using PaymentChannelStateService and returns it.
 
-###### returns:
+##### returns:
 
 - A tuple containing the current nonce and the current signed amount of funds. (tuple[int, int])
 

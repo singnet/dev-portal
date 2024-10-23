@@ -6,7 +6,12 @@ before we (or the community! ;-) ) write an SDK for it.
 
 ## Step 1. Prerequisites
 
-This guide assumes you've got a wallet.
+This guide assumes you've got a wallet (check 
+[Getting Ready to Call AI CheckUp](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/) 
+guide).  
+
+This guide calls the calculator service (organization_id = `26072b8b6a0e448180f8c0e702ab6d2f`, 
+service_id = `Exampleservice`) on the testnet `sepolia` (chain_id = `11155111`).
 
 ### Versions
 
@@ -153,14 +158,14 @@ Finally, the generated **service_client** instance can be used to call methods p
 from snet import sdk
 
 config = sdk.config.Config(private_key='YOUR_PRIVATE_KEY',
-                eth_rpc_endpoint=f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
+                eth_rpc_endpoint=f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY", # RPC endpoint of "sepolia" network
                 concurrency=False,
                 force_update=False)
 
 snet_sdk = sdk.SnetSDK(config)
 
-org_id = "26072b8b6a0e448180f8c0e702ab6d2f"
-service_id = "Exampleservice"
+org_id = "26072b8b6a0e448180f8c0e702ab6d2f" # Organization ID
+service_id = "Exampleservice" # Service ID
 group_name = "default_group"
 service_client = snet_sdk.create_service_client(org_id=org_id, service_id=service_id, group_name=group_name)
 
@@ -174,7 +179,7 @@ import SnetSDK from 'snet-sdk-web';
 
 const config = {
     web3Provider: window.ethereum,
-    networkId: '11155111',
+    networkId: '11155111', // Chain ID of "sepolia" network
     defaultGasPrice: '4700000',
     defaultGasLimit: '210000',
 };
@@ -191,11 +196,11 @@ const initSDK = async () => {
 };
 
 const getServiceClient = async () => {
-const sdk = await initSdk();
-const calculatorClient = await  sdk.createServiceСlient(
-    '26072b8b6a0e448180f8c0e702ab6d2f',
-    'Exampleservice'
-);
+    const sdk = await initSdk();
+    const calculatorClient = await  sdk.createServiceСlient(
+        '26072b8b6a0e448180f8c0e702ab6d2f', // Organization ID
+        'Exampleservice' // Service ID
+    );
 }
 
 const sentRequest = async () => {
@@ -230,9 +235,9 @@ const SnetSDK = require('snet-sdk');
 const grpc = require('./path_to_generated_grpc_js_file');  // Path to the generated libraries
 
 const config = {
-    web3Provider: "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID",
+    web3Provider: "https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID", // RPC endpoint of "sepolia" network
     privateKey: "0xYOUR_PRIVATE_KEY",
-    networkId: "1",
+    networkId: "11155111", // Chain ID of "sepolia" network
     ipfsEndpoint: "https://ipfs.singularitynet.io",
     defaultGasPrice: "4700000",
     defaultGasLimit: "210000"
@@ -240,8 +245,9 @@ const config = {
 
 async function callService() {
     const sdk = new SnetSDK.default(config);
-    const client = await sdk.createServiceClient(    '26072b8b6a0e448180f8c0e702ab6d2f',
-    'Exampleservice', grpc.Calculator );
+    const client = await sdk.createServiceClient('26072b8b6a0e448180f8c0e702ab6d2f', // Organization ID
+                                                 'Exampleservice', // Service ID 
+                                                 grpc.Calculator);
     
     const methodDescriptor = grpc.Calculator.mul;
     const request = new methodDescriptor.requestType();
@@ -261,15 +267,16 @@ callService();
 ```
 :::
 
+> **Note:** The SDK itself configures payment channels for you.
+
 After executing this code, you should have the following result in console:
 
 ```plaintext
 Performing 20 * 3: 60
 ```
 
-You can also use other values and methods to call in that service.
-
-The SDK itself configures payment channels for you.
+> **Note:** You can also use other values and methods to call in that service. Moreover, you can change id of the organization and 
+service to call other services and chain id or RPC endpoint to call services on mainnet.
 
 To learn more about every SDK, visit:
 - [Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)

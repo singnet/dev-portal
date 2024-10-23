@@ -1,8 +1,9 @@
-## module: sdk.mpe.mpe_contract
+
+# module : sdk.mpe.mpe_contract
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/mpe/mpe_contract.py) to GitHub
 
-Entities:
+## Entities:
 1. [MPEContract](#class-mpecontract)
    - [\_\_init\_\_](#init)
    - [balance](#balance)
@@ -14,71 +15,71 @@ Entities:
    - [channel_extend_and_add_funds](#channel-extend-and-add-funds)
    - [_fund_escrow_account](#fund-escrow-account)
 
-### Class `MPEContract`
+## Class `MPEContract`
 
 extends: -
 
 is extended by: -
 
-#### description
+### description
 
 The `MPEContract` class is responsible for interacting with the MultiPartyEscrow 
 contract on the Ethereum blockchain. It provides methods for retrieving the balance of an address, depositing 
 funds into the contract, opening a channel, adding funds to a channel, extending the expiration of a channel, and more.
 
-#### attributes
+### attributes
 
 - `web3` (Web3): An instance of the Web3 class for interacting with the Ethereum blockchain.
 - `contract` (Contract): An instance of the `Contract` class from the `web3` library for interacting 
 with the MultiPartyEscrow contract.
 
-#### methods
+### methods
 
-#### `__init__`
+### `__init__`
 
 Initializes a new instance of the class. The class is initialized with a Web3 object and an optional contract address. 
 If no contract address is provided, it uses the default MultiPartyEscrow contract.
 
-###### args:
+##### args:
 
 - `w3` (Web3): An instance of the `Web3` class.
 - `address` (str): The address of the MultiPartyEscrow contract. Defaults to None.
 
-###### returns:
+##### returns:
 
 - _None_
 
-#### `balance`
+### `balance`
 
 Returns the balance of the given address in the MPE contract in cogs.
 
-###### args:
+##### args:
 
 - `address` (str): The address to retrieve the balance for.
 
-###### returns:
+##### returns:
 
 - The balance in cogs. (int)
 
-#### `deposit`
+### `deposit`
 
 Deposit the specified amount of AGIX tokens in cogs into the MultiPartyEscrow contract.
 
-###### args:
+##### args:
 
 - `account` (Account): The account instance used to send the transaction.
 - `amount_in_cogs` (int): The amount of AGIX tokens in cogs to deposit.
 
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the deposit transaction. (TxReceipt)
 
-#### `open_channel`
+### `open_channel`
 
 Opens a payment channel with the specified amount of AGIX tokens in cogs (taken from MPE) and expiration time.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object used to send the transaction.
 - `payment_address` (str): The address of the payment recipient.
@@ -86,17 +87,17 @@ Opens a payment channel with the specified amount of AGIX tokens in cogs (taken 
 - `amount` (int): The amount of AGIX tokens in cogs to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `deposit_and_open_channel`
+### `deposit_and_open_channel`
 
 Opens a payment channel with the specified amount of AGIX tokens in cogs (which are previously deposited on MPE) 
 and expiration time. The account must have sufficient allowance to perform the deposit, otherwise the account 
 first approves the transfer.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object used to send the transaction.
 - `payment_address` (str): The address of the payment recipient.
@@ -104,64 +105,64 @@ first approves the transfer.
 - `amount` (int): The amount of AGIX tokens in cogs first for deposit on MPE, then for deposit on the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `channel_add_funds`
+### `channel_add_funds`
 
 Adds funds to an existing payment channel.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object used to sign the transaction.
 - `channel_id` (int): The ID of the payment channel.
 - `amount` (int): The amount of funds to add to the channel.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `channel_extend`
+### `channel_extend`
 
 Extends the expiration time of a payment channel.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object used to send the transaction.
 - `channel_id` (int): The ID of the payment channel.
 - `expiration` (int): The new expiration time of the payment channel in blocks.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `channel_extend_and_add_funds`
+### `channel_extend_and_add_funds`
 
 Extends the expiration time of a payment channel and adds funds to it.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object used to send the transaction.
 - `channel_id` (int): The ID of the payment channel.
 - `expiration` (int): The new expiration time of the payment channel in blocks.
 - `amount` (int): The amount of funds to add to the channel.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt)
 
-#### `_fund_escrow_account`
+### `_fund_escrow_account`
 
 Funds the escrow account for the given account with the specified amount.
 
-###### args:
+##### args:
 
 - `account` (Account): The account object used to send the transaction and for which 
 the escrow account needs to be funded.
 - `amount` (int): The amount to be funded into the escrow account.
 
-###### returns:
+##### returns:
 
 - The transaction receipt of the transaction. (TxReceipt | _None_)
 
