@@ -4,7 +4,7 @@
 
 Run this tutorial from a bash terminal.
 
-In this tutorial we will publish an example service in SingularityNET using Ropsten Test Network.
+In this tutorial we will publish an example service in SingularityNET using Sepolia Test Network.
 
 We build a [Docker](https://www.docker.com/) Image using this [Dockerfile](https://github.com/singnet/dev-portal-v2/docs/products/AIMarketplace/Forcomers/Dockerfile)
 that is set up with all the required dependencies but if you prefer you can install the dependencies by yourself in your own workstation.
@@ -118,10 +118,10 @@ You'll need some ETH and AGIX tokens.
 
 First, get the address of your account using `snet account print` command.
 
-Now make sure you are on Ropsten Network, using:
+Now make sure you are on Sepolia Network, using:
 
 ```sh
-snet network ropsten
+snet network sepolia
 ```
 
 And then check your balance, using:
@@ -243,7 +243,7 @@ Create a `SNET DAEMON` configuration file named `snetd.config.json`.
 cat > snetd.config.json << EOF
 {
    "DAEMON_END_POINT": "$DAEMON_HOST:$DAEMON_PORT",
-   "BLOCKCHAIN_NETWORK_SELECTED": "ropsten",
+   "BLOCKCHAIN_NETWORK_SELECTED": "sepolia",
    "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    "PASSTHROUGH_ENABLED": true,
@@ -283,7 +283,7 @@ Open a new terminal, if using Docker, enter in the docker container, using:
 docker exec -it MY_SNET_SERVICE bash
 ```
 
-At this point you can use several `SNET CLI` commands to interact with your account and with the Ropsten network
+At this point you can use several `SNET CLI` commands to interact with your account and with the Sepolia network
 (see [SNET CLI](http://snet-cli-docs.singularitynet.io) for details).
 
 Check your balance and setup a MultiPartyEscrow (MPE) Payment Channel to call your service.

@@ -254,7 +254,7 @@ Confirm the transaction and the Blockchain should now be aware of your service!
 ### Step 2.4) Running SNET Daemon
 
 
-To run your service, you simply need to run an instance of SNET Daemon at the specified endpoint. It will listen to client calls at the Blockchain and execute your service at the specified path using the client parameters. SNET Daemon takes a configuration file that specifies which network it should listen to (e.g. Kovan Testnet), where to redirect calls to, etc. (refer to [SNET Daemon's Github Repository](https://github.com/singnet/snet-daemon) for the complete list of parameters). By default, the daemon configuration file should be created at the root directory of your service and be called `snetd.config.json`. Here's the example configuration file for our service (again, make sure to change the parameters accordingly before saving):
+To run your service, you simply need to run an instance of SNET Daemon at the specified endpoint. It will listen to client calls at the Blockchain and execute your service at the specified path using the client parameters. SNET Daemon takes a configuration file that specifies which network it should listen to (e.g. Sepolia Testnet), where to redirect calls to, etc. (refer to [SNET Daemon's Github Repository](https://github.com/singnet/snet-daemon) for the complete list of parameters). By default, the daemon configuration file should be created at the root directory of your service and be called `snetd.config.json`. Here's the example configuration file for our service (again, make sure to change the parameters accordingly before saving):
 
 ```json
 {

@@ -1,7 +1,7 @@
 This example contains a Docker image and a number of simple application examples which demonstrate how to work with the SingularityNET platform.
 
 For the sake of clarity and simplicity, we prepared an environment which
-simulates the behaviour of the Kovan Ethereum testnet. All actions occur within your own instance of Ganache and doesn’t affect any public networks.
+simulates the behaviour of the Sepolia Ethereum testnet. All actions occur within your own instance of Ganache and doesn’t affect any public networks.
 
 Prerequisites:
 * [Docker CE](https://docs.docker.com/engine/installation/)

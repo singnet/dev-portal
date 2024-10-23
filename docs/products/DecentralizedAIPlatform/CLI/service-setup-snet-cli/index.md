@@ -53,9 +53,9 @@ sudo mv snet-daemon-${SNETD_VERSION}-linux-amd64/snetd /usr/bin/snetd
     #The address is of the Signer , who would issue you free tokens
     #Please note , if you are using market place Dapp , then we recommend to set the below
     #for free call Support 
-    #for Ropsten the Signer Address is 0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F
+    #for Sepolia the Signer Address is 0xf703b9aB8931B6590CFc95183be4fEf278732016
     #for mainnet the Signer Address is 0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf
-    SIGNERADDRESS="0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F"
+    SIGNERADDRESS="0xf703b9aB8931B6590CFc95183be4fEf278732016"
     #Tags should be in small letters 
     TAGS=image-recognition; 
     #create a metadata file with the same name as the service id.

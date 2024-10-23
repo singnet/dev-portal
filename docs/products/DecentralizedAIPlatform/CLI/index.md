@@ -9,7 +9,7 @@ The CLI provides commands to interface with the Blockchain in the following ways
 SingularityNET Registry;
 * Claiming funds from customers using MPE and payment channels;
 * Reading and writing metadata and Protobuf specs about AI services (these are stored on IPFS, while basic service parameters can be fetched from Blockchain contracts); and
-* Connecting to different networks like local testnets, Kovan, Ropsten, and the Ethereum mainnet.
+* Connecting to different networks like local testnets, Sepolia, and the Ethereum mainnet.
 
 The CLI also provides service development and deployment support. It can set up new services by generating service metadata, Protobuf specs, and code templates provided by the SingularityNET Foundation. The CLI interacts with daemons for each service.
 Security-wise, the CLI follows the same guidelines as provided by Ethereum for storing the private keys. When user identities are created and registered with a client, the CLI safely stores the details on the local machine and retrieves them only when it needs to interact with the Blockchain.
@@ -41,15 +41,15 @@ The transactions you make a call to SingularityNET are:
 After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
 or extend the timeout for the payment channel.
 
-So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
+So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now.
 
-Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.ropsten.be/).
+Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.singularitynet.io/).
 
-To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/Forcomers/wallet/.md), and then provide them with your wallet's public address.
+To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/Forcomers/wallet/), and then provide them with your wallet's public address.
 
 ### Step 2. Get some AGIX
 
-We provide a faucet to get AGIX for either Ropsten or Kovan [networks](https://faucet.singularitynet.io/)
+We provide a faucet to get AGIX for Sepolia [network](https://faucet.singularitynet.io/)
 
 You'll need a github account to authenticate, and there after you can request AGIX every 24 hours. 
 
@@ -60,8 +60,8 @@ pip3 install snet-cli #if not done already
 
 ### Set an identity 
 ```sh
-snet identity create user-ropsten mnemonic --mnemonic "YOUR MNEMONICS" --network ropsten
-snet identity user-ropsten
+snet identity create user-sepolia mnemonic --mnemonic "YOUR MNEMONICS" --network sepolia
+snet identity user-sepolia
 ```
 ### Deposit in Escrow and Create a Channel
 ```sh

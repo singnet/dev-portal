@@ -25,17 +25,12 @@ snet identity create [-h] [--mnemonic MNEMONIC] [--private-key PRIVATE_KEY]
                                                                                                                 
 All real value transactions occur in either "Main Ethereum Network" or "Mainnet Network". The other available networks are for testing purposes, and
 the tokens on those networks are essentially value-less and are only useful for testing code and software.
-                                                                                                                
-**Note**: SingularityNet began using  Kovan in order for testing, but this network is likely to be deprecated soon in favour of Ropsten network.
+                                                                                                        
                                                                                                                 
  **Important** The major releases will be over the main network. Beginning with the Beta testing in Feb/Mar 2019.
 
 >NOTE: Use the SingularityNET Marketplace in Mainnet Mode whenever you want to integrate an AI service into your software. Use the SingularityNET Marketplace in Ropsten Mode whenever you want to test the platform as a developer. Do not integrate AI services from the Ropsten Network in your software, as their continuous availability is not guaranteed.
 
-## Step 4. Ethereum Faucet (Ropsten Test Network Only)
+## Step 4. AGIX Faucet (Sepolia Test Network Only)
 
-Ethereum Ropsten coins are free to claim and can be used to test the platform. Ropsten Ethereum is needed to cover the Gas costs associated with transactions on the platform. Users are required to visit a [Ropsten Faucet](https://faucet.metamask.io/), which is a per-request Ropsten Ethereum distribution hub. Users provide their Ropsten Ethereum wallet address from MetaMask to the faucet and it issues a set amount of Ropsten Ethereum to the requesting wallet.
-
-## Step 5. AGIX Faucet (Ropsten Test Network Only)
-
-In order to have Ropsten AGIX to test the platform, users are required to visit the [AGIX Faucet](https://faucet.singularitynet.io/), which is a per-request Ropsten AGIX distribution hub. In this case, users provide their Ropsten Ethereum wallet addresses to the Faucet, and a set amount of Ropsten AGIX will be transferred to the requesting wallet. In order to receive these tokens, the user must log in via [GitHub](https://github.com/) to access the AGIX Ropsten Faucet. 
+In order to have Sepolia AGIX to test the platform, users are required to visit the [AGIX Faucet](https://faucet.singularitynet.io/), which is a per-request Sepolia AGIX distribution hub. In this case, users provide their Sepolia Ethereum wallet addresses to the Faucet, and a set amount of Sepolia AGIX will be transferred to the requesting wallet. In order to receive these tokens, the user must connect Sepolia wallet to access the AGIX Sepolia Faucet. 

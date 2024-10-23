@@ -12,7 +12,7 @@ The transactions you make a call to SingularityNET are:
 After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
 or extend the timeout for the payment channel.
 
-So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
+So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now.
 
 
 To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/Forcomers/wallet/), and then provide them with your wallet's public address.

@@ -13,15 +13,15 @@ The transactions you make a call to SingularityNET are:
 After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
 or extend the timeout for the payment channel.
 
-So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
+So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now.
 
-Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.ropsten.be/).
+Luckily for test network you can [go to a faucet to request some Ether for free](https://faucet.singularitynet.io/).
 
 To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/Forcomers/wallet/), and then provide them with your wallet's public address.
 
 ### Step 2. Get some AGIX
 
-We provide a faucet to get AGIX for either Ropsten or Kovan [networks](https://faucet.singularitynet.io/)
+We provide a faucet to get AGIX for Sepolia [network](https://faucet.singularitynet.io/)
 
 You'll need a github account to authenticate, and there after you can request AGIX every 24 hours. 
 
@@ -32,8 +32,8 @@ pip3 install snet-cli #if not done already
 
 ### Set an identity 
 ```sh
-snet identity create user-ropsten mnemonic --mnemonic "YOUR MNEMONICS" --network ropsten
-snet identity user-ropsten
+snet identity create user-sepolia mnemonic --mnemonic "YOUR MNEMONICS" --network sepolia
+snet identity user-sepolia
 ```
 ### Deposit in Escrow and Create a Channel
 ```sh

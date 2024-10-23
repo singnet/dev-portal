@@ -198,7 +198,7 @@ snet identity snet-user
 # switch to local ipfs endpoint
 snet set  default_ipfs_endpoint http://localhost:5002
 
-# Configure contract addresses for local network (for kovan addresess are already configured!)
+# Configure contract addresses for local network 
 snet set current_singularitynettoken_at 0x6e5f20669177f5bdf3703ec5ea9c4d4fe3aabd14
 snet set current_registry_at            0x4e74fefa82e83e0964f0d9f53c68e03f7298a8b2
 snet set current_multipartyescrow_at    0x5c7a4290f6f8ff64c69eeffdfafc8644a4ec3a4e
