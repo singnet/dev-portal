@@ -8,19 +8,27 @@
 For snet.cli you need Python 3.10 (or higher) with pip. Also you will need libudev and libusb 1.0
 Install them by running:
 
-`sudo apt install libudev-dev libusb-1.0-0-dev`
+```sh
+sudo apt install libudev-dev libusb-1.0-0-dev
+```
 
 2) Install new version of snet.cli:
 
-`pip install snet.cli`
+```sh
+pip install snet.cli
+```
 
 
 3) **(OPTIONAL)** Enabling commands autocomplete
 If you want to enable auto completion of commands, you should install the following package:
 
-`sudo apt install python3-argcomplete`
+```sh
+sudo apt install python3-argcomplete
+```
 
-`sudo activate-global-python-argcomplete`
+```sh
+sudo activate-global-python-argcomplete
+```
 
 4) Reinitialize ubuntu session (quit and login again). Everything should be working
 
@@ -30,17 +38,23 @@ If you want to enable auto completion of commands, you should install the follow
 
 1) Create an Identity in `snet.cli` for mainnet, if you already have an account with Ether, then you can use it, as an example:
 
-`snet identity create <IDENTITY> key --private-key <PVT-KEY> --network mainnet`
+```sh
+snet identity create <IDENTITY> key --private-key <PVT-KEY> --network mainnet
+```
 
 OR
 
-`snet identity create <IDENTITY> mnemonic --network mainnet`
+```sh
+snet identity create <IDENTITY> mnemonic --network mainnet
+```
 
 You can create an identity with your crypto wallet private key or with seed phrases (mnemonic). You can export your private key from the wallet, and seed phrases are given upon creation of said wallet. Choose whichever you have.
 
 2) Add the organization name, id and the type of organization (use the same <ORGANIZATION_ID> for daemon configuration later in the guide)
 
-`snet organization metadata-init <ORG-NAME> <ORGANIZATION_ID> individual`
+```sh
+snet organization metadata-init <ORG-NAME> <ORGANIZATION_ID> individual
+```
 
 organization_metadata.json file will be created, with metadata information you provided
 
@@ -58,7 +72,9 @@ organization_metadata.json file will be created, with metadata information you p
 
 3) Add description about your organization
 
-`snet organization metadata-add-description --description "Describe your organization details here" --short-description  "This is short description of your organization" --url "https://anyurlofyourorganization"`
+```sh
+snet organization metadata-add-description --description "Describe your organization details here" --short-description  "This is short description of your organization" --url "https://anyurlofyourorganization"
+```
 
 Updated organization_metadata.json:
 
@@ -92,11 +108,15 @@ Use parameters from previous steps: `<group_name>`, `<etcd-endpoint>`
 Your full etcd endpoint is printed by docker etcd installation script in the end. Look for
 **`ETCD ENDPOINT: https://<ETCD_ADDRESS>:2379`** (do not include **/health** at the end if it is present)
 
-`snet organization add-group --payment-expiration-threshold 40320 <group_name> <wallet_address> <etcd-endpoint>`
+```sh
+snet organization add-group --payment-expiration-threshold 40320 <group_name> <wallet_address> <etcd-endpoint>
+```
 
 Final command should look like this:
 
-`snet organization add-group --payment-expiration-threshold 40320 default_group 0x06A1D29e9FfA2415434A7A571235744F8DA2a514 https://your-etcd-endpont-ip-host:2379`
+```sh
+snet organization add-group --payment-expiration-threshold 40320 default_group 0x06A1D29e9FfA2415434A7A571235744F8DA2a514 https://your-etcd-endpont-ip-host:2379
+```
 
 This section will be added to your organization_metadata.json:
 
@@ -127,13 +147,16 @@ You can see more about configuring and deploying the ETCD by following this [lin
 
 Add in any images related to your organization
 
-`snet organization metadata-add-assets [-h] [--metadata-file METADATA_FILE] ASSET_FILE_PATH ASSET_TYPE`
+```sh
+snet organization metadata-add-assets [-h] [--metadata-file METADATA_FILE] ASSET_FILE_PATH ASSET_TYPE
+```
 
  
 Example:
 
-`snet organization metadata-add-assets image.png hero_image`
-
+```sh
+snet organization metadata-add-assets image.png hero_image
+```
 
 Add in any contact details related to your organization
 
@@ -145,15 +168,21 @@ snet organization metadata-add-contact [-h] [--phone PHONE] [--email EMAIL]
 
 Example:
 
-`snet organization metadata-add-contact --phone 123456789 --email yourorg@yourorg support`
+```sh
+snet organization metadata-add-contact --phone 123456789 --email yourorg@yourorg support
+```
 
 6) Check the metadata file created, you can correct data directly in file with any editor
 
-`cat organization_metadata.json`
+```sh
+cat organization_metadata.json
+```
 
 7) Publish the organization (note that this command creates a transaction, so you need to have ETH on your account wallet)
 
-`snet organization create <ORGANIZATION_ID>`
+```sh
+snet organization create <ORGANIZATION_ID>
+```
 
 ## Service setup
 
@@ -161,7 +190,9 @@ Example:
 
 1) Go to the folder with your gRPC service
 
-`cd path/to/your/service`
+```sh
+cd path/to/your/service
+```
 
 2) Prepare service metadata to publish the service
 
@@ -199,29 +230,39 @@ snet service metadata-init \
 
 1) Add service description
 
-`snet service metadata-add-description --json '{"description": "Description of my Service.", "url": "https://service.users.guide"}'`
+```sh
+snet service metadata-add-description --json '{"description": "Description of my Service.", "url": "https://service.users.guide"}'
+```
 
 4) Add daemon metering address
 
 To enable metering for your service run: (get metering address from section 7)
 
-`snet service metadata-add-daemon-addresses <GROUP_NAME> <METERING_ADDRESS>`
+```sh
+snet service metadata-add-daemon-addresses <GROUP_NAME> <METERING_ADDRESS>
+```
 
 5) Publish the service on SingularityNET
 
 Now you can publish your service (service_metadata.json is used implicitly), use `<ORGANIZATION_ID>` and `<SERVICE_ID>`. Run this command:
 
-`snet service publish <ORGANIZATION_ID> <SERVICE_ID>`
+```sh
+snet service publish <ORGANIZATION_ID> <SERVICE_ID>
+```
 
 Note: This command also creates a transaction, so you must have GETH on your balance
 
 Example:
 
-`snet service publish my_test_org my_test_service`
+```sh
+snet service publish my_test_org my_test_service
+```
 
 6) Check if your service has been properly published
 
-`snet organization info <ORGANIZATION_ID>`
+```sh
+snet organization info <ORGANIZATION_ID>
+```
 
 ## Calling service with snet.cli
 
@@ -231,7 +272,9 @@ To call a SNET service you need to open a payment channel with MPE on it. To get
 
 ```bash
 snet account deposit 0.000001 # Deposit AGIX Token to MPE. 
+```
 
+```sh
 snet channel open-init <org_id> <group_name> 0.000001 +7days # Open a Channel (for 7 days) and transfer AGIX in to the Channel
 ```
 
@@ -241,7 +284,9 @@ While protocol buffers are used for communication, call parameters are represent
 
 For example, in this platform example we need to pass the following JSON as a parameter for the “add” method to our service:
 
-`snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'`
+```sh
+snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'
+```
 
 Confirm the transaction when asked to. After that you should see service response to your JSON payload
 
@@ -255,7 +300,9 @@ value: 42.0
 
 When users are calling your service they send credentials that allow you to collect tokens they spent on service from their payment channel. To collect these tokens you have to run this command:
 
-`snet treasurer claim-all --endpoint <daemon-endpoint>`
+```sh
+snet treasurer claim-all --endpoint <daemon-endpoint>
+```
 
 **If the user's payment channel closes before you have collected your payment - you will lose your money. If for whatever reason you lose data on your ETCD cluster - you won’t be able to collect tokens either. That’s because payment channel credentials are located there. It is in your best interest to properly manage ETCD and its data, and to collect payment periodically.**
 
@@ -265,7 +312,9 @@ When you set up payment groups for your organization a special parameter was use
 
 Run this command twice a week (you can automate it with cron):
 
-`snet treasurer claim-all --endpoint <daemon-endpoint>`
+```sh
+snet treasurer claim-all --endpoint <daemon-endpoint>
+```
 
 ## Closing payment channel (recollecting your tokens as client)
 
@@ -273,4 +322,6 @@ When you open a payment channel to call services, you are doing this as a client
 
 While your payment channel is open, you can’t take your tokens back. You have to wait until it expires (in this guide it was open for +2days, so it will expire in roughly that time) before you can recollect your tokens. To do so run:
 
-`snet channel claim-timeout-all`
+```sh
+snet channel claim-timeout-all
+```

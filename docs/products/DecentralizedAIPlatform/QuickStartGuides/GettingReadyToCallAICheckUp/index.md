@@ -4,7 +4,7 @@
 
 To call the services published on our AI Marketplace Platform, the first thing you need is to create a wallet for working in the Ethereum network. You can learn more [here](https://metamask.io/download/).
 
-## 2. Getting ETH corrency to your wallet
+## 2. Getting ETH currency to your wallet
 
 Ether is used to pay for interactions on the blockchain (known as gas).
 
@@ -15,7 +15,7 @@ The transactions you make a call to SingularityNET are:
 After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
 or extend the timeout for the payment channel.
 
-So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now.
+So how do you get Ether? The mainnet requires you to buy, but we're going to use a testnet for now.
 
 Find out where to buy [here](https://coinmarketcap.com/currencies/ethereum/#Markets)
 

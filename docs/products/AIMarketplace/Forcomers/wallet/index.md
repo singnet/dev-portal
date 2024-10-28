@@ -29,7 +29,7 @@ the tokens on those networks are essentially value-less and are only useful for 
                                                                                                                 
  **Important** The major releases will be over the main network. Beginning with the Beta testing in Feb/Mar 2019.
 
->NOTE: Use the SingularityNET Marketplace in Mainnet Mode whenever you want to integrate an AI service into your software. Use the SingularityNET Marketplace in Ropsten Mode whenever you want to test the platform as a developer. Do not integrate AI services from the Ropsten Network in your software, as their continuous availability is not guaranteed.
+>NOTE: Use the SingularityNET Marketplace in Mainnet Mode whenever you want to integrate an AI service into your software. Use the SingularityNET Marketplace in Sepolia Mode whenever you want to test the platform as a developer. Do not integrate AI services from the Sepolia Network in your software, as their continuous availability is not guaranteed.
 
 ## Step 4. AGIX Faucet (Sepolia Test Network Only)
 

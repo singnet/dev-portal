@@ -21,7 +21,7 @@ The main steps of this tutorial are:
 3. [Call the service](#step-3-calling-your-service).
 
 
-## Step 1) Writing the code for your service
+## Step 1: Writing the code for your service
 
 For this tutorial we'll write an example executable service in [Python](https://www.python.org/) but this approach can be applied to other programming languages as well.
 
@@ -94,9 +94,9 @@ Notice that:
 - Once your code is ready, avoid printing any debug or status messages since they'll be sent to `stdout`, where SNET Daemon awaits the JSON-encoded return data;
 - Since this code will be interpreted as executable, you need to tell your operating system what interpreter to use by adding the shebang `#!/usr/bin/env python3`, for Python3, or an equivalent for your programming language of choice. You also need to give executable permissions to it, in our case, by running `chmod +x example-executable-service.py`.
 
-## Step 2) Publishing the service onto SingularityNET
+## Step 2: Publishing the service onto SingularityNET
 
-### Step 2.1) Specifying the service model
+## Step 2.1: Specifying the service model
 
 After writing the code for your service, you should now specify its user interface: the service model. We do that through a [protobuf](https://developers.google.com/protocol-buffers/docs/overview) file, in which we define `services` (or methods) and their inputs and outputs (`messages`). By default, the `.proto` file is stored inside the `service/service_spec` folder. Below is the protobuf file for our example executable service that defines the `add` method, the `Numbers` message containing the two numbers to added, `a` and `b`, and the `Result` message returning their sum. It is a very simple example of a protobuf file, [learn more](https://developers.google.com/protocol-buffers/docs/proto3) about protobuf syntax for more complex service models.
 
@@ -119,7 +119,7 @@ service Addition {
 
 You should copy this code into an `example-executable-service.proto` file inside `example-executable-service/service/service_spec`. 
 
-### Step 2.2) Create the organization metadata and service metadata
+## Step 2.2: Create the organization metadata and service metadata
 
 A service metadata is a series of JSON-encoded information relative to the service that is necessary to publish it. It tells the Blockchain where to redirect client calls to (your service endpoints), its encoding, price, etc. (refer to SNET CLI's help for a list of all possible parameters). 
 
@@ -251,15 +251,15 @@ Confirm the transaction and the Blockchain should now be aware of your service!
 
 > After having published your service, both its `service_metadata.json` and its service model/specifications (`.proto` file) will have been stored in IPFS, so if you change these files locally, you'll need to update them. Have a look at `snet service update-metadata` and `snet service metadata-set-model` commands for that.
 
-### Step 2.4) Running SNET Daemon
+## Step 2.4: Running SNET Daemon
 
 
 To run your service, you simply need to run an instance of SNET Daemon at the specified endpoint. It will listen to client calls at the Blockchain and execute your service at the specified path using the client parameters. SNET Daemon takes a configuration file that specifies which network it should listen to (e.g. Sepolia Testnet), where to redirect calls to, etc. (refer to [SNET Daemon's Github Repository](https://github.com/singnet/snet-daemon) for the complete list of parameters). By default, the daemon configuration file should be created at the root directory of your service and be called `snetd.config.json`. Here's the example configuration file for our service (again, make sure to change the parameters accordingly before saving):
 
 ```json
 {
-    "BLOCKCHAIN_NETWORK_SELECTED": "ropsten",
-    "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
+    "BLOCKCHAIN_NETWORK_SELECTED": "sepolia",
+    "ETHEREUM_JSON_RPC_ENDPOINT": "https://sepolia.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
     "PASSTHROUGH_ENABLED": true,
     "PASSTHROUGH_ENDPOINT": "http://localhost:7003",
     "DAEMON_END_POINT": "0.0.0.0:8088",
@@ -285,9 +285,17 @@ You're now able to keep an instance of SNET Daemon running at your service direc
 snetd serve .
 ```
 
-## Step 3) Calling your service
+## Step 3: Calling your service
 
-To call your service through the Blockchain, make sure you have sufficient funds for the transactions (check by running `snet account balance`). If you don't, deposit an amount (e.g. 10 COGs, or 10e-8 AGIX) by running `snet account deposit 0.00000010`. 
+To call your service through the Blockchain, make sure you have sufficient funds for the transactions.
+
+```sh
+check by running `snet account balance
+```
+If you don't, deposit an amount (e.g. 10 COGs, or 10e-8 AGIX) by running
+```sh
+snet account deposit 0.00000010
+```
  
 Create a payment channel to your service: specify its organization ID and the group name, deposit some tokens into the channel and set its expiration time: `snet channel open-init ORG_ID default_group AMOUNT EXPIRATION`. For our example, we'll deposit 0 tokens and set the payment channel to expire in 10 days:
 

@@ -8,7 +8,7 @@
 #### Create an Identity in snet.cli for Mainnet, if you already have an account with ether , then you can use it , as an example 
 
 ```sh
-snet identity create test-user key --private-key <PVT-KEY> --network mainnet
+snet identity create test-user key --private-key <PRIVATE-KEY> --network mainnet
 ```
 #### Add the organization name, id and the type of organization
 test-org-name is the organization name and test-org-id is the organization id. 

@@ -57,7 +57,7 @@ Subject :
 ```
 certificates are about to expire for service %s for %s network.
 ```
-### Ropsten Alerts on Certificates
+### Sepolia Alerts on Certificates
 Alert messages are sent through the mail id : test-no-reply@singularitynet.io 
 Subject :
 ```
@@ -122,7 +122,7 @@ For other Organizations, follow the below steps to regenerate the etcd client ce
 - Copy the ca.pem, ca-key.pem, ca-config.json & client.json that you previously used for generating the etcd certificates.
 - Run the below command to generate the client certificates.
 
-### How to deploy an Organization and a Service on Ropsten? 
+### How to deploy an Organization and a Service on Sepolia? 
 Complete the following steps listed in the [document](https://drive.google.com/open?id=1w9zYYB5HxrlXCgUKzCsgGbXRGzm75Cm0n0qbPeMhrRU) 
 
 
@@ -286,7 +286,7 @@ Also make sure  your stubs are updated on the Dapp Components
 
 - Keep the below links for reference 
     
-    Dapp for Ropsten: http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
+    Dapp for Sepolia: https://testnet-marketplace.singularitynet.io/
     
     Dapp for Mainnet: http://beta.singularitynet.io/
 
@@ -309,10 +309,10 @@ Also make sure  your stubs are updated on the Dapp Components
 
 ### How do I raise a Pull request for DApp
 - Raise pull requests using “snet-dapp-monorepo/development”.
-- After merging in the development. It will be deployed to the ropsten network:http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/
+- After merging in the development. It will be deployed to the Sepolia network: https://testnet-marketplace.singularitynet.io/
 
 ### When does my Pull request gets merged to Master 
-- If your changes are seen in [ropsten](http://enhanced-marketplace.s3-website-us-east-1.amazonaws.com/). 
+- If your changes are seen in [Sepolia](https://testnet-marketplace.singularitynet.io/). 
     
     Inform the concerned authority to merge the changes from development to master. This is then deployed to Mainnet network: http://beta.singularitynet.io/
     

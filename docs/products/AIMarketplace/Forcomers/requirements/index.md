@@ -13,7 +13,7 @@ sudo apt-get install wget git
 sudo apt-get install python3 python3-pip
 sudo apt-get install nodejs npm
 sudo apt-get install libudev-dev libusb-1.0-0-dev
-sudo pip3 install snet-cli
+sudo pip3 install snet.cli
 
 # !!! Get the latest snet-daemon from Github releases
 SNETD_VERSION=`curl -s https://api.github.com/repos/singnet/snet-daemon/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'`
