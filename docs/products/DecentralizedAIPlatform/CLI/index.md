@@ -25,7 +25,7 @@ and locking/unlocking accounts for transacting with the Blockchain. This compone
 
 This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/products/AIMarketplace/Forcomers/setupguide/.md).
 
-See the [CLI documentation](http://snet-cli-docs.singularitynet.io/) for full details of actions the tool allows.
+See the [CLI documentation](/docs/products/DecentralizedAIPlatform/CLI/Manual/) for full details of actions the tool allows.
 
 ## Making a call to a SingularityNET service
 

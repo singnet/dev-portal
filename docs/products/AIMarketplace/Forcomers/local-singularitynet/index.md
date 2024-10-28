@@ -23,7 +23,7 @@ sudo apt-get install golang go-dep golang-goprotobuf-dev golint
 
 ### NodeJS toolset
 
-- NodeJS 8+
+- NodeJS 18+
 - NPM
 
 [Truffle](https://truffleframework.com/truffle) and [Ganache](https://truffleframework.com/ganache) are used to develop and test Ethereum contracts so NodeJS development tools are required.
@@ -38,13 +38,13 @@ IPFS is used to keep RPC models of the services which are published via Singular
 
 ### Python toolset
 
-- Python 3.6.5
+- Python 3.11.4
 - Pip
 
 Part of the code is written in Python so you need a Python interpreter and Pip as python package manager.
 
 ```sh
-sudo apt-get install python3 python3-pip
+sudo apt-get install python3.11 python3.11-pip
 ```
 
 ### Other

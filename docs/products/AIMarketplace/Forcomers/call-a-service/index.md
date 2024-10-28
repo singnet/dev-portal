@@ -19,8 +19,6 @@ To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/For
 
 ## Step 2. Get some AGIX
 
-
-
 You'll need a github account to authenticate, and there after you can request AGIX every 24 hours.
 
 ## Step 3. Make a Call from the Marketplace
@@ -34,14 +32,18 @@ The `snet` CLI tool is your swiss army knife for working with SingularityNET. It
 You can install the CLI with pip:
 
 ```sh
-sudo pip3 install snet-cli
+sudo pip3 install snet.cli
 ```
 
 You then need to create an identity that matches your metamask account, since this is where the faucets sent all your test tokens too.
 
-```sh
-snet identity create YOURNAME key
-```
+Create an Identity in snet.cli for Sepolia, if you already have an account with ether, then you can use it, as an example:
+
+`snet identity create <IDENTITY> key --private-key <PVT-KEY> --network sepolia`
+
+OR
+
+`snet identity create <IDENTITY> mnemonic --network sepolia`
 
 You will be prompted for the private key for your wallet. To get this, click "Show your account details" on metamask, and "export your private key". This will ask for your metamask password. Once you enter it, you can then copy your private key and paste it into the snet cli. Next, you should probably copy some meaningless text to your clipboard to avoid accidentally pasting the key somewhere it shouldn't go.
 
@@ -49,12 +51,32 @@ WARNING: Your private key is like the password to your online banking. Be very c
 
 SingularityNET takes your security seriously and any vulnerabilities can be reported on our Github (if minor), or emailed to [security@singularitynet.io](mailto:security@singularitynet.io)
 
-## Step 5. Make a Call from the Command Line
+## Step 5. Make a Call from the Command Line with snet.cli
 
-TODO
+1) Deposit in Escrow and Create a Channel
+
+To call a SNET service you need to open a payment channel with MPE on it. To get MPE run:
+
+``` bash
+snet account deposit 0.000001 # Deposit AGIX Token to MPE. 
+
+snet channel open-init <org_id> <group_name> 0.000001 +7days # Open a Channel (for 7 days) and transfer AGIX in to the Channel
+```
+
+2) Make a call to a service
+
+While protocol buffers are used for communication, call parameters are represented as JSON on the command line.
+
+For example, in this platform example we need to pass the following JSON as a parameter for the “add” method to our service:
+
+`snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'`
+
+Confirm the transaction when asked to. After that you should see service response to your JSON payload
 
 ```sh
-snet client call ...
+Price for this call will be 0.0000001 AGI (use -y to remove this warning).
+Proceed? (y/n): y
+value: 42.0
 ```
 
 ## Step 6. Congratulations!

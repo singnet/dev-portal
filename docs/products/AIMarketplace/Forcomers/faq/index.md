@@ -10,9 +10,9 @@ TEST ETH: You can get them on public faucet for the particular network you are t
 
 TEST AGIX: Our AGIX faucet will be updated soon to support Sepolia network
 
-## SNET-cli:
+## snet.cli:
 
-### Can I use older versions of python to install SNET-cli:
+### Can I use older versions of python to install snet.cli:
 We strongly recommend using python version specified in prerequisites section of our repository. It can work on older version of python, however we can't guarantee that all functionality will work as inteneded. Use it at your own disgression
 
 ### While trying to use test network I get this error: `Exception: Netowrk sepolia is not in config`
@@ -28,11 +28,11 @@ To update service metadata you have to be owner of organization that published t
 {"jsonrpc":"2.0","id":1,"error":{"code":-32005,"message":"daily request count exceeded, request rate limited","data":{"rate":{"allowed_rps":1,"backoff_seconds":30,"current_rps":2.6333333333333333},"see":"https://infura.io/dashboard"}}}" 429 Too Many Requests"
 ```
 
-This is an issue with our public RPC endpoint. We are currently working on the solution to this problem. At this moment we recomend creating your own infura account to get private RPC endpoint. You have to update endpoint url inside your snet-cli config file which is located here: `$HOME/.snet/config`. Replace existing values to your own infura or similar RPC providers, but be aware that you need to use same network.
+This is an issue with our public RPC endpoint. We are currently working on the solution to this problem. At this moment we recomend creating your own infura account to get private RPC endpoint or using some RPC endpoint. You have to update endpoint url inside your snet-cli config file which is located here: `$HOME/.snet/config`. Replace existing values to your own infura or similar RPC providers, but be aware that you need to use same network.
 
 If you have this issue calling your own services, update the daemon configuration of your services. Add this value to your daemon config: `'ethereum_json_rpc_endpoint': 'https://mainnet.infura.io/v3/<your-endpoint-id>'` 
 
-## SNET-daemon:
+## SNET Daemon:
 ### Daemon crashes after the start on `enabling SSL support via X509 keypair` step
 Check `payment_channel` section of your daemon config to ensure that path to ETCD certificates is valid.
 

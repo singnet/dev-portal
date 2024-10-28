@@ -70,7 +70,7 @@ You could create simple template config by:
 
 The init command will create a `snetd.config file.json` in which you will need to change some parameters:
 
- ```json
+```json
 {
         "blockchain_enabled": true,
         "blockchain_network_selected": "sepolia",

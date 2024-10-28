@@ -108,7 +108,6 @@ You can create an identity using a known key.
 -   key - hex private key
 -   rpc - used with a JSON-RPC manager
 -   ledger - hardware wallet
--   trezor - hardware wallet
 
 Check more details on how to use them at ([SNET CLI](http://snet-cli-docs.singularitynet.io)).
 
@@ -239,32 +238,24 @@ snet organization info $ORGANIZATION_ID
 
 Create a `SNET DAEMON` configuration file named `snetd.config.json`.
 
-```sh
-cat > snetd.config.json << EOF
+```json
 {
-   "DAEMON_END_POINT": "$DAEMON_HOST:$DAEMON_PORT",
-   "BLOCKCHAIN_NETWORK_SELECTED": "sepolia",
-   "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
-   "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
-   "PASSTHROUGH_ENABLED": true,
-   "PASSTHROUGH_ENDPOINT": "http://localhost:$SERVICE_PORT",
-   "ORGANIZATION_ID": "$ORGANIZATION_ID",
-   "SERVICE_ID": "$SERVICE_ID",
-
-
-   "PAYMENT_CHANNEL_STORAGE_SERVER": {
-        "DATA_DIR": "/opt/singnet/etcd/"
-    },
-
-
-   "LOG": {
-        "LEVEL": "debug",
-        "OUTPUT": {
-            "TYPE": "stdout"
-        }
-   }
+        "blockchain_enabled": true,
+        "blockchain_network_selected": "sepolia",
+        "passthrough_endpoint":"YOUR_SERVICE_ENDPOINT",
+        "service_id": "YOUR_SERVICE_ID",
+        "organization_id": "YOUR_ORG_ID",
+        "daemon_end_point": "127.0.0.1:8080",
+        "daemon_group_name":"default_group",
+        "passthrough_enabled": true,
+        "payment_channel_storage_type": "etcd",
+        "ipfs_end_point": "http://ipfs.singularitynet.io:80",
+        "log": {
+                "output": {
+                        "type": ["file", "stdout"]
+                }
+        }  
 }
-EOF
 ```
 
 Running the service will spawn an instance of `SNET DAEMON` automatically.
