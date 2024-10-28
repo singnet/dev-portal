@@ -1,6 +1,6 @@
 # What is the Bridge?
 
-SingularityNet Bridge allows users to transfer their tokens across supported Blockchains. Currently, we support AGIX and NTX tokens on Ethereum and Cardano.
+SingularityNET Bridge allows users to transfer their tokens across supported Blockchains. Currently, we support AGIX and NTX tokens on Ethereum and Cardano.
 
 A key aspect of the Phase two proposal was to allow 1-1 swapping of AGIX tokens across Ethereum and Cardano chains. Since then we have also launched the NTX token which exists on both Ethereum and Cardano chains. The bridge will enable seamless conversion of both the AGIX and NTX tokens across these chains. 
 

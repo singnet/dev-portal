@@ -28,7 +28,7 @@ Run docker image with examples:
 ```
 
 After docker image is up you will be in the `singnet` folder which contains all
-main SingularityNet git repositories and SingularityNet examples.
+main SingularityNET git repositories and SingularityNET examples.
 
 Please start with reading `examples/01-snet-cli/README` file and follow instructions.
 

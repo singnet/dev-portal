@@ -9,7 +9,7 @@
 
 etcd is written in Go and uses the Raft consensus algorithm to manage a highly-available replicated log.
 
-## etcd and SingularityNet Platform
+## etcd and SingularityNET Platform
 
 <a href="https://github.com/etcd-io/etcd" target="_blank">etcd</a> is used as storage to store context related to 
 [Payments](/docs/products/DecentralizedAIPlatform/Daemon/daemon-channel-storage/)
