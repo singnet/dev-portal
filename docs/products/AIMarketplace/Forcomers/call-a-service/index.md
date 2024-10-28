@@ -25,7 +25,7 @@ You'll need a github account to authenticate, and there after you can request AG
 
 Follow this [video tutorial](https://www.youtube.com/watch?v=j_9yLRQ1bE4).
 
-## Step 4. Setup the `snet` CLI tool
+## Step 4. Setup the snet.cli tool
 
 The `snet` CLI tool is your swiss army knife for working with SingularityNET. It lets you publish services, manage your identities, and query what AI services are available to use. If you are familar with cloud providers like Amazon or Google, this is our decentralised equivalent of their `aws` or `gcloud` respectively.
 
