@@ -1,16 +1,16 @@
-- [Python 3.6+](https://www.python.org/downloads/)
-- [Node 8+ with npm](https://nodejs.org/en/download/)
-- [SNET CLI](https://github.com/singnet/snet-cli/releases)
+- [Python 3.10+](https://www.python.org/downloads/)
+- [Node 19+ with npm](https://nodejs.org/en/download/)
+- [SNET CLI](https://github.com/singnet/snet-cli/releases/latest)
     - libudev
     - libusb 1.0
-- [SNET Daemon](https://github.com/singnet/snet-daemon/releases)
+- [SNET Daemon](https://github.com/singnet/snet-daemon/releases/latest)
 
 For example, installing the requirements using `Ubuntu 18.04`:
 
 ```sh
 sudo apt-get update
 sudo apt-get install wget git
-sudo apt-get install python3 python3-pip
+sudo apt-get install python3.10 python3.10-pip
 sudo apt-get install nodejs npm
 sudo apt-get install libudev-dev libusb-1.0-0-dev
 sudo pip3 install snet.cli

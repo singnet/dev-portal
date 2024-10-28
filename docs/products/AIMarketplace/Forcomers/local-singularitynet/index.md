@@ -38,7 +38,7 @@ IPFS is used to keep RPC models of the services which are published via Singular
 
 ### Python toolset
 
-- Python 3.11.4
+- Python 3.10+
 - Pip
 
 Part of the code is written in Python so you need a Python interpreter and Pip as python package manager.
