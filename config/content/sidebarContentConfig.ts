@@ -95,7 +95,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Quick Start Guides",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
         collapsed: true,
         items: [
             {
@@ -904,7 +904,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Boilerplate/GettingStarted/",
             },
             { 
-                text: "Using guid",
+                text: "Using guide",
                 link: "/docs/products/DecentralizedAIPlatform/Boilerplate/UserGuide/",
             }
         ],
@@ -999,7 +999,7 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
         items: [
             {
                 text: "Platform workshops",
-                link: "",
+                link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/python/",
                 collapsed: true,
                 items:[
                     {

@@ -45,7 +45,7 @@ Details like Service the price of the service ,
 image depicting / related to the service , service type, description, the endpoint and how to make a request.
 
 Please note that
-- Singularity platform works on gRPC. Whenever you need to call you need a protofile.
+- SingularityNET platform works on gRPC. Whenever you need to call you need a protofile.
 - File management system such as IPFS stores the location of the hash and points to the associated protofile
     The IPFS can include a file and the same file returns same hash. 
     

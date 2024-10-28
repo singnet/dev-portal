@@ -1,6 +1,6 @@
-# Singularity Web SDK Boilerplate User Guide
+# SingularityNET Boilerplate User Guide
 
-Welcome to the Singularity Web SDK Boilerplate User Guide! This document will provide step-by-step instructions on setting up, configuring, and using the boilerplate project to integrate with SingularityNET services.
+Welcome to the SingularityNET Boilerplate User Guide! This document will provide step-by-step instructions on setting up, configuring, and using the boilerplate project to integrate with SingularityNET services.
 
 ## Step 1. Dependencies
 
@@ -157,4 +157,4 @@ To deploy this project to the Internet Computer (ICP), follow these steps:
 
 ---
 
-By following this guide, you should be able to set up, configure, and use the Singularity Web SDK Boilerplate to integrate with SingularityNET services and deploy your project to the Internet Computer.
+By following this guide, you should be able to set up, configure, and use the SingularityNET Web SDK Boilerplate to integrate with SingularityNET services and deploy your project to the Internet Computer.
