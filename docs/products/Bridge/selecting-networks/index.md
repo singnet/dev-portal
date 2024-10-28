@@ -17,7 +17,7 @@ Bridging tokens from one chain to another involves the following steps
 
 1. Set up the token pair
 
-2. Authorize (Approve ) the bridge to transfer tokens on the Ethereum side on your behalf. This involves a web3 wallet interaction. This is a one time, if you dont change the default valueю - you will not need to authorize for every conversion. 
+2. Authorize (Approve) the bridge to transfer tokens on the Ethereum side on your behalf. This involves a web3 wallet interaction. This is a one time, if you dont change the default valueю - you will not need to authorize for every conversion. 
 Important: at this point, you are not yet transferring tokens to another network. You are only allowing the smart contract access to interact with the tokens. This step is mandatory.
 
 3. Once authorized you can initiatite the conversion. 
