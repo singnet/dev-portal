@@ -238,8 +238,8 @@ print(*service_metadata.get_all_endpoints_for_group(group_name="default_group"),
 # ('model_ipfs_hash', 'QmeyrQkEyba8dd4rc3jrLd5pEwsxHutfH2RvsSaeSMqTtQ')
 # ('mpe_address', '0x7E0aF8988DF45B824b2E0e0A87c6196897744970')
 # ('groups', [{'free_calls': 0, 'free_call_signer_address': '0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F', 'daemon_addresses': ['0x0709e9b78756b740ab0c64427f43f8305fd6d1a7'], 'pricing': [{'default': True, 'price_model': 'fixed_price', 'price_in_cogs': 1}], 'endpoints': ['http://node1.naint.tech:62400'], 'group_id': '/mb90Qs8VktxGQmU0uRu0bSlGgqeDlYrKrs+WbsOvOQ=', 'group_name': 'default_group'}])
-# ('service_description', {'url': 'https://ropsten-v2-publisher.singularitynet.io/org', 'short_description': 'Example service', 'description': 'Example service'})
-# ('media', [{'order': 1, 'url': 'https://ropsten-marketplace-service-assets.s3.us-east-1.amazonaws.com/26072b8b6a0e448180f8c0e702ab6d2f/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg', 'file_type': 'image', 'asset_type': 'hero_image', 'alt_text': ''}])
+# ('service_description', {'url': 'https://sepolia-v2-publisher.singularitynet.io/org', 'short_description': 'Example service', 'description': 'Example service'})
+# ('media', [{'order': 1, 'url': 'https://sepolia-marketplace-service-assets.s3.us-east-1.amazonaws.com/26072b8b6a0e448180f8c0e702ab6d2f/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg', 'file_type': 'image', 'asset_type': 'hero_image', 'alt_text': ''}])
 # ('contributors', [{'name': 'test', 'email_id': ''}])
 # ('tags', ['exampleservice'])
 # 

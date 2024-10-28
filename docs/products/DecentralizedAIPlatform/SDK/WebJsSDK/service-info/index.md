@@ -152,14 +152,14 @@ The structure of the service data:
         }
     ],
     "service_description": {
-        "url": "https://ropsten-v2-publisher.singularitynet.io/org",
+        "url": "https://sepolia-v2-publisher.singularitynet.io/org",
         "short_description": "Example service",
         "description": "Example service"
     },
     "media": [
         {
             "order": 1,
-            "url": "https://ropsten-marketplace-service-assets.s3.us-east-1.amazonaws.com/26072b8b6a0e448180f8c0e702ab6d2f/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg",
+            "url": "https://sepolia-marketplace-service-assets.s3.us-east-1.amazonaws.com/26072b8b6a0e448180f8c0e702ab6d2f/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg",
             "file_type": "image",
             "asset_type": "hero_image",
             "alt_text": ""
