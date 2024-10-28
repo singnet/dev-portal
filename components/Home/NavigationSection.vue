@@ -1,8 +1,5 @@
 <template>
     <div class="navigation-section-container">
-        <h1 class="navigation-section-title">
-            Products docs
-        </h1>
         <NavigationCard v-for="item in docsConfig" :item="item" />
     </div>
 </template>
@@ -29,11 +26,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-}
-
-.navigation-section-title {
-    flex-basis: 100%;
-    text-align: center;
 }
 
 .dark .card-redirect svg {

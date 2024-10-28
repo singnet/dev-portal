@@ -67,7 +67,7 @@ export const TechnologiesSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/AboutTechnologies/ethereum/",
     },
     {
-        text: "AGIX Token",
+        text: "AGIX Token and faucet",
         link: "/docs/products/AboutTechnologies/agix-token/",
     },
     {
@@ -133,80 +133,6 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         ],
     },
     {
-        text: "Core concepts",
-        collapsed: true,
-        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/keyterms/",
-        items: [
-            {
-                text: "Marketplace ecosystem",
-                collapsed: true,
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
-                items: [
-                    {
-                        text: "Service",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service/",
-                    },
-                    {
-                        text: "Explanation of Daemon",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/daemon/",
-                    },
-                    {
-                        text: "Marketplace service invocation",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_invocation/",
-                    },
-                    {
-                        text: "Marketplace service training",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_training/",
-                    },
-                ],
-            },
-            {
-                text: "Smart contracts",
-                collapsed: true,
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/",
-                items: [
-                    {
-                        text: "MPE",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/",
-                    },
-                    {
-                        text: "MPE Stateless Client",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe-stateless-client/",
-                    },
-                ],
-            },
-
-            {
-                text: "ERC20",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/erc20/",
-            },
-            {
-                text: "ETCD",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/etcd/",
-            },
-            {
-                text: "Ethereum Address",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum-address/",
-            },
-            {
-                text: "GRPC",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/grpc/",
-            },
-            {
-                text: "IPFS",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ipfs/",
-            },
-            {
-                text: "Protobuf",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/protobuf/",
-            },
-            {
-                text: "ETCD Setup",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup/",
-            },
-        ],
-    },
-    {
         text: "Daemon",
         link: "/docs/products/DecentralizedAIPlatform/Daemon/",
         collapsed: true,
@@ -242,6 +168,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/CLI/",
         collapsed: true,
         items: [
+            {
+                text: "What is CLI?",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/",
+            },
             {
                 text: "Organization setup via CLI",
                 link: "/docs/products/DecentralizedAIPlatform/CLI/organization-setup-sent-cli/",
@@ -783,6 +713,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         collapsed: true,
         items: [
             {
+                text: "What is Publisher?",
+                link: "/docs/products/DecentralizedAIPlatform/PublisherPortal/",
+            },
+            {
                 text: "Text Quickstart Guide",
                 link: "/docs/products/DecentralizedAIPlatform/PublisherPortal/text-guide/",
             },
@@ -939,9 +873,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "Java SDK",
-                link:"",
+                link:"/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
                 collapsed: true,
-                items:[],
+                items:[
+                    {
+                        text: "Getting started guide",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
+                    },
+                ],
             },
         ],
     },
@@ -953,9 +892,96 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "UI Boilerplate",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/Boilerplate/",
         collapsed: true,
-        items: [],
+        items: [
+            {
+                text: "What is Boilerplate?",
+                link: "/docs/products/DecentralizedAIPlatform/Boilerplate/",
+            },
+            { 
+                text: "Getting Started",
+                link: "/docs/products/DecentralizedAIPlatform/Boilerplate/GettingStarted/",
+            },
+            { 
+                text: "Using guid",
+                link: "/docs/products/DecentralizedAIPlatform/Boilerplate/UserGuide/",
+            }
+        ],
+    },
+    {
+        text: "Core concepts",
+        collapsed: true,
+        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/keyterms/",
+        items: [
+            {
+                text: "Marketplace ecosystem",
+                collapsed: true,
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
+                items: [
+                    {
+                        text: "Service",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service/",
+                    },
+                    {
+                        text: "Explanation of Daemon",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/daemon/",
+                    },
+                    {
+                        text: "Marketplace service invocation",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_invocation/",
+                    },
+                    {
+                        text: "Marketplace service training",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_training/",
+                    },
+                ],
+            },
+            {
+                text: "Smart contracts",
+                collapsed: true,
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/",
+                items: [
+                    {
+                        text: "MPE",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/",
+                    },
+                    {
+                        text: "MPE Stateless Client",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe-stateless-client/",
+                    },
+                ],
+            },
+
+            {
+                text: "ERC20",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/erc20/",
+            },
+            {
+                text: "ETCD",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/etcd/",
+            },
+            {
+                text: "Ethereum Address",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum-address/",
+            },
+            {
+                text: "GRPC",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/grpc/",
+            },
+            {
+                text: "IPFS",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ipfs/",
+            },
+            {
+                text: "Protobuf",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/protobuf/",
+            },
+            {
+                text: "ETCD Setup",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup/",
+            },
+        ],
     },
     {
         text: "Used Technologies",
