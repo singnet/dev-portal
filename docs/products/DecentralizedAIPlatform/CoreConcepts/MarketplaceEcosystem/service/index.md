@@ -10,7 +10,7 @@ These services are primarily meant to be AI or machine learning related, but the
 
 - Services define their API using <a href="https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition" target="_blank">protocol buffers</a>. 
 - This allows SingularityNET clients to determine the request/response schema programmatically. 
-- The first step in setting up a service on the SingularityNet Platform is to define the service definition via protocol buffers.
+- The first step in setting up a service on the SingularityNET Platform is to define the service definition via protocol buffers.
 - A sample proto file is available <a href="https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto" target="_blank">here</a>
 
 

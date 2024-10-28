@@ -38,7 +38,7 @@ cat snetd.config.json
 screen -d -m snetd-linux-amd64
 ```
 
-## Call service via SingularityNet
+## Call service via SingularityNET
 ```sh
 snet identity caller
 snet client open_init_channel_registry ExampleOrganization EchoService 50 57600 -y

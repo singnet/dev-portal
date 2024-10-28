@@ -2,7 +2,7 @@
 
 An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account.
 
-The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNet platform with a minimal number of on-Blockchain interactions between AI Consumers and AI service providers.
+The Multi-party Escrow (MPE) smart contract API and the payment channel together enable payments in the SingularityNET platform with a minimal number of on-Blockchain interactions between AI Consumers and AI service providers.
 
 The MPE contract comprises two main functions, which includes:
 

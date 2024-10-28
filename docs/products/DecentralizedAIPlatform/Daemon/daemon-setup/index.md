@@ -91,7 +91,7 @@ The init command will create a `snetd.config file.json` in which you will need t
 ```
 
 ## SSL Configuration
-The SingularityNet Daemon is designed to be deployed as a sidecar proxy alongside the service on a given host. All communication to the daemon needs to be secured using SSL and can be achieved in the following ways
+The SingularityNET Daemon is designed to be deployed as a sidecar proxy alongside the service on a given host. All communication to the daemon needs to be secured using SSL and can be achieved in the following ways
 
 * Set up the daemon behind an nginx server
 * Use SSL certificates. <a href="https://dev.singularitynet.io/docs/ai-developers/daemon-ssl-setup/" target="_blank">This</a> guide walks thru the process of obtaining SSL certificates from Let's Encrypt
@@ -126,14 +126,14 @@ The SingularityNet Daemon is designed to be deployed as a sidecar proxy alongsid
 
 * **organization_id**
   <br/>
-  ID of the organization (as set up on the SingularityNet platform) that this daemon belongs to.
+  ID of the organization (as set up on the SingularityNET platform) that this daemon belongs to.
    ```json
    "organization_id": "snet",
    ```   
 
 * **service_id**
   <br/>
-  ID of the service (as set up on the SingularityNet platform) that this daemon is proxys requests for. The daemon will fetch configuration from the SingularityNet platform based on the `organization_id` and `service_id`
+  ID of the service (as set up on the SingularityNET platform) that this daemon is proxys requests for. The daemon will fetch configuration from the SingularityNET platform based on the `organization_id` and `service_id`
    ```json
    "service_id": "example-service",
    ```   

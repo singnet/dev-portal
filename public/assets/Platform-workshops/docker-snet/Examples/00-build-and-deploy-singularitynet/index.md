@@ -1,4 +1,4 @@
-## Build and deploy SingularityNet contracts
+## Build and deploy SingularityNET contracts
 ```sh
 cd ${SINGNET}/platform-contracts # go to the platform-contracts repository
 npm install                      # install dependencies
@@ -16,7 +16,7 @@ pip install -e .                 # install snet-cli
 cat ~/.snet/config               # look at snet-cli configuration
 ```
 
-## Build and install SingularityNet daemon
+## Build and install SingularityNET daemon
 ```sh
 cd ${SINGNET}/snet-daemon                   # go to the daemon repository
 ./scripts/install                           # install dependencies

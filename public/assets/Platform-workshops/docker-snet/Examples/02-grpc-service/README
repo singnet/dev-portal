@@ -29,7 +29,7 @@ snet service publish ExampleOrganizationId EchoService --yes
 cat snetd.config.json
 snetd-linux-amd64 &
 
-# call service via SingularityNet
+# call service via SingularityNET
 snet identity caller
 snet channel open-init ExampleOrganizationId EchoService 50 57600 -y
 snet client call 0 3 localhost:8080 echo '{"message": "hello"}'
