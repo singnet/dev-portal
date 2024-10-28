@@ -121,7 +121,7 @@ This section will be added to your organization_metadata.json:
     ]
 ```
 
-You can see more about configuring and deploying the ETCD by following this [link](/docs/products/docs/products/DecentralizedAIPlatform/ETCD/)
+You can see more about configuring and deploying the ETCD by following this [link](/docs/products/DecentralizedAIPlatform/ETCD/)
 
 1) Optional information (skip if you don’t need it)
 
@@ -176,7 +176,7 @@ snet service metadata-init \
 	--fixed-price FIXED_PRICE
 ```
 
-You can see more about configuring and deploying the Daemon by following this [link](/docs/products/docs/products/DecentralizedAIPlatform/Daemon/daemon-setup/)
+You can see more about configuring and deploying the Daemon by following this [link](/docs/products/DecentralizedAIPlatform/Daemon/daemon-setup/)
 
 
 Where,
