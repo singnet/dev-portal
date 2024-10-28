@@ -106,6 +106,7 @@ You can create an identity using a known key.
 `SNET CLI` supports these other identity types:
 
 -   key - hex private key
+-   mnemonic - seed phrase type of wallet
 -   rpc - used with a JSON-RPC manager
 -   ledger - hardware wallet
 
