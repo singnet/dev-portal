@@ -42,15 +42,15 @@ If your ETCD node keeps crashing, check its logs with this command and debug it:
 **Result**: If everything was done correctly you would have seen ETCD INSTALLED SUCCESSFULLY. If that is the case, now you should have a running docker container with ETCD cluster and new certificates for ETCD (path to them will be printed by script, look for CERTIFICATES PATH)
 
 ### Daemon setup
-1) Download latest release from https://github.com/singnet/snet-daemon/releases
+1) Download latest release from https://github.com/singnet/snet-daemon/releases/latest
 
-`wget https://github.com/singnet/snet-daemon/releases/download/v5.1.2/snetd-linux-amd64-v5.1.2`
+`wget https://github.com/singnet/snet-daemon/releases/download/v5.1.5/snetd-linux-amd64-v5.1.5`
 
-(wget command for downloading snetd v5.1.2)
+(wget command for downloading snetd v5.1.5)
 
 2) Make sure that snetd file is executable
 
-`chmod +x snetd-linux-amd64-v5.1.2`
+`chmod +x snetd-linux-amd64-v5.1.5`
 
 3) Create config file for daemon
 
@@ -58,20 +58,20 @@ If your ETCD node keeps crashing, check its logs with this command and debug it:
 
 4) **(OPTIONAL)** Put executable file in `/usr/bin folder`
 
-`cp snetd-linux-amd64-v5.1.2 /usr/bin/snetd`
+`cp snetd-linux-amd64-v5.1.5 /usr/bin/snetd`
 
 ### Installing SNET-cli
 
 1) Prerequisites
 
-For snet-cli you need Python 3.11 (or older) with pip. Also you will need libudev and libusb 1.0
+For snet-cli you need Python 3.10 (or older) with pip. Also you will need libudev and libusb 1.0
 Install them by running:
 
 `sudo apt install libudev-dev libusb-1.0-0-dev`
 
-2) Install new version of snet-cli:
+1) Install new version of `snet.cli`:
 
-`pip install snet.snet-cli`
+`pip install snet.cli`
 
 
 3) **(OPTIONAL)** Enabling commands autocomplete

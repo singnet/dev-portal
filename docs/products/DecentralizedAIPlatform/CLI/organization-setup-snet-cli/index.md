@@ -1,11 +1,11 @@
 # Organization setup via CLI
 
-## Publishing Organization on Blockchain using snet-cli
+## Publishing Organization on Blockchain using snet.cli
 
 
 ### Setting Metadata
 
-#### Create an Identity in snet-cli for Mainnet, if you already have an account with ether , then you can use it , as an example 
+#### Create an Identity in snet.cli for Mainnet, if you already have an account with ether , then you can use it , as an example 
 
 ```sh
 snet identity create test-user key --private-key <PVT-KEY> --network mainnet
@@ -144,6 +144,3 @@ snet organization create mozi <addressofMember1>,<addressOfMember2>
 ```
 
 See the [CLI documentation](http://snet-cli-docs.singularitynet.io/organization.html) for full details of actions the tool allows.
-
-
-

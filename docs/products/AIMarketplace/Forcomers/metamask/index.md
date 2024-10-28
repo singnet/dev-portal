@@ -3,23 +3,18 @@
 Metamask is a plugin which is used by the SingularityNET platform.
 
 ## How to get Metamask
-To get the metamask plugin [install](https://metamask.io/download.html)
+To get the metamask plugin [install](https://metamask.io/download/).
+
+## Setup Metamask
+
+About setup learn more [here](https://support.metamask.io/getting-started/getting-started-with-metamask/).
 
 ## Wallets in Metamask 
-Once you have installed and set up your metamask,
-Click on the icon on the top right of your metamask window. 
-you could pick any of the options below 
 
-![wallet options](/assets/images/products/AIMarketplace/forcomers/metamaskwalletoptions.webp)
+How to manage your wallet [here](https://support.metamask.io/managing-my-wallet/).
 
-### Create a wallet
-![wallet options](/assets/images/products/AIMarketplace/forcomers/createwallet.webp)
+## Connect to a hardware wallet
 
-### Import an existing wallet
-![import options](/assets/images/products/AIMarketplace/forcomers/importwallet.webp)
-
-### Connect to a hardware wallet
-![hardware options](/assets/images/products/AIMarketplace/forcomers/hardwarewallet.webp)
-
+Follow [link](https://support.metamask.io/managing-my-wallet/how-to-connect-a-trezor-or-ledger-hardware-wallet/) about connect hardware wallet to Metamask.
 
 

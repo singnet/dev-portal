@@ -40,10 +40,9 @@ notes](https://github.com/singnet/snet-sdk-java/tree/master/plugin/gradle) and
 [code examples](https://github.com/singnet/snet-sdk-java/tree/master/example)
 are available at GitHub.
 
-Currently, a fully functional a [preliminary version of a Python
+Currently, a fully functional a [version of a Python
 SDK](https://github.com/singnet/snet-sdk-python) is available, which forms the
-basis for the [SDK tutorial](/docs/products/DecentralizedAIPlatform/SDK/sdk-tutorial/), but has  [some design
-improvements](https://github.com/singnet/snet-sdk-python/issues/16).
+basis for the [SDK tutorial](/docs/products/DecentralizedAIPlatform/SDK/sdk-python-tutorial/), but has  [some design improvements](https://github.com/singnet/snet-sdk-python/issues/16).
 
 Work is in process towards an [SDK for
 Javascript](https://github.com/singnet/snet-sdk-js), and intend to support

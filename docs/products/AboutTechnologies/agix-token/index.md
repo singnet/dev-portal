@@ -10,16 +10,16 @@ For those new to Ethereum, it may be a bit confusing what exactly the difference
 * Mainnet tokens could have a monetary value.
 * Both tokens can be used to add extra utility to the software.
 
-Since we are currently in the Beta stage, we only use Sepolia Testnet AGIX. You can find our Mainnet AGIX Token (to be used in a later stage) [here](https://etherscan.io/address/0x8eb24319393716668d768dcec29356ae9cffe285) with the address `0x8eb24319393716668d768dcec29356ae9cffe285`.
+For testnet we use [Sepolia Testnet AGIX](https://faucet.singularitynet.io/). You can find our Mainnet AGIX Token (to be used in a later stage) [here](https://etherscan.io/address/0x5B7533812759B45C2B44C19e320ba2cD2681b542) with the address `0x5B7533812759B45C2B44C19e320ba2cD2681b542`.
 
 <div class="callout callout--warning">
     <p><strong>NOTE</strong> While we are aware that the AGIX token is currently being traded on some exchanges, we do not encourage or facilitate this exchange trading in any manner. Speculative secondary trading is against the spirit of the AGIX token and SingularityNET project. We strongly discourage speculative secondary trading and officially ask AGIX token holders to act accordingly.</p>
 </div>
 
 
-## Sepolia AGIX Faucet
+## Sepolia Testnet AGIX Faucet
 
-We have an automated faucet for distributing Sepolia Testnet AGIX Tokens [here](https://faucet.singularitynet.io/). You need connect test metamask account (click Connect wallet) and sign transaction (click Get tokens) where you want to receive the AGIX token. You can request 1000 AGIX token anytime. You will have to pay the commission in Sepolia ETH.
+We have an automated faucet for distributing Sepolia Testnet AGIX Tokens [here](https://faucet.singularitynet.io/). You need connect test metamask account (click Connect wallet) and sign transaction (click Get tokens) where you want to receive the AGIX token. You can request 10000 AGIX token anytime. You will have to pay the commission in Sepolia ETH.
 
 Symbol: AGIX
 
