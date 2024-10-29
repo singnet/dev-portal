@@ -1,4 +1,9 @@
 # Java SDK
+
+## ❗ Currently under development ❗
+
+Java SDK is currently under development, so some functionality may be unavailable or work incorrectly.
+
 ## Overview
 
 This tutorial explains how to create a SingularityNET service client in Java

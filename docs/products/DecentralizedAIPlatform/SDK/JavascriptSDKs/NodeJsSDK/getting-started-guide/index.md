@@ -2,6 +2,10 @@
 
 SingularityNET SDK for Node.js
 
+## ❗ Currently under development ❗
+
+Node.js SDK is currently under development, so some functionality may be unavailable or work incorrectly.
+
 ## Package
 
 | Package                                      | Description                                               |
