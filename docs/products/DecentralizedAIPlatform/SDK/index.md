@@ -1,1 +1,1 @@
-# General SDK Concept and Requirments
+# General SDK Concept and Requirements

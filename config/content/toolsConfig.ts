@@ -40,19 +40,19 @@ export default [
         text: "JavaScript Web SDK",
         description: "Integrate SingularityNET services seamlessly into Web applications",
         gitLink: "https://github.com/singnet/snet-sdk-js/tree/master/packages/web",
-        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/"
+        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/"
     },
     {
         text: "JavaScript Node SDK",
         description: "Integrate SingularityNET services seamlessly into Node.js applications",
         gitLink: "https://github.com/singnet/snet-sdk-js/tree/master/packages/nodejs",
-        link: "/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/"
+        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/"
     },
     {
         text: "Java SDK",
         description: "Java SDK to invoke AI services on Java SE and Android platforms",
         gitLink: "https://github.com/singnet/snet-sdk-java",
-        link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-java"
+        link: "/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/"
     },
     {
         text: "Boilerplate",
