@@ -8,28 +8,6 @@ export interface HomeSectionItem {
 
 export default [
     {
-        text: "Airdrop",
-        textIconID: "airdrop-icon",
-        imageFileName: "airdrop.webp",
-        description: "All relevant documentation about the Airdrop in SingularityNET.",
-        link: "/docs/products/Airdrop/"
-    },
-    {
-        text: "Bridge",
-        textIconID:"bridge-icon",
-        imageFileName:"bridge.webp",
-        description: "All relevant documentation about the Bridge project",
-        link: "/docs/products/Bridge/",
-    },
-    {
-        text: "Staking",
-        textIconID: "staking-icon",
-        imageFileName: "staking.webp",
-        description:
-            "All relevant documentation about the Staking project.",
-        link: "/docs/products/Staking/"
-    },
-    {
         text: "AI Marketplace",
         textIconID: "marketplace-icon",
         imageFileName: "marketplace.webp",
@@ -54,10 +32,31 @@ export default [
         link: "/docs/products/AboutTechnologies/"
     },
     {
+        text: "Bridge",
+        textIconID:"bridge-icon",
+        imageFileName:"bridge.webp",
+        description: "All relevant documentation about the Bridge project",
+        link: "/docs/products/Bridge/",
+    },
+    {
         text: "WaLT",
         textIconID: "walt-icon",
         imageFileName: "walt.webp",
         description: "Connect Linked Wallet Tool",
         link: "/docs/products/WaLT/"
+    },
+    {
+        text: "Staking",
+        textIconID: "staking-icon",
+        imageFileName: "staking.webp",
+        description: "All relevant documentation about the Staking project.",
+        link: "/docs/products/Staking/"
+    },
+    {
+        text: "Airdrop",
+        textIconID: "airdrop-icon",
+        imageFileName: "airdrop.webp",
+        description: "All relevant documentation about the Airdrop in SingularityNET.",
+        link: "/docs/products/Airdrop/"
     }
 ] as HomeSectionItem[];
