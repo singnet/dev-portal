@@ -2,6 +2,10 @@
 
 SingularityNET SDK for Node.js
 
+## ❗ Currently under development ❗
+
+Node.js SDK is currently under development, so some functionality may be unavailable or work incorrectly.
+
 ## Package
 
 | Package                                      | Description                                               |
@@ -10,9 +14,10 @@ SingularityNET SDK for Node.js
 
 
 ### Core concepts
+
 The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
 To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
-To handle payment of services, SingularityNET uses [Ethereum state channels](https://dev.singularitynet.io/docs/ai-consumers/mpe/).
+To handle payment of services, SingularityNET uses [Ethereum state channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 The SingularityNET SDK abstracts and manages state channels with service providers
 on behalf of the user and handles authentication with the SingularityNET services.
 
@@ -83,13 +88,14 @@ For more detailed instructions, refer to the [SingularityNET CLI documentation](
 
 #### Generate the gRPC Client Library:
 
-Use the CLI to generate the gRPC client library for the service you want to use. Replace `<org_id>` and `<service_id>` with the appropriate organization and service identifiers.
+Now we need to generate stub files.
 
-```bash
-snet sdk generate-client-library nodejs <org_id> <service_id>
+```sh
+protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
+protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
 ```
 
-The generated client libraries will be located in the directory `./client_libraries/nodejs/<hash>/<org_id>/<service_id>` unless you specify a different output path.
+For more details please check the [Generating stubs for JS tutorial](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/generating-stubs/)
 
 Once you have the generated gRPC client libraries, you can create an instance of a SingularityNET service client.
 

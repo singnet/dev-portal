@@ -5,7 +5,7 @@
                 {{ copyrightSection.text }}
             </p>
         </div>
-        <div class="copyright-message">
+        <div v-if="copyrightSection.message" class="copyright-message">
             <p>
                 {{ copyrightSection.message }}
             </p>

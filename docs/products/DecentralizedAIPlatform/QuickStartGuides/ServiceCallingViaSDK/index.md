@@ -1,6 +1,6 @@
 # Service Calling via SDK
 
-Currently our SDK supports Python and JS (Web and Node). In the future we will support a wider range of languages. 
+Currently, our SDK supports Python and JS (Web). In the future we will support a wider range of languages. 
 We use protocol buffers and grpc, so if you can find language support for both of them, it's only a matter of time 
 before we (or the community! ;-) ) write an SDK for it.
 
@@ -24,11 +24,6 @@ python 3.10 +
 Node.js 18 +
 react-scripts 5.0.1 +
 ```
-
-```plaintext [NodeJS]
-Node.js 18 +
-npm 8.0.0 +
-```
 :::
 
 ## Step 2. Install the SDK
@@ -40,10 +35,6 @@ pip install snet.sdk
 
 ```sh [WebJS]
 npm install snet-sdk-web
-```
-
-```sh [NodeJS]
-npm install snet-sdk
 ```
 :::
 
@@ -115,33 +106,8 @@ Update your **package.json** scripts to use **react-app-rewired** instead of **r
 ```
 
 ```sh [WebJS]
-# For Linux
-protoc \
-    --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
-    --js_out=import_style=commonjs,binary,namespace_prefix=\
-    [package name]_[org id]_[service]:. --ts_out=service=grpc-web:. \
-    [proto file name].proto
-    
-# For Windows
-protoc ^
-    --plugin=protoc-gen-ts=%cd%/node_modules/.bin/protoc-gen-ts.cmd ^ --js_out=import_style=commonjs,binary,namespace_prefix=^
-    [package name]_[org id]_[service]:. --ts_out=service=grpc-web:. ^
-    [proto file name].proto
-```
-
-```sh [NodeJS]
-# For Linux
-protoc \
-    --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
-    --js_out=import_style=commonjs,binary,namespace_prefix=\
-    [package name]_[org id]_[service]:. --ts_out=service=grpc-web:. \
-    [proto file name].proto
-    
-# For Windows
-protoc ^
-    --plugin=protoc-gen-ts=%cd%/node_modules/.bin/protoc-gen-ts.cmd ^ --js_out=import_style=commonjs,binary,namespace_prefix=^
-    [package name]_[org id]_[service]:. --ts_out=service=grpc-web:. ^
-    [proto file name].proto
+protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
+protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
 ```
 :::
 
@@ -229,42 +195,6 @@ const onActionEnd = (response) => {
     console.log("Performing 20 * 3: ", response.message.getValue())
 }
 ```
-
-```javascript [NodeJS]
-const SnetSDK = require('snet-sdk');
-const grpc = require('./path_to_generated_grpc_js_file');  // Path to the generated libraries
-
-const config = {
-    web3Provider: "https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID", // RPC endpoint of "sepolia" network
-    privateKey: "0xYOUR_PRIVATE_KEY",
-    networkId: "11155111", // Chain ID of "sepolia" network
-    ipfsEndpoint: "https://ipfs.singularitynet.io",
-    defaultGasPrice: "4700000",
-    defaultGasLimit: "210000"
-  }
-
-async function callService() {
-    const sdk = new SnetSDK.default(config);
-    const client = await sdk.createServiceClient('26072b8b6a0e448180f8c0e702ab6d2f', // Organization ID
-                                                 'Exampleservice', // Service ID 
-                                                 grpc.Calculator);
-    
-    const methodDescriptor = grpc.Calculator.mul;
-    const request = new methodDescriptor.requestType();
-    request.setA(20);
-    request.setB(3);
-    
-    client.service.getValue(request, (err, result) => {
-        if (err) {
-            console.error("GRPC call failed", err);
-        } else {
-            console.log("Performing 20 * 3: ", result.toString());
-        }
-    });
-}
-
-callService();
-```
 :::
 
 > **Note:** The SDK itself configures payment channels for you.
@@ -280,5 +210,5 @@ service to call other services and chain id or RPC endpoint to call services on 
 
 To learn more about every SDK, visit:
 - [Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)
-- [WebJS SDK](/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/)
-- [NodeJS SDK](/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/)
+- [WebJS SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
+

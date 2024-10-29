@@ -21,7 +21,6 @@ The following code snippet is included in the metadata file:
     "org_name": "test-org-name",
     "org_id": "test-org-id",
     "org_type": "individual",
-
 ```
 
 #### Add in description about your organization

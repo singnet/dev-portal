@@ -174,7 +174,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "Organization setup via CLI",
-                link: "/docs/products/DecentralizedAIPlatform/CLI/organization-setup-sent-cli/",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/organization-setup-snet-cli/",
             },
             {
                 text: "Service setup via CLI",
@@ -731,14 +731,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/SDK/",
         collapsed: true,
         items: [
-            {
-                text: "Architecture of SDK",
-                link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-architecture/",
-            },
-            {
-                text: "SDK Tutorial",
-                link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-tutorial/",
-            },
+//             {
+//                 text: "Architecture of SDK",
+//                 link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-architecture/",
+//             },
             {
                 text: "Python SDK",
                 collapsed: true,
@@ -842,43 +838,54 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 ],
             },
             {
-                text: "NodeJS SDK",
-                link:"/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
+                text: "Javascript SDKs",
                 collapsed: true,
-                items:[
+                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                items: [
                     {
-                        text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
+                        text: "WebJS SDK",
+                        link:"/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                        collapsed: true,
+                        items:[
+                            {
+                                text: "Getting started guide",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                            },
+                            {
+                                text: "Calculator example",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/calculator/",
+                            },
+                            {
+                                text: "Service info and Metamask wallet",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/service-info/",
+                            },
+                        ],
                     },
-                ],
-            },
-            {
-                text: "WebJS SDK",
-                link:"/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/",
-                collapsed: true,
-                items:[
                     {
-                        text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/",
+                        text: "NodeJS SDK",
+                        link:"/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/",
+                        collapsed: true,
+                        items:[
+                            {
+                                text: "Getting started guide",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/",
+                            },
+                        ],
                     },
                     {
-                        text: "Calculator example",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/calculator/",
+                        text: "Generating Stubs for JS",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/generating-stubs/",
                     },
-                    {
-                        text: "Service info and Metamask wallet",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/service-info/",
-                    },
-                ],
+                ]
             },
             {
                 text: "Java SDK",
-                link:"/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
+                link:"/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/",
                 collapsed: true,
                 items:[
                     {
                         text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/",
                     },
                 ],
             },
@@ -886,9 +893,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "UI Sandbox",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/Sandbox/",
         collapsed: true,
-        items: [],
+        items: [
+            {
+                text: "What is UI Sandbox?",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/",
+            }
+        ],
     },
     {
         text: "UI Boilerplate",
@@ -952,7 +964,6 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                 ],
             },
-
             {
                 text: "ERC20",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/erc20/",
@@ -972,6 +983,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "IPFS",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ipfs/",
+            },
+            {
+                text: "FileCoin",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/filecoin/",
             },
             {
                 text: "Protobuf",
