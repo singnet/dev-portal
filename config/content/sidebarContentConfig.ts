@@ -174,7 +174,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "Organization setup via CLI",
-                link: "/docs/products/DecentralizedAIPlatform/CLI/organization-setup-sent-cli/",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/organization-setup-snet-cli/",
             },
             {
                 text: "Service setup via CLI",
@@ -731,14 +731,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/SDK/",
         collapsed: true,
         items: [
-            {
-                text: "Architecture of SDK",
-                link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-architecture/",
-            },
-            {
-                text: "SDK Tutorial",
-                link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-tutorial/",
-            },
+//             {
+//                 text: "Architecture of SDK",
+//                 link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-architecture/",
+//             },
             {
                 text: "Python SDK",
                 collapsed: true,
@@ -841,17 +837,17 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                 ],
             },
-            {
-                text: "NodeJS SDK",
-                link:"/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
-                collapsed: true,
-                items:[
-                    {
-                        text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
-                    },
-                ],
-            },
+//             {
+//                 text: "NodeJS SDK",
+//                 link:"/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
+//                 collapsed: true,
+//                 items:[
+//                     {
+//                         text: "Getting started guide",
+//                         link: "/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
+//                     },
+//                 ],
+//             },
             {
                 text: "WebJS SDK",
                 link:"/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/",
@@ -860,6 +856,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     {
                         text: "Getting started guide",
                         link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/",
+                    },
+                    {
+                        text: "Generating Stubs for JS",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/generating-stubs/",
                     },
                     {
                         text: "Calculator example",
@@ -871,17 +871,17 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                 ],
             },
-            {
-                text: "Java SDK",
-                link:"/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
-                collapsed: true,
-                items:[
-                    {
-                        text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
-                    },
-                ],
-            },
+//             {
+//                 text: "Java SDK",
+//                 link:"/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
+//                 collapsed: true,
+//                 items:[
+//                     {
+//                         text: "Getting started guide",
+//                         link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
+//                     },
+//                 ],
+//             },
         ],
     },
     {

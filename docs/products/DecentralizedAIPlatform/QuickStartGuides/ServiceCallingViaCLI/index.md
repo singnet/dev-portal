@@ -12,7 +12,8 @@ service_id = `Exampleservice`) on the testnet `sepolia` (chain_id = `11155111`).
 
 ## Step 2. Install CLI
 
-### Install snet.cli
+Install snet.cli
+
 ```sh
 pip3 install snet.cli
 ```

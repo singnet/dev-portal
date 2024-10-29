@@ -175,26 +175,15 @@ service Calculator {
 }
 ```
 
-Apart from the steps mentioned at the official [documentation](https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/code-generation.md) to generate `js` stubs from `.proto` definitions, you also need to provide the namespace_prefix flag to the generator. Here is an example which illustrates the usage:
+Now we need to generate stub files.
 
-For Linux
-
-```bash
-    protoc \
-    --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
-    --js_out=import_style=commonjs,binary,namespace_prefix=\
-    [package name]_[org id]_[service]:. --ts_out=service=grpc-web:. \
-    [proto file name].proto
+```sh
+protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
+protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
 ```
 
-For Windows CMD
+For more details please check the [Generating stubs for JS tutorial](/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/generating-stubs/)
 
-```bash
-    protoc ^
-    --plugin=protoc-gen-ts=%cd%/node_modules/.bin/protoc-gen-ts.cmd ^ --js_out=import_style=commonjs,binary,namespace_prefix=^
-    [package name]_[org id]_[service]:. --ts_out=service=grpc-web:. ^
-    [proto file name].proto
-```
 
 After that comands you will get four files. Transfer the js files to your project. In our example, this is the `stubs` folder. Now we can use the functions of our service
 
