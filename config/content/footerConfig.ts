@@ -95,7 +95,6 @@ export default [
 ];
 
 export const copyrightSection = {
-    text: "Copyright © 2021 SingularityNET. All rights reserved.",
-    message:
-        "Stichting SingularityNET Barbara Strozzilaan 362 1083 HN Amsterdam The Netherlands",
+    text: `© ${new Date().getFullYear()} SingularityNET`,
+    message: "",
 };
