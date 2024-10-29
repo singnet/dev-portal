@@ -20,16 +20,32 @@ export default [
         title: "Products",
         items: [
             {
-                link: "https://beta.singularitynet.io/",
-                text: "AI Marketplace",
-            },
-            {
+                text: "Staking portal",
                 link: "https://staking.singularitynet.io/howitworks",
-                text: "AGIX Staking",
             },
             {
-                link: "https://publisher.singularitynet.io/",
+                text: "AI Marketplace",
+                link: "https://beta.singularitynet.io/",
+            },
+            {
                 text: "AI Publisher",
+                link: "https://publisher.singularitynet.io/",
+            },
+            {
+                text: "Linking Wallet Tool",
+                link: "https://mywallets.singularitynet.io/",
+            },
+            {
+                text: "Bridge Ethereum-Cardano",
+                link: "https://bridge.singularitynet.io/",
+            },
+            {
+                text: "Bridge Ethereum-Binance",
+                link: "https://bsc-bridge.singularitynet.io/",
+            },
+            {
+                text: "Bridge Cardano AGIX-ASI",
+                link: "https://asi-migration.singularitynet.io/",
             },
         ],
     },
@@ -37,16 +53,20 @@ export default [
         title: "Community",
         items: [
             {
+                text: "Blog",
                 link: "http://blog.singularitynet.io/",
-                text: "Official Blog",
             },
             {
-                link: "https://community.singularitynet.io/",
+                text: "Mattermost",
+                link: "https://chat.singularitynet.io/chat/channels/town-square",
+            },
+            {
                 text: "Forum",
+                link: "https://community.singularitynet.io/",
             },
             {
-                link: "https://telegram.me/singularitynet",
                 text: "Telegram",
+                link: "https://telegram.me/singularitynet",
             },
         ],
     },
