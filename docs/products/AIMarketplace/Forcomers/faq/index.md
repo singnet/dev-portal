@@ -8,7 +8,9 @@ TEST ETH: You can get them on public faucet for the particular network you are t
  - Requires at least 0.001 ETH in mainnet network: https://www.infura.io/faucet/sepolia 
  - Requires at least 0.001 ETH in mainnet network: https://www.alchemy.com/faucets/ethereum-sepolia  
 
-TEST AGIX: Our AGIX faucet will be updated soon to support Sepolia network
+TEST AGIX: 
+
+ - No requirements: https://faucet.singularitynet.io/
 
 ## snet.cli:
 

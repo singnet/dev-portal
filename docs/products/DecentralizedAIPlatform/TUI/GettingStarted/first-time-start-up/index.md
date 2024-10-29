@@ -90,7 +90,7 @@ Once you have restarted your machine, start the script again. Finally, it will g
 
 Running the application for the first time will prompt you with the Identity Creation menu. The TUI needs to have the default identity setup, so it can display your account&#x20;
 
-![Identity creation menu](/public/assets/images/products/AIMarketplace/TUI/TUIIdentityCreate.webp) Identity creation menu
+![Identity creation menu](/assets/images/products/AIMarketplace/TUI/TUIIdentityCreate.webp) Identity creation menu
 
 Here, just create an account with whatever account name you would like. It is only utilized locally for managing/differentiating identities.&#x20;
 

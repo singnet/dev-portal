@@ -993,6 +993,41 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
 
 export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
     {
+        text: "Marketplace",
+        collapsed: true,
+        link:"/docs/products/AIMarketplace/Overview/what-is-aimarketplace/",
+        items:[
+            {
+                text: "What is AIMarketplace?",
+                link: "/docs/products/AIMarketplace/Overview/what-is-aimarketplace/"
+            },
+            {
+                text: "Registration process",
+                link: "/docs/products/AIMarketplace/Overview/registration/"
+            },
+            {
+                text: "Services page",
+                link: "/docs/products/AIMarketplace/Overview/services-page/"
+            },
+            {
+                text: "Service page",
+                link: "/docs/products/AIMarketplace/Overview/services-page/"
+            },
+            {
+                text: "Free calls",
+                link: "/docs/products/AIMarketplace/Overview/free-call/"
+            },
+            {
+                text: "Account page",
+                link: "/docs/products/AIMarketplace/Overview/account-page/"
+            },
+            {
+                text: "Payment methods",
+                link: "/docs/products/AIMarketplace/Overview/payment-methods"
+            },
+        ]
+    },
+    {
         text: "For comers",
         collapsed: false,
         link: "/docs/products/AIMarketplace/Forcomers/",

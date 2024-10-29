@@ -8,7 +8,7 @@ The issue comes into play when your default identity is invalid, meaning your de
 
 Therefore, you will always run into the error below, when trying to start the TUI, the application is attempting to print your account balance, but it cannot because your default identity is invalid.&#x20;
 
-![Invalid identity error on login](/public/assets/images/products/AIMarketplace/TUI/ErrorPleaseEnsureYouHaveCreatedAValidIdentity.webp)
+![Invalid identity error on login](/assets/images/products/AIMarketplace/TUI/ErrorPleaseEnsureYouHaveCreatedAValidIdentity.webp)
 Invalid identity error on login
 
 
