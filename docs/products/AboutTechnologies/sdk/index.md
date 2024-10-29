@@ -11,7 +11,7 @@ authorizations.
 We support SDK for the below two languages 
 
 - [SDK in Python](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)
-- [SDK in WebJS](/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/)
+- [SDK in WebJS](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
 
 All SDKs provided adhere to the same design standard and strategy
 
