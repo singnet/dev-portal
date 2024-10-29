@@ -964,7 +964,6 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                 ],
             },
-
             {
                 text: "ERC20",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/erc20/",
@@ -984,6 +983,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "IPFS",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ipfs/",
+            },
+            {
+                text: "FileCoin",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/filecoin/",
             },
             {
                 text: "Protobuf",
