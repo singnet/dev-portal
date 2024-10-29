@@ -57,10 +57,6 @@ export default [
                 link: "http://blog.singularitynet.io/",
             },
             {
-                text: "Mattermost",
-                link: "https://chat.singularitynet.io/chat/channels/town-square",
-            },
-            {
                 text: "Forum",
                 link: "https://community.singularitynet.io/",
             },
