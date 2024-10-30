@@ -68,7 +68,7 @@ You could create simple template config by:
 
 :::
 
-The init command will create a `snetd.config file.json` in which you will need to change some parameters:
+The init command will create a `snetd.config.json` in which you will need to change and add some parameters:
 
 ```json
 {
@@ -90,39 +90,14 @@ The init command will create a `snetd.config file.json` in which you will need t
 }
 ```
 
-## SSL Configuration
-The SingularityNET Daemon is designed to be deployed as a sidecar proxy alongside the service on a given host. All communication to the daemon needs to be secured using SSL and can be achieved in the following ways
+### Config parameters
 
-* Set up the daemon behind an nginx server
-* Use SSL certificates. <a href="https://dev.singularitynet.io/docs/ai-developers/daemon-ssl-setup/" target="_blank">This</a> guide walks thru the process of obtaining SSL certificates from Let's Encrypt
-
-### Key Configurations
 * **blockchain_network_selected**
   <br/>
-  Should be main for production use or sepolia for testing.
+  Should be `main` for production use or `sepolia` for testing.
    ```json
    "blockchain_network_selected": "main",
-   ```   
-
-* **ssl_cert and ssl_key**
-  <br/>
-  If you are using your own certificates (or from Let's Encrypt as described [here](/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/)) add the following two entries to the daemon config
-   ```json
-   "ssl_cert": "/etc/letsencrypt/live/<daemon_domain>/fullchain.pem",
-   "ssl_key": "/etc/letsencrypt/live/<daemon_domain>/privkey.pem",
-   ``` 
-* **passthrough_endpoint**
-  <br/>
-  This is the AI service end point to which the daemon will proxy all requests.
-   ```json
-   "passthrough_endpoint": "http://localhost:3000",
-   ``` 
-* **daemon_end_point**
-  <br/>
-  This is the endpoint on which the daemon listens for requests and should be in the `<host>:<port>` format. This address should be publically accessible
-   ```json
-   "daemon_end_point": "0.0.0.0:7002",
-   ```   
+   ```
 
 * **organization_id**
   <br/>
@@ -138,10 +113,57 @@ The SingularityNET Daemon is designed to be deployed as a sidecar proxy alongsid
    "service_id": "example-service",
    ```   
 
+* **ssl_cert and ssl_key**
+  <br/>
+  If you are using your own certificates (or from Let's Encrypt as described [here](/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/)) add the following two entries to the daemon config
+   ```json
+   "ssl_cert": "/etc/letsencrypt/live/<daemon_domain>/fullchain.pem",
+   "ssl_key": "/etc/letsencrypt/live/<daemon_domain>/privkey.pem",
+   ``` 
 
-For a detailed list of configurations available, please check [github](https://github.com/singnet/snet-daemon)
+* **passthrough_endpoint**
+  <br/>
+  This is the AI service endpoint to which the daemon will proxy all requests.
+   ```json
+   "passthrough_endpoint": "http://localhost:3000",
+   ``` 
 
-The daemon <a href="https://github.com/singnet/snet-daemon#configuration" target="_blank">configuration</a> page has all the available configurations
+* **daemon_end_point**
+  <br/>
+  This is the endpoint on which the daemon listens for requests and should be in the `<host>:<port>` format. This address should be publically accessible
+   ```json
+   "daemon_end_point": "0.0.0.0:7002",
+   ```   
+
+* **daemon_group_name**
+This parameter defines the group the daemon belongs to. The group helps determine the recipient address for payments.
+```json
+"daemon_group_name":"default_group",
+```
+
+* **Etcd certs**
+  <br/>
+If the client endpoint is https, then you will need to add the following on your configuration to use
+the certificates to connect:
+```json
+  "payment_channel_cert_path": "client.pem",
+  "payment_channel_ca_path": "ca.pem",
+  "payment_channel_key_path": "client-key.pem"
+  ``` 
+
+
+* **free_calls_users**
+  <br/>
+  You can set a separate number of allowed free calls for certain users of the marketplace
+  ```json
+  "free_calls_users": {
+    "johndoe@gmail.com": 500,
+    "snet@test.com": 100,
+    "me@email.com": 150
+  }
+  ```
+
+For a detailed list of configurations available, please check <a href="https://github.com/singnet/snet-daemon#configuration" target="_blank">configuration</a> page with all the available configurations.
 
 ## Start Daemon
 
