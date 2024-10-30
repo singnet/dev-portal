@@ -16,13 +16,13 @@ You can offer anything from simple solutions like a pathfinding algorithm to com
 ## Architecture
 
 SingularityNET consists of several key points that ensure its operation:
-- Minimizing dependency on blockchains like Ethereum to increase speed and reduce costs;
-- Abstract approach to integrating AI services, simplifying the publishing and usage process;
+- Minimizing dependency on blockchains like [Ethereum](/docs/products/AboutTechnologies/ethereum/) to increase speed and reduce costs;
+- Abstract approach to integrating AI services, simplifying the [publishing](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/) and usage process;
 - Support for regulatory compliance without sacrificing openness.
 
 ## Benefits for Developers
 
-- Simplicity: The platform is easy to master thanks to a universal tool — the Daemon, which ensures scalability, resilience, and service management, as well as handles payments for services. The Daemon is a decentralized tool.
+- Simplicity: The platform is easy to master thanks to a universal tool — the [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/), which ensures scalability, resilience, and service management, as well as handles payments for services. The Daemon is a decentralized tool.
 - Scalability: Your services can handle large numbers of users without losing performance.
 - Openness: To make our marketplace compliant with regulations without compromising on openness, we implemented it separately from our fully decentralized registry of AI services currently available on the Blockchain.
 

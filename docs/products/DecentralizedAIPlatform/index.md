@@ -63,7 +63,7 @@ Or create UI interface for the interaction with the service in the AI Marketplac
 For the OnBoarding process Service Provider can use CLI or TUI and this service would NOT be visible on the AI Marketplace. 
 For the OnBoarding process Service Provider can use Publisher Portal and this service WILL be visible on the AI Marketplace. It is NOT MANDATORY to publish UI at the same moment, it can be uploaded later. The main thing here is that OnBoarding via Publisher Portal provides this opportunity to appear on the AI Marketplace and CLI/ TUI does not.
 
-The general OnBoarding process requires from the Service Provider to:
+## The general OnBoarding process requires from the Service Provider to:
 
 1. Register on the Publisher Portal to publish organization and services.
 2. The first step is to register an organization under which the published services will exist. As part of your organization registration, you will need to fill out organization information and fill out information to receive payment for services. The information will then be uploaded to a decentralized repository and stored in a smart contract. (See extended scheme)
@@ -84,7 +84,7 @@ To call the service there are several options:
 ***Free calls*** – the amount of these calls are configured by the Service Provider. The main idea is to use an AI service for free to try it. And in case of good and expected experience use it on a paid basis. It is always nice to try before buying!
 
 ***Paid calls*** – this is a paid option where Service Consumers can buy more calls. For now the Platform supports a pay per call system, but later we will present subscriptions and other billing options! 
-This means that Service Consumer ***DOES NOT*** need to make a paid transaction each time when the service is called! For the first time when Service Consumer starts paid interaction with the AI service this Service Consumer opens a payment channel via Multi Party Escrow contract for some period of time which is configured by Service Consumer. This channel can be replenished with any amount of AGIX at any moment (before the closing of the channel due to time period setting). After replenishment Service Consumer can call the AI service and a special component Daemon will count the number of calls securely and check the payment channel for sufficient funds which requires no transaction and blockchain fee payment at the service calling moment. You can check more detailed information about payment channels in the documentation here.
+This means that Service Consumer ***DOES NOT*** need to make a paid transaction each time when the service is called! For the first time when Service Consumer starts paid interaction with the AI service this Service Consumer opens a payment channel via Multi Party Escrow contract for some period of time which is configured by Service Consumer. This channel can be replenished with any amount of AGIX at any moment (before the closing of the channel due to time period setting). After replenishment Service Consumer can call the AI service and a special component [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/) will count the number of calls securely and check the payment channel for sufficient funds which requires no transaction and blockchain fee payment at the service calling moment. You can check more detailed information about payment channels in the documentation [here](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 
 To buy paid calls Service Consumer can do it in two ways:
 
@@ -93,7 +93,7 @@ Use ***crypto wallet*** – payments can be done directly via crypto wallet usin
 Use ***paypal*** to exchange fiat money to AGIX token (available only on the AI Marketplace now).
 
 
-Decentralized AI Platform documentation structure
+## Decentralized AI Platform documentation structure
  
 
 In the section of Decentralized AI Platform of the Developer Portal you can find the following information:

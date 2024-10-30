@@ -20,11 +20,6 @@ export const RootSections: ISiteSections = {
 };
 
 export const Products: ISiteSections = {
-    TECHNOLOGIES: {
-        name: "About Technologies",
-        path: "/docs/products/AboutTechnologies/",
-        textIconID: "techs-icon",
-    },
     MARKETPLACE: {
         name: "AI Marketplace",
         path: "/docs/products/AIMarketplace/",
@@ -57,33 +52,6 @@ export const Products: ISiteSections = {
     },
 };
 
-export const TechnologiesSection: DefaultTheme.SidebarItem[] = [
-    {
-        text: "Technologies we use",
-        link: "/docs/products/AboutTechnologies/"
-    },
-    {
-        text: "Blockchain",
-        link: "/docs/products/AboutTechnologies/blockchain/",
-    },
-    {
-        text: "Ethereum",
-        link: "/docs/products/AboutTechnologies/ethereum/",
-    },
-    {
-        text: "AGIX Token and faucet",
-        link: "/docs/products/AboutTechnologies/agix-token/",
-    },
-    {
-        text: "Concepts of organization",
-        link: "/docs/products/AboutTechnologies/concepts-organization/",
-    },
-    {
-        text: "Introduction in SDK",
-        link: "/docs/products/AboutTechnologies/sdk/",
-    },
-];
-
 export const PlatformSection: DefaultTheme.SidebarItem[] = [
     {
         text: "What is Decentralized AI Platform?",
@@ -111,18 +79,6 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/",
             },
             {
-                text: "Service Onboarding via Publisher",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/",
-            },
-            {
-                text: "Service Onboarding via CLI",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaCLI/",
-            },
-            {
-                text: "Service Onboarding via TUI",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaTUI/",
-            },
-            {
                 text: "Service Calling via CLI",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI/",
             },
@@ -134,13 +90,40 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Service Calling via SDK",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/",
             },
+        ],
+    },
+    {
+        text: "Developer's Tutorials",
+        link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
+        collapsed: true,
+        items:[
             {
-                text: "Training",
-                link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/Training/",
+                text: "Service Onboarding via Publisher",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
+            },
+            {
+                text: "Service Onboarding via CLI",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaCLI/",
+            },
+            {
+                text: "Service Onboarding via TUI",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaTUI/",
+            },
+            {
+                text: "Full guide to Onboarding in mainnet",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/FullGuideOnboardingMainnet/",
+            },
+            {
+                text: "Full guide to Onboarding in testnet",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/FullGuideOnboardingTestnet/",
+            },
+            {
+                text: "(Coming soon) Integration Training Service",
+                link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/Training/",
             },
             {
                 text: "Integration HTTP Service",
-                link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/IntegrationHTTPService/",
+                link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationHTTPService/",
             },
         ],
     },
@@ -168,6 +151,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Daemon SSL Setup",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/",
+            },
+            {
+                text: "ETCD Setup",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/",
             },
             {
                 text: "Logger & hooks",
@@ -993,6 +980,22 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 ],
             },
             {
+                text: "Blockchain",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/blockchain/",
+            },
+            {
+                text: "Ethereum",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum/",
+            },
+            {
+                text: "AGIX Token and faucet",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/agix-token/",
+            },
+            {
+                text: "Concepts of organization",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/concepts-organization/",
+            },
+            {
                 text: "ERC20",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/erc20/",
             },
@@ -1261,7 +1264,6 @@ export const DocsSection: DefaultTheme.SidebarItem[] = [
 ];
 
 export default {
-    [Products.TECHNOLOGIES.path]: TechnologiesSection,
     [Products.MARKETPLACE.path]: MarketplaceSection,
     [Products.STAKING.path]: StakingSection,
     [Products.WALT.path]: WALTSection,

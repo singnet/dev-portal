@@ -4,6 +4,8 @@
 
 This document describes the mandatory items that must be implemented in order to get into the Decentralized AI Platform and AI Marketplace:
 
+The fastest method for onboarding on our Platform and publish your service is via [Publisher](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/). In addition to this method, see the other ways of onboarding your service.
+
 ### 1. AI Service
 
 First and most important, you must have a service that is able to accept requests and return responses to them.
