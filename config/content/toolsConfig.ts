@@ -63,7 +63,7 @@ export default [
     {
         text: "Boilerplate",
         description: "The project demonstrates the integration of snet-sdk-web, focusing on wallet management and service utilization within the SingularityNET ecosystem",
-        gitLink: "https://github.com/singnet/ICP-boilerplate",
+        gitLink: "https://github.com/singnet/Web-JS-SDK-Boilerplate",
         link: "/docs/products/DecentralizedAIPlatform/Boilerplate/"
     },
 ] as IToolsSectionItem[]

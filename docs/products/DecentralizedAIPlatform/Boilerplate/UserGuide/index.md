@@ -27,8 +27,8 @@ Follow these steps to set up the project:
 1. **Clone the repository and navigate to the directory:**
 
 ```bash
-  git clone https://github.com/singnet/ICP-boilerplate
-  cd ICP-boilerplate
+  git clone https://github.com/singnet/Web-JS-SDK-Boilerplate
+  cd Web-JS-SDK-Boilerplate
 ```
 
 2. **Copy the .env.example file to .env and update the values as necessary:**
@@ -127,21 +127,3 @@ async function runService(text) {
 newChat('user', "This is a user's message.");
 newChat('bot', "This is a bot's response.");
 ```
-
-## Step 5. Deploy project to Internet Computer (ICP)
-
-To deploy this project to the Internet Computer (ICP), follow these steps:
-
-1. **Build the Project**: Before deploying, build the project using the following command:
-
-```bash
-  npm run build
-```
-
-2. **Install DFX (ICP SDK)**: Install the DFX SDK by following the instructions on the official ICP documentation: [Installing DFX via DFX-VM](https://internetcomputer.org/docs/current/developer-docs/getting-started/install/#installing-dfx-via-dfxvm).
-
-3. **Get ICP Cycles and Deploy to Mainnet**: Obtain some ICP cycles and deploy the project to the mainnet by following the instructions on the ICP documentation: [Get ICP Cycles and Deploy to Mainnet](https://internetcomputer.org/docs/current/developer-docs/getting-started/deploy/mainnet).
-
----
-
-By following this guide, you should be able to set up, configure, and use the SingularityNET Web SDK Boilerplate to integrate with SingularityNET services and deploy your project to the Internet Computer.
