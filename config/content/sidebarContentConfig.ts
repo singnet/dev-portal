@@ -932,7 +932,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Core concepts",
         collapsed: true,
-        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/keyterms/",
+        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
         items: [
             {
                 text: "Marketplace ecosystem",
@@ -1008,9 +1008,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Used Technologies",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/",
         collapsed: true,
-        items: [],
+        items: [
+            {
+                text: "Glossary",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/",
+            }
+        ],
     },
 ];
 

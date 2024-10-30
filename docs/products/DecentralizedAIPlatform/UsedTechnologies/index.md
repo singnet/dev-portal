@@ -1,3 +1,5 @@
+# Glossary
+
 ### IPFS
 
 The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to
