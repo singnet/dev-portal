@@ -161,6 +161,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Daemon SSL Setup",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/",
             },
+            {
+                text: "Build daemon",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-build/",
+            },
         ],
     },
     {
