@@ -14,15 +14,6 @@ The package is published in npm at the following link:
 
 These instructions are for the development and use of the SingularityNET SDK for JavaScript on web platform like browsers.
 
-### Core concepts
-
-The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
-To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
-To handle payment of services, SingularityNET uses
-[Ethereum state channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
-The SingularityNET SDK abstracts and manages state channels with service providers on behalf of the user and
-handles authentication with the SingularityNET services.
-
 ### Installation
 
 ```bash

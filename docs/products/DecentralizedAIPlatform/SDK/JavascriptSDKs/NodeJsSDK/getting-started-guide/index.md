@@ -12,15 +12,6 @@ Node.js SDK is currently under development, so some functionality may be unavail
 |----------------------------------------------|-----------------------------------------------------------|
 | [snet-sdk](https://www.npmjs.com/package/snet-sdk) | Integrate SingularityNET services seamlessly into Node.js applications |
 
-
-### Core concepts
-
-The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
-To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
-To handle payment of services, SingularityNET uses [Ethereum state channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
-The SingularityNET SDK abstracts and manages state channels with service providers
-on behalf of the user and handles authentication with the SingularityNET services.
-
 ## Getting Started
 
 ### Step 1. Prerequisites

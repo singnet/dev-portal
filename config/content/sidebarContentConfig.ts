@@ -736,9 +736,13 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "SDK",
-        link: "/docs/products/DecentralizedAIPlatform/SDK/",
+        link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-concept/",
         collapsed: true,
         items: [
+            {
+                text: "SDK Concept",
+                link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-concept/",
+            },
 //             {
 //                 text: "Architecture of SDK",
 //                 link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-architecture/",
