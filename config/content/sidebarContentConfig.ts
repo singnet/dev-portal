@@ -1042,11 +1042,11 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Services page",
-        link: "/docs/products/AIMarketplace/service-page/"
+        link: "/docs/products/AIMarketplace/services-page/"
     },
     {
         text: "Service page",
-        link: "/docs/products/AIMarketplace/services-page/"
+        link: "/docs/products/AIMarketplace/service-page/"
     },
     {
         text: "How to try AI Service for free?",
