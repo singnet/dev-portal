@@ -26,7 +26,7 @@ export default [
     },
     {
         text: "Daemon",
-        description: "Daemon exposes an AI application as an API that is accessible through the SingularityNET platform.",
+        description: "Daemon exposes an AI application as an API that is accessible through the SingularityNET platform",
         gitLink: "https://github.com/singnet/snet-daemon",
         link: "/docs/products/DecentralizedAIPlatform/Daemon/"
     },

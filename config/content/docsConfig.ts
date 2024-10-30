@@ -12,7 +12,7 @@ export default [
         textIconID: "platform-icon",
         imageFileName: "platform.webp",
         description:
-            "Explore, publish, and integrate AI services on AI Marketplace's docs.",
+            "Explore, publish, integrate and call AI services via Decentralized AI Platform and Marketplace",
         link: "/docs/products/DecentralizedAIPlatform/"
     },
     {

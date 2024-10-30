@@ -72,25 +72,12 @@ To interact with your own SingularityNET services, you need to compile the `.pro
 
 ### Steps to Generate JS Files
 
-Follow the steps mentioned in the official [documentation](https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/code-generation.md) to generate `js` stubs from `.proto` definitions. Additionally, provide the `namespace_prefix` flag to the generator.
-
-#### Example Command for Linux
-
-```bash
-protoc ^
-protoc \
---plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
---js_out=import_style=commonjs,binary,namespace_prefix=[package name]_[org id]_[service]:. --ts_out=service=grpc-web:. \
-[proto file name].proto
+```sh
+protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
+protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
 ```
 
-#### Example Command for Windows CMD
-
-```bash
-protoc ^
---plugin=protoc-gen-ts=%cd%/node_modules/.bin/protoc-gen-ts.cmd ^ --js_out=import_style=commonjs,binary,namespace_prefix=[package name]_[org id]_[service]:. --ts_out=service=grpc-web:. ^
-[proto file name].proto
-```
+For more details please check the [Generating stubs for JS tutorial](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/generating-stubs/)
 
 After that you need to place them in the `src/ExampleService/assets` folder to use it in your service component.
 
