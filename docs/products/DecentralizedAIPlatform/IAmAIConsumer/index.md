@@ -19,6 +19,6 @@ Registration of AI services is done separately from the marketplace, which helps
 Join SingularityNET and harness the power of artificial intelligence with us!
 
 To get started, you'll need:
-- A wallet supporting the Ethereum network ([Metamask](/docs/products/AIMarketplace/ForConsumers/metamask/))
+- A wallet supporting the Ethereum network ([Metamask](/docs/products/AIMarketplace/ForConsumers/metamask-wallet/))
 - Some AGIX tokens to pay for services
 - Registration on the website https://beta.singularitynet.io/

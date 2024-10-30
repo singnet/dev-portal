@@ -157,10 +157,6 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/",
             },
             {
-                text: "ETCD Setup",
-                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/",
-            },
-            {
                 text: "Logger & hooks",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-logger/",
             },
@@ -944,8 +940,12 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Core concepts",
         collapsed: true,
-        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
+        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/",
         items: [
+            {
+                text: "Glossary",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/",
+            },
             {
                 text: "Marketplace ecosystem",
                 collapsed: true,
@@ -992,59 +992,59 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                 ],
             },
-            {
-                text: "Used Technologies",
-                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
-                collapsed: true,
-                items: [
-                        {
-                        text: "ERC20",
-                        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
-                    },
-                    {
-                        text: "ETCD",
-                        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/etcd/",
-                    },
-                    {
-                        text: "Ethereum Address",
-                        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/ethereum-address/",
-                    },
-                    {
-                        text: "GRPC",
-                        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/grpc/",
-                    },
-                    {
-                        text: "IPFS",
-                        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/ipfs/",
-                    },
-                    {
-                        text: "FileCoin",
-                        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/filecoin/",
-                    },
-                    {
-                        text: "Protobuf",
-                        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/protobuf/",
-                    },
-                    {
-                        text: "Blockchain",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/blockchain/",
-                    },
-                    {
-                        text: "Ethereum",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum/",
-                    },
-                    {
-                        text: "AGIX Token and faucet",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/agix-token/",
-                    },
-                    {
-                        text: "Concepts of organization",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/concepts-organization/",
-                    },
-                ],
-            },
         ],
     },
+    {
+        text: "Used Technologies",
+        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
+        collapsed: true,
+        items: [
+                {
+                text: "ERC20",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
+            },
+            {
+                text: "ETCD",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/etcd/",
+            },
+            {
+                text: "Ethereum Address",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/ethereum-address/",
+            },
+            {
+                text: "GRPC",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/grpc/",
+            },
+            {
+                text: "IPFS",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/ipfs/",
+            },
+            {
+                text: "FileCoin",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/filecoin/",
+            },
+            {
+                text: "Protobuf",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/protobuf/",
+            },
+            {
+                text: "Blockchain",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/blockchain/",
+            },
+            {
+                text: "Ethereum",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum/",
+            },
+            {
+                text: "AGIX Token and faucet",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/agix-token/",
+            },
+            {
+                text: "Concepts of organization",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/concepts-organization/",
+            },
+        ],
+    },  
 ];
 
 export const MarketplaceSection: DefaultTheme.SidebarItem[] = [

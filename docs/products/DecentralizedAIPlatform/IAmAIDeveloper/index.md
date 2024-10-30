@@ -16,7 +16,7 @@ You can offer anything from simple solutions like a pathfinding algorithm to com
 ## Architecture
 
 SingularityNET consists of several key points that ensure its operation:
-- Minimizing dependency on blockchains like [Ethereum](/docs/products/AboutTechnologies/ethereum/) to increase speed and reduce costs;
+- Minimizing dependency on blockchains like [Ethereum](docs/products/DecentralizedAIPlatform/UsedTechnologies/ethereum-address/) to increase speed and reduce costs;
 - Abstract approach to integrating AI services, simplifying the [publishing](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/) and usage process;
 - Support for regulatory compliance without sacrificing openness.
 
