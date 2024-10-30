@@ -1093,72 +1093,36 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
                 ]
             },
             {
-                text: "Call a service",
-                link: "/docs/products/AIMarketplace/ForConsumers/call-a-service/",
-            },
-            {
-                text: "Integration",
-                link: "/docs/products/AIMarketplace/ForConsumers/integration/",
-            },
-            {
-                text: "Local Singularity",
+                text: "Local SingularityNET",
                 link: "/docs/products/AIMarketplace/ForConsumers/local-singularitynet/",
             },
             {
-                text: "MetaMask",
-                link: "/docs/products/AIMarketplace/ForConsumers/metamask/",
+                text: "MetaMask Wallet",
+                link: "/docs/products/AIMarketplace/ForConsumers/metamask-wallet/",
+            },
+            {
+                text: "Naming standarts",
+                link: "/docs/products/AIMarketplace/ForConsumers/naming-standarts/",
             },
             {
                 text: "OpenCog",
                 link: "/docs/products/AIMarketplace/ForConsumers/opencog/",
             },
             {
-                text: "Organization",
-                link: "/docs/products/AIMarketplace/ForConsumers/organization/",
+                text: "Earnings",
+                link: "/docs/products/AIMarketplace/ForConsumers/earning/",
             },
             {
-                text: "Publish",
-                link: "/docs/products/AIMarketplace/ForConsumers/publish/",
+                text: "Contribution Guidelines",
+                link: "/docs/products/AIMarketplace/ForConsumers/contribution-guidelines/",
             },
             {
-                text: "RasberryPI",
-                link: "/docs/products/AIMarketplace/ForConsumers/raspberrypi/",
+                text: "Training",
+                link: "/docs/products/AIMarketplace/ForConsumers/training/",
             },
             {
-                text: "Registry",
-                link: "/docs/products/AIMarketplace/ForConsumers/registry/",
-            },
-            {
-                text: "Requirements",
-                link: "/docs/products/AIMarketplace/ForConsumers/requirements/",
-            },
-            {
-                text: "Setup Guide",
-                link: "/docs/products/AIMarketplace/ForConsumers/setupguide/",
-            },
-            {
-                text: "Wallet",
-                link: "/docs/products/AIMarketplace/ForConsumers/wallet/",
-            },
-            {
-                text: "Claim",
-                link: "/docs/products/AIMarketplace/ForConsumers/claim/",
-            },
-            {
-                text: "PayPal",
-                link: "/docs/products/AIMarketplace/ForConsumers/paypal/",
-            },
-            {
-                text: "Guide for testnet",
-                link: "/docs/products/AIMarketplace/ForConsumers/snet-full-guide-testnet/",
-            },
-            {
-                text: "Guide for mainnet",
-                link: "/docs/products/AIMarketplace/ForConsumers/snet-full-guide-mainnet/",
-            },
-            {
-                text: "FAQ",
-                link: "/docs/products/AIMarketplace/ForConsumers/faq/",
+                text: "Triton Instructions",
+                link: "/docs/products/AIMarketplace/ForConsumers/triton-instructions/",
             },
             {
                 text: "Troubleshooting",
