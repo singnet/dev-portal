@@ -134,6 +134,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Service Calling via SDK",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/",
             },
+            {
+                text: "Training",
+                link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/Training/",
+            },
+            {
+                text: "Integration HTTP Service",
+                link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/IntegrationHTTPService/",
+            },
         ],
     },
     {
@@ -1117,10 +1125,6 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/AIMarketplace/ForConsumers/contribution-guidelines/",
             },
             {
-                text: "Training",
-                link: "/docs/products/AIMarketplace/ForConsumers/training/",
-            },
-            {
                 text: "Triton Instructions",
                 link: "/docs/products/AIMarketplace/ForConsumers/triton-instructions/",
             },
@@ -1139,6 +1143,7 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Ethereum Staking",
+        link: "/docs/products/Staking/stake-window/",
         collapsed: true,
         items: [
             {
@@ -1162,6 +1167,7 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
     {
         text: "Cardano Staking",
         collapsed: true,
+        link: "/docs/products/Staking/cardano-staking-withdraw/",
         items: [
             {
                 text: "Cardano Staking withdraw",
@@ -1174,18 +1180,6 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Cardano Staking Rewards",
                 link: "/docs/products/Staking/cardano-staking-rewards/",
-            },
-            {
-                text: "Cardano Staking withdraw NTX",
-                link: "/docs/products/Staking/cardano-staking-withdraw-ntx/",
-            },
-            {
-                text: "Cardano Staking Timeline NTX",
-                link: "/docs/products/Staking/cardano-staking-timeline-ntx/",
-            },
-            {
-                text: "Cardano Staking Rewards NTX",
-                link: "/docs/products/Staking/cardano-staking-rewards-ntx/",
             },
         ],
     },
