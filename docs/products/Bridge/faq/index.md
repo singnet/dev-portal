@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-## What does the SingularityNet Bridge do?
+## What does the SingularityNET Bridge do?
 
 The Bridge provides a means to transfer AGIX tokens on Ethereum to AGIX tokens on Cardano and vice-versa on a 1:1 basis as promised in the phase two proposal.
 
@@ -50,4 +50,4 @@ In such cases always, check the Transactions page to see the current status befo
 
 If your transaction is taking a lot of time, you may wish to speed it up as shown below 
 
-![faq](/assets/images/products/Bridge/faq.png)
+![faq](/assets/images/products/Bridge/faq.webp)

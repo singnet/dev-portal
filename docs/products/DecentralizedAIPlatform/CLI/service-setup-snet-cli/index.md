@@ -1,18 +1,17 @@
-# Service set up via snet-cli
+# Service set up via snet.cli
 
-- [Python 3.6+](https://www.python.org/downloads/)
-- [Node 8+ with npm](https://nodejs.org/en/download/)
+- [Python 3.10+](https://www.python.org/downloads/)
 - [SNET CLI](https://github.com/singnet/snet-cli/releases)
     - libudev
     - libusb 1.0
-- [SNET Daemon](https://github.com/singnet/snet-daemon/releases)
+- [SNET Daemon](https://github.com/singnet/snet-daemon/releases/latest)
 
 For example, installing the requirements using `Ubuntu 18.04`:
 
 ```sh
 sudo apt-get update
 sudo apt-get install wget git
-sudo apt-get install python3 python3-pip
+sudo apt-get install python3.11 python3.11-pip
 sudo apt-get install nodejs npm
 sudo apt-get install libudev-dev libusb-1.0-0-dev
 sudo pip3 install snet-cli
@@ -53,9 +52,9 @@ sudo mv snet-daemon-${SNETD_VERSION}-linux-amd64/snetd /usr/bin/snetd
     #The address is of the Signer , who would issue you free tokens
     #Please note , if you are using market place Dapp , then we recommend to set the below
     #for free call Support 
-    #for Ropsten the Signer Address is 0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F
+    #for Sepolia the Signer Address is 0xf703b9aB8931B6590CFc95183be4fEf278732016
     #for mainnet the Signer Address is 0x3Bb9b2499c283cec176e7C707Ecb495B7a961ebf
-    SIGNERADDRESS="0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F"
+    SIGNERADDRESS="0xf703b9aB8931B6590CFc95183be4fEf278732016"
     #Tags should be in small letters 
     TAGS=image-recognition; 
     #create a metadata file with the same name as the service id.

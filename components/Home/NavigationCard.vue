@@ -89,7 +89,7 @@ export default {
 .navigation-card .card-title {
     margin-bottom: 10px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .navigation-card .card-title-text {
@@ -100,13 +100,16 @@ export default {
     font-size: 22px;
     line-height: 30px;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: wrap;
     text-overflow: ellipsis;
 }
 
 .navigation-card .card-title-icon {
     flex: 0 0 auto;
     margin-right: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .navigation-card .card-description {

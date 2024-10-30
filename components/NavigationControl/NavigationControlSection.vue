@@ -8,7 +8,9 @@
         </div>
     </a>
 </template>
-<script>
+<script lang="ts">
+import { PropType } from "vue";
+import { ISectionData } from "../../config/content/sidebarContentConfig";
 import SpriteIcon from "../Common/SpriteIcon.vue";
 
 export default {
@@ -17,7 +19,7 @@ export default {
     },
     props: {
         sectionData: {
-            type: Object,
+            type: Object as PropType<ISectionData>,
             required: true,
         },
         isActive: {

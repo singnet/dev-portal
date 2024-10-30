@@ -1,94 +1,96 @@
 # Service Calling via CLI
 
 
-### Step 1. Get some Ether
+## Step 1. Prerequisites
 
-Ether is used to pay for interactions on the block chain (known as gas).
+This guide assumes you've got a wallet (check 
+[Getting Ready to Call AI CheckUp](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/) 
+guide).  
 
-The transactions you make a call to SingularityNET are:
-- Transfer AGIX into the multi-party escrow account,
-- Create a payment channel for a service published in the SingularityNET registry, and
-- Transfer AGIX into the payment channel and set the timeout
+This guide calls the calculator service (organization_id = `26072b8b6a0e448180f8c0e702ab6d2f`, 
+service_id = `Exampleservice`) on the testnet `sepolia` (chain_id = `11155111`).
 
-After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
-or extend the timeout for the payment channel.
+## Step 2. Install CLI
 
-So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now. Specifically Ropsten.
+Install snet.cli
 
-Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.ropsten.be/).
-
-To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/Forcomers/wallet/), and then provide them with your wallet's public address.
-
-### Step 2. Get some AGIX
-
-We provide a faucet to get AGIX for either Ropsten or Kovan [networks](https://faucet.singularitynet.io/)
-
-You'll need a github account to authenticate, and there after you can request AGIX every 24 hours. 
-
-### Install snet-cli
 ```sh
-pip3 install snet-cli #if not done already
+pip3 install snet.cli
 ```
+
+## Step 3. Set configuration
+
+To sign transactions you need to create an identity.
 
 ### Set an identity 
 ```sh
-snet identity create user-ropsten mnemonic --mnemonic "YOUR MNEMONICS" --network ropsten
-snet identity user-ropsten
+snet identity create your_name key --private-key <YOUR_PRIVATE_KEY>
 ```
-### Deposit in Escrow and Create a Channel
+
+You can also use other identity types (check [`snet identity create`](/docs/products/DecentralizedAIPlatform/CLI/Manual/Identity/#create) command).
+
+### Set a network
+
+In this example we use the `sepolia` testnet.
+
 ```sh
-snet account balance # check balance (all tokens belongs to this idenity)
-snet account deposit 0.000001 # Deposit Token to MPE and Open a payment channel to the new service:
-snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGIX in to the Channel
+snet network sepolia
 ```
-### Make a call to a Service 
 
-#### JSON parameters
+## Step 4. Deposit to MPE and Open Channel
 
-While protocol buffers are used for communication, call parameters are represented as JSON on the command line.
+To check your ETH, AGIX and MPE balance please run:
 
-There are three ways of passing this JSON:
-* via a cmdline parameter;
-* via JSON file; and
-* via stdin.
+```sh
+snet account balance 
+```
 
-For example, in [this platform example](/docs/products/AIMarketplace/Forcomers/mpe-example/) we need to pass the following JSON as a parameter for the "add" method to our service:
+If you don't have enough AGIX in MPE you can deposit it.
+
+```sh
+snet account deposit 0.00001
+```
+
+Open a channel and transfer AGIX to it.
+
+```sh
+snet channel open-init 26072b8b6a0e448180f8c0e702ab6d2f default_group 0.00001 +8days 
+```
+
+## Step 5. Make a call to a Service 
+
+Now you can call a service.
+
+```sh
+snet client call 26072b8b6a0e448180f8c0e702ab6d2f Exampleservice default_group add '{"a":10,"b":32}'
+```
+
+It returns the result of the service call.
+
+```sh
+value: 42
+```
+
+### Service call on Windows
+
+When calling the service in the way above on Windows, an error like "Decoding JSON has failed" may occur due to 
+the specifics of this OS. To avoid this problem, call the service as follows:
+
+- save the parameters in a JSON file
 
 ```json
-{"a": 10, "b": 32}
+{
+  "a": 10, 
+  "b": 32
+}
 ```
 
-We can use three ways:
-
-##### via cmdline parameter
+- pass the path to the file with parameters to the call command
 
 ```sh
-snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'
-```
-##### via json file
-```sh
-echo '{"a":10,"b":32}' > p.txt
-snet client call <org_id> <service_id> <group_name> add p.txt
+snet client call 26072b8b6a0e448180f8c0e702ab6d2f Exampleservice default_group add PATH/TO/JSON/params.json
 ```
 
-##### via stdin
-```sh
-echo '{"a":10,"b":32}' | snet client call <org_id> <service_id> <group_name> add
-```
+> **Note:** You can also call the service this way on UNIX
 
-### Modifiers
-
-We've implemented several modifiers for this JSON parameter in order to simplify passing big files and to have the possibility to pass binary data (and not only base64 encoded data).
-
-There are 3 possible modifiers:
-* file      - read from file;
-* b64encode - encode to base64; and
-* b64decode - decode from base64.
-
-For example, if you pass the following JSON as a parameter, then as an "image" parameter we will use the base64 encoded content of "1.jpeg"
-
-```json
-{"image_type": "jpg", "file@b64encode@image": "1.jpeg"}
-```
-
-If we remove the b64encode modifier from the previous example, then we will pass 1.jpeg image in binary format without base64 encoding.  
+To get more details, check out the [CLI manual](/docs/products/DecentralizedAIPlatform/CLI/Manual/)

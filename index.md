@@ -1,5 +1,6 @@
 ---
 layout: home
 ---
-
-<Home />
+<ClientOnly>
+    <Home />
+</ClientOnly>

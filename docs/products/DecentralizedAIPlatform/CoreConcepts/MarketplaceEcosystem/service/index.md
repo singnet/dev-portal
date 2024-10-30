@@ -1,4 +1,4 @@
-## Service
+# Service
 
 The platform's primary reason for existence is to allow a diverse collection AI services to be bought and sold via a distributed marketplace. Anyone can publish the availability of their machine learning method, or integrated AI solution, and allow clients to interact with and pay for them directly.
 
@@ -10,7 +10,7 @@ These services are primarily meant to be AI or machine learning related, but the
 
 - Services define their API using <a href="https://developers.google.com/protocol-buffers/docs/reference/proto3-spec#service_definition" target="_blank">protocol buffers</a>. 
 - This allows SingularityNET clients to determine the request/response schema programmatically. 
-- The first step in setting up a service on the SingularityNet Platform is to define the service definition via protocol buffers.
+- The first step in setting up a service on the SingularityNET Platform is to define the service definition via protocol buffers.
 - A sample proto file is available <a href="https://github.com/singnet/example-service/blob/master/service/service_spec/example_service.proto" target="_blank">here</a>
 
 
@@ -45,7 +45,7 @@ Details like Service the price of the service ,
 image depicting / related to the service , service type, description, the endpoint and how to make a request.
 
 Please note that
-- Singularity platform works on gRPC. Whenever you need to call you need a protofile.
+- SingularityNET platform works on gRPC. Whenever you need to call you need a protofile.
 - File management system such as IPFS stores the location of the hash and points to the associated protofile
     The IPFS can include a file and the same file returns same hash. 
     

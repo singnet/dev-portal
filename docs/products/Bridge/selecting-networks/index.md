@@ -2,13 +2,13 @@
 
 The bridge currently supports Ethereum and Cardano blockchain networks. Use the dropdown on the homepage of the bridge to select the network and the direction of conversion:
 
-![SelectingNetworks](/assets/images/products/Bridge/selecting-networks.png)
+![SelectingNetworks](/assets/images/products/Bridge/selecting-networks.webp)
 
 # Choosing Assets
 
 The bridge currently supports AGIX and NTX, RJV on the Ethereum and Cardano networks. Once you have selected the chain and the direction of conversion, use the token dropdown to select the token to convert
 
-![ChoosingAssets](/assets/images/products/Bridge/choosing-assets.png)
+![ChoosingAssets](/assets/images/products/Bridge/choosing-assets.webp)
 
 # Initiating Conversion
 Algorithm of working with Ethereum-Cardano bridge:
@@ -17,7 +17,7 @@ Bridging tokens from one chain to another involves the following steps
 
 1. Set up the token pair
 
-2. Authorize (Approve ) the bridge to transfer tokens on the Ethereum side on your behalf. This involves a web3 wallet interaction. This is a one time, if you dont change the default valueю - you will not need to authorize for every conversion. 
+2. Authorize (Approve) the bridge to transfer tokens on the Ethereum side on your behalf. This involves a web3 wallet interaction. This is a one time, if you dont change the default valueю - you will not need to authorize for every conversion. 
 Important: at this point, you are not yet transferring tokens to another network. You are only allowing the smart contract access to interact with the tokens. This step is mandatory.
 
 3. Once authorized you can initiatite the conversion. 
@@ -36,7 +36,7 @@ To view all the transactions, click on the transactions tab on the main page
 
 you would something like the below 
 
-![ChoosingAssets](/assets/images/products/Bridge/viewing-history.png)
+![ChoosingAssets](/assets/images/products/Bridge/viewing-history.webp)
 
 * Initiated - The conversion request has been initiated and the Bridge is waiting for confirmations from the Blockchain before it moves to the Processing state. You do not have to do anything at this state, just wait for the conversion to move to the next state.
 

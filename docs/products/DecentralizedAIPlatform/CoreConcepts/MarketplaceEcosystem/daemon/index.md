@@ -1,4 +1,4 @@
-## Daemon
+# Daemon
 
 The [SingularityNET daemon](https://github.com/singnet/snet-daemon) is the adapter that a service can use to interface with the SingularityNET platform.
 
@@ -61,7 +61,7 @@ The daemon supports SSL termination using a developer-supplied certificate and k
 
 Prior to invoking a service through the SingularityNET platform, the consumer must have completed the following:
 - Funded the [Multi-Party Escrow contract](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/);
-- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/products/AIMarketplace/Forcomers/organization/).
+- Opened a payment channel with the recipient as specified by the [Organization metadata](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingTestnet/).
 
 With each invocation the daemon checks for the following
 - that the signature is authentic;

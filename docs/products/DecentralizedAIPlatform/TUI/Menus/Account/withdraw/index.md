@@ -2,7 +2,7 @@
 
 Withdraw AGI tokens from MPE wallet
 
-![Withdraw Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at7.29.40AM.png) Withdraw Page
+![Withdraw Page](/assets/images/products/AIMarketplace/TUI/WithdrawAGIX.webp) Withdraw Page
 
 ```bash
 # Format of the command in the SNET CLI

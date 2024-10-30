@@ -1,6 +1,6 @@
 # Client
 
-![Client page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.15.31PM.png)Client page
+![Client page](/assets/images/products/AIMarketplace/TUI/ClientPage.webp)Client page
 
 **Overview**
 

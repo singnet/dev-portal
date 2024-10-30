@@ -1,6 +1,6 @@
 # View All Page
 
-![Services View All page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.11.15PM.png)Services View All page
+![Services View All page](/assets/images/products/AIMarketplace/TUI/ViewAllPage.webp)Services View All page
 
 **Overview**
 

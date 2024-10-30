@@ -1,14 +1,14 @@
 <template>
     <div class="tool-card card">
-        <div class="tool-info">
+        <a class="tool-info" :href="item.link">
             <h1 class="tool-title">
                 {{ item.text }}
             </h1>
             <p class="tool-description">
                 {{ item.description }}
             </p>
-        </div>
-        <a class="tool-redirect" :href="item.link">
+        </a>
+        <a class="tool-redirect"  :href="item.gitLink" target="_blank">
             <SpriteIcon :textIconID="'github-icon'" :width="'18px'" :height="'18px'" />
             <p>GitHub</p>
         </a>
@@ -45,9 +45,13 @@ h1 {
     width: 100%;
     justify-content: space-between;
     padding: 24px;
-    margin-top: 20px
+    margin-top: 20px;
 }
 
+.tool-info {
+    text-decoration: none;
+    color: var(--vp-c-text-1) !important;
+}
 
 .tool-redirect {
     color: var(--vp-c-black);

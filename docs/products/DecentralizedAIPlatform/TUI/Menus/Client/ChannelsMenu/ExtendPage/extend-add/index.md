@@ -2,7 +2,7 @@
 
 Set new expiration for the channel and add funds
 
-![Extend Add page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.23.35PM.png)Extend Add page
+![Extend Add page](/assets/images/products/AIMarketplace/TUI/ChannelExtendAddPage.webp)Extend Add page
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

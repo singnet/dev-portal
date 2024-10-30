@@ -14,11 +14,11 @@ For start development you need:
 Copy repository:
 
 ```sh
-git clone https://github.com/singnet/dev-portal-v2.git
+git clone https://github.com/singnet/dev-portal.git
 ```
 
 ```sh
-cd dev-portal-v2
+cd dev-portal
 ```
 
 then install dependencies:
@@ -37,13 +37,20 @@ npm run dev
 
 If you want to update the documentation, change the corresponding files in `/docs/products/`. To add documentation files, place them in the appropriate product section and do not forget to add them to the sidebar (add the data to the `/config/content/sidebarContentConfig.ts` to the appropriate section). If a new documentation page requires images, add them to the appropriate folder in `/assets/images/`
 
-The new section must contain index.md file with the following component:
+Dev-portal-2 uses a library module with clean-URLs and for its correct operation it is necessary to store documents correctly.
 
-```js
-<SectionNavigationGrid sectionRoot='<sectionRoot>' />
+Add all documents in individual folders and the entry point must be a file index.md
+As shown in the diagram:
+
+```
+├─ getting-started
+│  └─ index.md
+├─ installation
+│  └─ index.md
+└─ index.md
 ```
 
-where the `sectionRoot` corresponds to the `Product` from `/config/content/sidebarContentConfig.ts`
+If there are other files inside the folder, except index.md then the name of this folder should start with a capital letter. Otherwise, with lowercase
 
 ## Add new component
 

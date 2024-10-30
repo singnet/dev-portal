@@ -1,6 +1,6 @@
 # Organization
 
-![Organization Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.43.00PM.png)Organization Page
+![Organization Page](/assets/images/products/AIMarketplace/TUI/OrganizationPage.webp)Organization Page
 
 **Overview**
 

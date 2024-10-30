@@ -1,6 +1,8 @@
+# Daemon SSL setup
+
 ## Introduction
 
-This section provides steps on securing your SingularityNet Daemon with Certbot from <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a>.
+This section provides steps on securing your SingularityNET Daemon with Certbot from <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a>.
 <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a> is a nonprofit Certificate Authority (CA) that provides an easy way to obtain and install free TLS/SSL certificates, thereby enabling encrypted HTTPS on web servers. It simplifies the process by providing a software client, Certbot, that attempts to automate most (if not all) of the required steps. Currently, the entire process of obtaining and installing a certificate is fully automated. The Lets Encrypt <a href="https://letsencrypt.org/getting-started/" target="_blank">getting started guide</a> gives a detailed explanation on using Lets Encrypt.
 
 
@@ -76,7 +78,7 @@ IMPORTANT NOTES:
 ```
 
 ## Step 3 — Getting the certificate path
-Get the certificate path and key using the command: `sudo certbot certificates`. This is needed for configuring the SingularityNet daemon
+Get the certificate path and key using the command: `sudo certbot certificates`. This is needed for configuring the SingularityNET daemon
 
 ```bash
 $ sudo certbot certificates

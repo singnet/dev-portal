@@ -1,6 +1,7 @@
 import type { DefaultTheme } from "vitepress";
 
 export default [
+    { text: "Old Dev Portal", link: "https://old-dev.singularitynet.io/" },
     { text: "Home", link: "/", activeMatch: "^/$|^$" },
     { text: "Docs", link: "/docs/", activeMatch: "^/docs/" },
     {
@@ -15,8 +16,29 @@ export default [
                 link: "https://beta.singularitynet.io/",
             },
             {
-                text: "AI Publisher",
+                text: "Publisher Portal",
                 link: "https://publisher.singularitynet.io/",
+            },
+            {
+                text: "Linking Wallet Tool",
+                link: "https://mywallets.singularitynet.io/",
+            },
+            {
+                text: "Bridge",
+                items: [
+                    {
+                        text: "Ethereum-Cardano",
+                        link: "https://bridge.singularitynet.io/",
+                    },
+                    {
+                        text: "Ethereum-Binance",
+                        link: "https://bsc-bridge.singularitynet.io/",
+                    },
+                    {
+                        text: "Cardano AGIX-ASI",
+                        link: "https://asi-migration.singularitynet.io/",
+                    },
+                ]
             },
         ],
     },

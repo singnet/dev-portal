@@ -1,38 +1,69 @@
 export interface IToolsSectionItem {
     text: string,
     description: string,
+    gitLink: string,
     link: string,
 }
 
 export default [
     {
-        text: "SNET Contracts",
-        description: "Ethereum smart contracts that power the SingularityNet platform",
-        link: "https://github.com/singnet/platform-contracts",
+        text: "Smart Contracts",
+        description: "Ethereum smart contracts that power the SingularityNET platform",
+        gitLink: "https://github.com/singnet/platform-contracts",
+        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/"
     },
     {
-        text: "SNET Client",
-        description: "A command line utility to interface with the SingularityNet platform",
-        link: "https://google.com",
+        text: "CLI",
+        description: "A command line utility to interface with the SingularityNET platform",
+        gitLink: "https://github.com/singnet/snet-cli",
+        link: "/docs/products/DecentralizedAIPlatform/CLI/"
+    },
+    {
+        text: "TUI",
+        description: "Mouse-centric text user interface to simplify interacting with the SingularityNET command line interface",
+        gitLink: "https://github.com/singnet/TUI",
+        link: "/docs/products/DecentralizedAIPlatform/TUI/"
     },
     {
         text: "Daemon",
-        description: "Daemon exposes an AI application as an API that is accessible through the SingularityNET platform.",
-        link: "https://github.com/singnet/snet-daemon",
+        description: "Daemon exposes an AI application as an API that is accessible through the SingularityNET platform",
+        gitLink: "https://github.com/singnet/snet-daemon",
+        link: "/docs/products/DecentralizedAIPlatform/Daemon/"
+    },
+    {
+        text: "UI Sandbox version 1",
+        description: "Development environment for testing UI components for AI Marketplace",
+        gitLink: "https://github.com/singnet/snet-dapp?tab=readme-ov-file#sandbox-mode-for-services",
+        link: "/docs/products/DecentralizedAIPlatform/Sandbox/available-now/"
     },
     {
         text: "Python SDK",
-        description: "Python SDK to invoke AI services on the SingularityNet platform programmatically",
-        link: "https://github.com/singnet/snet-sdk-python",
+        description: "Python SDK to invoke AI services on the SingularityNET platform programmatically",
+        gitLink: "https://github.com/singnet/snet-sdk-python",
+        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/"
+    },
+    {
+        text: "JavaScript Web SDK",
+        description: "Integrate SingularityNET services seamlessly into Web applications",
+        gitLink: "https://github.com/singnet/snet-sdk-js/tree/master/packages/web",
+        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/"
+    },
+    {
+        text: "JavaScript Node SDK",
+        description: "Integrate SingularityNET services seamlessly into Node.js applications",
+        gitLink: "https://github.com/singnet/snet-sdk-js/tree/master/packages/nodejs",
+        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/"
     },
     {
         text: "Java SDK",
         description: "Java SDK to invoke AI services on Java SE and Android platforms",
-        link: "https://github.com/singnet/snet-sdk-java",
+        gitLink: "https://github.com/singnet/snet-sdk-java",
+        link: "/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/"
     },
     {
-        text: "SNET TUI",
-        description: "Mouse-centric text user interface to simplify interacting with the SingularityNET command line interface",
-        link: "https://github.com/singnet/TUI",
+        text: "Boilerplate",
+        description: "The project demonstrates the integration of snet-sdk-web, focusing on wallet management and service utilization within the SingularityNET ecosystem",
+        gitLink: "https://github.com/singnet/Web-JS-SDK-Boilerplate",
+        link: "/docs/products/DecentralizedAIPlatform/Boilerplate/"
     },
 ] as IToolsSectionItem[]

@@ -2,7 +2,7 @@
 
 Add/Remove members from organization&#x20;
 
-![Manage members page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-16at8.45.09PM.png)Manage members page
+![Manage members page](/assets/images/products/AIMarketplace/TUI/ManageMembersPage.webp)Manage members page
 
 ```bash
 # Format of the commands in the SNET CLI

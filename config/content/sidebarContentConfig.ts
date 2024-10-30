@@ -20,11 +20,6 @@ export const RootSections: ISiteSections = {
 };
 
 export const Products: ISiteSections = {
-    TECHNOLOGIES: {
-        name: "About Technologies",
-        path: "/docs/products/AboutTechnologies/",
-        textIconID: "techs-icon",
-    },
     MARKETPLACE: {
         name: "AI Marketplace",
         path: "/docs/products/AIMarketplace/",
@@ -53,32 +48,9 @@ export const Products: ISiteSections = {
     PLATFORM:{
         name: "Decentralized AI Platform",
         path: "/docs/products/DecentralizedAIPlatform/",
-        textIconID: "marketplace-icon",
+        textIconID: "platform-icon",
     },
 };
-
-export const TechnologiesSection: DefaultTheme.SidebarItem[] = [
-    {
-        text: "Blockchain",
-        link: "/docs/products/AboutTechnologies/blockchain",
-    },
-    {
-        text: "Ethereum",
-        link: "/docs/products/AboutTechnologies/ethereum",
-    },
-    {
-        text: "AGIX Token",
-        link: "/docs/products/AboutTechnologies/agi-token",
-    },
-    {
-        text: "Concepts of organization",
-        link: "/docs/products/AboutTechnologies/concepts-organization/",
-    },
-    {
-        text: "Introduction in SDK",
-        link: "/docs/products/AboutTechnologies/sdk",
-    },
-];
 
 export const PlatformSection: DefaultTheme.SidebarItem[] = [
     {
@@ -87,156 +59,196 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "I am AI Consumer",
-        link: "/docs/products/DecentralizedAIPlatform/IAmAIConsumer"
+        link: "/docs/products/DecentralizedAIPlatform/IAmAIConsumer/"
     },
     {
         text: "I am AI Developer",
-        link: "/docs/products/DecentralizedAIPlatform/IAmAIDeveloper"
+        link: "/docs/products/DecentralizedAIPlatform/IAmAIDeveloper/"
     },
     {
         text: "Quick Start Guides",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
         collapsed: true,
         items: [
             {
                 text: "Getting Ready to Onboard CheckUp",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
             },
             {
-                text: "Service Onboarding via Publisher",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher",
-            },
-            {
-                text: "Service Onboarding via CLI",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaCLI",
-            },
-            {
-                text: "Service Onboarding via TUI",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaTUI",
+                text: "Getting Ready to Call AI CheckUp",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/",
             },
             {
                 text: "Service Calling via CLI",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI/",
             },
             {
                 text: "Service Calling via TUI",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaTUI",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaTUI/",
             },
             {
                 text: "Service Calling via SDK",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/",
             },
         ],
     },
     {
-        text: "Core concepts",
+        text: "Developer's Tutorials",
+        link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
         collapsed: true,
-        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/keyterms",
-        items: [
+        items:[
             {
-                text: "Marketplace ecosystem",
-                collapsed: true,
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace",
-                items: [
-                    {
-                        text: "Service",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service",
-                    },
-                    {
-                        text: "Explanation of Daemon",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/daemon",
-                    },
-                    {
-                        text: "Marketplace service invocation",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_invocation",
-                    },
-                    {
-                        text: "Marketplace service training",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_training",
-                    },
-                ],
+                text: "Service Onboarding via Publisher",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
             },
             {
-                text: "Smart contracts",
-                collapsed: true,
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/smart-contracts",
-                items: [
-                    {
-                        text: "MPE",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe",
-                    },
-                    {
-                        text: "MPE Stateless Client",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe-stateless-client",
-                    },
-                ],
-            },
-
-            {
-                text: "ERC20",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/erc20",
+                text: "Service Onboarding via CLI",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaCLI/",
             },
             {
-                text: "ETCD",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/etcd",
+                text: "Service Onboarding via TUI",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaTUI/",
             },
             {
-                text: "Ethereum Address",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum-address",
+                text: "Full guide to Onboarding in mainnet",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/FullGuideOnboardingMainnet/",
             },
             {
-                text: "GRPC",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/grpc",
+                text: "Full guide to Onboarding in testnet",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/FullGuideOnboardingTestnet/",
             },
             {
-                text: "IPFS",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ipfs",
+                text: "(Coming soon) Integration Training Service",
+                link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/Training/",
             },
             {
-                text: "Protobuf",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/protobuf",
-            },
-            {
-                text: "ETCD Setup",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup",
+                text: "Integration HTTP Service",
+                link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationHTTPService/",
             },
         ],
     },
     {
         text: "Daemon",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/Daemon/",
         collapsed: true,
         items: [
             {
+                text: "What is Daemon?",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/",
+            },
+            {
+                text: "Daemon setup",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-setup/",
+            },
+            {
                 text: "Daemon architecture",
-                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-architecture",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-architecture/",
             },
             {
                 text: "Daemon Channel Storage",
-                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-channel-storage",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-channel-storage/",
             },
             {
                 text: "Daemon SSL Setup",
-                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/",
             },
             {
-                text: "Daemon Setup",
-                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-setup",
+                text: "ETCD Setup",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/",
+            },
+            {
+                text: "Logger & hooks",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-logger/",
+            },
+            {
+                text: "Build daemon",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-build/",
+            },
+            {
+                text: "Daemon API",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-api/",
             },
         ],
     },
     {
         text: "CLI",
-        link: "/docs/products/DecentralizedAIPlatform/CLI/snet-cli",
+        link: "/docs/products/DecentralizedAIPlatform/CLI/",
         collapsed: true,
         items: [
             {
+                text: "What is CLI?",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/",
+            },
+            {
                 text: "Organization setup via CLI",
-                link: "/docs/products/DecentralizedAIPlatform/CLI/organization-setup-sent-cli",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/organization-setup-snet-cli/",
             },
             {
                 text: "Service setup via CLI",
-                link: "/docs/products/DecentralizedAIPlatform/CLI/service-setup-snet-cli",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/service-setup-snet-cli/",
+            },
+            {
+                text: "Manual",
+                link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/",
+                collapsed: true,
+                items: [
+                    {
+                        text: "Account",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Account/",
+                    },
+                    {
+                        text: "Channel",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Channel/",
+                    },
+                    {
+                        text: "Client",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Client/",
+                    },
+                    {
+                        text: "Contract",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Contract/",
+                    },
+                    {
+                        text: "Identity",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Identity/",
+                    },
+                    {
+                        text: "Network",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Network/",
+                    },
+                    {
+                        text: "Organization",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Organization/",
+                    },
+                    {
+                        text: "Sdk",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Sdk/",
+                    },
+                    {
+                        text: "Service",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Service/",
+                    },
+                    {
+                        text: "Session",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Session/",
+                    },
+                    {
+                        text: "Set",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Set/",
+                    },
+                    {
+                        text: "Treasurer",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Treasurer/",
+                    },
+                    {
+                        text: "Unset",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Unset/",
+                    },
+                    {
+                        text: "Version",
+                        link: "/docs/products/DecentralizedAIPlatform/CLI/Manual/Version/",
+                    },
+                ],
             },
         ],
     },
@@ -246,173 +258,177 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         collapsed: true,
         items: [
             {
+                text: "What is TUI?",
+                link: "/docs/products/DecentralizedAIPlatform/TUI/",
+            },
+            {
                 text: "Getting Started",
-                link: "/docs/products/DecentralizedAIPlatform/TUI/getting-started/",
+                link: "/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/",
                 collapsed: true,
                 items: [
                     {
                         text: "Installation",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/getting-started/installation",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/installation/",
                     },
                     {
                         text: "First time start up",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/getting-started/first-time-start-up",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/first-time-start-up/",
                     },
                     {
                         text: "Execution",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/getting-started/execution",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/execution/",
                     },
                 ],
             },
             {
                 text: "Menus",
-                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/",
+                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/",
                 collapsed: true,
                 items: [
                     {
                         text: "Account",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/",
                         collapsed: true,
                         items: [
                             {
                                 text: "Identify page",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/identity-page/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/IdentityPage/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Create identity page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/identity-page/create-identity-page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/IdentityPage/create-identity-page/",
                                         collapsed: true,
                                     },
                                 ],
                             },
                             {
                                 text: "Treasurer",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/treasurer/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/Treasurer/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Claim",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/treasurer/claim",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/Treasurer/claim/",
                                         collapsed: true,
                                     },
                                     {
                                         text: "Claim all",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/treasurer/claim-all",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/Treasurer/claim-all/",
                                         collapsed: true,
                                     },
                                     {
                                         text: "Claim expired",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/treasurer/claim-expired",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/Treasurer/claim-expired/",
                                         collapsed: true,
                                     },
                                 ],
                             },
                             {
                                 text: "Deposit",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/deposit",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/deposit/",
                             },
                             {
                                 text: "Transfer",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/transfer",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/transfer/",
                             },
                             {
                                 text: "Withdraw",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/account/withdraw",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/withdraw/",
                             },
                         ],
                     },
                     {
                         text: "Client",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/",
                         collapsed: true,
                         items: [
                             {
                                 text: "Channels menu",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Claim page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/claim-page/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ClaimPage/",
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: "Claim timeout",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/claim-page/claim-timeout",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ClaimPage/claim-timeout/",
                                             },
                                             {
                                                 text: "Claim all timeout",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/claim-page/claim-all-timeout",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ClaimPage/claim-all-timeout/",
                                             },
                                         ],
                                     },
                                     {
                                         text: "Extend page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/extend-page/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ExtendPage/",
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: "Extend add",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/extend-page/extend-add",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ExtendPage/extend-add/",
                                             },
                                             {
                                                 text: "Extend add organization",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/extend-page/extend-add-organization",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ExtendPage/extend-add-organization/",
                                             },
                                         ],
                                     },
                                     {
                                         text: "Initialize open page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/initialize-open-page/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/",
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: "Initialize",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/initialize-open-page/initialize",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/initialize/",
                                             },
                                             {
                                                 text: "Initialize metadata",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/initialize-open-page/initialize-metadata",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/initialize-metadata/",
                                             },
                                             {
                                                 text: "Open initialize",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/initialize-open-page/open-initialize",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/open-initialize/",
                                             },
                                             {
                                                 text: "Open initialize metadata",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/initialize-open-page/open-initialize-metadata",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/open-initialize-metadata/",
                                             },
                                         ],
                                     },
                                     {
                                         text: "Print page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/print-page/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/",
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: "Print all channels filter group",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/print-page/print-all-channels-filter-group",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/print-all-channels-filter-group/",
                                             },
                                             {
                                                 text: "Print all channels filter sender",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/print-page/print-all-channels-filter-sender",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/print-all-channels-filter-sender/",
                                             },
                                             {
                                                 text: "Print all channels filter group sender",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/print-page/print-all-channels-filter-group-sender",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/print-all-channels-filter-group-sender/",
                                             },
                                             {
                                                 text: "Print all channels filter group recipient",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/print-page/print-all-channels-filter-recipient",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/print-all-channels-filter-recipient/",
                                             },
                                             {
                                                 text: "Print initialized channels",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/print-page/print-initialized-channels",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/print-initialized-channels/",
                                             },
                                             {
                                                 text: "Print initialized channels filter organization",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/channels-menu/print-page/print-initialized-channels-filter-organization",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/print-initialized-channels-filter-organization/",
                                             },
                                         ],
                                     },
@@ -420,96 +436,96 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                             },
                             {
                                 text: "Call",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/call",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/call/",
                             },
                             {
                                 text: "Call low level",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/call-low-level",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/call-low-level/",
                             },
                             {
                                 text: "Get channel state",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/client/get-channel-state",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/get-channel-state/",
                             },
                         ],
                     },
                     {
                         text: "Organization",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/",
                         collapsed: true,
                         items: [
                             {
                                 text: "Groups page",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/groups-page/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Add a group",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/groups-page/add-a-group",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/add-a-group/",
                                     },
                                     {
                                         text: "Update group",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/groups-page/update-group",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/update-group/",
                                     },
                                 ],
                             },
                             {
                                 text: "Manage page",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/manage-page/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/ManagePage/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Create organization",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/manage-page/create-organization",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/ManagePage/create-organization/",
                                     },
                                     {
                                         text: "Delete organization",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/manage-page/delete-organization",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/ManagePage/delete-organization/",
                                     },
                                 ],
                             },
                             {
                                 text: "Members page",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/members-page/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MembersPage/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Manage members",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/members-page/manage-members",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MembersPage/manage-members/",
                                     },
                                     {
                                         text: "Change organization owner",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/members-page/change-organization-owner",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MembersPage/change-organization-owner/",
                                     },
                                 ],
                             },
                             {
                                 text: "Metadata page",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/metadata-page/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Add description",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/metadata-page/add-description",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/add-description/",
                                     },
                                     {
                                         text: "Initialize metadata",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/metadata-page/initialize-metadata",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/initialize-metadata/",
                                     },
                                     {
                                         text: "Manage assets",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/metadata-page/manage-assets",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/manage-assets/",
                                     },
                                     {
                                         text: "Manage contacts",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/metadata-page/manage-contacts",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/manage-contacts/",
                                     },
                                     {
                                         text: "Print metadata",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/metadata-page/print-metadata",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/print-metadata/",
                                     },
                                     {
                                         text: "Update metadata",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/organization/metadata-page/update-metadata",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/update-metadata/",
                                     },
                                 ],
                             },
@@ -517,182 +533,182 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                     {
                         text: "Services",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/",
                         collapsed: true,
                         items: [
                             {
                                 text: "Manage page",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/manage-page/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/ManagePage/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Publish Service",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/manage-page/publish-service",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/ManagePage/publish-service/",
                                     },
                                     {
                                         text: "Delete service",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/manage-page/delete-service",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/ManagePage/delete-service/",
                                     },
                                 ],
                             },
                             {
                                 text: "Metadata menu",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/",
                                 collapsed: true,
                                 items: [
                                     {
                                         text: "Add/remove page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/add-remove-page/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/",
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: "Add/remove description",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/add-remove-page/add-service-description",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/add-service-description/",
                                             },
                                             {
                                                 text: "Add/remove daemon address",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/add-remove-page/add-remove-daemon-address",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/add-remove-daemon-address/",
                                             },
                                             {
                                                 text: "Add/remove service metadata assets",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/add-remove-page/add-remove-service-metadata-assets",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/add-remove-service-metadata-assets/",
                                             },
                                             {
                                                 text: "Add/remove service metadata groups",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/add-remove-page/add-remove-service-metadata-groups",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/add-remove-service-metadata-groups/",
                                             },
                                             {
                                                 text: "Add/remove service metadata media",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/add-remove-page/add-remove-service-metadata-media",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/add-remove-service-metadata-media/",
                                             },
                                         ],
                                     },
                                     {
                                         text: "Get page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/get-page/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/GetPage/",
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: "Service status",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/get-page/service-status",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/GetPage/service-status/",
                                             },
                                             {
                                                 text: "API metadata",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/get-page/api-metadata",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/GetPage/api-metadata/",
                                             },
                                             {
                                                 text: "API registry",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/get-page/api-registry",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/GetPage/api-registry/",
                                             },
                                         ],
                                     },
                                     {
                                         text: "Set page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/set-page/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/",
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: "Set fixed price",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/set-page/set-fixed-price",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/set-fixed-price/",
                                             },
                                             {
                                                 text: "Set free calls",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/set-page/set-free-calls",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/set-free-calls/",
                                             },
                                             {
                                                 text: "Set free call signer address",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/set-page/set-free-call-signer-address",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/set-free-call-signer-address/",
                                             },
                                             {
                                                 text: "Set method price",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/set-page/set-method-price",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/set-method-price/",
                                             },
                                             {
                                                 text: "Set model",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/set-page/set-model",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/set-model/",
                                             },
                                         ],
                                     },
                                     {
                                         text: "Update page",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/update-page/",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/UpdatePage/",
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: "Update service daemon address",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/update-page/update-service-daemon-address",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/UpdatePage/update-service-daemon-address/",
                                             },
                                             {
                                                 text: "Update metadata",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/update-page/update-metadata",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/UpdatePage/update-metadata/",
                                             },
                                             {
                                                 text: "Validate metadata",
-                                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/update-page/validate-metadata",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/UpdatePage/validate-metadata/",
                                             },
                                         ],
                                     },
                                     {
                                         text: "Initialize service metadata",
-                                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/metadata-menu/initialize-service-metadata",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/initialize-service-metadata/",
                                     },
                                 ],
                             },
                             {
                                 text: "View all page",
-                                link: "/docs/products/DecentralizedAIPlatform/TUI/menus/services/view-all-page",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/view-all-page/",
                             },
                         ],
                     },
                     {
                         text: "Custom command",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/menus/custom-command",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/custom-command/",
                     },
                 ],
             },
             {
                 text: "Tutorials",
-                link: "/docs/products/DecentralizedAIPlatform/TUI/tutorials/",
+                link: "/docs/products/DecentralizedAIPlatform/TUI/Tutorials/",
                 collapsed: true,
                 items: [
                     {
                         text: "Adding funds to wallet",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/tutorials/adding-funds-to-wallet",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Tutorials/adding-funds-to-wallet/",
                     },
                     {
                         text: "Invoke a service with the TUI",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/tutorials/invoke-a-service-with-the-tui",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Tutorials/invoke-a-service-with-the-tui/",
                     },
                     {
                         text: "Opening and Initializing a payment channel",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/tutorials/opening-and-initializing-a-payment-channel",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Tutorials/opening-and-initializing-a-payment-channel/",
                     },
                 ],
             },
             {
                 text: "FAQ",
-                link: "/docs/products/DecentralizedAIPlatform/TUI/faq/",
+                link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/",
                 collapsed: true,
                 items: [
                     {
-                        text: "Could not retrieve account information",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/faq/could-not-retrieve-account-information",
+                        text: "Could not retrieve Account information",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/could-not-retrieve-account-information/",
                     },
                     {
                         text: "How do I select text, and copy/paste?",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/faq/how-do-i-select-text-and-copy-paste",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/how-do-i-select-text-and-copy-paste/",
                     },
                     {
                         text: "I want to use my keyboard instead of my mouse!",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/faq/i-want-to-use-my-keyboard-instead-of-my-mouse",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/i-want-to-use-my-keyboard-instead-of-my-mouse/",
                     },
                     {
                         text: "JSON Serialization on Windows",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/faq/json-serialization-on-windows",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/json-serialization-on-windows/",
                     },
                     {
                         text: "The TUI looks really bad on my screen! What do I do?",
-                        link: "/docs/products/DecentralizedAIPlatform/TUI/faq/the-tui-looks-really-bad-on-my-screen-what-do-i-do",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/the-tui-looks-really-bad-on-my-screen-what-do-i-do/",
                     },
                 ],
             },
@@ -704,264 +720,422 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         collapsed: true,
         items: [
             {
+                text: "What is Publisher?",
+                link: "/docs/products/DecentralizedAIPlatform/PublisherPortal/",
+            },
+            {
                 text: "Text Quickstart Guide",
-                link: "/docs/products/DecentralizedAIPlatform/PublisherPortal/text-guide",
+                link: "/docs/products/DecentralizedAIPlatform/PublisherPortal/text-guide/",
             },
             {
                 text: "Video Quickstart Guide",
-                link: "/docs/products/DecentralizedAIPlatform/PublisherPortal/video-guide",
+                link: "/docs/products/DecentralizedAIPlatform/PublisherPortal/video-guide/",
             },
         ],
     },
     {
         text: "SDK",
-        link: "/docs/products/DecentralizedAIPlatform/SDK/",
+        link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-concept/",
         collapsed: true,
         items: [
             {
-                text: "Architecture of SDK",
-                link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-architecture",
+                text: "SDK Concept",
+                link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-concept/",
             },
-            {
-                text: "SDK Tutorial",
-                link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-tutorial",
-            },
+//             {
+//                 text: "Architecture of SDK",
+//                 link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-architecture/",
+//             },
+//             }
             {
                 text: "Python SDK",
                 collapsed: true,
-                link: "/docs/products/DecentralizedAIPlatform/SDK/python-sdk-first-steps",
+                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/",
                 items: [
                     {
                         text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/",
                     },
                     {
                         text: "Calculator example",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/calculator",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/calculator/",
                     },
                     {
                         text: "Console App example",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/console-app",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/console-app/",
                     },
                     {
                         text: "Documentation",
                         collapsed: true,
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/",
                         items: [
                             {
                                 text: "init",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/init",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/init/",
                             },
                             {
                                 text: "account",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/account",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/account/",
                             },
                             {
                                 text: "service_client",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/service-client",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/service-client/",
                             },
                             {
                                 text: "config",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/config",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/config/",
                             },
                             {
                                 text: "client_lib_generator",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/client-lib-generator",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/client-lib-generator/",
                             },
                             {
                                 text: "concurrency_manager",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/concurrency-manager",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/concurrency-manager/",
                             },
                             {
                                 text: "service_metadata",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/service-metadata",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/service-metadata/",
                             },
                             {
-                                text: "metadata_provider",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/metadata-provider",
-                            },
-                            {
-                                text: "ipfs_metadata_provider",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/ipfs-metadata-provider",
+                                text: "storage_provider",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/storage-provider/",
                             },
                             {
                                 text: "mpe_contract",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/mpe-contract",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/mpe-contract/",
                             },
                             {
                                 text: "payment_channel",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/payment-channel",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/payment-channel/",
                             },
                             {
                                 text: "payment_channel_provider",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/payment-channel-provider",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/payment-channel-provider/",
                             },
                             {
                                 text: "payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/payment-strategy/",
                             },
                             {
                                 text: "default_payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/default-payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/default-payment-strategy/",
                             },
                             {
                                 text: "freecall_payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/freecall-payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/freecall-payment-strategy/",
                             },
                             {
                                 text: "paidcall_payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/paidcall-payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/paidcall-payment-strategy/",
                             },
                             {
                                 text: "prepaid_payment_strategy",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/prepaid-payment-strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/prepaid-payment-strategy/",
                             },
                             {
                                 text: "training",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/training",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/training/",
                             },
                             {
                                 text: "utils",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/utils",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/utils/",
                             },
                             {
                                 text: "ipfs_utils",
-                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/documentation/ipfs-utils",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/ipfs-utils/",
                             },
                         ],
                     },
                 ],
             },
             {
-                text: "NodeJS SDK",
-                link:"",
+                text: "Javascript SDKs",
                 collapsed: true,
-                items:[],
+                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                items: [
+                    {
+                        text: "WebJS SDK",
+                        link:"/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                        collapsed: true,
+                        items:[
+                            {
+                                text: "Getting started guide",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                            },
+                            {
+                                text: "Calculator example",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/calculator/",
+                            },
+                            {
+                                text: "Service info and Metamask wallet",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/service-info/",
+                            },
+                        ],
+                    },
+                    {
+                        text: "NodeJS SDK",
+                        link:"/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/",
+                        collapsed: true,
+                        items:[
+                            {
+                                text: "Getting started guide",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/",
+                            },
+                        ],
+                    },
+                    {
+                        text: "Generating Stubs for JS",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/generating-stubs/",
+                    },
+                ]
             },
             {
-                text: "WebJS SDK",
-                link:"/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide",
+                text: "Java SDK",
+                link:"/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/",
                 collapsed: true,
                 items:[
                     {
                         text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide",
-                    },
-                    {
-                        text: "Calculator example",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/calculator",
-                    },
-                    {
-                        text: "Get service info and metamask wallet interuction",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/service-info",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/",
                     },
                 ],
-            },
-            {
-                text: "Java SDK",
-                link:"",
-                collapsed: true,
-                items:[],
             },
         ],
     },
     {
         text: "UI Sandbox",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/Sandbox/",
         collapsed: true,
-        items: [],
+        items: [
+            {
+                text: "What is UI Sandbox?",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/",
+            },
+            {
+                text: "UI Sandbox version 1",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/available-now",
+            }
+        ],
     },
     {
         text: "UI Boilerplate",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/Boilerplate/",
         collapsed: true,
-        items: [],
+        items: [
+            {
+                text: "What is Boilerplate?",
+                link: "/docs/products/DecentralizedAIPlatform/Boilerplate/",
+            },
+            { 
+                text: "Getting Started",
+                link: "/docs/products/DecentralizedAIPlatform/Boilerplate/GettingStarted/",
+            },
+            { 
+                text: "Using guide",
+                link: "/docs/products/DecentralizedAIPlatform/Boilerplate/UserGuide/",
+            }
+        ],
+    },
+    {
+        text: "Core concepts",
+        collapsed: true,
+        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/",
+        items: [
+            {
+                text: "Glossary",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/",
+            },
+            {
+                text: "Introduction",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
+            },
+            {
+                text: "Service",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service/",
+            },
+            {
+                text: "Explanation of Daemon",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/daemon/",
+            },
+            {
+                text: "Marketplace service invocation",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_invocation/",
+            },
+            {
+                text: "Marketplace service training",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_training/",
+            },
+            {
+                text: "Smart contracts",
+                collapsed: true,
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/",
+                items: [
+                    {
+                        text: "Overview",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/",
+                    },
+                    {
+                        text: "MPE",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/",
+                    },
+                    {
+                        text: "MPE Stateless Client",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe-stateless-client/",
+                    },
+                    {
+                        text: "Registry",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/registry/",
+                    },
+                ],
+            },
+        ],
     },
     {
         text: "Used Technologies",
-        link: "",
+        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
         collapsed: true,
-        items: [],
+        items: [
+            {
+                text: "ERC20",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
+            },
+            {
+                text: "ETCD",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/etcd/",
+            },
+            {
+                text: "Ethereum Address",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/ethereum-address/",
+            },
+            {
+                text: "GRPC",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/grpc/",
+            },
+            {
+                text: "IPFS",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/ipfs/",
+            },
+            {
+                text: "FileCoin",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/filecoin/",
+            },
+            {
+                text: "Protobuf",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/protobuf/",
+            },
+            {
+                text: "Blockchain",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/blockchain/",
+            },
+            {
+                text: "Ethereum",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum/",
+            },
+            {
+                text: "AGIX Token and faucet",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/agix-token/",
+            },
+            {
+                text: "Concepts of organization",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/concepts-organization/",
+            },
+        ],
     },
 ];
 
 export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
     {
-        text: "For comers",
-        collapsed: true,
-        link: "/docs/products/AIMarketplace/Forcomers/",
+        text: "What is AI Marketplace?",
+        link: "/docs/products/AIMarketplace/"
+    },
+    {
+        text: "Registration process",
+        link: "/docs/products/AIMarketplace/registration/"
+    },
+    {
+        text: "Services page",
+        link: "/docs/products/AIMarketplace/services-page/"
+    },
+    {
+        text: "Service page",
+        link: "/docs/products/AIMarketplace/service-page/"
+    },
+    {
+        text: "How to try AI Service for free?",
+        link: "/docs/products/AIMarketplace/free-call/"
+    },
+    {
+        text: "Account page",
+        link: "/docs/products/AIMarketplace/account-page/"
+    },
+    {
+        text: "Payment methods",
+        link: "/docs/products/AIMarketplace/payment-methods/"
+    },
+    {
+        text: "For Consumers",
+        collapsed: false,
+        link: "/docs/products/AIMarketplace/ForConsumers/",
         items: [
             {
-                text: "Call a service",
-                link: "/docs/products/AIMarketplace/Forcomers/call-a-service/",
+                text: "Platform workshops",
+                link: "/docs/products/AIMarketplace/ForConsumers/Platform-workshops/python/",
+                collapsed: true,
+                items:[
+                    {
+                        text: "Python",
+                        link: "/docs/products/AIMarketplace/ForConsumers/Platform-workshops/python/",
+                    },
+                    {
+                        text: "C++",
+                        link: "/docs/products/AIMarketplace/ForConsumers/Platform-workshops/cpp/",
+                    },
+                    {
+                        text: "Go",
+                        link: "/docs/products/AIMarketplace/ForConsumers/Platform-workshops/go/",
+                    },
+                    {
+                        text: "Java",
+                        link: "/docs/products/AIMarketplace/ForConsumers/Platform-workshops/java/",
+                    },
+                    {
+                        text: "Docker SNET",
+                        link: "/docs/products/AIMarketplace/ForConsumers/Platform-workshops/Docker-snet/",
+                    },
+                ]
             },
             {
-                text: "Integration",
-                link: "/docs/products/AIMarketplace/Forcomers/integration/",
+                text: "Local SingularityNET",
+                link: "/docs/products/AIMarketplace/ForConsumers/local-singularitynet/",
             },
             {
-                text: "Local Singularity",
-                link: "/docs/products/AIMarketplace/Forcomers/local-singularitynet/",
+                text: "MetaMask Wallet",
+                link: "/docs/products/AIMarketplace/ForConsumers/metamask-wallet/",
             },
             {
-                text: "MetaMask",
-                link: "/docs/products/AIMarketplace/Forcomers/metamask",
+                text: "Naming standarts",
+                link: "/docs/products/AIMarketplace/ForConsumers/naming-standarts/",
             },
             {
                 text: "OpenCog",
-                link: "/docs/products/AIMarketplace/Forcomers/opencog/",
+                link: "/docs/products/AIMarketplace/ForConsumers/opencog/",
             },
             {
-                text: "Organization",
-                link: "/docs/products/AIMarketplace/Forcomers/organization/",
+                text: "Earnings",
+                link: "/docs/products/AIMarketplace/ForConsumers/earning/",
             },
             {
-                text: "Publish",
-                link: "/docs/products/AIMarketplace/Forcomers/publish/",
+                text: "Contribution Guidelines",
+                link: "/docs/products/AIMarketplace/ForConsumers/contribution-guidelines/",
             },
             {
-                text: "RasberryPI",
-                link: "/docs/products/AIMarketplace/Forcomers/raspberrypi",
-            },
-            {
-                text: "Registry",
-                link: "/docs/products/AIMarketplace/Forcomers/registry/",
-            },
-            {
-                text: "Requirements",
-                link: "/docs/products/AIMarketplace/Forcomers/requirements/",
-            },
-            {
-                text: "Setup Guide",
-                link: "/docs/products/AIMarketplace/Forcomers/setupguide/",
-            },
-            {
-                text: "Wallet",
-                link: "/docs/products/AIMarketplace/Forcomers/wallet/",
-            },
-            {
-                text: "Claim",
-                link: "/docs/products/AIMarketplace/Forcomers/claim",
-            },
-            {
-                text: "PayPal",
-                link: "/docs/products/AIMarketplace/Forcomers/paypal",
-            },
-            {
-                text: "Guide for testnet",
-                link: "/docs/products/AIMarketplace/Forcomers/snet-full-guide-testnet",
-            },
-            {
-                text: "Guide for mainnet",
-                link: "/docs/products/AIMarketplace/Forcomers/snet-full-guide-mainnet",
-            },
-            {
-                text: "FAQ",
-                link: "/docs/products/AIMarketplace/Forcomers/faq",
+                text: "Triton Instructions",
+                link: "/docs/products/AIMarketplace/ForConsumers/triton-instructions/",
             },
             {
                 text: "Troubleshooting",
-                link: "/docs/products/AIMarketplace/Forcomers/troubleshooting",
+                link: "/docs/products/AIMarketplace/ForConsumers/troubleshooting/",
             },
         ],
     },
@@ -974,53 +1148,43 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Ethereum Staking",
+        link: "/docs/products/Staking/stake-window/",
         collapsed: true,
         items: [
             {
                 text: "Stake window",
-                link: "/docs/products/Staking/stake-window",
+                link: "/docs/products/Staking/stake-window/",
             },
             {
                 text: "Stake timeline",
-                link: "/docs/products/Staking/stake-timeline",
+                link: "/docs/products/Staking/stake-timeline/",
             },
             {
                 text: "Stake reward",
-                link: "/docs/products/Staking/stake-reward",
+                link: "/docs/products/Staking/stake-reward/",
             },
             {
                 text: "Stake opt out",
-                link: "/docs/products/Staking/stake-opt-out",
+                link: "/docs/products/Staking/stake-opt-out/",
             },
         ],
     },
     {
         text: "Cardano Staking",
         collapsed: true,
+        link: "/docs/products/Staking/cardano-staking-withdraw/",
         items: [
             {
                 text: "Cardano Staking withdraw",
-                link: "/docs/products/Staking/cardano-staking-withdraw",
+                link: "/docs/products/Staking/cardano-staking-withdraw/",
             },
             {
                 text: "Cardano Staking Timeline",
-                link: "/docs/products/Staking/cardano-staking-timeline",
+                link: "/docs/products/Staking/cardano-staking-timeline/",
             },
             {
                 text: "Cardano Staking Rewards",
-                link: "/docs/products/Staking/cardano-staking-rewards",
-            },
-            {
-                text: "Cardano Staking withdraw NTX",
-                link: "/docs/products/Staking/cardano-staking-withdraw-ntx",
-            },
-            {
-                text: "Cardano Staking Timeline NTX",
-                link: "/docs/products/Staking/cardano-staking-timeline-ntx",
-            },
-            {
-                text: "Cardano Staking Rewards NTX",
-                link: "/docs/products/Staking/cardano-staking-rewards-ntx",
+                link: "/docs/products/Staking/cardano-staking-rewards/",
             },
         ],
     },
@@ -1033,11 +1197,11 @@ export const WALTSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "How to Use",
-        link: "/docs/products/WaLT/howtouse",
+        link: "/docs/products/WaLT/howtouse/",
     },
     {
         text: "Frequently Asked Questions",
-        link: "/docs/products/WaLT/faq",
+        link: "/docs/products/WaLT/faq/",
     },
 ];
 
@@ -1048,41 +1212,19 @@ export const BridgeSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Selecting Networks",
-        link: "/docs/products/Bridge/selecting-networks",
+        link: "/docs/products/Bridge/selecting-networks/",
     },
     {
         text: "Troubles",
-        link: "/docs/products/Bridge/troubles",
+        link: "/docs/products/Bridge/troubles/",
     },
     {
         text: "FAQ",
-        link: "/docs/products/Bridge/faq",
+        link: "/docs/products/Bridge/faq/",
     },
     {
         text: "Ethereum-Binance",
-        link: "/docs/products/Bridge/eth-to-binance",
-    },
-    {
-        text: "Testing",
-        collapsed: true,
-        items: [
-            {
-                text: "Prerequisites",
-                link: "/docs/products/Bridge/testing/prerequisites",
-            },
-            {
-                text: "Connecting wallets",
-                link: "/docs/products/Bridge/testing/connecting-wallets",
-            },
-            {
-                text: "Ethereum to Cardano Conversion",
-                link: "/docs/products/Bridge/testing/eth-to-cardano-conversion",
-            },
-            {
-                text: "Cardano to Ethereum Conversion",
-                link: "/docs/products/Bridge/testing/cardano-to-eth-conversion",
-            },
-        ],
+        link: "/docs/products/Bridge/eth-to-binance/",
     },
 ];
 
@@ -1098,21 +1240,21 @@ export const AirdropSection: DefaultTheme.SidebarItem[] = [
         items: [
             {
                 text: "Connect wallet",
-                link: "/docs/products/Airdrop/Registration/connect-wallet",
+                link: "/docs/products/Airdrop/Registration/connect-wallet/",
             },
             {
                 text: "Register",
-                link: "/docs/products/Airdrop/Registration/register",
+                link: "/docs/products/Airdrop/Registration/register/",
             },
         ],
     },
     {
         text: "Claim",
-        link: "/docs/products/Airdrop/claim",
+        link: "/docs/products/Airdrop/claim/",
     },
     {
         text: "FAQ",
-        link: "/docs/products/Airdrop/faq",
+        link: "/docs/products/Airdrop/faq/",
     },
 ];
 
@@ -1124,7 +1266,6 @@ export const DocsSection: DefaultTheme.SidebarItem[] = [
 ];
 
 export default {
-    [Products.TECHNOLOGIES.path]: TechnologiesSection,
     [Products.MARKETPLACE.path]: MarketplaceSection,
     [Products.STAKING.path]: StakingSection,
     [Products.WALT.path]: WALTSection,

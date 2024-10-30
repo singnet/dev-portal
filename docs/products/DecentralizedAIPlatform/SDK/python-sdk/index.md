@@ -1,8 +1,11 @@
-# snet-sdk-python
+# SNET Python SDK
+
 SingularityNET SDK for Python
+
 ## Getting Started
 These instructions are for the development and use of the SingularityNET SDK for Python.
-### Usage
+
+## Usage
 The SingularityNET SDK allows you to import compiled client libraries for your service or services or choice and make calls to those services programmatically from your application by setting up state channels with the providers of those services and making gRPC calls to the SingularityNET daemons for those services by selecting a channel with sufficient funding and supplying the appropriate metadata for authentication.
 Once you have installed the snet-sdk in your current environment and it's in your PYTHONPATH, you should import it and create an instance of the base sdk class:
 ```bash
@@ -58,16 +61,14 @@ ________________________________________
 ## Development
 ## Installing
 ### Prerequisites
-- Python 3.6.5
-- Node 8+ w/npm
+- Python 3.10+
+- Node 18+ w/npm
 ________________________________________
 Clone the git repository
 
 ```sh
 $ git clone git@github.com:singnet/snet-sdk-python.git
 $ cd snet-sdk-python
-•	Install development/test Blockchain dependencies
-$ ./scripts/Blockchain install
 •	Install the package in development/editable mode
 $ pip install -e .
 ```
@@ -110,6 +111,7 @@ All the SDKs assume that there is enough eth balance to cover the gas cost and A
 The SDKs chose a default Payment Channel Management Strategy,  which is the simplest form of picking an existing Payment Channel if any or creates a new Payment Channel if no channel is found. 
 
 This can be easily overridden by providing your own strategy to the SDK at the time of construction. Documentation on creating custom strategies will be available soon.
+
 ## Development
 This is a monorepo which is setup a little differently. It does not use any external tools like lerna or any other popular tool.
 

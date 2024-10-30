@@ -2,7 +2,7 @@
 
 Add or remove an Ethereum public address of the daemon, in a given payment group of a service
 
-![Add/Remove Daemon Address Page](/assets/images/products/AIMarketplace/TUI/Screenshot2024-08-17at6.03.04PM.png)
+![Add/Remove Daemon Address Page](/assets/images/products/AIMarketplace/TUI/ServiceDaemonAddressPage.webp)
 
 ```bash
 # Format of the commands in the SNET CLI
