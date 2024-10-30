@@ -1,6 +1,6 @@
 # Demo call of AI Service
 
-Try it out yourself! – Majority of services have free demo calls that you can try right away. Input your parameters and data and let AI process your request instantly. After your trial demo calls used up, you can still run the demos using MetaMask via AGIX tokens.
+Try it out yourself! – Majority of services have free demo calls that you can try right away. Input your parameters and data and let AI process your request instantly. After your trial demo calls used up, you can still run the services using MetaMask via AGIX tokens.
 
 To call the service through the Marketplace, you need to go to the page of the required service and scroll to the "Service demo" menu
 
