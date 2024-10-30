@@ -947,31 +947,24 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/",
             },
             {
-                text: "Marketplace ecosystem",
-                collapsed: true,
+                text: "Introduction",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
-                items: [
-                    {
-                        text: "Introduction",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
-                    },
-                    {
-                        text: "Service",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service/",
-                    },
-                    {
-                        text: "Explanation of Daemon",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/daemon/",
-                    },
-                    {
-                        text: "Marketplace service invocation",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_invocation/",
-                    },
-                    {
-                        text: "Marketplace service training",
-                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_training/",
-                    },
-                ],
+            },
+            {
+                text: "Service",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service/",
+            },
+            {
+                text: "Explanation of Daemon",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/daemon/",
+            },
+            {
+                text: "Marketplace service invocation",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_invocation/",
+            },
+            {
+                text: "Marketplace service training",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_training/",
             },
             {
                 text: "Smart contracts",
@@ -990,6 +983,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         text: "MPE Stateless Client",
                         link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe-stateless-client/",
                     },
+                    {
+                        text: "Registry",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/registry/",
+                    },
                 ],
             },
         ],
@@ -999,7 +996,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
         collapsed: true,
         items: [
-                {
+            {
                 text: "ERC20",
                 link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
             },
@@ -1044,7 +1041,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/concepts-organization/",
             },
         ],
-    },  
+    },
 ];
 
 export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
