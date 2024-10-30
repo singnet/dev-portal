@@ -8,20 +8,20 @@ export interface HomeSectionItem {
 
 export default [
     {
-        text: "AI Marketplace",
-        textIconID: "marketplace-icon",
-        imageFileName: "marketplace.webp",
-        description:
-            "Explore, publish, and integrate AI services on AI Marketplace's docs.",
-        link: "/docs/products/AIMarketplace/"
-    },
-    {
         text: "Decentralized AI Platform",
         textIconID: "platform-icon",
         imageFileName: "platform.webp",
         description:
             "Explore, publish, and integrate AI services on AI Marketplace's docs.",
         link: "/docs/products/DecentralizedAIPlatform/"
+    },
+    {
+        text: "AI Marketplace",
+        textIconID: "marketplace-icon",
+        imageFileName: "marketplace.webp",
+        description:
+            "Explore, publish, and integrate AI services on AI Marketplace's docs.",
+        link: "/docs/products/AIMarketplace/"
     },
     {
         text: "About technologies",
