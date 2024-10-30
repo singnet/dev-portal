@@ -14,11 +14,11 @@ For start development you need:
 Copy repository:
 
 ```sh
-git clone https://github.com/singnet/dev-portal-v2.git
+git clone https://github.com/singnet/dev-portal.git
 ```
 
 ```sh
-cd dev-portal-v2
+cd dev-portal
 ```
 
 then install dependencies:
