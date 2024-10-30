@@ -71,6 +71,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         collapsed: true,
         items: [
             {
+                text: "Service Onboarding via Publisher",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
+            },
+            {
                 text: "Getting Ready to Onboard CheckUp",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
             },
