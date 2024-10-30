@@ -142,12 +142,8 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/",
             },
             {
-                text: "Daemon Setup",
+                text: "Daemon setup",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-setup/",
-            },
-            {
-                text: "Daemon API",
-                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-api/",
             },
             {
                 text: "Daemon architecture",
@@ -160,6 +156,18 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Daemon SSL Setup",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/",
+            },
+            {
+                text: "Logger & hooks",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-logger/",
+            },
+            {
+                text: "Build daemon",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-build/",
+            },
+            {
+                text: "Daemon API",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-api/",
             },
         ],
     },
