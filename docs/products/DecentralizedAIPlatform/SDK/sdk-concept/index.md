@@ -37,31 +37,34 @@ The SDK uses SingularityNET Token to check balance and approve deposit to MPE.
 ### Storage providers
 
 The storage provider is designed to store metadata of services and organizations, as well as services (daemons) APIs
-(currently, only `.proto` files). ALl these files are needed to call the service.
+(currently, only `.proto` files). All these files are needed to call the service.
 
 Currently, we support [IPFS](/docs/products/DecentralizedAIPlatform/CoreConcepts/ipfs/) and 
 [FileCoin](/docs/products/DecentralizedAIPlatform/CoreConcepts/filecoin/) storage providers. 
-Interaction with them may differ depending on the implementation language, but in any case you can use 
-REST or RPC APIs.
+Interaction with them may differ depending on the implementation language, but in any case IPFS and FileCoin 
+provide REST or RPC APIs.
 
 ### Daemon
 
 Interacting with a service means interacting with the `daemon` of that service, which the SDK communicates with 
 using `gRPC`. Service method calls require `.proto` files (from storage provider), which are compiled differently 
-for each implementation. In addition, the daemon has its own services (methods), `.proto` files to which should be 
-in the SDK. These services are needed, for example, to get the current channel state and to use concurrent calls.
+for each implementation. In addition, the daemon has its own services (methods), `.proto` files to which are built 
+into the SDK. These services are needed, for example, to get the current channel state and to use concurrent calls.
 
 For more details, refer to the [Daemon section](/docs/products/DecentralizedAIPlatform/Daemon/)
 
 ## User interface
 
 There are two main entities in SDK:
+
 - sdk
 - service client
 
-The developer, as a user of the SDK, interacts with it using these very entities. `service client` allows you 
-to perform service-specific actions (call, open channel, etc.), whereas the `sdk` mainly provides the ability to 
-call contract functions (deposit, balance, etc.)
+The developer, as a user of the SDK, interacts with it using these very entities. At the beginning, a `config` is 
+created with all the necessary values, which is passed to `sdk`. `service client` is created with the help of 
+`sdk` and allows to perform service-specific actions (call, open a channel, etc.), and `sdk` takes care of all 
+other functionality (by itself or with the help of other entities), for example, calling contract functions, 
+generating stubs, accessing storage provider, etc. There can be more than one `service client` under one `sdk`.
 
 ## Implementations
 
