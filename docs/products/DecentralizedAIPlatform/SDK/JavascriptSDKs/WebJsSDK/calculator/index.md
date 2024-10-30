@@ -182,7 +182,7 @@ protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
 protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
 ```
 
-For more details please check the [Generating stubs for JS tutorial](/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/generating-stubs/)
+For more details please check the [Generating stubs for JS tutorial](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/generating-stubs/)
 
 
 After that comands you will get four files. Transfer the js files to your project. In our example, this is the `stubs` folder. Now we can use the functions of our service

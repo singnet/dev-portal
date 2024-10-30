@@ -837,51 +837,58 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                 ],
             },
-//             {
-//                 text: "NodeJS SDK",
-//                 link:"/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
-//                 collapsed: true,
-//                 items:[
-//                     {
-//                         text: "Getting started guide",
-//                         link: "/docs/products/DecentralizedAIPlatform/SDK/NodeJsSDK/getting-started-guide/",
-//                     },
-//                 ],
-//             },
             {
-                text: "WebJS SDK",
-                link:"/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/",
+                text: "Javascript SDKs",
+                collapsed: true,
+                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                items: [
+                    {
+                        text: "WebJS SDK",
+                        link:"/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                        collapsed: true,
+                        items:[
+                            {
+                                text: "Getting started guide",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
+                            },
+                            {
+                                text: "Calculator example",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/calculator/",
+                            },
+                            {
+                                text: "Service info and Metamask wallet",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/service-info/",
+                            },
+                        ],
+                    },
+                    {
+                        text: "NodeJS SDK",
+                        link:"/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/",
+                        collapsed: true,
+                        items:[
+                            {
+                                text: "Getting started guide",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/",
+                            },
+                        ],
+                    },
+                    {
+                        text: "Generating Stubs for JS",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/generating-stubs/",
+                    },
+                ]
+            },
+            {
+                text: "Java SDK",
+                link:"/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/",
                 collapsed: true,
                 items:[
                     {
                         text: "Getting started guide",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/",
-                    },
-                    {
-                        text: "Generating Stubs for JS",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/generating-stubs/",
-                    },
-                    {
-                        text: "Calculator example",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/calculator/",
-                    },
-                    {
-                        text: "Service info and Metamask wallet",
-                        link: "/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/service-info/",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/",
                     },
                 ],
             },
-//             {
-//                 text: "Java SDK",
-//                 link:"/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
-//                 collapsed: true,
-//                 items:[
-//                     {
-//                         text: "Getting started guide",
-//                         link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-java/",
-//                     },
-//                 ],
-//             },
         ],
     },
     {
@@ -957,7 +964,6 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     },
                 ],
             },
-
             {
                 text: "ERC20",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/erc20/",
@@ -979,6 +985,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ipfs/",
             },
             {
+                text: "FileCoin",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/filecoin/",
+            },
+            {
                 text: "Protobuf",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/protobuf/",
             },
@@ -997,6 +1007,41 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
 ];
 
 export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
+    {
+        text: "Marketplace",
+        collapsed: true,
+        link:"/docs/products/AIMarketplace/Overview/what-is-aimarketplace/",
+        items:[
+            {
+                text: "What is AIMarketplace?",
+                link: "/docs/products/AIMarketplace/Overview/what-is-aimarketplace/"
+            },
+            {
+                text: "Registration process",
+                link: "/docs/products/AIMarketplace/Overview/registration/"
+            },
+            {
+                text: "Services page",
+                link: "/docs/products/AIMarketplace/Overview/services-page/"
+            },
+            {
+                text: "Service page",
+                link: "/docs/products/AIMarketplace/Overview/services-page/"
+            },
+            {
+                text: "Free calls",
+                link: "/docs/products/AIMarketplace/Overview/free-call/"
+            },
+            {
+                text: "Account page",
+                link: "/docs/products/AIMarketplace/Overview/account-page/"
+            },
+            {
+                text: "Payment methods",
+                link: "/docs/products/AIMarketplace/Overview/payment-methods"
+            },
+        ]
+    },
     {
         text: "For comers",
         collapsed: false,

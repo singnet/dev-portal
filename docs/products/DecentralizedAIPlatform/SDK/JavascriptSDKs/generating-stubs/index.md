@@ -25,9 +25,7 @@ If installed correctly, the `protoc` version will be displayed.
 ### For Linux:
 
 To install `protoc` on Linux, please follow the instructions provided on the official gRPC documentation site: [https://grpc.io/docs/protoc-installation/](https://grpc.io/docs/protoc-installation/).
-
 This guide includes steps for various distributions and provides the latest installation instructions.
-
 
 ## Step 2. Install Additional Plugins for `protoc`
 
@@ -54,7 +52,7 @@ snet service get-api-registry <org_id> <SERVICE_ID> <PROTO_DIR>
 For more details, please check the [CLI](/docs/products/DecentralizedAIPlatform/CLI/) or 
 [CLI Manual](/docs/products/DecentralizedAIPlatform/CLI/Manual/)
 
-## Step 3. Generate stub files for JS
+## Step 4. Generate stub files for JS
 
 Navigate to the directory where the `.proto` file is located, and run the following commands to generate the necessary stub files:
 
@@ -77,4 +75,3 @@ protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
 ```
 
 These commands will create `JS` and `gRPC` files required for the service.
-

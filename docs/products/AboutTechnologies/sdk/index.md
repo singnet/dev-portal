@@ -11,7 +11,12 @@ authorizations.
 We support SDK for the below two languages 
 
 - [SDK in Python](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)
-- [SDK in WebJS](/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/)
+- [SDK in WebJS](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
+
+And two SDKs are under development:
+
+- [SDK in Java](/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/)
+- [SDK in Node.JS](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/)
 
 All SDKs provided adhere to the same design standard and strategy
 
@@ -30,7 +35,8 @@ definitions, so that the services can be invoked with minimal fuss.
 Currently, a fully functional of a [Python SDK](https://github.com/singnet/snet-sdk-python) is available, but has 
 [some design improvements](https://github.com/singnet/snet-sdk-python/issues/16).
 
-Also a fully functional of a [WebJS SDK](https://github.com/singnet/snet-sdk-js/tree/master/packages/web) is available. 
+Also, a fully functional of a [WebJS SDK](https://github.com/singnet/snet-sdk-js/tree/master/packages/web) is available. 
 
-Work is in process towards an [SDK for Node.JS](https://github.com/singnet/snet-sdk-js/tree/master/packages/nodejs), 
-and intend to support other popular languages and welcome third party contributions for people's favourite languages.
+We are currently working on [SDK for Node.JS](https://github.com/singnet/snet-sdk-js/tree/master/packages/nodejs) 
+and [SDK for Java](https://github.com/singnet/snet-sdk-java). We are also planning to support other popular languages, 
+and welcome third-party contributions to the SDK for users' favorite languages.

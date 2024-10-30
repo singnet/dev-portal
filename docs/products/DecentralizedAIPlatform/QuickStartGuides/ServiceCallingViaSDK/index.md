@@ -210,5 +210,5 @@ service to call other services and chain id or RPC endpoint to call services on 
 
 To learn more about every SDK, visit:
 - [Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)
-- [WebJS SDK](/docs/products/DecentralizedAIPlatform/SDK/WebJsSDK/getting-started-guide/)
+- [WebJS SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
 
