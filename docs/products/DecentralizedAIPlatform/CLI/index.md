@@ -23,7 +23,7 @@ and locking/unlocking accounts for transacting with the Blockchain. This compone
 * Registry contract. Deals with organizations, members, services, types, and tags.
 * MPE contract. Sends and receives funds and manages other functions related to payment channels; e.g., closing a channel or extending its expiry date.
 
-This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/products/AIMarketplace/Forcomers/setupguide/.md).
+This tool is used extensively in our tutorials and guides, to install it, follow the [setup guide](/docs/products/AIMarketplace/ForConsumers/local-singularitynet/).
 
 See the [CLI documentation](/docs/products/DecentralizedAIPlatform/CLI/Manual/) for full details of actions the tool allows.
 
@@ -45,7 +45,7 @@ So how do you get Ether? The mainnet requires you to buy or mine it, but we're g
 
 Luckily for test networks you can [go to a faucet to request some Ether for free](https://faucet.singularitynet.io/).
 
-To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/Forcomers/wallet/), and then provide them with your wallet's public address.
+To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/ForConsumers/metamask-wallet/), and then provide them with your wallet's public address.
 
 ### Step 2. Get some AGIX
 
@@ -80,7 +80,7 @@ There are three ways of passing this JSON:
 * via JSON file; and
 * via stdin.
 
-For example, in [this platform example](/docs/products/AIMarketplace/Forcomers/mpe-example/.md#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
+For example, in [this platform example](/docs/products/AIMarketplace/Publisher/mpe-example1/.md#make-a-call-using-stateless-logic) we need to pass the following JSON as a parameter for the "add" method to our service:
 
 ```json
 {"a": 10, "b": 32}

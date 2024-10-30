@@ -1,6 +1,5 @@
-# AI Marketplace
+# What is the AI Services Marketplace?
 
-## Overview
 SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, and anyone on the network can be use the service using the internet connection.
 
 Developers can charge for the usage of their services using the native AGIX token.
@@ -18,3 +17,17 @@ Firstly, we made the conscious choice to minimize our dependence on our current 
 Secondly, on AI services integration, we wanted to abstract away as much of the network as possible, in order to reduce the learning curve and minimize the overhead associated with providing AI services via the network. This abstraction is achieved with a single flexible tool, the daemon, that will help us provide scalability, robustness, distribution, and management features to the entire community.
 
 Finally, to make our marketplace compliant with regulations without compromising on openness, we implemented it separately from our fully decentralized registry of AI services currently available on the Blockchain.
+
+## Who Can Use the Marketplace?
+### 1. Developers
+Developers can find powerful AI services to integrate directly into their applications or products, accelerating time-to-market for AI-enabled solutions.
+
+### 2. Integrators and Business Professionals
+For those looking to enhance business processes or customer experiences with AI, the marketplace offers a diverse selection of ready-to-use services. Users can explore options that match specific needs, from machine learning models to natural language processing tools, making it easier to bring AI-driven insights and automation to their operations. For such users, we have [guides](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/) on how to call services.
+
+### 3. AI Service Providers
+The marketplace is also an ideal environment for AI developers who create and provide AI solutions. By listing their services, developers can reach a broader audience, gain visibility, and connect directly with those looking for their specific expertise. The platform allows service providers to showcase their products and enables efficient distribution and management of their AI solutions. For such users, we have [guides](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/) that you need to create your own service
+
+## Why Use the Marketplace?
+The AI Services Marketplace provides an accessible platform to quickly discover and implement AI technologies without the need for deep technical expertise. It serves as a bridge between AI service creators and those seeking to leverage AI capabilities, making it possible to innovate, scale, and personalize AI solutions across industries and fields.
+

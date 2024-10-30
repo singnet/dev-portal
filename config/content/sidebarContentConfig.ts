@@ -59,6 +59,10 @@ export const Products: ISiteSections = {
 
 export const TechnologiesSection: DefaultTheme.SidebarItem[] = [
     {
+        text: "Technologies we use",
+        link: "/docs/products/AboutTechnologies/"
+    },
+    {
         text: "Blockchain",
         link: "/docs/products/AboutTechnologies/blockchain/",
     },
@@ -1008,39 +1012,32 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
 
 export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
     {
-        text: "Marketplace",
-        collapsed: true,
-        link:"/docs/products/AIMarketplace/Overview/what-is-aimarketplace/",
-        items:[
-            {
-                text: "What is AIMarketplace?",
-                link: "/docs/products/AIMarketplace/Overview/what-is-aimarketplace/"
-            },
-            {
-                text: "Registration process",
-                link: "/docs/products/AIMarketplace/Overview/registration/"
-            },
-            {
-                text: "Services page",
-                link: "/docs/products/AIMarketplace/Overview/services-page/"
-            },
-            {
-                text: "Service page",
-                link: "/docs/products/AIMarketplace/Overview/services-page/"
-            },
-            {
-                text: "Free calls",
-                link: "/docs/products/AIMarketplace/Overview/free-call/"
-            },
-            {
-                text: "Account page",
-                link: "/docs/products/AIMarketplace/Overview/account-page/"
-            },
-            {
-                text: "Payment methods",
-                link: "/docs/products/AIMarketplace/Overview/payment-methods"
-            },
-        ]
+        text: "What is AI Marketplace?",
+        link: "/docs/products/AIMarketplace/"
+    },
+    {
+        text: "Registration process",
+        link: "/docs/products/AIMarketplace/registration/"
+    },
+    {
+        text: "Services page",
+        link: "/docs/products/AIMarketplace/services-page/"
+    },
+    {
+        text: "Service page",
+        link: "/docs/products/AIMarketplace/services-page/"
+    },
+    {
+        text: "How to try AI Service for free?",
+        link: "/docs/products/AIMarketplace/free-call/"
+    },
+    {
+        text: "Account page",
+        link: "/docs/products/AIMarketplace/account-page/"
+    },
+    {
+        text: "Payment methods",
+        link: "/docs/products/AIMarketplace/payment-methods/"
     },
     {
         text: "For Comsumers",

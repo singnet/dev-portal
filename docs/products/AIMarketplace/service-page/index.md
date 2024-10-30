@@ -2,7 +2,7 @@
 
 Each AI service on this platform is unique. Click on any service you would like to use to find out more about its required input, expected output, cost, usage, developer’s note and much more!
 
-* Note: The first time you visit the page of any service, it will ask you to log in via MetaMask. Make sure you read [this page](/docs/products/AIMarketplace/Forcomers/metamask/)
+* Note: The first time you visit the page of any service, it will ask you to log in via MetaMask. Make sure you read [this page](/docs/products/AIMarketplace/ForConsumers/metamask-wallet/)
 
 ![Active Service](/assets/images/products/AIMarketplace/Marketplace/ActiveService.webp)
 
