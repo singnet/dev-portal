@@ -1,6 +1,6 @@
 # What is the AI Services Marketplace?
 
-SingularityNET (SNET) is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, and anyone on the network can be use the service using the internet connection.
+[SingularityNET (SNET) Marketplace](https://beta.singularitynet.io/) is a decentralized application (DApp), which lists the available AI services and helps you to interact with those services through web interface abstracting all the complexity in invoking a service. It also processes payment for services (through MetaMask/General Wallet) and conduct service ratings. Whenever transaction happens on Blockchain, an event is created. The marketplace monitors all those events. For example, if you publish a new organization, a new service, the marketplace receives an alert notification about published information in the Blockchain. The marketplace reads the organization metadata, the service metadata and stores this into its database. This application efficiently displays all the details quickly without relying on the slow performance of the Blockchain.
 
 Developers can charge for the usage of their services using the native AGIX token.
 
@@ -31,3 +31,13 @@ The marketplace is also an ideal environment for AI developers who create and pr
 ## Why Use the Marketplace?
 The AI Services Marketplace provides an accessible platform to quickly discover and implement AI technologies without the need for deep technical expertise. It serves as a bridge between AI service creators and those seeking to leverage AI capabilities, making it possible to innovate, scale, and personalize AI solutions across industries and fields.
 
+## Marketplace Requirements
+If you are a service author, for the service to be visible to others and listed on the marketplace you must:
+
+1. Build and publish your service
+2. Use SSL with the snet-daemon. 
+
+Note: if you don't already have an SSL certificate for your domain, it is recommended you use certbot and letsencrypt.
+
+3. Fork the snet-dapp repo, build a react component as the user interface for your service, and submit a pull request. Note: Identify the services on your networks, organization and service names being used. For more details, refer to dapp repo README.md.
+4. Last is some paperwork that we are still finalising, and we'll update this list when we have that. If you are itching to get your service listed, reach out to us via one of our community groups. Note: your service can be published to SingularityNET without being listed on the marketplace, but your service may be less discoverable to potential customers if it is not listed.
