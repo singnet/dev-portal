@@ -53,7 +53,7 @@ export const Products: ISiteSections = {
     PLATFORM:{
         name: "Decentralized AI Platform",
         path: "/docs/products/DecentralizedAIPlatform/",
-        textIconID: "marketplace-icon",
+        textIconID: "platform-icon",
     },
 };
 
