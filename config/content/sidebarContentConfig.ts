@@ -1043,108 +1043,108 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
         ]
     },
     {
-        text: "For comers",
+        text: "For Comsumers",
         collapsed: false,
-        link: "/docs/products/AIMarketplace/Forcomers/",
+        link: "/docs/products/AIMarketplace/ForComsumers/",
         items: [
             {
                 text: "Platform workshops",
-                link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/python/",
+                link: "/docs/products/AIMarketplace/ForComsumers/Platform-workshops/python/",
                 collapsed: true,
                 items:[
                     {
                         text: "Python",
-                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/python/",
+                        link: "/docs/products/AIMarketplace/ForComsumers/Platform-workshops/python/",
                     },
                     {
                         text: "C++",
-                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/cpp/",
+                        link: "/docs/products/AIMarketplace/ForComsumers/Platform-workshops/cpp/",
                     },
                     {
                         text: "Go",
-                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/go/",
+                        link: "/docs/products/AIMarketplace/ForComsumers/Platform-workshops/go/",
                     },
                     {
                         text: "Java",
-                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/java/",
+                        link: "/docs/products/AIMarketplace/ForComsumers/Platform-workshops/java/",
                     },
                     {
                         text: "Docker SNET",
-                        link: "/docs/products/AIMarketplace/Forcomers/Platform-workshops/Docker-snet/",
+                        link: "/docs/products/AIMarketplace/ForComsumers/Platform-workshops/Docker-snet/",
                     },
                 ]
             },
             {
                 text: "Call a service",
-                link: "/docs/products/AIMarketplace/Forcomers/call-a-service/",
+                link: "/docs/products/AIMarketplace/ForComsumers/call-a-service/",
             },
             {
                 text: "Integration",
-                link: "/docs/products/AIMarketplace/Forcomers/integration/",
+                link: "/docs/products/AIMarketplace/ForComsumers/integration/",
             },
             {
                 text: "Local Singularity",
-                link: "/docs/products/AIMarketplace/Forcomers/local-singularitynet/",
+                link: "/docs/products/AIMarketplace/ForComsumers/local-singularitynet/",
             },
             {
                 text: "MetaMask",
-                link: "/docs/products/AIMarketplace/Forcomers/metamask/",
+                link: "/docs/products/AIMarketplace/ForComsumers/metamask/",
             },
             {
                 text: "OpenCog",
-                link: "/docs/products/AIMarketplace/Forcomers/opencog/",
+                link: "/docs/products/AIMarketplace/ForComsumers/opencog/",
             },
             {
                 text: "Organization",
-                link: "/docs/products/AIMarketplace/Forcomers/organization/",
+                link: "/docs/products/AIMarketplace/ForComsumers/organization/",
             },
             {
                 text: "Publish",
-                link: "/docs/products/AIMarketplace/Forcomers/publish/",
+                link: "/docs/products/AIMarketplace/ForComsumers/publish/",
             },
             {
                 text: "RasberryPI",
-                link: "/docs/products/AIMarketplace/Forcomers/raspberrypi/",
+                link: "/docs/products/AIMarketplace/ForComsumers/raspberrypi/",
             },
             {
                 text: "Registry",
-                link: "/docs/products/AIMarketplace/Forcomers/registry/",
+                link: "/docs/products/AIMarketplace/ForComsumers/registry/",
             },
             {
                 text: "Requirements",
-                link: "/docs/products/AIMarketplace/Forcomers/requirements/",
+                link: "/docs/products/AIMarketplace/ForComsumers/requirements/",
             },
             {
                 text: "Setup Guide",
-                link: "/docs/products/AIMarketplace/Forcomers/setupguide/",
+                link: "/docs/products/AIMarketplace/ForComsumers/setupguide/",
             },
             {
                 text: "Wallet",
-                link: "/docs/products/AIMarketplace/Forcomers/wallet/",
+                link: "/docs/products/AIMarketplace/ForComsumers/wallet/",
             },
             {
                 text: "Claim",
-                link: "/docs/products/AIMarketplace/Forcomers/claim/",
+                link: "/docs/products/AIMarketplace/ForComsumers/claim/",
             },
             {
                 text: "PayPal",
-                link: "/docs/products/AIMarketplace/Forcomers/paypal/",
+                link: "/docs/products/AIMarketplace/ForComsumers/paypal/",
             },
             {
                 text: "Guide for testnet",
-                link: "/docs/products/AIMarketplace/Forcomers/snet-full-guide-testnet/",
+                link: "/docs/products/AIMarketplace/ForComsumers/snet-full-guide-testnet/",
             },
             {
                 text: "Guide for mainnet",
-                link: "/docs/products/AIMarketplace/Forcomers/snet-full-guide-mainnet/",
+                link: "/docs/products/AIMarketplace/ForComsumers/snet-full-guide-mainnet/",
             },
             {
                 text: "FAQ",
-                link: "/docs/products/AIMarketplace/Forcomers/faq/",
+                link: "/docs/products/AIMarketplace/ForComsumers/faq/",
             },
             {
                 text: "Troubleshooting",
-                link: "/docs/products/AIMarketplace/Forcomers/troubleshooting/",
+                link: "/docs/products/AIMarketplace/ForComsumers/troubleshooting/",
             },
         ],
     },
