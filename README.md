@@ -50,6 +50,8 @@ As shown in the diagram:
 └─ index.md
 ```
 
+If there are other files inside the folder, except index.md then the name of this folder should start with a capital letter. Otherwise, with lowercase
+
 ## Add new component
 
 If you want to add a new one .vue component, you need to add these files to the appropriate folder in the `/components/` section or create a new folder if the existing ones are not suitable. Do not forget import new components in `/.vitepress/theme/index.ts`

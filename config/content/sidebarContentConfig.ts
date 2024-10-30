@@ -1042,7 +1042,7 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Services page",
-        link: "/docs/products/AIMarketplace/services-page/"
+        link: "/docs/products/AIMarketplace/service-page/"
     },
     {
         text: "Service page",

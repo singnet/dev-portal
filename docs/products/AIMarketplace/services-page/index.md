@@ -10,7 +10,7 @@ In this section, you have the option to organize services either by their names 
 ![List of organization - sorting](/assets/images/products/AIMarketplace/Marketplace/AllOrganizationsSortBy.webp)
 
 
-If you are looking for a specific service, you can find it by name in this section
+If you are looking for a specific service, you can find it by name, description, tags or other service-related informationin this section
 
 ![List of organization - search](/assets/images/products/AIMarketplace/Marketplace/AllOrganizationsSearch.webp)
 
