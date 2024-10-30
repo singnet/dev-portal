@@ -1,6 +1,7 @@
 import type { DefaultTheme } from "vitepress";
 
 export default [
+    { text: "Old Dev Portal", link: "https://old-dev.singularitynet.io/" },
     { text: "Home", link: "/", activeMatch: "^/$|^$" },
     { text: "Docs", link: "/docs/", activeMatch: "^/docs/" },
     {
