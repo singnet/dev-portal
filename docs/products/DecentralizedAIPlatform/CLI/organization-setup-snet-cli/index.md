@@ -60,13 +60,13 @@ snet organization add-group <group_name> <wallet_address> <etcd-end-point>
 
 Example 
 ```sh
-snet organization add-group default_groups 0x06A1D29e9FfA2415434A7A571235744F8DA2a514 https://your-etcdendpont:2379
+snet organization add-group default_group 0x06A1D29e9FfA2415434A7A571235744F8DA2a514 https://your-etcdendpont:2379
 ```
 This would append the below to the json
 ```json
 "groups": [
         {
-            "group_name": "default_groups",
+            "group_name": "default_group",
             "group_id": "gz/+/M9l/qxpfNzPn+T2XmTSPMKyphYyxSsQSPhEJXA=",
             "payment": {
                 "payment_address": "0x06A1D29e9FfA2415434A7A571235744F8DA2a514",

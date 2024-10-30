@@ -2,6 +2,8 @@
 
 Welcome to the SingularityNET Boilerplate! This project demonstrates the integration of snet-sdk-web, focusing on wallet management and service utilization within the SingularityNET ecosystem. It supports two types of wallets: a browser extension wallet similar to MetaMask and a social authentication-based wallet.
 
+[Git repository](https://github.com/singnet/Web-JS-SDK-Boilerplate)
+
 ## Features:
 
 -   Integration of desktop/mobile and social authentication-based wallets.

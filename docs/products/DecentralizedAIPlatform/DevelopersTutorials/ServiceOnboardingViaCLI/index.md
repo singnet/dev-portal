@@ -123,7 +123,7 @@ This section will be added to your organization_metadata.json:
 ```json
 "groups": [
         {
-            "group_name": "default_groups",
+            "group_name": "default_group",
             "group_id": "gz/+/M9l/qxpfNzPn+T2XmTSPMKyphYyxSsQSPhEJXA=",
             "payment": {
                 "payment_address": "0x06A1D29e9FfA2415434A7A571235744F8DA2a514",
@@ -223,7 +223,7 @@ Example:
 snet service metadata-init \
     service/service_spec \
     "your-service" \
-    --group-name default_groups \
+    --group-name default_group \
     --fixed-price 0.00000001 \
     --endpoints https://<your-domain-or-public-ip>:<port>
 ```
