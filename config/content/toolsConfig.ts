@@ -31,6 +31,12 @@ export default [
         link: "/docs/products/DecentralizedAIPlatform/Daemon/"
     },
     {
+        text: "UI Sandbox version 1",
+        description: "Development environment for testing UI components for AI Marketplace",
+        gitLink: "https://github.com/singnet/snet-dapp?tab=readme-ov-file#sandbox-mode-for-services",
+        link: "/docs/products/DecentralizedAIPlatform/Sandbox/available-now/"
+    },
+    {
         text: "Python SDK",
         description: "Python SDK to invoke AI services on the SingularityNET platform programmatically",
         gitLink: "https://github.com/singnet/snet-sdk-python",
