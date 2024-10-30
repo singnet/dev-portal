@@ -170,6 +170,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/",
             },
             {
+                text: "ETCD Setup",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/",
+            },
+            {
                 text: "Logger & hooks",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-logger/",
             },
@@ -759,6 +763,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
 //                 text: "Architecture of SDK",
 //                 link: "/docs/products/DecentralizedAIPlatform/SDK/sdk-architecture/",
 //             },
+//             }
             {
                 text: "Python SDK",
                 collapsed: true,
@@ -960,6 +965,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
                 items: [
                     {
+                        text: "Introduction",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace/",
+                    },
+                    {
                         text: "Service",
                         link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/service/",
                     },
@@ -983,6 +992,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/",
                 items: [
                     {
+                        text: "Overview",
+                        link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/",
+                    },
+                    {
                         text: "MPE",
                         link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/",
                     },
@@ -993,48 +1006,44 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 ],
             },
             {
-                text: "ERC20",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/erc20/",
-            },
-            {
-                text: "ETCD",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/etcd/",
-            },
-            {
-                text: "Ethereum Address",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum-address/",
-            },
-            {
-                text: "GRPC",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/grpc/",
-            },
-            {
-                text: "IPFS",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ipfs/",
-            },
-            {
-                text: "FileCoin",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/filecoin/",
-            },
-            {
-                text: "Protobuf",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/protobuf/",
-            },
-            {
-                text: "ETCD Setup",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup/",
+                text: "Glossary",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/",
             },
         ],
     },
     {
         text: "Used Technologies",
-        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/",
+        link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
         collapsed: true,
         items: [
             {
-                text: "Glossary",
-                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/",
-            }
+                text: "ERC20",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/erc20/",
+            },
+            {
+                text: "ETCD",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/etcd/",
+            },
+            {
+                text: "Ethereum Address",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/ethereum-address/",
+            },
+            {
+                text: "GRPC",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/grpc/",
+            },
+            {
+                text: "IPFS",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/ipfs/",
+            },
+            {
+                text: "FileCoin",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/filecoin/",
+            },
+            {
+                text: "Protobuf",
+                link: "/docs/products/DecentralizedAIPlatform/UsedTechnologies/protobuf/",
+            },
         ],
     },
 ];
