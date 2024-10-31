@@ -1,626 +1,628 @@
 header:
-    logo:
-        text:
-        image: '/assets/images/layout/logo.png'
-    nav:
-        - item_name: Home
-          item_url: '/'
-        - item_name: Docs
-          item_url: '/docs/overview/'
-        - item_name: Products
-          item_url: ''
-          subheaders:
-              - title: 'AI Marketplace'
-                url: 'https://beta.singularitynet.io'
-              - title: 'AI Publisher'
-                url: 'https://publisher.singularitynet.io/'
+  logo:
+    text:
+    image: "/assets/images/layout/logo.png"
+  nav:
+    - item_name: Home
+      item_url: "/"
+    - item_name: Docs
+      item_url: "/docs/overview/"
+    - item_name: Products
+      item_url: ""
+      subheaders:
+        - title: "AI Marketplace"
+          url: "https://beta.singularitynet.io"
+        - title: "AI Publisher"
+          url: "https://publisher.singularitynet.io/"
 
-              - title: 'AGIX Staking'
-                url: 'https://staking.singularitynet.io/'
-        - item_name: Community
-          item_url: ''
-          subheaders:
-              - title: 'FAQ'
-                url: 'https://community.singularitynet.io/c/qa'
-              - title: 'Forum'
-                url: 'https://community.singularitynet.io/'
-              - title: 'Telegram'
-                url: 'https://t.me/singularitynet'
-    secondnav:
-        - item_name: Overview
-          item_url: '/docs/overview/'
-        - item_name: Core Concepts
-          item_url: '/docs/concepts/'
-        - item_name: AI Consumer
-          item_url: '/docs/ai-consumers/'
-        - item_name: AI Developer
-          item_url: '/docs/ai-developers/'
-        - item_name: Platform Dev
-          item_url: '/docs/platform-dev/'
-        - item_name: Products
-          item_url: '/products'
+        - title: "AGIX Staking"
+          url: "https://staking.singularitynet.io/"
+    - item_name: Community
+      item_url: ""
+      subheaders:
+        - title: "FAQ"
+          url: "https://community.singularitynet.io/c/qa"
+        - title: "Forum"
+          url: "https://community.singularitynet.io/"
+        - title: "Telegram"
+          url: "https://t.me/singularitynet"
+    - item_name: Back to Dev Portal
+      item_url: "https://dev.singularitynet.io/"
+  secondnav:
+    - item_name: Overview
+      item_url: "/docs/overview/"
+    - item_name: Core Concepts
+      item_url: "/docs/concepts/"
+    - item_name: AI Consumer
+      item_url: "/docs/ai-consumers/"
+    - item_name: AI Developer
+      item_url: "/docs/ai-developers/"
+    - item_name: Platform Dev
+      item_url: "/docs/platform-dev/"
+    - item_name: Products
+      item_url: "/products"
 
 footer:
-    content:
-        logo:
-            text:
-            image: '/assets/images/layout/logo.png'
-        copyright: Copyright &copy; 2021 SingularityNET. All rights reserved.
-        copyright_address: Stichting SingularityNET Barbara Strozzilaan 362 1083 HN Amsterdam The Netherlands
-    social_list:
-        - network_name: github
-          profile_icon: github
-          profile_url: 'https://github.com/singnet'
-        - network_name: twitter
-          profile_icon: twitter
-          profile_url: 'https://twitter.com/singularity_net'
-        - network_name: facebook
-          profile_icon: facebook-square
-          profile_url: 'https://www.facebook.com/singularityNET.io'
-        - network_name: linkedin
-          profile_icon: linkedin
-          profile_url: 'https://www.linkedin.com/company/singularitynet/'
-        - network_name: youtube
-          profile_icon: youtube
-          profile_url: 'https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw'
-        - network_name: instagram
-          profile_icon: instagram
-          profile_url: 'https://instagram.com/singularitynet.io'
+  content:
+    logo:
+      text:
+      image: "/assets/images/layout/logo.png"
+    copyright: Copyright &copy; 2021 SingularityNET. All rights reserved.
+    copyright_address: Stichting SingularityNET Barbara Strozzilaan 362 1083 HN Amsterdam The Netherlands
+  social_list:
+    - network_name: github
+      profile_icon: github
+      profile_url: "https://github.com/singnet"
+    - network_name: twitter
+      profile_icon: twitter
+      profile_url: "https://twitter.com/singularity_net"
+    - network_name: facebook
+      profile_icon: facebook-square
+      profile_url: "https://www.facebook.com/singularityNET.io"
+    - network_name: linkedin
+      profile_icon: linkedin
+      profile_url: "https://www.linkedin.com/company/singularitynet/"
+    - network_name: youtube
+      profile_icon: youtube
+      profile_url: "https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw"
+    - network_name: instagram
+      profile_icon: instagram
+      profile_url: "https://instagram.com/singularitynet.io"
 
 docs:
-    concepts:
-        title: Core Concepts
-        url: '/docs/concepts'
-    tutorials:
-        title: Tutorials
-        url: '/tutorials'
-    provider:
-        title: AI Developer
-        url: '/docs/ai-developers/development'
-    buyer:
-        title: AI Consumer
-        url: '/docs/ai-consumers/snet-cli-tutorial'
+  concepts:
+    title: Core Concepts
+    url: "/docs/concepts"
+  tutorials:
+    title: Tutorials
+    url: "/tutorials"
+  provider:
+    title: AI Developer
+    url: "/docs/ai-developers/development"
+  buyer:
+    title: AI Consumer
+    url: "/docs/ai-consumers/snet-cli-tutorial"
 
 concepts:
-    introduction:
-        title: 'SingularityNET Introduction '
-        url: '/docs/concepts/'
-    blockchain:
-        title: 'What is Blockchain'
-        url: '/docs/concepts/blockchain'
-    ethereum:
-        title: Ethereum
+  introduction:
+    title: "SingularityNET Introduction "
+    url: "/docs/concepts/"
+  blockchain:
+    title: "What is Blockchain"
+    url: "/docs/concepts/blockchain"
+  ethereum:
+    title: Ethereum
+    cta: Read more
+    children:
+      ethereum-overview:
+        title: Overview
+        excerpt:
         cta: Read more
-        children:
-            ethereum-overview:
-                title: Overview
-                excerpt:
-                cta: Read more
-                url: '/docs/concepts/ethereum'
-            erc20:
-                title: ERC20 Tokens
-                excerpt:
-                cta: Read more
-                url: '/docs/concepts/erc20'
-            smart-contracts:
-                title: Smart Contracts
-                excerpt:
-                cta: Read more
-                url: '/docs/concepts/smart-contracts'
-            ethereum-address:
-                title: Address
-                excerpt:
-                cta: Read more
-                url: '/docs/concepts/ethereum-address'
-    ipfs:
-        title: 'IPFS '
-        url: '/docs/concepts/ipfs'
-    protobuf:
-        title: 'Protocol Buffers'
-        url: '/docs/concepts/protobuf'
-    grpc:
-        title: 'gRPC'
-        url: '/docs/concepts/grpc'
-    distributed-storage:
-        title: 'Distributed Storage'
-        children:
-            etcd:
-                title: etcd
-                excerpt:
-                cta: Read more
-                url: '/docs/concepts/etcd'
-    #key-terms:
-    #  title: "Key terms"
-    #  url: "/docs/concepts/keyterms"
+        url: "/docs/concepts/ethereum"
+      erc20:
+        title: ERC20 Tokens
+        excerpt:
+        cta: Read more
+        url: "/docs/concepts/erc20"
+      smart-contracts:
+        title: Smart Contracts
+        excerpt:
+        cta: Read more
+        url: "/docs/concepts/smart-contracts"
+      ethereum-address:
+        title: Address
+        excerpt:
+        cta: Read more
+        url: "/docs/concepts/ethereum-address"
+  ipfs:
+    title: "IPFS "
+    url: "/docs/concepts/ipfs"
+  protobuf:
+    title: "Protocol Buffers"
+    url: "/docs/concepts/protobuf"
+  grpc:
+    title: "gRPC"
+    url: "/docs/concepts/grpc"
+  distributed-storage:
+    title: "Distributed Storage"
+    children:
+      etcd:
+        title: etcd
+        excerpt:
+        cta: Read more
+        url: "/docs/concepts/etcd"
+  #key-terms:
+  #  title: "Key terms"
+  #  url: "/docs/concepts/keyterms"
 
 tutorials:
-    general:
-        title: 'General service publishing tutorials'
-        url: '/tutorials/'
-    language:
-        title: 'Tutorials by programming language'
-        url: '/tutorials/'
-    workshop:
-        title: 'Workshop Tutorials'
-        url: '/tutorials/'
+  general:
+    title: "General service publishing tutorials"
+    url: "/tutorials/"
+  language:
+    title: "Tutorials by programming language"
+    url: "/tutorials/"
+  workshop:
+    title: "Workshop Tutorials"
+    url: "/tutorials/"
 
 ai-consumers:
-    Introduction:
-        title: Introduction
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-consumers/'
-    getting-started:
-        title: Getting Started
-        children:
-            registry:
-                title: Registry
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/registry'
-            mpe:
-                title: Multi-Party Escrow
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/mpe'
-            organization:
-                title: Organization
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/organization'
-            service:
-                title: Service
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/service'
-            marketplace:
-                title: Marketplace Dapp
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/marketplace'
-            snet-daemon-api:
-                title: Daemon API
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/daemon-api'
-            keyterms:
-                title: Key Terms
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/keyterms'
-
-    payments:
-        title: Payments
-        children:
-            tokens:
-                title: Tokens
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/tokens'
-
-            paypal:
-                title: Paypal
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/paypal'
-
-    service-invocation:
-        title: Service Invocation
-        children:
-            marketplace-dapp:
-                title: Marketplace-Dapp
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/marketplace-service_invocation'
-            snet-cli:
-                title: snet-cli
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/snet-cli'
-            sdk:
-                title: SDK
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/sdk'
-    tutorials:
-        title: Tutorials
-        children:
-            create-wallet:
-                title: How to Create a Wallet?
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/wallet'
-            setup:
-                title: Setup Guide
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/setupguide'
-            invoke-serivce-snet-cli:
-                title: Invoking a Service using snet-cli
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/invoke-service-snet-cli'
-            invoke-serivce-dapp:
-                title: Invoking a Service using Marketplace Dapp
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/marketplace-service_invocation'
-            invoke-serivce-training-dapp:
-                title: Invoking a Training using Marketplace Dapp
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/marketplace-service_training'
-            invoke-serivce-java-sdk:
-                title: Invoking a Service using Java sdk
-                excerpt:
-                cta: Read more
-                url: '/docs/tutorials/client/java'
-            invoke-serivce-nodejs-sdk:
-                title: Invoking A Service Using Node.Js SDK
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/sdk-tutorial'
-            invike-service-python-sdk:
-                title: Python SDK Getting Started Guide
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/sdk-tutorial-python'
-    troubleshooting:
-        title: Troubleshooting
-        excerpt: How to communicate with SingularityNET services with the stateless method.
-        cta: Read more
-        url: '/docs/ai-consumers/troubleshooting'
-
-ai-developers:
-    Introduction:
-        title: Introduction
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/'
-    getting-started:
-        title: Getting Started
-        children:
-            mpe:
-                title: MPE
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/mpe'
-            registry:
-                title: Registry
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/registry'
-            organization:
-                title: Organization
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/organization'
-            service:
-                title: Service
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/service'
-            daemon:
-                title: Daemon
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/daemon'
-            mpe-stateless-client:
-                title: Stateless Client
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/mpe-stateless-client'
-            marketplace:
-                title: Marketplace Dapp
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/marketplace'
-            naming-standards:
-                title: 'Naming Standards'
-                url: '/docs/ai-developers/naming-standards'
-            keyterms:
-                title: Key Terms
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/keyterms'
-    payments:
-        title: Payments
-        children:
-            channel-storage:
-                title: Payment Channel Storage
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/daemon-channel-storage'
-            mpe:
-                title: Paypal
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/paypal'
-            tokens:
-                title: Tokens
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-consumers/tokens'
-    set-up-guide:
-        title: Setup Guide
-        children:
-            grpc:
-                title: 'gRPC Services'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/grpc'
-            etcd:
-                title: 'etcd storage'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/etcd'
-            etcd-setup:
-                title: 'etcd Setup'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/etcdsetup'
-            create-wallet:
-                title: 'Creating an Ethereum Identity'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/ethereum-identity'
-            org-setup:
-                title: 'Organization Setup'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/organization-setup'
-            collaboration:
-                title: 'Collaboration'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/collaboration'
-            service-setup:
-                title: 'Service Setup'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/service-setup'
-            filecoin:
-                title: 'FileCoin Storage Provider'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/filecoin'
-            daemon:
-                title: 'Daemon Setup'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/daemon-setup'
-            dapp-ui-component:
-                title: 'DApp UI Component for Service'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/dapp-ui-component'
-            claims:
-                title: 'Claim AGIX'
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/claim'
-    tutorials:
-        title: Tutorials
-        children:
-            onboarding-mainnet:
-                title: Mainnet onboarding end to end tutorial
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/snet-full-guide-mainnet'
-            onboarding-testnet:
-                title: Testnet onboarding end to end tutorial
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/snet-full-guide-testnet'
-            service-type-http:
-                title: Integrating HTTP service
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/service-type-http'
-            training-service-guide:
-                title: Integrating training in service
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/training-guide'
-            triton-instructions:
-                title: Integrating Triton-based Service
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/triton-instructions'
-            runpod-based-ai-service:
-                title: Integrating ServerlessGPU Service
-                excerpt:
-                cta: Read more
-                url: '/docs/ai-developers/runpod-based-ai-service'
-                # org-setup:
-                #   title: Publish Organization using snet-cli
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-developers/organization-setup-sent-cli'
-                # service-setup:
-                #   title: Publish Service using snet-cli
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-developers/service-setup-snet-cli'
-                # invoke-serivce-snet-cli:
-                #   title: Invoking a Service using snet-cli
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-consumers/invoke-service-snet-cli'
-                # invoke-serivce-dapp:
-                #   title: Invoking a Service using Marketplace Dapp
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-consumers/marketplace-service_invocation'
-                # invoke-serivce-training-dapp:
-                #   title: Invoking a Training using Marketplace Dapp
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-consumers/marketplace-service_training'
-                # invoke-serivce-java-sdk:
-                #   title: Invoking a Service using Java sdk
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-consumers/java-sdk'
-                # invoke-serivce-nodejs-sdk:
-                #   title: Invoking A Service Using Node.Js SDK
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-developers/sdk-tutorial'
-                # invike-service-python-sdk:
-                #   title: Python SDK Getting Started Guide
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-consumers/sdk-tutorial-python'
-                # tutorail:
-                #   title: Tutorials
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-developers/tutorials'
-                # development:
-                #   title: More Examples
-                #   excerpt:
-                #   cta: Read more
-                #   url: '/docs/ai-developers/development'
-    troubleshooting:
-        title: Troubleshooting
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/troubleshooting'
-    FAQ:
-        title: FAQ
-        excerpt:
-        cta: Read more
-        url: '/docs/ai-developers/faq'
-
-platform-dev:
-    Introduction:
-        title: Introduction
-        excerpt:
-        cta: Read more
-        url: '/docs/platform-dev/'
-    registry:
+  Introduction:
+    title: Introduction
+    excerpt:
+    cta: Read more
+    url: "/docs/ai-consumers/"
+  getting-started:
+    title: Getting Started
+    children:
+      registry:
         title: Registry
         excerpt:
         cta: Read more
-        url: '/docs/ai-consumers/registry'
-    daemon:
-        title: Daemon
-        children:
-            introduction:
-                title: Daemon
-                excerpt: How to communicate with SingularityNET services with the stateless method.
-                cta: Read more
-                url: '/docs/ai-developers/daemon'
-            architecture:
-                title: Architecture
-                excerpt: Architechtire of all key components in Daemon
-                url: '/docs/platform-dev/daemon-architecture'
-    sdk:
-        title: SDK
-        children:
-            introduction:
-                title: SDK
-                excerpt: SDK
-                cta: Read more
-                url: '/docs/platform-dev/sdk'
-            architecture:
-                title: Architecture
-                excerpt: Architechtire of all key components in Daemon
-                url: '/docs/platform-dev/sdk-architecture'
-    mpe:
+        url: "/docs/ai-consumers/registry"
+      mpe:
         title: Multi-Party Escrow
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/mpe"
+      organization:
+        title: Organization
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/organization"
+      service:
+        title: Service
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/service"
+      marketplace:
+        title: Marketplace Dapp
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/marketplace"
+      snet-daemon-api:
+        title: Daemon API
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/daemon-api"
+      keyterms:
+        title: Key Terms
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/keyterms"
+
+  payments:
+    title: Payments
+    children:
+      tokens:
+        title: Tokens
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/tokens"
+
+      paypal:
+        title: Paypal
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/paypal"
+
+  service-invocation:
+    title: Service Invocation
+    children:
+      marketplace-dapp:
+        title: Marketplace-Dapp
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/marketplace-service_invocation"
+      snet-cli:
+        title: snet-cli
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/snet-cli"
+      sdk:
+        title: SDK
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/sdk"
+  tutorials:
+    title: Tutorials
+    children:
+      create-wallet:
+        title: How to Create a Wallet?
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/wallet"
+      setup:
+        title: Setup Guide
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/setupguide"
+      invoke-serivce-snet-cli:
+        title: Invoking a Service using snet-cli
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/invoke-service-snet-cli"
+      invoke-serivce-dapp:
+        title: Invoking a Service using Marketplace Dapp
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/marketplace-service_invocation"
+      invoke-serivce-training-dapp:
+        title: Invoking a Training using Marketplace Dapp
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/marketplace-service_training"
+      invoke-serivce-java-sdk:
+        title: Invoking a Service using Java sdk
+        excerpt:
+        cta: Read more
+        url: "/docs/tutorials/client/java"
+      invoke-serivce-nodejs-sdk:
+        title: Invoking A Service Using Node.Js SDK
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/sdk-tutorial"
+      invike-service-python-sdk:
+        title: Python SDK Getting Started Guide
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/sdk-tutorial-python"
+  troubleshooting:
+    title: Troubleshooting
+    excerpt: How to communicate with SingularityNET services with the stateless method.
+    cta: Read more
+    url: "/docs/ai-consumers/troubleshooting"
+
+ai-developers:
+  Introduction:
+    title: Introduction
+    excerpt:
+    cta: Read more
+    url: "/docs/ai-developers/"
+  getting-started:
+    title: Getting Started
+    children:
+      mpe:
+        title: MPE
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/mpe"
+      registry:
+        title: Registry
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/registry"
+      organization:
+        title: Organization
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/organization"
+      service:
+        title: Service
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/service"
+      daemon:
+        title: Daemon
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/daemon"
+      mpe-stateless-client:
+        title: Stateless Client
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/mpe-stateless-client"
+      marketplace:
+        title: Marketplace Dapp
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/marketplace"
+      naming-standards:
+        title: "Naming Standards"
+        url: "/docs/ai-developers/naming-standards"
+      keyterms:
+        title: Key Terms
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/keyterms"
+  payments:
+    title: Payments
+    children:
+      channel-storage:
+        title: Payment Channel Storage
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/daemon-channel-storage"
+      mpe:
+        title: Paypal
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/paypal"
+      tokens:
+        title: Tokens
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-consumers/tokens"
+  set-up-guide:
+    title: Setup Guide
+    children:
+      grpc:
+        title: "gRPC Services"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/grpc"
+      etcd:
+        title: "etcd storage"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/etcd"
+      etcd-setup:
+        title: "etcd Setup"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/etcdsetup"
+      create-wallet:
+        title: "Creating an Ethereum Identity"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/ethereum-identity"
+      org-setup:
+        title: "Organization Setup"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/organization-setup"
+      collaboration:
+        title: "Collaboration"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/collaboration"
+      service-setup:
+        title: "Service Setup"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/service-setup"
+      filecoin:
+        title: "FileCoin Storage Provider"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/filecoin"
+      daemon:
+        title: "Daemon Setup"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/daemon-setup"
+      dapp-ui-component:
+        title: "DApp UI Component for Service"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/dapp-ui-component"
+      claims:
+        title: "Claim AGIX"
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/claim"
+  tutorials:
+    title: Tutorials
+    children:
+      onboarding-mainnet:
+        title: Mainnet onboarding end to end tutorial
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/snet-full-guide-mainnet"
+      onboarding-testnet:
+        title: Testnet onboarding end to end tutorial
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/snet-full-guide-testnet"
+      service-type-http:
+        title: Integrating HTTP service
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/service-type-http"
+      training-service-guide:
+        title: Integrating training in service
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/training-guide"
+      triton-instructions:
+        title: Integrating Triton-based Service
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/triton-instructions"
+      runpod-based-ai-service:
+        title: Integrating ServerlessGPU Service
+        excerpt:
+        cta: Read more
+        url: "/docs/ai-developers/runpod-based-ai-service"
+        # org-setup:
+        #   title: Publish Organization using snet-cli
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/organization-setup-sent-cli'
+        # service-setup:
+        #   title: Publish Service using snet-cli
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/service-setup-snet-cli'
+        # invoke-serivce-snet-cli:
+        #   title: Invoking a Service using snet-cli
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-consumers/invoke-service-snet-cli'
+        # invoke-serivce-dapp:
+        #   title: Invoking a Service using Marketplace Dapp
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-consumers/marketplace-service_invocation'
+        # invoke-serivce-training-dapp:
+        #   title: Invoking a Training using Marketplace Dapp
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-consumers/marketplace-service_training'
+        # invoke-serivce-java-sdk:
+        #   title: Invoking a Service using Java sdk
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-consumers/java-sdk'
+        # invoke-serivce-nodejs-sdk:
+        #   title: Invoking A Service Using Node.Js SDK
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/sdk-tutorial'
+        # invike-service-python-sdk:
+        #   title: Python SDK Getting Started Guide
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-consumers/sdk-tutorial-python'
+        # tutorail:
+        #   title: Tutorials
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/tutorials'
+        # development:
+        #   title: More Examples
+        #   excerpt:
+        #   cta: Read more
+        #   url: '/docs/ai-developers/development'
+  troubleshooting:
+    title: Troubleshooting
+    excerpt:
+    cta: Read more
+    url: "/docs/ai-developers/troubleshooting"
+  FAQ:
+    title: FAQ
+    excerpt:
+    cta: Read more
+    url: "/docs/ai-developers/faq"
+
+platform-dev:
+  Introduction:
+    title: Introduction
+    excerpt:
+    cta: Read more
+    url: "/docs/platform-dev/"
+  registry:
+    title: Registry
+    excerpt:
+    cta: Read more
+    url: "/docs/ai-consumers/registry"
+  daemon:
+    title: Daemon
+    children:
+      introduction:
+        title: Daemon
         excerpt: How to communicate with SingularityNET services with the stateless method.
         cta: Read more
-        url: '/docs/ai-consumers/mpe'
-    channel-storage:
-        title: Daemon Channel Storage
-        excerpt: Channel Storage
+        url: "/docs/ai-developers/daemon"
+      architecture:
+        title: Architecture
+        excerpt: Architechtire of all key components in Daemon
+        url: "/docs/platform-dev/daemon-architecture"
+  sdk:
+    title: SDK
+    children:
+      introduction:
+        title: SDK
+        excerpt: SDK
         cta: Read more
-        url: '/docs/ai-developers/daemon-channel-storage'
+        url: "/docs/platform-dev/sdk"
+      architecture:
+        title: Architecture
+        excerpt: Architechtire of all key components in Daemon
+        url: "/docs/platform-dev/sdk-architecture"
+  mpe:
+    title: Multi-Party Escrow
+    excerpt: How to communicate with SingularityNET services with the stateless method.
+    cta: Read more
+    url: "/docs/ai-consumers/mpe"
+  channel-storage:
+    title: Daemon Channel Storage
+    excerpt: Channel Storage
+    cta: Read more
+    url: "/docs/ai-developers/daemon-channel-storage"
 
 products:
-    Introduction:
-        title: Introduction
+  Introduction:
+    title: Introduction
+    excerpt:
+    cta: Read more
+    url: "/products/"
+  marketplace:
+    title: AI Marketplace
+    excerpt:
+    cta: Read more
+    url: "/products/marketplace"
+  publisher:
+    title: Publisher portal
+    excerpt:
+    cta: Read more
+    url: "/products/publisher"
+  ethereum-staking:
+    title: Ethereum staking AGIX
+    children:
+      overview:
+        title: Overview
         excerpt:
         cta: Read more
-        url: '/products/'
-    marketplace:
-        title: AI Marketplace
+        url: "/products/staking"
+      staking-timeline:
+        title: Staking Timeline
         excerpt:
         cta: Read more
-        url: '/products/marketplace'
-    publisher:
-        title: Publisher portal
+        url: "/products/stake-timeline"
+      stake-window:
+        title: Stake Window
         excerpt:
         cta: Read more
-        url: '/products/publisher'
-    ethereum-staking:
-        title: Ethereum staking AGIX
-        children:
-            overview:
-                title: Overview
-                excerpt:
-                cta: Read more
-                url: '/products/staking'
-            staking-timeline:
-                title: Staking Timeline
-                excerpt:
-                cta: Read more
-                url: '/products/stake-timeline'
-            stake-window:
-                title: Stake Window
-                excerpt:
-                cta: Read more
-                url: '/products/stake-window'
-            stake-opt-out:
-                title: Stake Opt-out
-                excerpt:
-                cta: Read more
-                url: '/products/stake-opt-out'
-            stake-reward:
-                title: Stake Reward
-                excerpt:
-                cta: Read more
-                url: '/products/stake-reward'
-    cardano-staking:
-        title: Cardano staking AGIX
-        children:
-            cardano-staking-timeline:
-                title: Staking Timeline
-                excerpt:
-                cta: Read more
-                url: '/products/cardano-staking-timeline'
-            cardano-staking-rewards:
-                title: Staking/withdrawal Period
-                excerpt:
-                cta: Read more
-                url: '/products/cardano-staking-withdraw'
-            cardano-staking-withdraw:
-                title: Rewards Distribution Period
-                excerpt:
-                cta: Read more
-                url: '/products/cardano-staking-rewards' 
-    cardano-staking-ntx:
-        title: Cardano staking NTX
-        children: 
-            cardano-staking-timline-ntx:
-                title: Staking Timeline
-                excerpt:
-                cta: Read more 
-                url: '/products/cardano-staking-timeline-ntx'
-            cardano-staking-rewards-ntx:
-                title: Staking/withdrawal Period
-                excerpt:
-                cta: Read more
-                url: '/products/cardano-staking-withdraw-ntx'
-            cardano-staking-withdraw-ntx:
-                title: Rewards Distribution Period
-                excerpt:
-                cta: Read more
-                url: '/products/cardano-staking-rewards-ntx'  
-    rfai:
-        title: Request For AI Service
+        url: "/products/stake-window"
+      stake-opt-out:
+        title: Stake Opt-out
         excerpt:
         cta: Read more
-        url: '/products/rfai'
+        url: "/products/stake-opt-out"
+      stake-reward:
+        title: Stake Reward
+        excerpt:
+        cta: Read more
+        url: "/products/stake-reward"
+  cardano-staking:
+    title: Cardano staking AGIX
+    children:
+      cardano-staking-timeline:
+        title: Staking Timeline
+        excerpt:
+        cta: Read more
+        url: "/products/cardano-staking-timeline"
+      cardano-staking-rewards:
+        title: Staking/withdrawal Period
+        excerpt:
+        cta: Read more
+        url: "/products/cardano-staking-withdraw"
+      cardano-staking-withdraw:
+        title: Rewards Distribution Period
+        excerpt:
+        cta: Read more
+        url: "/products/cardano-staking-rewards"
+  cardano-staking-ntx:
+    title: Cardano staking NTX
+    children:
+      cardano-staking-timline-ntx:
+        title: Staking Timeline
+        excerpt:
+        cta: Read more
+        url: "/products/cardano-staking-timeline-ntx"
+      cardano-staking-rewards-ntx:
+        title: Staking/withdrawal Period
+        excerpt:
+        cta: Read more
+        url: "/products/cardano-staking-withdraw-ntx"
+      cardano-staking-withdraw-ntx:
+        title: Rewards Distribution Period
+        excerpt:
+        cta: Read more
+        url: "/products/cardano-staking-rewards-ntx"
+  rfai:
+    title: Request For AI Service
+    excerpt:
+    cta: Read more
+    url: "/products/rfai"
