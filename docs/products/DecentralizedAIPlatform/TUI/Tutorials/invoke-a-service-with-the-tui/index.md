@@ -2,7 +2,7 @@
 
 ### Step 1: Deposit AGIX in MPE
 
-Once you have some AGIX in your wallet, you can deposit it into your [Multi-party Escrow](https://dev.singularitynet.io/docs/ai-developers/mpe/) with the [deposit page](/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/deposit/) (found in the account page), as shown below.&#x20;
+Once you have some AGIX in your wallet, you can deposit it into your [Multi-party Escrow](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/) with the [deposit page](/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/deposit/) (found in the account page), as shown below.&#x20;
 
 ![Account Deposit Page](/assets/images/products/AIMarketplace/TUI/TUIDeposit.webp)Account Deposit Page
 

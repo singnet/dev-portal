@@ -21,7 +21,7 @@ Infrastural diagram of ETCD Cluster setup on AWS.
 
 ## ETCD set up Script
 
-<a id="raw-url" href="https://raw.githubusercontent.com/singnet/dev-portal/master/docs/ai-developers/etcdscript.sh">Download script</a>
+[Download script]()
 
 For detailed explanation on every step , reference the sections below
 
