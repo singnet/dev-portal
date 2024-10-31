@@ -1,4 +1,6 @@
 # Why support for Training on platform? 
+
+## ❗️ Currently under development ❗️
 Currently all calls on the market place dapp are Inference call
 SingularityNET is solving this difficulty for AI systems on the Platform and Marketplace by allowing developers to offer multiple training models of their algorithm. The end-user can pick whether it wants to use the model trained on chest x-rays or the one trained on dental x-rays. The end-user can even provide their own training data to create a unique training model specifically suited to their exact data. This multi-model opportunity will allow developers to offer flexible, trainable, and customizable AI’s through our decentralized Marketplace, to better serve AI consumers - and enable access to high-quality AI services for all. This Platform upgrade is well underway, with functionality added to the Platform daemon already. The next step will be to upgrade the SDK, Marketplace front-end, publisher, and other systems to support multi-model AIs and model training calls.
 **Please note**:The Model Is stored at the AI developers end
@@ -16,7 +18,8 @@ metadata of a model
 
  Here all the complexity of creating a training is abstracted from the users. It become easy for the user to create and edit their trainings. 
  If the training is available inside the model then the Models tab will appear.
- ![marketplace](/assets/images/products/AIMarketplace/core-concepts/marketplace_training_models.png)
+ 
+ <ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/marketplace_training_models.png" alt="marketplace"/>
 
  The first step in requesting a custom model is to create a project. The REQUEST A NEW MODEL button will help the users to create the model. The models you create in this project inherit the name of the project. Once the REQUEST A NEW MODEL button is clicked it will open a new window where the user can enter the details.
  AI consumers , will pass the below details 
@@ -29,11 +32,11 @@ metadata of a model
 
 In return the AI conusmer will get back a model ID
 
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/marketplace_training_newmodelrequest.png)
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/marketplace_training_newmodelrequest.png" alt="marketplace"/>
 
 The available training models are displayed under the training method drop down box.
 
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/marketplace_training_newmodelrequest_trainingmethods.png)
+<ImageViewer src="//assets/images/products/AIMarketplace/core-concepts/marketplace_training_newmodelrequest_trainingmethods.png" alt="marketplace"/>
 
 # Training a model 
 Once the model is created , AI consumer can invoke training methods , of course the expectation here is to pass the model Id as part of the request 
@@ -57,20 +60,20 @@ AI consumer can add/remove addresses associated with a given model , can also ma
 **Important**: Metamask is a plugin which is used by the SingularityNET platform. This plugin allows the user to connect with the existing models. 
 
 
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/marketplace_training_existingmodel.png)
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/marketplace_training_existingmodel.png" alt="marketplace"/>
 
 Under the existing model, it will provide the details regarding the models created with model name, model Id, model description, status, access and the last update details.
 
 # Edit model Service
 The Edit button provide a new scope to change the details in the existing models.
 
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/marketplace_training_models_edit.png)
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/marketplace_training_models_edit.png" alt="marketplace"/>
 
 # Delete model Service
 AI consumer had created and can request that the model be deleted.
 The delete button provide a service to delete the models.
 
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/marketplace_training_models_delete.png)
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/marketplace_training_models_delete.png" alt="marketplace"/>
 
 # GetModelStatus
 Pass the model Id and get back the training status of this model 

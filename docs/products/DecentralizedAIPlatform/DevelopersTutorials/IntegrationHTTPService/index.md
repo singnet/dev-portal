@@ -9,7 +9,7 @@ Then specify the `service_type = http` parameter when creating your AI service.
 
 ## Scheme
 
-![The scheme of the daemon's work with http services](/assets/images/products/AIMarketplace/Marketplace/daemon_http.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/daemon_http.webp" alt="The scheme of the daemon's work with http services"/>
 
 ## Limitations
 * Currently, only POST methods are supported;

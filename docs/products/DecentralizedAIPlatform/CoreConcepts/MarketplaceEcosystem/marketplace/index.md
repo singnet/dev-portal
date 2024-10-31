@@ -10,25 +10,25 @@ For example, if you publish a new organization, a new service, the marketplace r
 
 The following image shows the contents from the marketplace.
 
-![marketplace](/assets/images/products/AIMarketplace/forcomers/dapp_landing_page.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/forcomers/dapp_landing_page.webp" alt="marketplace"/>
 
 The decentralized application (DApp) does the following:
 
-- Reads data from the on-chain Registry and pairs it with off-chain metadata.
-  This allows for searching, filtering, and discovering AI services.
+-   Reads data from the on-chain Registry and pairs it with off-chain metadata.
+    This allows for searching, filtering, and discovering AI services.
 
-- Integrates the SingularityNET curation service, and displays from the registry.
-  Whenever an event comes from Blockchain, the details are stored in the local database, the review process is done on that data, and then when approved, the information is made available in the marketplace.
-  **Note:** Displays those services that have been vetted, and owners who have experienced due diligence and signed legal agreements that protects user and data privacy.
+-   Integrates the SingularityNET curation service, and displays from the registry.
+    Whenever an event comes from Blockchain, the details are stored in the local database, the review process is done on that data, and then when approved, the information is made available in the marketplace.
+    **Note:** Displays those services that have been vetted, and owners who have experienced due diligence and signed legal agreements that protects user and data privacy.
 
-- Displays custom UI components for interactions with AI services.
-  It enables you to quickly build the UI components and host the component on the platform, and also you can determine what inputs need to be chosen for service execution, and is the expected output, without understanding the complexity of knowing the gRPC protocol, the proto that is associated with the service and how to call the service and so on.
+-   Displays custom UI components for interactions with AI services.
+    It enables you to quickly build the UI components and host the component on the platform, and also you can determine what inputs need to be chosen for service execution, and is the expected output, without understanding the complexity of knowing the gRPC protocol, the proto that is associated with the service and how to call the service and so on.
 
-- Integrates with Multi-Party Escrow, to allow consumers to pay for service usage;
-  Allows consumers to rate the utilized services.
-  **Note:** This rating services will be part of the SingularityNET's Reputation System (currently under development). Currently, it is very difficult to rate services on Blockchain. Therefore all rating mechanisms are performed off-chain and managed in the market place. So you can share your opinion and reviews at marketplace.
+-   Integrates with Multi-Party Escrow, to allow consumers to pay for service usage;
+    Allows consumers to rate the utilized services.
+    **Note:** This rating services will be part of the SingularityNET's Reputation System (currently under development). Currently, it is very difficult to rate services on Blockchain. Therefore all rating mechanisms are performed off-chain and managed in the market place. So you can share your opinion and reviews at marketplace.
 
-- Captures usage metrics at a consumer level.
+-   Captures usage metrics at a consumer level.
 
 **Note:** Although, the SingularityNET platform is open and decentralized, the Marketplace is the SingularityNET Foundation's curated view. This allows the foundation to adhere to legal requirements of different legislative regions. Currently, the Marketplace and SingularityNET is in beta stage. For more information about the current status, refer to current status page for changes, or follow the [git-repo](https://github.com/singnet/snet-dapp)
 

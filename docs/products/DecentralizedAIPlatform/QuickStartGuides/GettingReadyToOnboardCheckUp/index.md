@@ -1,6 +1,7 @@
 # SingularityNET Platform Onboarding Checkup
 
-![SingularityNET Platform Onboarding Checkup](/assets/images/products/AIMarketplace/Marketplace/ReadyToOnboardingCheckUp.webp)
+</br>
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ReadyToOnboardingCheckUp.webp" alt="Checkup"/>
 
 This document describes the mandatory items that must be implemented in order to get into the Decentralized AI Platform and AI Marketplace:
 

@@ -1,6 +1,7 @@
 # I am AI Developer
 
-![AI Developer](/assets/images/products/AIMarketplace/Marketplace/AIDeveloper.webp)
+<br/>
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/AIDeveloper.webp" alt="AI Developer"/>
 
 ***SingularityNET (SNET)*** is a platform that allows developers to publish and monetize their AI services through blockchain. Any user across the internet can access these services. An internal token - AGIX, is used for payment.
 

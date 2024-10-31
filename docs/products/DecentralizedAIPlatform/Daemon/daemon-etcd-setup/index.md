@@ -17,7 +17,7 @@ Following are the example nodes for our reference.
 ## Infrastructure Diagram
 
 Infrastural diagram of ETCD Cluster setup on AWS.
-![Etcd Cluster Infrastructure](/assets/images/products/AIMarketplace/core-concepts/etcd-cluster.png)
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/etcd-cluster.png" alt="Etcd Cluster Infrastructure"/>
 
 ## ETCD set up Script
 
