@@ -24,22 +24,22 @@ The platform is a **decentralized solution** built on the basis of **smart contr
 
 ## Platform components explained
 
-<p style="font-weight: 700">Publisher portal</p> - this service allows to publish services on AI Marketplace
+<span style="font-weight: 700">Publisher portal</span> - this service allows to publish services on AI Marketplace
 CLI/TUI - Tools for publish orgs and services without marketplace displays, for calls to services
-SDK - Tool for integrating calls AI Services to another programs 
+SDK - Tool for integrating calls AI Services to another programs
 AI Marketplace - the service allows using AI services via web interface
 
-<p style="font-weight: 700">Blockchain</p> - Ethereum is now used to implement platform contracts, but other blockchain will be used as well Cardano and other
+<span style="font-weight: 700">Blockchain</span> - Ethereum is now used to implement platform contracts, but other blockchain will be used as well Cardano and other
 
-<p style="font-weight: 700">MPE Contract</p> - smart contract used to implementation of on-chain payments for AI service calls
+<span style="font-weight: 700">MPE Contract</span> - smart contract used to implementation of on-chain payments for AI service calls
 
-<p style="font-weight: 700">Registry Contract</p> - smart contract used for store information about organizations and services
+<span style="font-weight: 700">Registry Contract</span> - smart contract used for store information about organizations and services
 
-<p style="font-weight: 700">DSN</p> - decentralized storage, where metadata about organizations and services are stored, now used: IPFS and Filecoin
+<span style="font-weight: 700">DSN</span> - decentralized storage, where metadata about organizations and services are stored, now used: IPFS and Filecoin
 
-<p style="font-weight: 700">Daemon</p> - A daemon is an adapter between an AI service and a client, tracking service calls, calculating costs, and redirecting requests to the AI
+<span style="font-weight: 700">Daemon</span> - A daemon is an adapter between an AI service and a client, tracking service calls, calculating costs, and redirecting requests to the AI
 
-<p style="font-weight: 700">AI Service</p> - an artificial intelligence service that processes user requests through Daemon
+<span style="font-weight: 700">AI Service</span> - an artificial intelligence service that processes user requests through Daemon
 
 ![Basic scheme](/assets/images/products/AIMarketplace/Marketplace/BasicScheme.webp)
 
@@ -75,9 +75,9 @@ Service Consumers can call the AI services in a few ways. First of all using AI 
 
 To call the service there are several options:
 
-<p style="font-weight: 700">Free calls</p> – the amount of these calls are configured by the Service Provider. The main idea is to use an AI service for free to try it. And in case of good and expected experience use it on a paid basis. It is always nice to try before buying!
+<span style="font-weight: 700">Free calls</span> – the amount of these calls are configured by the Service Provider. The main idea is to use an AI service for free to try it. And in case of good and expected experience use it on a paid basis. It is always nice to try before buying!
 
-<p style="font-weight: 700">Paid calls</p> – this is a paid option where Service Consumers can buy more calls. For now the Platform supports a pay per call system, but later we will present subscriptions and other billing options! 
+<span style="font-weight: 700">Paid calls</span> – this is a paid option where Service Consumers can buy more calls. For now the Platform supports a pay per call system, but later we will present subscriptions and other billing options! 
 This means that Service Consumer <span style="font-weight: 700">DOES NOT</span> need to make a paid transaction each time when the service is called! For the first time when Service Consumer starts paid interaction with the AI service this Service Consumer opens a payment channel via Multi Party Escrow contract for some period of time which is configured by Service Consumer. This channel can be replenished with any amount of AGIX at any moment (before the closing of the channel due to time period setting). After replenishment Service Consumer can call the AI service and a special component [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/) will count the number of calls securely and check the payment channel for sufficient funds which requires no transaction and blockchain fee payment at the service calling moment. You can check more detailed information about payment channels in the documentation [here](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 
 To buy paid calls Service Consumer can do it in two ways:
