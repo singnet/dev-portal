@@ -24,14 +24,6 @@ export default [
         link: "/docs/products/AIMarketplace/"
     },
     {
-        text: "About technologies",
-        textIconID: "techs-icon",
-        imageFileName: "techs.webp",
-        description:
-            "A documentary overview of the stack of all technologies that are used in our projects",
-        link: "/docs/products/AboutTechnologies/"
-    },
-    {
         text: "Bridge",
         textIconID:"bridge-icon",
         imageFileName:"bridge.webp",

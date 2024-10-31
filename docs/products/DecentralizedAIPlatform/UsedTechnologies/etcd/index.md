@@ -16,4 +16,4 @@ etcd is written in Go and uses the Raft consensus algorithm to manage a highly-a
 * Free Call Usage
 at an organization level. 
 
-The section [ETCD setup](/docs/products/DecentralizedAIPlatform/CoreConcepts/etcdsetup/) section details how to set up an etcd cluster
+The section [ETCD setup](/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/) section details how to set up an etcd cluster

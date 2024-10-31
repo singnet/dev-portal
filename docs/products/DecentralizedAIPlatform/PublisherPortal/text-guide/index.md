@@ -20,7 +20,7 @@
 14. Support Number: Optional field. Contact number for customers.
 ![Payment Address](/assets/images/products/AIMarketplace/publisher/PaymentAddress.webp)
 15. Payment address: The Ethereum address to which all payments will be processed for this group. The address of the etcd you have deployed should be here. It doesn’t matter if it’s public or local, the main thing is that the daemon can reach etcd through it.
-16. ETCD Endpoint: all the ETCD endpoints that will be used. Details [here](/docs/products/DecentralizedAIPlatform/CoreConcepts/etcd/)
+16. ETCD Endpoint: all the ETCD endpoints that will be used. Details [here](/docs/products/DecentralizedAIPlatform/UsedTechnologies/etcd/)
 ![Publishing Organization to Blockchain](/assets/images/products/AIMarketplace/publisher/PublishOrganizationToBlockchain.webp)
 17. Connect MetaMask: This is necessary to confirm your account ownership this address will be used to confirm any changes associated with this organization. you must have an active metamask extension and give it access to this site.
 <img src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" style="width:40%">

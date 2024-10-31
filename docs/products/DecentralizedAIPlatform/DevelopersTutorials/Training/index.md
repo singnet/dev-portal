@@ -172,7 +172,7 @@ For example, we will use Python.
     
     org_id = "" # TODO
     service_id = ""  # TODO
-    group_name = "default_groups"
+    group_name = "default_group"
     
     config = {
         "private_key": "",  # TODO
