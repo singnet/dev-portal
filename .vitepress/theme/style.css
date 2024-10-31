@@ -10,6 +10,8 @@
   --vp-sidebar-bg-color: rgba(246, 246, 247, 0.6);
   --vp-sidebar-bg-color-non-transparent: rgb(246, 246, 247);
 
+  --vp-transparent-black: rgba(0, 0, 0, 0.5);
+
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
@@ -65,7 +67,7 @@
   --vp-light-card: rgba(255, 255, 255, 0.15);
   --vp-dark-card: rgba(164, 164, 164, 0.15);
   
-  --vp-scroll-background: var(--vp-c-lightgray);;
+  --vp-scroll-background: var(--vp-c-lightgray);
   --vp-scroll-thumb-color: #80788d;
   --vp-shadow-1: 0 0 70px rgba(110, 33, 157, 0.5);
 
@@ -85,7 +87,7 @@
 }
 
 .dark {
-  --vp-sidebar-bg-color: rgba(0, 0, 0, 0.5);
+  --vp-sidebar-bg-color: var(--vp-transparent-black);
   --vp-sidebar-bg-color-non-transparent: rgb(0, 0, 0);
 
   --vp-scroll-background: var(--vp-c-gray);
