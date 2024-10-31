@@ -45,11 +45,13 @@ AI Marketplace - the service allows using AI services via web interface
 ***AI Service*** - an artificial intelligence service that processes user requests through Daemon
 
 ![Basic scheme](/assets/images/products/AIMarketplace/Marketplace/BasicScheme.webp)
+<p style="text-align: center; font-weight: 700">Basic scheme</p>
 
 You can always check the extended version of the Decentralized AI Platform scheme if you want to know more details and check our other documentation provided in the appropriate sections on the Developer Portal!
 
 
 ![Extended scheme](/assets/images/products/AIMarketplace/Marketplace/ExtendedScheme.webp)
+<p style="text-align: center; font-weight: 700">Extended scheme</p>
 
 
 Service Provide needs to go through the OnBoarding process to Publish information about the service and data to call it (provide name, service matdata, wallet data for getting payments and data to connect to the up and running service). For this we have a short Checklist – what should be ready from the Service Provider side.
