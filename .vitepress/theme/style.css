@@ -207,7 +207,7 @@ header button span,
   max-width: calc(var(--vp-layout-max-width) - 64px)
 }
 
-.vp-doc p {
+.vp-doc p, .vp-doc li{
   font-size: 18px;
 }
 
