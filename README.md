@@ -1,4 +1,4 @@
-![logo](public/assets/images/common/logo.svg)
+![logo](public/assets/images/common/logo_black.svg)
 
 Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io)
 
