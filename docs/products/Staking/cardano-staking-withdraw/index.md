@@ -19,7 +19,7 @@ In considered period users are allowed to:
 
 -   Deposit AGIX tokens to the contract, thereby taking part in the staking
 -   Update their deposit (do re-deposit)
--   Withdraw deposited AGIX together with already earned awards
+-   Withdraw deposited AGIX together with already earned rewards
 
 <br>
 <b>Remember that you can only withdraw all of your funds (deposited + rewards) from staking pool </b>
