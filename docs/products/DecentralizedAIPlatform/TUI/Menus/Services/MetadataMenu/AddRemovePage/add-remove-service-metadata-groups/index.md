@@ -2,7 +2,7 @@
 
 Add or remove a group from a service's metadata
 
-![Add/Remove Service Metadata Groups Page](/assets/images/products/AIMarketplace/TUI/ManageServiceGroupPage.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ManageServiceGroupPage.webp" alt="Add/Remove Service Metadata Groups Page"/>
 
 ```bash
 # Format of the commands in the SNET CLI

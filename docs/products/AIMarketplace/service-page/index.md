@@ -2,31 +2,31 @@
 
 Each AI service on this platform is unique. Click on any service you would like to use to find out more about its required input, expected output, cost, usage, developer’s note and much more!
 
-* Note: The first time you visit the page of any service, it will ask you to log in via MetaMask. Make sure you read [this page](/docs/products/AIMarketplace/ForConsumers/metamask-wallet/)
+-   Note: The first time you visit the page of any service, it will ask you to log in via MetaMask. Make sure you read [this page](/docs/products/AIMarketplace/ForConsumers/metamask-wallet/)
 
-![Active Service](/assets/images/products/AIMarketplace/Marketplace/ActiveService.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ActiveService.webp" alt="Active Service"/>
 
 This is an example of an active service.
 
-In the "About" section you can see Overview, Tags and Service Demo call menu. 
+In the "About" section you can see Overview, Tags and Service Demo call menu.
 
-![Active Service - Header](/assets/images/products/AIMarketplace/Marketplace/ActiveServiceHeader.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ActiveServiceHeader.webp" alt="Active Service - Header"/>
 
 In this section you can see the name, provider and rating of the services.
 
-![Active Service - Project details](/assets/images/products/AIMarketplace/Marketplace/ActiveServiceProjectDetails.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ActiveServiceProjectDetails.webp" alt="Active Service - Project details"/>
 
 In this section you can see the project details
 
-![Active Service - Price](/assets/images/products/AIMarketplace/Marketplace/ActiveServicePrice.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ActiveServicePrice.webp" alt="Active Service - Price"/>
 
 In this section you can see the price for each call.
 
-![Service Install And Run menu](/assets/images/products/AIMarketplace/Marketplace/ServiceInstallAndRun.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ServiceInstallAndRun.webp" alt="Service Install And Run"/>
 
 In the "Install and Run" section you can see Integration Setup and Setting Up Files guides for several languages
 
-![Free call menu](/assets/images/products/AIMarketplace/Marketplace/FreeCallService.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/FreeCallService.webp" alt="Free call menu"/>
 
 At the bottom of the page you can see the menu for calling the service. Most of the services have a certain number of free calls so that you can try this service.
 

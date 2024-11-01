@@ -2,7 +2,7 @@
 
 Create an Organization
 
-![Create Organization page](/assets/images/products/AIMarketplace/TUI/CreateOrganizationPage.webp)Create Organization page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/CreateOrganizationPage.webp" alt="Create Organization page"/>
 
 ```bash
 # Format of the commands in the SNET CLI

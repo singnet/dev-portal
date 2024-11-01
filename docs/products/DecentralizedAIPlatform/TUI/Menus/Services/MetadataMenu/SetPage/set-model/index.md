@@ -2,7 +2,7 @@
 
 Publish protobuf model in ipfs and update existing metadata file
 
-![Set Model page](/assets/images/products/AIMarketplace/TUI/SetServiceModelPage.webp)Set Model page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/SetServiceModelPage.webp" alt="Set Model page"/>
 
 ```bash
 # Format of the command in the SNET CLI

@@ -1080,6 +1080,8 @@ There is no "right" way to do it, you can approach this step in many different w
 ### Publishing service on marketplace
 From this point you can publish your service through [publisher portal](https://publisher.singularitynet.io/) as usual.
 
-If you are not familiar with the process of creation of organization and publishing serivces, you can follow [this guide](https://dev.singularitynet.io/docs/ai-developers/SNET_Full_Guide_(Mainnet)) to get better understanding of the parameters you must provide during this process.
+If you are not familiar with the process of creation of organization and publishing serivces, you can follow 
+[this guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingMainnet/) to get better 
+understanding of the parameters you must provide during this process.
 
 In the process of publishing service make sure to use triton protobuf file specified earlier and your demo files.

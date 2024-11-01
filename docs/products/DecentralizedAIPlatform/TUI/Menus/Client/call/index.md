@@ -2,7 +2,7 @@
 
 Call server. We ask state of the channel from the server if needed. Channel should be already initialized.
 
-![Call service page](/assets/images/products/AIMarketplace/TUI/ClientCallServerPage.webp)Call service page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ClientCallServerPage.webp" alt="Call service page"/>
 
 ```bash
 # Format of the command in the SNET CLI

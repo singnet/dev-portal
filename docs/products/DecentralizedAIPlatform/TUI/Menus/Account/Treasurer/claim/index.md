@@ -2,7 +2,7 @@
 
 Claim given channels. We also claim all pending ‘payments in progress’ in case we ‘lost’ some payments.
 
-![Claim Page](/assets/images/products/AIMarketplace/TUI/PaymentClaimPage.webp)Claim page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/PaymentClaimPage.webp" alt="Claim page"/>
 
 ```bash
 # Format of the command in the SNET CLI

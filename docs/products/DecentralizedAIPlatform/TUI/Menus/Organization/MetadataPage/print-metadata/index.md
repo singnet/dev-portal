@@ -2,7 +2,7 @@
 
 Print metadata for given organization
 
-![](/assets/images/products/AIMarketplace/TUI/OrganizationMetadataPage.webp)Print Organization Metadata page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/OrganizationMetadataPage.webp" alt="Print Organization Metadata page"/>
 
 ```bash
 # Format of the command in the SNET CLI

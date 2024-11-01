@@ -2,7 +2,7 @@
 
 Print your initialized channels.
 
-![Print Initialized Channels Page](/assets/images/products/AIMarketplace/TUI/ChannelInitializedPage.webp) Print Initialized Channels Page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ChannelInitializedPage.webp" alt="Print Initialized Channels Page"/>
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

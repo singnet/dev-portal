@@ -24,34 +24,35 @@ You can easily post a list of your services in the Marketplace app, which will m
 
 Enter all relevant data to publish in your Organization through simple forms, which abstracts all the complexity using command line interface. Once the basic on boarding details are entered, a
 review is triggered for the Singnet Team, this is to ensure compliance with any legal procedures before on boarding any organization on to market place Dapp
-![On Boarding](/assets/images/products/AIMarketplace/publisher/DUNS_Number.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/DUNS_Number.webp" alt="on Boarding"/>
 
 ## Invite Workflow - Adding members to an Organization
 
 The platform provides a simple workflow to add new members, the owner just needs to add the email address of the member, the system sends invitation to the member based on accept invitation
 and also ensures all the required details like (Wallet address) of the member are furnished when the invitation is accepted.
-![Invite Members](/assets/images/products/AIMarketplace/publisher/Invite_Workflow.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/Invite_Workflow.webp" alt="Invite Members" />
 
 ## Publishing an Organization on Blockchain
 
 Once details of an Organization are entered, a review is triggered, once approved by the Signet team, you can publish the organization through the portal.
-![Publish Organization](/assets/images/products/AIMarketplace/publisher/Publish_Organixation.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/Publish_Organixation.webp" alt="Publish Organization"/>
 
 ## Service metadata Screen
 
 Enter all relevant data required to publish your services using a simple forms, which abstracts all the complexity experienced through command line interface.
-![Service metadata details](/assets/images/products/AIMarketplace/publisher/Service_Metadata_1.webp)
-![Service metadata details](/assets/images/products/AIMarketplace/publisher/Service_Metadata_2.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/Service_Metadata_1.webp" alt="Service metadata details"/>
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/Service_Metadata_2.webp" alt="Service metadata details"/>
 
 ## Publishing a Service on a block chain
 
 OAfter entering all the details, a review process is triggered for the singularity team, to ensure the details are compliant with legal procedures before
 on boarding any service on to market place Dapp.
-![Service Review](/assets/images/products/AIMarketplace/publisher/Publish_Service_onbloackhain_0.webp)
-
-![Publish Service on Blockchain](/assets/images/products/AIMarketplace/publisher/Publish_Service_onbloackhain_1.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/Publish_Service_onbloackhain_0.webp" alt="Service Review"/>
+<br/>
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/Publish_Service_onbloackhain_1.webp" alt="Blockchain"/>
 
 ## Claim easily from Publisher portal
 
 Soon claims will be availed using the publisher portal.
-![Claim](/assets/images/products/AIMarketplace/publisher/WalletAccount.webp)
+
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/WalletAccount.webp" alt="Claim"/>

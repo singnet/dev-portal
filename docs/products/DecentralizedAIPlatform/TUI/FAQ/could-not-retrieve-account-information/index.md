@@ -1,28 +1,23 @@
 # Could not retrieve account information
 
-
-
 The CLI, and by extension the TUI, doesn't have any validity checks when creating new identities. What we mean by this is, you can theoretically input whatever information you would like into fields like the private key of your wallet during identity creation. The CLI will create the identity with this invalid information, regardless.&#x20;
 
 The issue comes into play when your default identity is invalid, meaning your default identity has faulty information. If this is the issue, the TUI cannot access your identity details (account number, balance, etc.) as your identity isn't a valid account.&#x20;
 
 Therefore, you will always run into the error below, when trying to start the TUI, the application is attempting to print your account balance, but it cannot because your default identity is invalid.&#x20;
 
-![Invalid identity error on login](/assets/images/products/AIMarketplace/TUI/ErrorPleaseEnsureYouHaveCreatedAValidIdentity.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ErrorPleaseEnsureYouHaveCreatedAValidIdentity.webp" alt="Invalid identity error on login"/>
 Invalid identity error on login
-
 
 ### Step 1: Activate CLI-only mode
 
 First things first, you need to activate the CLI-only mode, you can find exact instructions in the [execution section ](/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/execution/)
 
-
-
 ### Step 2: Create identity with the CLI
 
 You then need to utilize this CLI command to create a new, valid, identity:
 
-![CLI create identity command documentation](/assets/images/products/AIMarketplace/TUI/CreateANewIdentityCommand.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/CreateANewIdentityCommand.webp" alt="CLI create identity command documentation"/>
 
 <pre class="language-bash"><code class="lang-bash"># NOTE: The &#x3C;> is shorthand for "fill this information in here"
 # NOTE 2: For network choose mainnet or sepolia for testnet
@@ -47,8 +42,6 @@ snet identity create &#x3C;Identity_Name> ledger --network &#x3C;mainnet | sepol
 
 <mark style="color:red;">NOTE</mark>: If you already have a different, valid, identity created. You can skip the new identity creation step and just switch to the valid identity you have already created. However, if you are unsure it is probably best to just create a new one.&#x20;
 
-
-
 ### Step 3: Switch to your new Identity
 
 Run the following command to switch to the new identity you have created
@@ -56,8 +49,6 @@ Run the following command to switch to the new identity you have created
 ```sh
 snet identity <Identity_Name_of_new_identity>
 ```
-
-
 
 ### Step 4: Check your new identity is valid&#x20;
 
@@ -70,4 +61,3 @@ snet account balance
 If you can see Ethereum, AGIX and MPE balances of your identity, you have a valid identity. Otherwise, please retry this guide and ensure you have the correct information for your cryptocurrency wallet. \
 \
 If you have a valid identity, you can the restart the TUI with your repective Operating System's run script, as detailed [here](/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/execution/)
-

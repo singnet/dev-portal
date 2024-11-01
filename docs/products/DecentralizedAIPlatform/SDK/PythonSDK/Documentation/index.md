@@ -5,8 +5,8 @@ SingularityNET SDK for Python
 ## Core concepts
 
 The SingularityNET SDK allows you to make calls to SingularityNET services programmatically from your application.
-To communicate between clients and services, SingularityNET uses [gRPC](https://grpc.io/).
-To handle payment of services, SingularityNET uses [Ethereum state channels](https://dev.singularitynet.io/docs/concepts/multi-party-escrow/).
+To communicate between clients and services, SingularityNET uses [gRPC](/docs/products/DecentralizedAIPlatform/UsedTechnologies/grpc/).
+To handle payment of services, SingularityNET uses [Ethereum state channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 The SingularityNET SDK abstracts and manages state channels with service providers on behalf of the user and handles authentication with the SingularityNET services.
 
 A getting started guide for the SNET SDK for Python is available [here](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/).

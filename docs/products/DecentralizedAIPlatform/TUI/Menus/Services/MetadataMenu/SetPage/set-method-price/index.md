@@ -2,7 +2,7 @@
 
 Set pricing model as method price for all methods
 
-![Set method price page](/assets/images/products/AIMarketplace/TUI/SetServiceMethodPricePage.webp)Set method price page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/SetServiceMethodPricePage.webp" alt="Set method price page"/>
 
 ```bash
 # Format of the command in the SNET CLI

@@ -5,14 +5,14 @@ For example it becomes easy for the user to Input the values that need to be sen
 
 Please note that the the Marketplace offers a **free trial** version, where registered users can access service(s) for a specified number of calls.
 
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/free_call_feature.png)
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/free_call_feature.png" alt="marketplace"/>
 
 Once your freecalls are exhausted , you will need to pay for any new calls to the service. for this you need need a wallet, some ethers in your wallet , some AGIX in your wallet
 
 **_You can either pay through Metamask or through a General wallet(paypal)_**
 
 -   Select a Wallet -
-    ![marketplace](/assets/images/products/AIMarketplace/core-concepts/select_awallet.png)
+    <ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/select_awallet.png" alt="marketplace"/>
 
 Lets look at each of the wallet options in detail below
 
@@ -26,7 +26,7 @@ Lets look at each of the wallet options in detail below
 As a first step you will need to Authorize the Dapp to connect to your metamask account
 
 -   Authorize Metamask -
-    ![marketplace](/assets/images/products/AIMarketplace/core-concepts/authorize_metamask.png)
+    <ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/authorize_metamask.png" alt="marketplace"/>
 
 #### Depositing tokens from Metamask to the Escrow Wallet.
 
@@ -46,15 +46,18 @@ Steps
 12. You might need to refresh if your token still appears as authorized.
 
 If you dont have money on Escrow account, you will be asked to **_Deposit into Escrow_**
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/depositinEscrow.png)
+
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/depositinEscrow.png" alt="marketplace"/>
 Now click on **Deposit**
 
 You need to confirm every Blockchain transaction when using metamask as your mode of payment
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/confirmationfrommetamask.png)
+
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/confirmationfrommetamask.png" alt="marketplace"/>
 
 Based on the number of calls you wish to invoke ,select the option and the channel will be
 funded accordingly
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/metamaskmultiplecalls.png)
+
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/metamaskmultiplecalls.png" alt="marketplace"/>
 
 Once the funds are in the channel, you are all set to invoke the service !
 
@@ -72,7 +75,7 @@ Select the 'General Wallet' Option
    This will take you to the corresponding service details page.
 
 If you are using General Wallet and you have sufficient funds , you will see the continue button
-![marketplace](/assets/images/products/AIMarketplace/core-concepts/generalwalletUse.png)
+<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/generalwalletUse.png" alt="marketplace"/>
 
 5. Now you have the access to the invoke section of the service
    The interface will change according to the input need for each service.
@@ -81,7 +84,7 @@ If you are using General Wallet and you have sufficient funds , you will see the
 8. If you are using Metamask , then the transaction will need to be signed again using metamask before invoking
 9. Wait for the response
 10. You are now eligible to write a review
-    ![marketplace](/assets/images/products/AIMarketplace/core-concepts/reviewscree.png)
+    <ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/reviewscree.png" alt="marketplace"/>
 
 You can now continue to use the Service till you have sufficient funds before the expiry date of the channel
 

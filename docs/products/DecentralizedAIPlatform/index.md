@@ -41,15 +41,11 @@ AI Marketplace - the service allows using AI services via web interface
 
 <span style="font-weight: 700">AI Service</span> - an artificial intelligence service that processes user requests through Daemon
 
-![Basic scheme](/assets/images/products/AIMarketplace/Marketplace/BasicScheme.webp)
-
-<p style="text-align: center; font-weight: 700">Basic scheme</p>
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/BasicScheme.webp" alt="Basic scheme" pictureTitle="Basic scheme"/>
 
 You can always check the extended version of the Decentralized AI Platform scheme if you want to know more details and check our other documentation provided in the appropriate sections on the Developer Portal!
 
-![Extended scheme](/assets/images/products/AIMarketplace/Marketplace/ExtendedScheme.webp)
-
-<p style="text-align: center; font-weight: 700">Extended scheme</p>
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ExtendedScheme.webp" alt="Extended scheme" pictureTitle="Extended scheme"/>
 
 Service Provide needs to go through the OnBoarding process to Publish information about the service and data to call it (provide name, service matdata, wallet data for getting payments and data to connect to the up and running service). For this we have a short Checklist – what should be ready from the Service Provider side.
 
@@ -77,7 +73,7 @@ To call the service there are several options:
 
 <span style="font-weight: 700">Free calls</span> – the amount of these calls are configured by the Service Provider. The main idea is to use an AI service for free to try it. And in case of good and expected experience use it on a paid basis. It is always nice to try before buying!
 
-<span style="font-weight: 700">Paid calls</span> – this is a paid option where Service Consumers can buy more calls. For now the Platform supports a pay per call system, but later we will present subscriptions and other billing options! 
+<span style="font-weight: 700">Paid calls</span> – this is a paid option where Service Consumers can buy more calls. For now the Platform supports a pay per call system, but later we will present subscriptions and other billing options!
 This means that Service Consumer <span style="font-weight: 700">DOES NOT</span> need to make a paid transaction each time when the service is called! For the first time when Service Consumer starts paid interaction with the AI service this Service Consumer opens a payment channel via Multi Party Escrow contract for some period of time which is configured by Service Consumer. This channel can be replenished with any amount of AGIX at any moment (before the closing of the channel due to time period setting). After replenishment Service Consumer can call the AI service and a special component [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/) will count the number of calls securely and check the payment channel for sufficient funds which requires no transaction and blockchain fee payment at the service calling moment. You can check more detailed information about payment channels in the documentation [here](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 
 To buy paid calls Service Consumer can do it in two ways:
@@ -90,23 +86,23 @@ Use <span style="font-weight: 700">paypal</span> to exchange fiat money to AGIX 
 
 In the section of Decentralized AI Platform of the Developer Portal you can find the following information:
 
-- **Quick Start Guides** with no extra options and excessive info what to do to start interaction with the Platform from Service Provider and Service Consumer perspective.
+-   **Quick Start Guides** with no extra options and excessive info what to do to start interaction with the Platform from Service Provider and Service Consumer perspective.
 
-- **The Daemon section** provides detailed explanations of the Daemon goal, scenarios and setup guides.
+-   **The Daemon section** provides detailed explanations of the Daemon goal, scenarios and setup guides.
 
-- **The CLI section** provides explanations on how to use CLI and CLI commands explained.
+-   **The CLI section** provides explanations on how to use CLI and CLI commands explained.
 
-- **The TUI section** provides explanations on how to use TUI.
+-   **The TUI section** provides explanations on how to use TUI.
 
-- **The Publisher Portal** section explains what is Publisher Portal and how to use it.
+-   **The Publisher Portal** section explains what is Publisher Portal and how to use it.
 
-- **SDK section** provides basic language-isolated explanation of the main idea of the SDK itself and also explanations and guides on how to use existing Python, JavaScript and JAVA SDKs.
+-   **SDK section** provides basic language-isolated explanation of the main idea of the SDK itself and also explanations and guides on how to use existing Python, JavaScript and JAVA SDKs.
 
-- **The UI Sandbox section** provides explanations on how the Service Provider creates an appropriate UI interface for the AI service to be used by Service Consumers on the AI Marketplace.
+-   **The UI Sandbox section** provides explanations on how the Service Provider creates an appropriate UI interface for the AI service to be used by Service Consumers on the AI Marketplace.
 
-- **UI Boilerplate** is a UI template which can be used together with JS SDK to easily create some UIs apart from AI Marketplace, but some separate web-site with AI service integrated.
+-   **UI Boilerplate** is a UI template which can be used together with JS SDK to easily create some UIs apart from AI Marketplace, but some separate web-site with AI service integrated.
 
-- **Used Technologies section** provides explanation of all the solutions we used to create the Platform and glossary of used Termins in context of the Platform.
+-   **Used Technologies section** provides explanation of all the solutions we used to create the Platform and glossary of used Termins in context of the Platform.
 
 Looking forward to assisting any time needed – just write us using feedback form on the Developer Portal in the right down corner.
 

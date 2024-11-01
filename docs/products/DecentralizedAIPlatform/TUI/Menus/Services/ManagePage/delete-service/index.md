@@ -2,7 +2,7 @@
 
 Delete service registration from registry
 
-![Delete Service page](/assets/images/products/AIMarketplace/TUI/DeleteAServicePage.webp)Delete Service page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/DeleteAServicePage.webp" alt="Delete Service page"/>
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

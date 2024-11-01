@@ -18,7 +18,7 @@ With each invocation the daemon checks that
 
 After these successful checks, the request is proxied to the service. The daemon also keeps track of payment states of different clients.
 
-<img src="/assets/images/products/AIMarketplace/daemon/daemon_diagram.jpg" width="400">
+<ImageViewer src="/assets/images/products/AIMarketplace/daemon/daemon_diagram.jpg" alt="daemon_diagram"/>
 
 Once the daemon has validated requests, it translates them into the format expected by the AI service. The daemon exposes a [gRPC](https://grpc.io/), so all requests are based on gRPC and [protocol buffers](https://developers.google.com/protocol-buffers/), but it can translate requests to a few different formats, as expected by the service. 
 

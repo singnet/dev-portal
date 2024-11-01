@@ -1,6 +1,6 @@
 # Organization
 
-![Organization Page](/assets/images/products/AIMarketplace/TUI/OrganizationPage.webp)Organization Page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/OrganizationPage.webp" alt="Organization Page"/>
 
 **Overview**
 

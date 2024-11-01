@@ -2,7 +2,8 @@
 
 Change Organization’s owner
 
-![Change organization owner page](/assets/images/products/AIMarketplace/TUI/OrganizationOwnerPage.webp)Change organization owner page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/OrganizationOwnerPage.webp" alt="Change organization owner page"/>
+
 
 ```bash
 # Format of the commands in the SNET CLI
