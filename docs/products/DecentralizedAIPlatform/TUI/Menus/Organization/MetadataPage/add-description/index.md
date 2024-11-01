@@ -2,7 +2,7 @@
 
 Add description to (local) metadata
 
-![Add description page](/assets/images/products/AIMarketplace/TUI/AddDescriptionPage.webp)Add description page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/AddDescriptionPage.webp" alt="Add description page"/>
 
 ```bash
 # Format of the command in the SNET CLI

@@ -2,7 +2,7 @@
 
 Initialize channel using local organization metadata file
 
-![Initialize Channel with Metadata page](/assets/images/products/AIMarketplace/TUI/ChannelInitializeMetadataPage.webp)Initialize Channel with Metadata page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ChannelInitializeMetadataPage.webp" alt="Initialize Channel with Metadata page"/>
 
 ```bash
 # Format of the command in the SNET CLI

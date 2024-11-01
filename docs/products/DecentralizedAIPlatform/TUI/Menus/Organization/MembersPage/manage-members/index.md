@@ -2,7 +2,7 @@
 
 Add/Remove members from organization&#x20;
 
-![Manage members page](/assets/images/products/AIMarketplace/TUI/ManageMembersPage.webp)Manage members page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ManageMembersPage.webp" alt="Manage members page"/>
 
 ```bash
 # Format of the commands in the SNET CLI

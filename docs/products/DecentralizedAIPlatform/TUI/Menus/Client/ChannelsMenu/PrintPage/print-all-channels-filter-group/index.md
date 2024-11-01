@@ -2,7 +2,7 @@
 
 Print all channels for the given service.
 
-![Print All Channels Filter Group](/assets/images/products/AIMarketplace/TUI/PrintAllChannelsForGroupPage.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/PrintAllChannelsForGroupPage.webp" alt="Print All Channels Filter Group"/>
 
 ```bash
 # Format of the command in the SNET CLI

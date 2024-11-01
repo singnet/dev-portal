@@ -2,7 +2,7 @@
 
 Low level function for calling the server. Service should be already initialized.
 
-![Call low-level page](/assets/images/products/AIMarketplace/TUI/ClientCallServerLowLevelFunctionPage.webp)Call low-level page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ClientCallServerLowLevelFunctionPage.webp" alt="Call low-level page"/>
 
 ```bash
 # Format of the command in the SNET CLI
