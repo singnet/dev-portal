@@ -1251,25 +1251,10 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
         link:"/docs/products/Staking/",
     },
     {
-        text: "Ethereum Staking",
-        link: "/docs/products/Staking/the-end-of-ethereum-staking/",
-        collapsed: true,
-        items: [
-            {
-                text: "The end of Ethereum staking",
-                link: "/docs/products/Staking/the-end-of-ethereum-staking/",
-            },
-        ],
-    },
-    {
         text: "Cardano Staking",
         collapsed: true,
-        link: "/docs/products/Staking/the-end-of-cardano-staking/",
+        link: "/docs/products/Staking/cardano-staking-withdraw/",
         items: [
-            {
-                text: "The end of Cardano staking",
-                link: "/docs/products/Staking/the-end-of-cardano-staking/",
-            },
             {
                 text: "Cardano Staking withdraw",
                 link: "/docs/products/Staking/cardano-staking-withdraw/",
