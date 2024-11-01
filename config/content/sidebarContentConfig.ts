@@ -67,7 +67,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Quick Start Guides",
-        link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
+        link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/",
         collapsed: true,
         items: [
             {
@@ -271,6 +271,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 collapsed: true,
                 items: [
                     {
+                        text: "Requirements", 
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/",
+                    },
+                    {
                         text: "Installation",
                         link: "/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/installation/",
                     },
@@ -290,15 +294,27 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 collapsed: true,
                 items: [
                     {
+                        text: "Menus of TUI",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/",
+                    },
+                    {
                         text: "Account",
                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/",
                         collapsed: true,
                         items: [
                             {
-                                text: "Identify page",
+                                text: "Account Page",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/",
+                            },
+                            {
+                                text: "Identify",
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/IdentityPage/",
                                 collapsed: true,
                                 items: [
+                                    {
+                                        text: "Identify page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/IdentityPage/",
+                                    },
                                     {
                                         text: "Create identity page",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/IdentityPage/create-identity-page/",
@@ -311,6 +327,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/Treasurer/",
                                 collapsed: true,
                                 items: [
+                                    {
+                                        text: "Treasurer Page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/Treasurer/",
+                                    },
                                     {
                                         text: "Claim",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Account/Treasurer/claim/",
@@ -348,15 +368,27 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         collapsed: true,
                         items: [
                             {
+                                text: "Client Page",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/",
+                            },
+                            {
                                 text: "Channels menu",
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/",
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: "Claim page",
+                                        text: "Channels Page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/",
+                                    },
+                                    {
+                                        text: "Claim",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ClaimPage/",
                                         collapsed: true,
                                         items: [
+                                            {
+                                                text: "Claim Page",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ClaimPage/",
+                                            },
                                             {
                                                 text: "Claim timeout",
                                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ClaimPage/claim-timeout/",
@@ -368,10 +400,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                         ],
                                     },
                                     {
-                                        text: "Extend page",
+                                        text: "Extend",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ExtendPage/",
                                         collapsed: true,
                                         items: [
+                                            {
+                                                text: "Extend Page",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ExtendPage/",        
+                                            },
                                             {
                                                 text: "Extend add",
                                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/ExtendPage/extend-add/",
@@ -383,10 +419,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                         ],
                                     },
                                     {
-                                        text: "Initialize open page",
+                                        text: "Initialize open",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/",
                                         collapsed: true,
                                         items: [
+                                            {
+                                                text: "Initialize open Page",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/",
+                                            },
                                             {
                                                 text: "Initialize",
                                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/InitializeOpenPage/initialize/",
@@ -406,10 +446,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                         ],
                                     },
                                     {
-                                        text: "Print page",
+                                        text: "Print",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/",
                                         collapsed: true,
                                         items: [
+                                            {
+                                                text: "Print Page",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/",
+                                            },
                                             {
                                                 text: "Print all channels filter group",
                                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Client/ChannelsMenu/PrintPage/print-all-channels-filter-group/",
@@ -458,10 +502,18 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         collapsed: true,
                         items: [
                             {
-                                text: "Groups page",
+                                text: "Organization Page",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/",
+                            },
+                            {
+                                text: "Groups",
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/",
                                 collapsed: true,
                                 items: [
+                                    {
+                                        text: "Groups Page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/",
+                                    },
                                     {
                                         text: "Add a group",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/GroupsPage/add-a-group/",
@@ -473,10 +525,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                 ],
                             },
                             {
-                                text: "Manage page",
+                                text: "Manage",
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/ManagePage/",
                                 collapsed: true,
                                 items: [
+                                    {
+                                        text: "Manage Page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/ManagePage/",
+                                    },
                                     {
                                         text: "Create organization",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/ManagePage/create-organization/",
@@ -488,10 +544,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                 ],
                             },
                             {
-                                text: "Members page",
+                                text: "Members",
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MembersPage/",
                                 collapsed: true,
                                 items: [
+                                    {
+                                        text: "Members Page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MembersPage/",
+                                    },
                                     {
                                         text: "Manage members",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MembersPage/manage-members/",
@@ -503,10 +563,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                 ],
                             },
                             {
-                                text: "Metadata page",
+                                text: "Metadata",
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/",
                                 collapsed: true,
                                 items: [
+                                    {
+                                        text: "Metadata Page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/",
+                                    },
                                     {
                                         text: "Add description",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Organization/MetadataPage/add-description/",
@@ -541,10 +605,18 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         collapsed: true,
                         items: [
                             {
-                                text: "Manage page",
+                                text: "Services Page",
+                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/",
+                            },
+                            {
+                                text: "Manage",
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/ManagePage/",
                                 collapsed: true,
                                 items: [
+                                    {
+                                        text: "Manage Page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/ManagePage/",
+                                    },
                                     {
                                         text: "Publish Service",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/ManagePage/publish-service/",
@@ -556,15 +628,23 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                 ],
                             },
                             {
-                                text: "Metadata menu",
+                                text: "Metadata",
                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/",
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: "Add/remove page",
+                                        text: "Metadata Page",
+                                        link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/",
+                                    },
+                                    {
+                                        text: "Add/remove",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/",
                                         collapsed: true,
                                         items: [
+                                            {
+                                                text: "Add/remove Page",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/",
+                                            },
                                             {
                                                 text: "Add/remove description",
                                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/AddRemovePage/add-service-description/",
@@ -588,10 +668,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                         ],
                                     },
                                     {
-                                        text: "Get page",
+                                        text: "Get",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/GetPage/",
                                         collapsed: true,
                                         items: [
+                                            {
+                                                text: "Get Page",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/GetPage/",
+                                            },
                                             {
                                                 text: "Service status",
                                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/GetPage/service-status/",
@@ -607,10 +691,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                         ],
                                     },
                                     {
-                                        text: "Set page",
+                                        text: "Set",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/",
                                         collapsed: true,
                                         items: [
+                                            {
+                                                text: "Set Page",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/",
+                                            },
                                             {
                                                 text: "Set fixed price",
                                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/SetPage/set-fixed-price/",
@@ -634,10 +722,14 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                         ],
                                     },
                                     {
-                                        text: "Update page",
+                                        text: "Update",
                                         link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/UpdatePage/",
                                         collapsed: true,
                                         items: [
+                                            {
+                                                text: "Update Page",
+                                                link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/UpdatePage/",
+                                            },
                                             {
                                                 text: "Update service daemon address",
                                                 link: "/docs/products/DecentralizedAIPlatform/TUI/Menus/Services/MetadataMenu/UpdatePage/update-service-daemon-address/",
@@ -676,6 +768,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 collapsed: true,
                 items: [
                     {
+                        text: "Tutorials on using TUI",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/Tutorials/",
+                    },
+                    {
                         text: "Adding funds to wallet",
                         link: "/docs/products/DecentralizedAIPlatform/TUI/Tutorials/adding-funds-to-wallet/",
                     },
@@ -694,6 +790,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/",
                 collapsed: true,
                 items: [
+                    {
+                        text: "FAQ for TUI",
+                        link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/",
+                    },
                     {
                         text: "Could not retrieve Account information",
                         link: "/docs/products/DecentralizedAIPlatform/TUI/FAQ/could-not-retrieve-account-information/",
@@ -1152,43 +1252,23 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Ethereum Staking",
-        link: "/docs/products/Staking/stake-window/",
+        link: "/docs/products/Staking/the-end-of-ethereum-staking/",
         collapsed: true,
         items: [
             {
-                text: "Stake window",
-                link: "/docs/products/Staking/stake-window/",
-            },
-            {
-                text: "Stake timeline",
-                link: "/docs/products/Staking/stake-timeline/",
-            },
-            {
-                text: "Stake reward",
-                link: "/docs/products/Staking/stake-reward/",
-            },
-            {
-                text: "Stake opt out",
-                link: "/docs/products/Staking/stake-opt-out/",
+                text: "The end of Ethereum staking",
+                link: "/docs/products/Staking/the-end-of-ethereum-staking/",
             },
         ],
     },
     {
         text: "Cardano Staking",
         collapsed: true,
-        link: "/docs/products/Staking/cardano-staking-withdraw/",
+        link: "/docs/products/Staking/the-end-of-cardano-staking/",
         items: [
             {
-                text: "Cardano Staking withdraw",
-                link: "/docs/products/Staking/cardano-staking-withdraw/",
-            },
-            {
-                text: "Cardano Staking Timeline",
-                link: "/docs/products/Staking/cardano-staking-timeline/",
-            },
-            {
-                text: "Cardano Staking Rewards",
-                link: "/docs/products/Staking/cardano-staking-rewards/",
+                text: "The end of Cardano staking",
+                link: "/docs/products/Staking/the-end-of-cardano-staking/",
             },
         ],
     },
