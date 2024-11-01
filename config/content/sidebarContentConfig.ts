@@ -1270,6 +1270,18 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
                 text: "The end of Cardano staking",
                 link: "/docs/products/Staking/the-end-of-cardano-staking/",
             },
+            {
+                text: "Cardano Staking withdraw",
+                link: "/docs/products/Staking/cardano-staking-withdraw/",
+            },
+            {
+                text: "Cardano Staking Timeline",
+                link: "/docs/products/Staking/cardano-staking-timeline/",
+            },
+            {
+                text: "Cardano Staking Rewards",
+                link: "/docs/products/Staking/cardano-staking-rewards/",
+            }
         ],
     },
 ];
