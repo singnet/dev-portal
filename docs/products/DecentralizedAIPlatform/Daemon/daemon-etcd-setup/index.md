@@ -21,7 +21,7 @@ Infrastural diagram of ETCD Cluster setup on AWS.
 
 ## ETCD set up Script
 
-[Download script]()
+<a download href="/assets/etcddb/etcd_setup.sh">Download script</a>
 
 For detailed explanation on every step , reference the sections below
 
