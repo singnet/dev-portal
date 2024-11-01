@@ -2,7 +2,7 @@
 
 Add service description
 
-![Add service description page](/assets/images/products/AIMarketplace/TUI/AddDescriptionPage.webp)Add service description page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/AddDescriptionPage.webp" alt="Add service description page"/>
 
 ```bash
 # Format of the command in the SNET CLI

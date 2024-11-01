@@ -2,7 +2,7 @@
 
 Set free calls for group for service
 
-![Set Free Calls page](/assets/images/products/AIMarketplace/TUI/ServiceSetFreeCallsPage.webp)Set Free Calls page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ServiceSetFreeCallsPage.webp" alt="Set Free Calls page"/>
 
 ```bash
 # Format of the command in the SNET CLI

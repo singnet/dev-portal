@@ -2,7 +2,7 @@
 
 Set new expiration and add funds for the channel for the given service
 
-![Extend Add Organization page](/assets/images/products/AIMarketplace/TUI/ChannelExtendAddPage.webp)Extend Add Organization page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ChannelExtendAddPage.webp" alt="Extend Add Organization page"/>
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>snet channel extend-add-for-org [-h] [--registry-at REGISTRY_AT]

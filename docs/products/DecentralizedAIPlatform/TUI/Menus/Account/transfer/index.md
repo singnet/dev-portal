@@ -2,7 +2,7 @@
 
 Transfer AGI tokens inside MPE wallet
 
-![Transfer Page](/assets/images/products/AIMarketplace/TUI/TransferAGIX.webp)Transfer Page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/TransferAGIX.webp" alt="Transfer Page"/>
 
 ```bash
 # Format of the command in the SNET CLI

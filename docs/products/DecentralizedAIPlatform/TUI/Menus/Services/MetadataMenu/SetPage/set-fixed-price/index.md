@@ -2,7 +2,7 @@
 
 Set pricing model as fixed price for all methods
 
-![Set Fixed Price page](/assets/images/products/AIMarketplace/TUI/SetServiceFixedPricePage.webp)Set Fixed Price page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/SetServiceFixedPricePage.webp" alt="Set Fixed Price page"/>
 
 ```bash
 # Format of the command in the SNET CLI

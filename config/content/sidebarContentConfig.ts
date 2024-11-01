@@ -71,16 +71,16 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         collapsed: true,
         items: [
             {
+                text: "Service Onboarding via Publisher",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
+            },
+            {
                 text: "Getting Ready to Onboard CheckUp",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
             },
             {
                 text: "Getting Ready to Call AI CheckUp",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/",
-            },
-            {
-                text: "Service Onboarding via Publisher",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
             },
             {
                 text: "Service Calling via CLI",
@@ -115,11 +115,11 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "Full guide to Onboarding in mainnet",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingMainnet/",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/FullGuideOnboardingMainnet/",
             },
             {
                 text: "Full guide to Onboarding in testnet",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingTestnet/",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/FullGuideOnboardingTestnet/",
             },
             {
                 text: "(Coming soon) Integration Training Service",

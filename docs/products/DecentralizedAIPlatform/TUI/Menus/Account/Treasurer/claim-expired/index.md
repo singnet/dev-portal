@@ -2,7 +2,7 @@
 
 Claim all channels which are close to expiration date. We also claim all pending ‘payments in progress’ in case we ‘lost’ some payments.
 
-![Claim expired page](/assets/images/products/AIMarketplace/TUI/ClaimExpiredPaymentsPage.webp) Claim expired page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ClaimExpiredPaymentsPage.webp" alt="Claim expired page"/>
 
 ```bash
 # Format of the command in the SNET CLI

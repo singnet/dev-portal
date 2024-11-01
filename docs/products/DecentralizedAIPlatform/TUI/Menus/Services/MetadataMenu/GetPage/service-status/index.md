@@ -2,7 +2,8 @@
 
 Print service status
 
-![Print service status page](/assets/images/products/AIMarketplace/TUI/ServiceStatusPage.webp)Print service status page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ServiceStatusPage.webp" alt="Print service status page"/>
+
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>
