@@ -115,11 +115,11 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "Full guide to Onboarding in mainnet",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/FullGuideOnboardingMainnet/",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingMainnet/",
             },
             {
                 text: "Full guide to Onboarding in testnet",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/FullGuideOnboardingTestnet/",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingTestnet/",
             },
             {
                 text: "(Coming soon) Integration Training Service",
