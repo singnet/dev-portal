@@ -67,7 +67,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Quick Start Guides",
-        link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/",
+        link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
         collapsed: true,
         items: [
             {
