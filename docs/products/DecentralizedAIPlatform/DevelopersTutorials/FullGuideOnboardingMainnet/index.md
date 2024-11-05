@@ -6,7 +6,7 @@ This step depends on the web server which you are using. Set the port forwarding
 
 **Example** : `your_awesome_domain.com:<DAEMON_PORT>` --> `<DAEMON_INTERNAL ADDRESS>:<DAEMON_PORT>`
 
-### Domain certificates generation (skip of you already have SSL enabled on your domain)
+## Domain certificates generation (skip of you already have SSL enabled on your domain)
 1) Install certbot following this instructions:
 
 [https://certbot.eff.org/instructions?ws=other&os=ubuntufocal](https://certbot.eff.org/instructions?ws=other&os=ubuntufocal)
@@ -36,8 +36,8 @@ Certificates are valid for 90 days. You will have to restart your Daemon in futu
 
 **Result**: Now you should have "ssl_cert": fullchain.pem and "ssl_key": privkey.pem parameters for the daemon config file. This allows you to use the httpS daemon endpoint.
 
-### ETCD setup
-#### Single node docker setup
+## ETCD setup
+### Single node docker setup
 1) Download installation script (works only on ubuntu)
 
 ```sh
@@ -93,7 +93,7 @@ docker logs docker-etcd-node-1
 
 **Result**: If everything was done correctly you would have seen ETCD INSTALLED SUCCESSFULLY. If that is the case, now you should have a running docker container with ETCD cluster and new certificates for ETCD (path to them will be printed by script, look for CERTIFICATES PATH)
 
-### Daemon setup
+## Daemon setup
 1) Download latest release from https://github.com/singnet/snet-daemon/releases/latest
 
 ```sh
@@ -120,7 +120,7 @@ touch snetd.config.json
 cp snetd-linux-amd64-v5.1.5 /usr/bin/snetd
 ```
 
-### Installing snet.cli
+## Installing snet.cli
 (not required if you use Publisher for organization and service management) 
 
 1) Prerequisites
@@ -154,7 +154,7 @@ sudo activate-global-python-argcomplete
 
 5) Confirm installation with “snet” command
 
-### gRPC Service development (example)
+## gRPC Service development (example)
 
 1) Create proto file `<name>.proto` (example.proto):
 
@@ -297,7 +297,7 @@ if __name__ == '__main__':
   run()
 ```
 
-### Enabling metering
+## Enabling metering
 
 1) Run this python script to generate address and key for metering:
 
@@ -319,7 +319,7 @@ print("Address: ", acct.address)
 
 Add Address (**<METERING_ADDRESS>**) when publishing your service and replace **<METERING_KEY>** with a Private key in the next step.
 
-### Organization setup
+## Organization setup
 
 Use [Publisher Portal](https://publisher.singularitynet.io/) for registration in mainnet (Production). If you want to use testnet (sepolia) do steps below: 
 
@@ -462,7 +462,7 @@ cat organization_metadata.json
 snet organization create <ORGANIZATION_ID>
 ```
 
-### Service setup
+## Service setup
 
 **If you used Publisher to create your organization**, create your services there too. If you used snet-cli, continue with steps below:
 
@@ -539,7 +539,7 @@ snet service publish my_test_org my_test_service
 snet organization info <ORGANIZATION_ID>
 ```
 
-### Final configuration
+## Final configuration
 
 1) Copy etcd certificates to daemon host (skip if daemon and etcd are located on same host)
 
@@ -623,7 +623,7 @@ Your daemon config file should look something like this:
 "DEBUG[] starting daemon"
 ```
 
-### Starting service
+## Starting service
 
 1) Start the service you created in section 4
 
@@ -633,7 +633,7 @@ Your daemon config file should look something like this:
 /path/to/snetd -c <PATH_TO_DAEMON_CONFIG_FILE>
 ```
 
-### Calling service with snet.cli
+## Calling service with snet.cli
 
 1) Deposit in Escrow and Create a Channel
 
@@ -663,7 +663,7 @@ Proceed? (y/n): y
 value: 42.0
 ```
 
-### Claiming payment
+## Claiming payment
 
 When users are calling your service they send credentials that allow you to collect tokens they spent on service from their payment channel. To collect these tokens you have to run this command:
 
@@ -673,7 +673,7 @@ snet treasurer claim-all --endpoint <daemon-endpoint>
 
 **If the user's payment channel closes before you have collected your payment - you will lose your money. If for whatever reason you lose data on your ETCD cluster - you won’t be able to collect tokens either. That’s because payment channel credentials are located there. It is in your best interest to properly manage ETCD and its data, and to collect payment periodically.**
 
-### Payment expiration threshold
+## Payment expiration threshold
 
 When you set up payment groups for your organization a special parameter was used: **--payment-expiration-threshold 40320**. This parameters makes daemon working on that group to forbid the access to your service if the user's payment channel will expire in the next 40320 blocks. It means that if users payment channel will expire in less than a week (40320 blocks * ~15 sec/block = 604800 seconds = 10080 minutes = 168 hours = 7 days) he won’t be able to use your services. This allows you to set up scheduled payment claims without worrying about your money. If you claim all payments at least once a week, users won’t be able to return their tokens after calling your services. That’s because their payment channel won’t expire before your scheduled payment collection. It is recommended to collect it twice a week. You can do it once a week, but with less margin for errors.
 
@@ -683,7 +683,7 @@ Run this command twice a week (you can automate it with cron):
 snet treasurer claim-all --endpoint <daemon-endpoint>
 ```
 
-### Closing payment channel (recollecting your tokens as client)
+## Closing payment channel (recollecting your tokens as client)
 
 When you open a payment channel to call services, you are doing this as a client. So this step's only purpose is to recollect your tokens from opening a testing channel. You probably won’t need it again.
 
