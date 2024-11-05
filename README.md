@@ -1,8 +1,8 @@
-![logo](public/assets/images/common/logo_black.svg)
+![logo](public/assets/images/products/Readme/logo.png)
 
 Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io)
 
-Our Developer Portal provides documentation about the main product of SingularityNET
+Our Developer Portal provides documentation about the main products of SingularityNET
 
 
 ## Contributing
