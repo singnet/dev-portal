@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev . --host",
+    "build": "vitepress build .",
+    "preview": "vitepress preview ."
+  },
+  "dependencies": {
+    "markdown-it-container": "^4.0.0",
+    "swiper": "^11.1.12"
+  },
+  "devDependencies": {
+    "vitepress": "^1.4.1"
+  }
+}
