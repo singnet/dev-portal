@@ -1,39 +1,7 @@
-runServer.sh
-startPortal.bat
-nhRunServer.sh
-duplicates.xlsx
-broken-links.log
-.gitignore
-.~lock.duplicates.xlsx#
-checkLinks.sh
-# ------
-# Common
-# ------
-*~
-.DS_Store
-.svn
-.cvs
-*.bak
-*.swp
-Thumbs.db
-
-# -----------------------
-# Local Development Tools
-# -----------------------
-/node_modules
-/npm-debug.log
-/mysources
-.idea
-
-# ---------------
-# Compiled assets
-# ---------------
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# ---------------
-# Project Files
-# ---------------
-/nbproject
+cache
+.temp
+dist
+node_modules
+package-lock.json
+yarn.lock
+.env
