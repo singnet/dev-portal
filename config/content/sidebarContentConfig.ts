@@ -67,9 +67,13 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Quick Start Guides",
-        link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
+        link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
         collapsed: true,
         items: [
+            {
+                text: "Service Onboarding via Publisher",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
+            },
             {
                 text: "Getting Ready to Onboard CheckUp",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
@@ -77,10 +81,6 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Getting Ready to Call AI CheckUp",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/",
-            },
-            {
-                text: "Service Onboarding via Publisher",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
             },
             {
                 text: "Service Calling via CLI",
