@@ -4,6 +4,13 @@ Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io)
 
 Our Developer Portal provides documentation about the main product of SingularityNET
 
+
+## Contributing
+We are glad to see new contributors!
+If you want to add a new document or request any edits, please:
+1. Create a fork of this repo
+2. Open the pull request with your edits
+
 ## Setup
 
 For start development you need:
@@ -50,7 +57,45 @@ As shown in the diagram:
 └─ index.md
 ```
 
-If there are other files inside the folder, except index.md then the name of this folder should start with a capital letter. Otherwise, with lowercase
+If there are other files inside the folder, except index.md then the name of this folder should start with a capital letter. Otherwise, with lowercase.
+
+### Add an image
+
+To add an image to your document, please follow these steps:
+
+1. Upload the file to `public/assets/images/products/name_of_product/name_of_subcategory/title_image`
+2. Add next code:
+
+```javascript
+<ImageViewer
+    src='/assets/images/products/path_to_your_file'
+    alt='alt for image'
+/>
+```
+
+If you want to add a description to an image, you should use the `pictureTitle` attribute. For example:
+
+```javascript
+<ImageViewer
+    src='/assets/images/products/AIMarketplace/Marketplace/BasicScheme.webp'
+    alt='Basic scheme'
+    pictureTitle='Basic scheme'
+/>
+```
+
+Result:
+![imageViewerExample](public/assets/images/products/Readme/imageViewerExample.webp)
+
+### Add a video
+
+To add a video to your document, please follow these steps:
+
+1. Upload the file to `public/assets/images/products/name_of_product/name_of_subcategory/title_image`
+2. Add next code:
+
+```javascript
+<Video src="'/assets/images/products/path_to_your_file'" />
+```
 
 ## Add new component
 
