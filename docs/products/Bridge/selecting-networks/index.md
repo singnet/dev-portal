@@ -24,11 +24,11 @@ Bridging tokens from one chain to another involves the following steps
 3.  Once authorized you can initiatite the conversion.
     If you enter correct values in the field with the number of tokens and the number of allowed tokens is less than or equal to the number entered - you will see the Convert button
 
-        1. You will first be prompted for a signature to track that you are initiating the conversion
+    1. You will first be prompted for a signature to track that you are initiating the conversion
 
-        2. When converting from Ethereum to Cardano you will be prompted to transfer tokens to the contract. These tokens will be burnt on the Ethereum chain and equivalent tokens minted on the Cardano chain
+    2. When converting from Ethereum to Cardano you will be prompted to transfer tokens to the contract. These tokens will be burnt on the Ethereum chain and equivalent tokens minted on the Cardano chain
 
-        3. When converting from Cardano to Ethereum you will be provided a deposit address. Conversion will be initiaited when tokens are transferred to the deposit address.
+    3. When converting from Cardano to Ethereum you will be provided a deposit address. Conversion will be initiaited when tokens are transferred to the deposit address.
 
 # Viewing History
 
