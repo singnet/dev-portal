@@ -11,7 +11,7 @@ Start by cloning the Github repo with the following command
 <pre class="language-bash"><code class="lang-bash"><strong># Change directory to where you would like to store the TUI
 </strong><strong>cd &#x3C;Folder Path>
 </strong><strong># Clone the repo with the git command
-</strong><strong>git clone https://github.com/vbrltech/sNET-TUI.git
+</strong><strong>git clone https://github.com/singnet/TUI.git
 </strong></code></pre>
 
 ## Step 2: Execute the appropriate run script
