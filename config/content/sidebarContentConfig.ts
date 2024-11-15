@@ -172,6 +172,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Daemon API",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-api/",
             },
+            {
+                text: "Error codes",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/error-codes/",
+            },
         ],
     },
     {
