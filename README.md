@@ -1,4 +1,4 @@
-![logo](/assets/images/common/logo.svg)
+![logo](public/assets/images/common/logo_black.svg)
 
 Welcome to the [SingularityNET Developer Portal](https://dev.singularitynet.io)
 
@@ -14,11 +14,11 @@ For start development you need:
 Copy repository:
 
 ```sh
-git clone https://github.com/singnet/dev-portal-v2.git
+git clone https://github.com/singnet/dev-portal.git
 ```
 
 ```sh
-cd dev-portal-v2
+cd dev-portal
 ```
 
 then install dependencies:
@@ -49,6 +49,8 @@ As shown in the diagram:
 │  └─ index.md
 └─ index.md
 ```
+
+If there are other files inside the folder, except index.md then the name of this folder should start with a capital letter. Otherwise, with lowercase
 
 ## Add new component
 

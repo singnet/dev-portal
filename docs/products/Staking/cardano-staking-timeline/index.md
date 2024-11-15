@@ -3,7 +3,7 @@ A single window has the following stages
 * Staking/Withdrawal Period
 * Rewards Distribution Period
 
-![window](/assets/images/products/Staking/window.webp)
+<ImageViewer src="/assets/images/products/Staking/window.webp" alt="Window"/>
 
 As the staking pool starts, the Staking/Withdrawal Period begins and users can send tokens to pool in order to stake them. Tokens aren’t locked in the on-chain script, users can withdraw their deposited amount plus earned rewards in any time during Staking/Withdrawal Period.
 

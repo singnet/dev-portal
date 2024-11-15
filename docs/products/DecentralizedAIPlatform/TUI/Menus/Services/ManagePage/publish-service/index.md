@@ -2,7 +2,7 @@
 
 Publish service with given metadata
 
-![Publish service page](/assets/images/products/AIMarketplace/TUI/ServicePublishingPage.webp)Publish service page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ServicePublishingPage.webp" alt="Publish Service Page"/>
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

@@ -15,20 +15,18 @@ If you're new to SingularityNET, this is the suggested order in which to explore
 
 The first three links are relevant if you want to be a consumer of SingularityNET services. They are also worth going through if you want to publish a service, so that you you can test your service and will know the flow your customers need to go through.
 
-- [Prerequisities](/docs/products/AIMarketplace/Forcomers/requirements/) - What do you need to do before you can start working with decentralised AI services.
-- [Create a Wallet](/docs/products/AIMarketplace/Forcomers/wallet/) - To make transactions you'll need a wallet with some funds.
-- [How to call a service](/docs/products/AIMarketplace/Forcomers/call-a-service/) - Covers trying out a service in the marketplace, and calling it from our command line tool.
+- [Create a Wallet](/docs/products/AIMarketplace/ForConsumers/metamask-wallet/) - To make transactions you'll need a wallet with some funds.
+- [How to call a service](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/) - Covers trying out a service in the marketplace, and calling it from our command line tool.
 - [Using the SDK](/docs/products/DecentralizedAIPlatform/SDK/python-sdk/) - Calling a service using the Python SDK.
 
 These steps guide you through creating a service, and getting that service on our marketplace:
 
-- [Publish and run your own example service](/docs/products/AIMarketplace/Forcomers/publish/)
+- [Publish and run your own example service](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/)
 
 ## SingularityNET Platform
 
 Learn the details of the platform components.
 
-- [Registry](/docs/products/AIMarketplace/Forcomers/registry/)
 - [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/daemon-architecture/)
 - [Multi-Party Escrow (MPE)](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/)
 
@@ -37,14 +35,14 @@ Learn the details of the platform components.
 We maintain language-specific tutorials for a number popular languages.
 
 - Tutorials
-	- [Build a service in C++](/docs/products/AIMarketplace/Forcomers/Platform-workshops/cpp/)
-	- [Build a service in Go](/docs/products/AIMarketplace/Forcomers/Platform-workshops/go/)
-	- [Build a service in Java](/docs/products/AIMarketplace/Forcomers/Platform-workshops/java/)
-	- [Build a service in Python](/docs/products/AIMarketplace/Forcomers/Platform-workshops/python/)
-	- [Build an Opencog service](/docs/products/AIMarketplace/Forcomers/opencog/)
+	- [Build a service in C++](/docs/products/AIMarketplace/ForConsumers/Platform-workshops/cpp/)
+	- [Build a service in Go](/docs/products/AIMarketplace/ForConsumers/Platform-workshops/go/)
+	- [Build a service in Java](/docs/products/AIMarketplace/ForConsumers/Platform-workshops/java/)
+	- [Build a service in Python](/docs/products/AIMarketplace/ForConsumers/Platform-workshops/python/)
+	- [Build an Opencog service](/docs/products/AIMarketplace/ForConsumers/opencog/)
 
 ## Advanced
 
 - [Multi-Party Escrow (MPE) - Payment Channel Storage](/docs/products/DecentralizedAIPlatform/Daemon/daemon-channel-storage/) - Details of channels and payment works.
-- [Launch your own local copy of the SingularityNET platform](/docs/products/AIMarketplace/Forcomers/local-singularitynet/) - If you want to set up your own development environment of the whole platform, this is the page for you!
-- [Full automated SingularityNET platform example](/docs/products/AIMarketplace/Forcomers/mpe-example/)
+- [Launch your own local copy of the SingularityNET platform](/docs/products/AIMarketplace/ForConsumers/local-singularitynet/) - If you want to set up your own development environment of the whole platform, this is the page for you!
+- [Full automated SingularityNET platform example](/docs/products/AIMarketplace/Publisher/mpe-example1/)

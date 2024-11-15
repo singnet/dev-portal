@@ -26,9 +26,15 @@ export default [
     },
     {
         text: "Daemon",
-        description: "Daemon exposes an AI application as an API that is accessible through the SingularityNET platform.",
+        description: "Daemon exposes an AI application as an API that is accessible through the SingularityNET platform",
         gitLink: "https://github.com/singnet/snet-daemon",
         link: "/docs/products/DecentralizedAIPlatform/Daemon/"
+    },
+    {
+        text: "UI Sandbox version 1",
+        description: "Development environment for testing UI components for AI Marketplace",
+        gitLink: "https://github.com/singnet/snet-dapp?tab=readme-ov-file#sandbox-mode-for-services",
+        link: "/docs/products/DecentralizedAIPlatform/Sandbox/available-now/"
     },
     {
         text: "Python SDK",
@@ -57,7 +63,7 @@ export default [
     {
         text: "Boilerplate",
         description: "The project demonstrates the integration of snet-sdk-web, focusing on wallet management and service utilization within the SingularityNET ecosystem",
-        gitLink: "https://github.com/singnet/ICP-boilerplate",
+        gitLink: "https://github.com/singnet/Web-JS-SDK-Boilerplate",
         link: "/docs/products/DecentralizedAIPlatform/Boilerplate/"
     },
 ] as IToolsSectionItem[]

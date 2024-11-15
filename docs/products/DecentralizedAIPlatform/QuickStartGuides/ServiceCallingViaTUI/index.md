@@ -1,6 +1,7 @@
 # Service Calling via TUI
 
-![Client Page](/assets/images/products/AIMarketplace/TUI/ClientPageTUI.webp)
+</br>
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ClientPageTUI.webp" alt="Client Page"/>
 
 1. Go to Client Page.
 2. Press to "Call"
@@ -9,8 +10,10 @@
 5. Enter Service Method. This is method of service, that you would call. The methods are usually described in the service documentation.
 6. Enter path to Parameters. This is Path to JSON file containing parameters required by service method
 7. Enter Payment group. Usually the "default_group"
-![Filled Client Call Page](/assets/images/products/AIMarketplace/TUI/FilledClientCallServerPage.webp)
+
+    <ImageViewer src="/assets/images/products/AIMarketplace/TUI/FilledClientCallServerPage.webp" alt="Filled Client Call Page"/>
+
 8. Press "View Server Call Price".
 9. If everything was entered correctly, you will see the price for calling the service. After confirming the payment, the service will process your request.
 
-![Final Value](/assets/images/products/AIMarketplace/TUI/FinalValueFromCall.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/FinalValueFromCall.webp" alt="Final Value"/>

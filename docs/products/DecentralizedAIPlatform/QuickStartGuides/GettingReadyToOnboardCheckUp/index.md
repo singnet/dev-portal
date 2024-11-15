@@ -1,6 +1,11 @@
 # SingularityNET Platform Onboarding Checkup
 
+</br>
+<ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ReadyToOnboardingCheckUp.webp" alt="Checkup"/>
+
 This document describes the mandatory items that must be implemented in order to get into the Decentralized AI Platform and AI Marketplace:
+
+The fastest method for onboarding on our Platform and publish your service is via [Publisher](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/). In addition to this method, see the other ways of onboarding your service.
 
 ### 1. AI Service
 

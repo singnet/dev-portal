@@ -8,28 +8,20 @@ export interface HomeSectionItem {
 
 export default [
     {
+        text: "Decentralized AI Platform",
+        textIconID: "platform-icon",
+        imageFileName: "platform.webp",
+        description:
+            "Explore, publish, integrate and call AI services via Decentralized AI Platform and Marketplace",
+        link: "/docs/products/DecentralizedAIPlatform/"
+    },
+    {
         text: "AI Marketplace",
         textIconID: "marketplace-icon",
         imageFileName: "marketplace.webp",
         description:
             "Explore, publish, and integrate AI services on AI Marketplace's docs.",
         link: "/docs/products/AIMarketplace/"
-    },
-    {
-        text: "Decentralized AI Platform",
-        textIconID: "platform-icon",
-        imageFileName: "platform.webp",
-        description:
-            "Explore, publish, and integrate AI services on AI Marketplace's docs.",
-        link: "/docs/products/DecentralizedAIPlatform/"
-    },
-    {
-        text: "About technologies",
-        textIconID: "techs-icon",
-        imageFileName: "techs.webp",
-        description:
-            "A documentary overview of the stack of all technologies that are used in our projects",
-        link: "/docs/products/AboutTechnologies/"
     },
     {
         text: "Bridge",

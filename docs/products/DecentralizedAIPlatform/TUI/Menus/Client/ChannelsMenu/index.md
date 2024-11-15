@@ -1,6 +1,6 @@
 # Channels Menu
 
-![Channels Menu](/assets/images/products/AIMarketplace/TUI/ChannelPage.webp)Channels Menu
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ChannelPage.webp" alt="Channels Menu"/>
 
 **Overview**
 

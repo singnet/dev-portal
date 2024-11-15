@@ -1,6 +1,6 @@
 # View All Page
 
-![Services View All page](/assets/images/products/AIMarketplace/TUI/ViewAllPage.webp)Services View All page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ViewAllPage.webp" alt="Services View All page" pictureTitle="Services View All page"/>
 
 **Overview**
 

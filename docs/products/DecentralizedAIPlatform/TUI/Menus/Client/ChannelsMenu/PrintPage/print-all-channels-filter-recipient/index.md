@@ -2,7 +2,7 @@
 
 Print all channels for the given recipient.
 
-![Print All Channels Filter Recipient](/assets/images/products/AIMarketplace/TUI/PrintAllChannelsForRecipientPage.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/PrintAllChannelsForRecipientPage.webp" alt="Print All Channels Filter Recipient"/>
 
 ```bash
 # Format of the command in the SNET CLI

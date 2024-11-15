@@ -1,6 +1,6 @@
 # Account
 
-![Account](/assets/images/products/AIMarketplace/TUI/AccountPage.webp)
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/AccountPage.webp" alt="Account" pictureTitle="Account"/>
 
 **Overview**
 

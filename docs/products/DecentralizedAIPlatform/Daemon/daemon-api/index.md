@@ -69,4 +69,4 @@ The client can get the latest payment channel state from the service using Payme
 ## Sequence of Calls
 
 Sequence diagram of calls during client/daemon interaction:
-[![Client/daemon interaction sequence diagram](/assets/images/products/AIMarketplace/daemon/clientDaemonInteractionSequenceDiagram.svg 'Client/daemon interaction sequence diagram')](/assets/images/products/AIMarketplace/daemon/clientDaemonInteractionSequenceDiagram.svg)
+<ImageViewer src="/assets/images/products/AIMarketplace/daemon/clientDaemonInteractionSequenceDiagram.svg" alt="diagram"/>

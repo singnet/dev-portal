@@ -6,7 +6,7 @@
 
 The custom command page is slightly different. It allows you to run whatever command you would like with the CLI, through the TUI. This is primarily for commands that aren't already implemented into the TUI, or if you would like to run a command with a specific parameter combination that isn't possible.
 
-![Custom Command Page](/assets/images/products/AIMarketplace/TUI/TUICustomCommand.webp)Custom Command Page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/TUICustomCommand.webp" alt="Custom Command Page"/>
 
 In essence, the page is very simple:
 

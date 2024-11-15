@@ -1,6 +1,6 @@
 # Client
 
-![Client page](/assets/images/products/AIMarketplace/TUI/ClientPage.webp)Client page
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ClientPage.webp" alt="Client page"/>
 
 **Overview**
 

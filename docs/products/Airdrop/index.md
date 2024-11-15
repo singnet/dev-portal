@@ -1,14 +1,26 @@
-# Rewarding AGIX Token Holders with New Token Airdrops
-As part of SingularityNET's efforts to launch new tokens and projects, we may offer airdrops to reward AGIX token holders. These airdrops are a way to share the value of new spin-off projects with our existing community.
+# How Loyalty Rewards work
 
-## How It Works:
-* **Token Distribution**: A portion of the total supply tokens is reserved for AGIX token holders. These tokens are distributed across different windows, which are specific time periods during which you can claim your rewards.
+In the SingularityNET Phase Two proposal, 5% of tokens minted each month are allocated to creating a special “Loyalty Rewards Pool”. These tokens are allocated to express the gratitude of SingularityNET to Phase One AGIX token holders for supporting the Phase Two initiative, and to create an opportunity to incentivize and reward community growth through new token holders on the Cardano blockchain.
+The Phase Two plan made a clear distinction between the distribution of tokens from the first 12 months of AGIX-ADA minting, and those minted from year 2 onwards. Distribution of tokens minted during the first 12-month cycle is to be initiated via mechanics determined by the SingularityNET organization, while the community has the opportunity to update the distribution mechanics thereafter.
 
-* **Registration Required**: To claim tokens in each distribution window, AGIX holders must register during that window. This registration is essential to ensure you're eligible to receive the airdropped tokens.
+## Eligibility
+Addresses included in the snapshot are automatically eligible. Snapshot: May 28th, 2021, at 08:00:20 AM UTC+0 (Hardfork snapshot of AGI holders). Private wallets and staking only, exchange balances are not eligible. Minimum AGI required: 10.
 
-## Who Can Participate:
-* The exact eligibility criteria for each airdrop, including which AGIX holders can participate and how much they will receive, will be outlined in the **official announcements** of each spin-off project or token launch.
+## KYC requirements
+There are no KYC requirements to participate in the loyalty rewards program.
+Claiming End Date
+Phase 1 holders have 3 years to claim their year 1 loyalty rewards, up until November 22nd 2025, 11am UTC.
+Cardano Claiming Special Instructions
+Due to the way that transferring a native asset on the Cardano network works, users will need to deposit about 2 ADA from the wallet they are claiming the rewards to (in order to cover for sending the AGIX tokens). Users will receive these back together with the AGIX Loyalty Reward Tokens.
 
-* Make sure to stay updated through our communication channels for the latest information on upcoming airdrops and eligibility guidelines.
+## AGI Balance
+Minimum of 10 AGI
 
-By participating in these airdrops, AGIX holders can benefit from the success and growth of new projects within the SingularityNET ecosystem. Keep an eye out for more details on how to claim your rewards!
+## Accocation
+Rewards are proportional to token balance during the snapshot. Staking Bonus: AGI Tokens which were staked on staking.singularitynet.io at the time of the snapshot will qualify for a 20% bonus on top of the allocated loyalty rewards.
+
+## ADA transferred
+Please give it at least 24 hours to receive ADA and AGIX tokens.
+
+## Distribution Period
+There will be six monthly allocations, starting November 22nd, 2022 and the last one becoming available at April 18th, 2023.

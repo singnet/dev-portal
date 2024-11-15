@@ -2,7 +2,8 @@
 
 Validates if created metadata is consistent
 
-![Validate metadata page](/assets/images/products/AIMarketplace/TUI/ValidateServiceMetadataPage.webp)Validate metadata page
+
+<ImageViewer src="/assets/images/products/AIMarketplace/TUI/ValidateServiceMetadataPage.webp" alt="Validate metadata page"/>
 
 <pre class="language-bash"><code class="lang-bash"><strong># Format of the command in the SNET CLI
 </strong>

@@ -1,6 +1,7 @@
 import SpriteIcon from "../../components/Common/SpriteIcon.vue";
 import Home from "../../components/Home/Home.vue";
 import Video from "../../components/Common/Video.vue";
+import ImageViewer from "../../components/Common/ImageViewer.vue";
 import NavigationControl from "../../components/NavigationControl/NavigationControl.vue";
 import FeedBackForm from "../../components/Common/FeedBackForm.vue";
 import Footer from "../../components/Footer/Footer.vue";
@@ -26,5 +27,6 @@ export default {
         app.component("Home", Home);
         app.component("Video", Video);
         app.component("SpriteIcon", SpriteIcon);
+        app.component("ImageViewer", ImageViewer)
     },
 } satisfies Theme;

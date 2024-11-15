@@ -28,7 +28,7 @@ export default [
                 link: "https://beta.singularitynet.io/",
             },
             {
-                text: "AI Publisher",
+                text: "Publisher Portal",
                 link: "https://publisher.singularitynet.io/",
             },
             {

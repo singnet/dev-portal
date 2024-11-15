@@ -8,8 +8,8 @@
         <div class="tools-items-container">
             <div class="tools-header-component card">
                 <ThemedImage :imageFileName="'tools.webp'" alt="tools" />
-                <p>On our website you will find a convenient block with tools for creating your ideal web
-                    resource. Start your creation journey now!</p>
+                <p>Here you will find a complete set of tools and resources that will help you create your ideal
+                product. Start your journey to success with our powerful arsenal of technologies!</p>
             </div>
             <!-- @vue-ignore -->
             <swiper v-if="!isMobile" class="swiper-container" v-bind="swiperOptions">
