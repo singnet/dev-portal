@@ -50,7 +50,7 @@ Address of Registry contract, if not specified we read address from â€œnetworksâ
 
     
 
-Service metadata json file (default organization_metadata.json)
+Organization metadata json file (default organization_metadata.json)
 
 Default: `'organization_metadata.json'`
 
@@ -142,7 +142,7 @@ Default: `'5s'`
 
     
 
-Service metadata json file (default organization_metadata.json)
+Organization metadata json file (default organization_metadata.json)
 
 Default: `'organization_metadata.json'`
 
@@ -218,7 +218,7 @@ Payment channel Request timeout
 
     
 
-Service metadata json file (default organization_metadata.json)
+Organization metadata json file (default organization_metadata.json)
 
 Default: `'organization_metadata.json'`
 
@@ -614,7 +614,7 @@ Unique Organization Id
 
     
 
-Service metadata json file (default organization_metadata.json)
+Organization metadata json file (default organization_metadata.json)
 
 Default: `'organization_metadata.json'`
 
@@ -704,7 +704,7 @@ Unique Organization Id
 
     
 
-Service metadata json file (default organization_metadata.json)
+Organization metadata json file (default organization_metadata.json)
 
 Default: `'organization_metadata.json'`
 
@@ -1026,4 +1026,23 @@ Default: `False`
     
 
 registry contract address (defaults to session.current_registry_at)
+
+## validate-metadata
+
+Validates if created metadata is consistent
+
+```sh
+snet organization validate-metadata [-h]
+                                    [--metadata-file METADATA_FILE]
+```
+
+#### Named Arguments
+
+`--metadata-file`
+
+    
+
+Organization metadata json file (default organization_metadata.json)
+
+Default: `'organization_metadata.json'`
 

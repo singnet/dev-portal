@@ -8,25 +8,15 @@ usage: snet sdk [-h] COMMAND ...
 
 ## generate-client-library
 
-Generate compiled client libraries to call services using your language of
-choice
+Generate compiled client libraries to call services using Python
 
 ```sh
 snet sdk generate-client-library [-h]
                                  [--registry-at REGISTRY_AT]
-                                 [--wallet-index WALLET_INDEX] LANGUAGE ORG_ID SERVICE_ID [PROTO_DIR]
+                                 [--wallet-index WALLET_INDEX] ORG_ID SERVICE_ID [PROTO_DIR]
 ```
 
 #### Positional Arguments
-
-`LANGUAGE`
-
-    
-
-Possible choices: python, nodejs
-
-Choose target language for the generated client library from [‘python’,
-‘nodejs’]
 
 `ORG_ID`
 
