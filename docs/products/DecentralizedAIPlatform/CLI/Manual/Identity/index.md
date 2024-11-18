@@ -93,15 +93,15 @@ snet identity delete [-h] IDENTITY_NAME
 
     
 
-Possible choices: andrey
+Possible choices: IDENTITY_NAME1, IDENTITY_NAME2, ...
 
-Name of identity to delete from [‘andrey’]
+Name of identity to delete from [‘IDENTITY_NAME1’, ‘IDENTITY_NAME2’, ...]
 
-## andrey
+## identity_name
 
-Switch to andrey identity
+Switch to IDENTITY_NAME identity
 
 ```sh
-snet identity andrey [-h]
+snet identity IDENTITY_NAME [-h]
 ```
 
