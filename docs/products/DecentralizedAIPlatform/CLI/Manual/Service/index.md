@@ -902,12 +902,12 @@ Publish service with given metadata
 snet service publish [-h]
                      [--metadata-file METADATA_FILE]
                      [--update-mpe-address]
-                     [--storage {ipfs,filecoin}]
                      [--multipartyescrow-at MULTIPARTYESCROW_AT]
                      [--registry-at REGISTRY_AT]
                      [--wallet-index WALLET_INDEX]
                      [--yes]
-                     [--quiet | --verbose] ORG_ID SERVICE_ID
+                     [--quiet | --verbose]
+                     [--storage {ipfs,filecoin}] ORG_ID SERVICE_ID
 ```
 
 #### Positional Arguments
@@ -942,16 +942,6 @@ Update mpe_address in metadata before publishing them
 
 Default: `False`
 
-`--storage`
-
-    
-
-Possible choices: ipfs, filecoin
-
-Choose storage for uploading metadata/protobuf file (defaults to ‘ipfs’)
-
-Default: `'ipfs'`
-
 `--multipartyescrow-at, --mpe`
 
     
@@ -964,6 +954,16 @@ Address of MultiPartyEscrow contract, if not specified we read address from
     
 
 Address of Registry contract, if not specified we read address from “networks”
+
+`--storage`
+
+    
+
+Possible choices: ipfs, filecoin
+
+Choose storage for uploading metadata/protobuf file (defaults to ‘ipfs’)
+
+Default: `'ipfs'`
 
 #### transaction arguments
 
@@ -1006,7 +1006,6 @@ Publish metadata only in IPFS, without publishing in Registry
 snet service publish-in-ipfs [-h]
                              [--metadata-file METADATA_FILE]
                              [--update-mpe-address]
-                             [--storage {ipfs,filecoin}]
                              [--multipartyescrow-at MULTIPARTYESCROW_AT]
                              [--wallet-index WALLET_INDEX]
                              [--yes]
@@ -1030,16 +1029,6 @@ Default: `'service_metadata.json'`
 Update mpe_address in metadata before publishing them
 
 Default: `False`
-
-`--storage`
-
-    
-
-Possible choices: ipfs, filecoin
-
-Choose storage for uploading metadata/protobuf file (defaults to ‘ipfs’)
-
-Default: `'ipfs'`
 
 `--multipartyescrow-at, --mpe`
 
@@ -1089,7 +1078,6 @@ Publish metadata only in FileCoin, without publishing in Registry
 snet service publish-in-filecoin [-h]
                                  [--metadata-file METADATA_FILE]
                                  [--update-mpe-address]
-                                 [--storage {ipfs,filecoin}]
                                  [--multipartyescrow-at MULTIPARTYESCROW_AT]
                                  [--wallet-index WALLET_INDEX]
                                  [--yes]
@@ -1113,16 +1101,6 @@ Default: `'service_metadata.json'`
 Update mpe_address in metadata before publishing them
 
 Default: `False`
-
-`--storage`
-
-    
-
-Possible choices: ipfs, filecoin
-
-Choose storage for uploading metadata/protobuf file (defaults to ‘ipfs’)
-
-Default: `'ipfs'`
 
 `--multipartyescrow-at, --mpe`
 
@@ -1172,12 +1150,12 @@ Publish metadata in IPFS or FileCoin and update existed service
 snet service update-metadata [-h]
                              [--metadata-file METADATA_FILE]
                              [--update-mpe-address]
-                             [--storage {ipfs,filecoin}]
                              [--multipartyescrow-at MULTIPARTYESCROW_AT]
                              [--registry-at REGISTRY_AT]
                              [--wallet-index WALLET_INDEX]
                              [--yes]
-                             [--quiet | --verbose] ORG_ID SERVICE_ID
+                             [--quiet | --verbose]
+                             [--storage {ipfs,filecoin}] ORG_ID SERVICE_ID
 ```
 
 #### Positional Arguments
@@ -1212,16 +1190,6 @@ Update mpe_address in metadata before publishing them
 
 Default: `False`
 
-`--storage`
-
-    
-
-Possible choices: ipfs, filecoin
-
-Choose storage for uploading metadata/protobuf file (defaults to ‘ipfs’)
-
-Default: `'ipfs'`
-
 `--multipartyescrow-at, --mpe`
 
     
@@ -1234,6 +1202,16 @@ Address of MultiPartyEscrow contract, if not specified we read address from
     
 
 Address of Registry contract, if not specified we read address from “networks”
+
+`--storage`
+
+    
+
+Possible choices: ipfs, filecoin
+
+Choose storage for uploading metadata/protobuf file (defaults to ‘ipfs’)
+
+Default: `'ipfs'`
 
 #### transaction arguments
 

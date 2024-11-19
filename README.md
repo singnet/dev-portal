@@ -9,7 +9,7 @@ Our Developer Portal provides documentation about the main products of Singulari
 We are glad to see new contributors!
 If you want to add a new document or request any edits, please:
 1. Create a fork of this repo
-2. Open the pull request with your edits
+2. Open the pull request to `development` branch with your edits
 
 ## Setup
 

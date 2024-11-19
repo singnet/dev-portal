@@ -6,132 +6,20 @@ usage: snet channel [-h] COMMAND ...
 
 ## Commands
 
-## init
+## open
 
-Initialize channel taking org metadata from Registry
+Open channel using organization metadata from Registry
 
 ```sh
-snet channel init [-h]
+snet channel open [-h]
                   [--registry-at REGISTRY_AT]
-                  [--multipartyescrow- at MULTIPARTYESCROW_AT] ORG_ID group_name CHANNEL_ID
-```
-
-#### Positional Arguments
-
-`ORG_ID`
-
-    
-
-Id of the Organization
-
-`group_name`
-
-    
-
-Name of the payment group. Parameter should be specified only for services
-with several payment groups
-
-`CHANNEL_ID`
-
-    
-
-The Channel Id
-
-#### Named Arguments
-
-`--registry-at, --registry`
-
-    
-
-Address of Registry contract, if not specified we read address from “networks”
-
-`--multipartyescrow-at, --mpe`
-
-    
-
-Address of MultiPartyEscrow contract, if not specified we read address from
-“networks”
-
-## init-metadata
-
-Initialize channel using organization metadata
-
-```sh
-snet channel init-metadata [-h]
-                           [--registry-at REGISTRY_AT]
-                           [--metadata- file METADATA_FILE]
-                           [--multipartyescrow-at MULTIPARTYESCROW_AT]
-                           [--wallet- index WALLET_INDEX] ORG_ID group_name CHANNEL_ID
-```
-
-#### Positional Arguments
-
-`ORG_ID`
-
-    
-
-Id of the Organization
-
-`group_name`
-
-    
-
-Name of the payment group. Parameter should be specified only for services
-with several payment groups
-
-`CHANNEL_ID`
-
-    
-
-The Channel Id
-
-#### Named Arguments
-
-`--registry-at, --registry`
-
-    
-
-Address of Registry contract, if not specified we read address from “networks”
-
-`--metadata-file`
-
-    
-
-Service metadata json file (default service_metadata.json)
-
-Default: `'organization_metadata.json'`
-
-`--multipartyescrow-at, --mpe`
-
-    
-
-Address of MultiPartyEscrow contract, if not specified we read address from
-“networks”
-
-#### optional call arguments
-
-`--wallet-index`
-
-    
-
-Wallet index of account to use for calling (defaults to
-session.identity.default_wallet_index)
-
-## open-init
-
-Open and initialize channel using organization metadata from Registry
-
-```sh
-snet channel open-init [-h]
-                       [--registry-at REGISTRY_AT]
-                       [--force]
-                       [--signer SIGNER]
-                       [--multipartyescrow-at MULTIPARTYESCROW_AT]
-                       [--wallet-index WALLET_INDEX]
-                       [--yes]
-                       [--quiet | --verbose]
-                       [--open-new-anyway]
-                       [--from-block FROM_BLOCK] ORG_ID group_name AMOUNT EXPIRATION
+                  [--force]
+                  [--signer SIGNER]
+                  [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                  [--wallet-index WALLET_INDEX]
+                  [--yes]
+                  [--quiet | --verbose]
+                  [--open-new-anyway] ORG_ID group_name AMOUNT EXPIRATION
 ```
 
 #### Positional Arguments
@@ -200,14 +88,6 @@ Skip check that channel already exists and open new channel anyway
 
 Default: `False`
 
-`--from-block`
-
-    
-
-Start searching from this block (for channel searching)
-
-Default: `0`
-
 #### transaction arguments
 
 `--wallet-index`
@@ -241,12 +121,12 @@ Verbose transaction printing
 
 Default: `False`
 
-## open-init-metadata
+## open-from-metadata
 
-Open and initialize channel using organization metadata
+Open channel using existing organization metadata
 
 ```sh
-snet channel open-init-metadata [-h]
+snet channel open-from-metadata [-h]
                                 [--registry-at REGISTRY_AT]
                                 [--force]
                                 [--signer SIGNER]
@@ -255,7 +135,6 @@ snet channel open-init-metadata [-h]
                                 [--yes]
                                 [--quiet | --verbose]
                                 [--open-new-anyway]
-                                [--from-block FROM_BLOCK]
                                 [--metadata-file METADATA_FILE] ORG_ID group_name AMOUNT EXPIRATION
 ```
 
@@ -324,14 +203,6 @@ Address of MultiPartyEscrow contract, if not specified we read address from
 Skip check that channel already exists and open new channel anyway
 
 Default: `False`
-
-`--from-block`
-
-    
-
-Start searching from this block (for channel searching)
-
-Default: `0`
 
 `--metadata-file`
 
@@ -466,6 +337,7 @@ Default: `False`
 ## extend-add-for-org
 
 Set new expiration and add funds for the channel for the given service
+(organization and group name)
 
 ```sh
 snet channel extend-add-for-org [-h]
@@ -478,8 +350,7 @@ snet channel extend-add-for-org [-h]
                                 [--yes]
                                 [--quiet | --verbose]
                                 [--group-name GROUP_NAME]
-                                [--channel-id CHANNEL_ID]
-                                [--from-block FROM_BLOCK] ORG_ID group_name
+                                [--channel-id CHANNEL_ID] ORG_ID group_name
 ```
 
 #### Positional Arguments
@@ -525,14 +396,6 @@ with several payment groups
 
 The Channel Id (only in case of multiply initialized channels for the same
 payment group)
-
-`--from-block`
-
-    
-
-Start searching from this block (for channel searching)
-
-Default: `0`
 
 #### Expiration and amount
 
@@ -599,170 +462,17 @@ Print the last ethereum block number
 snet channel block-number [-h]
 ```
 
-## print-initialized
-
-Print initialized channels.
-
-```sh
-snet channel print-initialized [-h]
-                               [--only-id]
-                               [--filter-sender | --filter-signer | --filter-my]
-                               [--multipartyescrow-at MULTIPARTYESCROW_AT]
-                               [--wallet-index WALLET_INDEX]
-                               [--registry-at REGISTRY_AT]
-```
-
-#### Named Arguments
-
-`--only-id`
-
-    
-
-Print only id of channels
-
-Default: `False`
-
-`--filter-sender`
-
-    
-
-Print only channels in which current identity is sender
-
-Default: `False`
-
-`--filter-signer`
-
-    
-
-Print only channels in which current identity is signer
-
-Default: `False`
-
-`--filter-my`
-
-    
-
-Print only channels in which current identity is sender or signer
-
-Default: `False`
-
-`--multipartyescrow-at, --mpe`
-
-    
-
-Address of MultiPartyEscrow contract, if not specified we read address from
-“networks”
-
-`--registry-at, --registry`
-
-    
-
-Address of Registry contract, if not specified we read address from “networks”
-
-#### optional call arguments
-
-`--wallet-index`
-
-    
-
-Wallet index of account to use for calling (defaults to
-session.identity.default_wallet_index)
-
-## print-initialized-filter-org
-
-Print initialized channels for the given org (all payment group).
-
-```sh
-snet channel print-initialized-filter-org [-h]
-                                          [--registry-at REGISTRY_AT]
-                                          [--only-id]
-                                          [--filter-sender | --filter-signer | --filter-my]
-                                          [--multipartyescrow-at MULTIPARTYESCROW_AT]
-                                          [--wallet-index WALLET_INDEX] ORG_ID group_name
-```
-
-#### Positional Arguments
-
-`ORG_ID`
-
-    
-
-Id of the Organization
-
-`group_name`
-
-    
-
-Name of the payment group. Parameter should be specified only for services
-with several payment groups
-
-#### Named Arguments
-
-`--registry-at, --registry`
-
-    
-
-Address of Registry contract, if not specified we read address from “networks”
-
-`--only-id`
-
-    
-
-Print only id of channels
-
-Default: `False`
-
-`--filter-sender`
-
-    
-
-Print only channels in which current identity is sender
-
-Default: `False`
-
-`--filter-signer`
-
-    
-
-Print only channels in which current identity is signer
-
-Default: `False`
-
-`--filter-my`
-
-    
-
-Print only channels in which current identity is sender or signer
-
-Default: `False`
-
-`--multipartyescrow-at, --mpe`
-
-    
-
-Address of MultiPartyEscrow contract, if not specified we read address from
-“networks”
-
-#### optional call arguments
-
-`--wallet-index`
-
-    
-
-Wallet index of account to use for calling (defaults to
-session.identity.default_wallet_index)
-
-## print-all-filter-sender
+## print-filter-sender
 
 Print all channels for the given sender.
 
 ```sh
-snet channel print-all-filter-sender [-h]
-                                     [--only-id]
-                                     [--multipartyescrow-at MULTIPARTYESCROW_AT]
-                                     [--from-block FROM_BLOCK]
-                                     [--wallet-index WALLET_INDEX]
-                                     [--sender SENDER]
+snet channel print-filter-sender [-h]
+                                 [--only-id]
+                                 [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                                 [--wallet-index WALLET_INDEX]
+                                 [--sender SENDER]
+                                 [--do- not-sync]
 ```
 
 #### Named Arguments
@@ -781,14 +491,6 @@ Default: `False`
 
 Address of MultiPartyEscrow contract, if not specified we read address from
 “networks”
-
-`--from-block`
-
-    
-
-Start searching from this block (for channel searching)
-
-Default: `0`
 
 `--sender`
 
@@ -796,6 +498,14 @@ Default: `0`
 
 Account to set as sender (by default we use the current identity)
 
+`--do-not-sync, -ds`
+
+    
+
+Print channels without synchronizing their state
+
+Default: `False`
+
 #### optional call arguments
 
 `--wallet-index`
@@ -805,17 +515,17 @@ Account to set as sender (by default we use the current identity)
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-## print-all-filter-recipient
+## print-filter-recipient
 
 Print all channels for the given recipient.
 
 ```sh
-snet channel print-all-filter-recipient [-h]
-                                        [--only-id]
-                                        [--multipartyescrow-at MULTIPARTYESCROW_AT]
-                                        [--from-block FROM_BLOCK]
-                                        [--wallet-index WALLET_INDEX]
-                                        [--recipient RECIPIENT]
+snet channel print-filter-recipient [-h]
+                                    [--only-id]
+                                    [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                                    [--wallet-index WALLET_INDEX]
+                                    [--recipient RECIPIENT]
+                                    [--do-not-sync]
 ```
 
 #### Named Arguments
@@ -834,14 +544,6 @@ Default: `False`
 
 Address of MultiPartyEscrow contract, if not specified we read address from
 “networks”
-
-`--from-block`
-
-    
-
-Start searching from this block (for channel searching)
-
-Default: `0`
 
 `--recipient`
 
@@ -849,6 +551,14 @@ Default: `0`
 
 Account to set as recipient (by default we use the current identity)
 
+`--do-not-sync, -ds`
+
+    
+
+Print channels without synchronizing their state
+
+Default: `False`
+
 #### optional call arguments
 
 `--wallet-index`
@@ -858,17 +568,17 @@ Account to set as recipient (by default we use the current identity)
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-## print-all-filter-group
+## print-filter-group
 
 Print all channels for the given service.
 
 ```sh
-snet channel print-all-filter-group [-h]
-                                    [--registry-at REGISTRY_AT]
-                                    [--only-id]
-                                    [--multipartyescrow-at MULTIPARTYESCROW_AT]
-                                    [--from-block FROM_BLOCK]
-                                    [--wallet-index WALLET_INDEX] ORG_ID group_name
+snet channel print-filter-group [-h]
+                                [--registry-at REGISTRY_AT]
+                                [--only-id]
+                                [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                                [--wallet-index WALLET_INDEX]
+                                [--do-not-sync] ORG_ID group_name
 ```
 
 #### Positional Arguments
@@ -909,13 +619,13 @@ Default: `False`
 Address of MultiPartyEscrow contract, if not specified we read address from
 “networks”
 
-`--from-block`
+`--do-not-sync, -ds`
 
     
 
-Start searching from this block (for channel searching)
+Print channels without synchronizing their state
 
-Default: `0`
+Default: `False`
 
 #### optional call arguments
 
@@ -926,18 +636,18 @@ Default: `0`
 Wallet index of account to use for calling (defaults to
 session.identity.default_wallet_index)
 
-## print-all-filter-group-sender
+## print-filter-group-sender
 
 Print all channels for the given group and sender.
 
 ```sh
-snet channel print-all-filter-group-sender [-h]
-                                           [--registry-at REGISTRY_AT]
-                                           [--only-id]
-                                           [--multipartyescrow-at MULTIPARTYESCROW_AT]
-                                           [--from- block FROM_BLOCK]
-                                           [--wallet-index WALLET_INDEX]
-                                           [--sender SENDER] ORG_ID group_name
+snet channel print-filter-group-sender [-h]
+                                       [--registry-at REGISTRY_AT]
+                                       [--only-id]
+                                       [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                                       [--wallet-index WALLET_INDEX]
+                                       [--sender SENDER]
+                                       [--do-not-sync] ORG_ID group_name
 ```
 
 #### Positional Arguments
@@ -977,20 +687,73 @@ Default: `False`
 
 Address of MultiPartyEscrow contract, if not specified we read address from
 “networks”
-
-`--from-block`
-
-    
-
-Start searching from this block (for channel searching)
-
-Default: `0`
 
 `--sender`
 
     
 
 Account to set as sender (by default we use the current identity)
+
+`--do-not-sync, -ds`
+
+    
+
+Print channels without synchronizing their state
+
+Default: `False`
+
+#### optional call arguments
+
+`--wallet-index`
+
+    
+
+Wallet index of account to use for calling (defaults to
+session.identity.default_wallet_index)
+
+## print-all
+
+Print all channels.
+
+```sh
+snet channel print-all [-h]
+                       [--registry-at REGISTRY_AT]
+                       [--only-id]
+                       [--multipartyescrow-at MULTIPARTYESCROW_AT]
+                       [--wallet-index WALLET_INDEX]
+                       [--do-not-sync]
+```
+
+#### Named Arguments
+
+`--registry-at, --registry`
+
+    
+
+Address of Registry contract, if not specified we read address from “networks”
+
+`--only-id`
+
+    
+
+Print only id of channels
+
+Default: `False`
+
+`--multipartyescrow-at, --mpe`
+
+    
+
+Address of MultiPartyEscrow contract, if not specified we read address from
+“networks”
+
+`--do-not-sync, -ds`
+
+    
+
+Print channels without synchronizing their state
+
+Default: `False`
 
 #### optional call arguments
 
@@ -1073,7 +836,6 @@ snet channel claim-timeout-all [-h]
                                [--wallet-index WALLET_INDEX]
                                [--yes]
                                [--quiet | --verbose]
-                               [--from-block FROM_BLOCK]
 ```
 
 #### Named Arguments
@@ -1084,14 +846,6 @@ snet channel claim-timeout-all [-h]
 
 Address of MultiPartyEscrow contract, if not specified we read address from
 “networks”
-
-`--from-block`
-
-    
-
-Start searching from this block (for channel searching)
-
-Default: `0`
 
 #### transaction arguments
 
