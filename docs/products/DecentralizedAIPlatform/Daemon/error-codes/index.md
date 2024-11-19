@@ -4,13 +4,13 @@ The errors described here are most likely due to incorrect configuration of the 
 
 ## Desciptions of codes
 
-### 1
+## 1
 
 **Name: ServiceUnavailable** \
 Purpose: This error means that the daemon could not access the service at the specified address.\
 Solution: Check the daemon config param `passthrough_endpoint` and whether your service is available at the specified endopint.
 
-### 2
+## 2
 
 **Name: InvalidMetadata** \
 Purpose: Invalid service or organization metadata in ipfs or filecoin.\
@@ -22,19 +22,19 @@ snet service validate-metadata --metadata-file service_metadata.json
 ```
 :::
 
-### 3
+## 3
 
 **Name: InvalidProto** \
 Purpose: This error appears when a proto file was incorrectly written for http services and daemon can't marshal or unmarshal proto messages.\
 Solution: Fix protofile and update it with cli or publisher.
 
-### 4
+## 4
 
 **Name: HTTPRequestBuildError** \
 Purpose: Can't create HTTP request to the service.\
 Solution: Check the daemon config params: `passthrough_endpoint` & `service_credentials`.
 
-### 5
+## 5
 
 **Name: InvalidServiceCredentials** \
 Purpose: Invalid service credentials param
@@ -51,7 +51,7 @@ Example of valid service credentials in daemon config:
   ],
 ```
 
-### 6
+## 6
 
 **Name: InvalidConfig** \
 Purpose: Invalid config
@@ -62,7 +62,7 @@ Solution: Recheck your config or generate a new one:
 snetd-linux-amd64-v5.1.5 init
 ```
 
-### 7
+## 7
 
 **Name: ReceiveMsgError** \
 Purpose: This error can occur for several reasons: internal bugs, incorrect encoding in metadata, network problems.
