@@ -20,7 +20,6 @@ Create a new network
 
 ```sh
 snet network create [-h]
-                    [--default-gas-price DEFAULT_GAS_PRICE]
                     [--skip-check] network_name eth_rpc_endpoint
 ```
 
@@ -40,15 +39,6 @@ Ethereum rpc endpoint
 
 #### Named Arguments
 
-`--default-gas-price`
-
-    
-
-Default gas price (in wei) or gas price strategy (‘fast’ ~1min, ‘medium’ ~5min
-or ‘slow’ ~60min), default is ‘medium’
-
-Default: `'medium'`
-
 `--skip-check`
 
     
@@ -63,14 +53,6 @@ Switch to mainnet network
 
 ```sh
 snet network mainnet [-h]
-```
-
-## goerli
-
-Switch to goerli network
-
-```sh
-snet network goerli [-h]
 ```
 
 ## sepolia

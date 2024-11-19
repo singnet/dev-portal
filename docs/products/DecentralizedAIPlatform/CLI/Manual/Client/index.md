@@ -20,7 +20,6 @@ snet client call [-h]
                  [--save-field SAVE_FIELD SAVE_FIELD]
                  [--endpoint ENDPOINT]
                  [--channel-id CHANNEL_ID]
-                 [--from-block FROM_BLOCK]
                  [--yes]
                  [--skip-update-check] ORG_ID SERVICE_ID group_name METHOD [PARAMS]
 ```
@@ -100,14 +99,6 @@ Service endpoint (by default we read it from metadata)
 
 The Channel Id (only in case of multiply initialized channels for the same
 payment group)
-
-`--from-block`
-
-    
-
-Start searching from this block (for channel searching)
-
-Default: `0`
 
 `--yes, -y`
 
