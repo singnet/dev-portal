@@ -8,25 +8,25 @@ Now is available `Marketplace Sandbox mode`. Here you can test the UI of your AI
 
 Cloning this repo:
 
-```
+```sh
 git clone git@github.com:singnet/snet-dapp.git
 ```
 
 Go to project folder:
 
-```
+```sh
 cd snet-dapp
 ```
 
 Get dependencies:
 
-```
+```sh
 yarn install
 ```
 
 Create the env file:
 
-```
+```sh
 cp .env.sandbox .env
 ```
 
@@ -45,10 +45,10 @@ cp .env.sandbox .env
 
     1. Generate stubs:
 
-    ```sh
-    protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
-    protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
-    ```
+```sh
+protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
+protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
+```
 
     For more details please check the [Generating stubs for JS tutorial](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/generating-stubs/)
 
@@ -59,13 +59,13 @@ cp .env.sandbox .env
         Create a new directory named after the `service-id` under the newly created directory in the above step
 
         e.g. for a service with org-id: snet and service-id: example-service you will have to do the following assuming you are at the root of the `snet-dapp`
-
-            cd src/assets/thirdPartyServices
-            mkdir snet
-            cd snet
-            mkdir example_service
-            cd example_service
-
+```sh
+cd src/assets/thirdPartyServices
+mkdir snet
+cd snet
+mkdir example_service
+cd example_service
+```
         Put the all the resources used by the custom ui under this directory including the `js stubs`.
 
 4.  Register the custom ui
@@ -76,12 +76,12 @@ cp .env.sandbox .env
 
 5.  Assuming that the snet daemon is running on the port that you specified in the REACT_APP_SANDBOX_SERVICE_ENDPOINT, running the bellow commands should bring up the DApp in sandbox mode for local development.
 
-    ```
-    yarn start
-    ```
+```sh
+yarn start
+```
 
     or
 
-    ```
-    npm run start
-    ```
+```sh
+npm run start
+```

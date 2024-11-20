@@ -34,7 +34,7 @@ const webpack = require('webpack');
 module.exports = function override(config) {
     const fallback = config.resolve.fallback || {};
     Object.assign(fallback, {
-        os: require.resolve('os-browserify'),t
+        os: require.resolve('os-browserify'),
         url: require.resolve('url'),
     });
     config.resolve.fallback = fallback;
