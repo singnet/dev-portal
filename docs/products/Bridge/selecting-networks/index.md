@@ -6,7 +6,7 @@ The bridge currently supports Ethereum and Cardano blockchain networks. Use the 
 
 # Choosing Assets
 
-The bridge currently supports AGIX and NTX, RJV on the Ethereum and Cardano networks. Once you have selected the chain and the direction of conversion, use the token dropdown to select the token to convert
+The bridge currently supports the following tokens on the Ethereum and Cardano networks: `AGIX`, `NTX`, `FET (ASI)`, `WMTX`, `RJV`, and `CGV`. Once you have selected the chain and the direction of conversion, use the token dropdown to select the token to convert.
 
 <ImageViewer src="/assets/images/products/Bridge/choosing-assets.webp" alt="ChoosingAssets"/>
 
@@ -18,7 +18,7 @@ Bridging tokens from one chain to another involves the following steps
 
 1.  Set up the token pair
 
-2.  Authorize (Approve) the bridge to transfer tokens on the Ethereum side on your behalf. This involves a web3 wallet interaction. This is a one time, if you dont change the default valueю - you will not need to authorize for every conversion.
+2.  Authorize (Approve) the bridge to transfer tokens on the Ethereum side on your behalf. This involves a web3 wallet interaction. This is a one time, if you dont change the default value - you will not need to authorize for every conversion.
     Important: at this point, you are not yet transferring tokens to another network. You are only allowing the smart contract access to interact with the tokens. This step is mandatory.
 
 3.  Once authorized you can initiatite the conversion.
