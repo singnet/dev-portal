@@ -34,7 +34,10 @@ When you load the bridge page, the default direction is from **Binance Smart Cha
 
 6. **Claim Tokens**  
    Click the **"Claim"** button and confirm the transaction on the Binance Smart Chain network.  
-   _Make sure to monitor the network where you are receiving tokens._
+   _Make sure to monitor the network where you are receiving tokens._  
+
+> **Important:**  
+> Transferring tokens and claiming tokens are **paid operations**. Please ensure you have enough funds to cover the gas fees for both transfer and claim operations.
 
 ---
 
@@ -58,4 +61,7 @@ When you load the bridge page, the default direction is from **Binance Smart Cha
 
 6. **Claim Tokens**  
    Click the **"Claim"** button and confirm the transaction on the Ethereum network.  
-   _Make sure to monitor the network where you are receiving tokens._
+   _Make sure to monitor the network where you are receiving tokens._  
+
+> **Important:**  
+> Transferring tokens and claiming tokens are **paid operations**. Please ensure you have enough funds to cover the gas fees for both transfer and claim operations.
