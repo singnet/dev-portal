@@ -4,4 +4,4 @@ The bridge currently supports the following tokens on the Ethereum and Cardano n
 
 Once you have selected the chain and the direction of conversion, use the token dropdown to select the token to convert.
 
-<ImageViewer src="/assets/images/products/Bridge/choosing-assets.png" alt="ChoosingAssets"/>
+<ImageViewer src="/assets/images/products/Bridge/choosing-assets.webp" alt="ChoosingAssets"/>

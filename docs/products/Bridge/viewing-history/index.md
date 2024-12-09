@@ -23,6 +23,8 @@ To view all the transactions, click on the `Transactions` tab on the main page
 - **`Ready for Claim`**  
   This state applies to conversions from **Cardano to Ethereum** and indicates that the tokens have moved to the Ethereum side.  
   _To claim the tokens, initiate the claim from the page. You will need to perform a wallet operation to claim the tokens into your wallet._
+  
+  _Claiming tokens on the Ethereum network is a paid operation. Ensure you have at least 0.005 ETH in your wallet to cover the gas fee for the claim transaction._
 
 ---
 
