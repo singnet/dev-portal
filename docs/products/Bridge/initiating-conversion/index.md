@@ -26,7 +26,8 @@ Input the number of tokens you wish to transfer.
 1. **Approve Tokens:**  
    - A **Metamask** wallet prompt will appear requesting approval for the specified amount of tokens.  
    - You must approve at least the amount you intend to transfer.  
-   - This step is mandatory, as it allows the bridge to interact with your tokens.  
+   - This step is mandatory, as it allows the bridge to interact with your specified tokens.  
+> Approve in MetaMask is required for the smart contract of our bridge to manage a specified token in a specified amount and facilitate its transfer between networks. You can learn more about it [here](https://support.metamask.io/transactions-and-gas/transactions/what-is-a-token-approval/).
 
 2. **Convert Tokens:**  
    - Once the approval is complete, the **"Convert"** button will appear.  

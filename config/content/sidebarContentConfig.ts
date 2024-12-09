@@ -1312,7 +1312,7 @@ export const BridgeSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/Bridge/viewing-history/",
     },
     {
-        text: "Troubles",
+        text: "If You Encountered an Error",
         link: "/docs/products/Bridge/troubles/",
     },
     {

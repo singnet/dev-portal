@@ -22,22 +22,27 @@ When you load the bridge page, the default direction is from **Binance Smart Cha
 2. **Switch Network to "FROM"**  
    Set the network to the **FROM** direction (in this flow: Ethereum).
 
-3. **Sign and Authorize**  
-   Sign the message and authorize tokens in the Ethereum network.  
-   _Make sure to monitor the network from which you are sending tokens._
+3. **Approve Tokens**  
+   - Click the **"Approve"** button to begin the approval process.  
+   - A **Metamask** wallet prompt will appear requesting approval for the specified amount of tokens.  
+   - Approve at least the amount you intend to transfer.  
+   - This step is required to allow the bridge to interact with your tokens securely.  
+   > Approval in MetaMask enables the bridge's smart contract to manage a specified token in a specified amount and facilitate its transfer between networks. Learn more about token approvals [here](https://support.metamask.io/transactions-and-gas/transactions/what-is-a-token-approval/).
 
-4. **Wait for Confirmation**  
-   Wait for the confirmation of burned tokens on the Ethereum network.
+4. **Convert Tokens**  
+   - Once the approval is complete, the **"Convert"** button will appear.  
+   - Click **"Convert"** and follow the wallet prompts to sign the transaction.  
+   - Tokens will be **burned** on the Ethereum network, and an equivalent amount will be **minted** on the Binance Smart Chain network.
 
 5. **Switch to "TO" Network and Account**  
    Switch the network and account to **Binance Smart Chain** (in this flow: Binance).
 
 6. **Claim Tokens**  
-   Click the **"Claim"** button and confirm the transaction on the Binance Smart Chain network.  
-   _Make sure to monitor the network where you are receiving tokens._  
+   - Click the **"Claim"** button in the **Transactions Tab** and confirm the transaction on the Binance Smart Chain network.  
+   - Ensure you have sufficient funds for the gas fee.
 
-> **Important:**  
-> Transferring tokens and claiming tokens are **paid operations**. Please ensure you have enough funds to cover the gas fees for both transfer and claim operations.
+> **Note:**  
+> Transferring tokens and claiming tokens are paid operations. Ensure you have enough funds to cover the gas fees for both transfer and claim operations.
 
 ---
 
@@ -49,19 +54,24 @@ When you load the bridge page, the default direction is from **Binance Smart Cha
 2. **Switch Network to "FROM"**  
    Set the network to the **FROM** direction (in this flow: Binance Smart Chain).
 
-3. **Sign and Authorize**  
-   Sign the message and authorize tokens in the Binance Smart Chain network.  
-   _Make sure to monitor the network from which you are sending tokens._
+3. **Approve Tokens**  
+   - Click the **"Approve"** button to begin the approval process.  
+   - A **Metamask** wallet prompt will appear requesting approval for the specified amount of tokens.  
+   - Approve at least the amount you intend to transfer.  
+   - This step is required to allow the bridge to interact with your tokens securely.  
+   > Approval in MetaMask enables the bridge's smart contract to manage a specified token in a specified amount and facilitate its transfer between networks. Learn more about token approvals [here](https://support.metamask.io/transactions-and-gas/transactions/what-is-a-token-approval/).
 
-4. **Wait for Confirmation**  
-   Wait for the confirmation of burned tokens on the Binance Smart Chain network.
+4. **Convert Tokens**  
+   - Once the approval is complete, the **"Convert"** button will appear.  
+   - Click **"Convert"** and follow the wallet prompts to sign the transaction.  
+   - Tokens will be **burned** on the Binance Smart Chain network, and an equivalent amount will be **minted** on the Ethereum network.
 
 5. **Switch to "TO" Network and Account**  
    Switch the network and account to **Ethereum** (in this flow: Ethereum).
 
 6. **Claim Tokens**  
-   Click the **"Claim"** button and confirm the transaction on the Ethereum network.  
-   _Make sure to monitor the network where you are receiving tokens._  
+   - Click the **"Claim"** button in the **Transactions Tab** and confirm the transaction on the Ethereum network.  
+   - Ensure you have sufficient funds for the gas fee.
 
-> **Important:**  
-> Transferring tokens and claiming tokens are **paid operations**. Please ensure you have enough funds to cover the gas fees for both transfer and claim operations.
+> **Note:**  
+> Transferring tokens and claiming tokens are paid operations. Ensure you have enough funds to cover the gas fees for both transfer and claim operations.
