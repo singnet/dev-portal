@@ -1,37 +1,61 @@
 # Ethereum-Binance
 
-Algorithm of working with Ethereum-Binance bridge: 
+### Algorithm of working with the Ethereum-Binance bridge
+
 ::: warning
-Currently bridge between Ethereum and Binance Smart Chain works only for CGV and RJV tokens:
-Link: https://bsc-bridge.singularitynet.io/
+Currently, the bridge between Ethereum and Binance Smart Chain works only for **CGV** and **RJV** tokens:  
+[Bridge Link](https://bsc-bridge.singularitynet.io/)
 :::
 
-When you load the bridge page first the default direction is from Binance Smart Chain to Ethereum. But you always can change it!
+---
 
-Example flow from Ethereum to Binance Smart Chain:
+### General Information
+When you load the bridge page, the default direction is from **Binance Smart Chain** to **Ethereum**, but you can always change it!
 
-1. Connect an Ethereum account, connect an account for Binance
+---
 
-2. Switch the network to FROM(in this flow - Ethereum)
+### Example Flow: From Ethereum to Binance Smart Chain
 
-3. Sign the message and Authorize tokens in the Ethereum network. Keep an eye on the network from which you are sending tokens!
+1. **Connect Accounts**  
+   Connect an Ethereum account and a Binance Smart Chain account.
 
-4. Wait for the confirmation of burn tokens in the Ethereum network tokens.
+2. **Switch Network to "FROM"**  
+   Set the network to the **FROM** direction (in this flow: Ethereum).
 
-5. Switch to the TO network and account if you connect another account for Binance Smart Chain(in this flow - Binance)
+3. **Sign and Authorize**  
+   Sign the message and authorize tokens in the Ethereum network.  
+   _Make sure to monitor the network from which you are sending tokens._
 
-6. Click the "Claim" button and confirm the transaction in the Binance SmartChain network. Keep an eye on the network in which you receive tokens.
+4. **Wait for Confirmation**  
+   Wait for the confirmation of burned tokens on the Ethereum network.
 
-The procedure for transferring from Binance Smart Chain to Ethereum:
+5. **Switch to "TO" Network and Account**  
+   Switch the network and account to **Binance Smart Chain** (in this flow: Binance).
 
-1. Connect an Ethereum account, connect an account for Binance
+6. **Claim Tokens**  
+   Click the **"Claim"** button and confirm the transaction on the Binance Smart Chain network.  
+   _Make sure to monitor the network where you are receiving tokens._
 
-2. Switch the network to FROM(in this flow - Binance Smart Chain)
+---
 
-3. Sign the message and Authorize tokens in Binance Smart Chain network. Keep an eye on the network from which you are sending tokens!
+### Procedure: From Binance Smart Chain to Ethereum
 
-4. Wait for the confirmation of burn tokens in the Binance Smart Chain network.
+1. **Connect Accounts**  
+   Connect an Ethereum account and a Binance Smart Chain account.
 
-5. Switch to the TO network and account if you connect another account for Ethereum(in this flow - Ethereum)
+2. **Switch Network to "FROM"**  
+   Set the network to the **FROM** direction (in this flow: Binance Smart Chain).
 
-6. Click the "Claim" button and confirm the transaction on the Ethereum network. Keep an eye on the network in which you receive tokens.
+3. **Sign and Authorize**  
+   Sign the message and authorize tokens in the Binance Smart Chain network.  
+   _Make sure to monitor the network from which you are sending tokens._
+
+4. **Wait for Confirmation**  
+   Wait for the confirmation of burned tokens on the Binance Smart Chain network.
+
+5. **Switch to "TO" Network and Account**  
+   Switch the network and account to **Ethereum** (in this flow: Ethereum).
+
+6. **Claim Tokens**  
+   Click the **"Claim"** button and confirm the transaction on the Ethereum network.  
+   _Make sure to monitor the network where you are receiving tokens._

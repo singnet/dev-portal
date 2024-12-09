@@ -1300,6 +1300,18 @@ export const BridgeSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/Bridge/selecting-networks/",
     },
     {
+        text: "Choosing Assets",
+        link: "/docs/products/Bridge/choosing-assets/",
+    },
+    {
+        text: "Initiating Conversion",
+        link: "/docs/products/Bridge/initiating-conversion/",
+    },
+    {
+        text: "Viewing History",
+        link: "/docs/products/Bridge/viewing-history/",
+    },
+    {
         text: "Troubles",
         link: "/docs/products/Bridge/troubles/",
     },
