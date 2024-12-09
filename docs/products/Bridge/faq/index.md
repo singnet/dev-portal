@@ -2,13 +2,23 @@
 
 ## What does the SingularityNET Bridge do?
 
-The Bridge provides a means to transfer AGIX tokens on Ethereum to AGIX tokens on Cardano and vice-versa on a 1:1 basis as promised in the phase two proposal.
+The SingularityNET Bridge allows users to transfer tokens between the Ethereum and Cardano networks on a 1:1 basis.  
+⚠️ **Important:** Transfers are restricted to identical tokens (e.g., AGIX on Ethereum to AGIX on Cardano).  
+
+Supported tokens include:  
+
+- **AGIX**  
+- **NTX**  
+- **FET (ASI)**  
+- **WMTX**  
+- **RJV**  
+- **CGV**  
 
 ## How long will it take for the conversion to complete?
 
 The Bridge is moving tokens across two Blockchains and consequently will take a few minutes to complete, to clear their respective consensus mechanisms. If the chains are congested, conversion may take longer.
 
-In all cases, you can view the current state of the conversion in the "Transactions" tab of the Bridge.
+In all cases, you can view the current state of the conversion in the `Transactions` tab of the Bridge.
 
 Please always check the status of the conversion before submitting a conversion again. In most cases, the transaction has been submitted and is waiting to be finalized by the blockchains.
 
@@ -18,27 +28,46 @@ The Transactions page lists all your conversion requests. The page first lists a
 
 Each conversion can be in one of the following states as referenced in the Status column
 
-* Initiated - The conversion request has been initiated and the Bridge is waiting for confirmations from the Blockchain before it moves to the Processing state. You do not have to do anything at this state, just wait for the conversion to move to the next state.
+- **`Initiated`**  
+  The conversion request has been initiated, and the Bridge is waiting for confirmations from the blockchain before moving to the **Processing** state.  
+  _You do not have to take any action at this stage, just wait for the conversion to proceed._
 
-* Processing - The Bridge is minting/burning tokens as part of the conversion. You do not have to do anything at this state, just wait for the conversion to move to the next state.
+---
 
-* Ready for Claim - This state applies for conversions from Cardano to Ethereum and indicates that the tokens have moved to the Ethereum side. You need to claim the tokens from the Bridge. Initiate the claim from the page, you will need to perform a wallet operation to claim the tokens to your wallet
+- **`Processing`**  
+  The Bridge is minting or burning tokens as part of the conversion.  
+  _You do not have to take any action at this stage, just wait for the conversion to proceed._
 
-* Claim Initiated - This state applies for conversions from Cardano to Ethereum and indicates that the Bridge is waiting for confirmations from the Ethereum blockchain.  You do not have to do anything at this state.
+---
 
-* Expired - The conversion request has expired. This usually means that the first step of moving tokens did not succeed. 
+- **`Ready for Claim`**  
+  This state applies to conversions from **Cardano to Ethereum** and indicates that the tokens have moved to the Ethereum side.  
+  _To claim the tokens, initiate the claim from the page. You will need to perform a wallet operation to claim the tokens into your wallet._
 
-    + Ethereum to Cardano - This can happen if you signed for the conversion but did not complete the next step of transferring tokens. In this case, a conversion request was created but no tokens were moved
+---
 
-    + Cardano to Ethereum - This can happen if you create a conversion but did not deposit tokens to the address provided to you or deposited a different amount from what you specified in the Bridge
+- **`Claim Initiated`**  
+  This state applies to conversions from **Cardano to Ethereum** and indicates that the Bridge is waiting for confirmations from the Ethereum blockchain.  
+  _You do not have to take any action at this stage._
 
-* Success - Your conversion is successful, the tokens have reached your wallet
+---
+
+- **`Expired`**  
+  The conversion request has expired. This typically occurs when the first step of moving tokens fails.  
+
+  - **Ethereum to Cardano**: This can happen if you signed for the conversion but did not complete the next step of transferring tokens. In this case, a conversion request was created, but no tokens were moved.  
+  - **Cardano to Ethereum**: This can happen if you created a conversion but did not deposit tokens to the provided address or deposited an incorrect amount.
+
+---
+
+- **`Success`**  
+  Your conversion is successful, and the tokens have reached your wallet.
 
 ## How are my conversions sorted on the Transactions page?
 
-The Transactions page first displays open conversions i.e., conversions that are in the Initiated, Processing, Ready for Claim or Claim initiated state.
+The Transactions page first displays open conversions i.e., conversions that are in the `Initiated`, `Processing`, `Ready for Claim` or `Claim` initiated state.
 
-All Successful or Expired conversion requests are then displayed sorted by the Creation time.
+All `Successful` or `Expired` conversion requests are then displayed sorted by the Creation time.
 
 ## I got a message on a Black popup when I initiated my conversion on the Home page. What happened to my conversion?
 

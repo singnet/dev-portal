@@ -1,37 +1,77 @@
 # Ethereum-Binance
 
-Algorithm of working with Ethereum-Binance bridge: 
+### Algorithm of working with the Ethereum-Binance bridge
+
 ::: warning
-Currently bridge between Ethereum and Binance Smart Chain works only for CGV and RJV tokens:
-Link: https://bsc-bridge.singularitynet.io/
+Currently, the bridge between Ethereum and Binance Smart Chain works only for **CGV** and **RJV** tokens:  
+[Bridge Link](https://bsc-bridge.singularitynet.io/)
 :::
 
-When you load the bridge page first the default direction is from Binance Smart Chain to Ethereum. But you always can change it!
+---
 
-Example flow from Ethereum to Binance Smart Chain:
+### General Information
+When you load the bridge page, the default direction is from **Binance Smart Chain** to **Ethereum**, but you can always change it!
 
-1. Connect an Ethereum account, connect an account for Binance
+---
 
-2. Switch the network to FROM(in this flow - Ethereum)
+### Example Flow: From Ethereum to Binance Smart Chain
 
-3. Sign the message and Authorize tokens in the Ethereum network. Keep an eye on the network from which you are sending tokens!
+1. **Connect Accounts**  
+   Connect an Ethereum account and a Binance Smart Chain account.
 
-4. Wait for the confirmation of burn tokens in the Ethereum network tokens.
+2. **Switch Network to "FROM"**  
+   Set the network to the **FROM** direction (in this flow: Ethereum).
 
-5. Switch to the TO network and account if you connect another account for Binance Smart Chain(in this flow - Binance)
+3. **Approve Tokens**  
+   - Click the **"Approve"** button to begin the approval process.  
+   - A **Metamask** wallet prompt will appear requesting approval for the specified amount of tokens.  
+   - Approve at least the amount you intend to transfer.  
+   - This step is required to allow the bridge to interact with your tokens securely.  
+   > Approval in MetaMask enables the bridge's smart contract to manage a specified token in a specified amount and facilitate its transfer between networks. Learn more about token approvals [here](https://support.metamask.io/transactions-and-gas/transactions/what-is-a-token-approval/).
 
-6. Click the "Claim" button and confirm the transaction in the Binance SmartChain network. Keep an eye on the network in which you receive tokens.
+4. **Convert Tokens**  
+   - Once the approval is complete, the **"Convert"** button will appear.  
+   - Click **"Convert"** and follow the wallet prompts to sign the transaction.  
+   - Tokens will be **burned** on the Ethereum network, and an equivalent amount will be **minted** on the Binance Smart Chain network.
 
-The procedure for transferring from Binance Smart Chain to Ethereum:
+5. **Switch to "TO" Network and Account**  
+   Switch the network and account to **Binance Smart Chain** (in this flow: Binance).
 
-1. Connect an Ethereum account, connect an account for Binance
+6. **Claim Tokens**  
+   - Click the **"Claim"** button in the **Transactions Tab** and confirm the transaction on the Binance Smart Chain network.  
+   - Ensure you have sufficient funds for the gas fee.
 
-2. Switch the network to FROM(in this flow - Binance Smart Chain)
+> **Note:**  
+> Transferring tokens and claiming tokens are paid operations. Ensure you have enough funds to cover the gas fees for both transfer and claim operations.
 
-3. Sign the message and Authorize tokens in Binance Smart Chain network. Keep an eye on the network from which you are sending tokens!
+---
 
-4. Wait for the confirmation of burn tokens in the Binance Smart Chain network.
+### Procedure: From Binance Smart Chain to Ethereum
 
-5. Switch to the TO network and account if you connect another account for Ethereum(in this flow - Ethereum)
+1. **Connect Accounts**  
+   Connect an Ethereum account and a Binance Smart Chain account.
 
-6. Click the "Claim" button and confirm the transaction on the Ethereum network. Keep an eye on the network in which you receive tokens.
+2. **Switch Network to "FROM"**  
+   Set the network to the **FROM** direction (in this flow: Binance Smart Chain).
+
+3. **Approve Tokens**  
+   - Click the **"Approve"** button to begin the approval process.  
+   - A **Metamask** wallet prompt will appear requesting approval for the specified amount of tokens.  
+   - Approve at least the amount you intend to transfer.  
+   - This step is required to allow the bridge to interact with your tokens securely.  
+   > Approval in MetaMask enables the bridge's smart contract to manage a specified token in a specified amount and facilitate its transfer between networks. Learn more about token approvals [here](https://support.metamask.io/transactions-and-gas/transactions/what-is-a-token-approval/).
+
+4. **Convert Tokens**  
+   - Once the approval is complete, the **"Convert"** button will appear.  
+   - Click **"Convert"** and follow the wallet prompts to sign the transaction.  
+   - Tokens will be **burned** on the Binance Smart Chain network, and an equivalent amount will be **minted** on the Ethereum network.
+
+5. **Switch to "TO" Network and Account**  
+   Switch the network and account to **Ethereum** (in this flow: Ethereum).
+
+6. **Claim Tokens**  
+   - Click the **"Claim"** button in the **Transactions Tab** and confirm the transaction on the Ethereum network.  
+   - Ensure you have sufficient funds for the gas fee.
+
+> **Note:**  
+> Transferring tokens and claiming tokens are paid operations. Ensure you have enough funds to cover the gas fees for both transfer and claim operations.
