@@ -9,6 +9,10 @@ Bridging tokens from one chain to another involves the following steps:
 ### 1. Set Up the Token Pair  
 Select the token and the direction of the transfer (e.g., Ethereum to Cardano or Cardano to Ethereum).  
 
+::: warning
+Claiming tokens on the Ethereum network is a paid operation. Ensure you have at least **0.005 ETH** in your wallet to cover the gas fee for the claim transaction.
+:::
+
 ---
 
 ### 2. Enter the Amount of Tokens  
