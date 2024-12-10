@@ -18,21 +18,33 @@ Claiming tokens on the Ethereum network is a paid operation. Ensure you have at 
 ### 2. Enter the Amount of Tokens  
 Input the number of tokens you wish to transfer.  
 
+<ImageViewer src="/assets/images/products/Bridge/input-tokens.webp" alt="InputTokens"/>
+
 ---
 
 ### 3. Conversion Steps  
 
 #### **For Ethereum to Cardano**  
+
+- Click on the ‘Approve’ button that appears
+
+<ImageViewer src="/assets/images/products/Bridge/approve-button.webp" alt="ApproveButton"/>
+
 1. **Approve Tokens:**  
    - A **Metamask** wallet prompt will appear requesting approval for the specified amount of tokens.  
    - You must approve at least the amount you intend to transfer.  
-   - This step is mandatory, as it allows the bridge to interact with your specified tokens.  
+   - This step is mandatory, as it allows the bridge to interact with your specified tokens.
+
+<ImageViewer src="/assets/images/products/Bridge/metamask-approve.webp" alt="MetamaskApprove"/>
+
 > Approve in MetaMask is required for the smart contract of our bridge to manage a specified token in a specified amount and facilitate its transfer between networks. You can learn more about it [here](https://support.metamask.io/transactions-and-gas/transactions/what-is-a-token-approval/).
 
 2. **Convert Tokens:**  
    - Once the approval is complete, the **"Convert"** button will appear.  
    - Click **"Convert"** and follow the wallet prompts to sign the transaction.  
    - Tokens will be **burned** on the Ethereum network, and an equivalent amount will be **minted** on the Cardano network.  
+
+<ImageViewer src="/assets/images/products/Bridge/convert-button.webp" alt="ConvertButton"/>
 
 ---
 
