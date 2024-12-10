@@ -19,8 +19,8 @@
 13. Support email: This email needs to AI Marketplace users to contact you about questions and other.
 14. Support Number: Optional field. Contact number for customers.
     <ImageViewer src="/assets/images/products/AIMarketplace/publisher/PaymentAddress.webp" alt="Address"/>
-15. Payment address: The Ethereum address to which all payments will be processed for this group. The address of the etcd you have deployed should be here. It doesn’t matter if it’s public or local, the main thing is that the daemon can reach etcd through it.
-16. ETCD Endpoint: all the ETCD endpoints that will be used. Details [here](/docs/products/DecentralizedAIPlatform/UsedTechnologies/etcd/)
+15. Payment address: The Ethereum address to which all payments will be processed for this group.
+16. ETCD Endpoint: all the ETCD endpoints that will be used. The address of the etcd you have deployed should be here. It doesn’t matter if it’s public or local, the main thing is that the daemon can reach etcd through it. Details [here](/docs/products/DecentralizedAIPlatform/UsedTechnologies/etcd/)
 
     <ImageViewer src="/assets/images/products/AIMarketplace/publisher/PublishOrganizationToBlockchain.webp" alt="Organization"/>
 
@@ -47,14 +47,14 @@
 12. Demo Free Calls: number of free demo calls to your service
 13. Daemon endpoint: Daemon endpoint is the public address where you plan to host the daemon. Must start with http/https.
 14. Daemon Addresses: The Ethereum public address
-    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/PublishOrganizationToBlockchain.webp" alt="Price"/>
+    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/PriceAndDaemonEndpointsMenus.webp" alt="Price"/>
     How to get: Open PyCharm and run a program that will generate an address and a private key:
 
 ```py
 from eth_account import Account
 accut = Account.create()
-print(‘Your address: ’ + accut.address)
-print(‘Your private key: ’ + accut.key.hex())
+print('Your address: ' + accut.address)
+print('Your private key: ' + accut.key.hex())
 ```
 
 15. Type of your service: You need to choose the appropriate type of service
