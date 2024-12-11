@@ -7,14 +7,29 @@ This guide explains how to extend an existing project to create a calculator wit
 You will work with the following files:
 
 1. **index.js**: Implements the calculator's functionality and user interface.
-2. **style.css**: Provides styles for the calculator components.
+2. **style.js**: Provides styles for the calculator components.
 3. **example_pb_service.js**: Contains the interface for interacting with the calculator service.
 4. **example_pb.js**: Auxiliary file for service communication.
+
+### About `example_pb_service.js` and `example_pb.js`
+
+- **example_pb_service.js**:
+  This file provides an abstraction layer for making service calls. It contains method descriptors for each operation (e.g., `add`, `subtract`) exposed by the Calculator service. Each method descriptor includes:
+  - The expected input and output message types.
+  - The gRPC method name.
+
+  It simplifies the process of calling a service method by encapsulating the details of the gRPC protocol.
+
+- **example_pb.js**:
+  This file contains definitions of the message types used by the Calculator service, as defined in the `.proto` file. These include:
+  - `Numbers`: Represents the two numbers (`a` and `b`) involved in a calculation.
+  - `Result`: Represents the output value of a calculation.
+
+  It provides serialization and deserialization logic for these messages, enabling communication with the service in binary format.
 
 Download the required service files:
 - <a href="/assets/files/example_pb_service.js" download>example_pb_service.js</a> 
 - <a href="/assets/files/example_pb.js" download>example_pb.js</a>
-
 
 ## Step-by-Step Modifications
 
@@ -35,7 +50,6 @@ import { Calculator } from "./example_pb_service";
 ```
 
 These components will be used to build the UI for the calculator.
-
 
 ### 2. Creating the Input Form
 Create a `ServiceInput` component for entering values and selecting an operation. This component uses `useState` to manage input fields and operation selection.
@@ -123,7 +137,6 @@ const ServiceInput = ({ onSubmitAction }) => {
 
 This component collects the user's inputs and sends them to the parent component via the `onSubmitAction` callback.
 
-
 ### 3. Sending Data to the Service
 The `submitAction` function is responsible for creating a request and sending data to the service.
 
@@ -155,7 +168,6 @@ const submitAction = (action, firstValue, secondValue) => {
 
 This function creates a request object, fills it with the user-provided inputs, and sends it to the service.
 
-
 ### 4. Handling the Response
 The `onActionEnd` function processes the service's response and sets the result.
 
@@ -174,7 +186,6 @@ const onActionEnd = (response) => {
 ```
 
 This function checks for errors in the response and updates the state with the result if successful.
-
 
 ### 5. Displaying the Result
 Create a `ServiceOutput` component to show the result or an error message.
@@ -197,7 +208,6 @@ const ServiceOutput = ({ response }) => {
 ```
 
 This component displays either the result or an error message based on the `response` prop.
-
 
 ### 6. Main Component
 Combine `ServiceInput` and `ServiceOutput` in the main `ExampleService` component. Use `isComplete` to toggle between input and output views.
@@ -223,7 +233,6 @@ export default withStyles(useStyles)(ExampleService);
 
 This component ties together the input and output components to form the complete calculator interface.
 
-
 This completes the guide. The provided explanations clarify how each piece of code contributes to the overall functionality of the calculator service.
 
 
@@ -236,151 +245,122 @@ import { withStyles } from "@mui/styles";
 import { useStyles } from "./styles";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import OutlinedDropDown from '../../common/OutlinedDropdown';
+import OutlinedTextArea from '../../common/OutlinedTextArea';
+import { Calculator } from "./example_pb_service";
 
-const ServiceInput = ({ onSubmitAction }) => {
+const ExampleService = ({ serviceClient, isComplete }) => {
     const classes = useStyles();
-    const [firstValue, setFirstValue] = useState("");
-    const [secondValue, setSecondValue] = useState("");
-    const [action, setAction] = useState("");
+    const [response, setResponse] = useState(null);
 
-    const availableToRunToggle = () => {
-        if (
-            firstValue.length > 0 &&
-            secondValue.length > 0 &&
-            action.length > 0
-        ) {
-            return true;
-        }
-        return false;
-    };
+    const ServiceInput = () => {
 
-    const handleChangeAction = (event) => {
-        setAction(event.target.value);
-    };
+        const [firstValue, setFirstValue] = useState("");
+        const [secondValue, setSecondValue] = useState("");
+        const [action, setAction] = useState("");
 
-    const onValueChange = (event) => {
-        if (event.target.name === "firstValue") {
-            setFirstValue(event.target.value);
-        } else if (event.target.name === "secondValue") {
-            setSecondValue(event.target.value);
-        }
-    };
 
-    const ActionSelect = () => {
+        const isAllowedToRun = () => {
+            return !!firstValue && !!secondValue && !!action;
+        };
+
+        const onActionEnd = (response) => {
+            const { message, status, statusMessage } = response;
+
+            if (status !== 0) {
+                throw new Error(statusMessage);
+            }
+
+            setResponse(message.getValue());
+        };
+
+        const submitAction = () => {
+            const methodDescriptor = Calculator[action];
+            const request = new methodDescriptor.requestType();
+
+            request.setA(firstValue);
+            request.setB(secondValue);
+
+            const props = {
+                request,
+                preventCloseServiceOnEnd: false,
+                onEnd: onActionEnd,
+            };
+
+            serviceClient.unary(methodDescriptor, props);
+        };
+
         return (
-            <FormControl style={{ minWidth: "120px" }}>
-                <InputLabel>Action</InputLabel>
-                <Select
-                    value={action}
-                    label="Actions"
-                    onChange={handleChangeAction}
-                >
-                    <MenuItem value={"Add"}>Add</MenuItem>
-                    <MenuItem value={"Subtract"}>Subtract</MenuItem>
-                    <MenuItem value={"Multiply"}>Multiply</MenuItem>
-                    <MenuItem value={"Divide"}>Divide</MenuItem>
-                </Select>
-            </FormControl>
+            <div className={classes.contentBox}>
+                <Typography variant="h4">Input values</Typography>
+                <div className={classes.contentBox}>
+                    <OutlinedTextArea
+                        label={"First value"}
+                        value={firstValue}
+                        onChange={(event) =>
+                            setFirstValue(event.target.value)
+                        }
+                    />
+                </div>
+                <div className={classes.contentBox}>
+                    <OutlinedTextArea
+                        label={"Second value"}
+                        value={secondValue}
+                        onChange={(event) =>
+                            setSecondValue(event.target.value)
+                        }
+                    />
+                </div>
+                <div className={classes.contentBox}>
+                    <Typography variant="h4">Action</Typography>
+                    <OutlinedDropDown
+                        label={"Select action"}
+                        list={[
+                            { value: "add", label: "Add" },
+                            { value: "sub", label: "Subtract" },
+                            { value: "mul", label: "Multiply" },
+                            { value: "div", label: "Divide" },
+                        ]}
+                        onChange={(event) => setAction(event.target.value)}
+                        value={action}
+                    />
+                </div>
+                <div className={classes.contentBox}>
+                    <Button
+                        variant={"contained"}
+                        onClick={submitAction}
+                        disabled={!isAllowedToRun()}
+                    >
+                        {"Submit"}
+                    </Button>
+                </div>
+            </div>
         );
     };
 
-    return (
-        <div className={classes.serviceMainPage}>
-            <div className={classes.contentBox}>
-                <Typography variant="h2">Input values</Typography>
-                <TextField
-                    id="outlined-basic"
-                    label="First value"
-                    name="firstValue"
-                    variant="outlined"
-                    onChange={onValueChange}
-                />
-                <TextField
-                    id="outlined-basic"
-                    label="Second value"
-                    name="secondValue"
-                    variant="outlined"
-                    onChange={onValueChange}
-                />
-                <ActionSelect />
-            </div>
-            <Button
-                variant="contained"
-                onClick={() => onSubmitAction(action, firstValue, secondValue)}
-                disabled={!availableToRunToggle()}
-            >
-                {"Submit"}
-            </Button>
-        </div>
-    );
-};
+    const ServiceOutput = () => {
+        if (typeof response !== "number") {
+            return (
+                <div>
+                    <Typography variant="h4">
+                        Something went wrong...
+                    </Typography>
+                </div>
+            );
+        }
 
-const ServiceOutput = ({ response }) => {
-    if (response === undefined) {
         return (
             <div>
-                <Typography variant="h2">Something went wrong...</Typography>
+                <Typography variant="h4">
+                    Service call completed with output {response}
+                </Typography>
             </div>
         );
-    }
-
-    return (
-        <div>
-            <Typography variant="h2">
-                Service call completed with output {response}
-            </Typography>
-        </div>
-    );
-};
-
-const ExampleService = ({ isComplete }) => {
-    const classes = useStyles();
-    const [response, setResponse] = useState(undefined);
-
-    const onActionEnd = (response) => {
-        const { message, status, statusMessage } = response;
-
-        if (status !== 0) {
-            throw new Error(statusMessage);
-        }
-
-        setResponse(message.getValue());
-    };
-
-    const submitAction = (action, firstValue, secondValue) => {
-        alert(`
-          action: ${action}
-          firstValue: ${firstValue}
-          secondValue: ${secondValue}
-        `);
-
-        // const methodDescriptor = Calculator[action];
-        // const request = new methodDescriptor.requestType();
-
-        // request.setA(firstValue);
-        // request.setB(secondValue);
-
-        // const props = {
-        //   request,
-        //   preventCloseServiceOnEnd: false,
-        //   onEnd: onActionEnd,
-        // };
-
-        // serviceClient.unary(methodDescriptor, props);
     };
 
     return (
         <div className={classes.serviceContainer}>
-            {!isComplete ? (
-                <ServiceInput onSubmitAction={submitAction} />
-            ) : (
-                <ServiceOutput response={response} />
-            )}
+            {!isComplete ? <ServiceInput /> : <ServiceOutput />}
         </div>
     );
 };
