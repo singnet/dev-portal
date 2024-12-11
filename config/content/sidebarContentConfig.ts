@@ -1022,7 +1022,11 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "UI Sandbox version 1",
-                link: "/docs/products/DecentralizedAIPlatform/Sandbox/available-now",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/available-now/",
+            },
+            {
+                text: "Calculator guide",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/calculator-guide/",
             }
         ],
     },
