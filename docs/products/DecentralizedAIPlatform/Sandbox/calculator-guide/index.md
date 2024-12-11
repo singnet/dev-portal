@@ -34,206 +34,220 @@ Download the required service files:
 ## Step-by-Step Modifications
 
 ### 1. Importing Required Components
-Add the following imports to the top of `index.js`:
+We start with the import statements, which bring in various libraries and components that we need to use in our component.
 
-```js
+Original imports:
+
+```javascript
 import React, { useState } from "react";
 import { withStyles } from "@mui/styles";
+import { useStyles } from "./styles";
 import Button from "@mui/material/Button";
+```
+#### React, { useState }:
+* React is a core library that allows us to build user interfaces using components.
+* useState is a function that helps us manage state in our component. We'll explain this in detail later when we start using it.
+#### withStyles and useStyles:
+
+* These are used to style the components in the @mui (Material-UI) library. They let you define and apply custom styles to the components.
+#### Button:
+
+* A Material-UI component that represents a clickable button. We’ll use it in our form to submit the action.
+#### New imports to add:
+
+```js
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import OutlinedDropDown from '../../common/OutlinedDropdown';
+import OutlinedTextArea from '../../common/OutlinedTextArea';
 import { Calculator } from "./example_pb_service";
 ```
 
-These components will be used to build the UI for the calculator.
+#### Typography:
 
-### 2. Creating the Input Form
-Create a `ServiceInput` component for entering values and selecting an operation. This component uses `useState` to manage input fields and operation selection.
+* A Material-UI component for text formatting. We'll use it to display text like titles, messages, and the output of calculations.
 
-#### Code Breakdown:
+#### OutlinedDropDown:
 
-**Define State Variables:**
+* This is a custom dropdown component, located in the common folder. It lets us display a list of options (like add, subtract, etc.) for the user to choose from.
 
+#### OutlinedTextArea:
+
+* Another custom component for text input. This allows the user to type values into text fields (e.g., first value and second value).
+
+#### Calculator:
+
+* This comes from a file that contains predefined methods for making remote procedure calls (RPCs) to a server. We'll use it to call mathematical operations from a service.
+
+### 2. ServiceInput Component: Getting User Input
+The ServiceInput component will be responsible for collecting data from the user, such as the two numbers (firstValue and secondValue) and the operation (action). It will then send this data to the backend for processing.
+
+**Original Code:**
+
+```javascript
+const ServiceInput = () => {
+    return (
+        <div className={classes.contentBox}>
+            Input
+        </div>
+    );
+};
+```
+Now, let's break it down with our changes.
+
+#### Setting up state with useState:
 ```js
 const [firstValue, setFirstValue] = useState("");
 const [secondValue, setSecondValue] = useState("");
 const [action, setAction] = useState("");
 ```
 
-Here, `firstValue` and `secondValue` store the numbers the user inputs, while `action` tracks the selected arithmetic operation.
+#### What is useState?
 
-**Handle Input Changes:**
+* useState is a React hook that allows you to create state variables in your component. State variables store information that can change over time, like user input.
+* For example, firstValue will store the value entered by the user for the first number. setFirstValue is the function used to update that state whenever the user types something into the input field.
 
-```js
-const onValueChange = (event) => {
-    if (event.target.name === "firstValue") {
-        setFirstValue(event.target.value);
-    } else if (event.target.name === "secondValue") {
-        setSecondValue(event.target.value);
-    }
-};
+#### Why useState("")?
 
-const handleChangeAction = (event) => {
-    setAction(event.target.value);
-};
-```
+* useState("") initializes the state variable with an empty string. This is because we expect the user to input text (like a number), so we start with an empty string.
 
-These functions update the state variables whenever the user types a number or selects an operation from the dropdown menu.
-
-**Build the Input Form:**
+#### Handling form submission:
+We need a function that will check if the inputs are valid and submit the data to the server.
 
 ```js
-const ServiceInput = ({ onSubmitAction }) => {
-    return (
-        <div className={classes.serviceMainPage}>
-            <Typography variant="h2">Input values</Typography>
-
-            {/* Input fields for the numbers */}
-            <TextField
-                id="firstValue"
-                label="First value"
-                name="firstValue"
-                variant="outlined"
-                onChange={onValueChange}
-            />
-            <TextField
-                id="secondValue"
-                label="Second value"
-                name="secondValue"
-                variant="outlined"
-                onChange={onValueChange}
-            />
-
-            {/* Dropdown menu for the operation */}
-            <FormControl style={{ minWidth: "120px" }}>
-                <InputLabel>Action</InputLabel>
-                <Select
-                    value={action}
-                    onChange={handleChangeAction}
-                >
-                    <MenuItem value={"add"}>Add</MenuItem>
-                    <MenuItem value={"sub"}>Subtract</MenuItem>
-                    <MenuItem value={"mul"}>Multiply</MenuItem>
-                    <MenuItem value={"div"}>Divide</MenuItem>
-                </Select>
-            </FormControl>
-
-            {/* Submit button for sending inputs and operation */}
-            <Button
-                variant="contained"
-                onClick={() => onSubmitAction(action, firstValue, secondValue)}
-                disabled={!(firstValue && secondValue && action)}
-            >
-                Submit
-            </Button>
-        </div>
-    );
+const isAllowedToRun = () => {
+    return !!firstValue && !!secondValue && !!action;
 };
 ```
-
-This component collects the user's inputs and sends them to the parent component via the `onSubmitAction` callback.
-
-### 3. Sending Data to the Service
-The `submitAction` function is responsible for creating a request and sending data to the service.
-
-#### Code Breakdown:
-
-**Prepare and Send Request:**
+#### What does !!firstValue mean?
+* The double exclamation mark (!!) is a trick to convert a value into a boolean. If firstValue is an empty string, it will return false. If it has any content, it returns true. This ensures that the submit button is disabled unless the user has entered values for all fields.
+#### Handling the Action (button click):
+When the user clicks "Submit", we need to call the backend with the data entered in the form. This is handled by the submitAction function.
 
 ```js
-const submitAction = (action, firstValue, secondValue) => {
-    // Determine the service method based on the selected action
-    const methodDescriptor = Calculator[action];
+const submitAction = () => {
+    const methodDescriptor = Calculator[action];  // Action like 'add', 'sub', etc.
     const request = new methodDescriptor.requestType();
 
-    // Set the values in the request
     request.setA(firstValue);
     request.setB(secondValue);
 
-    // Prepare the properties for the service call
     const props = {
         request,
-        preventCloseServiceOnEnd: false, // Do not close service on response
-        onEnd: onActionEnd,             // Callback for handling response
+        preventCloseServiceOnEnd: false,
+        onEnd: onActionEnd,
     };
 
-    // Send the request using the unary method
     serviceClient.unary(methodDescriptor, props);
 };
 ```
+#### What is Calculator[action]?
 
-This function creates a request object, fills it with the user-provided inputs, and sends it to the service.
+* The Calculator object contains predefined methods for the operations (like add, sub, etc.). Calculator[action] dynamically selects the method based on the user's choice.
+#### What is request.setA(firstValue)?
 
-### 4. Handling the Response
-The `onActionEnd` function processes the service's response and sets the result.
+* This line creates a request object and sets the values (firstValue and secondValue) to be sent to the backend. It converts the string input into numbers if necessary.
+#### Why serviceClient.unary?
+
+* serviceClient.unary is used to make a call to the backend using gRPC (a remote procedure call mechanism). We are sending the request and defining what happens when the action ends (success or failure).
+#### Displaying the Input Fields:
+Next, we render the input fields and the dropdown to allow the user to enter the values and choose the action.
 
 ```js
-const onActionEnd = (response) => {
-    const { message, status, statusMessage } = response;
+return (
+    <div className={classes.contentBox}>
+        <Typography variant="h4">Input values</Typography>
+        <div className={classes.contentBox}>
+            <OutlinedTextArea
+                label={"First value"}
+                value={firstValue}
+                onChange={(event) => setFirstValue(event.target.value)}
+            />
+        </div>
+        <div className={classes.contentBox}>
+            <OutlinedTextArea
+                label={"Second value"}
+                value={secondValue}
+                onChange={(event) => setSecondValue(event.target.value)}
+            />
+        </div>
+        <div className={classes.contentBox}>
+            <Typography variant="h4">Action</Typography>
+            <OutlinedDropDown
+                label={"Select action"}
+                list={[
+                    { value: "add", label: "Add" },
+                    { value: "sub", label: "Subtract" },
+                    { value: "mul", label: "Multiply" },
+                    { value: "div", label: "Divide" },
+                ]}
+                onChange={(event) => setAction(event.target.value)}
+                value={action}
+            />
+        </div>
+        <div className={classes.contentBox}>
+            <Button
+                variant={"contained"}
+                onClick={submitAction}
+                disabled={!isAllowedToRun()}
+            >
+                {"Submit"}
+            </Button>
+        </div>
+    </div>
+);
+```
+#### What is event.target.value?
 
-    // Handle errors based on the response status
-    if (status !== 0) {
-        throw new Error(statusMessage);
+* event refers to the event object that is triggered when the user interacts with an element (like typing in a text field or selecting an option).
+* event.target refers to the DOM element that triggered the event (in this case, the input field or dropdown).
+* event.target.value is the value of the input field. For example, when the user types into the text box, event.target.value will give us the string they typed.
+#### Why onChange={(event) => setFirstValue(event.target.value)}?
+
+* onChange is an event handler that triggers when the user types in the text box. It updates the firstValue state with the new value typed by the user.
+### 3. ServiceOutput Component: Displaying the Result
+The ServiceOutput component shows the result of the operation once the backend has processed it.
+
+```js
+const ServiceOutput = () => {
+    if (typeof response !== "number") {
+        return (
+            <div>
+                <Typography variant="h4">
+                    Something went wrong...
+                </Typography>
+            </div>
+        );
     }
 
-    // Extract and set the result from the response
-    setResponse(message.getValue());
-};
-```
-
-This function checks for errors in the response and updates the state with the result if successful.
-
-### 5. Displaying the Result
-Create a `ServiceOutput` component to show the result or an error message.
-
-#### Code:
-
-```js
-const ServiceOutput = ({ response }) => {
-    if (!response) {
-        return <Typography variant="h4">Something went wrong...</Typography>;
-    }
-
-    // Display the result of the service call
     return (
-        <Typography variant="h4">
-            Service call completed with output: {response}
-        </Typography>
-    );
-};
-```
-
-This component displays either the result or an error message based on the `response` prop.
-
-### 6. Main Component
-Combine `ServiceInput` and `ServiceOutput` in the main `ExampleService` component. Use `isComplete` to toggle between input and output views.
-
-```js
-const ExampleService = ({ isComplete }) => {
-    const [response, setResponse] = useState(undefined);
-
-    return (
-        <div className={classes.serviceContainer}>
-            {/* Render input form or output based on completion status */}
-            {!isComplete ? (
-                <ServiceInput onSubmitAction={submitAction} />
-            ) : (
-                <ServiceOutput response={response} />
-            )}
+        <div>
+            <Typography variant="h4">
+                Service call completed with output {response}
+            </Typography>
         </div>
     );
 };
-
-export default withStyles(useStyles)(ExampleService);
 ```
+#### What does typeof response !== "number" do?
 
-This component ties together the input and output components to form the complete calculator interface.
+* This checks if the response is a valid number. If the backend returns something unexpected (like an error or string), it displays a message indicating something went wrong.
+#### Why display the result with {response}?
 
-This completes the guide. The provided explanations clarify how each piece of code contributes to the overall functionality of the calculator service.
+* This uses the response value returned by the backend to show the result of the calculation.
+### Final Step: Combining Everything in the Main Component
+The main component returns either the ServiceInput (if isComplete is false) or the ServiceOutput (if isComplete is true).
+
+```js
+return (
+    <div className={classes.serviceContainer}>
+        {!isComplete ? <ServiceInput /> : <ServiceOutput />}
+    </div>
+);
+```
+#### What does !isComplete ? <ServiceInput /> : <ServiceOutput /> mean?
+* This is a ternary operator. If isComplete is false, it shows the ServiceInput form. Otherwise, it shows the ServiceOutput with the result.
+
+* This completes the guide. The provided explanations clarify how each piece of code contributes to the overall functionality of the calculator service.
 
 
 ## Final File
