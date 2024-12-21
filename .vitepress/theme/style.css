@@ -371,6 +371,49 @@ body {
   display: none;
 }
 
+#main-links-image {
+  position: relative;
+}
+
+#main-links-image a {
+  position: absolute;
+  z-index: 1;
+  border-radius: 4px;
+  transition: all 0.2s;
+  width: 11%;
+  height: 21%;
+}
+
+#main-links-image a:hover {
+  box-shadow:  0 0 10px var(--vp-accent-border);
+}
+
+#main-links-image .top-link {
+  top: 11%;
+}
+
+#main-links-image .bottom-link {
+  top: 70%;
+}
+
+#eth-test-faucet {
+  left: 30%;
+}
+
+#agix-faucet,
+#mainnet-publisher {
+  left: 46.5%;
+}
+
+#testnet-publisher {
+  left: 63%;
+}
+
+#testnet-marketplace,
+#mainnet-marketplace {
+  left: 81%;
+}
+
 @media (min-width: 1770px) {
   :root {
     --vp-layout-max-width: var(--vp-layout-max-width-large-screen);
