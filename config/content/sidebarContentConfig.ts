@@ -80,7 +80,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "Service Onboarding via Publisher",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/",
             },
             {
                 text: "Service Calling via CLI",
@@ -1021,13 +1021,17 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Sandbox/",
             },
             {
-                text: "UI Sandbox version 1",
-                link: "/docs/products/DecentralizedAIPlatform/Sandbox/available-now/",
+                text: "How to use UI Sandbox version 2 (new)",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/version-2/",
             },
             {
                 text: "Calculator guide",
                 link: "/docs/products/DecentralizedAIPlatform/Sandbox/calculator-guide/",
-            }
+            },
+            {
+                text: "How to use UI Sandbox version 1 (old)",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/version-1/",
+            },
         ],
     },
     {
