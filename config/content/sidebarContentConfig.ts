@@ -66,6 +66,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/IAmAIDeveloper/"
     },
     {
+        text: "Main Links",
+        link: "/docs/products/DecentralizedAIPlatform/MainLinks/"
+    },
+    {
         text: "Quick Start Guides",
         link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
         collapsed: true,
