@@ -33,5 +33,3 @@ Explore UI Sandbox Version 2 here: [AI UI Constructor](https://ai-ui-constructor
 Here you can see the differences between the workflow of the old and the new version.
 
 <ImageViewer src="/assets/images/products/Sandbox/oldnew.webp" alt="Workflow"/>
-=======
-Explore UI Sandbox Version 2 here: [AI UI Constructor](https://ai-ui-constructor.singularitynet.io/).
