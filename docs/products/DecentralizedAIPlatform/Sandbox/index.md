@@ -27,3 +27,11 @@ The second version introduces the following key improvements:
 * Enhanced Functionality: Developers can now create, debug, and export projects with fewer steps, making the entire process more efficient.
 
 Explore UI Sandbox Version 2 here: [AI UI Constructor](https://ai-ui-constructor.singularitynet.io/).
+
+## Comparison of version workflows
+
+Here you can see the differences between the workflow of the old and the new version.
+
+<ImageViewer src="/assets/images/products/Sandbox/oldnew.webp" alt="Workflow"/>
+=======
+Explore UI Sandbox Version 2 here: [AI UI Constructor](https://ai-ui-constructor.singularitynet.io/).
