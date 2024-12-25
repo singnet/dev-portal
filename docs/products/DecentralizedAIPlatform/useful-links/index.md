@@ -13,7 +13,7 @@ Below are the key portals and tools to get started with the SingularityNET Publi
    <a id="mainnet-publisher" class="bottom-link" target="_blank" href="https://publisher.singularitynet.io/"></a>
    <a id="mainnet-marketplace" class="bottom-link" target="_blank" href="https://beta.singularitynet.io/"></a>
    
-<ImageViewer src='/assets/images/products/AIMarketplace/mainLinks/onboardingpath.webp' alt=''/>
+<ImageViewer src='/assets/images/products/AIMarketplace/mainLinks/onboardingpath.webp' alt='Main Links path'/>
 </div>
 
 #### **AI Marketplaces**
