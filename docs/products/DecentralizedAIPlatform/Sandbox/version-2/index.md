@@ -15,31 +15,33 @@ Use your .proto file to generate .js stub files. Follow the guide here: [Generat
 2. Access the Sandbox
 Navigate to the [AI UI Constructor](https://ai-ui-constructor.singularitynet.io/).
 
-3. Sign In or Register
-Log in using your Cognito account. If you do not have an account, you can create one using the Sign Up form.
+3. Make sure that the MetaMask extension with the Sepolia network is enabled in your browser.
 
-4. Create a New Project
+4. Sign In or Register
+Log in using your Marketplace account. If you do not have an account, you can create one using the Sign Up form.
+
+5. Create a New Project
 Select New Project from the menu options to initiate a new workspace.
 
-5. Upload Stub Files
+6. Upload Stub Files
 Upload the generated stub files to your project.
 
-6. Edit Project Files
+7. Edit Project Files
 Modify index.js and styles.js as needed. Additional files can also be uploaded or created within the project.
 
-7. Compile the Code
+8. Compile the Code
 Use the Compile button to build and test the application.
 
-8. Provide Application Details
+9. Provide Application Details
 Populate the fields for OrganisationID, ServiceId, and Endpoint in the preview application section.
 
-9. Debug and Iterate
+10. Debug and Iterate
 Debug the application code and repeat the Compile process until the desired results are achieved.
 
-10. Export the Project
+11. Export the Project
 Once the project is complete, download the files in a .zip format using the Export Project button.
 
-11. Publish the DEMO
+12. Publish the DEMO
 Deploy the completed DEMO application through the Publisher Portal.
 
 ## UI Sandbox Workflow Diagram

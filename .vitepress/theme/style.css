@@ -396,22 +396,27 @@ body {
   top: 70%;
 }
 
+#main-links-image .middle-link {
+  top: 40%;
+  left: 55%;
+}
+
 #eth-test-faucet {
-  left: 30%;
+  left: 25%;
 }
 
 #agix-faucet,
 #mainnet-publisher {
-  left: 46.5%;
+  left: 55%;
 }
 
 #testnet-publisher {
-  left: 63%;
+  left: 70%;
 }
 
 #testnet-marketplace,
 #mainnet-marketplace {
-  left: 81%;
+  left: 86%;
 }
 
 @media (min-width: 1770px) {
