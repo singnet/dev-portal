@@ -1,4 +1,4 @@
-# Main Links
+# Useful Links
 
 Below are the key portals and tools to get started with the SingularityNET Publisher and Marketplace. Each link is provided with a brief explanation, including distinctions between **User Test** and **Test** environments.
 
@@ -9,24 +9,21 @@ Below are the key portals and tools to get started with the SingularityNET Publi
    <a id="agix-faucet" class="top-link" target="_blank" href="https://faucet.singularitynet.io/"></a>
    <a id="testnet-publisher" class="top-link" target="_blank" href="https://testnet-publisher.singularitynet.io"></a>
    <a id="testnet-marketplace" class="top-link" target="_blank" href="https://testnet-marketplace.singularitynet.io/"></a>
+   <a class="middle-link" target="_blank" href="https://testnet-marketplace.singularitynet.io/"></a>
    <a id="mainnet-publisher" class="bottom-link" target="_blank" href="https://publisher.singularitynet.io/"></a>
    <a id="mainnet-marketplace" class="bottom-link" target="_blank" href="https://beta.singularitynet.io/"></a>
-   <ImageViewer
-      src='/assets/images/products/AIMarketplace/mainLinks/mainLinks.webp'
-      alt=''
-   />
+   
+<ImageViewer src='/assets/images/products/AIMarketplace/mainLinks/onboardingpath.webp' alt='Main Links path'/>
 </div>
 
 #### **AI Marketplaces**
 
-1. [Main AI Marketplace](https://beta.singularitynet.io/)  
+1. [AI Marketplace Mainnet](https://beta.singularitynet.io/)  
    The main platform for live AI services. Users can browse, purchase, and interact with AI services deployed on the Mainnet.
 
-2. [AI Marketplace USER Test](https://testnet-marketplace.singularitynet.io/)  
+2. [AI Marketplace Testnet](https://testnet-marketplace.singularitynet.io/)  
    A private environment for testing AI services on the Testnet. Services published in this environment are only visible to the publisher and cannot be seen by others, nor can the publisher view services from others.
 
-3. [AI Marketplace Test](https://ropsten-v2-dapp.singularitynet.io/)  
-   A shared environment for testing AI services on the Testnet. All users who publish services here can view and test services from others.
 
 _How it works:_ In the **Publisher Portal**, users create organizations and publish services that can then be accessed and utilized on the AI Marketplaces.
 
@@ -34,20 +31,17 @@ _How it works:_ In the **Publisher Portal**, users create organizations and publ
 
 #### **Publisher Portals**
 
-1. [Publisher Portal Main](https://publisher.singularitynet.io/)  
+1. [Publisher Portal Mainnet](https://publisher.singularitynet.io/)  
    The main Publisher portal for deploying and configuring AI services to the Mainnet.
 
-2. [Publisher Portal USER Test](https://testnet-publisher.singularitynet.io/)  
+2. [Publisher Portal Testnet](https://testnet-publisher.singularitynet.io/)  
    A private Publisher portal for publishing and configuring AI services in the User Test environment.
-
-3. [Publisher Portal Test](https://sing-publisher-stage.singularitynet.io/)  
-   The Publisher portal for publishing and configuring AI services in the shared Test environment, where all users on the Testnet can see and interact with each other's services.
 
 ---
 
 #### **UI Sandbox**
 
-[AI UI Constructor (Testnet)](https://ai-ui-constructor.singularitynet.io/)  
+[AI UI Constructor](https://ai-ui-constructor.singularitynet.io/)  
 **UI Sandbox** is a powerful and versatile development environment that provides tools for:
 
 -   Creating custom modules and services.
