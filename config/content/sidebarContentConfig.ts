@@ -1194,6 +1194,10 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/AIMarketplace/payment-methods/"
     },
     {
+        text: "How to use training?",
+        link: "/docs/products/AIMarketplace/training-guide/",
+    },
+    {
         text: "For Consumers",
         collapsed: false,
         link: "/docs/products/AIMarketplace/ForConsumers/",
