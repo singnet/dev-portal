@@ -405,9 +405,13 @@ body {
   left: 25%;
 }
 
-#agix-faucet,
-#mainnet-publisher {
+#agix-faucet
+{
   left: 40%;
+}
+
+#mainnet-publisher{
+  left: 55%;
 }
 
 #testnet-publisher {
