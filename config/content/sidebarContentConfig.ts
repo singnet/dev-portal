@@ -66,8 +66,8 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/IAmAIDeveloper/"
     },
     {
-        text: "Main Links",
-        link: "/docs/products/DecentralizedAIPlatform/MainLinks/"
+        text: "Useful Links",
+        link: "/docs/products/DecentralizedAIPlatform/useful-links/"
     },
     {
         text: "Quick Start Guides",
@@ -1029,7 +1029,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Sandbox/version-2/",
             },
             {
-                text: "Calculator guide",
+                text: "Calculator guide for UI Sandbox version 2",
                 link: "/docs/products/DecentralizedAIPlatform/Sandbox/calculator-guide/",
             },
             {
