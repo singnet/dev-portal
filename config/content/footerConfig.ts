@@ -32,6 +32,10 @@ export default [
                 link: "https://publisher.singularitynet.io/",
             },
             {
+                text: "AI UI Constructor (Sandbox)",
+                link: "https://ai-ui-constructor.singularitynet.io",
+            },
+            {
                 text: "Linking Wallet Tool",
                 link: "https://mywallets.singularitynet.io/",
             },
