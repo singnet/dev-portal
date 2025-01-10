@@ -50,6 +50,10 @@ export default [
         text: "Community",
         items: [
             {
+                text: "Website",
+                link: "https://singularitynet.io/"
+            },
+            {
                 text: "Blog",
                 link: "http://blog.singularitynet.io/",
             },
