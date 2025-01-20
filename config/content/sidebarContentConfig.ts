@@ -180,6 +180,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Error codes",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/error-codes/",
             },
+            {
+                text: "Alchemy API Key",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/",
+            },
         ],
     },
     {

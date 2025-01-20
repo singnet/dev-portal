@@ -58,16 +58,32 @@ You'll need a github account to authenticate, and there after you can request AG
 pip3 install snet-cli #if not done already
 ```
 
-### Set an identity 
+### Set an Identity 
 ```sh
 snet identity create user-sepolia mnemonic --mnemonic "YOUR MNEMONICS" --network sepolia
 snet identity user-sepolia
 ```
+
+### Set the Default Ethereum RPC Endpoint
+To interact with the Ethereum network, you need to set the default Ethereum RPC endpoint. Use the Alchemy RPC endpoint for your network:
+
+- **For Mainnet**:  
+  ```sh
+  snet set default_eth_rpc_endpoint https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>
+  ```
+
+- **For Testnet (Sepolia)**:  
+  ```sh
+  snet set default_eth_rpc_endpoint https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>
+  ```
+
+Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have one, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+
 ### Deposit in Escrow and Create a Channel
 ```sh
-snet account balance # check balance (all tokens belongs to this idenity)
-snet account deposit 0.000001 # Deposit Token to MPE and Open a payment channel to the new service:
-snet channel open-init <org_id> <group_name> 0.000001 +2days # Now open a Channel and transfer AGIX in to the Channel
+snet account balance # check balance (all tokens belong to this identity)
+snet account deposit 0.000001 # Deposit tokens to MPE and open a payment channel to the new service
+snet channel open-init <org_id> <group_name> 0.000001 +2days # Open a channel and transfer AGIX into the channel
 ```
 ### Make a call to a Service 
 

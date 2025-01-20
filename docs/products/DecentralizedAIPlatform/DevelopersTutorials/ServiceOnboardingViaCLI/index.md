@@ -50,7 +50,23 @@ snet identity create <IDENTITY> mnemonic --network mainnet
 
 You can create an identity with your crypto wallet private key or with seed phrases (mnemonic). You can export your private key from the wallet, and seed phrases are given upon creation of said wallet. Choose whichever you have.
 
-2) Add the organization name, id and the type of organization (use the same <ORGANIZATION_ID> for daemon configuration later in the guide)
+2) Set the Default Ethereum RPC Endpoint
+
+To interact with the Ethereum network, you need to set the default Ethereum RPC endpoint. Use the Alchemy RPC endpoint for your network:
+
+- **For Mainnet:**
+  ```sh
+  snet set default_eth_rpc_endpoint https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>
+  ```
+
+- **For Sepolia (Testnet):**
+  ```sh
+  snet set default_eth_rpc_endpoint https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>
+  ```
+
+Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have an API key yet, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create one.
+
+3) Add the organization name, id and the type of organization (use the same <ORGANIZATION_ID> for daemon configuration later in the guide)
 
 ```sh
 snet organization metadata-init <ORG-NAME> <ORGANIZATION_ID> individual
@@ -70,7 +86,7 @@ organization_metadata.json file will be created, with metadata information you p
 }
 ```
 
-3) Add description about your organization
+4) Add description about your organization
 
 ```sh
 snet organization metadata-add-description --description "Describe your organization details here" --short-description  "This is short description of your organization" --url "https://anyurlofyourorganization"
@@ -94,7 +110,7 @@ Updated organization_metadata.json:
 }
 ```
 
-4) Add in Recipient and group details
+5) Add in Recipient and group details
 
 Use the same endpoint mentioned in the ETCD setup.
 
