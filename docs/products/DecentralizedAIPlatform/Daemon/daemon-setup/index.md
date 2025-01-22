@@ -186,7 +186,7 @@ The `init` command will create a `snetd.config.json` file. You will need to modi
   You can set a separate number of allowed free calls for certain users of the marketplace:
   ```json
   "free_calls_users": {
-    "johndoe@gmail.com": 500,
+    "test@mail.com": 500,
     "snet@test.com": 100,
     "me@email.com": 150
   }
