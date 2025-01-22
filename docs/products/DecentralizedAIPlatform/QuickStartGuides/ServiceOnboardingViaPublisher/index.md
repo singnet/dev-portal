@@ -68,23 +68,49 @@ print(‘Your private key: ’ + accut.key.hex())
 18. Launch AI Service: Confirm in MetaMask
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="Proto"/>
 
-## How to create&start Daemon (billing & service setup)
+Here’s the complete documentation with the example configuration added at the end:
 
-### It requires some preparation:
+---
 
-1. Create an [Infura](https://www.infura.io/) account that will be used by your daemon to interact with the blockchain and generate API key
-   <ImageViewer src="/assets/images/products/AIMarketplace/publisher/InfuraHomePage.webp" alt="Infura HomePage"/>
-2. After visiting the Infura homepage, you will already have one generated API key, you can copy it
-   <ImageViewer src="/assets/images/products/AIMarketplace/publisher/InfuraKey.webp" alt="Infura Key"/>
-3. The address of your generated key must be specified in the daemon config. It will be used to validate daemon calls on the blockchain network
-   After downloading the service and publishing it (PUBLISHED status), you can complete the daemon config
+## How to Create & Start Daemon (Billing & Service Setup)
 
-4. Passthrough_endpoint is the endpoint on which your service is located, to which the daemon will send user requests.
-5. Pvt_key_for_metering – key that we generate in Infura
-   <ImageViewer src="/assets/images/products/AIMarketplace/publisher/CreatingDaemonConfig.webp" alt="Daemon Config"/>
-6. Copy config or download a JSON file
+### Preparation Steps:
 
-The JSON file will look something like this
+1. **Generate an API Key in Alchemy**  
+   Follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create and obtain your API key. This key will be used by your daemon to interact with the Ethereum blockchain.
+
+   After obtaining the API key, you will need to add the following fields to your daemon configuration:
+
+   - **For Mainnet:**  
+     ```json
+     "ethereum_json_rpc_http_endpoint": "http://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
+     "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>"
+     ```
+
+   - **For Testnet (Sepolia):**  
+     ```json
+     "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+     "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>"
+     ```
+
+   Replace `<YOUR_API_KEY>` with the API key you copied from Alchemy.
+
+2. **Specify the Private Key for Metering in the Daemon Config**  
+   The `pvt_key_for_metering` field in the daemon configuration requires the **private key of an Ethereum wallet**.  
+
+3. **Configure the Passthrough Endpoint**  
+   The `passthrough_endpoint` is the endpoint where your service is hosted. The daemon will send user requests to this endpoint.
+
+4. **Finalize the Daemon Config**  
+   Copy config or download a JSON file
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/CreatingDaemonConfig.webp" alt="DaemonConfig"/>
+
+
+---
+
+### Example Daemon Configuration
+
+Here’s an example of a complete daemon configuration file:
 
 ```json
 {
@@ -103,9 +129,16 @@ The JSON file will look something like this
     "ssl_cert": "/home/nlp/certs/domain/fullchain.pem",
     "ssl_key": "/home/nlp/certs/domain/privkey.pem",
     "payment_channel_storage_type": "etcd",
+    "pvt_key_for_metering": "<YOUR_PRIVATE_KEY>",
+    "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+    "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
     "log": { "level": "debug", "output": { "type": "stdout" } }
 }
 ```
+
+### Fields to Replace:
+- `<YOUR_PRIVATE_KEY>`: Replace with your Ethereum wallet’s private key.
+- `<YOUR_API_KEY>`: Replace with your Alchemy API key.
 
 ### Now we will install the daemon and run it with the downloaded config
 

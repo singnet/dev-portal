@@ -18,24 +18,55 @@ Install snet.cli
 pip3 install snet.cli
 ```
 
-## Step 3. Set configuration
+Here’s the updated **Step 3. Set Configuration** section with the additional instructions for setting the default Ethereum RPC endpoint and a reference to the Alchemy API Key setup guide:
 
-To sign transactions you need to create an identity.
 
-### Set an identity 
+## Step 3. Set Configuration
+
+To sign transactions, you need to create an identity and configure the network settings.
+
+### 1. Set an Identity
+Create an identity using your Ethereum private key. This identity will be used to sign transactions.
+
 ```sh
 snet identity create your_name key --private-key <YOUR_PRIVATE_KEY>
 ```
 
-You can also use other identity types (check [`snet identity create`](/docs/products/DecentralizedAIPlatform/CLI/Manual/Identity/#create) command).
+- Replace `<YOUR_PRIVATE_KEY>` with your Ethereum wallet’s private key.
+- You can also use other identity types. Check the [`snet identity create`](/docs/products/DecentralizedAIPlatform/CLI/Manual/Identity/#create) command for more details.
 
-### Set a network
-
-In this example we use the `sepolia` testnet.
+### 2. Set a Network
+In this example, we use the `sepolia` testnet. Run the following command to set the network:
 
 ```sh
 snet network sepolia
 ```
+
+### 3. Set the Default Ethereum RPC Endpoint
+To interact with the Ethereum network, you need to set the default Ethereum RPC endpoint. Use the Alchemy RPC endpoint for your network:
+
+- **For Mainnet:**
+  ```sh
+  snet set default_eth_rpc_endpoint https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>
+  ```
+
+- **For Sepolia (Testnet):**
+  ```sh
+  snet set default_eth_rpc_endpoint https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>
+  ```
+
+Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have an API key yet, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create one.
+
+---
+
+### Additional Notes:
+- Ensure your private key and API key are kept secure. Never share them publicly.
+- For testing, use the Sepolia testnet to avoid real fund losses.
+- For more details on Alchemy API key setup, refer to the [Alchemy Documentation](https://docs.alchemy.com).
+
+---
+
+This updated section now includes the `snet set default_eth_rpc_endpoint` command and a reference to the Alchemy API Key setup guide. Let me know if you need further adjustments! 😊
 
 ## Step 4. Deposit to MPE and Open Channel
 
