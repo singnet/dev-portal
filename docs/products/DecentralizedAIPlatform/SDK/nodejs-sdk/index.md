@@ -28,27 +28,28 @@ npm install snet-sdk
 ```
 
 ## 3. Configuration Setup
-Create a configuration file (e.g., config.js) to store your SingularityNET SDK configuration settings. Below is a sample configuration setup:
+Create a configuration file (e.g., `config.js`) to store your SingularityNET SDK configuration settings. Below is a sample configuration setup:
 
 ```json
-{ 
-    "web3Provider": "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID",
-    "privateKey": "0xYOUR_PRIVATE_KEY",
-    "networkId": "1",
-    "ipfsEndpoint": "https://ipfs.singularitynet.io",
-    "defaultGasPrice": "4700000",
-    "defaultGasLimit": "210000"
+{
+  "web3Provider": "https://eth-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY",
+  "privateKey": "0xYOUR_PRIVATE_KEY",
+  "networkId": "1",
+  "ipfsEndpoint": "https://ipfs.singularitynet.io",
+  "defaultGasPrice": "4700000",
+  "defaultGasLimit": "210000"
 }
 ```
 
 ### Explanation of Configuration Keys:
 
-- **web3Provider**: URL of the Web3 provider to interact with the Ethereum network.
-- **privateKey**: Private key of your Ethereum account for signing transactions.
-- **networkId**: Ethereum network ID (e.g., `1` for Mainnet, `11155111` for Sepolia).
-- **ipfsEndpoint**: Endpoint for connecting to SingularityNET's IPFS node.
-- **defaultGasPrice**: Gas price for transactions in wei.
-- **defaultGasLimit**: Gas limit for transactions.
+- **`web3Provider`**: The URL of the Web3 provider to interact with the Ethereum network. 
+Replace `YOUR_ALCHEMY_API_KEY` with your Alchemy API key. [Follow these instructions to get your API key](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+- **`privateKey`**: The private key of your Ethereum account for signing transactions.
+- **`networkId`**: Ethereum network ID (e.g., `1` for Mainnet, `11155111` for Sepolia).
+- **`ipfsEndpoint`**: SingularityNET’s IPFS node endpoint.
+- **`defaultGasPrice`**: Gas price for transactions (in wei).
+- **`defaultGasLimit`**: Gas limit for transactions.
 
 Replace the placeholders with your actual credentials and network information.
 

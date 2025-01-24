@@ -124,7 +124,7 @@ Finally, the generated **service_client** instance can be used to call methods p
 from snet import sdk
 
 config = sdk.config.Config(private_key='YOUR_PRIVATE_KEY',
-                eth_rpc_endpoint=f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY", # RPC endpoint of "sepolia" network
+                eth_rpc_endpoint=f"https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>", # RPC endpoint of "sepolia" network
                 concurrency=False,
                 force_update=False)
 

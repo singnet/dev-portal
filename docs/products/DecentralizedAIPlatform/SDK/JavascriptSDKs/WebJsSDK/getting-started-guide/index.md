@@ -94,7 +94,7 @@ const config = {
     defaultGasPrice: '4700000',
     defaultGasLimit: '210000',
     ipfsEndpoint: 'http://ipfs.YOUR_ORGANIZATION.io:80',
-    rpcEndpoint: 'https://sepolia.infura.io/v3/YOUR_INFURA_KEY',
+    rpcEndpoint: 'https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>',
 };
 
 const initSDK = async () => {

@@ -67,27 +67,36 @@ pip install snet.sdk
 
 ### Configuration
 
-Firstly, we need to configure sdk and service client. So we create a config dict and then an sdk instance with
-that config. 
+Firstly, we need to configure the SDK and service client. We create a configuration dictionary and initialize the SDK instance with it.
 
-_Note:_ don't forget to import `snet.sdk` package.
+_Note:_ Don't forget to import the `snet.sdk` package.
 
 ```python
 from snet import sdk
 
 """
-SDK configuration that is configured by the application provider.
-To run the application you need to change the 'private_key', 'eth_rpc_endpoint' and 'identity_name' values.
+SDK configuration provided by the application provider.
+To run the application, replace 'private_key' and 'eth_rpc_endpoint' with your values.
 """
-config = sdk.config.Config(private_key="YOUR_PRIVATE_KEY",
-                               eth_rpc_endpoint=f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
-                               concurrency=False,
-                               force_update=False)
+config = sdk.config.Config(
+    private_key="YOUR_PRIVATE_KEY",  # Replace with your Ethereum private key
+    eth_rpc_endpoint="https://eth-sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY",  # Replace with your Alchemy API key
+    concurrency=False, 
+    force_update=False 
+)
 
-snet_sdk = sdk.SnetSDK(config)  # the 'SnetSDK' instance
+# Initialize the SnetSDK instance
+snet_sdk = sdk.SnetSDK(config)
 ```
 
-Here you need to set private values: `private_key`, `eth_rpc_endpoint` and possibly change some others.
+#### What to Replace
+- `private_key`: Your Ethereum account private key for signing transactions.
+- `eth_rpc_endpoint`: Use the Alchemy RPC endpoint with your API key:
+   ```
+   https://eth-sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY
+   ```
+
+To get your **Alchemy API Key**, follow [this guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 
 ### Global variables
 

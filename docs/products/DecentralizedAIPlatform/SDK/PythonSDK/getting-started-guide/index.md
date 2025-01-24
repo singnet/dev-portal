@@ -26,11 +26,18 @@ instance of the base sdk class:
 ```python
 from snet import sdk
 
-config = sdk.config.Config(private_key="YOUR_PRIVATE_KEY",
-                               eth_rpc_endpoint=f"https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
-                               concurrency=False,
-                               force_update=False)
+"""
+SDK configuration provided by the application provider.
+To run the application, replace 'private_key' and 'eth_rpc_endpoint' with your values.
+"""
+config = sdk.config.Config(
+    private_key="YOUR_PRIVATE_KEY",  # Replace with your Ethereum private key
+    eth_rpc_endpoint="https://eth-sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY",  # Replace with your Alchemy API key
+    concurrency=False, 
+    force_update=False 
+)
 
+# Initialize the SnetSDK instance
 snet_sdk = sdk.SnetSDK(config)
 ```
 
@@ -42,6 +49,8 @@ for a reference.
 
 - `private_key`: Your wallet's private key that will be used to pay for calls. Is **required** in config;   
 - `eth_rpc_endpoint`: RPC endpoint that is used to access the Ethereum network. Is **required** in config;
+> To get your **Alchemy API Key**, follow [this guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+
 - `wallet_index`: The index of the wallet that will be used to pay for calls;
 - `ipfs_endpoint`: IPFS endpoint that is used to access IPFS;
 - `concurrency`: If set to True, will enable concurrency for the SDK;

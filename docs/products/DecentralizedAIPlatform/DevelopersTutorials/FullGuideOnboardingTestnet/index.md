@@ -415,23 +415,39 @@ Example:
 
 `snet organization info <ORGANIZATION_ID>`
 
-## Final configuration
+Here’s the updated **Final Configuration** section specifically for **Testnet (Sepolia)**, including the necessary details for setting up the Alchemy API key and RPC endpoints:
 
-1) Copy etcd certificates to daemon host (skip if daemon and etcd are located on same host)
+---
 
-`scp /var/lib/etcd/cfssl/{client.pem,ca.pem,client-key.pem} user@daemon_host:<PATH_TO_ETCD_CERTS>`
+## Final Configuration
 
-2) Copy domain certificates to daemon host (skip if daemon and web server are located on same host)
+1) Copy etcd Certificates to Daemon Host  
 
-`scp /etc/letsencrypt/live/<DAEMON_DOMAIN>/{fullchain.pem,privkey.pem} user@daemon_host:<PATH_TO_DOMAIN_CERTS>`
+Skip this step if the daemon and etcd are located on the same host.
 
-3) Adjust daemon configuration (replace all <****> with necessary data, including all certificates, organization id, service id, daemon group and addresses)
+```sh
+scp /var/lib/etcd/cfssl/{client.pem,ca.pem,client-key.pem} user@daemon_host:<PATH_TO_ETCD_CERTS>
+```
 
-`$EDITOR snetd.config.json`
+2) Copy Domain Certificates to Daemon Host  
 
-Add following parameters: 
+Skip this step if the daemon and web server are located on the same host.
 
-``` json
+```sh
+scp /etc/letsencrypt/live/<DAEMON_DOMAIN>/{fullchain.pem,privkey.pem} user@daemon_host:<PATH_TO_DOMAIN_CERTS>
+```
+
+3) Adjust Daemon Configuration  
+
+Edit the daemon configuration file and replace all `<****>` placeholders with the necessary data, including certificates, organization ID, service ID, daemon group, and addresses.
+
+```sh
+$EDITOR snetd.config.json
+```
+
+Add the following parameters:
+
+```json
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "sepolia",
@@ -445,14 +461,33 @@ Add following parameters:
   "payment_channel_cert_path": "<PATH_TO_ETCD_CERTS>/client.pem",
   "payment_channel_ca_path": "<PATH_TO_ETCD_CERTS>/ca.pem",
   "payment_channel_key_path": "<PATH_TO_ETCD_CERTS>/client-key.pem",
+  "ssl_cert": "<PATH_TO_DOMAIN_CERTS>/fullchain.pem",
+  "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
+  "metering_enabled": true,
+  "metering_end_point": "https://marketplace-mt-v2.singularitynet.io",
+  "pvt_key_for_metering": "<METERING_KEY>",
+  "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+  "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "log": {"level": "debug", "output": {"type": "stdout"}}
 }
-
 ```
 
-Your daemon config file should look something like this:
+### Fields to Replace:
+- `<DAEMON_PORT>`: The port on which the daemon will run.
+- `<DAEMON_GROUP>`: The group name for the daemon (e.g., `default_group`).
+- `<ORGANIZATION_ID>`: Your organization’s ID.
+- `<SERVICE_ID>`: Your service’s ID.
+- `<SERVICE_HOST>`: The host address of your service.
+- `<SERVICE_PORT>`: The port on which your service is running.
+- `<PATH_TO_ETCD_CERTS>`: The path to the etcd certificates on the daemon host.
+- `<PATH_TO_DOMAIN_CERTS>`: The path to the domain certificates on the daemon host.
+- `<METERING_KEY>`: The private key for metering (from your Ethereum wallet).
+- `<YOUR_API_KEY>`: Your Alchemy API key. If you don’t have one, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 
-``` json
+### Example Daemon Configuration for Testnet (Sepolia)
+Here’s an example of a complete daemon configuration file for **Sepolia Testnet**:
+
+```json
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "sepolia",
@@ -466,9 +501,15 @@ Your daemon config file should look something like this:
   "payment_channel_cert_path": "/home/user/etcd-certs/client.pem",
   "payment_channel_ca_path": "/home/user/etcd-certs/ca.pem",
   "payment_channel_key_path": "/home/user/etcd-certs/client-key.pem",
+  "ssl_cert": "/home/user/domain-certs/fullchain.pem",
+  "ssl_key": "/home/user/domain-certs/privkey.pem",
+  "metering_enabled": true,
+  "metering_end_point": "https://marketplace-mt-v2.singularitynet.io",
+  "pvt_key_for_metering": "947cddc74476bac4ac0a9ddbf8a136a0c7b4a8d364c6252b2d91e4226fe1bc1f",
+  "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/your_alchemy_api_key",
+  "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/your_alchemy_api_key",
   "log": {"level": "debug", "output": {"type": "stdout"}}
 }
-
 ```
 
 4) Launch snet daemon with command:
