@@ -100,7 +100,7 @@ This error occurs when:
 **Solution:**  
 1. **Switch to your own Alchemy API key:**  
    - Obtain an Alchemy API key by following the instructions here:  
-     [Alchemy API Key Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).  
+     [Alchemy API Key Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).  
 2. Update your daemon configuration with the appropriate fields:  
 
    **For Mainnet:**  

@@ -482,7 +482,7 @@ Add the following parameters:
 - `<PATH_TO_ETCD_CERTS>`: The path to the etcd certificates on the daemon host.
 - `<PATH_TO_DOMAIN_CERTS>`: The path to the domain certificates on the daemon host.
 - `<METERING_KEY>`: The private key for metering (from your Ethereum wallet).
-- `<YOUR_API_KEY>`: Your Alchemy API key. If you don’t have one, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+- `<YOUR_API_KEY>`: Your Alchemy API key. If you don’t have one, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 
 ### Example Daemon Configuration for Testnet (Sepolia)
 Here’s an example of a complete daemon configuration file for **Sepolia Testnet**:

@@ -73,7 +73,7 @@ print(‘Your private key: ’ + accut.key.hex())
 ### Preparation Steps:
 
 1. **Generate an API Key in Alchemy**  
-   Follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create and obtain your API key. This key will be used by your daemon to interact with the Ethereum blockchain.
+   Follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create and obtain your API key. This key will be used by your daemon to interact with the Ethereum blockchain.
 
    After obtaining the API key, you will need to add the following fields to your daemon configuration:
 

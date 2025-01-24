@@ -54,7 +54,7 @@ Create a configuration file (e.g., `config.js`) to store your SingularityNET SDK
 ### Explanation of Configuration Keys:
 
 - **`web3Provider`**: The URL of the Web3 provider to interact with the Ethereum network. 
-Replace `YOUR_ALCHEMY_API_KEY` with your Alchemy API key. [Follow these instructions to get your API key](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+Replace `YOUR_ALCHEMY_API_KEY` with your Alchemy API key. [Follow these instructions to get your API key](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 - **`privateKey`**: The private key of your Ethereum account for signing transactions.
 - **`networkId`**: Ethereum network ID (e.g., `1` for Mainnet, `11155111` for Sepolia).
 - **`ipfsEndpoint`**: SingularityNET’s IPFS node endpoint.
