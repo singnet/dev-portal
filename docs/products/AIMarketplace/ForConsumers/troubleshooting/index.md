@@ -29,9 +29,34 @@ To update service metadata you have to be owner of organization that published t
 {"jsonrpc":"2.0","id":1,"error":{"code":-32005,"message":"daily request count exceeded, request rate limited","data":{"rate":{"allowed_rps":1,"backoff_seconds":30,"current_rps":2.6333333333333333},"see":"https://infura.io/dashboard"}}}" 429 Too Many Requests"
 ```
 
-This is an issue with our public RPC endpoint. We are currently working on the solution to this problem. At this moment we recomend creating your own infura account to get private RPC endpoint or using some RPC endpoint. You have to update endpoint url inside your snet-cli config file which is located here: `$HOME/.snet/config`. Replace existing values to your own infura or similar RPC providers, but be aware that you need to use same network.
+This issue relates to the limitations of our public RPC endpoint. To resolve this, we recommend creating your own **Alchemy** account to obtain a private RPC endpoint. Below are the steps to update your configuration:
 
-If you have this issue calling your own services, update the daemon configuration of your services. Add this value to your daemon config: `'ethereum_json_rpc_endpoint': 'https://mainnet.infura.io/v3/<your-endpoint-id>'` 
+### Update `snet-cli` Configuration
+
+1. Open the `snet-cli` configuration file:
+   ```bash
+   nano $HOME/.snet/config
+   ```
+
+2. Replace the existing `ethereum_json_rpc_endpoint` with your Alchemy endpoint:
+   ```json
+   "ethereum_json_rpc_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<your-alchemy-api-key>"
+   ```
+
+3. Save the file. To get your **Alchemy API Key**, follow [this guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+
+---
+
+### Update Daemon Configuration for Services
+
+If this issue occurs with your services, update their daemon configuration:
+
+- Locate and open the daemon configuration file (e.g., `daemon_config.json`).
+- Add or update:
+   ```json
+   "ethereum_json_rpc_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<your-alchemy-api-key>"
+   ```
+- Restart the daemon to apply changes.
 
 ## SNET Daemon:
 ### Daemon crashes after the start on `enabling SSL support via X509 keypair` step
@@ -290,12 +315,17 @@ If you make calls using SDK / snet-cli, the issue is resolved once if the daemon
 Ignore: This was more towards the operator UI use case, need modification in the next release. 
 
 ### msg="error determining current block" error="403 Forbidden
-Add the the following link: 
 
-```json
-"ethereum_json_rpc_endpoint": "https://mainnet.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2" 
-```
-In your daemon configuration. Ideally  you should have your own project Id on infura. 
+Update your daemon configuration:
+
+1. Open `daemon_config.json`.
+2. Add or update:
+   ```json
+   "ethereum_json_rpc_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<your-alchemy-api-key>"
+   ```
+3. Restart the daemon.
+
+**Note**: Use your own Alchemy API key. [Get it here](https://www.alchemy.com/).
 
 
 
