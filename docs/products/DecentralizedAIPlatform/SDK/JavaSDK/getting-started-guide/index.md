@@ -314,7 +314,7 @@ Configuration config = Configuration.newBuilder()
 Ethereum JSON RPC Endpoint is a required property which selects the Ethereum
 network and JSON RPC endpoint to use. Experienced Ethereum users can use Alchemy
 URL with own project id here, see [Alchemy Getting
-Started](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/). But for the sake of simplicity we use
+Started](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/). But for the sake of simplicity we use
 SingularityNET project id Alchemy URL which is available as a `Configuration`
 constant.
 

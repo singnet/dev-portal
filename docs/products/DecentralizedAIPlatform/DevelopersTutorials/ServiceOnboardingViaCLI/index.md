@@ -64,7 +64,7 @@ To interact with the Ethereum network, you need to set the default Ethereum RPC 
   snet set default_eth_rpc_endpoint https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>
   ```
 
-Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have an API key yet, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create one.
+Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have an API key yet, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create one.
 
 3) Add the organization name, id and the type of organization (use the same <ORGANIZATION_ID> for daemon configuration later in the guide)
 

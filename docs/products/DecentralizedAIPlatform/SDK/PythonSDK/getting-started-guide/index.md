@@ -49,7 +49,7 @@ for a reference.
 
 - `private_key`: Your wallet's private key that will be used to pay for calls. Is **required** in config;   
 - `eth_rpc_endpoint`: RPC endpoint that is used to access the Ethereum network. Is **required** in config;
-> To get your **Alchemy API Key**, follow [this guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+> To get your **Alchemy API Key**, follow [this guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 
 - `wallet_index`: The index of the wallet that will be used to pay for calls;
 - `ipfs_endpoint`: IPFS endpoint that is used to access IPFS;
