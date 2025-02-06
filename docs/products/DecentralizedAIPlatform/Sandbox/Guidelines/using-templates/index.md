@@ -467,7 +467,9 @@ For any service to work within the project, two essential stub files must be inc
 1. **`example_pb_service.js`** – Contains the interface for interacting with the service.  
 2. **`example_pb.js`** – Auxiliary file for service communication.  
 
-These files are automatically generated from the `.proto` definition and are necessary for handling requests and responses between the frontend and the backend.
+These files are automatically generated from the `.proto` definition and are necessary for handling requests and responses between the frontend and the backend. 
+
+Add them to our project to ensure proper functionality.
 
 ### About `example_pb_service.js` and `example_pb.js`
 
