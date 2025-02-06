@@ -1033,8 +1033,23 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Sandbox/version-2/",
             },
             {
-                text: "Calculator guide for UI Sandbox version 2",
-                link: "/docs/products/DecentralizedAIPlatform/Sandbox/calculator-guide/",
+                text: "Templates overview",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/templates-overview/",
+            },
+            {
+                text: "Guidelines",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/Guidelines/calculator-guide/",
+                collapsed: true,
+                items: [
+                    {
+                        text: "Calculator guide for UI Sandbox",
+                        link: "/docs/products/DecentralizedAIPlatform/Sandbox/Guidelines/calculator-guide/",
+                    },
+                    {
+                        text: "Using templates guide for UI Sandbox",
+                        link: "/docs/products/DecentralizedAIPlatform/Sandbox/Guidelines/using-templates/",
+                    },
+                ],
             },
             {
                 text: "How to use UI Sandbox version 1 (old)",
