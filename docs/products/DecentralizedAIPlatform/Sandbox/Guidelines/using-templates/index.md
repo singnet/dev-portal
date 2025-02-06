@@ -1,4 +1,4 @@
-# Guide to Using the Templates
+# How to use the Templates
 
 When you select a template, a new project is loaded containing two files:
 - **`index.js`** – Implements the core functionality of the template.
@@ -8,7 +8,7 @@ Below is an example of the **Text-to-Text** template.
 
 ### index.js File
 
-```javascript
+```jsx
 import React, { useState } from "react";
 import StyledButton from "@integratedComponents/StyledButton";
 import OutlinedTextArea from "@commonComponents/OutlinedTextArea";
@@ -108,7 +108,7 @@ export default withStyles(useStyles)(TextToText);
 
 ### styles.js File
 
-```javascript
+```jsx
 import makeStyles from '@mui/styles/makeStyles';
 
 export const useStyles = makeStyles(() => ({
@@ -138,12 +138,12 @@ For a calculator, you need two numbers to perform an addition operation. Therefo
 #### Change: Replace the Single Input with Two Inputs
 
 - **Before:**
-  ```javascript
+  ```jsx
   const [textInput, setTextInput] = useState();
   ```
 
 - **After:**
-  ```javascript
+  ```jsx
   const [firstValue, setFirstValue] = useState("");
   const [secondValue, setSecondValue] = useState("");
   ```
@@ -202,7 +202,7 @@ We hardcode the operation by using `Calculator["add"]` from the Calculator servi
 #### Change: Update the API Call Code
 
 - **Before (Commented-Out Code):**
-  ```javascript
+  ```jsx
   const submitAction = () => {
         // const methodDescriptor = ;
         // const request = new methodDescriptor.requestType();
@@ -220,7 +220,7 @@ We hardcode the operation by using `Calculator["add"]` from the Calculator servi
   ```
 
 - **After:**
-  ```javascript
+  ```jsx
   const submitAction = () => {
       const methodDescriptor = Calculator["add"]; // Use the "add" operation
       const request = new methodDescriptor.requestType();
@@ -247,12 +247,12 @@ By un-commenting this line, the result returned from the backend is stored in th
 #### Change: Uncomment and Update the Response Handling
 
 - **Before (Commented-Out):**
-  ```javascript
+  ```jsx
   // setOutput(message.getValue());
   ```
 
 - **After:**
-  ```javascript
+  ```jsx
   setOutput(message.getValue());
   ```
 
@@ -321,7 +321,7 @@ This format clearly separates the heading ("Service call completed with output:"
 
 Below is the complete `index.js` implementation after all modifications:
 
-```javascript
+```jsx
 import React, { useState } from "react";
 import { withStyles } from "@mui/styles";
 import { useStyles } from "./styles";
