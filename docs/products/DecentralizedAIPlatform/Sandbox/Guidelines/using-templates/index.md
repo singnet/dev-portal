@@ -459,3 +459,33 @@ export default withStyles(useStyles)(ExampleService);
 4. **Output Formatting:**  
    - **Changed:** Updated the ServiceOutput component to use `<h4>` tags for headings and an OutlinedTextArea to display the result, as shown in the provided format.  
    - **Explanation:** This format clearly separates the heading ("Service call completed with output:") from the actual output, ensuring consistent presentation.
+
+## Required Stub Files for Any Service
+
+For any service to work within the project, two essential stub files must be included:
+
+1. **`example_pb_service.js`** – Contains the interface for interacting with the service.  
+2. **`example_pb.js`** – Auxiliary file for service communication.  
+
+These files are automatically generated from the `.proto` definition and are necessary for handling requests and responses between the frontend and the backend.
+
+### About `example_pb_service.js` and `example_pb.js`
+
+- **`example_pb_service.js`**:  
+  This file provides an abstraction layer for making service calls. It contains method descriptors for each operation (e.g., `add`, `subtract`) exposed by the service. Each method descriptor includes:
+  - The expected input and output message types.
+  - The gRPC method name.
+
+  It simplifies the process of calling a service method by encapsulating the details of the gRPC protocol.
+
+- **`example_pb.js`**:  
+  This file contains definitions of the message types used by the service, as defined in the `.proto` file. These include:
+  - `Numbers`: Represents the two numbers (`a` and `b`) involved in a calculation.
+  - `Result`: Represents the output value of a calculation.
+
+  It provides serialization and deserialization logic for these messages, enabling communication with the service in binary format.
+
+### Download the Required Service Files:
+
+- <a href="/assets/files/example_pb_service.js" download>example_pb_service.js</a>  
+- <a href="/assets/files/example_pb.js" download>example_pb.js</a>  
