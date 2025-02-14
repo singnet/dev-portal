@@ -1,22 +1,27 @@
-# How to use the Templates
+# How to use Templates
+## Introduction
+This guide will help you understand how to use the template library to quickly create a UI for your services.
 
+## Where to get a project template
+To use the `Templates library`, select any of the following options on the start screen: `New project` or `Open project`. Then go to the right half of the workspace and select the template you need in the `Templates` tab. You can also use the `search` and `filters` to quickly find the template you need.
+
+## Files in the template
 When you select a template, a new project is loaded containing two files:
 - **`index.js`** – Implements the core functionality of the template.
-- **`styles.js`** – Contains styling definitions.
+- **`style.css`** – Contains style definitions (Hidden by default).
 
-Below is an example of the **Text-to-Text** template.
+::: tip
+To access the hidden files, click on the eye icon next to the files list.
+:::
 
-### index.js File
-
+### `index.js` File (TextToText template)
 ```jsx
 import React, { useState } from "react";
 import StyledButton from "@integratedComponents/StyledButton";
 import OutlinedTextArea from "@commonComponents/OutlinedTextArea";
-import { withStyles } from "@mui/styles";
-import { useStyles } from "./styles";
+import "./style.css";
 
 const TextToText = ({ serviceClient, isComplete }) => {
-    const classes = useStyles();
     const [output, setOutput] = useState();
 
     const ServiceInput = () => {
@@ -39,7 +44,8 @@ const TextToText = ({ serviceClient, isComplete }) => {
         const submitAction = () => {
             // const methodDescriptor = ;
             // const request = new methodDescriptor.requestType();
-            // request.setValue(textInput);
+
+            // request.setValue(textInput)
 
             const props = {
                 request,
@@ -51,9 +57,9 @@ const TextToText = ({ serviceClient, isComplete }) => {
         };
 
         return (
-            <div className={classes.contentBox}>
+            <div className={"content-box"}>
                 <h4>{"Input"}</h4>
-                <div className={classes.contentBox}>
+                <div className={"content-box"}>
                     <OutlinedTextArea
                         type={"text"}
                         label={"Text"}
@@ -62,7 +68,7 @@ const TextToText = ({ serviceClient, isComplete }) => {
                         onChange={(event) => setTextInput(event.target.value)}
                     />
                 </div>
-                <div className={classes.contentBox}>
+                <div className={"content-box"}>
                     <StyledButton
                         btnText={"Submit"}
                         variant={"contained"}
@@ -77,16 +83,20 @@ const TextToText = ({ serviceClient, isComplete }) => {
     const ServiceOutput = () => {
         if (!output) {
             return (
-                <div className={classes.contentBox}>
-                    <h4>{"Something went wrong..."}</h4>
+                <div className={"content-box"}>
+                    <h4>
+                        {"Something went wrong..."}
+                    </h4>
                 </div>
             );
         }
 
         return (
-            <div className={classes.contentBox}>
-                <h4>{"Output"}</h4>
-                <div className={classes.contentBox}>
+            <div className={"content-box"}>
+                <h4>
+                    {"Output"}
+                </h4>
+                <div className={"content-box"}>
                     <OutlinedTextArea
                         type={"text"}
                         value={output}
@@ -97,50 +107,47 @@ const TextToText = ({ serviceClient, isComplete }) => {
     };
 
     return (
-        <div className={classes.serviceContainer}>
+        <div className={"service-container"}>
             {!isComplete ? <ServiceInput /> : <ServiceOutput />}
         </div>
     );
 };
 
-export default withStyles(useStyles)(TextToText);
+export default TextToText;
 ```
 
-### styles.js File
+### `styles.js` File (Hidden by default)
 
-```jsx
-import makeStyles from '@mui/styles/makeStyles';
+```css
+.service-container {
+    padding: 10px;
+}
 
-export const useStyles = makeStyles(() => ({
-    serviceContainer: {
-        padding: "10px",
-    },
-    contentBox: {
-        marginBottom: "15px",
-        "& .MuiSelect-select": {
-            minWidth: "200px",
-        }
-    },
-}));
+.content-box {
+    margin-bottom: 15px;
+}
 
-export default useStyles;
+.content-box .MuiSelect-select {
+    min-width: 200px;
+}
 ```
 
 ## Customizing Templates for Your Service
-
-Let's now transform the Text-to-Text template into a simple Calculator Service that performs addition. We will explain every change in detail.
+Let's now transform the `Text-to-Text` template into a simple `Calculator Service` that performs `addition`. We will explain every change in detail.
 
 ### Transforming the Input Section
+For a `Calculator`, you need two numbers to perform an `addition` operation. Therefore, we replace the single `textInput` state variable with two variables—`firstValue` and `secondValue`— both initialized to an empty string.
 
-For a calculator, you need two numbers to perform an addition operation. Therefore, we replace the single `textInput` state variable with two variables—`firstValue` and `secondValue`—both initialized to an empty string. 
-> Variables don't necessarily have to be named this way, you can name them in your own way.
+::: tip
+Variables don't have to be named this way, you can name them in your own way.
+:::
 
 #### Change: Replace the Single Input with Two Inputs
 
 - **Before:**
-  ```jsx
-  const [textInput, setTextInput] = useState();
-  ```
+```jsx
+const [textInput, setTextInput] = useState();
+```
 
 - **After:**
   ```jsx
@@ -150,93 +157,91 @@ For a calculator, you need two numbers to perform an addition operation. Therefo
 
 ---
 
-For the UI update, we add two separate input fields so that the user can enter the first and second numbers required for the addition operation. A read-only OutlinedTextArea is used as a heading to indicate "Input values."
+For the UI update, we add two separate `input` fields with the titles before each, so that the user can identify and enter the `first` and the `second` numbers required for the `addition` operation. The `OutlinedTextArea` is used with a `Heading-4` (`h4`) to indicate and input required values.
 
 #### Change: Update the UI to Display Two Input Fields
 
 - **Before (Original UI):**
-  ```jsx
-  <h4>{"Input"}</h4>
-  <div className={classes.contentBox}>
-      <OutlinedTextArea
-          type={"text"}
-          label={"Text"}
-          helperTxt={"Enter text"}
-          value={textInput}
-          onChange={(event) => setTextInput(event.target.value)}
-      />
-  </div>
-  ```
+```jsx
+<h4>{"Input"}</h4>
+<div className={"content-box"}>
+    <OutlinedTextArea
+        type={"text"}
+        label={"Text"}
+        helperTxt={"Enter text"}
+        value={textInput}
+        onChange={(event) => setTextInput(event.target.value)}
+    />
+</div>
+```
 
 - **After:**
-  ```jsx
-  <h4>
-    {"Input values"}
-  </h4>
-  <div className={classes.contentBox}>
-      <OutlinedTextArea
-          type={"text"}
-          label={"First number"}
-          helperTxt={"Enter first number"}
-          value={firstValue}
-          onChange={(event) => setFirstValue(event.target.value)}
-      />
-  </div>
-  <div className={classes.contentBox}>
-      <OutlinedTextArea
-          type={"text"}
-          label={"Second number"}
-          helperTxt={"Enter second number"}
-          value={secondValue}
-          onChange={(event) => setSecondValue(event.target.value)}
-      />
-  </div>
-  ```
+```jsx
+<h4>{"Input values"}</h4>
+<div className={"content-box"}>
+    <OutlinedTextArea
+        label={"First value"}
+        value={firstValue}
+        onChange={(event) =>
+            setFirstValue(event.target.value)
+        }
+    />
+</div>
+<div className={"content-box"}>
+    <OutlinedTextArea
+        label={"Second value"}
+        value={secondValue}
+        onChange={(event) =>
+            setSecondValue(event.target.value)
+        }
+    />
+</div>
+```
 
 ---
 
-### Updating the Submit Action to Use the "add" Method
+### Updating the `Submit Action` to Use the `add` Method
 
-We hardcode the operation by using `Calculator["add"]` from the Calculator service. The input values from firstValue and secondValue are assigned to the request using `setA()` and `setB()`, respectively. This ensures that the backend receives the correct values for the addition operation.
+We set the `addition` operation by using `Calculator["add"]` from the `Calculator` service. The input values from the `firstValue` and the `secondValue` are assigned to the request using `setA()` and `setB()`, respectively. This ensures that the backend receives the correct values for the `addition` operation.
 
-#### Change: Update the API Call Code
+#### Change: Update the `API Call` Code
 
 - **Before (Commented-Out Code):**
-  ```jsx
-  const submitAction = () => {
-        // const methodDescriptor = ;
-        // const request = new methodDescriptor.requestType();
+```jsx
+const submitAction = () => {
+    // const methodDescriptor = ;
+    // const request = new methodDescriptor.requestType();
 
-        // request.setValue(textInput)
+    // request.setValue(textInput)
 
-        const props = {
-            request,
-            preventCloseServiceOnEnd: false,
-            onEnd: onActionEnd,
-        };
-
-        serviceClient.unary(methodDescriptor, props);
+    const props = {
+        request,
+        preventCloseServiceOnEnd: false,
+        onEnd: onActionEnd,
     };
-  ```
+
+    serviceClient.unary(methodDescriptor, props);
+};
+```
 
 - **After:**
-  ```jsx
-  const submitAction = () => {
-      const methodDescriptor = Calculator["add"]; // Use the "add" operation
-      const request = new methodDescriptor.requestType();
+```jsx
+const submitAction = () => {
+    const methodDescriptor = Calculator["add"];
+    const request = new methodDescriptor.requestType();
 
-      request.setA(firstValue);
-      request.setB(secondValue);
+    request.setA(firstValue);
+    request.setB(secondValue);
 
-      const props = {
-          request,
-          preventCloseServiceOnEnd: false,
-          onEnd: onActionEnd,
-      };
+    const props = {
+        request,
+        preventCloseServiceOnEnd: false,
+        onEnd: onActionEnd,
+    };
 
-      serviceClient.unary(methodDescriptor, props);
-  };
-  ```
+    serviceClient.unary(methodDescriptor, props);
+};
+```
 
 ---
 
@@ -247,98 +252,96 @@ By un-commenting this line, the result returned from the backend is stored in th
 #### Change: Uncomment and Update the Response Handling
 
 - **Before (Commented-Out):**
-  ```jsx
-  // setOutput(message.getValue());
-  ```
+```jsx
+// setOutput(message.getValue());
+```
 
 - **After:**
-  ```jsx
-  setOutput(message.getValue());
-  ```
+```jsx
+setOutput(message.getValue());
+```
 
 ---
 
 ### Updating the Output Formatting
-
-This format clearly separates the heading ("Service call completed with output:") from the actual result. The result is displayed in a read-only OutlinedTextArea, ensuring a consistent and clear presentation.
+The heading `{"Service call completed with output:"}` is use alongside with other blocks to separate block `title` from the actual `result`. The `result` is displayed in a read-only `OutlinedTextArea`, ensuring a consistent and clear presentation.
 
 #### Change: Replace the Original ServiceOutput Component
 
 - **Before:**
-  ```jsx
-  const ServiceOutput = () => {
-      if (!output) {
-          return (
-              <div className={classes.contentBox}>
-                  <h4>{"Something went wrong..."}</h4>
-              </div>
-          );
-      }
-  
-      return (
-          <div className={classes.contentBox}>
-              <h4>{"Output"}</h4>
-              <div className={classes.contentBox}>
-                  <OutlinedTextArea
-                      type={"text"}
-                      value={output}
-                  />
-              </div>
-          </div>
-      );
-  };
-  ```
+```jsx
+const ServiceOutput = () => {
+    if (!output) {
+        return (
+            <div className={"content-box"}>
+                <h4>
+                    {"Something went wrong..."}
+                </h4>
+            </div>
+        );
+    }
+
+    return (
+        <div className={"content-box"}>
+            <h4>
+                {"Output"}
+            </h4>
+            <div className={"content-box"}>
+                <OutlinedTextArea
+                    type={"text"}
+                    value={output}
+                />
+            </div>
+        </div>
+    );
+};
+```
 
 - **After:**
-  ```jsx
-  const ServiceOutput = () => {
-      if (typeof output !== "number") {
-          return (
-              <div className={classes.contentBox}>
-                  <h4>
-                      {"Something went wrong..."}
-                  </h4>
-              </div>
-          );
-      }
-  
-      return (
-          <div className={classes.contentBox}>
-              <h4>
-                  {"Service call completed with output:"}
-              </h4>
-              <div className={classes.contentBox}>
-                  <OutlinedTextArea
-                      value={output}
-                  />
-              </div>
-          </div>
-      );
-  };
-  ```
+```jsx
+const ServiceOutput = () => {
+    if (typeof output !== "number") {
+        return (
+            <div className={"content-box"}>
+                <h4>
+                    {"Something went wrong..."}
+                </h4>
+            </div>
+        );
+    }
+
+    return (
+        <div className={"content-box"}>
+            <h4>
+                {"Service call completed with output:"}
+            </h4>
+            <div className={"content-box"}>
+                <OutlinedTextArea
+                    value={output}
+                />
+            </div>
+        </div>
+    );
+};
+```
 
 ## Final File: index.js (Calculator – Addition)
-
 Below is the complete `index.js` implementation after all modifications:
 
 ```jsx
 import React, { useState } from "react";
-import { withStyles } from "@mui/styles";
-import { useStyles } from "./styles";
-import Button from "@mui/material/Button";
-import OutlinedTextArea from "../../common/OutlinedTextArea";
+import StyledButton from "@integratedComponents/StyledButton";
+import OutlinedTextArea from "@commonComponents/OutlinedTextArea";
 import { Calculator } from "./example_pb_service";
+import "./style.css"
 
 const ExampleService = ({ serviceClient, isComplete }) => {
-    const classes = useStyles();
-    const [response, setResponse] = useState(null);
+    const [output, setOutput] = useState(null);
 
     const ServiceInput = () => {
-        // Changed: Two state variables for two inputs (first and second numbers)
-        const [firstValue, setFirstValue] = useState("");
-        const [secondValue, setSecondValue] = useState("");
+        const [firstValue, setFirstValue] = useState();
+        const [secondValue, setSecondValue] = useState();
 
-        // We no longer need an "action" state since we hardcode the "add" operation.
         const isAllowedToRun = () => {
             return !!firstValue && !!secondValue;
         };
@@ -350,12 +353,10 @@ const ExampleService = ({ serviceClient, isComplete }) => {
                 throw new Error(statusMessage);
             }
 
-            // Changed: Un-commented response handling
-            setResponse(message.getValue());
+            setOutput(message.getValue());
         };
 
         const submitAction = () => {
-            // Changed: Use the "add" method from Calculator
             const methodDescriptor = Calculator["add"];
             const request = new methodDescriptor.requestType();
 
@@ -372,45 +373,42 @@ const ExampleService = ({ serviceClient, isComplete }) => {
         };
 
         return (
-            <div className={classes.contentBox}>
-                <h4>
-                    {"Input values"}
-                </h4>
-                <div className={classes.contentBox}>
+            <div className={"content-box"}>
+                <h4>{"Input values"}</h4>
+                <div className={"content-box"}>
                     <OutlinedTextArea
-                        type={"text"}
-                        label={"First number"}
-                        helperTxt={"Enter first number"}
+                        label={"First value"}
                         value={firstValue}
-                        onChange={(event) => setFirstValue(event.target.value)}
+                        onChange={(event) =>
+                            setFirstValue(event.target.value)
+                        }
                     />
                 </div>
-                <div className={classes.contentBox}>
+                <div className={"content-box"}>
                     <OutlinedTextArea
-                        type={"text"}
-                        label={"Second number"}
-                        helperTxt={"Enter second number"}
+                        label={"Second value"}
                         value={secondValue}
-                        onChange={(event) => setSecondValue(event.target.value)}
+                        onChange={(event) =>
+                            setSecondValue(event.target.value)
+                        }
                     />
                 </div>
-                <div className={classes.contentBox}>
-                    <Button
+                <div className={"content-box"}>
+                    <StyledButton
+                        btnText={"Submit"}
                         variant={"contained"}
                         onClick={submitAction}
                         disabled={!isAllowedToRun()}
-                    >
-                        {"Submit"}
-                    </Button>
+                    />
                 </div>
             </div>
         );
     };
 
     const ServiceOutput = () => {
-        if (typeof response !== "number") {
+        if (typeof output !== "number") {
             return (
-                <div className={classes.contentBox}>
+                <div className={"content-box"}>
                     <h4>
                         {"Something went wrong..."}
                     </h4>
@@ -419,13 +417,13 @@ const ExampleService = ({ serviceClient, isComplete }) => {
         }
 
         return (
-            <div className={classes.contentBox}>
+            <div className={"content-box"}>
                 <h4>
                     {"Service call completed with output:"}
                 </h4>
-                <div className={classes.contentBox}>
+                <div className={"content-box"}>
                     <OutlinedTextArea
-                        value={response}
+                        value={output}
                     />
                 </div>
             </div>
@@ -433,17 +431,17 @@ const ExampleService = ({ serviceClient, isComplete }) => {
     };
 
     return (
-        <div className={classes.serviceContainer}>
+        <div className={"service-container"}>
             {!isComplete ? <ServiceInput /> : <ServiceOutput />}
         </div>
     );
 };
 
-export default withStyles(useStyles)(ExampleService);
+export default ExampleService;
+
 ```
 
 ## Summary of Changes
-
 1. **State and Input Fields:**  
    - **Changed:** Replaced the single `textInput` with two state variables: `firstValue` and `secondValue`.  
    - **Explanation:** Two inputs are required to perform an addition operation; therefore, we created two state variables and updated the UI accordingly.
@@ -461,18 +459,14 @@ export default withStyles(useStyles)(ExampleService);
    - **Explanation:** This format clearly separates the heading ("Service call completed with output:") from the actual output, ensuring consistent presentation.
 
 ## Required Stub Files for Any Service
-
 For any service to work within the project, two essential stub files must be included:
-
 1. **`example_pb_service.js`** – Contains the interface for interacting with the service.  
 2. **`example_pb.js`** – Auxiliary file for service communication.  
 
 These files are automatically generated from the `.proto` definition and are necessary for handling requests and responses between the frontend and the backend. 
-
 Add them to our project to ensure proper functionality.
 
 ### About `example_pb_service.js` and `example_pb.js`
-
 - **`example_pb_service.js`**:  
   This file provides an abstraction layer for making service calls. It contains method descriptors for each operation (e.g., `add`, `subtract`) exposed by the service. Each method descriptor includes:
   - The expected input and output message types.
@@ -488,7 +482,6 @@ Add them to our project to ensure proper functionality.
   It provides serialization and deserialization logic for these messages, enabling communication with the service in binary format.
 
 ### Download the Required Service Files:
-
 - <a href="/assets/files/example_pb_service.js" download>example_pb_service.js</a>  
 - <a href="/assets/files/example_pb.js" download>example_pb.js</a>  
 
