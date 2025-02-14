@@ -21,14 +21,14 @@ To access the hidden files, click on the eye icon next to the files list.
   - The expected input and output message types.
   - The gRPC method name.
 
-  It simplifies the process of calling a service method by encapsulating the details of the gRPC protocol.
+It simplifies service method calls by handling the details of the gRPC protocol.
 
 - **`example_pb.js`**:
   This file contains definitions of the message types used by the Calculator service, as defined in the `.proto` file. These include:
   - `Numbers`: Represents the two numbers (`a` and `b`) involved in a calculation.
   - `Result`: Represents the output value of a calculation.
 
-It provides serialization and deserialization logic for these messages, enabling communication with the service in binary format.
+It provides logic to convert messages into a binary format (serialization) and back (deserialization), enabling communication with the service
 
 Download the required service files:
 - <a href="/assets/files/example_pb_service.js" download>example_pb_service.js</a> 
@@ -38,7 +38,7 @@ And then `upload` them into the project using `upload button` near the files lis
 
 ## Step-by-Step Modifications
 ### 1. Importing Required Components
-We start with the import statements, which bring in various libraries and components that we need to use in our component.
+We start with the import statements, which bring in the necessary libraries and UI elements.
 **Original imports:**
 ```jsx
 import React, { useState } from "react";
@@ -80,7 +80,7 @@ import "./style.css"
 * Another custom component for text input. This allows the user to type values into text fields (e.g., first value and second value).
 
 #### `{Calculator}`:
-* This comes from a file that contains predefined methods for making remote procedure calls (RPCs) to a server. We'll use it to call mathematical operations from a service.
+* This is imported from a file that contains predefined methods for making remote procedure calls (RPCs) to a server. We'll use it to call mathematical operations from a service.
 
 ### 2. ServiceInput Component: Getting User Input
 The ServiceInput component will be responsible for collecting data from the user, such as the two numbers (firstValue and secondValue) and the operation (action). It will then send this data to the backend for processing.
@@ -317,7 +317,7 @@ const ServiceOutput = () => {
 };
 ```
 #### What does `typeof output !== "number"` do?
-* This checks if the `output` is a valid number. If the backend returns something unexpected (like an error or string), it displays a message indicating something went wrong.
+* This checks if the `output` is a valid number. If the backend returns an unexpected result (such as an error or invalid data), an error message is displayed.
 
 #### Why display the result with `{output}`?
 * This uses the `output` value returned by the backend to show the result of the calculation.

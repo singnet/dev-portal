@@ -116,7 +116,7 @@ const TextToText = ({ serviceClient, isComplete }) => {
 export default TextToText;
 ```
 
-### `styles.js` File (Hidden by default)
+### `style.css` File (Hidden by default)
 
 ```css
 .service-container {
@@ -136,10 +136,10 @@ export default TextToText;
 Let's now transform the `Text-to-Text` template into a simple `Calculator Service` that performs `addition`. We will explain every change in detail.
 
 ### Transforming the Input Section
-For a `Calculator`, you need two numbers to perform an `addition` operation. Therefore, we replace the single `textInput` state variable with two variables—`firstValue` and `secondValue`— both initialized to an empty string.
+For a `Calculator`, you need two numbers to perform an `addition` operation. Therefore, we replace the single `textInput` state variable with two variables: `firstValue` and `secondValue`. Both are initialized as empty strings."
 
 ::: tip
-Variables don't have to be named this way, you can name them in your own way.
+Variables can be named differently based on your preference.
 :::
 
 #### Change: Replace the Single Input with Two Inputs
@@ -264,7 +264,7 @@ setOutput(message.getValue());
 ---
 
 ### Updating the Output Formatting
-The heading `{"Service call completed with output:"}` is use alongside with other blocks to separate block `title` from the actual `result`. The `result` is displayed in a read-only `OutlinedTextArea`, ensuring a consistent and clear presentation.
+The heading `{"Service call completed with output:"}` is used alongside other blocks to separate the block `title` from the actual `result`. The `result` is displayed in a read-only `OutlinedTextArea`, ensuring a consistent and clear presentation.
 
 #### Change: Replace the Original ServiceOutput Component
 
@@ -472,14 +472,14 @@ Add them to our project to ensure proper functionality.
   - The expected input and output message types.
   - The gRPC method name.
 
-  It simplifies the process of calling a service method by encapsulating the details of the gRPC protocol.
+It simplifies service method calls by handling the details of the gRPC protocol.
 
 - **`example_pb.js`**:  
   This file contains definitions of the message types used by the service, as defined in the `.proto` file. These include:
   - `Numbers`: Represents the two numbers (`a` and `b`) involved in a calculation.
   - `Result`: Represents the output value of a calculation.
 
-  It provides serialization and deserialization logic for these messages, enabling communication with the service in binary format.
+It provides logic to convert messages into a binary format (serialization) and back (deserialization), enabling communication with the service
 
 ### Download the Required Service Files:
 - <a href="/assets/files/example_pb_service.js" download>example_pb_service.js</a>  
