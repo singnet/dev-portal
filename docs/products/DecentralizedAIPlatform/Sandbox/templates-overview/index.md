@@ -32,7 +32,7 @@ When you select a template, a confirmation dialog appears:
 
 If you click **`PROCEED`**:
   - Your current project session will be terminated.
-  - A new project will be created that contains only the essential files (`index.js` and `styles.js`).
+  - A new project will be created that contains only the essential files (`index.js` and `style.css`).
 
 If you click **`CANCEL`**:
   - The dialog will be closed.  
