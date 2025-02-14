@@ -1042,11 +1042,11 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 collapsed: true,
                 items: [
                     {
-                        text: "Calculator guide for UI Sandbox",
+                        text: "How to create a UI for the Calculator service",
                         link: "/docs/products/DecentralizedAIPlatform/Sandbox/Guidelines/calculator-guide/",
                     },
                     {
-                        text: "Using templates guide for UI Sandbox",
+                        text: "How to use Templates",
                         link: "/docs/products/DecentralizedAIPlatform/Sandbox/Guidelines/using-templates/",
                     },
                 ],

@@ -1,13 +1,12 @@
 # Templates overview
-
-The **Templates** tab in **UI Sandbox** provides you with a set of ready-to-use templates that streamline your development process by offering predefined structures for various types of input and output data.
+## Introduction
+The `Templates` tab in the `UI Sandbox` provides you with a set of ready-to-use templates that streamline your development process by offering predefined structures for various types of input and output data.
 
 <ImageViewer src="/assets/images/products/Sandbox/templates.webp" alt="Templates-tab"/>
 
 These templates serve as a foundation for integrating services, allowing you to modify and extend them according to your needs.
 
 ## Overview of the Templates Tab
-
 The **Templates** tab allows you to select preconfigured templates for different types of data processing. These templates include essential components and a basic structure that you can further customize.
 
 ### Search bar  
@@ -15,12 +14,12 @@ You can use the search bar to quickly find templates by filtering based on names
 
 ### Filtering by data type
 You can filter templates based on their input and output data types. Available filter options:  
-- **Text**  
-- **Image**  
-- **Audio**  
-- **File**
+- **`Text`**  
+- **`Image`**  
+- **`Audio`**  
+- **`File`**
 
-You can select one or multiple filters, and the displayed templates will include at least one of the selected data types.
+You can select one or multiple `filters`, and the displayed `templates` will include at least one of the selected data types.
 
 ### Template selection process
 From the list of templates, as shown in the picture above, you can select the option you need.
@@ -31,11 +30,11 @@ When you select a template, a confirmation dialog appears:
   >  
   > **PROCEED** | **CANCEL**
 
-If you click **PROCEED**:
+If you click **`PROCEED`**:
   - Your current project session will be terminated.
   - A new project will be created that contains only the essential files (`index.js` and `styles.js`).
 
-If you click **CANCEL**:
+If you click **`CANCEL`**:
   - The dialog will be closed.  
 
 ## List of available templates
