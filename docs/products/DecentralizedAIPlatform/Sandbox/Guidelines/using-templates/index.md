@@ -3,7 +3,7 @@
 This guide will help you understand how to use the template library to quickly create a UI for your services.
 
 ## Where to get a project template
-To use the `Templates library`, select any of the following options on the start screen: `New project` or `Open project`. Then go to the right half of the workspace and select the template you need in the `Templates` tab. You can also use the `search` and `filters` to quickly find the template you need.
+To use the `Templates library`, select any of the following options on the start screen: `New Project` or `Open Project` or `Open Templates`. Then go to the right half of the workspace and select the template you need in the `Templates` tab. You can also use the `search` and `filters` to quickly find the template you need.
 
 ## Files in the template
 When you select a template, a new project is loaded containing two files:
