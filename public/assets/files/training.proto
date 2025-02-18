@@ -1,0 +1,124 @@
+syntax = "proto3";
+import "google/protobuf/descriptor.proto";  // Required for indicators to work
+package training;
+option go_package = "github.com/singnet/snet-daemon/v5/training";
+
+// Methods that the service provider must implement
+service Model {
+
+  // Free
+  // Can pass the address of the model creator
+  rpc create_model(NewModel) returns (ModelID) {}
+
+  // Free
+  rpc validate_model_price(ValidateRequest) returns (PriceInBaseUnit) {}
+
+  // Paid
+  rpc upload_and_validate(stream UploadInput) returns (StatusResponse) {}
+
+  // Paid
+  rpc validate_model(ValidateRequest) returns (StatusResponse) {}
+
+  // Free, one signature for both train_model_price & train_model methods
+  rpc train_model_price(ModelID) returns (PriceInBaseUnit) {}
+
+  // Paid
+  rpc train_model(ModelID) returns (StatusResponse) {}
+
+  // Free
+  rpc delete_model(ModelID) returns (StatusResponse) {
+    // After model deletion, the status becomes DELETED in etcd
+  }
+
+  // Free
+  rpc get_model_status(ModelID) returns (StatusResponse) {}
+}
+
+message ModelResponse {
+  string model_id = 1;
+  Status status = 2;
+  string updated_date = 3;
+  string name = 4;
+  string description = 5;
+  string grpc_method_name = 6;
+  string grpc_service_name = 7;
+
+  // List of all addresses that will have access to this model
+  repeated string address_list = 8;
+
+  // Access to the model is granted only for use and viewing
+  bool is_public = 9;
+
+  string training_data_link = 10;
+}
+
+// Used as input for new_model requests
+// The service provider decides whether to use these fields; returning model_id is mandatory
+message NewModel {
+  string name = 1;
+  string description = 2;
+  string grpc_method_name = 3;
+  string grpc_service_name = 4;
+
+  // List of all addresses that will have access to this model
+  repeated string address_list = 5;
+
+  // Set this to true if you want your model to be accessible by other AI consumers
+  bool is_public = 6;
+
+  // These parameters will be passed by the daemon
+  string organization_id = 7;
+  string service_id = 8;
+  string group_id = 9;
+}
+
+// This structure must be used by the service provider
+message ModelID {
+  string model_id = 1;
+}
+
+// This structure must be used by the service provider
+// Used in the train_model_price method to get the training/validation price
+message PriceInBaseUnit {
+  uint64 price = 1; // cogs, weis, afet, aasi, etc.
+}
+
+enum Status {
+  CREATED = 0;
+  VALIDATING = 1;
+  VALIDATED = 2;
+  TRAINING = 3;
+  READY_TO_USE = 4; // After training is completed
+  ERRORED = 5;
+  DELETED = 6;
+}
+
+message StatusResponse {
+  Status status = 1;
+}
+
+message UploadInput {
+  string model_id = 1;
+  bytes data = 2;
+  string file_name = 3;
+  uint64 file_size = 4; // in bytes
+  uint64 batch_size = 5;
+  uint64 batch_number = 6;
+  uint64 batch_count = 7;
+}
+
+message ValidateRequest {
+  string model_id = 2;
+  string training_data_link = 3;
+}
+
+extend google.protobuf.MethodOptions {
+  string default_model_id = 50001;
+  uint64 max_models_per_user = 50002; // max models per method & user
+  uint64 dataset_max_size_mb = 50003; // max size of dataset
+  uint64 dataset_max_count_files = 50004; // maximum number of files in the dataset
+  uint64 dataset_max_size_single_file_mb = 50005; // maximum size of a single file in the dataset
+  string dataset_files_type = 50006; // allowed files types in dataset. string with array or single value, example: jpg, png, mp3
+  string dataset_type = 50007; // string with array or single value, example: zip, tar.gz, tar
+  string dataset_description = 50008; // additional free-form requirements
+}

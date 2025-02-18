@@ -2,26 +2,41 @@
 
 ## ❗️ Currently under development ❗️
 
-The AI developer needs to implement 3 methods for daemon [training.proto](https://github.com/semyon-dev/snet-daemon/blob/master/training/training.proto).
+The AI developer needs to implement 8 methods for daemon <a href="/assets/files/training.proto" download>training.proto</a>  
 There will be no cost borne by the consumer in calling these methods,
 pricing will apply when you actually call the training methods defined.
 AI consumer will call all these methods:
 
 ```proto
-syntax = "proto3";
+service Model {
 
-rpc create_model(CreateModelRequest) returns (ModelDetailsResponse)
-rpc delete_model(UpdateModelRequest) returns (ModelDetailsResponse)
-rpc get_model_status(ModelDetailsRequest) returns (ModelDetailsResponse)
-```
+  // Free
+  // Can pass the address of the model creator
+  rpc create_model(NewModel) returns (ModelID) {}
 
-Daemon will implement, however the AI developer should skip implementing these:
+  // Free
+  rpc validate_model_price(ValidateRequest) returns (PriceInBaseUnit) {}
 
-```proto
-syntax = "proto3";
+  // Paid
+  rpc upload_and_validate(stream UploadInput) returns (StatusResponse) {}
 
-rpc update_model_access(UpdateModelRequest) returns (ModelDetailsResponse)
-rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
+  // Paid
+  rpc validate_model(ValidateRequest) returns (StatusResponse) {}
+
+  // Free, one signature for both train_model_price & train_model methods
+  rpc train_model_price(ModelID) returns (PriceInBaseUnit) {}
+
+  // Paid
+  rpc train_model(ModelID) returns (StatusResponse) {}
+
+  // Free
+  rpc delete_model(ModelID) returns (StatusResponse) {
+    // After model deletion, the status becomes DELETED in etcd
+  }
+
+  // Free
+  rpc get_model_status(ModelID) returns (StatusResponse) {}
+}
 ```
 
 ## Scheme
@@ -38,7 +53,6 @@ rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
 1.  Write your service proto file with training methods. You should mark training methods with trainingMethodIndicator from training.proto (import it):
 
     ```proto
-    syntax = "proto3";
     import "training.proto";
     package example_service;
 
@@ -57,97 +71,78 @@ rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
     }
     ```
 
-    Also you can import and use [pricing.proto (more detailed about pricing)](https://github.com/singnet/snet-daemon/blob/master/pricing/pricing.proto):
-
-    ```proto
-    option (pricing.my_method_option).estimatePriceMethod = "/example_service.Calculator/dynamic_pricing_add";
-    ```
 
 2.  [Generate gRPC code](https://grpc.io/docs/languages/python/quickstart/#generate-grpc-code) for your programming language.
     For example, we will use Python.
 
         Install grpc tools for python:
-        ```sh
-        pip3 install grpc
-        pip3 install grpcio-tools
-        ```
+    ```sh
+    pip3 install grpcio
+    pip3 install grpcio-tools
+    ```
 
-        Then generate pb files for training.proto and for your service.proto:
-        ```sh
-        python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. training.proto
-        python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. service.proto
-        ```
+    Then generate pb files for training.proto and for your service.proto:
+    ```sh
+    python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. .\training.proto
+    ```
 
 3.  Implement and write server logic for model methods. Example:
 
     ```python
-    import training_pb2
-    import training_pb2_grpc
-    import time
-    import grpc
     from concurrent import futures
-    import argparse
+    import grpc
 
-    _ONE_DAY_IN_SECONDS = 60 * 60 * 24
+    import training_pb2_grpc
+    import training_pb2
+    from training_pb2_grpc import ModelServicer
 
-    parser = argparse.ArgumentParser(description="")
-    parser.add_argument("--host", type=str, default="0.0.0.0", help="host")
-    parser.add_argument("--port", type=int, default=5001, help="port")
-    args = parser.parse_args()
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    training_pb2_grpc.add_ModelServicer_to_server(ModelServicer(), server)
+    server.add_insecure_port("[::]:5002")  # you should use this port in daemon in config.model_training_endpoint
+    server.start()
+    server.wait_for_termination()
 
 
-    class ExampleService(training_pb2_grpc.ModelServicer):
-        """Provides methods that implement functionality of route guide server."""
-
-        def __init__(self):
-            pass
+    class Training(training_pb2_grpc.ModelServicer):
 
         def create_model(self, request, context):
             # your logic
             # model_id = generate_model_ID()
-            print("creating model...")
-            model_id = "100"
-            details = training_pb2.ModelDetails()
-            details.model_id = model_id
-            return training_pb2.ModelDetailsResponse(
-                status=training_pb2.Status.CREATED,
-                model_details=details
-            )
-
-        def delete_model(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.ModelDetailsResponse(
-                status=training_pb2.Status.DELETED,
-                model_details=request.model_details,
-            )
+            return training_pb2.ModelID(model_id="NEW_RANDOM_ID")
 
         def get_model_status(self, request, context):
             # your logic
             # TODO
-            return training_pb2.ModelDetailsResponse(
-                status=training_pb2.Status.IN_PROGRESS,
-                model_details=request.model_details,
-            )
+            return training_pb2.StatusResponse(training_pb2.READY_TO_USE)
 
+        def delete_model(self, request, context):
+            # your logic
+            # TODO
+            return training_pb2.StatusResponse(training_pb2.DELETED)
 
-    def serve():
-        server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-        training_pb2_grpc.add_ModelServicer_to_server(
-            ExampleService(), server
-        )
-        server.add_insecure_port("{}:{}".format(args.host, args.port))
-        server.start()
-        print("Server started")
-        try:
-            while True:
-                time.sleep(_ONE_DAY_IN_SECONDS)
-        except KeyboardInterrupt:
-            server.stop(0)
+        def validate_model_price(self, request, context):
+            # your logic
+            # TODO
+            return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
 
+        def train_model_price(self, request, context):
+            # your logic
+            # TODO
+            return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
 
-    if __name__ == "__main__":
-        serve()
+        def train_model(self, request, context):
+            # your logic
+            # TODO
+            return training_pb2.StatusResponse(training_pb2.TRAINING)
+
+        def upload_and_validate(self, request, context):
+            # your logic
+            # TODO
+            return training_pb2.StatusResponse(training_pb2.VALIDATING)
+        def validate_model(self, request, context):
+            # your logic
+            # TODO
+            return training_pb2.StatusResponse(training_pb2.VALIDATING)
 
     ```
 
