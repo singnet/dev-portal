@@ -1213,7 +1213,7 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/AIMarketplace/payment-methods/"
     },
     {
-        text: "How to use training?",
+        text: "What is the training?",
         link: "/docs/products/AIMarketplace/training-guide/",
     },
     {

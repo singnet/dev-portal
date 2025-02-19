@@ -39,6 +39,8 @@ service Model {
 }
 ```
 
+There will be no cost borne by the consumer in calling these methods, pricing will apply when you actually call the training methods defined.
+
 ## Scheme
 
 <ImageViewer src="/assets/images/products/AIMarketplace/daemon/daemon_training.png" alt="The scheme of the daemon's work with training methods"/>
@@ -53,21 +55,67 @@ service Model {
 1.  Write your service proto file with training methods. You should mark training methods with trainingMethodIndicator from training.proto (import it):
 
     ```proto
+    syntax = "proto3";
+    package service;
     import "training.proto";
-    package example_service;
+    option go_package = "../service";
 
-    message ExampleInput {
-     string TrainingDatasetURL = 1;
+    message sttResp{
+        string result = 1;
     }
 
-    message ExampleResponse {
-     bool IsSuccess = 1;
+    message sttInput{
+        training.ModelID model_id = 1;
+        bytes speech = 2;
     }
 
-    service ExampleTrainingService {
-     rpc train_method(ExampleInput) returns (ExampleResponse) {
-        option (training.my_method_option).trainingMethodIndicator = "true";
-      }
+    message randomInput{
+        training.ModelID model_id = 1;
+        string prompt = 2;
+    }
+
+    message randomOutput{
+        string response = 2;
+    }
+
+    service TrainToUse {
+        rpc random(randomInput) returns (randomOutput){}
+    }
+
+    service ProMethods{
+        rpc stt(sttInput) returns (sttResp) {
+            option (training.dataset_description) = "Additional requirements";
+            option (training.dataset_files_type) = "png, mp4, txt, mp3";
+            option (training.dataset_type) = "zip, tar.gz";
+            option (training.dataset_max_count_files) = 100;
+            option (training.dataset_max_size_mb) = 100;
+            option (training.dataset_max_size_single_file_mb) = 10;
+            option (training.default_model_id) = "default";
+            option (training.max_models_per_user) = 5;
+        }
+
+        rpc easy_trained(sttInput) returns (sttResp) {
+            option (training.dataset_type) = "zip";
+            option (training.dataset_max_size_mb) = 25;
+            option (training.default_model_id) = "default";
+            option (training.max_models_per_user) = 100;
+        }
+    }
+
+    message BasicSttInput {
+        string text = 1;
+    }
+
+    service BasicMethods{
+        // basic method without modelID
+        rpc stt(BasicSttInput) returns(sttResp){
+
+        }
+
+        // basic method without modelID
+        rpc easy(BasicSttInput) returns(sttResp){
+
+        }
     }
     ```
 
