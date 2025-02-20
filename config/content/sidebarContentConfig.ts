@@ -1098,6 +1098,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/daemon/",
             },
             {
+                text: "Explanation of Training",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/training/"
+            },
+            {
                 text: "Marketplace service invocation",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/marketplace-service_invocation/",
             },
@@ -1213,7 +1217,7 @@ export const MarketplaceSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/AIMarketplace/payment-methods/"
     },
     {
-        text: "What is the training?",
+        text: "How to use training?",
         link: "/docs/products/AIMarketplace/training-guide/",
     },
     {
