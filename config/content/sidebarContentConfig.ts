@@ -98,6 +98,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Service Calling via SDK",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/",
             },
+            {
+                text: "Service Training via SDK",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceTrainingViaSDK/",
+            },
         ],
     },
     {
@@ -879,6 +883,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                     {
                         text: "Console App example",
                         link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/console-app/",
+                    },
+                    {
+                        text: "Training",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/training/",
                     },
                     {
                         text: "Documentation",
