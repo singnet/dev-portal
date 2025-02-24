@@ -958,8 +958,20 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                 link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/prepaid-payment-strategy/",
                             },
                             {
+                                text: "training_payment_strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/training-payment-strategy/",
+                            },
+                            {
                                 text: "training",
                                 link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/training/",
+                            },
+                            {
+                                text: "responses",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/responses/",
+                            },
+                            {
+                                text: "exceptions",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/exceptions/",
                             },
                             {
                                 text: "utils",
@@ -968,6 +980,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                             {
                                 text: "ipfs_utils",
                                 link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/ipfs-utils/",
+                            },
+                            {
+                                text: "call_utils",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/call-utils/",
                             },
                         ],
                     },

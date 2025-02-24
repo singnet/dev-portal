@@ -1,9 +1,8 @@
-
-# module : sdk.utils.utils
+# module: sdk.utils.utils
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/utils/utils.py) to GitHub
 
-## Entities:
+Entities:
 1. [safe_address_converter](#function-safe-address-converter)
 2. [type_converter](#function-type-converter)
 3. [bytes32_to_str](#function-bytes32-to-str)
@@ -11,10 +10,11 @@
 5. [is_valid_endpoint](#function-is-valid-endpoint)
 6. [normalize_private_key](#function-normalize-private-key)
 7. [get_address_from_private](#function-get-address-from-private)
-8. [add_to_path](#class-add-to-path)
-9. [find_file_by_keyword](#function-find-file-by-keyword)
-10. [bytesuri_to_hash](#function-bytesuri-to-hash)
-11. [safe_extract_proto](#function-safe-extract-proto)
+8. [get_current_block_number](#function-get-current-block-number)
+9. [add_to_path](#class-add-to-path)
+10. [find_file_by_keyword](#function-find-file-by-keyword)
+11. [bytesuri_to_hash](#function-bytesuri-to-hash)
+12. [safe_extract_proto](#function-safe-extract-proto)
 
 
 ## Function `safe_address_converter`
@@ -33,7 +33,7 @@ Checks if the address is a valid checksum address and returns it, otherwise rais
 
 - `Exception`: If the address isn't a valid checksum address.
 
-## Function `type_converter`
+## Function `type_converter
 
 Creates a function that converts a value to the specified type.
 
@@ -68,6 +68,7 @@ Generated files as well as .proto files are stored in the `~/.snet` directory.
 - `codegen_dir` (PurePath): The directory where the compiled code will be generated.
 - `proto_file` (str): The name of the .proto file to compile. Defaults to `None`.
 - `target_language` (str, optional): The target language for the compiled code. Defaults to "python".
+- `add_training` (bool): Whether to include training.proto in the compilation. Defaults to False.
 
 ##### returns:
 
@@ -117,6 +118,14 @@ Returns the wallet address from the private key.
 
 - The wallet address. (ChecksumAddress)
 
+## Function `get_current_block_number`
+
+Returns the current block number in Ethereum.
+
+##### returns:
+
+- The current block number. (BlockNumber (int))
+
 ## Class `add_to_path`
 
 `add_to_path` class is a _**context manager**_ that temporarily adds a given path to the system's `sys.path` list. 
@@ -136,6 +145,7 @@ Finds a file by keyword in the current directory and subdirectories.
 
 - `directory` (AnyStr | PathLike[AnyStr]): The directory to search in.
 - `keyword` (AnyStr): The keyword to search for.
+- `exclude` (List[AnyStr], optional): A list of strings to exclude from the search. Defaults to _None_.
 
 ##### returns:
 

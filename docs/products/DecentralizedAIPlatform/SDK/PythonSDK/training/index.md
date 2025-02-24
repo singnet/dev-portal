@@ -91,12 +91,15 @@ The sequence of basic actions is as follows:
 3) Train the model
 4) Call the service based on the new model
 
+##### `create_model`
+
 To create a new model you need to call the `create_model` method. It takes the following parameters:
-- `method_name` - name of the service method for which we want to create a new model
-- `model_name` - name of the new model
-- `model_description`- description of the new model (optional)
+- `method_name` - name of the service method for which we want to create a new model 
+(use [get_training_metadata](#get-training-metadata) method to get the list of available methods)
+- `model_name` - name of the new model (you need to come up with this)
+- `model_description`- description of the new model (optional) 
 - `is_public_accessible` - whether the model is publicly accessible (optional, default: `False`)
-- `addresses_with_access` - list of addresses with access to the model (optional)
+- `addresses_with_access` - list of addresses with access to the model (optional) (makes sense only if `is_public_accessible` is _False_)
 
 and returns a `Model` object with all the model information.
 
@@ -107,6 +110,8 @@ model_id = new_model.model_id
 
 print(new_model.status) # ModelStatus.CREATED
 ```
+
+##### `upload_and_validate`
 
 To upload the training dataset you need to call the `upload_and_validate` method. It takes the following parameters:
 - `model_id` - id of the model
@@ -126,6 +131,8 @@ print(model_status) # ModelStatus.VALIDATING
 > Note: Dataset validation usually takes some time, so you should wait for the `VALIDATED` status of the model 
 > (using the `get_model` or `get_all_models` methods) after sending the dataset for validation before proceeding 
 > further with the model.
+
+##### `train_model`
 
 To train the model on an uploaded dataset you need to call the `train_model` method. It takes the following parameters:
 - `model_id` - id of the model
@@ -161,7 +168,9 @@ In addition to the basic ones, there are also methods for working with models an
 5) `update_model`
 6) `delete_model`
 
-`get_training_metadata` allows you to get the metadata about the training in the service:
+##### `get_training_metadata` 
+
+allows you to get the metadata about the training in the service:
 
 ```python
 training_metadata = service_client.training.get_training_metadata()
@@ -172,7 +181,9 @@ print(training_metadata)
 # training_methods: {'service1': ['rpc1', 'rpc2'], 'service2': ['rpc3', 'rpc4']}
 ```
 
-`get_method_metadata` allows you to get the requirements for the dataset on which the model will be trained 
+##### `get_method_metadata` 
+
+allows you to get the requirements for the dataset on which the model will be trained 
 for a particular service method. It takes the following parameters:
 
 - `method_name` - name of the service method
@@ -192,7 +203,9 @@ print(method_metadata)
 # dataset_description: 'dataset description'
 ```
 
-`get_model` allows you to get the `Model` object with all the model information for a particular model. 
+##### `get_model` 
+
+allows you to get the `Model` object with all the model information for a particular model. 
 It takes `model_id` as a parameter.
 
 ```python
@@ -214,7 +227,9 @@ print(model)
 # updated by address: 0x1234567890123456789012345678901234567890
 ```
 
-`get_all_models` allows you to get all the models in the service, but you can use filters if needed. 
+##### `get_all_models` 
+
+allows you to get all the models in the service, but you can use filters if needed. 
 It takes the following parameters:
 - `statuses` - list of statuses of the models (optional)
 - `is_public` - whether the model is public or not (optional)
@@ -225,11 +240,14 @@ It takes the following parameters:
 
 and returns a list of `Model` objects.
 
-`update_model` allows you to change the model information. It takes the following parameters:
+##### `update_model`
+
+allows you to change the model information. It takes the following parameters:
 - `model_id` - id of the model
 - `model_name` - name of the model (optional)
 - `description` - description of the model (optional)
-- `addresses_with_access` - list of addresses of the users who can call the service (optional)
+- `addresses_with_access` - list of addresses of the users who can call the service (optional) 
+(makes sense only if the model is not public)
 
 ```python
 model = service_client.training.create_model(method_name=grpc_method_name,
@@ -241,7 +259,9 @@ model = service_client.training.update_model(model_id, model_name="model_name", 
                                     addresses_with_access=["0x1234567890123456789012345678901234567890"]) # added an address
 ```
 
-`delete_model` allows you to delete the model from the service. It takes `model_id` as a parameter:
+##### `delete_model`
+
+allows you to delete the model from the service. It takes `model_id` as a parameter:
 
 ```python
 model_status = service_client.training.delete_model(model_id)
@@ -277,7 +297,7 @@ id or create a new model.
 
 This exception can be thrown when you try to call `upload_and_validate` method with an inappropriate dataset. 
 The point is that the dataset is checked for compliance with the requirements (which can be obtained via the 
-`get_method_metadata` method) on the SDK side before loading. If the dataset is not compliant, this exception 
+`get_method_metadata` method) on the SDK side before uploading. If the dataset is not compliant, this exception 
 will be thrown, detailing what incompatibilities the dataset has.
 
 ```text
@@ -288,7 +308,9 @@ snet.sdk.training.exceptions.WrongDatasetException: Dataset check failed:
 	Wrong file type: `wav` in file: `result.wav`. Allowed file types: png, mp3, txt
 ```
 
+- `GRPCException`
 
+This exception is thrown when an error occurs while calling the grpc service.
 
 ## Model status
 
