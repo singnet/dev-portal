@@ -1,28 +1,44 @@
 # Introduce in training
 
-## ❗️ Currently under development ❗️
+This guide will help you maintain training for your service.
 
-The AI developer needs to implement 3 methods for daemon [training.proto](https://github.com/semyon-dev/snet-daemon/blob/master/training/training.proto).
-There will be no cost borne by the consumer in calling these methods,
-pricing will apply when you actually call the training methods defined.
+The AI developer needs to implement 8 methods for daemon <a href="/assets/files/training.proto" download>training.proto</a>  
+
+Most of the methods are free, but the methods for validation and training are paid, the price for them can be found through validate_model_price & train_model_price. As a service provider, you must implement the logic of calculating the price for these two methods. You can always return 1 cog or make dynamic logic depending on the parameters and dataset.
+
 AI consumer will call all these methods:
 
-```proto
-syntax = "proto3";
+  ```proto
+  service Model {
 
-rpc create_model(CreateModelRequest) returns (ModelDetailsResponse)
-rpc delete_model(UpdateModelRequest) returns (ModelDetailsResponse)
-rpc get_model_status(ModelDetailsRequest) returns (ModelDetailsResponse)
-```
+  // Free
+  // Can pass the address of the model creator
+  rpc create_model(NewModel) returns (ModelID) {}
 
-Daemon will implement, however the AI developer should skip implementing these:
+  // Free
+  rpc validate_model_price(ValidateRequest) returns (PriceInBaseUnit) {}
 
-```proto
-syntax = "proto3";
+  // Paid
+  rpc upload_and_validate(stream UploadInput) returns (StatusResponse) {}
 
-rpc update_model_access(UpdateModelRequest) returns (ModelDetailsResponse)
-rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
-```
+  // Paid
+  rpc validate_model(ValidateRequest) returns (StatusResponse) {}
+
+  // Free, one signature for both train_model_price & train_model methods
+  rpc train_model_price(ModelID) returns (PriceInBaseUnit) {}
+
+  // Paid
+  rpc train_model(ModelID) returns (StatusResponse) {}
+
+  // Free
+  rpc delete_model(ModelID) returns (StatusResponse) {
+    // After model deletion, the status becomes DELETED in etcd
+  }
+
+  // Free
+  rpc get_model_status(ModelID) returns (StatusResponse) {}
+  }
+  ```
 
 ## Scheme
 
@@ -35,189 +51,152 @@ rpc get_all_models(AccessibleModelsRequest) returns (AccessibleModelsResponse)
 
 ## Step by step
 
-1.  Write your service proto file with training methods. You should mark training methods with trainingMethodIndicator from training.proto (import it):
+1.  Write your service proto file with training.proto features:
 
     ```proto
     syntax = "proto3";
+    package service;
     import "training.proto";
-    package example_service;
-
-    message ExampleInput {
-     string TrainingDatasetURL = 1;
+    
+    message sttResp{
+      string result = 1;
+    }
+    
+    message basicSttInput {
+      bytes speech = 1;
+    }
+    
+    message sttInput{
+      //  Specify that your method accepts a training.ModelID in order to support training
+      training.ModelID model_id = 1;
+      bytes speech = 2;
     }
 
-    message ExampleResponse {
-     bool IsSuccess = 1;
+
+    service ExampleService{
+    rpc stt(sttInput) returns (sttResp) {
+      # can specify requirements for dataset
+      option (training.dataset_description) = "Additional requirements";
+      option (training.dataset_files_type) = "png, mp4, txt, mp3";
+      option (training.dataset_type) = "zip, tar.gz";
+      option (training.dataset_max_count_files) = 100;
+      option (training.dataset_max_size_mb) = 100;
+      option (training.dataset_max_size_single_file_mb) = 10;
+      option (training.default_model_id) = "default";
+      option (training.max_models_per_user) = 5;
     }
 
-    service ExampleTrainingService {
-     rpc train_method(ExampleInput) returns (ExampleResponse) {
-        option (training.my_method_option).trainingMethodIndicator = "true";
-      }
-    }
+    rpc basic_stt(basicSttInput) returns (sttResp) {
+    // basic stt method without training support
+    }}
     ```
 
-    Also you can import and use [pricing.proto (more detailed about pricing)](https://github.com/singnet/snet-daemon/blob/master/pricing/pricing.proto):
-
-    ```proto
-    option (pricing.my_method_option).estimatePriceMethod = "/example_service.Calculator/dynamic_pricing_add";
-    ```
 
 2.  [Generate gRPC code](https://grpc.io/docs/languages/python/quickstart/#generate-grpc-code) for your programming language.
     For example, we will use Python.
 
         Install grpc tools for python:
-        ```sh
-        pip3 install grpc
-        pip3 install grpcio-tools
-        ```
+    ```sh
+    pip3 install grpcio
+    pip3 install grpcio-tools
+    ```
 
-        Then generate pb files for training.proto and for your service.proto:
-        ```sh
-        python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. training.proto
-        python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. service.proto
-        ```
+    Then generate pb files for training.proto and for your service.proto:
+    ```sh
+    python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. training.proto
+    python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. service.proto
+    ```
 
 3.  Implement and write server logic for model methods. Example:
 
     ```python
-    import training_pb2
-    import training_pb2_grpc
-    import time
-    import grpc
     from concurrent import futures
-    import argparse
+    import grpc
+    
+    import service_pb2
+    import service_pb2_grpc
+    import training_pb2_grpc
+    import training_pb2
+    from training_pb2_grpc import ModelServicer
+    from service_pb2_grpc import ExampleService
+    
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    training_pb2_grpc.add_ModelServicer_to_server(ModelServicer(), server)
+    service_pb2_grpc.add_ExampleServiceServicer_to_server(ExampleService(), server)
+    
+    # you should use this endpoint in config daemon: model_maintenance_endpoint
+    server.add_insecure_port("[::]:5002")
+    server.start()
+    server.wait_for_termination()
 
-    _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
-    parser = argparse.ArgumentParser(description="")
-    parser.add_argument("--host", type=str, default="0.0.0.0", help="host")
-    parser.add_argument("--port", type=int, default=5001, help="port")
-    args = parser.parse_args()
-
-
-    class ExampleService(training_pb2_grpc.ModelServicer):
-        """Provides methods that implement functionality of route guide server."""
-
-        def __init__(self):
-            pass
-
+    # Your service methods
+    class ExampleService(service_pb2_grpc.ExampleServiceServicer):
+        def basic_stt(self, request, context):
+            # no model_id in request
+            speech_data = request.speech
+            return service_pb2.sttResp(result="RESULT without pre-trained model")
+    
+        def stt(self, request, context):
+            # get the ID of the model that the user wants to use for this method
+            model_id = request.model_id.model_id
+            speech_data = request.speech
+            return service_pb2.sttResp(result="RESULT with model " + model_id)
+    
+    
+    # Model maintaining methods
+    class Training(training_pb2_grpc.ModelServicer):
+    
         def create_model(self, request, context):
-            # your logic
-            # model_id = generate_model_ID()
-            print("creating model...")
-            model_id = "100"
-            details = training_pb2.ModelDetails()
-            details.model_id = model_id
-            return training_pb2.ModelDetailsResponse(
-                status=training_pb2.Status.CREATED,
-                model_details=details
-            )
+            print("new model: ", request.name)
+            print("model for grpc_method_name: ", request.grpc_method_name)
+            return training_pb2.ModelID(model_id="NEW_RANDOM_ID")
 
-        def delete_model(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.ModelDetailsResponse(
-                status=training_pb2.Status.DELETED,
-                model_details=request.model_details,
-            )
+    def get_model_status(self, request, context):
+        model_id = request.model_id.model_id
+        return training_pb2.StatusResponse(training_pb2.READY_TO_USE)
 
-        def get_model_status(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.ModelDetailsResponse(
-                status=training_pb2.Status.IN_PROGRESS,
-                model_details=request.model_details,
-            )
+    def delete_model(self, request, context):
+        model_id = request.model_id.model_id
+        return training_pb2.StatusResponse(training_pb2.DELETED)
 
+    def validate_model_price(self, request, context):
+        print(request.training_data_link)
+        return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
 
-    def serve():
-        server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-        training_pb2_grpc.add_ModelServicer_to_server(
-            ExampleService(), server
-        )
-        server.add_insecure_port("{}:{}".format(args.host, args.port))
-        server.start()
-        print("Server started")
-        try:
-            while True:
-                time.sleep(_ONE_DAY_IN_SECONDS)
-        except KeyboardInterrupt:
-            server.stop(0)
+    def train_model_price(self, request, context):
+        model_id = request.model_id.model_id
+        return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
 
+    def train_model(self, request, context):
+        model_id = request.model_id.model_id
+        return training_pb2.StatusResponse(training_pb2.TRAINING)
 
-    if __name__ == "__main__":
-        serve()
+    def upload_and_validate(self, request_iterator, context):
+        file_path = "uploaded_file.raw"
+        total_size = 0
+
+        with open(file_path, "wb") as f:
+            for chunk in request_iterator:
+                f.write(chunk.chunk)
+                total_size += len(chunk.chunk)
+
+        print(f"File uploaded: {file_path}, size: {total_size} bytes")
+
+        return training_pb2.StatusResponse(training_pb2.VALIDATING)
+
+    def validate_model(self, request, context):
+        model_id = request.model_id
+        training_data_link = request.training_data_link
+        return training_pb2.StatusResponse(training_pb2.VALIDATING)
 
     ```
 
-4.  Then implement your service proto and run service.
+4.  Then run your service and update daemon config:
 
-5.  Prepare daemon config and run daemon:
-
-    `model_maintenance_endpoint` — this is for gRPC server endpoint for Model Maintenance like create_model, delete_model, get_model_status (example in 3 point);
-
-    `model_training_endpoint` — this is for gRPC server endpoint for your training methods;
-
+    `model_maintenance_endpoint` — You can specify a separate endpoint for gRPC server for Model Maintenance like create_model, delete_model, get_model_status, validate_model_price etc;
     `model_training_enabled` — need to be true for training.
 
-    But you can use one endpoint for all configs (model_maintenance_endpoint, model_training_endpoint, passthrough_endpoint).
+5. Restart daemon
 
-    **Notice**: If in config `enable_dynamic_pricing` is True and method is training (trainingMethodIndicator = "true") request will go
-    through model_training_endpoint instead of passthrough_endpoint.
-
-6.  Test and call model methods via SDK:
-
-    ```python
-    from snet.sdk import SnetSDK
-    import test_pb2_grpc # your service pb file
-    from snet.sdk.training import training
-
-    org_id = "" # TODO
-    service_id = ""  # TODO
-    group_name = "default_group"
-
-    config = {
-        "private_key": "",  # TODO
-        "eth_rpc_endpoint": "https://goerli.infura.io/v3",  # TODO
-    }
-
-    snet_sdk = SnetSDK(config)
-
-    service_client = snet_sdk.create_service_client(org_id, service_id, test_pb2_grpc.CalculatorStub, group_name)
-
-
-    tr = training.TrainingModel()
-    resp = tr.create_model(service_client, grpc_method_name="/example_service.Calculator/train_add",
-                           model_name="test_model", is_publicly_accessible=True,
-                           training_data_link="<>", description="my model")
-    print("create_model: ", resp)
-    model_id = resp.model_details.model_id
-    print("new model id: ", model_id)
-
-    resp = tr.get_model_status(service_client, grpc_method_name="/example_service.Calculator/train_add",
-                               model_id=model_id)
-    print("get_model_status: ", resp)
-
-    print("get_all_models: ", tr.get_all_models(service_client, grpc_service_name='service_name',
-                                                grpc_method_name="/example_service.Calculator/train_add"))
-
-    resp = tr.update_model_access(service_client, grpc_method_name="/example_service.Calculator/train_add",
-                                  model_name="model_name", model_id=model_id, is_public=True,
-                                  description='new description')
-    print("delete model: ", resp)
-
-    resp = tr.get_model_status(service_client, grpc_method_name="/example_service.Calculator/train_add",
-                               model_id=model_id)
-    print("model status: ", resp)
-    print("from model status: ", resp.model_details.model_id)
-
-    resp = tr.delete_model(service_client, grpc_method_name="/example_service.Calculator/train_add",
-                           model_id=resp.model_details.model_id)
-    print("delete model: ", resp)
-
-    resp = tr.get_model_status(service_client, grpc_method_name="/example_service.Calculator/train_add",
-                               model_id=resp.model_details.model_id)
-    print("model status: ", resp)
-    print("from model status: ", resp.model_details.model_id)
-    ```
+6. Test and call model methods via SDK, for example: [Python SDK](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/)

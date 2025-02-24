@@ -49,10 +49,10 @@ the below will be added in to the metadata file
 #### Add in Recipient and group details 
 Use the same endpoint mentioned in the previous step, to setup the etcd cluster.  
 
-**groups** : Multiple groups can be associated with an organization, one payment type is associated with every group.
-**payment_address** : Address of the Service provider who would receive the payment
-**payment_channel_storage_type** : Type of storage to manage payments ( For Example ETCD )
-**endpoints** : Storage end points for the clients to connect.
+- **groups** : Multiple groups can be associated with an organization, one payment type is associated with every group.
+- **payment_address** : Address of the Service provider who would receive the payment
+- **payment_channel_storage_type** : Type of storage to manage payments ( For Example ETCD )
+- **endpoints** : Storage end points for the clients to connect.
 
 ```sh
 snet organization add-group <group_name> <wallet_address> <etcd-end-point>

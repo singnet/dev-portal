@@ -43,7 +43,7 @@ This issue relates to the limitations of our public RPC endpoint. To resolve thi
    "ethereum_json_rpc_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<your-alchemy-api-key>"
    ```
 
-3. Save the file. To get your **Alchemy API Key**, follow [this guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+3. Save the file. To get your **Alchemy API Key**, follow [this guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 
 ---
 

@@ -55,18 +55,13 @@ To interact with the Ethereum network, you need to set the default Ethereum RPC 
   snet set default_eth_rpc_endpoint https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>
   ```
 
-Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have an API key yet, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create one.
+Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have an API key yet, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create one.
 
----
 
 ### Additional Notes:
 - Ensure your private key and API key are kept secure. Never share them publicly.
 - For testing, use the Sepolia testnet to avoid real fund losses.
-- For more details on Alchemy API key setup, refer to the [Alchemy Documentation](https://docs.alchemy.com).
 
----
-
-This updated section now includes the `snet set default_eth_rpc_endpoint` command and a reference to the Alchemy API Key setup guide. Let me know if you need further adjustments! 😊
 
 ## Step 4. Deposit to MPE and Open Channel
 
@@ -85,7 +80,7 @@ snet account deposit 0.00001
 Open a channel and transfer AGIX to it.
 
 ```sh
-snet channel open-init 26072b8b6a0e448180f8c0e702ab6d2f default_group 0.00001 +8days 
+snet channel open 26072b8b6a0e448180f8c0e702ab6d2f default_group 0.00001 +8days 
 ```
 
 ## Step 5. Make a call to a Service 

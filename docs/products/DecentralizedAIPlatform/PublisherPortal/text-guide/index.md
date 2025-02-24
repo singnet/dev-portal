@@ -69,7 +69,7 @@ print('Your private key: ' + accut.key.hex())
 ### Preparation Steps:
 
 1. **Generate an API Key in Alchemy**  
-   Follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create and obtain your API key. This key will be used by your daemon to interact with the Ethereum blockchain.
+   Follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to create and obtain your API key. This key will be used by your daemon to interact with the Ethereum blockchain.
 
    After obtaining the API key, you will need to add the following fields to your daemon configuration:
 
@@ -90,8 +90,8 @@ print('Your private key: ' + accut.key.hex())
 2. **Specify the Private Key for Metering in the Daemon Config**  
    The `pvt_key_for_metering` field in the daemon configuration requires the **private key of an Ethereum wallet**.  
 
-3. **Configure the Passthrough Endpoint**  
-   The `passthrough_endpoint` is the endpoint where your service is hosted. The daemon will send user requests to this endpoint.
+3. **Configure the Service Endpoint**  
+   The `service_endpoint` is the endpoint where your service is hosted. The daemon will send user requests to this endpoint.
 
 4. **Finalize the Daemon Config**  
    Copy config or download a JSON file
@@ -108,13 +108,12 @@ Here’s an example of a complete daemon configuration file:
 {
     "blockchain_enabled": true,
     "blockchain_network_selected": "sepolia",
-    "daemon_end_point": "0.0.0.0:62401",
+    "daemon_endpoint": "0.0.0.0:62401",
     "daemon_group_name": "default_group",
-    "ipfs_end_point": "http://ipfs.singularitynet.io:80",
+    "ipfs_endpoint": "http://ipfs.singularitynet.io:80",
     "organization_id": "Naint1",
     "service_id": "ServNaint7",
-    "passthrough_enabled": true,
-    "passthrough_endpoint": "http://127.0.0.1:7004",
+    "service_endpoint": "http://127.0.0.1:7004",
     "payment_channel_cert_path": "/home/nlp/certs/cfssl/client.pem",
     "payment_channel_ca_path": "/home/nlp/certs/cfssl/ca.pem",
     "payment_channel_key_path": "/home/nlp/certs/cfssl/client-key.pem",

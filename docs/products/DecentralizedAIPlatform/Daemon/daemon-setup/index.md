@@ -75,13 +75,12 @@ The `init` command will create a `snetd.config.json` file. You will need to modi
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "main",
-  "daemon_end_point": "0.0.0.0:<DAEMON_PORT>",
+  "daemon_endpoint": "0.0.0.0:<DAEMON_PORT>",
   "daemon_group_name": "<DAEMON_GROUP>",
-  "ipfs_end_point": "http://ipfs.singularitynet.io:80",
+  "ipfs_endpoint": "http://ipfs.singularitynet.io:80",
   "organization_id": "<ORGANIZATION_ID>",
   "service_id": "<SERVICE_ID>",
-  "passthrough_enabled": true,
-  "passthrough_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
+  "service_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
   "ethereum_json_rpc_http_endpoint": "http://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   "log": {"level": "debug", "output": {"type": "stdout"}}
@@ -93,20 +92,19 @@ The `init` command will create a `snetd.config.json` file. You will need to modi
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "sepolia",
-  "daemon_end_point": "0.0.0.0:<DAEMON_PORT>",
+  "daemon_endpoint": "0.0.0.0:<DAEMON_PORT>",
   "daemon_group_name": "<DAEMON_GROUP>",
-  "ipfs_end_point": "http://ipfs.singularitynet.io:80",
+  "ipfs_endpoint": "http://ipfs.singularitynet.io:80",
   "organization_id": "<ORGANIZATION_ID>",
   "service_id": "<SERVICE_ID>",
-  "passthrough_enabled": true,
-  "passthrough_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
+  "service_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
   "payment_channel_cert_path": "<PATH_TO_ETCD_CERTS>/client.pem",
   "payment_channel_ca_path": "<PATH_TO_ETCD_CERTS>/ca.pem",
   "payment_channel_key_path": "<PATH_TO_ETCD_CERTS>/client-key.pem",
   "ssl_cert": "<PATH_TO_DOMAIN_CERTS>/fullchain.pem",
   "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
   "metering_enabled": true,
-  "metering_end_point": "https://marketplace-mt-v2.singularitynet.io",
+  "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
   "pvt_key_for_metering": "<METERING_KEY>",
   "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
@@ -146,7 +144,7 @@ The `init` command will create a `snetd.config.json` file. You will need to modi
     "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
     "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>"
     ```  
-  Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have one, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+  Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have one, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 
 
 - **ssl_cert and ssl_key**:  
@@ -156,16 +154,16 @@ The `init` command will create a `snetd.config.json` file. You will need to modi
   "ssl_key": "/etc/letsencrypt/live/<daemon_domain>/privkey.pem",
   ```
 
-- **passthrough_endpoint**:  
+- **service_endpoint**:  
   The AI service endpoint to which the daemon will proxy all requests.
   ```json
-  "passthrough_endpoint": "http://localhost:3000",
+  "service_endpoint": "http://localhost:3000",
   ```
 
-- **daemon_end_point**:  
+- **daemon_endpoint**:  
   The endpoint on which the daemon listens for requests. This should be in the `<host>:<port>` format and publicly accessible.
   ```json
-  "daemon_end_point": "0.0.0.0:7002",
+  "daemon_endpoint": "0.0.0.0:7002",
   ```
 
 - **daemon_group_name**:  

@@ -64,7 +64,7 @@ snet_sdk = sdk.SnetSDK(config)
    https://eth-sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY
    ```
 
-To get your **Alchemy API Key**, follow [this guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+To get your **Alchemy API Key**, follow [this guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 
 
 Calculator service is deployed on the sepolia network. To create a client of this service we need to pass `org_id`, 

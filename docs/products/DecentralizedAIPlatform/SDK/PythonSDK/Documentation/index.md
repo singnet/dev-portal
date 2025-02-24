@@ -32,8 +32,12 @@ A getting started guide for the SNET SDK for Python is available [here](/docs/pr
     3. [freecall_payment_strategy](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/freecall-payment-strategy/)
     4. [paidcall_payment_strategy](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/paidcall-payment-strategy/)
     5. [prepaid_payment_strategy](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/prepaid-payment-strategy/)
+    6. [training_payment_strategy](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/training-payment-strategy/)
 10. utils
     1. [utils](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/utils/)
     2. [ipfs_utils](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/ipfs-utils/)
+    3. [call_utils](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/call-utils/)
 11. training
     1. [training](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/training/)
+    2. [responses](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/responses/)
+    3. [exceptions](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/exceptions/)

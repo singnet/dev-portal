@@ -451,20 +451,19 @@ Add the following parameters:
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "sepolia",
-  "daemon_end_point": "0.0.0.0:<DAEMON_PORT>",
+  "daemon_endpoint": "0.0.0.0:<DAEMON_PORT>",
   "daemon_group_name": "<DAEMON_GROUP>",
-  "ipfs_end_point": "http://ipfs.singularitynet.io:80",
+  "ipfs_endpoint": "http://ipfs.singularitynet.io:80",
   "organization_id": "<ORGANIZATION_ID>",
   "service_id": "<SERVICE_ID>",
-  "passthrough_enabled": true,
-  "passthrough_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
+  "service_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
   "payment_channel_cert_path": "<PATH_TO_ETCD_CERTS>/client.pem",
   "payment_channel_ca_path": "<PATH_TO_ETCD_CERTS>/ca.pem",
   "payment_channel_key_path": "<PATH_TO_ETCD_CERTS>/client-key.pem",
   "ssl_cert": "<PATH_TO_DOMAIN_CERTS>/fullchain.pem",
   "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
   "metering_enabled": true,
-  "metering_end_point": "https://marketplace-mt-v2.singularitynet.io",
+  "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
   "pvt_key_for_metering": "<METERING_KEY>",
   "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
@@ -482,7 +481,7 @@ Add the following parameters:
 - `<PATH_TO_ETCD_CERTS>`: The path to the etcd certificates on the daemon host.
 - `<PATH_TO_DOMAIN_CERTS>`: The path to the domain certificates on the daemon host.
 - `<METERING_KEY>`: The private key for metering (from your Ethereum wallet).
-- `<YOUR_API_KEY>`: Your Alchemy API key. If you don’t have one, follow the [Alchemy API Key Setup Guide](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+- `<YOUR_API_KEY>`: Your Alchemy API key. If you don’t have one, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
 
 ### Example Daemon Configuration for Testnet (Sepolia)
 Here’s an example of a complete daemon configuration file for **Sepolia Testnet**:
@@ -491,20 +490,19 @@ Here’s an example of a complete daemon configuration file for **Sepolia Testne
 {
   "blockchain_enabled": true,
   "blockchain_network_selected": "sepolia",
-  "daemon_end_point": "0.0.0.0:7000",
+  "daemon_endpoint": "0.0.0.0:7000",
   "daemon_group_name": "default_group",
-  "ipfs_end_point": "http://ipfs.singularitynet.io:80",
+  "ipfs_endpoint": "http://ipfs.singularitynet.io:80",
   "organization_id": "my_test_org",
   "service_id": "my_test_service",
-  "passthrough_enabled": true,
-  "passthrough_endpoint": "http://127.0.0.1:8010",
+  "service_endpoint": "http://127.0.0.1:8010",
   "payment_channel_cert_path": "/home/user/etcd-certs/client.pem",
   "payment_channel_ca_path": "/home/user/etcd-certs/ca.pem",
   "payment_channel_key_path": "/home/user/etcd-certs/client-key.pem",
   "ssl_cert": "/home/user/domain-certs/fullchain.pem",
   "ssl_key": "/home/user/domain-certs/privkey.pem",
   "metering_enabled": true,
-  "metering_end_point": "https://marketplace-mt-v2.singularitynet.io",
+  "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
   "pvt_key_for_metering": "947cddc74476bac4ac0a9ddbf8a136a0c7b4a8d364c6252b2d91e4226fe1bc1f",
   "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/your_alchemy_api_key",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/your_alchemy_api_key",
@@ -596,13 +594,12 @@ Make sure to write something random in token because it ensures that your cluste
 {
   **"blockchain_enabled": true,**
   "blockchain_network_selected": "goerli",
-  "daemon_end_point": "0.0.0.0:7000",
+  "daemon_endpoint": "0.0.0.0:7000",
   "daemon_group_name": "default_group",
-  "ipfs_end_point": "http://ipfs.singularitynet.io:80",
+  "ipfs_endpoint": "http://ipfs.singularitynet.io:80",
   "organization_id": "my_test_org",
   "service_id": "my_test_service",
-  "passthrough_enabled": true,
-  "passthrough_endpoint": "http://127.0.0.1:8010",
+  "service_endpoint": "http://127.0.0.1:8010",
   "payment_channel_cert_path": "/var/lib/etcd/cfssl/client.pem", /need to remove
   "payment_channel_ca_path": "/var/lib/etcd/cfssl/ca.pem", /need to remove
   "payment_channel_key_path": "/var/lib/etcd/cfssl/client-key.pem", /need to remove

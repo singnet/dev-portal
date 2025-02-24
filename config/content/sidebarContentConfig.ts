@@ -98,6 +98,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "Service Calling via SDK",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/",
             },
+            {
+                text: "Service Training via SDK",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceTrainingViaSDK/",
+            },
         ],
     },
     {
@@ -881,6 +885,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/console-app/",
                     },
                     {
+                        text: "Training",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/training/",
+                    },
+                    {
                         text: "Documentation",
                         collapsed: true,
                         link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/",
@@ -950,8 +958,20 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                                 link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/prepaid-payment-strategy/",
                             },
                             {
+                                text: "training_payment_strategy",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/training-payment-strategy/",
+                            },
+                            {
                                 text: "training",
                                 link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/training/",
+                            },
+                            {
+                                text: "responses",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/responses/",
+                            },
+                            {
+                                text: "exceptions",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/exceptions/",
                             },
                             {
                                 text: "utils",
@@ -960,6 +980,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                             {
                                 text: "ipfs_utils",
                                 link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/ipfs-utils/",
+                            },
+                            {
+                                text: "call_utils",
+                                link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/call-utils/",
                             },
                         ],
                     },
@@ -1096,6 +1120,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Explanation of Daemon",
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/MarketplaceEcosystem/daemon/",
+            },
+            {
+                text: "Explanation of Training",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/training/"
             },
             {
                 text: "Marketplace service invocation",
