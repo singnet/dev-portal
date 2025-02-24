@@ -2,9 +2,9 @@
     "BLOCKCHAIN_NETWORK_SELECTED": "sepolia",
     "ETHEREUM_JSON_RPC_ENDPOINT": "https://sepolia.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
     "PASSTHROUGH_ENABLED": true,
-    "PASSTHROUGH_ENDPOINT": "http://localhost:__SERVICE_PORT__",
-    "DAEMON_END_POINT": "0.0.0.0:7000",
-    "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
+    "SERVICE_ENDPOINT": "http://localhost:__SERVICE_PORT__",
+    "DAEMON_ENDPOINT": "0.0.0.0:7000",
+    "IPFS_ENDPOINT": "http://ipfs.singularitynet.io:80",
     "ORGANIZATION_ID": "__ORGANIZATION_ID__",
     "SERVICE_ID": "__SERVICE_ID__",
     "PAYMENT_CHANNEL_STORAGE_SERVER": {

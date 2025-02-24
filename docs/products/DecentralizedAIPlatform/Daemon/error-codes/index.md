@@ -11,7 +11,7 @@ The errors described here are most likely due to incorrect configuration of the 
 The daemon could not access the service at the specified address.  
 
 **Solution:**  
-Check the daemon configuration parameter `passthrough_endpoint` and ensure your service is available at the specified endpoint.  
+Check the daemon configuration parameter `service_endpoint` and ensure your service is available at the specified endpoint.  
 
 ## **Name: InvalidMetadata**  
 ### 2  
@@ -42,7 +42,7 @@ Fix the proto file and update it using CLI or the publisher.
 Unable to create an HTTP request to the service.  
 
 **Solution:**  
-Verify the daemon configuration parameters `passthrough_endpoint` and `service_credentials`.  
+Verify the daemon configuration parameters `service_endpoint` and `service_credentials`.  
 
 ## **Name: InvalidServiceCredentials**  
 ### 5  

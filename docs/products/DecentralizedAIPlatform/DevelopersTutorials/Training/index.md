@@ -204,9 +204,9 @@ There will be no cost borne by the consumer in calling these methods, pricing wi
 
     `model_training_enabled` — need to be true for training.
 
-    But you can use one endpoint for all configs (model_maintenance_endpoint, model_training_endpoint, passthrough_endpoint).
+    But you can use one endpoint for all configs (model_maintenance_endpoint, model_training_endpoint, service_endpoint).
 
     **Notice**: If in config `enable_dynamic_pricing` is True and method is training (trainingMethodIndicator = "true") request will go
-    through model_training_endpoint instead of passthrough_endpoint.
+    through model_training_endpoint instead of service_endpoint.
 
 6.  Test and call model methods via SDK, for example: [Python SDK](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/)
