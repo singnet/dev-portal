@@ -198,15 +198,8 @@ There will be no cost borne by the consumer in calling these methods, pricing wi
 
 5.  Prepare daemon config and run daemon:
 
-    `model_maintenance_endpoint` — this is for gRPC server endpoint for Model Maintenance like create_model, delete_model, get_model_status (example in 3 point);
-
-    `model_training_endpoint` — this is for gRPC server endpoint for your training methods;
+    `model_maintenance_endpoint` — You can specify a separate endpoint for gRPC server for Model Maintenance like create_model, delete_model, get_model_status, validate_model_price etc;
 
     `model_training_enabled` — need to be true for training.
-
-    But you can use one endpoint for all configs (model_maintenance_endpoint, model_training_endpoint, passthrough_endpoint).
-
-    **Notice**: If in config `enable_dynamic_pricing` is True and method is training (trainingMethodIndicator = "true") request will go
-    through model_training_endpoint instead of passthrough_endpoint.
 
 6.  Test and call model methods via SDK, for example: [Python SDK](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/)
