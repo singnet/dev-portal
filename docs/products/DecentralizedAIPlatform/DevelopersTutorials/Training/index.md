@@ -1,8 +1,9 @@
 # Introduce in training
 
 The AI developer needs to implement 8 methods for daemon <a href="/assets/files/training.proto" download>training.proto</a>  
-There will be no cost borne by the consumer in calling these methods,
-pricing will apply when you actually call the training methods defined.
+
+Most of the methods are free, but the methods for validation and training are paid, the price for them can be found through validate_model_price & train_model_price. As a service provider, you must implement the logic of calculating the price for these two methods. You can always return 1 cog or make dynamic logic depending on the parameters and dataset.
+
 AI consumer will call all these methods:
 
 ```proto
@@ -37,8 +38,6 @@ service Model {
 }
 ```
 
-There will be no cost borne by the consumer in calling these methods, pricing will apply when you actually call the training methods defined.
-
 ## Scheme
 
 <ImageViewer src="/assets/images/products/AIMarketplace/daemon/daemon_training.png" alt="The scheme of the daemon's work with training methods"/>
@@ -50,72 +49,45 @@ There will be no cost borne by the consumer in calling these methods, pricing wi
 
 ## Step by step
 
-1.  Write your service proto file with training methods. You should mark training methods with trainingMethodIndicator from training.proto (import it):
+1.  Write your service proto file with training.proto features:
 
     ```proto
     syntax = "proto3";
     package service;
     import "training.proto";
-    option go_package = "../service";
 
     message sttResp{
         string result = 1;
     }
 
+    message basicSttInput {
+        string text = 1;
+    }
+
     message sttInput{
+        // Specify that your method accepts a training.ModelID in order to support training
         training.ModelID model_id = 1;
         bytes speech = 2;
     }
 
-    message randomInput{
-        training.ModelID model_id = 1;
-        string prompt = 2;
+
+    service ExampleService{
+    rpc stt(sttInput) returns (sttResp) {
+        option (training.dataset_description) = "Additional requirements";
+        option (training.dataset_files_type) = "png, mp4, txt, mp3";
+        option (training.dataset_type) = "zip, tar.gz";
+        option (training.dataset_max_count_files) = 100;
+        option (training.dataset_max_size_mb) = 100;
+        option (training.dataset_max_size_single_file_mb) = 10;
+        option (training.default_model_id) = "default";
+        option (training.max_models_per_user) = 5;
     }
 
-    message randomOutput{
-        string response = 2;
+    rpc basic_stt(basicSttInput) returns (sttResp) {
+        // basic stt method without training support
     }
-
-    service TrainToUse {
-        rpc random(randomInput) returns (randomOutput){}
     }
-
-    service ProMethods{
-        rpc stt(sttInput) returns (sttResp) {
-            option (training.dataset_description) = "Additional requirements";
-            option (training.dataset_files_type) = "png, mp4, txt, mp3";
-            option (training.dataset_type) = "zip, tar.gz";
-            option (training.dataset_max_count_files) = 100;
-            option (training.dataset_max_size_mb) = 100;
-            option (training.dataset_max_size_single_file_mb) = 10;
-            option (training.default_model_id) = "default";
-            option (training.max_models_per_user) = 5;
-        }
-
-        rpc easy_trained(sttInput) returns (sttResp) {
-            option (training.dataset_type) = "zip";
-            option (training.dataset_max_size_mb) = 25;
-            option (training.default_model_id) = "default";
-            option (training.max_models_per_user) = 100;
-        }
-    }
-
-    message BasicSttInput {
-        string text = 1;
-    }
-
-    service BasicMethods{
-        // basic method without modelID
-        rpc stt(BasicSttInput) returns(sttResp){
-
-        }
-
-        // basic method without modelID
-        rpc easy(BasicSttInput) returns(sttResp){
-
-        }
-    }
-    ```
+```
 
 
 2.  [Generate gRPC code](https://grpc.io/docs/languages/python/quickstart/#generate-grpc-code) for your programming language.
@@ -144,7 +116,8 @@ There will be no cost borne by the consumer in calling these methods, pricing wi
 
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     training_pb2_grpc.add_ModelServicer_to_server(ModelServicer(), server)
-    server.add_insecure_port("[::]:5002")  # you should use this port in daemon in config.model_training_endpoint
+    # you should use this endpoint in config daemon: model_maintenance_endpoint
+    server.add_insecure_port("[::]:5002")
     server.start()
     server.wait_for_termination()
 
