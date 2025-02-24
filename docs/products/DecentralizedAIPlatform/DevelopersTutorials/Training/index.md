@@ -1,7 +1,5 @@
 # Introduce in training
 
-## ❗️ Currently under development ❗️
-
 The AI developer needs to implement 8 methods for daemon <a href="/assets/files/training.proto" download>training.proto</a>  
 There will be no cost borne by the consumer in calling these methods,
 pricing will apply when you actually call the training methods defined.
@@ -201,5 +199,6 @@ There will be no cost borne by the consumer in calling these methods, pricing wi
     `model_maintenance_endpoint` — You can specify a separate endpoint for gRPC server for Model Maintenance like create_model, delete_model, get_model_status, validate_model_price etc;
 
     `model_training_enabled` — need to be true for training.
+
 
 6.  Test and call model methods via SDK, for example: [Python SDK](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/)

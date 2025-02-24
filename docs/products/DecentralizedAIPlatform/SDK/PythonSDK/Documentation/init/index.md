@@ -1,14 +1,12 @@
-
-# module : sdk.\_\_init\_\_
+# module: sdk.\_\_init\_\_
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/__init__.py) to GitHub
 
-## Entities:
+Entities:
 1. [SnetSDK](#class-snetsdk)
    - [\_\_init\_\_](#init)
    - [create_service_client](#create-service-client)
    - [get_service_stub](#get-service-stub)
-   - [get_path_to_pb_files](#get-path-to-pb-files)
    - [get_module_by_keyword](#get-module-by-keyword)
    - [get_service_metadata](#get-service-metadata)
    - [_get_first_group](#get-first-group)
@@ -46,14 +44,14 @@ payment channels.
 
 Initializes a new instance of the `SnetSDK` class. Initializes `web3` with the specified Ethereum RPC endpoint.
 Instantiates the MPE contract with the specified contract address if provided, otherwise uses the default MPE contract.
-Instantiates the IPFS client with the specified IPFS endpoint if provided, otherwise uses the default IPFS endpoint.
+Instantiates storage provider.
 Instantiates the Registry contract with the specified contract address if provided, otherwise uses the default Registry 
 contract. Instantiates the Account object with the specified Web3 client, SDK configuration, and MPE contract.
 
 ##### args:
 
 - `sdk_config` (Config): A `Config` object containing the SDK configuration.
-- `metadata_provider` (MetadataProvider): A `MetadataProvider` object. Defaults to _None_.
+- `metadata_provider` (MetadataProvider): A `StorageProvider` object. Defaults to _None_.
 
 ##### returns:
 
@@ -63,9 +61,9 @@ contract. Instantiates the Account object with the specified Web3 client, SDK co
 
 If `force_update` is True or if there are no gRPC stubs for the given service, the proto files are loaded 
 and compiled using the `generate_client_library()` method of the `ClientLibGenerator` class instance. 
-It then initializes `payment_channel_management_strategy` to `DefaultPaymentStrategy` if it is not specified. 
+It then initializes `payment_strategy` to `DefaultPaymentStrategy` if it is not specified. 
 It also sets the `options` dictionary with some default values. If `self._metadata_provider` is not specified 
-it is initialized by `IPFSMetadataProvider`. It also gets the service stub using the `self.get_service_stub` 
+it is initialized by `StorageProvider`. It also gets the service stub using the `self.get_service_stub` 
 method and the pb2 module using the `self.get_module_by_keyword` method. Finally, it creates a new instance 
 of the `ServiceClient` class with all the required parameters, which is then returned.
 
@@ -74,7 +72,7 @@ of the `ServiceClient` class with all the required parameters, which is then ret
 - `org_id` (str): The ID of the organization.
 - `service_id` (str): The ID of the service.
 - `group_name` (str): The name of the payment group. Defaults to _None_.
-- `payment_channel_management_strategy` (PaymentStrategy): The payment channel management strategy. Defaults to _None_.
+- `payment_strategy` (PaymentStrategy): The payment channel management strategy. Defaults to _None_.
 - `free_call_auth_token_bin` (str): The free call authentication token in binary format. Defaults to _None_.
 - `free_call_token_expiry_block` (int): The block number when the free call token expires. Defaults to _None_.
 - `options` (dict): Additional options for the service client. Defaults to _None_.
@@ -100,19 +98,6 @@ Retrieves the gRPC service stub for the given organization and service ID.
 ##### raises:
 
 - Exception: If an error occurs while importing a module.
-
-### `get_path_to_pb_files`
-
-Returns the path to the directory containing the protobuf files for a given organization and service.
-
-##### args:
-
-- `org_id` (str): The ID of the organization.
-- `service_id` (str): The ID of the service.
-
-##### returns:
-
-- The path to the directory containing the protobuf files. (str)
 
 ### `get_module_by_keyword`
 
