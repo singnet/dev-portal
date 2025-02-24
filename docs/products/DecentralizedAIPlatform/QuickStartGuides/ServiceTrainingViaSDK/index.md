@@ -65,7 +65,7 @@ Don't forget to save the model id in a variable, it will be useful for further a
 ```python
 model_name = "YOUR_MODEL_NAME"
 
-new_model = service_client.training.create_model(grpc_method_name=grpc_method_name,
+new_model = service_client.training.create_model(method_name=grpc_method_name,
                                                  model_name=model_name)
 model_id = new_model.model_id
 ```
@@ -109,8 +109,9 @@ parameters = {
     "param2": "value2"
 }
 
-result = service_client.call_rpc(grpc_method_name, grpc_message_name, model_id, **parameters)
+result = service_client.call_rpc(grpc_method_name, grpc_message_name, model_id=model_id, **parameters)
 ```
 
+Don't forget to change `grpc_message_name` and also keys and values of `parameters`.
 
 
