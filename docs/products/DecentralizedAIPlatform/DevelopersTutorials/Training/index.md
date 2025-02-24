@@ -6,8 +6,8 @@ Most of the methods are free, but the methods for validation and training are pa
 
 AI consumer will call all these methods:
 
-```proto
-service Model {
+  ```proto
+  service Model {
 
   // Free
   // Can pass the address of the model creator
@@ -35,8 +35,8 @@ service Model {
 
   // Free
   rpc get_model_status(ModelID) returns (StatusResponse) {}
-}
-```
+  }
+  ```
 
 ## Scheme
 
@@ -85,9 +85,8 @@ service Model {
 
     rpc basic_stt(basicSttInput) returns (sttResp) {
         // basic stt method without training support
-    }
-    }
-```
+    }}
+    ```
 
 
 2.  [Generate gRPC code](https://grpc.io/docs/languages/python/quickstart/#generate-grpc-code) for your programming language.
