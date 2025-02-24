@@ -1,14 +1,15 @@
 # Introduce in training
 
-## ❗️ Currently under development ❗️
+This guide will help you maintain training for your service.
 
 The AI developer needs to implement 8 methods for daemon <a href="/assets/files/training.proto" download>training.proto</a>  
-There will be no cost borne by the consumer in calling these methods,
-pricing will apply when you actually call the training methods defined.
+
+Most of the methods are free, but the methods for validation and training are paid, the price for them can be found through validate_model_price & train_model_price. As a service provider, you must implement the logic of calculating the price for these two methods. You can always return 1 cog or make dynamic logic depending on the parameters and dataset.
+
 AI consumer will call all these methods:
 
-```proto
-service Model {
+  ```proto
+  service Model {
 
   // Free
   // Can pass the address of the model creator
@@ -36,10 +37,8 @@ service Model {
 
   // Free
   rpc get_model_status(ModelID) returns (StatusResponse) {}
-}
-```
-
-There will be no cost borne by the consumer in calling these methods, pricing will apply when you actually call the training methods defined.
+  }
+  ```
 
 ## Scheme
 
@@ -52,71 +51,44 @@ There will be no cost borne by the consumer in calling these methods, pricing wi
 
 ## Step by step
 
-1.  Write your service proto file with training methods. You should mark training methods with trainingMethodIndicator from training.proto (import it):
+1.  Write your service proto file with training.proto features:
 
     ```proto
     syntax = "proto3";
     package service;
     import "training.proto";
-    option go_package = "../service";
-
+    
     message sttResp{
-        string result = 1;
+      string result = 1;
     }
-
+    
+    message basicSttInput {
+      bytes speech = 1;
+    }
+    
     message sttInput{
-        training.ModelID model_id = 1;
-        bytes speech = 2;
+      //  Specify that your method accepts a training.ModelID in order to support training
+      training.ModelID model_id = 1;
+      bytes speech = 2;
     }
 
-    message randomInput{
-        training.ModelID model_id = 1;
-        string prompt = 2;
+
+    service ExampleService{
+    rpc stt(sttInput) returns (sttResp) {
+      # can specify requirements for dataset
+      option (training.dataset_description) = "Additional requirements";
+      option (training.dataset_files_type) = "png, mp4, txt, mp3";
+      option (training.dataset_type) = "zip, tar.gz";
+      option (training.dataset_max_count_files) = 100;
+      option (training.dataset_max_size_mb) = 100;
+      option (training.dataset_max_size_single_file_mb) = 10;
+      option (training.default_model_id) = "default";
+      option (training.max_models_per_user) = 5;
     }
 
-    message randomOutput{
-        string response = 2;
-    }
-
-    service TrainToUse {
-        rpc random(randomInput) returns (randomOutput){}
-    }
-
-    service ProMethods{
-        rpc stt(sttInput) returns (sttResp) {
-            option (training.dataset_description) = "Additional requirements";
-            option (training.dataset_files_type) = "png, mp4, txt, mp3";
-            option (training.dataset_type) = "zip, tar.gz";
-            option (training.dataset_max_count_files) = 100;
-            option (training.dataset_max_size_mb) = 100;
-            option (training.dataset_max_size_single_file_mb) = 10;
-            option (training.default_model_id) = "default";
-            option (training.max_models_per_user) = 5;
-        }
-
-        rpc easy_trained(sttInput) returns (sttResp) {
-            option (training.dataset_type) = "zip";
-            option (training.dataset_max_size_mb) = 25;
-            option (training.default_model_id) = "default";
-            option (training.max_models_per_user) = 100;
-        }
-    }
-
-    message BasicSttInput {
-        string text = 1;
-    }
-
-    service BasicMethods{
-        // basic method without modelID
-        rpc stt(BasicSttInput) returns(sttResp){
-
-        }
-
-        // basic method without modelID
-        rpc easy(BasicSttInput) returns(sttResp){
-
-        }
-    }
+    rpc basic_stt(basicSttInput) returns (sttResp) {
+    // basic stt method without training support
+    }}
     ```
 
 
@@ -131,7 +103,8 @@ There will be no cost borne by the consumer in calling these methods, pricing wi
 
     Then generate pb files for training.proto and for your service.proto:
     ```sh
-    python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. .\training.proto
+    python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. training.proto
+    python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. service.proto
     ```
 
 3.  Implement and write server logic for model methods. Example:
@@ -139,74 +112,91 @@ There will be no cost borne by the consumer in calling these methods, pricing wi
     ```python
     from concurrent import futures
     import grpc
-
+    
+    import service_pb2
+    import service_pb2_grpc
     import training_pb2_grpc
     import training_pb2
     from training_pb2_grpc import ModelServicer
-
+    from service_pb2_grpc import ExampleService
+    
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     training_pb2_grpc.add_ModelServicer_to_server(ModelServicer(), server)
-    server.add_insecure_port("[::]:5002")  # you should use this port in daemon in config.model_training_endpoint
+    service_pb2_grpc.add_ExampleServiceServicer_to_server(ExampleService(), server)
+    
+    # you should use this endpoint in config daemon: model_maintenance_endpoint
+    server.add_insecure_port("[::]:5002")
     server.start()
     server.wait_for_termination()
 
 
+    # Your service methods
+    class ExampleService(service_pb2_grpc.ExampleServiceServicer):
+        def basic_stt(self, request, context):
+            # no model_id in request
+            speech_data = request.speech
+            return service_pb2.sttResp(result="RESULT without pre-trained model")
+    
+        def stt(self, request, context):
+            # get the ID of the model that the user wants to use for this method
+            model_id = request.model_id.model_id
+            speech_data = request.speech
+            return service_pb2.sttResp(result="RESULT with model " + model_id)
+    
+    
+    # Model maintaining methods
     class Training(training_pb2_grpc.ModelServicer):
-
+    
         def create_model(self, request, context):
-            # your logic
-            # model_id = generate_model_ID()
+            print("new model: ", request.name)
+            print("model for grpc_method_name: ", request.grpc_method_name)
             return training_pb2.ModelID(model_id="NEW_RANDOM_ID")
 
-        def get_model_status(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.StatusResponse(training_pb2.READY_TO_USE)
+    def get_model_status(self, request, context):
+        model_id = request.model_id.model_id
+        return training_pb2.StatusResponse(training_pb2.READY_TO_USE)
 
-        def delete_model(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.StatusResponse(training_pb2.DELETED)
+    def delete_model(self, request, context):
+        model_id = request.model_id.model_id
+        return training_pb2.StatusResponse(training_pb2.DELETED)
 
-        def validate_model_price(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
+    def validate_model_price(self, request, context):
+        print(request.training_data_link)
+        return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
 
-        def train_model_price(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
+    def train_model_price(self, request, context):
+        model_id = request.model_id.model_id
+        return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
 
-        def train_model(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.StatusResponse(training_pb2.TRAINING)
+    def train_model(self, request, context):
+        model_id = request.model_id.model_id
+        return training_pb2.StatusResponse(training_pb2.TRAINING)
 
-        def upload_and_validate(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.StatusResponse(training_pb2.VALIDATING)
-        def validate_model(self, request, context):
-            # your logic
-            # TODO
-            return training_pb2.StatusResponse(training_pb2.VALIDATING)
+    def upload_and_validate(self, request_iterator, context):
+        file_path = "uploaded_file.raw"
+        total_size = 0
+
+        with open(file_path, "wb") as f:
+            for chunk in request_iterator:
+                f.write(chunk.chunk)
+                total_size += len(chunk.chunk)
+
+        print(f"File uploaded: {file_path}, size: {total_size} bytes")
+
+        return training_pb2.StatusResponse(training_pb2.VALIDATING)
+
+    def validate_model(self, request, context):
+        model_id = request.model_id
+        training_data_link = request.training_data_link
+        return training_pb2.StatusResponse(training_pb2.VALIDATING)
 
     ```
 
-4.  Then implement your service proto and run service.
+4.  Then run your service and update daemon config:
 
-5.  Prepare daemon config and run daemon:
-
-    `model_maintenance_endpoint` — this is for gRPC server endpoint for Model Maintenance like create_model, delete_model, get_model_status (example in 3 point);
-
-    `model_training_endpoint` — this is for gRPC server endpoint for your training methods;
-
+    `model_maintenance_endpoint` — You can specify a separate endpoint for gRPC server for Model Maintenance like create_model, delete_model, get_model_status, validate_model_price etc;
     `model_training_enabled` — need to be true for training.
 
-    But you can use one endpoint for all configs (model_maintenance_endpoint, model_training_endpoint, service_endpoint).
+5. Restart daemon
 
-    **Notice**: If in config `enable_dynamic_pricing` is True and method is training (trainingMethodIndicator = "true") request will go
-    through model_training_endpoint instead of service_endpoint.
-
-6.  Test and call model methods via SDK, for example: [Python SDK](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/)
+6. Test and call model methods via SDK, for example: [Python SDK](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaSDK/)
