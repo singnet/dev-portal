@@ -46,7 +46,7 @@ part of the build. You need to pass the version as shown in the example below:
 
 Example: 
 ```bash
-./scripts/build linux amd64 v5.1.6-custom
+./scripts/build linux amd64 v5.2-custom
 ```
 The final binaries will be in the `/build` folder.
 
@@ -54,15 +54,15 @@ If you are using a Unix-based system (for example, Linux or Mac OS), you need to
 :::code-group
 
 ```sh [Linux]
-chmod +x ./build/snetd-darwin-amd64-v5.1.6-custom
+chmod +x ./build/snetd-darwin-amd64-v5.2-custom
 ```
 
 ```sh [MacOS ARM]
-chmod +x ./build/snetd-darwin-arm64-v5.1.6-custom
+chmod +x ./build/snetd-darwin-arm64-v5.2-custom
 ```
 
 ```sh [MacOS Intel]
-chmod +x ./build/snetd-darwin-amd64-v5.1.6-custom
+chmod +x ./build/snetd-darwin-amd64-v5.2-custom
 ```
 :::
 

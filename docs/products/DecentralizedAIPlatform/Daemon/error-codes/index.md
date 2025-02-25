@@ -73,7 +73,7 @@ The configuration is invalid.
 Recheck your configuration or generate a new one:  
 
 ```sh
-snetd-linux-amd64-v5.1.5 init
+snetd-linux-amd64-v5.2 init
 ```  
 
 ## **Name: ReceiveMsgError**  
