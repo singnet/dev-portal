@@ -363,11 +363,11 @@ You would get the below output.
 To set up your own ETCD cluster please follow the link here .  
  Certificates for ETCD
 For snet all ETCD storage , required certificates are available at drive  
- For SNET Organisation, in order to renew the ETCD Client Certificates
+ For SNET Organization, in order to renew the ETCD Client Certificates
 Run the etcd-client-certificates-generation job.
 This will generate client-certificates in this path.
 
-        For other Organisations, follow the below steps to regenerate the etcd client certificates.
+        For other Organizations, follow the below steps to regenerate the etcd client certificates.
 
 Download the cfssl & cfssljson using the below commands
 
