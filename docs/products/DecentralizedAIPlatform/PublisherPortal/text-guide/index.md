@@ -146,7 +146,11 @@ chmod +x snetd-linux-amd64-v5.2
    screen -S YourName
    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ChmodAndScreenCommands.webp" alt="Screen"/>
 4. Start Daemon in this session
-   ./snetd-linux-amd64-v5.2 -c snetd.config.json
+
+```sh
+./snetd-linux-amd64-v5.2 -c snetd.config.json
+```
+
    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ConfigPowershell.webp" alt="Config"/>
 5. Press Ctrl + A + D to disconnect from screen session
 6. Check daemon:
