@@ -33,7 +33,7 @@ Modify `index.js` and `style.css` as needed. Additional files can also be upload
 Use the `Compile button` to build and test the application.
 
 9. Provide Application Details
-Populate the fields for `OrganisationID`, `ServiceId`, and `Endpoint` in the preview application section.
+Populate the fields for `OrganizationID`, `ServiceId`, and `Endpoint` in the preview application section.
 
 10. Debug and Iterate
 Debug the application code and repeat the Compile process until the desired results are achieved.

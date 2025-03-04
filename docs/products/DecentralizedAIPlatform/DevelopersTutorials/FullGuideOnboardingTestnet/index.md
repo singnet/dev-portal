@@ -417,8 +417,6 @@ Example:
 
 Here’s the updated **Final Configuration** section specifically for **Testnet (Sepolia)**, including the necessary details for setting up the Alchemy API key and RPC endpoints:
 
----
-
 ## Final Configuration
 
 1) Copy etcd Certificates to Daemon Host  
@@ -520,7 +518,7 @@ Here’s an example of a complete daemon configuration file for **Sepolia Testne
 
 ## Starting service
 
-1) Start the service you created in section 6
+1) Start the service you created in section **Service Setup**
 
 2) Start snetd daemon configured with yours service endpoint(check your configuration)
 
