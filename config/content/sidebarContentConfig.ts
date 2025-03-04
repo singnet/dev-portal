@@ -130,7 +130,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingTestnet/",
             },
             {
-                text: "(Coming soon) Integration Training Service",
+                text: "Integration Training Service",
                 link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/Training/",
             },
             {
