@@ -103,8 +103,18 @@ Once your UI code is ready, click Compile.
 <ImageViewer src="/assets/images/products/Sandbox/interface-overview/ProductsButton.webp" alt="Products dropdown"/>
 
 ## Need Help?
-If you have any questions, feel free to reach out via the **Feedback Form**.
+Got questions? Reach out via the **Feedback Form**.
 
 <ImageViewer src="/assets/images/products/Sandbox/interface-overview/FeedbackForm.webp" alt="Feedback Form"/>
+
+The Feedback Form requires the following fields:
+
+* **Mandatory:** Category, Name, Email
+
+* **Optional:** OrganizationID, ServiceID, Endpoint, and Feedback
+
+* You can also attach files ***(.zip, .jpeg, .png, .proto)***.
+
+<ImageViewer src="/assets/images/products/Sandbox/interface-overview/FeedbackFormExtended.webp" alt="Feedback Form Extended"/>
 
 Happy building!
