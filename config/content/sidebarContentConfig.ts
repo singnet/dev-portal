@@ -83,6 +83,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/",
             },
             {
+                text: "Creating a UI for the service",
+                link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/CreatingUIForTheService/",
+            },
+            {
                 text: "Service Onboarding via Publisher",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/",
             },
