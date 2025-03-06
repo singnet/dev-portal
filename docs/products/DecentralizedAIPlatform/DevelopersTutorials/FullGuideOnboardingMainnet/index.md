@@ -511,7 +511,7 @@ snet service metadata-add-description --json '{"description": "Description of my
 
 4) Add daemon metering address
 
-To enable metering for your service run: (get metering address from section 7)
+To enable metering for your service run: (get metering address from section **Enabling metering**)
 
 ```sh
 snet service metadata-add-daemon-addresses <GROUP_NAME> <METERING_ADDRESS>
@@ -540,8 +540,6 @@ snet organization info <ORGANIZATION_ID>
 ```
 
 Here’s the updated **Final Configuration** section specifically for **Mainnet**, including the necessary details for setting up the Alchemy API key and RPC endpoints:
-
----
 
 ## Final Configuration
 
@@ -648,7 +646,7 @@ Here’s an example of a complete daemon configuration file for **Mainnet**:
 
 ## Starting service
 
-1) Start the service you created in section 4
+1) Start the service you created in section **Service Setup**
 
 2) Start snetd daemon configured with yours service endpoint(check your configuration)
 

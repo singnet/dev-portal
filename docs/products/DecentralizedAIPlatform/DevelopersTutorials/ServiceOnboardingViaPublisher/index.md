@@ -62,8 +62,8 @@ How to get: Open PyCharm and run a program that will generate an address and a p
 ```py
 from eth_account import Account
 accut = Account.create()
-print(‘Your address: ’ + accut.address)
-print(‘Your private key: ’ + accut.key.hex())
+print("Your address: " + accut.address)
+print("Your private key: " + accut.key.hex())
 ```
 
 15. Type of your service: You need to choose the appropriate type of service
@@ -156,7 +156,11 @@ chmod +x snetd-linux-amd64-v5.2
    screen -S YourName
    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ChmodAndScreenCommands.webp" alt="Screen"/>
 4. Start Daemon in this session
-   ./snetd-linux-amd64-v5.2 -c snetd.config.json
+
+```sh
+./snetd-linux-amd64-v5.2 -c snetd.config.json
+```
+
    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ConfigPowershell.webp" alt=" Config"/>
 5. Press Ctrl + A + D to disconnect from screen session
 6. Check daemon:

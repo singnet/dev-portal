@@ -187,7 +187,7 @@ To set up your own ETCD cluster please follow the [link](/docs/products/Decentra
 
 ### Certificates for ETCD 
 
-To renew the ETCD Client Certificates for SNET Organisation:
+To renew the ETCD Client Certificates for SNET Organization:
 - Run the [etcd-client-certificates-generation](https://eu-central-1.console.aws.amazon.com/codesuite/codebuild/projects/etcd-client-certificates-generation/history?region=eu-central-1) job.
 - This task generates the client-certificates in this [path](https://s3.console.aws.amazon.com/s3/buckets/codepipeline-us-east-1-publish/etcd/certificates/?region=us-east-1&tab=overview).
         
