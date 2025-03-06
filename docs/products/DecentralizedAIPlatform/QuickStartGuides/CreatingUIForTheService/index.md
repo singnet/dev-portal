@@ -44,12 +44,18 @@ Navigate to the **Library Tab** to browse and select the UI components you need,
 - File&Image Uploaders
 - and many more!
 
+<ImageViewer src="/assets/images/products/Sandbox/interface-overview/LibrarySection.webp" alt="Library section"/>
+
 Alternatively, visit the **Templates Tab** to use a pre-built UI layout that suits your needs.
+
+<ImageViewer src="/assets/images/products/Sandbox/interface-overview/TemplatesSection.webp" alt="Templates section"/>
 
 ### 2. Capturing User Input
 Ensure the UI collects and validates user input before sending requests:
 - Use state variables to store input values.
 - Implement validation to prevent incomplete or incorrect submissions.
+
+<ImageViewer src="/assets/images/products/Sandbox/interface-overview/CodeSection.webp" alt="Code section"/>
 
 ### 3. Compiling and Testing Your UI
 Click **Compile** to test your UI:
@@ -57,11 +63,17 @@ Click **Compile** to test your UI:
 - Ensure the correct dependencies are available.
 - Verify that the output appears correctly in the preview.
 
+<ImageViewer src="/assets/images/products/Sandbox/interface-overview/SuccessCompiled.webp" alt="Success compiled"/>
+
 ## Saving and Exporting
 - Click **Export Project** or use **Ctrl+S** to download your UI as a .zip archive.
 - Navigate to the **Publisher** to deploy your UI.
 
+<ImageViewer src="/assets/images/products/Sandbox/interface-overview/ExportProject.webp" alt="Export project button"/>
+
 ## Need Help?
 If you encounter issues, use the **Feedback Form** to report problems or ask questions. Include necessary details like **OrganizationID**, **ServiceID**, **Endpoint**, and attachments if needed.
+
+<ImageViewer src="/assets/images/products/Sandbox/interface-overview/FeedbackForm.webp" alt="Feedback Form"/>
 
 Happy coding!
