@@ -1,4 +1,9 @@
 # How to create a UI for the Calculator service
+
+## You can watch the video for easy understanding:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rG-s3Q4gRs4?si=ywvxdc-2m2pytNwW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Introduction
 This guide explains how to extend an existing UI project (use the `New project` menu item) to create a calculator with basic arithmetic operations (`add`, `subtract`, `multiply`, and `divide`). The focus is on how to integrate service calls into your application. We will go step by step through the modifications needed in the provided files.
 
