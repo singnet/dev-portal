@@ -1,128 +1,67 @@
-# Creating a UI for a Service Integration
+# Developer Guide: Creating a UI for a Service Integration
 
 ## Introduction
+This guide walks you through the process of integrating a remote service into an existing UI project. You will learn how to set up your environment, build the interface, connect it to the service, and handle responses efficiently.
 
-This guide outlines the process of extending an existing UI project to integrate a service that handles user input and performs operations via remote procedure calls (RPC). The focus is on how to connect the UI with a backend service and manage user interactions effectively.
+## Getting Started
 
-## File Structure
+### When You First Visit
+Upon opening the platform, you will be presented with an option to start a new UI project or load an existing one.
 
-You will work with the following files:
+* **New Project** – Creates an empty UI structure to start from scratch.
+* **Open Project** – Allows you to upload an existing project archive.
+* **Open Templates** – Provides predefined UI templates that can be customized for different services.
+* **Open Example** – Loads a working UI example that you can explore and modify.
 
-1. **index.js** – Implements the UI logic and service integration.
-2. **style.css** – Defines styles for UI components (hidden by default).
-3. **service\_pb\_service.js** – Provides the interface for service communication.
-4. **service\_pb.js** – Contains message definitions for data exchange with the backend.
+## Workspace Overview
+Once you start a project, the workspace consists of two main sections:
 
-### About service\_pb\_service.js and service\_pb.js
+### Left Panel – Code Editor
+The left panel contains the files needed to create and manage your UI.
 
-- **service\_pb\_service.js**: Defines method descriptors for service operations, simplifying gRPC calls.
-- **service\_pb.js**: Handles serialization and deserialization of messages used in service communication.
+#### File Structure
+- **`index.js`** – Implements UI logic and handles service communication.
+- **`style.css`** – Defines styles for UI components.
+- **Service Communication File** – Facilitates interactions with the backend.
 
-## Implementation Steps
+#### Code Display Settings
+- Adjust font size and line spacing for better readability.
 
-### 1. Import Required Components
+### Right Panel – UI Preview & Resources
+The right panel contains:
 
-Modify imports to include necessary components and the service interface:
+- **Preview Tab** – Displays the compiled UI output.
+- **Library Tab** – Lists available UI components with descriptions.
+- **Templates Tab** – Provides pre-built UI elements.
 
-```jsx
-import React, { useState } from "react";
-import StyledButton from '@integratedComponents/StyledButton';
-import OutlinedTextArea from '@commonComponents/OutlinedTextArea';
-import OutlinedDropDown from '@commonComponents/OutlinedDropdown';
-import { Service } from "./service_pb_service";
-import "./style.css";
-```
+## Steps to Integrate the Service
 
-### 2. Handling User Input
+### 1. Setting Up the UI
+Navigate to the **Library Tab** to browse and select the UI components you need, such as:
+- Input fields for user data.
+- Dropdown menus.
+- Buttons for submitting actions.
+- File&Image Uploaders
+- and many more!
 
-Define state variables to manage user input and selection:
+Alternatively, visit the **Templates Tab** to use a pre-built UI layout that suits your needs.
 
-```jsx
-const [firstValue, setFirstValue] = useState("");
-const [secondValue, setSecondValue] = useState("");
-const [action, setAction] = useState("");
-```
+### 2. Capturing User Input
+Ensure the UI collects and validates user input before sending requests:
+- Use state variables to store input values.
+- Implement validation to prevent incomplete or incorrect submissions.
 
-Ensure input validation before enabling submission:
+### 3. Compiling and Testing Your UI
+Click **Compile** to test your UI:
+- Enter required service details.
+- Ensure the correct dependencies are available.
+- Verify that the output appears correctly in the preview.
 
-```jsx
-const isAllowedToRun = () => {
-    return !!firstValue && !!secondValue && !!action;
-};
-```
+## Saving and Exporting
+- Click **Export Project** or use **Ctrl+S** to download your UI as a .zip archive.
+- Navigate to the **Publisher** to deploy your UI.
 
-### 3. Submitting Data to the Service
+## Need Help?
+If you encounter issues, use the **Feedback Form** to report problems or ask questions. Include necessary details like **OrganizationID**, **ServiceID**, **Endpoint**, and attachments if needed.
 
-Construct a request object and send data to the backend:
-
-```jsx
-const submitAction = () => {
-    const methodDescriptor = Service[action];
-    const request = new methodDescriptor.requestType();
-
-    request.setA(firstValue);
-    request.setB(secondValue);
-
-    const props = {
-        request,
-        preventCloseServiceOnEnd: false,
-        onEnd: onActionEnd,
-    };
-
-    serviceClient.unary(methodDescriptor, props);
-};
-```
-
-### 4. Rendering the UI
-
-Provide input fields and dropdown for user interaction:
-
-```jsx
-return (
-    <div className={"content-box"}>
-        <h4>{"Input values"}</h4>
-        <OutlinedTextArea label={"First value"} value={firstValue} onChange={(e) => setFirstValue(e.target.value)} />
-        <OutlinedTextArea label={"Second value"} value={secondValue} onChange={(e) => setSecondValue(e.target.value)} />
-        <OutlinedDropDown label={"Select action"} list={[
-            { value: "add", label: "Add" },
-            { value: "sub", label: "Subtract" },
-            { value: "mul", label: "Multiply" },
-            { value: "div", label: "Divide" },
-        ]} onChange={(e) => setAction(e.target.value)} value={action} />
-        <StyledButton btnText={"Submit"} variant={"contained"} onClick={submitAction} disabled={!isAllowedToRun()} />
-    </div>
-);
-```
-
-### 5. Displaying the Result
-
-Render output after receiving the response:
-
-```jsx
-const ServiceOutput = () => {
-    if (typeof output !== "number") {
-        return <h4>{"Something went wrong..."}</h4>;
-    }
-    return (
-        <div className={"content-box"}>
-            <h4>{"Service call completed with output:"}</h4>
-            <OutlinedTextArea value={output} />
-        </div>
-    );
-};
-```
-
-### 6. Combining Components in the Main Component
-
-```jsx
-return (
-    <div className={"service-container"}>
-        {!isComplete ? <ServiceInput /> : <ServiceOutput />}
-    </div>
-);
-```
-
-## Conclusion
-
-This guide provides an overview of integrating a service into a UI, handling user input, sending requests, and displaying results. Developers can expand upon this foundation to suit their specific application needs.
-
+Happy coding!
