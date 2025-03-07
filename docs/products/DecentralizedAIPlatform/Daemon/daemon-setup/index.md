@@ -9,19 +9,19 @@ Select the file on the GitHub page for your operating system and architecture an
 :::code-group
 
 ```sh [Linux]
-curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2/snetd-linux-amd64-v5.2
+curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-linux-amd64-v5.2.1
 ```
 
 ```powershell [Windows Powershell/Cmd]
-curl -O -L https://github.com/singnet/snet-daemon/releases/download/v5.2/snetd-windows-amd64-v5.2.exe
+curl -O -L https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-windows-amd64-v5.2.1.exe
 ```
 
 ```sh [MacOS ARM]
-curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2/snetd-darwin-arm64-v5.2
+curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-darwin-arm64-v5.2.1
 ```
 
 ```sh [MacOS Intel]
-curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2/snetd-darwin-amd64-v5.2
+curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-darwin-amd64-v5.2.1
 ```
 
 :::
@@ -30,15 +30,15 @@ If you are using a Unix-based system (for example, Linux or Mac OS), you need to
 :::code-group
 
 ```sh [Linux]
-chmod +x ./snetd-darwin-amd64-v5.2
+chmod +x ./snetd-darwin-amd64-v5.2.1
 ```
 
 ```sh [MacOS ARM]
-chmod +x ./snetd-darwin-arm64-v5.2
+chmod +x ./snetd-darwin-arm64-v5.2.1
 ```
 
 ```sh [MacOS Intel]
-chmod +x ./snetd-darwin-amd64-v5.2
+chmod +x ./snetd-darwin-amd64-v5.2.1
 ```
 
 :::
@@ -51,19 +51,19 @@ You can create a simple template configuration by running:
 :::code-group
 
 ```sh [Linux]
-./snetd-linux-amd64-v5.2 init
+./snetd-linux-amd64-v5.2.1 init
 ```
 
 ```powershell [Windows Powershell/Cmd]
-.\snetd-windows-amd64-v5.2.exe init
+.\snetd-windows-amd64-v5.2.1.exe init
 ```
 
 ```sh [MacOS ARM]
-./snetd-darwin-arm64-v5.2 init
+./snetd-darwin-arm64-v5.2.1 init
 ```
 
 ```sh [MacOS Intel]
-./snetd-darwin-amd64-v5.2 init
+./snetd-darwin-amd64-v5.2.1 init
 ```
 
 :::
@@ -197,19 +197,19 @@ For a detailed list of configurations, check the [configuration page](https://gi
 :::code-group
 
 ```sh [Linux]
-./snetd-linux-amd64-v5.2 --config <config_file_name>
+./snetd-linux-amd64-v5.2.1 --config <config_file_name>
 ```
 
 ```powershell [Windows Powershell/Cmd]
-.\snetd-windows-amd64-v5.2.exe --config <config_file_name>
+.\snetd-windows-amd64-v5.2.1.exe --config <config_file_name>
 ```
 
 ```sh [MacOS ARM]
-./snetd-darwin-arm64-v5.2 --config <config_file_name>
+./snetd-darwin-arm64-v5.2.1 --config <config_file_name>
 ```
 
 ```sh [MacOS Intel]
-./snetd-darwin-amd64-v5.2 --config <config_file_name>
+./snetd-darwin-amd64-v5.2.1 --config <config_file_name>
 ```
 
 :::
