@@ -1,8 +1,8 @@
 # Build daemon
 ## Prerequisites and dependencies
 
-* [Go 1.22+](https://golang.org/dl/)
-* [Protoc 25.0+](https://github.com/protocolbuffers/protobuf/releases)
+* [Go 1.23+](https://golang.org/dl/)
+* [Protoc 29+](https://github.com/protocolbuffers/protobuf/releases)
 
 Protoc (libprotoc), golang and $GOPATH/bin are recommended to be in environment variables.
 
@@ -24,7 +24,7 @@ cd snet-daemon
 ```
 
 ```powershell [Windows (Powershell)]
-./scripts/install_deps.ps1
+./scripts/powershell/install_deps.ps1
 ```
 :::
 
@@ -40,7 +40,7 @@ part of the build. You need to pass the version as shown in the example below:
 ```
 
 ```powershell [Windows (Powershell)]
-./scripts/build.ps1 <linux/windows/darwin> <amd64/arm/arm64> <version>
+./scripts/powershell/build.ps1 <linux/windows/darwin> <amd64/arm/arm64> <version>
 ```
 :::
 
@@ -68,7 +68,7 @@ chmod +x ./build/snetd-darwin-amd64-v5.2-custom
 
 ## Multi-compiling
 
-If you want to build daemon for several platforms, run `./scripts/build-all <version>` instead
+If you want to build daemon for several platforms, run `./scripts/build_all_platforms <version>` instead
 of `./scripts/build`.
 
 You can edit the script to choose the specific platforms, but by default it will build for Linux, Darwin (OSX), and
