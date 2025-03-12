@@ -83,6 +83,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/",
             },
             {
+                text: "Creating a UI for the service",
+                link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/CreatingUIForTheService/",
+            },
+            {
                 text: "Service Onboarding via Publisher",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/",
             },
@@ -130,7 +134,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingTestnet/",
             },
             {
-                text: "(Coming soon) Integration Training Service",
+                text: "Integration Training Service",
                 link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/Training/",
             },
             {
@@ -1051,6 +1055,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "What is UI Sandbox?",
                 link: "/docs/products/DecentralizedAIPlatform/Sandbox/",
+            },
+            {
+                text: "UI Sandbox's interface overview",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/interface-overview/"
             },
             {
                 text: "How to use UI Sandbox version 2 (new)",

@@ -29,31 +29,35 @@
 16. ETCD Endpoint: all the ETCD endpoints that will be used. Details [here](/docs/products/DecentralizedAIPlatform/UsedTechnologies/etcd/)
 
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/PublishOrganizationToBlockchain.webp" alt="Publishing Organization to Blockchain"/>
+
 17. Connect MetaMask: This is necessary to confirm your account ownership this address will be used to confirm any changes associated with this organization. you must have an active metamask extension and give it access to this site.
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="Publishing Organization to Blockchain"/>
 
 ## How to create a service?
 
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/CreatingNewService.webp" alt="Creating New Service"/>
+
 1. AI Service Name: max 50 char
 2. Service ID: Identification for your service. You can choose every available id. This data will be used by users when accessing via the CLI
 3. Short description: Preview description of your service. Max 160 characters.
 4. Long description: Expanded description of your company. Max 5000 characters.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/AIServiceProfileInformation.webp" alt="Publishing Organization to Blockchain"/>
+
 5. Tags: The tags will be shown on the page od your service on the marketplace, as well as help users find your service by keywords. You can add up to 20 tags
 6. Project URL: Your service’s website must be publicly available and the domain name must be associated with your organization
 7. Contributors
 8. AI Service Profile Image: This picture will be visible to consumers on marketplace page
 
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ServiceTags.webp" alt="Creating New Service"/>
+
 9. Enable Demo: If your service should be available only through the CLI/SDK, then set the Enable Demo flag to off.
-10. Upload Demo Files: If your service should be available on the marketplace, then upload files for your interface.
+10. Upload Demo Files: If your service should be available on the marketplace, then upload files for your interface. You can create the UI yourself. Details [here](/docs/products/DecentralizedAIPlatform/QuickStartGuides/CreatingUIForTheService/)
 11. AI Service price: the price of one service request.
 12. Demo Free Calls: number of free demo calls to your service
 13. Daemon endpoint: Daemon endpoint is the public address where you plan to host the daemon. Must start with http/https.
 14. Daemon Addresses: The Ethereum public address
-<ImageViewer src="/assets/images/products/AIMarketplace/publisher/PublishOrganizationToBlockchain.webp" alt="Price"/>
+<ImageViewer src="/assets/images/products/AIMarketplace/publisher/PaymentAddress.webp" alt="Payment Address"/>
 How to get: Open PyCharm and run a program that will generate an address and a private key:
 ```py
 from eth_account import Account
@@ -61,9 +65,11 @@ accut = Account.create()
 print(‘Your address: ’ + accut.address)
 print(‘Your private key: ’ + accut.key.hex())
 ```
+
 15. Type of your service: You need to choose the appropriate type of service
 16. Upload the Proto files: .zip file that contains proto files of your AI service
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/UploadingTheProtoFiles.webp" alt="Proto"/>
+
 17. Waiting...
 18. Launch AI Service: Confirm in MetaMask
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="Proto"/>
@@ -143,14 +149,14 @@ Here’s an example of a complete daemon configuration file:
 2. Change rules on Daemon file using ‘chmod’ util
 
 ```sh
-chmod +x snetd-linux-amd64-v5.2
+chmod +x snetd-linux-amd64-v5.2.1
 ```
 
 3. Start screen util (If you haven't this util you need install it). It is necessary that the session with started demon does not end when you close terminal.
    screen -S YourName
    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ChmodAndScreenCommands.webp" alt="Screen"/>
 4. Start Daemon in this session
-   ./snetd-linux-amd64-v5.2 -c snetd.config.json
+   ./snetd-linux-amd64-v5.2.1 -c snetd.config.json
    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ConfigPowershell.webp" alt=" Config"/>
 5. Press Ctrl + A + D to disconnect from screen session
 6. Check daemon:

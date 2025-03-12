@@ -146,14 +146,14 @@ Here’s an example of a complete daemon configuration file:
 2. Change rules on Daemon file using ‘chmod’ util
 
 ```sh
-chmod +x snetd-linux-amd64-v5.2
+chmod +x snetd-linux-amd64-v5.2.1
 ```
 
 3. Start screen util (If you haven't this util you need install it). It is necessary that the session with started demon does not end when you close terminal.
    screen -S YourName
    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ChmodAndScreenCommands.webp" alt="Screen"/>
 4. Start Daemon in this session
-   ./snetd-linux-amd64-v5.2 -c snetd.config.json
+   ./snetd-linux-amd64-v5.2.1 -c snetd.config.json
    <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ConfigPowershell.webp" alt=" Config"/>
 5. Press Ctrl + A + D to disconnect from screen session
 6. Check daemon:

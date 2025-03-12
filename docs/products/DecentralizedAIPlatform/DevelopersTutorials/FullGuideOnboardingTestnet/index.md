@@ -44,13 +44,13 @@ If your ETCD node keeps crashing, check its logs with this command and debug it:
 ## Daemon setup
 1) Download latest release from https://github.com/singnet/snet-daemon/releases/latest
 
-`wget https://github.com/singnet/snet-daemon/releases/download/v5.2/snetd-linux-amd64-v5.2`
+`wget https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-linux-amd64-v5.2.1`
 
-(wget command for downloading snetd v5.2)
+(wget command for downloading snetd v5.2.1)
 
 2) Make sure that snetd file is executable
 
-`chmod +x snetd-linux-amd64-v5.2`
+`chmod +x snetd-linux-amd64-v5.2.1`
 
 3) Create config file for daemon
 
@@ -58,7 +58,7 @@ If your ETCD node keeps crashing, check its logs with this command and debug it:
 
 4) **(OPTIONAL)** Put executable file in `/usr/bin folder`
 
-`cp snetd-linux-amd64-v5.2 /usr/bin/snetd`
+`cp snetd-linux-amd64-v5.2.1 /usr/bin/snetd`
 
 ## Installing SNET-cli
 
