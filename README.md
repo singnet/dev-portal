@@ -130,6 +130,21 @@ export default {
     ...
 }
 ```
+## Using the Accordion
+To use the Accordion element, use the following syntax
+```html
+<AccordionItem :id="idHere">
+    <template #title>
+       title here
+    </template>
+    <template #description>
+        content here
+    </template>
+</AccordionItem>
+```
+- To create an anchor link to an object, set the value of the parameter `:id`;
+- Use the `<template #title>` tag to indicate the section header, for example, a frequently asked question;
+- Use the `<template #description>` tag to indicate the part of the section to be disclosed, for example, the answer to a frequently asked question.
 
 ## Update existing config
 
