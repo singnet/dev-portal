@@ -109,16 +109,22 @@ To secure your daemon with SSL, generate **domain certificates** using `certbot`
 
 ## **Installing the Daemon**
 
+Get the **latest version** of the SingularityNET Daemon from the official GitHub releases page:
+
+👉 [https://github.com/singnet/snet-daemon/releases/latest](https://github.com/singnet/snet-daemon/releases/latest)
+
+### Below is an example of how to install the daemon on **Linux**:
+
 1. **Download the latest release:**
 
    ```sh
-   wget https://github.com/singnet/snet-daemon/releases/latest/download/snetd-linux-amd64-v5.2.1
+   wget https://github.com/singnet/snet-daemon/releases/latest/download/snetd-linux-amd64-v5.x.x
    ```
 
 2. **Ensure the daemon file is executable:**
 
    ```sh
-   chmod +x snetd-linux-amd64-v5.2.1
+   chmod +x snetd-linux-amd64-v5.x.x
    ```
 
 3. **Create a configuration file for the daemon:**
@@ -127,11 +133,13 @@ To secure your daemon with SSL, generate **domain certificates** using `certbot`
    touch snetd.config.json
    ```
 
-4. *(Optional)* **Move the executable file to /usr/bin for system-wide access:**
+4. *(Optional)* **Move the executable file to `/usr/bin` for system-wide access:**
 
    ```sh
-   cp snetd-linux-amd64-v5.2.1 /usr/bin/snetd
+   sudo cp snetd-linux-amd64-v5.x.x /usr/bin/snetd
    ```
+
+> 🔧 Replace `v5.x.x` with the actual version number you downloaded from the [releases page](https://github.com/singnet/snet-daemon/releases/latest), for example `v5.2.1`.
 
 ## Configuring the Daemon
 
