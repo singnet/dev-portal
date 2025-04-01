@@ -1356,7 +1356,7 @@ export const WALTSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/WaLT/howtouse/",
     },
     {
-        text: "Frequently Asked Questions",
+        text: "FAQ",
         link: "/docs/products/WaLT/faq/",
     },
 ];

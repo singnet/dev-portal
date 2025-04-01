@@ -74,7 +74,7 @@ export default {
 }
 
 .accordion-item.expanded .accordion-item-description {
-    max-height: 500px;
+    max-height: 1000px;
     margin-top: 10px;
 }
 
