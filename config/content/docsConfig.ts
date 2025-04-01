@@ -49,6 +49,6 @@ export default [
         textIconID: "airdrop-icon",
         imageFileName: "airdrop.webp",
         description: "All relevant documentation about the Airdrop in SingularityNET.",
-        link: "/docs/products/Airdrop/"
+        link:"/docs/products/Airdrop/"
     }
 ] as HomeSectionItem[];
