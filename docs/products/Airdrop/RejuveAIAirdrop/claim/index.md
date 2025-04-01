@@ -26,11 +26,11 @@ In the process of participating in the **Rejuve.AI Airdrop** you may encounter s
 
 <ImageViewer src="/assets/images/products/Airdrop/statuses.webp" alt="Statuses"/>
 
-1. **Received**. This status means that you have successfully registered in the current era and your **RJV** tokens have been reserved for you.
-2. **Ready to Claim**. This status indicates that the window for requesting tokens is open and you can request your **RJV** tokens.
-3. **Not Registered**. This status means that you have **not registered** in the current era.
-4. **Not Started**. This status indicates that the current epoch **has not started yet**, or registration for it has not yet been opened.
-5. **Pending**. This status means that your registration or token **request is being processed**.
+1. **`Received`**. This status means that you have successfully registered in the current era and your **RJV** tokens have been reserved for you.
+2. **`Ready to Claim`**. This status indicates that the window for requesting tokens is open and you can request your **RJV** tokens.
+3. **`Not Registered`**. This status means that you have **not registered** in the current era.
+4. **`Not Started`**. This status indicates that the current epoch **has not started yet**, or registration for it has not yet been opened.
+5. **`Pending`**. This status means that your registration or token **request is being processed**.
 
 ## How do I check the status?
 
