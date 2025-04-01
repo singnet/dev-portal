@@ -1356,7 +1356,7 @@ export const WALTSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/WaLT/howtouse/",
     },
     {
-        text: "Frequently Asked Questions",
+        text: "FAQ",
         link: "/docs/products/WaLT/faq/",
     },
 ];
@@ -1398,32 +1398,66 @@ export const BridgeSection: DefaultTheme.SidebarItem[] = [
 
 export const AirdropSection: DefaultTheme.SidebarItem[] = [
     {
-        text: "What is AirDrop?",
+        text: "What is Airdrop?",
         link:"/docs/products/Airdrop/",
     },
     {
-        text: "Registration",
-        link: "/docs/products/Airdrop/Registration/",
+        text: "Loyalty Rewards",
+        link:"/docs/products/Airdrop/LoyaltyRewards/",
         collapsed: true,
         items: [
             {
-                text: "Connect wallet",
-                link: "/docs/products/Airdrop/Registration/connect-wallet/",
+                text: "Registration",
+                link: "/docs/products/Airdrop/LoyaltyRewards/Registration/",
+                collapsed: false,
+                items: [
+                    {
+                        text: "Connect wallet",
+                        link: "/docs/products/Airdrop/LoyaltyRewards/Registration/connect-wallet/",
+                    },
+                    {
+                        text: "Register",
+                        link: "/docs/products/Airdrop/LoyaltyRewards/Registration/register/",
+                    },
+                ],
             },
             {
-                text: "Register",
-                link: "/docs/products/Airdrop/Registration/register/",
+                text: "Claim",
+                link: "/docs/products/Airdrop/LoyaltyRewards/claim/",
+            },
+            {
+                text: "FAQ",
+                link: "/docs/products/Airdrop/LoyaltyRewards/faq/",
             },
         ],
     },
     {
-        text: "Claim",
-        link: "/docs/products/Airdrop/claim/",
-    },
-    {
-        text: "FAQ",
-        link: "/docs/products/Airdrop/faq/",
-    },
+        text: "Rejuve.AI Airdrop",
+        link:"/docs/products/Airdrop/RejuveAIAirdrop/",
+        collapsed: true,
+        items: [
+            {
+                text: "Requirements & Eligibility",
+                link: "/docs/products/Airdrop/RejuveAIAirdrop/requirements/",
+            },
+            {
+                text: "Registration",
+                link: "/docs/products/Airdrop/RejuveAIAirdrop/registration/",
+            },
+            {
+                text: "Claim",
+                link: "/docs/products/Airdrop/RejuveAIAirdrop/claim/",
+            },
+            {
+                text: "Entire process",
+                link: "/docs/products/Airdrop/RejuveAIAirdrop/entire-process/",
+            },
+            {
+                text: "FAQ",
+                link: "/docs/products/Airdrop/RejuveAIAirdrop/faq/",
+            },
+        ]
+    }
 ];
 
 export const DocsSection: DefaultTheme.SidebarItem[] = [
