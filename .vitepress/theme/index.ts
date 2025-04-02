@@ -11,6 +11,8 @@ import type { Theme } from "vitepress";
 import { h } from "vue";
 import "./style.css";
 
+const DAEMON_VERSION = 'v5.2.1';
+
 export default {
     extends: DefaultTheme,
     Layout() {
@@ -30,5 +32,6 @@ export default {
         app.component("SpriteIcon", SpriteIcon);
         app.component("ImageViewer", ImageViewer);
         app.component("AccordionItem", AccordionItem);
+        app.config.globalProperties.$daemonVersion = DAEMON_VERSION;
     },
 } satisfies Theme;

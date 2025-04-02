@@ -91,7 +91,7 @@ To secure your daemon with SSL, generate **domain certificates** using `certbot`
 
 1. **Run this Python script to generate an address and key for metering using the latest ****`eth_account`**** syntax:**
 
-   ```py
+   ```python-vue
    from eth_account import Account
    import secrets
 
@@ -117,14 +117,14 @@ Get the **latest version** of the SingularityNET Daemon from the official GitHub
 
 1. **Download the latest release:**
 
-   ```sh
-   wget https://github.com/singnet/snet-daemon/releases/latest/download/snetd-linux-amd64-v5.x.x
+   ```sh-vue
+   wget https://github.com/singnet/snet-daemon/releases/latest/download/snetd-linux-amd64-{{ $daemonVersion }}
    ```
 
 2. **Ensure the daemon file is executable:**
 
-   ```sh
-   chmod +x snetd-linux-amd64-v5.x.x
+   ```sh-vue
+   chmod +x snetd-linux-amd64-{{ $daemonVersion }}
    ```
 
 3. **Create a configuration file for the daemon:**
@@ -135,11 +135,9 @@ Get the **latest version** of the SingularityNET Daemon from the official GitHub
 
 4. *(Optional)* **Move the executable file to `/usr/bin` for system-wide access:**
 
-   ```sh
-   sudo cp snetd-linux-amd64-v5.x.x /usr/bin/snetd
+   ```sh-vue
+   sudo cp snetd-linux-amd64-{{ $daemonVersion }} /usr/bin/snetd
    ```
-
-> 🔧 Replace `v5.x.x` with the actual version number you downloaded from the [releases page](https://github.com/singnet/snet-daemon/releases/latest), for example `v5.2.1`.
 
 ## Configuring the Daemon
 

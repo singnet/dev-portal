@@ -284,10 +284,10 @@ Select the appropriate binary for your operating system (e.g., `linux-amd64`, `l
 
 Example command for Linux (amd64):
 
-```bash
-wget https://github.com/singnet/snet-daemon/releases/latest/download/snetd-linux-amd64-v5.2.1
-chmod +x snetd-linux-amd64-v5.2.1
-sudo mv snetd-linux-amd64-v5.2.1 /usr/bin/snetd
+```bash-vue
+wget https://github.com/singnet/snet-daemon/releases/latest/download/snetd-linux-amd64-{{ $daemonVersion }}
+chmod +x snetd-linux-amd64-v{{ $daemonVersion }}
+sudo mv snetd-linux-amd64-v{{ $daemonVersion }} /usr/bin/snetd
 ```
 
 > 📌 Ensure the daemon binary has executable permissions (`chmod +x`) before moving it to `/usr/bin`.
@@ -448,7 +448,7 @@ curl <DAEMON_DOMAIN>:<DAEMON_PORT>/heartbeat
 
 Successful output looks like:
 
-```json
+```json-vue
 {
   "daemonID": "2f2d493591eca925e84a933953b769471078e7b2d96b37565a30d3ef37585bba",
   "timestamp": "1743002956",
@@ -457,7 +457,7 @@ Successful output looks like:
     "serviceID": "<SERVICE_ID>",
     "status": "SERVING"
   },
-  "daemonVersion": "v5.2.1",
+  "daemonVersion": "{{ $daemonVersion }}",
   "trainingEnabled": false,
   "trainingInProto": false,
   "trainingMethods": [],

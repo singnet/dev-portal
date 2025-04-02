@@ -96,16 +96,16 @@ docker logs docker-etcd-node-1
 ## Daemon setup
 1) Download latest release from https://github.com/singnet/snet-daemon/releases/latest
 
-```sh
-wget https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-linux-amd64-v5.2.1
+```sh-vue
+wget https://github.com/singnet/snet-daemon/releases/download/{{ $daemonVersion }}/snetd-linux-amd64-{{ $daemonVersion }}
 ```
 
-(wget command for downloading snetd v5.2.1)
+(wget command for downloading snetd {{ $daemonVersion }})
 
 2) Make sure that snetd file is executable
 
-```sh
-chmod +x snetd-linux-amd64-v5.2.1
+```sh-vue
+chmod +x snetd-linux-amd64-{{ $daemonVersion }}
 ```
 
 3) Create config file for daemon
@@ -116,8 +116,8 @@ touch snetd.config.json
 
 4) **(OPTIONAL)** Put executable file in `/usr/bin folder`
 
-```sh
-cp snetd-linux-amd64-v5.2.1 /usr/bin/snetd
+```sh-vue
+cp snetd-linux-amd64-{{ $daemonVersion }} /usr/bin/snetd
 ```
 
 ## Installing snet.cli
