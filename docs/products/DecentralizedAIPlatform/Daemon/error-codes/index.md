@@ -72,8 +72,8 @@ The configuration is invalid.
 **Solution:**  
 Recheck your configuration or generate a new one:  
 
-```sh
-snetd-linux-amd64-v5.2.1 init
+```sh-vue
+snetd-linux-amd64-{{ $daemonVersion }} init
 ```  
 
 ## **Name: ReceiveMsgError**  

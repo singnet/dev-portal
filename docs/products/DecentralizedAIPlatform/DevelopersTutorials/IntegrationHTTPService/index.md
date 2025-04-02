@@ -1,6 +1,5 @@
 # Integration HTTP Service
 
-
 ## Introduction
 
 If you would like to integrate a simple HTTP API instead of `gRPC/JSONRPC/process` service types, 
@@ -12,6 +11,7 @@ Then specify the `service_type = http` parameter when creating your AI service.
 <ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/daemon_http.webp" alt="The scheme of the daemon's work with http services"/>
 
 ## Limitations
+
 * Currently, only POST methods are supported;
 * Only json in body of request supported;
 * No streaming supported;
