@@ -282,8 +282,8 @@ Example command for Linux (amd64):
 
 ```bash-vue
 wget https://github.com/singnet/snet-daemon/releases/latest/download/snetd-linux-amd64-{{ $daemonVersion }}
-chmod +x snetd-linux-amd64-v{{ $daemonVersion }}
-sudo mv snetd-linux-amd64-v{{ $daemonVersion }} /usr/bin/snetd
+chmod +x snetd-linux-amd64-{{ $daemonVersion }}
+sudo mv snetd-linux-amd64-{{ $daemonVersion }} /usr/bin/snetd
 ```
 
 > 📌 Ensure the daemon binary has executable permissions (`chmod +x`) before moving it to `/usr/bin`.
