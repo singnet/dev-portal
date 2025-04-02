@@ -1341,6 +1341,10 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Cardano Staking Rewards",
                 link: "/docs/products/Staking/cardano-staking-rewards/",
+            },
+            {
+                text: "Cardano Staking Opt-Out",
+                link: "/docs/products/Staking/cardano-staking-opt-out/",
             }
         ],
     },
