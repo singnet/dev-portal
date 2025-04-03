@@ -18,7 +18,7 @@ You can offer anything from simple solutions like a pathfinding algorithm to com
 
 SingularityNET consists of several key points that ensure its operation:
 - Minimizing dependency on blockchains like [Ethereum](/docs/products/DecentralizedAIPlatform/UsedTechnologies/ethereum-address/) to increase speed and reduce costs;
-- Abstract approach to integrating AI services, simplifying the [publishing](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/) and usage process;
+- Abstract approach to integrating AI services, simplifying the [publishing](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/) and usage process;
 - Support for regulatory compliance without sacrificing openness.
 
 ## Benefits for Developers
