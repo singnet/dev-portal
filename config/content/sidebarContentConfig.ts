@@ -88,7 +88,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "Service Onboarding via Publisher",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/OnboardingViaPublisher/",
             },
             {
                 text: "Service Calling via CLI",
