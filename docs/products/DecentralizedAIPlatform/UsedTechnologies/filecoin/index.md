@@ -1,7 +1,7 @@
 # FileCoin
 
 If you want to use FileCoin as a storage instead of IPFS, this article is for you! Follow the steps in the 
-[usage](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaCLI/#using-filecoin) section.
+[usage](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/#using-filecoin) section.
 
 ## Core concepts
 

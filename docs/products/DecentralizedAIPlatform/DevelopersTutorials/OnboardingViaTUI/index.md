@@ -1,4 +1,4 @@
-# Service Onboarding via TUI
+# Guide to Publishing an Organization and Service via TUI
 
 ## Step 1: Install
 

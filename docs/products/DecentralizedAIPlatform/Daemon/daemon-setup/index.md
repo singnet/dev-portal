@@ -8,20 +8,20 @@ Select the file on the GitHub page for your operating system and architecture an
 
 :::code-group
 
-```sh [Linux]
-curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-linux-amd64-v5.2.1
+```sh-vue [Linux]
+curl -LJO https://github.com/singnet/snet-daemon/releases/download/{{ $daemonVersion }}/snetd-linux-amd64-{{ $daemonVersion }}
 ```
 
-```powershell [Windows Powershell/Cmd]
-curl -O -L https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-windows-amd64-v5.2.1.exe
+```powershell-vue [Windows Powershell/Cmd]
+curl -O -L https://github.com/singnet/snet-daemon/releases/download/{{ $daemonVersion }}/snetd-windows-amd64-{{ $daemonVersion }}.exe
 ```
 
-```sh [MacOS ARM]
-curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-darwin-arm64-v5.2.1
+```sh-vue [MacOS ARM]
+curl -LJO https://github.com/singnet/snet-daemon/releases/download/{{ $daemonVersion }}/snetd-darwin-arm64-{{ $daemonVersion }}
 ```
 
-```sh [MacOS Intel]
-curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-darwin-amd64-v5.2.1
+```sh-vue [MacOS Intel]
+curl -LJO https://github.com/singnet/snet-daemon/releases/download/{{ $daemonVersion }}/snetd-darwin-amd64-{{ $daemonVersion }}
 ```
 
 :::
@@ -29,16 +29,16 @@ curl -LJO https://github.com/singnet/snet-daemon/releases/download/v5.2.1/snetd-
 If you are using a Unix-based system (for example, Linux or Mac OS), you need to give the file executable permissions:
 :::code-group
 
-```sh [Linux]
-chmod +x ./snetd-darwin-amd64-v5.2.1
+```sh-vue [Linux]
+chmod +x ./snetd-darwin-amd64-{{ $daemonVersion }}
 ```
 
-```sh [MacOS ARM]
-chmod +x ./snetd-darwin-arm64-v5.2.1
+```sh-vue [MacOS ARM]
+chmod +x ./snetd-darwin-arm64-{{ $daemonVersion }}
 ```
 
-```sh [MacOS Intel]
-chmod +x ./snetd-darwin-amd64-v5.2.1
+```sh-vue [MacOS Intel]
+chmod +x ./snetd-darwin-amd64-{{ $daemonVersion }}
 ```
 
 :::
@@ -50,20 +50,20 @@ The daemon needs to be configured to work with the corresponding AI service.
 You can create a simple template configuration by running:
 :::code-group
 
-```sh [Linux]
-./snetd-linux-amd64-v5.2.1 init
+```sh-vue [Linux]
+./snetd-linux-amd64-{{ $daemonVersion }} init
 ```
 
-```powershell [Windows Powershell/Cmd]
-.\snetd-windows-amd64-v5.2.1.exe init
+```powershell-vue [Windows Powershell/Cmd]
+.\snetd-windows-amd64-{{ $daemonVersion }} init
 ```
 
-```sh [MacOS ARM]
-./snetd-darwin-arm64-v5.2.1 init
+```sh-vue [MacOS ARM]
+./snetd-darwin-arm64-{{ $daemonVersion }} init
 ```
 
-```sh [MacOS Intel]
-./snetd-darwin-amd64-v5.2.1 init
+```sh-vue [MacOS Intel]
+./snetd-darwin-amd64-{{ $daemonVersion }} init
 ```
 
 :::
@@ -196,20 +196,20 @@ For a detailed list of configurations, check the [configuration page](https://gi
 
 :::code-group
 
-```sh [Linux]
-./snetd-linux-amd64-v5.2.1 --config <config_file_name>
+```sh-vue [Linux]
+./snetd-linux-amd64-{{ $daemonVersion }} --config <config_file_name>
 ```
 
-```powershell [Windows Powershell/Cmd]
-.\snetd-windows-amd64-v5.2.1.exe --config <config_file_name>
+```powershell-vue [Windows Powershell/Cmd]
+.\snetd-windows-amd64-{{ $daemonVersion }}.exe --config <config_file_name>
 ```
 
-```sh [MacOS ARM]
-./snetd-darwin-arm64-v5.2.1 --config <config_file_name>
+```sh-vue [MacOS ARM]
+./snetd-darwin-arm64-{{ $daemonVersion }} --config <config_file_name>
 ```
 
-```sh [MacOS Intel]
-./snetd-darwin-amd64-v5.2.1 --config <config_file_name>
+```sh-vue [MacOS Intel]
+./snetd-darwin-amd64-{{ $daemonVersion }} --config <config_file_name>
 ```
 
 :::

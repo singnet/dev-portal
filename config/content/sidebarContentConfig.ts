@@ -88,7 +88,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "Service Onboarding via Publisher",
-                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceOnboardingViaPublisher/",
+                link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/OnboardingViaPublisher/",
             },
             {
                 text: "Service Calling via CLI",
@@ -110,36 +110,36 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
     },
     {
         text: "Developer's Tutorials",
-        link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
+        link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/",
         collapsed: true,
         items:[
             {
-                text: "Service Onboarding via Publisher",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaPublisher/",
+                text: "Full Onboarding Guide (Mainnet & Testnet)",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/",
             },
             {
-                text: "Service Onboarding via CLI",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaCLI/",
+                text: "Onboarding via Publisher",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/",
             },
             {
-                text: "Service Onboarding via TUI",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/ServiceOnboardingViaTUI/",
+                text: "Onboarding via CLI",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/",
             },
             {
-                text: "Full guide to Onboarding in mainnet",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingMainnet/",
+                text: "Onboarding via TUI",
+                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/",
             },
             {
-                text: "Full guide to Onboarding in testnet",
-                link:"/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingTestnet/",
+                text: "GRPC Service Integration",
+                link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationGRPCService/",
             },
             {
-                text: "Integration Training Service",
-                link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/Training/",
-            },
-            {
-                text: "Integration HTTP Service",
+                text: "HTTP Service Integration",
                 link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationHTTPService/",
+            },
+            {
+                text: "Training Service Integration",
+                link: "/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationTrainingService/",
             },
         ],
     },
@@ -1341,6 +1341,10 @@ export const StakingSection: DefaultTheme.SidebarItem[] = [
             {
                 text: "Cardano Staking Rewards",
                 link: "/docs/products/Staking/cardano-staking-rewards/",
+            },
+            {
+                text: "Cardano Staking Opt-Out",
+                link: "/docs/products/Staking/cardano-staking-opt-out/",
             }
         ],
     },

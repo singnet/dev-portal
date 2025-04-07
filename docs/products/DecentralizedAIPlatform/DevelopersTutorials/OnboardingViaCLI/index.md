@@ -1,4 +1,4 @@
-# Guide for publish organizatiion and service via CLI
+# Guide to Publishing an Organization and Service via CLI
 
 ## Installing SNET CLI
 (not required if you use Publisher for organization and service management) 
@@ -45,7 +45,7 @@ snet identity create <IDENTITY> key --private-key <PVT-KEY> --network mainnet
 OR
 
 ```sh
-snet identity create <IDENTITY> mnemonic --network mainnet
+snet identity create <IDENTITY> mnemonic <MNEMONIC> --network mainnet
 ```
 
 You can create an identity with your crypto wallet private key or with seed phrases (mnemonic). You can export your private key from the wallet, and seed phrases are given upon creation of said wallet. Choose whichever you have.
@@ -225,13 +225,13 @@ snet service metadata-init \
 
 You can see more about configuring and deploying the Daemon by following this [link](/docs/products/DecentralizedAIPlatform/Daemon/daemon-setup/)
 
-
 Where,
-**SERVICE_PROTOBUF_DIR** - Directory which contains protobuf files of your service
-**SERVICE_DISPLAY_NAME** - Display name of your service. You can choose any name you want.
-**PAYMENT_GROUP_NAME** - Name of the payment group from organization metadata published in organization setup, step 4
-**DAEMON_ENDPOINT** - Endpoint which will be used to connect to your service daemon. 
-**FIXED_PRICE** - Price in AGIX for a single call to your service. We will set the price to 10^-8 AGIX (remember that 10^-8 AGIX = 1 COG).
+- `SERVICE_PROTOBUF_DIR` - Directory which contains protobuf files of your service
+- `SERVICE_DISPLAY_NAME` - Display name of your service. You can choose any name you want.
+- `PAYMENT_GROUP_NAME` - Name of the payment group from organization metadata published in organization setup, step 4
+- `DAEMON_ENDPOINT` - Endpoint which will be used to connect to your service daemon.
+- `FIXED_PRICE` - Price in AGIX for a single call to your service. We will set the price to `10^-8 AGIX` \
+(remember that `10^-8 AGIX = 1 COG`).
 
 Example: 
 

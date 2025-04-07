@@ -359,7 +359,7 @@ You would get the below output.
 
 **Note**: Ship the `ca.pem`, `client.pem` & `client-key.pem` files along with daemon, and follow the daemon configuration to connect between etcd and daemon.
 
-###Setting up your own ETCD cluster
+### Setting up your own ETCD cluster
 To set up your own ETCD cluster please follow the link here .  
  Certificates for ETCD
 For snet all ETCD storage , required certificates are available at drive  
@@ -367,14 +367,17 @@ For snet all ETCD storage , required certificates are available at drive
 Run the etcd-client-certificates-generation job.
 This will generate client-certificates in this path.
 
-        For other Organisations, follow the below steps to regenerate the etcd client certificates.
+> For other Organisations, follow the below steps to regenerate the etcd client certificates.
 
 Download the cfssl & cfssljson using the below commands
 
+```bash
 curl -s -L -o cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
-curl -s -L -o cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+```
 
-Copy the ca.pem, ca-key.pem, ca-config.json & client.json that you previously used for generating the etcd certificates.
+Copy the `ca.pem`, `ca-key.pem`, `ca-config.json` & `client.json` that you previously used for generating the etcd certificates.
 Run the below command to generate the client certificates.
 
+```bash
 ./cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=client.json | ./cfssljson -bare client
+```

@@ -19,4 +19,3 @@ A total of **50 million RJV tokens** have been allocated for this purpose, with 
 - [Rejuve.AI](https://www.rejuve.ai/)  
 - [Rejuve.AI Airdrop Portal](https://rejuve-airdrop.singularitynet.io/)  
 - If you have any questions, you can submit a request to **CONTACT US** on the [Rejuve.AI Airdrop Portal](https://rejuve-airdrop.singularitynet.io/).
-

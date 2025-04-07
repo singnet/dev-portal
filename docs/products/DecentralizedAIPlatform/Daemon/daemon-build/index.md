@@ -45,24 +45,24 @@ part of the build. You need to pass the version as shown in the example below:
 :::
 
 Example: 
-```bash
-./scripts/build linux amd64 v5.2-custom
+```bash-vue
+./scripts/build linux amd64 {{ $daemonVersion }}-custom
 ```
 The final binaries will be in the `/build` folder.
 
 If you are using a Unix-based system (for example, Linux or Mac OS), you need to give the rights to execute the file:
 :::code-group
 
-```sh [Linux]
-chmod +x ./build/snetd-darwin-amd64-v5.2-custom
+```sh-vue [Linux]
+chmod +x ./build/snetd-darwin-amd64-{{ $daemonVersion }}-custom
 ```
 
-```sh [MacOS ARM]
-chmod +x ./build/snetd-darwin-arm64-v5.2-custom
+```sh-vue [MacOS ARM]
+chmod +x ./build/snetd-darwin-arm64-{{ $daemonVersion }}-custom
 ```
 
-```sh [MacOS Intel]
-chmod +x ./build/snetd-darwin-amd64-v5.2-custom
+```sh-vue [MacOS Intel]
+chmod +x ./build/snetd-darwin-amd64-{{ $daemonVersion }}-custom
 ```
 :::
 

@@ -1,5 +1,13 @@
 # Claim for Rejuve.AI Airdrop
 
+## Claim Process for Ethereum Eligible Wallets
+
+<ImageViewer src="/assets/images/products/Airdrop/claim-process-ethereum.webp" alt="Claim process ethereum"/>
+
+## Claim Process for Cardano Eligible Wallets
+
+<ImageViewer src="/assets/images/products/Airdrop/claim-process-cardano.webp" alt="Claim process cardano"/>
+
 ## How to Claim Your Tokens?  
 
 1. **Wait for the claim window to open:** After registering in an epoch, the claim window will open in approximately one month.  

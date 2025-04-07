@@ -1,4 +1,4 @@
-# Onboarding via Publisher
+# Guide to Publishing an Organization and Service via Publisher
 
 ## You can watch the video for easy understanding:
 
