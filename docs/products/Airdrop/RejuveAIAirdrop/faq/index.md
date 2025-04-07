@@ -200,3 +200,44 @@
         <p>After completing either of these steps, try claiming your tokens again.</p>
     </template>
 </AccordionItem>
+
+<AccordionItem :id="15">
+    <template #title>
+        <strong>15. How does the claim process work if my eligible wallet was Cardano-based?</strong>
+    </template>
+    <template #description>
+        <p>The claim process if your elegible wallet - Cardano involves two authorization steps and typically takes about 1 hour:</p>
+        <ol>
+            <li><strong>Claim button</strong> - initiate the token claim process</li>
+            <li><strong>Sign the first transaction</strong> (without sending any ADA)</li>
+            <li><strong>Sign the second transaction</strong> - confirm the transaction sending 1.5 ADA + network fee to cover token transfer costs</li>
+            <li><strong>Wait approximately 1 hour</strong> for processing</li>
+            <li><strong>Success</strong> - tokens will appear in your wallet</li>
+        </ol>
+        <p>If you don't receive your tokens after this period:</p>
+        <ul>
+            <li>Contact technical support by submitting a request through <strong>CONTACT US</strong> on the <a href="https://rejuve-airdrop.singularitynet.io/" target="_blank">Rejuve.AI Airdrop Portal</a>.</li>
+        </ul>
+    </template>
+</AccordionItem>
+
+<AccordionItem :id="16">
+    <template #title>
+        <strong>16. How does the claim process work if my eligible wallet was Ethereum-based?</strong>
+    </template>
+    <template #description>
+        <p>The claim process if your elegible wallet - Ethereum involves three authorization steps and typically takes about 1 hour:</p>
+        <ol>
+            <li><strong>Claim button</strong> - initiate the token claim process</li>
+            <li><strong>First Ethereum wallet signature</strong> - connect your receiving wallet and approve the data update to generate your registration ID</li>
+            <li><strong>Second Ethereum wallet signature</strong> - verify the message containing your registration ID</li>
+            <li><strong>Cardano wallet signature</strong> - confirm the transaction sending 1.5 ADA + network fee to cover token transfer costs</li>
+            <li><strong>Wait approximately 1 hour</strong> for processing</li>
+            <li><strong>Success</strong> - tokens will appear in your wallet</li>
+        </ol>
+        <p>If you don't receive your tokens after this period:</p>
+        <ul>
+            <li>Contact technical support by submitting a request through <strong>CONTACT US</strong> on the <a href="https://rejuve-airdrop.singularitynet.io/" target="_blank">Rejuve.AI Airdrop Portal</a>.</li>
+        </ul>
+    </template>
+</AccordionItem>
