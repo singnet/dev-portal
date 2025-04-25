@@ -893,6 +893,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/training/",
                     },
                     {
+                        text: "Concurrency",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/concurrency/",
+                    },
+                    {
                         text: "Documentation",
                         collapsed: true,
                         link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/",

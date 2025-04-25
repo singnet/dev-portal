@@ -197,6 +197,47 @@ payment_channel.extend_expiration(expiration=33333)
 payment_channel.extend_and_add_funds(amount=123456, expiration=33333)
 ```
 
+### Concurrent (Prepaid) call
+
+Concurrent (prepaid) calls allow you to prepay for a batch of service calls in advance. This off-chain strategy is ideal for scenarios requiring high throughput and low latency. Unlike regular paid calls, the payment is done once upfront, and the SDK automatically manages the channel during usage.
+
+To use concurrent prepaid calls, specify the `concurrent_calls` parameter when creating a service client:
+
+```python
+service_client = snet_sdk.create_service_client(
+    org_id="26072b8b6a0e448180f8c0e702ab6d2f",
+    service_id="Exampleservice",
+    group_name="default_group",
+    concurrent_calls=5  # Number of prepaid calls to allocate
+)
+```
+
+Then you can make service calls as usual, and the SDK will use the prepaid pool internally:
+
+```python
+for i in range(5):
+    response = service_client.call_rpc("add", "Numbers", a=1, b=2)
+    print(f"Concurrent call {i+1} result:", response)
+```
+
+This model is especially useful for batch inference or rapid sequential calls without incurring on-chain transaction costs for each invocation.
+
+### Train call
+
+Some of the training methods, namely `upload_and_validate` and `train_model`, are paid as well as the regular service call. Accordingly, you need to pay some AGIX to take advantage of the training. For this, as for a regular service call, you need a payment channel with the required amount of funds on it and expiration (in Python SDK, the selection, opening or adding funds to the channel is done automatically).
+
+The only difference is that the price of a service call is a static number stored in the service metadata, whereas the price of calling the methods above is determined each time through the service provider before calling these methods. There are auxiliary methods `validate_model_price` and `train_model_price` respectively to determine the price of calling paid methods.
+
+```python
+validate_price = service_client.training.validate_model_price(model_id)
+model_status = service_client.training.upload_and_validate(model_id, zip_path, validate_price)
+
+# -------------------------------------------------------------------------------
+
+train_price = service_client.training.train_model_price(model_id)
+model_status = service_client.training.train_model(model_id, train_price)
+```
+
 ## Other useful features
 
 ### Get the current block number
@@ -264,11 +305,7 @@ print(messages)
 # {'Numbers': [('float', 'a'), ('float', 'b')], 'Result': [('float', 'value')]}
 ```
 
----
-
 ###### 1 This method uses a call to a paid smart contract function.
-
----
 
 ## Development
 
