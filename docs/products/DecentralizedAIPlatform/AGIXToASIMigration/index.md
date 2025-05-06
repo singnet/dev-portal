@@ -53,7 +53,7 @@ Below are updated domains for the ASI (FET) and Legacy AGIX versions of Marketpl
 | Token         | Mainnet MPE                                  | Testnet MPE                                  |
 | ------------- | -------------------------------------------- | -------------------------------------------- |
 | **ASI (FET)** | `0xdF8d4826E016aFA8803d94A716FEB70aD5D2B8Ac` | `0x042d31F61c598eADcAc729B845406514521db520` |
-| **AGIX**      | `0x5e592F9b1d303183d963635f895f0f0C48284f4e` | `0x042d31F61c598eADcAc729B845406514521db520` |
+| **AGIX**      | `0x5e592F9b1d303183d963635f895f0f0C48284f4e` | `0x7E0aF8988DF45B824b2E0e0A87c6196897744970` |
 
 #### Withdrawing Funds from AGIX MPE
 
