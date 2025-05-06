@@ -65,19 +65,19 @@ Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have an API k
 
 ## Step 4. Deposit to MPE and Open Channel
 
-To check your ETH, AGIX and MPE balance please run:
+To check your ETH, ASI (FET) and MPE balance please run:
 
 ```sh
 snet account balance 
 ```
 
-If you don't have enough AGIX in MPE you can deposit it.
+If you don't have enough ASI (FET) in MPE you can deposit it.
 
 ```sh
 snet account deposit 0.00001
 ```
 
-Open a channel and transfer AGIX to it.
+Open a channel and transfer ASI (FET) to it.
 
 ```sh
 snet channel open 26072b8b6a0e448180f8c0e702ab6d2f default_group 0.00001 +8days 

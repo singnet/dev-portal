@@ -78,7 +78,7 @@ from `SnetSDK`.
 - `mpe_contract` (MPEContract): An instance of the `MPEContract` class for interacting with 
 the MultiPartyEscrow contract.
 - `token_contract` (Contract): An instance of the `Contract` class from the `web3` library for interacting 
-with the SingularityNET AGIX Token contract.
+with the SingularityNET ASI (FET) Token contract.
 - `private_key` (str): The private key associated with the account.
 - `signer_private_key` (str): The private key used for signing transactions.
 - `address` (str): The Ethereum address associated with the account.
@@ -177,11 +177,11 @@ Retrieves the escrow balance for the current account.
 
 ### `deposit_to_escrow_account`
 
-Deposit the specified amount of AGIX tokens in cogs into the MPE account.
+Deposit the specified amount of ASI (FET) tokens in cogs into the MPE account.
 
 ##### args:
 
-- `amount_in_cogs` (int): The amount of AGIX tokens in cogs to deposit.
+- `amount_in_cogs` (int): The amount of ASI (FET) tokens in cogs to deposit.
 
 ##### returns:
 
@@ -189,11 +189,11 @@ Deposit the specified amount of AGIX tokens in cogs into the MPE account.
 
 ### `approve_transfer`
 
-Approves a transfer of a specified amount of AGIX tokens in cogs to the MPE contract.
+Approves a transfer of a specified amount of ASI (FET) tokens in cogs to the MPE contract.
 
 ##### args:
 
-- `amount_in_cogs` (int): The amount of AGIX tokens in cogs to approve for transfer.
+- `amount_in_cogs` (int): The amount of ASI (FET) tokens in cogs to approve for transfer.
 
 ##### returns:
 

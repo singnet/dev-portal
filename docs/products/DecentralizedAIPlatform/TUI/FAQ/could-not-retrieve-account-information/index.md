@@ -58,6 +58,6 @@ Just check if the CLI can print your account balance, if it can you have a valid
 snet account balance
 ```
 
-If you can see Ethereum, AGIX and MPE balances of your identity, you have a valid identity. Otherwise, please retry this guide and ensure you have the correct information for your cryptocurrency wallet. \
+If you can see Ethereum, ASI (FET) and MPE balances of your identity, you have a valid identity. Otherwise, please retry this guide and ensure you have the correct information for your cryptocurrency wallet. \
 \
 If you have a valid identity, you can the restart the TUI with your repective Operating System's run script, as detailed [here](/docs/products/DecentralizedAIPlatform/TUI/GettingStarted/execution/)

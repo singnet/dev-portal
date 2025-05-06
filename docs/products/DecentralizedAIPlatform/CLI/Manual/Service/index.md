@@ -92,7 +92,7 @@ Default: `[]`
 
     
 
-Set fixed price in AGIX token for all methods
+Set fixed price in ASI (FET) token for all methods
 
 `--encoding`
 
@@ -183,7 +183,7 @@ group name for fixed price method
 
     
 
-Set fixed price in AGIX token for all methods
+Set fixed price in ASI (FET) token for all methods
 
 #### Named Arguments
 
@@ -234,7 +234,7 @@ method for which price need to be set
 
     
 
-Set fixed price in AGIX token for all methods
+Set fixed price in ASI (FET) token for all methods
 
 #### Named Arguments
 

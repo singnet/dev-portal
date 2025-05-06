@@ -41,7 +41,7 @@ with several payment groups
 
     
 
-Amount of AGIX tokens to put in the new channel
+Amount of ASI (FET) tokens to put in the new channel
 
 `EXPIRATION`
 
@@ -157,7 +157,7 @@ with several payment groups
 
     
 
-Amount of AGIX tokens to put in the new channel
+Amount of ASI (FET) tokens to put in the new channel
 
 `EXPIRATION`
 
@@ -299,7 +299,7 @@ Default: `False`
 
     
 
-Amount of AGIX tokens to add to the channel
+Amount of ASI (FET) tokens to add to the channel
 
 #### transaction arguments
 
@@ -419,7 +419,7 @@ Default: `False`
 
     
 
-Amount of AGIX tokens to add to the channel
+Amount of ASI (FET) tokens to add to the channel
 
 #### transaction arguments
 

@@ -15,7 +15,7 @@ snet account withdraw [-h] [--multipartyescrow-at MULTIPARTYESCROW_AT]
 
 User Flow:
 
-* Input the amount of AGIX to withdraw from your MPE wallet
+* Input the amount of ASI (FET) to withdraw from your MPE wallet
 * Input any optional parameters you would like (And if you would like quiet or verbose transaction data)
 * Click the "Withdraw" button
 * Confirm/Deny the gas fee charges for the withdraw transaction

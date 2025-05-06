@@ -231,11 +231,11 @@ is the client for the payment channel state service.
 
 ### `open_channel`
 
-Opens a payment channel with the specified amount of AGIX tokens in cogs and expiration time.
+Opens a payment channel with the specified amount of ASI (FET) tokens in cogs and expiration time.
 
 ##### args:
 
-- `amount` (int): The amount of AGIX tokens in cogs to deposit into the channel.
+- `amount` (int): The amount of ASI (FET) tokens in cogs to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
 ##### returns:
@@ -245,11 +245,11 @@ Opens a payment channel with the specified amount of AGIX tokens in cogs and exp
 ### `deposit_and_open_channel`
 
 Deposits the specified amount of tokens into the MPE smart contract and opens a payment channel 
-with its amount of AGIX tokens in cogs and expiration time.
+with its amount of ASI (FET) tokens in cogs and expiration time.
 
 ##### args:
 
-- `amount` (int): The amount of AGIX tokens in cogs to deposit into the channel.
+- `amount` (int): The amount of ASI (FET) tokens in cogs to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
 ##### returns:

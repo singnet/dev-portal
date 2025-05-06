@@ -12,11 +12,11 @@ The "Account" page is a central hub within the TUI, providing users with a simpl
   * **Account Information**
     * **Account Address**: Displays the unique blockchain address of the user.
     * **ETH Balance**: Shows the current Ethereum balance, crucial for transaction fees.
-    * **AGIX Balance**: Reflects the balance of AGIX tokens, the primary currency for SingularityNET services.
+    * **ASI (FET) Balance**: Reflects the balance of ASI (FET) tokens, the primary currency for SingularityNET services.
     * **MPE Balance**: Indicates funds in the Multi-Party Escrow, vital for service transactions.
 * **Sub-page Buttons**
-  * **Deposit Page**: Page to deposit AGIX tokens into the MPE wallet.
-  * **Withdraw Page**: Page to withdraw AGIX tokens from their MPE wallet.
-  * **Transfer Page**: Page to transfer AGIX tokens within the MPE wallet.
+  * **Deposit Page**: Page to deposit ASI (FET) tokens into the MPE wallet.
+  * **Withdraw Page**: Page to withdraw ASI (FET) tokens from their MPE wallet.
+  * **Transfer Page**: Page to transfer ASI (FET) tokens within the MPE wallet.
   * **Identity Settings Page**: Page for adding/removing identities.
-  * **Treasurer Page**: Page to claim AGIX from channels: specific, expired or all
+  * **Treasurer Page**: Page to claim ASI (FET) from channels: specific, expired or all

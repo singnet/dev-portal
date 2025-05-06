@@ -9,7 +9,7 @@ The MPE contract comprises two main functions, which includes:
 1. A wallet with a deposit and withdraw function.
 2. A set of the simple (“atomic”) unidirectional payment channels between clients and service providers and support functions for controlling these channels.
 
-    **Note:** Any one can deposit and withdraw their AGIX tokens into a Multi-Party Escrow, (which have not been escrowed at the moment).
+    **Note:** Any one can deposit and withdraw their ASI (FET) tokens into a Multi-Party Escrow, (which have not been escrowed at the moment).
 
 ## What is Payment Channel?
 
@@ -51,7 +51,7 @@ If Kevin is buying services from the Kevin, they both need to enter in to a form
 
 **Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity.
 
-1. Kevin deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their AGIX tokens.
+1. Kevin deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their ASI (FET) tokens.
 2. Kevin creates and opens a Payment Channel.<br>
    <br>**Note:** Kevin is the sender of tokens and Jack is the receiver of tokens. Every channel created has a unique ID, which begins from 0.
 3. Kevin funds the channel. Kevin suggests Jack to deposit a bare amount ( cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable. <br>
@@ -61,7 +61,7 @@ If Kevin is buying services from the Kevin, they both need to enter in to a form
 4. Kevin needs to authorize using the signature (using his private key to sign) to let Jack withdraw
 5. Jack verifies the following
     - Signature is authentic;
-    - Amount of AGIX tokens specified is correct (last Authorized Amount from Kevin + Cost of the Service being called) ;
+    - Amount of ASI (FET) tokens specified is correct (last Authorized Amount from Kevin + Cost of the Service being called) ;
     - Amount does not exceed the value of the channel
     - Channel is not very close to expiring or has expired.
 6. Kevin makes a call; Jack now sends the signed authorization to Kevin to “withdraw”. The effective balance is 1.

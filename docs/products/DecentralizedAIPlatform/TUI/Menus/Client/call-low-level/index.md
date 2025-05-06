@@ -19,6 +19,6 @@ snet client call-lowlevel [-h] [--service SERVICE]
 
 User flow:
 
-* Input the org id, service id, group name, channel id, nonce, amount in AGIX, method and a JSON formatted list of parameters
+* Input the org id, service id, group name, channel id, nonce, amount in ASI (FET), method and a JSON formatted list of parameters
 * Input any optional parameters you would like
 * Click the "Call low-level" button

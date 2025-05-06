@@ -18,6 +18,6 @@ snet channel open-init [-h] [--registry-at REGISTRY_AT] [--force]
 
 User flow:
 
-* Input the organization id, group name, amount of AGIX to add to the channel, and the duration of the channel before expiration
+* Input the organization id, group name, amount of ASI (FET) to add to the channel, and the duration of the channel before expiration
 * Input any optional parameters you would like
 * Click the "Open Initialize" button

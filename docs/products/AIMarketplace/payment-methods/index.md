@@ -27,7 +27,7 @@ The integration of SingularityNET’s decentralized AI marketplace with PayPal r
 1. Go to the [Marketplace portal](http://beta.singularitynet.io)
 2. Pay for service through your Paypal account
 3. If you dont have a wallet , the application will create a wallet and a channel for you.
-   The application will then deposit the equivalent AGIX tokens in to channel.
+   The application will then deposit the equivalent ASI (FET) tokens in to channel.
 4. Now you can make a call now - The Dapp components hide all the complexity on making these calls.
 
 ![marketplace](/assets/images/products/AIMarketplace/forcomers/marketplaceimage.gif)
@@ -36,15 +36,15 @@ For more details refer to the [page](/docs/products/DecentralizedAIPlatform/Core
 
 ## MetaMask
 
-You can deposit AGIX via Metamask. Go to the account page in the upper right corner.
+You can deposit ASI (FET) via Metamask. Go to the account page in the upper right corner.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/AccountPageRedirect.webp" alt="Account page"/>
 
-Select the MetaMask account from which you want to deposit AGIX
+Select the MetaMask account from which you want to deposit ASI (FET)
 
 <ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/DepositSelectMetamsk.webp" alt="Account page"/>
 
-Select the number of AGIX tokens you want to deposit
+Select the number of ASI (FET) tokens you want to deposit
 
 <ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/DepositEnterAmountOfAGIX.webp" alt="Account page"/>
 

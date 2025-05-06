@@ -230,8 +230,8 @@ Where,
 - `SERVICE_DISPLAY_NAME` - Display name of your service. You can choose any name you want.
 - `PAYMENT_GROUP_NAME` - Name of the payment group from organization metadata published in organization setup, step 4
 - `DAEMON_ENDPOINT` - Endpoint which will be used to connect to your service daemon.
-- `FIXED_PRICE` - Price in AGIX for a single call to your service. We will set the price to `10^-8 AGIX` \
-(remember that `10^-8 AGIX = 1 COG`).
+- `FIXED_PRICE` - Price in ASI (FET) for a single call to your service. We will set the price to `10^-8 ASI (FET)` \
+(remember that `10^-8 ASI (FET) = 1 COG`).
 
 Example: 
 
@@ -383,11 +383,11 @@ a detailed description.
 To call a SNET service you need to open a payment channel with MPE on it. To get MPE run:
 
 ```bash
-snet account deposit 0.000001 # Deposit AGIX Token to MPE. 
+snet account deposit 0.000001 # Deposit ASI (FET) Token to MPE. 
 ```
 
 ```sh
-snet channel open-init <org_id> <group_name> 0.000001 +7days # Open a Channel (for 7 days) and transfer AGIX in to the Channel
+snet channel open-init <org_id> <group_name> 0.000001 +7days # Open a Channel (for 7 days) and transfer ASI (FET) in to the Channel
 ```
 
 2) Make a call to a service
@@ -403,7 +403,7 @@ snet client call <org_id> <service_id> <group_name> add '{"a":10,"b":32}'
 Confirm the transaction when asked to. After that you should see service response to your JSON payload
 
 ```sh
-Price for this call will be 0.0000001 AGIX (use -y to remove this warning).
+Price for this call will be 0.0000001 ASI (FET) (use -y to remove this warning).
 Proceed? (y/n): y
 value: 42.0
 ```

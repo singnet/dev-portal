@@ -63,12 +63,12 @@ Returns the balance of the given address in the MPE contract in cogs.
 
 ### `deposit`
 
-Deposit the specified amount of AGIX tokens in cogs into the MultiPartyEscrow contract.
+Deposit the specified amount of ASI (FET) tokens in cogs into the MultiPartyEscrow contract.
 
 ##### args:
 
 - `account` (Account): The account instance used to send the transaction.
-- `amount_in_cogs` (int): The amount of AGIX tokens in cogs to deposit.
+- `amount_in_cogs` (int): The amount of ASI (FET) tokens in cogs to deposit.
 
 
 ##### returns:
@@ -77,14 +77,14 @@ Deposit the specified amount of AGIX tokens in cogs into the MultiPartyEscrow co
 
 ### `open_channel`
 
-Opens a payment channel with the specified amount of AGIX tokens in cogs (taken from MPE) and expiration time.
+Opens a payment channel with the specified amount of ASI (FET) tokens in cogs (taken from MPE) and expiration time.
 
 ##### args:
 
 - `account` (Account): The account object used to send the transaction.
 - `payment_address` (str): The address of the payment recipient.
 - `group_id` (str): The ID of the payment group.
-- `amount` (int): The amount of AGIX tokens in cogs to deposit into the channel.
+- `amount` (int): The amount of ASI (FET) tokens in cogs to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
 ##### returns:
@@ -93,7 +93,7 @@ Opens a payment channel with the specified amount of AGIX tokens in cogs (taken 
 
 ### `deposit_and_open_channel`
 
-Opens a payment channel with the specified amount of AGIX tokens in cogs (which are previously deposited on MPE) 
+Opens a payment channel with the specified amount of ASI (FET) tokens in cogs (which are previously deposited on MPE) 
 and expiration time. The account must have sufficient allowance to perform the deposit, otherwise the account 
 first approves the transfer.
 
@@ -102,7 +102,7 @@ first approves the transfer.
 - `account` (Account): The account object used to send the transaction.
 - `payment_address` (str): The address of the payment recipient.
 - `group_id` (str): The ID of the payment group.
-- `amount` (int): The amount of AGIX tokens in cogs first for deposit on MPE, then for deposit on the channel.
+- `amount` (int): The amount of ASI (FET) tokens in cogs first for deposit on MPE, then for deposit on the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
 ##### returns:

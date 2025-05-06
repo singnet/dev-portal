@@ -18,7 +18,7 @@ is extended by: -
 ### description
 
 The `FreeCallPaymentStrategy` class is a concrete implementation of the `PaymentStrategy` interface.
-It allows you to use free calls (which can be received from the [Dapp](https://beta.singularitynet.io/)) to 
+It allows you to use free calls (which can be received from the [Dapp](https://marketplace.singularitynet.io/)) to 
 call services. 
 
 ### methods
