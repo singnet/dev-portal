@@ -33,8 +33,8 @@ the tokens on those networks are essentially value-less and are only useful for 
 
 >NOTE: Use the SingularityNET Marketplace in Mainnet Mode whenever you want to integrate an AI service into your software. Use the SingularityNET Marketplace in Sepolia Mode whenever you want to test the platform as a developer. Do not integrate AI services from the Sepolia Network in your software, as their continuous availability is not guaranteed.
 
-## AGIX Faucet (Sepolia Test Network Only)
+## ASI (FET) Faucet (Sepolia Test Network Only)
 
-In order to have Sepolia AGIX to test the platform, users are required to visit the [AGIX Faucet](https://faucet.singularitynet.io/), which is a per-request Sepolia AGIX distribution hub. In this case, users provide their Sepolia Ethereum wallet addresses to the Faucet, and a set amount of Sepolia AGIX will be transferred to the requesting wallet. In order to receive these tokens, the user must connect Sepolia wallet to access the AGIX Sepolia Faucet. 
+In order to have Sepolia ASI (FET) to test the platform, users are required to visit the [ASI (FET) Faucet](https://faucet.singularitynet.io/), which is a per-request Sepolia ASI (FET) distribution hub. In this case, users provide their Sepolia Ethereum wallet addresses to the Faucet, and a set amount of Sepolia ASI (FET) will be transferred to the requesting wallet. In order to receive these tokens, the user must connect Sepolia wallet to access the ASI (FET) Sepolia Faucet. 
 
 

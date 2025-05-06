@@ -3,6 +3,6 @@ ERC-20 is a standard interface for tokens. It allows any tokens on Ethereum to b
 
 It defines a standard interface that all tokens should adhere to. This enables users and developers to understand how the token will work in the Ethereum ecosystem. This standardization enables richer interaction between the various tools and usecases built on top of Ethereum
 
-The AGIX Token is an ERC-20 token that powers the SingularityNET platform.
+The ASI (FET) Token is an ERC-20 token that powers the SingularityNET platform.
 
-<p><strong>Note: While we are aware that the AGIX token is currently being traded on some exchanges, we do not encourage or facilitate this exchange trading in any manner. Speculative secondary trading is against the spirit of the AGIX token and SingularityNET project. We strongly discourage speculative secondary trading and officially ask AGIX token holders to act accordingly.</strong></p>
+<p><strong>Note: While we are aware that the ASI (FET) token is currently being traded on some exchanges, we do not encourage or facilitate this exchange trading in any manner. Speculative secondary trading is against the spirit of the ASI (FET) token and SingularityNET project. We strongly discourage speculative secondary trading and officially ask ASI (FET) token holders to act accordingly.</strong></p>

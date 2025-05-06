@@ -10,7 +10,7 @@ The "Client" page is utilized for making calls to services on the marketplace. I
 
 * **Main Organization Display**
   * **Organization Information**
-    * The main display of the Client page presents the user with a list of all their initialized channels. Showcasing each channels organization id, service id, group name, channel id, nonce, amount of AGIX tokens, and the expiration time for each channel
+    * The main display of the Client page presents the user with a list of all their initialized channels. Showcasing each channels organization id, service id, group name, channel id, nonce, amount of ASI (FET) tokens, and the expiration time for each channel
 * **Sub-page buttons**
   * **Call page:** Call server. We ask state of the channel from the server if needed. Channel should be already initialized.
   * **Call low level page:** Low level function for calling the server. Service should be already initialized.

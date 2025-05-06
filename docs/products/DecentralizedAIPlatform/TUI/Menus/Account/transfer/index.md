@@ -15,7 +15,7 @@ snet account transfer [-h] [--multipartyescrow-at MULTIPARTYESCROW_AT]
 
 User Flow:
 
-* Input the amount of AGIX to transfer within the MPE wallet
+* Input the amount of ASI (FET) to transfer within the MPE wallet
 * Input any optional parameters you would like (And if you would like quiet or verbose transaction data)
 * Click the "Transfer" button
 * Confirm/Deny the gas fee charges for the transfer transaction

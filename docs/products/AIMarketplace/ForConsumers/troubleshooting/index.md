@@ -7,7 +7,7 @@ TEST ETH: You can get them on public faucet for the particular network you are t
  - Requires at least 0.001 ETH in mainnet network: https://www.infura.io/faucet/sepolia 
  - Requires at least 0.001 ETH in mainnet network: https://www.alchemy.com/faucets/ethereum-sepolia  
 
-TEST AGIX: 
+TEST ASI (FET): 
 
  - No requirements: https://faucet.singularitynet.io/
 
@@ -371,7 +371,7 @@ Also make sure  your stubs are updated on the Dapp Components
 
 - Keep the below links for reference 
     
-    Dapp for Sepolia: https://testnet-marketplace.singularitynet.io/
+    Dapp for Sepolia: https://testnet.marketplace.singularitynet.io/
     
     Dapp for Mainnet: http://beta.singularitynet.io/
 
@@ -394,10 +394,10 @@ Also make sure  your stubs are updated on the Dapp Components
 
 ### How do I raise a Pull request for DApp
 - Raise pull requests using “snet-dapp-monorepo/development”.
-- After merging in the development. It will be deployed to the Sepolia network: https://testnet-marketplace.singularitynet.io/
+- After merging in the development. It will be deployed to the Sepolia network: https://testnet.marketplace.singularitynet.io/
 
 ### When does my Pull request gets merged to Master 
-- If your changes are seen in [Sepolia](https://testnet-marketplace.singularitynet.io/). 
+- If your changes are seen in [Sepolia](https://testnet.marketplace.singularitynet.io/). 
     
     Inform the concerned authority to merge the changes from development to master. This is then deployed to Mainnet network: http://beta.singularitynet.io/
     

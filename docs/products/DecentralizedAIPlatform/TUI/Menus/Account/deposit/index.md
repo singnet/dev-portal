@@ -1,6 +1,6 @@
 # Deposit
 
-Initiates the process to deposit AGIX tokens into the MPE wallet.
+Initiates the process to deposit ASI (FET) tokens into the MPE wallet.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/TUI/DepositAGIX.webp" alt="Deposit Page"/>
 
@@ -16,7 +16,7 @@ snet account deposit [-h] [--singularitynettoken-at SINGULARITYNETTOKEN_AT]
 
 User Flow:
 
-* Input the amount of AGIX to deposit into your MPE wallet
+* Input the amount of ASI (FET) to deposit into your MPE wallet
 * Input any optional parameters you would like (And if you would like quiet or verbose transaction data)
 * Click the "Deposit" button
 * Confirm/Deny the gas fee charges for the deposit transaction

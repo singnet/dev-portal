@@ -181,7 +181,7 @@ The structure of the service data:
 
 The SDK connects to Metamask at the first initialization. After that, you can exchange data with the user's wallet
 
-For example, to get the wallet address, AGIX token balance or transactions between service and wallet:
+For example, to get the wallet address, ASI (FET) token balance or transactions between service and wallet:
 
 ```js
 export const getWalletInfo = async () => {

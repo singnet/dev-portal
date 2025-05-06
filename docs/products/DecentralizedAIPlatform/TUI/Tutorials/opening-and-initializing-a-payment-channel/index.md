@@ -15,13 +15,13 @@ If you have arrived at the correct page, you should see the menu shown below
 
 <ImageViewer src="/assets/images/products/AIMarketplace/TUI/ChannelOpenInitializePage.webp" alt="Success"/>
 
-Fill out the fields according to which organization you would like to create a channel with, and how many AGIX tokens you would like to add to the channel.&#x20;
+Fill out the fields according to which organization you would like to create a channel with, and how many ASI (FET) tokens you would like to add to the channel.&#x20;
 
 **`Organization ID`** - ID of the organization who's service you would like to invoke. You can find a list of all the organization ids on a network with the [snet organization list ](https://snet-cli-docs.singularitynet.io/organization.html#list)command (executed through the custom command menu)
 
 **`Payment Group`** - The name of the payment group for the service, most commonly default\_group
 
-**`Amount`** - The amount of AGIX tokens you would like to add to the channel, adding more later costs gas fees as explained above.&#x20;
+**`Amount`** - The amount of ASI (FET) tokens you would like to add to the channel, adding more later costs gas fees as explained above.&#x20;
 
 **`Expiration`** - The expiration time in blocks (\<int>), or in blocks related to the current\_block (+\<int>blocks), or in days related to the current\_block and assuming 15 sec/block (+\<int>days). For example `+2days` creates a channel that expires 2 days from when it was created.
 
