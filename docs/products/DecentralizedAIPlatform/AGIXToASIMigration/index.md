@@ -6,13 +6,13 @@ Domains, contracts, and tools have been updated accordingly, with clear separati
 
 ## What's New
 
-* **Marketplace and Publisher migrated to ASI (FET)** token support.
+* **[Marketplace](https://marketplace.singularitynet.io) and [Publisher](https://publisher.singularitynet.io) migrated to ASI (FET)** token support.
 * **All new services use ASI (FET)** by default.
-* **Legacy AGIX support is deprecated**, but still accessible.
-* **New contract addresses** for ASI (FET) token and MPE.
-* **New CLI/SDK releases** support both ASI (FET) and Legacy AGIX modes.
-* **Instructions provided** for migrating services and claiming funds.
-* **Dev Portal updates required** to reflect separated flows for ASI and AGIX.
+* **Legacy AGIX support is deprecated**, but [still accessible](https://agix-marketplace.singularitynet.io).
+* **New contract addresses** for [ASI (FET)](https://etherscan.io/address/0xaea46a60368a7bd060eec7df8cba43b7ef41ad85) token and [MPE](https://etherscan.io/address/0xdF8d4826E016aFA8803d94A716FEB70aD5D2B8Ac).
+* [**New CLI/SDK releases**](#tools-and-packages) support both ASI (FET) and Legacy AGIX modes.
+* [**Instructions provided**](#withdrawing-funds-from-agix-mpe) for migrating services and claiming funds.
+
 
 This page provides a complete overview of the new infrastructure based on the ASI (FET) token and how to transition from deprecated AGIX services. It includes domain links, contract addresses, package updates, and instructions for developers working with the SingularityNET platform.
 
@@ -43,19 +43,23 @@ Below are updated domains for the ASI (FET) and Legacy AGIX versions of Marketpl
 
 ### Token Contracts
 
-| Token         | Mainnet Address                              | Testnet Address                              |
-| ------------- | -------------------------------------------- | -------------------------------------------- |
-| **ASI (FET)** | `0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85` | `0x3A54192862D1c52C8175d4912f1f778d1E3C2449` |
-| **AGIX**      | `0x5B7533812759B45C2B44C19e320ba2cD2681b542` | `0xf703b9aB8931B6590CFc95183be4fEf278732016` |
+| Token     | Network | Address                                      |
+| --------- | ------- | -------------------------------------------- |
+| ASI (FET) | Mainnet | `0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85` |
+| ASI (FET) | Testnet | `0x3A54192862D1c52C8175d4912f1f778d1E3C2449` |
+| AGIX      | Mainnet | `0x5B7533812759B45C2B44C19e320ba2cD2681b542` |
+| AGIX      | Testnet | `0xf703b9aB8931B6590CFc95183be4fEf278732016` |
 
 ### MultiPartyEscrow (MPE) Contracts
 
-| Token         | Mainnet MPE                                  | Testnet MPE                                  |
-| ------------- | -------------------------------------------- | -------------------------------------------- |
-| **ASI (FET)** | `0xdF8d4826E016aFA8803d94A716FEB70aD5D2B8Ac` | `0x042d31F61c598eADcAc729B845406514521db520` |
-| **AGIX**      | `0x5e592F9b1d303183d963635f895f0f0C48284f4e` | `0x7E0aF8988DF45B824b2E0e0A87c6196897744970` |
+| Token     | Network | MPE Address                                  |
+| --------- | ------- | -------------------------------------------- |
+| ASI (FET) | Mainnet | `0xdF8d4826E016aFA8803d94A716FEB70aD5D2B8Ac` |
+| ASI (FET) | Testnet | `0x042d31F61c598eADcAc729B845406514521db520` |
+| AGIX      | Mainnet | `0x5e592F9b1d303183d963635f895f0f0C48284f4e` |
+| AGIX      | Testnet | `0x7E0aF8988DF45B824b2E0e0A87c6196897744970` |
 
-#### Withdrawing Funds from AGIX MPE
+## Withdrawing Funds from AGIX MPE
 
 You can withdraw remaining AGIX from open payment channels using:
 
@@ -63,7 +67,7 @@ You can withdraw remaining AGIX from open payment channels using:
 snet account withdraw <AMOUNT> --multipartyescrow-at <AGIX_MPE_CONTRACT_ADDRESS>
 ```
 
-Or via the Legacy AGIX Marketplace under **Account** section.
+Or via the [Legacy AGIX Marketplace](https://agix-marketplace.singularitynet.io/) under **Account** section.
 
 ### Registry Contract (not changed)
 
@@ -72,7 +76,7 @@ Or via the Legacy AGIX Marketplace under **Account** section.
 | **Mainnet** | `0x247DEbEBB766E4fA99667265A158060018D5f4F8` |
 | **Testnet** | `0x4DCc70c6FCE4064803f0ae0cE48497B3f7182e5D` |
 
-> Registry contract has not changed. However, users **must migrate their services** from AGIX MPE to ASI (FET) MPE.
+> Registry contract remains the same. However, users **must migrate their services** from AGIX MPE to ASI (FET) MPE.
 
 ## Tools and Packages
 
@@ -133,8 +137,8 @@ Replace the addresses depending on the desired token (ASI or AGIX).
 
 ## Summary
 
-* Marketplace and Publisher now support ASI (FET) with updated domains.
+* [Marketplace](https://marketplace.singularitynet.io/) and [Publisher](https://publisher.singularitynet.io/) now support ASI (FET) with updated domains.
 * Legacy AGIX contracts and flows remain available but are deprecated.
 * Use CLI/SDK options to switch between tokens as needed.
-* Migrate all services to ASI (FET) and withdraw AGIX funds via CLI or AGIX Marketplace.
+* Migrate all services to ASI (FET) and withdraw AGIX funds via [CLI](https://github.com/singnet/snet-cli) or [AGIX Marketplace](https://agix-marketplace.singularitynet.io/).
 * Dev Portal to be updated with clear segmentation and links.
