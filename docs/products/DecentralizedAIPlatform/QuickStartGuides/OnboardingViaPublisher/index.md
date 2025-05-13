@@ -85,7 +85,7 @@ Provide users easy ways to contact you:
 Critical settings for secure operations:
 
 - **Payment Address** *(required)*  
-  Ethereum address to receive AGIX tokens.
+  Ethereum address to receive ASI (FET) tokens.
   > 📌 Ensure secure access to this address.
 
 - **ETCD Endpoint** *(required)*  
@@ -167,7 +167,7 @@ Set how users interact with and pay for your service:
   > Provide UI files for interactive demos. You can create your own UI—learn more [here](/docs/products/DecentralizedAIPlatform/QuickStartGuides/CreatingUIForTheService/).
 
 - **AI Service Price** *(required)*  
-  > Specify the price in AGIX tokens per individual service call.
+  > Specify the price in ASI (FET) tokens per individual service call.
 
 - **Demo Free Calls** *(required)*  
   > Set the number of free trial calls new users can make.

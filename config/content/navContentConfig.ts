@@ -13,7 +13,7 @@ export default [
             },
             {
                 text: "AI Marketplace",
-                link: "https://beta.singularitynet.io/",
+                link: "https://marketplace.singularitynet.io/",
             },
             {
                 text: "Publisher Portal",

@@ -398,29 +398,34 @@ body {
 
 #main-links-image .middle-link {
   top: 40%;
-  left: 55%;
+  left: 51%;
 }
 
 #eth-test-faucet {
-  left: 25%;
+  left: 23.5%;
 }
 
-#agix-faucet
+#asi-faucet
 {
-  left: 40%;
+  left: 37%;
 }
 
 #mainnet-publisher{
-  left: 55%;
+  left: 51%;
 }
 
 #testnet-publisher {
-  left: 70%;
+  left: 65%;
 }
 
 #testnet-marketplace,
 #mainnet-marketplace {
-  left: 86%;
+  left: 77%;
+}
+
+#agix-testnet-marketplace,
+#agix-mainnet-marketplace {
+  left: 88%;
 }
 
 @media (min-width: 1770px) {

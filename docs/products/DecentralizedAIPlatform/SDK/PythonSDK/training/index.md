@@ -60,7 +60,7 @@ service_client.training.<METHOD_NAME>
 ## Payment
 
 Some of the training methods, namely `upload_and_validate` and `train_model`, are paid as well as the regular service call. 
-Accordingly, you need to pay some AGIX to take advantage of the training. For this, as for a regular service call, 
+Accordingly, you need to pay some ASI (FET) to take advantage of the training. For this, as for a regular service call, 
 you need a payment channel with the required amount of funds on it and expiration (in Python SDK, the selection, 
 opening or adding funds to the channel is done automatically). 
 

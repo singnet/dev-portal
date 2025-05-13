@@ -45,7 +45,7 @@ In the process of publishing your service, you will have to install and configur
 Latest version of [Daemon](https://github.com/singnet/snet-daemon) for your service. It must also be installed and configured.
 
 Note! Your ETCD, Daemon and services can be on different machines or on one - on your preference.
-To make sure everything works and test your service, you can go through the exact same process in Sepolia testnet on test publisher portal: https://testnet-publisher.singularitynet.io
+To make sure everything works and test your service, you can go through the exact same process in Sepolia testnet on test publisher portal: https://testnet.publisher.singularitynet.io
 
 And if ready for publish your service use: https://publisher.singularitynet.io/
 

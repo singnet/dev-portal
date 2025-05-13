@@ -3,7 +3,7 @@
 This guide will walk you through the steps to train a model using the services provided. Follow the instruction below to get started.
 
 ## If You Already Have a prepared dataset:
-1. Register or log in to your account at [https://beta.singularitynet.io/](https://beta.singularitynet.io/).
+1. Register or log in to your account at [https://marketplace.singularitynet.io/](https://marketplace.singularitynet.io/).
 2. Select a service that has the training function enabled.
 
 You can find out if training is available for this service in this section:

@@ -2,7 +2,7 @@
 
 **Overview**
 
-This page allows the user to extend the duration of a channel, and add AGIX to it.
+This page allows the user to extend the duration of a channel, and add ASI (FET) to it.
 
 **Detailed Structure and Features**
 

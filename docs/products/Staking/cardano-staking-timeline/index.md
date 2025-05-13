@@ -13,19 +13,19 @@ After the Staking/Withdrawal Period is over, then comes Rewards Distribution Per
 
 <br>
   Example of accruing rewards logic for user:
-  * Window 1: User deposits 5 AGIX
-    * New deposit = 5 AGIX
-    * Rewards = 0 AGIX
-  * Window 2: User deposits 10 AGIX
-    * Confirmed stake  = 5 AGIX
-    * New deposit = 10 AGIX
-    * Rewards (1) are accrued to user for 5 AGIX stake
+  * Window 1: User deposits 5 ASI (FET)
+    * New deposit = 5 ASI (FET)
+    * Rewards = 0 ASI (FET)
+  * Window 2: User deposits 10 ASI (FET)
+    * Confirmed stake  = 5 ASI (FET)
+    * New deposit = 10 ASI (FET)
+    * Rewards (1) are accrued to user for 5 ASI (FET) stake
   * Window 3: User doesn’t deposit anything
-    * Confirmed stake = 15 AGIX
-    * Rewards (2) are accrued to user for 15 AGIX stake + rewards(1)
+    * Confirmed stake = 15 ASI (FET)
+    * Rewards (2) are accrued to user for 15 ASI (FET) stake + rewards(1)
   * Window 4:
-    * User’s final (confirmed) stake = 15 AGIX
-    * Rewards are accrued to user for 15 AGIX stake + rewards(2)
+    * User’s final (confirmed) stake = 15 ASI (FET)
+    * Rewards are accrued to user for 15 ASI (FET) stake + rewards(2)
 <br>
 
 Examples of user’s behavior:

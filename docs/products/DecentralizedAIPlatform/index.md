@@ -2,7 +2,7 @@
 
 **SingularityNET (SNET)** is an open and decentralized network of AI services made accessible through the Blockchain. Developers publish their services to the SingularityNET network, and anyone on the network can use the service using the internet connection.
 
-Developers can charge for the usage of their services using the native **AGIX** token.
+Developers can charge for the usage of their services using the native **ASI (FET)** token.
 
 Services can span the entire gamut of offerings in artificial intelligence and machine learning. Services can provide inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. The services can be as simple as wrapping a well-known algorithm such as A\* path planning, a complete end-to-end solution for an industry problem, or a standalone AI application. Developers can also deploy autonomous AI agents that interoperate with other services on the network.
 
@@ -74,13 +74,13 @@ To call the service there are several options:
 <span style="font-weight: 700">Free calls</span> – the amount of these calls are configured by the Service Provider. The main idea is to use an AI service for free to try it. And in case of good and expected experience use it on a paid basis. It is always nice to try before buying!
 
 <span style="font-weight: 700">Paid calls</span> – this is a paid option where Service Consumers can buy more calls. For now the Platform supports a pay per call system, but later we will present subscriptions and other billing options!
-This means that Service Consumer <span style="font-weight: 700">DOES NOT</span> need to make a paid transaction each time when the service is called! For the first time when Service Consumer starts paid interaction with the AI service this Service Consumer opens a payment channel via Multi Party Escrow contract for some period of time which is configured by Service Consumer. This channel can be replenished with any amount of AGIX at any moment (before the closing of the channel due to time period setting). After replenishment Service Consumer can call the AI service and a special component [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/) will count the number of calls securely and check the payment channel for sufficient funds which requires no transaction and blockchain fee payment at the service calling moment. You can check more detailed information about payment channels in the documentation [here](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
+This means that Service Consumer <span style="font-weight: 700">DOES NOT</span> need to make a paid transaction each time when the service is called! For the first time when Service Consumer starts paid interaction with the AI service this Service Consumer opens a payment channel via Multi Party Escrow contract for some period of time which is configured by Service Consumer. This channel can be replenished with any amount of ASI (FET) at any moment (before the closing of the channel due to time period setting). After replenishment Service Consumer can call the AI service and a special component [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/) will count the number of calls securely and check the payment channel for sufficient funds which requires no transaction and blockchain fee payment at the service calling moment. You can check more detailed information about payment channels in the documentation [here](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 
 To buy paid calls Service Consumer can do it in two ways:
 
-Use <span style="font-weight: 700">crypto wallet</span> – payments can be done directly via crypto wallet using AGIX token in the Ethereum blockchain. Note, that it is a blockchain transaction which will also require some blockchain fee paid in ETH crypto.
+Use <span style="font-weight: 700">crypto wallet</span> – payments can be done directly via crypto wallet using ASI (FET) token in the Ethereum blockchain. Note, that it is a blockchain transaction which will also require some blockchain fee paid in ETH crypto.
 
-Use <span style="font-weight: 700">paypal</span> to exchange fiat money to AGIX token (available only on the AI Marketplace now).
+Use <span style="font-weight: 700">paypal</span> to exchange fiat money to ASI (FET) token (available only on the AI Marketplace now).
 
 ## Decentralized AI Platform documentation structure
 

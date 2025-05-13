@@ -60,11 +60,11 @@ The SingularityNET DApp is essentially a rich Registry explorer. It loads the Re
 
 MetaMask is an internet browser extension that allows users to interact with the Ethereum Blockchain and its decentralized applications. MetaMask serves as your access portal for both the Ethereum Mainnet and Sepolia.
 
-### AGIX
+### ASI (FET)
 
-AGIX is the proprietary cryptocurrency token used by the SingularityNET platform. SingularityNET (AGIX) is an Ethereum based token complying with ERC-20 standards. The AGIX token will be used to settle a transaction over the Blockchain.
+ASI (FET) is the proprietary cryptocurrency token used by the SingularityNET platform. SingularityNET (ASI (FET)) is an Ethereum based token complying with ERC-20 standards. The ASI (FET) token will be used to settle a transaction over the Blockchain.
 
-### AGIX Token
+### ASI (FET) Token
 
 Tokens can be staked for voting rights and to become an Agent or spent on goods and services on the platform.
 

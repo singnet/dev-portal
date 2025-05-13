@@ -64,13 +64,13 @@ chmod +x macos_run.sh
 5. Press "Create Organization". Organization was successfully created!
    <ImageViewer src="/assets/images/products/AIMarketplace/TUI/OrganizationSuccessfullyCreatedTUI.webp" alt="Organization successfully created"/>
 
-## Step 5: Deposit some AGIX
+## Step 5: Deposit some ASI (FET)
 
 <ImageViewer src="/assets/images/products/AIMarketplace/TUI/AccountPage.webp" alt="AccountPage"/>
 
 1. Go to Account page
 2. Go to Deposit
-3. Enter amount of AGIX Token you want to deposit.
+3. Enter amount of ASI (FET) Token you want to deposit.
    <ImageViewer src="/assets/images/products/AIMarketplace/TUI/FilledDepositAGIXPage.webp" alt="Filled Deposit Page"/>
 4. Press "Deposit"
 

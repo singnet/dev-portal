@@ -34,11 +34,11 @@ See the [CLI documentation](/docs/products/DecentralizedAIPlatform/CLI/Manual/) 
 Ether is used to pay for interactions on the block chain (known as gas).
 
 The transactions you make a call to SingularityNET are:
-- Transfer AGIX into the multi-party escrow account,
+- Transfer ASI (FET) into the multi-party escrow account,
 - Create a payment channel for a service published in the SingularityNET registry, and
-- Transfer AGIX into the payment channel and set the timeout
+- Transfer ASI (FET) into the payment channel and set the timeout
 
-After that, you interact with the service directly and won't need to pay for further transactions unless you want add more AGIX
+After that, you interact with the service directly and won't need to pay for further transactions unless you want add more ASI (FET)
 or extend the timeout for the payment channel.
 
 So how do you get Ether? The mainnet requires you to buy or mine it, but we're going to use a test net for now.
@@ -47,11 +47,11 @@ Luckily for test networks you can [go to a faucet to request some Ether for free
 
 To use the faucet you need to [create a wallet](/docs/products/AIMarketplace/ForConsumers/metamask-wallet/), and then provide them with your wallet's public address.
 
-### Step 2. Get some AGIX
+### Step 2. Get some ASI (FET)
 
-We provide a faucet to get AGIX for Sepolia [network](https://faucet.singularitynet.io/)
+We provide a faucet to get ASI (FET) for Sepolia [network](https://faucet.singularitynet.io/)
 
-You'll need a github account to authenticate, and there after you can request AGIX every 24 hours. 
+You'll need a github account to authenticate, and there after you can request ASI (FET) every 24 hours. 
 
 ### Install snet-cli
 ```sh
@@ -83,7 +83,7 @@ Replace `<YOUR_API_KEY>` with your Alchemy API key. If you don’t have one, fol
 ```sh
 snet account balance # check balance (all tokens belong to this identity)
 snet account deposit 0.000001 # Deposit tokens to MPE and open a payment channel to the new service
-snet channel open-init <org_id> <group_name> 0.000001 +2days # Open a channel and transfer AGIX into the channel
+snet channel open-init <org_id> <group_name> 0.000001 +2days # Open a channel and transfer ASI (FET) into the channel
 ```
 ### Make a call to a Service 
 

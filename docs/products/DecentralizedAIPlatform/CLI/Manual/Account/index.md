@@ -26,7 +26,7 @@ session.identity.default_wallet_index)
 
 ## balance
 
-Print balance of AGIX tokens and balance of MPE wallet
+Print balance of ASI (FET) tokens and balance of MPE wallet
 
 ```sh
 snet account balance [-h]
@@ -69,7 +69,7 @@ session.identity.default_wallet_index)
 
 ## deposit
 
-Deposit AGIX tokens to MPE wallet
+Deposit ASI (FET) tokens to MPE wallet
 
 ```sh
 snet account deposit [-h]
@@ -86,7 +86,7 @@ snet account deposit [-h]
 
     
 
-Amount of AGIX tokens to deposit in MPE wallet
+Amount of ASI (FET) tokens to deposit in MPE wallet
 
 #### Named Arguments
 
@@ -139,7 +139,7 @@ Default: `False`
 
 ## withdraw
 
-Withdraw AGIX tokens from MPE wallet
+Withdraw ASI (FET) tokens from MPE wallet
 
 ```sh
 snet account withdraw [-h]
@@ -155,7 +155,7 @@ snet account withdraw [-h]
 
     
 
-Amount of AGIX tokens to withdraw from MPE wallet
+Amount of ASI (FET) tokens to withdraw from MPE wallet
 
 #### Named Arguments
 
@@ -201,7 +201,7 @@ Default: `False`
 
 ## transfer
 
-Transfer AGIX tokens inside MPE wallet
+Transfer ASI (FET) tokens inside MPE wallet
 
 ```sh
 snet account transfer [-h]
@@ -223,7 +223,7 @@ Address of the receiver
 
     
 
-Amount of AGIX tokens to be transferred to another account inside MPE wallet
+Amount of ASI (FET) tokens to be transferred to another account inside MPE wallet
 
 #### Named Arguments
 

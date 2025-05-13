@@ -70,6 +70,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         link: "/docs/products/DecentralizedAIPlatform/useful-links/"
     },
     {
+        text: "AGIX -> ASI (FET) Migration",
+        link: "/docs/products/DecentralizedAIPlatform/AGIXToASIMigration/"
+    },
+    {
         text: "Quick Start Guides",
         link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/",
         collapsed: true,
@@ -87,7 +91,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/QuickStartGuides/CreatingUIForTheService/",
             },
             {
-                text: "Service Onboarding via Publisher",
+                text: "Onboarding via Publisher",
                 link:"/docs/products/DecentralizedAIPlatform/QuickStartGuides/OnboardingViaPublisher/",
             },
             {
@@ -893,6 +897,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                         link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/training/",
                     },
                     {
+                        text: "Concurrency",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/concurrency/",
+                    },
+                    {
                         text: "Documentation",
                         collapsed: true,
                         link: "/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/Documentation/",
@@ -1208,8 +1216,8 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/ethereum/",
             },
             {
-                text: "AGIX Token and faucet",
-                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/agix-token/",
+                text: "ASI (FET) Token and faucet",
+                link: "/docs/products/DecentralizedAIPlatform/CoreConcepts/asi-token/",
             },
             {
                 text: "Concepts of organization",
