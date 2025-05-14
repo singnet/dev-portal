@@ -109,7 +109,7 @@ snet set current_multipartyescrow_at <AGIX_MPE_CONTRACT>
 
 ### Python SDK Configuration
 
-* [Latest Python SDK Release](https://github.com/singnet/snet-sdk-python/latest)
+* [Latest Python SDK Release](https://github.com/singnet/snet-sdk-python/releases/latest)
 
 By default, the SDK will use ASI (FET) infrastructure unless otherwise specified. If you want to explicitly use Legacy AGIX, you need to provide the corresponding MPE and token contract addresses as shown below.
 
