@@ -2,7 +2,7 @@
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/training/responses.py) to GitHub
 
-Entities:
+## Entities:
 1. [ModelMethodMessage](#class-modelmethodmessage)
 2. [ModelStatus](#class-modelstatus)
 3. [Model](#class-model)

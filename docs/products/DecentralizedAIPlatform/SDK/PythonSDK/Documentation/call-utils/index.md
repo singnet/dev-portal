@@ -2,7 +2,7 @@
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/utils/call_utils.py) to GitHub
 
-Entities:
+## Entities:
 1. [_ClientCallDetails](#class-clientcalldetails)
 2. [create_intercept_call_func](#function-create-intercept-call_func)
 

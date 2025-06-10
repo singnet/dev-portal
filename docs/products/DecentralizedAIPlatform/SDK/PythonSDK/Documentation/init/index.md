@@ -2,18 +2,37 @@
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/__init__.py) to GitHub
 
-Entities:
-1. [SnetSDK](#class-snetsdk)
-   - [\_\_init\_\_](#init)
-   - [create_service_client](#create-service-client)
-   - [get_service_stub](#get-service-stub)
-   - [get_module_by_keyword](#get-module-by-keyword)
-   - [get_service_metadata](#get-service-metadata)
-   - [_get_first_group](#get-first-group)
-   - [_get_group_by_group_name](#get-group-by-group-name)
-   - [_get_service_group_details](#get-service-group-details)
-   - [get_organization_list](#get-organization-list)
-   - [get_services_list](#get-services-list)
+## Entities:
+1. [PaymentStrategyType](#class-paymentstrategytype)
+2. [SnetSDK](#class-snetsdk)
+   - [\_\_init\_\_](#__init__)
+   - [create_service_client](#create_service_client)
+   - [get_service_stub](#get_service_stub)
+   - [get_module_by_keyword](#get_module_by_keyword)
+   - [get_service_metadata](#get_service_metadata)
+   - [_get_first_group](#_get_first_group)
+   - [_get_group_by_group_name](#_get_group_by_group_name)
+   - [_get_service_group_details](#_get_service_group_details)
+   - [get_organization_list](#get_organization_list)
+   - [get_services_list](#get_services_list)
+
+## Class `PaymentStrategyType`
+
+extends: `Enum`
+
+is extended by: -
+
+### description
+
+This is an `enum` that represents the available payment strategies. It is used to determine which payment 
+strategy to use when initializing the SDK.
+
+### members
+
+- `DEFAULT`
+- `FREE_CALL`
+- `PAID_CALL`
+- `PREPAID_CALL`
 
 ## Class `SnetSDK`
 
@@ -44,14 +63,14 @@ payment channels.
 
 Initializes a new instance of the `SnetSDK` class. Initializes `web3` with the specified Ethereum RPC endpoint.
 Instantiates the MPE contract with the specified contract address if provided, otherwise uses the default MPE contract.
-Instantiates storage provider.
+Instantiates the IPFS client with the specified IPFS endpoint if provided, otherwise uses the default IPFS endpoint.
 Instantiates the Registry contract with the specified contract address if provided, otherwise uses the default Registry 
 contract. Instantiates the Account object with the specified Web3 client, SDK configuration, and MPE contract.
 
 ##### args:
 
 - `sdk_config` (Config): A `Config` object containing the SDK configuration.
-- `metadata_provider` (MetadataProvider): A `StorageProvider` object. Defaults to _None_.
+- `metadata_provider` (MetadataProvider): A `MetadataProvider` object. Defaults to _None_.
 
 ##### returns:
 
@@ -63,7 +82,7 @@ If `force_update` is True or if there are no gRPC stubs for the given service, t
 and compiled using the `generate_client_library()` method of the `ClientLibGenerator` class instance. 
 It then initializes `payment_strategy` to `DefaultPaymentStrategy` if it is not specified. 
 It also sets the `options` dictionary with some default values. If `self._metadata_provider` is not specified 
-it is initialized by `StorageProvider`. It also gets the service stub using the `self.get_service_stub` 
+it is initialized by `IPFSMetadataProvider`. It also gets the service stub using the `self.get_service_stub` 
 method and the pb2 module using the `self.get_module_by_keyword` method. Finally, it creates a new instance 
 of the `ServiceClient` class with all the required parameters, which is then returned.
 
@@ -73,8 +92,8 @@ of the `ServiceClient` class with all the required parameters, which is then ret
 - `service_id` (str): The ID of the service.
 - `group_name` (str): The name of the payment group. Defaults to _None_.
 - `payment_strategy` (PaymentStrategy): The payment channel management strategy. Defaults to _None_.
-- `free_call_auth_token_bin` (str): The free call authentication token in binary format. Defaults to _None_.
-- `free_call_token_expiry_block` (int): The block number when the free call token expires. Defaults to _None_.
+- `payment_strategy_type` (PaymentStrategyType): The type of payment management strategy. 
+Defaults to `PaymentStrategyType.DEFAULT`.
 - `options` (dict): Additional options for the service client. Defaults to _None_.
 - `concurrent_calls` (int): The number of concurrent calls allowed. Defaults to 1.
 
