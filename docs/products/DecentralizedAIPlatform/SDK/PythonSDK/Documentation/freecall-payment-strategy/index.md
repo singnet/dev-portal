@@ -1,13 +1,13 @@
-
-# module : sdk.payment_strategies.freecall_payment_strategy
+# module: sdk.payment_strategies.freecall_payment_strategy
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/payment_strategies/freecall_payment_strategy.py) to GitHub
 
 ## Entities:
 1. [FreeCallPaymentStrategy](#class-freecallpaymentstrategy)
-   - [is_free_call_available](#is-free-call-available)
-   - [get_payment_metadata](#get-payment-metadata)
-   - [generate_signature](#generate-signature)
+   - [get_free_calls_available](#get_free_calls_available)
+   - [get_payment_metadata](#get_payment_metadata)
+   - [generate_signature](#generate_signature)
+   - [get_free_call_token_details](#get_free_call_token_details)
 
 ## Class `FreeCallPaymentStrategy`
 
@@ -18,14 +18,15 @@ is extended by: -
 ### description
 
 The `FreeCallPaymentStrategy` class is a concrete implementation of the `PaymentStrategy` interface.
-It allows you to use free calls (which can be received from the [Dapp](https://marketplace.singularitynet.io/)) to 
+It allows you to use free calls (which can be received from the daemon) to 
 call services. 
 
 ### methods
 
-### `is_free_call_available`
+### `get_free_calls_available`
 
-Checks if a free call is available for a given service client.
+Using grpc calls to the daemon, it gets a free call token, and also gets and returns the number of free calls 
+available.
 
 ##### args:
 
@@ -33,13 +34,13 @@ Checks if a free call is available for a given service client.
 
 ##### returns:
 
-- True if a free call is available, False otherwise. (bool)
+- Amount of free calls available. (int)
 
 ##### raises:
 
 -  Exception: If an error occurs while checking the free call availability.
 
-_Note_: If any exception occurs during the process, it returns False.
+_Note_: If an error occurs specifically during the grpc call to `GetFreeCallsAvailable`, 0 will be returned.
 
 ### `get_payment_metadata`
 
@@ -61,6 +62,8 @@ Generates a signature for the given service client using the provided free call 
 ##### args:
 
 - `service_client` (ServiceClient): The service client instance.
+- `current_block_number` (int, optional): The current block number. Defaults to _None_.
+- `with_token` (bool, optional): Whether to include the free call token in the signature. Defaults to _True_.
 
 ##### returns:
 
@@ -69,3 +72,20 @@ Generates a signature for the given service client using the provided free call 
 ##### raises:
 
 - Exception: If any of the required parameters for the free call strategy are missing.
+
+### `get_free_call_token_details`
+
+Sends a request to the daemon and receives a free call token and its details.
+
+##### args:
+
+- `service_client` (ServiceClient): The service client instance.
+- `current_block_number` (int, optional): The current block number. Defaults to _None_.
+
+##### returns:
+
+- A tuple containing the free call token and the token expiration block number. (tuple[str, int])
+
+##### raises:
+
+- Exception: If an error occurred while receiving the token.

@@ -2,7 +2,7 @@
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/utils/utils.py) to GitHub
 
-Entities:
+## Entities:
 1. [safe_address_converter](#function-safe-address-converter)
 2. [type_converter](#function-type-converter)
 3. [bytes32_to_str](#function-bytes32-to-str)

@@ -2,7 +2,7 @@
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/client_lib_generator.py) to GitHub
 
-Entities:
+## Entities:
 1. [ClientLibGenerator](#class-clientlibgenerator)
    - [\_\_init\_\_](#init)
    - [generate_client_library](#generate-client-library)

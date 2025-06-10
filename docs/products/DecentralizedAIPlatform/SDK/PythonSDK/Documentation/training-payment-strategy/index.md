@@ -2,7 +2,7 @@
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/payment_strategies/training_payment_strategy.py) to GitHub
 
-Entities:
+## Entities:
 1. [TrainingPaymentStrategy](#class-trainingpaymentstrategy)
     - [\_\_init\_\_](#init)
     - [get_price](#get-price)

@@ -2,7 +2,7 @@
 
 [Link](https://github.com/singnet/snet-sdk-python/blob/master/snet/sdk/training/training.py) to GitHub
 
-Entities:
+## Entities:
 1. [Training](#class-training)
    - [\_\_init\_\_](#init)
    - [get_model_id_object](#get-model-id-object)
