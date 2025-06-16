@@ -1097,9 +1097,8 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
             },
             {
                 text: "FAQ",
-                link: "/docs/products/DecentralizedAIPlatform/Sandbox/FAQ",
-            },
-
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/FAQ/",
+            }
         ],
     },
     {
