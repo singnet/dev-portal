@@ -214,7 +214,7 @@ Complete the following steps listed in the [document](https://drive.google.com/o
  snet service metadata-set-freecall-signer-address default_group $SIGNERADDRESS --metadata-file $MD_FILE
 ```
 
-### Specify a valid private key 'pvt_key_for_metering' to include during the service publication process.”
+### Specify a valid private key 'private_key_for_metering' to include during the service publication process.”
 When you enable the free calls and Metering, specify the private key to initialize the Daemon Otherwise, the  Daemon sends the request to metering, which checks the associated public address mapped in the configuration of that Daemon.
 
 ```bash
