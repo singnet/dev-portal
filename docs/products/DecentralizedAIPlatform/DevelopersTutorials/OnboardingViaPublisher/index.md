@@ -181,7 +181,7 @@ Define critical settings for your AI service daemon:
 - **Daemon Endpoint** *(required)*  
   > Publicly accessible URL where your daemon will be hosted. Must start with `https://`.
 
-- **Daemon Address (Ethereum public address)** *(required)*  
+- **Daemon Address and Free Call signer (Ethereum public address)** *(required)*  
   > Generate a secure Ethereum address and private key using the following Python script:
 
 ```python
@@ -319,7 +319,9 @@ Below is a complete example configuration, assuming you're using **embedded ETCD
   
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
+
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
   
   "ethereum_json_rpc_http_endpoint": "https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
@@ -359,7 +361,9 @@ Below is a complete example configuration, assuming you're using **embedded ETCD
   
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
+
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
   
   "ethereum_json_rpc_http_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
@@ -398,6 +402,7 @@ Below is a complete example configuration, assuming you're using **embedded ETCD
 | `<SERVICE_PORT>`            | Port number your service listens on.                                |
 | `<PATH_TO_DOMAIN_CERTS>`    | Path to your SSL domain certificates.                               |
 | `<METERING_KEY>`            | Private key generated for metering.                                 |
+| `<FREE_CALL_KEY>`           | Private key generated for free calls.                               |
 | `<YOUR_API_KEY>`            | Alchemy API key (see preparation step).                             |
 
 ---
@@ -414,7 +419,8 @@ Below is a complete example configuration, assuming you're using **embedded ETCD
 | `service_endpoint`                           | Your AI service's internal URL.                              |
 | `ssl_cert`, `ssl_key`                        | Paths to SSL certificate files.                              |
 | `metering_enabled`, `metering_endpoint`      | Metering settings; usually remain unchanged.                 |
-| `pvt_key_for_metering`                       | Private Ethereum key for service call metering.              |
+| `private_key_for_metering`                   | Private Ethereum key for service call metering.              |
+| `private_key_for_free_calls`                 | Private Ethereum key for service call free call.             |
 | `ethereum_json_rpc_http/ws_endpoint`         | Blockchain connection endpoints.                             |
 | `payment_channel_storage_server`             | Embedded ETCD configuration; no modification if default.     |
 | `log`                                        | Logging settings for daemon operations.                      |
