@@ -86,4 +86,8 @@ export default {
 .accordion-item.expanded .accordion-item-toggler {
     transform: rotate(180deg);
 }
+
+.accordion-item-description pre {
+    white-space: pre-wrap;
+}
 </style>

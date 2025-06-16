@@ -1095,6 +1095,11 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "How to use UI Sandbox version 1 (old)",
                 link: "/docs/products/DecentralizedAIPlatform/Sandbox/version-1/",
             },
+            {
+                text: "FAQ",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/FAQ",
+            },
+
         ],
     },
     {
