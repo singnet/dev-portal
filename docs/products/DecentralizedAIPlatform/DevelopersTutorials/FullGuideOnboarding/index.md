@@ -87,44 +87,6 @@ To secure your daemon with SSL, generate **domain certificates** using `certbot`
 
    **Result:** You now have `ssl_cert` and `ssl_key` parameters for your daemon configuration.
 
-## **Enabling Metering and Free Calls**
-
-To enable **Metering** and **Free Calls**, you must generate a **public address** and a **private key**. These credentials will be used to configure both features.
-You can either use **the same key pair** for both metering and free calls, or **generate separate ones** for each.
-
-### 1. Generate keys using `eth_account`
-
-Run the following Python script to generate a new Ethereum-compatible address and private key using the `eth_account` library:
-
-```python
-from eth_account import Account
-import secrets
-
-key = secrets.token_hex(32)
-acct = Account.from_key(key)
-print("SAVE BUT DO NOT SHARE PRIVATE KEY")
-print("Private key: ", key)
-print("Address: ", acct.address)
-```
-
-> 🔒 **Important:** Store the output securely. The private key grants full control over the corresponding address and should never be shared.
-
-### 2. Use the generated credentials
-
-You will need to use the generated keys in two places:
-
-* **Metering**:
-
-  * Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service.
-  * Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration.
-
-* **Free Calls**:
-
-  * Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service.
-  * Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration.
-
-> ✅ You may **reuse the same key pair** for both Metering and Free Calls, or generate **separate credentials** for better isolation.
-
 ## **Installing the Daemon**
 
 Get the **latest version** of the SingularityNET Daemon from the official GitHub releases page:
@@ -156,6 +118,52 @@ Get the **latest version** of the SingularityNET Daemon from the official GitHub
    ```sh-vue
    sudo cp snetd-linux-amd64-{{ $daemonVersion }} /usr/bin/snetd
    ```
+
+## **Enabling Metering and Free Calls**
+
+To enable **Metering** and **Free Calls**, you must generate a **public address** and a **private key**. These credentials will be used to configure both features.
+You can either use **the same key pair** for both metering and free calls, or **generate separate ones** for each.
+
+### 1. Generate keys
+
+You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+
+:::code-group
+
+```bash
+./snetd generate-key
+```
+
+```python
+from eth_account import Account
+import secrets
+
+key = secrets.token_hex(32)
+acct = Account.from_key(key)
+print("SAVE BUT DO NOT SHARE PRIVATE KEY")
+print("Private key: ", key)
+print("Address: ", acct.address)
+```
+
+:::
+
+> 🔒 **Important:** Store the output securely. The private key grants full control over the corresponding address and should never be shared.
+
+### 2. Use the generated credentials
+
+You will need to use the generated keys in two places:
+
+* **Metering**:
+
+  * Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service.
+  * Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration.
+
+* **Free Calls**:
+
+  * Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service.
+  * Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration.
+
+> ✅ You may **reuse the same key pair** for both Metering and Free Calls, or generate **separate credentials** for better isolation.
 
 ## Configuring the Daemon
 

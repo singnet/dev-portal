@@ -297,23 +297,28 @@ if __name__ == '__main__':
   run()
 ```
 
-## Enabling metering
+## Enabling metering and free calls
 
-1) Run this python script to generate address and key for metering:
+You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
 
-All necessary packets should be already installed if you installed snet-cli
+:::code-group
 
-```py
+```bash
+./snetd generate-key
+```
+
+```python
 from eth_account import Account
 import secrets
 
 key = secrets.token_hex(32)
-acct = Account.privateKeyToAccount(key)
+acct = Account.from_key(key)
 print("SAVE BUT DO NOT SHARE PRIVATE KEY")
 print("Private key: ", key)
 print("Address: ", acct.address)
-
 ```
+
+:::
 
 2) Remember this information. You will need it while configuring daemon and publishing service
 

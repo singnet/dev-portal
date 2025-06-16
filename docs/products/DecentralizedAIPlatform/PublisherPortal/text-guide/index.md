@@ -178,7 +178,13 @@ Define critical settings for your AI service daemon:
   > Publicly accessible URL where your daemon will be hosted. Must start with `https://`.
 
 - **Daemon Address and Free Call signer (Ethereum public address)** *(required)*  
-  > Generate a secure Ethereum address and private key using the following Python script:
+  > Generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+
+:::code-group
+
+```bash
+./snetd generate-key
+```
 
 ```python
 from eth_account import Account
@@ -190,6 +196,8 @@ print("SAVE BUT DO NOT SHARE PRIVATE KEY")
 print("Private key: ", key)
 print("Address: ", acct.address)
 ```
+
+:::
 
 > 📌 **Important:** Keep your private key secure and confidential.
 
@@ -251,9 +259,15 @@ Add these keys to your daemon configuration:
 
 Replace `<YOUR_API_KEY>` with your actual Alchemy API key.
 
-#### **1.2 Generate Metering Private Key**
+#### **1.2 Generate Metering and Free Call Private Key**
 
-Securely generate an Ethereum private key for daemon metering using this Python script:
+You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+
+:::code-group
+
+```bash
+./snetd generate-key
+```
 
 ```python
 from eth_account import Account
@@ -261,10 +275,12 @@ import secrets
 
 key = secrets.token_hex(32)
 acct = Account.from_key(key)
-print("SAVE BUT DO NOT SHARE THIS PRIVATE KEY")
-print("Private key:", key)
-print("Address:", acct.address)
+print("SAVE BUT DO NOT SHARE PRIVATE KEY")
+print("Private key: ", key)
+print("Address: ", acct.address)
 ```
+
+:::
 
 Save your private key securely.
 
