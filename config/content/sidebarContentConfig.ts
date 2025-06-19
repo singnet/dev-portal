@@ -1007,6 +1007,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
                 items: [
                     {
+                        text: "JS SDK (New Architecture)",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/js-sdk-new-architecture/",
+                    },
+                    {
                         text: "WebJS SDK",
                         link:"/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
                         collapsed: true,
