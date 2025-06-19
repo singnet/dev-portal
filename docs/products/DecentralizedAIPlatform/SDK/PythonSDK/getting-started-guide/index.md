@@ -25,7 +25,7 @@ These instructions are for the development and use of the SingularityNET SDK for
 
 ### Usage
 
-To call a service on a SingularityNET platform, the user must be able to deposit funds (AGIX tokens) to the 
+To call a service on a SingularityNET platform, the user must be able to deposit funds (FET tokens) to the 
 [Multi-Party Escrow](https://dev.singularitynet.io/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe) Smart Contract.
 To deposit these tokens or do any other transaction on the Ethereum blockchain.
 
@@ -195,7 +195,7 @@ managed by the SDK. But anyway you can use them if you want.
 
 #### Open channel with the specified amount of funds and expiration
 
-`open_channel()`[[1]](#1-this-method-uses-a-call-to-a-paid-smart-contract-function) opens a payment channel with the specified amount of AGIX tokens in cogs and expiration time. 
+`open_channel()`[[1]](#1-this-method-uses-a-call-to-a-paid-smart-contract-function) opens a payment channel with the specified amount of FET tokens in cogs and expiration time. 
 Expiration is payment channel's TTL in blocks. When opening a channel, funds are taken from MPE. So they must be 
 pre-deposited on it. For this, you can use the `deposit_to_escrow_account()`[[1]](#1-this-method-uses-a-call-to-a-paid-smart-contract-function) 
 method.
@@ -206,7 +206,7 @@ service_client.open_channel(amount=123456, expiration=33333)
 ```
 
 You can also use the `deposit_and_open_channel()`[[1]](#1-this-method-uses-a-call-to-a-paid-smart-contract-function) 
-method instead. It does the same as the previous one, but first deposits the specified amount of AGIX tokens in cogs 
+method instead. It does the same as the previous one, but first deposits the specified amount of FET tokens in cogs 
 into an MPE.
 
 ```python
@@ -263,7 +263,7 @@ This model is especially useful for batch inference or rapid sequential calls wi
 ### Train call
 
 Some of the training methods, namely `upload_and_validate` and `train_model`, are paid as well as the regular service call. 
-Accordingly, you need to pay some AGIX to take advantage of the training. For this, as for a regular service call, 
+Accordingly, you need to pay some FET to take advantage of the training. For this, as for a regular service call, 
 you need a payment channel with the required amount of funds on it and expiration (in Python SDK, the selection, 
 opening or adding funds to the channel is done automatically). 
 
