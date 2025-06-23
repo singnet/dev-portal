@@ -173,6 +173,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/",
             },
             {
+                text: "Daemon New Free Calls",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-new-free-calls/",
+            },
+            {
                 text: "ETCD Setup",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/",
             },
