@@ -177,8 +177,14 @@ Define critical settings for your AI service daemon:
 - **Daemon Endpoint** *(required)*  
   > Publicly accessible URL where your daemon will be hosted. Must start with `https://`.
 
-- **Daemon Address (Ethereum public address)** *(required)*  
-  > Generate a secure Ethereum address and private key using the following Python script:
+- **Daemon Address and Free Call signer (Ethereum public address)** *(required)*  
+  > Generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+
+:::code-group
+
+```bash
+./snetd generate-key
+```
 
 ```python
 from eth_account import Account
@@ -190,6 +196,8 @@ print("SAVE BUT DO NOT SHARE PRIVATE KEY")
 print("Private key: ", key)
 print("Address: ", acct.address)
 ```
+
+:::
 
 > 📌 **Important:** Keep your private key secure and confidential.
 
@@ -251,9 +259,15 @@ Add these keys to your daemon configuration:
 
 Replace `<YOUR_API_KEY>` with your actual Alchemy API key.
 
-#### **1.2 Generate Metering Private Key**
+#### **1.2 Generate Metering and Free Call Private Key**
 
-Securely generate an Ethereum private key for daemon metering using this Python script:
+You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+
+:::code-group
+
+```bash
+./snetd generate-key
+```
 
 ```python
 from eth_account import Account
@@ -261,10 +275,12 @@ import secrets
 
 key = secrets.token_hex(32)
 acct = Account.from_key(key)
-print("SAVE BUT DO NOT SHARE THIS PRIVATE KEY")
-print("Private key:", key)
-print("Address:", acct.address)
+print("SAVE BUT DO NOT SHARE PRIVATE KEY")
+print("Private key: ", key)
+print("Address: ", acct.address)
 ```
+
+:::
 
 Save your private key securely.
 
@@ -315,7 +331,9 @@ Below is a complete example configuration, assuming you're using **embedded ETCD
   
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
+
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
   
   "ethereum_json_rpc_http_endpoint": "https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
@@ -355,7 +373,9 @@ Below is a complete example configuration, assuming you're using **embedded ETCD
   
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
+
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
   
   "ethereum_json_rpc_http_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
@@ -394,6 +414,7 @@ Below is a complete example configuration, assuming you're using **embedded ETCD
 | `<SERVICE_PORT>`            | Port number your service listens on.                                |
 | `<PATH_TO_DOMAIN_CERTS>`    | Path to your SSL domain certificates.                               |
 | `<METERING_KEY>`            | Private key generated for metering.                                 |
+| `<FREE_CALL_KEY>`           | Private key generated for free calls.                               |
 | `<YOUR_API_KEY>`            | Alchemy API key (see preparation step).                             |
 
 ---
@@ -410,7 +431,8 @@ Below is a complete example configuration, assuming you're using **embedded ETCD
 | `service_endpoint`                           | Your AI service's internal URL.                              |
 | `ssl_cert`, `ssl_key`                        | Paths to SSL certificate files.                              |
 | `metering_enabled`, `metering_endpoint`      | Metering settings; usually remain unchanged.                 |
-| `pvt_key_for_metering`                       | Private Ethereum key for service call metering.              |
+| `private_key_for_metering`                   | Private Ethereum key for service call metering.              |
+| `private_key_for_free_calls`                 | Private Ethereum key for service call free call.             |
 | `ethereum_json_rpc_http/ws_endpoint`         | Blockchain connection endpoints.                             |
 | `payment_channel_storage_server`             | Embedded ETCD configuration; no modification if default.     |
 | `log`                                        | Logging settings for daemon operations.                      |
@@ -470,16 +492,3 @@ Successful output looks like:
 ---
 
 ✨ **Your daemon is now successfully installed and running!**
-
-
-## Invite Workflow - Adding members to an Organization
-
-The platform provides a simple workflow to add new members, the owner just needs to add the email address of the member, the system sends invitation to the member based on accept invitation
-and also ensures all the required details like (Wallet address) of the member are furnished when the invitation is accepted.
-
- <ImageViewer src="/assets/images/products/AIMarketplace/publisher/Invite_Workflow.webp" alt="Invite Members"/>
-
-## Claim easily from Publisher portal
-
-Claims can now be availed using the publisher portal.
-<ImageViewer src="/assets/images/products/AIMarketplace/publisher/WalletAccount.webp" alt="Claim"/>

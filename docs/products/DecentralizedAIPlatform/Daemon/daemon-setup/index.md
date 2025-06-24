@@ -105,7 +105,8 @@ The `init` command will create a `snetd.config.json` file. You will need to modi
   "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
   "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "log": {"level": "debug", "output": {"type": "stdout"}}

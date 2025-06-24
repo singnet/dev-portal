@@ -297,23 +297,28 @@ if __name__ == '__main__':
   run()
 ```
 
-## Enabling metering
+## Enabling metering and free calls
 
-1) Run this python script to generate address and key for metering:
+You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
 
-All necessary packets should be already installed if you installed snet-cli
+:::code-group
 
-```py
+```bash
+./snetd generate-key
+```
+
+```python
 from eth_account import Account
 import secrets
 
 key = secrets.token_hex(32)
-acct = Account.privateKeyToAccount(key)
+acct = Account.from_key(key)
 print("SAVE BUT DO NOT SHARE PRIVATE KEY")
 print("Private key: ", key)
 print("Address: ", acct.address)
-
 ```
+
+:::
 
 2) Remember this information. You will need it while configuring daemon and publishing service
 
@@ -588,7 +593,7 @@ Add the following parameters:
   "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
   "ethereum_json_rpc_http_endpoint": "http://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   "log": {"level": "debug", "output": {"type": "stdout"}}
@@ -627,7 +632,7 @@ Here’s an example of a complete daemon configuration file for **Mainnet**:
   "ssl_key": "/home/user/domain-certs/privkey.pem",
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "947cddc74476bac4ac0a9ddbf8a136a0c7b4a8d364c6252b2d91e4226fe1bc1f",
+  "private_key_for_metering": "947cddc74476bac4ac0a9ddbf8a136a0c7b4a8d364c6252b2d91e4226fe1bc1f",
   "ethereum_json_rpc_http_endpoint": "http://eth-mainnet.g.alchemy.com/v2/your_alchemy_api_key",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/your_alchemy_api_key",
   "log": {"level": "debug", "output": {"type": "stdout"}}

@@ -173,6 +173,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-ssl-setup/",
             },
             {
+                text: "Daemon New Free Calls",
+                link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-new-free-calls/",
+            },
+            {
                 text: "ETCD Setup",
                 link: "/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/",
             },
@@ -1007,6 +1011,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
                 items: [
                     {
+                        text: "JS SDK (New Architecture)",
+                        link: "/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/js-sdk-new-architecture/",
+                    },
+                    {
                         text: "WebJS SDK",
                         link:"/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/",
                         collapsed: true,
@@ -1095,6 +1103,10 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 text: "How to use UI Sandbox version 1 (old)",
                 link: "/docs/products/DecentralizedAIPlatform/Sandbox/version-1/",
             },
+            {
+                text: "FAQ",
+                link: "/docs/products/DecentralizedAIPlatform/Sandbox/FAQ/",
+            }
         ],
     },
     {

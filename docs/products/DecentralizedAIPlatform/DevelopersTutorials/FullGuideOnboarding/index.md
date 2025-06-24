@@ -87,26 +87,6 @@ To secure your daemon with SSL, generate **domain certificates** using `certbot`
 
    **Result:** You now have `ssl_cert` and `ssl_key` parameters for your daemon configuration.
 
-## **Enabling Metering**
-
-1. **Run this Python script to generate an address and key for metering using the latest ****`eth_account`**** syntax:**
-
-   ```python-vue
-   from eth_account import Account
-   import secrets
-
-   key = secrets.token_hex(32)
-   acct = Account.from_key(key)
-   print("SAVE BUT DO NOT SHARE PRIVATE KEY")
-   print("Private key: ", key)
-   print("Address: ", acct.address)
-   ```
-
-2. **Save this information.** You will need it when configuring the daemon and publishing your service.
-
-   - Add the generated **Address** (`<METERING_ADDRESS>`) when publishing your service.
-   - Replace `<METERING_KEY>` with the generated private key in the daemon configuration.
-
 ## **Installing the Daemon**
 
 Get the **latest version** of the SingularityNET Daemon from the official GitHub releases page:
@@ -138,6 +118,52 @@ Get the **latest version** of the SingularityNET Daemon from the official GitHub
    ```sh-vue
    sudo cp snetd-linux-amd64-{{ $daemonVersion }} /usr/bin/snetd
    ```
+
+## **Enabling Metering and Free Calls**
+
+To enable **Metering** and **Free Calls**, you must generate a **public address** and a **private key**. These credentials will be used to configure both features.
+You can either use **the same key pair** for both metering and free calls, or **generate separate ones** for each.
+
+### 1. Generate keys
+
+You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+
+:::code-group
+
+```bash
+./snetd generate-key
+```
+
+```python
+from eth_account import Account
+import secrets
+
+key = secrets.token_hex(32)
+acct = Account.from_key(key)
+print("SAVE BUT DO NOT SHARE PRIVATE KEY")
+print("Private key: ", key)
+print("Address: ", acct.address)
+```
+
+:::
+
+> 🔒 **Important:** Store the output securely. The private key grants full control over the corresponding address and should never be shared.
+
+### 2. Use the generated credentials
+
+You will need to use the generated keys in two places:
+
+* **Metering**:
+
+  * Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service.
+  * Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration.
+
+* **Free Calls**:
+
+  * Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service.
+  * Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration.
+
+> ✅ You may **reuse the same key pair** for both Metering and Free Calls, or generate **separate credentials** for better isolation.
 
 ## Configuring the Daemon
 
@@ -174,7 +200,9 @@ Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia
 
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
+
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
 
   "ethereum_json_rpc_http_endpoint": "https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
@@ -214,7 +242,9 @@ Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia
 
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
+
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
 
   "ethereum_json_rpc_http_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
@@ -252,7 +282,8 @@ Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia
 | `<SERVICE_HOST>`            | Address (IP or hostname) of your running AI service.                                                         |
 | `<SERVICE_PORT>`            | Port number on which your AI service is listening.                                                           |
 | `<PATH_TO_DOMAIN_CERTS>`    | Directory containing your domain certificates (`fullchain.pem` and `privkey.pem`).                           |
-| `<METERING_KEY>`            | Previously generated private key for metering (see [Enabling Metering](#enabling-metering)).                 |
+| `<METERING_KEY>`            | Previously generated private key for metering (see [Enabling Metering](#enabling-metering-and-free-calls)).                 |
+| `<FREE_CALL_KEY>`    | Previously generated private key for free calls (see [Enabling Free Calls](#enabling-metering-and-free-calls)).                           |
 | `<YOUR_API_KEY>`            | Alchemy API key for blockchain communication. Follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) if needed.|
 
 ---
@@ -271,7 +302,8 @@ Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia
 | `ssl_cert` and `ssl_key`               | SSL certificate paths for secure connections to daemon.                |
 | `metering_enabled`                     | Activates request metering functionality (`true`).                     |
 | `metering_endpoint`                    | Endpoint for metering service (no changes required).                   |
-| `pvt_key_for_metering`                 | Ethereum private key for metering functionality.                       |
+| `private_key_for_metering`                 | Ethereum private key for metering functionality.                       |
+| `private_key_for_calls`                 | Ethereum private key for free calls functionality.                       |
 | `ethereum_json_rpc_http_endpoint` and<br>`ethereum_json_rpc_ws_endpoint` | Blockchain RPC endpoints (Alchemy service URLs).                 |
 | `payment_channel_storage_server`       | Embedded ETCD setup (no modification required if using embedded ETCD). |
 | `log`                                  | Daemon logging settings.                                               |
@@ -281,7 +313,7 @@ Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia
 Currently, the daemon **cannot be started** because the **organization and service are not yet created**. These steps will be covered later in the guide. For now, you have successfully:
 
 ✔ Configured domain and SSL certificates.\
-✔ Generated metering keys.\
+✔ Generated metering and free calls private keys.\
 ✔ Installed and prepared the daemon.\
 ✔ Set up the configuration file for later use.
 
@@ -557,7 +589,7 @@ snet service metadata-add-description --json '{"description": "Description of my
 
 ### 4. Add Daemon Metering Address
 
-Enable metering by specifying the metering address generated earlier ([Metering address generation](#enabling-metering)):
+Enable metering by specifying the metering address generated earlier ([Metering address generation](#enabling-metering-and-free-calls)):
 
 ```bash
 snet service metadata-add-daemon-addresses <GROUP_NAME> <METERING_ADDRESS>
@@ -643,8 +675,10 @@ Here's a complete example configuration file, assuming you're using embedded ETC
   
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
   
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
+
   "ethereum_json_rpc_http_endpoint": "https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
   
@@ -683,8 +717,10 @@ Here's a complete example configuration file, assuming you're using embedded ETC
   
   "metering_enabled": true,
   "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "pvt_key_for_metering": "<METERING_KEY>",
+  "private_key_for_metering": "<METERING_KEY>",
   
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
+
   "ethereum_json_rpc_http_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
   
