@@ -115,7 +115,7 @@ const initSDK = async () => {
 | networkId       | Ethereum network ID.                                                                     | -                                  |
 | defaultGasPrice | The gas price to be used in case of fetching the gas price form the blockchain fails.    | 4700000                            |
 | defaultGasLimit | The gas limit to be used in case of fetching the gas estimate from the blockchain fails. | 210000                             |
-| ipfsEndpoint    | A URL for fetching service related metadata.                                             | `http://ipfs.singularitynet.io:80` |
+| ipfsEndpoint    | A URL for fetching service related metadata.                                             | `https://ipfs.singularitynet.io:443` |
 | rpcEndpoint     | RPC endpoints serve as gateways for Web3 applications to connect with blockchain nodes   | -                                  |
 
 **Note:** `rpcEndpoint` is optional, you should provide this if you are getting block size limit exceeded error. This is usually happens when you are using any web social auth providers.

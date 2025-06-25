@@ -4,7 +4,7 @@
     "PASSTHROUGH_ENABLED": true,
     "SERVICE_ENDPOINT": "http://localhost:__SERVICE_PORT__",
     "DAEMON_ENDPOINT": "0.0.0.0:7000",
-    "IPFS_ENDPOINT": "http://ipfs.singularitynet.io:80",
+    "IPFS_ENDPOINT": "https://ipfs.singularitynet.io:443",
     "ORGANIZATION_ID": "__ORGANIZATION_ID__",
     "SERVICE_ID": "__SERVICE_ID__",
     "PAYMENT_CHANNEL_STORAGE_SERVER": {
