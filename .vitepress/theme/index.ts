@@ -11,7 +11,7 @@ import type { Theme } from "vitepress";
 import { h } from "vue";
 import "./style.css";
 
-const DAEMON_VERSION = 'v5.2.1';
+const DAEMON_VERSION = 'v6.0.0';
 
 export default {
     extends: DefaultTheme,
