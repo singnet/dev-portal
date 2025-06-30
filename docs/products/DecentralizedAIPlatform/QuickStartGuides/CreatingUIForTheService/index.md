@@ -6,7 +6,7 @@ This guide walks you through the process of integrating a remote service into an
 ## Getting Started
 
 ### When You First Visit
-Upon opening the platform, you will be presented with an option to start a new UI project or load an existing one.
+Upon opening the [**UI Sandbox Portal**](https://ai-ui-constructor.singularitynet.io/), you will be presented with an option to start a new UI project or load an existing one.
 
 * **New Project** – Creates an empty UI structure to start from scratch.
 * **Open Project** – Allows you to upload an existing project archive.
