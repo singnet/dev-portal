@@ -181,13 +181,13 @@ The `init` command will create a `snetd.config.json` file. You will need to modi
   "payment_channel_key_path": "client-key.pem"
   ```
 
-- **free_calls_users**:  
-  You can set a separate number of allowed free calls for certain users of the marketplace:
+- **free_calls_per_address**:  
+  You can set a separate number of allowed free calls for certain addresses (not for web2 approach).
+
   ```json
-  "free_calls_users": {
-    "test@mail.com": 500,
-    "snet@test.com": 100,
-    "me@email.com": 150
+  "free_calls_per_address": {
+    "0x03607652d3ee4dad68ecea78f266906b421508d5": 500,
+    "0x0709e9B78756B740ab0C64427f43f8305fD6D1A7": 100
   }
   ```
 
