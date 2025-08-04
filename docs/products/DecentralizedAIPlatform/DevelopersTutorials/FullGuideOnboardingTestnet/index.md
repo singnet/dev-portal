@@ -626,3 +626,6 @@ Make sure to write something random in token because it ensures that your cluste
 }
 ```
 
+::: danger
+For each reference to the embedded ETCD configuration in the daemon, do not delete the directory specified by `data_dir`. Deleting this folder will remove access to payment channel storage and prevent token withdrawals.
+:::

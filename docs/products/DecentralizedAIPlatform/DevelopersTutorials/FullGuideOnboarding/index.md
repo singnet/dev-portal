@@ -269,6 +269,11 @@ Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia
 
 :::
 
+::: danger
+For each reference to the embedded ETCD configuration in the daemon, do not delete the directory specified by `data_dir`. Deleting this folder will remove access to payment channel storage and prevent token withdrawals.
+:::
+
+
 ---
 
 ### Placeholders to Replace:
@@ -742,6 +747,10 @@ Here's a complete example configuration file, assuming you're using embedded ETC
 }
 ```
 
+:::
+
+::: danger
+For each reference to the embedded ETCD configuration in the daemon, do not delete the directory specified by `data_dir`. Deleting this folder will remove access to payment channel storage and prevent token withdrawals.
 :::
 
 ## Launching the Daemon
