@@ -2,6 +2,159 @@
 
 This guide is designed for AI providers who want to publish their AI services on our marketplace.
 
+## Onboarding Methods Overview
+
+The SingularityNET platform provides three methods for publishing your AI service to the blockchain. All methods result in a service that can be called programmatically via CLI and SDK. The key difference lies in the interface used for publishing and whether you want your service to have a demo UI in the Marketplace.
+
+### Method Comparison
+
+| Method | Publishing Interface | Service Accessibility After Publishing | Marketplace UI Demo |
+|--------|---------------------|---------------------------------------|-------------------|
+| **[Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)** | Web GUI | Marketplace + CLI + SDK | ✅ Yes (optional) |
+| **[CLI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/)** | Command line | CLI + SDK only | ❌ No |
+| **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** | Terminal menus | CLI + SDK only | ❌ No |
+
+## Method Descriptions
+
+### 🌐 Publisher Portal
+
+> **Best for:** Teams and developers who want maximum service visibility with marketplace UI demo
+
+**What is it?**  
+Web-based platform at https://publisher.singularitynet.io that provides a graphical interface for service publishing. Includes an integrated UI Sandbox for creating custom demonstration interfaces.
+
+**Key Features**
+
+| Feature | Description |
+|---------|-------------|
+| Visual Interface | Form-based inputs with real-time validation |
+| UI Sandbox | Create custom demo interfaces for your service |
+| Team Collaboration | Multiple users can manage the same organization |
+| No CLI Required | Complete publishing without command-line knowledge |
+
+**When to Choose Publisher Portal:**
+- ✅ You want users to test your service directly in the Marketplace
+- ✅ You need a visual interface for the publishing process
+- ✅ Your team members have varying technical expertise
+- ✅ You want to create a custom UI demo for better service presentation
+
+**Limitations:**
+- ⚠️ Requires manual steps (not suitable for automation)
+- ⚠️ Needs web browser and MetaMask extension
+
+---
+
+### 💻 Command Line Interface (CLI)
+
+> **Best for:** Developers who need automation and programmatic control
+
+**What is it?**  
+The `snet-cli` tool provides direct interaction with the blockchain through command-line operations. Services are fully functional but without marketplace UI demos.
+
+**Key Features**
+
+| Feature | Description |
+|---------|-------------|
+| Full Control | Direct manipulation of all parameters and metadata |
+| Automation Ready | Scriptable commands for CI/CD pipelines |
+| Batch Operations | Publish multiple services programmatically |
+| Direct Blockchain Access | No intermediary services required |
+
+**When to Choose CLI:**
+- ✅ Your service will only be accessed via SDK or CLI (no web UI needed)
+- ✅ You need to automate the publishing process
+- ✅ You're integrating with existing DevOps workflows
+- ✅ You require fine-grained control over configuration
+
+**Limitations:**
+- ⚠️ No marketplace UI demo capability
+- ⚠️ Requires command-line proficiency
+- ⚠️ Manual metadata file creation
+
+---
+
+### 📟 Text User Interface (TUI)
+
+> **Best for:** Users who want terminal-based publishing with guided assistance
+
+**What is it?**  
+Terminal-based interface with interactive menus that guides you through the publishing process step by step.
+
+**Key Features**
+
+| Feature | Description |
+|---------|-------------|
+| Menu Navigation | Interactive menus - no need to memorize commands |
+| Cross-Platform | Works on Windows, Linux, and macOS |
+| No Browser Needed | Operates entirely in terminal |
+| Guided Workflow | Step-by-step process with clear instructions |
+
+**When to Choose TUI:**
+- ✅ You prefer terminal but want guided assistance
+- ✅ You're working on remote servers without GUI access
+- ✅ You don't want to memorize CLI commands
+- ✅ You need a middle ground between GUI and CLI
+
+**Limitations:**
+- ⚠️ No marketplace UI demo capability
+- ⚠️ Less flexible than direct CLI commands
+- ⚠️ Still requires terminal access
+
+## Important Clarifications
+
+### 📌 Service Accessibility
+> **Key Point:** All methods publish to the same blockchain. The difference is only in how users can interact with your service.
+
+- **Publisher Portal:** Service accessible via Marketplace UI + CLI + SDK
+- **CLI/TUI:** Service accessible via CLI + SDK only
+
+### 🔄 Interoperability
+Organizations and services are blockchain entities. Once created:
+- Can be managed through any method later
+- Can switch between methods as needed
+- Metadata can be updated using different tools
+
+### 🎨 UI Demo Considerations
+> **Note:** Only Publisher Portal allows creation of marketplace UI demos
+
+- UI demos increase service discoverability
+- Users can test services without technical knowledge
+- Optional but highly recommended for consumer-facing services
+- Cannot be added later if published via CLI/TUI
+
+## Quick Decision Guide
+
+### Choose Publisher Portal if:
+✅ **Marketplace Visibility** - You want users to discover and test your service easily  
+✅ **Team Collaboration** - Multiple people will manage the service  
+✅ **Visual Preference** - You prefer graphical interfaces  
+✅ **Demo Creation** - You want to showcase your service with a custom UI  
+
+### Choose CLI if:
+✅ **Automation** - You need to script the publishing process  
+✅ **SDK-Only Access** - Your service is for programmatic use only  
+✅ **DevOps Integration** - Part of your CI/CD pipeline  
+✅ **Advanced Control** - You need fine-grained configuration options  
+
+### Choose TUI if:
+✅ **Terminal Environment** - Working on servers without GUI  
+✅ **Guided Process** - Want help without memorizing commands  
+✅ **No Web Access** - Restricted environment without browser access  
+✅ **Middle Ground** - Between full CLI and web interface
+
+## Prerequisites
+
+Before starting with any onboarding method, ensure you have:
+
+1. **AI Service**: A functional service that accepts requests and returns responses
+2. **Proto Files**: Protocol buffer definitions (.proto) describing your service interface
+3. **Ethereum Wallet**: MetaMask wallet with approximately 0.01 ETH for transaction fees
+4. **Infrastructure**: 
+   - Python 3.10 or higher
+   - Server with open ports for external access
+   - SSL certificates (required for daemon)
+5. **Domain** (optional): Custom domain name for service access
+
 ## Service Type Selection
 
 Before deploying your AI, you need to set up a server that processes user requests. There are two types of service implementations available:
