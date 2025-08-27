@@ -3,8 +3,8 @@
 ## General service publishing tutorials
 
 -   [How to Publish a SingularityNET Service](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/) - Learn how to sell your AI service on the SingularityNET Marketplace.
--   [Publish a Process-Type SingularityNET Service](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingTestnet/) - Wrap your AI service as a process/executable and publish it onto SingularityNET.
--   [Service Integration Guidelines](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingMainnet/) - Write and integrate new AI services to the platform.
+-   [Publish a Process-Type SingularityNET Service](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/) - Wrap your AI service as a process/executable and publish it onto SingularityNET.
+-   [Service Integration Guidelines](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/) - Write and integrate new AI services to the platform.
 -   [Build an Opencog service](/docs/products/AIMarketplace/ForConsumers/opencog/.md)
 
 ## Tutorials by programming language

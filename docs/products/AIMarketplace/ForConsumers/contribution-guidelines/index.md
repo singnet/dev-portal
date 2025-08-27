@@ -153,7 +153,7 @@ If you would like to contribute by helping us improve, expand, or otherwise enha
 [go-tutorial]: /docs/products/AIMarketplace/ForConsumers/Platform-workshops/go/
 [python-tutorial]: /docs/products/AIMarketplace/ForConsumers/Platform-workshops/python/
 [opencog-tutorial]: /docs/products/AIMarketplace/ForConsumers/opencog/
-[service-tutorial]: /docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboardingTestnet/
+[service-tutorial]: /docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/
 [naming-standards]: /docs/products/AIMarketplace/ForConsumers/naming-standarts/
 [grpc]: https://grpc.io/
 [grpc-docs]: https://grpc.io/docs/
