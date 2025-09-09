@@ -86,23 +86,23 @@ Use <span style="font-weight: 700">paypal</span> to exchange fiat money to ASI (
 
 In the section of Decentralized AI Platform of the Developer Portal you can find the following information:
 
--   **Quick Start Guides** with no extra options and excessive info what to do to start interaction with the Platform from Service Provider and Service Consumer perspective.
+- **Quick Start Guides** with no extra options and excessive info what to do to start interaction with the Platform from Service Provider and Service Consumer perspective.
 
--   **The Daemon section** provides detailed explanations of the Daemon goal, scenarios and setup guides.
+- **The Daemon section** provides detailed explanations of the Daemon goal, scenarios and setup guides.
 
--   **The CLI section** provides explanations on how to use CLI and CLI commands explained.
+- **The CLI section** provides explanations on how to use CLI and CLI commands explained.
 
--   **The TUI section** provides explanations on how to use TUI.
+- **The TUI section** provides explanations on how to use TUI.
 
--   **The Publisher Portal** section explains what is Publisher Portal and how to use it.
+- **The Publisher Portal** section explains what is Publisher Portal and how to use it.
 
--   **SDK section** provides basic language-isolated explanation of the main idea of the SDK itself and also explanations and guides on how to use existing Python, JavaScript and JAVA SDKs.
+- **SDK section** provides basic language-isolated explanation of the main idea of the SDK itself and also explanations and guides on how to use existing Python, JavaScript and JAVA SDKs.
 
--   **The UI Sandbox section** provides explanations on how the Service Provider creates an appropriate UI interface for the AI service to be used by Service Consumers on the AI Marketplace.
+- **The UI Sandbox section** provides explanations on how the Service Provider creates an appropriate UI interface for the AI service to be used by Service Consumers on the AI Marketplace.
 
--   **UI Boilerplate** is a UI template which can be used together with JS SDK to easily create some UIs apart from AI Marketplace, but some separate web-site with AI service integrated.
+- **UI Boilerplate** is a UI template which can be used together with JS SDK to easily create some UIs apart from AI Marketplace, but some separate web-site with AI service integrated.
 
--   **Used Technologies section** provides explanation of all the solutions we used to create the Platform and glossary of used Termins in context of the Platform.
+- **Used Technologies section** provides explanation of all the solutions we used to create the Platform and glossary of used Termins in context of the Platform.
 
 Looking forward to assisting any time needed – just write us using feedback form on the Developer Portal in the right down corner.
 
