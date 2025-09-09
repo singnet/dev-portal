@@ -1,15 +1,15 @@
 # Python
 
--------------------------------
+---
 
 _Before following this tutorial, make sure you've installed_
 
-* _Docker ([https://www.docker.com/](https://www.docker.com/))_
-* _Metamask ([https://metamask.io](https://www.docker.com/))_
+- _Docker ([https://www.docker.com/](https://www.docker.com/))_
+- _Metamask ([https://metamask.io/](https://www.docker.com/))_
 
 _You will need a private-public key pair to register your service in SNET. Generate them in Metamask before you start this tutorial._
 
--------------------------------
+---
 
 Run this tutorial from a bash terminal.
 
@@ -17,7 +17,7 @@ We'll use Python gRPC, for more details see https://grpc.io/docs/
 
 In this tutorial we'll create a Python service and publish it in SingularityNET.
 
-## Step 1 
+## Step 1
 
 Setup a `ubuntu:18.04` docker container (with current `SNET Daemon` version) using provided `Dockerfile`.
 
@@ -48,7 +48,7 @@ Create the skeleton structure for your service's project
 `PROJECT_NAME` is a short tag for your project. It will be used to name
 project's directory and as a namespace tag in the .proto file.
 
-`ORGANIZATION_ID` is the id of an organization that you are a member or owner. 
+`ORGANIZATION_ID` is the id of an organization that you are a member or owner.
 
 `SERVICE_ID` is the id of your service.
 
@@ -59,8 +59,8 @@ empty implementation of the service.
 
 In this tutorial we'll implement a service with two methods:
 
-* int div(int a, int b)
-* string check(int a)
+- int div(int a, int b)
+- string check(int a)
 
 So we'll use this command line to create project's skeleton
 
@@ -74,8 +74,8 @@ cd /opt/singnet/tutorial
 Now we'll customize the skeleton code to actually implement our basic service.
 We need to edit `./service_spec/tutorial.proto` and define
 
-* the data structures used to carry input and output of the methods, and
-* the RPC API of the service.
+- the data structures used to carry input and output of the methods, and
+- the RPC API of the service.
 
 Take a look at https://developers.google.com/protocol-buffers/docs/overview to
 understand everything you can do in the `.proto` file.
@@ -134,6 +134,7 @@ class ServiceDefinition(pb2_grpc.ServiceDefinitionServicer):
         self.response.s = "{}".format(request.v)
         return self.response
 ```
+
 ## Step 5
 
 Now we'll write a client to test our server locally (without using the
@@ -186,8 +187,8 @@ python3 client.py 12 4
 # 3
 ```
 
-At this point you have successfully built a gRPC Python service. The executables can 
-be used from anywhere inside the container (they don't need anything from 
+At this point you have successfully built a gRPC Python service. The executables can
+be used from anywhere inside the container (they don't need anything from
 the installation directory) or outside the container if you have Python gRPC libraries installed.
 
 The next steps in this tutorial will publish the service in SingularityNET.
@@ -218,18 +219,18 @@ Example:
 ./publishAndStartService.sh 0x501e8c58E6C16081c0AbCf80Ce2ABb6b3f91E717
 ```
 
-This will start the `SNET Daemon` and your service. If everything goes well you will 
-see the Blockchain transaction logs and then the following messages 
+This will start the `SNET Daemon` and your service. If everything goes well you will
+see the Blockchain transaction logs and then the following messages
 (respectively from: your service and `SNET Daemon`):
 
 ```
 # [Blockchain log]
 # Server listening on 0.0.0.0:7070
 # [daemon initial log]
-# INFO[0002] Blockchain is enabled: instantiate payment validation interceptor 
+# INFO[0002] Blockchain is enabled: instantiate payment validation interceptor
 # INFO[0002]                                               PaymentChannelStorageClient="&{ConnectionTimeout:5s RequestTimeout:3s Endpoints:[http://127.0.0.1:2379]}"
 # INFO[0002] Default payment handler registered            defaultPaymentType=escrow
-# DEBU[0002] starting daemon                              
+# DEBU[0002] starting daemon
 ```
 
 You can double check if it has been properly published using
@@ -247,14 +248,14 @@ snet service delete my-org math-operations
 Actually, since this is just a tutorial, you are expected to un-publish your
 service as soon as you finish the tests.
 
-Other `snet` commands and options (as well as their documentation) can be found 
+Other `snet` commands and options (as well as their documentation) can be found
 [here](https://github.com/singnet/snet-cli).
 
 ## Step 10
 
 You can test your service making requests in command line:
 
-The `openChannel.sh` script will open and initialize a new payment channel, it'll 
+The `openChannel.sh` script will open and initialize a new payment channel, it'll
 output the new channel id (that will be used by `testServiceRequest.sh`):
 
 ```sh
