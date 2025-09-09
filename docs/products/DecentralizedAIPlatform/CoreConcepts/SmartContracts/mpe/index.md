@@ -32,13 +32,13 @@ Let us consider the simple unidirectional payment channel, the main logic is as 
 2. The sender then needs to send a small amount of tokens to the recipient each time (to the recipient) with signed authorization
 3. The recipient must verify whether the signed authorization and the amount required is correct, and that amount specified does not exceed the funds being escrowed.
 4. The channel nonce is incremented, whenever a claim happens,
-   Actually, the channel is not closed and the task can still continue off line, but a new nonce need to be used.
+   Actually, the channel is not closed and the task can still continue off line, but a new nonce needs to be used.
 5. The sender can perform the following:
    - Can collect all funds remaining after the expiration date.
      <br>-or-
    - Extend the expiration date and add funds to the contract at any moment in time.
 
-Note: The receiver can withdraw from the channel (same as claim) only using the authorized amount by the sender. Whenever a signature is made on a certain format which should be signed by the private key of Kevin, Jack then verifies whether the signature was authentic to Kevin, based on the agreed format.
+Note: The receiver can withdraw from the channel (same as claim) only using the authorized amount by the sender. Whenever a signature is made in a certain format, it must be signed by Kevin's private key. Jack then verifies whether the signature is authentic to Kevin, based on the agreed format.
 
 ## MPE Use cases
 
@@ -47,7 +47,7 @@ Consider the following
 - Kevin - is our Client **Consumer**/**Buyer**
 - Jack - is our Service **Provider**/**Seller**
 
-If Kevin is buying services from the Jack, they both need to enter in to a formal agreement with each other.A channel is created.
+If Kevin is buying services from Jack, they both need to enter in to a formal agreement with each other.A channel is created.
 
 **Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity.
 
