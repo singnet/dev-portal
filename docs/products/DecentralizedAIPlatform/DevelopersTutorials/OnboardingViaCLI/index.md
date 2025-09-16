@@ -1,5 +1,61 @@
 # Guide to Publishing an Organization and Service via CLI
 
+## Why Choose CLI?
+
+The Command Line Interface (CLI) provides **direct blockchain interaction** through terminal commands. This method is ideal for developers who need automation, scripting capabilities, and full control over the publishing process.
+
+### Method Comparison
+
+| Aspect | CLI | Publisher Portal | TUI |
+|--------|-----|-----------------|-----|
+| **Interface** | Command line | Web browser GUI | Terminal menus |
+| **Marketplace UI Demo** | ❌ No | ✅ Yes (optional) | ❌ No |
+| **Automation Support** | ✅ Full scripting | ❌ Manual only | ⚠️ Limited |
+| **Technical Expertise** | Advanced | Beginner-friendly | Intermediate |
+| **CI/CD Integration** | ✅ Native support | ❌ Not possible | ❌ Not suitable |
+
+### When to Use CLI
+
+**Choose this method if:**
+- Your service will be accessed programmatically only (SDK/CLI)
+- You need to automate the publishing process
+- You're integrating with existing DevOps workflows
+- You require fine-grained control over all parameters
+- You're publishing multiple services programmatically
+- You're comfortable with command-line interfaces
+
+### Limitations to Consider
+
+- **No marketplace UI demo** - Users cannot test your service through the web interface
+- **Steeper learning curve** - Requires familiarity with terminal commands
+- **Manual metadata creation** - JSON files must be crafted manually
+- **No visual feedback** - All operations are text-based
+
+### Service Accessibility After Publishing
+
+Services published via CLI are accessible through:
+- **CLI** - Other developers can call via snet-cli
+- **SDK** - Integration into applications (Python, JavaScript, Java)
+- **Marketplace Web UI** - No demo interface available
+
+> **Important:** Services published via CLI cannot have marketplace UI demos. Users must use CLI or SDK to interact with your service.
+
+### Perfect for Automation
+
+CLI is the best choice for:
+- **Batch operations** - Publishing multiple services with scripts
+- **CI/CD pipelines** - Automated deployment on code changes  
+- **Infrastructure as Code** - Version-controlled service definitions
+- **Headless environments** - Servers without GUI access
+
+### Alternative Methods
+
+Not sure if CLI is right for you? Check the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/) for a detailed comparison of all three methods:
+- **[Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)** - Web GUI with marketplace demo capability
+- **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** - Terminal interface with guided menus
+
+---
+
 ## Installing SNET CLI
 (not required if you use Publisher for organization and service management) 
 
