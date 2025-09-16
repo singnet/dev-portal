@@ -45,30 +45,51 @@ To ensure marketplace compliance without compromising openness, we implement it 
 ### User Interface Components
 
 **Publisher Portal**  
+
 Web service for publishing services on the AI Marketplace with visual interface.
 
-**CLI/TUI**  
+---
+
+**CLI/TUI**
+
 Command-line and terminal tools for:
 - Publishing organizations and services
 - Calling services programmatically
 - Managing platform operations without GUI
 
+---
+
 **SDK**  
+
 Libraries for integrating AI service calls into applications (Python, JavaScript, Java).
 
-**AI Marketplace**  
+---
+
+**AI Marketplace** 
+
 Web interface for browsing and using AI services directly in the browser.
+
+---
 
 ### Blockchain Infrastructure
 
-**Blockchain Networks**  
+**Blockchain Networks** 
+
 Currently using Ethereum, with plans to support additional networks like Cardano.
 
+---
+
 **MPE Contract**  
+
 Multi-Party Escrow smart contract managing on-chain payments for AI service calls.
 
+---
+
 **Registry Contract**  
+
 Smart contract storing information about organizations and services on-chain.
+
+---
 
 ### Storage and Processing
 
@@ -107,20 +128,28 @@ We provide a comprehensive checklist to help Service Providers prepare for onboa
 Service Consumers can access services through multiple channels:
 
 ### Direct Integration
+
 Using SDKs available for:
 - Python
 - JavaScript
 - Java
 
 ### AI Marketplace
+
 Web interface for direct service interaction.
+
+---
 
 ### Publishing Options for Providers
 
-**SDK-Only Services**  
+**SDK-Only Services** 
+
 Services without UI interfaces are accessible only through SDKs and CLI/TUI, not visible on the AI Marketplace.
 
+---
+
 **Full Marketplace Services**  
+
 Services with custom UI interfaces created using UI Sandbox are available both through SDKs and the AI Marketplace web interface.
 
 ## Service Provider Publishing Methods
@@ -171,9 +200,13 @@ Service Consumers can access AI services through:
 ### Payment Options
 
 #### Free Calls
+
 Service Providers configure a number of free trial calls allowing users to test services before purchasing. Try before you buy!
 
+---
+
 #### Paid Calls
+
 The platform uses a pay-per-call system with payment channels:
 
 **Key Features:**
@@ -184,6 +217,8 @@ The platform uses a pay-per-call system with payment channels:
 
 Learn more about [payment channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 
+---
+
 ### Payment Methods
 
 #### Crypto Wallet
@@ -191,25 +226,27 @@ Direct payments using ASI (FET) tokens on Ethereum blockchain.
 - Requires ETH for gas fees
 - Full decentralization
 
-#### PayPal Integration
-Exchange fiat currency for ASI (FET) tokens.
-- Currently available only on AI Marketplace
-- Simplified onboarding for non-crypto users
-
 ## Documentation Structure
 
 The Decentralized AI Platform documentation is organized into the following sections:
 
 ### Getting Started
-- **Quick Start Guides** - Streamlined instructions for Service Providers and Consumers to begin platform interaction
+
+- [**Quick Start Guides**](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToOnboardCheckUp/) - Streamlined instructions for Service Providers and Consumers to begin platform interaction
+
+---
 
 ### Tools and Interfaces
-- **Daemon** - Architecture, configuration, and setup guides for the service adapter component
-- **CLI** - Command-line interface usage and command reference
-- **TUI** - Terminal user interface guide
-- **Publisher Portal** - Web-based service publishing platform guide
+
+- [**Daemon**](/docs/products/DecentralizedAIPlatform/Daemon/) - Architecture, configuration, and setup guides for the service adapter component
+- [**CLI**](/docs/products/DecentralizedAIPlatform/CLI/) - Command-line interface usage and command reference
+- [**TUI**](/docs/products/DecentralizedAIPlatform/TUI/) - Terminal user interface guide
+- [**Publisher Portal**](/docs/products/DecentralizedAIPlatform/PublisherPortal/) - Web-based service publishing platform guide
+
+---
 
 ### Development Resources
+
 - **SDK Documentation** - Language-specific guides for:
   - Python SDK
   - JavaScript SDK
@@ -217,7 +254,10 @@ The Decentralized AI Platform documentation is organized into the following sect
 - **UI Sandbox** - Creating custom UI interfaces for AI services on the Marketplace
 - **UI Boilerplate** - Templates for standalone web applications with AI service integration
 
+---
+
 ### Reference
+
 - **Used Technologies** - Explanations of underlying technologies and platform-specific terminology glossary
 
 ## Support and Contact
