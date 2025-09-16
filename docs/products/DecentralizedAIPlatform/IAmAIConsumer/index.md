@@ -52,7 +52,7 @@ Integrate AI services into your applications:
 #### **Available SDKs**
 
 - **[Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)** - Full-featured SDK for Python developers
-- **[JavaScript SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/)** - For web and Node.js applications
+- **[JavaScript SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/js-sdk-new-architecture/)** - For web and Node.js applications
 - **[Java SDK](/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/)** - Enterprise Java integration
 
 #### **SDK Features**
