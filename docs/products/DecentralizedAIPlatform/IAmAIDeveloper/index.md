@@ -149,8 +149,8 @@ Efficient and secure payment handling:
 
 ### **Documentation and Guides**
 
-- [Complete Developer Documentation](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/)
-- [SDK Documentation](/docs/products/DecentralizedAIPlatform/SDK/)
+- [Complete Developer Documentation](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/)
+- [SDK Documentation](/docs/products/DecentralizedAIPlatform/SDK/sdk-concept/)
 - [Daemon Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/)
 - [Publishing Tutorials](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)
 
