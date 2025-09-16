@@ -6,7 +6,9 @@ This document outlines the mandatory requirements for publishing your AI service
 
 ## Quick Start
 
-The fastest method for onboarding is via the [Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/). Alternative methods are also available for different use cases.
+The fastest method for onboarding is via the [Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/). 
+
+Alternative methods are also available for different use cases.
 
 ## Prerequisites Checklist
 
