@@ -1,8 +1,10 @@
-# Guide to Publishing an Organization and Service via Publisher
+# Onboarding via Publisher
 
 ## Why Choose Publisher Portal?
 
 The Publisher Portal is a **web-based platform** that provides a graphical interface for publishing AI services to the SingularityNET marketplace. This method is ideal when you want maximum visibility and ease of use.
+
+---
 
 ### Method Comparison
 
@@ -14,6 +16,8 @@ The Publisher Portal is a **web-based platform** that provides a graphical inter
 | **Technical Expertise** | Beginner-friendly | Advanced | Intermediate |
 | **Automation Support** | ❌ Manual process | ✅ Scriptable | ⚠️ Limited |
 
+---
+
 ### When to Use Publisher Portal
 
 **Choose this method if:**
@@ -23,11 +27,15 @@ The Publisher Portal is a **web-based platform** that provides a graphical inter
 - You plan to create a custom UI demo for better service presentation
 - Service discoverability and user engagement are priorities
 
+---
+
 ### Limitations to Consider
 
 - **No automation** - All steps must be done manually through the web interface
 - **Browser dependency** - Requires MetaMask extension and modern web browser
 - **Not suitable for CI/CD** - Cannot be integrated into automated pipelines
+
+---
 
 ### Service Accessibility After Publishing
 
@@ -38,13 +46,14 @@ Services published via Publisher Portal are accessible through:
 
 > **Note:** This is the only method that allows creating marketplace UI demos. Services published via CLI or TUI can only be accessed programmatically.
 
+---
+
 ### Alternative Methods
 
-Not sure if Publisher Portal is right for you? Check the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/) for a detailed comparison of all three methods:
+Not sure if Publisher Portal is right for you? Check these alternatives:
 - **[CLI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/)** - For automation and programmatic control
 - **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** - Terminal interface with guided menus
-
----
+- **[Full Comparison Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/)** - Detailed comparison of all three methods
 
 ## You can watch the video for easy understanding:
 
@@ -202,9 +211,13 @@ Finalize your organization's blockchain registration:
 
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="MetaMask Confirmation"/>
 
+---
+
 ### ✨ **Your organization is now successfully registered!**
 
 ## **Service Setup**
+
+---
 
 ### **Step 1: Basic Service Information**
 
@@ -334,11 +347,15 @@ Complete your AI service definition:
 
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="MetaMask Confirmation"/>
 
+---
+
 ### ✨ **Your AI service is now successfully published!**
 
 ## **Set Up & Launch the Daemon**
 
 This section explains how to configure, install, and run the SingularityNET Daemon, which manages billing, service requests, and blockchain interaction for your AI service.
+
+---
 
 ### 🚩 **Step 1: Preparation Steps**
 

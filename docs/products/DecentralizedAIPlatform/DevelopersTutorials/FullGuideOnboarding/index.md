@@ -103,18 +103,25 @@ Terminal-based interface with interactive menus that guides you through the publ
 ## Important Clarifications
 
 ### 📌 Service Accessibility
+
 > **Key Point:** All methods publish to the same blockchain. The difference is only in how users can interact with your service.
 
 - **Publisher Portal:** Service accessible via Marketplace UI + CLI + SDK
 - **CLI/TUI:** Service accessible via CLI + SDK only
 
+---
+
 ### 🔄 Interoperability
+
 Organizations and services are blockchain entities. Once created:
 - Can be managed through any method later
 - Can switch between methods as needed
 - Metadata can be updated using different tools
 
+---
+
 ### 🎨 UI Demo Considerations
+
 > **Note:** Only Publisher Portal allows creation of marketplace UI demos
 
 - UI demos increase service discoverability
@@ -125,18 +132,25 @@ Organizations and services are blockchain entities. Once created:
 ## Quick Decision Guide
 
 ### Choose Publisher Portal if:
+
 ✅ **Marketplace Visibility** - You want users to discover and test your service easily  
 ✅ **Team Collaboration** - Multiple people will manage the service  
 ✅ **Visual Preference** - You prefer graphical interfaces  
 ✅ **Demo Creation** - You want to showcase your service with a custom UI  
 
+---
+
 ### Choose CLI if:
+
 ✅ **Automation** - You need to script the publishing process  
 ✅ **SDK-Only Access** - Your service is for programmatic use only  
 ✅ **DevOps Integration** - Part of your CI/CD pipeline  
 ✅ **Advanced Control** - You need fine-grained configuration options  
 
+---
+
 ### Choose TUI if:
+
 ✅ **Terminal Environment** - Working on servers without GUI  
 ✅ **Guided Process** - Want help without memorizing commands  
 ✅ **No Web Access** - Restricted environment without browser access  
@@ -172,7 +186,7 @@ Each has its own advantages and use cases:
 - [gRPC Integration Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationGRPCService/)
 - [HTTP Integration Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationHTTPService/)
 
-## **ETCD** Setup  
+## ETCD Setup  
 
 To manage **payment channels** and ensure decentralized synchronization, `etcd` is used as a **distributed key-value store** that helps track payments across AI service replicas.  
 
@@ -182,24 +196,24 @@ In this guide, we will be working with the **embedded** `etcd`, ensuring a simpl
 
 For **advanced users** who want to deploy `etcd` **on a public domain**, follow the **[ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/)** to configure a standalone `etcd` instance.
 
-## **Daemon Setup**
+## Daemon Setup
 
-### **What is the Daemon?**
+### What is the Daemon?
 
 A daemon is an adapter between an AI service and a client. Its primary responsibilities include:
 
-- Tracking service calls.
-- Calculating funds spent per call.
-- Redirecting requests to the AI service.
-- Managing free call limits.
+- Tracking service calls
+- Calculating funds spent per call
+- Redirecting requests to the AI service
+- Managing free call limits
 
 The daemon must be deployed on a **public address** since it acts as the entry point for all incoming requests.
 
-## **Domain Configuration for Daemon**
+## Domain Configuration for Daemon
 
 To enable secure communication between clients and the daemon, you need to configure a **domain and SSL certificates**.
 
-### **Port Forwarding from Domain to Daemon Host**
+### Port Forwarding from Domain to Daemon Host
 
 This step depends on the web server you are using. Configure **port forwarding** from `<DAEMON_PORT>` to `<DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>`.
 
@@ -209,22 +223,28 @@ This step depends on the web server you are using. Configure **port forwarding**
 your_awesome_domain.com:<DAEMON_PORT> --> <DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>
 ```
 
-### **Generating Domain Certificates (Skip if SSL is Already Configured)**
+---
+
+### Generating Domain Certificates
 
 To secure your daemon with SSL, generate **domain certificates** using `certbot`.
 
-1. Install `certbot` by following the instructions here: [Certbot Installation Guide](https://certbot.eff.org/instructions?ws=other\&os=ubuntufocal)
+> Skip this section if SSL is already configured on your domain.
 
-2. Generate SSL certificates:
+1. **Install `certbot`:**
+
+   Follow the instructions here: [Certbot Installation Guide](https://certbot.eff.org/instructions?ws=other&os=ubuntufocal)
+
+2. **Generate SSL certificates:**
 
    ```sh
    sudo certbot certonly
    ```
 
-   - Follow the prompts and choose **standalone** mode.
-   - Enter your daemon domain (e.g., `your_awesome_domain.com`).
+   - Follow the prompts and choose **standalone** mode
+   - Enter your daemon domain (e.g., `your_awesome_domain.com`)
 
-3. Retrieve certificate paths:
+3. **Retrieve certificate paths:**
 
    ```sh
    sudo certbot certificates
@@ -232,21 +252,21 @@ To secure your daemon with SSL, generate **domain certificates** using `certbot`
 
    You should see two files: `fullchain.pem` and `privkey.pem`.
 
-4. Verify automatic renewal is enabled:
+4. **Verify automatic renewal is enabled:**
 
    ```sh
    sudo systemctl show certbot.timer
    ```
 
-   **Result:** You now have `ssl_cert` and `ssl_key` parameters for your daemon configuration.
+**Result:** You now have `ssl_cert` and `ssl_key` parameters for your daemon configuration.
 
-## **Installing the Daemon**
+## Installing the Daemon
 
 Get the **latest version** of the SingularityNET Daemon from the official GitHub releases page:
 
 👉 [https://github.com/singnet/snet-daemon/releases/latest](https://github.com/singnet/snet-daemon/releases/latest)
 
-### Below is an example of how to install the daemon on **Linux**:
+### Installation Steps for Linux
 
 1. **Download the latest release:**
 
@@ -272,22 +292,23 @@ Get the **latest version** of the SingularityNET Daemon from the official GitHub
    sudo cp snetd-linux-amd64-{{ $daemonVersion }} /usr/bin/snetd
    ```
 
-## **Enabling Metering and Free Calls**
+## Enabling Metering and Free Calls
 
 To enable **Metering** and **Free Calls**, you must generate a **public address** and a **private key**. These credentials will be used to configure both features.
+
 You can either use **the same key pair** for both metering and free calls, or **generate separate ones** for each.
 
-### 1. Generate keys
+### Step 1: Generate Keys
 
 You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
 
 :::code-group
 
-```bash
+```bash[Using snetd]
 ./snetd generate-key
 ```
 
-```python
+```python[Using Python]
 from eth_account import Account
 import secrets
 
@@ -302,19 +323,19 @@ print("Address: ", acct.address)
 
 > 🔒 **Important:** Store the output securely. The private key grants full control over the corresponding address and should never be shared.
 
-### 2. Use the generated credentials
+---
+
+### Step 2: Use the Generated Credentials
 
 You will need to use the generated keys in two places:
 
-* **Metering**:
+**Metering:**
+- Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service
+- Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration
 
-  * Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service.
-  * Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration.
-
-* **Free Calls**:
-
-  * Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service.
-  * Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration.
+**Free Calls:**
+- Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service
+- Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration
 
 > ✅ You may **reuse the same key pair** for both Metering and Free Calls, or generate **separate credentials** for better isolation.
 
@@ -328,11 +349,9 @@ Edit the configuration file:
 $EDITOR snetd.config.json
 ```
 
+### Example Configuration
+
 Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia)**. Replace all placeholders (`<...>`) accordingly.
-
----
-
-### Example Configuration (`snetd.config.json`)
 
 :::code-group
 
@@ -426,54 +445,54 @@ Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia
 For each reference to the embedded ETCD configuration in the daemon, do not delete the directory specified by `data_dir`. Deleting this folder will remove access to payment channel storage and prevent token withdrawals.
 :::
 
-
 ---
 
-### Placeholders to Replace:
+### Placeholders to Replace
 
 | Placeholder                 | Explanation                                                                                                  |
 |-----------------------------|--------------------------------------------------------------------------------------------------------------|
-| `<DAEMON_PORT>`             | Port number where the daemon will run (e.g., `7000`).                                                        |
-| `<DAEMON_GROUP>`            | Group name for your daemon (`default_group`).                                                                |
-| `<ORGANIZATION_ID>`         | Your organization’s ID (after publishing organization).                                                      |
-| `<SERVICE_ID>`              | Your service’s ID (after publishing service).                                                                |
-| `<SERVICE_HOST>`            | Address (IP or hostname) of your running AI service.                                                         |
-| `<SERVICE_PORT>`            | Port number on which your AI service is listening.                                                           |
-| `<PATH_TO_DOMAIN_CERTS>`    | Directory containing your domain certificates (`fullchain.pem` and `privkey.pem`).                           |
-| `<METERING_KEY>`            | Previously generated private key for metering (see [Enabling Metering](#enabling-metering-and-free-calls)).                 |
-| `<FREE_CALL_KEY>`    | Previously generated private key for free calls (see [Enabling Free Calls](#enabling-metering-and-free-calls)).                           |
-| `<YOUR_API_KEY>`            | Alchemy API key for blockchain communication. Follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) if needed.|
+| `<DAEMON_PORT>`             | Port number where the daemon will run (e.g., `7000`)                                                        |
+| `<DAEMON_GROUP>`            | Group name for your daemon (`default_group`)                                                                |
+| `<ORGANIZATION_ID>`         | Your organization's ID (after publishing organization)                                                      |
+| `<SERVICE_ID>`              | Your service's ID (after publishing service)                                                                |
+| `<SERVICE_HOST>`            | Address (IP or hostname) of your running AI service                                                         |
+| `<SERVICE_PORT>`            | Port number on which your AI service is listening                                                           |
+| `<PATH_TO_DOMAIN_CERTS>`    | Directory containing your domain certificates (`fullchain.pem` and `privkey.pem`)                           |
+| `<METERING_KEY>`            | Previously generated private key for metering                                                               |
+| `<FREE_CALL_KEY>`           | Previously generated private key for free calls                                                             |
+| `<YOUR_API_KEY>`            | Alchemy API key for blockchain communication                                                                |
 
 ---
 
-### Configuration Field Explanations:
+### Configuration Field Explanations
 
 | Field                                  | Explanation                                                            |
 |----------------------------------------|------------------------------------------------------------------------|
-| `blockchain_enabled`                   | Enables blockchain connectivity (always `true`).                       |
-| `blockchain_network_selected`          | Blockchain network (`main` for Mainnet, `sepolia` for Testnet).        |
-| `daemon_endpoint`                      | Address and port where daemon listens for incoming connections.        |
-| `daemon_group_name`                    | Name of payment group (defined earlier).                               |
-| `organization_id`                      | ID referencing your published organization.                            |
-| `service_id`                           | ID referencing your published AI service.                              |
-| `service_endpoint`                     | Internal endpoint for your AI service.                                 |
-| `ssl_cert` and `ssl_key`               | SSL certificate paths for secure connections to daemon.                |
-| `metering_enabled`                     | Activates request metering functionality (`true`).                     |
-| `metering_endpoint`                    | Endpoint for metering service (no changes required).                   |
-| `private_key_for_metering`                 | Ethereum private key for metering functionality.                       |
-| `private_key_for_calls`                 | Ethereum private key for free calls functionality.                       |
-| `ethereum_json_rpc_http_endpoint` and<br>`ethereum_json_rpc_ws_endpoint` | Blockchain RPC endpoints (Alchemy service URLs).                 |
-| `payment_channel_storage_server`       | Embedded ETCD setup (no modification required if using embedded ETCD). |
-| `log`                                  | Daemon logging settings.                                               |
+| `blockchain_enabled`                   | Enables blockchain connectivity (always `true`)                       |
+| `blockchain_network_selected`          | Blockchain network (`main` for Mainnet, `sepolia` for Testnet)       |
+| `daemon_endpoint`                      | Address and port where daemon listens for incoming connections        |
+| `daemon_group_name`                    | Name of payment group (defined earlier)                               |
+| `organization_id`                      | ID referencing your published organization                            |
+| `service_id`                           | ID referencing your published AI service                              |
+| `service_endpoint`                     | Internal endpoint for your AI service                                 |
+| `ssl_cert` and `ssl_key`              | SSL certificate paths for secure connections to daemon                |
+| `metering_enabled`                     | Activates request metering functionality (`true`)                     |
+| `metering_endpoint`                    | Endpoint for metering service (no changes required)                   |
+| `private_key_for_metering`             | Ethereum private key for metering functionality                       |
+| `private_key_for_free_calls`           | Ethereum private key for free calls functionality                     |
+| `ethereum_json_rpc_http_endpoint`      | HTTP RPC endpoint for blockchain communication                        |
+| `ethereum_json_rpc_ws_endpoint`        | WebSocket RPC endpoint for blockchain communication                   |
+| `payment_channel_storage_server`       | Embedded ETCD setup (no modification required if using embedded ETCD) |
+| `log`                                  | Daemon logging settings                                               |
 
-## **Daemon Setup Summary**
+## Daemon Setup Summary
 
-Currently, the daemon **cannot be started** because the **organization and service are not yet created**. These steps will be covered later in the guide. For now, you have successfully:
+Currently, the daemon **cannot be started** because the **organization and service are not yet created**. These steps will be covered next. For now, you have successfully:
 
-✔ Configured domain and SSL certificates.\
-✔ Generated metering and free calls private keys.\
-✔ Installed and prepared the daemon.\
-✔ Set up the configuration file for later use.
+✔ Configured domain and SSL certificates  
+✔ Generated metering and free calls private keys  
+✔ Installed and prepared the daemon  
+✔ Set up the configuration file for later use  
 
 Proceed to the next step to create your **Organization and Service**.
 
@@ -487,7 +506,7 @@ To publish your organization, you can choose between two methods:
 
 ---
 
-### 1. Create an Identity in `snet-cli`
+### Step 1: Create an Identity in `snet-cli`
 
 First, create an identity in `snet-cli`. You can create an identity with your existing crypto wallet private key or mnemonic seed phrase. Choose whichever option applies to you.
 
@@ -537,7 +556,7 @@ snet network mainnet
 
 ---
 
-### 2. Initialize Organization Metadata
+### Step 2: Initialize Organization Metadata
 
 Initialize your organization metadata using your chosen `org_name` and `org_id`. Ensure to use the same `<ORGANIZATION_ID>` later in the daemon configuration.
 
@@ -561,7 +580,7 @@ A file named `organization_metadata.json` will be created with the provided meta
 
 ---
 
-### 3. Add Organization Description
+### Step 3: Add Organization Description
 
 Add a detailed description, a short description, and your organization's URL.
 
@@ -592,16 +611,16 @@ After executing, your `organization_metadata.json` file will be updated:
 
 ---
 
-### 4. Add Recipient and Group Details
+### Step 4: Add Recipient and Group Details
 
 Next, specify the recipient details and payment group configuration.
 
-- `payment_address`: Ethereum address to receive payments.
-- `payment_channel_storage_type`: Typically `etcd`.
+- `payment_address`: Ethereum address to receive payments
+- `payment_channel_storage_type`: Typically `etcd`
 - `endpoint`: The endpoint depends on your setup:
-  - Use `http://127.0.0.1:2379` if you’re using embedded etcd.
-  - Use your public etcd endpoint URL if deploying externally.
-- `payment-expiration-threshold`: Usually set to `40320`.
+  - Use `http://127.0.0.1:2379` if you're using embedded etcd
+  - Use your public etcd endpoint URL if deploying externally
+- `payment-expiration-threshold`: Usually set to `40320`
 
 Example command:
 
@@ -646,17 +665,17 @@ This step updates the `groups` section in your `organization_metadata.json`:
 
 ---
 
-### 5. (Optional) Add Assets and Contacts
+### Step 5: (Optional) Add Assets and Contacts
 
 You can optionally add assets (e.g., images) and contacts (email, phone) for your organization:
 
-- Add an asset:
+**Add an asset:**
 
 ```bash
 snet organization metadata-add-assets image.png hero_image
 ```
 
-- Add contact information:
+**Add contact information:**
 
 ```bash
 snet organization metadata-add-contact --phone 123456789 --email yourorg@yourorg support
@@ -664,7 +683,7 @@ snet organization metadata-add-contact --phone 123456789 --email yourorg@yourorg
 
 ---
 
-### 6. Verify Metadata File
+### Step 6: Verify Metadata File
 
 Check the metadata file you've created:
 
@@ -676,7 +695,7 @@ You may manually edit this file if needed.
 
 ---
 
-### 7. Publish Organization
+### Step 7: Publish Organization
 
 Finally, publish your organization. Note that publishing creates an on-chain transaction, requiring ETH in your wallet account.
 
@@ -690,7 +709,7 @@ If you previously published your organization using the **Publisher Portal**, pl
 
 ---
 
-### 1. Navigate to Your Service Directory
+### Step 1: Navigate to Your Service Directory
 
 ```bash
 cd path/to/your/service
@@ -698,7 +717,7 @@ cd path/to/your/service
 
 ---
 
-### 2. Initialize Service Metadata
+### Step 2: Initialize Service Metadata
 
 Create a metadata file for your service using the following command:
 
@@ -714,14 +733,14 @@ snet service metadata-init \
 
 Where:
 
-- `SERVICE_PROTOBUF_DIR`: Directory containing your service's protobuf files.
-- `SERVICE_DISPLAY_NAME`: User-friendly name for your service (can be any name).
-- `PAYMENT_GROUP_NAME`: The group name you defined earlier during [organization setup](#4-add-recipient-and-group-details).
-- `DAEMON_ENDPOINT`: Public endpoint (domain or IP address with port) of your deployed daemon.
-- `FIXED_PRICE`: Price per service call in ASI (FET) (for example, `0.00000001` ASI (FET) = 1 COG).
-- `SERVICE_TYPE`: Choose the service type you defined at the very beginning of this guide (`grpc` or `http`).
+- `SERVICE_PROTOBUF_DIR`: Directory containing your service's protobuf files
+- `SERVICE_DISPLAY_NAME`: User-friendly name for your service (can be any name)
+- `PAYMENT_GROUP_NAME`: The group name you defined earlier during [organization setup](#step-4-add-recipient-and-group-details)
+- `DAEMON_ENDPOINT`: Public endpoint (domain or IP address with port) of your deployed daemon
+- `FIXED_PRICE`: Price per service call in ASI (FET) (for example, `0.00000001` ASI (FET) = 1 COG)
+- `SERVICE_TYPE`: Choose the service type you defined at the very beginning of this guide (`grpc` or `http`)
 
-**Example**:
+**Example:**
 
 ```bash
 snet service metadata-init \
@@ -735,7 +754,7 @@ snet service metadata-init \
 
 ---
 
-### 3. Add a Service Description
+### Step 3: Add a Service Description
 
 Add details and a URL describing your service:
 
@@ -745,22 +764,21 @@ snet service metadata-add-description --json '{"description": "Description of my
 
 ---
 
-### 4. Add Daemon Metering Address
+### Step 4: Add Daemon Metering Address
 
-Enable metering by specifying the metering address generated earlier ([Metering address generation](#enabling-metering-and-free-calls)):
+Enable metering by specifying the metering address generated earlier ([Metering address generation](#step-1-generate-keys)):
 
 ```bash
 snet service metadata-add-daemon-addresses <GROUP_NAME> <METERING_ADDRESS>
 ```
 
 Replace:
-
-- `<GROUP_NAME>`: Your payment group name (e.g., `default_group`).
-- `<METERING_ADDRESS>`: Previously generated Ethereum address used for metering.
+- `<GROUP_NAME>`: Your payment group name (e.g., `default_group`)
+- `<METERING_ADDRESS>`: Previously generated Ethereum address used for metering
 
 ---
 
-### 5. Publish the Service
+### Step 5: Publish the Service
 
 Finally, publish your service. This creates an on-chain transaction, so ensure your wallet has enough ETH:
 
@@ -768,7 +786,7 @@ Finally, publish your service. This creates an on-chain transaction, so ensure y
 snet service publish <ORGANIZATION_ID> <SERVICE_ID>
 ```
 
-Example:
+**Example:**
 
 ```bash
 snet service publish my_test_org my_test_service
@@ -776,7 +794,7 @@ snet service publish my_test_org my_test_service
 
 ---
 
-### 6. Verify Service Publication
+### Step 6: Verify Service Publication
 
 Check your service publication status using:
 
@@ -798,109 +816,16 @@ Replace the placeholders as indicated below:
 
 ### Fields to Replace
 
-- `<DAEMON_PORT>`: The port where the daemon will run.
-- `<DAEMON_GROUP>`: The group name defined earlier (`default_group`).
-- `<ORGANIZATION_ID>`: Your published Organization ID.
-- `<SERVICE_ID>`: Your published Service ID.
-- `<SERVICE_HOST>`: The host address of your AI service.
-- `<SERVICE_PORT>`: The port your AI service is listening on.
-- `<PATH_TO_DOMAIN_CERTS>`: The directory containing your domain SSL certificates (`fullchain.pem` and `privkey.pem`).
-- `<METERING_KEY>`: Your previously generated private key for metering.
-- `<YOUR_API_KEY>`: Your Alchemy API key. If you don’t have one yet, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
-
----
-
-### Example Daemon Configuration
-
-Here's a complete example configuration file, assuming you're using embedded ETCD and have SSL certificates already set up:
-
-:::code-group
-
-```json[Testnet]
-{
-  "blockchain_enabled": true,
-  "blockchain_network_selected": "sepolia",
-  
-  "daemon_endpoint": "0.0.0.0:<DAEMON_PORT>",
-  "daemon_group_name": "<DAEMON_GROUP>",
-  
-  "organization_id": "<ORGANIZATION_ID>",
-  "service_id": "<SERVICE_ID>",
-  "service_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
-  
-  "ssl_cert": "<PATH_TO_DOMAIN_CERTS>/fullchain.pem",
-  "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
-  
-  "metering_enabled": true,
-  "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "private_key_for_metering": "<METERING_KEY>",
-  
-  "private_key_for_free_calls": "<FREE_CALL_KEY>",
-
-  "ethereum_json_rpc_http_endpoint": "https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
-  "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
-  
-  "payment_channel_storage_server": {
-    "client_port": 2379,
-    "cluster": "storage-1=http://127.0.0.1:2380",
-    "data_dir": "data.etcd",
-    "enabled": true,
-    "host": "127.0.0.1",
-    "id": "storage-1",
-    "log_level": "info",
-    "peer_port": 2380,
-    "scheme": "http",
-    "startup_timeout": "1m",
-    "token": "your-unique-token"
-  },
-  
-  "log": {"level": "debug", "output": {"type": "stdout"}}
-}
-```
-
-```json[Mainnet]
-{
-  "blockchain_enabled": true,
-  "blockchain_network_selected": "main",
-  
-  "daemon_endpoint": "0.0.0.0:<DAEMON_PORT>",
-  "daemon_group_name": "<DAEMON_GROUP>",
-  
-  "organization_id": "<ORGANIZATION_ID>",
-  "service_id": "<SERVICE_ID>",
-  "service_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
-  
-  "ssl_cert": "<PATH_TO_DOMAIN_CERTS>/fullchain.pem",
-  "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
-  
-  "metering_enabled": true,
-  "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
-  "private_key_for_metering": "<METERING_KEY>",
-  
-  "private_key_for_free_calls": "<FREE_CALL_KEY>",
-
-  "ethereum_json_rpc_http_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
-  "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
-  
-  "payment_channel_storage_server": {
-    "client_port": 2379,
-    "cluster": "storage-1=http://127.0.0.1:2380",
-    "data_dir": "data.etcd",
-    "enabled": true,
-    "host": "127.0.0.1",
-    "id": "storage-1",
-    "log_level": "info",
-    "peer_port": 2380,
-    "scheme": "http",
-    "startup_timeout": "1m",
-    "token": "your-unique-token"
-  },
-  
-  "log": {"level": "debug", "output": {"type": "stdout"}}
-}
-```
-
-:::
+- `<DAEMON_PORT>`: The port where the daemon will run
+- `<DAEMON_GROUP>`: The group name defined earlier (`default_group`)
+- `<ORGANIZATION_ID>`: Your published Organization ID
+- `<SERVICE_ID>`: Your published Service ID
+- `<SERVICE_HOST>`: The host address of your AI service
+- `<SERVICE_PORT>`: The port your AI service is listening on
+- `<PATH_TO_DOMAIN_CERTS>`: The directory containing your domain SSL certificates (`fullchain.pem` and `privkey.pem`)
+- `<METERING_KEY>`: Your previously generated private key for metering
+- `<FREE_CALL_KEY>`: Your previously generated private key for free calls
+- `<YOUR_API_KEY>`: Your Alchemy API key. If you don't have one yet, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/)
 
 ::: danger
 For each reference to the embedded ETCD configuration in the daemon, do not delete the directory specified by `data_dir`. Deleting this folder will remove access to payment channel storage and prevent token withdrawals.
@@ -919,3 +844,29 @@ Upon successful startup, you will see:
 ```bash
 INFO    ✅ Daemon successfully started and ready to accept requests
 ```
+
+## Next Steps
+
+Congratulations! Your AI service is now published and running on the SingularityNET platform.
+
+### Test Your Service
+
+- **Via CLI**: Follow the [Service Calling via CLI](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI/) guide
+- **Via SDK**: Use the [Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/) or [JavaScript SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
+
+### Monitor and Maintain
+
+- Check daemon logs regularly for any issues
+- Monitor your ETH balance for gas fees
+- Keep your SSL certificates updated
+- Backup your ETCD data directory regularly
+
+### Update Your Service
+
+To update your service:
+1. Modify your service code
+2. Update the service metadata if needed
+3. Republish using `snet service update`
+4. Restart the daemon
+
+For additional support, visit our [community forum](https://community.singularitynet.io) or [Discord channel](https://discord.gg/snet).

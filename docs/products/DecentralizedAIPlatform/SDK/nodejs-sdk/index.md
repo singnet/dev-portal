@@ -4,8 +4,6 @@
 
 This guide provides step-by-step instructions for setting up and using the SingularityNET SDK for Node.js. Follow these steps to integrate and interact with SingularityNET services in your application.
 
----
-
 ## 1. Prerequisites
 Before you start using the snet-sdk, ensure that your system meets the following requirements:
 

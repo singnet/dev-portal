@@ -4,6 +4,8 @@
 
 The Command Line Interface (CLI) provides **direct blockchain interaction** through terminal commands. This method is ideal for developers who need automation, scripting capabilities, and full control over the publishing process.
 
+---
+
 ### Method Comparison
 
 | Aspect | CLI | Publisher Portal | TUI |
@@ -13,6 +15,8 @@ The Command Line Interface (CLI) provides **direct blockchain interaction** thro
 | **Automation Support** | ✅ Full scripting | ❌ Manual only | ⚠️ Limited |
 | **Technical Expertise** | Advanced | Beginner-friendly | Intermediate |
 | **CI/CD Integration** | ✅ Native support | ❌ Not possible | ❌ Not suitable |
+
+---
 
 ### When to Use CLI
 
@@ -24,12 +28,16 @@ The Command Line Interface (CLI) provides **direct blockchain interaction** thro
 - You're publishing multiple services programmatically
 - You're comfortable with command-line interfaces
 
+---
+
 ### Limitations to Consider
 
 - **No marketplace UI demo** - Users cannot test your service through the web interface
 - **Steeper learning curve** - Requires familiarity with terminal commands
 - **Manual metadata creation** - JSON files must be crafted manually
 - **No visual feedback** - All operations are text-based
+
+---
 
 ### Service Accessibility After Publishing
 
@@ -40,6 +48,8 @@ Services published via CLI are accessible through:
 
 > **Important:** Services published via CLI cannot have marketplace UI demos. Users must use CLI or SDK to interact with your service.
 
+---
+
 ### Perfect for Automation
 
 CLI is the best choice for:
@@ -48,13 +58,13 @@ CLI is the best choice for:
 - **Infrastructure as Code** - Version-controlled service definitions
 - **Headless environments** - Servers without GUI access
 
+---
+
 ### Alternative Methods
 
 Not sure if CLI is right for you? Check the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/) for a detailed comparison of all three methods:
 - **[Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)** - Web GUI with marketplace demo capability
 - **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** - Terminal interface with guided menus
-
----
 
 ## Installing SNET CLI
 (not required if you use Publisher for organization and service management) 
@@ -338,6 +348,8 @@ snet organization info <ORGANIZATION_ID>
 
 ## Using FileCoin
 
+---
+
 ### API key
 
 #### Generating
@@ -364,6 +376,8 @@ snet unset filecoin_api_key
 ```
 
 > Note: This key is used regardless of identity.
+
+---
 
 ### Publishing
 
