@@ -512,8 +512,8 @@ Multiple support channels are available:
 
 ### Documentation:
 - [UI Sandbox Guide](/docs/products/DecentralizedAIPlatform/Sandbox/)
-- [Developer Tutorials](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/)
-- [API Reference](/docs/products/DecentralizedAIPlatform/SDK/)
+- [Developer Tutorials](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/)
+- [API Reference](/docs/products/DecentralizedAIPlatform/SDK/sdk-concept/)
 
 ---
 
