@@ -63,8 +63,6 @@ Not sure if TUI is right for you? Check the [Full Onboarding Guide](/docs/produc
 - **[Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)** - Web GUI with marketplace demo capability
 - **[CLI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/)** - Direct commands for automation and scripting
 
----
-
 ## Step 1: Install
 
 Start by cloning the Github repo with the following command

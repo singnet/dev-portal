@@ -1,0 +1,3242 @@
+diff --git a/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/index.md b/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/index.md
+index ede7c2a..74984bd 100644
+--- a/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/index.md
++++ b/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/index.md
+@@ -7,20 +7,21 @@ The Multi-party Escrow (MPE) smart contract API and the payment channel together
+ The MPE contract comprises two main functions, which includes:
+ 
+ 1. A wallet with a deposit and withdraw function.
+-2. A set of the simple (“atomic”) unidirectional payment channels between clients and service providers and support functions for controlling these channels.
++2. A set of the simple ("atomic") unidirectional payment channels between clients and service providers and support functions for controlling these channels.
+ 
+-    **Note:** Any one can deposit and withdraw their ASI (FET) tokens into a Multi-Party Escrow, (which have not been escrowed at the moment).
++**Note:** Any one can deposit and withdraw their ASI (FET) tokens into a Multi-Party Escrow, (which have not been escrowed at the moment).
+ 
+ ## What is Payment Channel?
+ 
+ Whenever the sender and the receiver enter into an contract, a channel is created.
++
+ A [payment channel](http://super3.org/introduction-to-micropayment-channels/) is a tool that enables off-chain transactions between parties without the delay imposed by Blockchain block formation and without compromising the transactional security.
+ 
+-## Atomic unidirectional payment channel
++## Atomic Unidirectional Payment Channel
+ 
+ If you are familiar with the concept of payment channels, ignore this section.
+ 
+-The core logical building block of the Multi-Party Escrow is a simple (“Atomic”) unidirectional payment channel. To learn more about the details of how to implement the Escrow contract for unidirectional payment channel, click on this link [SimpleEscrow.sol](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol) file here.
++The core logical building block of the Multi-Party Escrow is a simple ("Atomic") unidirectional payment channel. To learn more about the details of how to implement the Escrow contract for unidirectional payment channel, click on this link [SimpleEscrow.sol](https://github.com/astroseger/escrow_contracts/blob/master/contracts/SimpleEscrow.sol) file here.
+ 
+ It is understood that the payment channel is on the Blockchain. So, in order to prevent direct updating on the Blockchain regularly, the payment channel state is maintained in the storage.
+ 
+@@ -31,199 +32,278 @@ Let us consider the simple unidirectional payment channel, the main logic is as
+ 1. The sender creates an Escrow contract with a given expiration date, and funds it with a desired amount of tokens.
+ 2. The sender then needs to send a small amount of tokens to the recipient each time (to the recipient) with signed authorization
+ 3. The recipient must verify whether the signed authorization and the amount required is correct, and that amount specified does not exceed the funds being escrowed.
+-4. The channel nonce is incremented, whenever a claim happens,
+-   Actually, the channel is not closed and the task can still continue off line, but a new nonce need to be used.
++4. The channel nonce is incremented, whenever a claim happens. Actually, the channel is not closed and the task can still continue off line, but a new nonce need to be used.
+ 5. The sender can perform the following:
+-    - Can collect all funds remaining after the expiration date.
+-      <br>-or-
+-    - Extend the expiration date and add funds to the contract at any moment in time.
++    - Can collect all funds remaining after the expiration date
++    - **-or-**
++    - Extend the expiration date and add funds to the contract at any moment in time
++
++**Note:** The receiver can withdraw from the channel (same as claim) only using the authorized amount by the sender. Whenever a signature is made on a certain format which should be signed by the private key of Kevin, Jack then verifies whether the signature was authentic to Kevin, based on the agreed format.
++
++## MPE Use Cases
++
++Consider the following:
+ 
+-Note: The receiver can withdraw from the channel (same as claim) only using the authorized amount by the sender. Whenever a signature is made on a certain format which should be signed by the private key of Kevin, Jack then verifies whether the signature was authentic to Kevin, based on the agreed format.
++- **Kevin** - is our Client **Consumer**/**Buyer**
++- **Jack** - is our Service **Provider**/**Seller**
+ 
+-## MPE Use cases
++If Kevin is buying services from Jack, they both need to enter in to a formal agreement with each other. A channel is created.
+ 
+-Consider the following
++**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient), Organization Id and the daemon group identity.
+ 
+--   Kevin - is our Client **Consumer**/**Buyer**
+--   Jack - is our Service **Provider**/**Seller**
++### Transaction Flow
+ 
+-If Kevin is buying services from the Kevin, they both need to enter in to a formal agreement with each other.A channel is created.
++1. **Kevin deposits tokens** to the Multi-Party Escrow account and uses this as a wallet for their ASI (FET) tokens.
+ 
+-**Note:** Each channel is unique to a combination of client identity (sender), service identity (recipient),Organization Id and the daemon group identity.
++2. **Kevin creates and opens a Payment Channel.**
++   
++   **Note:** Kevin is the sender of tokens and Jack is the receiver of tokens. Every channel created has a unique ID, which begins from 0.
+ 
+-1. Kevin deposits tokens to the Multi-Party Escrow account and uses this as a wallet for their ASI (FET) tokens.
+-2. Kevin creates and opens a Payment Channel.<br>
+-   <br>**Note:** Kevin is the sender of tokens and Jack is the receiver of tokens. Every channel created has a unique ID, which begins from 0.
+-3. Kevin funds the channel. Kevin suggests Jack to deposit a bare amount ( cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable. <br>
+-   <br>Based on how much Jack wants to use a service , Jack deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time.
+-   **Note:** Unless and until Jack authorises, the Kevin cannot withdraw the money.
+-   Kevin and Jack come in to agreement to perform operation Off chain. The daemon manages the off chain state of the channel.
+-4. Kevin needs to authorize using the signature (using his private key to sign) to let Jack withdraw
+-5. Jack verifies the following
+-    - Signature is authentic;
+-    - Amount of ASI (FET) tokens specified is correct (last Authorized Amount from Kevin + Cost of the Service being called) ;
++3. **Kevin funds the channel.** Kevin suggests Jack to deposit a bare amount (cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable.
++   
++   Based on how much Jack wants to use a service, Jack deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time.
++   
++   **Note:** Unless and until Jack authorises, Kevin cannot withdraw the money. Kevin and Jack come in to agreement to perform operation Off chain. The daemon manages the off chain state of the channel.
++
++4. **Kevin needs to authorize** using the signature (using his private key to sign) to let Jack withdraw
++
++5. **Jack verifies the following:**
++    - Signature is authentic
++    - Amount of ASI (FET) tokens specified is correct (last Authorized Amount from Kevin + Cost of the Service being called)
+     - Amount does not exceed the value of the channel
+-    - Channel is not very close to expiring or has expired.
+-6. Kevin makes a call; Jack now sends the signed authorization to Kevin to “withdraw”. The effective balance is 1.
+-7. Jack can now make a claim with the amount authorized.
++    - Channel is not very close to expiring or has expired
++
++6. **Kevin makes a call;** Jack now sends the signed authorization to Kevin to "withdraw". The effective balance is 1.
++
++7. **Jack can now make a claim** with the amount authorized.
++   
+    **Note:** Nonce increments to 1, when claim is performed.
+ 
+-### Diagram showcasing how Kevin and Jack Communicate
++## Diagram Showcasing How Kevin and Jack Communicate
++
++<ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/persona.png" alt="How sellers and buyers interact"/>
++
++## State Management of the Channel
++
++### Initial Channel Creation
++
++Kevin (Buyer) and Jack (Service provider) enter into a contract for the first time, they create a channel details in the Blockchain as follows:
++
++| Parameter | Value | Description |
++|-----------|-------|-------------|
++| **Channel ID** | 1 | The channel ID created is 1 on Chain |
++| **Nonce** | 0 | Initially the Nonce is 0 |
++| **Full amount** | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs |
++| **Authorized Amount** | 0 | The Authorized amount is zero, because no services has been used for the first time |
++| **Signature** | Nil | No signature is required to be sent |
++
++---
+ 
+- <ImageViewer src="/assets/images/products/AIMarketplace/core-concepts/persona.png" alt="How sellers and buyers interact"/>
++### First Service Call
+ 
+-### State management of the channel
++Kevin makes a call and authorizes for 1 cog to Kevin, (assuming the cost of the service is 1 cog), the status of the channel is now maintained offchain by the storage mechanism used by Daemon:
+ 
+--   Kevin (Buyer) and Jack (Service provider) enter into a contract for the first time, they create a channel details in the Blockchain is as follows:
++| Parameter | Value | Description |
++|-----------|-------|-------------|
++| **Channel ID** | 1 | The channel ID 1 is now updated off chain |
++| **Nonce** | 0 | Initially the Nonce is 0 |
++| **Full amount** | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs |
++| **Authorized Amount** | 1 | The Authorized amount is one cog |
++| **Signature** | 1 | Signature is required for one cog |
+ 
+-| Channel ID            | 1        | The channel ID created is 1 on Chain                                                 |
+-| --------------------- | -------- | ------------------------------------------------------------------------------------ |
+-| **Nonce**             | 0        | Initially the Nonce is 0                                                             |
+-| **Full amount**       | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs                                    |
+-| **Authorized Amount** | 0        | The Authorized amount is zero, because no services has been used for the first time. |
+-| **Signature**         | Nil      | No signature is required to be sent.                                                 |
++---
+ 
+-<br>
+-<br>
++### Second Service Call
+ 
+--   Kevin makes a call and authorizes for 1 cog to Kevin, (assuming the cost of the service is 1 cog) ,the status of the channel is now maintained offchain by the storage mechanism used by Daemon :
++Kevin makes a call and authorizes for 2 cogs to Kevin, now the status changes as follows:
+ 
+-| **Channel ID**        | 1        | The channel ID 1 is now updated off chain         |
+-| --------------------- | -------- | ------------------------------------------------- |
+-| **Nonce**             | 0        | Initially the Nonce is 0                          |
+-| **Full amount**       | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs |
+-| **Authorized Amount** | 1        | The Authorized amount is zero.                    |
+-| **Signature**         | 1        | No signature is required to be sent.              |
++| Parameter | Value | Description |
++|-----------|-------|-------------|
++| **Channel ID** | 1 | The channel ID 1 is now updated off chain |
++| **Nonce** | 0 | Initially the Nonce is 0 |
++| **Full amount** | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs |
++| **Authorized Amount** | 2 Cogs | The Authorized amount is two |
++| **Signature** | 2 Cogs | Signature is required for two |
+ 
+--   Kevin makes a call and authorizes for 2 cogs, to Kevin, now the status changes as follows:
++---
+ 
+-| **Channel ID**        | 1        | The channel ID 1 is now updated off chain         |
+-| --------------------- | -------- | ------------------------------------------------- |
+-| **Nonce**             | 0        | Initially the Nonce is 0                          |
+-| **Full amount**       | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs |
+-| **Authorized Amount** | 2 Cogs   | The Authorized amount is two.                     |
+-| **Signature**         | 2 Cogs   | Signature is required for two.                    |
++### Claim Transaction
+ 
+--   Jack makes a claim using the signature from Jack, this transaction is considered on-chain transaction. please note the effective balance in Blockchain for this channel is now 98 and its nonce is 1,The same channel state is updated as follows even in the off chain state:
++Jack makes a claim using the signature from Jack, this transaction is considered on-chain transaction. Please note the effective balance in Blockchain for this channel is now 98 and its nonce is 1. The same channel state is updated as follows even in the off chain state:
+ 
+-| **Channel ID**        | 1       | The channel ID created is 1                                                   |
+-| --------------------- | ------- | ----------------------------------------------------------------------------- |
+-| **Nonce**             | 1       | Initially the Nonce was 0 but now it is 1                                     |
+-| **Full amount**       | 98 Cogs | Amount signed by Jack was for two cogs. The full amount in the channel is 98. |
+-| **Authorized Amount** | 0       | The Authorized amount is two.                                                 |
+-| **Signature**         | 0       | No signature is required to be sent                                           |
++| Parameter | Value | Description |
++|-----------|-------|-------------|
++| **Channel ID** | 1 | The channel ID created is 1 |
++| **Nonce** | 1 | Initially the Nonce was 0 but now it is 1 |
++| **Full amount** | 98 Cogs | Amount signed by Jack was for two cogs. The full amount in the channel is 98 |
++| **Authorized Amount** | 0 | The Authorized amount is zero after claim |
++| **Signature** | 0 | No signature is required to be sent |
+ 
+ **Note:** Claims are always on-chain transaction and the Nonce gets incremented when claims are made.
+ 
+ The same process follows for future calls authorizations of cogs.
+ 
++## Channel Management Functions
++
+ ### Postponing the Expiration Time of the Channel
+ 
+ With the following functions the client can postpone the expiration time of the channel and can add funds to the channel at any time and can also claim all funds from the channel after the expiration time is reached.
+ 
+-```
++```solidity
+ function channelExtend(uint256 channel_id, uint256 new_expiration);
+ function channelAddFunds(uint256 channel_id, uint256 amount);
+ function channelExtendAndAddFunds(uint256 channel_id, uint256 new_expiration, uint256 amount);
+ function channelClaimTimeout(uint256 channel_id);
+ ```
+ 
+-### Claiming your funds back after Expiration
++---
+ 
+-The Sender can claim the funds after the expiry date
++### Claiming Your Funds Back After Expiration
+ 
+-```
++The Sender can claim the funds after the expiry date:
++
++```solidity
+ function channelClaimTimeout(uint256 channel_id);
+ ```
+ 
+-## How the recipient Claims funds from the Channel
++## How the Recipient Claims Funds from the Channel
+ 
+-With the following function, the recipient can claim funds from the channel
++With the following function, the recipient can claim funds from the channel:
+ 
+-```
++```solidity
+ function channelClaim(uint256 channelId, uint256 amount, uint8 v, bytes32 r, bytes32 s, bool isSendback)
+ ```
+ 
+-It should be noted that `v`, `r`, `s` are parts of the signature. The recipent should present the signature for the following message `[MPEContractAdress, channelId, nonce, amount]`. It should be noted that `[MPEContractAdress, channel_id, nonce]` is the full ID of the "atomic" channel.
++It should be noted that `v`, `r`, `s` are parts of the signature. The recipient should present the signature for the following message `[MPEContractAdress, channelId, nonce, amount]`. It should be noted that `[MPEContractAdress, channel_id, nonce]` is the full ID of the "atomic" channel.
+ 
+ The recipient has two possibilities:
+ 
+--   `(is_sendback==true)` - "close" the channel and send the remainder back to the sender.
+--   `(is_sendback==false)` - "close/reopen". We transfer the claimed amount to the recipient, but instead of sending the remainder back to the sender we simple change the nonce of the channel. By doing this we close the old atomic channel `[MPEContractAdress, channel_id, old_nonce]` and open the new one `[MPEContractAdress, channel_id, new_nonce]`.
++- **`(is_sendback==true)`** - "close" the channel and send the remainder back to the sender.
++- **`(is_sendback==false)`** - "close/reopen". We transfer the claimed amount to the recipient, but instead of sending the remainder back to the sender we simple change the nonce of the channel. By doing this we close the old atomic channel `[MPEContractAdress, channel_id, old_nonce]` and open the new one `[MPEContractAdress, channel_id, new_nonce]`.
++
++## Important Remarks
++
++### Service Provider Flexibility
++
++The service provider can use the same Ethereum address for all payment groups or can use a different address. In any case, the daemons very rarely need to send an on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner). We call such a server a treasurer server.
++
++---
++
++### Client Signing
++
++In the current implementation, the client signs off-chain authorization messages with the signer's private key. This means that the client doesn't necessarily need to sign transactions with his Ethereum identity. Instead, he can use other key pairs.
++
++---
++
++### Non-blocking Operations
+ 
+-## Remarks
++The server does not need to wait for a confirmation from the Blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the `nonce` of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the Blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the Blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.
+ 
+--   The service provider can use the same Ethereum address for all payment groups or can use a different address. In any case, the daemons very rarely need to send an on-chain transaction. This means that we actually don't need to provide the daemons with direct access to the private key. Instead, a centralized server could sign the transactions from the daemons (in some cases it even can be done in semi-manual manner by the service owner). We call such a server a treasurer server.
+--   In the current implementation, the client signs off-chain authorization messages with the signer's private key. This means that the client doesn't necessarily need to sign transactions with his Ethereum identity. Instead, he can use other key pairs.
+--   The server does not need to wait for a confirmation from the Blockchain after it sends on-chain requests to close/reopen channels (`channelClaim`). It can inform the client that the `nonce` of the channel has changed, and it can start accepting calls from the client with a new `nonce`. It can be shown that it is secure for both the client and the server if the transaction is accepted by the Blockchain before the expiration date of the channel. Similarly, the client doesn't need to wait for a confirmation from the Blockchain after sending the `channelExtendAndAddFunds` call. It makes the Multi-Party Escrow functional, even on a very slow Ethereum network.
+--   The `nonce` in the channel prevents a race between the `channelExtendAndAddFunds` and `channelClaim`. If the client sends the `channelExtendAndAddFunds` request and at the same time the
+-    server sends a `channelClaim` request, they can continue to work without receiving confirmation from the Blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
++---
+ 
+-### Contract Addresses
++### Race Condition Prevention
+ 
+-[Click here](https://github.com/singnet/platform-contracts#deployed-contracts-npm-version-033)
++The `nonce` in the channel prevents a race between the `channelExtendAndAddFunds` and `channelClaim`. If the client sends the `channelExtendAndAddFunds` request and at the same time the server sends a `channelClaim` request, they can continue to work without receiving confirmation from the Blockchain. In this case it also does not matter which request will be accepted first (as `channelClaim` can only change the `nonce`, and cannot create a new Payment Channel structure).
++
++## Contract Addresses
++
++For deployed contract addresses, please refer to: [Platform Contracts Repository](https://github.com/singnet/platform-contracts#deployed-contracts-npm-version-033)
++
++---
+ 
+ # MPE Stateless Client
+ 
+-The Client does not have to maintain the state of the last amount it had signed
+-The client can request the last state of the given payment channel from the server.
+-_ The server is not able to forge this state, because it was signed by the client (of course the client should check its own signature).
+-_ The server is obviously interested in saving and sending the last state, otherwise it loses money.
++The Client does not have to maintain the state of the last amount it had signed. The client can request the last state of the given payment channel from the server.
++
++Key benefits:
++- The server is not able to forge this state, because it was signed by the client (of course the client should check its own signature)
++- The server is obviously interested in saving and sending the last state, otherwise it loses money
+ 
+ This section describes how the client communicates with the SingularityNET services using the Multi-Party Escrow payment channels without storing state of the payment channel.
+-The client needs to store the Ethereum identity as follows:
+ 
+-1. The client obtains the list of payment channels (payment channels with "sender==client") from the Multi-Party Escrow (see EventChannelOpen).
+-   Considering the situation in which the request to open the channel had been sent, but not yet mined. This can occur when the client request has not received any acknowledgement or the session is disconnected (it "lost" its state).
+-2. The client requests the last state of the given payment channel from the server
++## Client Workflow
++
++The client needs to store the Ethereum identity as follows:
+ 
+--   The server can never duplicate the state of the payment channel signed by the client (off course the client should check its own signature).
+--   The server saves and sends the last state, otherwise the money lost.
++1. **Obtain payment channels list** - The client obtains the list of payment channels (payment channels with "sender==client") from the Multi-Party Escrow (see EventChannelOpen). This considers the situation in which the request to open the channel had been sent, but not yet mined. This can occur when the client request has not received any acknowledgement or the session is disconnected (it "lost" its state).
+ 
+-**Note:** A unique gRPC method is available in the daemon helps return the state of the channel (see: https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto).
++2. **Request channel state** - The client requests the last state of the given payment channel from the server:
++   - The server can never duplicate the state of the payment channel signed by the client (of course the client should check its own signature)
++   - The server saves and sends the last state, otherwise the money is lost
+ 
+-The client does not necessarily require a special call request to know the last state of the channel from the daemon.
++**Note:** A unique gRPC method is available in the daemon that helps return the state of the channel (see: https://github.com/singnet/snet-cli/blob/master/snet_cli/resources/proto/state_service.proto).
+ 
+-The daemon can return the state of the channel in the response to any non-authorized call.
++## Channel State Information
+ 
+ The client receives the following information from the daemon:
+ 
+--   **current_nonce**
+-    <br>Current nonce of the payment channel.
+--   **current_signed_amoun**t
+-    <br>Last amount which were signed by client with current_nonce. If no messages were signed with the current_nonce, then this value is an empty byte string (b''), which we should interpret as 0.
+--   **current_signature **
+-    <br>Last signature sent by the client with current_nonce, it could be absent (empty string) if no message was signed with current nonce.
+--   **oldnonce_signed_amount**  
+-    <br>last amount which was signed by client with nonce=current_nonce - 1.
+--   **oldnonce_signature**
+-    <br>last signature sent by client with nonce = current_nonce - 1.
++### Current State Parameters
++
++- **`current_nonce`**
++  
++  Current nonce of the payment channel.
++
++- **`current_signed_amount`**
++  
++  Last amount which were signed by client with current_nonce. If no messages were signed with the current_nonce, then this value is an empty byte string (b''), which we should interpret as 0.
++
++- **`current_signature`**
++  
++  Last signature sent by the client with current_nonce, it could be absent (empty string) if no message was signed with current nonce.
++
++### Previous State Parameters
++
++- **`oldnonce_signed_amount`**
++  
++  Last amount which was signed by client with nonce=current_nonce - 1.
++
++- **`oldnonce_signature`**
++  
++  Last signature sent by client with nonce = current_nonce - 1.
++
++**Note:** The two last values are not available in current version, if implemented, can calculate the unspent_amount in the case that current_nonce != Blockchain_nonce.
+ 
+-**Note:** The two last values are not available in current version, if implemented, can calculate the unspent_amount in the case that current_nonce != |Blockchain_nonce.
++## Example Scenario
+ 
+-**Example**
+ Assume that the server performs a close/reopen procedure for the channel. The client can proceed without confirmation from the Blockchain, because the server does not need to be dependent, or the client ensures that the request is mined before expiration of the channel.
+ 
+-Before considering the above scenario, define the following parameters
++### Definitions
+ 
+--   |Blockchain_nonce - nonce of the channel in the Blockchain
+--   |Blockchain_value - value of the channel in the Blockchain
++Before considering the above scenario, define the following parameters:
+ 
+-It is known that the daemon starts the close/reopen procedure only after the previous channelClaim request was mined. This means that the current_nonce, at maximum, is one point ahead of the |Blockchain_nonce.
++- **`Blockchain_nonce`** - nonce of the channel in the Blockchain
++- **`Blockchain_value`** - value of the channel in the Blockchain
++
++It is known that the daemon starts the close/reopen procedure only after the previous channelClaim request was mined. This means that the current_nonce, at maximum, is one point ahead of the Blockchain_nonce.
++
++### Calculations
+ 
+ In each case, the client can verify their signature is authentic and considers the following two numbers:
+ 
+--   Next amount which has to be signed (next_signed_amount), taking into account the price for the current call (price). This value can be easily calculated as we interpret current_signed_amount = b'' as 0.
+-    -   next_signed_amount = current_signed_amount + price
+--   The amount of tokens which haven't been already spent (unspent_amount).
++#### Next Amount Calculation
+ 
+-**Simple case** current_nonce == |Blockchain_nonce
++Next amount which has to be signed (`next_signed_amount`), taking into account the price for the current call (`price`). This value can be easily calculated as we interpret current_signed_amount = b'' as 0:
+ 
+--   unspent_amount = |Blockchain_value - current_signed_amount
++```
++next_signed_amount = current_signed_amount + price
++```
+ 
+-**Complex case**current_nonce != |Blockchain_nonce
+-Taking into account our assumptions, we know that current_nonce = |Blockchain_nonce + 1.
++#### Unspent Amount Calculation
+ 
+--   unspent_amount = |Blockchain_value - oldnonce_signed_amount - current_signed_amount
++The amount of tokens which haven't been already spent (`unspent_amount`):
++
++**Simple case: `current_nonce == Blockchain_nonce`**
++
++```
++unspent_amount = Blockchain_value - current_signed_amount
++```
++
++**Complex case: `current_nonce != Blockchain_nonce`**
++
++Taking into account our assumptions, we know that `current_nonce = Blockchain_nonce + 1`:
++
++```
++unspent_amount = Blockchain_value - oldnonce_signed_amount - current_signed_amount
++```
+ 
+-**Note:** The server can send smaller oldnonce_signed_amount (not the actually last one which was used for channelClaim), But the server trust that the money available is actually more in the channel, which means that a likely attack has occurred through unspent_amount, which lead us believe that there are less tokens than the actuals, and therefore the future calls need be rejected instantly (or force us to call channelAddFunds).
++**Security Note:** The server can send smaller oldnonce_signed_amount (not the actually last one which was used for channelClaim), but the server trust that the money available is actually more in the channel, which means that a likely attack has occurred through unspent_amount, which lead us believe that there are less tokens than the actuals, and therefore the future calls need be rejected instantly (or force us to call channelAddFunds).
+\ No newline at end of file
+diff --git a/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/index.md b/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/index.md
+index b82aab6..12ec8e8 100644
+--- a/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/index.md
++++ b/docs/products/DecentralizedAIPlatform/CoreConcepts/glossary/index.md
+@@ -1,90 +1,256 @@
+ # Glossary
+ 
+-### IPFS
++A comprehensive guide to key terms and concepts used in the SingularityNET ecosystem.
+ 
+-The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to
+-store and share data in a distributed file system. IPFS uses content-addressing to uniquely
+-identify each file in a global namespace connecting all computing devices. Organization details
+-and service details are stored in IPFS and the hash associated with them are stored in a
+-Blockchain.
++## Blockchain & Smart Contracts
++
++### Smart Contract
++
++Smart contracts are self-executing programs stored on the blockchain that automatically execute when predetermined conditions are met. In SingularityNET, smart contracts manage service registration, payments, and organizational governance.
++
++---
+ 
+ ### Registry
+ 
+-The SingularityNET Registry is an ERC-165–compliant smart contract on the Ethereum Blockchain that stores organizations, services, and type repositories.
+-Registry provides all the information needed to find and interact with AI services on the platform, either by listing the information in full, or when it is too long, by listing the IPFS hash.
++The SingularityNET Registry is an ERC-165 compliant smart contract on the Ethereum blockchain that stores and manages:
++- Organizations and their metadata
++- AI services and their configurations
++- Type repositories for service interfaces
+ 
+-### Smart Contract
++The Registry provides all information needed to discover and interact with AI services on the platform, either by storing the information directly or by referencing IPFS hashes for larger data.
++
++---
+ 
+-Contract: Contracts are smart programs or algorithms, executes when certain conditions are met successfully.
++### MultiPartyEscrow (MPE) Contract
+ 
+-### MultipPartyEscrow Contract
++The MPE contract enables secure, conditional transactions between service consumers and providers through an escrow mechanism. It manages payment channels and ensures that funds are only released when services are successfully delivered.
+ 
+-An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account.
++---
+ 
+-### Channel
++### Payment Channel
+ 
+-A payment channel is a tool that enables off-chain transactions between parties without the delay imposed by Blockchain block formation and without compromising the transactional security.
++A payment channel is an off-chain scaling solution that enables multiple transactions between parties without requiring each transaction to be recorded on the blockchain. This reduces gas costs and eliminates blockchain confirmation delays while maintaining security.
++
++---
++
++### On-Chain & Off-Chain Transactions
++
++**On-chain transactions:**
++- Occur directly on the blockchain
++- Permanently recorded in blockchain history
++- Require gas fees for execution
++- Subject to block confirmation times
++
++**Off-chain transactions:**
++- Occur outside the blockchain
++- Near-zero transaction costs
++- Instant execution
++- Periodically settled on-chain for security
++
++## Platform Components
+ 
+ ### Daemon
+ 
+-Daemon maintains the channel state off chain, so in order to constrain operations involving gas cost (such as compensation or incentive or commission or any other facility charges levied) and allow transaction between parties without imposing any delay by the Blockchain block formation times and compromising on transactional security.
++The SingularityNET daemon is a sidecar proxy that interfaces between AI services and the platform. It handles:
++- Payment channel state management
++- Request authentication and authorization
++- Off-chain transaction processing
++- Communication with smart contracts
++- Service monitoring and logging
++
++The daemon abstracts blockchain complexity from service developers, allowing them to focus on AI functionality.
+ 
+-The SingularityNET daemon is an adapter that a service uses to interface with the SingularityNET platform. In software architecture lingo, the daemon is referred to sidecar proxy, — a process deployed next to a core application (the AI service, in this case) to abstract architectural details, such as logging and configuration, and the platform - interaction with smart contracts or even the decision to use the Ethereum Blockchain.
++---
+ 
+-### SDK
++### SDK (Software Development Kit)
+ 
+-SDK is a tool for AI customers to make calls to service. The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorizations. The SDK is available in NodeJS, Python and Java languages.
++SDKs are libraries that simplify integration with SingularityNET services. They provide:
++- Automated payment channel management
++- Service discovery and connection
++- Request signing and authentication
++- Multiple language support (Python, JavaScript, Java)
+ 
+-### Snet-Cli
++Available SDKs streamline the process of calling AI services and handling platform-specific requirements.
+ 
+-The SingularityNET command line interface (CLI) is the primary tool for interacting with the platform’s smart contracts, managing deployed services, and managing funds.
++---
+ 
+-### On-Chain & Off-Chain Transaction
++### CLI (Command Line Interface)
+ 
+-On-chain transactions refer to those crypto currency transactions which occur on the Blockchain - that is, on the records of the Blockchain - and remain dependent on the state of the Blockchain for their validity
+-Off-chain transactions refer to those transactions occurring on a cryptocurrency network which move the value outside of the blockchain. Due to their zero/low cost, off-chain transactions are gaining popularity, especially among large participants
++The SingularityNET CLI is the primary tool for:
++- Managing organizations and services
++- Interacting with smart contracts
++- Handling payment channels and funds
++- Service deployment and configuration
++- Identity and wallet management
++
++## Storage & Infrastructure
++
++### IPFS (InterPlanetary File System)
++
++IPFS is a distributed, peer-to-peer protocol for storing and sharing data. SingularityNET uses IPFS to store:
++- Service metadata
++- Organization details
++- Model files and artifacts
++- Documentation and specifications
++
++Content is addressed by cryptographic hash, ensuring data integrity and availability.
++
++---
++
++### ETCD
++
++ETCD is a distributed key-value store used by SingularityNET for:
++- Payment channel state storage
++- Service configuration management
++- Distributed coordination
++- Event logging and tracking
++
++ETCD nodes can be managed by daemon replicas, providing high availability and consistency.
++
++## Tokens & Payments
++
++### ASI (FET) Token
++
++ASI (FET) is the native utility token of the SingularityNET platform:
++- ERC-20 compliant token on Ethereum
++- Used for all service payments
++- Enables governance participation
++- Can be staked for network benefits
++
++---
++
++### COGS
++
++COGS are the smallest unit of measurement for transactions on the platform, similar to how wei relates to Ether. Service pricing and payments are calculated in COGS.
++
++---
++
++### Gas and Gas Costs
++
++**Gas** represents the computational effort required to execute blockchain operations:
++- **Gas Limit:** Maximum gas units willing to consume
++- **Gas Price:** Price per gas unit in Gwei
++- **Gas Strategy:** 
++  - Fast (~1 minute confirmation)
++  - Medium (~5 minute confirmation)
++  - Slow (~60 minute confirmation)
++
++## User Interface & Tools
++
++### DApp (Decentralized Application)
++
++The SingularityNET DApp is a web-based marketplace and service explorer that:
++- Displays available AI services
++- Enables service discovery and testing
++- Manages user accounts and payments
++- Provides service analytics and ratings
++
++---
++
++### MetaMask
++
++MetaMask is a browser extension wallet that:
++- Stores cryptocurrency and tokens
++- Signs transactions
++- Connects to Ethereum networks
++- Interfaces with DApps
++
++MetaMask serves as the primary gateway for interacting with SingularityNET on both mainnet and testnet.
++
++---
++
++### Publisher Portal
++
++A web interface for service providers to:
++- Register organizations
++- Deploy and manage services
++- Monitor usage and earnings
++- Handle team permissions
++
++## Security & Authentication
+ 
+ ### Signature
+ 
+-Authorization given by the signer.
++A cryptographic proof that validates:
++- Transaction authorization
++- Message authenticity
++- Identity verification
++- Payment channel updates
++
++Signatures ensure that only authorized parties can execute actions on the platform.
++
++---
+ 
+ ### Wallet/Address
+ 
+-Wallet is where you hold your crypto currencies , every wallet is associated to an address.
++**Wallet:** A software application that stores private keys and manages cryptocurrency holdings.
+ 
+-### Dapp
++**Address:** A unique identifier derived from a public key that:
++- Receives tokens and payments
++- Identifies accounts on the blockchain
++- Serves as a user's public identity
+ 
+-The SingularityNET DApp is essentially a rich Registry explorer. It loads the Registry and generates UI for managing the Services and Type Repositories registered in it.
++## Development & Integration
+ 
+-### Metamask
++### gRPC
+ 
+-MetaMask is an internet browser extension that allows users to interact with the Ethereum Blockchain and its decentralized applications. MetaMask serves as your access portal for both the Ethereum Mainnet and Sepolia.
++A high-performance RPC framework used for service communication:
++- Language-agnostic protocol
++- Efficient binary serialization
++- Streaming support
++- Used by all SingularityNET services
+ 
+-### ASI (FET)
++---
+ 
+-ASI (FET) is the proprietary cryptocurrency token used by the SingularityNET platform. SingularityNET (ASI (FET)) is an Ethereum based token complying with ERC-20 standards. The ASI (FET) token will be used to settle a transaction over the Blockchain.
++### Protocol Buffers (Protobuf)
+ 
+-### ASI (FET) Token
++A method for serializing structured data:
++- Defines service interfaces
++- Specifies message formats
++- Generates client/server code
++- Ensures type safety across languages
+ 
+-Tokens can be staked for voting rights and to become an Agent or spent on goods and services on the platform.
++## Infrastructure Providers
+ 
+-### Cogs
++### Infura/Alchemy
+ 
+-It is the unit of measurement transacted between parties.
++Managed Ethereum node services that provide:
++- Blockchain API access
++- Reliable network connectivity
++- Eliminates need for running own nodes
++- Scalable infrastructure for DApps
+ 
+-### ETCD
++These services enable users to interact with the blockchain without maintaining their own Ethereum nodes.
++
++## Network Concepts
+ 
+-ETCD is a local database that store all the events as table, when an event is triggered from Blockchain ETCD is also considered as a Deamon. ETCD was chosen because it is written in Go, and has out of the box embedded server support. This means that its nodes can be started and stopped by snet-daemon replicas
++### Mainnet
+ 
+-### Gas and Gas Cost
++The primary Ethereum network where:
++- Real transactions occur
++- Actual value is exchanged
++- Services operate in production
++- Permanent records are maintained
+ 
+-The Gas Limit is the maximum amount of Gas that a user is willing to pay for performing this action or confirming a transaction (a minimum of 21,000). The price of Gas (Gas Price) is the amount of Gwei that the user is willing to spend on each unit of Gas
++---
+ 
+-### Gas Strategy ( Slow , Medium and Fast)
++### Testnet (Sepolia)
+ 
+-Ethereum gas price is a time based gas price strategy ('fast' ~1min, 'medium' ~5min or 'slow' ~60min) (defaults to session.default_gas_price).
+-Infura
++A test network that mirrors mainnet functionality:
++- Free test tokens available
++- Safe environment for development
++- No real value at risk
++- Used for testing and demonstration
+ 
+-### Infura
++## Quick Reference
+ 
+-Infura is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node.
++| Term | Category | Description |
++|------|----------|-------------|
++| ASI (FET) | Token | Platform utility token |
++| Daemon | Infrastructure | Service-platform interface |
++| ETCD | Storage | Distributed state storage |
++| IPFS | Storage | Distributed file system |
++| MPE | Smart Contract | Payment escrow contract |
++| Registry | Smart Contract | Service directory contract |
++| SDK | Development | Integration libraries |
++| CLI | Tools | Command-line management tool |
+\ No newline at end of file
+diff --git a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/index.md b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/index.md
+index 3d79b28..1df904f 100644
+--- a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/index.md
++++ b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/index.md
+@@ -103,18 +103,25 @@ Terminal-based interface with interactive menus that guides you through the publ
+ ## Important Clarifications
+ 
+ ### 📌 Service Accessibility
++
+ > **Key Point:** All methods publish to the same blockchain. The difference is only in how users can interact with your service.
+ 
+ - **Publisher Portal:** Service accessible via Marketplace UI + CLI + SDK
+ - **CLI/TUI:** Service accessible via CLI + SDK only
+ 
++---
++
+ ### 🔄 Interoperability
++
+ Organizations and services are blockchain entities. Once created:
+ - Can be managed through any method later
+ - Can switch between methods as needed
+ - Metadata can be updated using different tools
+ 
++---
++
+ ### 🎨 UI Demo Considerations
++
+ > **Note:** Only Publisher Portal allows creation of marketplace UI demos
+ 
+ - UI demos increase service discoverability
+@@ -125,18 +132,25 @@ Organizations and services are blockchain entities. Once created:
+ ## Quick Decision Guide
+ 
+ ### Choose Publisher Portal if:
++
+ ✅ **Marketplace Visibility** - You want users to discover and test your service easily  
+ ✅ **Team Collaboration** - Multiple people will manage the service  
+ ✅ **Visual Preference** - You prefer graphical interfaces  
+ ✅ **Demo Creation** - You want to showcase your service with a custom UI  
+ 
++---
++
+ ### Choose CLI if:
++
+ ✅ **Automation** - You need to script the publishing process  
+ ✅ **SDK-Only Access** - Your service is for programmatic use only  
+ ✅ **DevOps Integration** - Part of your CI/CD pipeline  
+ ✅ **Advanced Control** - You need fine-grained configuration options  
+ 
++---
++
+ ### Choose TUI if:
++
+ ✅ **Terminal Environment** - Working on servers without GUI  
+ ✅ **Guided Process** - Want help without memorizing commands  
+ ✅ **No Web Access** - Restricted environment without browser access  
+@@ -172,7 +186,7 @@ Each has its own advantages and use cases:
+ - [gRPC Integration Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationGRPCService/)
+ - [HTTP Integration Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationHTTPService/)
+ 
+-## **ETCD** Setup  
++## ETCD Setup  
+ 
+ To manage **payment channels** and ensure decentralized synchronization, `etcd` is used as a **distributed key-value store** that helps track payments across AI service replicas.  
+ 
+@@ -182,24 +196,24 @@ In this guide, we will be working with the **embedded** `etcd`, ensuring a simpl
+ 
+ For **advanced users** who want to deploy `etcd` **on a public domain**, follow the **[ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/)** to configure a standalone `etcd` instance.
+ 
+-## **Daemon Setup**
++## Daemon Setup
+ 
+-### **What is the Daemon?**
++### What is the Daemon?
+ 
+ A daemon is an adapter between an AI service and a client. Its primary responsibilities include:
+ 
+-- Tracking service calls.
+-- Calculating funds spent per call.
+-- Redirecting requests to the AI service.
+-- Managing free call limits.
++- Tracking service calls
++- Calculating funds spent per call
++- Redirecting requests to the AI service
++- Managing free call limits
+ 
+ The daemon must be deployed on a **public address** since it acts as the entry point for all incoming requests.
+ 
+-## **Domain Configuration for Daemon**
++## Domain Configuration for Daemon
+ 
+ To enable secure communication between clients and the daemon, you need to configure a **domain and SSL certificates**.
+ 
+-### **Port Forwarding from Domain to Daemon Host**
++### Port Forwarding from Domain to Daemon Host
+ 
+ This step depends on the web server you are using. Configure **port forwarding** from `<DAEMON_PORT>` to `<DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>`.
+ 
+@@ -209,22 +223,28 @@ This step depends on the web server you are using. Configure **port forwarding**
+ your_awesome_domain.com:<DAEMON_PORT> --> <DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>
+ ```
+ 
+-### **Generating Domain Certificates (Skip if SSL is Already Configured)**
++---
++
++### Generating Domain Certificates
+ 
+ To secure your daemon with SSL, generate **domain certificates** using `certbot`.
+ 
+-1. Install `certbot` by following the instructions here: [Certbot Installation Guide](https://certbot.eff.org/instructions?ws=other\&os=ubuntufocal)
++> Skip this section if SSL is already configured on your domain.
++
++1. **Install `certbot`:**
+ 
+-2. Generate SSL certificates:
++   Follow the instructions here: [Certbot Installation Guide](https://certbot.eff.org/instructions?ws=other&os=ubuntufocal)
++
++2. **Generate SSL certificates:**
+ 
+    ```sh
+    sudo certbot certonly
+    ```
+ 
+-   - Follow the prompts and choose **standalone** mode.
+-   - Enter your daemon domain (e.g., `your_awesome_domain.com`).
++   - Follow the prompts and choose **standalone** mode
++   - Enter your daemon domain (e.g., `your_awesome_domain.com`)
+ 
+-3. Retrieve certificate paths:
++3. **Retrieve certificate paths:**
+ 
+    ```sh
+    sudo certbot certificates
+@@ -232,21 +252,21 @@ To secure your daemon with SSL, generate **domain certificates** using `certbot`
+ 
+    You should see two files: `fullchain.pem` and `privkey.pem`.
+ 
+-4. Verify automatic renewal is enabled:
++4. **Verify automatic renewal is enabled:**
+ 
+    ```sh
+    sudo systemctl show certbot.timer
+    ```
+ 
+-   **Result:** You now have `ssl_cert` and `ssl_key` parameters for your daemon configuration.
++**Result:** You now have `ssl_cert` and `ssl_key` parameters for your daemon configuration.
+ 
+-## **Installing the Daemon**
++## Installing the Daemon
+ 
+ Get the **latest version** of the SingularityNET Daemon from the official GitHub releases page:
+ 
+ 👉 [https://github.com/singnet/snet-daemon/releases/latest](https://github.com/singnet/snet-daemon/releases/latest)
+ 
+-### Below is an example of how to install the daemon on **Linux**:
++### Installation Steps for Linux
+ 
+ 1. **Download the latest release:**
+ 
+@@ -272,22 +292,23 @@ Get the **latest version** of the SingularityNET Daemon from the official GitHub
+    sudo cp snetd-linux-amd64-{{ $daemonVersion }} /usr/bin/snetd
+    ```
+ 
+-## **Enabling Metering and Free Calls**
++## Enabling Metering and Free Calls
+ 
+ To enable **Metering** and **Free Calls**, you must generate a **public address** and a **private key**. These credentials will be used to configure both features.
++
+ You can either use **the same key pair** for both metering and free calls, or **generate separate ones** for each.
+ 
+-### 1. Generate keys
++### Step 1: Generate Keys
+ 
+ You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+ 
+ :::code-group
+ 
+-```bash
++```bash[Using snetd]
+ ./snetd generate-key
+ ```
+ 
+-```python
++```python[Using Python]
+ from eth_account import Account
+ import secrets
+ 
+@@ -302,19 +323,19 @@ print("Address: ", acct.address)
+ 
+ > 🔒 **Important:** Store the output securely. The private key grants full control over the corresponding address and should never be shared.
+ 
+-### 2. Use the generated credentials
+-
+-You will need to use the generated keys in two places:
++---
+ 
+-* **Metering**:
++### Step 2: Use the Generated Credentials
+ 
+-  * Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service.
+-  * Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration.
++You will need to use the generated keys in two places:
+ 
+-* **Free Calls**:
++**Metering:**
++- Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service
++- Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration
+ 
+-  * Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service.
+-  * Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration.
++**Free Calls:**
++- Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service
++- Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration
+ 
+ > ✅ You may **reuse the same key pair** for both Metering and Free Calls, or generate **separate credentials** for better isolation.
+ 
+@@ -328,11 +349,9 @@ Edit the configuration file:
+ $EDITOR snetd.config.json
+ ```
+ 
+-Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia)**. Replace all placeholders (`<...>`) accordingly.
+-
+----
++### Example Configuration
+ 
+-### Example Configuration (`snetd.config.json`)
++Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia)**. Replace all placeholders (`<...>`) accordingly.
+ 
+ :::code-group
+ 
+@@ -426,54 +445,54 @@ Below are complete configuration examples for **Mainnet** and **Testnet (Sepolia
+ For each reference to the embedded ETCD configuration in the daemon, do not delete the directory specified by `data_dir`. Deleting this folder will remove access to payment channel storage and prevent token withdrawals.
+ :::
+ 
+-
+ ---
+ 
+-### Placeholders to Replace:
++### Placeholders to Replace
+ 
+ | Placeholder                 | Explanation                                                                                                  |
+ |-----------------------------|--------------------------------------------------------------------------------------------------------------|
+-| `<DAEMON_PORT>`             | Port number where the daemon will run (e.g., `7000`).                                                        |
+-| `<DAEMON_GROUP>`            | Group name for your daemon (`default_group`).                                                                |
+-| `<ORGANIZATION_ID>`         | Your organization’s ID (after publishing organization).                                                      |
+-| `<SERVICE_ID>`              | Your service’s ID (after publishing service).                                                                |
+-| `<SERVICE_HOST>`            | Address (IP or hostname) of your running AI service.                                                         |
+-| `<SERVICE_PORT>`            | Port number on which your AI service is listening.                                                           |
+-| `<PATH_TO_DOMAIN_CERTS>`    | Directory containing your domain certificates (`fullchain.pem` and `privkey.pem`).                           |
+-| `<METERING_KEY>`            | Previously generated private key for metering (see [Enabling Metering](#enabling-metering-and-free-calls)).                 |
+-| `<FREE_CALL_KEY>`    | Previously generated private key for free calls (see [Enabling Free Calls](#enabling-metering-and-free-calls)).                           |
+-| `<YOUR_API_KEY>`            | Alchemy API key for blockchain communication. Follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) if needed.|
++| `<DAEMON_PORT>`             | Port number where the daemon will run (e.g., `7000`)                                                        |
++| `<DAEMON_GROUP>`            | Group name for your daemon (`default_group`)                                                                |
++| `<ORGANIZATION_ID>`         | Your organization's ID (after publishing organization)                                                      |
++| `<SERVICE_ID>`              | Your service's ID (after publishing service)                                                                |
++| `<SERVICE_HOST>`            | Address (IP or hostname) of your running AI service                                                         |
++| `<SERVICE_PORT>`            | Port number on which your AI service is listening                                                           |
++| `<PATH_TO_DOMAIN_CERTS>`    | Directory containing your domain certificates (`fullchain.pem` and `privkey.pem`)                           |
++| `<METERING_KEY>`            | Previously generated private key for metering                                                               |
++| `<FREE_CALL_KEY>`           | Previously generated private key for free calls                                                             |
++| `<YOUR_API_KEY>`            | Alchemy API key for blockchain communication                                                                |
+ 
+ ---
+ 
+-### Configuration Field Explanations:
++### Configuration Field Explanations
+ 
+ | Field                                  | Explanation                                                            |
+ |----------------------------------------|------------------------------------------------------------------------|
+-| `blockchain_enabled`                   | Enables blockchain connectivity (always `true`).                       |
+-| `blockchain_network_selected`          | Blockchain network (`main` for Mainnet, `sepolia` for Testnet).        |
+-| `daemon_endpoint`                      | Address and port where daemon listens for incoming connections.        |
+-| `daemon_group_name`                    | Name of payment group (defined earlier).                               |
+-| `organization_id`                      | ID referencing your published organization.                            |
+-| `service_id`                           | ID referencing your published AI service.                              |
+-| `service_endpoint`                     | Internal endpoint for your AI service.                                 |
+-| `ssl_cert` and `ssl_key`               | SSL certificate paths for secure connections to daemon.                |
+-| `metering_enabled`                     | Activates request metering functionality (`true`).                     |
+-| `metering_endpoint`                    | Endpoint for metering service (no changes required).                   |
+-| `private_key_for_metering`                 | Ethereum private key for metering functionality.                       |
+-| `private_key_for_calls`                 | Ethereum private key for free calls functionality.                       |
+-| `ethereum_json_rpc_http_endpoint` and<br>`ethereum_json_rpc_ws_endpoint` | Blockchain RPC endpoints (Alchemy service URLs).                 |
+-| `payment_channel_storage_server`       | Embedded ETCD setup (no modification required if using embedded ETCD). |
+-| `log`                                  | Daemon logging settings.                                               |
+-
+-## **Daemon Setup Summary**
+-
+-Currently, the daemon **cannot be started** because the **organization and service are not yet created**. These steps will be covered later in the guide. For now, you have successfully:
+-
+-✔ Configured domain and SSL certificates.\
+-✔ Generated metering and free calls private keys.\
+-✔ Installed and prepared the daemon.\
+-✔ Set up the configuration file for later use.
++| `blockchain_enabled`                   | Enables blockchain connectivity (always `true`)                       |
++| `blockchain_network_selected`          | Blockchain network (`main` for Mainnet, `sepolia` for Testnet)       |
++| `daemon_endpoint`                      | Address and port where daemon listens for incoming connections        |
++| `daemon_group_name`                    | Name of payment group (defined earlier)                               |
++| `organization_id`                      | ID referencing your published organization                            |
++| `service_id`                           | ID referencing your published AI service                              |
++| `service_endpoint`                     | Internal endpoint for your AI service                                 |
++| `ssl_cert` and `ssl_key`              | SSL certificate paths for secure connections to daemon                |
++| `metering_enabled`                     | Activates request metering functionality (`true`)                     |
++| `metering_endpoint`                    | Endpoint for metering service (no changes required)                   |
++| `private_key_for_metering`             | Ethereum private key for metering functionality                       |
++| `private_key_for_free_calls`           | Ethereum private key for free calls functionality                     |
++| `ethereum_json_rpc_http_endpoint`      | HTTP RPC endpoint for blockchain communication                        |
++| `ethereum_json_rpc_ws_endpoint`        | WebSocket RPC endpoint for blockchain communication                   |
++| `payment_channel_storage_server`       | Embedded ETCD setup (no modification required if using embedded ETCD) |
++| `log`                                  | Daemon logging settings                                               |
++
++## Daemon Setup Summary
++
++Currently, the daemon **cannot be started** because the **organization and service are not yet created**. These steps will be covered next. For now, you have successfully:
++
++✔ Configured domain and SSL certificates  
++✔ Generated metering and free calls private keys  
++✔ Installed and prepared the daemon  
++✔ Set up the configuration file for later use  
+ 
+ Proceed to the next step to create your **Organization and Service**.
+ 
+@@ -487,7 +506,7 @@ To publish your organization, you can choose between two methods:
+ 
+ ---
+ 
+-### 1. Create an Identity in `snet-cli`
++### Step 1: Create an Identity in `snet-cli`
+ 
+ First, create an identity in `snet-cli`. You can create an identity with your existing crypto wallet private key or mnemonic seed phrase. Choose whichever option applies to you.
+ 
+@@ -537,7 +556,7 @@ snet network mainnet
+ 
+ ---
+ 
+-### 2. Initialize Organization Metadata
++### Step 2: Initialize Organization Metadata
+ 
+ Initialize your organization metadata using your chosen `org_name` and `org_id`. Ensure to use the same `<ORGANIZATION_ID>` later in the daemon configuration.
+ 
+@@ -561,7 +580,7 @@ A file named `organization_metadata.json` will be created with the provided meta
+ 
+ ---
+ 
+-### 3. Add Organization Description
++### Step 3: Add Organization Description
+ 
+ Add a detailed description, a short description, and your organization's URL.
+ 
+@@ -592,16 +611,16 @@ After executing, your `organization_metadata.json` file will be updated:
+ 
+ ---
+ 
+-### 4. Add Recipient and Group Details
++### Step 4: Add Recipient and Group Details
+ 
+ Next, specify the recipient details and payment group configuration.
+ 
+-- `payment_address`: Ethereum address to receive payments.
+-- `payment_channel_storage_type`: Typically `etcd`.
++- `payment_address`: Ethereum address to receive payments
++- `payment_channel_storage_type`: Typically `etcd`
+ - `endpoint`: The endpoint depends on your setup:
+-  - Use `http://127.0.0.1:2379` if you’re using embedded etcd.
+-  - Use your public etcd endpoint URL if deploying externally.
+-- `payment-expiration-threshold`: Usually set to `40320`.
++  - Use `http://127.0.0.1:2379` if you're using embedded etcd
++  - Use your public etcd endpoint URL if deploying externally
++- `payment-expiration-threshold`: Usually set to `40320`
+ 
+ Example command:
+ 
+@@ -646,17 +665,17 @@ This step updates the `groups` section in your `organization_metadata.json`:
+ 
+ ---
+ 
+-### 5. (Optional) Add Assets and Contacts
++### Step 5: (Optional) Add Assets and Contacts
+ 
+ You can optionally add assets (e.g., images) and contacts (email, phone) for your organization:
+ 
+-- Add an asset:
++**Add an asset:**
+ 
+ ```bash
+ snet organization metadata-add-assets image.png hero_image
+ ```
+ 
+-- Add contact information:
++**Add contact information:**
+ 
+ ```bash
+ snet organization metadata-add-contact --phone 123456789 --email yourorg@yourorg support
+@@ -664,7 +683,7 @@ snet organization metadata-add-contact --phone 123456789 --email yourorg@yourorg
+ 
+ ---
+ 
+-### 6. Verify Metadata File
++### Step 6: Verify Metadata File
+ 
+ Check the metadata file you've created:
+ 
+@@ -676,7 +695,7 @@ You may manually edit this file if needed.
+ 
+ ---
+ 
+-### 7. Publish Organization
++### Step 7: Publish Organization
+ 
+ Finally, publish your organization. Note that publishing creates an on-chain transaction, requiring ETH in your wallet account.
+ 
+@@ -690,7 +709,7 @@ If you previously published your organization using the **Publisher Portal**, pl
+ 
+ ---
+ 
+-### 1. Navigate to Your Service Directory
++### Step 1: Navigate to Your Service Directory
+ 
+ ```bash
+ cd path/to/your/service
+@@ -698,7 +717,7 @@ cd path/to/your/service
+ 
+ ---
+ 
+-### 2. Initialize Service Metadata
++### Step 2: Initialize Service Metadata
+ 
+ Create a metadata file for your service using the following command:
+ 
+@@ -714,14 +733,14 @@ snet service metadata-init \
+ 
+ Where:
+ 
+-- `SERVICE_PROTOBUF_DIR`: Directory containing your service's protobuf files.
+-- `SERVICE_DISPLAY_NAME`: User-friendly name for your service (can be any name).
+-- `PAYMENT_GROUP_NAME`: The group name you defined earlier during [organization setup](#4-add-recipient-and-group-details).
+-- `DAEMON_ENDPOINT`: Public endpoint (domain or IP address with port) of your deployed daemon.
+-- `FIXED_PRICE`: Price per service call in ASI (FET) (for example, `0.00000001` ASI (FET) = 1 COG).
+-- `SERVICE_TYPE`: Choose the service type you defined at the very beginning of this guide (`grpc` or `http`).
++- `SERVICE_PROTOBUF_DIR`: Directory containing your service's protobuf files
++- `SERVICE_DISPLAY_NAME`: User-friendly name for your service (can be any name)
++- `PAYMENT_GROUP_NAME`: The group name you defined earlier during [organization setup](#step-4-add-recipient-and-group-details)
++- `DAEMON_ENDPOINT`: Public endpoint (domain or IP address with port) of your deployed daemon
++- `FIXED_PRICE`: Price per service call in ASI (FET) (for example, `0.00000001` ASI (FET) = 1 COG)
++- `SERVICE_TYPE`: Choose the service type you defined at the very beginning of this guide (`grpc` or `http`)
+ 
+-**Example**:
++**Example:**
+ 
+ ```bash
+ snet service metadata-init \
+@@ -735,7 +754,7 @@ snet service metadata-init \
+ 
+ ---
+ 
+-### 3. Add a Service Description
++### Step 3: Add a Service Description
+ 
+ Add details and a URL describing your service:
+ 
+@@ -745,22 +764,21 @@ snet service metadata-add-description --json '{"description": "Description of my
+ 
+ ---
+ 
+-### 4. Add Daemon Metering Address
++### Step 4: Add Daemon Metering Address
+ 
+-Enable metering by specifying the metering address generated earlier ([Metering address generation](#enabling-metering-and-free-calls)):
++Enable metering by specifying the metering address generated earlier ([Metering address generation](#step-1-generate-keys)):
+ 
+ ```bash
+ snet service metadata-add-daemon-addresses <GROUP_NAME> <METERING_ADDRESS>
+ ```
+ 
+ Replace:
+-
+-- `<GROUP_NAME>`: Your payment group name (e.g., `default_group`).
+-- `<METERING_ADDRESS>`: Previously generated Ethereum address used for metering.
++- `<GROUP_NAME>`: Your payment group name (e.g., `default_group`)
++- `<METERING_ADDRESS>`: Previously generated Ethereum address used for metering
+ 
+ ---
+ 
+-### 5. Publish the Service
++### Step 5: Publish the Service
+ 
+ Finally, publish your service. This creates an on-chain transaction, so ensure your wallet has enough ETH:
+ 
+@@ -768,7 +786,7 @@ Finally, publish your service. This creates an on-chain transaction, so ensure y
+ snet service publish <ORGANIZATION_ID> <SERVICE_ID>
+ ```
+ 
+-Example:
++**Example:**
+ 
+ ```bash
+ snet service publish my_test_org my_test_service
+@@ -776,7 +794,7 @@ snet service publish my_test_org my_test_service
+ 
+ ---
+ 
+-### 6. Verify Service Publication
++### Step 6: Verify Service Publication
+ 
+ Check your service publication status using:
+ 
+@@ -798,109 +816,16 @@ Replace the placeholders as indicated below:
+ 
+ ### Fields to Replace
+ 
+-- `<DAEMON_PORT>`: The port where the daemon will run.
+-- `<DAEMON_GROUP>`: The group name defined earlier (`default_group`).
+-- `<ORGANIZATION_ID>`: Your published Organization ID.
+-- `<SERVICE_ID>`: Your published Service ID.
+-- `<SERVICE_HOST>`: The host address of your AI service.
+-- `<SERVICE_PORT>`: The port your AI service is listening on.
+-- `<PATH_TO_DOMAIN_CERTS>`: The directory containing your domain SSL certificates (`fullchain.pem` and `privkey.pem`).
+-- `<METERING_KEY>`: Your previously generated private key for metering.
+-- `<YOUR_API_KEY>`: Your Alchemy API key. If you don’t have one yet, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/).
+-
+----
+-
+-### Example Daemon Configuration
+-
+-Here's a complete example configuration file, assuming you're using embedded ETCD and have SSL certificates already set up:
+-
+-:::code-group
+-
+-```json[Testnet]
+-{
+-  "blockchain_enabled": true,
+-  "blockchain_network_selected": "sepolia",
+-  
+-  "daemon_endpoint": "0.0.0.0:<DAEMON_PORT>",
+-  "daemon_group_name": "<DAEMON_GROUP>",
+-  
+-  "organization_id": "<ORGANIZATION_ID>",
+-  "service_id": "<SERVICE_ID>",
+-  "service_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
+-  
+-  "ssl_cert": "<PATH_TO_DOMAIN_CERTS>/fullchain.pem",
+-  "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
+-  
+-  "metering_enabled": true,
+-  "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
+-  "private_key_for_metering": "<METERING_KEY>",
+-  
+-  "private_key_for_free_calls": "<FREE_CALL_KEY>",
+-
+-  "ethereum_json_rpc_http_endpoint": "https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+-  "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+-  
+-  "payment_channel_storage_server": {
+-    "client_port": 2379,
+-    "cluster": "storage-1=http://127.0.0.1:2380",
+-    "data_dir": "data.etcd",
+-    "enabled": true,
+-    "host": "127.0.0.1",
+-    "id": "storage-1",
+-    "log_level": "info",
+-    "peer_port": 2380,
+-    "scheme": "http",
+-    "startup_timeout": "1m",
+-    "token": "your-unique-token"
+-  },
+-  
+-  "log": {"level": "debug", "output": {"type": "stdout"}}
+-}
+-```
+-
+-```json[Mainnet]
+-{
+-  "blockchain_enabled": true,
+-  "blockchain_network_selected": "main",
+-  
+-  "daemon_endpoint": "0.0.0.0:<DAEMON_PORT>",
+-  "daemon_group_name": "<DAEMON_GROUP>",
+-  
+-  "organization_id": "<ORGANIZATION_ID>",
+-  "service_id": "<SERVICE_ID>",
+-  "service_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
+-  
+-  "ssl_cert": "<PATH_TO_DOMAIN_CERTS>/fullchain.pem",
+-  "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
+-  
+-  "metering_enabled": true,
+-  "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
+-  "private_key_for_metering": "<METERING_KEY>",
+-  
+-  "private_key_for_free_calls": "<FREE_CALL_KEY>",
+-
+-  "ethereum_json_rpc_http_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
+-  "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
+-  
+-  "payment_channel_storage_server": {
+-    "client_port": 2379,
+-    "cluster": "storage-1=http://127.0.0.1:2380",
+-    "data_dir": "data.etcd",
+-    "enabled": true,
+-    "host": "127.0.0.1",
+-    "id": "storage-1",
+-    "log_level": "info",
+-    "peer_port": 2380,
+-    "scheme": "http",
+-    "startup_timeout": "1m",
+-    "token": "your-unique-token"
+-  },
+-  
+-  "log": {"level": "debug", "output": {"type": "stdout"}}
+-}
+-```
+-
+-:::
++- `<DAEMON_PORT>`: The port where the daemon will run
++- `<DAEMON_GROUP>`: The group name defined earlier (`default_group`)
++- `<ORGANIZATION_ID>`: Your published Organization ID
++- `<SERVICE_ID>`: Your published Service ID
++- `<SERVICE_HOST>`: The host address of your AI service
++- `<SERVICE_PORT>`: The port your AI service is listening on
++- `<PATH_TO_DOMAIN_CERTS>`: The directory containing your domain SSL certificates (`fullchain.pem` and `privkey.pem`)
++- `<METERING_KEY>`: Your previously generated private key for metering
++- `<FREE_CALL_KEY>`: Your previously generated private key for free calls
++- `<YOUR_API_KEY>`: Your Alchemy API key. If you don't have one yet, follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/)
+ 
+ ::: danger
+ For each reference to the embedded ETCD configuration in the daemon, do not delete the directory specified by `data_dir`. Deleting this folder will remove access to payment channel storage and prevent token withdrawals.
+@@ -919,3 +844,29 @@ Upon successful startup, you will see:
+ ```bash
+ INFO    ✅ Daemon successfully started and ready to accept requests
+ ```
++
++## Next Steps
++
++Congratulations! Your AI service is now published and running on the SingularityNET platform.
++
++### Test Your Service
++
++- **Via CLI**: Follow the [Service Calling via CLI](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI/) guide
++- **Via SDK**: Use the [Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/) or [JavaScript SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
++
++### Monitor and Maintain
++
++- Check daemon logs regularly for any issues
++- Monitor your ETH balance for gas fees
++- Keep your SSL certificates updated
++- Backup your ETCD data directory regularly
++
++### Update Your Service
++
++To update your service:
++1. Modify your service code
++2. Update the service metadata if needed
++3. Republish using `snet service update`
++4. Restart the daemon
++
++For additional support, visit our [community forum](https://community.singularitynet.io) or [Discord channel](https://discord.gg/snet).
+\ No newline at end of file
+diff --git a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationGRPCService/index.md b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationGRPCService/index.md
+index e72cb57..4cc1e56 100644
+--- a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationGRPCService/index.md
++++ b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationGRPCService/index.md
+@@ -1,69 +1,85 @@
+ # Integration gRPC Service
+ 
+-## Introduction
++## Overview
+ 
+-If you want to integrate your AI service using `gRPC`, you will need to:
++This guide demonstrates how to integrate your AI service with the SingularityNET platform using gRPC. The gRPC protocol provides efficient, language-agnostic communication with built-in support for streaming, authentication, and error handling.
+ 
+-1. Prepare the correct `.proto` file;
+-2. Generate the gRPC server/client code;
+-3. Implement the server using your framework of choice;
+-4. Specify the `service_type = grpc` parameter when creating your AI service.
++## Prerequisites
+ 
+-gRPC is a powerful and efficient communication protocol that supports multiple programming languages, and is fully supported by our daemon.
++Before starting, ensure you have:
+ 
+-If you encounter issues or limitations, feel free to contact support or [open an issue on GitHub](https://github.com/singnet/snet-daemon/issues/new). We’ll help you out!
++- Python 3.10 or higher
++- Basic understanding of Protocol Buffers
++- Familiarity with gRPC concepts
++- SingularityNET daemon installed
+ 
+-## Example
++## Integration Steps
+ 
+-Let’s say we want to create a simple gRPC service with one method `call` that accepts a query and returns multiple answer fields.
++### Step 1: Define Your Service Protocol
+ 
+-### 1. Proto file
++Create a `.proto` file that describes your service interface. This file defines the request/response messages and service methods.
+ 
+-Create a `.proto` file describing your service (e.g., `example.proto`):
++#### Example: `example.proto`
+ 
+-```proto
++```protobuf
+ syntax = "proto3";
+ 
+ package example;
+ 
+-// Input message
++// Input message with multiple fields
+ message Query {
+     string query = 1;
+     bool _type = 2;
+ }
+ 
+-// Output message
++// Output message with multiple response fields
+ message Answer {
+     string answer = 1;
+     string answer2 = 2;
+     string answer3 = 3;
+ }
+ 
+-// Service definition
++// Service definition with RPC methods
+ service Example {
+     rpc call(Query) returns (Answer) {}
+ }
+ ```
+ 
+-### 2. Install gRPC tools
++### Step 2: Install Required Dependencies
+ 
+-Install the necessary Python packages:
++Install the gRPC tools and runtime libraries:
+ 
+ ```bash
++# Install gRPC and Protocol Buffer compiler
+ python -m pip install grpcio grpcio-tools
++
++# Optional: Install additional dependencies
++python -m pip install grpcio-reflection  # For server reflection
++python -m pip install grpcio-health-checking  # For health checks
+ ```
+ 
+-### 3. Generate gRPC code
++### Step 3: Generate Python Code from Proto File
+ 
+-Use the `protoc` compiler to generate Python bindings from your `.proto` file:
++Use the Protocol Buffer compiler to generate Python bindings:
+ 
+ ```bash
+-python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. example.proto
++# Generate Python code from proto file
++python -m grpc_tools.protoc \
++    -I. \
++    --python_out=. \
++    --grpc_python_out=. \
++    example.proto
+ ```
+ 
+-This will generate two files: `example_pb2.py` and `example_pb2_grpc.py`.
++This command generates two files:
++- `example_pb2.py` - Contains message classes
++- `example_pb2_grpc.py` - Contains service classes
++
++### Step 4: Implement the gRPC Server
+ 
+-### 4. Create the gRPC server
++Create your service implementation by extending the generated servicer class:
++
++#### `server.py`
+ 
+ ```python
+ import time
+@@ -74,50 +90,120 @@ from concurrent import futures
+ import grpc
+ import example_pb2
+ import example_pb2_grpc
+-from utility import Model  # your internal model or logic
++from utility import Model  # Your AI model or business logic
+ 
++# Constants
+ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
++_MAX_WORKERS = 10
+ 
+-# Server implementation
+ class ExampleServicer(example_pb2_grpc.ExampleServicer):
++    """
++    Service implementation class
++    """
++    
+     def __init__(self):
++        """Initialize your model or service dependencies"""
+         self.model = Model()
+-
++        logging.info("Service initialized successfully")
++    
+     def call(self, request, context):
++        """
++        Implement the RPC method defined in proto file
++        
++        Args:
++            request: The Query message from client
++            context: gRPC context for the RPC
++            
++        Returns:
++            Answer message with processing results
++        """
+         try:
++            # Extract request parameters
+             query = request.query
+             _type = request._type
++            
++            # Process request using your model
++            logging.info(f"Processing request: query='{query}', type={_type}")
+             result, result2, result3 = self.model.predict(query, _type)
+-            print(result, result2, result3)
++            
++            # Log results for debugging
++            logging.debug(f"Results: {result}, {result2}, {result3}")
++            
++            # Return response message
++            return example_pb2.Answer(
++                answer=result,
++                answer2=result2,
++                answer3=result3
++            )
++            
+         except Exception as e:
+-            print("Error: {}".format(e))
+-            raise Exception("Error: {}".format(e))
+-        return example_pb2.Answer(answer=result, answer2=result2, answer3=result3)
++            # Log error and set gRPC error status
++            logging.error(f"Error processing request: {e}")
++            context.set_details(str(e))
++            context.set_code(grpc.StatusCode.INTERNAL)
++            return example_pb2.Answer()
+ 
+ def serve():
+-    parser = argparse.ArgumentParser()
+-    parser.add_argument("--host", type=str, default="127.0.0.1")
+-    parser.add_argument("--port", type=int, default=8010)
++    """
++    Start the gRPC server
++    """
++    # Parse command line arguments
++    parser = argparse.ArgumentParser(description='gRPC Server')
++    parser.add_argument('--host', type=str, default='127.0.0.1',
++                        help='Server host address')
++    parser.add_argument('--port', type=int, default=8010,
++                        help='Server port number')
++    parser.add_argument('--workers', type=int, default=_MAX_WORKERS,
++                        help='Maximum number of worker threads')
+     args = parser.parse_args()
+-
+-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+-    example_pb2_grpc.add_ExampleServicer_to_server(ExampleServicer(), server)
+-    server.add_insecure_port(f"{args.host}:{args.port}")
++    
++    # Configure server
++    server = grpc.server(
++        futures.ThreadPoolExecutor(max_workers=args.workers),
++        options=[
++            ('grpc.max_send_message_length', 50 * 1024 * 1024),
++            ('grpc.max_receive_message_length', 50 * 1024 * 1024)
++        ]
++    )
++    
++    # Add servicer to server
++    example_pb2_grpc.add_ExampleServicer_to_server(
++        ExampleServicer(), server
++    )
++    
++    # Bind to address and start
++    server_address = f"{args.host}:{args.port}"
++    server.add_insecure_port(server_address)
+     server.start()
+-    print("Server started")
+-
++    
++    logging.info(f"Server started on {server_address}")
++    logging.info("Press Ctrl+C to stop the server")
++    
++    # Keep server running
+     try:
+         while True:
+             time.sleep(_ONE_DAY_IN_SECONDS)
+     except KeyboardInterrupt:
+-        server.stop(0)
++        logging.info("Shutting down server...")
++        server.stop(grace=5)  # 5 second grace period
++        logging.info("Server stopped")
+ 
+ if __name__ == '__main__':
+-    logging.basicConfig()
++    # Configure logging
++    logging.basicConfig(
++        level=logging.INFO,
++        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
++    )
++    
++    # Start server
+     serve()
+ ```
+ 
+-### 5. Create the gRPC client
++### Step 5: Create a Test Client
++
++Implement a client to test your service:
++
++#### `client.py`
+ 
+ ```python
+ import time
+@@ -128,29 +214,198 @@ import grpc
+ import example_pb2
+ import example_pb2_grpc
+ 
+-def ExampleClient(stub):
+-    s_time = time.time()
+-    query = "some query"
++def test_service(stub):
++    """
++    Test the service with sample data
++    
++    Args:
++        stub: gRPC service stub
++    """
++    start_time = time.time()
++    
++    # Prepare request
++    query = "What is artificial intelligence?"
+     _type = True
++    
++    # Make RPC call
++    request = example_pb2.Query(query=query, _type=_type)
++    response = stub.call(request)
++    
++    # Calculate response time
++    elapsed_time = time.time() - start_time
++    
++    # Display results
++    print("\n" + "=" * 80)
++    print(f"Response Time: {elapsed_time:.3f}s")
++    print(f"Answer 1: {response.answer}")
++    print(f"Answer 2: {response.answer2}")
++    print(f"Answer 3: {response.answer3}")
++    print("=" * 80 + "\n")
++
++def run_client():
++    """
++    Run the gRPC client
++    """
++    # Parse arguments
++    parser = argparse.ArgumentParser(description='gRPC Client')
++    parser.add_argument('--host', default='127.0.0.1', type=str,
++                        help='Server host address')
++    parser.add_argument('--port', default=8010, type=int,
++                        help='Server port number')
++    parser.add_argument('--timeout', default=30, type=int,
++                        help='Request timeout in seconds')
++    args = parser.parse_args()
++    
++    # Create channel and stub
++    server_address = f"{args.host}:{args.port}"
++    
++    with grpc.insecure_channel(
++        server_address,
++        options=[
++            ('grpc.max_send_message_length', 50 * 1024 * 1024),
++            ('grpc.max_receive_message_length', 50 * 1024 * 1024)
++        ]
++    ) as channel:
++        # Create stub
++        stub = example_pb2_grpc.ExampleStub(channel)
++        
++        try:
++            # Test the service
++            logging.info(f"Connecting to {server_address}")
++            test_service(stub)
++            
++        except grpc.RpcError as e:
++            logging.error(f"RPC failed: {e.code()}: {e.details()}")
++        except Exception as e:
++            logging.error(f"Unexpected error: {e}")
+ 
+-    response = stub.call(example_pb2.Query(query=query, _type=_type))
+-    r_time = time.time() - s_time
++if __name__ == '__main__':
++    # Configure logging
++    logging.basicConfig(
++        level=logging.INFO,
++        format='%(asctime)s - %(levelname)s - %(message)s'
++    )
++    
++    # Run client
++    run_client()
++```
+ 
+-    print('\n########################################################################################\n')
+-    print("{:.3}s\n{}".format(r_time, response.answer))
+-    print('\n########################################################################################\n')
++### Step 6: Configure for SingularityNET
+ 
+-def run():
+-    parser = argparse.ArgumentParser()
+-    parser.add_argument("--host", default="127.0.0.1", type=str)
+-    parser.add_argument("--port", default=8010, type=int)
+-    args = parser.parse_args()
++When registering your service with SingularityNET, specify the following parameters:
+ 
+-    with grpc.insecure_channel(f"{args.host}:{args.port}") as channel:
+-        stub = example_pb2_grpc.ExampleStub(channel)
+-        ExampleClient(stub)
++```bash
++# Set service type to gRPC
++snet service metadata-init \
++    --service-type grpc \
++    --encoding proto \
++    ...
++```
+ 
+-if __name__ == '__main__':
+-    logging.basicConfig()
+-    run()
++## Advanced Features
++
++### Health Checking
++
++Implement health checking for production services:
++
++```python
++from grpc_health.v1 import health_pb2_grpc
++from grpc_health.v1.health import HealthServicer
++
++# Add health servicer to your server
++health_servicer = HealthServicer()
++health_pb2_grpc.add_HealthServicer_to_server(health_servicer, server)
++```
++
++### Server Reflection
++
++Enable server reflection for debugging:
++
++```python
++from grpc_reflection.v1alpha import reflection
++
++# Enable reflection
++reflection.enable_server_reflection(SERVICE_NAMES, server)
++```
++
++### SSL/TLS Security
++
++For production deployments, use secure channels:
++
++```python
++# Load certificates
++with open('server.crt', 'rb') as f:
++    server_cert = f.read()
++with open('server.key', 'rb') as f:
++    server_key = f.read()
++
++# Create credentials
++credentials = grpc.ssl_server_credentials([(server_key, server_cert)])
++
++# Add secure port
++server.add_secure_port(server_address, credentials)
+ ```
++
++## Best Practices
++
++### Error Handling
++
++- Always wrap service methods in try-catch blocks
++- Use appropriate gRPC status codes
++- Provide meaningful error messages
++- Log errors for debugging
++
++### Performance Optimization
++
++- Use connection pooling for clients
++- Implement proper thread pools for servers
++- Consider streaming for large data transfers
++- Monitor and tune message size limits
++
++### Testing
++
++- Write unit tests for service methods
++- Implement integration tests with test clients
++- Use load testing tools for performance validation
++- Test error scenarios and edge cases
++
++## Troubleshooting
++
++### Common Issues and Solutions
++
++#### Port Already in Use
++
++```bash
++# Check if port is in use
++netstat -an | grep 8010
++
++# Kill process using the port
++lsof -i :8010
++kill -9 <PID>
++```
++
++#### Import Errors
++
++```bash
++# Ensure generated files are in Python path
++export PYTHONPATH="${PYTHONPATH}:$(pwd)"
++```
++
++#### Connection Refused
++
++- Verify server is running
++- Check firewall settings
++- Ensure correct host and port
++
++## Resources
++
++- [Protocol Buffers Guide](https://developers.google.com/protocol-buffers/docs/pythontutorial)
++- [SingularityNET Daemon Documentation](https://github.com/singnet/snet-daemon)
++- [Example Service Repository](https://github.com/singnet/example-service)
++
++## Support
++
++If you encounter issues or have questions:
++
++1. Search existing [GitHub issues](https://github.com/singnet/snet-daemon/issues)
++2. Contact support or open a new issue with detailed information
+diff --git a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/index.md b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/index.md
+index 6a760ac..7ec4b6d 100644
+--- a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/index.md
++++ b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/index.md
+@@ -4,6 +4,8 @@
+ 
+ The Command Line Interface (CLI) provides **direct blockchain interaction** through terminal commands. This method is ideal for developers who need automation, scripting capabilities, and full control over the publishing process.
+ 
++---
++
+ ### Method Comparison
+ 
+ | Aspect | CLI | Publisher Portal | TUI |
+@@ -14,6 +16,8 @@ The Command Line Interface (CLI) provides **direct blockchain interaction** thro
+ | **Technical Expertise** | Advanced | Beginner-friendly | Intermediate |
+ | **CI/CD Integration** | ✅ Native support | ❌ Not possible | ❌ Not suitable |
+ 
++---
++
+ ### When to Use CLI
+ 
+ **Choose this method if:**
+@@ -24,6 +28,8 @@ The Command Line Interface (CLI) provides **direct blockchain interaction** thro
+ - You're publishing multiple services programmatically
+ - You're comfortable with command-line interfaces
+ 
++---
++
+ ### Limitations to Consider
+ 
+ - **No marketplace UI demo** - Users cannot test your service through the web interface
+@@ -31,6 +37,8 @@ The Command Line Interface (CLI) provides **direct blockchain interaction** thro
+ - **Manual metadata creation** - JSON files must be crafted manually
+ - **No visual feedback** - All operations are text-based
+ 
++---
++
+ ### Service Accessibility After Publishing
+ 
+ Services published via CLI are accessible through:
+@@ -40,6 +48,8 @@ Services published via CLI are accessible through:
+ 
+ > **Important:** Services published via CLI cannot have marketplace UI demos. Users must use CLI or SDK to interact with your service.
+ 
++---
++
+ ### Perfect for Automation
+ 
+ CLI is the best choice for:
+@@ -48,14 +58,14 @@ CLI is the best choice for:
+ - **Infrastructure as Code** - Version-controlled service definitions
+ - **Headless environments** - Servers without GUI access
+ 
++---
++
+ ### Alternative Methods
+ 
+ Not sure if CLI is right for you? Check the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/) for a detailed comparison of all three methods:
+ - **[Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)** - Web GUI with marketplace demo capability
+ - **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** - Terminal interface with guided menus
+ 
+----
+-
+ ## Installing SNET CLI
+ (not required if you use Publisher for organization and service management) 
+ 
+@@ -338,6 +348,8 @@ snet organization info <ORGANIZATION_ID>
+ 
+ ## Using FileCoin
+ 
++---
++
+ ### API key
+ 
+ #### Generating
+@@ -365,6 +377,8 @@ snet unset filecoin_api_key
+ 
+ > Note: This key is used regardless of identity.
+ 
++---
++
+ ### Publishing
+ 
+ #### Storage Type argument
+diff --git a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/index.md b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/index.md
+index 6538c0a..1981be3 100644
+--- a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/index.md
++++ b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/index.md
+@@ -1,9 +1,11 @@
+-# Guide to Publishing an Organization and Service via Publisher
++# Onboarding via Publisher
+ 
+ ## Why Choose Publisher Portal?
+ 
+ The Publisher Portal is a **web-based platform** that provides a graphical interface for publishing AI services to the SingularityNET marketplace. This method is ideal when you want maximum visibility and ease of use.
+ 
++---
++
+ ### Method Comparison
+ 
+ | Aspect | Publisher Portal | CLI | TUI |
+@@ -14,6 +16,8 @@ The Publisher Portal is a **web-based platform** that provides a graphical inter
+ | **Technical Expertise** | Beginner-friendly | Advanced | Intermediate |
+ | **Automation Support** | ❌ Manual process | ✅ Scriptable | ⚠️ Limited |
+ 
++---
++
+ ### When to Use Publisher Portal
+ 
+ **Choose this method if:**
+@@ -23,12 +27,16 @@ The Publisher Portal is a **web-based platform** that provides a graphical inter
+ - You plan to create a custom UI demo for better service presentation
+ - Service discoverability and user engagement are priorities
+ 
++---
++
+ ### Limitations to Consider
+ 
+ - **No automation** - All steps must be done manually through the web interface
+ - **Browser dependency** - Requires MetaMask extension and modern web browser
+ - **Not suitable for CI/CD** - Cannot be integrated into automated pipelines
+ 
++---
++
+ ### Service Accessibility After Publishing
+ 
+ Services published via Publisher Portal are accessible through:
+@@ -38,13 +46,14 @@ Services published via Publisher Portal are accessible through:
+ 
+ > **Note:** This is the only method that allows creating marketplace UI demos. Services published via CLI or TUI can only be accessed programmatically.
+ 
++---
++
+ ### Alternative Methods
+ 
+-Not sure if Publisher Portal is right for you? Check the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/) for a detailed comparison of all three methods:
++Not sure if Publisher Portal is right for you? Check these alternatives:
+ - **[CLI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/)** - For automation and programmatic control
+ - **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** - Terminal interface with guided menus
+-
+----
++- **[Full Comparison Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/)** - Detailed comparison of all three methods
+ 
+ ## You can watch the video for easy understanding:
+ 
+@@ -202,10 +211,14 @@ Finalize your organization's blockchain registration:
+ 
+ <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="MetaMask Confirmation"/>
+ 
++---
++
+ ### ✨ **Your organization is now successfully registered!**
+ 
+ ## **Service Setup**
+ 
++---
++
+ ### **Step 1: Basic Service Information**
+ 
+ Provide the essential information about your AI service:
+@@ -334,12 +347,16 @@ Complete your AI service definition:
+ 
+ <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="MetaMask Confirmation"/>
+ 
++---
++
+ ### ✨ **Your AI service is now successfully published!**
+ 
+ ## **Set Up & Launch the Daemon**
+ 
+ This section explains how to configure, install, and run the SingularityNET Daemon, which manages billing, service requests, and blockchain interaction for your AI service.
+ 
++---
++
+ ### 🚩 **Step 1: Preparation Steps**
+ 
+ Before you run your daemon, complete the following preparations:
+diff --git a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/index.md b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/index.md
+index 8cdba08..e4485bf 100644
+--- a/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/index.md
++++ b/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/index.md
+@@ -63,8 +63,6 @@ Not sure if TUI is right for you? Check the [Full Onboarding Guide](/docs/produc
+ - **[Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)** - Web GUI with marketplace demo capability
+ - **[CLI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/)** - Direct commands for automation and scripting
+ 
+----
+-
+ ## Step 1: Install
+ 
+ Start by cloning the Github repo with the following command
+diff --git a/docs/products/DecentralizedAIPlatform/ETCD/index.md b/docs/products/DecentralizedAIPlatform/ETCD/index.md
+index 14291d7..ea47a1f 100644
+--- a/docs/products/DecentralizedAIPlatform/ETCD/index.md
++++ b/docs/products/DecentralizedAIPlatform/ETCD/index.md
+@@ -1,79 +1,365 @@
+-# ETCD Setup
++# ETCD Setup Guide
+ 
+-## Port forwarding from domain to daemon host (Existing domain required)
++## Overview
+ 
+-This step depends on the web server which you are using. Set the port forwarding from your `<DAEMON_PORT>` to `<DAEMON_INTERNAL_ADDRESS>`:`<DAEMON_PORT>`
++ETCD is a distributed key-value store used by SingularityNET for payment channel management and service state storage. This guide covers setting up ETCD for your SingularityNET service deployment.
+ 
+-**Example** : `your_awesome_domain.com:<DAEMON_PORT>` --> `<DAEMON_INTERNAL ADDRESS>:<DAEMON_PORT>`
++## Prerequisites
+ 
+-## Domain certificates generation (skip of you already have SSL enabled on your domain)
+-1) Install certbot following this instructions:
++Before starting the ETCD setup:
+ 
+-[https://certbot.eff.org/instructions?ws=other&os=ubuntufocal](https://certbot.eff.org/instructions?ws=other&os=ubuntufocal)
++- Ubuntu 18.04 or higher (for automated script)
++- Domain name with SSL certificates
++- Docker installed and running
++- Sudo permissions for the user
++- Open ports for ETCD communication (2379, 2380)
+ 
+-2) Create domain certificates:
++## Setup Options
+ 
+-Generate certificates with command:
++### Option 1: Single Node Docker Setup (Recommended for Development)
+ 
+-`sudo certbot certonly`
++This is the simplest setup suitable for development and small-scale deployments.
+ 
+-(Follow prompts and choose standalone version, enter your daemon domain from item 1 when asked to. Ex. your_awesome_domain.com)
+-Get certificates path with next command (you should see 2 files **fullchain.pem** and **privkey.pem**):
++### Option 2: Multi-node Cluster (Production)
+ 
+-`sudo certbot certificates`
++For high availability and production environments.
+ 
+-3) Check if certificate renewal is enabled
++## Single Node Docker Setup
+ 
+-`sudo systemctl show certbot.timer`
++### Step 1: Download Installation Script
+ 
+-Certificates are valid for 90 days. You will have to restart your Daemon in future when you have updated the certs
++```bash
++# Download the automated setup script
++wget https://raw.githubusercontent.com/singnet/platform-setup/main/docker-etcd-setup.sh
+ 
+-**Result**: Now you should have "ssl_cert": fullchain.pem and "ssl_key": privkey.pem parameters for the daemon config file. This allows you to use the httpS daemon endpoint.
++# Make it executable
++chmod +x docker-etcd-setup.sh
++```
++
++### Step 2: Configure Network Settings (Optional)
++
++If hosting ETCD on a separate network or using a custom domain, modify the configuration:
++
++1. Open the `server.json` file after running the script
++2. Add your domain to the hosts section:
++
++```json
++{
++    "hosts": [
++        "${public_ip}",
++        "${private_ip}",
++        "your.domain.com",  // Add your domain here
++        "127.0.0.1"
++    ]
++}
++```
++
++### Step 3: Run Installation Script
++
++```bash
++# Execute the setup script
++sudo bash docker-etcd-setup.sh
++```
++
++**Important Notes:**
++
++- The script will create a data folder in your current directory
++- **This folder contains your payment channel data - DO NOT DELETE IT**
++- Back up this folder regularly to prevent loss of funds
++
++### Step 4: Follow Script Prompts
++
++The script will guide you through:
++
++1. Setting certificate validity period (recommended: 365 days or more)
++2. Configuring network interfaces
++3. Setting up SSL certificates
++4. Initializing the ETCD cluster
++
++### Step 5: Verify Installation
++
++If successful, you'll see: `ETCD INSTALLED SUCCESSFULLY`
++
++Check the container status:
++
++```bash
++# Verify container is running
++docker ps | grep etcd
++
++# Check container logs
++docker logs docker-etcd-node-1
++```
++
++## SSL Certificate Configuration
++
++### Port Forwarding Setup
++
++Configure your web server to forward requests:
++
++```nginx
++# Example Nginx configuration
++server {
++    listen 443 ssl;
++    server_name your.domain.com;
++    
++    location /:2379 {
++        proxy_pass http://localhost:2379;
++        proxy_set_header Host $host;
++    }
++}
++```
++
++### Generate Domain Certificates
++
++#### Using Certbot (Let's Encrypt)
++
++1. **Install Certbot:**
++
++```bash
++# Ubuntu/Debian
++sudo apt update
++sudo apt install certbot
++
++# Or follow instructions at:
++# https://certbot.eff.org/instructions?ws=other&os=ubuntufocal
++```
++
++2. **Generate Certificates:**
++
++```bash
++# Standalone mode (requires port 80 to be free)
++sudo certbot certonly --standalone -d your.domain.com
++
++# Or using webroot
++sudo certbot certonly --webroot -w /var/www/html -d your.domain.com
++```
++
++3. **Locate Certificates:**
++
++```bash
++# View certificate paths
++sudo certbot certificates
++
++# Typical paths:
++# Certificate: /etc/letsencrypt/live/your.domain.com/fullchain.pem
++# Private Key: /etc/letsencrypt/live/your.domain.com/privkey.pem
++```
++
++4. **Enable Auto-renewal:**
++
++```bash
++# Check renewal timer
++sudo systemctl status certbot.timer
+ 
+-## ETCD setup
+-### Single node docker setup
+-1) Download installation script (works only on ubuntu)
++# Test renewal
++sudo certbot renew --dry-run
++```
+ 
+-`wget https://raw.githubusercontent.com/singnet/platform-setup/main/docker-etcd-setup.sh`
++### Certificate Parameters for Daemon
+ 
+-2) If you want to host your ETCD node on a separate network/Ethernet you should add its domain name in the configuration. To do so add the domain to hosts section of server.json file:
++Use these in your daemon configuration:
+ 
+ ```json
+- \"hosts\": [
+-        \"${public_ip}\",
+-        \"${private_ip}\",
+-        \"your.domain.com\", << Add it here, keep the \" around it
+-        \"127.0.0.1\"
+-    ],
++{
++    "ssl_cert": "/path/to/fullchain.pem",
++    "ssl_key": "/path/to/privkey.pem"
++}
++```
++
++## ETCD Certificate Management
++
++### Initial Certificate Generation
++
++Certificates are generated automatically during setup. For manual generation:
++
++```bash
++# Generate CA certificate
++cfssl gencert -initca ca-csr.json | cfssljson -bare ca
++
++# Generate server certificate
++cfssl gencert \
++    -ca=ca.pem \
++    -ca-key=ca-key.pem \
++    -config=ca-config.json \
++    -profile=server \
++    server.json | cfssljson -bare server
++
++# Generate peer certificate
++cfssl gencert \
++    -ca=ca.pem \
++    -ca-key=ca-key.pem \
++    -config=ca-config.json \
++    -profile=peer \
++    member-1.json | cfssljson -bare member-1
++
++# Generate client certificate
++cfssl gencert \
++    -ca=ca.pem \
++    -ca-key=ca-key.pem \
++    -config=ca-config.json \
++    -profile=client \
++    client.json | cfssljson -bare client
++```
++
++### Certificate Renewal
++
++When ETCD certificates expire:
++
++1. Navigate to the certificate directory
++2. Run the renewal commands above
++3. Restart the ETCD container:
++
++```bash
++docker restart docker-etcd-node-1
++```
++
++## Container Management
++
++### Common Docker Commands
++
++```bash
++# Start container
++docker start docker-etcd-node-1
++
++# Stop container
++docker stop docker-etcd-node-1
++
++# Restart container
++docker restart docker-etcd-node-1
++
++# View logs
++docker logs docker-etcd-node-1
++
++# Follow logs in real-time
++docker logs -f docker-etcd-node-1
++
++# Check container status
++docker inspect docker-etcd-node-1
++```
++
++### Troubleshooting
++
++#### Container Won't Start
++
++```bash
++# Check logs for errors
++docker logs docker-etcd-node-1
++
++# Common issues:
++# - Port already in use
++# - Certificate problems
++# - Disk space issues
++# - Permission problems
++```
++
++#### Port Conflicts
++
++```bash
++# Check if ports are in use
++netstat -tulpn | grep -E '2379|2380'
++
++# Find process using port
++lsof -i :2379
+ ```
+-3) Execute it (user must have sudo permissions)
+ 
+-`bash docker-etcd-setup.sh`
+-**!!!Data folder of the ETCD cluster will be created in the directory you are currently in. ALL YOUR EARNED MONEY WILL BE IN THIS FOLDER SO YOU SHOULDN’T LOSE IT **
++#### Data Recovery
++
++If container crashes:
++
++1. Stop the container
++2. Backup the data directory
++3. Check data integrity
++4. Restart with clean state if needed
++
++## Production Best Practices
++
++### High Availability Setup
++
++For production, consider:
++
++1. **Multi-node cluster** (minimum 3 nodes)
++2. **Regular backups** of data directory
++3. **Monitoring and alerting**
++4. **Automated certificate renewal**
++5. **Dedicated storage volume**
+ 
+-4) Follow instructions of script
++### Backup Strategy
+ 
+-5) Read important information below
++```bash
++# Create backup
++tar -czf etcd-backup-$(date +%Y%m%d).tar.gz /path/to/etcd/data
+ 
+-When asked for certificates validity time limit you can set them as long as you like. You won’t have to renew these certificates and restart the ETCD container. If you have to renew the certificates run these commands in the folder with current certificates:
++# Automated backup script
++#!/bin/bash
++BACKUP_DIR="/backup/etcd"
++DATA_DIR="/var/lib/etcd"
++DATE=$(date +%Y%m%d_%H%M%S)
+ 
++mkdir -p $BACKUP_DIR
++tar -czf $BACKUP_DIR/etcd-backup-$DATE.tar.gz $DATA_DIR
++
++# Keep only last 30 days
++find $BACKUP_DIR -name "*.tar.gz" -mtime +30 -delete
+ ```
+-cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
+ 
+-cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=server server.json | cfssljson -bare server
++### Monitoring
++
++Monitor these metrics:
++
++- Container health status
++- Disk usage
++- Memory consumption
++- Network latency
++- Certificate expiration dates
++
++### Security Considerations
++
++1. **Firewall Rules:** Only allow necessary ports
++2. **SSL/TLS:** Always use encrypted connections
++3. **Access Control:** Limit client access
++4. **Regular Updates:** Keep Docker and ETCD updated
++5. **Audit Logs:** Enable and monitor access logs
+ 
+-cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=peer member-1.json | cfssljson -bare member-1
++## Integration with SingularityNET
++
++### Daemon Configuration
++
++Add ETCD endpoints to your daemon configuration:
++
++```json
++{
++    "payment_channel_storage_type": "etcd",
++    "payment_channel_storage_client": {
++        "connection_timeout": "5s",
++        "request_timeout": "3s",
++        "endpoints": ["https://your.domain.com:2379"]
++    }
++}
++```
+ 
+-cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=client client.json | cfssljson -bare client
++### Testing Connection
+ 
++```bash
++# Test ETCD connectivity
++etcdctl --endpoints=https://your.domain.com:2379 \
++         --cert=/path/to/client.pem \
++         --key=/path/to/client-key.pem \
++         --cacert=/path/to/ca.pem \
++         endpoint health
+ ```
+ 
+-If for some reason your ETCD container is down use this command:
++## Additional Resources
+ 
+-`docker start docker-etcd-node-1`
++- [ETCD Official Documentation](https://etcd.io/docs/)
++- [Docker ETCD Image](https://hub.docker.com/r/bitnami/etcd)
++- [SingularityNET Daemon Setup](https://github.com/singnet/snet-daemon)
++- [Certificate Management with CFSSL](https://github.com/cloudflare/cfssl)
+ 
+-If your ETCD node keeps crashing, check its logs with this command and debug it:
++## Support
+ 
+-`docker logs docker-etcd-node-1`
++For issues or questions:
+ 
+-**Result**: If everything was done correctly you would have seen ETCD INSTALLED SUCCESSFULLY. If that is the case, now you should have a running docker container with ETCD cluster and new certificates for ETCD (path to them will be printed by script, look for CERTIFICATES PATH)
+\ No newline at end of file
++1. Check daemon logs for ETCD connection errors
++2. Verify network connectivity
++3. Ensure certificates are valid
++4. Contact SingularityNET support if issues persist
+\ No newline at end of file
+diff --git a/docs/products/DecentralizedAIPlatform/PublisherPortal/text-guide/index.md b/docs/products/DecentralizedAIPlatform/PublisherPortal/text-guide/index.md
+index c7da503..1981be3 100644
+--- a/docs/products/DecentralizedAIPlatform/PublisherPortal/text-guide/index.md
++++ b/docs/products/DecentralizedAIPlatform/PublisherPortal/text-guide/index.md
+@@ -1,5 +1,64 @@
+ # Onboarding via Publisher
+ 
++## Why Choose Publisher Portal?
++
++The Publisher Portal is a **web-based platform** that provides a graphical interface for publishing AI services to the SingularityNET marketplace. This method is ideal when you want maximum visibility and ease of use.
++
++---
++
++### Method Comparison
++
++| Aspect | Publisher Portal | CLI | TUI |
++|--------|-----------------|-----|-----|
++| **Interface** | Web browser GUI | Command line | Terminal menus |
++| **Marketplace UI Demo** | ✅ Yes (optional) | ❌ No | ❌ No |
++| **Team Collaboration** | ✅ Multiple users | ⚠️ Single user | ⚠️ Single user |
++| **Technical Expertise** | Beginner-friendly | Advanced | Intermediate |
++| **Automation Support** | ❌ Manual process | ✅ Scriptable | ⚠️ Limited |
++
++---
++
++### When to Use Publisher Portal
++
++**Choose this method if:**
++- You want users to test your service directly in the Marketplace with a demo UI
++- Multiple team members need to manage the organization/service
++- You prefer visual interfaces over command-line tools
++- You plan to create a custom UI demo for better service presentation
++- Service discoverability and user engagement are priorities
++
++---
++
++### Limitations to Consider
++
++- **No automation** - All steps must be done manually through the web interface
++- **Browser dependency** - Requires MetaMask extension and modern web browser
++- **Not suitable for CI/CD** - Cannot be integrated into automated pipelines
++
++---
++
++### Service Accessibility After Publishing
++
++Services published via Publisher Portal are accessible through:
++- **Marketplace Web UI** - Users can test directly with your custom demo
++- **CLI** - Developers can call via command line
++- **SDK** - Integration into applications (Python, JavaScript, etc.)
++
++> **Note:** This is the only method that allows creating marketplace UI demos. Services published via CLI or TUI can only be accessed programmatically.
++
++---
++
++### Alternative Methods
++
++Not sure if Publisher Portal is right for you? Check these alternatives:
++- **[CLI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/)** - For automation and programmatic control
++- **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** - Terminal interface with guided menus
++- **[Full Comparison Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/)** - Detailed comparison of all three methods
++
++## You can watch the video for easy understanding:
++
++<iframe width="560" height="315" src="https://www.youtube.com/embed/8AtkPUYLy8g?si=cEpyujqdisaS35Xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
++
+ ## **Organization Setup**
+ 
+ Follow these simple steps to register your organization clearly and quickly on the SingularityNET Publisher Portal.
+@@ -152,10 +211,14 @@ Finalize your organization's blockchain registration:
+ 
+ <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="MetaMask Confirmation"/>
+ 
++---
++
+ ### ✨ **Your organization is now successfully registered!**
+ 
+ ## **Service Setup**
+ 
++---
++
+ ### **Step 1: Basic Service Information**
+ 
+ Provide the essential information about your AI service:
+@@ -284,12 +347,16 @@ Complete your AI service definition:
+ 
+ <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="MetaMask Confirmation"/>
+ 
++---
++
+ ### ✨ **Your AI service is now successfully published!**
+ 
+ ## **Set Up & Launch the Daemon**
+ 
+ This section explains how to configure, install, and run the SingularityNET Daemon, which manages billing, service requests, and blockchain interaction for your AI service.
+ 
++---
++
+ ### 🚩 **Step 1: Preparation Steps**
+ 
+ Before you run your daemon, complete the following preparations:
+diff --git a/docs/products/DecentralizedAIPlatform/QuickStartGuides/OnboardingViaPublisher/index.md b/docs/products/DecentralizedAIPlatform/QuickStartGuides/OnboardingViaPublisher/index.md
+index df68437..1981be3 100644
+--- a/docs/products/DecentralizedAIPlatform/QuickStartGuides/OnboardingViaPublisher/index.md
++++ b/docs/products/DecentralizedAIPlatform/QuickStartGuides/OnboardingViaPublisher/index.md
+@@ -4,6 +4,8 @@
+ 
+ The Publisher Portal is a **web-based platform** that provides a graphical interface for publishing AI services to the SingularityNET marketplace. This method is ideal when you want maximum visibility and ease of use.
+ 
++---
++
+ ### Method Comparison
+ 
+ | Aspect | Publisher Portal | CLI | TUI |
+@@ -14,6 +16,8 @@ The Publisher Portal is a **web-based platform** that provides a graphical inter
+ | **Technical Expertise** | Beginner-friendly | Advanced | Intermediate |
+ | **Automation Support** | ❌ Manual process | ✅ Scriptable | ⚠️ Limited |
+ 
++---
++
+ ### When to Use Publisher Portal
+ 
+ **Choose this method if:**
+@@ -23,12 +27,16 @@ The Publisher Portal is a **web-based platform** that provides a graphical inter
+ - You plan to create a custom UI demo for better service presentation
+ - Service discoverability and user engagement are priorities
+ 
++---
++
+ ### Limitations to Consider
+ 
+ - **No automation** - All steps must be done manually through the web interface
+ - **Browser dependency** - Requires MetaMask extension and modern web browser
+ - **Not suitable for CI/CD** - Cannot be integrated into automated pipelines
+ 
++---
++
+ ### Service Accessibility After Publishing
+ 
+ Services published via Publisher Portal are accessible through:
+@@ -38,6 +46,8 @@ Services published via Publisher Portal are accessible through:
+ 
+ > **Note:** This is the only method that allows creating marketplace UI demos. Services published via CLI or TUI can only be accessed programmatically.
+ 
++---
++
+ ### Alternative Methods
+ 
+ Not sure if Publisher Portal is right for you? Check these alternatives:
+@@ -45,8 +55,6 @@ Not sure if Publisher Portal is right for you? Check these alternatives:
+ - **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** - Terminal interface with guided menus
+ - **[Full Comparison Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/)** - Detailed comparison of all three methods
+ 
+----
+-
+ ## You can watch the video for easy understanding:
+ 
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/8AtkPUYLy8g?si=cEpyujqdisaS35Xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+@@ -203,10 +211,14 @@ Finalize your organization's blockchain registration:
+ 
+ <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="MetaMask Confirmation"/>
+ 
++---
++
+ ### ✨ **Your organization is now successfully registered!**
+ 
+ ## **Service Setup**
+ 
++---
++
+ ### **Step 1: Basic Service Information**
+ 
+ Provide the essential information about your AI service:
+@@ -335,12 +347,16 @@ Complete your AI service definition:
+ 
+ <ImageViewer src="/assets/images/products/AIMarketplace/publisher/MetamaskConfirmation.webp" alt="MetaMask Confirmation"/>
+ 
++---
++
+ ### ✨ **Your AI service is now successfully published!**
+ 
+ ## **Set Up & Launch the Daemon**
+ 
+ This section explains how to configure, install, and run the SingularityNET Daemon, which manages billing, service requests, and blockchain interaction for your AI service.
+ 
++---
++
+ ### 🚩 **Step 1: Preparation Steps**
+ 
+ Before you run your daemon, complete the following preparations:
+diff --git a/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/index.md b/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/index.md
+index f4415ad..ab8e4cc 100644
+--- a/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/index.md
++++ b/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/index.md
+@@ -151,8 +151,6 @@ client.invoke(<ServiceName>.<MethodName>, <InvokeRpcOptions>);
+ 
+ More details about can be found on the official [documentation](https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/invoke.md#invokerpcoptions).
+ 
+----
+-
+ ## WEBSDK SETUP LOCALLY
+ 
+ If you want to setup WEB SDK locally please follow below steps
+diff --git a/docs/products/DecentralizedAIPlatform/SDK/nodejs-sdk/index.md b/docs/products/DecentralizedAIPlatform/SDK/nodejs-sdk/index.md
+index 9a84a51..e540596 100644
+--- a/docs/products/DecentralizedAIPlatform/SDK/nodejs-sdk/index.md
++++ b/docs/products/DecentralizedAIPlatform/SDK/nodejs-sdk/index.md
+@@ -4,8 +4,6 @@
+ 
+ This guide provides step-by-step instructions for setting up and using the SingularityNET SDK for Node.js. Follow these steps to integrate and interact with SingularityNET services in your application.
+ 
+----
+-
+ ## 1. Prerequisites
+ Before you start using the snet-sdk, ensure that your system meets the following requirements:
+ 
+diff --git a/docs/products/DecentralizedAIPlatform/Sandbox/FAQ/index.md b/docs/products/DecentralizedAIPlatform/Sandbox/FAQ/index.md
+index 198258e..0e26079 100644
+--- a/docs/products/DecentralizedAIPlatform/Sandbox/FAQ/index.md
++++ b/docs/products/DecentralizedAIPlatform/Sandbox/FAQ/index.md
+@@ -1,26 +1,545 @@
+-# UI Sandbox — Frequently Asked Questions
++# UI Sandbox - Frequently Asked Questions
+ 
+-This FAQ answers common questions about how to build and publish UI components for the SingularityNET Marketplace using the UI Sandbox.
++This comprehensive FAQ addresses common questions about building, testing, and publishing UI components for the SingularityNET Marketplace using the UI Sandbox.
++
++## General Questions
++
++<AccordionItem :id="what-is-ui-sandbox">
++  <template #title>
++    What is UI Sandbox and why should I use it?
++  </template>
++  <template #description>
++  
++    UI Sandbox is a powerful development environment specifically designed for creating custom user interfaces for AI services on the SingularityNET platform. 
++    
++    Key benefits include:
++    - No local setup required: Develop directly in your browser
++    - Real-time preview: See changes instantly as you code
++    - Component library: Access pre-built UI components
++    - Easy deployment: Export and publish directly to the marketplace
++    - Collaboration: Share projects with team members
++    
++    The sandbox eliminates the complexity of setting up a local development environment while providing all the tools needed to create professional service interfaces.
++  </template>
++</AccordionItem>
++
++<AccordionItem :id="version-differences">
++  <template #title>
++    What's the difference between Version 1 and Version 2?
++  </template>
++  <template #description>
++  
++    Version 1 (Legacy):
++    - Integrated within the SNET DAPP
++    - Basic editing capabilities
++    - Manual configuration required
++    - Limited debugging tools
++    
++    Version 2 (Current - Recommended):
++    - Standalone web application at ai-ui-constructor.singularitynet.io
++    - Enhanced development tools and debugging
++    - Improved component library
++    - Streamlined workflow with fewer manual steps
++    - Better performance and reliability
++    - Advanced features like module creation and sharing
++    
++    We strongly recommend using Version 2 for all new projects.
++  </template>
++</AccordionItem>
++
++## Development Questions
+ 
+ <AccordionItem :id="external-libraries">
+   <template #title>
+-    Why can't I directly use external libraries in my UI?
++    How can I use external JavaScript libraries in my UI?
++  </template>
++  <template #description>
++  
++    Due to platform security and performance requirements, you cannot directly install npm packages. However, there are several effective workarounds:
++    
++    Option 1: CDN Embedding (Recommended)
++    ```javascript
++    // 1. Download the minified version from cdnjs.com
++    // 2. Include it in your UI archive as lib.min.js
++    // 3. Import in your index.js:
++    import './lib.min.js';
++    
++    // Now use the library globally
++    const result = LibraryName.someFunction();
++    ```
++    
++    Option 2: Manual Integration
++    ```javascript
++    // Copy the library code directly into a file
++    // utils/library.js
++    export function libraryFunction() {
++      // Library code here
++    }
++    
++    // Import and use
++    import { libraryFunction } from './utils/library.js';
++    ```
++    
++    Option 3: Backend Processing
++    For complex operations or heavy libraries:
++    ```javascript
++    // Call your backend service
++    const response = await fetch('https://your-api.com/process', {
++      method: 'POST',
++      body: JSON.stringify(data)
++    });
++    const result = await response.json();
++    ```
++    
++    This approach keeps the UI lightweight while leveraging powerful backend processing.
++  </template>
++</AccordionItem>
++
++<AccordionItem :id="component-library">
++  <template #title>
++    What components are available in the built-in library?
++  </template>
++  <template #description>
++  
++    The UI Sandbox provides a comprehensive component library including:
++    
++    Form Components:
++    - Text inputs and textareas
++    - Dropdowns and select lists
++    - Checkboxes and radio buttons
++    - File upload components
++    - Date and time pickers
++    
++    Display Components:
++    - Cards and panels
++    - Tables and data grids
++    - Charts and graphs
++    - Image and video displays
++    - Loading indicators
++    
++    Layout Components:
++    - Grid systems
++    - Flexbox containers
++    - Tabs and accordions
++    - Modal dialogs
++    - Navigation menus
++    
++    Utility Components:
++    - Alerts and notifications
++    - Tooltips and popovers
++    - Progress bars
++    - Badges and labels
++    
++    All components are styled to match the SingularityNET design system and are fully responsive.
++  </template>
++</AccordionItem>
++
++<AccordionItem :id="api-integration">
++  <template #title>
++    How do I connect my UI to the AI service backend?
++  </template>
++  <template #description>
++  
++    The UI Sandbox provides built-in methods for service communication:
++    
++    Basic Service Call:
++    ```javascript
++    // The service object is automatically injected
++    async function callService(inputData) {
++      try {
++        // Prepare the request
++        const request = {
++          method: 'processData',
++          params: inputData
++        };
++        
++        // Call the service
++        const response = await service.call(request);
++        
++        // Handle the response
++        displayResults(response.data);
++      } catch (error) {
++        console.error('Service call failed:', error);
++        showError(error.message);
++      }
++    }
++    ```
++    
++    Handling Different Response Types:
++    ```javascript
++    // Text response
++    if (response.type === 'text') {
++      document.getElementById('output').textContent = response.data;
++    }
++    
++    // Image response
++    if (response.type === 'image') {
++      const img = document.createElement('img');
++      img.src = `data:image/png;base64,${response.data}`;
++      document.getElementById('output').appendChild(img);
++    }
++    
++    // JSON response
++    if (response.type === 'json') {
++      renderJsonData(response.data);
++    }
++    ```
++    
++    The sandbox handles authentication, payment channels, and error handling automatically.
++  </template>
++</AccordionItem>
++
++## Testing & Debugging
++
++<AccordionItem :id="local-testing">
++  <template #title>
++    How can I test my UI locally before publishing?
++  </template>
++  <template #description>
++  
++    The UI Sandbox provides several testing options:
++    
++    1. Preview Mode:
++    - Click the "Preview" button in the sandbox
++    - Test with mock data
++    - Verify responsive design
++    - Check error handling
++    
++    2. Test with Real Service:
++    ```javascript
++    // Enable test mode in your code
++    const TEST_MODE = true;
++    
++    if (TEST_MODE) {
++      // Use test endpoint
++      service.endpoint = 'https://test.your-service.com';
++      // Use test data
++      const testInput = { sample: 'data' };
++      testServiceCall(testInput);
++    }
++    ```
++    
++    3. Export and Local Testing:
++    - Export your UI package
++    - Run locally with a simple HTTP server:
++    ```bash
++    # Using Python
++    python -m http.server 8000
++    
++    # Using Node.js
++    npx http-server
++    ```
++    
++    4. Console Debugging:
++    - Use browser developer tools
++    - Add console.log statements
++    - Monitor network requests
++    - Check for JavaScript errors
++  </template>
++</AccordionItem>
++
++<AccordionItem :id="common-errors">
++  <template #title>
++    What are common errors and how do I fix them?
+   </template>
+   <template #description>
+   
+-    Currently, it's not possible to directly import external libraries (e.g., via npm install) into the UI on the SingularityNET Marketplace. This limitation helps ensure performance and stability of the platform.
++    Error: "Service not responding"
++    - Check if your service daemon is running
++    - Verify the endpoint URL is correct
++    - Ensure payment channel has sufficient funds
++    
++    Error: "Invalid input format"
++    ```javascript
++    // Validate input before sending
++    function validateInput(data) {
++      if (!data || typeof data !== 'object') {
++        throw new Error('Input must be an object');
++      }
++      // Add specific validations
++      if (!data.requiredField) {
++        throw new Error('Required field missing');
++      }
++      return true;
++    }
++    ```
++    
++    Error: "UI not loading"
++    - Check for syntax errors in JavaScript
++    - Verify all imports are correct
++    - Ensure index.html is properly structured
++    - Check browser console for specific errors
++    
++    Error: "Component not rendering"
++    ```javascript
++    // Ensure DOM is ready
++    document.addEventListener('DOMContentLoaded', function() {
++      // Initialize your components here
++      initializeUI();
++    });
++    ```
++    
++    Performance Issues:
++    - Optimize large data handling
++    - Use pagination for lists
++    - Lazy load heavy resources
++    - Minimize DOM manipulations
++  </template>
++</AccordionItem>
+ 
+-    However, there are two recommended workarounds:
++## Publishing & Deployment
+ 
+-    1) Embed the library manually via CDN 
+-    You can download the .min.js version of the library from a CDN like cdnjs.com, include it in your UI archive, and import it as a local file:
++<AccordionItem :id="publishing-process">
++  <template #title>
++    How do I publish my UI to the marketplace?
++  </template>
++  <template #description>
++  
++    Follow these steps to publish your UI:
++    
++    Step 1: Prepare Your Package
++    - Ensure all files are in the correct structure:
++    ```
++    ui-package/
++    ├── index.html       # Main HTML file
++    ├── index.js         # Main JavaScript
++    ├── styles.css       # Styling
++    └── assets/          # Images, fonts, etc.
++    ```
++    
++    Step 2: Test Thoroughly
++    - Run all test cases
++    - Verify responsive design
++    - Check error handling
++    - Test with different input types
++    
++    Step 3: Export from Sandbox
++    - Click "Export" in the UI Sandbox
++    - Download the .zip package
++    - Review the exported files
++    
++    Step 4: Upload to Publisher Portal
++    1. Log into [Publisher Portal](https://publisher.singularitynet.io)
++    2. Navigate to your service
++    3. Go to "UI Components" section
++    4. Upload your .zip package
++    5. Add version notes and description
++    
++    Step 5: Submit for Review
++    - Submit your UI for review
++    - Address any feedback
++    - Once approved, it will be live on the marketplace
++    
++    The entire process typically takes 24-48 hours after submission.
++  </template>
++</AccordionItem>
+ 
+-    // index.js  
+-    import './lib.js';
++<AccordionItem :id="updating-ui">
++  <template #title>
++    How do I update an existing UI?
++  </template>
++  <template #description>
++  
++    Updating your UI follows a versioning system:
++    
++    1. Make Your Changes:
++    - Import existing UI into sandbox
++    - Make necessary modifications
++    - Test all changes thoroughly
++    
++    2. Version Management:
++    ```javascript
++    // Add version info to your UI
++    const UI_VERSION = '2.0.0';
++    const CHANGELOG = {
++      '2.0.0': 'Added new visualization features',
++      '1.1.0': 'Fixed input validation',
++      '1.0.0': 'Initial release'
++    };
++    ```
++    
++    3. Backward Compatibility:
++    - Ensure new versions work with existing service versions
++    - Handle deprecated features gracefully:
++    ```javascript
++    // Support old and new API formats
++    function handleResponse(response) {
++      // New format
++      if (response.version >= 2) {
++        return response.data;
++      }
++      // Legacy format
++      return response.result || response;
++    }
++    ```
++    
++    4. Deploy Update:
++    - Upload new version through Publisher Portal
++    - Previous version remains available
++    - Users automatically get the latest version
++    - Option to rollback if issues arise
++  </template>
++</AccordionItem>
+ 
+-    2) Use your own backend for processing 
+-    For heavier libraries or dynamic visualizations, consider offloading logic to your own server. For example, generate a chart server-side and return it as an image to your UI.
++## Advanced Topics
+ 
+-    This keeps the Marketplace UI lightweight while still enabling advanced functionality.
++<AccordionItem :id="custom-modules">
++  <template #title>
++    How do I create reusable modules?
++  </template>
++  <template #description>
++  
++    Creating reusable modules helps maintain consistency across multiple services:
++    
++    1. Create a Module:
++    ```javascript
++    // modules/dataVisualizer.js
++    export class DataVisualizer {
++      constructor(container) {
++        this.container = container;
++      }
++      
++      renderChart(data, type = 'bar') {
++        // Chart rendering logic
++      }
++      
++      renderTable(data, options = {}) {
++        // Table rendering logic
++      }
++    }
++    ```
++    
++    2. Export as Package:
++    ```javascript
++    // modules/index.js
++    export { DataVisualizer } from './dataVisualizer.js';
++    export { FormValidator } from './formValidator.js';
++    export { ApiClient } from './apiClient.js';
++    ```
++    
++    3. Use in Multiple UIs:
++    ```javascript
++    import { DataVisualizer } from './modules/index.js';
++    
++    const viz = new DataVisualizer('output-container');
++    viz.renderChart(serviceResponse.data);
++    ```
++    
++    4. Share with Community:
++    - Package your modules
++    - Document usage and API
++    - Share through GitHub or npm
++    - Contribute to the UI Sandbox library
++  </template>
++</AccordionItem>
++
++<AccordionItem :id="performance-optimization">
++  <template #title>
++    How can I optimize my UI performance?
++  </template>
++  <template #description>
++  
++    Follow these best practices for optimal performance:
++    
++    1. Minimize Bundle Size:
++    ```javascript
++    // Load resources on demand
++    async function loadHeavyLibrary() {
++      if (!window.HeavyLib) {
++        await import('./heavy-lib.js');
++      }
++      return window.HeavyLib;
++    }
++    ```
++    
++    2. Optimize Rendering:
++    ```javascript
++    // Use document fragments for bulk updates
++    const fragment = document.createDocumentFragment();
++    data.forEach(item => {
++      const element = createItemElement(item);
++      fragment.appendChild(element);
++    });
++    container.appendChild(fragment);
++    ```
++    
++    3. Implement Virtual Scrolling:
++    ```javascript
++    // For large lists
++    class VirtualList {
++      renderVisible(items, scrollTop, containerHeight) {
++        const visibleItems = this.getVisibleItems(
++          items, 
++          scrollTop, 
++          containerHeight
++        );
++        this.render(visibleItems);
++      }
++    }
++    ```
++    
++    4. Cache Service Responses:
++    ```javascript
++    const cache = new Map();
++    
++    async function getCachedData(key) {
++      if (cache.has(key)) {
++        return cache.get(key);
++      }
++      const data = await service.call(key);
++      cache.set(key, data);
++      return data;
++    }
++    ```
++    
++    5. Use Web Workers for Heavy Processing:
++    ```javascript
++    // Process data in background
++    const worker = new Worker('processor.js');
++    worker.postMessage({ cmd: 'process', data: largeDataset });
++    worker.onmessage = (e) => {
++      displayResults(e.data);
++    };
++    ```
+   </template>
+ </AccordionItem>
++
++## Support & Resources
++
++Where can I get help if I'm stuck?
++  
++Multiple support channels are available:
++
++### Documentation:
++- [UI Sandbox Guide](/docs/products/DecentralizedAIPlatform/Sandbox/)
++- [Developer Tutorials](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/)
++- [API Reference](/docs/products/DecentralizedAIPlatform/SDK/)
++
++---
++
++### Community Support:
++- [Discord Channel](https://discord.gg/snet) - Real-time help
++- [Community Forum](https://community.singularitynet.io) - Detailed discussions
++- [GitHub Discussions](https://github.com/singnet/snet-dapp/discussions) - Technical questions
++
++---
++
++### Direct Support:
++- Email: support@singularitynet.io
++- Response time: Usually within 24-48 hours
++
++---
++
++### Video Tutorials:
++- [Getting Started with UI Sandbox](https://youtube.com/...)
++- [Building Your First Service UI](https://youtube.com/...)
++- [Advanced UI Techniques](https://youtube.com/...)
++
++---
++
++### When asking for help, provide:
++- Clear description of the issue
++- Steps to reproduce
++- Error messages or screenshots
++- Relevant code snippets
++- Browser and OS information
