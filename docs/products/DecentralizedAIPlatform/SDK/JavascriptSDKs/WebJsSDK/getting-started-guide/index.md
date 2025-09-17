@@ -151,8 +151,6 @@ client.invoke(<ServiceName>.<MethodName>, <InvokeRpcOptions>);
 
 More details about can be found on the official [documentation](https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/invoke.md#invokerpcoptions).
 
----
-
 ## WEBSDK SETUP LOCALLY
 
 If you want to setup WEB SDK locally please follow below steps
