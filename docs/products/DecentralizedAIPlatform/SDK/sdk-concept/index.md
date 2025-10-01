@@ -1,51 +1,45 @@
-# SNET SDK protocol
+# SNET SDK Protocol and Concepts
 
-SingularityNET Platform SDK goals to provide a convenient programming interface for the application developers
-who want to use variety of AI models in their applications or even provide this capability to their users.
+The **SingularityNET Platform SDK** is designed to provide a convenient programming interface for application developers:
 
-SDK protocol describes the structure, entities and functionality for the SingularityNET Platform SDK
-regardless of the implementation language.
+* It enables integration of a wide variety of AI models into applications.
+* It also allows exposing these capabilities directly to end‑users.
 
-Specific implementation of the SingularityNET Platform SDK may differ in its internal structure and entities
-but must maintain compatibility of all SDK interfaces with corresponding essential platform components.
+The **SDK protocol** defines the overall structure, entities, and functionality of the SingularityNET Platform SDK, independent of the specific implementation language.
+
+While internal structure and entities may differ between language implementations, all SDKs must remain compatible and consistently expose interfaces to the essential platform components.
 
 ## User Flow
 
 > Note: This section includes mandatory requirements for implementation.
 
-This is a general scenario for an SDK user.
+### This is a general scenario for an SDK user.
 
 #### Preparatory actions
 
-1. creating a `Config`'s instance with the required values
-2. creating a `SNETEngine`'s instance with the config passed to it
-3. adding new account (wallet) (`Account`) to the engine by calling `SNETEngine`'s method
-   (not necessary, but most likely will be needed)
-4. creating new `ServiceClient`'s instance by calling `SNETEngine`'s method
-   (not necessary, but most likely will be needed).
+* Creating a `Config` instance with the required values.
+* Creating a `SNETEngine` instance with the config passed to it.
+* Adding a new account (wallet) (`Account`) to the engine by calling a `SNETEngine` method *(optional, but in most cases needed).*
+* Creating a new `ServiceClient` instance by calling a `SNETEngine` method *(optional, but in most cases needed).*
 
-Now the SDK functionality is available through instances of the entities `SNETEngine`
-and `ServiceClient`.
+Once these steps are done, the SDK functionality becomes available through the `SNETEngine` and `ServiceClient` instances.
+
+---
 
 #### ServiceClient functionality
 
-1. ServiceClient → call
-2. ServiceClient → PaymentChannel → functions of the MPE contract for the channel
-   (e.g. `add funds`, `extend expiraton`)
-3. ServiceClient → ServiceMetadata → functions for editing service metadata, as well as
-   for publishing metadata to metadata provider, and downloading metadata from it
+* `Call`
+* `PaymentChannel` — functions of the MPE contract for the channel (e.g. `add funds`, `extend expiraton`)
+* `ServiceMetadata` — functions for editing service metadata, as well as for publishing metadata to metadata provider, and downloading metadata from it
+
+---
 
 #### SNETEngine functionality
 
-1. SNETEngine → Channels → functions of the MPE contract for the set of channels
-   (e.g. `open channel`, `load channels`)
-2. SNETEngine → MPEContract → functions of the MPE contract for the account
-   (e.g. `claim`, `deposit`) (in fact, MPEContract contains all the functionality of MPE,
-   but access to other functions is more convenient in other ways (through other entities))
-3. SNETEngine → RegistryContract → functions of the Registry contract for
-   services and organizations
-4. SNETEngine → MetadataProvider → OrgMetadata → functions for editing organization metadata,
-   as well as for publishing metadata to metadata provider, and downloading metadata from it
+* `Channels` — functions of the MPE contract for the set of channels (e.g. `open channel`, `load channels`)
+* `MPEContract` — functions of the MPE contract for the account (e.g. `claim`, `deposit`) (in fact, MPEContract contains all the functionality of MPE, but access to other functions is more convenient in other ways (through other entities))
+* `RegistryContract` — functions of the Registry contract for services and organizations
+* `MetadataProvider` → `OrgMetadata` — functions for editing organization metadata, as well as for publishing metadata to metadata provider, and downloading metadata from it
 
 <ImageViewer
     src='/assets/images/products/SDK/UseCase.png'
@@ -130,7 +124,7 @@ Its instance is created using a name, account type (key, mnemonic or ledger)
 and corresponding secret, the remaining fields are initialized automatically by Web3 by default.
 Contains almost no logic, only account data.
 
-##### data
+##### Data
 
 * name
 * address
@@ -140,7 +134,7 @@ Contains almost no logic, only account data.
 * index (optional)
 * nonce
 
-##### functionality
+##### Functionality
 
 * address determination by key/mnemonic/ledger by using Web3
 * updating the nonce value and comparison it with the value received via Web3
@@ -154,7 +148,7 @@ in the SNET platform. It contains entry point, network name, blockchain type, sm
 addresses (optional) and some other options. These values are specified when creating
 an instance, which is then passed to `SNETEngine`.
 
-##### data
+##### Data
 
 * blockchain entry point
 * blockchain type
@@ -164,7 +158,7 @@ an instance, which is then passed to `SNETEngine`.
 * forced update protobuf files (bool) (optional)
 * concurrency (bool) (optional)
 
-##### functionality
+##### Functionality
 
 * adding an account
 * getting an account
@@ -182,7 +176,7 @@ is installed in it, and new accounts and service clients are created by using it
 so they are accessed through it, and therefore most of the SDK functions are accessible
 from `SNETEngine`.
 
-##### data
+##### Data
 
 * `Config`'s instance
 * an instance of a Web3 library entity that will be passed to all dependent entities
@@ -193,7 +187,7 @@ from `SNETEngine`.
 * `GRPCLibGenerator`'s instance
 * `Channels`'s instance
 
-##### functionality
+##### Functionality
 
 * creating new `Account`
 * creating and initializing new `Service`
@@ -211,7 +205,7 @@ metadata provider functionality related on service. It contains the most importa
 `call` for calling a service with given parameters. It's the base entity to `ServiceClientByGRPC` and
 others that are planned to be implemented to access `daemons` using other methods, such as REST API.
 
-##### data
+##### Data
 
 * organization id
 * service id
@@ -225,7 +219,7 @@ others that are planned to be implemented to access `daemons` using other method
 * an instance of the metadata provider implementation (it's got from the owner's entity `SNETEngine`)
 * an instance of a Web3 library entity (it's got from the owner's entity `SNETEngine`)
 
-##### functionality
+##### Functionality
 
 * call a service with given parameters (abstract)
 * providing the user with access to `MPEContract`'s instance functionality related on channels
@@ -240,13 +234,13 @@ others that are planned to be implemented to access `daemons` using other method
 `ServiceClientByGRPC` extends `ServiceClient`. It allows you to call service functions by
 communicating with the `daemon` via gRPC
 
-##### data
+##### Data
 
 * grpc channel
 * data needed for grpc call
 * protobuf modules
 
-##### functionality
+##### Functionality
 
 <!--TODO: understand the remaining functionality related on grpc and finish writing it-->
 
@@ -270,13 +264,13 @@ to be implemented to work with other blockchains on the SNET platform.
 transactions for calling *write* functions of smart contracts in Ethereum. `EthContract` is the base
 entity for `MPEContract`, `RegistryContract` and `AGIXContract`.
 
-##### data
+##### Data
 
 * an instance of a Web3 library entity (it's got from the owner's entity `SNETEngine`)
 * smart contract object from Web3 library
 * contract address
 
-##### functionality
+##### Functionality
 
 * getting Web3 library contract object by name and optionally address  (using `snet.contracts` library)
 * getting contract info from Web3 library contract object
@@ -311,11 +305,11 @@ def _get_gas_price(self):
 `MPEContract` extends `EthContract`. It's an entity that provides all the functionality from
 [MultyPartyEscrow Contract](https://etherscan.io/address/0x5e592F9b1d303183d963635f895f0f0C48284f4e).
 
-##### data
+##### Data
 
 * `AGIXContract`'s instance (it's got from the owner's entity `SNETEngine`)
 
-##### functionality
+##### Functionality
 
 * calling [*read* functions](https://etherscan.io/address/0x5e592F9b1d303183d963635f895f0f0C48284f4e#readContract):
 
@@ -336,7 +330,7 @@ def _get_gas_price(self):
 `RegistryContract` extends `EthContract`. It's an entity that provides all the functionality from
 [Registry Contract](https://etherscan.io/address/0x247DEbEBB766E4fA99667265A158060018D5f4F8).
 
-##### functionality
+##### Functionality
 
 * calling [*read* functions](https://etherscan.io/address/0x247DEbEBB766E4fA99667265A158060018D5f4F8#readContract):
 
@@ -358,7 +352,7 @@ service metadata (and by the way also `.proto` files). It's the base entity to `
 and others that are planned to be implemented to work with other external file storages on
 the SNET platform.
 
-##### functionality
+##### Functionality
 
 * getting organization metadata from external storage (abstract)
 * getting service metadata from external storage (abstract)
@@ -374,13 +368,13 @@ the SNET platform.
 `IPFSMetadataProvider` implements `MetadataProvider`. It allows you to work with metadata and
 `.proto` files using [Interplanetary Filesystem (IPFS)](https://ipfs.tech/).
 
-##### data
+##### Data
 
 * `RegistryContract`'s instance (it's got from the owner's entity `SNETEngine`)
 * an instance of a IPFS HTTP client entity from the corresponding library
 * directory for storage protobuf files
 
-##### functionality
+##### Functionality
 
 * implementation of parent methods for IPFS
 * converting hash to URL (bytes) and back
@@ -392,7 +386,7 @@ the SNET platform.
 `PaymentChannel` is an entity that stores information about an open channel and allows the functions
 provided by MPE to be performed on it.
 
-##### data
+##### Data
 
 * channel id
 * an instance of a Web3 library entity (it's got from the owner's entity `Channels`)
@@ -403,7 +397,7 @@ provided by MPE to be performed on it.
 <!-- TODO: Understand what proto files are needed for in resources, and here specifically
 PaymentChannelStateServiceClient -->
 
-##### functionality
+##### Functionality
 
 * MPE functions applied to account and channel data, such as:
 
@@ -419,14 +413,14 @@ PaymentChannelStateServiceClient -->
 `Channels` is an entity that stores set of `PaymentChannel`s and allows services to interact with
 them effectively.
 
-##### data
+##### Data
 
 * channels (list/map)
 * an instance of a Web3 library entity (it's got from the owner's entity `SNETEngine`)
 * `MPEContract`'s instance (it's got from the owner's entity `SNETEngine`)
 * MPE deployment block
 
-##### functionality
+##### Functionality
 
 * storing channels information (`PaymentChannel`s)
 * search for channels in blockchain
@@ -443,14 +437,14 @@ them effectively.
 
 `GRPCLibGenerator` is an entity needed to generate `stub` files in a specific language.
 
-##### data
+##### Data
 
 * `IPFSMetadataProvider`'s instance (it's got from the owner's entity `SNETEngine`)
 * `RegistryContract`'s instance (it's got from the owner's entity `SNETEngine`)
 
 <!-- TODO: it's needed to decide, where the generation will take place, in engine or service -->
 
-##### functionality
+##### Functionality
 
 * generation of `stub` files based on specified organization and service ids, including:
 
@@ -465,13 +459,15 @@ them effectively.
 `AGIXContract` extends `EthContract`. It's an entity that provides the functionality from
 [SingularityNET AGIX Token Contract](https://etherscan.io/address/0x5B7533812759B45C2B44C19e320ba2cD2681b542).
 
-##### functionality
+##### Functionality
 
-* * calling [*read* functions](https://etherscan.io/address/0x5B7533812759B45C2B44C19e320ba2cD2681b542#readContract):
+* calling [*read* functions](https://etherscan.io/address/0x5B7533812759B45C2B44C19e320ba2cD2681b542#readContract):
+
   * allowance
   * balanceOf
   * etc.
-* * calling [*write* functions](https://etherscan.io/address/0x5B7533812759B45C2B44C19e320ba2cD2681b542#writeContract):
+* calling [*write* functions](https://etherscan.io/address/0x5B7533812759B45C2B44C19e320ba2cD2681b542#writeContract):
+
   * approve
   * transfer
   * etc.
@@ -538,11 +534,11 @@ be other entities inside for complex metadata fields. Below is an example of ser
 }
 ```
 
-##### data
+##### Data
 
 * map (or just fields) with service data
 
-##### functionality
+##### Functionality
 
 * updating fields value
 * adding new data to fields that are lists (media, groups, etc.)
@@ -602,11 +598,11 @@ be other entities inside for complex metadata fields. Below is an example of org
 }
 ```
 
-##### data
+##### Data
 
 * map (or just fields) with organization data
 
-##### functionality
+##### Functionality
 
 * updating fields value
 * adding new data to fields that are lists (groups, contacts, etc.)
@@ -620,7 +616,7 @@ be other entities inside for complex metadata fields. Below is an example of org
 `TransactionHandler` is an abstract entity. It allows you to conduct transactions. `TransactionHandler`
 is the base entity to `LedgerTransactionHandler` and `KeyOrMnemonicTransactionHandler`.
 
-##### functionality
+##### Functionality
 
 * signing transaction
 * sending transaction
@@ -634,13 +630,13 @@ is the base entity to `LedgerTransactionHandler` and `KeyOrMnemonicTransactionHa
 `LedgerTransactionHandler` implements `TransactionHandler`. It allows you to conduct transactions
 using ledger.
 
-##### data
+##### Data
 
 * address
 * index
 * dongle path
 
-##### functionality
+##### Functionality
 
 * connecting to ledger
 
@@ -653,12 +649,12 @@ using ledger.
 `KeyOrMnemonicTransactionHandler` implements `TransactionHandler`. It allows you to conduct transactions
 using key or mnemonic with index.
 
-##### data
+##### Data
 
 * private key
 * address
 
-##### functionality
+##### Functionality
 
 * implementation parent's functionality using Web3
 
@@ -670,7 +666,7 @@ using key or mnemonic with index.
 is the base entity to `DefaultPaymentStrategy`, `FreeCallPaymentStrategy`, `FreeCallPaymentStrategy`
 and `PaidCallPaymentStrategy`.
 
-##### functionality
+##### Functionality
 
 * getting call price (abstract)
 * getting payment metadata (abstract)
@@ -684,12 +680,12 @@ the user does not specify which strategy to use. And in fact, this is not a sepa
 depending on various conditions, chooses strategy from `FreeCallPaymentStrategy`, `FreeCallPaymentStrategy`
 and `PaidCallPaymentStrategy`.
 
-##### data
+##### Data
 
 * `ConcurrencyManager`'s instance
 * channel
 
-##### functionality
+##### Functionality
 
 * choosing payment strategy
 
@@ -700,7 +696,7 @@ and `PaidCallPaymentStrategy`.
 `FreeCallPaymentStrategy` implements `PaymentStrategy`. This payment strategy can be used when the user
 has free service call tokens.
 
-##### functionality
+##### Functionality
 
 * checking for free call tokens
 * implementation of parent's functionality for free-call type of call
@@ -712,13 +708,13 @@ has free service call tokens.
 `PrepaidPaymentStrategy` implements `PaymentStrategy`. This strategy can be used when the user has deposited
 funds into the channel in advance and **wants to pay for several calls at once**.
 
-##### data
+##### Data
 
 * `ConcurrencyManager`'s instance (it's got from the owner's entity, usually from`DefaultPaymentStrategy`)
 * call allowance
 * block offset (240 by default)
 
-##### functionality
+##### Functionality
 
 * providing concurrency
 * implementation of parent's functionality for prepaid type of call
@@ -731,12 +727,12 @@ funds into the channel in advance and **wants to pay for several calls at once**
 `FreeCallPaymentStrategy` implements `PaymentStrategy`. This payment strategy can be used when the user
 wants to call the service once.
 
-##### data
+##### Data
 
 * call allowance
 * block offset (240 by default)
 
-##### functionality
+##### Functionality
 
 * implementation of parent's functionality
 * selecting channel with checking for its presence, amount and expiration
@@ -747,13 +743,13 @@ wants to call the service once.
 
 `ConcurrencyManager` is an entity that organizes and controls concurrency by turning to the daemon.
 
-##### data
+##### Data
 
 * amount of concurrent calls
 * token
 * planned and used amount
 
-##### functionality
+##### Functionality
 
 * working with channel
 * getting token from daemon
@@ -765,7 +761,7 @@ wants to call the service once.
 
 `Utils` is an entity that contains a set of functions used in many other entities.
 
-##### functionality
+##### Functionality
 
 * validation of URL
 * validation of endpoint
@@ -787,6 +783,8 @@ Payment for service calls on the Singularity NET platform is made using the Sing
 a payment channel. To realize a service call on the platform, there are smart contracts. Each of them is responsible
 for a specific functionality.
 
+---
+
 #### MultiPartyEscrow
 
 The main purpose of MPE is to manage payment channels. For a call to be successful, a suitable payment channel
@@ -802,14 +800,15 @@ Here are the functions of this contract that the SDK must be able to call
 5. `channelExtend` - extends the expiration of the channel
 6. `channelExtendAndAddFunds` - extends the expiration of the channel and adds funds
 7. `deposit` - deposits funds into the MPE
-8. `depositAndOpenChannel` - deposits funds into the MPE and opens a new channel with the same amount of funds and
-   a given expiration
+8. `depositAndOpenChannel` - deposits funds into the MPE and opens a new channel with the same amount of funds and a given expiration
 9. `withdraw` - withdraws funds from the MPE back to the wallet
 10. `channelClaim` - claims funds from the channel (**for the service providers**)
 11. `multiChannelClaim` - claims funds from multiple channels (**for the service providers**)
 12. `channelClaimTimeout` - claims funds from the channel if the channel has expired (**for the service consumers**)
 
 You can see the implementation of MultiPartyEscrow in Ethereum [here](https://etherscan.io/address/0x5e592F9b1d303183d963635f895f0f0C48284f4e).
+
+---
 
 #### Registry
 
@@ -835,6 +834,8 @@ Here are the functions of this contract that the SDK must be able to call
 
 You can see the implementation of Registry in Ethereum [here](https://etherscan.io/address/0x247DEbEBB766E4fA99667265A158060018D5f4F8).
 
+---
+
 #### SingularityNetToken
 
 The AGIX Token is an ERC-20 token that powers the SingularityNet platform. In the SDK, this contract is needed to
@@ -848,6 +849,8 @@ Here are the functions of this contract that the SDK must be able to call
 
 You can see the implementation of SingularityNET AGIX Token in Ethereum [here](https://etherscan.io/address/0x5B7533812759B45C2B44C19e320ba2cD2681b542)
 
+---
+
 ### Storage Providers
 
 The storage provider is designed to store metadata of services and organizations, as well as services (daemons) APIs.
@@ -858,13 +861,19 @@ URI is a string consisting of a prefix with the name of the storage and the iden
 `<STORAGE_NAME>://<FILE_IDENTIFIER>`. The organization and service metadata URIs stored in the registry are
 additionally encoded in ASCII format and padded with null bytes.
 
+---
+
 #### IPFS
 
 URI example: `ipfs://<IPFS_HASH>`
 
+---
+
 #### FileCoin
 
 URI example: `filecoin://<FILECOIN_CID>`
+
+---
 
 ### Daemon
 
@@ -880,29 +889,26 @@ the following services, which are the same for all daemons:
 
 ## Implementations
 
-We support SDK for the below two languages
+The SingularityNET SDK is currently available in two fully supported languages:
 
-* [SDK in Python](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)
-* [SDK in WebJS](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
+* [Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)
+* [WebJS SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
 
-And two SDKs are under development:
+Two more SDKs are under active development:
 
-* [SDK in Java](/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/)
-* [SDK in Node.JS](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/)
+* [Java SDK](/docs/products/DecentralizedAIPlatform/SDK/JavaSDK/getting-started-guide/)
+* [Node.js SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/NodeJsSDK/getting-started-guide/)
 
-All SDKs provided adhere to the same design standard and strategy
+All SDK implementations follow the same overall design principles and strategy.
 
-**Note**: According to the design pattern for the SDK, modules such as functionality need to be available in all programming languages, such as Python and WebJS.
+**Note:** According to the design pattern, core SDK functionality must be consistently available across all programming languages (e.g., Python, WebJS).
 
-The SDK can include several default funding strategies for payment channels, but allows and supports the developer to implement funding strategies for payment channels of their own, to control over tokens and service payments.
+The SDK provides several default funding strategies for payment channels, while also allowing developers to implement their own strategies to maintain full control over tokens and service payments.
 
-The SDK, in combination with the CLI, simplifies the process of fetching the latest service specification for dependent services, and compiles the proto definitions, so that the services can be invoked with minimal fuss.
+Together with the CLI, the SDK simplifies the process of fetching the latest service specifications, compiling proto definitions, and invoking services with minimal setup.
 
-Currently, a fully functional [Python SDK](https://github.com/singnet/snet-sdk-python) is available, but has
-[some design improvements](https://github.com/singnet/snet-sdk-python/issues/16).
+* A fully functional [Python SDK](https://github.com/singnet/snet-sdk-python) is available (see [design improvement issues](https://github.com/singnet/snet-sdk-python/issues/16)).
+* A fully functional [WebJS SDK](https://github.com/singnet/snet-sdk-js/tree/master/packages/web) is also available.
 
-Also, a fully functional [WebJS SDK](https://github.com/singnet/snet-sdk-js/tree/master/packages/web) is available.
+Work is ongoing on the [Node.js SDK](https://github.com/singnet/snet-sdk-js/tree/master/packages/nodejs) and the [Java SDK](https://github.com/singnet/snet-sdk-java). Support for other popular languages is planned, and community contributions are welcome.
 
-We are currently working on [SDK for Node.JS](https://github.com/singnet/snet-sdk-js/tree/master/packages/nodejs)
-and [SDK for Java](https://github.com/singnet/snet-sdk-java). We are also planning to support other popular languages,
-and welcome third-party contributions to the SDK for users' favorite languages.
