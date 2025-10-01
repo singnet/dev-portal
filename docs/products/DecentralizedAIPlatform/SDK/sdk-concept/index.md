@@ -1,4 +1,4 @@
-# SNET SDK Protocol and Concepts
+# SDK Concept and functional description
 
 The **SingularityNET Platform SDK** is designed to provide a convenient programming interface for application developers:
 
