@@ -193,6 +193,166 @@ The `init` command will create a `snetd.config.json` file. You will need to modi
 
 For a detailed list of configurations, check the [configuration page](https://github.com/singnet/snet-daemon#configuration) with all available options.
 
+---
+
+## Switching from Testnet (Sepolia) to Mainnet
+
+If you initially deployed your service on the Sepolia testnet and want to migrate to Mainnet, you need to update several key parameters in your daemon configuration.
+
+### Critical Configuration Changes
+
+**1. Network Selection**
+
+Change the blockchain network from Sepolia to Mainnet:
+
+```json
+// Before (Sepolia):
+"blockchain_network_selected": "sepolia"
+
+// After (Mainnet):
+"blockchain_network_selected": "main"
+```
+
+---
+
+**2. Ethereum RPC Endpoints**
+
+Update both HTTP and WebSocket endpoints to point to Mainnet:
+
+**Before (Sepolia):**
+```json
+"ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+"ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>"
+```
+
+**After (Mainnet):**
+```json
+"ethereum_json_rpc_http_endpoint": "http://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
+"ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>"
+```
+
+---
+
+**3. Organization and Service IDs**
+
+**Important:** Organizations and services published on Sepolia testnet do NOT automatically exist on Mainnet. You must:
+
+1. **Republish your organization** on Mainnet using CLI or Publisher Portal
+2. **Republish your service** on Mainnet
+3. **Update daemon configuration** with new Mainnet IDs:
+
+```json
+"organization_id": "<YOUR_MAINNET_ORG_ID>",
+"service_id": "<YOUR_MAINNET_SERVICE_ID>"
+```
+
+> ⚠️ **Note:** Even if you use the same organization and service names, the IDs will be different on Mainnet.
+
+---
+
+### Parameters That DO NOT Change
+
+The following configuration parameters typically remain the same when switching networks:
+
+```json
+{
+  "daemon_endpoint": "0.0.0.0:<DAEMON_PORT>",
+  "daemon_group_name": "<DAEMON_GROUP>",
+  "service_endpoint": "http://<SERVICE_HOST>:<SERVICE_PORT>",
+  "ssl_cert": "<PATH_TO_DOMAIN_CERTS>/fullchain.pem",
+  "ssl_key": "<PATH_TO_DOMAIN_CERTS>/privkey.pem",
+  "metering_enabled": true,
+  "metering_endpoint": "https://marketplace-mt-v2.singularitynet.io",
+  "private_key_for_metering": "<METERING_KEY>",
+  "private_key_for_free_calls": "<FREE_CALL_KEY>",
+  "payment_channel_storage_server": {
+    // embedded ETCD configuration remains the same
+  }
+}
+```
+
+---
+
+### Complete Configuration Comparison
+
+**Testnet (Sepolia) Configuration:**
+```json
+{
+  "blockchain_network_selected": "sepolia",
+  "ethereum_json_rpc_http_endpoint": "http://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+  "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+  "organization_id": "<TESTNET_ORG_ID>",
+  "service_id": "<TESTNET_SERVICE_ID>"
+}
+```
+
+**Mainnet Configuration:**
+```json
+{
+  "blockchain_network_selected": "main",
+  "ethereum_json_rpc_http_endpoint": "http://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
+  "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
+  "organization_id": "<MAINNET_ORG_ID>",
+  "service_id": "<MAINNET_SERVICE_ID>"
+}
+```
+
+---
+
+### Migration Checklist
+
+Before switching to Mainnet, complete these steps:
+
+**Prerequisites:**
+- [ ] Sufficient ETH in your Mainnet wallet for gas fees (for publishing transactions)
+- [ ] Valid Alchemy API key that works with Mainnet endpoints
+- [ ] Backup of your Testnet configuration (for reference)
+
+**Publishing on Mainnet:**
+- [ ] Publish your organization on Mainnet (using CLI/Publisher Portal)
+- [ ] Publish your service on Mainnet
+- [ ] Note the new Mainnet organization_id and service_id
+
+**Configuration Updates:**
+- [ ] Update `blockchain_network_selected` to `"main"`
+- [ ] Update `ethereum_json_rpc_http_endpoint` to Mainnet URL
+- [ ] Update `ethereum_json_rpc_ws_endpoint` to Mainnet URL  
+- [ ] Update `organization_id` to Mainnet organization ID
+- [ ] Update `service_id` to Mainnet service ID
+
+**Final Steps:**
+- [ ] Save the updated configuration file
+- [ ] Restart the daemon with the updated configuration
+- [ ] Verify daemon connects to Mainnet (check logs)
+- [ ] Test service call to ensure everything works
+
+---
+
+### Additional Considerations
+
+**ETCD Data:**
+- If using embedded ETCD, you may want to start with a fresh `data.etcd` directory
+- Consider backing up your Testnet ETCD data before switching
+- Testnet payment channels will not be valid on Mainnet
+
+**Wallet and Tokens:**
+- Testnet ETH and tokens (Sepolia ETH/AGIX) cannot be used on Mainnet
+- Ensure your wallet has sufficient Mainnet ETH for gas fees
+- Update any payment addresses if they differ between networks
+
+**Verification:**
+
+After restarting the daemon with Mainnet configuration, verify the connection:
+
+```bash
+# Check daemon startup logs
+# Look for successful connection messages to Mainnet
+# Example log output:
+# INFO: Connected to Ethereum Mainnet
+# INFO: Organization: <YOUR_MAINNET_ORG_ID>
+# INFO: Service: <YOUR_MAINNET_SERVICE_ID>
+```
+
 ## Start Daemon
 
 :::code-group

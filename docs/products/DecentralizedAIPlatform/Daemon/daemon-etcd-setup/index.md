@@ -1,5 +1,35 @@
 # SETTING UP ETCD CLUSTER
 
+## Quick Start: Automated Installation
+
+For single-node ETCD deployments, we provide an automated installation script that handles certificate generation, ETCD installation, and systemd service configuration.
+
+**Download and run the script:**
+
+```bash
+wget https://dev.singularitynet.io/assets/etcddb/etcd_setup.sh
+chmod +x etcd_setup.sh
+sudo ./etcd_setup.sh
+```
+
+**The script will:**
+- Install ETCD v3.1.20
+- Generate SSL certificates automatically
+- Configure ETCD with TLS authentication  
+- Set up systemd service for automatic startup
+
+**Prerequisites:**
+- Ubuntu Operating System
+- Root/sudo privileges
+- Domain name mapped to your server
+- Ports 2379 (client) and 2380 (peer) accessible
+
+For manual setup or multi-node cluster configuration, continue reading the sections below.
+
+---
+
+## Manual Setup: Multi-Node ETCD Cluster
+
 Starting an etcd cluster normally requires each member to be familiar with other members in the cluster. Also, you need to determine in advance the public and private IP addresses of the system before setting up the cluster.
 
 To generate the server, client and peer certificates, use the public and private IP addresses of these machines. Using these certificates, the cluster will be setup with Transport Layer Service (TLS) Authentication enabled.

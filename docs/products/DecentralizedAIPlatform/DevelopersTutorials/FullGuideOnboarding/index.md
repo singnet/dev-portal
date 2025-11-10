@@ -190,11 +190,93 @@ Each has its own advantages and use cases:
 
 To manage **payment channels** and ensure decentralized synchronization, `etcd` is used as a **distributed key-value store** that helps track payments across AI service replicas.  
 
-For **most users**, we recommend using the **embedded** `etcd`, which runs automatically when `snet-daemon` starts. **No additional installation or configuration is required.**  
+You have two options for setting up ETCD:
 
-In this guide, we will be working with the **embedded** `etcd`, ensuring a simple and hassle-free setup for your service.  
+### Option 1: Embedded ETCD (Recommended for Most Users)
 
-For **advanced users** who want to deploy `etcd` **on a public domain**, follow the **[ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/)** to configure a standalone `etcd` instance.
+**Best for:** Single daemon deployments, development, and testing
+
+Embedded `etcd` runs automatically when `snet-daemon` starts. **No additional installation or configuration is required.** This guide uses embedded ETCD for simplicity.
+
+**When to use:**
+- ✅ Single daemon instance
+- ✅ Development and testing environments
+- ✅ Simple deployments without load balancing
+
+---
+
+### Option 2: Standalone ETCD Cluster (Advanced)
+
+**Best for:** Production environments with multiple daemon replicas
+
+**When to use:**
+- ✅ Multiple daemon instances requiring shared payment channel state
+- ✅ High-availability production deployments
+- ✅ Load-balanced services
+
+**Setup Instructions:**
+
+For standalone ETCD deployment, we provide an automated installation script that:
+- Installs ETCD v3.1.20
+- Generates SSL certificates automatically
+- Configures ETCD with TLS authentication
+- Sets up systemd service for automatic startup
+
+**Prerequisites:**
+- Ubuntu Operating System
+- Root/sudo privileges
+- Domain name for your ETCD server (e.g., `etcd.example.com`)
+- Ports 2379 (client) and 2380 (peer) accessible
+
+**Installation Steps:**
+
+1. Download the ETCD setup script:
+   ```bash
+   wget https://dev.singularitynet.io/assets/etcddb/etcd_setup.sh
+   chmod +x etcd_setup.sh
+   ```
+
+2. Run the installation script:
+   ```bash
+   sudo ./etcd_setup.sh
+   ```
+
+3. Follow the interactive prompts:
+   - **Domain name**: Enter your domain (e.g., `etcd.example.com`)
+   - **Organization name**: Enter your organization name
+   - **Certificate validity**: Specify validity period in years
+
+   The script will automatically:
+   - Install ETCD v3.1.20
+   - Generate SSL certificates for TLS authentication
+   - Configure systemd service
+   - Set up ETCD with the provided domain
+
+4. Upon successful installation, note the output:
+   ```
+   ETCD ENDPOINT: https://your-domain.com:2379/health
+   CERTIFICATES PATH: /var/lib/etcd/cfssl
+   ```
+
+5. Verify ETCD is running:
+   ```bash
+   sudo systemctl status etcd.service
+   ```
+
+6. **Important - Save certificate files:** Back up the generated certificates from `/var/lib/etcd/cfssl`:
+   - `ca.pem` - Certificate Authority
+   - `client.pem` - Client certificate  
+   - `client-key.pem` - Client private key
+
+   These certificates will be needed for daemon configuration when using standalone ETCD.
+
+**Note:** The script generates its own SSL certificates for ETCD. These are separate from the daemon's domain certificates (which you'll generate with Certbot in the next section).
+
+For detailed manual setup instructions or multi-node cluster configuration, see the [ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/).
+
+---
+
+**For this guide, we'll proceed with embedded ETCD for simplicity.**
 
 ## Daemon Setup
 
@@ -300,44 +382,161 @@ You can either use **the same key pair** for both metering and free calls, or **
 
 ### Step 1: Generate Keys
 
-You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+There are two supported methods for generating keypairs for metering and free-call authentication:
 
-:::code-group
+#### Method 1: Using SNET Daemon (Recommended)
 
-```bash[Using snetd]
+The SNET Daemon includes a built-in key generation tool that creates a secure Ethereum keypair:
+
+```bash
 ./snetd generate-key
 ```
 
-```python[Using Python]
+**Example output:**
+```bash
+Private key: 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+Address: 0x1234567890123456789012345678901234567890
+```
+
+**Advantages of this method:**
+- ✅ No additional dependencies required
+- ✅ Built directly into the daemon
+- ✅ Quick and simple one-command generation
+- ✅ Works on all platforms (Linux, Windows, macOS)
+
+---
+
+#### Method 2: Using Python Script
+
+Alternatively, you can generate keys using a Python script. This method requires Python and the `eth-account` library.
+
+**Prerequisites:**
+```bash
+pip install eth-account
+```
+
+**Script:**
+```python
 from eth_account import Account
 import secrets
 
+# Generate a random private key
 key = secrets.token_hex(32)
+
+# Create an account from the private key
 acct = Account.from_key(key)
+
+# Display the results
+print("="*50)
 print("SAVE BUT DO NOT SHARE PRIVATE KEY")
-print("Private key: ", key)
-print("Address: ", acct.address)
+print("="*50)
+print(f"Private key: 0x{key}")
+print(f"Address: {acct.address}")
+print("="*50)
 ```
 
-:::
+**Save this script as `generate_key.py` and run:**
+```bash
+python generate_key.py
+```
 
-> 🔒 **Important:** Store the output securely. The private key grants full control over the corresponding address and should never be shared.
+**Advantages of this method:**
+- ✅ Useful if you need to generate keys programmatically
+- ✅ Can be integrated into automation scripts
+- ✅ Provides full control over key generation parameters
+
+---
+
+### Security Best Practices
+
+> 🔒 **CRITICAL SECURITY NOTICE:**
+> 
+> - **NEVER share your private keys** with anyone
+> - **NEVER commit private keys** to version control (Git, etc.)
+> - **Store private keys securely** using environment variables or secret management tools
+> - **Back up your private keys** in a secure location
+> - The private key grants **full control** over the corresponding Ethereum address
+> - Loss of the private key means **permanent loss of access** to associated funds and functionality
 
 ---
 
 ### Step 2: Use the Generated Credentials
 
-You will need to use the generated keys in two places:
+After generating your keypair(s), you will need to use them in two places:
 
-**Metering:**
-- Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service
-- Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration
+#### For Metering:
 
-**Free Calls:**
-- Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service
-- Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration
+1. **When publishing your service:**
+   - Use the generated **Address** as `<METERING_ADDRESS>` 
+   - This is added via the CLI command:
+     ```bash
+     snet service metadata-add-daemon-addresses <GROUP_NAME> <METERING_ADDRESS>
+     ```
 
-> ✅ You may **reuse the same key pair** for both Metering and Free Calls, or generate **separate credentials** for better isolation.
+2. **In your daemon configuration (`snetd.config.json`):**
+   - Use the **Private Key** as `<METERING_KEY>`:
+     ```json
+     "private_key_for_metering": "0x1234567890abcdef..."
+     ```
+
+#### For Free Calls:
+
+1. **When publishing your service:**
+   - Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>`
+   - This can be set in the service metadata
+
+2. **In your daemon configuration (`snetd.config.json`):**
+   - Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>`:
+     ```json
+     "private_key_for_free_calls": "0x1234567890abcdef..."
+     ```
+
+---
+
+### Key Management Options
+
+You have two options for managing metering and free call keys:
+
+#### Option 1: Single Key Pair (Simplified)
+
+✅ **Use the same key pair for both metering and free calls**
+
+**Advantages:**
+- Simpler to manage (only one key to secure)
+- Reduced risk of key confusion
+- Easier configuration
+
+**Use this option if:**
+- You're starting out and want simplicity
+- You don't need separate access control for metering vs. free calls
+
+---
+
+#### Option 2: Separate Key Pairs (Advanced)
+
+✅ **Generate separate credentials for metering and free calls**
+
+**Advantages:**
+- Better security isolation
+- Separate access control
+- Easier to revoke access to one feature without affecting the other
+
+**Use this option if:**
+- You require strict security separation
+- Different teams manage metering vs. free calls
+- You need granular access control
+
+**Example: Generating two separate key pairs:**
+
+```bash
+# Generate metering key
+./snetd generate-key > metering_key.txt
+
+# Generate free calls key
+./snetd generate-key > free_calls_key.txt
+```
+
+> ⚠️ **Important:** Keep track of which key is used for which purpose to avoid configuration errors.
 
 ## Configuring the Daemon
 
@@ -830,6 +1029,81 @@ Replace the placeholders as indicated below:
 ::: danger
 For each reference to the embedded ETCD configuration in the daemon, do not delete the directory specified by `data_dir`. Deleting this folder will remove access to payment channel storage and prevent token withdrawals.
 :::
+
+## Switching Networks: Sepolia Testnet to Mainnet
+
+If you initially deployed your service on the Sepolia testnet and want to migrate to Mainnet, you need to update several parameters in your daemon configuration.
+
+### Critical Configuration Changes
+
+When switching from Sepolia testnet to Mainnet, update the following fields in your `snetd.config.json`:
+
+**1. Network Selection**
+```json
+// Change from:
+"blockchain_network_selected": "sepolia"
+
+// To:
+"blockchain_network_selected": "main"
+```
+
+**2. Ethereum RPC Endpoints**
+
+Update both HTTP and WebSocket endpoints to point to Mainnet:
+
+```json
+// Change from:
+"ethereum_json_rpc_http_endpoint": "https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>"
+"ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>"
+
+// To:
+"ethereum_json_rpc_http_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>"
+"ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>"
+```
+
+---
+
+### Complete Configuration Comparison
+
+**Testnet (Sepolia) Configuration:**
+```json
+{
+  "blockchain_network_selected": "sepolia",
+  "ethereum_json_rpc_http_endpoint": "https://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>",
+  "ethereum_json_rpc_ws_endpoint": "wss://eth-sepolia.g.alchemy.com/v2/<YOUR_API_KEY>"
+}
+```
+
+**Mainnet Configuration:**
+```json
+{
+  "blockchain_network_selected": "main",
+  "ethereum_json_rpc_http_endpoint": "https://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>",
+  "ethereum_json_rpc_ws_endpoint": "wss://eth-mainnet.g.alchemy.com/v2/<YOUR_API_KEY>"
+}
+```
+
+---
+
+### Additional Considerations
+
+**Organization and Service Re-publishing:**
+- Your organization and service published on Sepolia **will not** exist on Mainnet
+- You must re-publish your organization and service on Mainnet using the CLI/TUI/Publisher Portal
+- Update `organization_id` and `service_id` in daemon config after republishing
+
+**Wallet and Funding:**
+- Ensure your wallet has sufficient ETH on **Mainnet** for gas fees
+- Testnet tokens (Sepolia ETH/AGIX) cannot be used on Mainnet
+
+**ETCD Data:**
+- If using standalone ETCD, you may want to start with a fresh data directory
+- Backup existing `data.etcd` directory before switching networks
+
+**Verification:**
+After making changes, verify the daemon connects to the correct network by checking the startup logs.
+
+---
 
 ## Launching the Daemon
 

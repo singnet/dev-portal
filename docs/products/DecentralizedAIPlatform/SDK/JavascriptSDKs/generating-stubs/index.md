@@ -27,18 +27,12 @@ If installed correctly, the `protoc` version will be displayed.
 To install `protoc` on Linux, please follow the instructions provided on the official gRPC documentation site: [https://grpc.io/docs/protoc-installation/](https://grpc.io/docs/protoc-installation/).
 This guide includes steps for various distributions and provides the latest installation instructions.
 
-## Step 2. Install Additional Plugins for `protoc`
+## Step 2. Install Required npm Packages
 
-Install `protoc-gen-js` for generating JS files:
-
-```sh
-npm install -g protoc-gen-js
-```
-
-Install `protoc-gen-grpc` for generating gRPC files:
+Install the necessary packages for generating TypeScript stubs:
 
 ```sh
-npm install -g protoc-gen-grpc
+npm install ts-protoc-gen google-protobuf @types/google-protobuf grpc-web
 ```
 
 ## Step 3. Download `.proto` file for a Service
@@ -52,7 +46,7 @@ snet service get-api-registry <org_id> <SERVICE_ID> <PROTO_DIR>
 For more details, please check the [CLI](/docs/products/DecentralizedAIPlatform/CLI/) or 
 [CLI Manual](/docs/products/DecentralizedAIPlatform/CLI/Manual/)
 
-## Step 4. Generate stub files for JS
+## Step 4. Generate stub files for JavaScript/TypeScript
 
 Navigate to the directory where the `.proto` file is located, and run the following commands to generate the necessary stub files:
 
@@ -62,16 +56,58 @@ Navigate to the directory where the `.proto` file is located, and run the follow
 cd <PATH_TO_PROTO_DIR>
 ```
 
-2. Generate JavaScript files:
+2. Generate JavaScript and TypeScript stub files:
+
+### For Linux:
 
 ```sh
-protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
+protoc \
+  --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
+  --js_out=import_style=commonjs,binary,namespace_prefix=\
+[package name]_[org id]_[service]:. --ts_out=service=grpc-web:. \
+  [proto file name].proto
 ```
 
-3. Generate gRPC files:
+### For Windows (CMD):
 
+```cmd
+protoc ^
+  --plugin=protoc-gen-ts=%cd%/node_modules/.bin/protoc-gen-ts.cmd ^
+  --js_out=import_style=commonjs,binary,namespace_prefix=^
+[package name]_[org id]_[service]:. --ts_out=service=grpc-web:. ^
+  [proto file name].proto
+```
+
+**Placeholder Explanation:**
+- `[package name]` - The package name defined in your .proto file
+- `[org id]` - Your organization ID on the SingularityNET platform
+- `[service]` - Your service name
+- `[proto file name]` - The name of your .proto file
+
+**Example:**
+
+For a service with:
+- Package name: `example_service`
+- Organization ID: `test`
+- Service name: `Calculator`
+- Proto file: `example.proto`
+
+### Linux:
 ```sh
-protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
+protoc \
+  --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
+  --js_out=import_style=commonjs,binary,namespace_prefix=\
+example_service_test_Calculator:. --ts_out=service=grpc-web:. \
+  example.proto
 ```
 
-These commands will create `JS` and `gRPC` files required for the service.
+### Windows (CMD):
+```cmd
+protoc ^
+  --plugin=protoc-gen-ts=%cd%/node_modules/.bin/protoc-gen-ts.cmd ^
+  --js_out=import_style=commonjs,binary,namespace_prefix=^
+example_service_test_Calculator:. --ts_out=service=grpc-web:. ^
+  example.proto
+```
+
+These commands will create JavaScript and TypeScript stub files required for the service.
