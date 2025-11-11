@@ -35,11 +35,11 @@ Choose the deployment method that best fits your needs:
 
 **Choose HaaS if:**
 
-✅ You want to focus on AI service development, not infrastructure  
-✅ You need quick deployment without server management  
-✅ You prefer predictable monthly costs  
-✅ You don't want to handle ETCD, SSL, or daemon configuration  
-✅ You need reliable uptime with automated maintenance  
+- You want to focus on AI service development, not infrastructure
+- You need quick deployment without server management
+- You prefer predictable monthly costs
+- You don't want to handle ETCD, SSL, or daemon configuration
+- You need reliable uptime with automated maintenance
 
 ---
 
@@ -47,11 +47,11 @@ Choose the deployment method that best fits your needs:
 
 **Choose Self-Hosted if:**
 
-✅ You need full control over infrastructure  
-✅ You have existing server infrastructure  
-✅ You want to minimize recurring costs  
-✅ You require custom daemon configurations  
-✅ You have DevOps expertise  
+- You need full control over infrastructure
+- You have existing server infrastructure
+- You want to minimize recurring costs
+- You require custom daemon configurations
+- You have DevOps expertise
 
 > For self-hosted deployment instructions, see the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/).
 
@@ -103,7 +103,7 @@ The **Daemon Hosting Payment** modal will appear with the following fields:
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-payment-modal.png" alt="HaaS Payment Configuration"/>
 
-> 📌 **Note:** Ensure your **Service Endpoint** is publicly accessible and properly configured to handle requests from the HaaS daemon.
+> **Note:** Ensure your **Service Endpoint** is publicly accessible and properly configured to handle requests from the HaaS daemon.
 
 ---
 
@@ -126,11 +126,11 @@ The transaction covers:
 
 Once payment is confirmed, the platform automatically:
 
-✅ Provisions dedicated infrastructure  
-✅ Deploys and configures the daemon  
-✅ Generates and applies SSL certificates  
-✅ Sets up payment channel storage (ETCD)  
-✅ Populates daemon configuration in your service settings  
+- Provisions dedicated infrastructure
+- Deploys and configures the daemon
+- Generates and applies SSL certificates
+- Sets up payment channel storage (ETCD)
+- Populates daemon configuration in your service settings
 
 You'll see these fields automatically filled in your service configuration:
 
@@ -141,13 +141,13 @@ You'll see these fields automatically filled in your service configuration:
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-auto-filled.png" alt="Auto-filled Daemon Configuration"/>
 
-> ✨ **No ETCD configuration required** — HaaS uses a managed ETCD cluster automatically.
+> **Note:** No ETCD configuration required — HaaS uses a managed ETCD cluster automatically.
 
 ---
 
 ### Step 5: Complete Service Publication
 
-After HaaS successfully deploys your daemon, complete the remaining service publication steps in the Publisher Portal. Your service is now live with a fully managed daemon infrastructure!
+After HaaS successfully deploys your daemon, complete the remaining service publication steps in the Publisher Portal. Your service is now live with a fully managed daemon infrastructure.
 
 ---
 
@@ -197,7 +197,7 @@ Click the **three-dot menu** (⋮) next to any daemon to access management optio
 
 ---
 
-#### 🔄 Top Up
+#### Top Up
 
 **Purpose:** Extend your daemon's subscription by paying for additional time.
 
@@ -207,11 +207,11 @@ Click the **three-dot menu** (⋮) next to any daemon to access management optio
 3. MetaMask will prompt you to approve the transaction
 4. Your daemon's expiry date will be extended by the purchased period
 
-> 📌 **Tip:** Top up before your expiry date to avoid service interruption.
+> **Tip:** Top up before your expiry date to avoid service interruption.
 
 ---
 
-#### 📊 Detail
+#### Detail
 
 **Purpose:** View detailed information and status history for a specific daemon.
 
@@ -229,7 +229,7 @@ This page helps you:
 
 ---
 
-#### ⚙️ Update Daemon Config
+#### Update Daemon Config
 
 **Purpose:** Modify your daemon's service connection and authorization settings.
 
@@ -242,11 +242,11 @@ This page helps you:
 - You rotated API keys or authentication tokens
 - You changed your service's authentication requirements
 
-> ⚠️ **Important:** Ensure your new service endpoint is accessible before updating to avoid downtime.
+> **Important:** Ensure your new service endpoint is accessible before updating to avoid downtime.
 
 ---
 
-#### 💰 Run For Claiming
+#### Run For Claiming
 
 **Purpose:** Transfer accumulated funds from the daemon to your organization's payment address.
 
@@ -261,7 +261,7 @@ This page helps you:
 - Regular scheduled fund collection
 - Before daemon expiry to ensure no funds are left unclaimed
 
-> 📌 **Note:** Claiming sends funds to the **organization payment address** configured during organization setup.
+> **Note:** Claiming sends funds to the **organization payment address** configured during organization setup.
 
 ---
 
@@ -280,12 +280,12 @@ HaaS operates on a **monthly subscription basis** paid in FET tokens:
 
 ### Important Payment Notes
 
-⚠️ **Subscription Management:**
+**Subscription Management:**
 - Monitor your daemon's expiry date in the dashboard
 - Top up before expiry to maintain continuous service
 - Expired daemons enter `DOWN` status and stop processing requests
 
-⚠️ **Fund Management:**
+**Fund Management:**
 - Service call payments accumulate in the daemon's payment channels
 - Use **Run For Claiming** regularly to withdraw earnings
 - Unclaimed funds remain accessible even after subscription expiry
@@ -296,7 +296,7 @@ HaaS operates on a **monthly subscription basis** paid in FET tokens:
 
 ### After Deploying with HaaS
 
-✨ **Your daemon is now live!** Here's what to do next:
+**Your daemon is now live!** Here's what to do next:
 
 1. **Test Your Service**
    - Use the [Service Calling via CLI](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI/) guide
