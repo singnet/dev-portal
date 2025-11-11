@@ -200,11 +200,14 @@ The **My Daemons** page displays all your HaaS-managed daemons with the followin
 
 | Status | Meaning |
 |--------|---------|
-| `INIT` | Daemon is being initialized and deployed |
-| `READY_TO_START` | Daemon is provisioned and ready to start |
-| `RUNNING` | Daemon is active and handling requests |
-| `DOWN` | Daemon is stopped or subscription expired |
-| `ERROR` | Daemon encountered an error and requires attention |
+| `INIT` | Daemon entity is created, awaiting payment |
+| `READY_TO_START` | Payment confirmed, daemon is ready to be deployed |
+| `STARTING` | Daemon is being deployed |
+| `RESTARTING` | Daemon is being redeployed |
+| `UP` | Daemon is deployed and actively handling requests |
+| `DELETING` | Daemon is being deleted |
+| `DOWN` | Daemon is stopped or subscription expired (not paid) |
+| `ERROR` | Daemon encountered an error during deployment and requires attention |
 
 
 
