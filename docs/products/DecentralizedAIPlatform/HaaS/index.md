@@ -67,6 +67,23 @@ Before deploying with HaaS, ensure you have:
 4. **Service Endpoint**: Public URL where your AI service is accessible (e.g., `https://your-service.example.com`)
 5. **Authorization** (optional): Key, value, and location for each authorization parameter if your service requires authentication
 
+### Naming Requirements
+
+When creating your service (Steps 1 and 2), ensure your **Organization ID** and **Service ID** follow these rules:
+
+- **Lowercase only**: Use only lowercase letters (a-z)
+- **Allowed characters**: Letters, numbers, and hyphens (`-`)
+- **No special characters**: Do not use uppercase letters, underscores, spaces, or other special characters
+
+**Valid examples:**
+- Organization ID: `my-company`, `acme-corp`, `ai-services`, `test-org`
+- Service ID: `image-classifier`, `sentiment-analysis`, `translation-api`, `test-service`
+
+**Invalid examples:**
+- ❌ `MyCompany` (uppercase)
+- ❌ `test_service` (underscore)
+- ❌ `AI Services` (space and uppercase)
+
 
 
 ## Deploying Your Daemon with HaaS
@@ -142,6 +159,8 @@ You'll see these fields automatically filled in your service configuration:
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-auto-filled.png" alt="Auto-filled Daemon Configuration"/>
 
 > **Note:** No ETCD configuration required — HaaS uses a managed ETCD cluster automatically.
+
+> **Note on Screenshot:** Ensure Organization ID and Service ID in screenshots follow naming requirements (lowercase, hyphens only, no special characters). Example: `my-company` / `sentiment-analyzer` instead of `Test_Org` / `my_service`.
 
 
 
