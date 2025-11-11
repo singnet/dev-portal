@@ -12,7 +12,7 @@ Each HaaS deployment runs in an isolated, containerized environment with:
 - Built-in payment channel storage (ETCD)
 - Automated infrastructure updates and maintenance
 
----
+
 
 ## HaaS vs Self-Hosted Daemon
 
@@ -29,7 +29,7 @@ Choose the deployment method that best fits your needs:
 | **Cost Structure** | Monthly subscription (FET tokens) | Infrastructure costs only |
 | **Scalability** | ✅ Easy scaling | ⚠️ Manual scaling |
 
----
+
 
 ## When to Use HaaS
 
@@ -41,7 +41,7 @@ Choose the deployment method that best fits your needs:
 - You don't want to handle ETCD, SSL, or daemon configuration
 - You need reliable uptime with automated maintenance
 
----
+
 
 ## When to Use Self-Hosted Daemon
 
@@ -55,7 +55,7 @@ Choose the deployment method that best fits your needs:
 
 > For self-hosted deployment instructions, see the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/).
 
----
+
 
 ## Prerequisites
 
@@ -67,7 +67,7 @@ Before deploying with HaaS, ensure you have:
 4. **Service Endpoint**: Public URL where your AI service is accessible (e.g., `https://your-service.example.com`)
 5. **Authorization** (optional): API keys or authorization headers if your service requires authentication
 
----
+
 
 ## Deploying Your Daemon with HaaS
 
@@ -82,7 +82,7 @@ Click this section to open the HaaS setup wizard.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-entry-point.png" alt="HaaS Entry Point"/>
 
----
+
 
 ### Step 2: Configure Daemon Hosting
 
@@ -105,7 +105,7 @@ The **Daemon Hosting Payment** modal will appear with the following fields:
 
 > **Note:** Ensure your **Service Endpoint** is publicly accessible and properly configured to handle requests from the HaaS daemon.
 
----
+
 
 ### Step 3: Create and Pay
 
@@ -120,7 +120,7 @@ The transaction covers:
 - SSL certificate configuration
 - One month of hosting service
 
----
+
 
 ### Step 4: Automatic Configuration
 
@@ -143,13 +143,13 @@ You'll see these fields automatically filled in your service configuration:
 
 > **Note:** No ETCD configuration required — HaaS uses a managed ETCD cluster automatically.
 
----
+
 
 ### Step 5: Complete Service Publication
 
 After HaaS successfully deploys your daemon, complete the remaining service publication steps in the Publisher Portal. Your service is now live with a fully managed daemon infrastructure.
 
----
+
 
 ## Managing Your HaaS Daemons
 
@@ -159,7 +159,7 @@ Navigate to the **HaaS** section in the left sidebar of the Publisher Portal to 
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="HaaS Sidebar Navigation"/>
 
----
+
 
 ### Daemon List Overview
 
@@ -175,7 +175,7 @@ The **My Daemons** page displays all your HaaS-managed daemons with the followin
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-daemon-list.png" alt="HaaS Daemon List"/>
 
----
+
 
 ### Daemon Status Indicators
 
@@ -187,7 +187,7 @@ The **My Daemons** page displays all your HaaS-managed daemons with the followin
 | `DOWN` | Daemon is stopped or subscription expired |
 | `ERROR` | Daemon encountered an error and requires attention |
 
----
+
 
 ### Daemon Management Actions
 
@@ -195,9 +195,10 @@ Click the **three-dot menu** (⋮) next to any daemon to access management optio
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-actions-menu.png" alt="HaaS Actions Menu"/>
 
----
 
-#### Top Up
+--- 
+
+### Top Up
 
 **Purpose:** Extend your daemon's subscription by paying for additional time.
 
@@ -209,9 +210,9 @@ Click the **three-dot menu** (⋮) next to any daemon to access management optio
 
 > **Tip:** Top up before your expiry date to avoid service interruption.
 
----
+--- 
 
-#### Detail
+### Detail
 
 **Purpose:** View detailed information and status history for a specific daemon.
 
@@ -227,9 +228,9 @@ This page helps you:
 - Track status changes over time
 - Debug issues with deployment or connectivity
 
----
+--- 
 
-#### Update Daemon Config
+### Update Daemon Config
 
 **Purpose:** Modify your daemon's service connection and authorization settings.
 
@@ -244,9 +245,9 @@ This page helps you:
 
 > **Important:** Ensure your new service endpoint is accessible before updating to avoid downtime.
 
----
+--- 
 
-#### Run For Claiming
+### Run For Claiming
 
 **Purpose:** Transfer accumulated funds from the daemon to your organization's payment address.
 
@@ -263,7 +264,7 @@ This page helps you:
 
 > **Note:** Claiming sends funds to the **organization payment address** configured during organization setup.
 
----
+
 
 ## Payment and Billing
 
@@ -276,7 +277,7 @@ HaaS operates on a **monthly subscription basis** paid in FET tokens:
 - You can top up at any time to extend the expiry date
 - Multiple daemons require separate subscriptions
 
----
+
 
 ### Important Payment Notes
 
