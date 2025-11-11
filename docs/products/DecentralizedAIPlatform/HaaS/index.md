@@ -61,11 +61,28 @@ Choose the deployment method that best fits your needs:
 
 Before deploying with HaaS, ensure you have:
 
-1. **Published Service**: Your service must be created through the Publisher Portal (Steps 1 and 2 completed)
+1. **Service Created (Not Published)**: Your service must be created through the Publisher Portal (Steps 1 and 2 completed) but NOT yet published to the blockchain. Once a service is published, HaaS deployment will no longer be available for that service.
 2. **AI Service Running**: Your actual AI service must be deployed and accessible via HTTP/HTTPS endpoint
 3. **MetaMask Wallet**: With sufficient FET tokens for monthly subscription payment
 4. **Service Endpoint**: Public URL where your AI service is accessible (e.g., `https://your-service.example.com`)
-5. **Authorization** (optional): API keys or authorization headers if your service requires authentication
+5. **Authorization** (optional): Key, value, and location for each authorization parameter if your service requires authentication
+
+### Naming Requirements
+
+When creating your service (Steps 1 and 2), ensure your **Organization ID** and **Service ID** follow these rules:
+
+- **Lowercase only**: Use only lowercase letters (a-z)
+- **Allowed characters**: Letters, numbers, and hyphens (`-`)
+- **No special characters**: Do not use uppercase letters, underscores, spaces, or other special characters
+
+**Valid examples:**
+- Organization ID: `my-company`, `acme-corp`, `ai-services`, `test-org`
+- Service ID: `image-classifier`, `sentiment-analysis`, `translation-api`, `test-service`
+
+**Invalid examples:**
+- ❌ `MyCompany` (uppercase)
+- ❌ `test_service` (underscore)
+- ❌ `AI Services` (space and uppercase)
 
 
 
@@ -92,14 +109,14 @@ The **Daemon Hosting Payment** modal will appear with the following fields:
 
 | Field | Description | Example |
 |-------|-------------|---------|
-| **Monthly Cost** | Subscription price in FET tokens (displayed automatically) | `100 FET/month` |
+| **Monthly Cost** | Subscription price in FET tokens (displayed automatically) | `TBD FET/month` |
 | **Service Endpoint** | Public URL where your AI service is running | `https://api.yourservice.com` |
 
 #### Optional Configuration
 
 | Field | Description | Example |
 |-------|-------------|---------|
-| **Authorization Keys** | API keys, tokens, or headers if your service requires authentication | `Bearer YOUR_API_TOKEN` |
+| **Authorization** | Key, value, and location for each authorization parameter if your service requires authentication | Key: `Authorization`, Value: `Bearer token123`, Location: `header` |
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-payment-modal.png" alt="HaaS Payment Configuration"/>
 
@@ -143,6 +160,8 @@ You'll see these fields automatically filled in your service configuration:
 
 > **Note:** No ETCD configuration required — HaaS uses a managed ETCD cluster automatically.
 
+> **Note on Screenshot:** Ensure Organization ID and Service ID in screenshots follow naming requirements (lowercase, hyphens only, no special characters). Example: `my-company` / `sentiment-analyzer` instead of `Test_Org` / `my_service`.
+
 
 
 ### Step 5: Complete Service Publication
@@ -168,7 +187,7 @@ The **My Daemons** page displays all your HaaS-managed daemons with the followin
 | Column | Description |
 |--------|-------------|
 | **ID** | Unique identifier for the daemon instance |
-| **Status** | Current operational state (`INIT`, `READY_TO_START`, `DOWN`, `ERROR`) |
+| **Status** | Current operational state of the daemon |
 | **Expiry Date** | When your current subscription period ends |
 | **Last Payment** | Date of your most recent payment or "no payment data available" |
 | **Actions** | Management options (three-dot menu) |
@@ -196,7 +215,6 @@ Click the **three-dot menu** (⋮) next to any daemon to access management optio
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-actions-menu.png" alt="HaaS Actions Menu"/>
 
 
---- 
 
 ### Top Up
 
@@ -210,7 +228,7 @@ Click the **three-dot menu** (⋮) next to any daemon to access management optio
 
 > **Tip:** Top up before your expiry date to avoid service interruption.
 
---- 
+
 
 ### Detail
 
@@ -228,7 +246,7 @@ This page helps you:
 - Track status changes over time
 - Debug issues with deployment or connectivity
 
---- 
+
 
 ### Update Daemon Config
 
@@ -245,24 +263,25 @@ This page helps you:
 
 > **Important:** Ensure your new service endpoint is accessible before updating to avoid downtime.
 
---- 
+
 
 ### Run For Claiming
 
-**Purpose:** Transfer accumulated funds from the daemon to your organization's payment address.
+**Purpose:** Temporarily activate an inactive daemon to enable fund withdrawal from payment channels.
 
 **How it works:**
-1. Click **Run For Claiming**
-2. The system initiates a claim process
-3. Funds from paid service calls are transferred to the payment address specified in your organization settings
-4. You'll receive a confirmation once the claim completes
+1. When your daemon subscription expires, the daemon becomes inactive
+2. Funds from service calls remain in payment channels on the MPE (Multi-Party Escrow) contract
+3. To withdraw these funds via CLI, you need signatures from the daemon proving service calls occurred
+4. Click **Run For Claiming** to temporarily activate the daemon for one hour
+5. While active, you can use CLI commands to claim funds from payment channels using the daemon's signatures
 
 **When to use this:**
-- You want to withdraw accumulated earnings
-- Regular scheduled fund collection
-- Before daemon expiry to ensure no funds are left unclaimed
+- Your daemon subscription has expired but you have unclaimed funds in payment channels
+- You want to withdraw funds without renewing the full subscription
+- You need daemon signatures to complete the claiming process via CLI
 
-> **Note:** Claiming sends funds to the **organization payment address** configured during organization setup.
+> **Note:** This feature activates the daemon for one hour specifically to provide the signatures needed for claiming funds through the MPE contract. The actual fund transfer is performed via CLI commands, not through the HaaS interface.
 
 
 
@@ -287,6 +306,6 @@ HaaS operates on a **monthly subscription basis** paid in FET tokens:
 - Expired daemons enter `DOWN` status and stop processing requests
 
 **Fund Management:**
-- Service call payments accumulate in the daemon's payment channels
-- Use **Run For Claiming** regularly to withdraw earnings
-- Unclaimed funds remain accessible even after subscription expiry
+- Service call payments accumulate in payment channels on the MPE contract
+- When your subscription expires, use **Run For Claiming** to temporarily activate the daemon if you need to withdraw funds via CLI
+- Unclaimed funds remain in payment channels and can be accessed using the claiming feature
