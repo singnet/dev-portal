@@ -209,7 +209,28 @@ A daemon is an adapter between an AI service and a client. Its primary responsib
 
 The daemon must be deployed on a **public address** since it acts as the entry point for all incoming requests.
 
+### Daemon Deployment Options
+
+You have two options for deploying your daemon:
+
+**Option 1: Hosting-as-a-Service (HaaS)** - Managed infrastructure
+- Fully automated deployment and maintenance
+- No server setup, SSL certificates, or ETCD configuration required
+- Monthly subscription in FET tokens
+- Available only through Publisher Portal
+- See the [HaaS Guide](/docs/products/DecentralizedAIPlatform/HaaS/) for details
+
+**Option 2: Self-Hosted Daemon** - Manual infrastructure setup
+- Full control over infrastructure
+- Requires server provisioning, domain configuration, SSL certificates, and ETCD setup
+- Available through all onboarding methods (Publisher Portal, CLI, TUI)
+- Follow the sections below for self-hosted setup
+
+> **Note:** If you plan to use HaaS through the Publisher Portal, you can skip the following daemon setup sections (Domain Configuration, Installing the Daemon, Configuring the Daemon, and Launching the Daemon) as these are handled automatically.
+
 ## Domain Configuration for Daemon
+
+> **Note:** This section is only for **self-hosted daemon deployment**. Skip this if using [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/).
 
 To enable secure communication between clients and the daemon, you need to configure a **domain and SSL certificates**.
 
@@ -261,6 +282,8 @@ To secure your daemon with SSL, generate **domain certificates** using `certbot`
 **Result:** You now have `ssl_cert` and `ssl_key` parameters for your daemon configuration.
 
 ## Installing the Daemon
+
+> **Note:** This section is only for **self-hosted daemon deployment**. Skip this if using [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/).
 
 Get the **latest version** of the SingularityNET Daemon from the official GitHub releases page:
 
@@ -340,6 +363,8 @@ You will need to use the generated keys in two places:
 > ✅ You may **reuse the same key pair** for both Metering and Free Calls, or generate **separate credentials** for better isolation.
 
 ## Configuring the Daemon
+
+> **Note:** This section is only for **self-hosted daemon deployment**. Skip this if using [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/).
 
 To run the daemon, create and edit the configuration file named `snetd.config.json`. This file tells the daemon how to communicate with your AI service, blockchain, and payment storage.
 
@@ -487,6 +512,8 @@ For each reference to the embedded ETCD configuration in the daemon, do not dele
 
 ## Daemon Setup Summary
 
+> **Note:** This summary is for **self-hosted daemon deployment** only.
+
 Currently, the daemon **cannot be started** because the **organization and service are not yet created**. These steps will be covered next. For now, you have successfully:
 
 ✔ Configured domain and SSL certificates  
@@ -495,6 +522,8 @@ Currently, the daemon **cannot be started** because the **organization and servi
 ✔ Set up the configuration file for later use  
 
 Proceed to the next step to create your **Organization and Service**.
+
+**Alternative:** If you prefer not to manage infrastructure, consider using [Hosting-as-a-Service (HaaS)](/docs/products/DecentralizedAIPlatform/HaaS/) available through the Publisher Portal.
 
 ## Organization Setup
 
@@ -832,6 +861,8 @@ For each reference to the embedded ETCD configuration in the daemon, do not dele
 :::
 
 ## Launching the Daemon
+
+> **Note:** This section is only for **self-hosted daemon deployment**. If you used [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/), your daemon is already running.
 
 After editing and saving your configuration file, start the daemon with the following command:
 
