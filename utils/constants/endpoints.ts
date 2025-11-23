@@ -1,6 +1,22 @@
-interface APIEndpoints {
-    [APIKey: string]: string,
+
+interface ImportMetaEnv {
+    readonly VITE_FEEDBACK_FORM_URL: string;
 }
-export default {
-    FEEDBACK: "https://gr06twz66l.execute-api.us-east-1.amazonaws.com/mt-v2/user/message"// mainnet feedback endpoint
-} as APIEndpoints
+
+interface ImportMeta {
+    readonly env: ImportMetaEnv;
+}
+
+// @ts-ignore
+const { VITE_FEEDBACK_FORM_URL } = import.meta.env;
+
+interface APIEndpoints {
+    [APIKey: string]: string;
+}
+const endpoints: APIEndpoints = {
+    FEEDBACK: VITE_FEEDBACK_FORM_URL,
+};
+
+console.log("Initialized endpoints", endpoints);
+
+export { endpoints };
