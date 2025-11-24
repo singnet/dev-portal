@@ -207,6 +207,7 @@ The **My Daemons** page displays all your HaaS-managed daemons with the followin
 | `UP` | Daemon is deployed and actively handling requests |
 | `DELETING` | Daemon is being deleted |
 | `DOWN` | Daemon is stopped or subscription expired (not paid) |
+| `CLAIMING` | Daemon is temporarily running for one hour to enable fund withdrawal via CLI |
 | `ERROR` | Daemon encountered an error during deployment and requires attention |
 
 
@@ -272,19 +273,25 @@ This page helps you:
 
 **Purpose:** Temporarily activate an inactive daemon to enable fund withdrawal from payment channels.
 
+**Availability:**
+- This feature is **only available** when daemon status is `DOWN`
+- Can be used **once every 24 hours** (not sooner than 24 hours after the last successful claiming period started)
+
 **How it works:**
-1. When your daemon subscription expires, the daemon becomes inactive
+1. When your daemon subscription expires, the daemon becomes inactive (`DOWN` status)
 2. Funds from service calls remain in payment channels on the MPE (Multi-Party Escrow) contract
 3. To withdraw these funds via CLI, you need signatures from the daemon proving service calls occurred
-4. Click **Run For Claiming** to temporarily activate the daemon for one hour
-5. While active, you can use CLI commands to claim funds from payment channels using the daemon's signatures
+4. Click **Run For Claiming** to temporarily activate the daemon
+5. Daemon status changes to `CLAIMING` and runs for **one hour**
+6. **First 2-3 minutes**: Daemon is starting up and initializing
+7. **After startup**: Use CLI commands to claim funds from payment channels using the daemon's signatures
 
 **When to use this:**
 - Your daemon subscription has expired but you have unclaimed funds in payment channels
 - You want to withdraw funds without renewing the full subscription
 - You need daemon signatures to complete the claiming process via CLI
 
-> **Note:** This feature activates the daemon for one hour specifically to provide the signatures needed for claiming funds through the MPE contract. The actual fund transfer is performed via CLI commands, not through the HaaS interface.
+> **Important:** This feature activates the daemon for one hour specifically to provide the signatures needed for claiming funds through the MPE contract. The actual fund transfer is performed via CLI commands, not through the HaaS interface. Wait 2-3 minutes after activation before attempting to claim funds.
 
 
 
