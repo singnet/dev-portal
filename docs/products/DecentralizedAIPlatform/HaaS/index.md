@@ -12,6 +12,8 @@ Each HaaS deployment runs in an isolated, containerized environment with:
 - Built-in payment channel storage (ETCD)
 - Automated infrastructure updates and maintenance
 
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-workflow.png" alt="HaaS Deployment Workflow" pictureTitle="Complete HaaS deployment process from development to production"/>
+
 
 
 ## HaaS vs Self-Hosted Daemon
