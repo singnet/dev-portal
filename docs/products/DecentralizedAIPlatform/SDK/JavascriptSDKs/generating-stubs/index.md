@@ -1,77 +1,91 @@
 # Generating Stubs for JS
 
+This guide explains how to generate JavaScript stub files from `.proto` definitions. These stubs are required for building custom UIs in the [AI-UI Constructor](https://ai-ui-constructor.singularitynet.io/).
+
 ## Step 1. Install Protocol Buffers Compiler
 
-### For Windows:
+### For Windows
 
 1. Download the latest version of `protoc` for Windows from the official Google Protocol Buffers repository: [https://github.com/protocolbuffers/protobuf/releases](https://github.com/protocolbuffers/protobuf/releases).
-   
+
 2. Select the `protoc-<version>-win64.zip` file for the 64-bit Windows version and extract it to a convenient location (e.g., `C:\protoc`).
 
-3. Add the `bin` folder from the extracted archive to the `PATH` environment variable so that `protoc` can be called from any directory:
+3. Add the `bin` folder from the extracted archive to the `PATH` environment variable:
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\protoc\bin", [System.EnvironmentVariableTarget]::Machine)
 ```
 
-4. Verify the `protoc` installation by running the command:
+4. Verify the installation:
 
 ```powershell
 protoc --version
 ```
 
-If installed correctly, the `protoc` version will be displayed.
+### For Linux
 
-### For Linux:
+Follow the instructions on the official gRPC documentation: [https://grpc.io/docs/protoc-installation/](https://grpc.io/docs/protoc-installation/).
 
-To install `protoc` on Linux, please follow the instructions provided on the official gRPC documentation site: [https://grpc.io/docs/protoc-installation/](https://grpc.io/docs/protoc-installation/).
-This guide includes steps for various distributions and provides the latest installation instructions.
+## Step 2. Install Required NPM Packages
 
-## Step 2. Install Additional Plugins for `protoc`
-
-Install `protoc-gen-js` for generating JS files:
+Install the necessary packages for stub generation:
 
 ```sh
-npm install -g protoc-gen-js
+npm install --save-dev ts-protoc-gen google-protobuf grpc-web
 ```
 
-Install `protoc-gen-grpc` for generating gRPC files:
+## Step 3. Download `.proto` File for a Service
+
+Download the `.proto` file for your service using the CLI:
 
 ```sh
-npm install -g protoc-gen-grpc
+snet service get-api-registry <org_id> <service_id> <proto_dir>
 ```
 
-## Step 3. Download `.proto` file for a Service
+For more details, see the [CLI Manual](/docs/products/DecentralizedAIPlatform/CLI/Manual/).
 
-Download `.proto` file for a Service, using the following CLI command:
+## Step 4. Generate Stub Files
+
+Navigate to the directory containing your `.proto` file and run the following command:
 
 ```sh
-snet service get-api-registry <org_id> <SERVICE_ID> <PROTO_DIR>
+protoc \
+  --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
+  --js_out=import_style=commonjs,binary,namespace_prefix=<package_name>_<org_id>_<service_id>:. \
+  --ts_out=service=grpc-web:. \
+  <proto_file>.proto
 ```
 
-For more details, please check the [CLI](/docs/products/DecentralizedAIPlatform/CLI/) or 
-[CLI Manual](/docs/products/DecentralizedAIPlatform/CLI/Manual/)
+Replace the placeholders:
 
-## Step 4. Generate stub files for JS
+| Placeholder | Description |
+|-------------|-------------|
+| `<package_name>` | Package name from your `.proto` file |
+| `<org_id>` | Your organization ID |
+| `<service_id>` | Your service ID |
+| `<proto_file>` | Name of your `.proto` file (without extension) |
 
-Navigate to the directory where the `.proto` file is located, and run the following commands to generate the necessary stub files:
+### Example
 
-1. Navigate to the directory with the `.proto` file:
+For a service with:
+- Package name: `calculator`
+- Organization ID: `my_org`
+- Service ID: `calc_service`
+- Proto file: `calculator.proto`
 
 ```sh
-cd <PATH_TO_PROTO_DIR>
+protoc \
+  --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
+  --js_out=import_style=commonjs,binary,namespace_prefix=calculator_my_org_calc_service:. \
+  --ts_out=service=grpc-web:. \
+  calculator.proto
 ```
 
-2. Generate JavaScript files:
+## Step 5. Use Generated Files
 
-```sh
-protoc -I="." --js_out=import_style=commonjs,binary:. <file_name>.proto
-```
+After running the command, you will have the following generated files:
 
-3. Generate gRPC files:
+- `<proto_file>_pb.js` - Protocol buffer message definitions
+- `<proto_file>_pb_service.js` - Service client definitions
 
-```sh
-protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
-```
-
-These commands will create `JS` and `gRPC` files required for the service.
+Upload these files to the [AI-UI Constructor](https://ai-ui-constructor.singularitynet.io/) along with your UI code.

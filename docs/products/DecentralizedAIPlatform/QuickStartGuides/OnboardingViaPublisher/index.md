@@ -11,10 +11,10 @@ The Publisher Portal is a **web-based platform** that provides a graphical inter
 | Aspect | Publisher Portal | CLI | TUI |
 |--------|-----------------|-----|-----|
 | **Interface** | Web browser GUI | Command line | Terminal menus |
-| **Marketplace UI Demo** | ✅ Yes (optional) | ❌ No | ❌ No |
-| **Team Collaboration** | ✅ Multiple users | ⚠️ Single user | ⚠️ Single user |
+| **Marketplace UI Demo** | Yes (optional) | No | No |
+| **Team Collaboration** | Multiple users | Single user | Single user |
 | **Technical Expertise** | Beginner-friendly | Advanced | Intermediate |
-| **Automation Support** | ❌ Manual process | ✅ Scriptable | ⚠️ Limited |
+| **Automation Support** | Manual process | Scriptable | Limited |
 
 ---
 
@@ -55,11 +55,13 @@ Not sure if Publisher Portal is right for you? Check these alternatives:
 - **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)** - Terminal interface with guided menus
 - **[Full Comparison Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/)** - Detailed comparison of all three methods
 
-## You can watch the video for easy understanding:
+## Video Tutorial
+
+The following video provides a visual walkthrough of the Publisher Portal onboarding process. It covers organization registration, service configuration, and daemon setup.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8AtkPUYLy8g?si=cEpyujqdisaS35Xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## **Organization Setup**
+## Organization Setup
 
 Follow these simple steps to register your organization clearly and quickly on the SingularityNET Publisher Portal.
 
@@ -181,8 +183,7 @@ Provide users easy ways to contact you:
 Critical settings for secure operations:
 
 * **Payment Address** *(required)*  
-  Ethereum address to receive ASI (FET) tokens.
-  > 📌 Ensure secure access to this address.
+  Ethereum address to receive ASI (FET) tokens. Ensure secure access to this address.
 
 * **ETCD Endpoint** *(required)*  
   Default internal ETCD endpoint:
@@ -191,9 +192,7 @@ Critical settings for secure operations:
   http://127.0.0.1:2379
   ```
   
-  > 📌 Public setups require accessible ETCD endpoint  
-  (e.g., `http://etcd.yourdomain.com:2379`).  
-  More info [here](/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/).
+  For public setups, use an accessible ETCD endpoint (e.g., `https://etcd.yourdomain.com:2379`). More info in the [ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/ETCD/).
 
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/PaymentAddress.webp" alt="Payment Details"/>
 
@@ -213,9 +212,9 @@ Finalize your organization's blockchain registration:
 
 ---
 
-### ✨ **Your organization is now successfully registered!**
+Your organization is now successfully registered.
 
-## **Service Setup**
+## Service Setup
 
 ---
 
@@ -337,7 +336,7 @@ print("Address: ", acct.address)
 
 :::
 
-> 📌 **Important:** Keep your private key secure and confidential.
+> **Important:** Keep your private key secure and confidential.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/publisher/ServiceDaemon.png" alt="Service Daemon"/>
 
@@ -368,9 +367,9 @@ Complete your AI service definition:
 
 ---
 
-### ✨ **Your AI service is now successfully published!**
+Your AI service is now successfully published.
 
-## **Set Up & Launch the Daemon**
+## Set Up and Launch the Daemon
 
 > **Note:** This section is for **self-hosted daemon deployment**. If you used [Hosting-as-a-Service (HaaS)](/docs/products/DecentralizedAIPlatform/HaaS/) during Step 4, your daemon is already deployed and you can skip this entire section.
 
@@ -378,11 +377,11 @@ This section explains how to configure, install, and run the SingularityNET Daem
 
 ---
 
-### 🚩 **Step 1: Preparation Steps**
+### Step 1: Preparation Steps
 
 Before you run your daemon, complete the following preparations:
 
-#### **1.1 Generate Alchemy API Key**
+#### 1.1 Generate Alchemy API Key
 
 Follow the [Alchemy API Key Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/alchemy-api/) to generate your API key.  
 Add these keys to your daemon configuration:
@@ -401,7 +400,7 @@ Add these keys to your daemon configuration:
 
 Replace `<YOUR_API_KEY>` with your actual Alchemy API key.
 
-#### **1.2 Generate Metering and Free Call Private Key**
+#### 1.2 Generate Metering and Free Call Private Key
 
 You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
 
@@ -428,13 +427,11 @@ Save your private key securely.
 
 ---
 
-### 🚩 **Step 2: Download & Install the Daemon**
+### Step 2: Download and Install the Daemon
 
-Download the latest version of the SingularityNET daemon from the [official GitHub repository](https://github.com/singnet/snet-daemon/releases/latest):
+Download the latest version of the SingularityNET daemon from the [official GitHub repository](https://github.com/singnet/snet-daemon/releases/latest).
 
-Select the appropriate binary for your operating system (e.g., `linux-amd64`, `linux-arm64`, `darwin-amd64`, or `windows-amd64`) from the latest release:
-
-* [👉 Latest snet-daemon Release](https://github.com/singnet/snet-daemon/releases/latest)
+Select the appropriate binary for your operating system (e.g., `linux-amd64`, `linux-arm64`, `darwin-amd64`, or `windows-amd64`) from the latest release.
 
 Example command for Linux (amd64):
 
@@ -443,8 +440,6 @@ wget https://github.com/singnet/snet-daemon/releases/latest/download/snetd-linux
 chmod +x snetd-linux-amd64-{{ $daemonVersion }}
 sudo mv snetd-linux-amd64-{{ $daemonVersion }} /usr/bin/snetd
 ```
-
-> 📌 Ensure the daemon binary has executable permissions (`chmod +x`) before moving it to `/usr/bin`.
 
 ---
 
