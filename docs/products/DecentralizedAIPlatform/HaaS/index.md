@@ -303,8 +303,8 @@ This page helps you:
 
 HaaS operates on a **monthly subscription basis** paid in FET tokens:
 
-- Payment is required **upfront** for each subscription period
-- Subscription automatically expires if not renewed
+- Payment is required **upfront** for each month
+- The daemon automatically becomes unavailable when the subscription expires
 - You can top up at any time to extend the expiry date
 - Multiple daemons require separate subscriptions
 
@@ -316,6 +316,7 @@ HaaS operates on a **monthly subscription basis** paid in FET tokens:
 - Monitor your daemon's expiry date in the dashboard
 - Top up before expiry to maintain continuous service
 - Expired daemons enter `DOWN` status and stop processing requests
+- When you top up after expiration, the daemon restarts and the new subscription period begins from the moment of payment
 
 **Fund Management:**
 - Service call payments accumulate in payment channels on the MPE contract
