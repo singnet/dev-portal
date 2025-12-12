@@ -6,58 +6,65 @@ This document outlines the mandatory requirements for publishing your AI service
 
 ## Quick Start
 
-The fastest method for onboarding is via the [Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/). 
-
-Alternative methods are also available for different use cases.
+The fastest method for onboarding is via the [Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/). For a complete step-by-step guide, see the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/).
 
 ## Prerequisites Checklist
 
 ### 1. AI Service
-You must have a service capable of:
-- Accepting requests
-- Processing data
-- Returning responses
+
+You must have a service capable of accepting requests, processing data, and returning responses.
 
 ### 2. Protocol Buffer Definition (.proto file)
-Create a [.proto file](https://protobuf.dev/) that describes:
-- Service interfaces
-- Request/response messages
-- RPC method definitions
 
-This enables communication between your service and the Daemon via gRPC protocol.
+Create a [.proto file](https://protobuf.dev/) that describes service interfaces, request/response messages, and RPC method definitions. This enables communication between your service and the Daemon via gRPC protocol.
 
 ### 3. Ethereum Wallet
+
 Required components:
+
 - [MetaMask wallet](https://metamask.io/)
 - Approximately 0.01 ETH for transaction fees
 - Used for publishing organization and service
 
 ### 4. Publisher Portal Account (Optional for CLI/TUI)
+
 Register at: [https://publisher.singularitynet.io/](https://publisher.singularitynet.io/)
 
 ### 5. Virtual Machine Requirements
+
 Your hosting environment needs:
-- **Python** version 3.10 or higher
-- **Open port** for internet access
-- **Public IP address** or domain name
 
-### 6. Domain Name (Optional)
+- Python version 3.10 or higher
+- Open ports for daemon and ETCD communication
+- Public IP address or domain name
+
+### 6. Domain Name (Recommended)
+
 If you prefer domain-based access:
-- Purchase from any domain provider
-- Configure DNS settings
-- Point to your service endpoint
 
-### 7. ETCD Database Setup
-Install and configure:
-- [ETCD database](https://etcd.io/) for state management
-- Security certificates for secure communication
-- Detailed instructions provided during setup
+1. Purchase from any domain provider
+2. Add an A record pointing to your VPS IP address
+3. Wait for DNS propagation before generating SSL certificates
 
-### 8. Daemon Installation
-Deploy the latest [Daemon](https://github.com/singnet/snet-daemon) version:
-- Install and configure for your service
-- Handles payment processing and request routing
-- Manages service availability
+### 7. ETCD Setup
+
+For payment channel management:
+
+- **Embedded ETCD** (recommended): Runs automatically with daemon, no additional setup required
+- **Standalone ETCD**: For production deployments, follow the [ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/ETCD/)
+
+### 8. SSL Certificates
+
+Generate SSL certificates after your domain is linked to your server:
+
+```sh
+sudo apt install certbot
+sudo certbot certonly --standalone -d your-domain.com
+```
+
+### 9. Daemon Installation
+
+Deploy the latest [Daemon](https://github.com/singnet/snet-daemon) version. It handles payment processing, request routing, and service availability.
 
 ## Infrastructure Options
 

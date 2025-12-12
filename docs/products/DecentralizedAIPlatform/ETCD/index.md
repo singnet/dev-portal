@@ -4,15 +4,25 @@
 
 ETCD is a distributed key-value store used by SingularityNET for payment channel management and service state storage. This guide covers setting up ETCD for your SingularityNET service deployment.
 
+## When to Use This Guide
+
+For most users, the **embedded ETCD** (which runs automatically with the daemon) is sufficient. Use this guide only if you need:
+
+- External ETCD access for multiple daemons
+- High-availability production deployments
+- Separate ETCD infrastructure
+
+If you are using embedded ETCD, skip this guide and proceed to the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/).
+
 ## Prerequisites
 
 Before starting the ETCD setup:
 
-- Ubuntu 18.04 or higher (for automated script)
-- Domain name with SSL certificates
-- Docker installed and running
+- Ubuntu 18.04 or higher
 - Sudo permissions for the user
 - Open ports for ETCD communication (2379, 2380)
+
+> **Important:** If you plan to use domain-based certificates, your domain must be linked to your server's IP address BEFORE running the setup script. Add an A record in your domain's DNS settings pointing to your VPS IP.
 
 ## Setup Options
 
@@ -92,77 +102,65 @@ docker logs docker-etcd-node-1
 
 ## SSL Certificate Configuration
 
-### Port Forwarding Setup
+SSL certificates for your daemon should be generated AFTER the ETCD setup is complete. The recommended approach:
 
-Configure your web server to forward requests:
+1. **First:** Link domain to your server (A record in DNS)
+2. **Second:** Run ETCD setup script (handles ETCD-specific certificates)
+3. **Third:** Generate daemon SSL certificates using Certbot
 
-```nginx
-# Example Nginx configuration
-server {
-    listen 443 ssl;
-    server_name your.domain.com;
-    
-    location /:2379 {
-        proxy_pass http://localhost:2379;
-        proxy_set_header Host $host;
-    }
-}
-```
+### Generate Domain Certificates for Daemon
 
-### Generate Domain Certificates
-
-#### Using Certbot (Let's Encrypt)
+After ETCD is running, generate SSL certificates for your daemon:
 
 1. **Install Certbot:**
 
 ```bash
-# Ubuntu/Debian
 sudo apt update
 sudo apt install certbot
-
-# Or follow instructions at:
-# https://certbot.eff.org/instructions?ws=other&os=ubuntufocal
 ```
 
 2. **Generate Certificates:**
 
 ```bash
-# Standalone mode (requires port 80 to be free)
-sudo certbot certonly --standalone -d your.domain.com
-
-# Or using webroot
-sudo certbot certonly --webroot -w /var/www/html -d your.domain.com
+sudo certbot certonly --standalone -d your-domain.com
 ```
 
-3. **Locate Certificates:**
+> **Note:** Port 80 must be temporarily open for Certbot verification.
+
+3. **Verify Certificates:**
 
 ```bash
-# View certificate paths
 sudo certbot certificates
-
-# Typical paths:
-# Certificate: /etc/letsencrypt/live/your.domain.com/fullchain.pem
-# Private Key: /etc/letsencrypt/live/your.domain.com/privkey.pem
 ```
 
-4. **Enable Auto-renewal:**
+Output paths:
+- Certificate: `/etc/letsencrypt/live/your-domain.com/fullchain.pem`
+- Private Key: `/etc/letsencrypt/live/your-domain.com/privkey.pem`
+
+4. **Verify Auto-renewal:**
 
 ```bash
-# Check renewal timer
-sudo systemctl status certbot.timer
-
-# Test renewal
-sudo certbot renew --dry-run
+sudo systemctl show certbot.timer
 ```
 
 ### Certificate Parameters for Daemon
 
-Use these in your daemon configuration:
+Use the Certbot-generated certificates in your daemon configuration:
 
 ```json
 {
-    "ssl_cert": "/path/to/fullchain.pem",
-    "ssl_key": "/path/to/privkey.pem"
+    "ssl_cert": "/etc/letsencrypt/live/your-domain.com/fullchain.pem",
+    "ssl_key": "/etc/letsencrypt/live/your-domain.com/privkey.pem"
+}
+```
+
+The ETCD client certificates (generated during ETCD setup) are separate and used for ETCD communication:
+
+```json
+{
+    "payment_channel_cert_path": "/var/lib/etcd/cfssl/client.pem",
+    "payment_channel_ca_path": "/var/lib/etcd/cfssl/ca.pem",
+    "payment_channel_key_path": "/var/lib/etcd/cfssl/client-key.pem"
 }
 ```
 

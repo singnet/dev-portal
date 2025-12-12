@@ -2,6 +2,30 @@
 
 This guide is designed for AI providers who want to publish their AI services on our marketplace.
 
+## Platform Architecture Overview
+
+Before diving into the setup process, it is helpful to understand how the key components work together.
+
+### Key Components
+
+**ETCD** is a distributed key-value store that manages payment channel data. It tracks the state of payment channels between consumers and service providers. For most deployments, the embedded ETCD (which runs automatically with the daemon) is sufficient. External ETCD clusters are only needed for high-availability production setups.
+
+**Daemon** is an adapter that sits between your AI service and clients. It handles authentication and authorization, payment channel management, request metering, and free call tracking. The daemon must be publicly accessible via HTTPS.
+
+**Blockchain Registration** involves publishing your organization and service metadata to the Ethereum blockchain. This creates on-chain records that clients use to discover and connect to your service.
+
+### Deployment Flow
+
+The typical deployment sequence is:
+
+1. **Prepare Infrastructure** - Set up your VPS/VM with a domain and open ports
+2. **Install ETCD** - Either use embedded (automatic) or deploy standalone
+3. **Generate SSL Certificates** - Domain must be linked to your server first
+4. **Install and Configure Daemon** - Connect daemon to your AI service
+5. **Register Organization** - Publish organization metadata to blockchain
+6. **Register Service** - Publish service metadata to blockchain
+7. **Launch Daemon** - Start accepting requests
+
 ## Onboarding Methods Overview
 
 The SingularityNET platform provides three methods for publishing your AI service to the blockchain. All methods result in a service that can be called programmatically via CLI and SDK. The key difference lies in the interface used for publishing and whether you want your service to have a demo UI in the Marketplace.
@@ -16,7 +40,7 @@ The SingularityNET platform provides three methods for publishing your AI servic
 
 ## Method Descriptions
 
-### 🌐 Publisher Portal
+### Publisher Portal
 
 > **Best for:** Teams and developers who want maximum service visibility with marketplace UI demo
 
@@ -33,18 +57,20 @@ Web-based platform at https://publisher.singularitynet.io that provides a graphi
 | No CLI Required | Complete publishing without command-line knowledge |
 
 **When to Choose Publisher Portal:**
-- ✅ You want users to test your service directly in the Marketplace
-- ✅ You need a visual interface for the publishing process
-- ✅ Your team members have varying technical expertise
-- ✅ You want to create a custom UI demo for better service presentation
+
+- You want users to test your service directly in the Marketplace
+- You need a visual interface for the publishing process
+- Your team members have varying technical expertise
+- You want to create a custom UI demo for better service presentation
 
 **Limitations:**
-- ⚠️ Requires manual steps (not suitable for automation)
-- ⚠️ Needs web browser and MetaMask extension
+
+- Requires manual steps (not suitable for automation)
+- Needs web browser and MetaMask extension
 
 ---
 
-### 💻 Command Line Interface (CLI)
+### Command Line Interface (CLI)
 
 > **Best for:** Developers who need automation and programmatic control
 
@@ -61,19 +87,21 @@ The `snet-cli` tool provides direct interaction with the blockchain through comm
 | Direct Blockchain Access | No intermediary services required |
 
 **When to Choose CLI:**
-- ✅ Your service will only be accessed via SDK or CLI (no web UI needed)
-- ✅ You need to automate the publishing process
-- ✅ You're integrating with existing DevOps workflows
-- ✅ You require fine-grained control over configuration
+
+- Your service will only be accessed via SDK or CLI (no web UI needed)
+- You need to automate the publishing process
+- You're integrating with existing DevOps workflows
+- You require fine-grained control over configuration
 
 **Limitations:**
-- ⚠️ No marketplace UI demo capability
-- ⚠️ Requires command-line proficiency
-- ⚠️ Manual metadata file creation
+
+- No marketplace UI demo capability
+- Requires command-line proficiency
+- Manual metadata file creation
 
 ---
 
-### 📟 Text User Interface (TUI)
+### Text User Interface (TUI)
 
 > **Best for:** Users who want terminal-based publishing with guided assistance
 
@@ -90,71 +118,65 @@ Terminal-based interface with interactive menus that guides you through the publ
 | Guided Workflow | Step-by-step process with clear instructions |
 
 **When to Choose TUI:**
-- ✅ You prefer terminal but want guided assistance
-- ✅ You're working on remote servers without GUI access
-- ✅ You don't want to memorize CLI commands
-- ✅ You need a middle ground between GUI and CLI
+
+- You prefer terminal but want guided assistance
+- You're working on remote servers without GUI access
+- You don't want to memorize CLI commands
+- You need a middle ground between GUI and CLI
 
 **Limitations:**
-- ⚠️ No marketplace UI demo capability
-- ⚠️ Less flexible than direct CLI commands
-- ⚠️ Still requires terminal access
+
+- No marketplace UI demo capability
+- Less flexible than direct CLI commands
+- Still requires terminal access
 
 ## Important Clarifications
 
-### 📌 Service Accessibility
+### Service Accessibility
 
-> **Key Point:** All methods publish to the same blockchain. The difference is only in how users can interact with your service.
+All methods publish to the same blockchain. The difference is only in how users can interact with your service.
 
 - **Publisher Portal:** Service accessible via Marketplace UI + CLI + SDK
 - **CLI/TUI:** Service accessible via CLI + SDK only
 
 ---
 
-### 🔄 Interoperability
+### Interoperability
 
-Organizations and services are blockchain entities. Once created:
-- Can be managed through any method later
-- Can switch between methods as needed
-- Metadata can be updated using different tools
+Organizations and services are blockchain entities. Once created, they can be managed through any method later, can switch between methods as needed, and metadata can be updated using different tools.
 
 ---
 
-### 🎨 UI Demo Considerations
+### UI Demo Considerations
 
-> **Note:** Only Publisher Portal allows creation of marketplace UI demos
-
-- UI demos increase service discoverability
-- Users can test services without technical knowledge
-- Optional but highly recommended for consumer-facing services
-- Cannot be added later if published via CLI/TUI
+Only Publisher Portal allows creation of marketplace UI demos. UI demos increase service discoverability and allow users to test services without technical knowledge. This is optional but highly recommended for consumer-facing services. Note that UI demos cannot be added later if published via CLI/TUI.
 
 ## Quick Decision Guide
 
-### Choose Publisher Portal if:
+**Choose Publisher Portal if:**
 
-✅ **Marketplace Visibility** - You want users to discover and test your service easily  
-✅ **Team Collaboration** - Multiple people will manage the service  
-✅ **Visual Preference** - You prefer graphical interfaces  
-✅ **Demo Creation** - You want to showcase your service with a custom UI  
-
----
-
-### Choose CLI if:
-
-✅ **Automation** - You need to script the publishing process  
-✅ **SDK-Only Access** - Your service is for programmatic use only  
-✅ **DevOps Integration** - Part of your CI/CD pipeline  
-✅ **Advanced Control** - You need fine-grained configuration options  
+- You want users to discover and test your service easily (Marketplace visibility)
+- Multiple people will manage the service (Team collaboration)
+- You prefer graphical interfaces
+- You want to showcase your service with a custom UI demo
 
 ---
 
-### Choose TUI if:
+**Choose CLI if:**
 
-✅ **Terminal Environment** - Working on servers without GUI  
-✅ **Guided Process** - Want help without memorizing commands  
-✅ **No Web Access** - Restricted environment without browser access  
-✅ **Middle Ground** - Between full CLI and web interface
+- You need to script the publishing process (Automation)
+- Your service is for programmatic use only (SDK-only access)
+- Publishing is part of your CI/CD pipeline
+- You need fine-grained configuration options
+
+---
+
+**Choose TUI if:**
+
+- You're working on servers without GUI (Terminal environment)
+- You want guided help without memorizing commands
+- You're in a restricted environment without browser access
+- You need a middle ground between full CLI and web interface
 
 ## Prerequisites
 
@@ -181,20 +203,70 @@ Each has its own advantages and use cases:
 - **gRPC** is suitable for high-performance, strongly typed communication. It's ideal when you're working with structured data, multiple fields, and require efficient binary communication between client and server.
 - **HTTP** is easier to set up and better suited for integrating existing REST APIs or simpler services. If your service already exposes an HTTP endpoint or you prefer working with JSON over HTTP, this may be the better option.
 
-📘 Learn how to integrate your service:
+Learn how to integrate your service:
 
 - [gRPC Integration Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationGRPCService/)
 - [HTTP Integration Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/IntegrationHTTPService/)
 
+## Domain and VPS/VM Setup
+
+> **Note:** This section is only for **self-hosted daemon deployment**. Skip this if using [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/).
+
+Before installing ETCD or generating SSL certificates, your domain must be linked to your VPS/VM.
+
+### Linking Domain to Your Server
+
+1. Purchase a domain from any domain registrar
+2. Go to the DNS/Nameservers settings in your domain configuration
+3. Add an **A record** pointing to your VPS/VM IP address
+4. Wait for DNS propagation (can take up to 48 hours, usually faster)
+
+### Verify Domain Configuration
+
+Test that your domain resolves to your server:
+
+```sh
+ping your-domain.com
+```
+
+The response should show your server's IP address.
+
+### Port Configuration
+
+Ensure the following ports are accessible:
+
+| Port | Purpose |
+|------|--------|
+| `<DAEMON_PORT>` | Daemon endpoint (must be publicly accessible) |
+| `2379` | ETCD client communication (internal or external) |
+| `2380` | ETCD peer communication (for clusters) |
+| `80` | Required temporarily for Certbot SSL verification |
+
 ## ETCD Setup  
 
-To manage **payment channels** and ensure decentralized synchronization, `etcd` is used as a **distributed key-value store** that helps track payments across AI service replicas.  
+ETCD is a distributed key-value store used for payment channel management. You have two options:
 
-For **most users**, we recommend using the **embedded** `etcd`, which runs automatically when `snet-daemon` starts. **No additional installation or configuration is required.**  
+### Option 1: Embedded ETCD (Recommended)
 
-In this guide, we will be working with the **embedded** `etcd`, ensuring a simple and hassle-free setup for your service.  
+For most users, the **embedded ETCD** is sufficient. It runs automatically when `snet-daemon` starts and requires no additional installation.
 
-For **advanced users** who want to deploy `etcd` **on a public domain**, follow the **[ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/Daemon/daemon-etcd-setup/)** to configure a standalone `etcd` instance.
+The daemon configuration for embedded ETCD is included in the [Configuring the Daemon](#configuring-the-daemon) section below.
+
+### Option 2: Standalone Docker ETCD
+
+For production deployments or when you need external access to ETCD, use the Docker-based setup.
+
+The installation script handles:
+
+- Docker installation and configuration
+- CFSSL tools for certificate generation
+- ETCD Docker image deployment
+- PKI infrastructure (CA, server, peer, client certificates)
+- TLS encryption for ETCD communications
+
+Follow the **[ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/ETCD/)** for Docker-based installation.
+
+> **Important:** If using the SNET ETCD setup script, your domain must already be linked to your server's IP address. Otherwise, certificate validation will fail. You can also generate SSL certificates manually using Certbot after the ETCD setup.
 
 ## Daemon Setup
 
@@ -209,62 +281,84 @@ A daemon is an adapter between an AI service and a client. Its primary responsib
 
 The daemon must be deployed on a **public address** since it acts as the entry point for all incoming requests.
 
-## Domain Configuration for Daemon
+### Daemon Deployment Options
 
-To enable secure communication between clients and the daemon, you need to configure a **domain and SSL certificates**.
+You have two options for deploying your daemon:
 
-### Port Forwarding from Domain to Daemon Host
+**Option 1: Hosting-as-a-Service (HaaS)** - Managed infrastructure
+- Fully automated deployment and maintenance
+- No server setup, SSL certificates, or ETCD configuration required
+- Monthly subscription in FET tokens
+- Available only through Publisher Portal
+- See the [HaaS Guide](/docs/products/DecentralizedAIPlatform/HaaS/) for details
 
-This step depends on the web server you are using. Configure **port forwarding** from `<DAEMON_PORT>` to `<DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>`.
+**Option 2: Self-Hosted Daemon** - Manual infrastructure setup
+- Full control over infrastructure
+- Requires server provisioning, domain configuration, SSL certificates, and ETCD setup
+- Available through all onboarding methods (Publisher Portal, CLI, TUI)
+- Follow the sections below for self-hosted setup
 
-**Example:**
+> **Note:** If you plan to use HaaS through the Publisher Portal, you can skip the following daemon setup sections (Domain Configuration, Installing the Daemon, Configuring the Daemon, and Launching the Daemon) as these are handled automatically.
 
-```
-your_awesome_domain.com:<DAEMON_PORT> --> <DAEMON_INTERNAL_ADDRESS>:<DAEMON_PORT>
-```
+## SSL Certificate Generation
 
----
+> **Note:** This section is only for **self-hosted daemon deployment**. Skip this if using [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/).
 
-### Generating Domain Certificates
+SSL certificates are required for secure HTTPS communication with your daemon. Generate certificates using Certbot after your domain is linked to your server.
 
-To secure your daemon with SSL, generate **domain certificates** using `certbot`.
+### Prerequisites
 
-> Skip this section if SSL is already configured on your domain.
+- Domain must be registered and connected to your VPS IP address
+- Domain should be properly forwarding to your server (verify with `ping`)
+- Port 80 must be temporarily open for Certbot verification
 
-1. **Install `certbot`:**
+### Installation and Certificate Generation
 
-   Follow the instructions here: [Certbot Installation Guide](https://certbot.eff.org/instructions?ws=other&os=ubuntufocal)
-
-2. **Generate SSL certificates:**
+1. **Update system packages:**
 
    ```sh
-   sudo certbot certonly
+   sudo apt update
    ```
 
-   - Follow the prompts and choose **standalone** mode
-   - Enter your daemon domain (e.g., `your_awesome_domain.com`)
+2. **Install Certbot:**
 
-3. **Retrieve certificate paths:**
+   ```sh
+   sudo apt install certbot
+   ```
+
+3. **Generate SSL certificate:**
+
+   ```sh
+   sudo certbot certonly --standalone -d your-domain.com
+   ```
+
+   Replace `your-domain.com` with your actual domain name.
+
+4. **Verify certificate paths:**
 
    ```sh
    sudo certbot certificates
    ```
 
-   You should see two files: `fullchain.pem` and `privkey.pem`.
+   Output will show:
+   - Certificate Path: `/etc/letsencrypt/live/your-domain.com/fullchain.pem`
+   - Private Key Path: `/etc/letsencrypt/live/your-domain.com/privkey.pem`
 
-4. **Verify automatic renewal is enabled:**
+5. **Verify automatic renewal:**
 
    ```sh
    sudo systemctl show certbot.timer
    ```
 
-**Result:** You now have `ssl_cert` and `ssl_key` parameters for your daemon configuration.
+These paths will be used in your daemon configuration as `ssl_cert` and `ssl_key` parameters.
 
 ## Installing the Daemon
 
-Get the **latest version** of the SingularityNET Daemon from the official GitHub releases page:
+> **Note:** This section is only for **self-hosted daemon deployment**. Skip this if using [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/).
 
-👉 [https://github.com/singnet/snet-daemon/releases/latest](https://github.com/singnet/snet-daemon/releases/latest)
+Get the latest version of the SingularityNET Daemon from the official GitHub releases page:
+
+[https://github.com/singnet/snet-daemon/releases/latest](https://github.com/singnet/snet-daemon/releases/latest)
 
 ### Installation Steps for Linux
 
@@ -294,52 +388,62 @@ Get the **latest version** of the SingularityNET Daemon from the official GitHub
 
 ## Enabling Metering and Free Calls
 
-To enable **Metering** and **Free Calls**, you must generate a **public address** and a **private key**. These credentials will be used to configure both features.
+Metering tracks service usage, and Free Calls allow users to test your service without payment. Both features require generating Ethereum keypairs.
 
-You can either use **the same key pair** for both metering and free calls, or **generate separate ones** for each.
+### Key Generation Methods
 
-### Step 1: Generate Keys
+You can generate keypairs using two methods:
 
-You can generate a keypair for metering and free-call authentication using either a Python script or the built-in `snetd` Daemon tool:
+| Method | When to Use |
+|--------|-------------|
+| **SNET Daemon** | Quick generation after daemon installation |
+| **Python Script** | When daemon is not yet installed or for automation |
 
-:::code-group
+#### Method 1: Using SNET Daemon
 
-```bash[Using snetd]
+After downloading the daemon binary:
+
+```bash
 ./snetd generate-key
 ```
 
-```python[Using Python]
+Output:
+```
+Private Key: <64-character hex string>
+Address: <Ethereum address starting with 0x>
+```
+
+#### Method 2: Using Python Script
+
+Requires `eth_account` package (`pip install eth-account`):
+
+```python
 from eth_account import Account
 import secrets
 
 key = secrets.token_hex(32)
 acct = Account.from_key(key)
 print("SAVE BUT DO NOT SHARE PRIVATE KEY")
-print("Private key: ", key)
-print("Address: ", acct.address)
+print("Private key:", key)
+print("Address:", acct.address)
 ```
 
-:::
+> **Important:** Store the private key securely. It grants full control over the corresponding address and should never be shared.
 
-> 🔒 **Important:** Store the output securely. The private key grants full control over the corresponding address and should never be shared.
+### Using the Generated Credentials
 
----
+The generated keys are used in two places:
 
-### Step 2: Use the Generated Credentials
+| Purpose | Where Address is Used | Where Private Key is Used |
+|---------|----------------------|---------------------------|
+| **Metering** | Service metadata (`<METERING_ADDRESS>`) | Daemon config (`private_key_for_metering`) |
+| **Free Calls** | Service metadata (`<FREE_CALL_SIGNER_ADDRESS>`) | Daemon config (`private_key_for_free_calls`) |
 
-You will need to use the generated keys in two places:
-
-**Metering:**
-- Use the generated **Address** as `<METERING_ADDRESS>` when publishing your service
-- Use the **Private Key** as `<METERING_KEY>` in your `snetd` (daemon) configuration
-
-**Free Calls:**
-- Use the generated **Address** as `<FREE_CALL_SIGNER_ADDRESS>` when publishing your service
-- Use the **Private Key** as `<FREE_CALL_SIGNER_PRIVATE_KEY>` in the daemon configuration
-
-> ✅ You may **reuse the same key pair** for both Metering and Free Calls, or generate **separate credentials** for better isolation.
+You can reuse the same keypair for both Metering and Free Calls, or generate separate credentials for better isolation.
 
 ## Configuring the Daemon
+
+> **Note:** This section is only for **self-hosted daemon deployment**. Skip this if using [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/).
 
 To run the daemon, create and edit the configuration file named `snetd.config.json`. This file tells the daemon how to communicate with your AI service, blockchain, and payment storage.
 
@@ -485,16 +589,48 @@ For each reference to the embedded ETCD configuration in the daemon, do not dele
 | `payment_channel_storage_server`       | Embedded ETCD setup (no modification required if using embedded ETCD) |
 | `log`                                  | Daemon logging settings                                               |
 
+## Switching Between Testnet and Mainnet
+
+When moving from Sepolia testnet to Ethereum mainnet (or vice versa), you need to update specific parameters in your daemon configuration.
+
+### Parameters to Change
+
+| Parameter | Testnet (Sepolia) | Mainnet |
+|-----------|-------------------|--------|
+| `blockchain_network_selected` | `"sepolia"` | `"main"` |
+| `ethereum_json_rpc_http_endpoint` | `https://eth-sepolia.g.alchemy.com/v2/<KEY>` | `https://eth-mainnet.g.alchemy.com/v2/<KEY>` |
+| `ethereum_json_rpc_ws_endpoint` | `wss://eth-sepolia.g.alchemy.com/v2/<KEY>` | `wss://eth-mainnet.g.alchemy.com/v2/<KEY>` |
+
+### Additional Considerations
+
+- **Organization and Service IDs** must be re-registered on the target network (testnet registrations do not transfer to mainnet)
+- **Payment Address** should be verified for the target network
+- **Metering Endpoint** remains the same for both networks (`https://marketplace-mt-v2.singularitynet.io`)
+- **ETCD Configuration** does not change between networks
+
+### Switching Checklist
+
+1. Update `blockchain_network_selected` in daemon config
+2. Update both Alchemy RPC endpoints (HTTP and WebSocket)
+3. Re-register your organization on the target network
+4. Re-publish your service on the target network
+5. Update `organization_id` and `service_id` in daemon config with new values
+6. Restart the daemon
+
 ## Daemon Setup Summary
 
-Currently, the daemon **cannot be started** because the **organization and service are not yet created**. These steps will be covered next. For now, you have successfully:
+> **Note:** This summary is for **self-hosted daemon deployment** only.
 
-✔ Configured domain and SSL certificates  
-✔ Generated metering and free calls private keys  
-✔ Installed and prepared the daemon  
-✔ Set up the configuration file for later use  
+At this point, the daemon cannot be started because the organization and service are not yet created. These steps will be covered next. You have completed:
 
-Proceed to the next step to create your **Organization and Service**.
+- Domain and SSL certificate configuration
+- Metering and free calls private key generation
+- Daemon installation and preparation
+- Configuration file setup
+
+Proceed to the next step to create your Organization and Service.
+
+If you prefer not to manage infrastructure, consider using [Hosting-as-a-Service (HaaS)](/docs/products/DecentralizedAIPlatform/HaaS/) available through the Publisher Portal.
 
 ## Organization Setup
 
@@ -833,6 +969,8 @@ For each reference to the embedded ETCD configuration in the daemon, do not dele
 
 ## Launching the Daemon
 
+> **Note:** This section is only for **self-hosted daemon deployment**. If you used [HaaS](/docs/products/DecentralizedAIPlatform/HaaS/), your daemon is already running.
+
 After editing and saving your configuration file, start the daemon with the following command:
 
 ```bash
@@ -842,31 +980,37 @@ After editing and saving your configuration file, start the daemon with the foll
 Upon successful startup, you will see:
 
 ```bash
-INFO    ✅ Daemon successfully started and ready to accept requests
+INFO    Daemon successfully started and ready to accept requests
+```
+
+### Verify Daemon Status
+
+Test that your daemon is running correctly:
+
+```bash
+curl https://your-domain.com:<DAEMON_PORT>/heartbeat
+```
+
+A successful response will include:
+
+```json
+{
+  "daemonID": "...",
+  "timestamp": "...",
+  "status": "Online",
+  "serviceheartbeat": {
+    "serviceID": "<SERVICE_ID>",
+    "status": "SERVING"
+  }
+}
 ```
 
 ## Next Steps
 
-Congratulations! Your AI service is now published and running on the SingularityNET platform.
+Your AI service is now published and running on the SingularityNET platform.
 
-### Test Your Service
+**Test Your Service:**
 
-- **Via CLI**: Follow the [Service Calling via CLI](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI/) guide
-- **Via SDK**: Use the [Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/) or [JavaScript SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)
-
-### Monitor and Maintain
-
-- Check daemon logs regularly for any issues
-- Monitor your ETH balance for gas fees
-- Keep your SSL certificates updated
-- Backup your ETCD data directory regularly
-
-### Update Your Service
-
-To update your service:
-1. Modify your service code
-2. Update the service metadata if needed
-3. Republish using `snet service update`
-4. Restart the daemon
-
-For additional support, visit our [community forum](https://community.singularitynet.io) or [Discord channel](https://discord.gg/snet).
+- [Service Calling via CLI](/docs/products/DecentralizedAIPlatform/QuickStartGuides/ServiceCallingViaCLI/)
+- [Python SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/)
+- [JavaScript SDK](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/WebJsSDK/getting-started-guide/)

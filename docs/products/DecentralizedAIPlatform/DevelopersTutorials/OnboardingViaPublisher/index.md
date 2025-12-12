@@ -285,7 +285,26 @@ Configure how users will interact with your service through the Marketplace inte
 
 ### **Step 4: Daemon Configuration**
 
-Define critical settings for your AI service daemon:
+#### Deployment Options
+
+You have two options for deploying your daemon:
+
+**Option 1: Hosting-as-a-Service (HaaS)** - Managed infrastructure (recommended for most users)
+- Fully automated deployment and maintenance
+- No server setup or ETCD configuration required
+- Monthly subscription in FET tokens
+- See the [HaaS Guide](/docs/products/DecentralizedAIPlatform/HaaS/) for one-click deployment
+
+**Option 2: Self-Hosted Daemon** - Manual infrastructure setup
+- Full control over infrastructure
+- Requires server, SSL certificates, and ETCD configuration
+- Follow the steps below for self-hosted setup
+
+---
+
+#### Self-Hosted Daemon Configuration
+
+If you choose to self-host your daemon, define the following critical settings:
 
 * **AI Service Price** *(required)*  
   > Specify the price in ASI (FET) tokens per individual service call.
@@ -353,7 +372,9 @@ Complete your AI service definition:
 
 ## **Set Up & Launch the Daemon**
 
-This section explains how to configure, install, and run the SingularityNET Daemon, which manages billing, service requests, and blockchain interaction for your AI service.
+> **Note:** This section is for **self-hosted daemon deployment**. If you used [Hosting-as-a-Service (HaaS)](/docs/products/DecentralizedAIPlatform/HaaS/) during Step 4, your daemon is already deployed and you can skip this entire section.
+
+This section explains how to configure, install, and run the SingularityNET Daemon manually, which manages billing, service requests, and blockchain interaction for your AI service.
 
 ---
 

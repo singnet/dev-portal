@@ -148,6 +148,17 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         ],
     },
     {
+        text: "HaaS (Hosting-as-a-Service)",
+        link: "/docs/products/DecentralizedAIPlatform/HaaS/",
+        collapsed: true,
+        items:[
+            {
+                text: "Overview",
+                link:"/docs/products/DecentralizedAIPlatform/HaaS/",
+            },
+        ],
+    },
+    {
         text: "Daemon",
         link: "/docs/products/DecentralizedAIPlatform/Daemon/",
         collapsed: true,

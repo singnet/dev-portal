@@ -10,6 +10,7 @@
     "swiper": "^11.1.12"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
     "vitepress": "^1.4.1"
   }
 }
