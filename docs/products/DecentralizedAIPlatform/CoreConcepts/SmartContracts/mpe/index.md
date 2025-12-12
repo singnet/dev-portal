@@ -9,7 +9,7 @@ The MPE contract comprises two main functions, which includes:
 1. A wallet with a deposit and withdraw function.
 2. A set of the simple ("atomic") unidirectional payment channels between clients and service providers and support functions for controlling these channels.
 
-**Note:** Any one can deposit and withdraw their ASI (FET) tokens into a Multi-Party Escrow, (which have not been escrowed at the moment).
+   **Note:** Anyone can deposit and withdraw their ASI (FET) tokens into a Multi-Party Escrow, (which have not been escrowed at the moment).
 
 ## What is Payment Channel?
 
