@@ -57,7 +57,7 @@
 
 <script lang="ts">
 import DropdownList from './DropdownList.vue';
-import endpoints from '../../utils/constants/endpoints';
+import { endpoints } from '../../utils/constants/endpoints';
 import { OptionType } from './DropdownList.vue';
 
 const enum FeedbackCategory {
@@ -94,10 +94,10 @@ export default {
     },
     computed: {
         isSubmitAvailable(): boolean {
-            return this.name &&
+            return !!this.name &&
                 this.isEmailValid(this.email) &&
-                this.feedback &&
-                this.category
+                !!this.feedback &&
+                !!this.category
         },
         isMobile(): boolean {
             if (typeof window === 'undefined') {
@@ -115,13 +115,13 @@ export default {
             this.isFormDisplayed = !this.isFormDisplayed;
         },
         selectCategory(option: OptionType): void {
-            this.category = option.value;
+            this.category = option.value as FeedbackCategory;
         },
         resetForm(): void {
             this.name = '';
             this.email = '';
             this.feedback = '';
-            this.category = 'question';
+            this.category = 'question' as FeedbackCategory;
         },
         async showAlert(): Promise<void> {
             this.isRequestSent = true;
