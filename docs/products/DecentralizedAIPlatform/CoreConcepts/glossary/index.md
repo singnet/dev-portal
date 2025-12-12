@@ -1,90 +1,256 @@
 # Glossary
 
-### IPFS
+A comprehensive guide to key terms and concepts used in the SingularityNET ecosystem.
 
-The Inter-Planetary File System (IPFS) is a peer-to-peer network and a network protocol used to
-store and share data in a distributed file system. IPFS uses content-addressing to uniquely
-identify each file in a global namespace connecting all computing devices. Organization details
-and service details are stored in IPFS and the hash associated with them are stored in a
-Blockchain.
-
-### Registry
-
-The SingularityNET Registry is an ERC-165–compliant smart contract on the Ethereum Blockchain that stores organizations, services, and type repositories.
-Registry provides all the information needed to find and interact with AI services on the platform, either by listing the information in full, or when it is too long, by listing the IPFS hash.
+## Blockchain & Smart Contracts
 
 ### Smart Contract
 
-Contract: Contracts are smart programs or algorithms, executes when certain conditions are met successfully.
+Smart contracts are self-executing programs stored on the blockchain that automatically execute when predetermined conditions are met. In SingularityNET, smart contracts manage service registration, payments, and organizational governance.
 
-### MultipPartyEscrow Contract
+---
 
-An Escrow contract defines the conditional transaction between two transacting parties through an Escrow account.
+### Registry
 
-### Channel
+The SingularityNET Registry is an ERC-165 compliant smart contract on the Ethereum blockchain that stores and manages:
+- Organizations and their metadata
+- AI services and their configurations
+- Type repositories for service interfaces
 
-A payment channel is a tool that enables off-chain transactions between parties without the delay imposed by Blockchain block formation and without compromising the transactional security.
+The Registry provides all information needed to discover and interact with AI services on the platform, either by storing the information directly or by referencing IPFS hashes for larger data.
+
+---
+
+### MultiPartyEscrow (MPE) Contract
+
+The MPE contract enables secure, conditional transactions between service consumers and providers through an escrow mechanism. It manages payment channels and ensures that funds are only released when services are successfully delivered.
+
+---
+
+### Payment Channel
+
+A payment channel is an off-chain scaling solution that enables multiple transactions between parties without requiring each transaction to be recorded on the blockchain. This reduces gas costs and eliminates blockchain confirmation delays while maintaining security.
+
+---
+
+### On-Chain & Off-Chain Transactions
+
+**On-chain transactions:**
+- Occur directly on the blockchain
+- Permanently recorded in blockchain history
+- Require gas fees for execution
+- Subject to block confirmation times
+
+**Off-chain transactions:**
+- Occur outside the blockchain
+- Near-zero transaction costs
+- Instant execution
+- Periodically settled on-chain for security
+
+## Platform Components
 
 ### Daemon
 
-Daemon maintains the channel state off chain, so in order to constrain operations involving gas cost (such as compensation or incentive or commission or any other facility charges levied) and allow transaction between parties without imposing any delay by the Blockchain block formation times and compromising on transactional security.
+The SingularityNET daemon is a sidecar proxy that interfaces between AI services and the platform. It handles:
+- Payment channel state management
+- Request authentication and authorization
+- Off-chain transaction processing
+- Communication with smart contracts
+- Service monitoring and logging
 
-The SingularityNET daemon is an adapter that a service uses to interface with the SingularityNET platform. In software architecture lingo, the daemon is referred to sidecar proxy, — a process deployed next to a core application (the AI service, in this case) to abstract architectural details, such as logging and configuration, and the platform - interaction with smart contracts or even the decision to use the Ethereum Blockchain.
+The daemon abstracts blockchain complexity from service developers, allowing them to focus on AI functionality.
 
-### SDK
+---
 
-SDK is a tool for AI customers to make calls to service. The SDK simplifies the process of integrating with SingularityNET services and provides tooling to automatically augment gRPC client stubs with the necessary authorizations. The SDK is available in NodeJS, Python and Java languages.
+### SDK (Software Development Kit)
 
-### Snet-Cli
+SDKs are libraries that simplify integration with SingularityNET services. They provide:
+- Automated payment channel management
+- Service discovery and connection
+- Request signing and authentication
+- Multiple language support (Python, JavaScript, Java)
 
-The SingularityNET command line interface (CLI) is the primary tool for interacting with the platform’s smart contracts, managing deployed services, and managing funds.
+Available SDKs streamline the process of calling AI services and handling platform-specific requirements.
 
-### On-Chain & Off-Chain Transaction
+---
 
-On-chain transactions refer to those crypto currency transactions which occur on the Blockchain - that is, on the records of the Blockchain - and remain dependent on the state of the Blockchain for their validity
-Off-chain transactions refer to those transactions occurring on a cryptocurrency network which move the value outside of the blockchain. Due to their zero/low cost, off-chain transactions are gaining popularity, especially among large participants
+### CLI (Command Line Interface)
 
-### Signature
+The SingularityNET CLI is the primary tool for:
+- Managing organizations and services
+- Interacting with smart contracts
+- Handling payment channels and funds
+- Service deployment and configuration
+- Identity and wallet management
 
-Authorization given by the signer.
+## Storage & Infrastructure
 
-### Wallet/Address
+### IPFS (InterPlanetary File System)
 
-Wallet is where you hold your crypto currencies , every wallet is associated to an address.
+IPFS is a distributed, peer-to-peer protocol for storing and sharing data. SingularityNET uses IPFS to store:
+- Service metadata
+- Organization details
+- Model files and artifacts
+- Documentation and specifications
 
-### Dapp
+Content is addressed by cryptographic hash, ensuring data integrity and availability.
 
-The SingularityNET DApp is essentially a rich Registry explorer. It loads the Registry and generates UI for managing the Services and Type Repositories registered in it.
-
-### Metamask
-
-MetaMask is an internet browser extension that allows users to interact with the Ethereum Blockchain and its decentralized applications. MetaMask serves as your access portal for both the Ethereum Mainnet and Sepolia.
-
-### ASI (FET)
-
-ASI (FET) is the proprietary cryptocurrency token used by the SingularityNET platform. SingularityNET (ASI (FET)) is an Ethereum based token complying with ERC-20 standards. The ASI (FET) token will be used to settle a transaction over the Blockchain.
-
-### ASI (FET) Token
-
-Tokens can be staked for voting rights and to become an Agent or spent on goods and services on the platform.
-
-### Cogs
-
-It is the unit of measurement transacted between parties.
+---
 
 ### ETCD
 
-ETCD is a local database that store all the events as table, when an event is triggered from Blockchain ETCD is also considered as a Deamon. ETCD was chosen because it is written in Go, and has out of the box embedded server support. This means that its nodes can be started and stopped by snet-daemon replicas
+ETCD is a distributed key-value store used by SingularityNET for:
+- Payment channel state storage
+- Service configuration management
+- Distributed coordination
+- Event logging and tracking
 
-### Gas and Gas Cost
+ETCD nodes can be managed by daemon replicas, providing high availability and consistency.
 
-The Gas Limit is the maximum amount of Gas that a user is willing to pay for performing this action or confirming a transaction (a minimum of 21,000). The price of Gas (Gas Price) is the amount of Gwei that the user is willing to spend on each unit of Gas
+## Tokens & Payments
 
-### Gas Strategy ( Slow , Medium and Fast)
+### ASI (FET) Token
 
-Ethereum gas price is a time based gas price strategy ('fast' ~1min, 'medium' ~5min or 'slow' ~60min) (defaults to session.default_gas_price).
-Infura
+ASI (FET) is the native utility token of the SingularityNET platform:
+- ERC-20 compliant token on Ethereum
+- Used for all service payments
+- Enables governance participation
+- Can be staked for network benefits
 
-### Infura
+---
 
-Infura is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node.
+### COGS
+
+COGS are the smallest unit of measurement for transactions on the platform, similar to how wei relates to Ether. Service pricing and payments are calculated in COGS.
+
+---
+
+### Gas and Gas Costs
+
+**Gas** represents the computational effort required to execute blockchain operations:
+- **Gas Limit:** Maximum gas units willing to consume
+- **Gas Price:** Price per gas unit in Gwei
+- **Gas Strategy:** 
+  - Fast (~1 minute confirmation)
+  - Medium (~5 minute confirmation)
+  - Slow (~60 minute confirmation)
+
+## User Interface & Tools
+
+### DApp (Decentralized Application)
+
+The SingularityNET DApp is a web-based marketplace and service explorer that:
+- Displays available AI services
+- Enables service discovery and testing
+- Manages user accounts and payments
+- Provides service analytics and ratings
+
+---
+
+### MetaMask
+
+MetaMask is a browser extension wallet that:
+- Stores cryptocurrency and tokens
+- Signs transactions
+- Connects to Ethereum networks
+- Interfaces with DApps
+
+MetaMask serves as the primary gateway for interacting with SingularityNET on both mainnet and testnet.
+
+---
+
+### Publisher Portal
+
+A web interface for service providers to:
+- Register organizations
+- Deploy and manage services
+- Monitor usage and earnings
+- Handle team permissions
+
+## Security & Authentication
+
+### Signature
+
+A cryptographic proof that validates:
+- Transaction authorization
+- Message authenticity
+- Identity verification
+- Payment channel updates
+
+Signatures ensure that only authorized parties can execute actions on the platform.
+
+---
+
+### Wallet/Address
+
+**Wallet:** A software application that stores private keys and manages cryptocurrency holdings.
+
+**Address:** A unique identifier derived from a public key that:
+- Receives tokens and payments
+- Identifies accounts on the blockchain
+- Serves as a user's public identity
+
+## Development & Integration
+
+### gRPC
+
+A high-performance RPC framework used for service communication:
+- Language-agnostic protocol
+- Efficient binary serialization
+- Streaming support
+- Used by all SingularityNET services
+
+---
+
+### Protocol Buffers (Protobuf)
+
+A method for serializing structured data:
+- Defines service interfaces
+- Specifies message formats
+- Generates client/server code
+- Ensures type safety across languages
+
+## Infrastructure Providers
+
+### Infura/Alchemy
+
+Managed Ethereum node services that provide:
+- Blockchain API access
+- Reliable network connectivity
+- Eliminates need for running own nodes
+- Scalable infrastructure for DApps
+
+These services enable users to interact with the blockchain without maintaining their own Ethereum nodes.
+
+## Network Concepts
+
+### Mainnet
+
+The primary Ethereum network where:
+- Real transactions occur
+- Actual value is exchanged
+- Services operate in production
+- Permanent records are maintained
+
+---
+
+### Testnet (Sepolia)
+
+A test network that mirrors mainnet functionality:
+- Free test tokens available
+- Safe environment for development
+- No real value at risk
+- Used for testing and demonstration
+
+## Quick Reference
+
+| Term | Category | Description |
+|------|----------|-------------|
+| ASI (FET) | Token | Platform utility token |
+| Daemon | Infrastructure | Service-platform interface |
+| ETCD | Storage | Distributed state storage |
+| IPFS | Storage | Distributed file system |
+| MPE | Smart Contract | Payment escrow contract |
+| Registry | Smart Contract | Service directory contract |
+| SDK | Development | Integration libraries |
+| CLI | Tools | Command-line management tool |
