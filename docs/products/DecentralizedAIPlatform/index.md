@@ -8,102 +8,214 @@ Services can span the entire gamut of offerings in artificial intelligence and m
 
 The SingularityNET platform contains a number of critical components that work together to enable a decentralized network of AI services to flourish. The core components are designed to allow for a functional, scalable, and extensible system.
 
-In general we have 2 main “roles” on the Platform:
+## Main Roles on the Platform
 
-<span style="font-weight: 700">Service Provider (AI Developer)</span> - is an author of an AI service who publishes their service on the Platform and provides access to it for use by other users.
+The platform consists of two primary roles:
 
-<span style="font-weight: 700">Service Consumer (AI Consumer, Application Developer)</span> - is any user (a user of the AI ​​Marketplace, an application developer where AI services can be integrated, or even another AI developer who wants to interact with other AI services within their AI service) who will call the AI ​​services presented on the Platform in any format.
+* **Service Provider (AI Developer):** An author of an AI service who publishes their service on the Platform and provides access to it for use by other users.
+* **Service Consumer (AI Consumer, Application Developer):** Any user who calls AI services presented on the Platform. This includes:
 
-The platform is a **decentralized solution** built on the basis of **smart contracts**, a decentralized storage of AI service metadata files and a special Daemon component that allows AI Providers to manage calls to AI services and record the calls made. Payment for services is regulated by the settings of the **Multi-Party Escrow smart contract**, where a payment channel is created for each user, where the user's funds invested to call the AI ​​service are stored.
+  * Users of the AI Marketplace
+  * Application developers integrating AI services
+  * AI developers who want to interact with other AI services within their own service
 
-<span style="font-weight: 700">At first glance</span>, the system may seem complicated, but it contains only the necessary elements that we have developed in order to minimize the costs of users and developers on the blockchain, while maintaining the security of payments. Both conceptual and practical issues motivated this decision.
+## Platform Architecture
 
-<span style="font-weight: 700">Secondly</span>, on AI services integration, we wanted to abstract away as much of the network as possible, in order to reduce the learning curve and minimize the overhead associated with providing AI services via the network. This abstraction is achieved with a single flexible tool, the daemon, that will help us provide scalability, robustness, distribution, and management features to the entire community.
+The platform is a **decentralized solution** built on:
 
-<span style="font-weight: 700">Finally</span>, to make our marketplace compliant with regulations without compromising on openness, we implemented it separately from our fully decentralized registry of AI services currently available on the Blockchain.
+* **Smart contracts** for trustless operations
+* **Decentralized storage** for AI service metadata files
+* **Daemon component** that allows AI Providers to manage and record service calls
+* **Multi-Party Escrow smart contract** for secure payment channels
 
-## Platform components explained
+### Key Design Principles
 
-<span style="font-weight: 700">Publisher portal</span> - this service allows to publish services on AI Marketplace
-CLI/TUI - Tools for publish orgs and services without marketplace displays, for calls to services
-SDK - Tool for integrating calls AI Services to another programs
-AI Marketplace - the service allows using AI services via web interface
+* **Cost Efficiency:** While the system may seem complex at first glance, it contains only the necessary elements to minimize blockchain costs for users and developers while maintaining payment security.
+* **Simplified Integration:** We abstract away network complexity to reduce the learning curve and minimize overhead for AI service providers. This is achieved through the daemon - a single flexible tool providing scalability, robustness, distribution, and management features.
+* **Regulatory Compliance:** To ensure marketplace compliance without compromising openness, we implement it separately from our fully decentralized registry of AI services on the Blockchain.
 
-<span style="font-weight: 700">Blockchain</span> - Ethereum is now used to implement platform contracts, but other blockchain will be used as well Cardano and other
+## Platform Components Explained
 
-<span style="font-weight: 700">MPE Contract</span> - smart contract used to implementation of on-chain payments for AI service calls
+To make the structure clearer, components are grouped into blocks with bold labels and separated for better readability.
 
-<span style="font-weight: 700">Registry Contract</span> - smart contract used for store information about organizations and services
+### User Interface Components
 
-<span style="font-weight: 700">DSN</span> - decentralized storage, where metadata about organizations and services are stored, now used: IPFS and Filecoin
+* **Publisher Portal**
+  Web service for publishing services on the AI Marketplace with a visual interface.
 
-<span style="font-weight: 700">Daemon</span> - A daemon is an adapter between an AI service and a client, tracking service calls, calculating costs, and redirecting requests to the AI
+* **CLI/TUI**
+  Command-line and terminal tools for:
 
-<span style="font-weight: 700">AI Service</span> - an artificial intelligence service that processes user requests through Daemon
+  * Publishing organizations and services
+  * Calling services programmatically
+  * Managing platform operations without GUI
+
+* **SDK**
+  Libraries for integrating AI service calls into applications (Python, JavaScript, Java).
+
+* **AI Marketplace**
+  Web interface for browsing and using AI services directly in the browser.
+
+---
+
+### Blockchain Infrastructure
+
+* **Blockchain Networks**
+  Currently using Ethereum, with plans to support additional networks like Cardano.
+
+* **MPE Contract**
+  Multi-Party Escrow smart contract managing on-chain payments for AI service calls.
+
+* **Registry Contract**
+  Smart contract storing information about organizations and services on-chain.
+
+---
+
+### Storage and Processing
+
+* **Decentralized Storage (DSN)**
+  Distributed storage for metadata about organizations and services using:
+
+  * IPFS (InterPlanetary File System)
+  * Filecoin
+
+* **Daemon**
+  Adapter component between AI services and clients that:
+
+  * Tracks service calls
+  * Calculates costs
+  * Redirects requests to AI services
+  * Manages payment verification
+
+* **AI Service**
+  The actual artificial intelligence service that processes user requests through the Daemon.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/BasicScheme.webp" alt="Basic scheme" pictureTitle="Basic scheme"/>
 
-You can always check the extended version of the Decentralized AI Platform scheme if you want to know more details and check our other documentation provided in the appropriate sections on the Developer Portal!
+You can always check the extended version of the Decentralized AI Platform scheme for more details in the appropriate sections of the Developer Portal.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ExtendedScheme.webp" alt="Extended scheme" pictureTitle="Extended scheme"/>
 
-Service Provide needs to go through the OnBoarding process to Publish information about the service and data to call it (provide name, service matdata, wallet data for getting payments and data to connect to the up and running service). For this we have a short Checklist – what should be ready from the Service Provider side.
+## Service Provider Journey
 
-Service Consumers can use the services in several ways – via direct integration to applications using SDK (Python, JavaScript, Java) or using AI Marketplace. That means, that Service Provider can Publish the service in two ways:
-only for SDK use (without their own UI interface) and in this case this service would not be visible on the AI Marketplace.
-Or create UI interface for the interaction with the service in the AI Marketplace required design using UI Sandbox. In this case this service will be available not only via SDKs, but via AI Marketplace too.
+Service Providers need to complete the onboarding process to publish their services. This includes providing:
 
-## Service Provide Details
+* Service name and metadata
+* Wallet information for receiving payments
+* Connection details for the running service
 
-For the OnBoarding process Service Provider can use CLI or TUI and this service would NOT be visible on the AI Marketplace.
-For the OnBoarding process Service Provider can use Publisher Portal and this service WILL be visible on the AI Marketplace. It is NOT MANDATORY to publish UI at the same moment, it can be uploaded later. The main thing here is that OnBoarding via Publisher Portal provides this opportunity to appear on the AI Marketplace and CLI/ TUI does not.
+We provide a comprehensive checklist to help Service Providers prepare for onboarding.
 
-## The general OnBoarding process requires from the Service Provider to:
+## Service Consumer Options
 
-1. Register on the Publisher Portal to publish organization and services.
-2. The first step is to register an organization under which the published services will exist. As part of your organization registration, you will need to fill out organization information and fill out information to receive payment for services. The information will then be uploaded to a decentralized repository and stored in a smart contract. (See extended scheme)
-3. After the organization is published, it can start publishing your AI services. Here you will need to upload details of the service and how to call the service. This data will also be stored in a decentralized storage and smart contract for constant access to up-to-date information about the service. Storing data in IPFS and in a smart contract preserves the decentralization principles.
-4. After your service passes the automated publishing stage, it will appear on the AI Marketplace.
+Service Consumers can access services through multiple channels:
+
+* **Direct Integration**
+  Using SDKs available for:
+
+  * Python
+  * JavaScript
+  * Java
+
+* **AI Marketplace**
+  Web interface for direct service interaction.
+
+## Publishing Options for Providers
+
+* **SDK-Only Services**
+  Services without UI interfaces are accessible only through SDKs and CLI/TUI, not visible on the AI Marketplace.
+
+* **Full Marketplace Services**
+  Services with custom UI interfaces created using UI Sandbox are available both through SDKs and the AI Marketplace web interface.
+
+## Service Provider Publishing Methods — Overview
+
+Below is a concise integration of the **Full Onboarding Guide** to help you choose the right method quickly. All methods publish to the same blockchain and produce services callable via CLI and SDK; only the **Publisher Portal** enables a Marketplace demo UI.
+
+### Method Comparison
+
+| Method                                                                                                     | Publishing Interface | Service Accessibility After Publishing | Marketplace UI Demo |
+| ---------------------------------------------------------------------------------------------------------- | -------------------- | -------------------------------------- | ------------------- |
+| **[Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)** | Web GUI              | Marketplace + CLI + SDK                | Yes (optional)      |
+| **[CLI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/)**                    | Command line         | CLI + SDK only                         | No                  |
+| **[TUI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaTUI/)**                    | Terminal menus       | CLI + SDK only                         | No                  |
+
+### Quick Decision Guide
+
+* **Choose Publisher Portal** if you want Marketplace visibility, a demo UI, and a visual workflow (team-friendly).
+* **Choose CLI** for automation, CI/CD, and fine-grained control (SDK/CLI-only access).
+* **Choose TUI** for guided terminal publishing on servers without GUI (no need to memorize commands).
+
+> **Interoperability:** Organizations and services are on-chain entities. You can manage them later with any method and switch tools as needed. Only Publisher Portal supports creating a Marketplace demo UI.
+
+For complete steps (prerequisites, daemon setup, ETCD, keys for metering and free calls, domain/SSL, organization/service creation, and launch), see the **Full Guide** in the Developer Tutorials. The brief summary above preserves the key distinctions without duplicating the full procedure.
+
+## General Onboarding Process
+
+1. **Registration**
+   Register on the Publisher Portal to publish organizations and services.
+
+2. **Organization Setup**
+   Create an organization under which your services will be published:
+
+   * Fill out organization information
+   * Configure payment details
+   * Data is uploaded to decentralized storage and smart contracts
+
+3. **Service Publishing**
+   Publish your AI services under the organization:
+
+   * Upload service details and specifications
+   * Configure service endpoints
+   * Data is stored in IPFS and smart contracts for decentralized access
+
+4. **Marketplace Listing**
+   After automated publishing validation, your service appears on the AI Marketplace.
 
 ## Service Consumer Details
 
-Service Consumers can call the AI services in a few ways. First of all using AI Marketplace UI or integrate it into the developer solutions via SDKs. For now SDK available on Python, JavaScript (Web and Node) and Java. General description of the SDK logic provides the opportunity to implement the same logic to call service on the other languages as well, which are not supported on the SDK ecosystem yet. Also AI service calling is accessible via CLI and TUI as well (see extended scheme) for Service Consumers, which is usually needed for tests, but can be useful for some other purposes of the Service Consumer.
+### Access Methods
 
-To call the service there are several options:
+Service Consumers can access AI services through:
 
-<span style="font-weight: 700">Free calls</span> – the amount of these calls are configured by the Service Provider. The main idea is to use an AI service for free to try it. And in case of good and expected experience use it on a paid basis. It is always nice to try before buying!
+* **AI Marketplace UI** - Web interface for direct interaction
+* **SDKs** - Integration into applications (Python, JavaScript, Java)
+* **CLI/TUI** - Command-line access for testing and automation
 
-<span style="font-weight: 700">Paid calls</span> – this is a paid option where Service Consumers can buy more calls. For now the Platform supports a pay per call system, but later we will present subscriptions and other billing options!
-This means that Service Consumer <span style="font-weight: 700">DOES NOT</span> need to make a paid transaction each time when the service is called! For the first time when Service Consumer starts paid interaction with the AI service this Service Consumer opens a payment channel via Multi Party Escrow contract for some period of time which is configured by Service Consumer. This channel can be replenished with any amount of ASI (FET) at any moment (before the closing of the channel due to time period setting). After replenishment Service Consumer can call the AI service and a special component [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/) will count the number of calls securely and check the payment channel for sufficient funds which requires no transaction and blockchain fee payment at the service calling moment. You can check more detailed information about payment channels in the documentation [here](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
+### Payment Options
 
-To buy paid calls Service Consumer can do it in two ways:
+* **Free Calls**
+  Service Providers configure a number of free trial calls allowing users to test services before purchasing.
 
-Use <span style="font-weight: 700">crypto wallet</span> – payments can be done directly via crypto wallet using ASI (FET) token in the Ethereum blockchain. Note, that it is a blockchain transaction which will also require some blockchain fee paid in ETH crypto.
+* **Paid Calls**
+  The platform uses a pay-per-call system with payment channels:
 
-Use <span style="font-weight: 700">paypal</span> to exchange fiat money to ASI (FET) token (available only on the AI Marketplace now).
+  * **No per-call transactions:** Consumers **do not** need blockchain transactions for each call.
+  * **Payment channels:** One-time channel opening via Multi-Party Escrow contract.
+  * **Flexible funding:** Channels can be replenished with ASI (FET) tokens anytime before expiration.
+  * **Efficient processing:** The [Daemon](/docs/products/DecentralizedAIPlatform/Daemon/) tracks calls and verifies funds off-chain.
 
-## Decentralized AI Platform documentation structure
+Learn more about [payment channels](/docs/products/DecentralizedAIPlatform/CoreConcepts/SmartContracts/mpe/).
 
-In the section of Decentralized AI Platform of the Developer Portal you can find the following information:
+### Payment Methods
 
-- **Quick Start Guides** with no extra options and excessive info what to do to start interaction with the Platform from Service Provider and Service Consumer perspective.
+* **Crypto Wallet**
+  Direct payments using ASI (FET) tokens on Ethereum blockchain. Requires ETH for gas fees.
 
-- **The Daemon section** provides detailed explanations of the Daemon goal, scenarios and setup guides.
+## Documentation Structure
 
-- **The CLI section** provides explanations on how to use CLI and CLI commands explained.
+The Decentralized AI Platform documentation is organized into the following sections:
 
-- **The TUI section** provides explanations on how to use TUI.
+* **Getting Started:** Quick Start Guides for Service Providers and Consumers.
+* **Tools and Interfaces:** Daemon, CLI, TUI, Publisher Portal.
+* **Development Resources:** SDK Documentation, UI Sandbox, UI Boilerplate.
+* **Reference:** Used Technologies and terminology glossary.
 
-- **The Publisher Portal** section explains what is Publisher Portal and how to use it.
+## Support and Contact
 
-- **SDK section** provides basic language-isolated explanation of the main idea of the SDK itself and also explanations and guides on how to use existing Python, JavaScript and JAVA SDKs.
+We're here to help at every stage of your journey:
 
-- **The UI Sandbox section** provides explanations on how the Service Provider creates an appropriate UI interface for the AI service to be used by Service Consumers on the AI Marketplace.
+* **Feedback Form** - Available in the bottom right corner of the Developer Portal
+* **Direct Email Support** - **[onboarding-support@singularitynet.io](mailto:onboarding-support@singularitynet.io)**
 
-- **UI Boilerplate** is a UI template which can be used together with JS SDK to easily create some UIs apart from AI Marketplace, but some separate web-site with AI service integrated.
-
-- **Used Technologies section** provides explanation of all the solutions we used to create the Platform and glossary of used Termins in context of the Platform.
-
-Looking forward to assisting any time needed – just write us using feedback form on the Developer Portal in the right down corner.
-
-Or you can email us directly where we will help you at any stage of going through the onboarding process: **onboarding-support@singularitynet.io**
+Our team will assist you throughout the onboarding process and answer any questions about the platform.

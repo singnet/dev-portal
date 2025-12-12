@@ -17,7 +17,7 @@ The first three links are relevant if you want to be a consumer of SingularityNE
 
 - [Create a Wallet](/docs/products/AIMarketplace/ForConsumers/metamask-wallet/) - To make transactions you'll need a wallet with some funds.
 - [How to call a service](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/) - Covers trying out a service in the marketplace, and calling it from our command line tool.
-- [Using the SDK](/docs/products/DecentralizedAIPlatform/SDK/python-sdk/) - Calling a service using the Python SDK.
+- [Using the SDK](/docs/products/DecentralizedAIPlatform/SDK/PythonSDK/getting-started-guide/) - Calling a service using the Python SDK.
 
 These steps guide you through creating a service, and getting that service on our marketplace:
 

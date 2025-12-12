@@ -1,77 +1,126 @@
 # SingularityNET Platform Onboarding Checkup
 
-</br>
 <ImageViewer src="/assets/images/products/AIMarketplace/Marketplace/ReadyToOnboardingCheckUp.webp" alt="Checkup"/>
 
-This document describes the mandatory items that must be implemented in order to get into the Decentralized AI Platform and AI Marketplace:
+This document outlines the mandatory requirements for publishing your AI service on the Decentralized AI Platform and AI Marketplace.
 
-The fastest method for onboarding on our Platform and publish your service is via [Publisher](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/). In addition to this method, see the other ways of onboarding your service.
+## Quick Start
+
+The fastest method for onboarding is via the [Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/). For a complete step-by-step guide, see the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/).
+
+## Prerequisites Checklist
 
 ### 1. AI Service
 
-First and most important, you must have a service that is able to accept requests and return responses to them.
+You must have a service capable of accepting requests, processing data, and returning responses.
 
-### 2. Created .proto file of your AI service
+### 2. Protocol Buffer Definition (.proto file)
 
-Requires the creation of the described [.proto](https://protobuf.dev/) interfaces of your service calls to the Daemon via GRPC Protocol.
+Create a [.proto file](https://protobuf.dev/) that describes service interfaces, request/response messages, and RPC method definitions. This enables communication between your service and the Daemon via gRPC protocol.
 
 ### 3. Ethereum Wallet
 
-You will need a [metamask wallet](https://metamask.io/) and some ETH for transactions (about 0.01 ETH) to publish the organization and publish the service
+Required components:
 
-### 4. Account on Publisher Portal (optional if you want to use CLI/TUI)
+- [MetaMask wallet](https://metamask.io/)
+- Approximately 0.01 ETH for transaction fees
+- Used for publishing organization and service
 
-Register an account to create and publish an organization and services: https://publisher.singularitynet.io/
+### 4. Publisher Portal Account (Optional for CLI/TUI)
 
-### 5. Virtual machine with IP address and Python
+Register at: [https://publisher.singularitynet.io/](https://publisher.singularitynet.io/)
 
-Your virtual machine must have:
+### 5. Virtual Machine Requirements
 
-    1. Python version 3.10 or higher installed
-    2. Open a port on a virtual machine or cloud server to allow access to it over the internet.
+Your hosting environment needs:
 
-### 6. Domain name (optional)
+- Python version 3.10 or higher
+- Open ports for daemon and ETCD communication
+- Public IP address or domain name
 
-If you want to use a domain name to access your service, you will need to purchase it from a provider.
+### 6. Domain Name (Recommended)
 
-### 7. ETCD set up on Virtual Machine
+If you prefer domain-based access:
 
-In the process of publishing your service, you will have to install and configure:
-[ETCD database](https://etcd.io/) and security certificates (more details in the instructions).
+1. Purchase from any domain provider
+2. Add an A record pointing to your VPS IP address
+3. Wait for DNS propagation before generating SSL certificates
 
-### 8. Daemon up and running on Virtual Machine
+### 7. ETCD Setup
 
-In the process of publishing your service, you will have to install and configure:
-Latest version of [Daemon](https://github.com/singnet/snet-daemon) for your service. It must also be installed and configured.
+For payment channel management:
 
-Note! Your ETCD, Daemon and services can be on different machines or on one - on your preference.
-To make sure everything works and test your service, you can go through the exact same process in Sepolia testnet on test publisher portal: https://testnet.publisher.singularitynet.io
+- **Embedded ETCD** (recommended): Runs automatically with daemon, no additional setup required
+- **Standalone ETCD**: For production deployments, follow the [ETCD Setup Guide](/docs/products/DecentralizedAIPlatform/ETCD/)
 
-And if ready for publish your service use: https://publisher.singularitynet.io/
+### 8. SSL Certificates
 
+Generate SSL certificates after your domain is linked to your server:
 
+```sh
+sudo apt install certbot
+sudo certbot certonly --standalone -d your-domain.com
+```
 
+### 9. Daemon Installation
 
+Deploy the latest [Daemon](https://github.com/singnet/snet-daemon) version. It handles payment processing, request routing, and service availability.
 
-## Step 1: Register
+## Infrastructure Options
 
-Register an account to create and publish an organization and services: https://publisher.singularitynet.io/
+You have flexibility in your deployment architecture:
 
-You will need a [metamask](https://metamask.io/) wallet and some ETH for transactions (about 0.01 ETH) to publish the organization and publish the service 
+- **Single Machine** - ETCD, Daemon, and AI service on one server
+- **Distributed** - Components on separate machines for scalability
+- **Cloud Native** - Containerized deployment on cloud platforms
 
-## Step 2: Setting up the environment
+## Testing Environment
 
-Write proto standard interfaces for your service. Configure the ETCD and run the configured Daemon.
+Before mainnet deployment, test your service on:
+- **Sepolia Testnet** - [https://testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io)
+- Free test ETH and ASI available
+- Identical workflow to mainnet
 
-## Step 3: Testing
+## Publishing Workflow
 
+### Step 1: Registration
+Create your account and connect your wallet:
+- Publisher Portal: [https://publisher.singularitynet.io/](https://publisher.singularitynet.io/)
+- MetaMask wallet required
+- Small ETH balance for gas fees
 
-To make sure everything works and test your service, you can go through the exact same process on Sepolia testnet.
+### Step 2: Environment Setup
+Configure your service infrastructure:
+- Write proto interface definitions
+- Install and configure ETCD
+- Deploy and configure Daemon
+- Verify connectivity
 
+### Step 3: Testing
+Validate your setup on testnet:
+- Complete workflow on Sepolia network
+- Test service calls
+- Verify payment processing
 
-## Step 4: Publish
+### Step 4: Publishing
+Deploy to mainnet:
+- Collect all configuration data
+- Complete publishing process on platform
+- Verify service availability
 
-After setting up the environment and connecting the service to the daemon, you will need to collect all the data and go through the update process on the [platform](https://publisher.singularitynet.io/).
+## Alternative Publishing Methods
 
-An alternative publishing option is to publish via the CLI / TUI.
+Besides Publisher Portal, you can also use:
+- **CLI** - Command-line interface for automation
+- **TUI** - Terminal user interface for interactive setup
 
+Choose the method that best fits your workflow and technical requirements.
+
+## Support Resources
+
+Need help? We're here to assist:
+- **Email**: onboarding-support@singularitynet.io
+- **Documentation**: Browse our comprehensive guides
+- **Community**: Join our developer discussions
+
+Ready to publish? Start with the [Publisher Portal Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)!

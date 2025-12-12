@@ -1,5 +1,68 @@
 # Guide to Publishing an Organization and Service via TUI
 
+## Why Choose TUI?
+
+The Text User Interface (TUI) provides a **terminal-based menu system** that guides you through the publishing process step by step. This method strikes a balance between the simplicity of a GUI and the power of command-line tools.
+
+### Method Comparison
+
+| Aspect | TUI | Publisher Portal | CLI |
+|--------|-----|-----------------|-----|
+| **Interface** | Terminal menus | Web browser GUI | Command line |
+| **Marketplace UI Demo** | ❌ No | ✅ Yes (optional) | ❌ No |
+| **Learning Curve** | Moderate | Easy | Steep |
+| **Remote Access** | ✅ SSH-friendly | ❌ Requires browser | ✅ SSH-friendly |
+| **Navigation** | ✅ Menu-driven | ✅ Point-and-click | ⚠️ Command memory |
+
+### When to Use TUI
+
+**Choose this method if:**
+- You prefer terminal environments but want guided assistance
+- You're working on remote servers without GUI access
+- You need to manage services over SSH connections
+- You don't want to memorize CLI commands
+- You like the efficiency of keyboard navigation
+- You want a middle ground between GUI and CLI
+
+### Limitations to Consider
+
+- **No marketplace UI demo** - Services are only accessible via CLI/SDK
+- **Terminal dependency** - Requires terminal emulator
+- **Less flexible than CLI** - Cannot be easily scripted
+- **No automation support** - Manual interaction required
+
+### Service Accessibility After Publishing
+
+Services published via TUI are accessible through:
+- **CLI** - Developers can call via snet-cli
+- **SDK** - Integration into applications (Python, JavaScript, Java)
+- **Marketplace Web UI** - No demo interface available
+
+> **Important:** Like CLI, services published via TUI cannot have marketplace UI demos. Users must use programmatic methods to interact with your service.
+
+### Perfect Use Cases
+
+TUI excels in these scenarios:
+- **Server administration** - Managing services on headless servers
+- **Remote deployment** - Publishing services over SSH
+- **Terminal preference** - When you prefer keyboard over mouse
+- **Learning phase** - Transitioning from GUI to CLI
+- **Cross-platform** - Works consistently across Windows, Linux, macOS
+
+### Interactive Experience
+
+TUI offers unique advantages:
+- **No command memorization** - Navigate with arrow keys
+- **Visual feedback** - See options and current selections
+- **Error prevention** - Invalid options are not selectable
+- **Consistent workflow** - Same menu structure every time
+
+### Alternative Methods
+
+Not sure if TUI is right for you? Check the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/) for a detailed comparison of all three methods:
+- **[Publisher Portal](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)** - Web GUI with marketplace demo capability
+- **[CLI](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaCLI/)** - Direct commands for automation and scripting
+
 ## Step 1: Install
 
 Start by cloning the Github repo with the following command
