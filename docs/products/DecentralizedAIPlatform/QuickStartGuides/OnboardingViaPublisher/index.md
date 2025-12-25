@@ -4,6 +4,13 @@
 
 The Publisher Portal is a **web-based platform** that provides a graphical interface for publishing AI services to the SingularityNET marketplace. This method is ideal when you want maximum visibility and ease of use.
 
+::: tip Platform URLs
+| Environment | Publisher Portal | Marketplace |
+|-------------|-----------------|-------------|
+| **Mainnet** | [publisher.singularitynet.io](https://publisher.singularitynet.io) | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io) | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
+
 ---
 
 ### Method Comparison
@@ -369,6 +376,12 @@ Complete your AI service definition:
 
 Your AI service is now successfully published.
 
+::: tip View Your Published Service
+After publishing, view your service on the marketplace:
+- **Mainnet:** [marketplace.singularitynet.io](https://marketplace.singularitynet.io)
+- **Testnet:** [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io)
+:::
+
 ## Set Up and Launch the Daemon
 
 > **Note:** This section is for **self-hosted daemon deployment**. If you used [Hosting-as-a-Service (HaaS)](/docs/products/DecentralizedAIPlatform/HaaS/) during Step 4, your daemon is already deployed and you can skip this entire section.
@@ -633,3 +646,15 @@ Successful output looks like:
 ---
 
 ### ✨ **Your daemon is now successfully installed and running!**
+
+## Next Steps
+
+::: tip Verify Your Service
+Check that your service is live on the marketplace:
+
+| Network | Marketplace URL |
+|---------|----------------|
+| **Mainnet** | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+
+:::

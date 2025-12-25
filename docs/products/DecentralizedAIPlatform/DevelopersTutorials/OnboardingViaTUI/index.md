@@ -1,5 +1,12 @@
 # Guide to Publishing an Organization and Service via TUI
 
+::: tip Platform URLs
+| Environment | Publisher Portal | Marketplace |
+|-------------|-----------------|-------------|
+| **Mainnet** | [publisher.singularitynet.io](https://publisher.singularitynet.io) | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io) | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
+
 ## Why Choose TUI?
 
 The Text User Interface (TUI) provides a **terminal-based menu system** that guides you through the publishing process step by step. This method strikes a balance between the simplicity of a GUI and the power of command-line tools.

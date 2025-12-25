@@ -2,6 +2,10 @@
 
 This guide is designed for AI providers who want to publish their AI services on our marketplace.
 
+> **Marketplace Links:**
+> - **Mainnet:** [marketplace.singularitynet.io](https://marketplace.singularitynet.io)
+> - **Testnet:** [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io)
+
 ## Platform Architecture Overview
 
 Before diving into the setup process, it is helpful to understand how the key components work together.
@@ -190,6 +194,13 @@ Before starting with any onboarding method, ensure you have:
    - Server with open ports for external access
    - SSL certificates (required for daemon)
 5. **Domain** (optional): Custom domain name for service access
+
+> **Important:** We recommend testing your service on **Testnet** first before deploying to Mainnet.
+> 
+> | Environment | Marketplace | Publisher Portal |
+> |-------------|-------------|------------------|
+> | **Testnet** | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) | [testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io) |
+> | **Mainnet** | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) | [publisher.singularitynet.io](https://publisher.singularitynet.io) |
 
 ## Service Type Selection
 
@@ -592,6 +603,13 @@ For each reference to the embedded ETCD configuration in the daemon, do not dele
 ## Switching Between Testnet and Mainnet
 
 When moving from Sepolia testnet to Ethereum mainnet (or vice versa), you need to update specific parameters in your daemon configuration.
+
+::: tip Marketplace URLs
+| Network | Marketplace URL |
+|---------|----------------|
+| **Mainnet** | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet (Sepolia)** | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
 
 ### Parameters to Change
 
@@ -1008,6 +1026,11 @@ A successful response will include:
 ## Next Steps
 
 Your AI service is now published and running on the SingularityNET platform.
+
+::: tip View Your Service on Marketplace
+- **Mainnet:** [marketplace.singularitynet.io](https://marketplace.singularitynet.io)
+- **Testnet:** [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io)
+:::
 
 **Test Your Service:**
 

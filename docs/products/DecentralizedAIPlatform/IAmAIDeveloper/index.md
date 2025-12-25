@@ -109,6 +109,14 @@ Before you begin, ensure you have:
 ### **Publisher Portal (Recommended)**
 
 Best for developers who want marketplace visibility:
+
+::: tip Platform URLs
+| Environment | Publisher Portal | Marketplace |
+|-------------|-----------------|-------------|
+| **Mainnet** | [publisher.singularitynet.io](https://publisher.singularitynet.io) | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io) | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
+
 - **Visual interface** - User-friendly web-based publishing
 - **Marketplace listing** - Automatic inclusion in AI Marketplace
 - **UI support** - Option to add custom UI for your service

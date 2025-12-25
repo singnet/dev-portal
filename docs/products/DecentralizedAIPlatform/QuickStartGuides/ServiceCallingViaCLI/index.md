@@ -1,5 +1,11 @@
 # Service Calling via CLI
 
+::: tip Marketplace URLs
+| Network | URL |
+|---------|-----|
+| **Mainnet** | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
 
 ## Step 1. Prerequisites
 
@@ -8,7 +14,7 @@ This guide assumes you've got a wallet (check
 guide).  
 
 This guide calls the calculator service (organization_id = `26072b8b6a0e448180f8c0e702ab6d2f`, 
-service_id = `Exampleservice`) on the testnet `sepolia` (chain_id = `11155111`).
+service_id = `Exampleservice`) on the testnet `sepolia` (chain_id = `11155111`). You can find this service on the [Testnet Marketplace](https://testnet.marketplace.singularitynet.io).
 
 ## Step 2. Install CLI
 
