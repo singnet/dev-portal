@@ -177,7 +177,7 @@ Nonce of the channel
 
     
 
-Amount in cogs
+Amount in AFET
 
 `METHOD`
 

@@ -173,15 +173,15 @@ Retrieves the escrow balance for the current account.
 
 ##### returns:
 
-- The escrow balance in cogs. (int)
+- The escrow balance in AFET. (int)
 
 ### `deposit_to_escrow_account`
 
-Deposit the specified amount of ASI (FET) tokens in cogs into the MPE account.
+Deposit the specified amount of ASI (FET) tokens in AFET into the MPE account.
 
 ##### args:
 
-- `amount_in_cogs` (int): The amount of ASI (FET) tokens in cogs to deposit.
+- `amount_in_afet` (int): The amount of ASI (FET) tokens in AFET to deposit.
 
 ##### returns:
 
@@ -189,11 +189,11 @@ Deposit the specified amount of ASI (FET) tokens in cogs into the MPE account.
 
 ### `approve_transfer`
 
-Approves a transfer of a specified amount of ASI (FET) tokens in cogs to the MPE contract.
+Approves a transfer of a specified amount of ASI (FET) tokens in AFET to the MPE contract.
 
 ##### args:
 
-- `amount_in_cogs` (int): The amount of ASI (FET) tokens in cogs to approve for transfer.
+- `amount_in_afet` (int): The amount of ASI (FET) tokens in AFET to approve for transfer.
 
 ##### returns:
 
@@ -205,5 +205,5 @@ Retrieves the allowance of the current account for the MPE contract.
 
 ##### returns:
 
-- The allowance in cogs. (int)
+- The allowance in AFET. (int)
 

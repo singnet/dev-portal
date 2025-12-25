@@ -61,7 +61,7 @@ If Kevin is buying services from Jack, they both need to enter in to a formal ag
 
 3. **Kevin funds the channel.** Kevin suggests Jack to deposit a bare amount (cost of the service) and mentions that the amount can never been withdrawn for a predetermined period of time. This period is configurable.
    
-   Based on how much Jack wants to use a service, Jack deposits the amount in to the channel accordingly, so if the cost is 1 cog, and Jack needs to use it 10 times, he will deposit 10 cogs. Nonce is always zero when you create the channel for the first time.
+   Based on how much Jack wants to use a service, Jack deposits the amount in to the channel accordingly, so if the cost is 1 AFET, and Jack needs to use it 10 times, he will deposit 10 AFET. Nonce is always zero when you create the channel for the first time.
    
    **Note:** Unless and until Jack authorises, Kevin cannot withdraw the money. Kevin and Jack come in to agreement to perform operation Off chain. The daemon manages the off chain state of the channel.
 
@@ -93,7 +93,7 @@ Kevin (Buyer) and Jack (Service provider) enter into a contract for the first ti
 |-----------|-------|-------------|
 | **Channel ID** | 1 | The channel ID created is 1 on Chain |
 | **Nonce** | 0 | Initially the Nonce is 0 |
-| **Full amount** | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs |
+| **Full amount** | 100 AFET | Amount Kevin has put into the channel is 100 AFET |
 | **Authorized Amount** | 0 | The Authorized amount is zero, because no services has been used for the first time |
 | **Signature** | Nil | No signature is required to be sent |
 
@@ -101,29 +101,29 @@ Kevin (Buyer) and Jack (Service provider) enter into a contract for the first ti
 
 ### First Service Call
 
-Kevin makes a call and authorizes for 1 cog to Kevin, (assuming the cost of the service is 1 cog), the status of the channel is now maintained offchain by the storage mechanism used by Daemon:
+Kevin makes a call and authorizes for 1 AFET to Kevin, (assuming the cost of the service is 1 AFET), the status of the channel is now maintained offchain by the storage mechanism used by Daemon:
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | **Channel ID** | 1 | The channel ID 1 is now updated off chain |
 | **Nonce** | 0 | Initially the Nonce is 0 |
-| **Full amount** | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs |
-| **Authorized Amount** | 1 | The Authorized amount is one cog |
-| **Signature** | 1 | Signature is required for one cog |
+| **Full amount** | 100 AFET | Amount Kevin has put into the channel is 100 AFET |
+| **Authorized Amount** | 1 | The Authorized amount is one AFET |
+| **Signature** | 1 | Signature is required for one AFET |
 
 ---
 
 ### Second Service Call
 
-Kevin makes a call and authorizes for 2 cogs to Kevin, now the status changes as follows:
+Kevin makes a call and authorizes for 2 AFET to Kevin, now the status changes as follows:
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | **Channel ID** | 1 | The channel ID 1 is now updated off chain |
 | **Nonce** | 0 | Initially the Nonce is 0 |
-| **Full amount** | 100 Cogs | Amount Kevin has put into the channel is 100 Cogs |
-| **Authorized Amount** | 2 Cogs | The Authorized amount is two |
-| **Signature** | 2 Cogs | Signature is required for two |
+| **Full amount** | 100 AFET | Amount Kevin has put into the channel is 100 AFET |
+| **Authorized Amount** | 2 AFET | The Authorized amount is two |
+| **Signature** | 2 AFET | Signature is required for two |
 
 ---
 
@@ -135,13 +135,13 @@ Jack makes a claim using the signature from Jack, this transaction is considered
 |-----------|-------|-------------|
 | **Channel ID** | 1 | The channel ID created is 1 |
 | **Nonce** | 1 | Initially the Nonce was 0 but now it is 1 |
-| **Full amount** | 98 Cogs | Amount signed by Jack was for two cogs. The full amount in the channel is 98 |
+| **Full amount** | 98 AFET | Amount signed by Jack was for two AFET. The full amount in the channel is 98 |
 | **Authorized Amount** | 0 | The Authorized amount is zero after claim |
 | **Signature** | 0 | No signature is required to be sent |
 
 **Note:** Claims are always on-chain transaction and the Nonce gets incremented when claims are made.
 
-The same process follows for future calls authorizations of cogs.
+The same process follows for future calls authorizations of AFET.
 
 ## Channel Management Functions
 
