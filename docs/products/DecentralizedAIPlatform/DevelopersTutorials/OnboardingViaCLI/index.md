@@ -296,8 +296,8 @@ Where,
 - `SERVICE_DISPLAY_NAME` - Display name of your service. You can choose any name you want.
 - `PAYMENT_GROUP_NAME` - Name of the payment group from organization metadata published in organization setup, step 4
 - `DAEMON_ENDPOINT` - Endpoint which will be used to connect to your service daemon.
-- `FIXED_PRICE` - Price in ASI (FET) for a single call to your service. We will set the price to `10^-8 ASI (FET)` \
-(remember that `10^-8 ASI (FET) = 1 COG`).
+- `FIXED_PRICE` - Price in ASI (FET) for a single call to your service. We will set the price to `10^-18 ASI (FET)` \
+(remember that `10^-18 ASI (FET) = 1 AFET`).
 
 Example: 
 

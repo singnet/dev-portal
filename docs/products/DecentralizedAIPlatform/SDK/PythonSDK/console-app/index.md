@@ -364,7 +364,7 @@ def open_channel():
         if not is_continue:
             return None
 
-    amount = int(input("Enter amount of ASI (FET) tokens in cogs to put into the channel: ").strip())
+    amount = int(input("Enter amount of ASI (FET) tokens in AFET to put into the channel: ").strip())
 
     balance = snet_sdk.account.escrow_balance()
     is_deposit = False

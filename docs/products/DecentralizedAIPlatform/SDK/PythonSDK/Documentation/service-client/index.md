@@ -231,11 +231,11 @@ is the client for the payment channel state service.
 
 ### `open_channel`
 
-Opens a payment channel with the specified amount of ASI (FET) tokens in cogs and expiration time.
+Opens a payment channel with the specified amount of ASI (FET) tokens in AFET and expiration time.
 
 ##### args:
 
-- `amount` (int): The amount of ASI (FET) tokens in cogs to deposit into the channel.
+- `amount` (int): The amount of ASI (FET) tokens in AFET to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
 ##### returns:
@@ -245,11 +245,11 @@ Opens a payment channel with the specified amount of ASI (FET) tokens in cogs an
 ### `deposit_and_open_channel`
 
 Deposits the specified amount of tokens into the MPE smart contract and opens a payment channel 
-with its amount of ASI (FET) tokens in cogs and expiration time.
+with its amount of ASI (FET) tokens in AFET and expiration time.
 
 ##### args:
 
-- `amount` (int): The amount of ASI (FET) tokens in cogs to deposit into the channel.
+- `amount` (int): The amount of ASI (FET) tokens in AFET to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
 ##### returns:
@@ -258,11 +258,11 @@ with its amount of ASI (FET) tokens in cogs and expiration time.
 
 ### `get_price`
 
-Returns the price in cogs of the service group's pricing.
+Returns the price in AFET of the service group's pricing.
 
 ##### returns:
 
-- The price in cogs of the service group's pricing. (int)
+- The price in AFET of the service group's pricing. (int)
 
 ### `generate_signature`
 
