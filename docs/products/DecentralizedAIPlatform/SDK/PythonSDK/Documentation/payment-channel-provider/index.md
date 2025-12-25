@@ -115,13 +115,13 @@ pass it to PaymentChannel instances.
 
 ### `open_channel`
 
-Opens a payment channel with the specified amount of ASI (FET) tokens in cogs (taken from MPE) and expiration time. 
+Opens a payment channel with the specified amount of ASI (FET) tokens in AFET (taken from MPE) and expiration time. 
 And then returns it.
 
 ##### args:
 
 - `account` (Account): The account object used to send the transaction.
-- `amount` (int): The amount of ASI (FET) tokens in cogs to deposit into the channel.
+- `amount` (int): The amount of ASI (FET) tokens in AFET to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 - `payment_address` (str): The address of the payment recipient.
 - `group_id` (str): The ID of the payment group.
@@ -134,13 +134,13 @@ pass it to PaymentChannel instances.
 
 ### `deposit_and_open_channel`
 
-Opens a payment channel with the specified amount of ASI (FET) tokens in cogs (which are previously deposited on MPE) 
+Opens a payment channel with the specified amount of ASI (FET) tokens in AFET (which are previously deposited on MPE) 
 and expiration time. And then returns it.
 
 ##### args:
 
 - `account` (Account): The account object used to send the transaction.
-- `amount` (int): The amount of ASI (FET) tokens in cogs to deposit into the channel.
+- `amount` (int): The amount of ASI (FET) tokens in AFET to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 - `payment_address` (str): The address of the payment recipient.
 - `group_id` (str): The ID of the payment group.

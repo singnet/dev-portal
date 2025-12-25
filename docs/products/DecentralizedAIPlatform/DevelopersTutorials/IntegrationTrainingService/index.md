@@ -4,7 +4,7 @@ This guide will help you maintain training for your service.
 
 The AI developer needs to implement 8 methods for daemon <a href="/assets/files/training.proto" download>training.proto</a>  
 
-Most of the methods are free, but the methods for validation and training are paid, the price for them can be found through validate_model_price & train_model_price. As a service provider, you must implement the logic of calculating the price for these two methods. You can always return 1 cog or make dynamic logic depending on the parameters and dataset.
+Most of the methods are free, but the methods for validation and training are paid, the price for them can be found through validate_model_price & train_model_price. As a service provider, you must implement the logic of calculating the price for these two methods. You can always return 1 AFET or make dynamic logic depending on the parameters and dataset.
 
 AI consumer will call all these methods:
 
@@ -162,11 +162,11 @@ AI consumer will call all these methods:
 
     def validate_model_price(self, request, context):
         print(request.training_data_link)
-        return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
+        return training_pb2.PriceInBaseUnit(price=1)  # 1 AFET
 
     def train_model_price(self, request, context):
         model_id = request.model_id.model_id
-        return training_pb2.PriceInBaseUnit(price=1)  # 1 cog
+        return training_pb2.PriceInBaseUnit(price=1)  # 1 AFET
 
     def train_model(self, request, context):
         model_id = request.model_id.model_id

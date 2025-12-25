@@ -195,7 +195,7 @@ managed by the SDK. But anyway you can use them if you want.
 
 #### Open channel with the specified amount of funds and expiration
 
-`open_channel()`[[1]](#1-this-method-uses-a-call-to-a-paid-smart-contract-function) opens a payment channel with the specified amount of FET tokens in cogs and expiration time. 
+`open_channel()`[[1]](#1-this-method-uses-a-call-to-a-paid-smart-contract-function) opens a payment channel with the specified amount of ASI (FET) tokens in AFET and expiration time. 
 Expiration is payment channel's TTL in blocks. When opening a channel, funds are taken from MPE. So they must be 
 pre-deposited on it. For this, you can use the `deposit_to_escrow_account()`[[1]](#1-this-method-uses-a-call-to-a-paid-smart-contract-function) 
 method.
@@ -206,7 +206,7 @@ service_client.open_channel(amount=123456, expiration=33333)
 ```
 
 You can also use the `deposit_and_open_channel()`[[1]](#1-this-method-uses-a-call-to-a-paid-smart-contract-function) 
-method instead. It does the same as the previous one, but first deposits the specified amount of FET tokens in cogs 
+method instead. It does the same as the previous one, but first deposits the specified amount of ASI (FET) tokens in AFET 
 into an MPE.
 
 ```python
@@ -301,8 +301,8 @@ To find out the price of calling a service function, you need to use the `get_pr
 
 ```python
 price = service_client.get_price()
-print(f"The price in cogs for calling the service {service_client.service_id} is {price}")
-# The price in cogs for calling the service Exampleservice is 1
+print(f"The price in AFET for calling the service {service_client.service_id} is {price}")
+# The price in AFET for calling the service Exampleservice is 1
 ```
 
 #### Get the metadata of the service
@@ -322,7 +322,7 @@ print(*service_metadata.get_all_endpoints_for_group(group_name="default_group"),
 # ('service_type', 'grpc')
 # ('model_ipfs_hash', 'QmeyrQkEyba8dd4rc3jrLd5pEwsxHutfH2RvsSaeSMqTtQ')
 # ('mpe_address', '0x7E0aF8988DF45B824b2E0e0A87c6196897744970')
-# ('groups', [{'free_calls': 0, 'free_call_signer_address': '0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F', 'daemon_addresses': ['0x0709e9b78756b740ab0c64427f43f8305fd6d1a7'], 'pricing': [{'default': True, 'price_model': 'fixed_price', 'price_in_cogs': 1}], 'endpoints': ['http://node1.naint.tech:62400'], 'group_id': '/mb90Qs8VktxGQmU0uRu0bSlGgqeDlYrKrs+WbsOvOQ=', 'group_name': 'default_group'}])
+# ('groups', [{'free_calls': 0, 'free_call_signer_address': '0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F', 'daemon_addresses': ['0x0709e9b78756b740ab0c64427f43f8305fd6d1a7'], 'pricing': [{'default': True, 'price_model': 'fixed_price', 'price_in_afet': 1}], 'endpoints': ['http://node1.naint.tech:62400'], 'group_id': '/mb90Qs8VktxGQmU0uRu0bSlGgqeDlYrKrs+WbsOvOQ=', 'group_name': 'default_group'}])
 # ('service_description', {'url': 'https://ropsten-v2-publisher.singularitynet.io/org', 'short_description': 'Example service', 'description': 'Example service'})
 # ('media', [{'order': 1, 'url': 'https://ropsten-marketplace-service-assets.s3.us-east-1.amazonaws.com/26072b8b6a0e448180f8c0e702ab6d2f/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg', 'file_type': 'image', 'asset_type': 'hero_image', 'alt_text': ''}])
 # ('contributors', [{'name': 'test', 'email_id': ''}])

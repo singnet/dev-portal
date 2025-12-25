@@ -42,5 +42,5 @@ Returns the price for calling a service using the provided client service.
 
 ##### returns:
 
-- Price of calling service in cogs. (int)
+- Price of calling service in AFET. (int)
 

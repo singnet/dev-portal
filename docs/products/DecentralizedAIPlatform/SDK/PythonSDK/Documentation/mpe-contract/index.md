@@ -51,7 +51,7 @@ If no contract address is provided, it uses the default MultiPartyEscrow contrac
 
 ### `balance`
 
-Returns the balance of the given address in the MPE contract in cogs.
+Returns the balance of the given address in the MPE contract in AFET.
 
 ##### args:
 
@@ -59,16 +59,16 @@ Returns the balance of the given address in the MPE contract in cogs.
 
 ##### returns:
 
-- The balance in cogs. (int)
+- The balance in AFET. (int)
 
 ### `deposit`
 
-Deposit the specified amount of ASI (FET) tokens in cogs into the MultiPartyEscrow contract.
+Deposit the specified amount of ASI (FET) tokens in AFET into the MultiPartyEscrow contract.
 
 ##### args:
 
 - `account` (Account): The account instance used to send the transaction.
-- `amount_in_cogs` (int): The amount of ASI (FET) tokens in cogs to deposit.
+- `amount_in_afet` (int): The amount of ASI (FET) tokens in AFET to deposit.
 
 
 ##### returns:
@@ -77,14 +77,14 @@ Deposit the specified amount of ASI (FET) tokens in cogs into the MultiPartyEscr
 
 ### `open_channel`
 
-Opens a payment channel with the specified amount of ASI (FET) tokens in cogs (taken from MPE) and expiration time.
+Opens a payment channel with the specified amount of ASI (FET) tokens in AFET (taken from MPE) and expiration time.
 
 ##### args:
 
 - `account` (Account): The account object used to send the transaction.
 - `payment_address` (str): The address of the payment recipient.
 - `group_id` (str): The ID of the payment group.
-- `amount` (int): The amount of ASI (FET) tokens in cogs to deposit into the channel.
+- `amount` (int): The amount of ASI (FET) tokens in AFET to deposit into the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
 ##### returns:
@@ -93,7 +93,7 @@ Opens a payment channel with the specified amount of ASI (FET) tokens in cogs (t
 
 ### `deposit_and_open_channel`
 
-Opens a payment channel with the specified amount of ASI (FET) tokens in cogs (which are previously deposited on MPE) 
+Opens a payment channel with the specified amount of ASI (FET) tokens in AFET (which are previously deposited on MPE) 
 and expiration time. The account must have sufficient allowance to perform the deposit, otherwise the account 
 first approves the transfer.
 
@@ -102,7 +102,7 @@ first approves the transfer.
 - `account` (Account): The account object used to send the transaction.
 - `payment_address` (str): The address of the payment recipient.
 - `group_id` (str): The ID of the payment group.
-- `amount` (int): The amount of ASI (FET) tokens in cogs first for deposit on MPE, then for deposit on the channel.
+- `amount` (int): The amount of ASI (FET) tokens in AFET first for deposit on MPE, then for deposit on the channel.
 - `expiration` (int): The expiration time of the payment channel in blocks.
 
 ##### returns:

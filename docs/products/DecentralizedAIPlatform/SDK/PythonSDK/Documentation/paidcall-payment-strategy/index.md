@@ -88,7 +88,7 @@ Checks whether the payment channel has the required amount of funds.
 ##### args:
 
 - `channel` (PaymentChannel): The payment channel to check.
-- `amount` (int): The amount of funds in cogs to check.
+- `amount` (int): The amount of funds in AFET to check.
 
 ##### returns:
 

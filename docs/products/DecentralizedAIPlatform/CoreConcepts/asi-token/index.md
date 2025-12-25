@@ -23,7 +23,7 @@ We have an automated faucet for distributing Sepolia Testnet ASI Tokens [here](h
 
 Symbol: ASI
 
-Decimals: 8
+Decimals: 18
 
 Sepolia Token Address: 
 [0x3A54192862D1c52C8175d4912f1f778d1E3C2449](https://sepolia.etherscan.io/address/0x3A54192862D1c52C8175d4912f1f778d1E3C2449)

@@ -873,7 +873,7 @@ Where:
 - `SERVICE_DISPLAY_NAME`: User-friendly name for your service (can be any name)
 - `PAYMENT_GROUP_NAME`: The group name you defined earlier during [organization setup](#step-4-add-recipient-and-group-details)
 - `DAEMON_ENDPOINT`: Public endpoint (domain or IP address with port) of your deployed daemon
-- `FIXED_PRICE`: Price per service call in ASI (FET) (for example, `0.00000001` ASI (FET) = 1 COG)
+- `FIXED_PRICE`: Price per service call in ASI (FET) (for example, `0.000000000000000001` ASI (FET) = 1 AFET)
 - `SERVICE_TYPE`: Choose the service type you defined at the very beginning of this guide (`grpc` or `http`)
 
 **Example:**

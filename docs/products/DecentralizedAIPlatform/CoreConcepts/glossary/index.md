@@ -119,9 +119,9 @@ ASI (FET) is the native utility token of the SingularityNET platform:
 
 ---
 
-### COGS
+### AFET
 
-COGS are the smallest unit of measurement for transactions on the platform, similar to how wei relates to Ether. Service pricing and payments are calculated in COGS.
+AFET is the smallest unit of measurement for ASI (FET) token transactions on the platform, similar to how wei relates to Ether (1 FET = 10^18 AFET). Service pricing and payments are calculated in AFET.
 
 ---
 
