@@ -76,9 +76,17 @@ You have flexibility in your deployment architecture:
 
 ## Testing Environment
 
-Before mainnet deployment, test your service on:
-- **Sepolia Testnet** - [https://testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io)
-- Free test ETH and ASI available
+Before mainnet deployment, test your service on Sepolia Testnet:
+
+::: tip Testnet Resources
+| Resource | URL |
+|----------|-----|
+| **Testnet Publisher** | [testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io) |
+| **Testnet Marketplace** | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+| **Faucet (Free Tokens)** | [faucet.singularitynet.io](https://faucet.singularitynet.io) |
+:::
+
+- Free test ETH and ASI available via faucet
 - Identical workflow to mainnet
 
 ## Publishing Workflow
@@ -122,5 +130,12 @@ Need help? We're here to assist:
 - **Email**: onboarding-support@singularitynet.io
 - **Documentation**: Browse our comprehensive guides
 - **Community**: Join our developer discussions
+
+## Quick Links
+
+| Environment | Publisher Portal | Marketplace |
+|-------------|-----------------|-------------|
+| **Mainnet** | [publisher.singularitynet.io](https://publisher.singularitynet.io) | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io) | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
 
 Ready to publish? Start with the [Publisher Portal Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/OnboardingViaPublisher/)!

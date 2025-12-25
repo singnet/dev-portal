@@ -25,7 +25,16 @@ The `ASI (FET)` tokens are used as payment for the use of services on the AI mar
 
 ## 4. Account in AI Marketplace
  
-If you want to use AI marketplace and call services from the UI interface, you will need an account on our AI Platform. This account can also be used in our entire ecosystem. You can create account [here](https://marketplace.singularitynet.io/signup).
+If you want to use AI marketplace and call services from the UI interface, you will need an account on our AI Platform. This account can also be used in our entire ecosystem.
+
+::: tip Marketplace URLs
+| Network | URL |
+|---------|-----|
+| **Mainnet** | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
+
+You can create account [here](https://marketplace.singularitynet.io/signup).
 
 ## 5. Setup Environment
 

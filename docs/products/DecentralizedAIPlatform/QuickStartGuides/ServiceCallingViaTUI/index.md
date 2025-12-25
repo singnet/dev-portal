@@ -1,5 +1,12 @@
 # Service Calling via TUI
 
+::: tip Marketplace URLs
+| Network | URL |
+|---------|-----|
+| **Mainnet** | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
+
 </br>
 <ImageViewer src="/assets/images/products/AIMarketplace/TUI/ClientPageTUI.webp" alt="Client Page"/>
 

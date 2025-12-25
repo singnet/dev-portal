@@ -1,5 +1,12 @@
 # Guide to Publishing an Organization and Service via CLI
 
+::: tip Platform URLs
+| Environment | Publisher Portal | Marketplace |
+|-------------|-----------------|-------------|
+| **Mainnet** | [publisher.singularitynet.io](https://publisher.singularitynet.io) | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io) | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
+
 ## Why Choose CLI?
 
 The Command Line Interface (CLI) provides **direct blockchain interaction** through terminal commands. This method is ideal for developers who need automation, scripting capabilities, and full control over the publishing process.

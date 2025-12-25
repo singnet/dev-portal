@@ -4,6 +4,13 @@
 
 Developers can charge for the usage of their services using the native **ASI (FET)** token.
 
+::: tip Quick Access
+| Environment | Publisher Portal | Marketplace |
+|-------------|-----------------|-------------|
+| **Mainnet** | [publisher.singularitynet.io](https://publisher.singularitynet.io) | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.publisher.singularitynet.io](https://testnet.publisher.singularitynet.io) | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
+
 Services can span the entire gamut of offerings in artificial intelligence and machine learning. Services can provide inference or model training across myriad domains such as image/video, speech, text, time-series, bio-AI, network analysis, etc. The services can be as simple as wrapping a well-known algorithm such as A\* path planning, a complete end-to-end solution for an industry problem, or a standalone AI application. Developers can also deploy autonomous AI agents that interoperate with other services on the network.
 
 The SingularityNET platform contains a number of critical components that work together to enable a decentralized network of AI services to flourish. The core components are designed to allow for a functional, scalable, and extensible system.
@@ -179,6 +186,8 @@ For complete steps (prerequisites, daemon setup, ETCD, keys for metering and fre
 Service Consumers can access AI services through:
 
 * **AI Marketplace UI** - Web interface for direct interaction
+  - Mainnet: [marketplace.singularitynet.io](https://marketplace.singularitynet.io)
+  - Testnet: [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io)
 * **SDKs** - Integration into applications (Python, JavaScript, Java)
 * **CLI/TUI** - Command-line access for testing and automation
 

@@ -39,7 +39,14 @@ From simple to complex:
 
 The easiest way to start using AI services:
 
-- **Browse Services** - Explore available AI services at [marketplace.singularitynet.io](https://marketplace.singularitynet.io/)
+::: tip Marketplace URLs
+| Network | URL |
+|---------|-----|
+| **Mainnet** | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) |
+| **Testnet** | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+:::
+
+- **Browse Services** - Explore available AI services
 - **Try Before You Buy** - Most services offer free trial calls
 - **User-Friendly Interface** - No coding required for basic usage
 - **Integrated Payments** - PayPal and crypto wallet support
@@ -239,7 +246,10 @@ Each service provides:
 
 ### **Useful Links**
 
-- [AI Marketplace](https://marketplace.singularitynet.io/)
+| Resource | Mainnet | Testnet |
+|----------|---------|--------|
+| **AI Marketplace** | [marketplace.singularitynet.io](https://marketplace.singularitynet.io) | [testnet.marketplace.singularitynet.io](https://testnet.marketplace.singularitynet.io) |
+
 - [Developer Portal](https://dev.singularitynet.io/)
 - [GitHub Repository](https://github.com/singnet)
 - [Community Discord](https://discord.gg/snet)
