@@ -71,8 +71,8 @@ Calculator service is deployed on the sepolia network. To create a client of thi
 `service_id` and `group_name` to `create_service_client` method:
 
 ```python
-calc_client = snet_sdk.create_service_client(org_id="26072b8b6a0e448180f8c0e702ab6d2f",
-                                             service_id="Exampleservice", group_name="default_group")
+calc_client = snet_sdk.create_service_client(org_id="samples",
+                                             service_id="calculator", group_name="default_group")
 ```
 
 ### User input parsing

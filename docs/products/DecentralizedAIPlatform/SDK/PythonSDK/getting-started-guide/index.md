@@ -77,27 +77,27 @@ orgs_list = snet_sdk.get_organization_list()
 print(*orgs_list, sep="\n")
 # ...
 # GoogleOrg3
-# 26072b8b6a0e448180f8c0e702ab6d2f
+# samples
 # 43416d873fcb454589900189474b2eaa
 # ...
 ```
 
 ```python
-org_id = "26072b8b6a0e448180f8c0e702ab6d2f"
+org_id = "samples"
 services_list = snet_sdk.get_services_list(org_id=org_id)
 print(*services_list, sep="\n")
-# Exampleservice
+# calculator
 ```
 
 ### Calling the service
 
 Now, the instance of the sdk can be used to create the service client instances, using `create_service_client()` method.  
-Continuing from the previous code here is an example using `Exampleservice` from the `26072b8b6a0e448180f8c0e702ab6d2f` 
+Continuing from the previous code here is an example using `calculator` from the `samples` 
 organization:
 
 ```python
-service_client = snet_sdk.create_service_client(org_id="26072b8b6a0e448180f8c0e702ab6d2f", 
-                                                service_id="Exampleservice",
+service_client = snet_sdk.create_service_client(org_id="samples", 
+                                                service_id="calculator",
                                                 group_name="default_group")
 ```
 
@@ -126,8 +126,8 @@ print(service_client.get_services_and_messages_info_as_pretty_string())
 
 To invoke the service's methods, you can use the `call_rpc()` method. This method requires the names of the method and 
 data object, along with the data itself, to be passed into it. 
-To continue with our example, here’s a call to the *mul* method of the *Exampleservice* from the 
-*26072b8b6a0e448180f8c0e702ab6d2f* organization:
+To continue with our example, here’s a call to the *mul* method of the *calculator* from the 
+*samples* organization:
 
 ```python
 result = service_client.call_rpc("mul", "Numbers", a=20, b=3)
@@ -174,8 +174,8 @@ If you want to use the free calls you will need to choose `PaymentStrategyType.F
 Creating a service client with free calls included would look like this:
 
 ```python
-service_client = snet_sdk.create_service_client(org_id="26072b8b6a0e448180f8c0e702ab6d2f", 
-                                                service_id="Exampleservice",
+service_client = snet_sdk.create_service_client(org_id="samples", 
+                                                service_id="calculator",
                                                 payment_strategy_type = PaymentStrategyType.FREE_CALL)
 ```
 
@@ -185,8 +185,8 @@ If you want to use regular paid calls you will need to choose `PaymentStrategyTy
 Creating a service client with paid calls would look like this:
 
 ```python
-service_client = snet_sdk.create_service_client(org_id="26072b8b6a0e448180f8c0e702ab6d2f", 
-                                                service_id="Exampleservice",
+service_client = snet_sdk.create_service_client(org_id="samples", 
+                                                service_id="calculator",
                                                 payment_strategy_type = PaymentStrategyType.PAID_CALL)
 ```
 
@@ -242,8 +242,8 @@ prepaid calls would look like this:
 
 ```python
 service_client = snet_sdk.create_service_client(
-    org_id="26072b8b6a0e448180f8c0e702ab6d2f",
-    service_id="Exampleservice",
+    org_id="samples",
+    service_id="calculator",
     group_name="default_group",
     payment_strategy_type=PaymentStrategyType.PREPAID_CALL,
     concurrent_calls=5  # Number of prepaid calls to allocate
@@ -302,7 +302,7 @@ To find out the price of calling a service function, you need to use the `get_pr
 ```python
 price = service_client.get_price()
 print(f"The price in AFET for calling the service {service_client.service_id} is {price}")
-# The price in AFET for calling the service Exampleservice is 1
+# The price in AFET for calling the service calculator is 1
 ```
 
 #### Get the metadata of the service
@@ -311,7 +311,7 @@ The metadata of services is stored in IPFS. To view it, you need to call the `ge
 the organization id and the service id to it.
 
 ```python
-service_metadata = snet_sdk.get_service_metadata(org_id="26072b8b6a0e448180f8c0e702ab6d2f", service_id="Exampleservice")
+service_metadata = snet_sdk.get_service_metadata(org_id="samples", service_id="calculator")
 print(*service_metadata.m.items(), sep="\n", end="\n\n")
 print(*service_metadata.get_tags(), sep=",", end="\n\n")
 print(*service_metadata.get_all_endpoints_for_group(group_name="default_group"), sep=",", end="\n\n")
@@ -324,11 +324,11 @@ print(*service_metadata.get_all_endpoints_for_group(group_name="default_group"),
 # ('mpe_address', '0x7E0aF8988DF45B824b2E0e0A87c6196897744970')
 # ('groups', [{'free_calls': 0, 'free_call_signer_address': '0x7DF35C98f41F3Af0df1dc4c7F7D4C19a71Dd059F', 'daemon_addresses': ['0x0709e9b78756b740ab0c64427f43f8305fd6d1a7'], 'pricing': [{'default': True, 'price_model': 'fixed_price', 'price_in_afet': 1}], 'endpoints': ['http://node1.naint.tech:62400'], 'group_id': '/mb90Qs8VktxGQmU0uRu0bSlGgqeDlYrKrs+WbsOvOQ=', 'group_name': 'default_group'}])
 # ('service_description', {'url': 'https://ropsten-v2-publisher.singularitynet.io/org', 'short_description': 'Example service', 'description': 'Example service'})
-# ('media', [{'order': 1, 'url': 'https://ropsten-marketplace-service-assets.s3.us-east-1.amazonaws.com/26072b8b6a0e448180f8c0e702ab6d2f/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg', 'file_type': 'image', 'asset_type': 'hero_image', 'alt_text': ''}])
+# ('media', [{'order': 1, 'url': 'https://ropsten-marketplace-service-assets.s3.us-east-1.amazonaws.com/samples/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg', 'file_type': 'image', 'asset_type': 'hero_image', 'alt_text': ''}])
 # ('contributors', [{'name': 'test', 'email_id': ''}])
-# ('tags', ['exampleservice'])
+# ('tags', ['calculator'])
 # 
-# exampleservice
+# calculator
 # 
 # http://node1.naint.tech:62400
 ```

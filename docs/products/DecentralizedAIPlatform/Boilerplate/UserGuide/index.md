@@ -79,7 +79,7 @@ protoc-gen-grpc -I="." --grpc_out=grpc_js:. <file_name>.proto
 
 For more details please check the [Generating stubs for JS tutorial](/docs/products/DecentralizedAIPlatform/SDK/JavascriptSDKs/generating-stubs/)
 
-After that you need to place them in the `src/ExampleService/assets` folder to use it in your service component.
+After that you need to place them in the `src/calculator/assets` folder to use it in your service component.
 
 ## Step 4. Interact with your service
 
@@ -92,9 +92,9 @@ To configure the project to work with your service, you need to specify the `org
    orgId: "your-organization-id",
    serviceId: "your-service-id"
 
-### Adapt the ExampleService Component
+### Adapt the calculator Component
 
-The `ExampleService/TestExampleService` component provides a user interface for interacting with your service on the Mainnet/Sepolia network.
+The `calculator/Testcalculator` component provides a user interface for interacting with your service on the Mainnet/Sepolia network.
 
 #### Make call to your service
 

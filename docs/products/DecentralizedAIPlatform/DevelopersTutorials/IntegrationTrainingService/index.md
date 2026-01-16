@@ -73,7 +73,7 @@ AI consumer will call all these methods:
     }
 
 
-    service ExampleService{
+    service calculator{
     rpc stt(sttInput) returns (sttResp) {
       # can specify requirements for dataset
       option (training.dataset_description) = "Additional requirements";
@@ -118,11 +118,11 @@ AI consumer will call all these methods:
     import training_pb2_grpc
     import training_pb2
     from training_pb2_grpc import ModelServicer
-    from service_pb2_grpc import ExampleService
+    from service_pb2_grpc import calculator
     
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     training_pb2_grpc.add_ModelServicer_to_server(ModelServicer(), server)
-    service_pb2_grpc.add_ExampleServiceServicer_to_server(ExampleService(), server)
+    service_pb2_grpc.add_calculatorServicer_to_server(calculator(), server)
     
     # you should use this endpoint in config daemon: model_maintenance_endpoint
     server.add_insecure_port("[::]:5002")
@@ -131,7 +131,7 @@ AI consumer will call all these methods:
 
 
     # Your service methods
-    class ExampleService(service_pb2_grpc.ExampleServiceServicer):
+    class calculator(service_pb2_grpc.calculatorServicer):
         def basic_stt(self, request, context):
             # no model_id in request
             speech_data = request.speech

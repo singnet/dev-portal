@@ -104,8 +104,8 @@ Calculator service is deployed on the sepolia network. To create a client of thi
 ```js
 const sdk = await initSdk();
 const calculatorClient = sdk.createServiceСlient(
-    '26072b8b6a0e448180f8c0e702ab6d2f',
-    'Exampleservice'
+    'samples',
+    'calculator'
 );
 ```
 
@@ -123,7 +123,7 @@ const ACTIONS = [
     { value: 'div', title: ':' },
 ];
 
-const ExampleService = () => {
+const calculator = () => {
     const [firstValue, setFirstValue] = useState('');
     const [secondValue, setSecondValue] = useState('');
     const [selectedAction, setSelectedAction] = useState(ACTIONS[0]);
@@ -193,7 +193,7 @@ import { initSDK } from "./sdkConfig";
 <...>
 const SUCCESS_CODE = 0;
 
-const ExampleService = () => {
+const calculator = () => {
     <...>
     const getServiceClient = async () => {
         const sdk = await initSDK();

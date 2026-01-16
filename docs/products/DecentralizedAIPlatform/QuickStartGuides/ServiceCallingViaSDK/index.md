@@ -17,8 +17,8 @@ This guide assumes you've got a wallet (check
 [Getting Ready to Call AI CheckUp](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/) 
 guide).  
 
-This guide calls the calculator service (organization_id = `26072b8b6a0e448180f8c0e702ab6d2f`, 
-service_id = `Exampleservice`) on the testnet `sepolia` (chain_id = `11155111`). You can find this service on the [Testnet Marketplace](https://testnet.marketplace.singularitynet.io).
+This guide calls the calculator service (organization_id = `samples`, 
+service_id = `calculator`) on the testnet `sepolia` (chain_id = `11155111`). You can find this service on the [Testnet Marketplace](https://testnet.marketplace.singularitynet.io).
 
 ### Versions
 
@@ -137,8 +137,8 @@ config = sdk.config.Config(private_key='YOUR_PRIVATE_KEY',
 
 snet_sdk = sdk.SnetSDK(config)
 
-org_id = "26072b8b6a0e448180f8c0e702ab6d2f" # Organization ID
-service_id = "Exampleservice" # Service ID
+org_id = "samples" # Organization ID
+service_id = "calculator" # Service ID
 group_name = "default_group"
 service_client = snet_sdk.create_service_client(org_id=org_id, service_id=service_id, group_name=group_name)
 
@@ -171,8 +171,8 @@ const initSDK = async () => {
 const getServiceClient = async () => {
     const sdk = await initSdk();
     const calculatorClient = await  sdk.createServiceСlient(
-        '26072b8b6a0e448180f8c0e702ab6d2f', // Organization ID
-        'Exampleservice' // Service ID
+        'samples', // Organization ID
+        'calculator' // Service ID
     );
 }
 

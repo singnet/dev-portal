@@ -516,7 +516,7 @@ be other entities inside for complex metadata fields. Below is an example of ser
     "media": [
         {
             "order": 1,
-            "url": "https://ropsten-marketplace-service-assets.s3.us-east-1.amazonaws.com/26072b8b6a0e448180f8c0e702ab6d2f/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg",
+            "url": "https://ropsten-marketplace-service-assets.s3.us-east-1.amazonaws.com/samples/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg",
             "file_type": "image",
             "asset_type": "hero_image",
             "alt_text": ""
@@ -529,7 +529,7 @@ be other entities inside for complex metadata fields. Below is an example of ser
         }
     ],
     "tags": [
-        "exampleservice"
+        "calculator"
     ]
 }
 ```
@@ -555,7 +555,7 @@ be other entities inside for complex metadata fields. Below is an example of org
 ```json
 {
     "org_name": "Snet_test",
-    "org_id": "26072b8b6a0e448180f8c0e702ab6d2f",
+    "org_id": "samples",
     "org_type": "individual",
     "description": {
         "description": "Snet_test",

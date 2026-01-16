@@ -134,7 +134,7 @@ the following code under `plugins` section of the Maven `pom.xml`.
         <orgId>example-org</orgId>
         <serviceId>example-service</serviceId>
         <outputDir>${project.build.directory}/proto</outputDir>
-        <javaPackage>io.singularitynet.service.exampleservice</javaPackage>
+        <javaPackage>io.singularitynet.service.calculator</javaPackage>
         <ethereumJsonRpcEndpoint>http://localhost:8545</ethereumJsonRpcEndpoint>
         <!-- for the custom environment only -->
         <ipfsRpcEndpoint>http://localhost:5002</ipfsRpcEndpoint>
@@ -250,10 +250,10 @@ unpack it into the `proto` directory. Add target directory into the Protobuf
 source set.
 
 ```kotlin
-task getExampleServiceApi(type: io.singularitynet.sdk.gradle.GetSingularityNetServiceApi) {
+task getcalculatorApi(type: io.singularitynet.sdk.gradle.GetSingularityNetServiceApi) {
     orgId = 'example-org'
     serviceId = 'example-service'
-    javaPackage = 'io.singularitynet.service.exampleservice'
+    javaPackage = 'io.singularitynet.service.calculator'
     outputDir = file("$buildDir/proto")
     ethereumJsonRpcEndpoint = new URL('http://localhost:8545')
     // for the custom environment only
@@ -282,7 +282,7 @@ protobuf {
     }
     generateProtoTasks {
         all().each { task ->
-            task.dependsOn(getExampleServiceApi)
+            task.dependsOn(getcalculatorApi)
             task.builtins { remove java }
             task.plugins {
                 grpc {}
