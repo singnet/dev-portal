@@ -355,7 +355,7 @@ import OutlinedTextArea from "@commonComponents/OutlinedTextArea";
 import { Calculator } from "./example_pb_service";
 import "./style.css"
 
-const ExampleService = ({ serviceClient, isComplete }) => {
+const calculator = ({ serviceClient, isComplete }) => {
     const [output, setOutput] = useState(null);
 
     const ServiceInput = () => {
@@ -472,5 +472,5 @@ const ExampleService = ({ serviceClient, isComplete }) => {
     );
 };
 
-export default ExampleService;
+export default calculator;
 ```

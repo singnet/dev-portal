@@ -49,9 +49,9 @@ Available commands:
 	help - print a list of available commands in the main menu
 	exit - exit the application
 >>> services
-Enter organization id: 26072b8b6a0e448180f8c0e702ab6d2f
+Enter organization id: samples
 Services:
-	Exampleservice
+	calculator
 >>> exit
 ```
 

@@ -13,8 +13,8 @@ This guide assumes you've got a wallet (check
 [Getting Ready to Call AI CheckUp](/docs/products/DecentralizedAIPlatform/QuickStartGuides/GettingReadyToCallAICheckUp/) 
 guide).  
 
-This guide calls the calculator service (organization_id = `26072b8b6a0e448180f8c0e702ab6d2f`, 
-service_id = `Exampleservice`) on the testnet `sepolia` (chain_id = `11155111`). You can find this service on the [Testnet Marketplace](https://testnet.marketplace.singularitynet.io).
+This guide calls the calculator service (organization_id = `samples`, 
+service_id = `calculator`) on the testnet `sepolia` (chain_id = `11155111`). You can find this service on the [Testnet Marketplace](https://testnet.marketplace.singularitynet.io).
 
 ## Step 2. Install CLI
 
@@ -86,7 +86,7 @@ snet account deposit 0.00001
 Open a channel and transfer ASI (FET) to it.
 
 ```sh
-snet channel open 26072b8b6a0e448180f8c0e702ab6d2f default_group 0.00001 +8days 
+snet channel open samples default_group 0.00001 +8days 
 ```
 
 ## Step 5. Make a call to a Service 
@@ -94,7 +94,7 @@ snet channel open 26072b8b6a0e448180f8c0e702ab6d2f default_group 0.00001 +8days
 Now you can call a service.
 
 ```sh
-snet client call 26072b8b6a0e448180f8c0e702ab6d2f Exampleservice default_group add '{"a":10,"b":32}'
+snet client call samples calculator default_group add '{"a":10,"b":32}'
 ```
 
 It returns the result of the service call.
@@ -120,7 +120,7 @@ the specifics of this OS. To avoid this problem, call the service as follows:
 - pass the path to the file with parameters to the call command
 
 ```sh
-snet client call 26072b8b6a0e448180f8c0e702ab6d2f Exampleservice default_group add PATH/TO/JSON/params.json
+snet client call samples calculator default_group add PATH/TO/JSON/params.json
 ```
 
 > **Note:** You can also call the service this way on UNIX

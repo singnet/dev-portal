@@ -77,7 +77,7 @@ message CommonOutput {
   string result = 2;
 }
 
-service ExampleService {
+service calculator {
   // specify input and output types for each method
   // the method path (/calculate) should be named the same as in the proto file
   rpc calculate(CalculateInput) returns (CommonOutput) {}

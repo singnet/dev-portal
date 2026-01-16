@@ -62,7 +62,7 @@ Navigate to the client page, and open the "[Call](/docs/products/DecentralizedAI
 
 <ImageViewer src="/assets/images/products/AIMarketplace/TUI/TUIClientCall.webp" alt="Client Call Menu - Filled out with example details"/>
 
-As you can see pictured above, we have filled out the basic details to call the "add" function under the `ExampleService` service, created by SingularityNET. You must do the same for whatever service you are trying to call.&#x20;
+As you can see pictured above, we have filled out the basic details to call the "add" function under the `calculator` service, created by SingularityNET. You must do the same for whatever service you are trying to call.&#x20;
 
 <mark style="color:red;">NOTE</mark>: In the parameters input, you can utilize a path to a JSON file, containing your service call parameters, or you can directly insert JSON into the service call. You may run into issues with sending JSON directly in the service call as pictured above (usually only on Windows), you can find more information in the [FAQ](/docs/products/DecentralizedAIPlatform/TUI/FAQ/).
 

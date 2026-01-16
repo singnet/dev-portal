@@ -96,7 +96,7 @@ from utility import Model  # Your AI model or business logic
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 _MAX_WORKERS = 10
 
-class ExampleServicer(example_pb2_grpc.ExampleServicer):
+class calculatorr(example_pb2_grpc.calculatorr):
     """
     Service implementation class
     """
@@ -167,8 +167,8 @@ def serve():
     )
     
     # Add servicer to server
-    example_pb2_grpc.add_ExampleServicer_to_server(
-        ExampleServicer(), server
+    example_pb2_grpc.add_calculatorr_to_server(
+        calculatorr(), server
     )
     
     # Bind to address and start

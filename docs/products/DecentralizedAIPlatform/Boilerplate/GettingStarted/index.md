@@ -48,11 +48,11 @@ The project requires certain environment variables to be set in the `.env` file.
 
 ### Configuring Service
 
-The components that interact with the service are located in src/pages/ExampleService.
+The components that interact with the service are located in src/pages/calculator.
 The app automatically chooses which service to display based on the `REACT_APP_NETWORK` selected:
 
--   For `sepolia`, it uses `TestExampleService`.
--   For `mainnet`, it uses `ExampleService`.
+-   For `sepolia`, it uses `Testcalculator`.
+-   For `mainnet`, it uses `calculator`.
 
 To configure the project to work with your service, you need to specify the `orgId` and `serviceId` in the `src/config/service.ts` file. There are two configurations: one for mainnet and one for sepolia testnet.
 
@@ -63,9 +63,9 @@ To configure the project to work with your service, you need to specify the `org
     serviceId: "your-service-id"
     ```
 
-### ExampleService Component
+### calculator Component
 
-The `ExampleService/TestExampleService` component provides a user interface for interacting with your service on the `Mainnet/Sepolia` network. Below is a description of its main functions and how to use them.
+The `calculator/Testcalculator` component provides a user interface for interacting with your service on the `Mainnet/Sepolia` network. Below is a description of its main functions and how to use them.
 
 #### UI Components
 
@@ -94,7 +94,7 @@ The component also displays the organization and service name configured in the 
 
 ### Generating JavaScript Files for Your Services
 
-You will need to compile the `.proto` files from your service to JavaScript files and place them in the `src/ExampleService/assets` folder. After that, you can call functions from the generated js files in the service component, as it is done now in `ExampleService`
+You will need to compile the `.proto` files from your service to JavaScript files and place them in the `src/calculator/assets` folder. After that, you can call functions from the generated js files in the service component, as it is done now in `calculator`
 
 ```typescript
     import { example } from "./assets/mainnet/summary_pb_service";

@@ -112,8 +112,8 @@ The information about a service that was provided on publishing service contents
 const getServiceInfo = async () => {
     const sdk = await initSDK();
     const client = await sdk.createServiceClient(
-        '26072b8b6a0e448180f8c0e702ab6d2f',
-        'Exampleservice'
+        'samples',
+        'calculator'
     );
     return client.metadata;
 };
@@ -159,7 +159,7 @@ The structure of the service data:
     "media": [
         {
             "order": 1,
-            "url": "https://sepolia-marketplace-service-assets.s3.us-east-1.amazonaws.com/26072b8b6a0e448180f8c0e702ab6d2f/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg",
+            "url": "https://sepolia-marketplace-service-assets.s3.us-east-1.amazonaws.com/samples/services/d05c62bf9aa84843a195457d98417f4e/assets/20240327124952_asset.jpeg",
             "file_type": "image",
             "asset_type": "hero_image",
             "alt_text": ""
@@ -172,7 +172,7 @@ The structure of the service data:
         }
     ],
     "tags": [
-        "exampleservice"
+        "calculator"
     ]
 }
 ```
