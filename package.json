@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "markdown-it-container": "^4.0.0",
-    "swiper": "^11.1.12"
+    "swiper": "^11.1.12",
+    "waf-captcha-frontend": "^0.0.7"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

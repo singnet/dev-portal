@@ -1,4 +1,5 @@
 <template>
+    <div id="captcha-modal-container"></div>
     <div class="feedback-form-holder">
         <div class="feedback-form" :class="{ 'gradient-border': !isMobile, 'hidden': !isFormDisplayed }">
             <div class="form-header">
@@ -59,6 +60,7 @@
 import DropdownList from './DropdownList.vue';
 import { endpoints } from '../../utils/constants/endpoints';
 import { OptionType } from './DropdownList.vue';
+import { getCaptchaFetch } from '../../utils/captchaFetch';
 
 const enum FeedbackCategory {
     QUESTION = 'question',
@@ -75,6 +77,7 @@ const EMAIL_VALIDATION_REGEX: RegExp = new RegExp(
 export default {
     data() {
         return {
+            captchaFetch: undefined as | undefined | ((path: RequestInfo | URL, init: RequestInit) => Promise<Response>),
             isRequestHandling: false as boolean,
             isRequestSent: false as boolean,
             isFormDisplayed: false as boolean,
@@ -89,10 +92,14 @@ export default {
             ] as OptionType[]
         }
     },
+    created() {
+        this.captchaFetch = getCaptchaFetch()
+    },
     components: {
         DropdownList
     },
     computed: {
+        captchaFetch: getCaptchaFetch(),
         isSubmitAvailable(): boolean {
             return !!this.name &&
                 this.isEmailValid(this.email) &&
@@ -151,7 +158,7 @@ export default {
                 };
                 if (!this.isRequestHandling) {
                     this.isRequestHandling = true;
-                    await fetch(endpoints.FEEDBACK, options);
+                    await this.captchaFetch(endpoints.FEEDBACK, options);
                 }
                 this.isFormDisplayed = false;
                 await this.showAlert();
