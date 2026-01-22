@@ -1,6 +1,9 @@
 import { createCaptchaFetchHandler } from "waf-captcha-frontend";
 
 export const getCaptchaFetch = () => {
+    if (typeof window === "undefined") {
+        return fetch;
+    }
     // @ts-ignore
     const { VITE_JSAPI_URL, VITE_CAPTCHA_TOKEN } = import.meta.env;
 
