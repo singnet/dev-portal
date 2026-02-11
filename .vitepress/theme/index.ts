@@ -1,4 +1,5 @@
 import DefaultTheme from "vitepress/theme";
+import { captchaPlugin } from "./captchaFetch";
 import Home from "../../components/Home/Home.vue";
 import Video from "../../components/Common/Video.vue";
 import Footer from "../../components/Footer/Footer.vue";
@@ -33,5 +34,6 @@ export default {
         app.component("ImageViewer", ImageViewer);
         app.component("AccordionItem", AccordionItem);
         app.config.globalProperties.$daemonVersion = DAEMON_VERSION;
+        app.use(captchaPlugin);
     },
 } satisfies Theme;

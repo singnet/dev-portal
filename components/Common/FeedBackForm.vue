@@ -65,7 +65,6 @@
 import DropdownList from './DropdownList.vue';
 import { endpoints } from '../../utils/constants/endpoints';
 import { OptionType } from './DropdownList.vue';
-import { getCaptchaFetch } from '../../utils/captchaFetch';
 
 const enum FeedbackCategory {
     QUESTION = 'question',
@@ -82,7 +81,7 @@ const EMAIL_VALIDATION_REGEX: RegExp = new RegExp(
 export default {
     data() {
         return {
-            captchaFetch: undefined as | undefined | ((path: RequestInfo | URL, init: RequestInit) => Promise<Response>),
+            isCaptchaReady: false,
             isRequestHandling: false as boolean,
             isRequestSent: false as boolean,
             isRequestErrored: false as boolean,
@@ -97,9 +96,6 @@ export default {
                 { value: "feedback", title: "Feedback" },
             ] as OptionType[]
         }
-    },
-    created() {
-        this.captchaFetch = getCaptchaFetch();
     },
     components: {
         DropdownList
@@ -166,9 +162,9 @@ export default {
                         attachment_details: {},
                     })
                 };
-                if (!this.isRequestHandling) {
+                if (!this.isRequestHandling && this.$captcha.isReady) {
                     this.isRequestHandling = true;
-                    await this.captchaFetch?.(endpoints.FEEDBACK, options);
+                    await this.$captcha?.fetch?.(endpoints.FEEDBACK, options);
                 }
                 this.isFormDisplayed = false;
                 await this.showAlert();
