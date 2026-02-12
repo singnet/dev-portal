@@ -46,7 +46,6 @@ const captchaPlugin: Plugin = {
             isReady: !!captchaFetch
         };
 
-        // Provide для Composition API
         app.provide('captchaFetch', captchaFetch);
         app.provide('captcha', {
             fetch: captchaFetch,
