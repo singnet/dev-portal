@@ -19,12 +19,11 @@ const initCaptcha = () => {
     }
     if (captchaInstance) return captchaInstance;
 
-    // @ts-ignore
     const { VITE_JSAPI_URL, VITE_CAPTCHA_TOKEN } = import.meta.env;
 
     if (!VITE_CAPTCHA_TOKEN || !VITE_JSAPI_URL) {
         console.warn('Captcha configuration missing');
-        return null;
+        return fetch;
     }
 
     captchaInstance = createCaptchaFetchHandler({
