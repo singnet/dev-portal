@@ -1,4 +1,5 @@
 <template>
+    <div id="captcha-modal-container"></div>
     <div class="feedback-form-holder">
         <div class="feedback-form" :class="{ 'gradient-border': !isMobile, 'hidden': !isFormDisplayed }">
             <div class="form-header">
@@ -45,8 +46,13 @@
                 </div>
             </form>
         </div>
-        <div class="ready-alert" :class="{ 'hidden': !isRequestSent }">Thank you!
-            Our technical support will get in touch with you soon!</div>
+        <div class="ready-alert" :class="{ 'hidden': !isRequestSent }">
+            Thank you!
+            Our technical support will get in touch with you soon!
+        </div>
+        <div class="error-alert" :class="{ 'hidden': !isRequestErrored }">
+            Something went wrong! Please, try again later
+        </div>
         <div class="feedback-form-launcher" :class="{ 'hidden': isFormDisplayed }">
             <button @click="toggleFormVisibility">
                 <img src="/assets/images/common/feedback.webp" alt="feedback" />
@@ -75,8 +81,10 @@ const EMAIL_VALIDATION_REGEX: RegExp = new RegExp(
 export default {
     data() {
         return {
+            isCaptchaReady: false,
             isRequestHandling: false as boolean,
             isRequestSent: false as boolean,
+            isRequestErrored: false as boolean,
             isFormDisplayed: false as boolean,
             name: '' as string,
             email: '' as string,
@@ -125,8 +133,13 @@ export default {
         },
         async showAlert(): Promise<void> {
             this.isRequestSent = true;
-            await new Promise(r => setTimeout(r, 2000));
+            await new Promise(r => setTimeout(r, 5000));
             this.isRequestSent = false;
+        },
+        async showError(): Promise<void> {
+            this.isRequestErrored = true;
+            await new Promise(r => setTimeout(r, 5000));
+            this.isRequestErrored = false;
         },
         async sendFeedback(): Promise<void> {
             try {
@@ -149,15 +162,16 @@ export default {
                         attachment_details: {},
                     })
                 };
-                if (!this.isRequestHandling) {
+                if (!this.isRequestHandling && this.$captcha.isReady) {
                     this.isRequestHandling = true;
-                    await fetch(endpoints.FEEDBACK, options);
+                    await this.$captcha?.fetch?.(endpoints.FEEDBACK, options);
                 }
                 this.isFormDisplayed = false;
                 await this.showAlert();
             } catch (error) {
                 this.isFormDisplayed = false;
                 console.log("error on feedback request: ", error);
+                this.showError();
             } finally {
                 this.resetForm();
                 this.isRequestHandling = false;
@@ -202,6 +216,7 @@ export default {
     background: var(--feedback-form-background);
 }
 
+.error-alert.hidden,
 .ready-alert.hidden,
 .feedback-form.hidden,
 .feedback-form-launcher.hidden {
@@ -335,6 +350,7 @@ form {
     transform: scale(1.1);
 }
 
+.error-alert,
 .ready-alert {
     width: 200px;
     position: absolute;
@@ -342,9 +358,18 @@ form {
     bottom: 30px;
     padding: 10px;
     border-radius: 8px;
+    backdrop-filter: blur(5px);
+    transition: var(--feedback-form-transition) all;
+}
+
+.error-alert {
+    color: var(--vp-c-caution-3);
+    background-color: var(--vp-c-danger-soft);
+}
+
+.ready-alert {
     color: var(--vp-c-green-1);
     background-color: var(--vp-c-green-soft);
-    transition: var(--feedback-form-transition) all;
 }
 
 @media (max-width: 450px) {
