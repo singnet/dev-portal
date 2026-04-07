@@ -165,7 +165,7 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
                 link: "/docs/products/DecentralizedAIPlatform/HaaS/deployment/",
             },
             {
-                text: "Managing Daemons & Billing",
+                text: "Managing Deployments & Billing",
                 link: "/docs/products/DecentralizedAIPlatform/HaaS/daemon-management/",
             },
         ],
