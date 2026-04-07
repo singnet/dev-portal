@@ -2,52 +2,58 @@
 
 After deploying with HaaS, use the Publisher Portal dashboard to monitor status, view logs, manage subscriptions, and perform maintenance actions.
 
-
+---
 
 ## Accessing the Dashboard
 
 Navigate to **My Daemons** in the left sidebar of the Publisher Portal to open the deployments dashboard.
 
+At the top of the page you will see:
+
+| Element | Description |
+|---------|-------------|
+| **Balance** | Your current FET token balance on the platform |
+| **Top Up** | Button to add funds to your account |
+| **Add New** | Button to create a new deployment |
+
+The table below lists all deployments with their **Organization ID** and **Service ID**.
+
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="My Deployments page in the Publisher Portal showing the sidebar with My Daemons section, account balance, Top Up and Add New buttons, and a table of deployments with Organization ID and Service ID"/>
 
-
-
-## My Deployments
-
-The **My Deployments** page displays your account balance and all HaaS-managed deployments.
-
-At the top of the page you will see:
-- **Balance** — your current FET token balance on the platform
-- **Top Up** — add funds to your account
-- **Add New** — create a new deployment
-
-The table lists all deployments with their **Organization ID** and **Service ID**.
-
-
+---
 
 ## Deployment Details
 
 Click on any deployment row to expand it. The expanded view shows two cards:
 
-- **Daemon** — daemon ID, status, and last modified date with a **More** button
-- **Hosted Service** — hosted service ID, status, and last modified date with a **More** button (only present in Full-Stack deployments)
+| Card | Description |
+|------|-------------|
+| **Daemon** | Daemon ID, status, last modified date, and a **More** button for full details |
+| **Hosted Service** | Hosted service ID, status, last modified date, and a **More** button (Full-Stack only) |
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployment-expanded.png" alt="Expanded deployment row showing Daemon card with status UP and Hosted Service card with status INIT"/>
 
-
+---
 
 ## Daemon Information
 
 Click **More** on the Daemon card to view the full daemon details page:
 
-- **Daemon ID** and **Service ID**
-- **Status** — current operational state
-- **Daemon Endpoint** — public HTTPS endpoint
-- **Organization ID** and **Service Endpoint**
-- **Last Modified Date**
-- **Logs** — live daemon logs including configuration details, endpoints, and runtime information
+| Field | Description |
+|-------|-------------|
+| **Daemon ID** | Unique identifier |
+| **Service ID** | Associated service |
+| **Status** | Current operational state |
+| **Daemon Endpoint** | Public HTTPS endpoint |
+| **Organization ID** | Parent organization |
+| **Service Endpoint** | Connected AI service URL |
+| **Last Modified Date** | Last status change |
+
+The page also includes **Logs** — live daemon logs with configuration details, endpoints, and runtime information.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-daemon-detail.png" alt="Daemon Information page showing daemon configuration details and live logs"/>
+
+---
 
 ### Daemon Status Indicators
 
@@ -63,24 +69,34 @@ Click **More** on the Daemon card to view the full daemon details page:
 | `DELETING` | Daemon is being deleted |
 | `ERROR` | Daemon encountered an error during deployment |
 
-
+---
 
 ## Hosted Service Information
 
-Click **More** on the Hosted Service card to view the AI service details page (Full-Stack deployments only):
+::: tip
+This section applies only to **Full-Stack** deployments.
+:::
 
-- **Service ID**, **Organization ID**
-- **Status** — current deployment stage
-- **GitHub Account Name** and **GitHub Repository Name**
-- **Last Commit** — link to the last deployed commit
-- **Last Modified Date**
-- **Metrics** — real-time graphs for:
-  - **Invocations** — number of requests over time
-  - **Duration** — request processing time
-  - **Cold Starts** and **Warm Starts** — container startup metrics
+Click **More** on the Hosted Service card to view the AI service details page:
+
+| Field | Description |
+|-------|-------------|
+| **Service ID** | Unique identifier |
+| **Organization ID** | Parent organization |
+| **Status** | Current deployment stage |
+| **GitHub Account Name** | Repository owner |
+| **GitHub Repository Name** | Repository name |
+| **Last Commit** | Link to the last deployed commit |
+| **Last Modified Date** | Last status change |
+
+The page also includes:
+
+- **Metrics** — real-time graphs for Invocations, Duration, Cold Starts, and Warm Starts
 - **Logs** — live service logs with request processing details
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-hosted-service-detail.png" alt="Hosted Service Information page showing GitHub details, performance metrics graphs, and live service logs"/>
+
+---
 
 ### Hosted Service Status Indicators
 
@@ -97,29 +113,43 @@ Click **More** on the Hosted Service card to view the AI service details page (F
 | `DOWN` | Service is stopped |
 | `ERROR` | Deployment failed — check logs for details |
 
-
+---
 
 ## Updating Your Service
 
 ### Daemon Only Deployments
 
-To update the daemon configuration (service endpoint or authorization), use the daemon detail page.
+Update the daemon configuration (service endpoint or authorization) from the daemon detail page.
 
-> **Important:** Ensure your new service endpoint is accessible before updating to avoid downtime.
+::: warning
+Ensure your new service endpoint is accessible before updating to avoid downtime.
+:::
 
 ### Full-Stack Deployments
 
-To update your AI service code, push changes to the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle.
+Push changes to the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle — no manual action required.
 
-No manual action is required in the Publisher Portal — the deployment is triggered by git push.
-
-
+---
 
 ## Balance and Payments
 
+### Top Up
+
+To add funds to your account:
+
+1. Click **Top Up** on the My Deployments page
+2. MetaMask will prompt you to approve the FET token transfer
+3. Your balance will be updated after the transaction is confirmed
+
+::: tip
+Keep your balance funded to avoid service interruption. When you top up after expiration, the daemon restarts and the new subscription period begins from the moment of payment.
+:::
+
+---
+
 ### Balance History
 
-From the **My Deployments** page, you can view your full payment history. The **Balance History** page shows:
+View your full payment history from the My Deployments page. The Balance History page shows:
 
 | Column | Description |
 |--------|-------------|
@@ -135,21 +165,12 @@ Expand any row to see additional details:
 | **Hash** | Blockchain transaction hash |
 | **Status** | Transaction status (e.g., `SUCCESS`) |
 | **Sender** | Wallet address of the sender |
-| **Timestamp** | Precise timestamp |
 
 You can filter transactions by **Sort order**, **Type**, **Status**, and **Period** (1h, 1d, 1w, 1m, 1y, All).
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-balance-history.png" alt="Balance History page showing a Top Up transaction with expanded details including transaction hash, status, and sender"/>
 
-### Top Up
-
-To add funds to your account:
-
-1. Click **Top Up** on the My Deployments page
-2. MetaMask will prompt you to approve the FET token transfer
-3. Your balance will be updated after the transaction is confirmed
-
-> **Tip:** Keep your balance funded to avoid service interruption.
+---
 
 ### Fund Claiming
 
@@ -159,4 +180,6 @@ When your daemon is inactive (`DOWN` status), funds from service calls may remai
 2. **First 2-3 minutes:** Daemon is starting up and initializing
 3. **After startup:** Use CLI commands to claim funds from payment channels
 
-> **Important:** The actual fund transfer is performed via CLI commands, not through the HaaS interface. Wait 2-3 minutes after activation before attempting to claim.
+::: danger
+The actual fund transfer is performed via CLI commands, not through the HaaS interface. Wait 2-3 minutes after activation before attempting to claim.
+:::
