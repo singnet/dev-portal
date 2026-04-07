@@ -1,24 +1,24 @@
 # Managing Deployments and Billing
 
-After deploying with HaaS, use the Publisher Portal dashboard to monitor status, view logs, manage subscriptions, and perform maintenance actions.
+After deploying with HaaS, use the Publisher Portal deployments dashboard to monitor status, view logs, metrics and perform maintenance actions.
 
 ## Accessing the Dashboard
 
-Navigate to **My Daemons** in the left sidebar of the Publisher Portal to open the deployments dashboard.
+Navigate to **My Deployments** in the left sidebar of the Publisher Portal to open the deployments dashboard.
 
-At the top of the page you will see:
+At the main page you will see:
 
 | Element | Description |
 |---------|-------------|
 | **Balance** | Your current FET token balance on the platform |
 | **Top Up** | Button to add funds to your account |
-| **Add New** | Button to create a new deployment |
-
-The table below lists all deployments with their **Organization ID** and **Service ID**.
+| **History** | Button to check your balance history |
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="Publisher Portal sidebar with My Deployments section highlighted"/>
 
-<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployments-list.png" alt="My Deployments page showing account balance, Top Up and Add New buttons, and a table of deployments"/>
+The deployments table lists all your services with their **Organization ID** and **Service ID**:
+
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployments-list.png" alt="My Deployments page showing account balance, Top Up and History buttons, and a table of deployments"/>
 
 ## Deployment Details
 
@@ -28,6 +28,8 @@ Click on any deployment row to expand it. The expanded view shows two cards:
 |------|-------------|
 | **Daemon** | Daemon ID, status, last modified date, and a **More** button for full details |
 | **Hosted Service** | Hosted service ID, status, last modified date, and a **More** button (Full-Stack only) |
+
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployment-daemon-only.png" alt="Expanded deployment row showing Daemon card with Edit and More buttons, and AI Service Not Hosted placeholder"/>
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployment-expanded.png" alt="Expanded deployment row showing Daemon card with status UP and Hosted Service card with status INIT"/>
 
@@ -54,13 +56,9 @@ The page also includes **Logs** — live daemon logs with configuration details,
 | Status | Meaning |
 |--------|---------|
 | `INIT` | Daemon entity is created, awaiting deployment |
-| `READY_TO_START` | Payment confirmed, daemon is ready to be deployed |
 | `STARTING` | Daemon is being deployed |
-| `RESTARTING` | Daemon is being redeployed |
 | `UP` | Daemon is deployed and actively handling requests |
 | `DOWN` | Daemon is stopped or subscription expired |
-| `CLAIMING` | Daemon is temporarily running for one hour to enable fund withdrawal via CLI |
-| `DELETING` | Daemon is being deleted |
 | `ERROR` | Daemon encountered an error during deployment |
 
 ## Hosted Service Information
@@ -93,12 +91,7 @@ The page also includes:
 | Status | Meaning |
 |--------|---------|
 | `INIT` | Service entity is created, awaiting deployment |
-| `VALIDATING` | Repository structure and required files are being validated |
-| `REGISTERING` | Service is being registered in the platform infrastructure |
-| `PUSHING_NEW_VERSION` | Code is being prepared for the build pipeline |
-| `BUILDING` | Docker image is being built from your repository |
-| `DEPLOYING` | Container is being deployed to serverless infrastructure |
-| `PROFILING` | Test request is being sent to verify the service |
+| `STARTING` | Service is being built and deployed |
 | `UP` | Service is live and handling requests |
 | `DOWN` | Service is stopped |
 | `ERROR` | Deployment failed — check logs for details |
@@ -107,7 +100,9 @@ The page also includes:
 
 ### Daemon Only Deployments
 
-Update the daemon configuration (service endpoint or authorization) from the daemon detail page.
+Update the daemon configuration (service endpoint or authorization) by clicking the **Edit** button on the daemon detail page. A modal will appear where you can modify the service endpoint and authorization parameters.
+
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-daemon-edit.png" alt="Daemon edit modal showing Service Endpoint and Authorization fields with Create button"/>
 
 ::: warning
 Ensure your new service endpoint is accessible before updating to avoid downtime.
@@ -126,6 +121,8 @@ To add funds to your account:
 1. Click **Top Up** on the My Deployments page
 2. MetaMask will prompt you to approve the FET token transfer
 3. Your balance will be updated after the transaction is confirmed
+
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-topup-modal.png" alt="Top Up Account modal showing FET amount input with Cancel and Proceed buttons"/>
 
 ::: tip
 Keep your balance funded to avoid service interruption. When you top up after expiration, the daemon restarts and the new subscription period begins from the moment of payment.
@@ -154,14 +151,3 @@ You can filter transactions by **Sort order**, **Type**, **Status**, and **Perio
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-balance-history.png" alt="Balance History page showing a Top Up transaction with expanded details including transaction hash, status, and sender"/>
 
-### Fund Claiming
-
-When your daemon is inactive (`DOWN` status), funds from service calls may remain in payment channels on the MPE (Multi-Party Escrow) contract. To withdraw these funds:
-
-1. The daemon must be temporarily activated to provide claim signatures
-2. **First 2-3 minutes:** Daemon is starting up and initializing
-3. **After startup:** Use CLI commands to claim funds from payment channels
-
-::: danger
-The actual fund transfer is performed via CLI commands, not through the HaaS interface. Wait 2-3 minutes after activation before attempting to claim.
-:::

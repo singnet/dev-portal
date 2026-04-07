@@ -51,8 +51,11 @@ On the **Daemon + AI Service** tab, provide your GitHub repository details:
 |-------|----------|-------------|---------|
 | **GitHub Account Name** | Yes | GitHub account or organization that owns the repository | `your-github-username` |
 | **GitHub Repository Name** | Yes | Name of the repository with your AI service code | `my-ai-service` |
+| **Service Type** | Yes | Type of compute resource for your AI service | `CPU` / `GPU` |
 
 Click **Check Repository** to verify the SingularityNET HaaS GitHub App is installed on the repository.
+
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-fullstack-setup.png" alt="Daemon + AI Service tab showing GitHub Account Name, GitHub Repository Name fields, Check Repository and Initiate Deployment buttons"/>
 
 ::: tip
 If the GitHub App is not installed, you will be prompted to install it before proceeding.
