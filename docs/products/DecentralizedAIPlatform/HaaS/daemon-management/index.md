@@ -16,7 +16,9 @@ At the top of the page you will see:
 
 The table below lists all deployments with their **Organization ID** and **Service ID**.
 
-<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="My Deployments page in the Publisher Portal showing the sidebar with My Daemons section, account balance, Top Up and Add New buttons, and a table of deployments with Organization ID and Service ID"/>
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="Publisher Portal sidebar with My Deployments section highlighted"/>
+
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployments-list.png" alt="My Deployments page showing account balance, Top Up and Add New buttons, and a table of deployments"/>
 
 ## Deployment Details
 
