@@ -8,7 +8,7 @@ After deploying with HaaS, use the Publisher Portal dashboard to monitor status,
 
 Navigate to **My Daemons** in the left sidebar of the Publisher Portal to open the deployments dashboard.
 
-<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="Publisher Portal sidebar with My Daemons section highlighted"/>
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="My Deployments page in the Publisher Portal showing the sidebar with My Daemons section, account balance, Top Up and Add New buttons, and a table of deployments with Organization ID and Service ID"/>
 
 
 
@@ -22,8 +22,6 @@ At the top of the page you will see:
 - **Add New** — create a new deployment
 
 The table lists all deployments with their **Organization ID** and **Service ID**.
-
-<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployments-list.png" alt="My Deployments page showing account balance, Top Up and Add New buttons, and a table of deployments with Organization ID and Service ID"/>
 
 
 
