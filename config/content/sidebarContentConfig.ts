@@ -154,7 +154,19 @@ export const PlatformSection: DefaultTheme.SidebarItem[] = [
         items:[
             {
                 text: "Overview",
-                link:"/docs/products/DecentralizedAIPlatform/HaaS/",
+                link: "/docs/products/DecentralizedAIPlatform/HaaS/",
+            },
+            {
+                text: "Preparing AI Service Repository",
+                link: "/docs/products/DecentralizedAIPlatform/HaaS/preparing-repository/",
+            },
+            {
+                text: "Deploying with HaaS",
+                link: "/docs/products/DecentralizedAIPlatform/HaaS/deployment/",
+            },
+            {
+                text: "Managing Daemons & Billing",
+                link: "/docs/products/DecentralizedAIPlatform/HaaS/daemon-management/",
             },
         ],
     },
