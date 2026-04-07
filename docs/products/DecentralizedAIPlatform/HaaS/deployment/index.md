@@ -7,8 +7,6 @@ This guide walks you through the step-by-step process of deploying your daemon (
 - **Full-Stack mode:** prepare your repository per the [Preparing Your AI Service Repository](/docs/products/DecentralizedAIPlatform/HaaS/preparing-repository/) guide
 :::
 
----
-
 ## Step 1: Activate HaaS
 
 After completing the first two steps of service creation in the Publisher Portal (service profile and metadata), you will reach the **Pricing & Distribution** step.
@@ -16,8 +14,6 @@ After completing the first two steps of service creation in the Publisher Portal
 You will see a description of the Hosting-as-a-Service section with a link to the documentation and an **Activate** toggle. Click the toggle to enable HaaS for your service.
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-activate-toggle.png" alt="Pricing & Distribution page with the Hosting-as-a-Service section and Activate toggle"/>
-
----
 
 ## Step 2: Choose Deployment Mode
 
@@ -29,8 +25,6 @@ Once activated, you will see two tabs:
 | **Daemon + AI Service** | Hosts both the daemon and your AI service from a GitHub repository |
 
 Select the tab that matches your deployment mode.
-
----
 
 ## Step 3: Configure Deployment
 
@@ -49,8 +43,6 @@ On the **Daemon** tab, provide the endpoint of your externally hosted AI service
 Ensure your service endpoint is publicly accessible and properly configured to handle requests from the HaaS daemon.
 :::
 
----
-
 ### Full-Stack Mode (Daemon + AI Service)
 
 On the **Daemon + AI Service** tab, provide your GitHub repository details:
@@ -66,8 +58,6 @@ Click **Check Repository** to verify the SingularityNET HaaS GitHub App is insta
 If the GitHub App is not installed, you will be prompted to install it before proceeding.
 :::
 
----
-
 ## Step 4: Initiate Deployment
 
 Click **Initiate Deployment** after filling in the required fields. If applicable, MetaMask will prompt you to confirm the transaction.
@@ -80,8 +70,6 @@ The platform then automatically:
 - Sets up payment channel storage (ETCD)
 - Populates daemon configuration in your service settings
 - **Full-Stack mode:** Builds and deploys your AI service from the GitHub repository
-
----
 
 ## Step 5: Review Auto-Configuration
 
@@ -102,21 +90,15 @@ No ETCD configuration is required — HaaS uses a managed ETCD cluster automatic
 In Full-Stack mode, the AI service deployment progresses through the stages described in the [Deployment Lifecycle](/docs/products/DecentralizedAIPlatform/HaaS/preparing-repository/#deployment-lifecycle). Monitor progress in the [HaaS Dashboard](/docs/products/DecentralizedAIPlatform/HaaS/daemon-management/).
 :::
 
----
-
 ## Step 6: Verify Deployment
 
 After deployment completes, you can verify the status on the **Pricing & Distribution** page. For Full-Stack deployments, a successful setup will show:
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-fullstack-initialized.png" alt="Pricing & Distribution page showing Daemon + AI Service tab with the message that both daemon and AI services are deployed and running"/>
 
----
-
 ## Step 7: Complete Service Publication
 
 After HaaS successfully deploys your daemon (and AI service in Full-Stack mode), complete the remaining service publication steps in the Publisher Portal. Once published, your service is live on the AI Marketplace with fully managed infrastructure.
-
----
 
 ## Next Steps
 
