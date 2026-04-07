@@ -26,8 +26,6 @@ Each HaaS deployment runs in an isolated, containerized environment with:
 The diagram above illustrates the Daemon Only workflow. In Full-Stack mode, you provide a GitHub repository instead of a service endpoint, and the platform builds and hosts your AI service automatically.
 :::
 
----
-
 ## HaaS vs Self-Hosted Daemon
 
 | Aspect | HaaS Full-Stack | HaaS Daemon Only | Self-Hosted Daemon |
@@ -41,8 +39,6 @@ The diagram above illustrates the Daemon Only workflow. In Full-Stack mode, you 
 | **Technical Expertise** | Beginner-friendly | Intermediate | Advanced |
 | **Cost Structure** | Monthly subscription (FET tokens) | Monthly subscription (FET tokens) | Infrastructure costs only |
 | **Scalability** | Automatic serverless scaling | Easy scaling | Manual scaling |
-
----
 
 ## When to Use HaaS
 
@@ -74,8 +70,6 @@ Best if you need **full control** over infrastructure:
 For self-hosted deployment instructions, see the [Full Onboarding Guide](/docs/products/DecentralizedAIPlatform/DevelopersTutorials/FullGuideOnboarding/).
 :::
 
----
-
 ## Prerequisites
 
 Before deploying with HaaS, ensure you have:
@@ -95,8 +89,6 @@ Before deploying with HaaS, ensure you have:
 - SingularityNET HaaS GitHub App installed on your repository
 ::::
 
----
-
 ### Naming Requirements
 
 When creating your service (Steps 1 and 2), ensure your **Organization ID** and **Service ID** follow these rules:
@@ -106,8 +98,6 @@ When creating your service (Steps 1 and 2), ensure your **Organization ID** and 
 | Lowercase only | `my-company` | `MyCompany` |
 | Letters, numbers, hyphens | `ai-services` | `ai_services` |
 | No spaces or special characters | `test-org` | `AI Services` |
-
----
 
 ## Next Steps
 

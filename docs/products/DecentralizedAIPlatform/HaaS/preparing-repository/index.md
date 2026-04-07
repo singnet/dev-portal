@@ -11,8 +11,6 @@ Clone or fork the template to get started:
 [github.com/singnet/dummy-cpu-model-runpod](https://github.com/singnet/dummy-cpu-model-runpod)
 ::::
 
----
-
 ## Repository Structure
 
 Your repository must follow the template structure:
@@ -29,8 +27,6 @@ Your repository must follow the template structure:
 Do not modify `runpod_handler.py` or `Dockerfile`. These files are managed by the platform and ensure proper integration with the serverless infrastructure, logging, and error reporting.
 :::
 
----
-
 ## Writing `customer_main.py`
 
 This is the entry point for your AI service. Define a single function `run(input_data)` that accepts a dictionary of input parameters and returns a result.
@@ -44,8 +40,6 @@ def run(input_data):
     ...
     return result
 ```
-
----
 
 ### Example: Calculator Service
 
@@ -68,8 +62,6 @@ def run(input_data):
     return result
 ```
 
----
-
 ### Example: Image Classification Service
 
 ```python
@@ -89,8 +81,6 @@ def run(input_data):
     return {"predictions": predictions}
 ```
 
----
-
 ### Key Points
 
 | Aspect | Detail |
@@ -101,8 +91,6 @@ def run(input_data):
 | **Errors** | Unhandled exceptions are caught and reported automatically |
 | **Dependencies** | Import any library specified in your `requirements.txt` |
 | **Model loading** | Do it **outside** `run` (at module level) so it happens once at startup |
-
----
 
 ## Configuring `requirements.txt`
 
@@ -127,8 +115,6 @@ Pillow==10.1.0
 ::: danger
 Do not remove or change the versions of `runpod` and `sentry-sdk`. These packages are required for platform integration and monitoring.
 :::
-
----
 
 ## Creating `profile.json`
 
@@ -162,8 +148,6 @@ This file contains a sample request that the platform uses to verify your servic
 - For services that process large files, use a small or lightweight test input to keep profiling fast
 :::
 
----
-
 ## Deployment Lifecycle
 
 When you deploy using Full-Stack mode, the platform processes your repository through these stages:
@@ -182,15 +166,11 @@ When you deploy using Full-Stack mode, the platform processes your repository th
 If any stage fails, the status changes to `ERROR`. Check the deployment logs in the Publisher Portal for details.
 :::
 
----
-
 ## Updating Your Service
 
 To deploy a new version of your AI service, push changes to the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle (from `VALIDATING` to `UP`).
 
 No manual action is required — the deployment is triggered by git push.
-
----
 
 ## Troubleshooting
 
@@ -201,8 +181,6 @@ No manual action is required — the deployment is triggered by git push.
 | `PROFILING` fails | Payload mismatch | Verify `profile.json` matches what your `run` function expects |
 | `PROFILING` fails | Runtime error | Test your code locally before pushing; check deployment logs for the stack trace |
 | `ERROR` after `DEPLOYING` | Startup crash | Ensure model loading and initialization code handles errors gracefully |
-
----
 
 ## Next Steps
 

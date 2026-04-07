@@ -2,8 +2,6 @@
 
 After deploying with HaaS, use the Publisher Portal dashboard to monitor status, view logs, manage subscriptions, and perform maintenance actions.
 
----
-
 ## Accessing the Dashboard
 
 Navigate to **My Daemons** in the left sidebar of the Publisher Portal to open the deployments dashboard.
@@ -18,9 +16,9 @@ At the top of the page you will see:
 
 The table below lists all deployments with their **Organization ID** and **Service ID**.
 
-<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="My Deployments page in the Publisher Portal showing the sidebar with My Daemons section, account balance, Top Up and Add New buttons, and a table of deployments with Organization ID and Service ID"/>
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-sidebar.png" alt="Publisher Portal sidebar with My Deployments section highlighted"/>
 
----
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployments-list.png" alt="My Deployments page showing account balance, Top Up and Add New buttons, and a table of deployments"/>
 
 ## Deployment Details
 
@@ -32,8 +30,6 @@ Click on any deployment row to expand it. The expanded view shows two cards:
 | **Hosted Service** | Hosted service ID, status, last modified date, and a **More** button (Full-Stack only) |
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-deployment-expanded.png" alt="Expanded deployment row showing Daemon card with status UP and Hosted Service card with status INIT"/>
-
----
 
 ## Daemon Information
 
@@ -53,8 +49,6 @@ The page also includes **Logs** — live daemon logs with configuration details,
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-daemon-detail.png" alt="Daemon Information page showing daemon configuration details and live logs"/>
 
----
-
 ### Daemon Status Indicators
 
 | Status | Meaning |
@@ -68,8 +62,6 @@ The page also includes **Logs** — live daemon logs with configuration details,
 | `CLAIMING` | Daemon is temporarily running for one hour to enable fund withdrawal via CLI |
 | `DELETING` | Daemon is being deleted |
 | `ERROR` | Daemon encountered an error during deployment |
-
----
 
 ## Hosted Service Information
 
@@ -96,8 +88,6 @@ The page also includes:
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-hosted-service-detail.png" alt="Hosted Service Information page showing GitHub details, performance metrics graphs, and live service logs"/>
 
----
-
 ### Hosted Service Status Indicators
 
 | Status | Meaning |
@@ -113,8 +103,6 @@ The page also includes:
 | `DOWN` | Service is stopped |
 | `ERROR` | Deployment failed — check logs for details |
 
----
-
 ## Updating Your Service
 
 ### Daemon Only Deployments
@@ -129,8 +117,6 @@ Ensure your new service endpoint is accessible before updating to avoid downtime
 
 Push changes to the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle — no manual action required.
 
----
-
 ## Balance and Payments
 
 ### Top Up
@@ -144,8 +130,6 @@ To add funds to your account:
 ::: tip
 Keep your balance funded to avoid service interruption. When you top up after expiration, the daemon restarts and the new subscription period begins from the moment of payment.
 :::
-
----
 
 ### Balance History
 
@@ -169,8 +153,6 @@ Expand any row to see additional details:
 You can filter transactions by **Sort order**, **Type**, **Status**, and **Period** (1h, 1d, 1w, 1m, 1y, All).
 
 <ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-balance-history.png" alt="Balance History page showing a Top Up transaction with expanded details including transaction hash, status, and sender"/>
-
----
 
 ### Fund Claiming
 
