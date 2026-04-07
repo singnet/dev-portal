@@ -8,23 +8,17 @@
 | Mode | What the Platform Hosts | What You Provide |
 |------|------------------------|-----------------|
 | **Daemon Only** | Daemon | Your AI service running on your own infrastructure |
-| **Full-Stack** | Daemon + AI Service | A GitHub repository with your AI code |
+| **Full-Stack** | Daemon + AI Service | AI model to invoke |
 ::::
 
 Each HaaS deployment runs in an isolated, containerized environment with:
 
-- Dedicated virtual machine
 - Pre-configured runtime environment
 - Automated daemon deployment and lifecycle management
 - Built-in payment channel storage (ETCD)
 - Automated infrastructure updates and maintenance
 - Serverless AI service hosting with automatic scaling (Full-Stack mode)
 
-<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-workflow.png" alt="HaaS Deployment Workflow" pictureTitle="HaaS deployment process — Daemon Only mode"/>
-
-::: warning
-The diagram above illustrates the Daemon Only workflow. In Full-Stack mode, you provide a GitHub repository instead of a service endpoint, and the platform builds and hosts your AI service automatically.
-:::
 
 ## HaaS vs Self-Hosted Daemon
 
@@ -89,15 +83,6 @@ Before deploying with HaaS, ensure you have:
 - SingularityNET HaaS GitHub App installed on your repository
 ::::
 
-### Naming Requirements
-
-When creating your service (Steps 1 and 2), ensure your **Organization ID** and **Service ID** follow these rules:
-
-| Rule | Valid | Invalid |
-|------|-------|---------|
-| Lowercase only | `my-company` | `MyCompany` |
-| Letters, numbers, hyphens | `ai-services` | `ai_services` |
-| No spaces or special characters | `test-org` | `AI Services` |
 
 ## Next Steps
 
