@@ -168,9 +168,13 @@ If any stage fails, the status changes to `ERROR`. Check the deployment logs in 
 
 ## Updating Your Service
 
-To deploy a new version of your AI service, push changes to the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle (from `VALIDATING` to `UP`).
+To deploy a new version of your AI service, push changes to the **default branch** of the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle (from `VALIDATING` to `UP`).
 
 No manual action is required — the deployment is triggered by git push.
+
+::: warning
+HaaS only listens for commits on the repository's **default branch** (e.g., `main` or `master`). Pushes to other branches will not trigger a redeployment.
+:::
 
 ## Troubleshooting
 

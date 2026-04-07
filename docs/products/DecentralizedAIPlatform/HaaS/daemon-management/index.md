@@ -110,7 +110,7 @@ Ensure your new service endpoint is accessible before updating to avoid downtime
 
 ### Full-Stack Deployments
 
-Push changes to the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle — no manual action required.
+Push changes to the **default branch** of the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle — no manual action required.
 
 ## Balance and Payments
 
