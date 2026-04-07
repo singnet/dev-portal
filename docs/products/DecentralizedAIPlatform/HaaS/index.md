@@ -19,7 +19,7 @@ Each HaaS deployment runs in an isolated, containerized environment with:
 - Automated infrastructure updates and maintenance
 - Serverless AI service hosting with automatic scaling (Full-Stack mode)
 
-<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-workflow.png" alt="HaaS deployment workflow showing the process from developing an AI service through Publisher Portal onboarding to a ready deployment"/>
+<ImageViewer src="/assets/images/products/AIMarketplace/haas/haas-workflow.webp" alt="HaaS deployment workflow showing the process from developing an AI service through Publisher Portal onboarding to a ready deployment"/>
 
 ## HaaS vs Self-Hosted Daemon
 
