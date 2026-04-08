@@ -112,6 +112,23 @@ Ensure your new service endpoint is accessible before updating to avoid downtime
 
 Push changes to the **default branch** of the connected GitHub repository. The platform detects the update and automatically redeploys through the full lifecycle — no manual action required.
 
+## Pricing
+
+::: tip
+This section applies only to **Full-Stack** deployments. Daemon Only deployments use a fixed monthly subscription.
+:::
+
+The cost of each AI service call is calculated dynamically at the time of invocation. The final price takes into account:
+
+- **Model execution time** — how long the AI model takes to process the request
+- **Compute resource cost** — the cost of the serverless infrastructure used during execution
+- **FET token exchange rate** — the current AGIX/FET to USD conversion rate
+- **Platform commission** — a service fee applied by the platform
+
+::: warning
+Keep your provider balance funded. If your balance falls below the cost of a call, service invocations will be rejected until you top up.
+:::
+
 ## Balance and Payments
 
 ### Top Up

@@ -81,7 +81,7 @@ Before deploying with HaaS, ensure you have:
 
 **Full-Stack:**
 - GitHub repository prepared according to the [repository setup guide](/docs/products/DecentralizedAIPlatform/HaaS/preparing-repository/)
-- SingularityNET HaaS GitHub App installed on your repository
+- [SingularityNET HaaS GitHub App](https://github.com/apps/singularitynet-haas-listener) installed on your repository
 ::::
 
 
