@@ -8,7 +8,7 @@ In Full-Stack mode, the platform builds a Docker container from your GitHub repo
 
 :::: tip Template Repository
 Clone or fork the template to get started:
-[github.com/singnet/dummy-cpu-model-runpod](https://github.com/singnet/dummy-cpu-model-runpod)
+[github.com/singnet/haas-example-service](https://github.com/singnet/haas-example-service)
 ::::
 
 ## Repository Structure
